@@ -18,6 +18,9 @@ open class AlternateView
     open class override func get_type_handle() -> TypeHandle {
         return System_Net_Mail_AlternateView_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor(System.IO.Stream)
@@ -251,6 +254,9 @@ public final class AlternateViewCollection
     public class override func get_type_handle() -> TypeHandle {
         return System_Net_Mail_AlternateViewCollection_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // void Dispose()
@@ -282,6 +288,9 @@ open class Attachment
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Net_Mail_Attachment_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -562,6 +571,9 @@ open class AttachmentBase
     open class override func get_type_handle() -> TypeHandle {
         return System_Net_Mail_AttachmentBase_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // void Dispose()
@@ -717,6 +729,9 @@ public final class AttachmentCollection
     public class override func get_type_handle() -> TypeHandle {
         return System_Net_Mail_AttachmentCollection_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // void Dispose()
@@ -821,6 +836,9 @@ open class LinkedResource
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Net_Mail_LinkedResource_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -1035,6 +1053,9 @@ public final class LinkedResourceCollection
     public class override func get_type_handle() -> TypeHandle {
         return System_Net_Mail_LinkedResourceCollection_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // void Dispose()
@@ -1066,6 +1087,9 @@ open class MailAddress
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Net_Mail_MailAddress_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -1167,11 +1191,12 @@ open class MailAddress
          if the  was successfully created; otherwise, .
 
     */
-    open class func TryCreate(address : dotnet.System.String, result : inout dotnet.System.Net.Mail.MailAddress) throws -> Bool {
+    open class func TryCreate(address : dotnet.System.String, result : inout Optional<dotnet.System.Net.Mail.MailAddress>) throws -> Bool {
         var __thrown : NullableHandle = nil;
-            var _tmp_out_result = result.get_handle();
+            var _tmp_out_result = (result != nil) ? (result!.get_handle()) : nil;
         let __return = System_Net_Mail_MailAddress_bool__TryCreate_0__2__String_outMailAddress(&__thrown, address.get_handle(), &_tmp_out_result);
-        let _tmp2_result = dotnet.System.Net.Mail.MailAddress(hndl: _tmp_out_result);
+        let __h__tmp2_result = _tmp_out_result;
+        let _tmp2_result = (__h__tmp2_result != nil) ? dotnet.System.Net.Mail.MailAddress(hndl: __h__tmp2_result!) : nil;
             result = _tmp2_result;
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
@@ -1191,11 +1216,12 @@ open class MailAddress
          if the  was successfully created; otherwise, .
 
     */
-    open class func TryCreate(address : dotnet.System.String, displayName : Optional<dotnet.System.String>, result : inout dotnet.System.Net.Mail.MailAddress) throws -> Bool {
+    open class func TryCreate(address : dotnet.System.String, displayName : Optional<dotnet.System.String>, result : inout Optional<dotnet.System.Net.Mail.MailAddress>) throws -> Bool {
         var __thrown : NullableHandle = nil;
-            var _tmp_out_result = result.get_handle();
+            var _tmp_out_result = (result != nil) ? (result!.get_handle()) : nil;
         let __return = System_Net_Mail_MailAddress_bool__TryCreate_0__3__String_String_outMailAddress(&__thrown, address.get_handle(), displayName?.get_handle() ?? nil, &_tmp_out_result);
-        let _tmp2_result = dotnet.System.Net.Mail.MailAddress(hndl: _tmp_out_result);
+        let __h__tmp2_result = _tmp_out_result;
+        let _tmp2_result = (__h__tmp2_result != nil) ? dotnet.System.Net.Mail.MailAddress(hndl: __h__tmp2_result!) : nil;
             result = _tmp2_result;
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
@@ -1216,11 +1242,12 @@ open class MailAddress
          if the  was successfully created; otherwise, .
 
     */
-    open class func TryCreate(address : dotnet.System.String, displayName : Optional<dotnet.System.String>, displayNameEncoding : Optional<dotnet.System.Text.Encoding>, result : inout dotnet.System.Net.Mail.MailAddress) throws -> Bool {
+    open class func TryCreate(address : dotnet.System.String, displayName : Optional<dotnet.System.String>, displayNameEncoding : Optional<dotnet.System.Text.Encoding>, result : inout Optional<dotnet.System.Net.Mail.MailAddress>) throws -> Bool {
         var __thrown : NullableHandle = nil;
-            var _tmp_out_result = result.get_handle();
+            var _tmp_out_result = (result != nil) ? (result!.get_handle()) : nil;
         let __return = System_Net_Mail_MailAddress_bool__TryCreate_0__4__String_String_Encoding_outMailAddress(&__thrown, address.get_handle(), displayName?.get_handle() ?? nil, displayNameEncoding?.get_handle() ?? nil, &_tmp_out_result);
-        let _tmp2_result = dotnet.System.Net.Mail.MailAddress(hndl: _tmp_out_result);
+        let __h__tmp2_result = _tmp_out_result;
+        let _tmp2_result = (__h__tmp2_result != nil) ? dotnet.System.Net.Mail.MailAddress(hndl: __h__tmp2_result!) : nil;
             result = _tmp2_result;
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
@@ -1340,6 +1367,9 @@ open class MailAddressCollection
     open class override func get_type_handle() -> TypeHandle {
         return System_Net_Mail_MailAddressCollection_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor()
@@ -1405,6 +1435,9 @@ open class MailMessage
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Net_Mail_MailMessage_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -2129,6 +2162,9 @@ public final class SendCompletedEventHandler
     public class override func get_type_handle() -> TypeHandle {
         return System_Net_Mail_SendCompletedEventHandler_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // void Invoke(System.Object, System.ComponentModel.AsyncCompletedEventArgs)
@@ -2168,15 +2204,15 @@ public final class SendCompletedEventHandler
             return;
         }
     }
-    public init(_ callback : @escaping (dotnet.System.Object, dotnet.System.ComponentModel.AsyncCompletedEventArgs) throws -> Void) throws
+    public convenience init(_ __closure_Invoke : @escaping (dotnet.System.Object, dotnet.System.ComponentModel.AsyncCompletedEventArgs) throws -> Void) throws
     {
-        let __bridge : (UnsafeMutablePointer<NullableHandle>, NonnullHandle, NonnullHandle) -> Void =
+        let __interlude_Invoke : (UnsafeMutablePointer<NullableHandle>, NonnullHandle, NonnullHandle) -> Void =
         {
             (thrown : UnsafeMutablePointer<NullableHandle>, sender : NonnullHandle, e : NonnullHandle) -> Void in
             do
             {
                 thrown.pointee = nil;
-                try callback(dotnet.System.Object(hndl: sender), dotnet.System.ComponentModel.AsyncCompletedEventArgs(hndl: e));
+                try __closure_Invoke(dotnet.System.Object(hndl: sender), dotnet.System.ComponentModel.AsyncCompletedEventArgs(hndl: e));
             }
             catch let e as dotnet.System.Exception
             {
@@ -2188,24 +2224,24 @@ public final class SendCompletedEventHandler
                 thrown.pointee = __copy_handle(e.get_handle());
             }
         };
-        let cbarg = UnsafeRawPointer(Unmanaged.passRetained(__bridge as AnyObject).toOpaque());
-        func __cb(cb : UnsafeRawPointer?, thrown : UnsafeMutablePointer<NullableHandle>, sender : NonnullHandle, e : NonnullHandle) -> Void
+        func __cb_Invoke(pdata_interlude : UnsafeRawPointer, thrown : UnsafeMutablePointer<NullableHandle>, sender : NonnullHandle, e : NonnullHandle) -> Void
         {
-            let f = Unmanaged<AnyObject>.fromOpaque(cb!).takeUnretainedValue() as! (UnsafeMutablePointer<NullableHandle>, NonnullHandle, NonnullHandle) -> Void;
-            f(thrown, sender, e);
+            let f_interlude = Unmanaged<AnyObject>.fromOpaque(pdata_interlude).takeUnretainedValue() as! (UnsafeMutablePointer<NullableHandle>, NonnullHandle, NonnullHandle) -> Void;
+            f_interlude(thrown, sender, e);
         }
+        let __pdata_Invoke = UnsafeRawPointer(Unmanaged.passRetained(__interlude_Invoke as AnyObject).toOpaque());
+
         var __thrown : NullableHandle = nil;
         let h = System_Net_Mail_SendCompletedEventHandler_create(
             &__thrown,
-            cbarg,
-            nil, // TODO deinit
-            __cb
+            __cb_Invoke,
+            __pdata_Invoke,
+            nil
             );
-            // TODO check thrown
         if let __ex = __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-            super.init(hndl: h);
+            self.init(hndl: h);
         }
     }
     // void Invoke(System.Object, System.ComponentModel.AsyncCompletedEventArgs)
@@ -2234,6 +2270,9 @@ open class SmtpClient
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Net_Mail_SmtpClient_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -2396,13 +2435,13 @@ open class SmtpClient
     - Returns: The task object representing the asynchronous operation.
 
     */
-    open func SendMailAsync(message : dotnet.System.Net.Mail.MailMessage) throws -> dotnet.System.Threading.Tasks.Task {
+    open func SendMailAsync(message : dotnet.System.Net.Mail.MailMessage) async throws {
         var __thrown : NullableHandle = nil;
         let __return = System_Net_Mail_SmtpClient_Task__SendMailAsync_0__1__MailMessage(&__thrown, self.get_handle(), message.get_handle());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task(hndl: __return).ToAsync();
         }
     }
     // System.Threading.Tasks.Task SendMailAsync(System.String, System.String, System.String, System.String)
@@ -2417,13 +2456,13 @@ open class SmtpClient
     - Returns: The task object representing the asynchronous operation.
 
     */
-    open func SendMailAsync(from : dotnet.System.String, recipients : dotnet.System.String, subject : Optional<dotnet.System.String>, body : Optional<dotnet.System.String>) throws -> dotnet.System.Threading.Tasks.Task {
+    open func SendMailAsync(from : dotnet.System.String, recipients : dotnet.System.String, subject : Optional<dotnet.System.String>, body : Optional<dotnet.System.String>) async throws {
         var __thrown : NullableHandle = nil;
         let __return = System_Net_Mail_SmtpClient_Task__SendMailAsync_0__4__String_String_String_String(&__thrown, self.get_handle(), from.get_handle(), recipients.get_handle(), subject?.get_handle() ?? nil, body?.get_handle() ?? nil);
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task(hndl: __return).ToAsync();
         }
     }
     // System.Threading.Tasks.Task SendMailAsync(System.Net.Mail.MailMessage, System.Threading.CancellationToken)
@@ -2436,13 +2475,13 @@ open class SmtpClient
     - Returns: The task object representing the asynchronous operation.
 
     */
-    open func SendMailAsync(message : dotnet.System.Net.Mail.MailMessage, cancellationToken : dotnet.System.Threading.CancellationToken) throws -> dotnet.System.Threading.Tasks.Task {
+    open func SendMailAsync(message : dotnet.System.Net.Mail.MailMessage, cancellationToken : dotnet.System.Threading.CancellationToken) async throws {
         var __thrown : NullableHandle = nil;
         let __return = System_Net_Mail_SmtpClient_Task__SendMailAsync_0__2__MailMessage_CancellationToken(&__thrown, self.get_handle(), message.get_handle(), cancellationToken.get_handle());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task(hndl: __return).ToAsync();
         }
     }
     // System.Threading.Tasks.Task SendMailAsync(System.String, System.String, System.String, System.String, System.Threading.CancellationToken)
@@ -2458,13 +2497,13 @@ open class SmtpClient
     - Returns: The task object representing the asynchronous operation.
 
     */
-    open func SendMailAsync(from : dotnet.System.String, recipients : dotnet.System.String, subject : Optional<dotnet.System.String>, body : Optional<dotnet.System.String>, cancellationToken : dotnet.System.Threading.CancellationToken) throws -> dotnet.System.Threading.Tasks.Task {
+    open func SendMailAsync(from : dotnet.System.String, recipients : dotnet.System.String, subject : Optional<dotnet.System.String>, body : Optional<dotnet.System.String>, cancellationToken : dotnet.System.Threading.CancellationToken) async throws {
         var __thrown : NullableHandle = nil;
         let __return = System_Net_Mail_SmtpClient_Task__SendMailAsync_0__5__String_String_String_String_CancellationToken(&__thrown, self.get_handle(), from.get_handle(), recipients.get_handle(), subject?.get_handle() ?? nil, body?.get_handle() ?? nil, cancellationToken.get_handle());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task(hndl: __return).ToAsync();
         }
     }
     // [IsSpecialName] System.Security.Cryptography.X509Certificates.X509CertificateCollection get_ClientCertificates()
@@ -3005,6 +3044,9 @@ open class SmtpException
     open class override func get_type_handle() -> TypeHandle {
         return System_Net_Mail_SmtpException_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor()
@@ -3153,6 +3195,9 @@ open class SmtpFailedRecipientException
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Net_Mail_SmtpFailedRecipientException_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -3312,6 +3357,9 @@ open class SmtpFailedRecipientsException
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Net_Mail_SmtpFailedRecipientsException_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -3729,6 +3777,9 @@ open class ContentDisposition
     open class override func get_type_handle() -> TypeHandle {
         return System_Net_Mime_ContentDisposition_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor()
@@ -4091,6 +4142,9 @@ open class ContentType
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Net_Mime_ContentType_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }

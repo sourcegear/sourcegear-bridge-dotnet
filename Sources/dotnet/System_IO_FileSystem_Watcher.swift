@@ -17,6 +17,9 @@ open class ErrorEventArgs
     open class override func get_type_handle() -> TypeHandle {
         return System_IO_ErrorEventArgs_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor(System.Exception)
@@ -67,6 +70,9 @@ public final class ErrorEventHandler
     public class override func get_type_handle() -> TypeHandle {
         return System_IO_ErrorEventHandler_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // void Invoke(System.Object, System.IO.ErrorEventArgs)
@@ -106,15 +112,15 @@ public final class ErrorEventHandler
             return;
         }
     }
-    public init(_ callback : @escaping (dotnet.System.Object, dotnet.System.IO.ErrorEventArgs) throws -> Void) throws
+    public convenience init(_ __closure_Invoke : @escaping (dotnet.System.Object, dotnet.System.IO.ErrorEventArgs) throws -> Void) throws
     {
-        let __bridge : (UnsafeMutablePointer<NullableHandle>, NonnullHandle, NonnullHandle) -> Void =
+        let __interlude_Invoke : (UnsafeMutablePointer<NullableHandle>, NonnullHandle, NonnullHandle) -> Void =
         {
             (thrown : UnsafeMutablePointer<NullableHandle>, sender : NonnullHandle, e : NonnullHandle) -> Void in
             do
             {
                 thrown.pointee = nil;
-                try callback(dotnet.System.Object(hndl: sender), dotnet.System.IO.ErrorEventArgs(hndl: e));
+                try __closure_Invoke(dotnet.System.Object(hndl: sender), dotnet.System.IO.ErrorEventArgs(hndl: e));
             }
             catch let e as dotnet.System.Exception
             {
@@ -126,24 +132,24 @@ public final class ErrorEventHandler
                 thrown.pointee = __copy_handle(e.get_handle());
             }
         };
-        let cbarg = UnsafeRawPointer(Unmanaged.passRetained(__bridge as AnyObject).toOpaque());
-        func __cb(cb : UnsafeRawPointer?, thrown : UnsafeMutablePointer<NullableHandle>, sender : NonnullHandle, e : NonnullHandle) -> Void
+        func __cb_Invoke(pdata_interlude : UnsafeRawPointer, thrown : UnsafeMutablePointer<NullableHandle>, sender : NonnullHandle, e : NonnullHandle) -> Void
         {
-            let f = Unmanaged<AnyObject>.fromOpaque(cb!).takeUnretainedValue() as! (UnsafeMutablePointer<NullableHandle>, NonnullHandle, NonnullHandle) -> Void;
-            f(thrown, sender, e);
+            let f_interlude = Unmanaged<AnyObject>.fromOpaque(pdata_interlude).takeUnretainedValue() as! (UnsafeMutablePointer<NullableHandle>, NonnullHandle, NonnullHandle) -> Void;
+            f_interlude(thrown, sender, e);
         }
+        let __pdata_Invoke = UnsafeRawPointer(Unmanaged.passRetained(__interlude_Invoke as AnyObject).toOpaque());
+
         var __thrown : NullableHandle = nil;
         let h = System_IO_ErrorEventHandler_create(
             &__thrown,
-            cbarg,
-            nil, // TODO deinit
-            __cb
+            __cb_Invoke,
+            __pdata_Invoke,
+            nil
             );
-            // TODO check thrown
         if let __ex = __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-            super.init(hndl: h);
+            self.init(hndl: h);
         }
     }
     // void Invoke(System.Object, System.IO.ErrorEventArgs)
@@ -171,6 +177,9 @@ open class FileSystemEventArgs
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_IO_FileSystemEventArgs_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -271,6 +280,9 @@ public final class FileSystemEventHandler
     public class override func get_type_handle() -> TypeHandle {
         return System_IO_FileSystemEventHandler_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // void Invoke(System.Object, System.IO.FileSystemEventArgs)
@@ -310,15 +322,15 @@ public final class FileSystemEventHandler
             return;
         }
     }
-    public init(_ callback : @escaping (dotnet.System.Object, dotnet.System.IO.FileSystemEventArgs) throws -> Void) throws
+    public convenience init(_ __closure_Invoke : @escaping (dotnet.System.Object, dotnet.System.IO.FileSystemEventArgs) throws -> Void) throws
     {
-        let __bridge : (UnsafeMutablePointer<NullableHandle>, NonnullHandle, NonnullHandle) -> Void =
+        let __interlude_Invoke : (UnsafeMutablePointer<NullableHandle>, NonnullHandle, NonnullHandle) -> Void =
         {
             (thrown : UnsafeMutablePointer<NullableHandle>, sender : NonnullHandle, e : NonnullHandle) -> Void in
             do
             {
                 thrown.pointee = nil;
-                try callback(dotnet.System.Object(hndl: sender), dotnet.System.IO.FileSystemEventArgs(hndl: e));
+                try __closure_Invoke(dotnet.System.Object(hndl: sender), dotnet.System.IO.FileSystemEventArgs(hndl: e));
             }
             catch let e as dotnet.System.Exception
             {
@@ -330,24 +342,24 @@ public final class FileSystemEventHandler
                 thrown.pointee = __copy_handle(e.get_handle());
             }
         };
-        let cbarg = UnsafeRawPointer(Unmanaged.passRetained(__bridge as AnyObject).toOpaque());
-        func __cb(cb : UnsafeRawPointer?, thrown : UnsafeMutablePointer<NullableHandle>, sender : NonnullHandle, e : NonnullHandle) -> Void
+        func __cb_Invoke(pdata_interlude : UnsafeRawPointer, thrown : UnsafeMutablePointer<NullableHandle>, sender : NonnullHandle, e : NonnullHandle) -> Void
         {
-            let f = Unmanaged<AnyObject>.fromOpaque(cb!).takeUnretainedValue() as! (UnsafeMutablePointer<NullableHandle>, NonnullHandle, NonnullHandle) -> Void;
-            f(thrown, sender, e);
+            let f_interlude = Unmanaged<AnyObject>.fromOpaque(pdata_interlude).takeUnretainedValue() as! (UnsafeMutablePointer<NullableHandle>, NonnullHandle, NonnullHandle) -> Void;
+            f_interlude(thrown, sender, e);
         }
+        let __pdata_Invoke = UnsafeRawPointer(Unmanaged.passRetained(__interlude_Invoke as AnyObject).toOpaque());
+
         var __thrown : NullableHandle = nil;
         let h = System_IO_FileSystemEventHandler_create(
             &__thrown,
-            cbarg,
-            nil, // TODO deinit
-            __cb
+            __cb_Invoke,
+            __pdata_Invoke,
+            nil
             );
-            // TODO check thrown
         if let __ex = __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-            super.init(hndl: h);
+            self.init(hndl: h);
         }
     }
     // void Invoke(System.Object, System.IO.FileSystemEventArgs)
@@ -376,6 +388,9 @@ open class FileSystemWatcher
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_IO_FileSystemWatcher_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -969,6 +984,9 @@ open class InternalBufferOverflowException
     open class override func get_type_handle() -> TypeHandle {
         return System_IO_InternalBufferOverflowException_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor()
@@ -1140,6 +1158,9 @@ open class RenamedEventArgs
     open class override func get_type_handle() -> TypeHandle {
         return System_IO_RenamedEventArgs_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor(System.IO.WatcherChangeTypes, System.String, System.String, System.String)
@@ -1220,6 +1241,9 @@ public final class RenamedEventHandler
     public class override func get_type_handle() -> TypeHandle {
         return System_IO_RenamedEventHandler_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // void Invoke(System.Object, System.IO.RenamedEventArgs)
@@ -1259,15 +1283,15 @@ public final class RenamedEventHandler
             return;
         }
     }
-    public init(_ callback : @escaping (dotnet.System.Object, dotnet.System.IO.RenamedEventArgs) throws -> Void) throws
+    public convenience init(_ __closure_Invoke : @escaping (dotnet.System.Object, dotnet.System.IO.RenamedEventArgs) throws -> Void) throws
     {
-        let __bridge : (UnsafeMutablePointer<NullableHandle>, NonnullHandle, NonnullHandle) -> Void =
+        let __interlude_Invoke : (UnsafeMutablePointer<NullableHandle>, NonnullHandle, NonnullHandle) -> Void =
         {
             (thrown : UnsafeMutablePointer<NullableHandle>, sender : NonnullHandle, e : NonnullHandle) -> Void in
             do
             {
                 thrown.pointee = nil;
-                try callback(dotnet.System.Object(hndl: sender), dotnet.System.IO.RenamedEventArgs(hndl: e));
+                try __closure_Invoke(dotnet.System.Object(hndl: sender), dotnet.System.IO.RenamedEventArgs(hndl: e));
             }
             catch let e as dotnet.System.Exception
             {
@@ -1279,24 +1303,24 @@ public final class RenamedEventHandler
                 thrown.pointee = __copy_handle(e.get_handle());
             }
         };
-        let cbarg = UnsafeRawPointer(Unmanaged.passRetained(__bridge as AnyObject).toOpaque());
-        func __cb(cb : UnsafeRawPointer?, thrown : UnsafeMutablePointer<NullableHandle>, sender : NonnullHandle, e : NonnullHandle) -> Void
+        func __cb_Invoke(pdata_interlude : UnsafeRawPointer, thrown : UnsafeMutablePointer<NullableHandle>, sender : NonnullHandle, e : NonnullHandle) -> Void
         {
-            let f = Unmanaged<AnyObject>.fromOpaque(cb!).takeUnretainedValue() as! (UnsafeMutablePointer<NullableHandle>, NonnullHandle, NonnullHandle) -> Void;
-            f(thrown, sender, e);
+            let f_interlude = Unmanaged<AnyObject>.fromOpaque(pdata_interlude).takeUnretainedValue() as! (UnsafeMutablePointer<NullableHandle>, NonnullHandle, NonnullHandle) -> Void;
+            f_interlude(thrown, sender, e);
         }
+        let __pdata_Invoke = UnsafeRawPointer(Unmanaged.passRetained(__interlude_Invoke as AnyObject).toOpaque());
+
         var __thrown : NullableHandle = nil;
         let h = System_IO_RenamedEventHandler_create(
             &__thrown,
-            cbarg,
-            nil, // TODO deinit
-            __cb
+            __cb_Invoke,
+            __pdata_Invoke,
+            nil
             );
-            // TODO check thrown
         if let __ex = __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-            super.init(hndl: h);
+            self.init(hndl: h);
         }
     }
     // void Invoke(System.Object, System.IO.RenamedEventArgs)
@@ -1325,6 +1349,9 @@ public final class WaitForChangedResult
 {
     public class override func get_type_handle() -> TypeHandle {
         return System_IO_WaitForChangedResult_get_type_handle();
+    }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }

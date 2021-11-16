@@ -18,6 +18,9 @@ public final class DynamicILInfo
     public class override func get_type_handle() -> TypeHandle {
         return System_Reflection_Emit_DynamicILInfo_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // System.Int32 GetTokenFor(System.Byte[])
@@ -301,6 +304,9 @@ public final class DynamicMethod
 {
     public class override func get_type_handle() -> TypeHandle {
         return System_Reflection_Emit_DynamicMethod_get_type_handle();
+    }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }

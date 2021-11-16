@@ -155,19 +155,19 @@ struct {
     int32_t (* _Nonnull  _fp_System_Diagnostics_Tracing_EventSource_bool__IsEnabled_0__3__EventLevel_EventKeywords_EventChannel)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, int32_t level, int64_t keywords, uint8_t channel);
     void (* _Nonnull  _fp_System_Diagnostics_Tracing_EventSource_void__SendCommand_0__3__EventSource_EventCommand_System_Collections_Generic_IDictionary_string_string_)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL eventSource, int32_t command, SG_HNDL_NULLABLE commandArguments);
     void (* _Nonnull  _fp_System_Diagnostics_Tracing_EventSource_void__SetCurrentThreadActivityId_0__1__Guid)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL activityId);
-    void (* _Nonnull  _fp_System_Diagnostics_Tracing_EventSource_void__SetCurrentThreadActivityId_0__2__Guid_outGuid)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL activityId, SG_HNDL_NONNULL* _Nonnull __oldActivityThatWillContinue_out_ptr);
+    void (* _Nonnull  _fp_System_Diagnostics_Tracing_EventSource_void__SetCurrentThreadActivityId_0__2__Guid_outGuid)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL activityId, SG_HNDL_NULLABLE* _Nonnull __oldActivityThatWillContinue_out_ptr);
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_Diagnostics_Tracing_EventSource_String__ToString_0__0)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h);
     void (* _Nonnull  _fp_System_Diagnostics_Tracing_EventSource_void__Write_0__1__String)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE eventName);
     void (* _Nonnull  _fp_System_Diagnostics_Tracing_EventSource_void__Write_0__2__String_EventSourceOptions)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE eventName, SG_HNDL_NONNULL options);
     void (* _Nonnull  _fp_System_Diagnostics_Tracing_EventSource_void__Write_1__3__String_EventSourceOptions_UT)(TYP T, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE eventName, SG_HNDL_NONNULL options, GVAL data);
     SG_HNDL_NONNULL (* _Nonnull  _fp_specialize_System_Diagnostics_Tracing_EventSource_void__Write_1__3__String_EventSourceOptions_UT)(TYP T, SG_HNDL_NULLABLE * _Nonnull __thrown);
     void (* _Nonnull  _fp_invoke_System_Diagnostics_Tracing_EventSource_void__Write_1__3__String_EventSourceOptions_UT)(SG_HNDL_NONNULL ____hdel, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE eventName, SG_HNDL_NONNULL options, GVAL data);
-    void (* _Nonnull  _fp_System_Diagnostics_Tracing_EventSource_void__Write_1__5__String_refEventSourceOptions_refGuid_refGuid_refUT)(TYP T, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE eventName, SG_HNDL_NONNULL* _Nonnull __options_ref_ptr, SG_HNDL_NONNULL* _Nonnull __activityId_ref_ptr, SG_HNDL_NONNULL* _Nonnull __relatedActivityId_ref_ptr, GVAL* _Nonnull __data_ref_ptr);
+    void (* _Nonnull  _fp_System_Diagnostics_Tracing_EventSource_void__Write_1__5__String_refEventSourceOptions_refGuid_refGuid_refUT)(TYP T, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE eventName, SG_HNDL_NULLABLE* _Nonnull __options_ref_ptr, SG_HNDL_NULLABLE* _Nonnull __activityId_ref_ptr, SG_HNDL_NULLABLE* _Nonnull __relatedActivityId_ref_ptr, GVAL* _Nonnull __data_ref_ptr);
     SG_HNDL_NONNULL (* _Nonnull  _fp_specialize_System_Diagnostics_Tracing_EventSource_void__Write_1__5__String_refEventSourceOptions_refGuid_refGuid_refUT)(TYP T, SG_HNDL_NULLABLE * _Nonnull __thrown);
-    void (* _Nonnull  _fp_invoke_System_Diagnostics_Tracing_EventSource_void__Write_1__5__String_refEventSourceOptions_refGuid_refGuid_refUT)(SG_HNDL_NONNULL ____hdel, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE eventName, SG_HNDL_NONNULL* _Nonnull __options_ref_ptr, SG_HNDL_NONNULL* _Nonnull __activityId_ref_ptr, SG_HNDL_NONNULL* _Nonnull __relatedActivityId_ref_ptr, GVAL* _Nonnull __data_ref_ptr);
-    void (* _Nonnull  _fp_System_Diagnostics_Tracing_EventSource_void__Write_1__3__String_refEventSourceOptions_refUT)(TYP T, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE eventName, SG_HNDL_NONNULL* _Nonnull __options_ref_ptr, GVAL* _Nonnull __data_ref_ptr);
+    void (* _Nonnull  _fp_invoke_System_Diagnostics_Tracing_EventSource_void__Write_1__5__String_refEventSourceOptions_refGuid_refGuid_refUT)(SG_HNDL_NONNULL ____hdel, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE eventName, SG_HNDL_NULLABLE* _Nonnull __options_ref_ptr, SG_HNDL_NULLABLE* _Nonnull __activityId_ref_ptr, SG_HNDL_NULLABLE* _Nonnull __relatedActivityId_ref_ptr, GVAL* _Nonnull __data_ref_ptr);
+    void (* _Nonnull  _fp_System_Diagnostics_Tracing_EventSource_void__Write_1__3__String_refEventSourceOptions_refUT)(TYP T, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE eventName, SG_HNDL_NULLABLE* _Nonnull __options_ref_ptr, GVAL* _Nonnull __data_ref_ptr);
     SG_HNDL_NONNULL (* _Nonnull  _fp_specialize_System_Diagnostics_Tracing_EventSource_void__Write_1__3__String_refEventSourceOptions_refUT)(TYP T, SG_HNDL_NULLABLE * _Nonnull __thrown);
-    void (* _Nonnull  _fp_invoke_System_Diagnostics_Tracing_EventSource_void__Write_1__3__String_refEventSourceOptions_refUT)(SG_HNDL_NONNULL ____hdel, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE eventName, SG_HNDL_NONNULL* _Nonnull __options_ref_ptr, GVAL* _Nonnull __data_ref_ptr);
+    void (* _Nonnull  _fp_invoke_System_Diagnostics_Tracing_EventSource_void__Write_1__3__String_refEventSourceOptions_refUT)(SG_HNDL_NONNULL ____hdel, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE eventName, SG_HNDL_NULLABLE* _Nonnull __options_ref_ptr, GVAL* _Nonnull __data_ref_ptr);
     void (* _Nonnull  _fp_System_Diagnostics_Tracing_EventSource_void__Write_1__2__String_UT)(TYP T, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE eventName, GVAL data);
     SG_HNDL_NONNULL (* _Nonnull  _fp_specialize_System_Diagnostics_Tracing_EventSource_void__Write_1__2__String_UT)(TYP T, SG_HNDL_NULLABLE * _Nonnull __thrown);
     void (* _Nonnull  _fp_invoke_System_Diagnostics_Tracing_EventSource_void__Write_1__2__String_UT)(SG_HNDL_NONNULL ____hdel, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE eventName, GVAL data);
@@ -1417,7 +1417,7 @@ void System_Diagnostics_Tracing_EventSource_void__SetCurrentThreadActivityId_0__
     _g_System_Diagnostics_Tracing._fp_System_Diagnostics_Tracing_EventSource_void__SetCurrentThreadActivityId_0__1__Guid(__thrown, activityId);
 }
 
-void System_Diagnostics_Tracing_EventSource_void__SetCurrentThreadActivityId_0__2__Guid_outGuid(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL activityId, SG_HNDL_NONNULL* _Nonnull __oldActivityThatWillContinue_out_ptr) {
+void System_Diagnostics_Tracing_EventSource_void__SetCurrentThreadActivityId_0__2__Guid_outGuid(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL activityId, SG_HNDL_NULLABLE* _Nonnull __oldActivityThatWillContinue_out_ptr) {
     if (!_g_System_Diagnostics_Tracing._fp_System_Diagnostics_Tracing_EventSource_void__SetCurrentThreadActivityId_0__2__Guid_outGuid) {
         my_init();
     }
@@ -1468,7 +1468,7 @@ void invoke_System_Diagnostics_Tracing_EventSource_void__Write_1__3__String_Even
     _g_System_Diagnostics_Tracing._fp_invoke_System_Diagnostics_Tracing_EventSource_void__Write_1__3__String_EventSourceOptions_UT(____hdel, __thrown, __self_h, eventName, options, data);
 }
 
-void System_Diagnostics_Tracing_EventSource_void__Write_1__5__String_refEventSourceOptions_refGuid_refGuid_refUT(TYP T, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE eventName, SG_HNDL_NONNULL* _Nonnull __options_ref_ptr, SG_HNDL_NONNULL* _Nonnull __activityId_ref_ptr, SG_HNDL_NONNULL* _Nonnull __relatedActivityId_ref_ptr, GVAL* _Nonnull __data_ref_ptr) {
+void System_Diagnostics_Tracing_EventSource_void__Write_1__5__String_refEventSourceOptions_refGuid_refGuid_refUT(TYP T, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE eventName, SG_HNDL_NULLABLE* _Nonnull __options_ref_ptr, SG_HNDL_NULLABLE* _Nonnull __activityId_ref_ptr, SG_HNDL_NULLABLE* _Nonnull __relatedActivityId_ref_ptr, GVAL* _Nonnull __data_ref_ptr) {
     if (!_g_System_Diagnostics_Tracing._fp_System_Diagnostics_Tracing_EventSource_void__Write_1__5__String_refEventSourceOptions_refGuid_refGuid_refUT) {
         my_init();
     }
@@ -1483,14 +1483,14 @@ SG_HNDL_NONNULL specialize_System_Diagnostics_Tracing_EventSource_void__Write_1_
     return ret;
 }
 
-void invoke_System_Diagnostics_Tracing_EventSource_void__Write_1__5__String_refEventSourceOptions_refGuid_refGuid_refUT(SG_HNDL_NONNULL ____hdel, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE eventName, SG_HNDL_NONNULL* _Nonnull __options_ref_ptr, SG_HNDL_NONNULL* _Nonnull __activityId_ref_ptr, SG_HNDL_NONNULL* _Nonnull __relatedActivityId_ref_ptr, GVAL* _Nonnull __data_ref_ptr) {
+void invoke_System_Diagnostics_Tracing_EventSource_void__Write_1__5__String_refEventSourceOptions_refGuid_refGuid_refUT(SG_HNDL_NONNULL ____hdel, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE eventName, SG_HNDL_NULLABLE* _Nonnull __options_ref_ptr, SG_HNDL_NULLABLE* _Nonnull __activityId_ref_ptr, SG_HNDL_NULLABLE* _Nonnull __relatedActivityId_ref_ptr, GVAL* _Nonnull __data_ref_ptr) {
     if (!_g_System_Diagnostics_Tracing._fp_invoke_System_Diagnostics_Tracing_EventSource_void__Write_1__5__String_refEventSourceOptions_refGuid_refGuid_refUT) {
         my_init();
     }
     _g_System_Diagnostics_Tracing._fp_invoke_System_Diagnostics_Tracing_EventSource_void__Write_1__5__String_refEventSourceOptions_refGuid_refGuid_refUT(____hdel, __thrown, __self_h, eventName, __options_ref_ptr, __activityId_ref_ptr, __relatedActivityId_ref_ptr, __data_ref_ptr);
 }
 
-void System_Diagnostics_Tracing_EventSource_void__Write_1__3__String_refEventSourceOptions_refUT(TYP T, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE eventName, SG_HNDL_NONNULL* _Nonnull __options_ref_ptr, GVAL* _Nonnull __data_ref_ptr) {
+void System_Diagnostics_Tracing_EventSource_void__Write_1__3__String_refEventSourceOptions_refUT(TYP T, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE eventName, SG_HNDL_NULLABLE* _Nonnull __options_ref_ptr, GVAL* _Nonnull __data_ref_ptr) {
     if (!_g_System_Diagnostics_Tracing._fp_System_Diagnostics_Tracing_EventSource_void__Write_1__3__String_refEventSourceOptions_refUT) {
         my_init();
     }
@@ -1505,7 +1505,7 @@ SG_HNDL_NONNULL specialize_System_Diagnostics_Tracing_EventSource_void__Write_1_
     return ret;
 }
 
-void invoke_System_Diagnostics_Tracing_EventSource_void__Write_1__3__String_refEventSourceOptions_refUT(SG_HNDL_NONNULL ____hdel, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE eventName, SG_HNDL_NONNULL* _Nonnull __options_ref_ptr, GVAL* _Nonnull __data_ref_ptr) {
+void invoke_System_Diagnostics_Tracing_EventSource_void__Write_1__3__String_refEventSourceOptions_refUT(SG_HNDL_NONNULL ____hdel, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE eventName, SG_HNDL_NULLABLE* _Nonnull __options_ref_ptr, GVAL* _Nonnull __data_ref_ptr) {
     if (!_g_System_Diagnostics_Tracing._fp_invoke_System_Diagnostics_Tracing_EventSource_void__Write_1__3__String_refEventSourceOptions_refUT) {
         my_init();
     }

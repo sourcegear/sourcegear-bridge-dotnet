@@ -17,7 +17,7 @@ struct {
     void (* _Nonnull  _fp_System_ComponentModel_AsyncCompletedEventHandler_void__Invoke_0__2__Object_AsyncCompletedEventArgs)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE sender, SG_HNDL_NONNULL e);
     SG_HNDL_NULLABLE (* _Nonnull  _fp_System_ComponentModel_AsyncCompletedEventHandler_IAsyncResult__BeginInvoke_0__4__Object_AsyncCompletedEventArgs_AsyncCallback_Object)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE sender, SG_HNDL_NONNULL e, SG_HNDL_NULLABLE callback, SG_HNDL_NULLABLE object_);
     void (* _Nonnull  _fp_System_ComponentModel_AsyncCompletedEventHandler_void__EndInvoke_0__1__IAsyncResult)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE result);
-    SG_HNDL_NONNULL (* _Nonnull  _fp_System_ComponentModel_AsyncCompletedEventHandler_create)(SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nullable __pdata, void (* _Nullable __deinit)(const void* _Nullable __pdata), void (* _Nonnull  __cb)(const void* _Nullable __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE sender, SG_HNDL_NONNULL e));
+    SG_HNDL_NONNULL (* _Nonnull  _fp_System_ComponentModel_AsyncCompletedEventHandler_create)(SG_HNDL_NULLABLE * _Nonnull __thrown, void (* _Nonnull  __cb)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE sender, SG_HNDL_NONNULL e), const void* _Nonnull __pdata, void (* _Nullable __deinit)(const void* _Nonnull __pdata));
     TYP (* _Nonnull  _fp_System_ComponentModel_AsyncOperation_get_type_handle)(void);
     void (* _Nonnull  _fp_System_ComponentModel_AsyncOperation_void__OperationCompleted_0__0)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h);
     void (* _Nonnull  _fp_System_ComponentModel_AsyncOperation_void__Post_0__2__SendOrPostCallback_Object)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NONNULL d, SG_HNDL_NULLABLE arg);
@@ -58,7 +58,7 @@ struct {
     void (* _Nonnull  _fp_System_ComponentModel_DoWorkEventHandler_void__Invoke_0__2__Object_DoWorkEventArgs)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE sender, SG_HNDL_NONNULL e);
     SG_HNDL_NULLABLE (* _Nonnull  _fp_System_ComponentModel_DoWorkEventHandler_IAsyncResult__BeginInvoke_0__4__Object_DoWorkEventArgs_AsyncCallback_Object)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE sender, SG_HNDL_NONNULL e, SG_HNDL_NULLABLE callback, SG_HNDL_NULLABLE object_);
     void (* _Nonnull  _fp_System_ComponentModel_DoWorkEventHandler_void__EndInvoke_0__1__IAsyncResult)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE result);
-    SG_HNDL_NONNULL (* _Nonnull  _fp_System_ComponentModel_DoWorkEventHandler_create)(SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nullable __pdata, void (* _Nullable __deinit)(const void* _Nullable __pdata), void (* _Nonnull  __cb)(const void* _Nullable __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE sender, SG_HNDL_NONNULL e));
+    SG_HNDL_NONNULL (* _Nonnull  _fp_System_ComponentModel_DoWorkEventHandler_create)(SG_HNDL_NULLABLE * _Nonnull __thrown, void (* _Nonnull  __cb)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE sender, SG_HNDL_NONNULL e), const void* _Nonnull __pdata, void (* _Nullable __deinit)(const void* _Nonnull __pdata));
     TYP (* _Nonnull  _fp_System_ComponentModel_ProgressChangedEventArgs_get_type_handle)(void);
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_ComponentModel_ProgressChangedEventArgs_ctor_0__2__i32_Object)(SG_HNDL_NULLABLE * _Nonnull __thrown, int32_t progressPercentage, SG_HNDL_NULLABLE userState);
     int32_t (* _Nonnull  _fp_System_ComponentModel_ProgressChangedEventArgs_i32__get_ProgressPercentage_0__0)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h);
@@ -68,7 +68,7 @@ struct {
     void (* _Nonnull  _fp_System_ComponentModel_ProgressChangedEventHandler_void__Invoke_0__2__Object_ProgressChangedEventArgs)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE sender, SG_HNDL_NONNULL e);
     SG_HNDL_NULLABLE (* _Nonnull  _fp_System_ComponentModel_ProgressChangedEventHandler_IAsyncResult__BeginInvoke_0__4__Object_ProgressChangedEventArgs_AsyncCallback_Object)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE sender, SG_HNDL_NONNULL e, SG_HNDL_NULLABLE callback, SG_HNDL_NULLABLE object_);
     void (* _Nonnull  _fp_System_ComponentModel_ProgressChangedEventHandler_void__EndInvoke_0__1__IAsyncResult)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE result);
-    SG_HNDL_NONNULL (* _Nonnull  _fp_System_ComponentModel_ProgressChangedEventHandler_create)(SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nullable __pdata, void (* _Nullable __deinit)(const void* _Nullable __pdata), void (* _Nonnull  __cb)(const void* _Nullable __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE sender, SG_HNDL_NONNULL e));
+    SG_HNDL_NONNULL (* _Nonnull  _fp_System_ComponentModel_ProgressChangedEventHandler_create)(SG_HNDL_NULLABLE * _Nonnull __thrown, void (* _Nonnull  __cb)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE sender, SG_HNDL_NONNULL e), const void* _Nonnull __pdata, void (* _Nullable __deinit)(const void* _Nonnull __pdata));
     TYP (* _Nonnull  _fp_System_ComponentModel_RunWorkerCompletedEventArgs_get_type_handle)(void);
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_ComponentModel_RunWorkerCompletedEventArgs_ctor_0__3__Object_Exception_bool)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE result, SG_HNDL_NULLABLE error, int32_t cancelled);
     SG_HNDL_NULLABLE (* _Nonnull  _fp_System_ComponentModel_RunWorkerCompletedEventArgs_Object__get_Result_0__0)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h);
@@ -78,7 +78,7 @@ struct {
     void (* _Nonnull  _fp_System_ComponentModel_RunWorkerCompletedEventHandler_void__Invoke_0__2__Object_RunWorkerCompletedEventArgs)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE sender, SG_HNDL_NONNULL e);
     SG_HNDL_NULLABLE (* _Nonnull  _fp_System_ComponentModel_RunWorkerCompletedEventHandler_IAsyncResult__BeginInvoke_0__4__Object_RunWorkerCompletedEventArgs_AsyncCallback_Object)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE sender, SG_HNDL_NONNULL e, SG_HNDL_NULLABLE callback, SG_HNDL_NULLABLE object_);
     void (* _Nonnull  _fp_System_ComponentModel_RunWorkerCompletedEventHandler_void__EndInvoke_0__1__IAsyncResult)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE result);
-    SG_HNDL_NONNULL (* _Nonnull  _fp_System_ComponentModel_RunWorkerCompletedEventHandler_create)(SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nullable __pdata, void (* _Nullable __deinit)(const void* _Nullable __pdata), void (* _Nonnull  __cb)(const void* _Nullable __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE sender, SG_HNDL_NONNULL e));
+    SG_HNDL_NONNULL (* _Nonnull  _fp_System_ComponentModel_RunWorkerCompletedEventHandler_create)(SG_HNDL_NULLABLE * _Nonnull __thrown, void (* _Nonnull  __cb)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE sender, SG_HNDL_NONNULL e), const void* _Nonnull __pdata, void (* _Nullable __deinit)(const void* _Nonnull __pdata));
 } _g_System_ComponentModel_EventBasedAsync;
 
 static void my_init() {
@@ -163,11 +163,11 @@ void System_ComponentModel_AsyncCompletedEventHandler_void__EndInvoke_0__1__IAsy
     _g_System_ComponentModel_EventBasedAsync._fp_System_ComponentModel_AsyncCompletedEventHandler_void__EndInvoke_0__1__IAsyncResult(__thrown, __self_h, result);
 }
 
-SG_HNDL_NONNULL System_ComponentModel_AsyncCompletedEventHandler_create(SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nullable __pdata, void (* _Nullable __deinit)(const void* _Nullable __pdata), void (* _Nonnull  __cb)(const void* _Nullable __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE sender, SG_HNDL_NONNULL e)) {
+SG_HNDL_NONNULL System_ComponentModel_AsyncCompletedEventHandler_create(SG_HNDL_NULLABLE * _Nonnull __thrown, void (* _Nonnull  __cb)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE sender, SG_HNDL_NONNULL e), const void* _Nonnull __pdata, void (* _Nullable __deinit)(const void* _Nonnull __pdata)) {
     if (!_g_System_ComponentModel_EventBasedAsync._fp_System_ComponentModel_AsyncCompletedEventHandler_create) {
         my_init();
     }
-    SG_HNDL_NONNULL ret = _g_System_ComponentModel_EventBasedAsync._fp_System_ComponentModel_AsyncCompletedEventHandler_create(__thrown, __pdata, __deinit, __cb);
+    SG_HNDL_NONNULL ret = _g_System_ComponentModel_EventBasedAsync._fp_System_ComponentModel_AsyncCompletedEventHandler_create(__thrown, __cb, __pdata, __deinit);
     return ret;
 }
 
@@ -471,11 +471,11 @@ void System_ComponentModel_DoWorkEventHandler_void__EndInvoke_0__1__IAsyncResult
     _g_System_ComponentModel_EventBasedAsync._fp_System_ComponentModel_DoWorkEventHandler_void__EndInvoke_0__1__IAsyncResult(__thrown, __self_h, result);
 }
 
-SG_HNDL_NONNULL System_ComponentModel_DoWorkEventHandler_create(SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nullable __pdata, void (* _Nullable __deinit)(const void* _Nullable __pdata), void (* _Nonnull  __cb)(const void* _Nullable __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE sender, SG_HNDL_NONNULL e)) {
+SG_HNDL_NONNULL System_ComponentModel_DoWorkEventHandler_create(SG_HNDL_NULLABLE * _Nonnull __thrown, void (* _Nonnull  __cb)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE sender, SG_HNDL_NONNULL e), const void* _Nonnull __pdata, void (* _Nullable __deinit)(const void* _Nonnull __pdata)) {
     if (!_g_System_ComponentModel_EventBasedAsync._fp_System_ComponentModel_DoWorkEventHandler_create) {
         my_init();
     }
-    SG_HNDL_NONNULL ret = _g_System_ComponentModel_EventBasedAsync._fp_System_ComponentModel_DoWorkEventHandler_create(__thrown, __pdata, __deinit, __cb);
+    SG_HNDL_NONNULL ret = _g_System_ComponentModel_EventBasedAsync._fp_System_ComponentModel_DoWorkEventHandler_create(__thrown, __cb, __pdata, __deinit);
     return ret;
 }
 
@@ -549,11 +549,11 @@ void System_ComponentModel_ProgressChangedEventHandler_void__EndInvoke_0__1__IAs
     _g_System_ComponentModel_EventBasedAsync._fp_System_ComponentModel_ProgressChangedEventHandler_void__EndInvoke_0__1__IAsyncResult(__thrown, __self_h, result);
 }
 
-SG_HNDL_NONNULL System_ComponentModel_ProgressChangedEventHandler_create(SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nullable __pdata, void (* _Nullable __deinit)(const void* _Nullable __pdata), void (* _Nonnull  __cb)(const void* _Nullable __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE sender, SG_HNDL_NONNULL e)) {
+SG_HNDL_NONNULL System_ComponentModel_ProgressChangedEventHandler_create(SG_HNDL_NULLABLE * _Nonnull __thrown, void (* _Nonnull  __cb)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE sender, SG_HNDL_NONNULL e), const void* _Nonnull __pdata, void (* _Nullable __deinit)(const void* _Nonnull __pdata)) {
     if (!_g_System_ComponentModel_EventBasedAsync._fp_System_ComponentModel_ProgressChangedEventHandler_create) {
         my_init();
     }
-    SG_HNDL_NONNULL ret = _g_System_ComponentModel_EventBasedAsync._fp_System_ComponentModel_ProgressChangedEventHandler_create(__thrown, __pdata, __deinit, __cb);
+    SG_HNDL_NONNULL ret = _g_System_ComponentModel_EventBasedAsync._fp_System_ComponentModel_ProgressChangedEventHandler_create(__thrown, __cb, __pdata, __deinit);
     return ret;
 }
 
@@ -627,11 +627,11 @@ void System_ComponentModel_RunWorkerCompletedEventHandler_void__EndInvoke_0__1__
     _g_System_ComponentModel_EventBasedAsync._fp_System_ComponentModel_RunWorkerCompletedEventHandler_void__EndInvoke_0__1__IAsyncResult(__thrown, __self_h, result);
 }
 
-SG_HNDL_NONNULL System_ComponentModel_RunWorkerCompletedEventHandler_create(SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nullable __pdata, void (* _Nullable __deinit)(const void* _Nullable __pdata), void (* _Nonnull  __cb)(const void* _Nullable __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE sender, SG_HNDL_NONNULL e)) {
+SG_HNDL_NONNULL System_ComponentModel_RunWorkerCompletedEventHandler_create(SG_HNDL_NULLABLE * _Nonnull __thrown, void (* _Nonnull  __cb)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE sender, SG_HNDL_NONNULL e), const void* _Nonnull __pdata, void (* _Nullable __deinit)(const void* _Nonnull __pdata)) {
     if (!_g_System_ComponentModel_EventBasedAsync._fp_System_ComponentModel_RunWorkerCompletedEventHandler_create) {
         my_init();
     }
-    SG_HNDL_NONNULL ret = _g_System_ComponentModel_EventBasedAsync._fp_System_ComponentModel_RunWorkerCompletedEventHandler_create(__thrown, __pdata, __deinit, __cb);
+    SG_HNDL_NONNULL ret = _g_System_ComponentModel_EventBasedAsync._fp_System_ComponentModel_RunWorkerCompletedEventHandler_create(__thrown, __cb, __pdata, __deinit);
     return ret;
 }
 

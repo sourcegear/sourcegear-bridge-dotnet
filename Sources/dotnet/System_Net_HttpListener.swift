@@ -17,6 +17,9 @@ public final class AuthenticationSchemeSelector
     public class override func get_type_handle() -> TypeHandle {
         return System_Net_AuthenticationSchemeSelector_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // System.Net.AuthenticationSchemes Invoke(System.Net.HttpListenerRequest)
@@ -56,15 +59,15 @@ public final class AuthenticationSchemeSelector
         return dotnet.System.Net.AuthenticationSchemes(val: __return);
         }
     }
-    public init(_ callback : @escaping (dotnet.System.Net.HttpListenerRequest) throws -> dotnet.System.Net.AuthenticationSchemes) throws
+    public convenience init(_ __closure_Invoke : @escaping (dotnet.System.Net.HttpListenerRequest) throws -> dotnet.System.Net.AuthenticationSchemes) throws
     {
-        let __bridge : (UnsafeMutablePointer<NullableHandle>, NonnullHandle) -> Swift.Int32 =
+        let __interlude_Invoke : (UnsafeMutablePointer<NullableHandle>, NonnullHandle) -> Swift.Int32 =
         {
             (thrown : UnsafeMutablePointer<NullableHandle>, httpRequest : NonnullHandle) -> Swift.Int32 in
             do
             {
                 thrown.pointee = nil;
-                let ret = try callback(dotnet.System.Net.HttpListenerRequest(hndl: httpRequest));
+                let ret = try __closure_Invoke(dotnet.System.Net.HttpListenerRequest(hndl: httpRequest));
                 return ret.get_value();
             }
             catch let e as dotnet.System.Exception
@@ -79,24 +82,24 @@ public final class AuthenticationSchemeSelector
                 return 0;
             }
         };
-        let cbarg = UnsafeRawPointer(Unmanaged.passRetained(__bridge as AnyObject).toOpaque());
-        func __cb(cb : UnsafeRawPointer?, thrown : UnsafeMutablePointer<NullableHandle>, httpRequest : NonnullHandle) -> Swift.Int32
+        func __cb_Invoke(pdata_interlude : UnsafeRawPointer, thrown : UnsafeMutablePointer<NullableHandle>, httpRequest : NonnullHandle) -> Swift.Int32
         {
-            let f = Unmanaged<AnyObject>.fromOpaque(cb!).takeUnretainedValue() as! (UnsafeMutablePointer<NullableHandle>, NonnullHandle) -> Swift.Int32;
-            return f(thrown, httpRequest);
+            let f_interlude = Unmanaged<AnyObject>.fromOpaque(pdata_interlude).takeUnretainedValue() as! (UnsafeMutablePointer<NullableHandle>, NonnullHandle) -> Swift.Int32;
+            return f_interlude(thrown, httpRequest);
         }
+        let __pdata_Invoke = UnsafeRawPointer(Unmanaged.passRetained(__interlude_Invoke as AnyObject).toOpaque());
+
         var __thrown : NullableHandle = nil;
         let h = System_Net_AuthenticationSchemeSelector_create(
             &__thrown,
-            cbarg,
-            nil, // TODO deinit
-            __cb
+            __cb_Invoke,
+            __pdata_Invoke,
+            nil
             );
-            // TODO check thrown
         if let __ex = __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-            super.init(hndl: h);
+            self.init(hndl: h);
         }
     }
     // System.Net.AuthenticationSchemes Invoke(System.Net.HttpListenerRequest)
@@ -125,6 +128,9 @@ public final class HttpListener
 {
     public class override func get_type_handle() -> TypeHandle {
         return System_Net_HttpListener_get_type_handle();
+    }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -240,13 +246,13 @@ public final class HttpListener
     - Returns: The task object representing the asynchronous operation. The  property on the task object returns an  object that represents a client request.
 
     */
-    public func GetContextAsync() throws -> dotnet.System.Threading.Tasks.Task_1<dotnet.System.Net.HttpListenerContext> {
+    public func GetContextAsync() async throws -> dotnet.System.Net.HttpListenerContext {
         var __thrown : NullableHandle = nil;
         let __return = System_Net_HttpListener_System_Threading_Tasks_Task_System_Net_HttpListenerContext___GetContextAsync_0__0(&__thrown, self.get_handle());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task_1(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task_1(hndl: __return).ToAsync();
         }
     }
     // void Start()
@@ -654,6 +660,9 @@ public final class HttpListener_ExtendedProtectionSelector
     public class override func get_type_handle() -> TypeHandle {
         return System_Net_HttpListener_ExtendedProtectionSelector_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // System.Security.Authentication.ExtendedProtection.ExtendedProtectionPolicy Invoke(System.Net.HttpListenerRequest)
@@ -693,15 +702,15 @@ public final class HttpListener_ExtendedProtectionSelector
         return dotnet.System.Security.Authentication.ExtendedProtection.ExtendedProtectionPolicy(hndl : __return);
         }
     }
-    public init(_ callback : @escaping (dotnet.System.Net.HttpListenerRequest) throws -> dotnet.System.Security.Authentication.ExtendedProtection.ExtendedProtectionPolicy) throws
+    public convenience init(_ __closure_Invoke : @escaping (dotnet.System.Net.HttpListenerRequest) throws -> dotnet.System.Security.Authentication.ExtendedProtection.ExtendedProtectionPolicy) throws
     {
-        let __bridge : (UnsafeMutablePointer<NullableHandle>, NonnullHandle) -> NonnullHandle =
+        let __interlude_Invoke : (UnsafeMutablePointer<NullableHandle>, NonnullHandle) -> NonnullHandle =
         {
             (thrown : UnsafeMutablePointer<NullableHandle>, request : NonnullHandle) -> NonnullHandle in
             do
             {
                 thrown.pointee = nil;
-                let ret = try callback(dotnet.System.Net.HttpListenerRequest(hndl: request));
+                let ret = try __closure_Invoke(dotnet.System.Net.HttpListenerRequest(hndl: request));
                 return __copy_handle(ret.get_handle());
             }
             catch let e as dotnet.System.Exception
@@ -716,24 +725,24 @@ public final class HttpListener_ExtendedProtectionSelector
                 return NonnullHandle(bitPattern: 8675309)!;
             }
         };
-        let cbarg = UnsafeRawPointer(Unmanaged.passRetained(__bridge as AnyObject).toOpaque());
-        func __cb(cb : UnsafeRawPointer?, thrown : UnsafeMutablePointer<NullableHandle>, request : NonnullHandle) -> NonnullHandle
+        func __cb_Invoke(pdata_interlude : UnsafeRawPointer, thrown : UnsafeMutablePointer<NullableHandle>, request : NonnullHandle) -> NonnullHandle
         {
-            let f = Unmanaged<AnyObject>.fromOpaque(cb!).takeUnretainedValue() as! (UnsafeMutablePointer<NullableHandle>, NonnullHandle) -> NonnullHandle;
-            return f(thrown, request);
+            let f_interlude = Unmanaged<AnyObject>.fromOpaque(pdata_interlude).takeUnretainedValue() as! (UnsafeMutablePointer<NullableHandle>, NonnullHandle) -> NonnullHandle;
+            return f_interlude(thrown, request);
         }
+        let __pdata_Invoke = UnsafeRawPointer(Unmanaged.passRetained(__interlude_Invoke as AnyObject).toOpaque());
+
         var __thrown : NullableHandle = nil;
         let h = System_Net_HttpListener_ExtendedProtectionSelector_create(
             &__thrown,
-            cbarg,
-            nil, // TODO deinit
-            __cb
+            __cb_Invoke,
+            __pdata_Invoke,
+            nil
             );
-            // TODO check thrown
         if let __ex = __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-            super.init(hndl: h);
+            self.init(hndl: h);
         }
     }
     // System.Security.Authentication.ExtendedProtection.ExtendedProtectionPolicy Invoke(System.Net.HttpListenerRequest)
@@ -761,6 +770,9 @@ open class HttpListenerBasicIdentity
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Net_HttpListenerBasicIdentity_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -816,6 +828,9 @@ public final class HttpListenerContext
     public class override func get_type_handle() -> TypeHandle {
         return System_Net_HttpListenerContext_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // System.Threading.Tasks.Task<System.Net.WebSockets.HttpListenerWebSocketContext> AcceptWebSocketAsync(System.String)
@@ -827,18 +842,75 @@ public final class HttpListenerContext
     - Returns: The task object representing the asynchronous operation. The  property on the task object returns an  object.
 
     */
-    public func AcceptWebSocketAsync(subProtocol : Optional<dotnet.System.String>) throws -> dotnet.System.Threading.Tasks.Task_1<dotnet.System.Net.WebSockets.HttpListenerWebSocketContext> {
+    public func AcceptWebSocketAsync(subProtocol : Optional<dotnet.System.String>) async throws -> dotnet.System.Net.WebSockets.HttpListenerWebSocketContext {
         var __thrown : NullableHandle = nil;
         let __return = System_Net_HttpListenerContext_System_Threading_Tasks_Task_System_Net_WebSockets_HttpListenerWebSocketContext___AcceptWebSocketAsync_0__1__String(&__thrown, self.get_handle(), subProtocol?.get_handle() ?? nil);
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task_1(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task_1(hndl: __return).ToAsync();
         }
     }
-// TODO COPE (write_all_methods) (span) System.Threading.Tasks.Task<System.Net.WebSockets.HttpListenerWebSocketContext> AcceptWebSocketAsync(System.String, System.Int32, System.TimeSpan)
-// TODO COPE (write_all_methods) (span) System.Threading.Tasks.Task<System.Net.WebSockets.HttpListenerWebSocketContext> AcceptWebSocketAsync(System.String, System.Int32, System.TimeSpan, System.ArraySegment<System.Byte>)
-// TODO COPE (write_all_methods) (span) System.Threading.Tasks.Task<System.Net.WebSockets.HttpListenerWebSocketContext> AcceptWebSocketAsync(System.String, System.TimeSpan)
+    // System.Threading.Tasks.Task<System.Net.WebSockets.HttpListenerWebSocketContext> AcceptWebSocketAsync(System.String, System.Int32, System.TimeSpan)
+// docid: M:System.Net.HttpListenerContext.AcceptWebSocketAsync(System.String,System.Int32,System.TimeSpan)
+    /**
+    Accept a WebSocket connection specifying the supported WebSocket sub-protocol, receive buffer size, and WebSocket keep-alive interval as an asynchronous operation.
+
+    - Parameter subProtocol: The supported WebSocket sub-protocol.
+    - Parameter receiveBufferSize: The receive buffer size in bytes.
+    - Parameter keepAliveInterval: The WebSocket protocol keep-alive interval in milliseconds.
+    - Returns: The task object representing the asynchronous operation. The  property on the task object returns an  object.
+
+    */
+    public func AcceptWebSocketAsync(subProtocol : Optional<dotnet.System.String>, receiveBufferSize : Swift.Int32, keepAliveInterval : dotnet.System.TimeSpan) async throws -> dotnet.System.Net.WebSockets.HttpListenerWebSocketContext {
+        var __thrown : NullableHandle = nil;
+        let __return = System_Net_HttpListenerContext_System_Threading_Tasks_Task_System_Net_WebSockets_HttpListenerWebSocketContext___AcceptWebSocketAsync_0__3__String_i32_TimeSpan(&__thrown, self.get_handle(), subProtocol?.get_handle() ?? nil, receiveBufferSize, keepAliveInterval.get_handle());
+        if let __ex =  __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+        return try await dotnet.System.Threading.Tasks.Task_1(hndl: __return).ToAsync();
+        }
+    }
+    // System.Threading.Tasks.Task<System.Net.WebSockets.HttpListenerWebSocketContext> AcceptWebSocketAsync(System.String, System.Int32, System.TimeSpan, System.ArraySegment<System.Byte>)
+// docid: M:System.Net.HttpListenerContext.AcceptWebSocketAsync(System.String,System.Int32,System.TimeSpan,System.ArraySegment{System.Byte})
+    /**
+    Accept a WebSocket connection specifying the supported WebSocket sub-protocol, receive buffer size, WebSocket keep-alive interval, and the internal buffer as an asynchronous operation.
+
+    - Parameter subProtocol: The supported WebSocket sub-protocol.
+    - Parameter receiveBufferSize: The receive buffer size in bytes.
+    - Parameter keepAliveInterval: The WebSocket protocol keep-alive interval in milliseconds.
+    - Parameter internalBuffer: An internal buffer to use for this operation.
+    - Returns: The task object representing the asynchronous operation. The  property on the task object returns an  object.
+
+    */
+    public func AcceptWebSocketAsync(subProtocol : Optional<dotnet.System.String>, receiveBufferSize : Swift.Int32, keepAliveInterval : dotnet.System.TimeSpan, internalBuffer : dotnet.System.ArraySegment_1<Swift.UInt8>) async throws -> dotnet.System.Net.WebSockets.HttpListenerWebSocketContext {
+        var __thrown : NullableHandle = nil;
+        let __return = System_Net_HttpListenerContext_System_Threading_Tasks_Task_System_Net_WebSockets_HttpListenerWebSocketContext___AcceptWebSocketAsync_0__4__String_i32_TimeSpan_System_ArraySegment_u8_(&__thrown, self.get_handle(), subProtocol?.get_handle() ?? nil, receiveBufferSize, keepAliveInterval.get_handle(), internalBuffer.get_handle());
+        if let __ex =  __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+        return try await dotnet.System.Threading.Tasks.Task_1(hndl: __return).ToAsync();
+        }
+    }
+    // System.Threading.Tasks.Task<System.Net.WebSockets.HttpListenerWebSocketContext> AcceptWebSocketAsync(System.String, System.TimeSpan)
+// docid: M:System.Net.HttpListenerContext.AcceptWebSocketAsync(System.String,System.TimeSpan)
+    /**
+    Accept a WebSocket connection specifying the supported WebSocket sub-protocol  and WebSocket keep-alive interval as an asynchronous operation.
+
+    - Parameter subProtocol: The supported WebSocket sub-protocol.
+    - Parameter keepAliveInterval: The WebSocket protocol keep-alive interval in milliseconds.
+    - Returns: The task object representing the asynchronous operation. The  property on the task object returns an  object.
+
+    */
+    public func AcceptWebSocketAsync(subProtocol : Optional<dotnet.System.String>, keepAliveInterval : dotnet.System.TimeSpan) async throws -> dotnet.System.Net.WebSockets.HttpListenerWebSocketContext {
+        var __thrown : NullableHandle = nil;
+        let __return = System_Net_HttpListenerContext_System_Threading_Tasks_Task_System_Net_WebSockets_HttpListenerWebSocketContext___AcceptWebSocketAsync_0__2__String_TimeSpan(&__thrown, self.get_handle(), subProtocol?.get_handle() ?? nil, keepAliveInterval.get_handle());
+        if let __ex =  __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+        return try await dotnet.System.Threading.Tasks.Task_1(hndl: __return).ToAsync();
+        }
+    }
     // [IsSpecialName] System.Net.HttpListenerRequest get_Request()
 // docid: M:System.Net.HttpListenerContext.get_Request
     public func get_Request() throws -> dotnet.System.Net.HttpListenerRequest {
@@ -917,6 +989,9 @@ open class HttpListenerException
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Net_HttpListenerException_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -1003,6 +1078,9 @@ open class HttpListenerPrefixCollection
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Net_HttpListenerPrefixCollection_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -1201,6 +1279,9 @@ public final class HttpListenerRequest
     public class override func get_type_handle() -> TypeHandle {
         return System_Net_HttpListenerRequest_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // System.IAsyncResult BeginGetClientCertificate(System.AsyncCallback, System.Object)
@@ -1278,13 +1359,13 @@ public final class HttpListenerRequest
     - Returns: The task object representing the asynchronous operation. The  property on the task object returns a  object that contains the client's X.509 v.3 certificate.
 
     */
-    public func GetClientCertificateAsync() throws -> dotnet.System.Threading.Tasks.Task_1<dotnet.System.Security.Cryptography.X509Certificates.X509Certificate2> {
+    public func GetClientCertificateAsync() async throws -> dotnet.System.Security.Cryptography.X509Certificates.X509Certificate2 {
         var __thrown : NullableHandle = nil;
         let __return = System_Net_HttpListenerRequest_System_Threading_Tasks_Task_System_Security_Cryptography_X509Certificates_X509Certificate2___GetClientCertificateAsync_0__0(&__thrown, self.get_handle());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task_1(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task_1(hndl: __return).ToAsync();
         }
     }
     // [IsSpecialName] System.String[] get_AcceptTypes()
@@ -1911,6 +1992,9 @@ public final class HttpListenerResponse
     public class override func get_type_handle() -> TypeHandle {
         return System_Net_HttpListenerResponse_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // void Abort()
@@ -2480,6 +2564,9 @@ open class HttpListenerTimeoutManager
     open class override func get_type_handle() -> TypeHandle {
         return System_Net_HttpListenerTimeoutManager_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // [IsSpecialName] System.TimeSpan get_DrainEntityBody()
@@ -2493,7 +2580,17 @@ open class HttpListenerTimeoutManager
         return dotnet.System.TimeSpan(hndl : __return);
         }
     }
-// TODO COPE (write_all_methods) (span) [IsSpecialName] void set_DrainEntityBody(System.TimeSpan)
+    // [IsSpecialName] void set_DrainEntityBody(System.TimeSpan)
+// docid: M:System.Net.HttpListenerTimeoutManager.set_DrainEntityBody(System.TimeSpan)
+    open func set_DrainEntityBody(value : dotnet.System.TimeSpan) throws {
+        var __thrown : NullableHandle = nil;
+        System_Net_HttpListenerTimeoutManager_void__set_DrainEntityBody_0__1__TimeSpan(&__thrown, self.get_handle(), value.get_handle());
+        if let __ex =  __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            return;
+        }
+    }
     // [IsSpecialName] System.TimeSpan get_EntityBody()
 // docid: M:System.Net.HttpListenerTimeoutManager.get_EntityBody
     open func get_EntityBody() throws -> dotnet.System.TimeSpan {
@@ -2505,7 +2602,17 @@ open class HttpListenerTimeoutManager
         return dotnet.System.TimeSpan(hndl : __return);
         }
     }
-// TODO COPE (write_all_methods) (span) [IsSpecialName] void set_EntityBody(System.TimeSpan)
+    // [IsSpecialName] void set_EntityBody(System.TimeSpan)
+// docid: M:System.Net.HttpListenerTimeoutManager.set_EntityBody(System.TimeSpan)
+    open func set_EntityBody(value : dotnet.System.TimeSpan) throws {
+        var __thrown : NullableHandle = nil;
+        System_Net_HttpListenerTimeoutManager_void__set_EntityBody_0__1__TimeSpan(&__thrown, self.get_handle(), value.get_handle());
+        if let __ex =  __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            return;
+        }
+    }
     // [IsSpecialName] System.TimeSpan get_HeaderWait()
 // docid: M:System.Net.HttpListenerTimeoutManager.get_HeaderWait
     open func get_HeaderWait() throws -> dotnet.System.TimeSpan {
@@ -2517,7 +2624,17 @@ open class HttpListenerTimeoutManager
         return dotnet.System.TimeSpan(hndl : __return);
         }
     }
-// TODO COPE (write_all_methods) (span) [IsSpecialName] void set_HeaderWait(System.TimeSpan)
+    // [IsSpecialName] void set_HeaderWait(System.TimeSpan)
+// docid: M:System.Net.HttpListenerTimeoutManager.set_HeaderWait(System.TimeSpan)
+    open func set_HeaderWait(value : dotnet.System.TimeSpan) throws {
+        var __thrown : NullableHandle = nil;
+        System_Net_HttpListenerTimeoutManager_void__set_HeaderWait_0__1__TimeSpan(&__thrown, self.get_handle(), value.get_handle());
+        if let __ex =  __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            return;
+        }
+    }
     // [IsSpecialName] System.TimeSpan get_IdleConnection()
 // docid: M:System.Net.HttpListenerTimeoutManager.get_IdleConnection
     open func get_IdleConnection() throws -> dotnet.System.TimeSpan {
@@ -2529,7 +2646,17 @@ open class HttpListenerTimeoutManager
         return dotnet.System.TimeSpan(hndl : __return);
         }
     }
-// TODO COPE (write_all_methods) (span) [IsSpecialName] void set_IdleConnection(System.TimeSpan)
+    // [IsSpecialName] void set_IdleConnection(System.TimeSpan)
+// docid: M:System.Net.HttpListenerTimeoutManager.set_IdleConnection(System.TimeSpan)
+    open func set_IdleConnection(value : dotnet.System.TimeSpan) throws {
+        var __thrown : NullableHandle = nil;
+        System_Net_HttpListenerTimeoutManager_void__set_IdleConnection_0__1__TimeSpan(&__thrown, self.get_handle(), value.get_handle());
+        if let __ex =  __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            return;
+        }
+    }
     // [IsSpecialName] System.Int64 get_MinSendBytesPerSecond()
 // docid: M:System.Net.HttpListenerTimeoutManager.get_MinSendBytesPerSecond
     open func get_MinSendBytesPerSecond() throws -> Swift.Int64 {
@@ -2563,7 +2690,17 @@ open class HttpListenerTimeoutManager
         return dotnet.System.TimeSpan(hndl : __return);
         }
     }
-// TODO COPE (write_all_methods) (span) [IsSpecialName] void set_RequestQueue(System.TimeSpan)
+    // [IsSpecialName] void set_RequestQueue(System.TimeSpan)
+// docid: M:System.Net.HttpListenerTimeoutManager.set_RequestQueue(System.TimeSpan)
+    open func set_RequestQueue(value : dotnet.System.TimeSpan) throws {
+        var __thrown : NullableHandle = nil;
+        System_Net_HttpListenerTimeoutManager_void__set_RequestQueue_0__1__TimeSpan(&__thrown, self.get_handle(), value.get_handle());
+        if let __ex =  __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            return;
+        }
+    }
     /**
     Gets or sets the time allowed for the  to drain the entity body on a Keep-Alive connection.
 
@@ -2572,7 +2709,9 @@ open class HttpListenerTimeoutManager
         get {
             return try! get_DrainEntityBody();
         }
-// TODO COPE prop set (span) [IsSpecialName] void set_DrainEntityBody(System.TimeSpan)
+        set(v) {
+            return try! set_DrainEntityBody(value: v);
+        }
     }
     /**
     Gets or sets the time allowed for the request entity body to arrive.
@@ -2582,7 +2721,9 @@ open class HttpListenerTimeoutManager
         get {
             return try! get_EntityBody();
         }
-// TODO COPE prop set (span) [IsSpecialName] void set_EntityBody(System.TimeSpan)
+        set(v) {
+            return try! set_EntityBody(value: v);
+        }
     }
     /**
     Gets or sets the time allowed for the  to parse the request header.
@@ -2592,7 +2733,9 @@ open class HttpListenerTimeoutManager
         get {
             return try! get_HeaderWait();
         }
-// TODO COPE prop set (span) [IsSpecialName] void set_HeaderWait(System.TimeSpan)
+        set(v) {
+            return try! set_HeaderWait(value: v);
+        }
     }
     /**
     Gets or sets the time allowed for an idle connection.
@@ -2602,7 +2745,9 @@ open class HttpListenerTimeoutManager
         get {
             return try! get_IdleConnection();
         }
-// TODO COPE prop set (span) [IsSpecialName] void set_IdleConnection(System.TimeSpan)
+        set(v) {
+            return try! set_IdleConnection(value: v);
+        }
     }
     /**
     Gets or sets the minimum send rate, in bytes-per-second, for the response.
@@ -2624,7 +2769,9 @@ open class HttpListenerTimeoutManager
         get {
             return try! get_RequestQueue();
         }
-// TODO COPE prop set (span) [IsSpecialName] void set_RequestQueue(System.TimeSpan)
+        set(v) {
+            return try! set_RequestQueue(value: v);
+        }
     }
 } // HttpListenerTimeoutManager
 
@@ -2643,6 +2790,9 @@ open class HttpListenerWebSocketContext
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Net_WebSockets_HttpListenerWebSocketContext_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }

@@ -68,7 +68,7 @@ void System_Text_RegularExpressions_GroupCollection_void__CopyTo_0__2__GroupArra
 
 SG_HNDL_NONNULL System_Text_RegularExpressions_GroupCollection_IEnumerator__GetEnumerator_0__0(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h);
 
-int32_t System_Text_RegularExpressions_GroupCollection_bool__TryGetValue_0__2__String_outGroup(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NONNULL key, SG_HNDL_NONNULL* _Nonnull __value_out_ptr);
+int32_t System_Text_RegularExpressions_GroupCollection_bool__TryGetValue_0__2__String_outGroup(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NONNULL key, SG_HNDL_NULLABLE* _Nonnull __value_out_ptr);
 
 int32_t System_Text_RegularExpressions_GroupCollection_i32__get_Count_0__0(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h);
 
@@ -130,7 +130,7 @@ SG_HNDL_NULLABLE System_Text_RegularExpressions_MatchEvaluator_IAsyncResult__Beg
 
 SG_HNDL_NONNULL System_Text_RegularExpressions_MatchEvaluator_String__EndInvoke_0__1__IAsyncResult(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE result);
 
-SG_HNDL_NONNULL System_Text_RegularExpressions_MatchEvaluator_create(SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nullable __pdata, void (* _Nullable __deinit)(const void* _Nullable __pdata), SG_HNDL_NONNULL (* _Nonnull  __cb)(const void* _Nullable __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL match));
+SG_HNDL_NONNULL System_Text_RegularExpressions_MatchEvaluator_create(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL (* _Nonnull  __cb)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL match), const void* _Nonnull __pdata, void (* _Nullable __deinit)(const void* _Nonnull __pdata));
 
 TYP System_Text_RegularExpressions_Regex_get_type_handle(void);
 

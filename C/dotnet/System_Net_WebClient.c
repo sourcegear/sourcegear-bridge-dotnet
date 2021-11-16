@@ -14,7 +14,7 @@ struct {
     void (* _Nonnull  _fp_System_Net_DownloadDataCompletedEventHandler_void__Invoke_0__2__Object_DownloadDataCompletedEventArgs)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NONNULL sender, SG_HNDL_NONNULL e);
     SG_HNDL_NULLABLE (* _Nonnull  _fp_System_Net_DownloadDataCompletedEventHandler_IAsyncResult__BeginInvoke_0__4__Object_DownloadDataCompletedEventArgs_AsyncCallback_Object)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NONNULL sender, SG_HNDL_NONNULL e, SG_HNDL_NULLABLE callback, SG_HNDL_NULLABLE object_);
     void (* _Nonnull  _fp_System_Net_DownloadDataCompletedEventHandler_void__EndInvoke_0__1__IAsyncResult)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE result);
-    SG_HNDL_NONNULL (* _Nonnull  _fp_System_Net_DownloadDataCompletedEventHandler_create)(SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nullable __pdata, void (* _Nullable __deinit)(const void* _Nullable __pdata), void (* _Nonnull  __cb)(const void* _Nullable __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL sender, SG_HNDL_NONNULL e));
+    SG_HNDL_NONNULL (* _Nonnull  _fp_System_Net_DownloadDataCompletedEventHandler_create)(SG_HNDL_NULLABLE * _Nonnull __thrown, void (* _Nonnull  __cb)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL sender, SG_HNDL_NONNULL e), const void* _Nonnull __pdata, void (* _Nullable __deinit)(const void* _Nonnull __pdata));
     TYP (* _Nonnull  _fp_System_Net_DownloadProgressChangedEventArgs_get_type_handle)(void);
     int64_t (* _Nonnull  _fp_System_Net_DownloadProgressChangedEventArgs_i64__get_BytesReceived_0__0)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h);
     int64_t (* _Nonnull  _fp_System_Net_DownloadProgressChangedEventArgs_i64__get_TotalBytesToReceive_0__0)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h);
@@ -23,7 +23,7 @@ struct {
     void (* _Nonnull  _fp_System_Net_DownloadProgressChangedEventHandler_void__Invoke_0__2__Object_DownloadProgressChangedEventArgs)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NONNULL sender, SG_HNDL_NONNULL e);
     SG_HNDL_NULLABLE (* _Nonnull  _fp_System_Net_DownloadProgressChangedEventHandler_IAsyncResult__BeginInvoke_0__4__Object_DownloadProgressChangedEventArgs_AsyncCallback_Object)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NONNULL sender, SG_HNDL_NONNULL e, SG_HNDL_NULLABLE callback, SG_HNDL_NULLABLE object_);
     void (* _Nonnull  _fp_System_Net_DownloadProgressChangedEventHandler_void__EndInvoke_0__1__IAsyncResult)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE result);
-    SG_HNDL_NONNULL (* _Nonnull  _fp_System_Net_DownloadProgressChangedEventHandler_create)(SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nullable __pdata, void (* _Nullable __deinit)(const void* _Nullable __pdata), void (* _Nonnull  __cb)(const void* _Nullable __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL sender, SG_HNDL_NONNULL e));
+    SG_HNDL_NONNULL (* _Nonnull  _fp_System_Net_DownloadProgressChangedEventHandler_create)(SG_HNDL_NULLABLE * _Nonnull __thrown, void (* _Nonnull  __cb)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL sender, SG_HNDL_NONNULL e), const void* _Nonnull __pdata, void (* _Nullable __deinit)(const void* _Nonnull __pdata));
     TYP (* _Nonnull  _fp_System_Net_DownloadStringCompletedEventArgs_get_type_handle)(void);
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_Net_DownloadStringCompletedEventArgs_String__get_Result_0__0)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h);
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_Net_DownloadStringCompletedEventArgs_cast)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __h);
@@ -31,7 +31,7 @@ struct {
     void (* _Nonnull  _fp_System_Net_DownloadStringCompletedEventHandler_void__Invoke_0__2__Object_DownloadStringCompletedEventArgs)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NONNULL sender, SG_HNDL_NONNULL e);
     SG_HNDL_NULLABLE (* _Nonnull  _fp_System_Net_DownloadStringCompletedEventHandler_IAsyncResult__BeginInvoke_0__4__Object_DownloadStringCompletedEventArgs_AsyncCallback_Object)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NONNULL sender, SG_HNDL_NONNULL e, SG_HNDL_NULLABLE callback, SG_HNDL_NULLABLE object_);
     void (* _Nonnull  _fp_System_Net_DownloadStringCompletedEventHandler_void__EndInvoke_0__1__IAsyncResult)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE result);
-    SG_HNDL_NONNULL (* _Nonnull  _fp_System_Net_DownloadStringCompletedEventHandler_create)(SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nullable __pdata, void (* _Nullable __deinit)(const void* _Nullable __pdata), void (* _Nonnull  __cb)(const void* _Nullable __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL sender, SG_HNDL_NONNULL e));
+    SG_HNDL_NONNULL (* _Nonnull  _fp_System_Net_DownloadStringCompletedEventHandler_create)(SG_HNDL_NULLABLE * _Nonnull __thrown, void (* _Nonnull  __cb)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL sender, SG_HNDL_NONNULL e), const void* _Nonnull __pdata, void (* _Nullable __deinit)(const void* _Nonnull __pdata));
     TYP (* _Nonnull  _fp_System_Net_OpenReadCompletedEventArgs_get_type_handle)(void);
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_Net_OpenReadCompletedEventArgs_Stream__get_Result_0__0)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h);
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_Net_OpenReadCompletedEventArgs_cast)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __h);
@@ -39,7 +39,7 @@ struct {
     void (* _Nonnull  _fp_System_Net_OpenReadCompletedEventHandler_void__Invoke_0__2__Object_OpenReadCompletedEventArgs)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NONNULL sender, SG_HNDL_NONNULL e);
     SG_HNDL_NULLABLE (* _Nonnull  _fp_System_Net_OpenReadCompletedEventHandler_IAsyncResult__BeginInvoke_0__4__Object_OpenReadCompletedEventArgs_AsyncCallback_Object)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NONNULL sender, SG_HNDL_NONNULL e, SG_HNDL_NULLABLE callback, SG_HNDL_NULLABLE object_);
     void (* _Nonnull  _fp_System_Net_OpenReadCompletedEventHandler_void__EndInvoke_0__1__IAsyncResult)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE result);
-    SG_HNDL_NONNULL (* _Nonnull  _fp_System_Net_OpenReadCompletedEventHandler_create)(SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nullable __pdata, void (* _Nullable __deinit)(const void* _Nullable __pdata), void (* _Nonnull  __cb)(const void* _Nullable __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL sender, SG_HNDL_NONNULL e));
+    SG_HNDL_NONNULL (* _Nonnull  _fp_System_Net_OpenReadCompletedEventHandler_create)(SG_HNDL_NULLABLE * _Nonnull __thrown, void (* _Nonnull  __cb)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL sender, SG_HNDL_NONNULL e), const void* _Nonnull __pdata, void (* _Nullable __deinit)(const void* _Nonnull __pdata));
     TYP (* _Nonnull  _fp_System_Net_OpenWriteCompletedEventArgs_get_type_handle)(void);
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_Net_OpenWriteCompletedEventArgs_Stream__get_Result_0__0)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h);
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_Net_OpenWriteCompletedEventArgs_cast)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __h);
@@ -47,7 +47,7 @@ struct {
     void (* _Nonnull  _fp_System_Net_OpenWriteCompletedEventHandler_void__Invoke_0__2__Object_OpenWriteCompletedEventArgs)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NONNULL sender, SG_HNDL_NONNULL e);
     SG_HNDL_NULLABLE (* _Nonnull  _fp_System_Net_OpenWriteCompletedEventHandler_IAsyncResult__BeginInvoke_0__4__Object_OpenWriteCompletedEventArgs_AsyncCallback_Object)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NONNULL sender, SG_HNDL_NONNULL e, SG_HNDL_NULLABLE callback, SG_HNDL_NULLABLE object_);
     void (* _Nonnull  _fp_System_Net_OpenWriteCompletedEventHandler_void__EndInvoke_0__1__IAsyncResult)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE result);
-    SG_HNDL_NONNULL (* _Nonnull  _fp_System_Net_OpenWriteCompletedEventHandler_create)(SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nullable __pdata, void (* _Nullable __deinit)(const void* _Nullable __pdata), void (* _Nonnull  __cb)(const void* _Nullable __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL sender, SG_HNDL_NONNULL e));
+    SG_HNDL_NONNULL (* _Nonnull  _fp_System_Net_OpenWriteCompletedEventHandler_create)(SG_HNDL_NULLABLE * _Nonnull __thrown, void (* _Nonnull  __cb)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL sender, SG_HNDL_NONNULL e), const void* _Nonnull __pdata, void (* _Nullable __deinit)(const void* _Nonnull __pdata));
     TYP (* _Nonnull  _fp_System_Net_UploadDataCompletedEventArgs_get_type_handle)(void);
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_Net_UploadDataCompletedEventArgs_u8Array__get_Result_0__0)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h);
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_Net_UploadDataCompletedEventArgs_cast)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __h);
@@ -55,7 +55,7 @@ struct {
     void (* _Nonnull  _fp_System_Net_UploadDataCompletedEventHandler_void__Invoke_0__2__Object_UploadDataCompletedEventArgs)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NONNULL sender, SG_HNDL_NONNULL e);
     SG_HNDL_NULLABLE (* _Nonnull  _fp_System_Net_UploadDataCompletedEventHandler_IAsyncResult__BeginInvoke_0__4__Object_UploadDataCompletedEventArgs_AsyncCallback_Object)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NONNULL sender, SG_HNDL_NONNULL e, SG_HNDL_NULLABLE callback, SG_HNDL_NULLABLE object_);
     void (* _Nonnull  _fp_System_Net_UploadDataCompletedEventHandler_void__EndInvoke_0__1__IAsyncResult)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE result);
-    SG_HNDL_NONNULL (* _Nonnull  _fp_System_Net_UploadDataCompletedEventHandler_create)(SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nullable __pdata, void (* _Nullable __deinit)(const void* _Nullable __pdata), void (* _Nonnull  __cb)(const void* _Nullable __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL sender, SG_HNDL_NONNULL e));
+    SG_HNDL_NONNULL (* _Nonnull  _fp_System_Net_UploadDataCompletedEventHandler_create)(SG_HNDL_NULLABLE * _Nonnull __thrown, void (* _Nonnull  __cb)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL sender, SG_HNDL_NONNULL e), const void* _Nonnull __pdata, void (* _Nullable __deinit)(const void* _Nonnull __pdata));
     TYP (* _Nonnull  _fp_System_Net_UploadFileCompletedEventArgs_get_type_handle)(void);
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_Net_UploadFileCompletedEventArgs_u8Array__get_Result_0__0)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h);
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_Net_UploadFileCompletedEventArgs_cast)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __h);
@@ -63,7 +63,7 @@ struct {
     void (* _Nonnull  _fp_System_Net_UploadFileCompletedEventHandler_void__Invoke_0__2__Object_UploadFileCompletedEventArgs)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NONNULL sender, SG_HNDL_NONNULL e);
     SG_HNDL_NULLABLE (* _Nonnull  _fp_System_Net_UploadFileCompletedEventHandler_IAsyncResult__BeginInvoke_0__4__Object_UploadFileCompletedEventArgs_AsyncCallback_Object)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NONNULL sender, SG_HNDL_NONNULL e, SG_HNDL_NULLABLE callback, SG_HNDL_NULLABLE object_);
     void (* _Nonnull  _fp_System_Net_UploadFileCompletedEventHandler_void__EndInvoke_0__1__IAsyncResult)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE result);
-    SG_HNDL_NONNULL (* _Nonnull  _fp_System_Net_UploadFileCompletedEventHandler_create)(SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nullable __pdata, void (* _Nullable __deinit)(const void* _Nullable __pdata), void (* _Nonnull  __cb)(const void* _Nullable __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL sender, SG_HNDL_NONNULL e));
+    SG_HNDL_NONNULL (* _Nonnull  _fp_System_Net_UploadFileCompletedEventHandler_create)(SG_HNDL_NULLABLE * _Nonnull __thrown, void (* _Nonnull  __cb)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL sender, SG_HNDL_NONNULL e), const void* _Nonnull __pdata, void (* _Nullable __deinit)(const void* _Nonnull __pdata));
     TYP (* _Nonnull  _fp_System_Net_UploadProgressChangedEventArgs_get_type_handle)(void);
     int64_t (* _Nonnull  _fp_System_Net_UploadProgressChangedEventArgs_i64__get_BytesReceived_0__0)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h);
     int64_t (* _Nonnull  _fp_System_Net_UploadProgressChangedEventArgs_i64__get_BytesSent_0__0)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h);
@@ -74,7 +74,7 @@ struct {
     void (* _Nonnull  _fp_System_Net_UploadProgressChangedEventHandler_void__Invoke_0__2__Object_UploadProgressChangedEventArgs)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NONNULL sender, SG_HNDL_NONNULL e);
     SG_HNDL_NULLABLE (* _Nonnull  _fp_System_Net_UploadProgressChangedEventHandler_IAsyncResult__BeginInvoke_0__4__Object_UploadProgressChangedEventArgs_AsyncCallback_Object)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NONNULL sender, SG_HNDL_NONNULL e, SG_HNDL_NULLABLE callback, SG_HNDL_NULLABLE object_);
     void (* _Nonnull  _fp_System_Net_UploadProgressChangedEventHandler_void__EndInvoke_0__1__IAsyncResult)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE result);
-    SG_HNDL_NONNULL (* _Nonnull  _fp_System_Net_UploadProgressChangedEventHandler_create)(SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nullable __pdata, void (* _Nullable __deinit)(const void* _Nullable __pdata), void (* _Nonnull  __cb)(const void* _Nullable __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL sender, SG_HNDL_NONNULL e));
+    SG_HNDL_NONNULL (* _Nonnull  _fp_System_Net_UploadProgressChangedEventHandler_create)(SG_HNDL_NULLABLE * _Nonnull __thrown, void (* _Nonnull  __cb)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL sender, SG_HNDL_NONNULL e), const void* _Nonnull __pdata, void (* _Nullable __deinit)(const void* _Nonnull __pdata));
     TYP (* _Nonnull  _fp_System_Net_UploadStringCompletedEventArgs_get_type_handle)(void);
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_Net_UploadStringCompletedEventArgs_String__get_Result_0__0)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h);
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_Net_UploadStringCompletedEventArgs_cast)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __h);
@@ -82,7 +82,7 @@ struct {
     void (* _Nonnull  _fp_System_Net_UploadStringCompletedEventHandler_void__Invoke_0__2__Object_UploadStringCompletedEventArgs)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NONNULL sender, SG_HNDL_NONNULL e);
     SG_HNDL_NULLABLE (* _Nonnull  _fp_System_Net_UploadStringCompletedEventHandler_IAsyncResult__BeginInvoke_0__4__Object_UploadStringCompletedEventArgs_AsyncCallback_Object)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NONNULL sender, SG_HNDL_NONNULL e, SG_HNDL_NULLABLE callback, SG_HNDL_NULLABLE object_);
     void (* _Nonnull  _fp_System_Net_UploadStringCompletedEventHandler_void__EndInvoke_0__1__IAsyncResult)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE result);
-    SG_HNDL_NONNULL (* _Nonnull  _fp_System_Net_UploadStringCompletedEventHandler_create)(SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nullable __pdata, void (* _Nullable __deinit)(const void* _Nullable __pdata), void (* _Nonnull  __cb)(const void* _Nullable __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL sender, SG_HNDL_NONNULL e));
+    SG_HNDL_NONNULL (* _Nonnull  _fp_System_Net_UploadStringCompletedEventHandler_create)(SG_HNDL_NULLABLE * _Nonnull __thrown, void (* _Nonnull  __cb)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL sender, SG_HNDL_NONNULL e), const void* _Nonnull __pdata, void (* _Nullable __deinit)(const void* _Nonnull __pdata));
     TYP (* _Nonnull  _fp_System_Net_UploadValuesCompletedEventArgs_get_type_handle)(void);
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_Net_UploadValuesCompletedEventArgs_u8Array__get_Result_0__0)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h);
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_Net_UploadValuesCompletedEventArgs_cast)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __h);
@@ -90,7 +90,7 @@ struct {
     void (* _Nonnull  _fp_System_Net_UploadValuesCompletedEventHandler_void__Invoke_0__2__Object_UploadValuesCompletedEventArgs)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NONNULL sender, SG_HNDL_NONNULL e);
     SG_HNDL_NULLABLE (* _Nonnull  _fp_System_Net_UploadValuesCompletedEventHandler_IAsyncResult__BeginInvoke_0__4__Object_UploadValuesCompletedEventArgs_AsyncCallback_Object)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NONNULL sender, SG_HNDL_NONNULL e, SG_HNDL_NULLABLE callback, SG_HNDL_NULLABLE object_);
     void (* _Nonnull  _fp_System_Net_UploadValuesCompletedEventHandler_void__EndInvoke_0__1__IAsyncResult)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE result);
-    SG_HNDL_NONNULL (* _Nonnull  _fp_System_Net_UploadValuesCompletedEventHandler_create)(SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nullable __pdata, void (* _Nullable __deinit)(const void* _Nullable __pdata), void (* _Nonnull  __cb)(const void* _Nullable __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL sender, SG_HNDL_NONNULL e));
+    SG_HNDL_NONNULL (* _Nonnull  _fp_System_Net_UploadValuesCompletedEventHandler_create)(SG_HNDL_NULLABLE * _Nonnull __thrown, void (* _Nonnull  __cb)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL sender, SG_HNDL_NONNULL e), const void* _Nonnull __pdata, void (* _Nullable __deinit)(const void* _Nonnull __pdata));
     TYP (* _Nonnull  _fp_System_Net_WebClient_get_type_handle)(void);
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_Net_WebClient_ctor_0__0)(SG_HNDL_NULLABLE * _Nonnull __thrown);
     void (* _Nonnull  _fp_System_Net_WebClient_void__CancelAsync_0__0)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h);
@@ -221,7 +221,7 @@ struct {
     void (* _Nonnull  _fp_System_Net_WriteStreamClosedEventHandler_void__Invoke_0__2__Object_WriteStreamClosedEventArgs)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NONNULL sender, SG_HNDL_NONNULL e);
     SG_HNDL_NULLABLE (* _Nonnull  _fp_System_Net_WriteStreamClosedEventHandler_IAsyncResult__BeginInvoke_0__4__Object_WriteStreamClosedEventArgs_AsyncCallback_Object)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NONNULL sender, SG_HNDL_NONNULL e, SG_HNDL_NULLABLE callback, SG_HNDL_NULLABLE object_);
     void (* _Nonnull  _fp_System_Net_WriteStreamClosedEventHandler_void__EndInvoke_0__1__IAsyncResult)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE result);
-    SG_HNDL_NONNULL (* _Nonnull  _fp_System_Net_WriteStreamClosedEventHandler_create)(SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nullable __pdata, void (* _Nullable __deinit)(const void* _Nullable __pdata), void (* _Nonnull  __cb)(const void* _Nullable __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL sender, SG_HNDL_NONNULL e));
+    SG_HNDL_NONNULL (* _Nonnull  _fp_System_Net_WriteStreamClosedEventHandler_create)(SG_HNDL_NULLABLE * _Nonnull __thrown, void (* _Nonnull  __cb)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL sender, SG_HNDL_NONNULL e), const void* _Nonnull __pdata, void (* _Nullable __deinit)(const void* _Nonnull __pdata));
 } _g_System_Net_WebClient;
 
 static void my_init() {
@@ -282,11 +282,11 @@ void System_Net_DownloadDataCompletedEventHandler_void__EndInvoke_0__1__IAsyncRe
     _g_System_Net_WebClient._fp_System_Net_DownloadDataCompletedEventHandler_void__EndInvoke_0__1__IAsyncResult(__thrown, __self_h, result);
 }
 
-SG_HNDL_NONNULL System_Net_DownloadDataCompletedEventHandler_create(SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nullable __pdata, void (* _Nullable __deinit)(const void* _Nullable __pdata), void (* _Nonnull  __cb)(const void* _Nullable __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL sender, SG_HNDL_NONNULL e)) {
+SG_HNDL_NONNULL System_Net_DownloadDataCompletedEventHandler_create(SG_HNDL_NULLABLE * _Nonnull __thrown, void (* _Nonnull  __cb)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL sender, SG_HNDL_NONNULL e), const void* _Nonnull __pdata, void (* _Nullable __deinit)(const void* _Nonnull __pdata)) {
     if (!_g_System_Net_WebClient._fp_System_Net_DownloadDataCompletedEventHandler_create) {
         my_init();
     }
-    SG_HNDL_NONNULL ret = _g_System_Net_WebClient._fp_System_Net_DownloadDataCompletedEventHandler_create(__thrown, __pdata, __deinit, __cb);
+    SG_HNDL_NONNULL ret = _g_System_Net_WebClient._fp_System_Net_DownloadDataCompletedEventHandler_create(__thrown, __cb, __pdata, __deinit);
     return ret;
 }
 
@@ -352,11 +352,11 @@ void System_Net_DownloadProgressChangedEventHandler_void__EndInvoke_0__1__IAsync
     _g_System_Net_WebClient._fp_System_Net_DownloadProgressChangedEventHandler_void__EndInvoke_0__1__IAsyncResult(__thrown, __self_h, result);
 }
 
-SG_HNDL_NONNULL System_Net_DownloadProgressChangedEventHandler_create(SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nullable __pdata, void (* _Nullable __deinit)(const void* _Nullable __pdata), void (* _Nonnull  __cb)(const void* _Nullable __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL sender, SG_HNDL_NONNULL e)) {
+SG_HNDL_NONNULL System_Net_DownloadProgressChangedEventHandler_create(SG_HNDL_NULLABLE * _Nonnull __thrown, void (* _Nonnull  __cb)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL sender, SG_HNDL_NONNULL e), const void* _Nonnull __pdata, void (* _Nullable __deinit)(const void* _Nonnull __pdata)) {
     if (!_g_System_Net_WebClient._fp_System_Net_DownloadProgressChangedEventHandler_create) {
         my_init();
     }
-    SG_HNDL_NONNULL ret = _g_System_Net_WebClient._fp_System_Net_DownloadProgressChangedEventHandler_create(__thrown, __pdata, __deinit, __cb);
+    SG_HNDL_NONNULL ret = _g_System_Net_WebClient._fp_System_Net_DownloadProgressChangedEventHandler_create(__thrown, __cb, __pdata, __deinit);
     return ret;
 }
 
@@ -414,11 +414,11 @@ void System_Net_DownloadStringCompletedEventHandler_void__EndInvoke_0__1__IAsync
     _g_System_Net_WebClient._fp_System_Net_DownloadStringCompletedEventHandler_void__EndInvoke_0__1__IAsyncResult(__thrown, __self_h, result);
 }
 
-SG_HNDL_NONNULL System_Net_DownloadStringCompletedEventHandler_create(SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nullable __pdata, void (* _Nullable __deinit)(const void* _Nullable __pdata), void (* _Nonnull  __cb)(const void* _Nullable __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL sender, SG_HNDL_NONNULL e)) {
+SG_HNDL_NONNULL System_Net_DownloadStringCompletedEventHandler_create(SG_HNDL_NULLABLE * _Nonnull __thrown, void (* _Nonnull  __cb)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL sender, SG_HNDL_NONNULL e), const void* _Nonnull __pdata, void (* _Nullable __deinit)(const void* _Nonnull __pdata)) {
     if (!_g_System_Net_WebClient._fp_System_Net_DownloadStringCompletedEventHandler_create) {
         my_init();
     }
-    SG_HNDL_NONNULL ret = _g_System_Net_WebClient._fp_System_Net_DownloadStringCompletedEventHandler_create(__thrown, __pdata, __deinit, __cb);
+    SG_HNDL_NONNULL ret = _g_System_Net_WebClient._fp_System_Net_DownloadStringCompletedEventHandler_create(__thrown, __cb, __pdata, __deinit);
     return ret;
 }
 
@@ -476,11 +476,11 @@ void System_Net_OpenReadCompletedEventHandler_void__EndInvoke_0__1__IAsyncResult
     _g_System_Net_WebClient._fp_System_Net_OpenReadCompletedEventHandler_void__EndInvoke_0__1__IAsyncResult(__thrown, __self_h, result);
 }
 
-SG_HNDL_NONNULL System_Net_OpenReadCompletedEventHandler_create(SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nullable __pdata, void (* _Nullable __deinit)(const void* _Nullable __pdata), void (* _Nonnull  __cb)(const void* _Nullable __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL sender, SG_HNDL_NONNULL e)) {
+SG_HNDL_NONNULL System_Net_OpenReadCompletedEventHandler_create(SG_HNDL_NULLABLE * _Nonnull __thrown, void (* _Nonnull  __cb)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL sender, SG_HNDL_NONNULL e), const void* _Nonnull __pdata, void (* _Nullable __deinit)(const void* _Nonnull __pdata)) {
     if (!_g_System_Net_WebClient._fp_System_Net_OpenReadCompletedEventHandler_create) {
         my_init();
     }
-    SG_HNDL_NONNULL ret = _g_System_Net_WebClient._fp_System_Net_OpenReadCompletedEventHandler_create(__thrown, __pdata, __deinit, __cb);
+    SG_HNDL_NONNULL ret = _g_System_Net_WebClient._fp_System_Net_OpenReadCompletedEventHandler_create(__thrown, __cb, __pdata, __deinit);
     return ret;
 }
 
@@ -538,11 +538,11 @@ void System_Net_OpenWriteCompletedEventHandler_void__EndInvoke_0__1__IAsyncResul
     _g_System_Net_WebClient._fp_System_Net_OpenWriteCompletedEventHandler_void__EndInvoke_0__1__IAsyncResult(__thrown, __self_h, result);
 }
 
-SG_HNDL_NONNULL System_Net_OpenWriteCompletedEventHandler_create(SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nullable __pdata, void (* _Nullable __deinit)(const void* _Nullable __pdata), void (* _Nonnull  __cb)(const void* _Nullable __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL sender, SG_HNDL_NONNULL e)) {
+SG_HNDL_NONNULL System_Net_OpenWriteCompletedEventHandler_create(SG_HNDL_NULLABLE * _Nonnull __thrown, void (* _Nonnull  __cb)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL sender, SG_HNDL_NONNULL e), const void* _Nonnull __pdata, void (* _Nullable __deinit)(const void* _Nonnull __pdata)) {
     if (!_g_System_Net_WebClient._fp_System_Net_OpenWriteCompletedEventHandler_create) {
         my_init();
     }
-    SG_HNDL_NONNULL ret = _g_System_Net_WebClient._fp_System_Net_OpenWriteCompletedEventHandler_create(__thrown, __pdata, __deinit, __cb);
+    SG_HNDL_NONNULL ret = _g_System_Net_WebClient._fp_System_Net_OpenWriteCompletedEventHandler_create(__thrown, __cb, __pdata, __deinit);
     return ret;
 }
 
@@ -600,11 +600,11 @@ void System_Net_UploadDataCompletedEventHandler_void__EndInvoke_0__1__IAsyncResu
     _g_System_Net_WebClient._fp_System_Net_UploadDataCompletedEventHandler_void__EndInvoke_0__1__IAsyncResult(__thrown, __self_h, result);
 }
 
-SG_HNDL_NONNULL System_Net_UploadDataCompletedEventHandler_create(SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nullable __pdata, void (* _Nullable __deinit)(const void* _Nullable __pdata), void (* _Nonnull  __cb)(const void* _Nullable __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL sender, SG_HNDL_NONNULL e)) {
+SG_HNDL_NONNULL System_Net_UploadDataCompletedEventHandler_create(SG_HNDL_NULLABLE * _Nonnull __thrown, void (* _Nonnull  __cb)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL sender, SG_HNDL_NONNULL e), const void* _Nonnull __pdata, void (* _Nullable __deinit)(const void* _Nonnull __pdata)) {
     if (!_g_System_Net_WebClient._fp_System_Net_UploadDataCompletedEventHandler_create) {
         my_init();
     }
-    SG_HNDL_NONNULL ret = _g_System_Net_WebClient._fp_System_Net_UploadDataCompletedEventHandler_create(__thrown, __pdata, __deinit, __cb);
+    SG_HNDL_NONNULL ret = _g_System_Net_WebClient._fp_System_Net_UploadDataCompletedEventHandler_create(__thrown, __cb, __pdata, __deinit);
     return ret;
 }
 
@@ -662,11 +662,11 @@ void System_Net_UploadFileCompletedEventHandler_void__EndInvoke_0__1__IAsyncResu
     _g_System_Net_WebClient._fp_System_Net_UploadFileCompletedEventHandler_void__EndInvoke_0__1__IAsyncResult(__thrown, __self_h, result);
 }
 
-SG_HNDL_NONNULL System_Net_UploadFileCompletedEventHandler_create(SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nullable __pdata, void (* _Nullable __deinit)(const void* _Nullable __pdata), void (* _Nonnull  __cb)(const void* _Nullable __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL sender, SG_HNDL_NONNULL e)) {
+SG_HNDL_NONNULL System_Net_UploadFileCompletedEventHandler_create(SG_HNDL_NULLABLE * _Nonnull __thrown, void (* _Nonnull  __cb)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL sender, SG_HNDL_NONNULL e), const void* _Nonnull __pdata, void (* _Nullable __deinit)(const void* _Nonnull __pdata)) {
     if (!_g_System_Net_WebClient._fp_System_Net_UploadFileCompletedEventHandler_create) {
         my_init();
     }
-    SG_HNDL_NONNULL ret = _g_System_Net_WebClient._fp_System_Net_UploadFileCompletedEventHandler_create(__thrown, __pdata, __deinit, __cb);
+    SG_HNDL_NONNULL ret = _g_System_Net_WebClient._fp_System_Net_UploadFileCompletedEventHandler_create(__thrown, __cb, __pdata, __deinit);
     return ret;
 }
 
@@ -748,11 +748,11 @@ void System_Net_UploadProgressChangedEventHandler_void__EndInvoke_0__1__IAsyncRe
     _g_System_Net_WebClient._fp_System_Net_UploadProgressChangedEventHandler_void__EndInvoke_0__1__IAsyncResult(__thrown, __self_h, result);
 }
 
-SG_HNDL_NONNULL System_Net_UploadProgressChangedEventHandler_create(SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nullable __pdata, void (* _Nullable __deinit)(const void* _Nullable __pdata), void (* _Nonnull  __cb)(const void* _Nullable __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL sender, SG_HNDL_NONNULL e)) {
+SG_HNDL_NONNULL System_Net_UploadProgressChangedEventHandler_create(SG_HNDL_NULLABLE * _Nonnull __thrown, void (* _Nonnull  __cb)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL sender, SG_HNDL_NONNULL e), const void* _Nonnull __pdata, void (* _Nullable __deinit)(const void* _Nonnull __pdata)) {
     if (!_g_System_Net_WebClient._fp_System_Net_UploadProgressChangedEventHandler_create) {
         my_init();
     }
-    SG_HNDL_NONNULL ret = _g_System_Net_WebClient._fp_System_Net_UploadProgressChangedEventHandler_create(__thrown, __pdata, __deinit, __cb);
+    SG_HNDL_NONNULL ret = _g_System_Net_WebClient._fp_System_Net_UploadProgressChangedEventHandler_create(__thrown, __cb, __pdata, __deinit);
     return ret;
 }
 
@@ -810,11 +810,11 @@ void System_Net_UploadStringCompletedEventHandler_void__EndInvoke_0__1__IAsyncRe
     _g_System_Net_WebClient._fp_System_Net_UploadStringCompletedEventHandler_void__EndInvoke_0__1__IAsyncResult(__thrown, __self_h, result);
 }
 
-SG_HNDL_NONNULL System_Net_UploadStringCompletedEventHandler_create(SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nullable __pdata, void (* _Nullable __deinit)(const void* _Nullable __pdata), void (* _Nonnull  __cb)(const void* _Nullable __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL sender, SG_HNDL_NONNULL e)) {
+SG_HNDL_NONNULL System_Net_UploadStringCompletedEventHandler_create(SG_HNDL_NULLABLE * _Nonnull __thrown, void (* _Nonnull  __cb)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL sender, SG_HNDL_NONNULL e), const void* _Nonnull __pdata, void (* _Nullable __deinit)(const void* _Nonnull __pdata)) {
     if (!_g_System_Net_WebClient._fp_System_Net_UploadStringCompletedEventHandler_create) {
         my_init();
     }
-    SG_HNDL_NONNULL ret = _g_System_Net_WebClient._fp_System_Net_UploadStringCompletedEventHandler_create(__thrown, __pdata, __deinit, __cb);
+    SG_HNDL_NONNULL ret = _g_System_Net_WebClient._fp_System_Net_UploadStringCompletedEventHandler_create(__thrown, __cb, __pdata, __deinit);
     return ret;
 }
 
@@ -872,11 +872,11 @@ void System_Net_UploadValuesCompletedEventHandler_void__EndInvoke_0__1__IAsyncRe
     _g_System_Net_WebClient._fp_System_Net_UploadValuesCompletedEventHandler_void__EndInvoke_0__1__IAsyncResult(__thrown, __self_h, result);
 }
 
-SG_HNDL_NONNULL System_Net_UploadValuesCompletedEventHandler_create(SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nullable __pdata, void (* _Nullable __deinit)(const void* _Nullable __pdata), void (* _Nonnull  __cb)(const void* _Nullable __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL sender, SG_HNDL_NONNULL e)) {
+SG_HNDL_NONNULL System_Net_UploadValuesCompletedEventHandler_create(SG_HNDL_NULLABLE * _Nonnull __thrown, void (* _Nonnull  __cb)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL sender, SG_HNDL_NONNULL e), const void* _Nonnull __pdata, void (* _Nullable __deinit)(const void* _Nonnull __pdata)) {
     if (!_g_System_Net_WebClient._fp_System_Net_UploadValuesCompletedEventHandler_create) {
         my_init();
     }
-    SG_HNDL_NONNULL ret = _g_System_Net_WebClient._fp_System_Net_UploadValuesCompletedEventHandler_create(__thrown, __pdata, __deinit, __cb);
+    SG_HNDL_NONNULL ret = _g_System_Net_WebClient._fp_System_Net_UploadValuesCompletedEventHandler_create(__thrown, __cb, __pdata, __deinit);
     return ret;
 }
 
@@ -1862,11 +1862,11 @@ void System_Net_WriteStreamClosedEventHandler_void__EndInvoke_0__1__IAsyncResult
     _g_System_Net_WebClient._fp_System_Net_WriteStreamClosedEventHandler_void__EndInvoke_0__1__IAsyncResult(__thrown, __self_h, result);
 }
 
-SG_HNDL_NONNULL System_Net_WriteStreamClosedEventHandler_create(SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nullable __pdata, void (* _Nullable __deinit)(const void* _Nullable __pdata), void (* _Nonnull  __cb)(const void* _Nullable __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL sender, SG_HNDL_NONNULL e)) {
+SG_HNDL_NONNULL System_Net_WriteStreamClosedEventHandler_create(SG_HNDL_NULLABLE * _Nonnull __thrown, void (* _Nonnull  __cb)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL sender, SG_HNDL_NONNULL e), const void* _Nonnull __pdata, void (* _Nullable __deinit)(const void* _Nonnull __pdata)) {
     if (!_g_System_Net_WebClient._fp_System_Net_WriteStreamClosedEventHandler_create) {
         my_init();
     }
-    SG_HNDL_NONNULL ret = _g_System_Net_WebClient._fp_System_Net_WriteStreamClosedEventHandler_create(__thrown, __pdata, __deinit, __cb);
+    SG_HNDL_NONNULL ret = _g_System_Net_WebClient._fp_System_Net_WriteStreamClosedEventHandler_create(__thrown, __cb, __pdata, __deinit);
     return ret;
 }
 

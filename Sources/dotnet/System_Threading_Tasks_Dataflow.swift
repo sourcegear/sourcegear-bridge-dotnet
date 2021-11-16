@@ -20,6 +20,9 @@ public final class ActionBlock_1<TInput : SGBridgeGenericValue>
     public class override func get_type_handle() -> TypeHandle {
         return System_Threading_Tasks_Dataflow_ActionBlock_1_get_type_handle(TInput.get_type_handle());
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor(System.Action<TInput>)
@@ -195,6 +198,9 @@ public final class BatchBlock_1<T : SGBridgeGenericValue>
     public class override func get_type_handle() -> TypeHandle {
         return System_Threading_Tasks_Dataflow_BatchBlock_1_get_type_handle(T.get_type_handle());
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor(System.Int32)
@@ -290,11 +296,12 @@ public final class BatchBlock_1<T : SGBridgeGenericValue>
     }
     // bool TryReceive(System.Predicate<T[]>, ref T[])
 // docid: M:System.Threading.Tasks.Dataflow.BatchBlock`1.TryReceive(System.Predicate{System.Threading.Tasks.Dataflow.T[]},System.Threading.Tasks.Dataflow.T[]@)
-    public func TryReceive(filter : Optional<dotnet.System.Predicate_1<dotnet.System_Arr<T>>>, item : inout dotnet.System_Arr<T>) throws -> Bool {
+    public func TryReceive(filter : Optional<dotnet.System.Predicate_1<dotnet.System_Arr<T>>>, item : inout Optional<dotnet.System_Arr<T>>) throws -> Bool {
         var __thrown : NullableHandle = nil;
-            var _tmp_out_item = item.get_handle();
+            var _tmp_out_item = (item != nil) ? (item!.get_handle()) : nil;
         let __return = System_Threading_Tasks_Dataflow_BatchBlock_1_bool__TryReceive_0__2__System_Predicate_TArray__outTArray(T.get_type_handle(), &__thrown, self.get_handle(), (filter?.get_handle()), &_tmp_out_item);
-        let _tmp2_item = dotnet.System_Arr<T>(hndl: _tmp_out_item);
+        let __h__tmp2_item = _tmp_out_item;
+        let _tmp2_item = (__h__tmp2_item != nil) ? dotnet.System_Arr<T>(hndl: __h__tmp2_item!) : nil;
             item = _tmp2_item;
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
@@ -303,17 +310,18 @@ public final class BatchBlock_1<T : SGBridgeGenericValue>
         }
     }
     // delegate closure overload
-    public func TryReceive(filter : @escaping (Optional<dotnet.System_Arr<T>>) throws -> Bool, item : inout dotnet.System_Arr<T>) throws -> Bool {
+    public func TryReceive(filter : @escaping (dotnet.System_Arr<T>) throws -> Bool, item : inout Optional<dotnet.System_Arr<T>>) throws -> Bool {
         let del_filter = try dotnet.System.Predicate_1<dotnet.System_Arr<T>>(filter);
         return try TryReceive(filter: del_filter, item: &item);
     }
     // bool TryReceiveAll(ref System.Collections.Generic.IList<T[]>)
 // docid: M:System.Threading.Tasks.Dataflow.BatchBlock`1.TryReceiveAll(System.Collections.Generic.IList{System.Threading.Tasks.Dataflow.T[]}@)
-    public func TryReceiveAll(items : inout dotnet.System.Collections.Generic.IList_1<dotnet.System_Arr<T>>) throws -> Bool {
+    public func TryReceiveAll(items : inout Optional<dotnet.System.Collections.Generic.IList_1<dotnet.System_Arr<T>>>) throws -> Bool {
         var __thrown : NullableHandle = nil;
-            var _tmp_out_items = items.get_handle();
+            var _tmp_out_items = (items != nil) ? (items!.get_handle()) : nil;
         let __return = System_Threading_Tasks_Dataflow_BatchBlock_1_bool__TryReceiveAll_0__1__outSystem_Collections_Generic_IList_TArray_(T.get_type_handle(), &__thrown, self.get_handle(), &_tmp_out_items);
-        let _tmp2_items = dotnet.System.Collections.Generic.IList_1<dotnet.System_Arr<T>>(hndl : _tmp_out_items);
+        let __h__tmp2_items = _tmp_out_items;
+        let _tmp2_items = (__h__tmp2_items != nil) ? dotnet.System.Collections.Generic.IList_1<dotnet.System_Arr<T>>(hndl: __h__tmp2_items!) : nil;
             items = _tmp2_items;
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
@@ -396,6 +404,9 @@ public final class BatchedJoinBlock_2<T1 : SGBridgeGenericValue,T2 : SGBridgeGen
 {
     public class override func get_type_handle() -> TypeHandle {
         return System_Threading_Tasks_Dataflow_BatchedJoinBlock_2_get_type_handle(T1.get_type_handle(),T2.get_type_handle());
+    }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -494,11 +505,12 @@ public final class BatchedJoinBlock_2<T1 : SGBridgeGenericValue,T2 : SGBridgeGen
          if an item could be received; otherwise, .
 
     */
-    public func TryReceive(filter : Optional<dotnet.System.Predicate_1<dotnet.System.Tuple_2<dotnet.System.Collections.Generic.IList_1<T1>,dotnet.System.Collections.Generic.IList_1<T2>>>>, item : inout dotnet.System.Tuple_2<dotnet.System.Collections.Generic.IList_1<T1>,dotnet.System.Collections.Generic.IList_1<T2>>) throws -> Bool {
+    public func TryReceive(filter : Optional<dotnet.System.Predicate_1<dotnet.System.Tuple_2<dotnet.System.Collections.Generic.IList_1<T1>,dotnet.System.Collections.Generic.IList_1<T2>>>>, item : inout Optional<dotnet.System.Tuple_2<dotnet.System.Collections.Generic.IList_1<T1>,dotnet.System.Collections.Generic.IList_1<T2>>>) throws -> Bool {
         var __thrown : NullableHandle = nil;
-            var _tmp_out_item = item.get_handle();
+            var _tmp_out_item = (item != nil) ? (item!.get_handle()) : nil;
         let __return = System_Threading_Tasks_Dataflow_BatchedJoinBlock_2_bool__TryReceive_0__2__System_Predicate_System_System_Tuple_System_Collections_Generic_System_Collections_Generic_IList_T1__System_Collections_Generic_System_Collections_Generic_IList_T2____outSystem_Tuple_System_Collections_Generic_System_Collections_Generic_IList_T1__System_Collections_Generic_System_Collections_Generic_IList_T2__(T1.get_type_handle(), T2.get_type_handle(), &__thrown, self.get_handle(), (filter?.get_handle()), &_tmp_out_item);
-        let _tmp2_item = dotnet.System.Tuple_2<dotnet.System.Collections.Generic.IList_1<T1>,dotnet.System.Collections.Generic.IList_1<T2>>(hndl : _tmp_out_item);
+        let __h__tmp2_item = _tmp_out_item;
+        let _tmp2_item = (__h__tmp2_item != nil) ? dotnet.System.Tuple_2<dotnet.System.Collections.Generic.IList_1<T1>,dotnet.System.Collections.Generic.IList_1<T2>>(hndl: __h__tmp2_item!) : nil;
             item = _tmp2_item;
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
@@ -507,7 +519,7 @@ public final class BatchedJoinBlock_2<T1 : SGBridgeGenericValue,T2 : SGBridgeGen
         }
     }
     // delegate closure overload
-    public func TryReceive(filter : @escaping (Optional<dotnet.System.Tuple_2<dotnet.System.Collections.Generic.IList_1<T1>,dotnet.System.Collections.Generic.IList_1<T2>>>) throws -> Bool, item : inout dotnet.System.Tuple_2<dotnet.System.Collections.Generic.IList_1<T1>,dotnet.System.Collections.Generic.IList_1<T2>>) throws -> Bool {
+    public func TryReceive(filter : @escaping (dotnet.System.Tuple_2<dotnet.System.Collections.Generic.IList_1<T1>,dotnet.System.Collections.Generic.IList_1<T2>>) throws -> Bool, item : inout Optional<dotnet.System.Tuple_2<dotnet.System.Collections.Generic.IList_1<T1>,dotnet.System.Collections.Generic.IList_1<T2>>>) throws -> Bool {
         let del_filter = try dotnet.System.Predicate_1<dotnet.System.Tuple_2<dotnet.System.Collections.Generic.IList_1<T1>,dotnet.System.Collections.Generic.IList_1<T2>>>(filter);
         return try TryReceive(filter: del_filter, item: &item);
     }
@@ -521,11 +533,12 @@ public final class BatchedJoinBlock_2<T1 : SGBridgeGenericValue,T2 : SGBridgeGen
          if one or more items could be received; otherwise, .
 
     */
-    public func TryReceiveAll(items : inout dotnet.System.Collections.Generic.IList_1<dotnet.System.Tuple_2<dotnet.System.Collections.Generic.IList_1<T1>,dotnet.System.Collections.Generic.IList_1<T2>>>) throws -> Bool {
+    public func TryReceiveAll(items : inout Optional<dotnet.System.Collections.Generic.IList_1<dotnet.System.Tuple_2<dotnet.System.Collections.Generic.IList_1<T1>,dotnet.System.Collections.Generic.IList_1<T2>>>>) throws -> Bool {
         var __thrown : NullableHandle = nil;
-            var _tmp_out_items = items.get_handle();
+            var _tmp_out_items = (items != nil) ? (items!.get_handle()) : nil;
         let __return = System_Threading_Tasks_Dataflow_BatchedJoinBlock_2_bool__TryReceiveAll_0__1__outSystem_Collections_Generic_IList_System_System_Tuple_System_Collections_Generic_System_Collections_Generic_IList_T1__System_Collections_Generic_System_Collections_Generic_IList_T2___(T1.get_type_handle(), T2.get_type_handle(), &__thrown, self.get_handle(), &_tmp_out_items);
-        let _tmp2_items = dotnet.System.Collections.Generic.IList_1<dotnet.System.Tuple_2<dotnet.System.Collections.Generic.IList_1<T1>,dotnet.System.Collections.Generic.IList_1<T2>>>(hndl : _tmp_out_items);
+        let __h__tmp2_items = _tmp_out_items;
+        let _tmp2_items = (__h__tmp2_items != nil) ? dotnet.System.Collections.Generic.IList_1<dotnet.System.Tuple_2<dotnet.System.Collections.Generic.IList_1<T1>,dotnet.System.Collections.Generic.IList_1<T2>>>(hndl: __h__tmp2_items!) : nil;
             items = _tmp2_items;
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
@@ -649,6 +662,9 @@ public final class BatchedJoinBlock_3<T1 : SGBridgeGenericValue,T2 : SGBridgeGen
     public class override func get_type_handle() -> TypeHandle {
         return System_Threading_Tasks_Dataflow_BatchedJoinBlock_3_get_type_handle(T1.get_type_handle(),T2.get_type_handle(),T3.get_type_handle());
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor(System.Int32)
@@ -747,11 +763,12 @@ public final class BatchedJoinBlock_3<T1 : SGBridgeGenericValue,T2 : SGBridgeGen
          if an item could be received; otherwise, .
 
     */
-    public func TryReceive(filter : Optional<dotnet.System.Predicate_1<dotnet.System.Tuple_3<dotnet.System.Collections.Generic.IList_1<T1>,dotnet.System.Collections.Generic.IList_1<T2>,dotnet.System.Collections.Generic.IList_1<T3>>>>, item : inout dotnet.System.Tuple_3<dotnet.System.Collections.Generic.IList_1<T1>,dotnet.System.Collections.Generic.IList_1<T2>,dotnet.System.Collections.Generic.IList_1<T3>>) throws -> Bool {
+    public func TryReceive(filter : Optional<dotnet.System.Predicate_1<dotnet.System.Tuple_3<dotnet.System.Collections.Generic.IList_1<T1>,dotnet.System.Collections.Generic.IList_1<T2>,dotnet.System.Collections.Generic.IList_1<T3>>>>, item : inout Optional<dotnet.System.Tuple_3<dotnet.System.Collections.Generic.IList_1<T1>,dotnet.System.Collections.Generic.IList_1<T2>,dotnet.System.Collections.Generic.IList_1<T3>>>) throws -> Bool {
         var __thrown : NullableHandle = nil;
-            var _tmp_out_item = item.get_handle();
+            var _tmp_out_item = (item != nil) ? (item!.get_handle()) : nil;
         let __return = System_Threading_Tasks_Dataflow_BatchedJoinBlock_3_bool__TryReceive_0__2__System_Predicate_System_System_Tuple_System_Collections_Generic_System_Collections_Generic_IList_T1__System_Collections_Generic_System_Collections_Generic_IList_T2__System_Collections_Generic_System_Collections_Generic_IList_T3____outSystem_Tuple_System_Collections_Generic_System_Collections_Generic_IList_T1__System_Collections_Generic_System_Collections_Generic_IList_T2__System_Collections_Generic_System_Collections_Generic_IList_T3__(T1.get_type_handle(), T2.get_type_handle(), T3.get_type_handle(), &__thrown, self.get_handle(), (filter?.get_handle()), &_tmp_out_item);
-        let _tmp2_item = dotnet.System.Tuple_3<dotnet.System.Collections.Generic.IList_1<T1>,dotnet.System.Collections.Generic.IList_1<T2>,dotnet.System.Collections.Generic.IList_1<T3>>(hndl : _tmp_out_item);
+        let __h__tmp2_item = _tmp_out_item;
+        let _tmp2_item = (__h__tmp2_item != nil) ? dotnet.System.Tuple_3<dotnet.System.Collections.Generic.IList_1<T1>,dotnet.System.Collections.Generic.IList_1<T2>,dotnet.System.Collections.Generic.IList_1<T3>>(hndl: __h__tmp2_item!) : nil;
             item = _tmp2_item;
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
@@ -760,7 +777,7 @@ public final class BatchedJoinBlock_3<T1 : SGBridgeGenericValue,T2 : SGBridgeGen
         }
     }
     // delegate closure overload
-    public func TryReceive(filter : @escaping (Optional<dotnet.System.Tuple_3<dotnet.System.Collections.Generic.IList_1<T1>,dotnet.System.Collections.Generic.IList_1<T2>,dotnet.System.Collections.Generic.IList_1<T3>>>) throws -> Bool, item : inout dotnet.System.Tuple_3<dotnet.System.Collections.Generic.IList_1<T1>,dotnet.System.Collections.Generic.IList_1<T2>,dotnet.System.Collections.Generic.IList_1<T3>>) throws -> Bool {
+    public func TryReceive(filter : @escaping (dotnet.System.Tuple_3<dotnet.System.Collections.Generic.IList_1<T1>,dotnet.System.Collections.Generic.IList_1<T2>,dotnet.System.Collections.Generic.IList_1<T3>>) throws -> Bool, item : inout Optional<dotnet.System.Tuple_3<dotnet.System.Collections.Generic.IList_1<T1>,dotnet.System.Collections.Generic.IList_1<T2>,dotnet.System.Collections.Generic.IList_1<T3>>>) throws -> Bool {
         let del_filter = try dotnet.System.Predicate_1<dotnet.System.Tuple_3<dotnet.System.Collections.Generic.IList_1<T1>,dotnet.System.Collections.Generic.IList_1<T2>,dotnet.System.Collections.Generic.IList_1<T3>>>(filter);
         return try TryReceive(filter: del_filter, item: &item);
     }
@@ -774,11 +791,12 @@ public final class BatchedJoinBlock_3<T1 : SGBridgeGenericValue,T2 : SGBridgeGen
          if one or more items could be received; otherwise, .
 
     */
-    public func TryReceiveAll(items : inout dotnet.System.Collections.Generic.IList_1<dotnet.System.Tuple_3<dotnet.System.Collections.Generic.IList_1<T1>,dotnet.System.Collections.Generic.IList_1<T2>,dotnet.System.Collections.Generic.IList_1<T3>>>) throws -> Bool {
+    public func TryReceiveAll(items : inout Optional<dotnet.System.Collections.Generic.IList_1<dotnet.System.Tuple_3<dotnet.System.Collections.Generic.IList_1<T1>,dotnet.System.Collections.Generic.IList_1<T2>,dotnet.System.Collections.Generic.IList_1<T3>>>>) throws -> Bool {
         var __thrown : NullableHandle = nil;
-            var _tmp_out_items = items.get_handle();
+            var _tmp_out_items = (items != nil) ? (items!.get_handle()) : nil;
         let __return = System_Threading_Tasks_Dataflow_BatchedJoinBlock_3_bool__TryReceiveAll_0__1__outSystem_Collections_Generic_IList_System_System_Tuple_System_Collections_Generic_System_Collections_Generic_IList_T1__System_Collections_Generic_System_Collections_Generic_IList_T2__System_Collections_Generic_System_Collections_Generic_IList_T3___(T1.get_type_handle(), T2.get_type_handle(), T3.get_type_handle(), &__thrown, self.get_handle(), &_tmp_out_items);
-        let _tmp2_items = dotnet.System.Collections.Generic.IList_1<dotnet.System.Tuple_3<dotnet.System.Collections.Generic.IList_1<T1>,dotnet.System.Collections.Generic.IList_1<T2>,dotnet.System.Collections.Generic.IList_1<T3>>>(hndl : _tmp_out_items);
+        let __h__tmp2_items = _tmp_out_items;
+        let _tmp2_items = (__h__tmp2_items != nil) ? dotnet.System.Collections.Generic.IList_1<dotnet.System.Tuple_3<dotnet.System.Collections.Generic.IList_1<T1>,dotnet.System.Collections.Generic.IList_1<T2>,dotnet.System.Collections.Generic.IList_1<T3>>>(hndl: __h__tmp2_items!) : nil;
             items = _tmp2_items;
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
@@ -922,6 +940,9 @@ public final class BroadcastBlock_1<T : SGBridgeGenericValue>
     public class override func get_type_handle() -> TypeHandle {
         return System_Threading_Tasks_Dataflow_BroadcastBlock_1_get_type_handle(T.get_type_handle());
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor(System.Func<T,T>)
@@ -931,9 +952,9 @@ public final class BroadcastBlock_1<T : SGBridgeGenericValue>
 
     - Parameter cloningFunction: The function to use to clone the data when offered to other blocks.
     */
-    public init(cloningFunction : dotnet.System.Func_2<T,T>) throws {
+    public init(cloningFunction : Optional<dotnet.System.Func_2<T,T>>) throws {
         var __thrown : NullableHandle = nil;
-        let h = System_Threading_Tasks_Dataflow_BroadcastBlock_1_ctor_0__1__System_Func_T_T_(T.get_type_handle(), &__thrown, nil);
+        let h = System_Threading_Tasks_Dataflow_BroadcastBlock_1_ctor_0__1__System_Func_T_T_(T.get_type_handle(), &__thrown, (cloningFunction?.get_handle()));
         if let __ex = __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
@@ -948,9 +969,9 @@ public final class BroadcastBlock_1<T : SGBridgeGenericValue>
     - Parameter cloningFunction: The function to use to clone the data when offered to other blocks.
     - Parameter dataflowBlockOptions: The options with which to configure this  .
     */
-    public init(cloningFunction : dotnet.System.Func_2<T,T>, dataflowBlockOptions : dotnet.System.Threading.Tasks.Dataflow.DataflowBlockOptions) throws {
+    public init(cloningFunction : Optional<dotnet.System.Func_2<T,T>>, dataflowBlockOptions : dotnet.System.Threading.Tasks.Dataflow.DataflowBlockOptions) throws {
         var __thrown : NullableHandle = nil;
-        let h = System_Threading_Tasks_Dataflow_BroadcastBlock_1_ctor_0__2__System_Func_T_T__DataflowBlockOptions(T.get_type_handle(), &__thrown, nil, dataflowBlockOptions.get_handle());
+        let h = System_Threading_Tasks_Dataflow_BroadcastBlock_1_ctor_0__2__System_Func_T_T__DataflowBlockOptions(T.get_type_handle(), &__thrown, (cloningFunction?.get_handle()), dataflowBlockOptions.get_handle());
         if let __ex = __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
@@ -1019,10 +1040,10 @@ public final class BroadcastBlock_1<T : SGBridgeGenericValue>
          if an item could be received; otherwise, .
 
     */
-    public func TryReceive(filter : dotnet.System.Predicate_1<T>, item : inout T) throws -> Bool {
+    public func TryReceive(filter : Optional<dotnet.System.Predicate_1<T>>, item : inout T) throws -> Bool {
         var __thrown : NullableHandle = nil;
             var _tmp_out_item = item.to_gval();
-        let __return = System_Threading_Tasks_Dataflow_BroadcastBlock_1_bool__TryReceive_0__2__System_Predicate_T__outT(T.get_type_handle(), &__thrown, self.get_handle(), nil, &_tmp_out_item);
+        let __return = System_Threading_Tasks_Dataflow_BroadcastBlock_1_bool__TryReceive_0__2__System_Predicate_T__outT(T.get_type_handle(), &__thrown, self.get_handle(), (filter?.get_handle()), &_tmp_out_item);
             let _tmp2_item = T(gval: _tmp_out_item);
             item = _tmp2_item;
         if let __ex =  __thrown {
@@ -1071,6 +1092,9 @@ public final class BufferBlock_1<T : SGBridgeGenericValue>
 {
     public class override func get_type_handle() -> TypeHandle {
         return System_Threading_Tasks_Dataflow_BufferBlock_1_get_type_handle(T.get_type_handle());
+    }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -1167,10 +1191,10 @@ public final class BufferBlock_1<T : SGBridgeGenericValue>
          if an item could be received; otherwise, .
 
     */
-    public func TryReceive(filter : dotnet.System.Predicate_1<T>, item : inout T) throws -> Bool {
+    public func TryReceive(filter : Optional<dotnet.System.Predicate_1<T>>, item : inout T) throws -> Bool {
         var __thrown : NullableHandle = nil;
             var _tmp_out_item = item.to_gval();
-        let __return = System_Threading_Tasks_Dataflow_BufferBlock_1_bool__TryReceive_0__2__System_Predicate_T__outT(T.get_type_handle(), &__thrown, self.get_handle(), nil, &_tmp_out_item);
+        let __return = System_Threading_Tasks_Dataflow_BufferBlock_1_bool__TryReceive_0__2__System_Predicate_T__outT(T.get_type_handle(), &__thrown, self.get_handle(), (filter?.get_handle()), &_tmp_out_item);
             let _tmp2_item = T(gval: _tmp_out_item);
             item = _tmp2_item;
         if let __ex =  __thrown {
@@ -1194,11 +1218,12 @@ public final class BufferBlock_1<T : SGBridgeGenericValue>
          if one or more items could be received; otherwise, .
 
     */
-    public func TryReceiveAll(items : inout dotnet.System.Collections.Generic.IList_1<T>) throws -> Bool {
+    public func TryReceiveAll(items : inout Optional<dotnet.System.Collections.Generic.IList_1<T>>) throws -> Bool {
         var __thrown : NullableHandle = nil;
-            var _tmp_out_items = items.get_handle();
+            var _tmp_out_items = (items != nil) ? (items!.get_handle()) : nil;
         let __return = System_Threading_Tasks_Dataflow_BufferBlock_1_bool__TryReceiveAll_0__1__outSystem_Collections_Generic_IList_T_(T.get_type_handle(), &__thrown, self.get_handle(), &_tmp_out_items);
-        let _tmp2_items = dotnet.System.Collections.Generic.IList_1<T>(hndl : _tmp_out_items);
+        let __h__tmp2_items = _tmp_out_items;
+        let _tmp2_items = (__h__tmp2_items != nil) ? dotnet.System.Collections.Generic.IList_1<T>(hndl: __h__tmp2_items!) : nil;
             items = _tmp2_items;
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
@@ -1510,13 +1535,13 @@ public struct DataflowBlock {
  If it returns , more output is not and will never be available, due to the source completing prior to output being available.
 
     */
-    public static func OutputAvailableAsync<UTOutput : SGBridgeGenericValue>(source : dotnet.System.Threading.Tasks.Dataflow.ISourceBlock_1<UTOutput>) throws -> dotnet.System.Threading.Tasks.Task_1<Bool> {
+    public static func OutputAvailableAsync<UTOutput : SGBridgeGenericValue>(source : dotnet.System.Threading.Tasks.Dataflow.ISourceBlock_1<UTOutput>) async throws -> Bool {
         var __thrown : NullableHandle = nil;
         let __return = System_Threading_Tasks_Dataflow_DataflowBlock_System_Threading_Tasks_Task_bool___OutputAvailableAsync_1__1__System_Threading_Tasks_Dataflow_ISourceBlock_UTOutput_(UTOutput.get_type_handle(), &__thrown, source.get_handle());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task_1(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task_1(hndl: __return).ToAsync();
         }
     }
     // System.Threading.Tasks.Task<bool> OutputAvailableAsync<TOutput>(System.Threading.Tasks.Dataflow.ISourceBlock<TOutput>, System.Threading.CancellationToken)
@@ -1529,13 +1554,13 @@ public struct DataflowBlock {
     - Returns: A  that informs of whether and when more output is available. If, when the task completes, its  is , more output is available in the source (though another consumer of the source may retrieve the data). If it returns , more output is not and will never be available, due to the source completing prior to output being available.
 
     */
-    public static func OutputAvailableAsync<UTOutput : SGBridgeGenericValue>(source : dotnet.System.Threading.Tasks.Dataflow.ISourceBlock_1<UTOutput>, cancellationToken : dotnet.System.Threading.CancellationToken) throws -> dotnet.System.Threading.Tasks.Task_1<Bool> {
+    public static func OutputAvailableAsync<UTOutput : SGBridgeGenericValue>(source : dotnet.System.Threading.Tasks.Dataflow.ISourceBlock_1<UTOutput>, cancellationToken : dotnet.System.Threading.CancellationToken) async throws -> Bool {
         var __thrown : NullableHandle = nil;
         let __return = System_Threading_Tasks_Dataflow_DataflowBlock_System_Threading_Tasks_Task_bool___OutputAvailableAsync_1__2__System_Threading_Tasks_Dataflow_ISourceBlock_UTOutput__CancellationToken(UTOutput.get_type_handle(), &__thrown, source.get_handle(), cancellationToken.get_handle());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task_1(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task_1(hndl: __return).ToAsync();
         }
     }
     // bool Post<TInput>(System.Threading.Tasks.Dataflow.ITargetBlock<TInput>, TInput)
@@ -1567,13 +1592,13 @@ public struct DataflowBlock {
     - Returns: A task that represents the asynchronous receive operation. When an item value is successfully received from the source, the returned task is completed and its  returns the received value. If an item value cannot be retrieved because the source is empty and completed , an  exception is thrown in the returned task.
 
     */
-    public static func ReceiveAsync<UTOutput : SGBridgeGenericValue>(source : dotnet.System.Threading.Tasks.Dataflow.ISourceBlock_1<UTOutput>) throws -> dotnet.System.Threading.Tasks.Task_1<UTOutput> {
+    public static func ReceiveAsync<UTOutput : SGBridgeGenericValue>(source : dotnet.System.Threading.Tasks.Dataflow.ISourceBlock_1<UTOutput>) async throws -> UTOutput {
         var __thrown : NullableHandle = nil;
         let __return = System_Threading_Tasks_Dataflow_DataflowBlock_System_Threading_Tasks_Task_UTOutput___ReceiveAsync_1__1__System_Threading_Tasks_Dataflow_ISourceBlock_UTOutput_(UTOutput.get_type_handle(), &__thrown, source.get_handle());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task_1(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task_1(hndl: __return).ToAsync();
         }
     }
     // System.Threading.Tasks.Task<TOutput> ReceiveAsync<TOutput>(System.Threading.Tasks.Dataflow.ISourceBlock<TOutput>, System.Threading.CancellationToken)
@@ -1586,17 +1611,54 @@ public struct DataflowBlock {
     - Returns: A task that represents the asynchronous receive operation. When a value is successfully received from the source, the returned task is completed and its  returns the value. If a value cannot be retrieved because cancellation was requested, the returned task is canceled. If the value cannot be retrieved because the source is empty and completed , an  exception is thrown in the returned task.
 
     */
-    public static func ReceiveAsync<UTOutput : SGBridgeGenericValue>(source : dotnet.System.Threading.Tasks.Dataflow.ISourceBlock_1<UTOutput>, cancellationToken : dotnet.System.Threading.CancellationToken) throws -> dotnet.System.Threading.Tasks.Task_1<UTOutput> {
+    public static func ReceiveAsync<UTOutput : SGBridgeGenericValue>(source : dotnet.System.Threading.Tasks.Dataflow.ISourceBlock_1<UTOutput>, cancellationToken : dotnet.System.Threading.CancellationToken) async throws -> UTOutput {
         var __thrown : NullableHandle = nil;
         let __return = System_Threading_Tasks_Dataflow_DataflowBlock_System_Threading_Tasks_Task_UTOutput___ReceiveAsync_1__2__System_Threading_Tasks_Dataflow_ISourceBlock_UTOutput__CancellationToken(UTOutput.get_type_handle(), &__thrown, source.get_handle(), cancellationToken.get_handle());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task_1(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task_1(hndl: __return).ToAsync();
         }
     }
-// TODO COPE (write_all_methods) (span) System.Threading.Tasks.Task<TOutput> ReceiveAsync<TOutput>(System.Threading.Tasks.Dataflow.ISourceBlock<TOutput>, System.TimeSpan)
-// TODO COPE (write_all_methods) (span) System.Threading.Tasks.Task<TOutput> ReceiveAsync<TOutput>(System.Threading.Tasks.Dataflow.ISourceBlock<TOutput>, System.TimeSpan, System.Threading.CancellationToken)
+    // System.Threading.Tasks.Task<TOutput> ReceiveAsync<TOutput>(System.Threading.Tasks.Dataflow.ISourceBlock<TOutput>, System.TimeSpan)
+// docid: M:System.Threading.Tasks.Dataflow.DataflowBlock.ReceiveAsync``1(System.Threading.Tasks.Dataflow.ISourceBlock{``0},System.TimeSpan)
+    /**
+    Asynchronously receives a value from a specified source, observing an optional time-out period.
+
+    - Parameter source: The source from which to receive the value.
+    - Parameter timeout: The maximum time interval, in milliseconds, to wait for the synchronous operation to complete, or an interval that represents -1 milliseconds to wait indefinitely.
+    - Returns: A task that represents the asynchronous receive operation. When a value is successfully received from the source, the returned task is completed and its  returns the value. If a value cannot be retrieved because the time-out expired, the returned task is canceled. If the value cannot be retrieved because the source is empty and completed , an  exception is thrown in the returned task.
+
+    */
+    public static func ReceiveAsync<UTOutput : SGBridgeGenericValue>(source : dotnet.System.Threading.Tasks.Dataflow.ISourceBlock_1<UTOutput>, timeout : dotnet.System.TimeSpan) async throws -> UTOutput {
+        var __thrown : NullableHandle = nil;
+        let __return = System_Threading_Tasks_Dataflow_DataflowBlock_System_Threading_Tasks_Task_UTOutput___ReceiveAsync_1__2__System_Threading_Tasks_Dataflow_ISourceBlock_UTOutput__TimeSpan(UTOutput.get_type_handle(), &__thrown, source.get_handle(), timeout.get_handle());
+        if let __ex =  __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+        return try await dotnet.System.Threading.Tasks.Task_1(hndl: __return).ToAsync();
+        }
+    }
+    // System.Threading.Tasks.Task<TOutput> ReceiveAsync<TOutput>(System.Threading.Tasks.Dataflow.ISourceBlock<TOutput>, System.TimeSpan, System.Threading.CancellationToken)
+// docid: M:System.Threading.Tasks.Dataflow.DataflowBlock.ReceiveAsync``1(System.Threading.Tasks.Dataflow.ISourceBlock{``0},System.TimeSpan,System.Threading.CancellationToken)
+    /**
+    Asynchronously receives a value from a specified source, providing a token to cancel the operation and observing an optional time-out interval.
+
+    - Parameter source: The source from which to receive the value.
+    - Parameter timeout: The maximum time interval, in milliseconds, to wait for the synchronous operation to complete, or an interval that represents -1 milliseconds to wait indefinitely.
+    - Parameter cancellationToken: The token which may be used to cancel the receive operation.
+    - Returns: A task that represents the asynchronous receive operation. When a value is successfully received from the source, the returned task is completed and its  returns the value. If a value cannot be retrieved because the time-out expired or cancellation was requested, the returned task is canceled. If the value cannot be retrieved because the source is empty and completed, an  exception is thrown in the returned task.
+
+    */
+    public static func ReceiveAsync<UTOutput : SGBridgeGenericValue>(source : dotnet.System.Threading.Tasks.Dataflow.ISourceBlock_1<UTOutput>, timeout : dotnet.System.TimeSpan, cancellationToken : dotnet.System.Threading.CancellationToken) async throws -> UTOutput {
+        var __thrown : NullableHandle = nil;
+        let __return = System_Threading_Tasks_Dataflow_DataflowBlock_System_Threading_Tasks_Task_UTOutput___ReceiveAsync_1__3__System_Threading_Tasks_Dataflow_ISourceBlock_UTOutput__TimeSpan_CancellationToken(UTOutput.get_type_handle(), &__thrown, source.get_handle(), timeout.get_handle(), cancellationToken.get_handle());
+        if let __ex =  __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+        return try await dotnet.System.Threading.Tasks.Task_1(hndl: __return).ToAsync();
+        }
+    }
     // TOutput Receive<TOutput>(System.Threading.Tasks.Dataflow.ISourceBlock<TOutput>)
 // docid: M:System.Threading.Tasks.Dataflow.DataflowBlock.Receive``1(System.Threading.Tasks.Dataflow.ISourceBlock{``0})
     /**
@@ -1634,8 +1696,45 @@ public struct DataflowBlock {
             return UTOutput(gval: __return);
         }
     }
-// TODO COPE (write_all_methods) (span) TOutput Receive<TOutput>(System.Threading.Tasks.Dataflow.ISourceBlock<TOutput>, System.TimeSpan)
-// TODO COPE (write_all_methods) (span) TOutput Receive<TOutput>(System.Threading.Tasks.Dataflow.ISourceBlock<TOutput>, System.TimeSpan, System.Threading.CancellationToken)
+    // TOutput Receive<TOutput>(System.Threading.Tasks.Dataflow.ISourceBlock<TOutput>, System.TimeSpan)
+// docid: M:System.Threading.Tasks.Dataflow.DataflowBlock.Receive``1(System.Threading.Tasks.Dataflow.ISourceBlock{``0},System.TimeSpan)
+    /**
+    Synchronously receives a value from a specified source, observing an optional time-out period.
+
+    - Parameter source: The source from which to receive the value.
+    - Parameter timeout: The maximum time interval, in milliseconds, to wait for the synchronous operation to complete, or an interval that represents -1 milliseconds to wait indefinitely.
+    - Returns: The received value.
+
+    */
+    public static func Receive<UTOutput : SGBridgeGenericValue>(source : dotnet.System.Threading.Tasks.Dataflow.ISourceBlock_1<UTOutput>, timeout : dotnet.System.TimeSpan) throws -> UTOutput {
+        var __thrown : NullableHandle = nil;
+        let __return = System_Threading_Tasks_Dataflow_DataflowBlock_UTOutput__Receive_1__2__System_Threading_Tasks_Dataflow_ISourceBlock_UTOutput__TimeSpan(UTOutput.get_type_handle(), &__thrown, source.get_handle(), timeout.get_handle());
+        if let __ex =  __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            return UTOutput(gval: __return);
+        }
+    }
+    // TOutput Receive<TOutput>(System.Threading.Tasks.Dataflow.ISourceBlock<TOutput>, System.TimeSpan, System.Threading.CancellationToken)
+// docid: M:System.Threading.Tasks.Dataflow.DataflowBlock.Receive``1(System.Threading.Tasks.Dataflow.ISourceBlock{``0},System.TimeSpan,System.Threading.CancellationToken)
+    /**
+    Synchronously receives a value from a specified source, providing a token to cancel the operation and observing an optional time-out interval.
+
+    - Parameter source: The source from which to receive the value.
+    - Parameter timeout: The maximum time interval, in milliseconds, to wait for the synchronous operation to complete, or an interval that represents -1 milliseconds to wait indefinitely.
+    - Parameter cancellationToken: The token to use to cancel the receive operation.
+    - Returns: The received value.
+
+    */
+    public static func Receive<UTOutput : SGBridgeGenericValue>(source : dotnet.System.Threading.Tasks.Dataflow.ISourceBlock_1<UTOutput>, timeout : dotnet.System.TimeSpan, cancellationToken : dotnet.System.Threading.CancellationToken) throws -> UTOutput {
+        var __thrown : NullableHandle = nil;
+        let __return = System_Threading_Tasks_Dataflow_DataflowBlock_UTOutput__Receive_1__3__System_Threading_Tasks_Dataflow_ISourceBlock_UTOutput__TimeSpan_CancellationToken(UTOutput.get_type_handle(), &__thrown, source.get_handle(), timeout.get_handle(), cancellationToken.get_handle());
+        if let __ex =  __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            return UTOutput(gval: __return);
+        }
+    }
     // System.Threading.Tasks.Task<bool> SendAsync<TInput>(System.Threading.Tasks.Dataflow.ITargetBlock<TInput>, TInput)
 // docid: M:System.Threading.Tasks.Dataflow.DataflowBlock.SendAsync``1(System.Threading.Tasks.Dataflow.ITargetBlock{``0},``0)
     /**
@@ -1646,13 +1745,13 @@ public struct DataflowBlock {
     - Returns: A  that represents the asynchronous send. If the target accepts and consumes the offered element during the call to , upon return from the call the resulting  will be completed and its  property will return . If the target declines the offered element during the call, upon return from the call the resulting  will be completed and its  property will return . If the target postpones the offered element, the element will be buffered until such time that the target consumes or releases it, at which point the task will complete, with its  indicating whether the message was consumed. If the target never attempts to consume or release the message, the returned task will never complete.
 
     */
-    public static func SendAsync<UTInput : SGBridgeGenericValue>(target : dotnet.System.Threading.Tasks.Dataflow.ITargetBlock_1<UTInput>, item : UTInput) throws -> dotnet.System.Threading.Tasks.Task_1<Bool> {
+    public static func SendAsync<UTInput : SGBridgeGenericValue>(target : dotnet.System.Threading.Tasks.Dataflow.ITargetBlock_1<UTInput>, item : UTInput) async throws -> Bool {
         var __thrown : NullableHandle = nil;
         let __return = System_Threading_Tasks_Dataflow_DataflowBlock_System_Threading_Tasks_Task_bool___SendAsync_1__2__System_Threading_Tasks_Dataflow_ITargetBlock_UTInput__UTInput(UTInput.get_type_handle(), &__thrown, target.get_handle(), item.to_gval());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task_1(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task_1(hndl: __return).ToAsync();
         }
     }
     // System.Threading.Tasks.Task<bool> SendAsync<TInput>(System.Threading.Tasks.Dataflow.ITargetBlock<TInput>, TInput, System.Threading.CancellationToken)
@@ -1668,13 +1767,13 @@ public struct DataflowBlock {
  If cancellation is requested before the target has successfully consumed the sent data, the returned task will complete in the Canceled state and the data will no longer be available to the target.
 
     */
-    public static func SendAsync<UTInput : SGBridgeGenericValue>(target : dotnet.System.Threading.Tasks.Dataflow.ITargetBlock_1<UTInput>, item : UTInput, cancellationToken : dotnet.System.Threading.CancellationToken) throws -> dotnet.System.Threading.Tasks.Task_1<Bool> {
+    public static func SendAsync<UTInput : SGBridgeGenericValue>(target : dotnet.System.Threading.Tasks.Dataflow.ITargetBlock_1<UTInput>, item : UTInput, cancellationToken : dotnet.System.Threading.CancellationToken) async throws -> Bool {
         var __thrown : NullableHandle = nil;
         let __return = System_Threading_Tasks_Dataflow_DataflowBlock_System_Threading_Tasks_Task_bool___SendAsync_1__3__System_Threading_Tasks_Dataflow_ITargetBlock_UTInput__UTInput_CancellationToken(UTInput.get_type_handle(), &__thrown, target.get_handle(), item.to_gval(), cancellationToken.get_handle());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task_1(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task_1(hndl: __return).ToAsync();
         }
     }
     // bool TryReceive<TOutput>(System.Threading.Tasks.Dataflow.IReceivableSourceBlock<TOutput>, ref TOutput)
@@ -1702,6 +1801,14 @@ public struct DataflowBlock {
     }
     // System.Collections.Generic.IAsyncEnumerable<TOutput> ReceiveAllAsync<TOutput>(System.Threading.Tasks.Dataflow.IReceivableSourceBlock<TOutput>, System.Threading.CancellationToken)
 // docid: M:System.Threading.Tasks.Dataflow.DataflowBlock.ReceiveAllAsync``1(System.Threading.Tasks.Dataflow.IReceivableSourceBlock{``0},System.Threading.CancellationToken)
+    /**
+    Creates an  that enables receiving all of the data from the source.
+
+    - Parameter source: The source from which to asynchronously receive.
+    - Parameter cancellationToken: The  that can be used to cancel the receive operation.
+    - Returns: The created async enumerable.
+
+    */
     public static func ReceiveAllAsync<UTOutput : SGBridgeGenericValue>(source : dotnet.System.Threading.Tasks.Dataflow.IReceivableSourceBlock_1<UTOutput>, cancellationToken : dotnet.System.Threading.CancellationToken = System.Threading.CancellationToken.None) throws -> dotnet.System.Collections.Generic.IAsyncEnumerable_1<UTOutput> {
         var __thrown : NullableHandle = nil;
         let __return = System_Threading_Tasks_Dataflow_DataflowBlock_System_Collections_Generic_IAsyncEnumerable_UTOutput___ReceiveAllAsync_1__2__System_Threading_Tasks_Dataflow_IReceivableSourceBlock_UTOutput__CancellationToken(UTOutput.get_type_handle(), &__thrown, source.get_handle(), cancellationToken.get_handle());
@@ -1725,6 +1832,9 @@ open class DataflowBlockOptions
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Threading_Tasks_Dataflow_DataflowBlockOptions_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -1973,6 +2083,9 @@ open class DataflowLinkOptions
     open class override func get_type_handle() -> TypeHandle {
         return System_Threading_Tasks_Dataflow_DataflowLinkOptions_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor()
@@ -2107,6 +2220,9 @@ public final class DataflowMessageHeader
 {
     public class override func get_type_handle() -> TypeHandle {
         return System_Threading_Tasks_Dataflow_DataflowMessageHeader_get_type_handle();
+    }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -2357,6 +2473,9 @@ open class ExecutionDataflowBlockOptions
     open class override func get_type_handle() -> TypeHandle {
         return System_Threading_Tasks_Dataflow_ExecutionDataflowBlockOptions_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor()
@@ -2456,6 +2575,9 @@ open class GroupingDataflowBlockOptions
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Threading_Tasks_Dataflow_GroupingDataflowBlockOptions_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -2558,6 +2680,9 @@ open class IDataflowBlock
     open class func get_type_handle() -> TypeHandle {
         return System_Threading_Tasks_Dataflow_IDataflowBlock_get_type_handle();
     }
+    open class func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     let h : NonnullHandle;
     public func to_gval() -> GVal { return GVal(Swift.Int(bitPattern: self.h)); }
     public func dup_gval() -> GVal { return GVal(Swift.Int(bitPattern: __copy_handle(self.h))); }
@@ -2629,6 +2754,9 @@ open class IPropagatorBlock_2<TInput : SGBridgeGenericValue,TOutput : SGBridgeGe
     open class func get_type_handle() -> TypeHandle {
         return System_Threading_Tasks_Dataflow_IPropagatorBlock_2_get_type_handle(TInput.get_type_handle(),TOutput.get_type_handle());
     }
+    open class func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     let h : NonnullHandle;
     public func to_gval() -> GVal { return GVal(Swift.Int(bitPattern: self.h)); }
     public func dup_gval() -> GVal { return GVal(Swift.Int(bitPattern: __copy_handle(self.h))); }
@@ -2656,6 +2784,9 @@ open class IReceivableSourceBlock_1<TOutput : SGBridgeGenericValue>
     open class func get_type_handle() -> TypeHandle {
         return System_Threading_Tasks_Dataflow_IReceivableSourceBlock_1_get_type_handle(TOutput.get_type_handle());
     }
+    open class func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     let h : NonnullHandle;
     public func to_gval() -> GVal { return GVal(Swift.Int(bitPattern: self.h)); }
     public func dup_gval() -> GVal { return GVal(Swift.Int(bitPattern: __copy_handle(self.h))); }
@@ -2676,10 +2807,10 @@ open class IReceivableSourceBlock_1<TOutput : SGBridgeGenericValue>
          if an item could be received; otherwise, .
 
     */
-    open func TryReceive(filter : dotnet.System.Predicate_1<TOutput>, item : inout TOutput) throws -> Bool {
+    open func TryReceive(filter : Optional<dotnet.System.Predicate_1<TOutput>>, item : inout TOutput) throws -> Bool {
         var __thrown : NullableHandle = nil;
             var _tmp_out_item = item.to_gval();
-        let __return = System_Threading_Tasks_Dataflow_IReceivableSourceBlock_1_bool__TryReceive_0__2__System_Predicate_TOutput__outTOutput(TOutput.get_type_handle(), &__thrown, self.get_handle(), nil, &_tmp_out_item);
+        let __return = System_Threading_Tasks_Dataflow_IReceivableSourceBlock_1_bool__TryReceive_0__2__System_Predicate_TOutput__outTOutput(TOutput.get_type_handle(), &__thrown, self.get_handle(), (filter?.get_handle()), &_tmp_out_item);
             let _tmp2_item = TOutput(gval: _tmp_out_item);
             item = _tmp2_item;
         if let __ex =  __thrown {
@@ -2703,11 +2834,12 @@ open class IReceivableSourceBlock_1<TOutput : SGBridgeGenericValue>
          if one or more items could be received; otherwise, .
 
     */
-    open func TryReceiveAll(items : inout dotnet.System.Collections.Generic.IList_1<TOutput>) throws -> Bool {
+    open func TryReceiveAll(items : inout Optional<dotnet.System.Collections.Generic.IList_1<TOutput>>) throws -> Bool {
         var __thrown : NullableHandle = nil;
-            var _tmp_out_items = items.get_handle();
+            var _tmp_out_items = (items != nil) ? (items!.get_handle()) : nil;
         let __return = System_Threading_Tasks_Dataflow_IReceivableSourceBlock_1_bool__TryReceiveAll_0__1__outSystem_Collections_Generic_IList_TOutput_(TOutput.get_type_handle(), &__thrown, self.get_handle(), &_tmp_out_items);
-        let _tmp2_items = dotnet.System.Collections.Generic.IList_1<TOutput>(hndl : _tmp_out_items);
+        let __h__tmp2_items = _tmp_out_items;
+        let _tmp2_items = (__h__tmp2_items != nil) ? dotnet.System.Collections.Generic.IList_1<TOutput>(hndl: __h__tmp2_items!) : nil;
             items = _tmp2_items;
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
@@ -2732,6 +2864,9 @@ open class ISourceBlock_1<TOutput : SGBridgeGenericValue>
     public typealias TOutput_ISourceBlock_1 = TOutput;
     open class func get_type_handle() -> TypeHandle {
         return System_Threading_Tasks_Dataflow_ISourceBlock_1_get_type_handle(TOutput.get_type_handle());
+    }
+    open class func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     let h : NonnullHandle;
     public func to_gval() -> GVal { return GVal(Swift.Int(bitPattern: self.h)); }
@@ -2842,6 +2977,9 @@ open class ITargetBlock_1<TInput : SGBridgeGenericValue>
     open class func get_type_handle() -> TypeHandle {
         return System_Threading_Tasks_Dataflow_ITargetBlock_1_get_type_handle(TInput.get_type_handle());
     }
+    open class func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     let h : NonnullHandle;
     public func to_gval() -> GVal { return GVal(Swift.Int(bitPattern: self.h)); }
     public func dup_gval() -> GVal { return GVal(Swift.Int(bitPattern: __copy_handle(self.h))); }
@@ -2869,9 +3007,9 @@ open class ITargetBlock_1<TInput : SGBridgeGenericValue>
  If the target chose not to accept the message,  is returned. If the target chose not to accept the message and will never accept another message from this source,  is returned.
 
     */
-    open func OfferMessage(messageHeader : dotnet.System.Threading.Tasks.Dataflow.DataflowMessageHeader, messageValue : TInput, source : dotnet.System.Threading.Tasks.Dataflow.ISourceBlock_1<TInput>, consumeToAccept : Bool) throws -> dotnet.System.Threading.Tasks.Dataflow.DataflowMessageStatus {
+    open func OfferMessage(messageHeader : dotnet.System.Threading.Tasks.Dataflow.DataflowMessageHeader, messageValue : TInput, source : Optional<dotnet.System.Threading.Tasks.Dataflow.ISourceBlock_1<TInput>>, consumeToAccept : Bool) throws -> dotnet.System.Threading.Tasks.Dataflow.DataflowMessageStatus {
         var __thrown : NullableHandle = nil;
-        let __return = System_Threading_Tasks_Dataflow_ITargetBlock_1_DataflowMessageStatus__OfferMessage_0__4__DataflowMessageHeader_TInput_System_Threading_Tasks_Dataflow_ISourceBlock_TInput__bool(TInput.get_type_handle(), &__thrown, self.get_handle(), messageHeader.get_handle(), messageValue.to_gval(), nil, Swift.Int32(consumeToAccept ? 1 : 0));
+        let __return = System_Threading_Tasks_Dataflow_ITargetBlock_1_DataflowMessageStatus__OfferMessage_0__4__DataflowMessageHeader_TInput_System_Threading_Tasks_Dataflow_ISourceBlock_TInput__bool(TInput.get_type_handle(), &__thrown, self.get_handle(), messageHeader.get_handle(), messageValue.to_gval(), (source?.get_handle()), Swift.Int32(consumeToAccept ? 1 : 0));
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
@@ -2893,6 +3031,9 @@ public final class JoinBlock_2<T1 : SGBridgeGenericValue,T2 : SGBridgeGenericVal
 {
     public class override func get_type_handle() -> TypeHandle {
         return System_Threading_Tasks_Dataflow_JoinBlock_2_get_type_handle(T1.get_type_handle(),T2.get_type_handle());
+    }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -2989,11 +3130,12 @@ public final class JoinBlock_2<T1 : SGBridgeGenericValue,T2 : SGBridgeGenericVal
          if an item could be received; otherwise, .
 
     */
-    public func TryReceive(filter : Optional<dotnet.System.Predicate_1<dotnet.System.Tuple_2<T1,T2>>>, item : inout dotnet.System.Tuple_2<T1,T2>) throws -> Bool {
+    public func TryReceive(filter : Optional<dotnet.System.Predicate_1<dotnet.System.Tuple_2<T1,T2>>>, item : inout Optional<dotnet.System.Tuple_2<T1,T2>>) throws -> Bool {
         var __thrown : NullableHandle = nil;
-            var _tmp_out_item = item.get_handle();
+            var _tmp_out_item = (item != nil) ? (item!.get_handle()) : nil;
         let __return = System_Threading_Tasks_Dataflow_JoinBlock_2_bool__TryReceive_0__2__System_Predicate_System_System_Tuple_T1_T2___outSystem_Tuple_T1_T2_(T1.get_type_handle(), T2.get_type_handle(), &__thrown, self.get_handle(), (filter?.get_handle()), &_tmp_out_item);
-        let _tmp2_item = dotnet.System.Tuple_2<T1,T2>(hndl : _tmp_out_item);
+        let __h__tmp2_item = _tmp_out_item;
+        let _tmp2_item = (__h__tmp2_item != nil) ? dotnet.System.Tuple_2<T1,T2>(hndl: __h__tmp2_item!) : nil;
             item = _tmp2_item;
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
@@ -3002,7 +3144,7 @@ public final class JoinBlock_2<T1 : SGBridgeGenericValue,T2 : SGBridgeGenericVal
         }
     }
     // delegate closure overload
-    public func TryReceive(filter : @escaping (dotnet.System.Tuple_2<T1,T2>) throws -> Bool, item : inout dotnet.System.Tuple_2<T1,T2>) throws -> Bool {
+    public func TryReceive(filter : @escaping (dotnet.System.Tuple_2<T1,T2>) throws -> Bool, item : inout Optional<dotnet.System.Tuple_2<T1,T2>>) throws -> Bool {
         let del_filter = try dotnet.System.Predicate_1<dotnet.System.Tuple_2<T1,T2>>(filter);
         return try TryReceive(filter: del_filter, item: &item);
     }
@@ -3016,11 +3158,12 @@ public final class JoinBlock_2<T1 : SGBridgeGenericValue,T2 : SGBridgeGenericVal
          if one or more items could be received; otherwise, .
 
     */
-    public func TryReceiveAll(items : inout dotnet.System.Collections.Generic.IList_1<dotnet.System.Tuple_2<T1,T2>>) throws -> Bool {
+    public func TryReceiveAll(items : inout Optional<dotnet.System.Collections.Generic.IList_1<dotnet.System.Tuple_2<T1,T2>>>) throws -> Bool {
         var __thrown : NullableHandle = nil;
-            var _tmp_out_items = items.get_handle();
+            var _tmp_out_items = (items != nil) ? (items!.get_handle()) : nil;
         let __return = System_Threading_Tasks_Dataflow_JoinBlock_2_bool__TryReceiveAll_0__1__outSystem_Collections_Generic_IList_System_System_Tuple_T1_T2__(T1.get_type_handle(), T2.get_type_handle(), &__thrown, self.get_handle(), &_tmp_out_items);
-        let _tmp2_items = dotnet.System.Collections.Generic.IList_1<dotnet.System.Tuple_2<T1,T2>>(hndl : _tmp_out_items);
+        let __h__tmp2_items = _tmp_out_items;
+        let _tmp2_items = (__h__tmp2_items != nil) ? dotnet.System.Collections.Generic.IList_1<dotnet.System.Tuple_2<T1,T2>>(hndl: __h__tmp2_items!) : nil;
             items = _tmp2_items;
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
@@ -3124,6 +3267,9 @@ public final class JoinBlock_3<T1 : SGBridgeGenericValue,T2 : SGBridgeGenericVal
     public class override func get_type_handle() -> TypeHandle {
         return System_Threading_Tasks_Dataflow_JoinBlock_3_get_type_handle(T1.get_type_handle(),T2.get_type_handle(),T3.get_type_handle());
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor()
@@ -3219,11 +3365,12 @@ public final class JoinBlock_3<T1 : SGBridgeGenericValue,T2 : SGBridgeGenericVal
          if an item could be received; otherwise, .
 
     */
-    public func TryReceive(filter : Optional<dotnet.System.Predicate_1<dotnet.System.Tuple_3<T1,T2,T3>>>, item : inout dotnet.System.Tuple_3<T1,T2,T3>) throws -> Bool {
+    public func TryReceive(filter : Optional<dotnet.System.Predicate_1<dotnet.System.Tuple_3<T1,T2,T3>>>, item : inout Optional<dotnet.System.Tuple_3<T1,T2,T3>>) throws -> Bool {
         var __thrown : NullableHandle = nil;
-            var _tmp_out_item = item.get_handle();
+            var _tmp_out_item = (item != nil) ? (item!.get_handle()) : nil;
         let __return = System_Threading_Tasks_Dataflow_JoinBlock_3_bool__TryReceive_0__2__System_Predicate_System_System_Tuple_T1_T2_T3___outSystem_Tuple_T1_T2_T3_(T1.get_type_handle(), T2.get_type_handle(), T3.get_type_handle(), &__thrown, self.get_handle(), (filter?.get_handle()), &_tmp_out_item);
-        let _tmp2_item = dotnet.System.Tuple_3<T1,T2,T3>(hndl : _tmp_out_item);
+        let __h__tmp2_item = _tmp_out_item;
+        let _tmp2_item = (__h__tmp2_item != nil) ? dotnet.System.Tuple_3<T1,T2,T3>(hndl: __h__tmp2_item!) : nil;
             item = _tmp2_item;
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
@@ -3232,7 +3379,7 @@ public final class JoinBlock_3<T1 : SGBridgeGenericValue,T2 : SGBridgeGenericVal
         }
     }
     // delegate closure overload
-    public func TryReceive(filter : @escaping (dotnet.System.Tuple_3<T1,T2,T3>) throws -> Bool, item : inout dotnet.System.Tuple_3<T1,T2,T3>) throws -> Bool {
+    public func TryReceive(filter : @escaping (dotnet.System.Tuple_3<T1,T2,T3>) throws -> Bool, item : inout Optional<dotnet.System.Tuple_3<T1,T2,T3>>) throws -> Bool {
         let del_filter = try dotnet.System.Predicate_1<dotnet.System.Tuple_3<T1,T2,T3>>(filter);
         return try TryReceive(filter: del_filter, item: &item);
     }
@@ -3246,11 +3393,12 @@ public final class JoinBlock_3<T1 : SGBridgeGenericValue,T2 : SGBridgeGenericVal
          if one or more items could be received; otherwise, .
 
     */
-    public func TryReceiveAll(items : inout dotnet.System.Collections.Generic.IList_1<dotnet.System.Tuple_3<T1,T2,T3>>) throws -> Bool {
+    public func TryReceiveAll(items : inout Optional<dotnet.System.Collections.Generic.IList_1<dotnet.System.Tuple_3<T1,T2,T3>>>) throws -> Bool {
         var __thrown : NullableHandle = nil;
-            var _tmp_out_items = items.get_handle();
+            var _tmp_out_items = (items != nil) ? (items!.get_handle()) : nil;
         let __return = System_Threading_Tasks_Dataflow_JoinBlock_3_bool__TryReceiveAll_0__1__outSystem_Collections_Generic_IList_System_System_Tuple_T1_T2_T3__(T1.get_type_handle(), T2.get_type_handle(), T3.get_type_handle(), &__thrown, self.get_handle(), &_tmp_out_items);
-        let _tmp2_items = dotnet.System.Collections.Generic.IList_1<dotnet.System.Tuple_3<T1,T2,T3>>(hndl : _tmp_out_items);
+        let __h__tmp2_items = _tmp_out_items;
+        let _tmp2_items = (__h__tmp2_items != nil) ? dotnet.System.Collections.Generic.IList_1<dotnet.System.Tuple_3<T1,T2,T3>>(hndl: __h__tmp2_items!) : nil;
             items = _tmp2_items;
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
@@ -3373,6 +3521,9 @@ public final class TransformBlock_2<TInput : SGBridgeGenericValue,TOutput : SGBr
 {
     public class override func get_type_handle() -> TypeHandle {
         return System_Threading_Tasks_Dataflow_TransformBlock_2_get_type_handle(TInput.get_type_handle(),TOutput.get_type_handle());
+    }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -3504,10 +3655,10 @@ public final class TransformBlock_2<TInput : SGBridgeGenericValue,TOutput : SGBr
          if an item could be received; otherwise, .
 
     */
-    public func TryReceive(filter : dotnet.System.Predicate_1<TOutput>, item : inout TOutput) throws -> Bool {
+    public func TryReceive(filter : Optional<dotnet.System.Predicate_1<TOutput>>, item : inout TOutput) throws -> Bool {
         var __thrown : NullableHandle = nil;
             var _tmp_out_item = item.to_gval();
-        let __return = System_Threading_Tasks_Dataflow_TransformBlock_2_bool__TryReceive_0__2__System_Predicate_TOutput__outTOutput(TInput.get_type_handle(), TOutput.get_type_handle(), &__thrown, self.get_handle(), nil, &_tmp_out_item);
+        let __return = System_Threading_Tasks_Dataflow_TransformBlock_2_bool__TryReceive_0__2__System_Predicate_TOutput__outTOutput(TInput.get_type_handle(), TOutput.get_type_handle(), &__thrown, self.get_handle(), (filter?.get_handle()), &_tmp_out_item);
             let _tmp2_item = TOutput(gval: _tmp_out_item);
             item = _tmp2_item;
         if let __ex =  __thrown {
@@ -3531,11 +3682,12 @@ public final class TransformBlock_2<TInput : SGBridgeGenericValue,TOutput : SGBr
          if one or more items could be received; otherwise, .
 
     */
-    public func TryReceiveAll(items : inout dotnet.System.Collections.Generic.IList_1<TOutput>) throws -> Bool {
+    public func TryReceiveAll(items : inout Optional<dotnet.System.Collections.Generic.IList_1<TOutput>>) throws -> Bool {
         var __thrown : NullableHandle = nil;
-            var _tmp_out_items = items.get_handle();
+            var _tmp_out_items = (items != nil) ? (items!.get_handle()) : nil;
         let __return = System_Threading_Tasks_Dataflow_TransformBlock_2_bool__TryReceiveAll_0__1__outSystem_Collections_Generic_IList_TOutput_(TInput.get_type_handle(), TOutput.get_type_handle(), &__thrown, self.get_handle(), &_tmp_out_items);
-        let _tmp2_items = dotnet.System.Collections.Generic.IList_1<TOutput>(hndl : _tmp_out_items);
+        let __h__tmp2_items = _tmp_out_items;
+        let _tmp2_items = (__h__tmp2_items != nil) ? dotnet.System.Collections.Generic.IList_1<TOutput>(hndl: __h__tmp2_items!) : nil;
             items = _tmp2_items;
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
@@ -3618,6 +3770,9 @@ public final class TransformManyBlock_2<TInput : SGBridgeGenericValue,TOutput : 
 {
     public class override func get_type_handle() -> TypeHandle {
         return System_Threading_Tasks_Dataflow_TransformManyBlock_2_get_type_handle(TInput.get_type_handle(),TOutput.get_type_handle());
+    }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -3749,10 +3904,10 @@ public final class TransformManyBlock_2<TInput : SGBridgeGenericValue,TOutput : 
          if an item could be received; otherwise, .
 
     */
-    public func TryReceive(filter : dotnet.System.Predicate_1<TOutput>, item : inout TOutput) throws -> Bool {
+    public func TryReceive(filter : Optional<dotnet.System.Predicate_1<TOutput>>, item : inout TOutput) throws -> Bool {
         var __thrown : NullableHandle = nil;
             var _tmp_out_item = item.to_gval();
-        let __return = System_Threading_Tasks_Dataflow_TransformManyBlock_2_bool__TryReceive_0__2__System_Predicate_TOutput__outTOutput(TInput.get_type_handle(), TOutput.get_type_handle(), &__thrown, self.get_handle(), nil, &_tmp_out_item);
+        let __return = System_Threading_Tasks_Dataflow_TransformManyBlock_2_bool__TryReceive_0__2__System_Predicate_TOutput__outTOutput(TInput.get_type_handle(), TOutput.get_type_handle(), &__thrown, self.get_handle(), (filter?.get_handle()), &_tmp_out_item);
             let _tmp2_item = TOutput(gval: _tmp_out_item);
             item = _tmp2_item;
         if let __ex =  __thrown {
@@ -3776,11 +3931,12 @@ public final class TransformManyBlock_2<TInput : SGBridgeGenericValue,TOutput : 
          if one or more items could be received; otherwise, .
 
     */
-    public func TryReceiveAll(items : inout dotnet.System.Collections.Generic.IList_1<TOutput>) throws -> Bool {
+    public func TryReceiveAll(items : inout Optional<dotnet.System.Collections.Generic.IList_1<TOutput>>) throws -> Bool {
         var __thrown : NullableHandle = nil;
-            var _tmp_out_items = items.get_handle();
+            var _tmp_out_items = (items != nil) ? (items!.get_handle()) : nil;
         let __return = System_Threading_Tasks_Dataflow_TransformManyBlock_2_bool__TryReceiveAll_0__1__outSystem_Collections_Generic_IList_TOutput_(TInput.get_type_handle(), TOutput.get_type_handle(), &__thrown, self.get_handle(), &_tmp_out_items);
-        let _tmp2_items = dotnet.System.Collections.Generic.IList_1<TOutput>(hndl : _tmp_out_items);
+        let __h__tmp2_items = _tmp_out_items;
+        let _tmp2_items = (__h__tmp2_items != nil) ? dotnet.System.Collections.Generic.IList_1<TOutput>(hndl: __h__tmp2_items!) : nil;
             items = _tmp2_items;
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
@@ -3864,6 +4020,9 @@ public final class WriteOnceBlock_1<T : SGBridgeGenericValue>
     public class override func get_type_handle() -> TypeHandle {
         return System_Threading_Tasks_Dataflow_WriteOnceBlock_1_get_type_handle(T.get_type_handle());
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor(System.Func<T,T>)
@@ -3873,9 +4032,9 @@ public final class WriteOnceBlock_1<T : SGBridgeGenericValue>
 
     - Parameter cloningFunction: The function to use to clone the data when offered to other blocks.
     */
-    public init(cloningFunction : dotnet.System.Func_2<T,T>) throws {
+    public init(cloningFunction : Optional<dotnet.System.Func_2<T,T>>) throws {
         var __thrown : NullableHandle = nil;
-        let h = System_Threading_Tasks_Dataflow_WriteOnceBlock_1_ctor_0__1__System_Func_T_T_(T.get_type_handle(), &__thrown, nil);
+        let h = System_Threading_Tasks_Dataflow_WriteOnceBlock_1_ctor_0__1__System_Func_T_T_(T.get_type_handle(), &__thrown, (cloningFunction?.get_handle()));
         if let __ex = __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
@@ -3890,9 +4049,9 @@ public final class WriteOnceBlock_1<T : SGBridgeGenericValue>
     - Parameter cloningFunction: The function to use to clone the data when offered to other blocks.
     - Parameter dataflowBlockOptions: The options with which to configure this .
     */
-    public init(cloningFunction : dotnet.System.Func_2<T,T>, dataflowBlockOptions : dotnet.System.Threading.Tasks.Dataflow.DataflowBlockOptions) throws {
+    public init(cloningFunction : Optional<dotnet.System.Func_2<T,T>>, dataflowBlockOptions : dotnet.System.Threading.Tasks.Dataflow.DataflowBlockOptions) throws {
         var __thrown : NullableHandle = nil;
-        let h = System_Threading_Tasks_Dataflow_WriteOnceBlock_1_ctor_0__2__System_Func_T_T__DataflowBlockOptions(T.get_type_handle(), &__thrown, nil, dataflowBlockOptions.get_handle());
+        let h = System_Threading_Tasks_Dataflow_WriteOnceBlock_1_ctor_0__2__System_Func_T_T__DataflowBlockOptions(T.get_type_handle(), &__thrown, (cloningFunction?.get_handle()), dataflowBlockOptions.get_handle());
         if let __ex = __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
@@ -3961,10 +4120,10 @@ public final class WriteOnceBlock_1<T : SGBridgeGenericValue>
          if an item could be received; otherwise, .
 
     */
-    public func TryReceive(filter : dotnet.System.Predicate_1<T>, item : inout T) throws -> Bool {
+    public func TryReceive(filter : Optional<dotnet.System.Predicate_1<T>>, item : inout T) throws -> Bool {
         var __thrown : NullableHandle = nil;
             var _tmp_out_item = item.to_gval();
-        let __return = System_Threading_Tasks_Dataflow_WriteOnceBlock_1_bool__TryReceive_0__2__System_Predicate_T__outT(T.get_type_handle(), &__thrown, self.get_handle(), nil, &_tmp_out_item);
+        let __return = System_Threading_Tasks_Dataflow_WriteOnceBlock_1_bool__TryReceive_0__2__System_Predicate_T__outT(T.get_type_handle(), &__thrown, self.get_handle(), (filter?.get_handle()), &_tmp_out_item);
             let _tmp2_item = T(gval: _tmp_out_item);
             item = _tmp2_item;
         if let __ex =  __thrown {
@@ -4094,15 +4253,15 @@ extension dotnet.System.Threading.Tasks.Dataflow.ISourceBlock_1 {
 
 // EXTENSION METHOD System.Threading.Tasks.Task<bool> OutputAvailableAsync<TOutput>(System.Threading.Tasks.Dataflow.ISourceBlock<TOutput>)
 extension dotnet.System.Threading.Tasks.Dataflow.ISourceBlock_1 {
-    public func OutputAvailableAsync() throws -> dotnet.System.Threading.Tasks.Task_1<Bool> {
-        return try dotnet.System.Threading.Tasks.Dataflow.DataflowBlock.OutputAvailableAsync(source: self);
+    public func OutputAvailableAsync() async throws -> Bool {
+        return try await dotnet.System.Threading.Tasks.Dataflow.DataflowBlock.OutputAvailableAsync(source: self);
     }
 }
 
 // EXTENSION METHOD System.Threading.Tasks.Task<bool> OutputAvailableAsync<TOutput>(System.Threading.Tasks.Dataflow.ISourceBlock<TOutput>, System.Threading.CancellationToken)
 extension dotnet.System.Threading.Tasks.Dataflow.ISourceBlock_1 {
-    public func OutputAvailableAsync(cancellationToken : dotnet.System.Threading.CancellationToken) throws -> dotnet.System.Threading.Tasks.Task_1<Bool> {
-        return try dotnet.System.Threading.Tasks.Dataflow.DataflowBlock.OutputAvailableAsync(source: self, cancellationToken: cancellationToken);
+    public func OutputAvailableAsync(cancellationToken : dotnet.System.Threading.CancellationToken) async throws -> Bool {
+        return try await dotnet.System.Threading.Tasks.Dataflow.DataflowBlock.OutputAvailableAsync(source: self, cancellationToken: cancellationToken);
     }
 }
 
@@ -4115,23 +4274,31 @@ extension dotnet.System.Threading.Tasks.Dataflow.ITargetBlock_1 {
 
 // EXTENSION METHOD System.Threading.Tasks.Task<TOutput> ReceiveAsync<TOutput>(System.Threading.Tasks.Dataflow.ISourceBlock<TOutput>)
 extension dotnet.System.Threading.Tasks.Dataflow.ISourceBlock_1 {
-    public func ReceiveAsync() throws -> dotnet.System.Threading.Tasks.Task_1<TOutput> {
-        return try dotnet.System.Threading.Tasks.Dataflow.DataflowBlock.ReceiveAsync(source: self);
+    public func ReceiveAsync() async throws -> TOutput {
+        return try await dotnet.System.Threading.Tasks.Dataflow.DataflowBlock.ReceiveAsync(source: self);
     }
 }
 
 // EXTENSION METHOD System.Threading.Tasks.Task<TOutput> ReceiveAsync<TOutput>(System.Threading.Tasks.Dataflow.ISourceBlock<TOutput>, System.Threading.CancellationToken)
 extension dotnet.System.Threading.Tasks.Dataflow.ISourceBlock_1 {
-    public func ReceiveAsync(cancellationToken : dotnet.System.Threading.CancellationToken) throws -> dotnet.System.Threading.Tasks.Task_1<TOutput> {
-        return try dotnet.System.Threading.Tasks.Dataflow.DataflowBlock.ReceiveAsync(source: self, cancellationToken: cancellationToken);
+    public func ReceiveAsync(cancellationToken : dotnet.System.Threading.CancellationToken) async throws -> TOutput {
+        return try await dotnet.System.Threading.Tasks.Dataflow.DataflowBlock.ReceiveAsync(source: self, cancellationToken: cancellationToken);
     }
 }
 
 // EXTENSION METHOD System.Threading.Tasks.Task<TOutput> ReceiveAsync<TOutput>(System.Threading.Tasks.Dataflow.ISourceBlock<TOutput>, System.TimeSpan)
-// TODO COPE extension method (span) System.Threading.Tasks.Task<TOutput> ReceiveAsync<TOutput>(System.Threading.Tasks.Dataflow.ISourceBlock<TOutput>, System.TimeSpan)
+extension dotnet.System.Threading.Tasks.Dataflow.ISourceBlock_1 {
+    public func ReceiveAsync(timeout : dotnet.System.TimeSpan) async throws -> TOutput {
+        return try await dotnet.System.Threading.Tasks.Dataflow.DataflowBlock.ReceiveAsync(source: self, timeout: timeout);
+    }
+}
 
 // EXTENSION METHOD System.Threading.Tasks.Task<TOutput> ReceiveAsync<TOutput>(System.Threading.Tasks.Dataflow.ISourceBlock<TOutput>, System.TimeSpan, System.Threading.CancellationToken)
-// TODO COPE extension method (span) System.Threading.Tasks.Task<TOutput> ReceiveAsync<TOutput>(System.Threading.Tasks.Dataflow.ISourceBlock<TOutput>, System.TimeSpan, System.Threading.CancellationToken)
+extension dotnet.System.Threading.Tasks.Dataflow.ISourceBlock_1 {
+    public func ReceiveAsync(timeout : dotnet.System.TimeSpan, cancellationToken : dotnet.System.Threading.CancellationToken) async throws -> TOutput {
+        return try await dotnet.System.Threading.Tasks.Dataflow.DataflowBlock.ReceiveAsync(source: self, timeout: timeout, cancellationToken: cancellationToken);
+    }
+}
 
 // EXTENSION METHOD TOutput Receive<TOutput>(System.Threading.Tasks.Dataflow.ISourceBlock<TOutput>)
 extension dotnet.System.Threading.Tasks.Dataflow.ISourceBlock_1 {
@@ -4148,22 +4315,30 @@ extension dotnet.System.Threading.Tasks.Dataflow.ISourceBlock_1 {
 }
 
 // EXTENSION METHOD TOutput Receive<TOutput>(System.Threading.Tasks.Dataflow.ISourceBlock<TOutput>, System.TimeSpan)
-// TODO COPE extension method (span) TOutput Receive<TOutput>(System.Threading.Tasks.Dataflow.ISourceBlock<TOutput>, System.TimeSpan)
+extension dotnet.System.Threading.Tasks.Dataflow.ISourceBlock_1 {
+    public func Receive(timeout : dotnet.System.TimeSpan) throws -> TOutput {
+        return try dotnet.System.Threading.Tasks.Dataflow.DataflowBlock.Receive(source: self, timeout: timeout);
+    }
+}
 
 // EXTENSION METHOD TOutput Receive<TOutput>(System.Threading.Tasks.Dataflow.ISourceBlock<TOutput>, System.TimeSpan, System.Threading.CancellationToken)
-// TODO COPE extension method (span) TOutput Receive<TOutput>(System.Threading.Tasks.Dataflow.ISourceBlock<TOutput>, System.TimeSpan, System.Threading.CancellationToken)
+extension dotnet.System.Threading.Tasks.Dataflow.ISourceBlock_1 {
+    public func Receive(timeout : dotnet.System.TimeSpan, cancellationToken : dotnet.System.Threading.CancellationToken) throws -> TOutput {
+        return try dotnet.System.Threading.Tasks.Dataflow.DataflowBlock.Receive(source: self, timeout: timeout, cancellationToken: cancellationToken);
+    }
+}
 
 // EXTENSION METHOD System.Threading.Tasks.Task<bool> SendAsync<TInput>(System.Threading.Tasks.Dataflow.ITargetBlock<TInput>, TInput)
 extension dotnet.System.Threading.Tasks.Dataflow.ITargetBlock_1 {
-    public func SendAsync(item : TInput) throws -> dotnet.System.Threading.Tasks.Task_1<Bool> {
-        return try dotnet.System.Threading.Tasks.Dataflow.DataflowBlock.SendAsync(target: self, item: item);
+    public func SendAsync(item : TInput) async throws -> Bool {
+        return try await dotnet.System.Threading.Tasks.Dataflow.DataflowBlock.SendAsync(target: self, item: item);
     }
 }
 
 // EXTENSION METHOD System.Threading.Tasks.Task<bool> SendAsync<TInput>(System.Threading.Tasks.Dataflow.ITargetBlock<TInput>, TInput, System.Threading.CancellationToken)
 extension dotnet.System.Threading.Tasks.Dataflow.ITargetBlock_1 {
-    public func SendAsync(item : TInput, cancellationToken : dotnet.System.Threading.CancellationToken) throws -> dotnet.System.Threading.Tasks.Task_1<Bool> {
-        return try dotnet.System.Threading.Tasks.Dataflow.DataflowBlock.SendAsync(target: self, item: item, cancellationToken: cancellationToken);
+    public func SendAsync(item : TInput, cancellationToken : dotnet.System.Threading.CancellationToken) async throws -> Bool {
+        return try await dotnet.System.Threading.Tasks.Dataflow.DataflowBlock.SendAsync(target: self, item: item, cancellationToken: cancellationToken);
     }
 }
 

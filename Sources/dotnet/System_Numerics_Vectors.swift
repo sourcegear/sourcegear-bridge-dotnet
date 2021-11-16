@@ -7,10 +7,6 @@ import jumptable_dotnet;
 extension System.Numerics {
 // type: System.Numerics.Matrix3x2
 // boxed value type
-    /**
-    Represents a 3x2 matrix.
-
-    */
 public final class Matrix3x2
     :
     dotnet.System.Object
@@ -18,30 +14,21 @@ public final class Matrix3x2
     public class override func get_type_handle() -> TypeHandle {
         return System_Numerics_Matrix3x2_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
-    /**
-    Gets the multiplicative identity matrix.
-
-    */
     public static var Identity : dotnet.System.Numerics.Matrix3x2 {
         get {
             return try! get_Identity();
         }
     }
-    /**
-    Indicates whether the current matrix is the identity matrix.
-
-    */
     public var IsIdentity : Bool {
         get {
             return try! get_IsIdentity();
         }
     }
-    /**
-    Gets or sets the translation component of this matrix.
-
-    */
     public var Translation : dotnet.System.Numerics.Vector2 {
         get {
             return try! get_Translation();
@@ -52,16 +39,6 @@ public final class Matrix3x2
     }
     // .ctor(System.Single, System.Single, System.Single, System.Single, System.Single, System.Single)
 // docid: M:System.Numerics.Matrix3x2.#ctor(System.Single,System.Single,System.Single,System.Single,System.Single,System.Single)
-    /**
-    Creates a 3x2 matrix from the specified components.
-
-    - Parameter m11: The value to assign to the first element in the first row.
-    - Parameter m12: The value to assign to the second element in the first row.
-    - Parameter m21: The value to assign to the first element in the second row.
-    - Parameter m22: The value to assign to the second element in the second row.
-    - Parameter m31: The value to assign to the first element in the third row.
-    - Parameter m32: The value to assign to the second element in the third row.
-    */
     public init(m11 : Swift.Float, m12 : Swift.Float, m21 : Swift.Float, m22 : Swift.Float, m31 : Swift.Float, m32 : Swift.Float) throws {
         var __thrown : NullableHandle = nil;
         let h = System_Numerics_Matrix3x2_ctor_0__6__f32_f32_f32_f32_f32_f32(&__thrown, m11, m12, m21, m22, m31, m32);
@@ -77,14 +54,6 @@ public final class Matrix3x2
     }
     // System.Numerics.Matrix3x2 Add(System.Numerics.Matrix3x2, System.Numerics.Matrix3x2)
 // docid: M:System.Numerics.Matrix3x2.Add(System.Numerics.Matrix3x2,System.Numerics.Matrix3x2)
-    /**
-    Adds each element in one matrix with its corresponding element in a second matrix.
-
-    - Parameter value1: The first matrix.
-    - Parameter value2: The second matrix.
-    - Returns: The matrix that contains the summed values of  and .
-
-    */
     public class func Add(value1 : dotnet.System.Numerics.Matrix3x2, value2 : dotnet.System.Numerics.Matrix3x2) throws -> dotnet.System.Numerics.Matrix3x2 {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Matrix3x2_Matrix3x2__Add_0__2__Matrix3x2_Matrix3x2(&__thrown, value1.get_handle(), value2.get_handle());
@@ -96,13 +65,6 @@ public final class Matrix3x2
     }
     // System.Numerics.Matrix3x2 CreateRotation(System.Single)
 // docid: M:System.Numerics.Matrix3x2.CreateRotation(System.Single)
-    /**
-    Creates a rotation matrix using the given rotation in radians.
-
-    - Parameter radians: The amount of rotation, in radians.
-    - Returns: The rotation matrix.
-
-    */
     public class func CreateRotation(radians : Swift.Float) throws -> dotnet.System.Numerics.Matrix3x2 {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Matrix3x2_Matrix3x2__CreateRotation_0__1__f32(&__thrown, radians);
@@ -114,14 +76,6 @@ public final class Matrix3x2
     }
     // System.Numerics.Matrix3x2 CreateRotation(System.Single, System.Numerics.Vector2)
 // docid: M:System.Numerics.Matrix3x2.CreateRotation(System.Single,System.Numerics.Vector2)
-    /**
-    Creates a rotation matrix using the specified rotation in radians and a center point.
-
-    - Parameter radians: The amount of rotation, in radians.
-    - Parameter centerPoint: The center point.
-    - Returns: The rotation matrix.
-
-    */
     public class func CreateRotation(radians : Swift.Float, centerPoint : dotnet.System.Numerics.Vector2) throws -> dotnet.System.Numerics.Matrix3x2 {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Matrix3x2_Matrix3x2__CreateRotation_0__2__f32_Vector2(&__thrown, radians, centerPoint.get_handle());
@@ -133,13 +87,6 @@ public final class Matrix3x2
     }
     // System.Numerics.Matrix3x2 CreateScale(System.Numerics.Vector2)
 // docid: M:System.Numerics.Matrix3x2.CreateScale(System.Numerics.Vector2)
-    /**
-    Creates a scaling matrix from the specified vector scale.
-
-    - Parameter scales: The scale to use.
-    - Returns: The scaling matrix.
-
-    */
     public class func CreateScale(scales : dotnet.System.Numerics.Vector2) throws -> dotnet.System.Numerics.Matrix3x2 {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Matrix3x2_Matrix3x2__CreateScale_0__1__Vector2(&__thrown, scales.get_handle());
@@ -151,14 +98,6 @@ public final class Matrix3x2
     }
     // System.Numerics.Matrix3x2 CreateScale(System.Numerics.Vector2, System.Numerics.Vector2)
 // docid: M:System.Numerics.Matrix3x2.CreateScale(System.Numerics.Vector2,System.Numerics.Vector2)
-    /**
-    Creates a scaling matrix from the specified vector scale with an offset from the specified center point.
-
-    - Parameter scales: The scale to use.
-    - Parameter centerPoint: The center offset.
-    - Returns: The scaling matrix.
-
-    */
     public class func CreateScale(scales : dotnet.System.Numerics.Vector2, centerPoint : dotnet.System.Numerics.Vector2) throws -> dotnet.System.Numerics.Matrix3x2 {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Matrix3x2_Matrix3x2__CreateScale_0__2__Vector2_Vector2(&__thrown, scales.get_handle(), centerPoint.get_handle());
@@ -170,13 +109,6 @@ public final class Matrix3x2
     }
     // System.Numerics.Matrix3x2 CreateScale(System.Single)
 // docid: M:System.Numerics.Matrix3x2.CreateScale(System.Single)
-    /**
-    Creates a scaling matrix that scales uniformly with the given scale.
-
-    - Parameter scale: The uniform scale to use.
-    - Returns: The scaling matrix.
-
-    */
     public class func CreateScale(scale : Swift.Float) throws -> dotnet.System.Numerics.Matrix3x2 {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Matrix3x2_Matrix3x2__CreateScale_0__1__f32(&__thrown, scale);
@@ -188,14 +120,6 @@ public final class Matrix3x2
     }
     // System.Numerics.Matrix3x2 CreateScale(System.Single, System.Numerics.Vector2)
 // docid: M:System.Numerics.Matrix3x2.CreateScale(System.Single,System.Numerics.Vector2)
-    /**
-    Creates a scaling matrix that scales uniformly with the specified scale with an offset from the specified center.
-
-    - Parameter scale: The uniform scale to use.
-    - Parameter centerPoint: The center offset.
-    - Returns: The scaling matrix.
-
-    */
     public class func CreateScale(scale : Swift.Float, centerPoint : dotnet.System.Numerics.Vector2) throws -> dotnet.System.Numerics.Matrix3x2 {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Matrix3x2_Matrix3x2__CreateScale_0__2__f32_Vector2(&__thrown, scale, centerPoint.get_handle());
@@ -207,14 +131,6 @@ public final class Matrix3x2
     }
     // System.Numerics.Matrix3x2 CreateScale(System.Single, System.Single)
 // docid: M:System.Numerics.Matrix3x2.CreateScale(System.Single,System.Single)
-    /**
-    Creates a scaling matrix from the specified X and Y components.
-
-    - Parameter xScale: The value to scale by on the X axis.
-    - Parameter yScale: The value to scale by on the Y axis.
-    - Returns: The scaling matrix.
-
-    */
     public class func CreateScale(xScale : Swift.Float, yScale : Swift.Float) throws -> dotnet.System.Numerics.Matrix3x2 {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Matrix3x2_Matrix3x2__CreateScale_0__2__f32_f32(&__thrown, xScale, yScale);
@@ -226,15 +142,6 @@ public final class Matrix3x2
     }
     // System.Numerics.Matrix3x2 CreateScale(System.Single, System.Single, System.Numerics.Vector2)
 // docid: M:System.Numerics.Matrix3x2.CreateScale(System.Single,System.Single,System.Numerics.Vector2)
-    /**
-    Creates a scaling matrix that is offset by a given center point.
-
-    - Parameter xScale: The value to scale by on the X axis.
-    - Parameter yScale: The value to scale by on the Y axis.
-    - Parameter centerPoint: The center point.
-    - Returns: The scaling matrix.
-
-    */
     public class func CreateScale(xScale : Swift.Float, yScale : Swift.Float, centerPoint : dotnet.System.Numerics.Vector2) throws -> dotnet.System.Numerics.Matrix3x2 {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Matrix3x2_Matrix3x2__CreateScale_0__3__f32_f32_Vector2(&__thrown, xScale, yScale, centerPoint.get_handle());
@@ -246,14 +153,6 @@ public final class Matrix3x2
     }
     // System.Numerics.Matrix3x2 CreateSkew(System.Single, System.Single)
 // docid: M:System.Numerics.Matrix3x2.CreateSkew(System.Single,System.Single)
-    /**
-    Creates a skew matrix from the specified angles in radians.
-
-    - Parameter radiansX: The X angle, in radians.
-    - Parameter radiansY: The Y angle, in radians.
-    - Returns: The skew matrix.
-
-    */
     public class func CreateSkew(radiansX : Swift.Float, radiansY : Swift.Float) throws -> dotnet.System.Numerics.Matrix3x2 {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Matrix3x2_Matrix3x2__CreateSkew_0__2__f32_f32(&__thrown, radiansX, radiansY);
@@ -265,15 +164,6 @@ public final class Matrix3x2
     }
     // System.Numerics.Matrix3x2 CreateSkew(System.Single, System.Single, System.Numerics.Vector2)
 // docid: M:System.Numerics.Matrix3x2.CreateSkew(System.Single,System.Single,System.Numerics.Vector2)
-    /**
-    Creates a skew matrix from the specified angles in radians and a center point.
-
-    - Parameter radiansX: The X angle, in radians.
-    - Parameter radiansY: The Y angle, in radians.
-    - Parameter centerPoint: The center point.
-    - Returns: The skew matrix.
-
-    */
     public class func CreateSkew(radiansX : Swift.Float, radiansY : Swift.Float, centerPoint : dotnet.System.Numerics.Vector2) throws -> dotnet.System.Numerics.Matrix3x2 {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Matrix3x2_Matrix3x2__CreateSkew_0__3__f32_f32_Vector2(&__thrown, radiansX, radiansY, centerPoint.get_handle());
@@ -285,13 +175,6 @@ public final class Matrix3x2
     }
     // System.Numerics.Matrix3x2 CreateTranslation(System.Numerics.Vector2)
 // docid: M:System.Numerics.Matrix3x2.CreateTranslation(System.Numerics.Vector2)
-    /**
-    Creates a translation matrix from the specified 2-dimensional vector.
-
-    - Parameter position: The translation position.
-    - Returns: The translation matrix.
-
-    */
     public class func CreateTranslation(position : dotnet.System.Numerics.Vector2) throws -> dotnet.System.Numerics.Matrix3x2 {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Matrix3x2_Matrix3x2__CreateTranslation_0__1__Vector2(&__thrown, position.get_handle());
@@ -303,14 +186,6 @@ public final class Matrix3x2
     }
     // System.Numerics.Matrix3x2 CreateTranslation(System.Single, System.Single)
 // docid: M:System.Numerics.Matrix3x2.CreateTranslation(System.Single,System.Single)
-    /**
-    Creates a translation matrix from the specified X and Y components.
-
-    - Parameter xPosition: The X position.
-    - Parameter yPosition: The Y position.
-    - Returns: The translation matrix.
-
-    */
     public class func CreateTranslation(xPosition : Swift.Float, yPosition : Swift.Float) throws -> dotnet.System.Numerics.Matrix3x2 {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Matrix3x2_Matrix3x2__CreateTranslation_0__2__f32_f32(&__thrown, xPosition, yPosition);
@@ -322,14 +197,6 @@ public final class Matrix3x2
     }
     // bool Equals(System.Numerics.Matrix3x2)
 // docid: M:System.Numerics.Matrix3x2.Equals(System.Numerics.Matrix3x2)
-    /**
-    Returns a value that indicates whether this instance and another 3x2 matrix are equal.
-
-    - Parameter other: The other matrix.
-    - Returns: 
-         if the two matrices are equal; otherwise, .
-
-    */
     public func Equals(other : dotnet.System.Numerics.Matrix3x2) throws -> Bool {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Matrix3x2_bool__Equals_0__1__Matrix3x2(&__thrown, self.get_handle(), other.get_handle());
@@ -341,14 +208,6 @@ public final class Matrix3x2
     }
     // bool Equals(System.Object)
 // docid: M:System.Numerics.Matrix3x2.Equals(System.Object)
-    /**
-    Returns a value that indicates whether this instance and a specified object are equal.
-
-    - Parameter obj: The object to compare with the current instance.
-    - Returns: 
-         if the current instance and  are equal; otherwise, . If  is , the method returns .
-
-    */
     public override func Equals(obj : Optional<dotnet.System.Object>) throws -> Bool {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Matrix3x2_bool__Equals_0__1__Object(&__thrown, self.get_handle(), obj?.get_handle() ?? nil);
@@ -360,12 +219,6 @@ public final class Matrix3x2
     }
     // System.Single GetDeterminant()
 // docid: M:System.Numerics.Matrix3x2.GetDeterminant
-    /**
-    Calculates the determinant for this matrix.
-
-    - Returns: The determinant.
-
-    */
     public func GetDeterminant() throws -> Swift.Float {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Matrix3x2_f32__GetDeterminant_0__0(&__thrown, self.get_handle());
@@ -377,12 +230,6 @@ public final class Matrix3x2
     }
     // System.Int32 GetHashCode()
 // docid: M:System.Numerics.Matrix3x2.GetHashCode
-    /**
-    Returns the hash code for this instance.
-
-    - Returns: The hash code.
-
-    */
     public override func GetHashCode() throws -> Swift.Int32 {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Matrix3x2_i32__GetHashCode_0__0(&__thrown, self.get_handle());
@@ -394,20 +241,12 @@ public final class Matrix3x2
     }
     // bool Invert(System.Numerics.Matrix3x2, ref System.Numerics.Matrix3x2)
 // docid: M:System.Numerics.Matrix3x2.Invert(System.Numerics.Matrix3x2,System.Numerics.Matrix3x2@)
-    /**
-    Inverts the specified matrix. The return value indicates whether the operation succeeded.
-
-    - Parameter matrix: The matrix to invert.
-    - Parameter result: When this method returns, contains the inverted matrix if the operation succeeded.
-    - Returns: 
-         if  was converted successfully; otherwise,  .
-
-    */
-    public class func Invert(matrix : dotnet.System.Numerics.Matrix3x2, result : inout dotnet.System.Numerics.Matrix3x2) throws -> Bool {
+    public class func Invert(matrix : dotnet.System.Numerics.Matrix3x2, result : inout Optional<dotnet.System.Numerics.Matrix3x2>) throws -> Bool {
         var __thrown : NullableHandle = nil;
-            var _tmp_out_result = result.get_handle();
+            var _tmp_out_result = (result != nil) ? (result!.get_handle()) : nil;
         let __return = System_Numerics_Matrix3x2_bool__Invert_0__2__Matrix3x2_outMatrix3x2(&__thrown, matrix.get_handle(), &_tmp_out_result);
-        let _tmp2_result = dotnet.System.Numerics.Matrix3x2(hndl: _tmp_out_result);
+        let __h__tmp2_result = _tmp_out_result;
+        let _tmp2_result = (__h__tmp2_result != nil) ? dotnet.System.Numerics.Matrix3x2(hndl: __h__tmp2_result!) : nil;
             result = _tmp2_result;
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
@@ -417,15 +256,6 @@ public final class Matrix3x2
     }
     // System.Numerics.Matrix3x2 Lerp(System.Numerics.Matrix3x2, System.Numerics.Matrix3x2, System.Single)
 // docid: M:System.Numerics.Matrix3x2.Lerp(System.Numerics.Matrix3x2,System.Numerics.Matrix3x2,System.Single)
-    /**
-    Performs a linear interpolation from one matrix to a second matrix based on a value that specifies the weighting of the second matrix.
-
-    - Parameter matrix1: The first matrix.
-    - Parameter matrix2: The second matrix.
-    - Parameter amount: The relative weighting of .
-    - Returns: The interpolated matrix.
-
-    */
     public class func Lerp(matrix1 : dotnet.System.Numerics.Matrix3x2, matrix2 : dotnet.System.Numerics.Matrix3x2, amount : Swift.Float) throws -> dotnet.System.Numerics.Matrix3x2 {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Matrix3x2_Matrix3x2__Lerp_0__3__Matrix3x2_Matrix3x2_f32(&__thrown, matrix1.get_handle(), matrix2.get_handle(), amount);
@@ -437,14 +267,6 @@ public final class Matrix3x2
     }
     // System.Numerics.Matrix3x2 Multiply(System.Numerics.Matrix3x2, System.Numerics.Matrix3x2)
 // docid: M:System.Numerics.Matrix3x2.Multiply(System.Numerics.Matrix3x2,System.Numerics.Matrix3x2)
-    /**
-    Returns the matrix that results from multiplying two matrices together.
-
-    - Parameter value1: The first matrix.
-    - Parameter value2: The second matrix.
-    - Returns: The product matrix.
-
-    */
     public class func Multiply(value1 : dotnet.System.Numerics.Matrix3x2, value2 : dotnet.System.Numerics.Matrix3x2) throws -> dotnet.System.Numerics.Matrix3x2 {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Matrix3x2_Matrix3x2__Multiply_0__2__Matrix3x2_Matrix3x2(&__thrown, value1.get_handle(), value2.get_handle());
@@ -456,14 +278,6 @@ public final class Matrix3x2
     }
     // System.Numerics.Matrix3x2 Multiply(System.Numerics.Matrix3x2, System.Single)
 // docid: M:System.Numerics.Matrix3x2.Multiply(System.Numerics.Matrix3x2,System.Single)
-    /**
-    Returns the matrix that results from scaling all the elements of a specified matrix by a scalar factor.
-
-    - Parameter value1: The matrix to scale.
-    - Parameter value2: The scaling value to use.
-    - Returns: The scaled matrix.
-
-    */
     public class func Multiply(value1 : dotnet.System.Numerics.Matrix3x2, value2 : Swift.Float) throws -> dotnet.System.Numerics.Matrix3x2 {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Matrix3x2_Matrix3x2__Multiply_0__2__Matrix3x2_f32(&__thrown, value1.get_handle(), value2);
@@ -475,13 +289,6 @@ public final class Matrix3x2
     }
     // System.Numerics.Matrix3x2 Negate(System.Numerics.Matrix3x2)
 // docid: M:System.Numerics.Matrix3x2.Negate(System.Numerics.Matrix3x2)
-    /**
-    Negates the specified matrix by multiplying all its values by -1.
-
-    - Parameter value: The matrix to negate.
-    - Returns: The negated matrix.
-
-    */
     public class func Negate(value : dotnet.System.Numerics.Matrix3x2) throws -> dotnet.System.Numerics.Matrix3x2 {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Matrix3x2_Matrix3x2__Negate_0__1__Matrix3x2(&__thrown, value.get_handle());
@@ -493,14 +300,6 @@ public final class Matrix3x2
     }
     // [IsSpecialName] System.Numerics.Matrix3x2 op_Addition(System.Numerics.Matrix3x2, System.Numerics.Matrix3x2)
 // docid: M:System.Numerics.Matrix3x2.op_Addition(System.Numerics.Matrix3x2,System.Numerics.Matrix3x2)
-    /**
-    Adds each element in one matrix with its corresponding element in a second matrix.
-
-    - Parameter value1: The first matrix.
-    - Parameter value2: The second matrix.
-    - Returns: The matrix that contains the summed values.
-
-    */
     public class func op_Addition(value1 : dotnet.System.Numerics.Matrix3x2, value2 : dotnet.System.Numerics.Matrix3x2) throws -> dotnet.System.Numerics.Matrix3x2 {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Matrix3x2_Matrix3x2__op_Addition_0__2__Matrix3x2_Matrix3x2(&__thrown, value1.get_handle(), value2.get_handle());
@@ -512,15 +311,6 @@ public final class Matrix3x2
     }
     // [IsSpecialName] bool op_Equality(System.Numerics.Matrix3x2, System.Numerics.Matrix3x2)
 // docid: M:System.Numerics.Matrix3x2.op_Equality(System.Numerics.Matrix3x2,System.Numerics.Matrix3x2)
-    /**
-    Returns a value that indicates whether the specified matrices are equal.
-
-    - Parameter value1: The first matrix to compare.
-    - Parameter value2: The second matrix to compare.
-    - Returns: 
-         if  and  are equal; otherwise, .
-
-    */
     public class func op_Equality(value1 : dotnet.System.Numerics.Matrix3x2, value2 : dotnet.System.Numerics.Matrix3x2) throws -> Bool {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Matrix3x2_bool__op_Equality_0__2__Matrix3x2_Matrix3x2(&__thrown, value1.get_handle(), value2.get_handle());
@@ -532,15 +322,6 @@ public final class Matrix3x2
     }
     // [IsSpecialName] bool op_Inequality(System.Numerics.Matrix3x2, System.Numerics.Matrix3x2)
 // docid: M:System.Numerics.Matrix3x2.op_Inequality(System.Numerics.Matrix3x2,System.Numerics.Matrix3x2)
-    /**
-    Returns a value that indicates whether the specified matrices are not equal.
-
-    - Parameter value1: The first matrix to compare.
-    - Parameter value2: The second matrix to compare.
-    - Returns: 
-         if  and  are not equal; otherwise, .
-
-    */
     public class func op_Inequality(value1 : dotnet.System.Numerics.Matrix3x2, value2 : dotnet.System.Numerics.Matrix3x2) throws -> Bool {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Matrix3x2_bool__op_Inequality_0__2__Matrix3x2_Matrix3x2(&__thrown, value1.get_handle(), value2.get_handle());
@@ -552,14 +333,6 @@ public final class Matrix3x2
     }
     // [IsSpecialName] System.Numerics.Matrix3x2 op_Multiply(System.Numerics.Matrix3x2, System.Numerics.Matrix3x2)
 // docid: M:System.Numerics.Matrix3x2.op_Multiply(System.Numerics.Matrix3x2,System.Numerics.Matrix3x2)
-    /**
-    Returns the matrix that results from multiplying two matrices together.
-
-    - Parameter value1: The first matrix.
-    - Parameter value2: The second matrix.
-    - Returns: The product matrix.
-
-    */
     public class func op_Multiply(value1 : dotnet.System.Numerics.Matrix3x2, value2 : dotnet.System.Numerics.Matrix3x2) throws -> dotnet.System.Numerics.Matrix3x2 {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Matrix3x2_Matrix3x2__op_Multiply_0__2__Matrix3x2_Matrix3x2(&__thrown, value1.get_handle(), value2.get_handle());
@@ -571,14 +344,6 @@ public final class Matrix3x2
     }
     // [IsSpecialName] System.Numerics.Matrix3x2 op_Multiply(System.Numerics.Matrix3x2, System.Single)
 // docid: M:System.Numerics.Matrix3x2.op_Multiply(System.Numerics.Matrix3x2,System.Single)
-    /**
-    Returns the matrix that results from scaling all the elements of a specified matrix by a scalar factor.
-
-    - Parameter value1: The matrix to scale.
-    - Parameter value2: The scaling value to use.
-    - Returns: The scaled matrix.
-
-    */
     public class func op_Multiply(value1 : dotnet.System.Numerics.Matrix3x2, value2 : Swift.Float) throws -> dotnet.System.Numerics.Matrix3x2 {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Matrix3x2_Matrix3x2__op_Multiply_0__2__Matrix3x2_f32(&__thrown, value1.get_handle(), value2);
@@ -590,14 +355,6 @@ public final class Matrix3x2
     }
     // [IsSpecialName] System.Numerics.Matrix3x2 op_Subtraction(System.Numerics.Matrix3x2, System.Numerics.Matrix3x2)
 // docid: M:System.Numerics.Matrix3x2.op_Subtraction(System.Numerics.Matrix3x2,System.Numerics.Matrix3x2)
-    /**
-    Subtracts each element in a second matrix from its corresponding element in a first matrix.
-
-    - Parameter value1: The first matrix.
-    - Parameter value2: The second matrix.
-    - Returns: The matrix containing the values that result from subtracting each element in  from its corresponding element in .
-
-    */
     public class func op_Subtraction(value1 : dotnet.System.Numerics.Matrix3x2, value2 : dotnet.System.Numerics.Matrix3x2) throws -> dotnet.System.Numerics.Matrix3x2 {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Matrix3x2_Matrix3x2__op_Subtraction_0__2__Matrix3x2_Matrix3x2(&__thrown, value1.get_handle(), value2.get_handle());
@@ -609,13 +366,6 @@ public final class Matrix3x2
     }
     // [IsSpecialName] System.Numerics.Matrix3x2 op_UnaryNegation(System.Numerics.Matrix3x2)
 // docid: M:System.Numerics.Matrix3x2.op_UnaryNegation(System.Numerics.Matrix3x2)
-    /**
-    Negates the specified matrix by multiplying all its values by -1.
-
-    - Parameter value: The matrix to negate.
-    - Returns: The negated matrix.
-
-    */
     public class func op_UnaryNegation(value : dotnet.System.Numerics.Matrix3x2) throws -> dotnet.System.Numerics.Matrix3x2 {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Matrix3x2_Matrix3x2__op_UnaryNegation_0__1__Matrix3x2(&__thrown, value.get_handle());
@@ -627,14 +377,6 @@ public final class Matrix3x2
     }
     // System.Numerics.Matrix3x2 Subtract(System.Numerics.Matrix3x2, System.Numerics.Matrix3x2)
 // docid: M:System.Numerics.Matrix3x2.Subtract(System.Numerics.Matrix3x2,System.Numerics.Matrix3x2)
-    /**
-    Subtracts each element in a second matrix from its corresponding element in a first matrix.
-
-    - Parameter value1: The first matrix.
-    - Parameter value2: The second matrix.
-    - Returns: The matrix containing the values that result from subtracting each element in  from its corresponding element in .
-
-    */
     public class func Subtract(value1 : dotnet.System.Numerics.Matrix3x2, value2 : dotnet.System.Numerics.Matrix3x2) throws -> dotnet.System.Numerics.Matrix3x2 {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Matrix3x2_Matrix3x2__Subtract_0__2__Matrix3x2_Matrix3x2(&__thrown, value1.get_handle(), value2.get_handle());
@@ -646,12 +388,6 @@ public final class Matrix3x2
     }
     // System.String ToString()
 // docid: M:System.Numerics.Matrix3x2.ToString
-    /**
-    Returns a string that represents this matrix.
-
-    - Returns: The string representation of this matrix.
-
-    */
     public override func ToString() throws -> dotnet.System.String {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Matrix3x2_String__ToString_0__0(&__thrown, self.get_handle());
@@ -710,10 +446,6 @@ public final class Matrix3x2
 
 // type: System.Numerics.Matrix4x4
 // boxed value type
-    /**
-    Represents a 4x4 matrix.
-
-    */
 public final class Matrix4x4
     :
     dotnet.System.Object
@@ -721,30 +453,21 @@ public final class Matrix4x4
     public class override func get_type_handle() -> TypeHandle {
         return System_Numerics_Matrix4x4_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
-    /**
-    Gets the multiplicative identity matrix.
-
-    */
     public static var Identity : dotnet.System.Numerics.Matrix4x4 {
         get {
             return try! get_Identity();
         }
     }
-    /**
-    Indicates whether the current matrix is the identity matrix.
-
-    */
     public var IsIdentity : Bool {
         get {
             return try! get_IsIdentity();
         }
     }
-    /**
-    Gets or sets the translation component of this matrix.
-
-    */
     public var Translation : dotnet.System.Numerics.Vector3 {
         get {
             return try! get_Translation();
@@ -755,11 +478,6 @@ public final class Matrix4x4
     }
     // .ctor(System.Numerics.Matrix3x2)
 // docid: M:System.Numerics.Matrix4x4.#ctor(System.Numerics.Matrix3x2)
-    /**
-    Creates a  object from a specified  object.
-
-    - Parameter value: A 3x2 matrix.
-    */
     public init(value : dotnet.System.Numerics.Matrix3x2) throws {
         var __thrown : NullableHandle = nil;
         let h = System_Numerics_Matrix4x4_ctor_0__1__Matrix3x2(&__thrown, value.get_handle());
@@ -771,26 +489,6 @@ public final class Matrix4x4
     }
     // .ctor(System.Single, System.Single, System.Single, System.Single, System.Single, System.Single, System.Single, System.Single, System.Single, System.Single, System.Single, System.Single, System.Single, System.Single, System.Single, System.Single)
 // docid: M:System.Numerics.Matrix4x4.#ctor(System.Single,System.Single,System.Single,System.Single,System.Single,System.Single,System.Single,System.Single,System.Single,System.Single,System.Single,System.Single,System.Single,System.Single,System.Single,System.Single)
-    /**
-    Creates a 4x4 matrix from the specified components.
-
-    - Parameter m11: The value to assign to the first element in the first row.
-    - Parameter m12: The value to assign to the second element in the first row.
-    - Parameter m13: The value to assign to the third element in the first row.
-    - Parameter m14: The value to assign to the fourth element in the first row.
-    - Parameter m21: The value to assign to the first element in the second row.
-    - Parameter m22: The value to assign to the second element in the second row.
-    - Parameter m23: The value to assign to the third element in the second row.
-    - Parameter m24: The value to assign to the third element in the second row.
-    - Parameter m31: The value to assign to the first element in the third row.
-    - Parameter m32: The value to assign to the second element in the third row.
-    - Parameter m33: The value to assign to the third element in the third row.
-    - Parameter m34: The value to assign to the fourth element in the third row.
-    - Parameter m41: The value to assign to the first element in the fourth row.
-    - Parameter m42: The value to assign to the second element in the fourth row.
-    - Parameter m43: The value to assign to the third element in the fourth row.
-    - Parameter m44: The value to assign to the fourth element in the fourth row.
-    */
     public init(m11 : Swift.Float, m12 : Swift.Float, m13 : Swift.Float, m14 : Swift.Float, m21 : Swift.Float, m22 : Swift.Float, m23 : Swift.Float, m24 : Swift.Float, m31 : Swift.Float, m32 : Swift.Float, m33 : Swift.Float, m34 : Swift.Float, m41 : Swift.Float, m42 : Swift.Float, m43 : Swift.Float, m44 : Swift.Float) throws {
         var __thrown : NullableHandle = nil;
         let h = System_Numerics_Matrix4x4_ctor_0__16__f32_f32_f32_f32_f32_f32_f32_f32_f32_f32_f32_f32_f32_f32_f32_f32(&__thrown, m11, m12, m13, m14, m21, m22, m23, m24, m31, m32, m33, m34, m41, m42, m43, m44);
@@ -806,14 +504,6 @@ public final class Matrix4x4
     }
     // System.Numerics.Matrix4x4 Add(System.Numerics.Matrix4x4, System.Numerics.Matrix4x4)
 // docid: M:System.Numerics.Matrix4x4.Add(System.Numerics.Matrix4x4,System.Numerics.Matrix4x4)
-    /**
-    Adds each element in one matrix with its corresponding element in a second matrix.
-
-    - Parameter value1: The first matrix.
-    - Parameter value2: The second matrix.
-    - Returns: The matrix that contains the summed values of  and .
-
-    */
     public class func Add(value1 : dotnet.System.Numerics.Matrix4x4, value2 : dotnet.System.Numerics.Matrix4x4) throws -> dotnet.System.Numerics.Matrix4x4 {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Matrix4x4_Matrix4x4__Add_0__2__Matrix4x4_Matrix4x4(&__thrown, value1.get_handle(), value2.get_handle());
@@ -825,16 +515,6 @@ public final class Matrix4x4
     }
     // System.Numerics.Matrix4x4 CreateBillboard(System.Numerics.Vector3, System.Numerics.Vector3, System.Numerics.Vector3, System.Numerics.Vector3)
 // docid: M:System.Numerics.Matrix4x4.CreateBillboard(System.Numerics.Vector3,System.Numerics.Vector3,System.Numerics.Vector3,System.Numerics.Vector3)
-    /**
-    Creates a spherical billboard that rotates around a specified object position.
-
-    - Parameter objectPosition: The position of the object that the billboard will rotate around.
-    - Parameter cameraPosition: The position of the camera.
-    - Parameter cameraUpVector: The up vector of the camera.
-    - Parameter cameraForwardVector: The forward vector of the camera.
-    - Returns: The created billboard.
-
-    */
     public class func CreateBillboard(objectPosition : dotnet.System.Numerics.Vector3, cameraPosition : dotnet.System.Numerics.Vector3, cameraUpVector : dotnet.System.Numerics.Vector3, cameraForwardVector : dotnet.System.Numerics.Vector3) throws -> dotnet.System.Numerics.Matrix4x4 {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Matrix4x4_Matrix4x4__CreateBillboard_0__4__Vector3_Vector3_Vector3_Vector3(&__thrown, objectPosition.get_handle(), cameraPosition.get_handle(), cameraUpVector.get_handle(), cameraForwardVector.get_handle());
@@ -846,17 +526,6 @@ public final class Matrix4x4
     }
     // System.Numerics.Matrix4x4 CreateConstrainedBillboard(System.Numerics.Vector3, System.Numerics.Vector3, System.Numerics.Vector3, System.Numerics.Vector3, System.Numerics.Vector3)
 // docid: M:System.Numerics.Matrix4x4.CreateConstrainedBillboard(System.Numerics.Vector3,System.Numerics.Vector3,System.Numerics.Vector3,System.Numerics.Vector3,System.Numerics.Vector3)
-    /**
-    Creates a cylindrical billboard that rotates around a specified axis.
-
-    - Parameter objectPosition: The position of the object that the billboard will rotate around.
-    - Parameter cameraPosition: The position of the camera.
-    - Parameter rotateAxis: The axis to rotate the billboard around.
-    - Parameter cameraForwardVector: The forward vector of the camera.
-    - Parameter objectForwardVector: The forward vector of the object.
-    - Returns: The billboard matrix.
-
-    */
     public class func CreateConstrainedBillboard(objectPosition : dotnet.System.Numerics.Vector3, cameraPosition : dotnet.System.Numerics.Vector3, rotateAxis : dotnet.System.Numerics.Vector3, cameraForwardVector : dotnet.System.Numerics.Vector3, objectForwardVector : dotnet.System.Numerics.Vector3) throws -> dotnet.System.Numerics.Matrix4x4 {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Matrix4x4_Matrix4x4__CreateConstrainedBillboard_0__5__Vector3_Vector3_Vector3_Vector3_Vector3(&__thrown, objectPosition.get_handle(), cameraPosition.get_handle(), rotateAxis.get_handle(), cameraForwardVector.get_handle(), objectForwardVector.get_handle());
@@ -868,14 +537,6 @@ public final class Matrix4x4
     }
     // System.Numerics.Matrix4x4 CreateFromAxisAngle(System.Numerics.Vector3, System.Single)
 // docid: M:System.Numerics.Matrix4x4.CreateFromAxisAngle(System.Numerics.Vector3,System.Single)
-    /**
-    Creates a matrix that rotates around an arbitrary vector.
-
-    - Parameter axis: The axis to rotate around.
-    - Parameter angle: The angle to rotate around , in radians.
-    - Returns: The rotation matrix.
-
-    */
     public class func CreateFromAxisAngle(axis : dotnet.System.Numerics.Vector3, angle : Swift.Float) throws -> dotnet.System.Numerics.Matrix4x4 {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Matrix4x4_Matrix4x4__CreateFromAxisAngle_0__2__Vector3_f32(&__thrown, axis.get_handle(), angle);
@@ -887,13 +548,6 @@ public final class Matrix4x4
     }
     // System.Numerics.Matrix4x4 CreateFromQuaternion(System.Numerics.Quaternion)
 // docid: M:System.Numerics.Matrix4x4.CreateFromQuaternion(System.Numerics.Quaternion)
-    /**
-    Creates a rotation matrix from the specified Quaternion rotation value.
-
-    - Parameter quaternion: The source Quaternion.
-    - Returns: The rotation matrix.
-
-    */
     public class func CreateFromQuaternion(quaternion : dotnet.System.Numerics.Quaternion) throws -> dotnet.System.Numerics.Matrix4x4 {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Matrix4x4_Matrix4x4__CreateFromQuaternion_0__1__Quaternion(&__thrown, quaternion.get_handle());
@@ -905,15 +559,6 @@ public final class Matrix4x4
     }
     // System.Numerics.Matrix4x4 CreateFromYawPitchRoll(System.Single, System.Single, System.Single)
 // docid: M:System.Numerics.Matrix4x4.CreateFromYawPitchRoll(System.Single,System.Single,System.Single)
-    /**
-    Creates a rotation matrix from the specified yaw, pitch, and roll.
-
-    - Parameter yaw: The angle of rotation, in radians, around the Y axis.
-    - Parameter pitch: The angle of rotation, in radians, around the X axis.
-    - Parameter roll: The angle of rotation, in radians, around the Z axis.
-    - Returns: The rotation matrix.
-
-    */
     public class func CreateFromYawPitchRoll(yaw : Swift.Float, pitch : Swift.Float, roll : Swift.Float) throws -> dotnet.System.Numerics.Matrix4x4 {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Matrix4x4_Matrix4x4__CreateFromYawPitchRoll_0__3__f32_f32_f32(&__thrown, yaw, pitch, roll);
@@ -925,15 +570,6 @@ public final class Matrix4x4
     }
     // System.Numerics.Matrix4x4 CreateLookAt(System.Numerics.Vector3, System.Numerics.Vector3, System.Numerics.Vector3)
 // docid: M:System.Numerics.Matrix4x4.CreateLookAt(System.Numerics.Vector3,System.Numerics.Vector3,System.Numerics.Vector3)
-    /**
-    Creates a view matrix.
-
-    - Parameter cameraPosition: The position of the camera.
-    - Parameter cameraTarget: The target towards which the camera is pointing.
-    - Parameter cameraUpVector: The direction that is "up" from the camera's point of view.
-    - Returns: The view matrix.
-
-    */
     public class func CreateLookAt(cameraPosition : dotnet.System.Numerics.Vector3, cameraTarget : dotnet.System.Numerics.Vector3, cameraUpVector : dotnet.System.Numerics.Vector3) throws -> dotnet.System.Numerics.Matrix4x4 {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Matrix4x4_Matrix4x4__CreateLookAt_0__3__Vector3_Vector3_Vector3(&__thrown, cameraPosition.get_handle(), cameraTarget.get_handle(), cameraUpVector.get_handle());
@@ -945,16 +581,6 @@ public final class Matrix4x4
     }
     // System.Numerics.Matrix4x4 CreateOrthographic(System.Single, System.Single, System.Single, System.Single)
 // docid: M:System.Numerics.Matrix4x4.CreateOrthographic(System.Single,System.Single,System.Single,System.Single)
-    /**
-    Creates an orthographic perspective matrix from the given view volume dimensions.
-
-    - Parameter width: The width of the view volume.
-    - Parameter height: The height of the view volume.
-    - Parameter zNearPlane: The minimum Z-value of the view volume.
-    - Parameter zFarPlane: The maximum Z-value of the view volume.
-    - Returns: The orthographic projection matrix.
-
-    */
     public class func CreateOrthographic(width : Swift.Float, height : Swift.Float, zNearPlane : Swift.Float, zFarPlane : Swift.Float) throws -> dotnet.System.Numerics.Matrix4x4 {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Matrix4x4_Matrix4x4__CreateOrthographic_0__4__f32_f32_f32_f32(&__thrown, width, height, zNearPlane, zFarPlane);
@@ -966,18 +592,6 @@ public final class Matrix4x4
     }
     // System.Numerics.Matrix4x4 CreateOrthographicOffCenter(System.Single, System.Single, System.Single, System.Single, System.Single, System.Single)
 // docid: M:System.Numerics.Matrix4x4.CreateOrthographicOffCenter(System.Single,System.Single,System.Single,System.Single,System.Single,System.Single)
-    /**
-    Creates a customized orthographic projection matrix.
-
-    - Parameter left: The minimum X-value of the view volume.
-    - Parameter right: The maximum X-value of the view volume.
-    - Parameter bottom: The minimum Y-value of the view volume.
-    - Parameter top: The maximum Y-value of the view volume.
-    - Parameter zNearPlane: The minimum Z-value of the view volume.
-    - Parameter zFarPlane: The maximum Z-value of the view volume.
-    - Returns: The orthographic projection matrix.
-
-    */
     public class func CreateOrthographicOffCenter(left : Swift.Float, right : Swift.Float, bottom : Swift.Float, top : Swift.Float, zNearPlane : Swift.Float, zFarPlane : Swift.Float) throws -> dotnet.System.Numerics.Matrix4x4 {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Matrix4x4_Matrix4x4__CreateOrthographicOffCenter_0__6__f32_f32_f32_f32_f32_f32(&__thrown, left, right, bottom, top, zNearPlane, zFarPlane);
@@ -989,16 +603,6 @@ public final class Matrix4x4
     }
     // System.Numerics.Matrix4x4 CreatePerspective(System.Single, System.Single, System.Single, System.Single)
 // docid: M:System.Numerics.Matrix4x4.CreatePerspective(System.Single,System.Single,System.Single,System.Single)
-    /**
-    Creates a perspective projection matrix from the given view volume dimensions.
-
-    - Parameter width: The width of the view volume at the near view plane.
-    - Parameter height: The height of the view volume at the near view plane.
-    - Parameter nearPlaneDistance: The distance to the near view plane.
-    - Parameter farPlaneDistance: The distance to the far view plane.
-    - Returns: The perspective projection matrix.
-
-    */
     public class func CreatePerspective(width : Swift.Float, height : Swift.Float, nearPlaneDistance : Swift.Float, farPlaneDistance : Swift.Float) throws -> dotnet.System.Numerics.Matrix4x4 {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Matrix4x4_Matrix4x4__CreatePerspective_0__4__f32_f32_f32_f32(&__thrown, width, height, nearPlaneDistance, farPlaneDistance);
@@ -1010,16 +614,6 @@ public final class Matrix4x4
     }
     // System.Numerics.Matrix4x4 CreatePerspectiveFieldOfView(System.Single, System.Single, System.Single, System.Single)
 // docid: M:System.Numerics.Matrix4x4.CreatePerspectiveFieldOfView(System.Single,System.Single,System.Single,System.Single)
-    /**
-    Creates a perspective projection matrix based on a field of view, aspect ratio, and near and far view plane distances.
-
-    - Parameter fieldOfView: The field of view in the y direction, in radians.
-    - Parameter aspectRatio: The aspect ratio, defined as view space width divided by height.
-    - Parameter nearPlaneDistance: The distance to the near view plane.
-    - Parameter farPlaneDistance: The distance to the far view plane.
-    - Returns: The perspective projection matrix.
-
-    */
     public class func CreatePerspectiveFieldOfView(fieldOfView : Swift.Float, aspectRatio : Swift.Float, nearPlaneDistance : Swift.Float, farPlaneDistance : Swift.Float) throws -> dotnet.System.Numerics.Matrix4x4 {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Matrix4x4_Matrix4x4__CreatePerspectiveFieldOfView_0__4__f32_f32_f32_f32(&__thrown, fieldOfView, aspectRatio, nearPlaneDistance, farPlaneDistance);
@@ -1031,18 +625,6 @@ public final class Matrix4x4
     }
     // System.Numerics.Matrix4x4 CreatePerspectiveOffCenter(System.Single, System.Single, System.Single, System.Single, System.Single, System.Single)
 // docid: M:System.Numerics.Matrix4x4.CreatePerspectiveOffCenter(System.Single,System.Single,System.Single,System.Single,System.Single,System.Single)
-    /**
-    Creates a customized perspective projection matrix.
-
-    - Parameter left: The minimum x-value of the view volume at the near view plane.
-    - Parameter right: The maximum x-value of the view volume at the near view plane.
-    - Parameter bottom: The minimum y-value of the view volume at the near view plane.
-    - Parameter top: The maximum y-value of the view volume at the near view plane.
-    - Parameter nearPlaneDistance: The distance to the near view plane.
-    - Parameter farPlaneDistance: The distance to the far view plane.
-    - Returns: The perspective projection matrix.
-
-    */
     public class func CreatePerspectiveOffCenter(left : Swift.Float, right : Swift.Float, bottom : Swift.Float, top : Swift.Float, nearPlaneDistance : Swift.Float, farPlaneDistance : Swift.Float) throws -> dotnet.System.Numerics.Matrix4x4 {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Matrix4x4_Matrix4x4__CreatePerspectiveOffCenter_0__6__f32_f32_f32_f32_f32_f32(&__thrown, left, right, bottom, top, nearPlaneDistance, farPlaneDistance);
@@ -1054,13 +636,6 @@ public final class Matrix4x4
     }
     // System.Numerics.Matrix4x4 CreateReflection(System.Numerics.Plane)
 // docid: M:System.Numerics.Matrix4x4.CreateReflection(System.Numerics.Plane)
-    /**
-    Creates a matrix that reflects the coordinate system about a specified plane.
-
-    - Parameter value: The plane about which to create a reflection.
-    - Returns: A new matrix expressing the reflection.
-
-    */
     public class func CreateReflection(value : dotnet.System.Numerics.Plane) throws -> dotnet.System.Numerics.Matrix4x4 {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Matrix4x4_Matrix4x4__CreateReflection_0__1__Plane(&__thrown, value.get_handle());
@@ -1072,13 +647,6 @@ public final class Matrix4x4
     }
     // System.Numerics.Matrix4x4 CreateRotationX(System.Single)
 // docid: M:System.Numerics.Matrix4x4.CreateRotationX(System.Single)
-    /**
-    Creates a matrix for rotating points around the X axis.
-
-    - Parameter radians: The amount, in radians, by which to rotate around the X axis.
-    - Returns: The rotation matrix.
-
-    */
     public class func CreateRotationX(radians : Swift.Float) throws -> dotnet.System.Numerics.Matrix4x4 {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Matrix4x4_Matrix4x4__CreateRotationX_0__1__f32(&__thrown, radians);
@@ -1090,14 +658,6 @@ public final class Matrix4x4
     }
     // System.Numerics.Matrix4x4 CreateRotationX(System.Single, System.Numerics.Vector3)
 // docid: M:System.Numerics.Matrix4x4.CreateRotationX(System.Single,System.Numerics.Vector3)
-    /**
-    Creates a matrix for rotating points around the X axis from a center point.
-
-    - Parameter radians: The amount, in radians, by which to rotate around the X axis.
-    - Parameter centerPoint: The center point.
-    - Returns: The rotation matrix.
-
-    */
     public class func CreateRotationX(radians : Swift.Float, centerPoint : dotnet.System.Numerics.Vector3) throws -> dotnet.System.Numerics.Matrix4x4 {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Matrix4x4_Matrix4x4__CreateRotationX_0__2__f32_Vector3(&__thrown, radians, centerPoint.get_handle());
@@ -1109,13 +669,6 @@ public final class Matrix4x4
     }
     // System.Numerics.Matrix4x4 CreateRotationY(System.Single)
 // docid: M:System.Numerics.Matrix4x4.CreateRotationY(System.Single)
-    /**
-    Creates a matrix for rotating points around the Y axis.
-
-    - Parameter radians: The amount, in radians, by which to rotate around the Y-axis.
-    - Returns: The rotation matrix.
-
-    */
     public class func CreateRotationY(radians : Swift.Float) throws -> dotnet.System.Numerics.Matrix4x4 {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Matrix4x4_Matrix4x4__CreateRotationY_0__1__f32(&__thrown, radians);
@@ -1127,14 +680,6 @@ public final class Matrix4x4
     }
     // System.Numerics.Matrix4x4 CreateRotationY(System.Single, System.Numerics.Vector3)
 // docid: M:System.Numerics.Matrix4x4.CreateRotationY(System.Single,System.Numerics.Vector3)
-    /**
-    The amount, in radians, by which to rotate around the Y axis from a center point.
-
-    - Parameter radians: The amount, in radians, by which to rotate around the Y-axis.
-    - Parameter centerPoint: The center point.
-    - Returns: The rotation matrix.
-
-    */
     public class func CreateRotationY(radians : Swift.Float, centerPoint : dotnet.System.Numerics.Vector3) throws -> dotnet.System.Numerics.Matrix4x4 {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Matrix4x4_Matrix4x4__CreateRotationY_0__2__f32_Vector3(&__thrown, radians, centerPoint.get_handle());
@@ -1146,13 +691,6 @@ public final class Matrix4x4
     }
     // System.Numerics.Matrix4x4 CreateRotationZ(System.Single)
 // docid: M:System.Numerics.Matrix4x4.CreateRotationZ(System.Single)
-    /**
-    Creates a matrix for rotating points around the Z axis.
-
-    - Parameter radians: The amount, in radians, by which to rotate around the Z-axis.
-    - Returns: The rotation matrix.
-
-    */
     public class func CreateRotationZ(radians : Swift.Float) throws -> dotnet.System.Numerics.Matrix4x4 {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Matrix4x4_Matrix4x4__CreateRotationZ_0__1__f32(&__thrown, radians);
@@ -1164,14 +702,6 @@ public final class Matrix4x4
     }
     // System.Numerics.Matrix4x4 CreateRotationZ(System.Single, System.Numerics.Vector3)
 // docid: M:System.Numerics.Matrix4x4.CreateRotationZ(System.Single,System.Numerics.Vector3)
-    /**
-    Creates a matrix for rotating points around the Z axis from a center point.
-
-    - Parameter radians: The amount, in radians, by which to rotate around the Z-axis.
-    - Parameter centerPoint: The center point.
-    - Returns: The rotation matrix.
-
-    */
     public class func CreateRotationZ(radians : Swift.Float, centerPoint : dotnet.System.Numerics.Vector3) throws -> dotnet.System.Numerics.Matrix4x4 {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Matrix4x4_Matrix4x4__CreateRotationZ_0__2__f32_Vector3(&__thrown, radians, centerPoint.get_handle());
@@ -1183,13 +713,6 @@ public final class Matrix4x4
     }
     // System.Numerics.Matrix4x4 CreateScale(System.Numerics.Vector3)
 // docid: M:System.Numerics.Matrix4x4.CreateScale(System.Numerics.Vector3)
-    /**
-    Creates a scaling matrix from the specified vector scale.
-
-    - Parameter scales: The scale to use.
-    - Returns: The scaling matrix.
-
-    */
     public class func CreateScale(scales : dotnet.System.Numerics.Vector3) throws -> dotnet.System.Numerics.Matrix4x4 {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Matrix4x4_Matrix4x4__CreateScale_0__1__Vector3(&__thrown, scales.get_handle());
@@ -1201,14 +724,6 @@ public final class Matrix4x4
     }
     // System.Numerics.Matrix4x4 CreateScale(System.Numerics.Vector3, System.Numerics.Vector3)
 // docid: M:System.Numerics.Matrix4x4.CreateScale(System.Numerics.Vector3,System.Numerics.Vector3)
-    /**
-    Creates a scaling matrix with a center point.
-
-    - Parameter scales: The vector that contains the amount to scale on each axis.
-    - Parameter centerPoint: The center point.
-    - Returns: The scaling matrix.
-
-    */
     public class func CreateScale(scales : dotnet.System.Numerics.Vector3, centerPoint : dotnet.System.Numerics.Vector3) throws -> dotnet.System.Numerics.Matrix4x4 {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Matrix4x4_Matrix4x4__CreateScale_0__2__Vector3_Vector3(&__thrown, scales.get_handle(), centerPoint.get_handle());
@@ -1220,13 +735,6 @@ public final class Matrix4x4
     }
     // System.Numerics.Matrix4x4 CreateScale(System.Single)
 // docid: M:System.Numerics.Matrix4x4.CreateScale(System.Single)
-    /**
-    Creates a uniform scaling matrix that scale equally on each axis.
-
-    - Parameter scale: The uniform scaling factor.
-    - Returns: The scaling matrix.
-
-    */
     public class func CreateScale(scale : Swift.Float) throws -> dotnet.System.Numerics.Matrix4x4 {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Matrix4x4_Matrix4x4__CreateScale_0__1__f32(&__thrown, scale);
@@ -1238,14 +746,6 @@ public final class Matrix4x4
     }
     // System.Numerics.Matrix4x4 CreateScale(System.Single, System.Numerics.Vector3)
 // docid: M:System.Numerics.Matrix4x4.CreateScale(System.Single,System.Numerics.Vector3)
-    /**
-    Creates a uniform scaling matrix that scales equally on each axis with a center point.
-
-    - Parameter scale: The uniform scaling factor.
-    - Parameter centerPoint: The center point.
-    - Returns: The scaling matrix.
-
-    */
     public class func CreateScale(scale : Swift.Float, centerPoint : dotnet.System.Numerics.Vector3) throws -> dotnet.System.Numerics.Matrix4x4 {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Matrix4x4_Matrix4x4__CreateScale_0__2__f32_Vector3(&__thrown, scale, centerPoint.get_handle());
@@ -1257,15 +757,6 @@ public final class Matrix4x4
     }
     // System.Numerics.Matrix4x4 CreateScale(System.Single, System.Single, System.Single)
 // docid: M:System.Numerics.Matrix4x4.CreateScale(System.Single,System.Single,System.Single)
-    /**
-    Creates a scaling matrix from the specified X, Y, and Z components.
-
-    - Parameter xScale: The value to scale by on the X axis.
-    - Parameter yScale: The value to scale by on the Y axis.
-    - Parameter zScale: The value to scale by on the Z axis.
-    - Returns: The scaling matrix.
-
-    */
     public class func CreateScale(xScale : Swift.Float, yScale : Swift.Float, zScale : Swift.Float) throws -> dotnet.System.Numerics.Matrix4x4 {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Matrix4x4_Matrix4x4__CreateScale_0__3__f32_f32_f32(&__thrown, xScale, yScale, zScale);
@@ -1277,16 +768,6 @@ public final class Matrix4x4
     }
     // System.Numerics.Matrix4x4 CreateScale(System.Single, System.Single, System.Single, System.Numerics.Vector3)
 // docid: M:System.Numerics.Matrix4x4.CreateScale(System.Single,System.Single,System.Single,System.Numerics.Vector3)
-    /**
-    Creates a scaling matrix that is offset by a given center point.
-
-    - Parameter xScale: The value to scale by on the X axis.
-    - Parameter yScale: The value to scale by on the Y axis.
-    - Parameter zScale: The value to scale by on the Z axis.
-    - Parameter centerPoint: The center point.
-    - Returns: The scaling matrix.
-
-    */
     public class func CreateScale(xScale : Swift.Float, yScale : Swift.Float, zScale : Swift.Float, centerPoint : dotnet.System.Numerics.Vector3) throws -> dotnet.System.Numerics.Matrix4x4 {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Matrix4x4_Matrix4x4__CreateScale_0__4__f32_f32_f32_Vector3(&__thrown, xScale, yScale, zScale, centerPoint.get_handle());
@@ -1298,14 +779,6 @@ public final class Matrix4x4
     }
     // System.Numerics.Matrix4x4 CreateShadow(System.Numerics.Vector3, System.Numerics.Plane)
 // docid: M:System.Numerics.Matrix4x4.CreateShadow(System.Numerics.Vector3,System.Numerics.Plane)
-    /**
-    Creates a matrix that flattens geometry into a specified plane as if casting a shadow from a specified light source.
-
-    - Parameter lightDirection: The direction from which the light that will cast the shadow is coming.
-    - Parameter plane: The plane onto which the new matrix should flatten geometry so as to cast a shadow.
-    - Returns: A new matrix that can be used to flatten geometry onto the specified plane from the specified direction.
-
-    */
     public class func CreateShadow(lightDirection : dotnet.System.Numerics.Vector3, plane : dotnet.System.Numerics.Plane) throws -> dotnet.System.Numerics.Matrix4x4 {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Matrix4x4_Matrix4x4__CreateShadow_0__2__Vector3_Plane(&__thrown, lightDirection.get_handle(), plane.get_handle());
@@ -1317,13 +790,6 @@ public final class Matrix4x4
     }
     // System.Numerics.Matrix4x4 CreateTranslation(System.Numerics.Vector3)
 // docid: M:System.Numerics.Matrix4x4.CreateTranslation(System.Numerics.Vector3)
-    /**
-    Creates a translation matrix from the specified 3-dimensional vector.
-
-    - Parameter position: The amount to translate in each axis.
-    - Returns: The translation matrix.
-
-    */
     public class func CreateTranslation(position : dotnet.System.Numerics.Vector3) throws -> dotnet.System.Numerics.Matrix4x4 {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Matrix4x4_Matrix4x4__CreateTranslation_0__1__Vector3(&__thrown, position.get_handle());
@@ -1335,15 +801,6 @@ public final class Matrix4x4
     }
     // System.Numerics.Matrix4x4 CreateTranslation(System.Single, System.Single, System.Single)
 // docid: M:System.Numerics.Matrix4x4.CreateTranslation(System.Single,System.Single,System.Single)
-    /**
-    Creates a translation matrix from the specified X, Y, and Z components.
-
-    - Parameter xPosition: The amount to translate on the X axis.
-    - Parameter yPosition: The amount to translate on the Y axis.
-    - Parameter zPosition: The amount to translate on the Z axis.
-    - Returns: The translation matrix.
-
-    */
     public class func CreateTranslation(xPosition : Swift.Float, yPosition : Swift.Float, zPosition : Swift.Float) throws -> dotnet.System.Numerics.Matrix4x4 {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Matrix4x4_Matrix4x4__CreateTranslation_0__3__f32_f32_f32(&__thrown, xPosition, yPosition, zPosition);
@@ -1355,15 +812,6 @@ public final class Matrix4x4
     }
     // System.Numerics.Matrix4x4 CreateWorld(System.Numerics.Vector3, System.Numerics.Vector3, System.Numerics.Vector3)
 // docid: M:System.Numerics.Matrix4x4.CreateWorld(System.Numerics.Vector3,System.Numerics.Vector3,System.Numerics.Vector3)
-    /**
-    Creates a world matrix with the specified parameters.
-
-    - Parameter position: The position of the object.
-    - Parameter forward: The forward direction of the object.
-    - Parameter up: The upward direction of the object. Its value is usually [0, 1, 0].
-    - Returns: The world matrix.
-
-    */
     public class func CreateWorld(position : dotnet.System.Numerics.Vector3, forward : dotnet.System.Numerics.Vector3, up : dotnet.System.Numerics.Vector3) throws -> dotnet.System.Numerics.Matrix4x4 {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Matrix4x4_Matrix4x4__CreateWorld_0__3__Vector3_Vector3_Vector3(&__thrown, position.get_handle(), forward.get_handle(), up.get_handle());
@@ -1375,28 +823,20 @@ public final class Matrix4x4
     }
     // bool Decompose(System.Numerics.Matrix4x4, ref System.Numerics.Vector3, ref System.Numerics.Quaternion, ref System.Numerics.Vector3)
 // docid: M:System.Numerics.Matrix4x4.Decompose(System.Numerics.Matrix4x4,System.Numerics.Vector3@,System.Numerics.Quaternion@,System.Numerics.Vector3@)
-    /**
-    Attempts to extract the scale, translation, and rotation components from the given scale, rotation, or translation matrix. The return value indicates whether the operation succeeded.
-
-    - Parameter matrix: The source matrix.
-    - Parameter scale: When this method returns, contains the scaling component of the transformation matrix if the operation succeeded.
-    - Parameter rotation: When this method returns, contains the rotation component of the transformation matrix if the operation succeeded.
-    - Parameter translation: When the method returns, contains the translation component of the transformation matrix if the operation succeeded.
-    - Returns: 
-         if  was decomposed successfully; otherwise,  .
-
-    */
-    public class func Decompose(matrix : dotnet.System.Numerics.Matrix4x4, scale : inout dotnet.System.Numerics.Vector3, rotation : inout dotnet.System.Numerics.Quaternion, translation : inout dotnet.System.Numerics.Vector3) throws -> Bool {
+    public class func Decompose(matrix : dotnet.System.Numerics.Matrix4x4, scale : inout Optional<dotnet.System.Numerics.Vector3>, rotation : inout Optional<dotnet.System.Numerics.Quaternion>, translation : inout Optional<dotnet.System.Numerics.Vector3>) throws -> Bool {
         var __thrown : NullableHandle = nil;
-            var _tmp_out_scale = scale.get_handle();
-            var _tmp_out_rotation = rotation.get_handle();
-            var _tmp_out_translation = translation.get_handle();
+            var _tmp_out_scale = (scale != nil) ? (scale!.get_handle()) : nil;
+            var _tmp_out_rotation = (rotation != nil) ? (rotation!.get_handle()) : nil;
+            var _tmp_out_translation = (translation != nil) ? (translation!.get_handle()) : nil;
         let __return = System_Numerics_Matrix4x4_bool__Decompose_0__4__Matrix4x4_outVector3_outQuaternion_outVector3(&__thrown, matrix.get_handle(), &_tmp_out_scale, &_tmp_out_rotation, &_tmp_out_translation);
-        let _tmp2_scale = dotnet.System.Numerics.Vector3(hndl: _tmp_out_scale);
+        let __h__tmp2_scale = _tmp_out_scale;
+        let _tmp2_scale = (__h__tmp2_scale != nil) ? dotnet.System.Numerics.Vector3(hndl: __h__tmp2_scale!) : nil;
             scale = _tmp2_scale;
-        let _tmp2_rotation = dotnet.System.Numerics.Quaternion(hndl: _tmp_out_rotation);
+        let __h__tmp2_rotation = _tmp_out_rotation;
+        let _tmp2_rotation = (__h__tmp2_rotation != nil) ? dotnet.System.Numerics.Quaternion(hndl: __h__tmp2_rotation!) : nil;
             rotation = _tmp2_rotation;
-        let _tmp2_translation = dotnet.System.Numerics.Vector3(hndl: _tmp_out_translation);
+        let __h__tmp2_translation = _tmp_out_translation;
+        let _tmp2_translation = (__h__tmp2_translation != nil) ? dotnet.System.Numerics.Vector3(hndl: __h__tmp2_translation!) : nil;
             translation = _tmp2_translation;
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
@@ -1406,14 +846,6 @@ public final class Matrix4x4
     }
     // bool Equals(System.Numerics.Matrix4x4)
 // docid: M:System.Numerics.Matrix4x4.Equals(System.Numerics.Matrix4x4)
-    /**
-    Returns a value that indicates whether this instance and another 4x4 matrix are equal.
-
-    - Parameter other: The other matrix.
-    - Returns: 
-         if the two matrices are equal; otherwise, .
-
-    */
     public func Equals(other : dotnet.System.Numerics.Matrix4x4) throws -> Bool {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Matrix4x4_bool__Equals_0__1__Matrix4x4(&__thrown, self.get_handle(), other.get_handle());
@@ -1425,14 +857,6 @@ public final class Matrix4x4
     }
     // bool Equals(System.Object)
 // docid: M:System.Numerics.Matrix4x4.Equals(System.Object)
-    /**
-    Returns a value that indicates whether this instance and a specified object are equal.
-
-    - Parameter obj: The object to compare with the current instance.
-    - Returns: 
-         if the current instance and  are equal; otherwise, . If  is , the method returns .
-
-    */
     public override func Equals(obj : Optional<dotnet.System.Object>) throws -> Bool {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Matrix4x4_bool__Equals_0__1__Object(&__thrown, self.get_handle(), obj?.get_handle() ?? nil);
@@ -1444,12 +868,6 @@ public final class Matrix4x4
     }
     // System.Single GetDeterminant()
 // docid: M:System.Numerics.Matrix4x4.GetDeterminant
-    /**
-    Calculates the determinant of the current 4x4 matrix.
-
-    - Returns: The determinant.
-
-    */
     public func GetDeterminant() throws -> Swift.Float {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Matrix4x4_f32__GetDeterminant_0__0(&__thrown, self.get_handle());
@@ -1461,12 +879,6 @@ public final class Matrix4x4
     }
     // System.Int32 GetHashCode()
 // docid: M:System.Numerics.Matrix4x4.GetHashCode
-    /**
-    Returns the hash code for this instance.
-
-    - Returns: The hash code.
-
-    */
     public override func GetHashCode() throws -> Swift.Int32 {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Matrix4x4_i32__GetHashCode_0__0(&__thrown, self.get_handle());
@@ -1478,20 +890,12 @@ public final class Matrix4x4
     }
     // bool Invert(System.Numerics.Matrix4x4, ref System.Numerics.Matrix4x4)
 // docid: M:System.Numerics.Matrix4x4.Invert(System.Numerics.Matrix4x4,System.Numerics.Matrix4x4@)
-    /**
-    Inverts the specified matrix. The return value indicates whether the operation succeeded.
-
-    - Parameter matrix: The matrix to invert.
-    - Parameter result: When this method returns, contains the inverted matrix if the operation succeeded.
-    - Returns: 
-         if  was converted successfully; otherwise,  .
-
-    */
-    public class func Invert(matrix : dotnet.System.Numerics.Matrix4x4, result : inout dotnet.System.Numerics.Matrix4x4) throws -> Bool {
+    public class func Invert(matrix : dotnet.System.Numerics.Matrix4x4, result : inout Optional<dotnet.System.Numerics.Matrix4x4>) throws -> Bool {
         var __thrown : NullableHandle = nil;
-            var _tmp_out_result = result.get_handle();
+            var _tmp_out_result = (result != nil) ? (result!.get_handle()) : nil;
         let __return = System_Numerics_Matrix4x4_bool__Invert_0__2__Matrix4x4_outMatrix4x4(&__thrown, matrix.get_handle(), &_tmp_out_result);
-        let _tmp2_result = dotnet.System.Numerics.Matrix4x4(hndl: _tmp_out_result);
+        let __h__tmp2_result = _tmp_out_result;
+        let _tmp2_result = (__h__tmp2_result != nil) ? dotnet.System.Numerics.Matrix4x4(hndl: __h__tmp2_result!) : nil;
             result = _tmp2_result;
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
@@ -1501,15 +905,6 @@ public final class Matrix4x4
     }
     // System.Numerics.Matrix4x4 Lerp(System.Numerics.Matrix4x4, System.Numerics.Matrix4x4, System.Single)
 // docid: M:System.Numerics.Matrix4x4.Lerp(System.Numerics.Matrix4x4,System.Numerics.Matrix4x4,System.Single)
-    /**
-    Performs a linear interpolation from one matrix to a second matrix based on a value that specifies the weighting of the second matrix.
-
-    - Parameter matrix1: The first matrix.
-    - Parameter matrix2: The second matrix.
-    - Parameter amount: The relative weighting of .
-    - Returns: The interpolated matrix.
-
-    */
     public class func Lerp(matrix1 : dotnet.System.Numerics.Matrix4x4, matrix2 : dotnet.System.Numerics.Matrix4x4, amount : Swift.Float) throws -> dotnet.System.Numerics.Matrix4x4 {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Matrix4x4_Matrix4x4__Lerp_0__3__Matrix4x4_Matrix4x4_f32(&__thrown, matrix1.get_handle(), matrix2.get_handle(), amount);
@@ -1521,14 +916,6 @@ public final class Matrix4x4
     }
     // System.Numerics.Matrix4x4 Multiply(System.Numerics.Matrix4x4, System.Numerics.Matrix4x4)
 // docid: M:System.Numerics.Matrix4x4.Multiply(System.Numerics.Matrix4x4,System.Numerics.Matrix4x4)
-    /**
-    Returns the matrix that results from multiplying two matrices together.
-
-    - Parameter value1: The first matrix.
-    - Parameter value2: The second matrix.
-    - Returns: The product matrix.
-
-    */
     public class func Multiply(value1 : dotnet.System.Numerics.Matrix4x4, value2 : dotnet.System.Numerics.Matrix4x4) throws -> dotnet.System.Numerics.Matrix4x4 {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Matrix4x4_Matrix4x4__Multiply_0__2__Matrix4x4_Matrix4x4(&__thrown, value1.get_handle(), value2.get_handle());
@@ -1540,14 +927,6 @@ public final class Matrix4x4
     }
     // System.Numerics.Matrix4x4 Multiply(System.Numerics.Matrix4x4, System.Single)
 // docid: M:System.Numerics.Matrix4x4.Multiply(System.Numerics.Matrix4x4,System.Single)
-    /**
-    Returns the matrix that results from scaling all the elements of a specified matrix by a scalar factor.
-
-    - Parameter value1: The matrix to scale.
-    - Parameter value2: The scaling value to use.
-    - Returns: The scaled matrix.
-
-    */
     public class func Multiply(value1 : dotnet.System.Numerics.Matrix4x4, value2 : Swift.Float) throws -> dotnet.System.Numerics.Matrix4x4 {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Matrix4x4_Matrix4x4__Multiply_0__2__Matrix4x4_f32(&__thrown, value1.get_handle(), value2);
@@ -1559,13 +938,6 @@ public final class Matrix4x4
     }
     // System.Numerics.Matrix4x4 Negate(System.Numerics.Matrix4x4)
 // docid: M:System.Numerics.Matrix4x4.Negate(System.Numerics.Matrix4x4)
-    /**
-    Negates the specified matrix by multiplying all its values by -1.
-
-    - Parameter value: The matrix to negate.
-    - Returns: The negated matrix.
-
-    */
     public class func Negate(value : dotnet.System.Numerics.Matrix4x4) throws -> dotnet.System.Numerics.Matrix4x4 {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Matrix4x4_Matrix4x4__Negate_0__1__Matrix4x4(&__thrown, value.get_handle());
@@ -1577,14 +949,6 @@ public final class Matrix4x4
     }
     // [IsSpecialName] System.Numerics.Matrix4x4 op_Addition(System.Numerics.Matrix4x4, System.Numerics.Matrix4x4)
 // docid: M:System.Numerics.Matrix4x4.op_Addition(System.Numerics.Matrix4x4,System.Numerics.Matrix4x4)
-    /**
-    Adds each element in one matrix with its corresponding element in a second matrix.
-
-    - Parameter value1: The first matrix.
-    - Parameter value2: The second matrix.
-    - Returns: The matrix that contains the summed values.
-
-    */
     public class func op_Addition(value1 : dotnet.System.Numerics.Matrix4x4, value2 : dotnet.System.Numerics.Matrix4x4) throws -> dotnet.System.Numerics.Matrix4x4 {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Matrix4x4_Matrix4x4__op_Addition_0__2__Matrix4x4_Matrix4x4(&__thrown, value1.get_handle(), value2.get_handle());
@@ -1596,15 +960,6 @@ public final class Matrix4x4
     }
     // [IsSpecialName] bool op_Equality(System.Numerics.Matrix4x4, System.Numerics.Matrix4x4)
 // docid: M:System.Numerics.Matrix4x4.op_Equality(System.Numerics.Matrix4x4,System.Numerics.Matrix4x4)
-    /**
-    Returns a value that indicates whether the specified matrices are equal.
-
-    - Parameter value1: The first matrix to compare.
-    - Parameter value2: The second matrix to care
-    - Returns: 
-         if  and  are equal; otherwise, .
-
-    */
     public class func op_Equality(value1 : dotnet.System.Numerics.Matrix4x4, value2 : dotnet.System.Numerics.Matrix4x4) throws -> Bool {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Matrix4x4_bool__op_Equality_0__2__Matrix4x4_Matrix4x4(&__thrown, value1.get_handle(), value2.get_handle());
@@ -1616,15 +971,6 @@ public final class Matrix4x4
     }
     // [IsSpecialName] bool op_Inequality(System.Numerics.Matrix4x4, System.Numerics.Matrix4x4)
 // docid: M:System.Numerics.Matrix4x4.op_Inequality(System.Numerics.Matrix4x4,System.Numerics.Matrix4x4)
-    /**
-    Returns a value that indicates whether the specified matrices are not equal.
-
-    - Parameter value1: The first matrix to compare.
-    - Parameter value2: The second matrix to compare.
-    - Returns: 
-         if  and  are not equal; otherwise, .
-
-    */
     public class func op_Inequality(value1 : dotnet.System.Numerics.Matrix4x4, value2 : dotnet.System.Numerics.Matrix4x4) throws -> Bool {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Matrix4x4_bool__op_Inequality_0__2__Matrix4x4_Matrix4x4(&__thrown, value1.get_handle(), value2.get_handle());
@@ -1636,14 +982,6 @@ public final class Matrix4x4
     }
     // [IsSpecialName] System.Numerics.Matrix4x4 op_Multiply(System.Numerics.Matrix4x4, System.Numerics.Matrix4x4)
 // docid: M:System.Numerics.Matrix4x4.op_Multiply(System.Numerics.Matrix4x4,System.Numerics.Matrix4x4)
-    /**
-    Returns the matrix that results from multiplying two matrices together.
-
-    - Parameter value1: The first matrix.
-    - Parameter value2: The second matrix.
-    - Returns: The product matrix.
-
-    */
     public class func op_Multiply(value1 : dotnet.System.Numerics.Matrix4x4, value2 : dotnet.System.Numerics.Matrix4x4) throws -> dotnet.System.Numerics.Matrix4x4 {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Matrix4x4_Matrix4x4__op_Multiply_0__2__Matrix4x4_Matrix4x4(&__thrown, value1.get_handle(), value2.get_handle());
@@ -1655,14 +993,6 @@ public final class Matrix4x4
     }
     // [IsSpecialName] System.Numerics.Matrix4x4 op_Multiply(System.Numerics.Matrix4x4, System.Single)
 // docid: M:System.Numerics.Matrix4x4.op_Multiply(System.Numerics.Matrix4x4,System.Single)
-    /**
-    Returns the matrix that results from scaling all the elements of a specified matrix by a scalar factor.
-
-    - Parameter value1: The matrix to scale.
-    - Parameter value2: The scaling value to use.
-    - Returns: The scaled matrix.
-
-    */
     public class func op_Multiply(value1 : dotnet.System.Numerics.Matrix4x4, value2 : Swift.Float) throws -> dotnet.System.Numerics.Matrix4x4 {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Matrix4x4_Matrix4x4__op_Multiply_0__2__Matrix4x4_f32(&__thrown, value1.get_handle(), value2);
@@ -1674,14 +1004,6 @@ public final class Matrix4x4
     }
     // [IsSpecialName] System.Numerics.Matrix4x4 op_Subtraction(System.Numerics.Matrix4x4, System.Numerics.Matrix4x4)
 // docid: M:System.Numerics.Matrix4x4.op_Subtraction(System.Numerics.Matrix4x4,System.Numerics.Matrix4x4)
-    /**
-    Subtracts each element in a second matrix from its corresponding element in a first matrix.
-
-    - Parameter value1: The first matrix.
-    - Parameter value2: The second matrix.
-    - Returns: The matrix containing the values that result from subtracting each element in  from its corresponding element in .
-
-    */
     public class func op_Subtraction(value1 : dotnet.System.Numerics.Matrix4x4, value2 : dotnet.System.Numerics.Matrix4x4) throws -> dotnet.System.Numerics.Matrix4x4 {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Matrix4x4_Matrix4x4__op_Subtraction_0__2__Matrix4x4_Matrix4x4(&__thrown, value1.get_handle(), value2.get_handle());
@@ -1693,13 +1015,6 @@ public final class Matrix4x4
     }
     // [IsSpecialName] System.Numerics.Matrix4x4 op_UnaryNegation(System.Numerics.Matrix4x4)
 // docid: M:System.Numerics.Matrix4x4.op_UnaryNegation(System.Numerics.Matrix4x4)
-    /**
-    Negates the specified matrix by multiplying all its values by -1.
-
-    - Parameter value: The matrix to negate.
-    - Returns: The negated matrix.
-
-    */
     public class func op_UnaryNegation(value : dotnet.System.Numerics.Matrix4x4) throws -> dotnet.System.Numerics.Matrix4x4 {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Matrix4x4_Matrix4x4__op_UnaryNegation_0__1__Matrix4x4(&__thrown, value.get_handle());
@@ -1711,14 +1026,6 @@ public final class Matrix4x4
     }
     // System.Numerics.Matrix4x4 Subtract(System.Numerics.Matrix4x4, System.Numerics.Matrix4x4)
 // docid: M:System.Numerics.Matrix4x4.Subtract(System.Numerics.Matrix4x4,System.Numerics.Matrix4x4)
-    /**
-    Subtracts each element in a second matrix from its corresponding element in a first matrix.
-
-    - Parameter value1: The first matrix.
-    - Parameter value2: The second matrix.
-    - Returns: The matrix containing the values that result from subtracting each element in  from its corresponding element in .
-
-    */
     public class func Subtract(value1 : dotnet.System.Numerics.Matrix4x4, value2 : dotnet.System.Numerics.Matrix4x4) throws -> dotnet.System.Numerics.Matrix4x4 {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Matrix4x4_Matrix4x4__Subtract_0__2__Matrix4x4_Matrix4x4(&__thrown, value1.get_handle(), value2.get_handle());
@@ -1730,12 +1037,6 @@ public final class Matrix4x4
     }
     // System.String ToString()
 // docid: M:System.Numerics.Matrix4x4.ToString
-    /**
-    Returns a string that represents this matrix.
-
-    - Returns: The string representation of this matrix.
-
-    */
     public override func ToString() throws -> dotnet.System.String {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Matrix4x4_String__ToString_0__0(&__thrown, self.get_handle());
@@ -1747,14 +1048,6 @@ public final class Matrix4x4
     }
     // System.Numerics.Matrix4x4 Transform(System.Numerics.Matrix4x4, System.Numerics.Quaternion)
 // docid: M:System.Numerics.Matrix4x4.Transform(System.Numerics.Matrix4x4,System.Numerics.Quaternion)
-    /**
-    Transforms the specified matrix by applying the specified Quaternion rotation.
-
-    - Parameter value: The matrix to transform.
-    - Parameter rotation: The rotation t apply.
-    - Returns: The transformed matrix.
-
-    */
     public class func Transform(value : dotnet.System.Numerics.Matrix4x4, rotation : dotnet.System.Numerics.Quaternion) throws -> dotnet.System.Numerics.Matrix4x4 {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Matrix4x4_Matrix4x4__Transform_0__2__Matrix4x4_Quaternion(&__thrown, value.get_handle(), rotation.get_handle());
@@ -1766,13 +1059,6 @@ public final class Matrix4x4
     }
     // System.Numerics.Matrix4x4 Transpose(System.Numerics.Matrix4x4)
 // docid: M:System.Numerics.Matrix4x4.Transpose(System.Numerics.Matrix4x4)
-    /**
-    Transposes the rows and columns of a matrix.
-
-    - Parameter matrix: The matrix to transpose.
-    - Returns: The transposed matrix.
-
-    */
     public class func Transpose(matrix : dotnet.System.Numerics.Matrix4x4) throws -> dotnet.System.Numerics.Matrix4x4 {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Matrix4x4_Matrix4x4__Transpose_0__1__Matrix4x4(&__thrown, matrix.get_handle());
@@ -1831,10 +1117,6 @@ public final class Matrix4x4
 
 // type: System.Numerics.Plane
 // boxed value type
-    /**
-    Represents a plane in three-dimensional space.
-
-    */
 public final class Plane
     :
     dotnet.System.Object
@@ -1842,16 +1124,13 @@ public final class Plane
     public class override func get_type_handle() -> TypeHandle {
         return System_Numerics_Plane_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor(System.Numerics.Vector3, System.Single)
 // docid: M:System.Numerics.Plane.#ctor(System.Numerics.Vector3,System.Single)
-    /**
-    Creates a  object from a specified normal and the distance along the normal from the origin.
-
-    - Parameter normal: The plane's normal vector.
-    - Parameter d: The plane's distance from the origin along its normal vector.
-    */
     public init(normal : dotnet.System.Numerics.Vector3, d : Swift.Float) throws {
         var __thrown : NullableHandle = nil;
         let h = System_Numerics_Plane_ctor_0__2__Vector3_f32(&__thrown, normal.get_handle(), d);
@@ -1863,11 +1142,6 @@ public final class Plane
     }
     // .ctor(System.Numerics.Vector4)
 // docid: M:System.Numerics.Plane.#ctor(System.Numerics.Vector4)
-    /**
-    Creates a  object from a specified four-dimensional vector.
-
-    - Parameter value: A vector whose first three elements describe the normal vector, and whose  defines the distance along that normal from the origin.
-    */
     public init(value : dotnet.System.Numerics.Vector4) throws {
         var __thrown : NullableHandle = nil;
         let h = System_Numerics_Plane_ctor_0__1__Vector4(&__thrown, value.get_handle());
@@ -1879,14 +1153,6 @@ public final class Plane
     }
     // .ctor(System.Single, System.Single, System.Single, System.Single)
 // docid: M:System.Numerics.Plane.#ctor(System.Single,System.Single,System.Single,System.Single)
-    /**
-    Creates a  object from the X, Y, and Z components of its normal, and its distance from the origin on that normal.
-
-    - Parameter x: The X component of the normal.
-    - Parameter y: The Y component of the normal.
-    - Parameter z: The Z component of the normal.
-    - Parameter d: The distance of the plane along its normal from the origin.
-    */
     public init(x : Swift.Float, y : Swift.Float, z : Swift.Float, d : Swift.Float) throws {
         var __thrown : NullableHandle = nil;
         let h = System_Numerics_Plane_ctor_0__4__f32_f32_f32_f32(&__thrown, x, y, z, d);
@@ -1902,15 +1168,6 @@ public final class Plane
     }
     // System.Numerics.Plane CreateFromVertices(System.Numerics.Vector3, System.Numerics.Vector3, System.Numerics.Vector3)
 // docid: M:System.Numerics.Plane.CreateFromVertices(System.Numerics.Vector3,System.Numerics.Vector3,System.Numerics.Vector3)
-    /**
-    Creates a  object that contains three specified points.
-
-    - Parameter point1: The first point defining the plane.
-    - Parameter point2: The second point defining the plane.
-    - Parameter point3: The third point defining the plane.
-    - Returns: The plane containing the three points.
-
-    */
     public class func CreateFromVertices(point1 : dotnet.System.Numerics.Vector3, point2 : dotnet.System.Numerics.Vector3, point3 : dotnet.System.Numerics.Vector3) throws -> dotnet.System.Numerics.Plane {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Plane_Plane__CreateFromVertices_0__3__Vector3_Vector3_Vector3(&__thrown, point1.get_handle(), point2.get_handle(), point3.get_handle());
@@ -1922,14 +1179,6 @@ public final class Plane
     }
     // System.Single Dot(System.Numerics.Plane, System.Numerics.Vector4)
 // docid: M:System.Numerics.Plane.Dot(System.Numerics.Plane,System.Numerics.Vector4)
-    /**
-    Calculates the dot product of a plane and a 4-dimensional vector.
-
-    - Parameter plane: The plane.
-    - Parameter value: The four-dimensional vector.
-    - Returns: The dot product.
-
-    */
     public class func Dot(plane : dotnet.System.Numerics.Plane, value : dotnet.System.Numerics.Vector4) throws -> Swift.Float {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Plane_f32__Dot_0__2__Plane_Vector4(&__thrown, plane.get_handle(), value.get_handle());
@@ -1941,14 +1190,6 @@ public final class Plane
     }
     // System.Single DotCoordinate(System.Numerics.Plane, System.Numerics.Vector3)
 // docid: M:System.Numerics.Plane.DotCoordinate(System.Numerics.Plane,System.Numerics.Vector3)
-    /**
-    Returns the dot product of a specified three-dimensional vector and the normal vector of this plane plus the distance () value of the plane.
-
-    - Parameter plane: The plane.
-    - Parameter value: The 3-dimensional vector.
-    - Returns: The dot product.
-
-    */
     public class func DotCoordinate(plane : dotnet.System.Numerics.Plane, value : dotnet.System.Numerics.Vector3) throws -> Swift.Float {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Plane_f32__DotCoordinate_0__2__Plane_Vector3(&__thrown, plane.get_handle(), value.get_handle());
@@ -1960,14 +1201,6 @@ public final class Plane
     }
     // System.Single DotNormal(System.Numerics.Plane, System.Numerics.Vector3)
 // docid: M:System.Numerics.Plane.DotNormal(System.Numerics.Plane,System.Numerics.Vector3)
-    /**
-    Returns the dot product of a specified three-dimensional vector and the  vector of this plane.
-
-    - Parameter plane: The plane.
-    - Parameter value: The three-dimensional vector.
-    - Returns: The dot product.
-
-    */
     public class func DotNormal(plane : dotnet.System.Numerics.Plane, value : dotnet.System.Numerics.Vector3) throws -> Swift.Float {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Plane_f32__DotNormal_0__2__Plane_Vector3(&__thrown, plane.get_handle(), value.get_handle());
@@ -1979,14 +1212,6 @@ public final class Plane
     }
     // bool Equals(System.Numerics.Plane)
 // docid: M:System.Numerics.Plane.Equals(System.Numerics.Plane)
-    /**
-    Returns a value that indicates whether this instance and another plane object are equal.
-
-    - Parameter other: The other plane.
-    - Returns: 
-         if the two planes are equal; otherwise, .
-
-    */
     public func Equals(other : dotnet.System.Numerics.Plane) throws -> Bool {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Plane_bool__Equals_0__1__Plane(&__thrown, self.get_handle(), other.get_handle());
@@ -1998,14 +1223,6 @@ public final class Plane
     }
     // bool Equals(System.Object)
 // docid: M:System.Numerics.Plane.Equals(System.Object)
-    /**
-    Returns a value that indicates whether this instance and a specified object are equal.
-
-    - Parameter obj: The object to compare with the current instance.
-    - Returns: 
-         if the current instance and  are equal; otherwise, . If  is , the method returns .
-
-    */
     public override func Equals(obj : Optional<dotnet.System.Object>) throws -> Bool {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Plane_bool__Equals_0__1__Object(&__thrown, self.get_handle(), obj?.get_handle() ?? nil);
@@ -2017,12 +1234,6 @@ public final class Plane
     }
     // System.Int32 GetHashCode()
 // docid: M:System.Numerics.Plane.GetHashCode
-    /**
-    Returns the hash code for this instance.
-
-    - Returns: The hash code.
-
-    */
     public override func GetHashCode() throws -> Swift.Int32 {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Plane_i32__GetHashCode_0__0(&__thrown, self.get_handle());
@@ -2034,13 +1245,6 @@ public final class Plane
     }
     // System.Numerics.Plane Normalize(System.Numerics.Plane)
 // docid: M:System.Numerics.Plane.Normalize(System.Numerics.Plane)
-    /**
-    Creates a new  object whose normal vector is the source plane's normal vector normalized.
-
-    - Parameter value: The source plane.
-    - Returns: The normalized plane.
-
-    */
     public class func Normalize(value : dotnet.System.Numerics.Plane) throws -> dotnet.System.Numerics.Plane {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Plane_Plane__Normalize_0__1__Plane(&__thrown, value.get_handle());
@@ -2052,15 +1256,6 @@ public final class Plane
     }
     // [IsSpecialName] bool op_Equality(System.Numerics.Plane, System.Numerics.Plane)
 // docid: M:System.Numerics.Plane.op_Equality(System.Numerics.Plane,System.Numerics.Plane)
-    /**
-    Returns a value that indicates whether two planes are equal.
-
-    - Parameter value1: The first plane to compare.
-    - Parameter value2: The second plane to compare.
-    - Returns: 
-         if  and  are equal; otherwise, .
-
-    */
     public class func op_Equality(value1 : dotnet.System.Numerics.Plane, value2 : dotnet.System.Numerics.Plane) throws -> Bool {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Plane_bool__op_Equality_0__2__Plane_Plane(&__thrown, value1.get_handle(), value2.get_handle());
@@ -2072,15 +1267,6 @@ public final class Plane
     }
     // [IsSpecialName] bool op_Inequality(System.Numerics.Plane, System.Numerics.Plane)
 // docid: M:System.Numerics.Plane.op_Inequality(System.Numerics.Plane,System.Numerics.Plane)
-    /**
-    Returns a value that indicates whether two planes are not equal.
-
-    - Parameter value1: The first plane to compare.
-    - Parameter value2: The second plane to compare.
-    - Returns: 
-         if  and  are not equal; otherwise, .
-
-    */
     public class func op_Inequality(value1 : dotnet.System.Numerics.Plane, value2 : dotnet.System.Numerics.Plane) throws -> Bool {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Plane_bool__op_Inequality_0__2__Plane_Plane(&__thrown, value1.get_handle(), value2.get_handle());
@@ -2092,12 +1278,6 @@ public final class Plane
     }
     // System.String ToString()
 // docid: M:System.Numerics.Plane.ToString
-    /**
-    Returns the string representation of this plane object.
-
-    - Returns: A string that represents this  object.
-
-    */
     public override func ToString() throws -> dotnet.System.String {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Plane_String__ToString_0__0(&__thrown, self.get_handle());
@@ -2109,14 +1289,6 @@ public final class Plane
     }
     // System.Numerics.Plane Transform(System.Numerics.Plane, System.Numerics.Matrix4x4)
 // docid: M:System.Numerics.Plane.Transform(System.Numerics.Plane,System.Numerics.Matrix4x4)
-    /**
-    Transforms a normalized plane by a 4x4 matrix.
-
-    - Parameter plane: The normalized plane to transform.
-    - Parameter matrix: The transformation matrix to apply to .
-    - Returns: The transformed plane.
-
-    */
     public class func Transform(plane : dotnet.System.Numerics.Plane, matrix : dotnet.System.Numerics.Matrix4x4) throws -> dotnet.System.Numerics.Plane {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Plane_Plane__Transform_0__2__Plane_Matrix4x4(&__thrown, plane.get_handle(), matrix.get_handle());
@@ -2128,14 +1300,6 @@ public final class Plane
     }
     // System.Numerics.Plane Transform(System.Numerics.Plane, System.Numerics.Quaternion)
 // docid: M:System.Numerics.Plane.Transform(System.Numerics.Plane,System.Numerics.Quaternion)
-    /**
-    Transforms a normalized plane by a Quaternion rotation.
-
-    - Parameter plane: The normalized plane to transform.
-    - Parameter rotation: The Quaternion rotation to apply to the plane.
-    - Returns: A new plane that results from applying the Quaternion rotation.
-
-    */
     public class func Transform(plane : dotnet.System.Numerics.Plane, rotation : dotnet.System.Numerics.Quaternion) throws -> dotnet.System.Numerics.Plane {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Plane_Plane__Transform_0__2__Plane_Quaternion(&__thrown, plane.get_handle(), rotation.get_handle());
@@ -2150,10 +1314,6 @@ public final class Plane
 
 // type: System.Numerics.Quaternion
 // boxed value type
-    /**
-    Represents a vector that is used to encode three-dimensional physical rotations.
-
-    */
 public final class Quaternion
     :
     dotnet.System.Object
@@ -2161,21 +1321,16 @@ public final class Quaternion
     public class override func get_type_handle() -> TypeHandle {
         return System_Numerics_Quaternion_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
-    /**
-    Gets a quaternion that represents no rotation.
-
-    */
     public static var Identity : dotnet.System.Numerics.Quaternion {
         get {
             return try! get_Identity();
         }
     }
-    /**
-    Gets a value that indicates whether the current instance is the identity quaternion.
-
-    */
     public var IsIdentity : Bool {
         get {
             return try! get_IsIdentity();
@@ -2183,12 +1338,6 @@ public final class Quaternion
     }
     // .ctor(System.Numerics.Vector3, System.Single)
 // docid: M:System.Numerics.Quaternion.#ctor(System.Numerics.Vector3,System.Single)
-    /**
-    Creates a quaternion from the specified vector and rotation parts.
-
-    - Parameter vectorPart: The vector part of the quaternion.
-    - Parameter scalarPart: The rotation part of the quaternion.
-    */
     public init(vectorPart : dotnet.System.Numerics.Vector3, scalarPart : Swift.Float) throws {
         var __thrown : NullableHandle = nil;
         let h = System_Numerics_Quaternion_ctor_0__2__Vector3_f32(&__thrown, vectorPart.get_handle(), scalarPart);
@@ -2200,14 +1349,6 @@ public final class Quaternion
     }
     // .ctor(System.Single, System.Single, System.Single, System.Single)
 // docid: M:System.Numerics.Quaternion.#ctor(System.Single,System.Single,System.Single,System.Single)
-    /**
-    Constructs a quaternion from the specified components.
-
-    - Parameter x: The value to assign to the X component of the quaternion.
-    - Parameter y: The value to assign to the Y component of the quaternion.
-    - Parameter z: The value to assign to the Z component of the quaternion.
-    - Parameter w: The value to assign to the W component of the quaternion.
-    */
     public init(x : Swift.Float, y : Swift.Float, z : Swift.Float, w : Swift.Float) throws {
         var __thrown : NullableHandle = nil;
         let h = System_Numerics_Quaternion_ctor_0__4__f32_f32_f32_f32(&__thrown, x, y, z, w);
@@ -2223,14 +1364,6 @@ public final class Quaternion
     }
     // System.Numerics.Quaternion Add(System.Numerics.Quaternion, System.Numerics.Quaternion)
 // docid: M:System.Numerics.Quaternion.Add(System.Numerics.Quaternion,System.Numerics.Quaternion)
-    /**
-    Adds each element in one quaternion with its corresponding element in a second quaternion.
-
-    - Parameter value1: The first quaternion.
-    - Parameter value2: The second quaternion.
-    - Returns: The quaternion that contains the summed values of  and .
-
-    */
     public class func Add(value1 : dotnet.System.Numerics.Quaternion, value2 : dotnet.System.Numerics.Quaternion) throws -> dotnet.System.Numerics.Quaternion {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Quaternion_Quaternion__Add_0__2__Quaternion_Quaternion(&__thrown, value1.get_handle(), value2.get_handle());
@@ -2242,14 +1375,6 @@ public final class Quaternion
     }
     // System.Numerics.Quaternion Concatenate(System.Numerics.Quaternion, System.Numerics.Quaternion)
 // docid: M:System.Numerics.Quaternion.Concatenate(System.Numerics.Quaternion,System.Numerics.Quaternion)
-    /**
-    Concatenates two quaternions.
-
-    - Parameter value1: The first quaternion rotation in the series.
-    - Parameter value2: The second quaternion rotation in the series.
-    - Returns: A new quaternion representing the concatenation of the  rotation followed by the  rotation.
-
-    */
     public class func Concatenate(value1 : dotnet.System.Numerics.Quaternion, value2 : dotnet.System.Numerics.Quaternion) throws -> dotnet.System.Numerics.Quaternion {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Quaternion_Quaternion__Concatenate_0__2__Quaternion_Quaternion(&__thrown, value1.get_handle(), value2.get_handle());
@@ -2261,13 +1386,6 @@ public final class Quaternion
     }
     // System.Numerics.Quaternion Conjugate(System.Numerics.Quaternion)
 // docid: M:System.Numerics.Quaternion.Conjugate(System.Numerics.Quaternion)
-    /**
-    Returns the conjugate of a specified quaternion.
-
-    - Parameter value: The quaternion.
-    - Returns: A new quaternion that is the conjugate of .
-
-    */
     public class func Conjugate(value : dotnet.System.Numerics.Quaternion) throws -> dotnet.System.Numerics.Quaternion {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Quaternion_Quaternion__Conjugate_0__1__Quaternion(&__thrown, value.get_handle());
@@ -2279,14 +1397,6 @@ public final class Quaternion
     }
     // System.Numerics.Quaternion CreateFromAxisAngle(System.Numerics.Vector3, System.Single)
 // docid: M:System.Numerics.Quaternion.CreateFromAxisAngle(System.Numerics.Vector3,System.Single)
-    /**
-    Creates a quaternion from a unit vector and an angle to rotate around the vector.
-
-    - Parameter axis: The unit vector to rotate around.
-    - Parameter angle: The angle, in radians, to rotate around the vector.
-    - Returns: The newly created quaternion.
-
-    */
     public class func CreateFromAxisAngle(axis : dotnet.System.Numerics.Vector3, angle : Swift.Float) throws -> dotnet.System.Numerics.Quaternion {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Quaternion_Quaternion__CreateFromAxisAngle_0__2__Vector3_f32(&__thrown, axis.get_handle(), angle);
@@ -2298,13 +1408,6 @@ public final class Quaternion
     }
     // System.Numerics.Quaternion CreateFromRotationMatrix(System.Numerics.Matrix4x4)
 // docid: M:System.Numerics.Quaternion.CreateFromRotationMatrix(System.Numerics.Matrix4x4)
-    /**
-    Creates a quaternion from the specified rotation matrix.
-
-    - Parameter matrix: The rotation matrix.
-    - Returns: The newly created quaternion.
-
-    */
     public class func CreateFromRotationMatrix(matrix : dotnet.System.Numerics.Matrix4x4) throws -> dotnet.System.Numerics.Quaternion {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Quaternion_Quaternion__CreateFromRotationMatrix_0__1__Matrix4x4(&__thrown, matrix.get_handle());
@@ -2316,15 +1419,6 @@ public final class Quaternion
     }
     // System.Numerics.Quaternion CreateFromYawPitchRoll(System.Single, System.Single, System.Single)
 // docid: M:System.Numerics.Quaternion.CreateFromYawPitchRoll(System.Single,System.Single,System.Single)
-    /**
-    Creates a new quaternion from the given yaw, pitch, and roll.
-
-    - Parameter yaw: The yaw angle, in radians, around the Y axis.
-    - Parameter pitch: The pitch angle, in radians, around the X axis.
-    - Parameter roll: The roll angle, in radians, around the Z axis.
-    - Returns: The resulting quaternion.
-
-    */
     public class func CreateFromYawPitchRoll(yaw : Swift.Float, pitch : Swift.Float, roll : Swift.Float) throws -> dotnet.System.Numerics.Quaternion {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Quaternion_Quaternion__CreateFromYawPitchRoll_0__3__f32_f32_f32(&__thrown, yaw, pitch, roll);
@@ -2336,14 +1430,6 @@ public final class Quaternion
     }
     // System.Numerics.Quaternion Divide(System.Numerics.Quaternion, System.Numerics.Quaternion)
 // docid: M:System.Numerics.Quaternion.Divide(System.Numerics.Quaternion,System.Numerics.Quaternion)
-    /**
-    Divides one quaternion by a second quaternion.
-
-    - Parameter value1: The dividend.
-    - Parameter value2: The divisor.
-    - Returns: The quaternion that results from dividing  by .
-
-    */
     public class func Divide(value1 : dotnet.System.Numerics.Quaternion, value2 : dotnet.System.Numerics.Quaternion) throws -> dotnet.System.Numerics.Quaternion {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Quaternion_Quaternion__Divide_0__2__Quaternion_Quaternion(&__thrown, value1.get_handle(), value2.get_handle());
@@ -2355,14 +1441,6 @@ public final class Quaternion
     }
     // System.Single Dot(System.Numerics.Quaternion, System.Numerics.Quaternion)
 // docid: M:System.Numerics.Quaternion.Dot(System.Numerics.Quaternion,System.Numerics.Quaternion)
-    /**
-    Calculates the dot product of two quaternions.
-
-    - Parameter quaternion1: The first quaternion.
-    - Parameter quaternion2: The second quaternion.
-    - Returns: The dot product.
-
-    */
     public class func Dot(quaternion1 : dotnet.System.Numerics.Quaternion, quaternion2 : dotnet.System.Numerics.Quaternion) throws -> Swift.Float {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Quaternion_f32__Dot_0__2__Quaternion_Quaternion(&__thrown, quaternion1.get_handle(), quaternion2.get_handle());
@@ -2374,14 +1452,6 @@ public final class Quaternion
     }
     // bool Equals(System.Numerics.Quaternion)
 // docid: M:System.Numerics.Quaternion.Equals(System.Numerics.Quaternion)
-    /**
-    Returns a value that indicates whether this instance and another quaternion are equal.
-
-    - Parameter other: The other quaternion.
-    - Returns: 
-         if the two quaternions are equal; otherwise, .
-
-    */
     public func Equals(other : dotnet.System.Numerics.Quaternion) throws -> Bool {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Quaternion_bool__Equals_0__1__Quaternion(&__thrown, self.get_handle(), other.get_handle());
@@ -2393,14 +1463,6 @@ public final class Quaternion
     }
     // bool Equals(System.Object)
 // docid: M:System.Numerics.Quaternion.Equals(System.Object)
-    /**
-    Returns a value that indicates whether this instance and a specified object are equal.
-
-    - Parameter obj: The object to compare with the current instance.
-    - Returns: 
-         if the current instance and  are equal; otherwise, . If  is , the method returns .
-
-    */
     public override func Equals(obj : Optional<dotnet.System.Object>) throws -> Bool {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Quaternion_bool__Equals_0__1__Object(&__thrown, self.get_handle(), obj?.get_handle() ?? nil);
@@ -2412,12 +1474,6 @@ public final class Quaternion
     }
     // System.Int32 GetHashCode()
 // docid: M:System.Numerics.Quaternion.GetHashCode
-    /**
-    Returns the hash code for this instance.
-
-    - Returns: The hash code.
-
-    */
     public override func GetHashCode() throws -> Swift.Int32 {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Quaternion_i32__GetHashCode_0__0(&__thrown, self.get_handle());
@@ -2429,13 +1485,6 @@ public final class Quaternion
     }
     // System.Numerics.Quaternion Inverse(System.Numerics.Quaternion)
 // docid: M:System.Numerics.Quaternion.Inverse(System.Numerics.Quaternion)
-    /**
-    Returns the inverse of a quaternion.
-
-    - Parameter value: The quaternion.
-    - Returns: The inverted quaternion.
-
-    */
     public class func Inverse(value : dotnet.System.Numerics.Quaternion) throws -> dotnet.System.Numerics.Quaternion {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Quaternion_Quaternion__Inverse_0__1__Quaternion(&__thrown, value.get_handle());
@@ -2447,12 +1496,6 @@ public final class Quaternion
     }
     // System.Single Length()
 // docid: M:System.Numerics.Quaternion.Length
-    /**
-    Calculates the length of the quaternion.
-
-    - Returns: The computed length of the quaternion.
-
-    */
     public func Length() throws -> Swift.Float {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Quaternion_f32__Length_0__0(&__thrown, self.get_handle());
@@ -2464,12 +1507,6 @@ public final class Quaternion
     }
     // System.Single LengthSquared()
 // docid: M:System.Numerics.Quaternion.LengthSquared
-    /**
-    Calculates the squared length of the quaternion.
-
-    - Returns: The length squared of the quaternion.
-
-    */
     public func LengthSquared() throws -> Swift.Float {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Quaternion_f32__LengthSquared_0__0(&__thrown, self.get_handle());
@@ -2481,15 +1518,6 @@ public final class Quaternion
     }
     // System.Numerics.Quaternion Lerp(System.Numerics.Quaternion, System.Numerics.Quaternion, System.Single)
 // docid: M:System.Numerics.Quaternion.Lerp(System.Numerics.Quaternion,System.Numerics.Quaternion,System.Single)
-    /**
-    Performs a linear interpolation between two quaternions based on a value that specifies the weighting of the second quaternion.
-
-    - Parameter quaternion1: The first quaternion.
-    - Parameter quaternion2: The second quaternion.
-    - Parameter amount: The relative weight of  in the interpolation.
-    - Returns: The interpolated quaternion.
-
-    */
     public class func Lerp(quaternion1 : dotnet.System.Numerics.Quaternion, quaternion2 : dotnet.System.Numerics.Quaternion, amount : Swift.Float) throws -> dotnet.System.Numerics.Quaternion {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Quaternion_Quaternion__Lerp_0__3__Quaternion_Quaternion_f32(&__thrown, quaternion1.get_handle(), quaternion2.get_handle(), amount);
@@ -2501,14 +1529,6 @@ public final class Quaternion
     }
     // System.Numerics.Quaternion Multiply(System.Numerics.Quaternion, System.Numerics.Quaternion)
 // docid: M:System.Numerics.Quaternion.Multiply(System.Numerics.Quaternion,System.Numerics.Quaternion)
-    /**
-    Returns the quaternion that results from multiplying two quaternions together.
-
-    - Parameter value1: The first quaternion.
-    - Parameter value2: The second quaternion.
-    - Returns: The product quaternion.
-
-    */
     public class func Multiply(value1 : dotnet.System.Numerics.Quaternion, value2 : dotnet.System.Numerics.Quaternion) throws -> dotnet.System.Numerics.Quaternion {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Quaternion_Quaternion__Multiply_0__2__Quaternion_Quaternion(&__thrown, value1.get_handle(), value2.get_handle());
@@ -2520,14 +1540,6 @@ public final class Quaternion
     }
     // System.Numerics.Quaternion Multiply(System.Numerics.Quaternion, System.Single)
 // docid: M:System.Numerics.Quaternion.Multiply(System.Numerics.Quaternion,System.Single)
-    /**
-    Returns the quaternion that results from scaling all the components of a specified quaternion by a scalar factor.
-
-    - Parameter value1: The source quaternion.
-    - Parameter value2: The scalar value.
-    - Returns: The scaled quaternion.
-
-    */
     public class func Multiply(value1 : dotnet.System.Numerics.Quaternion, value2 : Swift.Float) throws -> dotnet.System.Numerics.Quaternion {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Quaternion_Quaternion__Multiply_0__2__Quaternion_f32(&__thrown, value1.get_handle(), value2);
@@ -2539,13 +1551,6 @@ public final class Quaternion
     }
     // System.Numerics.Quaternion Negate(System.Numerics.Quaternion)
 // docid: M:System.Numerics.Quaternion.Negate(System.Numerics.Quaternion)
-    /**
-    Reverses the sign of each component of the quaternion.
-
-    - Parameter value: The quaternion to negate.
-    - Returns: The negated quaternion.
-
-    */
     public class func Negate(value : dotnet.System.Numerics.Quaternion) throws -> dotnet.System.Numerics.Quaternion {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Quaternion_Quaternion__Negate_0__1__Quaternion(&__thrown, value.get_handle());
@@ -2557,13 +1562,6 @@ public final class Quaternion
     }
     // System.Numerics.Quaternion Normalize(System.Numerics.Quaternion)
 // docid: M:System.Numerics.Quaternion.Normalize(System.Numerics.Quaternion)
-    /**
-    Divides each component of a specified  by its length.
-
-    - Parameter value: The quaternion to normalize.
-    - Returns: The normalized quaternion.
-
-    */
     public class func Normalize(value : dotnet.System.Numerics.Quaternion) throws -> dotnet.System.Numerics.Quaternion {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Quaternion_Quaternion__Normalize_0__1__Quaternion(&__thrown, value.get_handle());
@@ -2575,14 +1573,6 @@ public final class Quaternion
     }
     // [IsSpecialName] System.Numerics.Quaternion op_Addition(System.Numerics.Quaternion, System.Numerics.Quaternion)
 // docid: M:System.Numerics.Quaternion.op_Addition(System.Numerics.Quaternion,System.Numerics.Quaternion)
-    /**
-    Adds each element in one quaternion with its corresponding element in a second quaternion.
-
-    - Parameter value1: The first quaternion.
-    - Parameter value2: The second quaternion.
-    - Returns: The quaternion that contains the summed values of  and .
-
-    */
     public class func op_Addition(value1 : dotnet.System.Numerics.Quaternion, value2 : dotnet.System.Numerics.Quaternion) throws -> dotnet.System.Numerics.Quaternion {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Quaternion_Quaternion__op_Addition_0__2__Quaternion_Quaternion(&__thrown, value1.get_handle(), value2.get_handle());
@@ -2594,14 +1584,6 @@ public final class Quaternion
     }
     // [IsSpecialName] System.Numerics.Quaternion op_Division(System.Numerics.Quaternion, System.Numerics.Quaternion)
 // docid: M:System.Numerics.Quaternion.op_Division(System.Numerics.Quaternion,System.Numerics.Quaternion)
-    /**
-    Divides one quaternion by a second quaternion.
-
-    - Parameter value1: The dividend.
-    - Parameter value2: The divisor.
-    - Returns: The quaternion that results from dividing  by .
-
-    */
     public class func op_Division(value1 : dotnet.System.Numerics.Quaternion, value2 : dotnet.System.Numerics.Quaternion) throws -> dotnet.System.Numerics.Quaternion {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Quaternion_Quaternion__op_Division_0__2__Quaternion_Quaternion(&__thrown, value1.get_handle(), value2.get_handle());
@@ -2613,15 +1595,6 @@ public final class Quaternion
     }
     // [IsSpecialName] bool op_Equality(System.Numerics.Quaternion, System.Numerics.Quaternion)
 // docid: M:System.Numerics.Quaternion.op_Equality(System.Numerics.Quaternion,System.Numerics.Quaternion)
-    /**
-    Returns a value that indicates whether two quaternions are equal.
-
-    - Parameter value1: The first quaternion to compare.
-    - Parameter value2: The second quaternion to compare.
-    - Returns: 
-         if the two quaternions are equal; otherwise, .
-
-    */
     public class func op_Equality(value1 : dotnet.System.Numerics.Quaternion, value2 : dotnet.System.Numerics.Quaternion) throws -> Bool {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Quaternion_bool__op_Equality_0__2__Quaternion_Quaternion(&__thrown, value1.get_handle(), value2.get_handle());
@@ -2633,15 +1606,6 @@ public final class Quaternion
     }
     // [IsSpecialName] bool op_Inequality(System.Numerics.Quaternion, System.Numerics.Quaternion)
 // docid: M:System.Numerics.Quaternion.op_Inequality(System.Numerics.Quaternion,System.Numerics.Quaternion)
-    /**
-    Returns a value that indicates whether two quaternions are not equal.
-
-    - Parameter value1: The first quaternion to compare.
-    - Parameter value2: The second quaternion to compare.
-    - Returns: 
-         if  and  are not equal; otherwise, .
-
-    */
     public class func op_Inequality(value1 : dotnet.System.Numerics.Quaternion, value2 : dotnet.System.Numerics.Quaternion) throws -> Bool {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Quaternion_bool__op_Inequality_0__2__Quaternion_Quaternion(&__thrown, value1.get_handle(), value2.get_handle());
@@ -2653,14 +1617,6 @@ public final class Quaternion
     }
     // [IsSpecialName] System.Numerics.Quaternion op_Multiply(System.Numerics.Quaternion, System.Numerics.Quaternion)
 // docid: M:System.Numerics.Quaternion.op_Multiply(System.Numerics.Quaternion,System.Numerics.Quaternion)
-    /**
-    Returns the quaternion that results from multiplying two quaternions together.
-
-    - Parameter value1: The first quaternion.
-    - Parameter value2: The second quaternion.
-    - Returns: The product quaternion.
-
-    */
     public class func op_Multiply(value1 : dotnet.System.Numerics.Quaternion, value2 : dotnet.System.Numerics.Quaternion) throws -> dotnet.System.Numerics.Quaternion {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Quaternion_Quaternion__op_Multiply_0__2__Quaternion_Quaternion(&__thrown, value1.get_handle(), value2.get_handle());
@@ -2672,14 +1628,6 @@ public final class Quaternion
     }
     // [IsSpecialName] System.Numerics.Quaternion op_Multiply(System.Numerics.Quaternion, System.Single)
 // docid: M:System.Numerics.Quaternion.op_Multiply(System.Numerics.Quaternion,System.Single)
-    /**
-    Returns the quaternion that results from scaling all the components of a specified quaternion by a scalar factor.
-
-    - Parameter value1: The source quaternion.
-    - Parameter value2: The scalar value.
-    - Returns: The scaled quaternion.
-
-    */
     public class func op_Multiply(value1 : dotnet.System.Numerics.Quaternion, value2 : Swift.Float) throws -> dotnet.System.Numerics.Quaternion {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Quaternion_Quaternion__op_Multiply_0__2__Quaternion_f32(&__thrown, value1.get_handle(), value2);
@@ -2691,14 +1639,6 @@ public final class Quaternion
     }
     // [IsSpecialName] System.Numerics.Quaternion op_Subtraction(System.Numerics.Quaternion, System.Numerics.Quaternion)
 // docid: M:System.Numerics.Quaternion.op_Subtraction(System.Numerics.Quaternion,System.Numerics.Quaternion)
-    /**
-    Subtracts each element in a second quaternion from its corresponding element in a first quaternion.
-
-    - Parameter value1: The first quaternion.
-    - Parameter value2: The second quaternion.
-    - Returns: The quaternion containing the values that result from subtracting each element in  from its corresponding element in .
-
-    */
     public class func op_Subtraction(value1 : dotnet.System.Numerics.Quaternion, value2 : dotnet.System.Numerics.Quaternion) throws -> dotnet.System.Numerics.Quaternion {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Quaternion_Quaternion__op_Subtraction_0__2__Quaternion_Quaternion(&__thrown, value1.get_handle(), value2.get_handle());
@@ -2710,13 +1650,6 @@ public final class Quaternion
     }
     // [IsSpecialName] System.Numerics.Quaternion op_UnaryNegation(System.Numerics.Quaternion)
 // docid: M:System.Numerics.Quaternion.op_UnaryNegation(System.Numerics.Quaternion)
-    /**
-    Reverses the sign of each component of the quaternion.
-
-    - Parameter value: The quaternion to negate.
-    - Returns: The negated quaternion.
-
-    */
     public class func op_UnaryNegation(value : dotnet.System.Numerics.Quaternion) throws -> dotnet.System.Numerics.Quaternion {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Quaternion_Quaternion__op_UnaryNegation_0__1__Quaternion(&__thrown, value.get_handle());
@@ -2728,15 +1661,6 @@ public final class Quaternion
     }
     // System.Numerics.Quaternion Slerp(System.Numerics.Quaternion, System.Numerics.Quaternion, System.Single)
 // docid: M:System.Numerics.Quaternion.Slerp(System.Numerics.Quaternion,System.Numerics.Quaternion,System.Single)
-    /**
-    Interpolates between two quaternions, using spherical linear interpolation.
-
-    - Parameter quaternion1: The first quaternion.
-    - Parameter quaternion2: The second quaternion.
-    - Parameter amount: The relative weight of the second quaternion in the interpolation.
-    - Returns: The interpolated quaternion.
-
-    */
     public class func Slerp(quaternion1 : dotnet.System.Numerics.Quaternion, quaternion2 : dotnet.System.Numerics.Quaternion, amount : Swift.Float) throws -> dotnet.System.Numerics.Quaternion {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Quaternion_Quaternion__Slerp_0__3__Quaternion_Quaternion_f32(&__thrown, quaternion1.get_handle(), quaternion2.get_handle(), amount);
@@ -2748,14 +1672,6 @@ public final class Quaternion
     }
     // System.Numerics.Quaternion Subtract(System.Numerics.Quaternion, System.Numerics.Quaternion)
 // docid: M:System.Numerics.Quaternion.Subtract(System.Numerics.Quaternion,System.Numerics.Quaternion)
-    /**
-    Subtracts each element in a second quaternion from its corresponding element in a first quaternion.
-
-    - Parameter value1: The first quaternion.
-    - Parameter value2: The second quaternion.
-    - Returns: The quaternion containing the values that result from subtracting each element in  from its corresponding element in .
-
-    */
     public class func Subtract(value1 : dotnet.System.Numerics.Quaternion, value2 : dotnet.System.Numerics.Quaternion) throws -> dotnet.System.Numerics.Quaternion {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Quaternion_Quaternion__Subtract_0__2__Quaternion_Quaternion(&__thrown, value1.get_handle(), value2.get_handle());
@@ -2767,12 +1683,6 @@ public final class Quaternion
     }
     // System.String ToString()
 // docid: M:System.Numerics.Quaternion.ToString
-    /**
-    Returns a string that represents this quaternion.
-
-    - Returns: The string representation of this quaternion.
-
-    */
     public override func ToString() throws -> dotnet.System.String {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Quaternion_String__ToString_0__0(&__thrown, self.get_handle());
@@ -2811,13 +1721,6 @@ public final class Quaternion
 public struct Vector {
     // System.Numerics.Vector<T> Abs<T>(System.Numerics.Vector<T>)
 // docid: M:System.Numerics.Vector.Abs``1(System.Numerics.Vector{``0})
-    /**
-    Returns a new vector whose elements are the absolute values of the given vector's elements.
-
-    - Parameter value: The source vector.
-    - Returns: The absolute value vector.
-
-    */
     public static func Abs<UT : SGBridgeGenericValue>(value : dotnet.System.Numerics.Vector_1<UT>) throws -> dotnet.System.Numerics.Vector_1<UT> {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Vector_System_Numerics_Vector_UT___Abs_1__1__System_Numerics_Vector_UT_(UT.get_type_handle(), &__thrown, value.get_handle());
@@ -2829,14 +1732,6 @@ public struct Vector {
     }
     // System.Numerics.Vector<T> Add<T>(System.Numerics.Vector<T>, System.Numerics.Vector<T>)
 // docid: M:System.Numerics.Vector.Add``1(System.Numerics.Vector{``0},System.Numerics.Vector{``0})
-    /**
-    Returns a new vector whose values are the sum of each pair of elements from two given vectors.
-
-    - Parameter left: The first vector.
-    - Parameter right: The second vector.
-    - Returns: The summed vector.
-
-    */
     public static func Add<UT : SGBridgeGenericValue>(left : dotnet.System.Numerics.Vector_1<UT>, right : dotnet.System.Numerics.Vector_1<UT>) throws -> dotnet.System.Numerics.Vector_1<UT> {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Vector_System_Numerics_Vector_UT___Add_1__2__System_Numerics_Vector_UT__System_Numerics_Vector_UT_(UT.get_type_handle(), &__thrown, left.get_handle(), right.get_handle());
@@ -2848,14 +1743,6 @@ public struct Vector {
     }
     // System.Numerics.Vector<T> AndNot<T>(System.Numerics.Vector<T>, System.Numerics.Vector<T>)
 // docid: M:System.Numerics.Vector.AndNot``1(System.Numerics.Vector{``0},System.Numerics.Vector{``0})
-    /**
-    Returns a new vector by performing a bitwise And Not operation on each pair of corresponding elements in two vectors.
-
-    - Parameter left: The first vector.
-    - Parameter right: The second vector.
-    - Returns: The resulting vector.
-
-    */
     public static func AndNot<UT : SGBridgeGenericValue>(left : dotnet.System.Numerics.Vector_1<UT>, right : dotnet.System.Numerics.Vector_1<UT>) throws -> dotnet.System.Numerics.Vector_1<UT> {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Vector_System_Numerics_Vector_UT___AndNot_1__2__System_Numerics_Vector_UT__System_Numerics_Vector_UT_(UT.get_type_handle(), &__thrown, left.get_handle(), right.get_handle());
@@ -2868,13 +1755,6 @@ public struct Vector {
 // TODO COPE (write_all_methods) (unused generic param) System.Numerics.Vector<TTo> As<TFrom, TTo>(System.Numerics.Vector<TFrom>)
     // System.Numerics.Vector<System.Byte> AsVectorByte<T>(System.Numerics.Vector<T>)
 // docid: M:System.Numerics.Vector.AsVectorByte``1(System.Numerics.Vector{``0})
-    /**
-    Reinterprets the bits of a specified vector into those of a vector of unsigned bytes.
-
-    - Parameter value: The source vector.
-    - Returns: The reinterpreted vector.
-
-    */
     public static func AsVectorByte<UT : SGBridgeGenericValue>(value : dotnet.System.Numerics.Vector_1<UT>) throws -> dotnet.System.Numerics.Vector_1<Swift.UInt8> {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Vector_System_Numerics_Vector_u8___AsVectorByte_1__1__System_Numerics_Vector_UT_(UT.get_type_handle(), &__thrown, value.get_handle());
@@ -2886,13 +1766,6 @@ public struct Vector {
     }
     // System.Numerics.Vector<System.Double> AsVectorDouble<T>(System.Numerics.Vector<T>)
 // docid: M:System.Numerics.Vector.AsVectorDouble``1(System.Numerics.Vector{``0})
-    /**
-    Reinterprets the bits of a specified vector into those of a double-precision floating-point vector.
-
-    - Parameter value: The source vector.
-    - Returns: The reinterpreted vector.
-
-    */
     public static func AsVectorDouble<UT : SGBridgeGenericValue>(value : dotnet.System.Numerics.Vector_1<UT>) throws -> dotnet.System.Numerics.Vector_1<Swift.Double> {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Vector_System_Numerics_Vector_f64___AsVectorDouble_1__1__System_Numerics_Vector_UT_(UT.get_type_handle(), &__thrown, value.get_handle());
@@ -2904,13 +1777,6 @@ public struct Vector {
     }
     // System.Numerics.Vector<System.Int16> AsVectorInt16<T>(System.Numerics.Vector<T>)
 // docid: M:System.Numerics.Vector.AsVectorInt16``1(System.Numerics.Vector{``0})
-    /**
-    Reinterprets the bits of a specified vector into those of a vector of 16-bit integers.
-
-    - Parameter value: The source vector.
-    - Returns: The reinterpreted vector.
-
-    */
     public static func AsVectorInt16<UT : SGBridgeGenericValue>(value : dotnet.System.Numerics.Vector_1<UT>) throws -> dotnet.System.Numerics.Vector_1<Swift.Int16> {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Vector_System_Numerics_Vector_i16___AsVectorInt16_1__1__System_Numerics_Vector_UT_(UT.get_type_handle(), &__thrown, value.get_handle());
@@ -2922,13 +1788,6 @@ public struct Vector {
     }
     // System.Numerics.Vector<System.Int32> AsVectorInt32<T>(System.Numerics.Vector<T>)
 // docid: M:System.Numerics.Vector.AsVectorInt32``1(System.Numerics.Vector{``0})
-    /**
-    Reinterprets the bits of a specified vector into those of a vector of integers.
-
-    - Parameter value: The source vector.
-    - Returns: The reinterpreted vector.
-
-    */
     public static func AsVectorInt32<UT : SGBridgeGenericValue>(value : dotnet.System.Numerics.Vector_1<UT>) throws -> dotnet.System.Numerics.Vector_1<Swift.Int32> {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Vector_System_Numerics_Vector_i32___AsVectorInt32_1__1__System_Numerics_Vector_UT_(UT.get_type_handle(), &__thrown, value.get_handle());
@@ -2940,13 +1799,6 @@ public struct Vector {
     }
     // System.Numerics.Vector<System.Int64> AsVectorInt64<T>(System.Numerics.Vector<T>)
 // docid: M:System.Numerics.Vector.AsVectorInt64``1(System.Numerics.Vector{``0})
-    /**
-    Reinterprets the bits of a specified vector into those of a vector of long integers.
-
-    - Parameter value: The source vector.
-    - Returns: The reinterpreted vector.
-
-    */
     public static func AsVectorInt64<UT : SGBridgeGenericValue>(value : dotnet.System.Numerics.Vector_1<UT>) throws -> dotnet.System.Numerics.Vector_1<Swift.Int64> {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Vector_System_Numerics_Vector_i64___AsVectorInt64_1__1__System_Numerics_Vector_UT_(UT.get_type_handle(), &__thrown, value.get_handle());
@@ -2980,13 +1832,6 @@ public struct Vector {
     }
     // System.Numerics.Vector<System.SByte> AsVectorSByte<T>(System.Numerics.Vector<T>)
 // docid: M:System.Numerics.Vector.AsVectorSByte``1(System.Numerics.Vector{``0})
-    /**
-    Reinterprets the bits of a specified vector into those of a vector of signed bytes.
-
-    - Parameter value: The source vector.
-    - Returns: The reinterpreted vector.
-
-    */
     public static func AsVectorSByte<UT : SGBridgeGenericValue>(value : dotnet.System.Numerics.Vector_1<UT>) throws -> dotnet.System.Numerics.Vector_1<Swift.Int8> {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Vector_System_Numerics_Vector_i8___AsVectorSByte_1__1__System_Numerics_Vector_UT_(UT.get_type_handle(), &__thrown, value.get_handle());
@@ -2998,13 +1843,6 @@ public struct Vector {
     }
     // System.Numerics.Vector<System.Single> AsVectorSingle<T>(System.Numerics.Vector<T>)
 // docid: M:System.Numerics.Vector.AsVectorSingle``1(System.Numerics.Vector{``0})
-    /**
-    Reinterprets the bits of a specified vector into those of a single-precision floating-point vector.
-
-    - Parameter value: The source vector.
-    - Returns: The reinterpreted vector.
-
-    */
     public static func AsVectorSingle<UT : SGBridgeGenericValue>(value : dotnet.System.Numerics.Vector_1<UT>) throws -> dotnet.System.Numerics.Vector_1<Swift.Float> {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Vector_System_Numerics_Vector_f32___AsVectorSingle_1__1__System_Numerics_Vector_UT_(UT.get_type_handle(), &__thrown, value.get_handle());
@@ -3016,13 +1854,6 @@ public struct Vector {
     }
     // System.Numerics.Vector<System.UInt16> AsVectorUInt16<T>(System.Numerics.Vector<T>)
 // docid: M:System.Numerics.Vector.AsVectorUInt16``1(System.Numerics.Vector{``0})
-    /**
-    Reinterprets the bits of a specified vector into those of a vector of unsigned 16-bit integers.
-
-    - Parameter value: The source vector.
-    - Returns: The reinterpreted vector.
-
-    */
     public static func AsVectorUInt16<UT : SGBridgeGenericValue>(value : dotnet.System.Numerics.Vector_1<UT>) throws -> dotnet.System.Numerics.Vector_1<Swift.UInt16> {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Vector_System_Numerics_Vector_u16___AsVectorUInt16_1__1__System_Numerics_Vector_UT_(UT.get_type_handle(), &__thrown, value.get_handle());
@@ -3034,13 +1865,6 @@ public struct Vector {
     }
     // System.Numerics.Vector<System.UInt32> AsVectorUInt32<T>(System.Numerics.Vector<T>)
 // docid: M:System.Numerics.Vector.AsVectorUInt32``1(System.Numerics.Vector{``0})
-    /**
-    Reinterprets the bits of a specified vector into those of a vector of unsigned integers.
-
-    - Parameter value: The source vector.
-    - Returns: The reinterpreted vector.
-
-    */
     public static func AsVectorUInt32<UT : SGBridgeGenericValue>(value : dotnet.System.Numerics.Vector_1<UT>) throws -> dotnet.System.Numerics.Vector_1<Swift.UInt32> {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Vector_System_Numerics_Vector_u32___AsVectorUInt32_1__1__System_Numerics_Vector_UT_(UT.get_type_handle(), &__thrown, value.get_handle());
@@ -3052,13 +1876,6 @@ public struct Vector {
     }
     // System.Numerics.Vector<System.UInt64> AsVectorUInt64<T>(System.Numerics.Vector<T>)
 // docid: M:System.Numerics.Vector.AsVectorUInt64``1(System.Numerics.Vector{``0})
-    /**
-    Reinterprets the bits of a specified vector into those of a vector of unsigned long integers.
-
-    - Parameter value: The source vector.
-    - Returns: The reinterpreted vector.
-
-    */
     public static func AsVectorUInt64<UT : SGBridgeGenericValue>(value : dotnet.System.Numerics.Vector_1<UT>) throws -> dotnet.System.Numerics.Vector_1<Swift.UInt64> {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Vector_System_Numerics_Vector_u64___AsVectorUInt64_1__1__System_Numerics_Vector_UT_(UT.get_type_handle(), &__thrown, value.get_handle());
@@ -3070,14 +1887,6 @@ public struct Vector {
     }
     // System.Numerics.Vector<T> BitwiseAnd<T>(System.Numerics.Vector<T>, System.Numerics.Vector<T>)
 // docid: M:System.Numerics.Vector.BitwiseAnd``1(System.Numerics.Vector{``0},System.Numerics.Vector{``0})
-    /**
-    Returns a new vector by performing a bitwise  operation on each pair of elements in two vectors.
-
-    - Parameter left: The first vector.
-    - Parameter right: The second vector.
-    - Returns: The resulting vector.
-
-    */
     public static func BitwiseAnd<UT : SGBridgeGenericValue>(left : dotnet.System.Numerics.Vector_1<UT>, right : dotnet.System.Numerics.Vector_1<UT>) throws -> dotnet.System.Numerics.Vector_1<UT> {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Vector_System_Numerics_Vector_UT___BitwiseAnd_1__2__System_Numerics_Vector_UT__System_Numerics_Vector_UT_(UT.get_type_handle(), &__thrown, left.get_handle(), right.get_handle());
@@ -3089,14 +1898,6 @@ public struct Vector {
     }
     // System.Numerics.Vector<T> BitwiseOr<T>(System.Numerics.Vector<T>, System.Numerics.Vector<T>)
 // docid: M:System.Numerics.Vector.BitwiseOr``1(System.Numerics.Vector{``0},System.Numerics.Vector{``0})
-    /**
-    Returns a new vector by performing a bitwise  operation on each pair of elements in two vectors.
-
-    - Parameter left: The first vector.
-    - Parameter right: The second vector.
-    - Returns: The resulting vector.
-
-    */
     public static func BitwiseOr<UT : SGBridgeGenericValue>(left : dotnet.System.Numerics.Vector_1<UT>, right : dotnet.System.Numerics.Vector_1<UT>) throws -> dotnet.System.Numerics.Vector_1<UT> {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Vector_System_Numerics_Vector_UT___BitwiseOr_1__2__System_Numerics_Vector_UT__System_Numerics_Vector_UT_(UT.get_type_handle(), &__thrown, left.get_handle(), right.get_handle());
@@ -3108,14 +1909,6 @@ public struct Vector {
     }
     // System.Numerics.Vector<System.Double> Ceiling(System.Numerics.Vector<System.Double>)
 // docid: M:System.Numerics.Vector.Ceiling(System.Numerics.Vector{System.Double})
-    /**
-    Returns a new vector whose elements are the smallest integral values that are greater than or equal to the given vector's elements.
-
-    - Parameter value: The source vector.
-    - Returns: The vector whose elements are the smallest integral values that are greater than or equal to the given vector's elements.
-            If a value is equal to , , or , that value is returned.
-
-    */
     public static func Ceiling(value : dotnet.System.Numerics.Vector_1<Swift.Double>) throws -> dotnet.System.Numerics.Vector_1<Swift.Double> {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Vector_System_Numerics_Vector_f64___Ceiling_0__1__System_Numerics_Vector_f64_(&__thrown, value.get_handle());
@@ -3127,14 +1920,6 @@ public struct Vector {
     }
     // System.Numerics.Vector<System.Single> Ceiling(System.Numerics.Vector<System.Single>)
 // docid: M:System.Numerics.Vector.Ceiling(System.Numerics.Vector{System.Single})
-    /**
-    Returns a new vector whose elements are the smallest integral values that are greater than or equal to the given vector's elements.
-
-    - Parameter value: The source vector.
-    - Returns: The vector whose elements are the smallest integral values that are greater than or equal to the given vector's elements.
-            If a value is equal to , , or , that value is returned.
-
-    */
     public static func Ceiling(value : dotnet.System.Numerics.Vector_1<Swift.Float>) throws -> dotnet.System.Numerics.Vector_1<Swift.Float> {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Vector_System_Numerics_Vector_f32___Ceiling_0__1__System_Numerics_Vector_f32_(&__thrown, value.get_handle());
@@ -3146,15 +1931,6 @@ public struct Vector {
     }
     // System.Numerics.Vector<System.Single> ConditionalSelect(System.Numerics.Vector<System.Int32>, System.Numerics.Vector<System.Single>, System.Numerics.Vector<System.Single>)
 // docid: M:System.Numerics.Vector.ConditionalSelect(System.Numerics.Vector{System.Int32},System.Numerics.Vector{System.Single},System.Numerics.Vector{System.Single})
-    /**
-    Creates a new single-precision vector with elements selected between two specified single-precision source vectors based on an integral mask vector.
-
-    - Parameter condition: The integral mask vector used to drive selection.
-    - Parameter left: The first source vector.
-    - Parameter right: The second source vector.
-    - Returns: The new vector with elements selected based on the mask.
-
-    */
     public static func ConditionalSelect(condition : dotnet.System.Numerics.Vector_1<Swift.Int32>, left : dotnet.System.Numerics.Vector_1<Swift.Float>, right : dotnet.System.Numerics.Vector_1<Swift.Float>) throws -> dotnet.System.Numerics.Vector_1<Swift.Float> {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Vector_System_Numerics_Vector_f32___ConditionalSelect_0__3__System_Numerics_Vector_i32__System_Numerics_Vector_f32__System_Numerics_Vector_f32_(&__thrown, condition.get_handle(), left.get_handle(), right.get_handle());
@@ -3166,15 +1942,6 @@ public struct Vector {
     }
     // System.Numerics.Vector<System.Double> ConditionalSelect(System.Numerics.Vector<System.Int64>, System.Numerics.Vector<System.Double>, System.Numerics.Vector<System.Double>)
 // docid: M:System.Numerics.Vector.ConditionalSelect(System.Numerics.Vector{System.Int64},System.Numerics.Vector{System.Double},System.Numerics.Vector{System.Double})
-    /**
-    Creates a new double-precision vector with elements selected between two specified double-precision source vectors based on an integral mask vector.
-
-    - Parameter condition: The integral mask vector used to drive selection.
-    - Parameter left: The first source vector.
-    - Parameter right: The second source vector.
-    - Returns: The new vector with elements selected based on the mask.
-
-    */
     public static func ConditionalSelect(condition : dotnet.System.Numerics.Vector_1<Swift.Int64>, left : dotnet.System.Numerics.Vector_1<Swift.Double>, right : dotnet.System.Numerics.Vector_1<Swift.Double>) throws -> dotnet.System.Numerics.Vector_1<Swift.Double> {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Vector_System_Numerics_Vector_f64___ConditionalSelect_0__3__System_Numerics_Vector_i64__System_Numerics_Vector_f64__System_Numerics_Vector_f64_(&__thrown, condition.get_handle(), left.get_handle(), right.get_handle());
@@ -3186,15 +1953,6 @@ public struct Vector {
     }
     // System.Numerics.Vector<T> ConditionalSelect<T>(System.Numerics.Vector<T>, System.Numerics.Vector<T>, System.Numerics.Vector<T>)
 // docid: M:System.Numerics.Vector.ConditionalSelect``1(System.Numerics.Vector{``0},System.Numerics.Vector{``0},System.Numerics.Vector{``0})
-    /**
-    Creates a new vector of a specified type with elements selected between two specified source vectors of the same type based on an integral mask vector.
-
-    - Parameter condition: The integral mask vector used to drive selection.
-    - Parameter left: The first source vector.
-    - Parameter right: The second source vector.
-    - Returns: The new vector with elements selected based on the mask.
-
-    */
     public static func ConditionalSelect<UT : SGBridgeGenericValue>(condition : dotnet.System.Numerics.Vector_1<UT>, left : dotnet.System.Numerics.Vector_1<UT>, right : dotnet.System.Numerics.Vector_1<UT>) throws -> dotnet.System.Numerics.Vector_1<UT> {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Vector_System_Numerics_Vector_UT___ConditionalSelect_1__3__System_Numerics_Vector_UT__System_Numerics_Vector_UT__System_Numerics_Vector_UT_(UT.get_type_handle(), &__thrown, condition.get_handle(), left.get_handle(), right.get_handle());
@@ -3206,13 +1964,6 @@ public struct Vector {
     }
     // System.Numerics.Vector<System.Double> ConvertToDouble(System.Numerics.Vector<System.Int64>)
 // docid: M:System.Numerics.Vector.ConvertToDouble(System.Numerics.Vector{System.Int64})
-    /**
-    Converts a Vector<Int64> to a Vector<Double>.
-
-    - Parameter value: The source vector.
-    - Returns: The converted vector.
-
-    */
     public static func ConvertToDouble(value : dotnet.System.Numerics.Vector_1<Swift.Int64>) throws -> dotnet.System.Numerics.Vector_1<Swift.Double> {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Vector_System_Numerics_Vector_f64___ConvertToDouble_0__1__System_Numerics_Vector_i64_(&__thrown, value.get_handle());
@@ -3224,13 +1975,6 @@ public struct Vector {
     }
     // System.Numerics.Vector<System.Double> ConvertToDouble(System.Numerics.Vector<System.UInt64>)
 // docid: M:System.Numerics.Vector.ConvertToDouble(System.Numerics.Vector{System.UInt64})
-    /**
-    Converts a Vector<UInt64> to a Vector<Double>.
-
-    - Parameter value: The source vector.
-    - Returns: The converted vector.
-
-    */
     public static func ConvertToDouble(value : dotnet.System.Numerics.Vector_1<Swift.UInt64>) throws -> dotnet.System.Numerics.Vector_1<Swift.Double> {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Vector_System_Numerics_Vector_f64___ConvertToDouble_0__1__System_Numerics_Vector_u64_(&__thrown, value.get_handle());
@@ -3242,13 +1986,6 @@ public struct Vector {
     }
     // System.Numerics.Vector<System.Int32> ConvertToInt32(System.Numerics.Vector<System.Single>)
 // docid: M:System.Numerics.Vector.ConvertToInt32(System.Numerics.Vector{System.Single})
-    /**
-    Converts a Vector<Single> to a Vector<Int32>.
-
-    - Parameter value: The source vector.
-    - Returns: The converted vector.
-
-    */
     public static func ConvertToInt32(value : dotnet.System.Numerics.Vector_1<Swift.Float>) throws -> dotnet.System.Numerics.Vector_1<Swift.Int32> {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Vector_System_Numerics_Vector_i32___ConvertToInt32_0__1__System_Numerics_Vector_f32_(&__thrown, value.get_handle());
@@ -3260,13 +1997,6 @@ public struct Vector {
     }
     // System.Numerics.Vector<System.Int64> ConvertToInt64(System.Numerics.Vector<System.Double>)
 // docid: M:System.Numerics.Vector.ConvertToInt64(System.Numerics.Vector{System.Double})
-    /**
-    Converts a Vector<Double> to a Vector<Int64>.
-
-    - Parameter value: The source vector.
-    - Returns: The converted vector.
-
-    */
     public static func ConvertToInt64(value : dotnet.System.Numerics.Vector_1<Swift.Double>) throws -> dotnet.System.Numerics.Vector_1<Swift.Int64> {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Vector_System_Numerics_Vector_i64___ConvertToInt64_0__1__System_Numerics_Vector_f64_(&__thrown, value.get_handle());
@@ -3278,13 +2008,6 @@ public struct Vector {
     }
     // System.Numerics.Vector<System.Single> ConvertToSingle(System.Numerics.Vector<System.Int32>)
 // docid: M:System.Numerics.Vector.ConvertToSingle(System.Numerics.Vector{System.Int32})
-    /**
-    Converts a Vector<Int32> to a Vector<Single>.
-
-    - Parameter value: The source vector.
-    - Returns: The converted vector.
-
-    */
     public static func ConvertToSingle(value : dotnet.System.Numerics.Vector_1<Swift.Int32>) throws -> dotnet.System.Numerics.Vector_1<Swift.Float> {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Vector_System_Numerics_Vector_f32___ConvertToSingle_0__1__System_Numerics_Vector_i32_(&__thrown, value.get_handle());
@@ -3296,13 +2019,6 @@ public struct Vector {
     }
     // System.Numerics.Vector<System.Single> ConvertToSingle(System.Numerics.Vector<System.UInt32>)
 // docid: M:System.Numerics.Vector.ConvertToSingle(System.Numerics.Vector{System.UInt32})
-    /**
-    Converts a Vector<UInt32> to a Vector<Single>.
-
-    - Parameter value: The source vector.
-    - Returns: The converted vector.
-
-    */
     public static func ConvertToSingle(value : dotnet.System.Numerics.Vector_1<Swift.UInt32>) throws -> dotnet.System.Numerics.Vector_1<Swift.Float> {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Vector_System_Numerics_Vector_f32___ConvertToSingle_0__1__System_Numerics_Vector_u32_(&__thrown, value.get_handle());
@@ -3314,13 +2030,6 @@ public struct Vector {
     }
     // System.Numerics.Vector<System.UInt32> ConvertToUInt32(System.Numerics.Vector<System.Single>)
 // docid: M:System.Numerics.Vector.ConvertToUInt32(System.Numerics.Vector{System.Single})
-    /**
-    Converts a Vector<Single> to a Vector<UInt32>.
-
-    - Parameter value: The source vector.
-    - Returns: The converted vector.
-
-    */
     public static func ConvertToUInt32(value : dotnet.System.Numerics.Vector_1<Swift.Float>) throws -> dotnet.System.Numerics.Vector_1<Swift.UInt32> {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Vector_System_Numerics_Vector_u32___ConvertToUInt32_0__1__System_Numerics_Vector_f32_(&__thrown, value.get_handle());
@@ -3332,13 +2041,6 @@ public struct Vector {
     }
     // System.Numerics.Vector<System.UInt64> ConvertToUInt64(System.Numerics.Vector<System.Double>)
 // docid: M:System.Numerics.Vector.ConvertToUInt64(System.Numerics.Vector{System.Double})
-    /**
-    Converts a Vector<Double> to a Vector<UInt64>.
-
-    - Parameter value: The source vector.
-    - Returns: The converted vector.
-
-    */
     public static func ConvertToUInt64(value : dotnet.System.Numerics.Vector_1<Swift.Double>) throws -> dotnet.System.Numerics.Vector_1<Swift.UInt64> {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Vector_System_Numerics_Vector_u64___ConvertToUInt64_0__1__System_Numerics_Vector_f64_(&__thrown, value.get_handle());
@@ -3350,14 +2052,6 @@ public struct Vector {
     }
     // System.Numerics.Vector<T> Divide<T>(System.Numerics.Vector<T>, System.Numerics.Vector<T>)
 // docid: M:System.Numerics.Vector.Divide``1(System.Numerics.Vector{``0},System.Numerics.Vector{``0})
-    /**
-    Returns a new vector whose values are the result of dividing the first vector's elements by the corresponding elements in the second vector.
-
-    - Parameter left: The first vector.
-    - Parameter right: The second vector.
-    - Returns: The divided vector.
-
-    */
     public static func Divide<UT : SGBridgeGenericValue>(left : dotnet.System.Numerics.Vector_1<UT>, right : dotnet.System.Numerics.Vector_1<UT>) throws -> dotnet.System.Numerics.Vector_1<UT> {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Vector_System_Numerics_Vector_UT___Divide_1__2__System_Numerics_Vector_UT__System_Numerics_Vector_UT_(UT.get_type_handle(), &__thrown, left.get_handle(), right.get_handle());
@@ -3369,14 +2063,6 @@ public struct Vector {
     }
     // T Dot<T>(System.Numerics.Vector<T>, System.Numerics.Vector<T>)
 // docid: M:System.Numerics.Vector.Dot``1(System.Numerics.Vector{``0},System.Numerics.Vector{``0})
-    /**
-    Returns the dot product of two vectors.
-
-    - Parameter left: The first vector.
-    - Parameter right: The second vector.
-    - Returns: The dot product.
-
-    */
     public static func Dot<UT : SGBridgeGenericValue>(left : dotnet.System.Numerics.Vector_1<UT>, right : dotnet.System.Numerics.Vector_1<UT>) throws -> UT {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Vector_UT__Dot_1__2__System_Numerics_Vector_UT__System_Numerics_Vector_UT_(UT.get_type_handle(), &__thrown, left.get_handle(), right.get_handle());
@@ -3388,14 +2074,6 @@ public struct Vector {
     }
     // System.Numerics.Vector<System.Int64> Equals(System.Numerics.Vector<System.Double>, System.Numerics.Vector<System.Double>)
 // docid: M:System.Numerics.Vector.Equals(System.Numerics.Vector{System.Double},System.Numerics.Vector{System.Double})
-    /**
-    Returns a new integral vector whose elements signal whether the elements in two specified double-precision vectors are equal.
-
-    - Parameter left: The first vector to compare.
-    - Parameter right: The second vector to compare.
-    - Returns: The resulting integral vector.
-
-    */
     public static func Equals(left : dotnet.System.Numerics.Vector_1<Swift.Double>, right : dotnet.System.Numerics.Vector_1<Swift.Double>) throws -> dotnet.System.Numerics.Vector_1<Swift.Int64> {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Vector_System_Numerics_Vector_i64___Equals_0__2__System_Numerics_Vector_f64__System_Numerics_Vector_f64_(&__thrown, left.get_handle(), right.get_handle());
@@ -3407,14 +2085,6 @@ public struct Vector {
     }
     // System.Numerics.Vector<System.Int32> Equals(System.Numerics.Vector<System.Int32>, System.Numerics.Vector<System.Int32>)
 // docid: M:System.Numerics.Vector.Equals(System.Numerics.Vector{System.Int32},System.Numerics.Vector{System.Int32})
-    /**
-    Returns a new integral vector whose elements signal whether the elements in two specified integral vectors are equal.
-
-    - Parameter left: The first vector to compare.
-    - Parameter right: The second vector to compare.
-    - Returns: The resulting integral vector.
-
-    */
     public static func Equals(left : dotnet.System.Numerics.Vector_1<Swift.Int32>, right : dotnet.System.Numerics.Vector_1<Swift.Int32>) throws -> dotnet.System.Numerics.Vector_1<Swift.Int32> {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Vector_System_Numerics_Vector_i32___Equals_0__2__System_Numerics_Vector_i32__System_Numerics_Vector_i32_(&__thrown, left.get_handle(), right.get_handle());
@@ -3426,14 +2096,6 @@ public struct Vector {
     }
     // System.Numerics.Vector<System.Int64> Equals(System.Numerics.Vector<System.Int64>, System.Numerics.Vector<System.Int64>)
 // docid: M:System.Numerics.Vector.Equals(System.Numerics.Vector{System.Int64},System.Numerics.Vector{System.Int64})
-    /**
-    Returns a new vector whose elements signal whether the elements in two specified long integer vectors are equal.
-
-    - Parameter left: The first vector to compare.
-    - Parameter right: The second vector to compare.
-    - Returns: The resulting long integer vector.
-
-    */
     public static func Equals(left : dotnet.System.Numerics.Vector_1<Swift.Int64>, right : dotnet.System.Numerics.Vector_1<Swift.Int64>) throws -> dotnet.System.Numerics.Vector_1<Swift.Int64> {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Vector_System_Numerics_Vector_i64___Equals_0__2__System_Numerics_Vector_i64__System_Numerics_Vector_i64_(&__thrown, left.get_handle(), right.get_handle());
@@ -3445,14 +2107,6 @@ public struct Vector {
     }
     // System.Numerics.Vector<System.Int32> Equals(System.Numerics.Vector<System.Single>, System.Numerics.Vector<System.Single>)
 // docid: M:System.Numerics.Vector.Equals(System.Numerics.Vector{System.Single},System.Numerics.Vector{System.Single})
-    /**
-    Returns a new integral vector whose elements signal whether the elements in two specified single-precision vectors are equal.
-
-    - Parameter left: The first vector to compare.
-    - Parameter right: The second vector to compare.
-    - Returns: The resulting integral vector.
-
-    */
     public static func Equals(left : dotnet.System.Numerics.Vector_1<Swift.Float>, right : dotnet.System.Numerics.Vector_1<Swift.Float>) throws -> dotnet.System.Numerics.Vector_1<Swift.Int32> {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Vector_System_Numerics_Vector_i32___Equals_0__2__System_Numerics_Vector_f32__System_Numerics_Vector_f32_(&__thrown, left.get_handle(), right.get_handle());
@@ -3464,15 +2118,6 @@ public struct Vector {
     }
     // bool EqualsAll<T>(System.Numerics.Vector<T>, System.Numerics.Vector<T>)
 // docid: M:System.Numerics.Vector.EqualsAll``1(System.Numerics.Vector{``0},System.Numerics.Vector{``0})
-    /**
-    Returns a value that indicates whether each pair of elements in the given vectors is equal.
-
-    - Parameter left: The first vector to compare.
-    - Parameter right: The second vector to compare.
-    - Returns: 
-         if all elements in  and  are equal; otherwise, .
-
-    */
     public static func EqualsAll<UT : SGBridgeGenericValue>(left : dotnet.System.Numerics.Vector_1<UT>, right : dotnet.System.Numerics.Vector_1<UT>) throws -> Bool {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Vector_bool__EqualsAll_1__2__System_Numerics_Vector_UT__System_Numerics_Vector_UT_(UT.get_type_handle(), &__thrown, left.get_handle(), right.get_handle());
@@ -3484,15 +2129,6 @@ public struct Vector {
     }
     // bool EqualsAny<T>(System.Numerics.Vector<T>, System.Numerics.Vector<T>)
 // docid: M:System.Numerics.Vector.EqualsAny``1(System.Numerics.Vector{``0},System.Numerics.Vector{``0})
-    /**
-    Returns a value that indicates whether any single pair of elements in the given vectors is equal.
-
-    - Parameter left: The first vector to compare.
-    - Parameter right: The second vector to compare.
-    - Returns: 
-         if any element pair in  and  is equal; otherwise, .
-
-    */
     public static func EqualsAny<UT : SGBridgeGenericValue>(left : dotnet.System.Numerics.Vector_1<UT>, right : dotnet.System.Numerics.Vector_1<UT>) throws -> Bool {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Vector_bool__EqualsAny_1__2__System_Numerics_Vector_UT__System_Numerics_Vector_UT_(UT.get_type_handle(), &__thrown, left.get_handle(), right.get_handle());
@@ -3504,14 +2140,6 @@ public struct Vector {
     }
     // System.Numerics.Vector<T> Equals<T>(System.Numerics.Vector<T>, System.Numerics.Vector<T>)
 // docid: M:System.Numerics.Vector.Equals``1(System.Numerics.Vector{``0},System.Numerics.Vector{``0})
-    /**
-    Returns a new vector of a specified type whose elements signal whether the elements in two specified vectors of the same type are equal.
-
-    - Parameter left: The first vector to compare.
-    - Parameter right: The second vector to compare.
-    - Returns: The resulting vector.
-
-    */
     public static func Equals<UT : SGBridgeGenericValue>(left : dotnet.System.Numerics.Vector_1<UT>, right : dotnet.System.Numerics.Vector_1<UT>) throws -> dotnet.System.Numerics.Vector_1<UT> {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Vector_System_Numerics_Vector_UT___Equals_1__2__System_Numerics_Vector_UT__System_Numerics_Vector_UT_(UT.get_type_handle(), &__thrown, left.get_handle(), right.get_handle());
@@ -3523,14 +2151,6 @@ public struct Vector {
     }
     // System.Numerics.Vector<System.Double> Floor(System.Numerics.Vector<System.Double>)
 // docid: M:System.Numerics.Vector.Floor(System.Numerics.Vector{System.Double})
-    /**
-    Returns a new vector whose elements are the largest integral values that are less than or equal to the given vector's elements.
-
-    - Parameter value: The source vector.
-    - Returns: The vector whose elements are the largest integral values that are less than or equal to the given vector's elements.
-            If a value is equal to , , or , that value is returned.
-
-    */
     public static func Floor(value : dotnet.System.Numerics.Vector_1<Swift.Double>) throws -> dotnet.System.Numerics.Vector_1<Swift.Double> {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Vector_System_Numerics_Vector_f64___Floor_0__1__System_Numerics_Vector_f64_(&__thrown, value.get_handle());
@@ -3542,14 +2162,6 @@ public struct Vector {
     }
     // System.Numerics.Vector<System.Single> Floor(System.Numerics.Vector<System.Single>)
 // docid: M:System.Numerics.Vector.Floor(System.Numerics.Vector{System.Single})
-    /**
-    Returns a new vector whose elements are the largest integral values that are less than or equal to the given vector's elements.
-
-    - Parameter value: The source vector.
-    - Returns: The vector whose elements are the largest integral values that are less than or equal to the given vector's elements.
-            If a value is equal to , , or , that value is returned.
-
-    */
     public static func Floor(value : dotnet.System.Numerics.Vector_1<Swift.Float>) throws -> dotnet.System.Numerics.Vector_1<Swift.Float> {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Vector_System_Numerics_Vector_f32___Floor_0__1__System_Numerics_Vector_f32_(&__thrown, value.get_handle());
@@ -3561,14 +2173,6 @@ public struct Vector {
     }
     // System.Numerics.Vector<System.Int64> GreaterThan(System.Numerics.Vector<System.Double>, System.Numerics.Vector<System.Double>)
 // docid: M:System.Numerics.Vector.GreaterThan(System.Numerics.Vector{System.Double},System.Numerics.Vector{System.Double})
-    /**
-    Returns a new integral vector whose elements signal whether the elements in one double-precision floating-point vector are greater than their corresponding elements in a second double-precision floating-point vector.
-
-    - Parameter left: The first vector to compare.
-    - Parameter right: The second vector to compare.
-    - Returns: The resulting integral vector.
-
-    */
     public static func GreaterThan(left : dotnet.System.Numerics.Vector_1<Swift.Double>, right : dotnet.System.Numerics.Vector_1<Swift.Double>) throws -> dotnet.System.Numerics.Vector_1<Swift.Int64> {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Vector_System_Numerics_Vector_i64___GreaterThan_0__2__System_Numerics_Vector_f64__System_Numerics_Vector_f64_(&__thrown, left.get_handle(), right.get_handle());
@@ -3580,14 +2184,6 @@ public struct Vector {
     }
     // System.Numerics.Vector<System.Int32> GreaterThan(System.Numerics.Vector<System.Int32>, System.Numerics.Vector<System.Int32>)
 // docid: M:System.Numerics.Vector.GreaterThan(System.Numerics.Vector{System.Int32},System.Numerics.Vector{System.Int32})
-    /**
-    Returns a new integral vector whose elements signal whether the elements in one integral vector are greater than their corresponding elements in a second integral vector.
-
-    - Parameter left: The first vector to compare.
-    - Parameter right: The second vector to compare.
-    - Returns: The resulting integral vector.
-
-    */
     public static func GreaterThan(left : dotnet.System.Numerics.Vector_1<Swift.Int32>, right : dotnet.System.Numerics.Vector_1<Swift.Int32>) throws -> dotnet.System.Numerics.Vector_1<Swift.Int32> {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Vector_System_Numerics_Vector_i32___GreaterThan_0__2__System_Numerics_Vector_i32__System_Numerics_Vector_i32_(&__thrown, left.get_handle(), right.get_handle());
@@ -3599,14 +2195,6 @@ public struct Vector {
     }
     // System.Numerics.Vector<System.Int64> GreaterThan(System.Numerics.Vector<System.Int64>, System.Numerics.Vector<System.Int64>)
 // docid: M:System.Numerics.Vector.GreaterThan(System.Numerics.Vector{System.Int64},System.Numerics.Vector{System.Int64})
-    /**
-    Returns a new long integer vector whose elements signal whether the elements in one long integer vector are greater than their corresponding elements in a second long integer vector.
-
-    - Parameter left: The first vector to compare.
-    - Parameter right: The second vector to compare.
-    - Returns: The resulting long integer vector.
-
-    */
     public static func GreaterThan(left : dotnet.System.Numerics.Vector_1<Swift.Int64>, right : dotnet.System.Numerics.Vector_1<Swift.Int64>) throws -> dotnet.System.Numerics.Vector_1<Swift.Int64> {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Vector_System_Numerics_Vector_i64___GreaterThan_0__2__System_Numerics_Vector_i64__System_Numerics_Vector_i64_(&__thrown, left.get_handle(), right.get_handle());
@@ -3618,14 +2206,6 @@ public struct Vector {
     }
     // System.Numerics.Vector<System.Int32> GreaterThan(System.Numerics.Vector<System.Single>, System.Numerics.Vector<System.Single>)
 // docid: M:System.Numerics.Vector.GreaterThan(System.Numerics.Vector{System.Single},System.Numerics.Vector{System.Single})
-    /**
-    Returns a new integral vector whose elements signal whether the elements in one single-precision floating-point vector are greater than their corresponding elements in a second single-precision floating-point vector.
-
-    - Parameter left: The first vector to compare.
-    - Parameter right: The second vector to compare.
-    - Returns: The resulting integral vector.
-
-    */
     public static func GreaterThan(left : dotnet.System.Numerics.Vector_1<Swift.Float>, right : dotnet.System.Numerics.Vector_1<Swift.Float>) throws -> dotnet.System.Numerics.Vector_1<Swift.Int32> {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Vector_System_Numerics_Vector_i32___GreaterThan_0__2__System_Numerics_Vector_f32__System_Numerics_Vector_f32_(&__thrown, left.get_handle(), right.get_handle());
@@ -3637,15 +2217,6 @@ public struct Vector {
     }
     // bool GreaterThanAll<T>(System.Numerics.Vector<T>, System.Numerics.Vector<T>)
 // docid: M:System.Numerics.Vector.GreaterThanAll``1(System.Numerics.Vector{``0},System.Numerics.Vector{``0})
-    /**
-    Returns a value that indicates whether all elements in the first vector are greater than the corresponding elements in the second vector.
-
-    - Parameter left: The first vector to compare.
-    - Parameter right: The second vector to compare.
-    - Returns: 
-         if all elements in  are greater than the corresponding elements in ; otherwise, .
-
-    */
     public static func GreaterThanAll<UT : SGBridgeGenericValue>(left : dotnet.System.Numerics.Vector_1<UT>, right : dotnet.System.Numerics.Vector_1<UT>) throws -> Bool {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Vector_bool__GreaterThanAll_1__2__System_Numerics_Vector_UT__System_Numerics_Vector_UT_(UT.get_type_handle(), &__thrown, left.get_handle(), right.get_handle());
@@ -3657,15 +2228,6 @@ public struct Vector {
     }
     // bool GreaterThanAny<T>(System.Numerics.Vector<T>, System.Numerics.Vector<T>)
 // docid: M:System.Numerics.Vector.GreaterThanAny``1(System.Numerics.Vector{``0},System.Numerics.Vector{``0})
-    /**
-    Returns a value that indicates whether any element in the first vector is greater than the corresponding element in the second vector.
-
-    - Parameter left: The first vector to compare.
-    - Parameter right: The second vector to compare.
-    - Returns: 
-         if any element in  is greater than the corresponding element in ; otherwise,  .
-
-    */
     public static func GreaterThanAny<UT : SGBridgeGenericValue>(left : dotnet.System.Numerics.Vector_1<UT>, right : dotnet.System.Numerics.Vector_1<UT>) throws -> Bool {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Vector_bool__GreaterThanAny_1__2__System_Numerics_Vector_UT__System_Numerics_Vector_UT_(UT.get_type_handle(), &__thrown, left.get_handle(), right.get_handle());
@@ -3677,14 +2239,6 @@ public struct Vector {
     }
     // System.Numerics.Vector<System.Int64> GreaterThanOrEqual(System.Numerics.Vector<System.Double>, System.Numerics.Vector<System.Double>)
 // docid: M:System.Numerics.Vector.GreaterThanOrEqual(System.Numerics.Vector{System.Double},System.Numerics.Vector{System.Double})
-    /**
-    Returns a new integral vector whose elements signal whether the elements in one vector are greater than or equal to their corresponding elements in the second double-precision floating-point vector.
-
-    - Parameter left: The first vector to compare.
-    - Parameter right: The second vector to compare.
-    - Returns: The resulting integral vector.
-
-    */
     public static func GreaterThanOrEqual(left : dotnet.System.Numerics.Vector_1<Swift.Double>, right : dotnet.System.Numerics.Vector_1<Swift.Double>) throws -> dotnet.System.Numerics.Vector_1<Swift.Int64> {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Vector_System_Numerics_Vector_i64___GreaterThanOrEqual_0__2__System_Numerics_Vector_f64__System_Numerics_Vector_f64_(&__thrown, left.get_handle(), right.get_handle());
@@ -3696,14 +2250,6 @@ public struct Vector {
     }
     // System.Numerics.Vector<System.Int32> GreaterThanOrEqual(System.Numerics.Vector<System.Int32>, System.Numerics.Vector<System.Int32>)
 // docid: M:System.Numerics.Vector.GreaterThanOrEqual(System.Numerics.Vector{System.Int32},System.Numerics.Vector{System.Int32})
-    /**
-    Returns a new integral vector whose elements signal whether the elements in one integral vector are greater than or equal to their corresponding elements in the second integral vector.
-
-    - Parameter left: The first vector to compare.
-    - Parameter right: The second vector to compare.
-    - Returns: The resulting integral vector.
-
-    */
     public static func GreaterThanOrEqual(left : dotnet.System.Numerics.Vector_1<Swift.Int32>, right : dotnet.System.Numerics.Vector_1<Swift.Int32>) throws -> dotnet.System.Numerics.Vector_1<Swift.Int32> {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Vector_System_Numerics_Vector_i32___GreaterThanOrEqual_0__2__System_Numerics_Vector_i32__System_Numerics_Vector_i32_(&__thrown, left.get_handle(), right.get_handle());
@@ -3715,14 +2261,6 @@ public struct Vector {
     }
     // System.Numerics.Vector<System.Int64> GreaterThanOrEqual(System.Numerics.Vector<System.Int64>, System.Numerics.Vector<System.Int64>)
 // docid: M:System.Numerics.Vector.GreaterThanOrEqual(System.Numerics.Vector{System.Int64},System.Numerics.Vector{System.Int64})
-    /**
-    Returns a new long integer vector whose elements signal whether the elements in one long integer vector are greater than or equal to their corresponding elements in the second long integer vector.
-
-    - Parameter left: The first vector to compare.
-    - Parameter right: The second vector to compare.
-    - Returns: The resulting long integer vector.
-
-    */
     public static func GreaterThanOrEqual(left : dotnet.System.Numerics.Vector_1<Swift.Int64>, right : dotnet.System.Numerics.Vector_1<Swift.Int64>) throws -> dotnet.System.Numerics.Vector_1<Swift.Int64> {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Vector_System_Numerics_Vector_i64___GreaterThanOrEqual_0__2__System_Numerics_Vector_i64__System_Numerics_Vector_i64_(&__thrown, left.get_handle(), right.get_handle());
@@ -3734,14 +2272,6 @@ public struct Vector {
     }
     // System.Numerics.Vector<System.Int32> GreaterThanOrEqual(System.Numerics.Vector<System.Single>, System.Numerics.Vector<System.Single>)
 // docid: M:System.Numerics.Vector.GreaterThanOrEqual(System.Numerics.Vector{System.Single},System.Numerics.Vector{System.Single})
-    /**
-    Returns a new integral vector whose elements signal whether the elements in one vector are greater than or equal to their corresponding elements in the single-precision floating-point second vector.
-
-    - Parameter left: The first vector to compare.
-    - Parameter right: The second vector to compare.
-    - Returns: The resulting integral vector.
-
-    */
     public static func GreaterThanOrEqual(left : dotnet.System.Numerics.Vector_1<Swift.Float>, right : dotnet.System.Numerics.Vector_1<Swift.Float>) throws -> dotnet.System.Numerics.Vector_1<Swift.Int32> {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Vector_System_Numerics_Vector_i32___GreaterThanOrEqual_0__2__System_Numerics_Vector_f32__System_Numerics_Vector_f32_(&__thrown, left.get_handle(), right.get_handle());
@@ -3753,15 +2283,6 @@ public struct Vector {
     }
     // bool GreaterThanOrEqualAll<T>(System.Numerics.Vector<T>, System.Numerics.Vector<T>)
 // docid: M:System.Numerics.Vector.GreaterThanOrEqualAll``1(System.Numerics.Vector{``0},System.Numerics.Vector{``0})
-    /**
-    Returns a value that indicates whether all elements in the first vector are greater than or equal to all the corresponding elements in the second vector.
-
-    - Parameter left: The first vector to compare.
-    - Parameter right: The second vector to compare.
-    - Returns: 
-         if all elements in  are greater than or equal to the corresponding elements in ; otherwise, .
-
-    */
     public static func GreaterThanOrEqualAll<UT : SGBridgeGenericValue>(left : dotnet.System.Numerics.Vector_1<UT>, right : dotnet.System.Numerics.Vector_1<UT>) throws -> Bool {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Vector_bool__GreaterThanOrEqualAll_1__2__System_Numerics_Vector_UT__System_Numerics_Vector_UT_(UT.get_type_handle(), &__thrown, left.get_handle(), right.get_handle());
@@ -3773,15 +2294,6 @@ public struct Vector {
     }
     // bool GreaterThanOrEqualAny<T>(System.Numerics.Vector<T>, System.Numerics.Vector<T>)
 // docid: M:System.Numerics.Vector.GreaterThanOrEqualAny``1(System.Numerics.Vector{``0},System.Numerics.Vector{``0})
-    /**
-    Returns a value that indicates whether any element in the first vector is greater than or equal to the corresponding element in the second vector.
-
-    - Parameter left: The first vector to compare.
-    - Parameter right: The second vector to compare.
-    - Returns: 
-         if any element in  is greater than or equal to the corresponding element in ; otherwise,  .
-
-    */
     public static func GreaterThanOrEqualAny<UT : SGBridgeGenericValue>(left : dotnet.System.Numerics.Vector_1<UT>, right : dotnet.System.Numerics.Vector_1<UT>) throws -> Bool {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Vector_bool__GreaterThanOrEqualAny_1__2__System_Numerics_Vector_UT__System_Numerics_Vector_UT_(UT.get_type_handle(), &__thrown, left.get_handle(), right.get_handle());
@@ -3793,14 +2305,6 @@ public struct Vector {
     }
     // System.Numerics.Vector<T> GreaterThanOrEqual<T>(System.Numerics.Vector<T>, System.Numerics.Vector<T>)
 // docid: M:System.Numerics.Vector.GreaterThanOrEqual``1(System.Numerics.Vector{``0},System.Numerics.Vector{``0})
-    /**
-    Returns a new vector whose elements signal whether the elements in one vector of a specified type are greater than or equal to their corresponding elements in the second vector of the same type.
-
-    - Parameter left: The first vector to compare.
-    - Parameter right: The second vector to compare.
-    - Returns: The resulting vector.
-
-    */
     public static func GreaterThanOrEqual<UT : SGBridgeGenericValue>(left : dotnet.System.Numerics.Vector_1<UT>, right : dotnet.System.Numerics.Vector_1<UT>) throws -> dotnet.System.Numerics.Vector_1<UT> {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Vector_System_Numerics_Vector_UT___GreaterThanOrEqual_1__2__System_Numerics_Vector_UT__System_Numerics_Vector_UT_(UT.get_type_handle(), &__thrown, left.get_handle(), right.get_handle());
@@ -3812,14 +2316,6 @@ public struct Vector {
     }
     // System.Numerics.Vector<T> GreaterThan<T>(System.Numerics.Vector<T>, System.Numerics.Vector<T>)
 // docid: M:System.Numerics.Vector.GreaterThan``1(System.Numerics.Vector{``0},System.Numerics.Vector{``0})
-    /**
-    Returns a new vector whose elements signal whether the elements in one vector of a specified type are greater than their corresponding elements in the second vector of the same time.
-
-    - Parameter left: The first vector to compare.
-    - Parameter right: The second vector to compare.
-    - Returns: The resulting vector.
-
-    */
     public static func GreaterThan<UT : SGBridgeGenericValue>(left : dotnet.System.Numerics.Vector_1<UT>, right : dotnet.System.Numerics.Vector_1<UT>) throws -> dotnet.System.Numerics.Vector_1<UT> {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Vector_System_Numerics_Vector_UT___GreaterThan_1__2__System_Numerics_Vector_UT__System_Numerics_Vector_UT_(UT.get_type_handle(), &__thrown, left.get_handle(), right.get_handle());
@@ -3831,14 +2327,6 @@ public struct Vector {
     }
     // System.Numerics.Vector<System.Int64> LessThan(System.Numerics.Vector<System.Double>, System.Numerics.Vector<System.Double>)
 // docid: M:System.Numerics.Vector.LessThan(System.Numerics.Vector{System.Double},System.Numerics.Vector{System.Double})
-    /**
-    Returns a new integral vector whose elements signal whether the elements in one double-precision floating-point vector are less than their corresponding elements in a second double-precision floating-point vector.
-
-    - Parameter left: The first vector to compare.
-    - Parameter right: The second vector to compare.
-    - Returns: The resulting integral vector.
-
-    */
     public static func LessThan(left : dotnet.System.Numerics.Vector_1<Swift.Double>, right : dotnet.System.Numerics.Vector_1<Swift.Double>) throws -> dotnet.System.Numerics.Vector_1<Swift.Int64> {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Vector_System_Numerics_Vector_i64___LessThan_0__2__System_Numerics_Vector_f64__System_Numerics_Vector_f64_(&__thrown, left.get_handle(), right.get_handle());
@@ -3850,14 +2338,6 @@ public struct Vector {
     }
     // System.Numerics.Vector<System.Int32> LessThan(System.Numerics.Vector<System.Int32>, System.Numerics.Vector<System.Int32>)
 // docid: M:System.Numerics.Vector.LessThan(System.Numerics.Vector{System.Int32},System.Numerics.Vector{System.Int32})
-    /**
-    Returns a new integral vector whose elements signal whether the elements in one integral vector are less than their corresponding elements in a second integral vector.
-
-    - Parameter left: The first vector to compare.
-    - Parameter right: The second vector to compare.
-    - Returns: The resulting integral vector
-
-    */
     public static func LessThan(left : dotnet.System.Numerics.Vector_1<Swift.Int32>, right : dotnet.System.Numerics.Vector_1<Swift.Int32>) throws -> dotnet.System.Numerics.Vector_1<Swift.Int32> {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Vector_System_Numerics_Vector_i32___LessThan_0__2__System_Numerics_Vector_i32__System_Numerics_Vector_i32_(&__thrown, left.get_handle(), right.get_handle());
@@ -3869,14 +2349,6 @@ public struct Vector {
     }
     // System.Numerics.Vector<System.Int64> LessThan(System.Numerics.Vector<System.Int64>, System.Numerics.Vector<System.Int64>)
 // docid: M:System.Numerics.Vector.LessThan(System.Numerics.Vector{System.Int64},System.Numerics.Vector{System.Int64})
-    /**
-    Returns a new long integer vector whose elements signal whether the elements in one long integer vector are less than their corresponding elements in a second long integer vector.
-
-    - Parameter left: The first vector to compare.
-    - Parameter right: The second vector to compare.
-    - Returns: The resulting long integer vector.
-
-    */
     public static func LessThan(left : dotnet.System.Numerics.Vector_1<Swift.Int64>, right : dotnet.System.Numerics.Vector_1<Swift.Int64>) throws -> dotnet.System.Numerics.Vector_1<Swift.Int64> {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Vector_System_Numerics_Vector_i64___LessThan_0__2__System_Numerics_Vector_i64__System_Numerics_Vector_i64_(&__thrown, left.get_handle(), right.get_handle());
@@ -3888,14 +2360,6 @@ public struct Vector {
     }
     // System.Numerics.Vector<System.Int32> LessThan(System.Numerics.Vector<System.Single>, System.Numerics.Vector<System.Single>)
 // docid: M:System.Numerics.Vector.LessThan(System.Numerics.Vector{System.Single},System.Numerics.Vector{System.Single})
-    /**
-    Returns a new integral vector whose elements signal whether the elements in one single-precision vector are less than their corresponding elements in a second single-precision vector.
-
-    - Parameter left: The first vector to compare.
-    - Parameter right: The second vector to compare.
-    - Returns: The resulting integral vector.
-
-    */
     public static func LessThan(left : dotnet.System.Numerics.Vector_1<Swift.Float>, right : dotnet.System.Numerics.Vector_1<Swift.Float>) throws -> dotnet.System.Numerics.Vector_1<Swift.Int32> {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Vector_System_Numerics_Vector_i32___LessThan_0__2__System_Numerics_Vector_f32__System_Numerics_Vector_f32_(&__thrown, left.get_handle(), right.get_handle());
@@ -3907,15 +2371,6 @@ public struct Vector {
     }
     // bool LessThanAll<T>(System.Numerics.Vector<T>, System.Numerics.Vector<T>)
 // docid: M:System.Numerics.Vector.LessThanAll``1(System.Numerics.Vector{``0},System.Numerics.Vector{``0})
-    /**
-    Returns a value that indicates whether all of the elements in the first vector are less than their corresponding elements in the second vector.
-
-    - Parameter left: The first vector to compare.
-    - Parameter right: The second vector to compare.
-    - Returns: 
-         if all of the elements in  are less than the corresponding elements in ; otherwise,  .
-
-    */
     public static func LessThanAll<UT : SGBridgeGenericValue>(left : dotnet.System.Numerics.Vector_1<UT>, right : dotnet.System.Numerics.Vector_1<UT>) throws -> Bool {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Vector_bool__LessThanAll_1__2__System_Numerics_Vector_UT__System_Numerics_Vector_UT_(UT.get_type_handle(), &__thrown, left.get_handle(), right.get_handle());
@@ -3927,15 +2382,6 @@ public struct Vector {
     }
     // bool LessThanAny<T>(System.Numerics.Vector<T>, System.Numerics.Vector<T>)
 // docid: M:System.Numerics.Vector.LessThanAny``1(System.Numerics.Vector{``0},System.Numerics.Vector{``0})
-    /**
-    Returns a value that indicates whether any element in the first vector is less than the corresponding element in the second vector.
-
-    - Parameter left: The first vector to compare.
-    - Parameter right: The second vector to compare.
-    - Returns: 
-         if any element in  is less than the corresponding element in ; otherwise,  .
-
-    */
     public static func LessThanAny<UT : SGBridgeGenericValue>(left : dotnet.System.Numerics.Vector_1<UT>, right : dotnet.System.Numerics.Vector_1<UT>) throws -> Bool {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Vector_bool__LessThanAny_1__2__System_Numerics_Vector_UT__System_Numerics_Vector_UT_(UT.get_type_handle(), &__thrown, left.get_handle(), right.get_handle());
@@ -3947,14 +2393,6 @@ public struct Vector {
     }
     // System.Numerics.Vector<System.Int64> LessThanOrEqual(System.Numerics.Vector<System.Double>, System.Numerics.Vector<System.Double>)
 // docid: M:System.Numerics.Vector.LessThanOrEqual(System.Numerics.Vector{System.Double},System.Numerics.Vector{System.Double})
-    /**
-    Returns a new integral vector whose elements signal whether the elements in one double-precision floating-point vector are less than or equal to their corresponding elements in a second double-precision floating-point vector.
-
-    - Parameter left: The first vector to compare.
-    - Parameter right: The second vector to compare.
-    - Returns: The resulting integral vector.
-
-    */
     public static func LessThanOrEqual(left : dotnet.System.Numerics.Vector_1<Swift.Double>, right : dotnet.System.Numerics.Vector_1<Swift.Double>) throws -> dotnet.System.Numerics.Vector_1<Swift.Int64> {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Vector_System_Numerics_Vector_i64___LessThanOrEqual_0__2__System_Numerics_Vector_f64__System_Numerics_Vector_f64_(&__thrown, left.get_handle(), right.get_handle());
@@ -3966,14 +2404,6 @@ public struct Vector {
     }
     // System.Numerics.Vector<System.Int32> LessThanOrEqual(System.Numerics.Vector<System.Int32>, System.Numerics.Vector<System.Int32>)
 // docid: M:System.Numerics.Vector.LessThanOrEqual(System.Numerics.Vector{System.Int32},System.Numerics.Vector{System.Int32})
-    /**
-    Returns a new integral vector whose elements signal whether the elements in one integral vector are less than or equal to their corresponding elements in a second integral vector.
-
-    - Parameter left: The first vector to compare.
-    - Parameter right: The second vector to compare.
-    - Returns: The resulting integral vector.
-
-    */
     public static func LessThanOrEqual(left : dotnet.System.Numerics.Vector_1<Swift.Int32>, right : dotnet.System.Numerics.Vector_1<Swift.Int32>) throws -> dotnet.System.Numerics.Vector_1<Swift.Int32> {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Vector_System_Numerics_Vector_i32___LessThanOrEqual_0__2__System_Numerics_Vector_i32__System_Numerics_Vector_i32_(&__thrown, left.get_handle(), right.get_handle());
@@ -3985,14 +2415,6 @@ public struct Vector {
     }
     // System.Numerics.Vector<System.Int64> LessThanOrEqual(System.Numerics.Vector<System.Int64>, System.Numerics.Vector<System.Int64>)
 // docid: M:System.Numerics.Vector.LessThanOrEqual(System.Numerics.Vector{System.Int64},System.Numerics.Vector{System.Int64})
-    /**
-    Returns a new long integer vector whose elements signal whether the elements in one long integer vector are less or equal to their corresponding elements in a second long integer vector.
-
-    - Parameter left: The first vector to compare.
-    - Parameter right: The second vector to compare.
-    - Returns: The resulting long integer vector.
-
-    */
     public static func LessThanOrEqual(left : dotnet.System.Numerics.Vector_1<Swift.Int64>, right : dotnet.System.Numerics.Vector_1<Swift.Int64>) throws -> dotnet.System.Numerics.Vector_1<Swift.Int64> {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Vector_System_Numerics_Vector_i64___LessThanOrEqual_0__2__System_Numerics_Vector_i64__System_Numerics_Vector_i64_(&__thrown, left.get_handle(), right.get_handle());
@@ -4004,14 +2426,6 @@ public struct Vector {
     }
     // System.Numerics.Vector<System.Int32> LessThanOrEqual(System.Numerics.Vector<System.Single>, System.Numerics.Vector<System.Single>)
 // docid: M:System.Numerics.Vector.LessThanOrEqual(System.Numerics.Vector{System.Single},System.Numerics.Vector{System.Single})
-    /**
-    Returns a new integral vector whose elements signal whether the elements in one single-precision floating-point vector are less than or equal to their corresponding elements in a second single-precision floating-point vector.
-
-    - Parameter left: The first vector to compare.
-    - Parameter right: The second vector to compare.
-    - Returns: The resulting integral vector.
-
-    */
     public static func LessThanOrEqual(left : dotnet.System.Numerics.Vector_1<Swift.Float>, right : dotnet.System.Numerics.Vector_1<Swift.Float>) throws -> dotnet.System.Numerics.Vector_1<Swift.Int32> {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Vector_System_Numerics_Vector_i32___LessThanOrEqual_0__2__System_Numerics_Vector_f32__System_Numerics_Vector_f32_(&__thrown, left.get_handle(), right.get_handle());
@@ -4023,15 +2437,6 @@ public struct Vector {
     }
     // bool LessThanOrEqualAll<T>(System.Numerics.Vector<T>, System.Numerics.Vector<T>)
 // docid: M:System.Numerics.Vector.LessThanOrEqualAll``1(System.Numerics.Vector{``0},System.Numerics.Vector{``0})
-    /**
-    Returns a value that indicates whether all elements in the first vector are less than or equal to their corresponding elements in the second vector.
-
-    - Parameter left: The first vector to compare.
-    - Parameter right: The second vector to compare.
-    - Returns: 
-         if all of the elements in  are less than or equal to the corresponding elements in ; otherwise,  .
-
-    */
     public static func LessThanOrEqualAll<UT : SGBridgeGenericValue>(left : dotnet.System.Numerics.Vector_1<UT>, right : dotnet.System.Numerics.Vector_1<UT>) throws -> Bool {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Vector_bool__LessThanOrEqualAll_1__2__System_Numerics_Vector_UT__System_Numerics_Vector_UT_(UT.get_type_handle(), &__thrown, left.get_handle(), right.get_handle());
@@ -4043,15 +2448,6 @@ public struct Vector {
     }
     // bool LessThanOrEqualAny<T>(System.Numerics.Vector<T>, System.Numerics.Vector<T>)
 // docid: M:System.Numerics.Vector.LessThanOrEqualAny``1(System.Numerics.Vector{``0},System.Numerics.Vector{``0})
-    /**
-    Returns a value that indicates whether any element in the first vector is less than or equal to the corresponding element in the second vector.
-
-    - Parameter left: The first vector to compare.
-    - Parameter right: The second vector to compare.
-    - Returns: 
-         if any element in  is less than or equal to the corresponding element in ; otherwise,  .
-
-    */
     public static func LessThanOrEqualAny<UT : SGBridgeGenericValue>(left : dotnet.System.Numerics.Vector_1<UT>, right : dotnet.System.Numerics.Vector_1<UT>) throws -> Bool {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Vector_bool__LessThanOrEqualAny_1__2__System_Numerics_Vector_UT__System_Numerics_Vector_UT_(UT.get_type_handle(), &__thrown, left.get_handle(), right.get_handle());
@@ -4063,14 +2459,6 @@ public struct Vector {
     }
     // System.Numerics.Vector<T> LessThanOrEqual<T>(System.Numerics.Vector<T>, System.Numerics.Vector<T>)
 // docid: M:System.Numerics.Vector.LessThanOrEqual``1(System.Numerics.Vector{``0},System.Numerics.Vector{``0})
-    /**
-    Returns a new vector whose elements signal whether the elements in one vector are less than or equal to their corresponding elements in the second vector.
-
-    - Parameter left: The first vector to compare.
-    - Parameter right: The second vector to compare.
-    - Returns: The resulting vector.
-
-    */
     public static func LessThanOrEqual<UT : SGBridgeGenericValue>(left : dotnet.System.Numerics.Vector_1<UT>, right : dotnet.System.Numerics.Vector_1<UT>) throws -> dotnet.System.Numerics.Vector_1<UT> {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Vector_System_Numerics_Vector_UT___LessThanOrEqual_1__2__System_Numerics_Vector_UT__System_Numerics_Vector_UT_(UT.get_type_handle(), &__thrown, left.get_handle(), right.get_handle());
@@ -4082,14 +2470,6 @@ public struct Vector {
     }
     // System.Numerics.Vector<T> LessThan<T>(System.Numerics.Vector<T>, System.Numerics.Vector<T>)
 // docid: M:System.Numerics.Vector.LessThan``1(System.Numerics.Vector{``0},System.Numerics.Vector{``0})
-    /**
-    Returns a new vector of a specified type whose elements signal whether the elements in one vector are less than their corresponding elements in the second vector.
-
-    - Parameter left: The first vector to compare.
-    - Parameter right: The second vector to compare.
-    - Returns: The resulting vector.
-
-    */
     public static func LessThan<UT : SGBridgeGenericValue>(left : dotnet.System.Numerics.Vector_1<UT>, right : dotnet.System.Numerics.Vector_1<UT>) throws -> dotnet.System.Numerics.Vector_1<UT> {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Vector_System_Numerics_Vector_UT___LessThan_1__2__System_Numerics_Vector_UT__System_Numerics_Vector_UT_(UT.get_type_handle(), &__thrown, left.get_handle(), right.get_handle());
@@ -4101,14 +2481,6 @@ public struct Vector {
     }
     // System.Numerics.Vector<T> Max<T>(System.Numerics.Vector<T>, System.Numerics.Vector<T>)
 // docid: M:System.Numerics.Vector.Max``1(System.Numerics.Vector{``0},System.Numerics.Vector{``0})
-    /**
-    Returns a new vector whose elements are the maximum of each pair of elements in the two given vectors.
-
-    - Parameter left: The first vector to compare.
-    - Parameter right: The second vector to compare.
-    - Returns: The maximum vector.
-
-    */
     public static func Max<UT : SGBridgeGenericValue>(left : dotnet.System.Numerics.Vector_1<UT>, right : dotnet.System.Numerics.Vector_1<UT>) throws -> dotnet.System.Numerics.Vector_1<UT> {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Vector_System_Numerics_Vector_UT___Max_1__2__System_Numerics_Vector_UT__System_Numerics_Vector_UT_(UT.get_type_handle(), &__thrown, left.get_handle(), right.get_handle());
@@ -4120,14 +2492,6 @@ public struct Vector {
     }
     // System.Numerics.Vector<T> Min<T>(System.Numerics.Vector<T>, System.Numerics.Vector<T>)
 // docid: M:System.Numerics.Vector.Min``1(System.Numerics.Vector{``0},System.Numerics.Vector{``0})
-    /**
-    Returns a new vector whose elements are the minimum of each pair of elements in the two given vectors.
-
-    - Parameter left: The first vector to compare.
-    - Parameter right: The second vector to compare.
-    - Returns: The minimum vector.
-
-    */
     public static func Min<UT : SGBridgeGenericValue>(left : dotnet.System.Numerics.Vector_1<UT>, right : dotnet.System.Numerics.Vector_1<UT>) throws -> dotnet.System.Numerics.Vector_1<UT> {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Vector_System_Numerics_Vector_UT___Min_1__2__System_Numerics_Vector_UT__System_Numerics_Vector_UT_(UT.get_type_handle(), &__thrown, left.get_handle(), right.get_handle());
@@ -4139,14 +2503,6 @@ public struct Vector {
     }
     // System.Numerics.Vector<T> Multiply<T>(System.Numerics.Vector<T>, System.Numerics.Vector<T>)
 // docid: M:System.Numerics.Vector.Multiply``1(System.Numerics.Vector{``0},System.Numerics.Vector{``0})
-    /**
-    Returns a new vector whose values are the product of each pair of elements in two specified vectors.
-
-    - Parameter left: The first vector.
-    - Parameter right: The second vector.
-    - Returns: The element-wise product vector.
-
-    */
     public static func Multiply<UT : SGBridgeGenericValue>(left : dotnet.System.Numerics.Vector_1<UT>, right : dotnet.System.Numerics.Vector_1<UT>) throws -> dotnet.System.Numerics.Vector_1<UT> {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Vector_System_Numerics_Vector_UT___Multiply_1__2__System_Numerics_Vector_UT__System_Numerics_Vector_UT_(UT.get_type_handle(), &__thrown, left.get_handle(), right.get_handle());
@@ -4158,14 +2514,6 @@ public struct Vector {
     }
     // System.Numerics.Vector<T> Multiply<T>(System.Numerics.Vector<T>, T)
 // docid: M:System.Numerics.Vector.Multiply``1(System.Numerics.Vector{``0},``0)
-    /**
-    Returns a new vector whose values are the values of a specified vector each multiplied by a scalar value.
-
-    - Parameter left: The vector.
-    - Parameter right: The scalar value.
-    - Returns: The scaled vector.
-
-    */
     public static func Multiply<UT : SGBridgeGenericValue>(left : dotnet.System.Numerics.Vector_1<UT>, right : UT) throws -> dotnet.System.Numerics.Vector_1<UT> {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Vector_System_Numerics_Vector_UT___Multiply_1__2__System_Numerics_Vector_UT__UT(UT.get_type_handle(), &__thrown, left.get_handle(), right.to_gval());
@@ -4177,14 +2525,6 @@ public struct Vector {
     }
     // System.Numerics.Vector<T> Multiply<T>(T, System.Numerics.Vector<T>)
 // docid: M:System.Numerics.Vector.Multiply``1(``0,System.Numerics.Vector{``0})
-    /**
-    Returns a new vector whose values are a scalar value multiplied by each of the values of a specified vector.
-
-    - Parameter left: The scalar value.
-    - Parameter right: The vector.
-    - Returns: The scaled vector.
-
-    */
     public static func Multiply<UT : SGBridgeGenericValue>(left : UT, right : dotnet.System.Numerics.Vector_1<UT>) throws -> dotnet.System.Numerics.Vector_1<UT> {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Vector_System_Numerics_Vector_UT___Multiply_1__2__UT_System_Numerics_Vector_UT_(UT.get_type_handle(), &__thrown, left.to_gval(), right.get_handle());
@@ -4196,14 +2536,6 @@ public struct Vector {
     }
     // System.Numerics.Vector<System.Single> Narrow(System.Numerics.Vector<System.Double>, System.Numerics.Vector<System.Double>)
 // docid: M:System.Numerics.Vector.Narrow(System.Numerics.Vector{System.Double},System.Numerics.Vector{System.Double})
-    /**
-    Narrows two Vector<Double> instances into one Vector<Single>.
-
-    - Parameter source1: The first source vector, whose elements become the lower-index elements of the return value.
-    - Parameter source2: The second source vector, whose elements become the higher-index elements of the return value.
-    - Returns: A Vector<Single> containing elements narrowed from the source vectors.
-
-    */
     public static func Narrow(low : dotnet.System.Numerics.Vector_1<Swift.Double>, high : dotnet.System.Numerics.Vector_1<Swift.Double>) throws -> dotnet.System.Numerics.Vector_1<Swift.Float> {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Vector_System_Numerics_Vector_f32___Narrow_0__2__System_Numerics_Vector_f64__System_Numerics_Vector_f64_(&__thrown, low.get_handle(), high.get_handle());
@@ -4215,14 +2547,6 @@ public struct Vector {
     }
     // System.Numerics.Vector<System.SByte> Narrow(System.Numerics.Vector<System.Int16>, System.Numerics.Vector<System.Int16>)
 // docid: M:System.Numerics.Vector.Narrow(System.Numerics.Vector{System.Int16},System.Numerics.Vector{System.Int16})
-    /**
-    Narrows two Vector<Int16> instances into one Vector<SByte>.
-
-    - Parameter source1: The first source vector, whose elements become the lower-index elements of the return value.
-    - Parameter source2: The second source vector, whose elements become the higher-index elements of the return value.
-    - Returns: A Vector<SByte> containing elements narrowed from the source vectors.
-
-    */
     public static func Narrow(low : dotnet.System.Numerics.Vector_1<Swift.Int16>, high : dotnet.System.Numerics.Vector_1<Swift.Int16>) throws -> dotnet.System.Numerics.Vector_1<Swift.Int8> {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Vector_System_Numerics_Vector_i8___Narrow_0__2__System_Numerics_Vector_i16__System_Numerics_Vector_i16_(&__thrown, low.get_handle(), high.get_handle());
@@ -4234,14 +2558,6 @@ public struct Vector {
     }
     // System.Numerics.Vector<System.Int16> Narrow(System.Numerics.Vector<System.Int32>, System.Numerics.Vector<System.Int32>)
 // docid: M:System.Numerics.Vector.Narrow(System.Numerics.Vector{System.Int32},System.Numerics.Vector{System.Int32})
-    /**
-    Narrows two Vector<Int32> instances into one Vector<Int16>.
-
-    - Parameter source1: The first source vector, whose elements become the lower-index elements of the return value.
-    - Parameter source2: The second source vector, whose elements become the higher-index elements of the return value.
-    - Returns: A Vector<Int16> containing elements narrowed from the source vectors.
-
-    */
     public static func Narrow(low : dotnet.System.Numerics.Vector_1<Swift.Int32>, high : dotnet.System.Numerics.Vector_1<Swift.Int32>) throws -> dotnet.System.Numerics.Vector_1<Swift.Int16> {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Vector_System_Numerics_Vector_i16___Narrow_0__2__System_Numerics_Vector_i32__System_Numerics_Vector_i32_(&__thrown, low.get_handle(), high.get_handle());
@@ -4253,14 +2569,6 @@ public struct Vector {
     }
     // System.Numerics.Vector<System.Int32> Narrow(System.Numerics.Vector<System.Int64>, System.Numerics.Vector<System.Int64>)
 // docid: M:System.Numerics.Vector.Narrow(System.Numerics.Vector{System.Int64},System.Numerics.Vector{System.Int64})
-    /**
-    Narrows two Vector<Int64> instances into one Vector<Int32>.
-
-    - Parameter source1: The first source vector, whose elements become the lower-index elements of the return value.
-    - Parameter source2: The second source vector, whose elements become the higher-index elements of the return value.
-    - Returns: A Vector<Int32> containing elements narrowed from the source vectors.
-
-    */
     public static func Narrow(low : dotnet.System.Numerics.Vector_1<Swift.Int64>, high : dotnet.System.Numerics.Vector_1<Swift.Int64>) throws -> dotnet.System.Numerics.Vector_1<Swift.Int32> {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Vector_System_Numerics_Vector_i32___Narrow_0__2__System_Numerics_Vector_i64__System_Numerics_Vector_i64_(&__thrown, low.get_handle(), high.get_handle());
@@ -4272,14 +2580,6 @@ public struct Vector {
     }
     // System.Numerics.Vector<System.Byte> Narrow(System.Numerics.Vector<System.UInt16>, System.Numerics.Vector<System.UInt16>)
 // docid: M:System.Numerics.Vector.Narrow(System.Numerics.Vector{System.UInt16},System.Numerics.Vector{System.UInt16})
-    /**
-    Narrows two Vector<UInt16> instances into one Vector<Byte>.
-
-    - Parameter source1: The first source vector, whose elements become the lower-index elements of the return value.
-    - Parameter source2: The second source vector, whose elements become the higher-index elements of the return value.
-    - Returns: A Vector<Byte> containing elements narrowed from the source vectors.
-
-    */
     public static func Narrow(low : dotnet.System.Numerics.Vector_1<Swift.UInt16>, high : dotnet.System.Numerics.Vector_1<Swift.UInt16>) throws -> dotnet.System.Numerics.Vector_1<Swift.UInt8> {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Vector_System_Numerics_Vector_u8___Narrow_0__2__System_Numerics_Vector_u16__System_Numerics_Vector_u16_(&__thrown, low.get_handle(), high.get_handle());
@@ -4291,14 +2591,6 @@ public struct Vector {
     }
     // System.Numerics.Vector<System.UInt16> Narrow(System.Numerics.Vector<System.UInt32>, System.Numerics.Vector<System.UInt32>)
 // docid: M:System.Numerics.Vector.Narrow(System.Numerics.Vector{System.UInt32},System.Numerics.Vector{System.UInt32})
-    /**
-    Narrows two Vector<UInt32> instances into one Vector<UInt16>.
-
-    - Parameter source1: The first source vector, whose elements become the lower-index elements of the return value.
-    - Parameter source2: The second source vector, whose elements become the higher-index elements of the return value.
-    - Returns: A Vector<UInt16> containing elements narrowed from the source vectors.
-
-    */
     public static func Narrow(low : dotnet.System.Numerics.Vector_1<Swift.UInt32>, high : dotnet.System.Numerics.Vector_1<Swift.UInt32>) throws -> dotnet.System.Numerics.Vector_1<Swift.UInt16> {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Vector_System_Numerics_Vector_u16___Narrow_0__2__System_Numerics_Vector_u32__System_Numerics_Vector_u32_(&__thrown, low.get_handle(), high.get_handle());
@@ -4310,14 +2602,6 @@ public struct Vector {
     }
     // System.Numerics.Vector<System.UInt32> Narrow(System.Numerics.Vector<System.UInt64>, System.Numerics.Vector<System.UInt64>)
 // docid: M:System.Numerics.Vector.Narrow(System.Numerics.Vector{System.UInt64},System.Numerics.Vector{System.UInt64})
-    /**
-    Narrows two Vector<UInt64> instances into one Vector<UInt32>.
-
-    - Parameter source1: The first source vector, whose elements become the lower-index elements of the return value.
-    - Parameter source2: The second source vector, whose elements become the higher-index elements of the return value.
-    - Returns: A Vector<UInt32> containing elements narrowed from the source vectors.
-
-    */
     public static func Narrow(low : dotnet.System.Numerics.Vector_1<Swift.UInt64>, high : dotnet.System.Numerics.Vector_1<Swift.UInt64>) throws -> dotnet.System.Numerics.Vector_1<Swift.UInt32> {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Vector_System_Numerics_Vector_u32___Narrow_0__2__System_Numerics_Vector_u64__System_Numerics_Vector_u64_(&__thrown, low.get_handle(), high.get_handle());
@@ -4329,13 +2613,6 @@ public struct Vector {
     }
     // System.Numerics.Vector<T> Negate<T>(System.Numerics.Vector<T>)
 // docid: M:System.Numerics.Vector.Negate``1(System.Numerics.Vector{``0})
-    /**
-    Returns a new vector whose elements are the negation of the corresponding element in the specified vector.
-
-    - Parameter value: The source vector.
-    - Returns: The negated vector.
-
-    */
     public static func Negate<UT : SGBridgeGenericValue>(value : dotnet.System.Numerics.Vector_1<UT>) throws -> dotnet.System.Numerics.Vector_1<UT> {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Vector_System_Numerics_Vector_UT___Negate_1__1__System_Numerics_Vector_UT_(UT.get_type_handle(), &__thrown, value.get_handle());
@@ -4347,13 +2624,6 @@ public struct Vector {
     }
     // System.Numerics.Vector<T> OnesComplement<T>(System.Numerics.Vector<T>)
 // docid: M:System.Numerics.Vector.OnesComplement``1(System.Numerics.Vector{``0})
-    /**
-    Returns a new vector whose elements are obtained by taking the one's complement of a specified vector's elements.
-
-    - Parameter value: The source vector.
-    - Returns: The resulting vector.
-
-    */
     public static func OnesComplement<UT : SGBridgeGenericValue>(value : dotnet.System.Numerics.Vector_1<UT>) throws -> dotnet.System.Numerics.Vector_1<UT> {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Vector_System_Numerics_Vector_UT___OnesComplement_1__1__System_Numerics_Vector_UT_(UT.get_type_handle(), &__thrown, value.get_handle());
@@ -4365,13 +2635,6 @@ public struct Vector {
     }
     // System.Numerics.Vector<T> SquareRoot<T>(System.Numerics.Vector<T>)
 // docid: M:System.Numerics.Vector.SquareRoot``1(System.Numerics.Vector{``0})
-    /**
-    Returns a new vector whose elements are the square roots of a specified vector's elements.
-
-    - Parameter value: The source vector.
-    - Returns: The square root vector.
-
-    */
     public static func SquareRoot<UT : SGBridgeGenericValue>(value : dotnet.System.Numerics.Vector_1<UT>) throws -> dotnet.System.Numerics.Vector_1<UT> {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Vector_System_Numerics_Vector_UT___SquareRoot_1__1__System_Numerics_Vector_UT_(UT.get_type_handle(), &__thrown, value.get_handle());
@@ -4383,14 +2646,6 @@ public struct Vector {
     }
     // System.Numerics.Vector<T> Subtract<T>(System.Numerics.Vector<T>, System.Numerics.Vector<T>)
 // docid: M:System.Numerics.Vector.Subtract``1(System.Numerics.Vector{``0},System.Numerics.Vector{``0})
-    /**
-    Returns a new vector whose values are the difference between the elements in the second vector and their corresponding elements in the first vector.
-
-    - Parameter left: The first vector.
-    - Parameter right: The second vector.
-    - Returns: The difference vector.
-
-    */
     public static func Subtract<UT : SGBridgeGenericValue>(left : dotnet.System.Numerics.Vector_1<UT>, right : dotnet.System.Numerics.Vector_1<UT>) throws -> dotnet.System.Numerics.Vector_1<UT> {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Vector_System_Numerics_Vector_UT___Subtract_1__2__System_Numerics_Vector_UT__System_Numerics_Vector_UT_(UT.get_type_handle(), &__thrown, left.get_handle(), right.get_handle());
@@ -4402,21 +2657,16 @@ public struct Vector {
     }
     // void Widen(System.Numerics.Vector<System.Byte>, ref System.Numerics.Vector<System.UInt16>, ref System.Numerics.Vector<System.UInt16>)
 // docid: M:System.Numerics.Vector.Widen(System.Numerics.Vector{System.Byte},System.Numerics.Vector{System.UInt16}@,System.Numerics.Vector{System.UInt16}@)
-    /**
-    Widens a Vector<Byte> into two Vector<UInt16> instances.
-
-    - Parameter source: The source vector whose elements are widened into the outputs.
-    - Parameter dest1: The first output vector, whose elements will contain the widened elements from lower indices in the source vector.
-    - Parameter dest2: The second output vector, whose elements will contain the widened elements from higher indices in the source vector.
-    */
-    public static func Widen(source : dotnet.System.Numerics.Vector_1<Swift.UInt8>, low : inout dotnet.System.Numerics.Vector_1<Swift.UInt16>, high : inout dotnet.System.Numerics.Vector_1<Swift.UInt16>) throws {
+    public static func Widen(source : dotnet.System.Numerics.Vector_1<Swift.UInt8>, low : inout Optional<dotnet.System.Numerics.Vector_1<Swift.UInt16>>, high : inout Optional<dotnet.System.Numerics.Vector_1<Swift.UInt16>>) throws {
         var __thrown : NullableHandle = nil;
-            var _tmp_out_low = low.get_handle();
-            var _tmp_out_high = high.get_handle();
+            var _tmp_out_low = (low != nil) ? (low!.get_handle()) : nil;
+            var _tmp_out_high = (high != nil) ? (high!.get_handle()) : nil;
         System_Numerics_Vector_void__Widen_0__3__System_Numerics_Vector_u8__outSystem_Numerics_Vector_u16__outSystem_Numerics_Vector_u16_(&__thrown, source.get_handle(), &_tmp_out_low, &_tmp_out_high);
-        let _tmp2_low = dotnet.System.Numerics.Vector_1<Swift.UInt16>(hndl : _tmp_out_low);
+        let __h__tmp2_low = _tmp_out_low;
+        let _tmp2_low = (__h__tmp2_low != nil) ? dotnet.System.Numerics.Vector_1<Swift.UInt16>(hndl: __h__tmp2_low!) : nil;
             low = _tmp2_low;
-        let _tmp2_high = dotnet.System.Numerics.Vector_1<Swift.UInt16>(hndl : _tmp_out_high);
+        let __h__tmp2_high = _tmp_out_high;
+        let _tmp2_high = (__h__tmp2_high != nil) ? dotnet.System.Numerics.Vector_1<Swift.UInt16>(hndl: __h__tmp2_high!) : nil;
             high = _tmp2_high;
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
@@ -4426,21 +2676,16 @@ public struct Vector {
     }
     // void Widen(System.Numerics.Vector<System.Int16>, ref System.Numerics.Vector<System.Int32>, ref System.Numerics.Vector<System.Int32>)
 // docid: M:System.Numerics.Vector.Widen(System.Numerics.Vector{System.Int16},System.Numerics.Vector{System.Int32}@,System.Numerics.Vector{System.Int32}@)
-    /**
-    Widens a Vector<Int16> into two Vector<Int32> instances.
-
-    - Parameter source: The source vector whose elements are widened into the outputs.
-    - Parameter dest1: The first output vector, whose elements will contain the widened elements from lower indices in the source vector.
-    - Parameter dest2: The second output vector, whose elements will contain the widened elements from higher indices in the source vector.
-    */
-    public static func Widen(source : dotnet.System.Numerics.Vector_1<Swift.Int16>, low : inout dotnet.System.Numerics.Vector_1<Swift.Int32>, high : inout dotnet.System.Numerics.Vector_1<Swift.Int32>) throws {
+    public static func Widen(source : dotnet.System.Numerics.Vector_1<Swift.Int16>, low : inout Optional<dotnet.System.Numerics.Vector_1<Swift.Int32>>, high : inout Optional<dotnet.System.Numerics.Vector_1<Swift.Int32>>) throws {
         var __thrown : NullableHandle = nil;
-            var _tmp_out_low = low.get_handle();
-            var _tmp_out_high = high.get_handle();
+            var _tmp_out_low = (low != nil) ? (low!.get_handle()) : nil;
+            var _tmp_out_high = (high != nil) ? (high!.get_handle()) : nil;
         System_Numerics_Vector_void__Widen_0__3__System_Numerics_Vector_i16__outSystem_Numerics_Vector_i32__outSystem_Numerics_Vector_i32_(&__thrown, source.get_handle(), &_tmp_out_low, &_tmp_out_high);
-        let _tmp2_low = dotnet.System.Numerics.Vector_1<Swift.Int32>(hndl : _tmp_out_low);
+        let __h__tmp2_low = _tmp_out_low;
+        let _tmp2_low = (__h__tmp2_low != nil) ? dotnet.System.Numerics.Vector_1<Swift.Int32>(hndl: __h__tmp2_low!) : nil;
             low = _tmp2_low;
-        let _tmp2_high = dotnet.System.Numerics.Vector_1<Swift.Int32>(hndl : _tmp_out_high);
+        let __h__tmp2_high = _tmp_out_high;
+        let _tmp2_high = (__h__tmp2_high != nil) ? dotnet.System.Numerics.Vector_1<Swift.Int32>(hndl: __h__tmp2_high!) : nil;
             high = _tmp2_high;
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
@@ -4450,21 +2695,16 @@ public struct Vector {
     }
     // void Widen(System.Numerics.Vector<System.Int32>, ref System.Numerics.Vector<System.Int64>, ref System.Numerics.Vector<System.Int64>)
 // docid: M:System.Numerics.Vector.Widen(System.Numerics.Vector{System.Int32},System.Numerics.Vector{System.Int64}@,System.Numerics.Vector{System.Int64}@)
-    /**
-    Widens a Vector<Int32> into two Vector<Int64> instances.
-
-    - Parameter source: The source vector whose elements are widened into the outputs.
-    - Parameter dest1: The first output vector, whose elements will contain the widened elements from lower indices in the source vector.
-    - Parameter dest2: The second output vector, whose elements will contain the widened elements from higher indices in the source vector.
-    */
-    public static func Widen(source : dotnet.System.Numerics.Vector_1<Swift.Int32>, low : inout dotnet.System.Numerics.Vector_1<Swift.Int64>, high : inout dotnet.System.Numerics.Vector_1<Swift.Int64>) throws {
+    public static func Widen(source : dotnet.System.Numerics.Vector_1<Swift.Int32>, low : inout Optional<dotnet.System.Numerics.Vector_1<Swift.Int64>>, high : inout Optional<dotnet.System.Numerics.Vector_1<Swift.Int64>>) throws {
         var __thrown : NullableHandle = nil;
-            var _tmp_out_low = low.get_handle();
-            var _tmp_out_high = high.get_handle();
+            var _tmp_out_low = (low != nil) ? (low!.get_handle()) : nil;
+            var _tmp_out_high = (high != nil) ? (high!.get_handle()) : nil;
         System_Numerics_Vector_void__Widen_0__3__System_Numerics_Vector_i32__outSystem_Numerics_Vector_i64__outSystem_Numerics_Vector_i64_(&__thrown, source.get_handle(), &_tmp_out_low, &_tmp_out_high);
-        let _tmp2_low = dotnet.System.Numerics.Vector_1<Swift.Int64>(hndl : _tmp_out_low);
+        let __h__tmp2_low = _tmp_out_low;
+        let _tmp2_low = (__h__tmp2_low != nil) ? dotnet.System.Numerics.Vector_1<Swift.Int64>(hndl: __h__tmp2_low!) : nil;
             low = _tmp2_low;
-        let _tmp2_high = dotnet.System.Numerics.Vector_1<Swift.Int64>(hndl : _tmp_out_high);
+        let __h__tmp2_high = _tmp_out_high;
+        let _tmp2_high = (__h__tmp2_high != nil) ? dotnet.System.Numerics.Vector_1<Swift.Int64>(hndl: __h__tmp2_high!) : nil;
             high = _tmp2_high;
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
@@ -4474,21 +2714,16 @@ public struct Vector {
     }
     // void Widen(System.Numerics.Vector<System.SByte>, ref System.Numerics.Vector<System.Int16>, ref System.Numerics.Vector<System.Int16>)
 // docid: M:System.Numerics.Vector.Widen(System.Numerics.Vector{System.SByte},System.Numerics.Vector{System.Int16}@,System.Numerics.Vector{System.Int16}@)
-    /**
-    Widens a Vector<SByte> into two Vector<Int16> instances.
-
-    - Parameter source: The source vector whose elements are widened into the outputs.
-    - Parameter dest1: The first output vector, whose elements will contain the widened elements from lower indices in the source vector.
-    - Parameter dest2: The second output vector, whose elements will contain the widened elements from higher indices in the source vector.
-    */
-    public static func Widen(source : dotnet.System.Numerics.Vector_1<Swift.Int8>, low : inout dotnet.System.Numerics.Vector_1<Swift.Int16>, high : inout dotnet.System.Numerics.Vector_1<Swift.Int16>) throws {
+    public static func Widen(source : dotnet.System.Numerics.Vector_1<Swift.Int8>, low : inout Optional<dotnet.System.Numerics.Vector_1<Swift.Int16>>, high : inout Optional<dotnet.System.Numerics.Vector_1<Swift.Int16>>) throws {
         var __thrown : NullableHandle = nil;
-            var _tmp_out_low = low.get_handle();
-            var _tmp_out_high = high.get_handle();
+            var _tmp_out_low = (low != nil) ? (low!.get_handle()) : nil;
+            var _tmp_out_high = (high != nil) ? (high!.get_handle()) : nil;
         System_Numerics_Vector_void__Widen_0__3__System_Numerics_Vector_i8__outSystem_Numerics_Vector_i16__outSystem_Numerics_Vector_i16_(&__thrown, source.get_handle(), &_tmp_out_low, &_tmp_out_high);
-        let _tmp2_low = dotnet.System.Numerics.Vector_1<Swift.Int16>(hndl : _tmp_out_low);
+        let __h__tmp2_low = _tmp_out_low;
+        let _tmp2_low = (__h__tmp2_low != nil) ? dotnet.System.Numerics.Vector_1<Swift.Int16>(hndl: __h__tmp2_low!) : nil;
             low = _tmp2_low;
-        let _tmp2_high = dotnet.System.Numerics.Vector_1<Swift.Int16>(hndl : _tmp_out_high);
+        let __h__tmp2_high = _tmp_out_high;
+        let _tmp2_high = (__h__tmp2_high != nil) ? dotnet.System.Numerics.Vector_1<Swift.Int16>(hndl: __h__tmp2_high!) : nil;
             high = _tmp2_high;
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
@@ -4498,21 +2733,16 @@ public struct Vector {
     }
     // void Widen(System.Numerics.Vector<System.Single>, ref System.Numerics.Vector<System.Double>, ref System.Numerics.Vector<System.Double>)
 // docid: M:System.Numerics.Vector.Widen(System.Numerics.Vector{System.Single},System.Numerics.Vector{System.Double}@,System.Numerics.Vector{System.Double}@)
-    /**
-    Widens a Vector<Single> into two Vector<Double> instances.
-
-    - Parameter source: The source vector whose elements are widened into the outputs.
-    - Parameter dest1: The first output vector, whose elements will contain the widened elements from lower indices in the source vector.
-    - Parameter dest2: The second output vector, whose elements will contain the widened elements from higher indices in the source vector.
-    */
-    public static func Widen(source : dotnet.System.Numerics.Vector_1<Swift.Float>, low : inout dotnet.System.Numerics.Vector_1<Swift.Double>, high : inout dotnet.System.Numerics.Vector_1<Swift.Double>) throws {
+    public static func Widen(source : dotnet.System.Numerics.Vector_1<Swift.Float>, low : inout Optional<dotnet.System.Numerics.Vector_1<Swift.Double>>, high : inout Optional<dotnet.System.Numerics.Vector_1<Swift.Double>>) throws {
         var __thrown : NullableHandle = nil;
-            var _tmp_out_low = low.get_handle();
-            var _tmp_out_high = high.get_handle();
+            var _tmp_out_low = (low != nil) ? (low!.get_handle()) : nil;
+            var _tmp_out_high = (high != nil) ? (high!.get_handle()) : nil;
         System_Numerics_Vector_void__Widen_0__3__System_Numerics_Vector_f32__outSystem_Numerics_Vector_f64__outSystem_Numerics_Vector_f64_(&__thrown, source.get_handle(), &_tmp_out_low, &_tmp_out_high);
-        let _tmp2_low = dotnet.System.Numerics.Vector_1<Swift.Double>(hndl : _tmp_out_low);
+        let __h__tmp2_low = _tmp_out_low;
+        let _tmp2_low = (__h__tmp2_low != nil) ? dotnet.System.Numerics.Vector_1<Swift.Double>(hndl: __h__tmp2_low!) : nil;
             low = _tmp2_low;
-        let _tmp2_high = dotnet.System.Numerics.Vector_1<Swift.Double>(hndl : _tmp_out_high);
+        let __h__tmp2_high = _tmp_out_high;
+        let _tmp2_high = (__h__tmp2_high != nil) ? dotnet.System.Numerics.Vector_1<Swift.Double>(hndl: __h__tmp2_high!) : nil;
             high = _tmp2_high;
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
@@ -4522,21 +2752,16 @@ public struct Vector {
     }
     // void Widen(System.Numerics.Vector<System.UInt16>, ref System.Numerics.Vector<System.UInt32>, ref System.Numerics.Vector<System.UInt32>)
 // docid: M:System.Numerics.Vector.Widen(System.Numerics.Vector{System.UInt16},System.Numerics.Vector{System.UInt32}@,System.Numerics.Vector{System.UInt32}@)
-    /**
-    Widens a Vector<UInt16> into two Vector<UInt32> instances.
-
-    - Parameter source: The source vector whose elements are widened into the outputs.
-    - Parameter dest1: The first output vector, whose elements will contain the widened elements from lower indices in the source vector.
-    - Parameter dest2: The second output vector, whose elements will contain the widened elements from higher indices in the source vector.
-    */
-    public static func Widen(source : dotnet.System.Numerics.Vector_1<Swift.UInt16>, low : inout dotnet.System.Numerics.Vector_1<Swift.UInt32>, high : inout dotnet.System.Numerics.Vector_1<Swift.UInt32>) throws {
+    public static func Widen(source : dotnet.System.Numerics.Vector_1<Swift.UInt16>, low : inout Optional<dotnet.System.Numerics.Vector_1<Swift.UInt32>>, high : inout Optional<dotnet.System.Numerics.Vector_1<Swift.UInt32>>) throws {
         var __thrown : NullableHandle = nil;
-            var _tmp_out_low = low.get_handle();
-            var _tmp_out_high = high.get_handle();
+            var _tmp_out_low = (low != nil) ? (low!.get_handle()) : nil;
+            var _tmp_out_high = (high != nil) ? (high!.get_handle()) : nil;
         System_Numerics_Vector_void__Widen_0__3__System_Numerics_Vector_u16__outSystem_Numerics_Vector_u32__outSystem_Numerics_Vector_u32_(&__thrown, source.get_handle(), &_tmp_out_low, &_tmp_out_high);
-        let _tmp2_low = dotnet.System.Numerics.Vector_1<Swift.UInt32>(hndl : _tmp_out_low);
+        let __h__tmp2_low = _tmp_out_low;
+        let _tmp2_low = (__h__tmp2_low != nil) ? dotnet.System.Numerics.Vector_1<Swift.UInt32>(hndl: __h__tmp2_low!) : nil;
             low = _tmp2_low;
-        let _tmp2_high = dotnet.System.Numerics.Vector_1<Swift.UInt32>(hndl : _tmp_out_high);
+        let __h__tmp2_high = _tmp_out_high;
+        let _tmp2_high = (__h__tmp2_high != nil) ? dotnet.System.Numerics.Vector_1<Swift.UInt32>(hndl: __h__tmp2_high!) : nil;
             high = _tmp2_high;
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
@@ -4546,21 +2771,16 @@ public struct Vector {
     }
     // void Widen(System.Numerics.Vector<System.UInt32>, ref System.Numerics.Vector<System.UInt64>, ref System.Numerics.Vector<System.UInt64>)
 // docid: M:System.Numerics.Vector.Widen(System.Numerics.Vector{System.UInt32},System.Numerics.Vector{System.UInt64}@,System.Numerics.Vector{System.UInt64}@)
-    /**
-    Widens a Vector<UInt32> into two Vector<UInt64> instances.
-
-    - Parameter source: The source vector whose elements are widened into the outputs.
-    - Parameter dest1: The first output vector, whose elements will contain the widened elements from lower indices in the source vector.
-    - Parameter dest2: The second output vector, whose elements will contain the widened elements from higher indices in the source vector.
-    */
-    public static func Widen(source : dotnet.System.Numerics.Vector_1<Swift.UInt32>, low : inout dotnet.System.Numerics.Vector_1<Swift.UInt64>, high : inout dotnet.System.Numerics.Vector_1<Swift.UInt64>) throws {
+    public static func Widen(source : dotnet.System.Numerics.Vector_1<Swift.UInt32>, low : inout Optional<dotnet.System.Numerics.Vector_1<Swift.UInt64>>, high : inout Optional<dotnet.System.Numerics.Vector_1<Swift.UInt64>>) throws {
         var __thrown : NullableHandle = nil;
-            var _tmp_out_low = low.get_handle();
-            var _tmp_out_high = high.get_handle();
+            var _tmp_out_low = (low != nil) ? (low!.get_handle()) : nil;
+            var _tmp_out_high = (high != nil) ? (high!.get_handle()) : nil;
         System_Numerics_Vector_void__Widen_0__3__System_Numerics_Vector_u32__outSystem_Numerics_Vector_u64__outSystem_Numerics_Vector_u64_(&__thrown, source.get_handle(), &_tmp_out_low, &_tmp_out_high);
-        let _tmp2_low = dotnet.System.Numerics.Vector_1<Swift.UInt64>(hndl : _tmp_out_low);
+        let __h__tmp2_low = _tmp_out_low;
+        let _tmp2_low = (__h__tmp2_low != nil) ? dotnet.System.Numerics.Vector_1<Swift.UInt64>(hndl: __h__tmp2_low!) : nil;
             low = _tmp2_low;
-        let _tmp2_high = dotnet.System.Numerics.Vector_1<Swift.UInt64>(hndl : _tmp_out_high);
+        let __h__tmp2_high = _tmp_out_high;
+        let _tmp2_high = (__h__tmp2_high != nil) ? dotnet.System.Numerics.Vector_1<Swift.UInt64>(hndl: __h__tmp2_high!) : nil;
             high = _tmp2_high;
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
@@ -4570,14 +2790,6 @@ public struct Vector {
     }
     // System.Numerics.Vector<T> Xor<T>(System.Numerics.Vector<T>, System.Numerics.Vector<T>)
 // docid: M:System.Numerics.Vector.Xor``1(System.Numerics.Vector{``0},System.Numerics.Vector{``0})
-    /**
-    Returns a new vector by performing a bitwise exclusive Or () operation on each pair of elements in two vectors.
-
-    - Parameter left: The first vector.
-    - Parameter right: The second vector.
-    - Returns: The resulting vector.
-
-    */
     public static func Xor<UT : SGBridgeGenericValue>(left : dotnet.System.Numerics.Vector_1<UT>, right : dotnet.System.Numerics.Vector_1<UT>) throws -> dotnet.System.Numerics.Vector_1<UT> {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Vector_System_Numerics_Vector_UT___Xor_1__2__System_Numerics_Vector_UT__System_Numerics_Vector_UT_(UT.get_type_handle(), &__thrown, left.get_handle(), right.get_handle());
@@ -4609,10 +2821,6 @@ public struct Vector {
         return (__return) != 0;
         }
     }
-    /**
-    Gets a value that indicates whether vector operations are subject to hardware acceleration through JIT intrinsic support.
-
-    */
     public static var IsHardwareAccelerated : Bool {
         get {
             return try! get_IsHardwareAccelerated();
@@ -4623,10 +2831,6 @@ public struct Vector {
 
 // type: System.Numerics.Vector2
 // boxed value type
-    /**
-    Represents a vector with two single-precision floating-point values.
-
-    */
 public final class Vector2
     :
     dotnet.System.Object,
@@ -4635,39 +2839,26 @@ public final class Vector2
     public class override func get_type_handle() -> TypeHandle {
         return System_Numerics_Vector2_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
-    /**
-    Gets a vector whose 2 elements are equal to one.
-
-    */
     public static var One : dotnet.System.Numerics.Vector2 {
         get {
             return try! get_One();
         }
     }
-    /**
-    Gets the vector (1,0).
-
-    */
     public static var UnitX : dotnet.System.Numerics.Vector2 {
         get {
             return try! get_UnitX();
         }
     }
-    /**
-    Gets the vector (0,1).
-
-    */
     public static var UnitY : dotnet.System.Numerics.Vector2 {
         get {
             return try! get_UnitY();
         }
     }
-    /**
-    Returns a vector whose 2 elements are equal to zero.
-
-    */
     public static var Zero : dotnet.System.Numerics.Vector2 {
         get {
             return try! get_Zero();
@@ -4675,11 +2866,6 @@ public final class Vector2
     }
     // .ctor(System.Single)
 // docid: M:System.Numerics.Vector2.#ctor(System.Single)
-    /**
-    Creates a new  object whose two elements have the same value.
-
-    - Parameter value: The value to assign to both elements.
-    */
     public init(value : Swift.Float) throws {
         var __thrown : NullableHandle = nil;
         let h = System_Numerics_Vector2_ctor_0__1__f32(&__thrown, value);
@@ -4691,12 +2877,6 @@ public final class Vector2
     }
     // .ctor(System.Single, System.Single)
 // docid: M:System.Numerics.Vector2.#ctor(System.Single,System.Single)
-    /**
-    Creates a vector whose elements have the specified values.
-
-    - Parameter x: The value to assign to the  field.
-    - Parameter y: The value to assign to the  field.
-    */
     public init(x : Swift.Float, y : Swift.Float) throws {
         var __thrown : NullableHandle = nil;
         let h = System_Numerics_Vector2_ctor_0__2__f32_f32(&__thrown, x, y);
@@ -4713,13 +2893,6 @@ public final class Vector2
     }
     // System.Numerics.Vector2 Abs(System.Numerics.Vector2)
 // docid: M:System.Numerics.Vector2.Abs(System.Numerics.Vector2)
-    /**
-    Returns a vector whose elements are the absolute values of each of the specified vector's elements.
-
-    - Parameter value: A vector.
-    - Returns: The absolute value vector.
-
-    */
     public class func Abs(value : dotnet.System.Numerics.Vector2) throws -> dotnet.System.Numerics.Vector2 {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Vector2_Vector2__Abs_0__1__Vector2(&__thrown, value.get_handle());
@@ -4731,14 +2904,6 @@ public final class Vector2
     }
     // System.Numerics.Vector2 Add(System.Numerics.Vector2, System.Numerics.Vector2)
 // docid: M:System.Numerics.Vector2.Add(System.Numerics.Vector2,System.Numerics.Vector2)
-    /**
-    Adds two vectors together.
-
-    - Parameter left: The first vector to add.
-    - Parameter right: The second vector to add.
-    - Returns: The summed vector.
-
-    */
     public class func Add(left : dotnet.System.Numerics.Vector2, right : dotnet.System.Numerics.Vector2) throws -> dotnet.System.Numerics.Vector2 {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Vector2_Vector2__Add_0__2__Vector2_Vector2(&__thrown, left.get_handle(), right.get_handle());
@@ -4750,15 +2915,6 @@ public final class Vector2
     }
     // System.Numerics.Vector2 Clamp(System.Numerics.Vector2, System.Numerics.Vector2, System.Numerics.Vector2)
 // docid: M:System.Numerics.Vector2.Clamp(System.Numerics.Vector2,System.Numerics.Vector2,System.Numerics.Vector2)
-    /**
-    Restricts a vector between a minimum and a maximum value.
-
-    - Parameter value1: The vector to restrict.
-    - Parameter min: The minimum value.
-    - Parameter max: The maximum value.
-    - Returns: The restricted vector.
-
-    */
     public class func Clamp(value1 : dotnet.System.Numerics.Vector2, min : dotnet.System.Numerics.Vector2, max : dotnet.System.Numerics.Vector2) throws -> dotnet.System.Numerics.Vector2 {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Vector2_Vector2__Clamp_0__3__Vector2_Vector2_Vector2(&__thrown, value1.get_handle(), min.get_handle(), max.get_handle());
@@ -4770,11 +2926,6 @@ public final class Vector2
     }
     // void CopyTo(System.Single[])
 // docid: M:System.Numerics.Vector2.CopyTo(System.Single[])
-    /**
-    Copies the elements of the vector to a specified array.
-
-    - Parameter array: The destination array.
-    */
     public func CopyTo(array : dotnet.System_Arr<Swift.Float>) throws {
         var __thrown : NullableHandle = nil;
         System_Numerics_Vector2_void__CopyTo_0__1__f32Array(&__thrown, self.get_handle(), array.get_handle());
@@ -4786,12 +2937,6 @@ public final class Vector2
     }
     // void CopyTo(System.Single[], System.Int32)
 // docid: M:System.Numerics.Vector2.CopyTo(System.Single[],System.Int32)
-    /**
-    Copies the elements of the vector to a specified array starting at a specified index position.
-
-    - Parameter array: The destination array.
-    - Parameter index: The index at which to copy the first element of the vector.
-    */
     public func CopyTo(array : dotnet.System_Arr<Swift.Float>, index : Swift.Int32) throws {
         var __thrown : NullableHandle = nil;
         System_Numerics_Vector2_void__CopyTo_0__2__f32Array_i32(&__thrown, self.get_handle(), array.get_handle(), index);
@@ -4805,14 +2950,6 @@ public final class Vector2
 // TODO COPE (write_all_methods) (span) bool TryCopyTo(System.Span<System.Single>)
     // System.Single Distance(System.Numerics.Vector2, System.Numerics.Vector2)
 // docid: M:System.Numerics.Vector2.Distance(System.Numerics.Vector2,System.Numerics.Vector2)
-    /**
-    Computes the Euclidean distance between the two given points.
-
-    - Parameter value1: The first point.
-    - Parameter value2: The second point.
-    - Returns: The distance.
-
-    */
     public class func Distance(value1 : dotnet.System.Numerics.Vector2, value2 : dotnet.System.Numerics.Vector2) throws -> Swift.Float {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Vector2_f32__Distance_0__2__Vector2_Vector2(&__thrown, value1.get_handle(), value2.get_handle());
@@ -4824,14 +2961,6 @@ public final class Vector2
     }
     // System.Single DistanceSquared(System.Numerics.Vector2, System.Numerics.Vector2)
 // docid: M:System.Numerics.Vector2.DistanceSquared(System.Numerics.Vector2,System.Numerics.Vector2)
-    /**
-    Returns the Euclidean distance squared between two specified points.
-
-    - Parameter value1: The first point.
-    - Parameter value2: The second point.
-    - Returns: The distance squared.
-
-    */
     public class func DistanceSquared(value1 : dotnet.System.Numerics.Vector2, value2 : dotnet.System.Numerics.Vector2) throws -> Swift.Float {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Vector2_f32__DistanceSquared_0__2__Vector2_Vector2(&__thrown, value1.get_handle(), value2.get_handle());
@@ -4843,14 +2972,6 @@ public final class Vector2
     }
     // System.Numerics.Vector2 Divide(System.Numerics.Vector2, System.Numerics.Vector2)
 // docid: M:System.Numerics.Vector2.Divide(System.Numerics.Vector2,System.Numerics.Vector2)
-    /**
-    Divides the first vector by the second.
-
-    - Parameter left: The first vector.
-    - Parameter right: The second vector.
-    - Returns: The vector resulting from the division.
-
-    */
     public class func Divide(left : dotnet.System.Numerics.Vector2, right : dotnet.System.Numerics.Vector2) throws -> dotnet.System.Numerics.Vector2 {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Vector2_Vector2__Divide_0__2__Vector2_Vector2(&__thrown, left.get_handle(), right.get_handle());
@@ -4862,14 +2983,6 @@ public final class Vector2
     }
     // System.Numerics.Vector2 Divide(System.Numerics.Vector2, System.Single)
 // docid: M:System.Numerics.Vector2.Divide(System.Numerics.Vector2,System.Single)
-    /**
-    Divides the specified vector by a specified scalar value.
-
-    - Parameter left: The vector.
-    - Parameter divisor: The scalar value.
-    - Returns: The vector that results from the division.
-
-    */
     public class func Divide(left : dotnet.System.Numerics.Vector2, divisor : Swift.Float) throws -> dotnet.System.Numerics.Vector2 {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Vector2_Vector2__Divide_0__2__Vector2_f32(&__thrown, left.get_handle(), divisor);
@@ -4881,14 +2994,6 @@ public final class Vector2
     }
     // System.Single Dot(System.Numerics.Vector2, System.Numerics.Vector2)
 // docid: M:System.Numerics.Vector2.Dot(System.Numerics.Vector2,System.Numerics.Vector2)
-    /**
-    Returns the dot product of two vectors.
-
-    - Parameter value1: The first vector.
-    - Parameter value2: The second vector.
-    - Returns: The dot product.
-
-    */
     public class func Dot(value1 : dotnet.System.Numerics.Vector2, value2 : dotnet.System.Numerics.Vector2) throws -> Swift.Float {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Vector2_f32__Dot_0__2__Vector2_Vector2(&__thrown, value1.get_handle(), value2.get_handle());
@@ -4900,14 +3005,6 @@ public final class Vector2
     }
     // bool Equals(System.Numerics.Vector2)
 // docid: M:System.Numerics.Vector2.Equals(System.Numerics.Vector2)
-    /**
-    Returns a value that indicates whether this instance and another vector are equal.
-
-    - Parameter other: The other vector.
-    - Returns: 
-         if the two vectors are equal; otherwise, .
-
-    */
     public func Equals(other : dotnet.System.Numerics.Vector2) throws -> Bool {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Vector2_bool__Equals_0__1__Vector2(&__thrown, self.get_handle(), other.get_handle());
@@ -4919,14 +3016,6 @@ public final class Vector2
     }
     // bool Equals(System.Object)
 // docid: M:System.Numerics.Vector2.Equals(System.Object)
-    /**
-    Returns a value that indicates whether this instance and a specified object are equal.
-
-    - Parameter obj: The object to compare with the current instance.
-    - Returns: 
-         if the current instance and  are equal; otherwise, . If  is , the method returns .
-
-    */
     public override func Equals(obj : Optional<dotnet.System.Object>) throws -> Bool {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Vector2_bool__Equals_0__1__Object(&__thrown, self.get_handle(), obj?.get_handle() ?? nil);
@@ -4938,12 +3027,6 @@ public final class Vector2
     }
     // System.Int32 GetHashCode()
 // docid: M:System.Numerics.Vector2.GetHashCode
-    /**
-    Returns the hash code for this instance.
-
-    - Returns: The hash code.
-
-    */
     public override func GetHashCode() throws -> Swift.Int32 {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Vector2_i32__GetHashCode_0__0(&__thrown, self.get_handle());
@@ -4955,12 +3038,6 @@ public final class Vector2
     }
     // System.Single Length()
 // docid: M:System.Numerics.Vector2.Length
-    /**
-    Returns the length of the vector.
-
-    - Returns: The vector's length.
-
-    */
     public func Length() throws -> Swift.Float {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Vector2_f32__Length_0__0(&__thrown, self.get_handle());
@@ -4972,12 +3049,6 @@ public final class Vector2
     }
     // System.Single LengthSquared()
 // docid: M:System.Numerics.Vector2.LengthSquared
-    /**
-    Returns the length of the vector squared.
-
-    - Returns: The vector's length squared.
-
-    */
     public func LengthSquared() throws -> Swift.Float {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Vector2_f32__LengthSquared_0__0(&__thrown, self.get_handle());
@@ -4989,15 +3060,6 @@ public final class Vector2
     }
     // System.Numerics.Vector2 Lerp(System.Numerics.Vector2, System.Numerics.Vector2, System.Single)
 // docid: M:System.Numerics.Vector2.Lerp(System.Numerics.Vector2,System.Numerics.Vector2,System.Single)
-    /**
-    Performs a linear interpolation between two vectors based on the given weighting.
-
-    - Parameter value1: The first vector.
-    - Parameter value2: The second vector.
-    - Parameter amount: A value between 0 and 1 that indicates the weight of .
-    - Returns: The interpolated vector.
-
-    */
     public class func Lerp(value1 : dotnet.System.Numerics.Vector2, value2 : dotnet.System.Numerics.Vector2, amount : Swift.Float) throws -> dotnet.System.Numerics.Vector2 {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Vector2_Vector2__Lerp_0__3__Vector2_Vector2_f32(&__thrown, value1.get_handle(), value2.get_handle(), amount);
@@ -5009,14 +3071,6 @@ public final class Vector2
     }
     // System.Numerics.Vector2 Max(System.Numerics.Vector2, System.Numerics.Vector2)
 // docid: M:System.Numerics.Vector2.Max(System.Numerics.Vector2,System.Numerics.Vector2)
-    /**
-    Returns a vector whose elements are the maximum of each of the pairs of elements in two specified vectors.
-
-    - Parameter value1: The first vector.
-    - Parameter value2: The second vector.
-    - Returns: The maximized vector.
-
-    */
     public class func Max(value1 : dotnet.System.Numerics.Vector2, value2 : dotnet.System.Numerics.Vector2) throws -> dotnet.System.Numerics.Vector2 {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Vector2_Vector2__Max_0__2__Vector2_Vector2(&__thrown, value1.get_handle(), value2.get_handle());
@@ -5028,14 +3082,6 @@ public final class Vector2
     }
     // System.Numerics.Vector2 Min(System.Numerics.Vector2, System.Numerics.Vector2)
 // docid: M:System.Numerics.Vector2.Min(System.Numerics.Vector2,System.Numerics.Vector2)
-    /**
-    Returns a vector whose elements are the minimum of each of the pairs of elements in two specified vectors.
-
-    - Parameter value1: The first vector.
-    - Parameter value2: The second vector.
-    - Returns: The minimized vector.
-
-    */
     public class func Min(value1 : dotnet.System.Numerics.Vector2, value2 : dotnet.System.Numerics.Vector2) throws -> dotnet.System.Numerics.Vector2 {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Vector2_Vector2__Min_0__2__Vector2_Vector2(&__thrown, value1.get_handle(), value2.get_handle());
@@ -5047,14 +3093,6 @@ public final class Vector2
     }
     // System.Numerics.Vector2 Multiply(System.Numerics.Vector2, System.Numerics.Vector2)
 // docid: M:System.Numerics.Vector2.Multiply(System.Numerics.Vector2,System.Numerics.Vector2)
-    /**
-    Returns a new vector whose values are the product of each pair of elements in two specified vectors.
-
-    - Parameter left: The first vector.
-    - Parameter right: The second vector.
-    - Returns: The element-wise product vector.
-
-    */
     public class func Multiply(left : dotnet.System.Numerics.Vector2, right : dotnet.System.Numerics.Vector2) throws -> dotnet.System.Numerics.Vector2 {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Vector2_Vector2__Multiply_0__2__Vector2_Vector2(&__thrown, left.get_handle(), right.get_handle());
@@ -5066,14 +3104,6 @@ public final class Vector2
     }
     // System.Numerics.Vector2 Multiply(System.Numerics.Vector2, System.Single)
 // docid: M:System.Numerics.Vector2.Multiply(System.Numerics.Vector2,System.Single)
-    /**
-    Multiplies a vector by a specified scalar.
-
-    - Parameter left: The vector to multiply.
-    - Parameter right: The scalar value.
-    - Returns: The scaled vector.
-
-    */
     public class func Multiply(left : dotnet.System.Numerics.Vector2, right : Swift.Float) throws -> dotnet.System.Numerics.Vector2 {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Vector2_Vector2__Multiply_0__2__Vector2_f32(&__thrown, left.get_handle(), right);
@@ -5085,14 +3115,6 @@ public final class Vector2
     }
     // System.Numerics.Vector2 Multiply(System.Single, System.Numerics.Vector2)
 // docid: M:System.Numerics.Vector2.Multiply(System.Single,System.Numerics.Vector2)
-    /**
-    Multiplies a scalar value by a specified vector.
-
-    - Parameter left: The scaled value.
-    - Parameter right: The vector.
-    - Returns: The scaled vector.
-
-    */
     public class func Multiply(left : Swift.Float, right : dotnet.System.Numerics.Vector2) throws -> dotnet.System.Numerics.Vector2 {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Vector2_Vector2__Multiply_0__2__f32_Vector2(&__thrown, left, right.get_handle());
@@ -5104,13 +3126,6 @@ public final class Vector2
     }
     // System.Numerics.Vector2 Negate(System.Numerics.Vector2)
 // docid: M:System.Numerics.Vector2.Negate(System.Numerics.Vector2)
-    /**
-    Negates a specified vector.
-
-    - Parameter value: The vector to negate.
-    - Returns: The negated vector.
-
-    */
     public class func Negate(value : dotnet.System.Numerics.Vector2) throws -> dotnet.System.Numerics.Vector2 {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Vector2_Vector2__Negate_0__1__Vector2(&__thrown, value.get_handle());
@@ -5122,13 +3137,6 @@ public final class Vector2
     }
     // System.Numerics.Vector2 Normalize(System.Numerics.Vector2)
 // docid: M:System.Numerics.Vector2.Normalize(System.Numerics.Vector2)
-    /**
-    Returns a vector with the same direction as the specified vector, but with a length of one.
-
-    - Parameter value: The vector to normalize.
-    - Returns: The normalized vector.
-
-    */
     public class func Normalize(value : dotnet.System.Numerics.Vector2) throws -> dotnet.System.Numerics.Vector2 {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Vector2_Vector2__Normalize_0__1__Vector2(&__thrown, value.get_handle());
@@ -5140,14 +3148,6 @@ public final class Vector2
     }
     // [IsSpecialName] System.Numerics.Vector2 op_Addition(System.Numerics.Vector2, System.Numerics.Vector2)
 // docid: M:System.Numerics.Vector2.op_Addition(System.Numerics.Vector2,System.Numerics.Vector2)
-    /**
-    Adds two vectors together.
-
-    - Parameter left: The first vector to add.
-    - Parameter right: The second vector to add.
-    - Returns: The summed vector.
-
-    */
     public class func op_Addition(left : dotnet.System.Numerics.Vector2, right : dotnet.System.Numerics.Vector2) throws -> dotnet.System.Numerics.Vector2 {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Vector2_Vector2__op_Addition_0__2__Vector2_Vector2(&__thrown, left.get_handle(), right.get_handle());
@@ -5159,14 +3159,6 @@ public final class Vector2
     }
     // [IsSpecialName] System.Numerics.Vector2 op_Division(System.Numerics.Vector2, System.Numerics.Vector2)
 // docid: M:System.Numerics.Vector2.op_Division(System.Numerics.Vector2,System.Numerics.Vector2)
-    /**
-    Divides the first vector by the second.
-
-    - Parameter left: The first vector.
-    - Parameter right: The second vector.
-    - Returns: The vector that results from dividing  by .
-
-    */
     public class func op_Division(left : dotnet.System.Numerics.Vector2, right : dotnet.System.Numerics.Vector2) throws -> dotnet.System.Numerics.Vector2 {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Vector2_Vector2__op_Division_0__2__Vector2_Vector2(&__thrown, left.get_handle(), right.get_handle());
@@ -5178,14 +3170,6 @@ public final class Vector2
     }
     // [IsSpecialName] System.Numerics.Vector2 op_Division(System.Numerics.Vector2, System.Single)
 // docid: M:System.Numerics.Vector2.op_Division(System.Numerics.Vector2,System.Single)
-    /**
-    Divides the specified vector by a specified scalar value.
-
-    - Parameter value1: The vector.
-    - Parameter value2: The scalar value.
-    - Returns: The result of the division.
-
-    */
     public class func op_Division(value1 : dotnet.System.Numerics.Vector2, value2 : Swift.Float) throws -> dotnet.System.Numerics.Vector2 {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Vector2_Vector2__op_Division_0__2__Vector2_f32(&__thrown, value1.get_handle(), value2);
@@ -5197,15 +3181,6 @@ public final class Vector2
     }
     // [IsSpecialName] bool op_Equality(System.Numerics.Vector2, System.Numerics.Vector2)
 // docid: M:System.Numerics.Vector2.op_Equality(System.Numerics.Vector2,System.Numerics.Vector2)
-    /**
-    Returns a value that indicates whether each pair of elements in two specified vectors is equal.
-
-    - Parameter left: The first vector to compare.
-    - Parameter right: The second vector to compare.
-    - Returns: 
-         if  and  are equal; otherwise, .
-
-    */
     public class func op_Equality(left : dotnet.System.Numerics.Vector2, right : dotnet.System.Numerics.Vector2) throws -> Bool {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Vector2_bool__op_Equality_0__2__Vector2_Vector2(&__thrown, left.get_handle(), right.get_handle());
@@ -5217,15 +3192,6 @@ public final class Vector2
     }
     // [IsSpecialName] bool op_Inequality(System.Numerics.Vector2, System.Numerics.Vector2)
 // docid: M:System.Numerics.Vector2.op_Inequality(System.Numerics.Vector2,System.Numerics.Vector2)
-    /**
-    Returns a value that indicates whether two specified vectors are not equal.
-
-    - Parameter left: The first vector to compare.
-    - Parameter right: The second vector to compare.
-    - Returns: 
-         if  and  are not equal; otherwise, .
-
-    */
     public class func op_Inequality(left : dotnet.System.Numerics.Vector2, right : dotnet.System.Numerics.Vector2) throws -> Bool {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Vector2_bool__op_Inequality_0__2__Vector2_Vector2(&__thrown, left.get_handle(), right.get_handle());
@@ -5237,14 +3203,6 @@ public final class Vector2
     }
     // [IsSpecialName] System.Numerics.Vector2 op_Multiply(System.Numerics.Vector2, System.Numerics.Vector2)
 // docid: M:System.Numerics.Vector2.op_Multiply(System.Numerics.Vector2,System.Numerics.Vector2)
-    /**
-    Returns a new vector whose values are the product of each pair of elements in two specified vectors.
-
-    - Parameter left: The first vector.
-    - Parameter right: The second vector.
-    - Returns: The element-wise product vector.
-
-    */
     public class func op_Multiply(left : dotnet.System.Numerics.Vector2, right : dotnet.System.Numerics.Vector2) throws -> dotnet.System.Numerics.Vector2 {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Vector2_Vector2__op_Multiply_0__2__Vector2_Vector2(&__thrown, left.get_handle(), right.get_handle());
@@ -5256,14 +3214,6 @@ public final class Vector2
     }
     // [IsSpecialName] System.Numerics.Vector2 op_Multiply(System.Numerics.Vector2, System.Single)
 // docid: M:System.Numerics.Vector2.op_Multiply(System.Numerics.Vector2,System.Single)
-    /**
-    Multiples the specified vector by the specified scalar value.
-
-    - Parameter left: The vector.
-    - Parameter right: The scalar value.
-    - Returns: The scaled vector.
-
-    */
     public class func op_Multiply(left : dotnet.System.Numerics.Vector2, right : Swift.Float) throws -> dotnet.System.Numerics.Vector2 {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Vector2_Vector2__op_Multiply_0__2__Vector2_f32(&__thrown, left.get_handle(), right);
@@ -5275,14 +3225,6 @@ public final class Vector2
     }
     // [IsSpecialName] System.Numerics.Vector2 op_Multiply(System.Single, System.Numerics.Vector2)
 // docid: M:System.Numerics.Vector2.op_Multiply(System.Single,System.Numerics.Vector2)
-    /**
-    Multiples the scalar value by the specified vector.
-
-    - Parameter left: The vector.
-    - Parameter right: The scalar value.
-    - Returns: The scaled vector.
-
-    */
     public class func op_Multiply(left : Swift.Float, right : dotnet.System.Numerics.Vector2) throws -> dotnet.System.Numerics.Vector2 {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Vector2_Vector2__op_Multiply_0__2__f32_Vector2(&__thrown, left, right.get_handle());
@@ -5294,14 +3236,6 @@ public final class Vector2
     }
     // [IsSpecialName] System.Numerics.Vector2 op_Subtraction(System.Numerics.Vector2, System.Numerics.Vector2)
 // docid: M:System.Numerics.Vector2.op_Subtraction(System.Numerics.Vector2,System.Numerics.Vector2)
-    /**
-    Subtracts the second vector from the first.
-
-    - Parameter left: The first vector.
-    - Parameter right: The second vector.
-    - Returns: The vector that results from subtracting  from .
-
-    */
     public class func op_Subtraction(left : dotnet.System.Numerics.Vector2, right : dotnet.System.Numerics.Vector2) throws -> dotnet.System.Numerics.Vector2 {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Vector2_Vector2__op_Subtraction_0__2__Vector2_Vector2(&__thrown, left.get_handle(), right.get_handle());
@@ -5313,13 +3247,6 @@ public final class Vector2
     }
     // [IsSpecialName] System.Numerics.Vector2 op_UnaryNegation(System.Numerics.Vector2)
 // docid: M:System.Numerics.Vector2.op_UnaryNegation(System.Numerics.Vector2)
-    /**
-    Negates the specified vector.
-
-    - Parameter value: The vector to negate.
-    - Returns: The negated vector.
-
-    */
     public class func op_UnaryNegation(value : dotnet.System.Numerics.Vector2) throws -> dotnet.System.Numerics.Vector2 {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Vector2_Vector2__op_UnaryNegation_0__1__Vector2(&__thrown, value.get_handle());
@@ -5331,14 +3258,6 @@ public final class Vector2
     }
     // System.Numerics.Vector2 Reflect(System.Numerics.Vector2, System.Numerics.Vector2)
 // docid: M:System.Numerics.Vector2.Reflect(System.Numerics.Vector2,System.Numerics.Vector2)
-    /**
-    Returns the reflection of a vector off a surface that has the specified normal.
-
-    - Parameter vector: The source vector.
-    - Parameter normal: The normal of the surface being reflected off.
-    - Returns: The reflected vector.
-
-    */
     public class func Reflect(vector : dotnet.System.Numerics.Vector2, normal : dotnet.System.Numerics.Vector2) throws -> dotnet.System.Numerics.Vector2 {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Vector2_Vector2__Reflect_0__2__Vector2_Vector2(&__thrown, vector.get_handle(), normal.get_handle());
@@ -5350,13 +3269,6 @@ public final class Vector2
     }
     // System.Numerics.Vector2 SquareRoot(System.Numerics.Vector2)
 // docid: M:System.Numerics.Vector2.SquareRoot(System.Numerics.Vector2)
-    /**
-    Returns a vector whose elements are the square root of each of a specified vector's elements.
-
-    - Parameter value: A vector.
-    - Returns: The square root vector.
-
-    */
     public class func SquareRoot(value : dotnet.System.Numerics.Vector2) throws -> dotnet.System.Numerics.Vector2 {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Vector2_Vector2__SquareRoot_0__1__Vector2(&__thrown, value.get_handle());
@@ -5368,14 +3280,6 @@ public final class Vector2
     }
     // System.Numerics.Vector2 Subtract(System.Numerics.Vector2, System.Numerics.Vector2)
 // docid: M:System.Numerics.Vector2.Subtract(System.Numerics.Vector2,System.Numerics.Vector2)
-    /**
-    Subtracts the second vector from the first.
-
-    - Parameter left: The first vector.
-    - Parameter right: The second vector.
-    - Returns: The difference vector.
-
-    */
     public class func Subtract(left : dotnet.System.Numerics.Vector2, right : dotnet.System.Numerics.Vector2) throws -> dotnet.System.Numerics.Vector2 {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Vector2_Vector2__Subtract_0__2__Vector2_Vector2(&__thrown, left.get_handle(), right.get_handle());
@@ -5387,12 +3291,6 @@ public final class Vector2
     }
     // System.String ToString()
 // docid: M:System.Numerics.Vector2.ToString
-    /**
-    Returns the string representation of the current instance using default formatting.
-
-    - Returns: The string representation of the current instance.
-
-    */
     public override func ToString() throws -> dotnet.System.String {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Vector2_String__ToString_0__0(&__thrown, self.get_handle());
@@ -5404,13 +3302,6 @@ public final class Vector2
     }
     // System.String ToString(System.String)
 // docid: M:System.Numerics.Vector2.ToString(System.String)
-    /**
-    Returns the string representation of the current instance using the specified format string to format individual elements.
-
-    - Parameter format: A standard or custom numeric format string that defines the format of individual elements.
-    - Returns: The string representation of the current instance.
-
-    */
     public func ToString(format : Optional<dotnet.System.String>) throws -> dotnet.System.String {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Vector2_String__ToString_0__1__String(&__thrown, self.get_handle(), format?.get_handle() ?? nil);
@@ -5422,14 +3313,6 @@ public final class Vector2
     }
     // System.String ToString(System.String, System.IFormatProvider)
 // docid: M:System.Numerics.Vector2.ToString(System.String,System.IFormatProvider)
-    /**
-    Returns the string representation of the current instance using the specified format string to format individual elements and the specified format provider to define culture-specific formatting.
-
-    - Parameter format: A standard or custom numeric format string that defines the format of individual elements.
-    - Parameter formatProvider: A format provider that supplies culture-specific formatting information.
-    - Returns: The string representation of the current instance.
-
-    */
     public func ToString(format : Optional<dotnet.System.String>, formatProvider : Optional<dotnet.System.IFormatProvider>) throws -> dotnet.System.String {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Vector2_String__ToString_0__2__String_IFormatProvider(&__thrown, self.get_handle(), format?.get_handle() ?? nil, formatProvider?.get_handle() ?? nil);
@@ -5441,14 +3324,6 @@ public final class Vector2
     }
     // System.Numerics.Vector2 Transform(System.Numerics.Vector2, System.Numerics.Matrix3x2)
 // docid: M:System.Numerics.Vector2.Transform(System.Numerics.Vector2,System.Numerics.Matrix3x2)
-    /**
-    Transforms a vector by a specified 3x2 matrix.
-
-    - Parameter position: The vector to transform.
-    - Parameter matrix: The transformation matrix.
-    - Returns: The transformed vector.
-
-    */
     public class func Transform(position : dotnet.System.Numerics.Vector2, matrix : dotnet.System.Numerics.Matrix3x2) throws -> dotnet.System.Numerics.Vector2 {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Vector2_Vector2__Transform_0__2__Vector2_Matrix3x2(&__thrown, position.get_handle(), matrix.get_handle());
@@ -5460,14 +3335,6 @@ public final class Vector2
     }
     // System.Numerics.Vector2 Transform(System.Numerics.Vector2, System.Numerics.Matrix4x4)
 // docid: M:System.Numerics.Vector2.Transform(System.Numerics.Vector2,System.Numerics.Matrix4x4)
-    /**
-    Transforms a vector by a specified 4x4 matrix.
-
-    - Parameter position: The vector to transform.
-    - Parameter matrix: The transformation matrix.
-    - Returns: The transformed vector.
-
-    */
     public class func Transform(position : dotnet.System.Numerics.Vector2, matrix : dotnet.System.Numerics.Matrix4x4) throws -> dotnet.System.Numerics.Vector2 {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Vector2_Vector2__Transform_0__2__Vector2_Matrix4x4(&__thrown, position.get_handle(), matrix.get_handle());
@@ -5479,14 +3346,6 @@ public final class Vector2
     }
     // System.Numerics.Vector2 Transform(System.Numerics.Vector2, System.Numerics.Quaternion)
 // docid: M:System.Numerics.Vector2.Transform(System.Numerics.Vector2,System.Numerics.Quaternion)
-    /**
-    Transforms a vector by the specified Quaternion rotation value.
-
-    - Parameter value: The vector to rotate.
-    - Parameter rotation: The rotation to apply.
-    - Returns: The transformed vector.
-
-    */
     public class func Transform(value : dotnet.System.Numerics.Vector2, rotation : dotnet.System.Numerics.Quaternion) throws -> dotnet.System.Numerics.Vector2 {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Vector2_Vector2__Transform_0__2__Vector2_Quaternion(&__thrown, value.get_handle(), rotation.get_handle());
@@ -5498,14 +3357,6 @@ public final class Vector2
     }
     // System.Numerics.Vector2 TransformNormal(System.Numerics.Vector2, System.Numerics.Matrix3x2)
 // docid: M:System.Numerics.Vector2.TransformNormal(System.Numerics.Vector2,System.Numerics.Matrix3x2)
-    /**
-    Transforms a vector normal by the given 3x2 matrix.
-
-    - Parameter normal: The source vector.
-    - Parameter matrix: The matrix.
-    - Returns: The transformed vector.
-
-    */
     public class func TransformNormal(normal : dotnet.System.Numerics.Vector2, matrix : dotnet.System.Numerics.Matrix3x2) throws -> dotnet.System.Numerics.Vector2 {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Vector2_Vector2__TransformNormal_0__2__Vector2_Matrix3x2(&__thrown, normal.get_handle(), matrix.get_handle());
@@ -5517,14 +3368,6 @@ public final class Vector2
     }
     // System.Numerics.Vector2 TransformNormal(System.Numerics.Vector2, System.Numerics.Matrix4x4)
 // docid: M:System.Numerics.Vector2.TransformNormal(System.Numerics.Vector2,System.Numerics.Matrix4x4)
-    /**
-    Transforms a vector normal by the given 4x4 matrix.
-
-    - Parameter normal: The source vector.
-    - Parameter matrix: The matrix.
-    - Returns: The transformed vector.
-
-    */
     public class func TransformNormal(normal : dotnet.System.Numerics.Vector2, matrix : dotnet.System.Numerics.Matrix4x4) throws -> dotnet.System.Numerics.Vector2 {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Vector2_Vector2__TransformNormal_0__2__Vector2_Matrix4x4(&__thrown, normal.get_handle(), matrix.get_handle());
@@ -5583,10 +3426,6 @@ public final class Vector2
 
 // type: System.Numerics.Vector3
 // boxed value type
-    /**
-    Represents a vector with three  single-precision floating-point values.
-
-    */
 public final class Vector3
     :
     dotnet.System.Object,
@@ -5595,48 +3434,31 @@ public final class Vector3
     public class override func get_type_handle() -> TypeHandle {
         return System_Numerics_Vector3_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
-    /**
-    Gets a vector whose 3 elements are equal to one.
-
-    */
     public static var One : dotnet.System.Numerics.Vector3 {
         get {
             return try! get_One();
         }
     }
-    /**
-    Gets the vector (1,0,0).
-
-    */
     public static var UnitX : dotnet.System.Numerics.Vector3 {
         get {
             return try! get_UnitX();
         }
     }
-    /**
-    Gets the vector (0,1,0).
-
-    */
     public static var UnitY : dotnet.System.Numerics.Vector3 {
         get {
             return try! get_UnitY();
         }
     }
-    /**
-    Gets the vector (0,0,1).
-
-    */
     public static var UnitZ : dotnet.System.Numerics.Vector3 {
         get {
             return try! get_UnitZ();
         }
     }
-    /**
-    Gets a vector whose 3 elements are equal to zero.
-
-    */
     public static var Zero : dotnet.System.Numerics.Vector3 {
         get {
             return try! get_Zero();
@@ -5644,12 +3466,6 @@ public final class Vector3
     }
     // .ctor(System.Numerics.Vector2, System.Single)
 // docid: M:System.Numerics.Vector3.#ctor(System.Numerics.Vector2,System.Single)
-    /**
-    Creates a   new  object from the specified  object and the specified value.
-
-    - Parameter value: The vector with two elements.
-    - Parameter z: The additional value to assign to the  field.
-    */
     public init(value : dotnet.System.Numerics.Vector2, z : Swift.Float) throws {
         var __thrown : NullableHandle = nil;
         let h = System_Numerics_Vector3_ctor_0__2__Vector2_f32(&__thrown, value.get_handle(), z);
@@ -5661,11 +3477,6 @@ public final class Vector3
     }
     // .ctor(System.Single)
 // docid: M:System.Numerics.Vector3.#ctor(System.Single)
-    /**
-    Creates a new  object whose three elements have the same value.
-
-    - Parameter value: The value to assign to all three elements.
-    */
     public init(value : Swift.Float) throws {
         var __thrown : NullableHandle = nil;
         let h = System_Numerics_Vector3_ctor_0__1__f32(&__thrown, value);
@@ -5677,13 +3488,6 @@ public final class Vector3
     }
     // .ctor(System.Single, System.Single, System.Single)
 // docid: M:System.Numerics.Vector3.#ctor(System.Single,System.Single,System.Single)
-    /**
-    Creates a vector whose elements have the specified values.
-
-    - Parameter x: The value to assign to the  field.
-    - Parameter y: The value to assign to the  field.
-    - Parameter z: The value to assign to the  field.
-    */
     public init(x : Swift.Float, y : Swift.Float, z : Swift.Float) throws {
         var __thrown : NullableHandle = nil;
         let h = System_Numerics_Vector3_ctor_0__3__f32_f32_f32(&__thrown, x, y, z);
@@ -5700,13 +3504,6 @@ public final class Vector3
     }
     // System.Numerics.Vector3 Abs(System.Numerics.Vector3)
 // docid: M:System.Numerics.Vector3.Abs(System.Numerics.Vector3)
-    /**
-    Returns a vector whose elements are the absolute values of each of the specified vector's elements.
-
-    - Parameter value: A vector.
-    - Returns: The absolute value vector.
-
-    */
     public class func Abs(value : dotnet.System.Numerics.Vector3) throws -> dotnet.System.Numerics.Vector3 {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Vector3_Vector3__Abs_0__1__Vector3(&__thrown, value.get_handle());
@@ -5718,14 +3515,6 @@ public final class Vector3
     }
     // System.Numerics.Vector3 Add(System.Numerics.Vector3, System.Numerics.Vector3)
 // docid: M:System.Numerics.Vector3.Add(System.Numerics.Vector3,System.Numerics.Vector3)
-    /**
-    Adds two vectors together.
-
-    - Parameter left: The first vector to add.
-    - Parameter right: The second vector to add.
-    - Returns: The summed vector.
-
-    */
     public class func Add(left : dotnet.System.Numerics.Vector3, right : dotnet.System.Numerics.Vector3) throws -> dotnet.System.Numerics.Vector3 {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Vector3_Vector3__Add_0__2__Vector3_Vector3(&__thrown, left.get_handle(), right.get_handle());
@@ -5737,15 +3526,6 @@ public final class Vector3
     }
     // System.Numerics.Vector3 Clamp(System.Numerics.Vector3, System.Numerics.Vector3, System.Numerics.Vector3)
 // docid: M:System.Numerics.Vector3.Clamp(System.Numerics.Vector3,System.Numerics.Vector3,System.Numerics.Vector3)
-    /**
-    Restricts a vector between a minimum and a maximum value.
-
-    - Parameter value1: The vector to restrict.
-    - Parameter min: The minimum value.
-    - Parameter max: The maximum value.
-    - Returns: The restricted vector.
-
-    */
     public class func Clamp(value1 : dotnet.System.Numerics.Vector3, min : dotnet.System.Numerics.Vector3, max : dotnet.System.Numerics.Vector3) throws -> dotnet.System.Numerics.Vector3 {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Vector3_Vector3__Clamp_0__3__Vector3_Vector3_Vector3(&__thrown, value1.get_handle(), min.get_handle(), max.get_handle());
@@ -5757,11 +3537,6 @@ public final class Vector3
     }
     // void CopyTo(System.Single[])
 // docid: M:System.Numerics.Vector3.CopyTo(System.Single[])
-    /**
-    Copies the elements of the vector to a specified array.
-
-    - Parameter array: The destination array.
-    */
     public func CopyTo(array : dotnet.System_Arr<Swift.Float>) throws {
         var __thrown : NullableHandle = nil;
         System_Numerics_Vector3_void__CopyTo_0__1__f32Array(&__thrown, self.get_handle(), array.get_handle());
@@ -5773,12 +3548,6 @@ public final class Vector3
     }
     // void CopyTo(System.Single[], System.Int32)
 // docid: M:System.Numerics.Vector3.CopyTo(System.Single[],System.Int32)
-    /**
-    Copies the elements of the vector to a specified array starting at a specified index position.
-
-    - Parameter array: The destination array.
-    - Parameter index: The index at which to copy the first element of the vector.
-    */
     public func CopyTo(array : dotnet.System_Arr<Swift.Float>, index : Swift.Int32) throws {
         var __thrown : NullableHandle = nil;
         System_Numerics_Vector3_void__CopyTo_0__2__f32Array_i32(&__thrown, self.get_handle(), array.get_handle(), index);
@@ -5792,14 +3561,6 @@ public final class Vector3
 // TODO COPE (write_all_methods) (span) bool TryCopyTo(System.Span<System.Single>)
     // System.Numerics.Vector3 Cross(System.Numerics.Vector3, System.Numerics.Vector3)
 // docid: M:System.Numerics.Vector3.Cross(System.Numerics.Vector3,System.Numerics.Vector3)
-    /**
-    Computes the cross product of two vectors.
-
-    - Parameter vector1: The first vector.
-    - Parameter vector2: The second vector.
-    - Returns: The cross product.
-
-    */
     public class func Cross(vector1 : dotnet.System.Numerics.Vector3, vector2 : dotnet.System.Numerics.Vector3) throws -> dotnet.System.Numerics.Vector3 {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Vector3_Vector3__Cross_0__2__Vector3_Vector3(&__thrown, vector1.get_handle(), vector2.get_handle());
@@ -5811,14 +3572,6 @@ public final class Vector3
     }
     // System.Single Distance(System.Numerics.Vector3, System.Numerics.Vector3)
 // docid: M:System.Numerics.Vector3.Distance(System.Numerics.Vector3,System.Numerics.Vector3)
-    /**
-    Computes the Euclidean distance between the two given points.
-
-    - Parameter value1: The first point.
-    - Parameter value2: The second point.
-    - Returns: The distance.
-
-    */
     public class func Distance(value1 : dotnet.System.Numerics.Vector3, value2 : dotnet.System.Numerics.Vector3) throws -> Swift.Float {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Vector3_f32__Distance_0__2__Vector3_Vector3(&__thrown, value1.get_handle(), value2.get_handle());
@@ -5830,14 +3583,6 @@ public final class Vector3
     }
     // System.Single DistanceSquared(System.Numerics.Vector3, System.Numerics.Vector3)
 // docid: M:System.Numerics.Vector3.DistanceSquared(System.Numerics.Vector3,System.Numerics.Vector3)
-    /**
-    Returns the Euclidean distance squared between two specified points.
-
-    - Parameter value1: The first point.
-    - Parameter value2: The second point.
-    - Returns: The distance squared.
-
-    */
     public class func DistanceSquared(value1 : dotnet.System.Numerics.Vector3, value2 : dotnet.System.Numerics.Vector3) throws -> Swift.Float {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Vector3_f32__DistanceSquared_0__2__Vector3_Vector3(&__thrown, value1.get_handle(), value2.get_handle());
@@ -5849,14 +3594,6 @@ public final class Vector3
     }
     // System.Numerics.Vector3 Divide(System.Numerics.Vector3, System.Numerics.Vector3)
 // docid: M:System.Numerics.Vector3.Divide(System.Numerics.Vector3,System.Numerics.Vector3)
-    /**
-    Divides the first vector by the second.
-
-    - Parameter left: The first vector.
-    - Parameter right: The second vector.
-    - Returns: The vector resulting from the division.
-
-    */
     public class func Divide(left : dotnet.System.Numerics.Vector3, right : dotnet.System.Numerics.Vector3) throws -> dotnet.System.Numerics.Vector3 {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Vector3_Vector3__Divide_0__2__Vector3_Vector3(&__thrown, left.get_handle(), right.get_handle());
@@ -5868,14 +3605,6 @@ public final class Vector3
     }
     // System.Numerics.Vector3 Divide(System.Numerics.Vector3, System.Single)
 // docid: M:System.Numerics.Vector3.Divide(System.Numerics.Vector3,System.Single)
-    /**
-    Divides the specified vector by a specified scalar value.
-
-    - Parameter left: The vector.
-    - Parameter divisor: The scalar value.
-    - Returns: The vector that results from the division.
-
-    */
     public class func Divide(left : dotnet.System.Numerics.Vector3, divisor : Swift.Float) throws -> dotnet.System.Numerics.Vector3 {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Vector3_Vector3__Divide_0__2__Vector3_f32(&__thrown, left.get_handle(), divisor);
@@ -5887,14 +3616,6 @@ public final class Vector3
     }
     // System.Single Dot(System.Numerics.Vector3, System.Numerics.Vector3)
 // docid: M:System.Numerics.Vector3.Dot(System.Numerics.Vector3,System.Numerics.Vector3)
-    /**
-    Returns the dot product of two vectors.
-
-    - Parameter vector1: The first vector.
-    - Parameter vector2: The second vector.
-    - Returns: The dot product.
-
-    */
     public class func Dot(vector1 : dotnet.System.Numerics.Vector3, vector2 : dotnet.System.Numerics.Vector3) throws -> Swift.Float {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Vector3_f32__Dot_0__2__Vector3_Vector3(&__thrown, vector1.get_handle(), vector2.get_handle());
@@ -5906,14 +3627,6 @@ public final class Vector3
     }
     // bool Equals(System.Numerics.Vector3)
 // docid: M:System.Numerics.Vector3.Equals(System.Numerics.Vector3)
-    /**
-    Returns a value that indicates whether this instance and another vector are equal.
-
-    - Parameter other: The other vector.
-    - Returns: 
-         if the two vectors are equal; otherwise, .
-
-    */
     public func Equals(other : dotnet.System.Numerics.Vector3) throws -> Bool {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Vector3_bool__Equals_0__1__Vector3(&__thrown, self.get_handle(), other.get_handle());
@@ -5925,14 +3638,6 @@ public final class Vector3
     }
     // bool Equals(System.Object)
 // docid: M:System.Numerics.Vector3.Equals(System.Object)
-    /**
-    Returns a value that indicates whether this instance and a specified object are equal.
-
-    - Parameter obj: The object to compare with the current instance.
-    - Returns: 
-         if the current instance and  are equal; otherwise, . If  is , the method returns .
-
-    */
     public override func Equals(obj : Optional<dotnet.System.Object>) throws -> Bool {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Vector3_bool__Equals_0__1__Object(&__thrown, self.get_handle(), obj?.get_handle() ?? nil);
@@ -5944,12 +3649,6 @@ public final class Vector3
     }
     // System.Int32 GetHashCode()
 // docid: M:System.Numerics.Vector3.GetHashCode
-    /**
-    Returns the hash code for this instance.
-
-    - Returns: The hash code.
-
-    */
     public override func GetHashCode() throws -> Swift.Int32 {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Vector3_i32__GetHashCode_0__0(&__thrown, self.get_handle());
@@ -5961,12 +3660,6 @@ public final class Vector3
     }
     // System.Single Length()
 // docid: M:System.Numerics.Vector3.Length
-    /**
-    Returns the length of this vector object.
-
-    - Returns: The vector's length.
-
-    */
     public func Length() throws -> Swift.Float {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Vector3_f32__Length_0__0(&__thrown, self.get_handle());
@@ -5978,12 +3671,6 @@ public final class Vector3
     }
     // System.Single LengthSquared()
 // docid: M:System.Numerics.Vector3.LengthSquared
-    /**
-    Returns the length of the vector squared.
-
-    - Returns: The vector's length squared.
-
-    */
     public func LengthSquared() throws -> Swift.Float {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Vector3_f32__LengthSquared_0__0(&__thrown, self.get_handle());
@@ -5995,15 +3682,6 @@ public final class Vector3
     }
     // System.Numerics.Vector3 Lerp(System.Numerics.Vector3, System.Numerics.Vector3, System.Single)
 // docid: M:System.Numerics.Vector3.Lerp(System.Numerics.Vector3,System.Numerics.Vector3,System.Single)
-    /**
-    Performs a linear interpolation between two vectors based on the given weighting.
-
-    - Parameter value1: The first vector.
-    - Parameter value2: The second vector.
-    - Parameter amount: A value between 0 and 1 that indicates the weight of .
-    - Returns: The interpolated vector.
-
-    */
     public class func Lerp(value1 : dotnet.System.Numerics.Vector3, value2 : dotnet.System.Numerics.Vector3, amount : Swift.Float) throws -> dotnet.System.Numerics.Vector3 {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Vector3_Vector3__Lerp_0__3__Vector3_Vector3_f32(&__thrown, value1.get_handle(), value2.get_handle(), amount);
@@ -6015,14 +3693,6 @@ public final class Vector3
     }
     // System.Numerics.Vector3 Max(System.Numerics.Vector3, System.Numerics.Vector3)
 // docid: M:System.Numerics.Vector3.Max(System.Numerics.Vector3,System.Numerics.Vector3)
-    /**
-    Returns a vector whose elements are the maximum of each of the pairs of elements in two specified vectors.
-
-    - Parameter value1: The first vector.
-    - Parameter value2: The second vector.
-    - Returns: The maximized vector.
-
-    */
     public class func Max(value1 : dotnet.System.Numerics.Vector3, value2 : dotnet.System.Numerics.Vector3) throws -> dotnet.System.Numerics.Vector3 {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Vector3_Vector3__Max_0__2__Vector3_Vector3(&__thrown, value1.get_handle(), value2.get_handle());
@@ -6034,14 +3704,6 @@ public final class Vector3
     }
     // System.Numerics.Vector3 Min(System.Numerics.Vector3, System.Numerics.Vector3)
 // docid: M:System.Numerics.Vector3.Min(System.Numerics.Vector3,System.Numerics.Vector3)
-    /**
-    Returns a vector whose elements are the minimum of each of the pairs of elements in two specified vectors.
-
-    - Parameter value1: The first vector.
-    - Parameter value2: The second vector.
-    - Returns: The minimized vector.
-
-    */
     public class func Min(value1 : dotnet.System.Numerics.Vector3, value2 : dotnet.System.Numerics.Vector3) throws -> dotnet.System.Numerics.Vector3 {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Vector3_Vector3__Min_0__2__Vector3_Vector3(&__thrown, value1.get_handle(), value2.get_handle());
@@ -6053,14 +3715,6 @@ public final class Vector3
     }
     // System.Numerics.Vector3 Multiply(System.Numerics.Vector3, System.Numerics.Vector3)
 // docid: M:System.Numerics.Vector3.Multiply(System.Numerics.Vector3,System.Numerics.Vector3)
-    /**
-    Returns a new vector whose values are the product of each pair of elements in two specified vectors.
-
-    - Parameter left: The first vector.
-    - Parameter right: The second vector.
-    - Returns: The element-wise product vector.
-
-    */
     public class func Multiply(left : dotnet.System.Numerics.Vector3, right : dotnet.System.Numerics.Vector3) throws -> dotnet.System.Numerics.Vector3 {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Vector3_Vector3__Multiply_0__2__Vector3_Vector3(&__thrown, left.get_handle(), right.get_handle());
@@ -6072,14 +3726,6 @@ public final class Vector3
     }
     // System.Numerics.Vector3 Multiply(System.Numerics.Vector3, System.Single)
 // docid: M:System.Numerics.Vector3.Multiply(System.Numerics.Vector3,System.Single)
-    /**
-    Multiplies a vector by a specified scalar.
-
-    - Parameter left: The vector to multiply.
-    - Parameter right: The scalar value.
-    - Returns: The scaled vector.
-
-    */
     public class func Multiply(left : dotnet.System.Numerics.Vector3, right : Swift.Float) throws -> dotnet.System.Numerics.Vector3 {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Vector3_Vector3__Multiply_0__2__Vector3_f32(&__thrown, left.get_handle(), right);
@@ -6091,14 +3737,6 @@ public final class Vector3
     }
     // System.Numerics.Vector3 Multiply(System.Single, System.Numerics.Vector3)
 // docid: M:System.Numerics.Vector3.Multiply(System.Single,System.Numerics.Vector3)
-    /**
-    Multiplies a scalar value by a specified vector.
-
-    - Parameter left: The scaled value.
-    - Parameter right: The vector.
-    - Returns: The scaled vector.
-
-    */
     public class func Multiply(left : Swift.Float, right : dotnet.System.Numerics.Vector3) throws -> dotnet.System.Numerics.Vector3 {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Vector3_Vector3__Multiply_0__2__f32_Vector3(&__thrown, left, right.get_handle());
@@ -6110,13 +3748,6 @@ public final class Vector3
     }
     // System.Numerics.Vector3 Negate(System.Numerics.Vector3)
 // docid: M:System.Numerics.Vector3.Negate(System.Numerics.Vector3)
-    /**
-    Negates a specified vector.
-
-    - Parameter value: The vector to negate.
-    - Returns: The negated vector.
-
-    */
     public class func Negate(value : dotnet.System.Numerics.Vector3) throws -> dotnet.System.Numerics.Vector3 {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Vector3_Vector3__Negate_0__1__Vector3(&__thrown, value.get_handle());
@@ -6128,13 +3759,6 @@ public final class Vector3
     }
     // System.Numerics.Vector3 Normalize(System.Numerics.Vector3)
 // docid: M:System.Numerics.Vector3.Normalize(System.Numerics.Vector3)
-    /**
-    Returns a vector with the same direction as the specified vector, but with a length of one.
-
-    - Parameter value: The vector to normalize.
-    - Returns: The normalized vector.
-
-    */
     public class func Normalize(value : dotnet.System.Numerics.Vector3) throws -> dotnet.System.Numerics.Vector3 {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Vector3_Vector3__Normalize_0__1__Vector3(&__thrown, value.get_handle());
@@ -6146,14 +3770,6 @@ public final class Vector3
     }
     // [IsSpecialName] System.Numerics.Vector3 op_Addition(System.Numerics.Vector3, System.Numerics.Vector3)
 // docid: M:System.Numerics.Vector3.op_Addition(System.Numerics.Vector3,System.Numerics.Vector3)
-    /**
-    Adds two vectors together.
-
-    - Parameter left: The first vector to add.
-    - Parameter right: The second vector to add.
-    - Returns: The summed vector.
-
-    */
     public class func op_Addition(left : dotnet.System.Numerics.Vector3, right : dotnet.System.Numerics.Vector3) throws -> dotnet.System.Numerics.Vector3 {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Vector3_Vector3__op_Addition_0__2__Vector3_Vector3(&__thrown, left.get_handle(), right.get_handle());
@@ -6165,14 +3781,6 @@ public final class Vector3
     }
     // [IsSpecialName] System.Numerics.Vector3 op_Division(System.Numerics.Vector3, System.Numerics.Vector3)
 // docid: M:System.Numerics.Vector3.op_Division(System.Numerics.Vector3,System.Numerics.Vector3)
-    /**
-    Divides the first vector by the second.
-
-    - Parameter left: The first vector.
-    - Parameter right: The second vector.
-    - Returns: The vector that results from dividing  by .
-
-    */
     public class func op_Division(left : dotnet.System.Numerics.Vector3, right : dotnet.System.Numerics.Vector3) throws -> dotnet.System.Numerics.Vector3 {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Vector3_Vector3__op_Division_0__2__Vector3_Vector3(&__thrown, left.get_handle(), right.get_handle());
@@ -6184,14 +3792,6 @@ public final class Vector3
     }
     // [IsSpecialName] System.Numerics.Vector3 op_Division(System.Numerics.Vector3, System.Single)
 // docid: M:System.Numerics.Vector3.op_Division(System.Numerics.Vector3,System.Single)
-    /**
-    Divides the specified vector by a specified scalar value.
-
-    - Parameter value1: The vector.
-    - Parameter value2: The scalar value.
-    - Returns: The result of the division.
-
-    */
     public class func op_Division(value1 : dotnet.System.Numerics.Vector3, value2 : Swift.Float) throws -> dotnet.System.Numerics.Vector3 {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Vector3_Vector3__op_Division_0__2__Vector3_f32(&__thrown, value1.get_handle(), value2);
@@ -6203,15 +3803,6 @@ public final class Vector3
     }
     // [IsSpecialName] bool op_Equality(System.Numerics.Vector3, System.Numerics.Vector3)
 // docid: M:System.Numerics.Vector3.op_Equality(System.Numerics.Vector3,System.Numerics.Vector3)
-    /**
-    Returns a value that indicates whether each pair of elements in two specified vectors is equal.
-
-    - Parameter left: The first vector to compare.
-    - Parameter right: The second vector to compare.
-    - Returns: 
-         if  and  are equal; otherwise, .
-
-    */
     public class func op_Equality(left : dotnet.System.Numerics.Vector3, right : dotnet.System.Numerics.Vector3) throws -> Bool {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Vector3_bool__op_Equality_0__2__Vector3_Vector3(&__thrown, left.get_handle(), right.get_handle());
@@ -6223,15 +3814,6 @@ public final class Vector3
     }
     // [IsSpecialName] bool op_Inequality(System.Numerics.Vector3, System.Numerics.Vector3)
 // docid: M:System.Numerics.Vector3.op_Inequality(System.Numerics.Vector3,System.Numerics.Vector3)
-    /**
-    Returns a value that indicates whether two specified vectors are not equal.
-
-    - Parameter left: The first vector to compare.
-    - Parameter right: The second vector to compare.
-    - Returns: 
-         if  and  are not equal; otherwise, .
-
-    */
     public class func op_Inequality(left : dotnet.System.Numerics.Vector3, right : dotnet.System.Numerics.Vector3) throws -> Bool {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Vector3_bool__op_Inequality_0__2__Vector3_Vector3(&__thrown, left.get_handle(), right.get_handle());
@@ -6243,14 +3825,6 @@ public final class Vector3
     }
     // [IsSpecialName] System.Numerics.Vector3 op_Multiply(System.Numerics.Vector3, System.Numerics.Vector3)
 // docid: M:System.Numerics.Vector3.op_Multiply(System.Numerics.Vector3,System.Numerics.Vector3)
-    /**
-    Returns a new vector whose values are the product of each pair of elements in two specified vectors.
-
-    - Parameter left: The first vector.
-    - Parameter right: The second vector.
-    - Returns: The element-wise product vector.
-
-    */
     public class func op_Multiply(left : dotnet.System.Numerics.Vector3, right : dotnet.System.Numerics.Vector3) throws -> dotnet.System.Numerics.Vector3 {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Vector3_Vector3__op_Multiply_0__2__Vector3_Vector3(&__thrown, left.get_handle(), right.get_handle());
@@ -6262,14 +3836,6 @@ public final class Vector3
     }
     // [IsSpecialName] System.Numerics.Vector3 op_Multiply(System.Numerics.Vector3, System.Single)
 // docid: M:System.Numerics.Vector3.op_Multiply(System.Numerics.Vector3,System.Single)
-    /**
-    Multiples the specified vector by the specified scalar value.
-
-    - Parameter left: The vector.
-    - Parameter right: The scalar value.
-    - Returns: The scaled vector.
-
-    */
     public class func op_Multiply(left : dotnet.System.Numerics.Vector3, right : Swift.Float) throws -> dotnet.System.Numerics.Vector3 {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Vector3_Vector3__op_Multiply_0__2__Vector3_f32(&__thrown, left.get_handle(), right);
@@ -6281,14 +3847,6 @@ public final class Vector3
     }
     // [IsSpecialName] System.Numerics.Vector3 op_Multiply(System.Single, System.Numerics.Vector3)
 // docid: M:System.Numerics.Vector3.op_Multiply(System.Single,System.Numerics.Vector3)
-    /**
-    Multiples the scalar value by the specified vector.
-
-    - Parameter left: The vector.
-    - Parameter right: The scalar value.
-    - Returns: The scaled vector.
-
-    */
     public class func op_Multiply(left : Swift.Float, right : dotnet.System.Numerics.Vector3) throws -> dotnet.System.Numerics.Vector3 {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Vector3_Vector3__op_Multiply_0__2__f32_Vector3(&__thrown, left, right.get_handle());
@@ -6300,14 +3858,6 @@ public final class Vector3
     }
     // [IsSpecialName] System.Numerics.Vector3 op_Subtraction(System.Numerics.Vector3, System.Numerics.Vector3)
 // docid: M:System.Numerics.Vector3.op_Subtraction(System.Numerics.Vector3,System.Numerics.Vector3)
-    /**
-    Subtracts the second vector from the first.
-
-    - Parameter left: The first vector.
-    - Parameter right: The second vector.
-    - Returns: The vector that results from subtracting  from .
-
-    */
     public class func op_Subtraction(left : dotnet.System.Numerics.Vector3, right : dotnet.System.Numerics.Vector3) throws -> dotnet.System.Numerics.Vector3 {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Vector3_Vector3__op_Subtraction_0__2__Vector3_Vector3(&__thrown, left.get_handle(), right.get_handle());
@@ -6319,13 +3869,6 @@ public final class Vector3
     }
     // [IsSpecialName] System.Numerics.Vector3 op_UnaryNegation(System.Numerics.Vector3)
 // docid: M:System.Numerics.Vector3.op_UnaryNegation(System.Numerics.Vector3)
-    /**
-    Negates the specified vector.
-
-    - Parameter value: The vector to negate.
-    - Returns: The negated vector.
-
-    */
     public class func op_UnaryNegation(value : dotnet.System.Numerics.Vector3) throws -> dotnet.System.Numerics.Vector3 {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Vector3_Vector3__op_UnaryNegation_0__1__Vector3(&__thrown, value.get_handle());
@@ -6337,14 +3880,6 @@ public final class Vector3
     }
     // System.Numerics.Vector3 Reflect(System.Numerics.Vector3, System.Numerics.Vector3)
 // docid: M:System.Numerics.Vector3.Reflect(System.Numerics.Vector3,System.Numerics.Vector3)
-    /**
-    Returns the reflection of a vector off a surface that has the specified normal.
-
-    - Parameter vector: The source vector.
-    - Parameter normal: The normal of the surface being reflected off.
-    - Returns: The reflected vector.
-
-    */
     public class func Reflect(vector : dotnet.System.Numerics.Vector3, normal : dotnet.System.Numerics.Vector3) throws -> dotnet.System.Numerics.Vector3 {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Vector3_Vector3__Reflect_0__2__Vector3_Vector3(&__thrown, vector.get_handle(), normal.get_handle());
@@ -6356,13 +3891,6 @@ public final class Vector3
     }
     // System.Numerics.Vector3 SquareRoot(System.Numerics.Vector3)
 // docid: M:System.Numerics.Vector3.SquareRoot(System.Numerics.Vector3)
-    /**
-    Returns a vector whose elements are the square root of each of a specified vector's elements.
-
-    - Parameter value: A vector.
-    - Returns: The square root vector.
-
-    */
     public class func SquareRoot(value : dotnet.System.Numerics.Vector3) throws -> dotnet.System.Numerics.Vector3 {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Vector3_Vector3__SquareRoot_0__1__Vector3(&__thrown, value.get_handle());
@@ -6374,14 +3902,6 @@ public final class Vector3
     }
     // System.Numerics.Vector3 Subtract(System.Numerics.Vector3, System.Numerics.Vector3)
 // docid: M:System.Numerics.Vector3.Subtract(System.Numerics.Vector3,System.Numerics.Vector3)
-    /**
-    Subtracts the second vector from the first.
-
-    - Parameter left: The first vector.
-    - Parameter right: The second vector.
-    - Returns: The difference vector.
-
-    */
     public class func Subtract(left : dotnet.System.Numerics.Vector3, right : dotnet.System.Numerics.Vector3) throws -> dotnet.System.Numerics.Vector3 {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Vector3_Vector3__Subtract_0__2__Vector3_Vector3(&__thrown, left.get_handle(), right.get_handle());
@@ -6393,12 +3913,6 @@ public final class Vector3
     }
     // System.String ToString()
 // docid: M:System.Numerics.Vector3.ToString
-    /**
-    Returns the string representation of the current instance using default formatting.
-
-    - Returns: The string representation of the current instance.
-
-    */
     public override func ToString() throws -> dotnet.System.String {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Vector3_String__ToString_0__0(&__thrown, self.get_handle());
@@ -6410,13 +3924,6 @@ public final class Vector3
     }
     // System.String ToString(System.String)
 // docid: M:System.Numerics.Vector3.ToString(System.String)
-    /**
-    Returns the string representation of the current instance using the specified format string to format individual elements.
-
-    - Parameter format: A standard or custom numeric format string that defines the format of individual elements.
-    - Returns: The string representation of the current instance.
-
-    */
     public func ToString(format : Optional<dotnet.System.String>) throws -> dotnet.System.String {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Vector3_String__ToString_0__1__String(&__thrown, self.get_handle(), format?.get_handle() ?? nil);
@@ -6428,14 +3935,6 @@ public final class Vector3
     }
     // System.String ToString(System.String, System.IFormatProvider)
 // docid: M:System.Numerics.Vector3.ToString(System.String,System.IFormatProvider)
-    /**
-    Returns the string representation of the current instance using the specified format string to format individual elements and the specified format provider to define culture-specific formatting.
-
-    - Parameter format: A standard or custom numeric format string that defines the format of individual elements.
-    - Parameter formatProvider: A format provider that supplies culture-specific formatting information.
-    - Returns: The string representation of the current instance.
-
-    */
     public func ToString(format : Optional<dotnet.System.String>, formatProvider : Optional<dotnet.System.IFormatProvider>) throws -> dotnet.System.String {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Vector3_String__ToString_0__2__String_IFormatProvider(&__thrown, self.get_handle(), format?.get_handle() ?? nil, formatProvider?.get_handle() ?? nil);
@@ -6447,14 +3946,6 @@ public final class Vector3
     }
     // System.Numerics.Vector3 Transform(System.Numerics.Vector3, System.Numerics.Matrix4x4)
 // docid: M:System.Numerics.Vector3.Transform(System.Numerics.Vector3,System.Numerics.Matrix4x4)
-    /**
-    Transforms a vector by a specified 4x4 matrix.
-
-    - Parameter position: The vector to transform.
-    - Parameter matrix: The transformation matrix.
-    - Returns: The transformed vector.
-
-    */
     public class func Transform(position : dotnet.System.Numerics.Vector3, matrix : dotnet.System.Numerics.Matrix4x4) throws -> dotnet.System.Numerics.Vector3 {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Vector3_Vector3__Transform_0__2__Vector3_Matrix4x4(&__thrown, position.get_handle(), matrix.get_handle());
@@ -6466,14 +3957,6 @@ public final class Vector3
     }
     // System.Numerics.Vector3 Transform(System.Numerics.Vector3, System.Numerics.Quaternion)
 // docid: M:System.Numerics.Vector3.Transform(System.Numerics.Vector3,System.Numerics.Quaternion)
-    /**
-    Transforms a vector by the specified Quaternion rotation value.
-
-    - Parameter value: The vector to rotate.
-    - Parameter rotation: The rotation to apply.
-    - Returns: The transformed vector.
-
-    */
     public class func Transform(value : dotnet.System.Numerics.Vector3, rotation : dotnet.System.Numerics.Quaternion) throws -> dotnet.System.Numerics.Vector3 {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Vector3_Vector3__Transform_0__2__Vector3_Quaternion(&__thrown, value.get_handle(), rotation.get_handle());
@@ -6485,14 +3968,6 @@ public final class Vector3
     }
     // System.Numerics.Vector3 TransformNormal(System.Numerics.Vector3, System.Numerics.Matrix4x4)
 // docid: M:System.Numerics.Vector3.TransformNormal(System.Numerics.Vector3,System.Numerics.Matrix4x4)
-    /**
-    Transforms a vector normal by the given 4x4 matrix.
-
-    - Parameter normal: The source vector.
-    - Parameter matrix: The matrix.
-    - Returns: The transformed vector.
-
-    */
     public class func TransformNormal(normal : dotnet.System.Numerics.Vector3, matrix : dotnet.System.Numerics.Matrix4x4) throws -> dotnet.System.Numerics.Vector3 {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Vector3_Vector3__TransformNormal_0__2__Vector3_Matrix4x4(&__thrown, normal.get_handle(), matrix.get_handle());
@@ -6562,10 +4037,6 @@ public final class Vector3
 
 // type: System.Numerics.Vector4
 // boxed value type
-    /**
-    Represents a vector with four single-precision floating-point values.
-
-    */
 public final class Vector4
     :
     dotnet.System.Object,
@@ -6574,57 +4045,36 @@ public final class Vector4
     public class override func get_type_handle() -> TypeHandle {
         return System_Numerics_Vector4_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
-    /**
-    Gets a vector whose 4 elements are equal to one.
-
-    */
     public static var One : dotnet.System.Numerics.Vector4 {
         get {
             return try! get_One();
         }
     }
-    /**
-    Gets the vector (0,0,0,1).
-
-    */
     public static var UnitW : dotnet.System.Numerics.Vector4 {
         get {
             return try! get_UnitW();
         }
     }
-    /**
-    Gets the vector (1,0,0,0).
-
-    */
     public static var UnitX : dotnet.System.Numerics.Vector4 {
         get {
             return try! get_UnitX();
         }
     }
-    /**
-    Gets the vector (0,1,0,0).
-
-    */
     public static var UnitY : dotnet.System.Numerics.Vector4 {
         get {
             return try! get_UnitY();
         }
     }
-    /**
-    Gets the vector (0,0,1,0).
-
-    */
     public static var UnitZ : dotnet.System.Numerics.Vector4 {
         get {
             return try! get_UnitZ();
         }
     }
-    /**
-    Gets a vector whose 4 elements are equal to zero.
-
-    */
     public static var Zero : dotnet.System.Numerics.Vector4 {
         get {
             return try! get_Zero();
@@ -6632,13 +4082,6 @@ public final class Vector4
     }
     // .ctor(System.Numerics.Vector2, System.Single, System.Single)
 // docid: M:System.Numerics.Vector4.#ctor(System.Numerics.Vector2,System.Single,System.Single)
-    /**
-    Creates a   new  object from the specified  object and a Z and a W component.
-
-    - Parameter value: The vector to use for the X and Y components.
-    - Parameter z: The Z component.
-    - Parameter w: The W component.
-    */
     public init(value : dotnet.System.Numerics.Vector2, z : Swift.Float, w : Swift.Float) throws {
         var __thrown : NullableHandle = nil;
         let h = System_Numerics_Vector4_ctor_0__3__Vector2_f32_f32(&__thrown, value.get_handle(), z, w);
@@ -6650,12 +4093,6 @@ public final class Vector4
     }
     // .ctor(System.Numerics.Vector3, System.Single)
 // docid: M:System.Numerics.Vector4.#ctor(System.Numerics.Vector3,System.Single)
-    /**
-    Constructs a new  object from the specified  object and a W component.
-
-    - Parameter value: The vector to use for the X, Y, and Z components.
-    - Parameter w: The W component.
-    */
     public init(value : dotnet.System.Numerics.Vector3, w : Swift.Float) throws {
         var __thrown : NullableHandle = nil;
         let h = System_Numerics_Vector4_ctor_0__2__Vector3_f32(&__thrown, value.get_handle(), w);
@@ -6667,11 +4104,6 @@ public final class Vector4
     }
     // .ctor(System.Single)
 // docid: M:System.Numerics.Vector4.#ctor(System.Single)
-    /**
-    Creates a new  object whose four elements have the same value.
-
-    - Parameter value: The value to assign to all four elements.
-    */
     public init(value : Swift.Float) throws {
         var __thrown : NullableHandle = nil;
         let h = System_Numerics_Vector4_ctor_0__1__f32(&__thrown, value);
@@ -6683,14 +4115,6 @@ public final class Vector4
     }
     // .ctor(System.Single, System.Single, System.Single, System.Single)
 // docid: M:System.Numerics.Vector4.#ctor(System.Single,System.Single,System.Single,System.Single)
-    /**
-    Creates a vector whose elements have the specified values.
-
-    - Parameter x: The value to assign to the  field.
-    - Parameter y: The value to assign to the  field.
-    - Parameter z: The value to assign to the  field.
-    - Parameter w: The value to assign to the  field.
-    */
     public init(x : Swift.Float, y : Swift.Float, z : Swift.Float, w : Swift.Float) throws {
         var __thrown : NullableHandle = nil;
         let h = System_Numerics_Vector4_ctor_0__4__f32_f32_f32_f32(&__thrown, x, y, z, w);
@@ -6707,13 +4131,6 @@ public final class Vector4
     }
     // System.Numerics.Vector4 Abs(System.Numerics.Vector4)
 // docid: M:System.Numerics.Vector4.Abs(System.Numerics.Vector4)
-    /**
-    Returns a vector whose elements are the absolute values of each of the specified vector's elements.
-
-    - Parameter value: A vector.
-    - Returns: The absolute value vector.
-
-    */
     public class func Abs(value : dotnet.System.Numerics.Vector4) throws -> dotnet.System.Numerics.Vector4 {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Vector4_Vector4__Abs_0__1__Vector4(&__thrown, value.get_handle());
@@ -6725,14 +4142,6 @@ public final class Vector4
     }
     // System.Numerics.Vector4 Add(System.Numerics.Vector4, System.Numerics.Vector4)
 // docid: M:System.Numerics.Vector4.Add(System.Numerics.Vector4,System.Numerics.Vector4)
-    /**
-    Adds two vectors together.
-
-    - Parameter left: The first vector to add.
-    - Parameter right: The second vector to add.
-    - Returns: The summed vector.
-
-    */
     public class func Add(left : dotnet.System.Numerics.Vector4, right : dotnet.System.Numerics.Vector4) throws -> dotnet.System.Numerics.Vector4 {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Vector4_Vector4__Add_0__2__Vector4_Vector4(&__thrown, left.get_handle(), right.get_handle());
@@ -6744,15 +4153,6 @@ public final class Vector4
     }
     // System.Numerics.Vector4 Clamp(System.Numerics.Vector4, System.Numerics.Vector4, System.Numerics.Vector4)
 // docid: M:System.Numerics.Vector4.Clamp(System.Numerics.Vector4,System.Numerics.Vector4,System.Numerics.Vector4)
-    /**
-    Restricts a vector between a minimum and a maximum value.
-
-    - Parameter value1: The vector to restrict.
-    - Parameter min: The minimum value.
-    - Parameter max: The maximum value.
-    - Returns: The restricted vector.
-
-    */
     public class func Clamp(value1 : dotnet.System.Numerics.Vector4, min : dotnet.System.Numerics.Vector4, max : dotnet.System.Numerics.Vector4) throws -> dotnet.System.Numerics.Vector4 {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Vector4_Vector4__Clamp_0__3__Vector4_Vector4_Vector4(&__thrown, value1.get_handle(), min.get_handle(), max.get_handle());
@@ -6764,11 +4164,6 @@ public final class Vector4
     }
     // void CopyTo(System.Single[])
 // docid: M:System.Numerics.Vector4.CopyTo(System.Single[])
-    /**
-    Copies the elements of the vector to a specified array.
-
-    - Parameter array: The destination array.
-    */
     public func CopyTo(array : dotnet.System_Arr<Swift.Float>) throws {
         var __thrown : NullableHandle = nil;
         System_Numerics_Vector4_void__CopyTo_0__1__f32Array(&__thrown, self.get_handle(), array.get_handle());
@@ -6780,12 +4175,6 @@ public final class Vector4
     }
     // void CopyTo(System.Single[], System.Int32)
 // docid: M:System.Numerics.Vector4.CopyTo(System.Single[],System.Int32)
-    /**
-    Copies the elements of the vector to a specified array starting at a specified index position.
-
-    - Parameter array: The destination array.
-    - Parameter index: The index at which to copy the first element of the vector.
-    */
     public func CopyTo(array : dotnet.System_Arr<Swift.Float>, index : Swift.Int32) throws {
         var __thrown : NullableHandle = nil;
         System_Numerics_Vector4_void__CopyTo_0__2__f32Array_i32(&__thrown, self.get_handle(), array.get_handle(), index);
@@ -6799,14 +4188,6 @@ public final class Vector4
 // TODO COPE (write_all_methods) (span) bool TryCopyTo(System.Span<System.Single>)
     // System.Single Distance(System.Numerics.Vector4, System.Numerics.Vector4)
 // docid: M:System.Numerics.Vector4.Distance(System.Numerics.Vector4,System.Numerics.Vector4)
-    /**
-    Computes the Euclidean distance between the two given points.
-
-    - Parameter value1: The first point.
-    - Parameter value2: The second point.
-    - Returns: The distance.
-
-    */
     public class func Distance(value1 : dotnet.System.Numerics.Vector4, value2 : dotnet.System.Numerics.Vector4) throws -> Swift.Float {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Vector4_f32__Distance_0__2__Vector4_Vector4(&__thrown, value1.get_handle(), value2.get_handle());
@@ -6818,14 +4199,6 @@ public final class Vector4
     }
     // System.Single DistanceSquared(System.Numerics.Vector4, System.Numerics.Vector4)
 // docid: M:System.Numerics.Vector4.DistanceSquared(System.Numerics.Vector4,System.Numerics.Vector4)
-    /**
-    Returns the Euclidean distance squared between two specified points.
-
-    - Parameter value1: The first point.
-    - Parameter value2: The second point.
-    - Returns: The distance squared.
-
-    */
     public class func DistanceSquared(value1 : dotnet.System.Numerics.Vector4, value2 : dotnet.System.Numerics.Vector4) throws -> Swift.Float {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Vector4_f32__DistanceSquared_0__2__Vector4_Vector4(&__thrown, value1.get_handle(), value2.get_handle());
@@ -6837,14 +4210,6 @@ public final class Vector4
     }
     // System.Numerics.Vector4 Divide(System.Numerics.Vector4, System.Numerics.Vector4)
 // docid: M:System.Numerics.Vector4.Divide(System.Numerics.Vector4,System.Numerics.Vector4)
-    /**
-    Divides the first vector by the second.
-
-    - Parameter left: The first vector.
-    - Parameter right: The second vector.
-    - Returns: The vector resulting from the division.
-
-    */
     public class func Divide(left : dotnet.System.Numerics.Vector4, right : dotnet.System.Numerics.Vector4) throws -> dotnet.System.Numerics.Vector4 {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Vector4_Vector4__Divide_0__2__Vector4_Vector4(&__thrown, left.get_handle(), right.get_handle());
@@ -6856,14 +4221,6 @@ public final class Vector4
     }
     // System.Numerics.Vector4 Divide(System.Numerics.Vector4, System.Single)
 // docid: M:System.Numerics.Vector4.Divide(System.Numerics.Vector4,System.Single)
-    /**
-    Divides the specified vector by a specified scalar value.
-
-    - Parameter left: The vector.
-    - Parameter divisor: The scalar value.
-    - Returns: The vector that results from the division.
-
-    */
     public class func Divide(left : dotnet.System.Numerics.Vector4, divisor : Swift.Float) throws -> dotnet.System.Numerics.Vector4 {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Vector4_Vector4__Divide_0__2__Vector4_f32(&__thrown, left.get_handle(), divisor);
@@ -6875,14 +4232,6 @@ public final class Vector4
     }
     // System.Single Dot(System.Numerics.Vector4, System.Numerics.Vector4)
 // docid: M:System.Numerics.Vector4.Dot(System.Numerics.Vector4,System.Numerics.Vector4)
-    /**
-    Returns the dot product of two vectors.
-
-    - Parameter vector1: The first vector.
-    - Parameter vector2: The second vector.
-    - Returns: The dot product.
-
-    */
     public class func Dot(vector1 : dotnet.System.Numerics.Vector4, vector2 : dotnet.System.Numerics.Vector4) throws -> Swift.Float {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Vector4_f32__Dot_0__2__Vector4_Vector4(&__thrown, vector1.get_handle(), vector2.get_handle());
@@ -6894,14 +4243,6 @@ public final class Vector4
     }
     // bool Equals(System.Numerics.Vector4)
 // docid: M:System.Numerics.Vector4.Equals(System.Numerics.Vector4)
-    /**
-    Returns a value that indicates whether this instance and another vector are equal.
-
-    - Parameter other: The other vector.
-    - Returns: 
-         if the two vectors are equal; otherwise, .
-
-    */
     public func Equals(other : dotnet.System.Numerics.Vector4) throws -> Bool {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Vector4_bool__Equals_0__1__Vector4(&__thrown, self.get_handle(), other.get_handle());
@@ -6913,14 +4254,6 @@ public final class Vector4
     }
     // bool Equals(System.Object)
 // docid: M:System.Numerics.Vector4.Equals(System.Object)
-    /**
-    Returns a value that indicates whether this instance and a specified object are equal.
-
-    - Parameter obj: The object to compare with the current instance.
-    - Returns: 
-         if the current instance and  are equal; otherwise, . If  is , the method returns .
-
-    */
     public override func Equals(obj : Optional<dotnet.System.Object>) throws -> Bool {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Vector4_bool__Equals_0__1__Object(&__thrown, self.get_handle(), obj?.get_handle() ?? nil);
@@ -6932,12 +4265,6 @@ public final class Vector4
     }
     // System.Int32 GetHashCode()
 // docid: M:System.Numerics.Vector4.GetHashCode
-    /**
-    Returns the hash code for this instance.
-
-    - Returns: The hash code.
-
-    */
     public override func GetHashCode() throws -> Swift.Int32 {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Vector4_i32__GetHashCode_0__0(&__thrown, self.get_handle());
@@ -6949,12 +4276,6 @@ public final class Vector4
     }
     // System.Single Length()
 // docid: M:System.Numerics.Vector4.Length
-    /**
-    Returns the length of this vector object.
-
-    - Returns: The vector's length.
-
-    */
     public func Length() throws -> Swift.Float {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Vector4_f32__Length_0__0(&__thrown, self.get_handle());
@@ -6966,12 +4287,6 @@ public final class Vector4
     }
     // System.Single LengthSquared()
 // docid: M:System.Numerics.Vector4.LengthSquared
-    /**
-    Returns the length of the vector squared.
-
-    - Returns: The vector's length squared.
-
-    */
     public func LengthSquared() throws -> Swift.Float {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Vector4_f32__LengthSquared_0__0(&__thrown, self.get_handle());
@@ -6983,15 +4298,6 @@ public final class Vector4
     }
     // System.Numerics.Vector4 Lerp(System.Numerics.Vector4, System.Numerics.Vector4, System.Single)
 // docid: M:System.Numerics.Vector4.Lerp(System.Numerics.Vector4,System.Numerics.Vector4,System.Single)
-    /**
-    Performs a linear interpolation between two vectors based on the given weighting.
-
-    - Parameter value1: The first vector.
-    - Parameter value2: The second vector.
-    - Parameter amount: A value between 0 and 1 that indicates the weight of .
-    - Returns: The interpolated vector.
-
-    */
     public class func Lerp(value1 : dotnet.System.Numerics.Vector4, value2 : dotnet.System.Numerics.Vector4, amount : Swift.Float) throws -> dotnet.System.Numerics.Vector4 {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Vector4_Vector4__Lerp_0__3__Vector4_Vector4_f32(&__thrown, value1.get_handle(), value2.get_handle(), amount);
@@ -7003,14 +4309,6 @@ public final class Vector4
     }
     // System.Numerics.Vector4 Max(System.Numerics.Vector4, System.Numerics.Vector4)
 // docid: M:System.Numerics.Vector4.Max(System.Numerics.Vector4,System.Numerics.Vector4)
-    /**
-    Returns a vector whose elements are the maximum of each of the pairs of elements in two specified vectors.
-
-    - Parameter value1: The first vector.
-    - Parameter value2: The second vector.
-    - Returns: The maximized vector.
-
-    */
     public class func Max(value1 : dotnet.System.Numerics.Vector4, value2 : dotnet.System.Numerics.Vector4) throws -> dotnet.System.Numerics.Vector4 {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Vector4_Vector4__Max_0__2__Vector4_Vector4(&__thrown, value1.get_handle(), value2.get_handle());
@@ -7022,14 +4320,6 @@ public final class Vector4
     }
     // System.Numerics.Vector4 Min(System.Numerics.Vector4, System.Numerics.Vector4)
 // docid: M:System.Numerics.Vector4.Min(System.Numerics.Vector4,System.Numerics.Vector4)
-    /**
-    Returns a vector whose elements are the minimum of each of the pairs of elements in two specified vectors.
-
-    - Parameter value1: The first vector.
-    - Parameter value2: The second vector.
-    - Returns: The minimized vector.
-
-    */
     public class func Min(value1 : dotnet.System.Numerics.Vector4, value2 : dotnet.System.Numerics.Vector4) throws -> dotnet.System.Numerics.Vector4 {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Vector4_Vector4__Min_0__2__Vector4_Vector4(&__thrown, value1.get_handle(), value2.get_handle());
@@ -7041,14 +4331,6 @@ public final class Vector4
     }
     // System.Numerics.Vector4 Multiply(System.Numerics.Vector4, System.Numerics.Vector4)
 // docid: M:System.Numerics.Vector4.Multiply(System.Numerics.Vector4,System.Numerics.Vector4)
-    /**
-    Returns a new vector whose values are the product of each pair of elements in two specified vectors.
-
-    - Parameter left: The first vector.
-    - Parameter right: The second vector.
-    - Returns: The element-wise product vector.
-
-    */
     public class func Multiply(left : dotnet.System.Numerics.Vector4, right : dotnet.System.Numerics.Vector4) throws -> dotnet.System.Numerics.Vector4 {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Vector4_Vector4__Multiply_0__2__Vector4_Vector4(&__thrown, left.get_handle(), right.get_handle());
@@ -7060,14 +4342,6 @@ public final class Vector4
     }
     // System.Numerics.Vector4 Multiply(System.Numerics.Vector4, System.Single)
 // docid: M:System.Numerics.Vector4.Multiply(System.Numerics.Vector4,System.Single)
-    /**
-    Multiplies a vector by a specified scalar.
-
-    - Parameter left: The vector to multiply.
-    - Parameter right: The scalar value.
-    - Returns: The scaled vector.
-
-    */
     public class func Multiply(left : dotnet.System.Numerics.Vector4, right : Swift.Float) throws -> dotnet.System.Numerics.Vector4 {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Vector4_Vector4__Multiply_0__2__Vector4_f32(&__thrown, left.get_handle(), right);
@@ -7079,14 +4353,6 @@ public final class Vector4
     }
     // System.Numerics.Vector4 Multiply(System.Single, System.Numerics.Vector4)
 // docid: M:System.Numerics.Vector4.Multiply(System.Single,System.Numerics.Vector4)
-    /**
-    Multiplies a scalar value by a specified vector.
-
-    - Parameter left: The scaled value.
-    - Parameter right: The vector.
-    - Returns: The scaled vector.
-
-    */
     public class func Multiply(left : Swift.Float, right : dotnet.System.Numerics.Vector4) throws -> dotnet.System.Numerics.Vector4 {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Vector4_Vector4__Multiply_0__2__f32_Vector4(&__thrown, left, right.get_handle());
@@ -7098,13 +4364,6 @@ public final class Vector4
     }
     // System.Numerics.Vector4 Negate(System.Numerics.Vector4)
 // docid: M:System.Numerics.Vector4.Negate(System.Numerics.Vector4)
-    /**
-    Negates a specified vector.
-
-    - Parameter value: The vector to negate.
-    - Returns: The negated vector.
-
-    */
     public class func Negate(value : dotnet.System.Numerics.Vector4) throws -> dotnet.System.Numerics.Vector4 {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Vector4_Vector4__Negate_0__1__Vector4(&__thrown, value.get_handle());
@@ -7116,13 +4375,6 @@ public final class Vector4
     }
     // System.Numerics.Vector4 Normalize(System.Numerics.Vector4)
 // docid: M:System.Numerics.Vector4.Normalize(System.Numerics.Vector4)
-    /**
-    Returns a vector with the same direction as the specified vector, but with a length of one.
-
-    - Parameter vector: The vector to normalize.
-    - Returns: The normalized vector.
-
-    */
     public class func Normalize(vector : dotnet.System.Numerics.Vector4) throws -> dotnet.System.Numerics.Vector4 {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Vector4_Vector4__Normalize_0__1__Vector4(&__thrown, vector.get_handle());
@@ -7134,14 +4386,6 @@ public final class Vector4
     }
     // [IsSpecialName] System.Numerics.Vector4 op_Addition(System.Numerics.Vector4, System.Numerics.Vector4)
 // docid: M:System.Numerics.Vector4.op_Addition(System.Numerics.Vector4,System.Numerics.Vector4)
-    /**
-    Adds two vectors together.
-
-    - Parameter left: The first vector to add.
-    - Parameter right: The second vector to add.
-    - Returns: The summed vector.
-
-    */
     public class func op_Addition(left : dotnet.System.Numerics.Vector4, right : dotnet.System.Numerics.Vector4) throws -> dotnet.System.Numerics.Vector4 {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Vector4_Vector4__op_Addition_0__2__Vector4_Vector4(&__thrown, left.get_handle(), right.get_handle());
@@ -7153,14 +4397,6 @@ public final class Vector4
     }
     // [IsSpecialName] System.Numerics.Vector4 op_Division(System.Numerics.Vector4, System.Numerics.Vector4)
 // docid: M:System.Numerics.Vector4.op_Division(System.Numerics.Vector4,System.Numerics.Vector4)
-    /**
-    Divides the first vector by the second.
-
-    - Parameter left: The first vector.
-    - Parameter right: The second vector.
-    - Returns: The vector that results from dividing  by .
-
-    */
     public class func op_Division(left : dotnet.System.Numerics.Vector4, right : dotnet.System.Numerics.Vector4) throws -> dotnet.System.Numerics.Vector4 {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Vector4_Vector4__op_Division_0__2__Vector4_Vector4(&__thrown, left.get_handle(), right.get_handle());
@@ -7172,14 +4408,6 @@ public final class Vector4
     }
     // [IsSpecialName] System.Numerics.Vector4 op_Division(System.Numerics.Vector4, System.Single)
 // docid: M:System.Numerics.Vector4.op_Division(System.Numerics.Vector4,System.Single)
-    /**
-    Divides the specified vector by a specified scalar value.
-
-    - Parameter value1: The vector.
-    - Parameter value2: The scalar value.
-    - Returns: The result of the division.
-
-    */
     public class func op_Division(value1 : dotnet.System.Numerics.Vector4, value2 : Swift.Float) throws -> dotnet.System.Numerics.Vector4 {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Vector4_Vector4__op_Division_0__2__Vector4_f32(&__thrown, value1.get_handle(), value2);
@@ -7191,15 +4419,6 @@ public final class Vector4
     }
     // [IsSpecialName] bool op_Equality(System.Numerics.Vector4, System.Numerics.Vector4)
 // docid: M:System.Numerics.Vector4.op_Equality(System.Numerics.Vector4,System.Numerics.Vector4)
-    /**
-    Returns a value that indicates whether each pair of elements in two specified vectors is equal.
-
-    - Parameter left: The first vector to compare.
-    - Parameter right: The second vector to compare.
-    - Returns: 
-         if  and  are equal; otherwise, .
-
-    */
     public class func op_Equality(left : dotnet.System.Numerics.Vector4, right : dotnet.System.Numerics.Vector4) throws -> Bool {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Vector4_bool__op_Equality_0__2__Vector4_Vector4(&__thrown, left.get_handle(), right.get_handle());
@@ -7211,15 +4430,6 @@ public final class Vector4
     }
     // [IsSpecialName] bool op_Inequality(System.Numerics.Vector4, System.Numerics.Vector4)
 // docid: M:System.Numerics.Vector4.op_Inequality(System.Numerics.Vector4,System.Numerics.Vector4)
-    /**
-    Returns a value that indicates whether two specified vectors are not equal.
-
-    - Parameter left: The first vector to compare.
-    - Parameter right: The second vector to compare.
-    - Returns: 
-         if  and  are not equal; otherwise, .
-
-    */
     public class func op_Inequality(left : dotnet.System.Numerics.Vector4, right : dotnet.System.Numerics.Vector4) throws -> Bool {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Vector4_bool__op_Inequality_0__2__Vector4_Vector4(&__thrown, left.get_handle(), right.get_handle());
@@ -7231,14 +4441,6 @@ public final class Vector4
     }
     // [IsSpecialName] System.Numerics.Vector4 op_Multiply(System.Numerics.Vector4, System.Numerics.Vector4)
 // docid: M:System.Numerics.Vector4.op_Multiply(System.Numerics.Vector4,System.Numerics.Vector4)
-    /**
-    Returns a new vector whose values are the product of each pair of elements in two specified vectors.
-
-    - Parameter left: The first vector.
-    - Parameter right: The second vector.
-    - Returns: The element-wise product vector.
-
-    */
     public class func op_Multiply(left : dotnet.System.Numerics.Vector4, right : dotnet.System.Numerics.Vector4) throws -> dotnet.System.Numerics.Vector4 {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Vector4_Vector4__op_Multiply_0__2__Vector4_Vector4(&__thrown, left.get_handle(), right.get_handle());
@@ -7250,14 +4452,6 @@ public final class Vector4
     }
     // [IsSpecialName] System.Numerics.Vector4 op_Multiply(System.Numerics.Vector4, System.Single)
 // docid: M:System.Numerics.Vector4.op_Multiply(System.Numerics.Vector4,System.Single)
-    /**
-    Multiples the specified vector by the specified scalar value.
-
-    - Parameter left: The vector.
-    - Parameter right: The scalar value.
-    - Returns: The scaled vector.
-
-    */
     public class func op_Multiply(left : dotnet.System.Numerics.Vector4, right : Swift.Float) throws -> dotnet.System.Numerics.Vector4 {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Vector4_Vector4__op_Multiply_0__2__Vector4_f32(&__thrown, left.get_handle(), right);
@@ -7269,14 +4463,6 @@ public final class Vector4
     }
     // [IsSpecialName] System.Numerics.Vector4 op_Multiply(System.Single, System.Numerics.Vector4)
 // docid: M:System.Numerics.Vector4.op_Multiply(System.Single,System.Numerics.Vector4)
-    /**
-    Multiples the scalar value by the specified vector.
-
-    - Parameter left: The vector.
-    - Parameter right: The scalar value.
-    - Returns: The scaled vector.
-
-    */
     public class func op_Multiply(left : Swift.Float, right : dotnet.System.Numerics.Vector4) throws -> dotnet.System.Numerics.Vector4 {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Vector4_Vector4__op_Multiply_0__2__f32_Vector4(&__thrown, left, right.get_handle());
@@ -7288,14 +4474,6 @@ public final class Vector4
     }
     // [IsSpecialName] System.Numerics.Vector4 op_Subtraction(System.Numerics.Vector4, System.Numerics.Vector4)
 // docid: M:System.Numerics.Vector4.op_Subtraction(System.Numerics.Vector4,System.Numerics.Vector4)
-    /**
-    Subtracts the second vector from the first.
-
-    - Parameter left: The first vector.
-    - Parameter right: The second vector.
-    - Returns: The vector that results from subtracting  from .
-
-    */
     public class func op_Subtraction(left : dotnet.System.Numerics.Vector4, right : dotnet.System.Numerics.Vector4) throws -> dotnet.System.Numerics.Vector4 {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Vector4_Vector4__op_Subtraction_0__2__Vector4_Vector4(&__thrown, left.get_handle(), right.get_handle());
@@ -7307,13 +4485,6 @@ public final class Vector4
     }
     // [IsSpecialName] System.Numerics.Vector4 op_UnaryNegation(System.Numerics.Vector4)
 // docid: M:System.Numerics.Vector4.op_UnaryNegation(System.Numerics.Vector4)
-    /**
-    Negates the specified vector.
-
-    - Parameter value: The vector to negate.
-    - Returns: The negated vector.
-
-    */
     public class func op_UnaryNegation(value : dotnet.System.Numerics.Vector4) throws -> dotnet.System.Numerics.Vector4 {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Vector4_Vector4__op_UnaryNegation_0__1__Vector4(&__thrown, value.get_handle());
@@ -7325,13 +4496,6 @@ public final class Vector4
     }
     // System.Numerics.Vector4 SquareRoot(System.Numerics.Vector4)
 // docid: M:System.Numerics.Vector4.SquareRoot(System.Numerics.Vector4)
-    /**
-    Returns a vector whose elements are the square root of each of a specified vector's elements.
-
-    - Parameter value: A vector.
-    - Returns: The square root vector.
-
-    */
     public class func SquareRoot(value : dotnet.System.Numerics.Vector4) throws -> dotnet.System.Numerics.Vector4 {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Vector4_Vector4__SquareRoot_0__1__Vector4(&__thrown, value.get_handle());
@@ -7343,14 +4507,6 @@ public final class Vector4
     }
     // System.Numerics.Vector4 Subtract(System.Numerics.Vector4, System.Numerics.Vector4)
 // docid: M:System.Numerics.Vector4.Subtract(System.Numerics.Vector4,System.Numerics.Vector4)
-    /**
-    Subtracts the second vector from the first.
-
-    - Parameter left: The first vector.
-    - Parameter right: The second vector.
-    - Returns: The difference vector.
-
-    */
     public class func Subtract(left : dotnet.System.Numerics.Vector4, right : dotnet.System.Numerics.Vector4) throws -> dotnet.System.Numerics.Vector4 {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Vector4_Vector4__Subtract_0__2__Vector4_Vector4(&__thrown, left.get_handle(), right.get_handle());
@@ -7362,12 +4518,6 @@ public final class Vector4
     }
     // System.String ToString()
 // docid: M:System.Numerics.Vector4.ToString
-    /**
-    Returns the string representation of the current instance using default formatting.
-
-    - Returns: The string representation of the current instance.
-
-    */
     public override func ToString() throws -> dotnet.System.String {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Vector4_String__ToString_0__0(&__thrown, self.get_handle());
@@ -7379,13 +4529,6 @@ public final class Vector4
     }
     // System.String ToString(System.String)
 // docid: M:System.Numerics.Vector4.ToString(System.String)
-    /**
-    Returns the string representation of the current instance using the specified format string to format individual elements.
-
-    - Parameter format: A standard or custom numeric format string that defines the format of individual elements.
-    - Returns: The string representation of the current instance.
-
-    */
     public func ToString(format : Optional<dotnet.System.String>) throws -> dotnet.System.String {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Vector4_String__ToString_0__1__String(&__thrown, self.get_handle(), format?.get_handle() ?? nil);
@@ -7397,14 +4540,6 @@ public final class Vector4
     }
     // System.String ToString(System.String, System.IFormatProvider)
 // docid: M:System.Numerics.Vector4.ToString(System.String,System.IFormatProvider)
-    /**
-    Returns the string representation of the current instance using the specified format string to format individual elements and the specified format provider to define culture-specific formatting.
-
-    - Parameter format: A standard or custom numeric format string that defines the format of individual elements.
-    - Parameter formatProvider: A format provider that supplies culture-specific formatting information.
-    - Returns: The string representation of the current instance.
-
-    */
     public func ToString(format : Optional<dotnet.System.String>, formatProvider : Optional<dotnet.System.IFormatProvider>) throws -> dotnet.System.String {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Vector4_String__ToString_0__2__String_IFormatProvider(&__thrown, self.get_handle(), format?.get_handle() ?? nil, formatProvider?.get_handle() ?? nil);
@@ -7416,14 +4551,6 @@ public final class Vector4
     }
     // System.Numerics.Vector4 Transform(System.Numerics.Vector2, System.Numerics.Matrix4x4)
 // docid: M:System.Numerics.Vector4.Transform(System.Numerics.Vector2,System.Numerics.Matrix4x4)
-    /**
-    Transforms a two-dimensional vector by a specified 4x4 matrix.
-
-    - Parameter position: The vector to transform.
-    - Parameter matrix: The transformation matrix.
-    - Returns: The transformed vector.
-
-    */
     public class func Transform(position : dotnet.System.Numerics.Vector2, matrix : dotnet.System.Numerics.Matrix4x4) throws -> dotnet.System.Numerics.Vector4 {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Vector4_Vector4__Transform_0__2__Vector2_Matrix4x4(&__thrown, position.get_handle(), matrix.get_handle());
@@ -7435,14 +4562,6 @@ public final class Vector4
     }
     // System.Numerics.Vector4 Transform(System.Numerics.Vector2, System.Numerics.Quaternion)
 // docid: M:System.Numerics.Vector4.Transform(System.Numerics.Vector2,System.Numerics.Quaternion)
-    /**
-    Transforms a two-dimensional vector by the specified Quaternion rotation value.
-
-    - Parameter value: The vector to rotate.
-    - Parameter rotation: The rotation to apply.
-    - Returns: The transformed vector.
-
-    */
     public class func Transform(value : dotnet.System.Numerics.Vector2, rotation : dotnet.System.Numerics.Quaternion) throws -> dotnet.System.Numerics.Vector4 {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Vector4_Vector4__Transform_0__2__Vector2_Quaternion(&__thrown, value.get_handle(), rotation.get_handle());
@@ -7454,14 +4573,6 @@ public final class Vector4
     }
     // System.Numerics.Vector4 Transform(System.Numerics.Vector3, System.Numerics.Matrix4x4)
 // docid: M:System.Numerics.Vector4.Transform(System.Numerics.Vector3,System.Numerics.Matrix4x4)
-    /**
-    Transforms a three-dimensional vector by a specified 4x4 matrix.
-
-    - Parameter position: The vector to transform.
-    - Parameter matrix: The transformation matrix.
-    - Returns: The transformed vector.
-
-    */
     public class func Transform(position : dotnet.System.Numerics.Vector3, matrix : dotnet.System.Numerics.Matrix4x4) throws -> dotnet.System.Numerics.Vector4 {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Vector4_Vector4__Transform_0__2__Vector3_Matrix4x4(&__thrown, position.get_handle(), matrix.get_handle());
@@ -7473,14 +4584,6 @@ public final class Vector4
     }
     // System.Numerics.Vector4 Transform(System.Numerics.Vector3, System.Numerics.Quaternion)
 // docid: M:System.Numerics.Vector4.Transform(System.Numerics.Vector3,System.Numerics.Quaternion)
-    /**
-    Transforms a three-dimensional vector by the specified Quaternion rotation value.
-
-    - Parameter value: The vector to rotate.
-    - Parameter rotation: The rotation to apply.
-    - Returns: The transformed vector.
-
-    */
     public class func Transform(value : dotnet.System.Numerics.Vector3, rotation : dotnet.System.Numerics.Quaternion) throws -> dotnet.System.Numerics.Vector4 {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Vector4_Vector4__Transform_0__2__Vector3_Quaternion(&__thrown, value.get_handle(), rotation.get_handle());
@@ -7492,14 +4595,6 @@ public final class Vector4
     }
     // System.Numerics.Vector4 Transform(System.Numerics.Vector4, System.Numerics.Matrix4x4)
 // docid: M:System.Numerics.Vector4.Transform(System.Numerics.Vector4,System.Numerics.Matrix4x4)
-    /**
-    Transforms a four-dimensional vector by a specified 4x4 matrix.
-
-    - Parameter vector: The vector to transform.
-    - Parameter matrix: The transformation matrix.
-    - Returns: The transformed vector.
-
-    */
     public class func Transform(vector : dotnet.System.Numerics.Vector4, matrix : dotnet.System.Numerics.Matrix4x4) throws -> dotnet.System.Numerics.Vector4 {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Vector4_Vector4__Transform_0__2__Vector4_Matrix4x4(&__thrown, vector.get_handle(), matrix.get_handle());
@@ -7511,14 +4606,6 @@ public final class Vector4
     }
     // System.Numerics.Vector4 Transform(System.Numerics.Vector4, System.Numerics.Quaternion)
 // docid: M:System.Numerics.Vector4.Transform(System.Numerics.Vector4,System.Numerics.Quaternion)
-    /**
-    Transforms a four-dimensional vector by the specified Quaternion rotation value.
-
-    - Parameter value: The vector to rotate.
-    - Parameter rotation: The rotation to apply.
-    - Returns: The transformed vector.
-
-    */
     public class func Transform(value : dotnet.System.Numerics.Vector4, rotation : dotnet.System.Numerics.Quaternion) throws -> dotnet.System.Numerics.Vector4 {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Vector4_Vector4__Transform_0__2__Vector4_Quaternion(&__thrown, value.get_handle(), rotation.get_handle());
@@ -7599,10 +4686,6 @@ public final class Vector4
 
 // type: System.Numerics.Vector`1
 // boxed value type
-    /**
-    Represents a single vector of a specified numeric type that is suitable for low-level optimization of parallel algorithms.
-
-    */
 public final class Vector_1<T : SGBridgeGenericValue>
     :
     dotnet.System.Object,
@@ -7611,42 +4694,31 @@ public final class Vector_1<T : SGBridgeGenericValue>
     public class override func get_type_handle() -> TypeHandle {
         return System_Numerics_Vector_1_get_type_handle(T.get_type_handle());
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
-    /**
-    Returns the number of elements stored in the vector.
-
-    */
     public static var Count : Swift.Int32 {
         get {
             return try! get_Count();
         }
     }
-    /**
-    Returns a vector containing all ones.
-
-    */
     public static var One : dotnet.System.Numerics.Vector_1<T> {
         get {
             return try! get_One();
         }
     }
-    /**
-    Returns a vector containing all zeroes.
-
-    */
     public static var Zero : dotnet.System.Numerics.Vector_1<T> {
         get {
             return try! get_Zero();
         }
     }
+// TODO COPE (generic type and parm span): .ctor(System.ReadOnlySpan<System.Byte>)
+// TODO COPE (parm span of t): .ctor(System.ReadOnlySpan<T>)
+// TODO COPE (parm span of t): .ctor(System.Span<T>)
     // .ctor(T)
 // docid: M:System.Numerics.Vector`1.#ctor(`0)
-    /**
-    Creates a vector whose components are of a specified type.
-
-    - Parameter value: The numeric type that defines the type of the components in the vector.
-    */
     public init(value : T) throws {
         var __thrown : NullableHandle = nil;
         let h = System_Numerics_Vector_1_ctor_0__1__T(T.get_type_handle(), &__thrown, value.to_gval());
@@ -7682,6 +4754,8 @@ public final class Vector_1<T : SGBridgeGenericValue>
         let h = System_Numerics_Vector_1_implicit_ctor(T.get_type_handle());
             super.init(hndl: h);
     }
+// TODO COPE (generic type and parm span): void CopyTo(System.Span<System.Byte>)
+// TODO COPE (parm span of t): void CopyTo(System.Span<T>)
     // void CopyTo(T[])
 // docid: M:System.Numerics.Vector`1.CopyTo(System.Numerics.T[])
     public func CopyTo(destination : dotnet.System_Arr<T>) throws {
@@ -7706,14 +4780,6 @@ public final class Vector_1<T : SGBridgeGenericValue>
     }
     // bool Equals(System.Numerics.Vector<T>)
 // docid: M:System.Numerics.Vector`1.Equals(System.Numerics.Vector{`0})
-    /**
-    Returns a value that indicates whether this instance is equal to a specified vector.
-
-    - Parameter other: The vector to compare with this instance.
-    - Returns: 
-         if the current instance and  are equal; otherwise, .
-
-    */
     public func Equals(other : dotnet.System.Numerics.Vector_1<T>) throws -> Bool {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Vector_1_bool__Equals_0__1__System_Numerics_Vector_T_(T.get_type_handle(), &__thrown, self.get_handle(), other.get_handle());
@@ -7725,14 +4791,6 @@ public final class Vector_1<T : SGBridgeGenericValue>
     }
     // bool Equals(System.Object)
 // docid: M:System.Numerics.Vector`1.Equals(System.Object)
-    /**
-    Returns a value that indicates whether this instance is equal to a specified object.
-
-    - Parameter obj: The object to compare with this instance.
-    - Returns: 
-         if the current instance and  are equal; otherwise, . The method returns  if  is null, or if  is a vector of a different type than the current instance.
-
-    */
     public override func Equals(obj : Optional<dotnet.System.Object>) throws -> Bool {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Vector_1_bool__Equals_0__1__Object(T.get_type_handle(), &__thrown, self.get_handle(), obj?.get_handle() ?? nil);
@@ -7744,12 +4802,6 @@ public final class Vector_1<T : SGBridgeGenericValue>
     }
     // System.Int32 GetHashCode()
 // docid: M:System.Numerics.Vector`1.GetHashCode
-    /**
-    Returns the hash code for this instance.
-
-    - Returns: The hash code.
-
-    */
     public override func GetHashCode() throws -> Swift.Int32 {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Vector_1_i32__GetHashCode_0__0(T.get_type_handle(), &__thrown, self.get_handle());
@@ -7761,14 +4813,6 @@ public final class Vector_1<T : SGBridgeGenericValue>
     }
     // [IsSpecialName] System.Numerics.Vector<T> op_Addition(System.Numerics.Vector<T>, System.Numerics.Vector<T>)
 // docid: M:System.Numerics.Vector`1.op_Addition(System.Numerics.Vector{`0},System.Numerics.Vector{`0})
-    /**
-    Adds two vectors together.
-
-    - Parameter left: The first vector to add.
-    - Parameter right: The second vector to add.
-    - Returns: The summed vector.
-
-    */
     public class func op_Addition(left : dotnet.System.Numerics.Vector_1<T>, right : dotnet.System.Numerics.Vector_1<T>) throws -> dotnet.System.Numerics.Vector_1<T> {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Vector_1_System_Numerics_Vector_T___op_Addition_0__2__System_Numerics_Vector_T__System_Numerics_Vector_T_(T.get_type_handle(), &__thrown, left.get_handle(), right.get_handle());
@@ -7780,14 +4824,6 @@ public final class Vector_1<T : SGBridgeGenericValue>
     }
     // [IsSpecialName] System.Numerics.Vector<T> op_BitwiseAnd(System.Numerics.Vector<T>, System.Numerics.Vector<T>)
 // docid: M:System.Numerics.Vector`1.op_BitwiseAnd(System.Numerics.Vector{`0},System.Numerics.Vector{`0})
-    /**
-    Returns a new vector by performing a bitwise  operation on each of the elements in two vectors.
-
-    - Parameter left: The first vector.
-    - Parameter right: The second vector.
-    - Returns: The vector that results from the bitwise  of  and .
-
-    */
     public class func op_BitwiseAnd(left : dotnet.System.Numerics.Vector_1<T>, right : dotnet.System.Numerics.Vector_1<T>) throws -> dotnet.System.Numerics.Vector_1<T> {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Vector_1_System_Numerics_Vector_T___op_BitwiseAnd_0__2__System_Numerics_Vector_T__System_Numerics_Vector_T_(T.get_type_handle(), &__thrown, left.get_handle(), right.get_handle());
@@ -7799,14 +4835,6 @@ public final class Vector_1<T : SGBridgeGenericValue>
     }
     // [IsSpecialName] System.Numerics.Vector<T> op_BitwiseOr(System.Numerics.Vector<T>, System.Numerics.Vector<T>)
 // docid: M:System.Numerics.Vector`1.op_BitwiseOr(System.Numerics.Vector{`0},System.Numerics.Vector{`0})
-    /**
-    Returns a new vector by performing a bitwise  operation on each of the elements in two vectors.
-
-    - Parameter left: The first vector.
-    - Parameter right: The second vector.
-    - Returns: The vector that results from the bitwise  of the elements in  and .
-
-    */
     public class func op_BitwiseOr(left : dotnet.System.Numerics.Vector_1<T>, right : dotnet.System.Numerics.Vector_1<T>) throws -> dotnet.System.Numerics.Vector_1<T> {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Vector_1_System_Numerics_Vector_T___op_BitwiseOr_0__2__System_Numerics_Vector_T__System_Numerics_Vector_T_(T.get_type_handle(), &__thrown, left.get_handle(), right.get_handle());
@@ -7818,14 +4846,6 @@ public final class Vector_1<T : SGBridgeGenericValue>
     }
     // [IsSpecialName] System.Numerics.Vector<T> op_Division(System.Numerics.Vector<T>, System.Numerics.Vector<T>)
 // docid: M:System.Numerics.Vector`1.op_Division(System.Numerics.Vector{`0},System.Numerics.Vector{`0})
-    /**
-    Divides the first vector by the second.
-
-    - Parameter left: The first vector.
-    - Parameter right: The second vector.
-    - Returns: The vector that results from dividing  by .
-
-    */
     public class func op_Division(left : dotnet.System.Numerics.Vector_1<T>, right : dotnet.System.Numerics.Vector_1<T>) throws -> dotnet.System.Numerics.Vector_1<T> {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Vector_1_System_Numerics_Vector_T___op_Division_0__2__System_Numerics_Vector_T__System_Numerics_Vector_T_(T.get_type_handle(), &__thrown, left.get_handle(), right.get_handle());
@@ -7837,15 +4857,6 @@ public final class Vector_1<T : SGBridgeGenericValue>
     }
     // [IsSpecialName] bool op_Equality(System.Numerics.Vector<T>, System.Numerics.Vector<T>)
 // docid: M:System.Numerics.Vector`1.op_Equality(System.Numerics.Vector{`0},System.Numerics.Vector{`0})
-    /**
-    Returns a value that indicates whether each pair of elements in two specified vectors are equal.
-
-    - Parameter left: The first vector to compare.
-    - Parameter right: The second vector to compare.
-    - Returns: 
-         if  and  are equal; otherwise, .
-
-    */
     public class func op_Equality(left : dotnet.System.Numerics.Vector_1<T>, right : dotnet.System.Numerics.Vector_1<T>) throws -> Bool {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Vector_1_bool__op_Equality_0__2__System_Numerics_Vector_T__System_Numerics_Vector_T_(T.get_type_handle(), &__thrown, left.get_handle(), right.get_handle());
@@ -7857,14 +4868,6 @@ public final class Vector_1<T : SGBridgeGenericValue>
     }
     // [IsSpecialName] System.Numerics.Vector<T> op_ExclusiveOr(System.Numerics.Vector<T>, System.Numerics.Vector<T>)
 // docid: M:System.Numerics.Vector`1.op_ExclusiveOr(System.Numerics.Vector{`0},System.Numerics.Vector{`0})
-    /**
-    Returns a new vector by performing a bitwise  operation on each of the elements in two vectors.
-
-    - Parameter left: The first vector.
-    - Parameter right: The second vector.
-    - Returns: The vector that results from the bitwise  of the elements in  and .
-
-    */
     public class func op_ExclusiveOr(left : dotnet.System.Numerics.Vector_1<T>, right : dotnet.System.Numerics.Vector_1<T>) throws -> dotnet.System.Numerics.Vector_1<T> {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Vector_1_System_Numerics_Vector_T___op_ExclusiveOr_0__2__System_Numerics_Vector_T__System_Numerics_Vector_T_(T.get_type_handle(), &__thrown, left.get_handle(), right.get_handle());
@@ -8008,15 +5011,6 @@ public final class Vector_1<T : SGBridgeGenericValue>
     }
     // [IsSpecialName] bool op_Inequality(System.Numerics.Vector<T>, System.Numerics.Vector<T>)
 // docid: M:System.Numerics.Vector`1.op_Inequality(System.Numerics.Vector{`0},System.Numerics.Vector{`0})
-    /**
-    Returns a value that indicates whether any single pair of elements in the specified vectors is equal.
-
-    - Parameter left: The first vector to compare.
-    - Parameter right: The second vector to compare.
-    - Returns: 
-         if any element pairs in left and right are equal.  if no element pairs are equal.
-
-    */
     public class func op_Inequality(left : dotnet.System.Numerics.Vector_1<T>, right : dotnet.System.Numerics.Vector_1<T>) throws -> Bool {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Vector_1_bool__op_Inequality_0__2__System_Numerics_Vector_T__System_Numerics_Vector_T_(T.get_type_handle(), &__thrown, left.get_handle(), right.get_handle());
@@ -8028,14 +5022,6 @@ public final class Vector_1<T : SGBridgeGenericValue>
     }
     // [IsSpecialName] System.Numerics.Vector<T> op_Multiply(System.Numerics.Vector<T>, System.Numerics.Vector<T>)
 // docid: M:System.Numerics.Vector`1.op_Multiply(System.Numerics.Vector{`0},System.Numerics.Vector{`0})
-    /**
-    Returns a new vector whose values are the product of each pair of elements in two specified vectors.
-
-    - Parameter left: The first vector.
-    - Parameter right: The second vector.
-    - Returns: The element-wise product vector.
-
-    */
     public class func op_Multiply(left : dotnet.System.Numerics.Vector_1<T>, right : dotnet.System.Numerics.Vector_1<T>) throws -> dotnet.System.Numerics.Vector_1<T> {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Vector_1_System_Numerics_Vector_T___op_Multiply_0__2__System_Numerics_Vector_T__System_Numerics_Vector_T_(T.get_type_handle(), &__thrown, left.get_handle(), right.get_handle());
@@ -8047,14 +5033,6 @@ public final class Vector_1<T : SGBridgeGenericValue>
     }
     // [IsSpecialName] System.Numerics.Vector<T> op_Multiply(System.Numerics.Vector<T>, T)
 // docid: M:System.Numerics.Vector`1.op_Multiply(System.Numerics.Vector{`0},`0)
-    /**
-    Multiplies a vector by a specified scalar value.
-
-    - Parameter value: The source vector.
-    - Parameter factor: A scalar value.
-    - Returns: The scaled vector.
-
-    */
     public class func op_Multiply(value : dotnet.System.Numerics.Vector_1<T>, factor : T) throws -> dotnet.System.Numerics.Vector_1<T> {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Vector_1_System_Numerics_Vector_T___op_Multiply_0__2__System_Numerics_Vector_T__T(T.get_type_handle(), &__thrown, value.get_handle(), factor.to_gval());
@@ -8066,14 +5044,6 @@ public final class Vector_1<T : SGBridgeGenericValue>
     }
     // [IsSpecialName] System.Numerics.Vector<T> op_Multiply(T, System.Numerics.Vector<T>)
 // docid: M:System.Numerics.Vector`1.op_Multiply(`0,System.Numerics.Vector{`0})
-    /**
-    Multiplies a vector by a specified scalar value.
-
-    - Parameter factor: The scalar value.
-    - Parameter value: The source vector.
-    - Returns: The scaled vector.
-
-    */
     public class func op_Multiply(factor : T, value : dotnet.System.Numerics.Vector_1<T>) throws -> dotnet.System.Numerics.Vector_1<T> {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Vector_1_System_Numerics_Vector_T___op_Multiply_0__2__T_System_Numerics_Vector_T_(T.get_type_handle(), &__thrown, factor.to_gval(), value.get_handle());
@@ -8085,13 +5055,6 @@ public final class Vector_1<T : SGBridgeGenericValue>
     }
     // [IsSpecialName] System.Numerics.Vector<T> op_OnesComplement(System.Numerics.Vector<T>)
 // docid: M:System.Numerics.Vector`1.op_OnesComplement(System.Numerics.Vector{`0})
-    /**
-    Returns a new vector whose elements are obtained by taking the one's complement of a specified vector's elements.
-
-    - Parameter value: The source vector.
-    - Returns: The one's complement vector.
-
-    */
     public class func op_OnesComplement(value : dotnet.System.Numerics.Vector_1<T>) throws -> dotnet.System.Numerics.Vector_1<T> {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Vector_1_System_Numerics_Vector_T___op_OnesComplement_0__1__System_Numerics_Vector_T_(T.get_type_handle(), &__thrown, value.get_handle());
@@ -8103,14 +5066,6 @@ public final class Vector_1<T : SGBridgeGenericValue>
     }
     // [IsSpecialName] System.Numerics.Vector<T> op_Subtraction(System.Numerics.Vector<T>, System.Numerics.Vector<T>)
 // docid: M:System.Numerics.Vector`1.op_Subtraction(System.Numerics.Vector{`0},System.Numerics.Vector{`0})
-    /**
-    Subtracts the second vector from the first.
-
-    - Parameter left: The first vector.
-    - Parameter right: The second vector.
-    - Returns: The vector that results from subtracting  from .
-
-    */
     public class func op_Subtraction(left : dotnet.System.Numerics.Vector_1<T>, right : dotnet.System.Numerics.Vector_1<T>) throws -> dotnet.System.Numerics.Vector_1<T> {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Vector_1_System_Numerics_Vector_T___op_Subtraction_0__2__System_Numerics_Vector_T__System_Numerics_Vector_T_(T.get_type_handle(), &__thrown, left.get_handle(), right.get_handle());
@@ -8122,13 +5077,6 @@ public final class Vector_1<T : SGBridgeGenericValue>
     }
     // [IsSpecialName] System.Numerics.Vector<T> op_UnaryNegation(System.Numerics.Vector<T>)
 // docid: M:System.Numerics.Vector`1.op_UnaryNegation(System.Numerics.Vector{`0})
-    /**
-    Negates a given vector.
-
-    - Parameter value: The vector to negate.
-    - Returns: The negated vector.
-
-    */
     public class func op_UnaryNegation(value : dotnet.System.Numerics.Vector_1<T>) throws -> dotnet.System.Numerics.Vector_1<T> {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Vector_1_System_Numerics_Vector_T___op_UnaryNegation_0__1__System_Numerics_Vector_T_(T.get_type_handle(), &__thrown, value.get_handle());
@@ -8140,12 +5088,6 @@ public final class Vector_1<T : SGBridgeGenericValue>
     }
     // System.String ToString()
 // docid: M:System.Numerics.Vector`1.ToString
-    /**
-    Returns the string representation of this vector using default formatting.
-
-    - Returns: The string representation of this vector.
-
-    */
     public override func ToString() throws -> dotnet.System.String {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Vector_1_String__ToString_0__0(T.get_type_handle(), &__thrown, self.get_handle());
@@ -8157,13 +5099,6 @@ public final class Vector_1<T : SGBridgeGenericValue>
     }
     // System.String ToString(System.String)
 // docid: M:System.Numerics.Vector`1.ToString(System.String)
-    /**
-    Returns the string representation of this vector using the specified format string to format individual elements.
-
-    - Parameter format: A  or  that defines the format of individual elements.
-    - Returns: The string representation of the current instance.
-
-    */
     public func ToString(format : Optional<dotnet.System.String>) throws -> dotnet.System.String {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Vector_1_String__ToString_0__1__String(T.get_type_handle(), &__thrown, self.get_handle(), format?.get_handle() ?? nil);
@@ -8175,14 +5110,6 @@ public final class Vector_1<T : SGBridgeGenericValue>
     }
     // System.String ToString(System.String, System.IFormatProvider)
 // docid: M:System.Numerics.Vector`1.ToString(System.String,System.IFormatProvider)
-    /**
-    Returns the string representation of this vector using the specified format string to format individual elements and the specified format provider to define culture-specific formatting.
-
-    - Parameter format: A  or  that defines the format of individual elements.
-    - Parameter formatProvider: A format provider that supplies culture-specific formatting information.
-    - Returns: The string representation of the current instance.
-
-    */
     public func ToString(format : Optional<dotnet.System.String>, formatProvider : Optional<dotnet.System.IFormatProvider>) throws -> dotnet.System.String {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Vector_1_String__ToString_0__2__String_IFormatProvider(T.get_type_handle(), &__thrown, self.get_handle(), format?.get_handle() ?? nil, formatProvider?.get_handle() ?? nil);
@@ -8192,6 +5119,8 @@ public final class Vector_1<T : SGBridgeGenericValue>
         return dotnet.System.String(hndl : __return);
         }
     }
+// TODO COPE (generic type and parm span): bool TryCopyTo(System.Span<System.Byte>)
+// TODO COPE (parm span of t): bool TryCopyTo(System.Span<T>)
     // [IsSpecialName] System.Int32 get_Count()
 // docid: M:System.Numerics.Vector`1.get_Count
     public class func get_Count() throws -> Swift.Int32 {
@@ -8227,9 +5156,6 @@ public final class Vector_1<T : SGBridgeGenericValue>
     }
     // [IsSpecialName] T get_Item(System.Int32)
 // docid: M:System.Numerics.Vector`1.get_Item(System.Int32)
-//BEGIN method_is_override
-//matches_1
-//matches :
     public func get_Item(index : Swift.Int32) throws -> T {
         var __thrown : NullableHandle = nil;
         let __return = System_Numerics_Vector_1_T__get_Item_0__1__i32(T.get_type_handle(), &__thrown, self.get_handle(), index);

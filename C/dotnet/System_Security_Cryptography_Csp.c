@@ -119,6 +119,7 @@ struct {
     void (* _Nonnull  _fp_System_Security_Cryptography_ICspAsymmetricAlgorithm_void__ImportCspBlob_0__1__u8Array)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NONNULL rawData);
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_Security_Cryptography_ICspAsymmetricAlgorithm_CspKeyContainerInfo__get_CspKeyContainerInfo_0__0)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h);
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_Security_Cryptography_ICspAsymmetricAlgorithm_cast)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __h);
+    SG_HNDL_NONNULL (* _Nonnull  _fp_System_Security_Cryptography_ICspAsymmetricAlgorithm_create)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL (* _Nonnull  __cb_System_Security_Cryptography_ICspAsymmetricAlgorithm_u8Array__ExportCspBlob_0__1__bool)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, int32_t includePrivateParameters), const void* _Nonnull __pdata_System_Security_Cryptography_ICspAsymmetricAlgorithm_u8Array__ExportCspBlob_0__1__bool, void (* _Nonnull  __cb_System_Security_Cryptography_ICspAsymmetricAlgorithm_void__ImportCspBlob_0__1__u8Array)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL rawData), const void* _Nonnull __pdata_System_Security_Cryptography_ICspAsymmetricAlgorithm_void__ImportCspBlob_0__1__u8Array, void (* _Nullable __deinit)(const void* _Nonnull __pdata));
     TYP (* _Nonnull  _fp_System_Security_Cryptography_KeyNumber_get_type_handle)(void);
     int32_t (* _Nonnull  _fp_System_Security_Cryptography_KeyNumber_get_Exchange)(void);
     int32_t (* _Nonnull  _fp_System_Security_Cryptography_KeyNumber_get_Signature)(void);
@@ -1118,6 +1119,14 @@ SG_HNDL_NONNULL System_Security_Cryptography_ICspAsymmetricAlgorithm_cast(SG_HND
         my_init();
     }
     SG_HNDL_NONNULL ret = _g_System_Security_Cryptography_Csp._fp_System_Security_Cryptography_ICspAsymmetricAlgorithm_cast(__thrown, __h);
+    return ret;
+}
+
+SG_HNDL_NONNULL System_Security_Cryptography_ICspAsymmetricAlgorithm_create(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL (* _Nonnull  __cb_System_Security_Cryptography_ICspAsymmetricAlgorithm_u8Array__ExportCspBlob_0__1__bool)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, int32_t includePrivateParameters), const void* _Nonnull __pdata_System_Security_Cryptography_ICspAsymmetricAlgorithm_u8Array__ExportCspBlob_0__1__bool, void (* _Nonnull  __cb_System_Security_Cryptography_ICspAsymmetricAlgorithm_void__ImportCspBlob_0__1__u8Array)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL rawData), const void* _Nonnull __pdata_System_Security_Cryptography_ICspAsymmetricAlgorithm_void__ImportCspBlob_0__1__u8Array, void (* _Nullable __deinit)(const void* _Nonnull __pdata)) {
+    if (!_g_System_Security_Cryptography_Csp._fp_System_Security_Cryptography_ICspAsymmetricAlgorithm_create) {
+        my_init();
+    }
+    SG_HNDL_NONNULL ret = _g_System_Security_Cryptography_Csp._fp_System_Security_Cryptography_ICspAsymmetricAlgorithm_create(__thrown, __cb_System_Security_Cryptography_ICspAsymmetricAlgorithm_u8Array__ExportCspBlob_0__1__bool, __pdata_System_Security_Cryptography_ICspAsymmetricAlgorithm_u8Array__ExportCspBlob_0__1__bool, __cb_System_Security_Cryptography_ICspAsymmetricAlgorithm_void__ImportCspBlob_0__1__u8Array, __pdata_System_Security_Cryptography_ICspAsymmetricAlgorithm_void__ImportCspBlob_0__1__u8Array, __deinit);
     return ret;
 }
 

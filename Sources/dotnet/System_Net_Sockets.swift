@@ -342,7 +342,7 @@ public struct IOControlCode : SGBridgeGenericValue {
     }
     // static field: System.Net.Sockets.IOControlCode GetQos
     /**
-    Retrieve the QOS structure associated with the socket. This control is only supported on platforms that provide a QOS capable transport (Windows Me, Windows 2000, and later.) This value is equal to the Winsock 2 SIO_GET_QOS constant.
+    Retrieve the QOS structure associated with the socket. This value is equal to the Winsock 2 SIO_GET_QOS constant.
 
     */
     public static var GetQos : dotnet.System.Net.Sockets.IOControlCode {
@@ -410,6 +410,9 @@ public final class IPPacketInformation
 {
     public class override func get_type_handle() -> TypeHandle {
         return System_Net_Sockets_IPPacketInformation_get_type_handle();
+    }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -610,6 +613,9 @@ open class IPv6MulticastOption
     open class override func get_type_handle() -> TypeHandle {
         return System_Net_Sockets_IPv6MulticastOption_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor(System.Net.IPAddress)
@@ -728,6 +734,9 @@ open class LingerOption
     open class override func get_type_handle() -> TypeHandle {
         return System_Net_Sockets_LingerOption_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor(bool, System.Int32)
@@ -830,6 +839,9 @@ open class MulticastOption
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Net_Sockets_MulticastOption_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -1004,6 +1016,9 @@ open class NetworkStream
     open class override func get_type_handle() -> TypeHandle {
         return System_Net_Sockets_NetworkStream_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor(System.Net.Sockets.Socket)
@@ -1081,7 +1096,7 @@ open class NetworkStream
 
     - Parameter buffer: An array of type  that is the location in memory to store data read from the .
     - Parameter offset: The location in  to begin storing the data.
-    - Parameter size: The number of bytes to read from the .
+    - Parameter count: The number of bytes to read from the .
     - Parameter callback: The  delegate that is executed when  completes.
     - Parameter state: An object that contains any additional user-defined data.
     - Returns: An  that represents the asynchronous call.
@@ -1108,7 +1123,7 @@ open class NetworkStream
 
     - Parameter buffer: An array of type  that contains the data to write to the .
     - Parameter offset: The location in  to begin sending the data.
-    - Parameter size: The number of bytes to write to the .
+    - Parameter count: The number of bytes to write to the .
     - Parameter callback: The  delegate that is executed when  completes.
     - Parameter state: An object that contains any additional user-defined data.
     - Returns: An  that represents the asynchronous call.
@@ -1202,13 +1217,13 @@ open class NetworkStream
     - Returns: The task object representing the asynchronous operation.
 
     */
-    open override func FlushAsync(cancellationToken : dotnet.System.Threading.CancellationToken) throws -> dotnet.System.Threading.Tasks.Task {
+    open override func FlushAsync(cancellationToken : dotnet.System.Threading.CancellationToken) async throws {
         var __thrown : NullableHandle = nil;
         let __return = System_Net_Sockets_NetworkStream_Task__FlushAsync_0__1__CancellationToken(&__thrown, self.get_handle(), cancellationToken.get_handle());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task(hndl: __return).ToAsync();
         }
     }
     // System.Int32 Read(System.Byte[], System.Int32, System.Int32)
@@ -1218,7 +1233,7 @@ open class NetworkStream
 
     - Parameter buffer: An array of type  that is the location in memory to store data read from the .
     - Parameter offset: The location in  to begin storing the data to.
-    - Parameter size: The number of bytes to read from the .
+    - Parameter count: The number of bytes to read from the .
     - Returns: The number of bytes read from the .
 
     */
@@ -1239,18 +1254,18 @@ open class NetworkStream
 
     - Parameter buffer: The buffer to write the data into.
     - Parameter offset: The location in  to begin storing the data to.
-    - Parameter size: The number of bytes to read from the .
     - Parameter cancellationToken: The token to monitor for cancellation requests.
+    - Parameter count: The number of bytes to read from the .
     - Returns: A task that represents the asynchronous read operation. The value of its  property contains the total number of bytes read into .
 
     */
-    open override func ReadAsync(buffer : dotnet.System_Arr<Swift.UInt8>, offset : Swift.Int32, count : Swift.Int32, cancellationToken : dotnet.System.Threading.CancellationToken) throws -> dotnet.System.Threading.Tasks.Task_1<Swift.Int32> {
+    open override func ReadAsync(buffer : dotnet.System_Arr<Swift.UInt8>, offset : Swift.Int32, count : Swift.Int32, cancellationToken : dotnet.System.Threading.CancellationToken) async throws -> Swift.Int32 {
         var __thrown : NullableHandle = nil;
         let __return = System_Net_Sockets_NetworkStream_System_Threading_Tasks_Task_i32___ReadAsync_0__4__u8Array_i32_i32_CancellationToken(&__thrown, self.get_handle(), buffer.get_handle(), offset, count, cancellationToken.get_handle());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task_1(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task_1(hndl: __return).ToAsync();
         }
     }
     // System.Threading.Tasks.ValueTask<System.Int32> ReadAsync(System.Memory<System.Byte>, System.Threading.CancellationToken)
@@ -1331,7 +1346,7 @@ open class NetworkStream
 
     - Parameter buffer: An array of type  that contains the data to write to the .
     - Parameter offset: The location in  from which to start writing data.
-    - Parameter size: The number of bytes to write to the .
+    - Parameter count: The number of bytes to write to the .
     */
     open override func Write(buffer : dotnet.System_Arr<Swift.UInt8>, offset : Swift.Int32, count : Swift.Int32) throws {
         var __thrown : NullableHandle = nil;
@@ -1350,18 +1365,18 @@ open class NetworkStream
 
     - Parameter buffer: A byte array that contains the data to write to the .
     - Parameter offset: The location in  from which to start writing data.
-    - Parameter size: The number of bytes to write to the .
     - Parameter cancellationToken: The token to monitor for cancellation requests.
+    - Parameter count: The number of bytes to write to the .
     - Returns: A task that represents the asynchronous write operation.
 
     */
-    open override func WriteAsync(buffer : dotnet.System_Arr<Swift.UInt8>, offset : Swift.Int32, count : Swift.Int32, cancellationToken : dotnet.System.Threading.CancellationToken) throws -> dotnet.System.Threading.Tasks.Task {
+    open override func WriteAsync(buffer : dotnet.System_Arr<Swift.UInt8>, offset : Swift.Int32, count : Swift.Int32, cancellationToken : dotnet.System.Threading.CancellationToken) async throws {
         var __thrown : NullableHandle = nil;
         let __return = System_Net_Sockets_NetworkStream_Task__WriteAsync_0__4__u8Array_i32_i32_CancellationToken(&__thrown, self.get_handle(), buffer.get_handle(), offset, count, cancellationToken.get_handle());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task(hndl: __return).ToAsync();
         }
     }
     // System.Threading.Tasks.ValueTask WriteAsync(System.ReadOnlyMemory<System.Byte>, System.Threading.CancellationToken)
@@ -2330,10 +2345,17 @@ public final class SafeSocketHandle
     public class override func get_type_handle() -> TypeHandle {
         return System_Net_Sockets_SafeSocketHandle_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor()
 // docid: M:System.Net.Sockets.SafeSocketHandle.#ctor
+    /**
+    Creates a .
+
+    */
     public init() throws {
         var __thrown : NullableHandle = nil;
         let h = System_Net_Sockets_SafeSocketHandle_ctor_0__0(&__thrown);
@@ -2427,6 +2449,9 @@ open class SendPacketsElement
     open class override func get_type_handle() -> TypeHandle {
         return System_Net_Sockets_SendPacketsElement_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor(System.Byte[])
@@ -2484,6 +2509,11 @@ open class SendPacketsElement
     }
     // .ctor(System.ReadOnlyMemory<System.Byte>)
 // docid: M:System.Net.Sockets.SendPacketsElement.#ctor(System.ReadOnlyMemory{System.Byte})
+    /**
+    Initializes a new instance of the  class using the specified buffer.
+
+    - Parameter buffer: A  of bytes to send using the  method.
+    */
     public init(buffer : dotnet.System.ReadOnlyMemory_1<Swift.UInt8>) throws {
         var __thrown : NullableHandle = nil;
         let h = System_Net_Sockets_SendPacketsElement_ctor_0__1__System_ReadOnlyMemory_u8_(&__thrown, buffer.get_handle());
@@ -2495,6 +2525,12 @@ open class SendPacketsElement
     }
     // .ctor(System.ReadOnlyMemory<System.Byte>, bool)
 // docid: M:System.Net.Sockets.SendPacketsElement.#ctor(System.ReadOnlyMemory{System.Byte},System.Boolean)
+    /**
+    Initializes a new instance of the  class using the specified buffer with an option to combine this element with the next element in a single send request from the sockets layer to the transport.
+
+    - Parameter buffer: A  of bytes to send using the  method.
+    - Parameter endOfPacket: Specifies that this element should not be combined with the next element in a single send request from the sockets layer to the transport. This flag is used for granular control of the content of each message on a datagram or message-oriented socket.
+    */
     public init(buffer : dotnet.System.ReadOnlyMemory_1<Swift.UInt8>, endOfPacket : Bool) throws {
         var __thrown : NullableHandle = nil;
         let h = System_Net_Sockets_SendPacketsElement_ctor_0__2__System_ReadOnlyMemory_u8__bool(&__thrown, buffer.get_handle(), Swift.Int32(endOfPacket ? 1 : 0));
@@ -2792,6 +2828,10 @@ open class SendPacketsElement
             return try! get_FileStream();
         }
     }
+    /**
+    Gets the buffer to be sent if the  object was initialized with a buffer parameter.
+
+    */
     open var MemoryBuffer : Optional<dotnet.System.ReadOnlyMemory_1<Swift.UInt8>> {
         get {
             return try! get_MemoryBuffer();
@@ -2830,6 +2870,9 @@ open class Socket
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Net_Sockets_Socket_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -2886,7 +2929,7 @@ open class Socket
     // .ctor(System.Net.Sockets.SocketType, System.Net.Sockets.ProtocolType)
 // docid: M:System.Net.Sockets.Socket.#ctor(System.Net.Sockets.SocketType,System.Net.Sockets.ProtocolType)
     /**
-    Initializes a new instance of the  class using the specified socket type and protocol.
+    Initializes a new instance of the  class using the specified socket type and protocol. If the operating system supports IPv6, this constructor creates a dual-mode socket; otherwise, it creates an IPv4 socket.
 
     - Parameter socketType: One of the  values.
     - Parameter protocolType: One of the  values.
@@ -2919,17 +2962,30 @@ open class Socket
     }
     // System.Threading.Tasks.Task<System.Net.Sockets.Socket> AcceptAsync()
 // docid: M:System.Net.Sockets.Socket.AcceptAsync
-    open func AcceptAsync() throws -> dotnet.System.Threading.Tasks.Task_1<dotnet.System.Net.Sockets.Socket> {
+    /**
+    Accepts an incoming connection.
+
+    - Returns: An asynchronous task that completes with the accepted Socket.
+
+    */
+    open func AcceptAsync() async throws -> dotnet.System.Net.Sockets.Socket {
         var __thrown : NullableHandle = nil;
         let __return = System_Net_Sockets_Socket_System_Threading_Tasks_Task_System_Net_Sockets_Socket___AcceptAsync_0__0(&__thrown, self.get_handle());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task_1(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task_1(hndl: __return).ToAsync();
         }
     }
     // System.Threading.Tasks.ValueTask<System.Net.Sockets.Socket> AcceptAsync(System.Threading.CancellationToken)
 // docid: M:System.Net.Sockets.Socket.AcceptAsync(System.Threading.CancellationToken)
+    /**
+    Accepts an incoming connection.
+
+    - Parameter cancellationToken: A cancellation token that can be used to cancel the asynchronous operation.
+    - Returns: An asynchronous task that completes with the accepted Socket.
+
+    */
     open func AcceptAsync(cancellationToken : dotnet.System.Threading.CancellationToken) throws -> dotnet.System.Threading.Tasks.ValueTask_1<dotnet.System.Net.Sockets.Socket> {
         var __thrown : NullableHandle = nil;
         let __return = System_Net_Sockets_Socket_System_Threading_Tasks_ValueTask_System_Net_Sockets_Socket___AcceptAsync_0__1__CancellationToken(&__thrown, self.get_handle(), cancellationToken.get_handle());
@@ -2941,17 +2997,32 @@ open class Socket
     }
     // System.Threading.Tasks.Task<System.Net.Sockets.Socket> AcceptAsync(System.Net.Sockets.Socket)
 // docid: M:System.Net.Sockets.Socket.AcceptAsync(System.Net.Sockets.Socket)
-    open func AcceptAsync(acceptSocket : Optional<dotnet.System.Net.Sockets.Socket>) throws -> dotnet.System.Threading.Tasks.Task_1<dotnet.System.Net.Sockets.Socket> {
+    /**
+    Accepts an incoming connection.
+
+    - Parameter acceptSocket: The socket to use for accepting the connection.
+    - Returns: An asynchronous task that completes with the accepted Socket.
+
+    */
+    open func AcceptAsync(acceptSocket : Optional<dotnet.System.Net.Sockets.Socket>) async throws -> dotnet.System.Net.Sockets.Socket {
         var __thrown : NullableHandle = nil;
         let __return = System_Net_Sockets_Socket_System_Threading_Tasks_Task_System_Net_Sockets_Socket___AcceptAsync_0__1__Socket(&__thrown, self.get_handle(), acceptSocket?.get_handle() ?? nil);
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task_1(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task_1(hndl: __return).ToAsync();
         }
     }
     // System.Threading.Tasks.ValueTask<System.Net.Sockets.Socket> AcceptAsync(System.Net.Sockets.Socket, System.Threading.CancellationToken)
 // docid: M:System.Net.Sockets.Socket.AcceptAsync(System.Net.Sockets.Socket,System.Threading.CancellationToken)
+    /**
+    Accepts an incoming connection.
+
+    - Parameter acceptSocket: The socket to use for accepting the connection.
+    - Parameter cancellationToken: A cancellation token that can be used to cancel the asynchronous operation.
+    - Returns: An asynchronous task that completes with the accepted Socket.
+
+    */
     open func AcceptAsync(acceptSocket : Optional<dotnet.System.Net.Sockets.Socket>, cancellationToken : dotnet.System.Threading.CancellationToken) throws -> dotnet.System.Threading.Tasks.ValueTask_1<dotnet.System.Net.Sockets.Socket> {
         var __thrown : NullableHandle = nil;
         let __return = System_Net_Sockets_Socket_System_Threading_Tasks_ValueTask_System_Net_Sockets_Socket___AcceptAsync_0__2__Socket_CancellationToken(&__thrown, self.get_handle(), acceptSocket?.get_handle() ?? nil, cancellationToken.get_handle());
@@ -2968,8 +3039,8 @@ open class Socket
 
     - Parameter e: The  object to use for this asynchronous socket operation.
     - Returns: 
-         if the I/O operation is pending. The  event on the  parameter will be raised upon completion of the operation.  
-  
+         if the I/O operation is pending. The  event on the  parameter will be raised upon completion of the operation.
+
   if the I/O operation completed synchronously. The  event on the  parameter will not be raised and the  object passed as a parameter may be examined immediately after the method call returns to retrieve the result of the operation.
 
     */
@@ -3529,9 +3600,9 @@ open class Socket
     Sends a file and buffers of data asynchronously to a connected  object.
 
     - Parameter fileName: A string that contains the path and name of the file to be sent. This parameter can be .
-    - Parameter preBuffer: A  array that contains data to be sent before the file is sent. This parameter can be .
-    - Parameter postBuffer: A  array that contains data to be sent after the file is sent. This parameter can be .
-    - Parameter flags: A bitwise combination of  values.
+    - Parameter preBuffer: The data to be sent before the file is sent. This parameter can be .
+    - Parameter postBuffer: The data to be sent after the file is sent. This parameter can be .
+    - Parameter flags: A bitwise combination of the enumeration values.
     - Parameter callback: An  delegate to be invoked when this operation completes. This parameter can be .
     - Parameter state: A user-defined object that contains state information for this request. This parameter can be .
     - Returns: An  object that represents the asynchronous operation.
@@ -3712,17 +3783,32 @@ open class Socket
     }
     // System.Threading.Tasks.Task ConnectAsync(System.Net.EndPoint)
 // docid: M:System.Net.Sockets.Socket.ConnectAsync(System.Net.EndPoint)
-    open func ConnectAsync(remoteEP : dotnet.System.Net.EndPoint) throws -> dotnet.System.Threading.Tasks.Task {
+    /**
+    Establishes a connection to a remote host.
+
+    - Parameter remoteEP: The endpoint to connect to.
+    - Returns: An asynchronous task that completes when the connection is established.
+
+    */
+    open func ConnectAsync(remoteEP : dotnet.System.Net.EndPoint) async throws {
         var __thrown : NullableHandle = nil;
         let __return = System_Net_Sockets_Socket_Task__ConnectAsync_0__1__EndPoint(&__thrown, self.get_handle(), remoteEP.get_handle());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task(hndl: __return).ToAsync();
         }
     }
     // System.Threading.Tasks.ValueTask ConnectAsync(System.Net.EndPoint, System.Threading.CancellationToken)
 // docid: M:System.Net.Sockets.Socket.ConnectAsync(System.Net.EndPoint,System.Threading.CancellationToken)
+    /**
+    Establishes a connection to a remote host.
+
+    - Parameter remoteEP: The endpoint to connect to.
+    - Parameter cancellationToken: A cancellation token that can be used to cancel the asynchronous operation.
+    - Returns: An asynchronous task that completes when the connection is established.
+
+    */
     open func ConnectAsync(remoteEP : dotnet.System.Net.EndPoint, cancellationToken : dotnet.System.Threading.CancellationToken) throws -> dotnet.System.Threading.Tasks.ValueTask {
         var __thrown : NullableHandle = nil;
         let __return = System_Net_Sockets_Socket_ValueTask__ConnectAsync_0__2__EndPoint_CancellationToken(&__thrown, self.get_handle(), remoteEP.get_handle(), cancellationToken.get_handle());
@@ -3734,17 +3820,34 @@ open class Socket
     }
     // System.Threading.Tasks.Task ConnectAsync(System.Net.IPAddress, System.Int32)
 // docid: M:System.Net.Sockets.Socket.ConnectAsync(System.Net.IPAddress,System.Int32)
-    open func ConnectAsync(address : dotnet.System.Net.IPAddress, port : Swift.Int32) throws -> dotnet.System.Threading.Tasks.Task {
+    /**
+    Establishes a connection to a remote host.
+
+    - Parameter address: The IPAddress of the remote host to connect to.
+    - Parameter port: The port on the remote host to connect to.
+    - Returns: An asynchronous task that completes when the connection is established.
+
+    */
+    open func ConnectAsync(address : dotnet.System.Net.IPAddress, port : Swift.Int32) async throws {
         var __thrown : NullableHandle = nil;
         let __return = System_Net_Sockets_Socket_Task__ConnectAsync_0__2__IPAddress_i32(&__thrown, self.get_handle(), address.get_handle(), port);
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task(hndl: __return).ToAsync();
         }
     }
     // System.Threading.Tasks.ValueTask ConnectAsync(System.Net.IPAddress, System.Int32, System.Threading.CancellationToken)
 // docid: M:System.Net.Sockets.Socket.ConnectAsync(System.Net.IPAddress,System.Int32,System.Threading.CancellationToken)
+    /**
+    Establishes a connection to a remote host.
+
+    - Parameter address: The IPAddress of the remote host to connect to.
+    - Parameter port: The port on the remote host to connect to.
+    - Parameter cancellationToken: A cancellation token that can be used to cancel the asynchronous operation.
+    - Returns: An asynchronous task that completes when the connection is established.
+
+    */
     open func ConnectAsync(address : dotnet.System.Net.IPAddress, port : Swift.Int32, cancellationToken : dotnet.System.Threading.CancellationToken) throws -> dotnet.System.Threading.Tasks.ValueTask {
         var __thrown : NullableHandle = nil;
         let __return = System_Net_Sockets_Socket_ValueTask__ConnectAsync_0__3__IPAddress_i32_CancellationToken(&__thrown, self.get_handle(), address.get_handle(), port, cancellationToken.get_handle());
@@ -3756,17 +3859,34 @@ open class Socket
     }
     // System.Threading.Tasks.Task ConnectAsync(System.Net.IPAddress[], System.Int32)
 // docid: M:System.Net.Sockets.Socket.ConnectAsync(System.Net.IPAddress[],System.Int32)
-    open func ConnectAsync(addresses : dotnet.System_Arr<dotnet.System.Net.IPAddress>, port : Swift.Int32) throws -> dotnet.System.Threading.Tasks.Task {
+    /**
+    Establishes a connection to a remote host.
+
+    - Parameter addresses: A list of IPAddresses for the remote host that will be used to attempt to connect to the remote host.
+    - Parameter port: The port on the remote host to connect to.
+    - Returns: An asynchronous task that completes when the connection is established.
+
+    */
+    open func ConnectAsync(addresses : dotnet.System_Arr<dotnet.System.Net.IPAddress>, port : Swift.Int32) async throws {
         var __thrown : NullableHandle = nil;
         let __return = System_Net_Sockets_Socket_Task__ConnectAsync_0__2__IPAddressArray_i32(&__thrown, self.get_handle(), addresses.get_handle(), port);
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task(hndl: __return).ToAsync();
         }
     }
     // System.Threading.Tasks.ValueTask ConnectAsync(System.Net.IPAddress[], System.Int32, System.Threading.CancellationToken)
 // docid: M:System.Net.Sockets.Socket.ConnectAsync(System.Net.IPAddress[],System.Int32,System.Threading.CancellationToken)
+    /**
+    Establishes a connection to a remote host.
+
+    - Parameter addresses: A list of IPAddresses for the remote host that will be used to attempt to connect to the remote host.
+    - Parameter port: The port on the remote host to connect to.
+    - Parameter cancellationToken: A cancellation token that can be used to cancel the asynchronous operation.
+    - Returns: An asynchronous task that completes when the connection is established.
+
+    */
     open func ConnectAsync(addresses : dotnet.System_Arr<dotnet.System.Net.IPAddress>, port : Swift.Int32, cancellationToken : dotnet.System.Threading.CancellationToken) throws -> dotnet.System.Threading.Tasks.ValueTask {
         var __thrown : NullableHandle = nil;
         let __return = System_Net_Sockets_Socket_ValueTask__ConnectAsync_0__3__IPAddressArray_i32_CancellationToken(&__thrown, self.get_handle(), addresses.get_handle(), port, cancellationToken.get_handle());
@@ -3778,17 +3898,34 @@ open class Socket
     }
     // System.Threading.Tasks.Task ConnectAsync(System.String, System.Int32)
 // docid: M:System.Net.Sockets.Socket.ConnectAsync(System.String,System.Int32)
-    open func ConnectAsync(host : dotnet.System.String, port : Swift.Int32) throws -> dotnet.System.Threading.Tasks.Task {
+    /**
+    Establishes a connection to a remote host.
+
+    - Parameter host: The hostname of the remote host to connect to.
+    - Parameter port: The port on the remote host to connect to.
+    - Returns: An asynchronous task that completes when the connection is established.
+
+    */
+    open func ConnectAsync(host : dotnet.System.String, port : Swift.Int32) async throws {
         var __thrown : NullableHandle = nil;
         let __return = System_Net_Sockets_Socket_Task__ConnectAsync_0__2__String_i32(&__thrown, self.get_handle(), host.get_handle(), port);
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task(hndl: __return).ToAsync();
         }
     }
     // System.Threading.Tasks.ValueTask ConnectAsync(System.String, System.Int32, System.Threading.CancellationToken)
 // docid: M:System.Net.Sockets.Socket.ConnectAsync(System.String,System.Int32,System.Threading.CancellationToken)
+    /**
+    Establishes a connection to a remote host.
+
+    - Parameter host: The hostname of the remote host to connect to.
+    - Parameter port: The port on the remote host to connect to.
+    - Parameter cancellationToken: A cancellation token that can be used to cancel the asynchronous operation.
+    - Returns: An asynchronous task that completes when the connection is established.
+
+    */
     open func ConnectAsync(host : dotnet.System.String, port : Swift.Int32, cancellationToken : dotnet.System.Threading.CancellationToken) throws -> dotnet.System.Threading.Tasks.ValueTask {
         var __thrown : NullableHandle = nil;
         let __return = System_Net_Sockets_Socket_ValueTask__ConnectAsync_0__3__String_i32_CancellationToken(&__thrown, self.get_handle(), host.get_handle(), port, cancellationToken.get_handle());
@@ -3805,8 +3942,8 @@ open class Socket
 
     - Parameter e: The  object to use for this asynchronous socket operation.
     - Returns: 
-         if the I/O operation is pending. The  event on the  parameter will be raised upon completion of the operation.  
-  
+         if the I/O operation is pending. The  event on the  parameter will be raised upon completion of the operation.
+
   if the I/O operation completed synchronously. In this case, The  event on the  parameter will not be raised and the  object passed as a parameter may be examined immediately after the method call returns to retrieve the result of the operation.
 
     */
@@ -3828,8 +3965,8 @@ open class Socket
     - Parameter protocolType: One of the  values.
     - Parameter e: The  object to use for this asynchronous socket operation.
     - Returns: 
-         if the I/O operation is pending. The  event on the  parameter will be raised upon completion of the operation.  
-  
+         if the I/O operation is pending. The  event on the  parameter will be raised upon completion of the operation.
+
   if the I/O operation completed synchronously. In this case, The  event on the  parameter will not be raised and the  object passed as a parameter may be examined immediately after the method call returns to retrieve the result of the operation.
 
     */
@@ -3866,8 +4003,8 @@ open class Socket
 
     - Parameter e: The  object to use for this asynchronous socket operation.
     - Returns: 
-         if the I/O operation is pending. The  event on the  parameter will be raised upon completion of the operation.  
-  
+         if the I/O operation is pending. The  event on the  parameter will be raised upon completion of the operation.
+
   if the I/O operation completed synchronously. In this case, The  event on the  parameter will not be raised and the  object passed as a parameter may be examined immediately after the method call returns to retrieve the result of the operation.
 
     */
@@ -3882,6 +4019,14 @@ open class Socket
     }
     // System.Threading.Tasks.ValueTask DisconnectAsync(bool, System.Threading.CancellationToken)
 // docid: M:System.Net.Sockets.Socket.DisconnectAsync(System.Boolean,System.Threading.CancellationToken)
+    /**
+    Disconnects a connected socket from the remote host.
+
+    - Parameter reuseSocket: Indicates whether the socket should be available for reuse after disconnect.
+    - Parameter cancellationToken: A cancellation token that can be used to cancel the asynchronous operation.
+    - Returns: An asynchronous task that completes when the socket is disconnected.
+
+    */
     open func DisconnectAsync(reuseSocket : Bool, cancellationToken : dotnet.System.Threading.CancellationToken = System.Threading.CancellationToken.None) throws -> dotnet.System.Threading.Tasks.ValueTask {
         var __thrown : NullableHandle = nil;
         let __return = System_Net_Sockets_Socket_ValueTask__DisconnectAsync_0__2__bool_CancellationToken(&__thrown, self.get_handle(), Swift.Int32(reuseSocket ? 1 : 0), cancellationToken.get_handle());
@@ -4328,30 +4473,30 @@ open class Socket
 
     - Parameter microSeconds: The time to wait for a response, in microseconds.
     - Parameter mode: One of the  values.
-    - Returns: The status of the  based on the polling mode value passed in the  parameter.  
-  
-  Mode Return Value if  has been called and a connection is pending;  
-  
- -or-  
-  
-  if data is available for reading;  
-  
- -or-  
-  
-  if the connection has been closed, reset, or terminated;  
-  
- otherwise, returns ., if processing a , and the connection has succeeded;  
-  
- -or-  
-  
-  if data can be sent;  
-  
- otherwise, returns . if processing a  that does not block, and the connection has failed;  
-  
- -or-  
-  
-  if  is not set and out-of-band data is available;  
-  
+    - Returns: The status of the  based on the polling mode value passed in the  parameter.
+
+  Mode Return Value if  has been called and a connection is pending;
+
+ -or-
+
+  if data is available for reading;
+
+ -or-
+
+  if the connection has been closed, reset, or terminated;
+
+ otherwise, returns ., if processing a , and the connection has succeeded;
+
+ -or-
+
+  if data can be sent;
+
+ otherwise, returns . if processing a  that does not block, and the connection has failed;
+
+ -or-
+
+  if  is not set and out-of-band data is available;
+
  otherwise, returns .
 
     */
@@ -4532,28 +4677,53 @@ open class Socket
 // TODO COPE (write_all_methods) (span) System.Int32 Receive(System.Span<System.Byte>, System.Net.Sockets.SocketFlags, ref System.Net.Sockets.SocketError)
     // System.Threading.Tasks.Task<System.Int32> ReceiveAsync(System.ArraySegment<System.Byte>, System.Net.Sockets.SocketFlags)
 // docid: M:System.Net.Sockets.Socket.ReceiveAsync(System.ArraySegment{System.Byte},System.Net.Sockets.SocketFlags)
-    open func ReceiveAsync(buffer : dotnet.System.ArraySegment_1<Swift.UInt8>, socketFlags : dotnet.System.Net.Sockets.SocketFlags) throws -> dotnet.System.Threading.Tasks.Task_1<Swift.Int32> {
+    /**
+    Receives data from a connected socket.
+
+    - Parameter buffer: The buffer for the received data.
+    - Parameter socketFlags: A bitwise combination of SocketFlags values that will be used when receiving the data.
+    - Returns: An asynchronous task that completes with the number of bytes received.
+
+    */
+    open func ReceiveAsync(buffer : dotnet.System.ArraySegment_1<Swift.UInt8>, socketFlags : dotnet.System.Net.Sockets.SocketFlags) async throws -> Swift.Int32 {
         var __thrown : NullableHandle = nil;
         let __return = System_Net_Sockets_Socket_System_Threading_Tasks_Task_i32___ReceiveAsync_0__2__System_ArraySegment_u8__SocketFlags(&__thrown, self.get_handle(), buffer.get_handle(), socketFlags.get_value());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task_1(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task_1(hndl: __return).ToAsync();
         }
     }
     // System.Threading.Tasks.Task<System.Int32> ReceiveAsync(System.Collections.Generic.IList<System.ArraySegment<System.Byte>>, System.Net.Sockets.SocketFlags)
 // docid: M:System.Net.Sockets.Socket.ReceiveAsync(System.Collections.Generic.IList{System.ArraySegment{System.Byte}},System.Net.Sockets.SocketFlags)
-    open func ReceiveAsync(buffers : dotnet.System.Collections.Generic.IList_1<dotnet.System.ArraySegment_1<Swift.UInt8>>, socketFlags : dotnet.System.Net.Sockets.SocketFlags) throws -> dotnet.System.Threading.Tasks.Task_1<Swift.Int32> {
+    /**
+    Receives data from a connected socket.
+
+    - Parameter buffers: A list of buffers for the received data.
+    - Parameter socketFlags: A bitwise combination of SocketFlags values that will be used when receiving the data.
+    - Returns: An asynchronous task that completes with the number of bytes received.
+
+    */
+    open func ReceiveAsync(buffers : dotnet.System.Collections.Generic.IList_1<dotnet.System.ArraySegment_1<Swift.UInt8>>, socketFlags : dotnet.System.Net.Sockets.SocketFlags) async throws -> Swift.Int32 {
         var __thrown : NullableHandle = nil;
         let __return = System_Net_Sockets_Socket_System_Threading_Tasks_Task_i32___ReceiveAsync_0__2__System_Collections_Generic_IList_System_System_ArraySegment_u8___SocketFlags(&__thrown, self.get_handle(), buffers.get_handle(), socketFlags.get_value());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task_1(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task_1(hndl: __return).ToAsync();
         }
     }
     // System.Threading.Tasks.ValueTask<System.Int32> ReceiveAsync(System.Memory<System.Byte>, System.Net.Sockets.SocketFlags, System.Threading.CancellationToken)
 // docid: M:System.Net.Sockets.Socket.ReceiveAsync(System.Memory{System.Byte},System.Net.Sockets.SocketFlags,System.Threading.CancellationToken)
+    /**
+    Receives data from a connected socket.
+
+    - Parameter buffer: The buffer for the received data.
+    - Parameter socketFlags: A bitwise combination of SocketFlags values that will be used when receiving the data.
+    - Parameter cancellationToken: A cancellation token that can be used to cancel the asynchronous operation.
+    - Returns: An asynchronous task that completes with the number of bytes received.
+
+    */
     open func ReceiveAsync(buffer : dotnet.System.Memory_1<Swift.UInt8>, socketFlags : dotnet.System.Net.Sockets.SocketFlags, cancellationToken : dotnet.System.Threading.CancellationToken = System.Threading.CancellationToken.None) throws -> dotnet.System.Threading.Tasks.ValueTask_1<Swift.Int32> {
         var __thrown : NullableHandle = nil;
         let __return = System_Net_Sockets_Socket_System_Threading_Tasks_ValueTask_i32___ReceiveAsync_0__3__System_Memory_u8__SocketFlags_CancellationToken(&__thrown, self.get_handle(), buffer.get_handle(), socketFlags.get_value(), cancellationToken.get_handle());
@@ -4570,8 +4740,8 @@ open class Socket
 
     - Parameter e: The  object to use for this asynchronous socket operation.
     - Returns: 
-         if the I/O operation is pending. The  event on the  parameter will be raised upon completion of the operation.  
-  
+         if the I/O operation is pending. The  event on the  parameter will be raised upon completion of the operation.
+
   if the I/O operation completed synchronously. In this case, The  event on the  parameter will not be raised and the  object passed as a parameter may be examined immediately after the method call returns to retrieve the result of the operation.
 
     */
@@ -4682,17 +4852,36 @@ open class Socket
 // TODO COPE (write_all_methods) (span) System.Int32 ReceiveFrom(System.Span<System.Byte>, System.Net.Sockets.SocketFlags, ref System.Net.EndPoint)
     // System.Threading.Tasks.Task<System.Net.Sockets.SocketReceiveFromResult> ReceiveFromAsync(System.ArraySegment<System.Byte>, System.Net.Sockets.SocketFlags, System.Net.EndPoint)
 // docid: M:System.Net.Sockets.Socket.ReceiveFromAsync(System.ArraySegment{System.Byte},System.Net.Sockets.SocketFlags,System.Net.EndPoint)
-    open func ReceiveFromAsync(buffer : dotnet.System.ArraySegment_1<Swift.UInt8>, socketFlags : dotnet.System.Net.Sockets.SocketFlags, remoteEndPoint : dotnet.System.Net.EndPoint) throws -> dotnet.System.Threading.Tasks.Task_1<dotnet.System.Net.Sockets.SocketReceiveFromResult> {
+    /**
+    Receives data and returns the endpoint of the sending host.
+
+    - Parameter buffer: The buffer for the received data.
+    - Parameter socketFlags: A bitwise combination of SocketFlags values that will be used when receiving the data.
+    - Parameter remoteEndPoint: An endpoint of the same type as the endpoint of the remote host.
+    - Returns: An asynchronous task that completes with a  containing the number of bytes received and the endpoint of the sending host.
+
+    */
+    open func ReceiveFromAsync(buffer : dotnet.System.ArraySegment_1<Swift.UInt8>, socketFlags : dotnet.System.Net.Sockets.SocketFlags, remoteEndPoint : dotnet.System.Net.EndPoint) async throws -> dotnet.System.Net.Sockets.SocketReceiveFromResult {
         var __thrown : NullableHandle = nil;
         let __return = System_Net_Sockets_Socket_System_Threading_Tasks_Task_System_Net_Sockets_SocketReceiveFromResult___ReceiveFromAsync_0__3__System_ArraySegment_u8__SocketFlags_EndPoint(&__thrown, self.get_handle(), buffer.get_handle(), socketFlags.get_value(), remoteEndPoint.get_handle());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task_1(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task_1(hndl: __return).ToAsync();
         }
     }
     // System.Threading.Tasks.ValueTask<System.Net.Sockets.SocketReceiveFromResult> ReceiveFromAsync(System.Memory<System.Byte>, System.Net.Sockets.SocketFlags, System.Net.EndPoint, System.Threading.CancellationToken)
 // docid: M:System.Net.Sockets.Socket.ReceiveFromAsync(System.Memory{System.Byte},System.Net.Sockets.SocketFlags,System.Net.EndPoint,System.Threading.CancellationToken)
+    /**
+    Receives data and returns the endpoint of the sending host.
+
+    - Parameter buffer: The buffer for the received data.
+    - Parameter socketFlags: A bitwise combination of SocketFlags values that will be used when receiving the data.
+    - Parameter remoteEndPoint: An endpoint of the same type as the endpoint of the remote host.
+    - Parameter cancellationToken: A cancellation token that can be used to signal the asynchronous operation should be canceled.
+    - Returns: An asynchronous task that completes with a  containing the number of bytes received and the endpoint of the sending host.
+
+    */
     open func ReceiveFromAsync(buffer : dotnet.System.Memory_1<Swift.UInt8>, socketFlags : dotnet.System.Net.Sockets.SocketFlags, remoteEndPoint : dotnet.System.Net.EndPoint, cancellationToken : dotnet.System.Threading.CancellationToken = System.Threading.CancellationToken.None) throws -> dotnet.System.Threading.Tasks.ValueTask_1<dotnet.System.Net.Sockets.SocketReceiveFromResult> {
         var __thrown : NullableHandle = nil;
         let __return = System_Net_Sockets_Socket_System_Threading_Tasks_ValueTask_System_Net_Sockets_SocketReceiveFromResult___ReceiveFromAsync_0__4__System_Memory_u8__SocketFlags_EndPoint_CancellationToken(&__thrown, self.get_handle(), buffer.get_handle(), socketFlags.get_value(), remoteEndPoint.get_handle(), cancellationToken.get_handle());
@@ -4709,8 +4898,8 @@ open class Socket
 
     - Parameter e: The  object to use for this asynchronous socket operation.
     - Returns: 
-         if the I/O operation is pending. The  event on the  parameter will be raised upon completion of the operation.  
-  
+         if the I/O operation is pending. The  event on the  parameter will be raised upon completion of the operation.
+
   if the I/O operation completed synchronously. In this case, The  event on the  parameter will not be raised and the  object passed as a parameter may be examined immediately after the method call returns to retrieve the result of the operation.
 
     */
@@ -4758,17 +4947,36 @@ open class Socket
 // TODO COPE (write_all_methods) (span) System.Int32 ReceiveMessageFrom(System.Span<System.Byte>, ref System.Net.Sockets.SocketFlags, ref System.Net.EndPoint, ref System.Net.Sockets.IPPacketInformation)
     // System.Threading.Tasks.Task<System.Net.Sockets.SocketReceiveMessageFromResult> ReceiveMessageFromAsync(System.ArraySegment<System.Byte>, System.Net.Sockets.SocketFlags, System.Net.EndPoint)
 // docid: M:System.Net.Sockets.Socket.ReceiveMessageFromAsync(System.ArraySegment{System.Byte},System.Net.Sockets.SocketFlags,System.Net.EndPoint)
-    open func ReceiveMessageFromAsync(buffer : dotnet.System.ArraySegment_1<Swift.UInt8>, socketFlags : dotnet.System.Net.Sockets.SocketFlags, remoteEndPoint : dotnet.System.Net.EndPoint) throws -> dotnet.System.Threading.Tasks.Task_1<dotnet.System.Net.Sockets.SocketReceiveMessageFromResult> {
+    /**
+    Receives data and returns additional information about the sender of the message.
+
+    - Parameter buffer: The buffer for the received data.
+    - Parameter socketFlags: A bitwise combination of SocketFlags values that will be used when receiving the data.
+    - Parameter remoteEndPoint: An endpoint of the same type as the endpoint of the remote host.
+    - Returns: An asynchronous task that completes with a  containing the number of bytes received and additional information about the sending host.
+
+    */
+    open func ReceiveMessageFromAsync(buffer : dotnet.System.ArraySegment_1<Swift.UInt8>, socketFlags : dotnet.System.Net.Sockets.SocketFlags, remoteEndPoint : dotnet.System.Net.EndPoint) async throws -> dotnet.System.Net.Sockets.SocketReceiveMessageFromResult {
         var __thrown : NullableHandle = nil;
         let __return = System_Net_Sockets_Socket_System_Threading_Tasks_Task_System_Net_Sockets_SocketReceiveMessageFromResult___ReceiveMessageFromAsync_0__3__System_ArraySegment_u8__SocketFlags_EndPoint(&__thrown, self.get_handle(), buffer.get_handle(), socketFlags.get_value(), remoteEndPoint.get_handle());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task_1(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task_1(hndl: __return).ToAsync();
         }
     }
     // System.Threading.Tasks.ValueTask<System.Net.Sockets.SocketReceiveMessageFromResult> ReceiveMessageFromAsync(System.Memory<System.Byte>, System.Net.Sockets.SocketFlags, System.Net.EndPoint, System.Threading.CancellationToken)
 // docid: M:System.Net.Sockets.Socket.ReceiveMessageFromAsync(System.Memory{System.Byte},System.Net.Sockets.SocketFlags,System.Net.EndPoint,System.Threading.CancellationToken)
+    /**
+    Receives data and returns additional information about the sender of the message.
+
+    - Parameter buffer: The buffer for the received data.
+    - Parameter socketFlags: A bitwise combination of SocketFlags values that will be used when receiving the data.
+    - Parameter remoteEndPoint: An endpoint of the same type as the endpoint of the remote host.
+    - Parameter cancellationToken: A cancellation token that can be used to signal the asynchronous operation should be canceled.
+    - Returns: An asynchronous task that completes with a  containing the number of bytes received and additional information about the sending host.
+
+    */
     open func ReceiveMessageFromAsync(buffer : dotnet.System.Memory_1<Swift.UInt8>, socketFlags : dotnet.System.Net.Sockets.SocketFlags, remoteEndPoint : dotnet.System.Net.EndPoint, cancellationToken : dotnet.System.Threading.CancellationToken = System.Threading.CancellationToken.None) throws -> dotnet.System.Threading.Tasks.ValueTask_1<dotnet.System.Net.Sockets.SocketReceiveMessageFromResult> {
         var __thrown : NullableHandle = nil;
         let __return = System_Net_Sockets_Socket_System_Threading_Tasks_ValueTask_System_Net_Sockets_SocketReceiveMessageFromResult___ReceiveMessageFromAsync_0__4__System_Memory_u8__SocketFlags_EndPoint_CancellationToken(&__thrown, self.get_handle(), buffer.get_handle(), socketFlags.get_value(), remoteEndPoint.get_handle(), cancellationToken.get_handle());
@@ -4785,8 +4993,8 @@ open class Socket
 
     - Parameter e: The  object to use for this asynchronous socket operation.
     - Returns: 
-         if the I/O operation is pending. The  event on the  parameter will be raised upon completion of the operation.  
-  
+         if the I/O operation is pending. The  event on the  parameter will be raised upon completion of the operation.
+
   if the I/O operation completed synchronously. In this case, The  event on the  parameter will not be raised and the  object passed as a parameter may be examined immediately after the method call returns to retrieve the result of the operation.
 
     */
@@ -4860,7 +5068,7 @@ open class Socket
     // System.Int32 Send(System.Byte[], System.Int32, System.Int32, System.Net.Sockets.SocketFlags, ref System.Net.Sockets.SocketError)
 // docid: M:System.Net.Sockets.Socket.Send(System.Byte[],System.Int32,System.Int32,System.Net.Sockets.SocketFlags,System.Net.Sockets.SocketError@)
     /**
-    Sends the specified number of bytes of data to a connected , starting at the specified offset, and using the specified 
+    Sends the specified number of bytes of data to a connected , starting at the specified offset, and using the specified .
 
     - Parameter buffer: An array of type  that contains the data to be sent.
     - Parameter offset: The position in the data buffer at which to begin sending data.
@@ -4986,28 +5194,53 @@ open class Socket
 // TODO COPE (write_all_methods) (span) System.Int32 Send(System.ReadOnlySpan<System.Byte>, System.Net.Sockets.SocketFlags, ref System.Net.Sockets.SocketError)
     // System.Threading.Tasks.Task<System.Int32> SendAsync(System.ArraySegment<System.Byte>, System.Net.Sockets.SocketFlags)
 // docid: M:System.Net.Sockets.Socket.SendAsync(System.ArraySegment{System.Byte},System.Net.Sockets.SocketFlags)
-    open func SendAsync(buffer : dotnet.System.ArraySegment_1<Swift.UInt8>, socketFlags : dotnet.System.Net.Sockets.SocketFlags) throws -> dotnet.System.Threading.Tasks.Task_1<Swift.Int32> {
+    /**
+    Sends data on a connected socket.
+
+    - Parameter buffer: The buffer for the data to send.
+    - Parameter socketFlags: A bitwise combination of SocketFlags values that will be used when sending the data.
+    - Returns: An asynchronous task that completes with the number of bytes sent.
+
+    */
+    open func SendAsync(buffer : dotnet.System.ArraySegment_1<Swift.UInt8>, socketFlags : dotnet.System.Net.Sockets.SocketFlags) async throws -> Swift.Int32 {
         var __thrown : NullableHandle = nil;
         let __return = System_Net_Sockets_Socket_System_Threading_Tasks_Task_i32___SendAsync_0__2__System_ArraySegment_u8__SocketFlags(&__thrown, self.get_handle(), buffer.get_handle(), socketFlags.get_value());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task_1(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task_1(hndl: __return).ToAsync();
         }
     }
     // System.Threading.Tasks.Task<System.Int32> SendAsync(System.Collections.Generic.IList<System.ArraySegment<System.Byte>>, System.Net.Sockets.SocketFlags)
 // docid: M:System.Net.Sockets.Socket.SendAsync(System.Collections.Generic.IList{System.ArraySegment{System.Byte}},System.Net.Sockets.SocketFlags)
-    open func SendAsync(buffers : dotnet.System.Collections.Generic.IList_1<dotnet.System.ArraySegment_1<Swift.UInt8>>, socketFlags : dotnet.System.Net.Sockets.SocketFlags) throws -> dotnet.System.Threading.Tasks.Task_1<Swift.Int32> {
+    /**
+    Sends data on a connected socket.
+
+    - Parameter buffers: A list of buffers for the data to send.
+    - Parameter socketFlags: A bitwise combination of SocketFlags values that will be used when sending the data.
+    - Returns: An asynchronous task that completes with the number of bytes sent.
+
+    */
+    open func SendAsync(buffers : dotnet.System.Collections.Generic.IList_1<dotnet.System.ArraySegment_1<Swift.UInt8>>, socketFlags : dotnet.System.Net.Sockets.SocketFlags) async throws -> Swift.Int32 {
         var __thrown : NullableHandle = nil;
         let __return = System_Net_Sockets_Socket_System_Threading_Tasks_Task_i32___SendAsync_0__2__System_Collections_Generic_IList_System_System_ArraySegment_u8___SocketFlags(&__thrown, self.get_handle(), buffers.get_handle(), socketFlags.get_value());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task_1(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task_1(hndl: __return).ToAsync();
         }
     }
     // System.Threading.Tasks.ValueTask<System.Int32> SendAsync(System.ReadOnlyMemory<System.Byte>, System.Net.Sockets.SocketFlags, System.Threading.CancellationToken)
 // docid: M:System.Net.Sockets.Socket.SendAsync(System.ReadOnlyMemory{System.Byte},System.Net.Sockets.SocketFlags,System.Threading.CancellationToken)
+    /**
+    Sends data on a connected socket.
+
+    - Parameter buffer: The buffer for the data to send.
+    - Parameter socketFlags: A bitwise combination of SocketFlags values that will be used when sending the data.
+    - Parameter cancellationToken: A cancellation token that can be used to cancel the asynchronous operation.
+    - Returns: An asynchronous task that completes with the number of bytes sent.
+
+    */
     open func SendAsync(buffer : dotnet.System.ReadOnlyMemory_1<Swift.UInt8>, socketFlags : dotnet.System.Net.Sockets.SocketFlags, cancellationToken : dotnet.System.Threading.CancellationToken = System.Threading.CancellationToken.None) throws -> dotnet.System.Threading.Tasks.ValueTask_1<Swift.Int32> {
         var __thrown : NullableHandle = nil;
         let __return = System_Net_Sockets_Socket_System_Threading_Tasks_ValueTask_i32___SendAsync_0__3__System_ReadOnlyMemory_u8__SocketFlags_CancellationToken(&__thrown, self.get_handle(), buffer.get_handle(), socketFlags.get_value(), cancellationToken.get_handle());
@@ -5024,8 +5257,8 @@ open class Socket
 
     - Parameter e: The  object to use for this asynchronous socket operation.
     - Returns: 
-         if the I/O operation is pending. The  event on the  parameter will be raised upon completion of the operation.  
-  
+         if the I/O operation is pending. The  event on the  parameter will be raised upon completion of the operation.
+
   if the I/O operation completed synchronously. In this case, The  event on the  parameter will not be raised and the  object passed as a parameter may be examined immediately after the method call returns to retrieve the result of the operation.
 
     */
@@ -5059,10 +5292,10 @@ open class Socket
     /**
     Sends the file  and buffers of data to a connected  object using the specified  value.
 
-    - Parameter fileName: A  that contains the path and name of the file to be sent. This parameter can be .
-    - Parameter preBuffer: A  array that contains data to be sent before the file is sent. This parameter can be .
-    - Parameter postBuffer: A  array that contains data to be sent after the file is sent. This parameter can be .
-    - Parameter flags: One or more of  values.
+    - Parameter fileName: The path and name of the file to be sent. This parameter can be .
+    - Parameter preBuffer: The data to be sent before the file is sent. This parameter can be .
+    - Parameter postBuffer: The data to be sent after the file is sent. This parameter can be .
+    - Parameter flags: A bitwise combination of the enumeration values that specifies how the file is transferred.
     */
     open func SendFile(fileName : Optional<dotnet.System.String>, preBuffer : Optional<dotnet.System_Arr<Swift.UInt8>>, postBuffer : Optional<dotnet.System_Arr<Swift.UInt8>>, flags : dotnet.System.Net.Sockets.TransmitFileOptions) throws {
         var __thrown : NullableHandle = nil;
@@ -5076,6 +5309,17 @@ open class Socket
 // TODO COPE (write_all_methods) (span) void SendFile(System.String, System.ReadOnlySpan<System.Byte>, System.ReadOnlySpan<System.Byte>, System.Net.Sockets.TransmitFileOptions)
     // System.Threading.Tasks.ValueTask SendFileAsync(System.String, System.ReadOnlyMemory<System.Byte>, System.ReadOnlyMemory<System.Byte>, System.Net.Sockets.TransmitFileOptions, System.Threading.CancellationToken)
 // docid: M:System.Net.Sockets.Socket.SendFileAsync(System.String,System.ReadOnlyMemory{System.Byte},System.ReadOnlyMemory{System.Byte},System.Net.Sockets.TransmitFileOptions,System.Threading.CancellationToken)
+    /**
+    Sends the file  and buffers of data to a connected  object using the specified  value.
+
+    - Parameter fileName: A  that contains the path and name of the file to be sent. This parameter can be .
+    - Parameter preBuffer: A  array that contains data to be sent before the file is sent. This parameter can be .
+    - Parameter postBuffer: A  array that contains data to be sent after the file is sent. This parameter can be .
+    - Parameter flags: One or more of  values.
+    - Parameter cancellationToken: A cancellation token that can be used to cancel the asynchronous operation.
+    - Returns: A value task that represents the asynchronous send file operation.
+
+    */
     open func SendFileAsync(fileName : Optional<dotnet.System.String>, preBuffer : dotnet.System.ReadOnlyMemory_1<Swift.UInt8>, postBuffer : dotnet.System.ReadOnlyMemory_1<Swift.UInt8>, flags : dotnet.System.Net.Sockets.TransmitFileOptions, cancellationToken : dotnet.System.Threading.CancellationToken = System.Threading.CancellationToken.None) throws -> dotnet.System.Threading.Tasks.ValueTask {
         var __thrown : NullableHandle = nil;
         let __return = System_Net_Sockets_Socket_ValueTask__SendFileAsync_0__5__String_System_ReadOnlyMemory_u8__System_ReadOnlyMemory_u8__TransmitFileOptions_CancellationToken(&__thrown, self.get_handle(), fileName?.get_handle() ?? nil, preBuffer.get_handle(), postBuffer.get_handle(), flags.get_value(), cancellationToken.get_handle());
@@ -5087,6 +5331,14 @@ open class Socket
     }
     // System.Threading.Tasks.ValueTask SendFileAsync(System.String, System.Threading.CancellationToken)
 // docid: M:System.Net.Sockets.Socket.SendFileAsync(System.String,System.Threading.CancellationToken)
+    /**
+    Sends the file  to a connected  object.
+
+    - Parameter fileName: A  that contains the path and name of the file to be sent. This parameter can be .
+    - Parameter cancellationToken: A cancellation token that can be used to cancel the asynchronous operation.
+    - Returns: A value task that represents the asynchronous send file operation.
+
+    */
     open func SendFileAsync(fileName : Optional<dotnet.System.String>, cancellationToken : dotnet.System.Threading.CancellationToken = System.Threading.CancellationToken.None) throws -> dotnet.System.Threading.Tasks.ValueTask {
         var __thrown : NullableHandle = nil;
         let __return = System_Net_Sockets_Socket_ValueTask__SendFileAsync_0__2__String_CancellationToken(&__thrown, self.get_handle(), fileName?.get_handle() ?? nil, cancellationToken.get_handle());
@@ -5103,8 +5355,8 @@ open class Socket
 
     - Parameter e: The  object to use for this asynchronous socket operation.
     - Returns: 
-         if the I/O operation is pending. The  event on the  parameter will be raised upon completion of the operation.  
-  
+         if the I/O operation is pending. The  event on the  parameter will be raised upon completion of the operation.
+
   if the I/O operation completed synchronously. In this case, The  event on the  parameter will not be raised and the  object passed as a parameter may be examined immediately after the method call returns to retrieve the result of the operation.
 
     */
@@ -5203,17 +5455,36 @@ open class Socket
 // TODO COPE (write_all_methods) (span) System.Int32 SendTo(System.ReadOnlySpan<System.Byte>, System.Net.Sockets.SocketFlags, System.Net.EndPoint)
     // System.Threading.Tasks.Task<System.Int32> SendToAsync(System.ArraySegment<System.Byte>, System.Net.Sockets.SocketFlags, System.Net.EndPoint)
 // docid: M:System.Net.Sockets.Socket.SendToAsync(System.ArraySegment{System.Byte},System.Net.Sockets.SocketFlags,System.Net.EndPoint)
-    open func SendToAsync(buffer : dotnet.System.ArraySegment_1<Swift.UInt8>, socketFlags : dotnet.System.Net.Sockets.SocketFlags, remoteEP : dotnet.System.Net.EndPoint) throws -> dotnet.System.Threading.Tasks.Task_1<Swift.Int32> {
+    /**
+    Sends data to the specified remote host.
+
+    - Parameter buffer: The buffer for the data to send.
+    - Parameter socketFlags: A bitwise combination of SocketFlags values that will be used when sending the data.
+    - Parameter remoteEP: The remote host to which to send the data.
+    - Returns: An asynchronous task that completes with the number of bytes sent.
+
+    */
+    open func SendToAsync(buffer : dotnet.System.ArraySegment_1<Swift.UInt8>, socketFlags : dotnet.System.Net.Sockets.SocketFlags, remoteEP : dotnet.System.Net.EndPoint) async throws -> Swift.Int32 {
         var __thrown : NullableHandle = nil;
         let __return = System_Net_Sockets_Socket_System_Threading_Tasks_Task_i32___SendToAsync_0__3__System_ArraySegment_u8__SocketFlags_EndPoint(&__thrown, self.get_handle(), buffer.get_handle(), socketFlags.get_value(), remoteEP.get_handle());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task_1(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task_1(hndl: __return).ToAsync();
         }
     }
     // System.Threading.Tasks.ValueTask<System.Int32> SendToAsync(System.ReadOnlyMemory<System.Byte>, System.Net.Sockets.SocketFlags, System.Net.EndPoint, System.Threading.CancellationToken)
 // docid: M:System.Net.Sockets.Socket.SendToAsync(System.ReadOnlyMemory{System.Byte},System.Net.Sockets.SocketFlags,System.Net.EndPoint,System.Threading.CancellationToken)
+    /**
+    Sends data to the specified remote host.
+
+    - Parameter buffer: The buffer for the data to send.
+    - Parameter socketFlags: A bitwise combination of SocketFlags values that will be used when sending the data.
+    - Parameter remoteEP: The remote host to which to send the data.
+    - Parameter cancellationToken: A cancellation token that can be used to cancel the asynchronous operation.
+    - Returns: An asynchronous task that completes with the number of bytes sent.
+
+    */
     open func SendToAsync(buffer : dotnet.System.ReadOnlyMemory_1<Swift.UInt8>, socketFlags : dotnet.System.Net.Sockets.SocketFlags, remoteEP : dotnet.System.Net.EndPoint, cancellationToken : dotnet.System.Threading.CancellationToken = System.Threading.CancellationToken.None) throws -> dotnet.System.Threading.Tasks.ValueTask_1<Swift.Int32> {
         var __thrown : NullableHandle = nil;
         let __return = System_Net_Sockets_Socket_System_Threading_Tasks_ValueTask_i32___SendToAsync_0__4__System_ReadOnlyMemory_u8__SocketFlags_EndPoint_CancellationToken(&__thrown, self.get_handle(), buffer.get_handle(), socketFlags.get_value(), remoteEP.get_handle(), cancellationToken.get_handle());
@@ -5230,8 +5501,8 @@ open class Socket
 
     - Parameter e: The  object to use for this asynchronous socket operation.
     - Returns: 
-         if the I/O operation is pending. The  event on the  parameter will be raised upon completion of the operation.  
-  
+         if the I/O operation is pending. The  event on the  parameter will be raised upon completion of the operation.
+
   if the I/O operation completed synchronously. In this case, The  event on the  parameter will not be raised and the  object passed as a parameter may be examined immediately after the method call returns to retrieve the result of the operation.
 
     */
@@ -5247,7 +5518,7 @@ open class Socket
     // void SetIPProtectionLevel(System.Net.Sockets.IPProtectionLevel)
 // docid: M:System.Net.Sockets.Socket.SetIPProtectionLevel(System.Net.Sockets.IPProtectionLevel)
     /**
-    Set the IP protection level on a socket.
+    Sets the IP protection level on a socket.
 
     - Parameter level: The IP protection level to set on this socket.
     */
@@ -5874,7 +6145,7 @@ open class Socket
         }
     }
     /**
-    Gets or sets a  value that specifies whether the  allows Internet Protocol (IP) datagrams to be fragmented.
+    Gets or sets a value that specifies whether the  allows Internet Protocol (IP) datagrams to be fragmented.
 
     */
     open var DontFragment : Bool {
@@ -5886,7 +6157,7 @@ open class Socket
         }
     }
     /**
-    Gets or sets a  value that specifies whether the  is a dual-mode socket used for both IPv4 and IPv6.
+    Gets or sets a value that specifies whether the  is a dual-mode socket used for both IPv4 and IPv6.
 
     */
     open var DualMode : Bool {
@@ -6126,7 +6397,7 @@ open class Socket
         }
     }
     /**
-    Specifies whether the socket should only use Overlapped I/O mode.
+    Gets or sets a value that specifies whether the socket should only use Overlapped I/O mode. On .NET 5+ (including .NET Core versions), the value is always .
 
     */
     open var UseOnlyOverlappedIO : Bool {
@@ -6152,6 +6423,9 @@ open class SocketAsyncEventArgs
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Net_Sockets_SocketAsyncEventArgs_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -6615,7 +6889,7 @@ open class SocketAsyncEventArgs
         }
     }
     // delegate closure overload
-    open func add_Completed(value : @escaping (Optional<dotnet.System.Object>, Optional<dotnet.System.Net.Sockets.SocketAsyncEventArgs>) throws -> Void) throws {
+    open func add_Completed(value : @escaping (Optional<dotnet.System.Object>, dotnet.System.Net.Sockets.SocketAsyncEventArgs) throws -> Void) throws {
         let del_value = try dotnet.System.EventHandler_1<dotnet.System.Net.Sockets.SocketAsyncEventArgs>(value);
         return try add_Completed(value: del_value);
     }
@@ -6631,7 +6905,7 @@ open class SocketAsyncEventArgs
         }
     }
     // delegate closure overload
-    open func remove_Completed(value : @escaping (Optional<dotnet.System.Object>, Optional<dotnet.System.Net.Sockets.SocketAsyncEventArgs>) throws -> Void) throws {
+    open func remove_Completed(value : @escaping (Optional<dotnet.System.Object>, dotnet.System.Net.Sockets.SocketAsyncEventArgs) throws -> Void) throws {
         let del_value = try dotnet.System.EventHandler_1<dotnet.System.Net.Sockets.SocketAsyncEventArgs>(value);
         return try remove_Completed(value: del_value);
     }
@@ -7096,6 +7370,9 @@ public final class SocketInformation
 {
     public class override func get_type_handle() -> TypeHandle {
         return System_Net_Sockets_SocketInformation_get_type_handle();
+    }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -7884,6 +8161,9 @@ public final class SocketReceiveFromResult
     public class override func get_type_handle() -> TypeHandle {
         return System_Net_Sockets_SocketReceiveFromResult_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     public override init() {
@@ -7905,6 +8185,9 @@ public final class SocketReceiveMessageFromResult
 {
     public class override func get_type_handle() -> TypeHandle {
         return System_Net_Sockets_SocketReceiveMessageFromResult_get_type_handle();
+    }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -7977,13 +8260,13 @@ public struct SocketTaskExtensions {
     - Returns: An asynchronous task that completes with a  to handle communication with the remote host.
 
     */
-    public static func AcceptAsync(socket : dotnet.System.Net.Sockets.Socket) throws -> dotnet.System.Threading.Tasks.Task_1<dotnet.System.Net.Sockets.Socket> {
+    public static func AcceptAsync(socket : dotnet.System.Net.Sockets.Socket) async throws -> dotnet.System.Net.Sockets.Socket {
         var __thrown : NullableHandle = nil;
         let __return = System_Net_Sockets_SocketTaskExtensions_System_Threading_Tasks_Task_System_Net_Sockets_Socket___AcceptAsync_0__1__Socket(&__thrown, socket.get_handle());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task_1(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task_1(hndl: __return).ToAsync();
         }
     }
     // System.Threading.Tasks.Task<System.Net.Sockets.Socket> AcceptAsync(System.Net.Sockets.Socket, System.Net.Sockets.Socket)
@@ -7996,13 +8279,13 @@ public struct SocketTaskExtensions {
     - Returns: An asynchronous task that completes with a  to handle communication with the remote host.
 
     */
-    public static func AcceptAsync(socket : dotnet.System.Net.Sockets.Socket, acceptSocket : Optional<dotnet.System.Net.Sockets.Socket>) throws -> dotnet.System.Threading.Tasks.Task_1<dotnet.System.Net.Sockets.Socket> {
+    public static func AcceptAsync(socket : dotnet.System.Net.Sockets.Socket, acceptSocket : Optional<dotnet.System.Net.Sockets.Socket>) async throws -> dotnet.System.Net.Sockets.Socket {
         var __thrown : NullableHandle = nil;
         let __return = System_Net_Sockets_SocketTaskExtensions_System_Threading_Tasks_Task_System_Net_Sockets_Socket___AcceptAsync_0__2__Socket_Socket(&__thrown, socket.get_handle(), acceptSocket?.get_handle() ?? nil);
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task_1(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task_1(hndl: __return).ToAsync();
         }
     }
     // System.Threading.Tasks.Task ConnectAsync(System.Net.Sockets.Socket, System.Net.EndPoint)
@@ -8015,13 +8298,13 @@ public struct SocketTaskExtensions {
     - Returns: An asynchronous Task.
 
     */
-    public static func ConnectAsync(socket : dotnet.System.Net.Sockets.Socket, remoteEP : dotnet.System.Net.EndPoint) throws -> dotnet.System.Threading.Tasks.Task {
+    public static func ConnectAsync(socket : dotnet.System.Net.Sockets.Socket, remoteEP : dotnet.System.Net.EndPoint) async throws {
         var __thrown : NullableHandle = nil;
         let __return = System_Net_Sockets_SocketTaskExtensions_Task__ConnectAsync_0__2__Socket_EndPoint(&__thrown, socket.get_handle(), remoteEP.get_handle());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task(hndl: __return).ToAsync();
         }
     }
     // System.Threading.Tasks.ValueTask ConnectAsync(System.Net.Sockets.Socket, System.Net.EndPoint, System.Threading.CancellationToken)
@@ -8055,13 +8338,13 @@ public struct SocketTaskExtensions {
     - Returns: A task that represents an asynchronous connection operation.
 
     */
-    public static func ConnectAsync(socket : dotnet.System.Net.Sockets.Socket, address : dotnet.System.Net.IPAddress, port : Swift.Int32) throws -> dotnet.System.Threading.Tasks.Task {
+    public static func ConnectAsync(socket : dotnet.System.Net.Sockets.Socket, address : dotnet.System.Net.IPAddress, port : Swift.Int32) async throws {
         var __thrown : NullableHandle = nil;
         let __return = System_Net_Sockets_SocketTaskExtensions_Task__ConnectAsync_0__3__Socket_IPAddress_i32(&__thrown, socket.get_handle(), address.get_handle(), port);
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task(hndl: __return).ToAsync();
         }
     }
     // System.Threading.Tasks.ValueTask ConnectAsync(System.Net.Sockets.Socket, System.Net.IPAddress, System.Int32, System.Threading.CancellationToken)
@@ -8096,13 +8379,13 @@ public struct SocketTaskExtensions {
     - Returns: A task that represents the asynchronous connect operation.
 
     */
-    public static func ConnectAsync(socket : dotnet.System.Net.Sockets.Socket, addresses : dotnet.System_Arr<dotnet.System.Net.IPAddress>, port : Swift.Int32) throws -> dotnet.System.Threading.Tasks.Task {
+    public static func ConnectAsync(socket : dotnet.System.Net.Sockets.Socket, addresses : dotnet.System_Arr<dotnet.System.Net.IPAddress>, port : Swift.Int32) async throws {
         var __thrown : NullableHandle = nil;
         let __return = System_Net_Sockets_SocketTaskExtensions_Task__ConnectAsync_0__3__Socket_IPAddressArray_i32(&__thrown, socket.get_handle(), addresses.get_handle(), port);
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task(hndl: __return).ToAsync();
         }
     }
     // System.Threading.Tasks.ValueTask ConnectAsync(System.Net.Sockets.Socket, System.Net.IPAddress[], System.Int32, System.Threading.CancellationToken)
@@ -8137,13 +8420,13 @@ public struct SocketTaskExtensions {
     - Returns: An asynchronous task.
 
     */
-    public static func ConnectAsync(socket : dotnet.System.Net.Sockets.Socket, host : dotnet.System.String, port : Swift.Int32) throws -> dotnet.System.Threading.Tasks.Task {
+    public static func ConnectAsync(socket : dotnet.System.Net.Sockets.Socket, host : dotnet.System.String, port : Swift.Int32) async throws {
         var __thrown : NullableHandle = nil;
         let __return = System_Net_Sockets_SocketTaskExtensions_Task__ConnectAsync_0__3__Socket_String_i32(&__thrown, socket.get_handle(), host.get_handle(), port);
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task(hndl: __return).ToAsync();
         }
     }
     // System.Threading.Tasks.ValueTask ConnectAsync(System.Net.Sockets.Socket, System.String, System.Int32, System.Threading.CancellationToken)
@@ -8178,13 +8461,13 @@ public struct SocketTaskExtensions {
     - Returns: A task that represents the asynchronous receive operation. The value of the  parameter contains the number of bytes received.
 
     */
-    public static func ReceiveAsync(socket : dotnet.System.Net.Sockets.Socket, buffer : dotnet.System.ArraySegment_1<Swift.UInt8>, socketFlags : dotnet.System.Net.Sockets.SocketFlags) throws -> dotnet.System.Threading.Tasks.Task_1<Swift.Int32> {
+    public static func ReceiveAsync(socket : dotnet.System.Net.Sockets.Socket, buffer : dotnet.System.ArraySegment_1<Swift.UInt8>, socketFlags : dotnet.System.Net.Sockets.SocketFlags) async throws -> Swift.Int32 {
         var __thrown : NullableHandle = nil;
         let __return = System_Net_Sockets_SocketTaskExtensions_System_Threading_Tasks_Task_i32___ReceiveAsync_0__3__Socket_System_ArraySegment_u8__SocketFlags(&__thrown, socket.get_handle(), buffer.get_handle(), socketFlags.get_value());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task_1(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task_1(hndl: __return).ToAsync();
         }
     }
     // System.Threading.Tasks.Task<System.Int32> ReceiveAsync(System.Net.Sockets.Socket, System.Collections.Generic.IList<System.ArraySegment<System.Byte>>, System.Net.Sockets.SocketFlags)
@@ -8198,13 +8481,13 @@ public struct SocketTaskExtensions {
     - Returns: A task that represents the asynchronous receive operation. The value of the  parameter contains the number of bytes received.
 
     */
-    public static func ReceiveAsync(socket : dotnet.System.Net.Sockets.Socket, buffers : dotnet.System.Collections.Generic.IList_1<dotnet.System.ArraySegment_1<Swift.UInt8>>, socketFlags : dotnet.System.Net.Sockets.SocketFlags) throws -> dotnet.System.Threading.Tasks.Task_1<Swift.Int32> {
+    public static func ReceiveAsync(socket : dotnet.System.Net.Sockets.Socket, buffers : dotnet.System.Collections.Generic.IList_1<dotnet.System.ArraySegment_1<Swift.UInt8>>, socketFlags : dotnet.System.Net.Sockets.SocketFlags) async throws -> Swift.Int32 {
         var __thrown : NullableHandle = nil;
         let __return = System_Net_Sockets_SocketTaskExtensions_System_Threading_Tasks_Task_i32___ReceiveAsync_0__3__Socket_System_Collections_Generic_IList_System_System_ArraySegment_u8___SocketFlags(&__thrown, socket.get_handle(), buffers.get_handle(), socketFlags.get_value());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task_1(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task_1(hndl: __return).ToAsync();
         }
     }
     // System.Threading.Tasks.ValueTask<System.Int32> ReceiveAsync(System.Net.Sockets.Socket, System.Memory<System.Byte>, System.Net.Sockets.SocketFlags, System.Threading.CancellationToken)
@@ -8240,13 +8523,13 @@ public struct SocketTaskExtensions {
     - Returns: An asynchronous Task that completes with a SocketReceiveFromResult struct.
 
     */
-    public static func ReceiveFromAsync(socket : dotnet.System.Net.Sockets.Socket, buffer : dotnet.System.ArraySegment_1<Swift.UInt8>, socketFlags : dotnet.System.Net.Sockets.SocketFlags, remoteEndPoint : dotnet.System.Net.EndPoint) throws -> dotnet.System.Threading.Tasks.Task_1<dotnet.System.Net.Sockets.SocketReceiveFromResult> {
+    public static func ReceiveFromAsync(socket : dotnet.System.Net.Sockets.Socket, buffer : dotnet.System.ArraySegment_1<Swift.UInt8>, socketFlags : dotnet.System.Net.Sockets.SocketFlags, remoteEndPoint : dotnet.System.Net.EndPoint) async throws -> dotnet.System.Net.Sockets.SocketReceiveFromResult {
         var __thrown : NullableHandle = nil;
         let __return = System_Net_Sockets_SocketTaskExtensions_System_Threading_Tasks_Task_System_Net_Sockets_SocketReceiveFromResult___ReceiveFromAsync_0__4__Socket_System_ArraySegment_u8__SocketFlags_EndPoint(&__thrown, socket.get_handle(), buffer.get_handle(), socketFlags.get_value(), remoteEndPoint.get_handle());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task_1(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task_1(hndl: __return).ToAsync();
         }
     }
     // System.Threading.Tasks.Task<System.Net.Sockets.SocketReceiveMessageFromResult> ReceiveMessageFromAsync(System.Net.Sockets.Socket, System.ArraySegment<System.Byte>, System.Net.Sockets.SocketFlags, System.Net.EndPoint)
@@ -8261,13 +8544,13 @@ public struct SocketTaskExtensions {
     - Returns: An asynchronous Task that completes with a  struct.
 
     */
-    public static func ReceiveMessageFromAsync(socket : dotnet.System.Net.Sockets.Socket, buffer : dotnet.System.ArraySegment_1<Swift.UInt8>, socketFlags : dotnet.System.Net.Sockets.SocketFlags, remoteEndPoint : dotnet.System.Net.EndPoint) throws -> dotnet.System.Threading.Tasks.Task_1<dotnet.System.Net.Sockets.SocketReceiveMessageFromResult> {
+    public static func ReceiveMessageFromAsync(socket : dotnet.System.Net.Sockets.Socket, buffer : dotnet.System.ArraySegment_1<Swift.UInt8>, socketFlags : dotnet.System.Net.Sockets.SocketFlags, remoteEndPoint : dotnet.System.Net.EndPoint) async throws -> dotnet.System.Net.Sockets.SocketReceiveMessageFromResult {
         var __thrown : NullableHandle = nil;
         let __return = System_Net_Sockets_SocketTaskExtensions_System_Threading_Tasks_Task_System_Net_Sockets_SocketReceiveMessageFromResult___ReceiveMessageFromAsync_0__4__Socket_System_ArraySegment_u8__SocketFlags_EndPoint(&__thrown, socket.get_handle(), buffer.get_handle(), socketFlags.get_value(), remoteEndPoint.get_handle());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task_1(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task_1(hndl: __return).ToAsync();
         }
     }
     // System.Threading.Tasks.Task<System.Int32> SendAsync(System.Net.Sockets.Socket, System.ArraySegment<System.Byte>, System.Net.Sockets.SocketFlags)
@@ -8281,13 +8564,13 @@ public struct SocketTaskExtensions {
     - Returns: An asynchronous task that completes with number of bytes sent to the socket if the operation was successful. Otherwise, the task will complete with an invalid socket error.
 
     */
-    public static func SendAsync(socket : dotnet.System.Net.Sockets.Socket, buffer : dotnet.System.ArraySegment_1<Swift.UInt8>, socketFlags : dotnet.System.Net.Sockets.SocketFlags) throws -> dotnet.System.Threading.Tasks.Task_1<Swift.Int32> {
+    public static func SendAsync(socket : dotnet.System.Net.Sockets.Socket, buffer : dotnet.System.ArraySegment_1<Swift.UInt8>, socketFlags : dotnet.System.Net.Sockets.SocketFlags) async throws -> Swift.Int32 {
         var __thrown : NullableHandle = nil;
         let __return = System_Net_Sockets_SocketTaskExtensions_System_Threading_Tasks_Task_i32___SendAsync_0__3__Socket_System_ArraySegment_u8__SocketFlags(&__thrown, socket.get_handle(), buffer.get_handle(), socketFlags.get_value());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task_1(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task_1(hndl: __return).ToAsync();
         }
     }
     // System.Threading.Tasks.Task<System.Int32> SendAsync(System.Net.Sockets.Socket, System.Collections.Generic.IList<System.ArraySegment<System.Byte>>, System.Net.Sockets.SocketFlags)
@@ -8301,13 +8584,13 @@ public struct SocketTaskExtensions {
     - Returns: An asynchronous task that completes with number of bytes sent to the socket if the operation was successful. Otherwise, the task will complete with an invalid socket error.
 
     */
-    public static func SendAsync(socket : dotnet.System.Net.Sockets.Socket, buffers : dotnet.System.Collections.Generic.IList_1<dotnet.System.ArraySegment_1<Swift.UInt8>>, socketFlags : dotnet.System.Net.Sockets.SocketFlags) throws -> dotnet.System.Threading.Tasks.Task_1<Swift.Int32> {
+    public static func SendAsync(socket : dotnet.System.Net.Sockets.Socket, buffers : dotnet.System.Collections.Generic.IList_1<dotnet.System.ArraySegment_1<Swift.UInt8>>, socketFlags : dotnet.System.Net.Sockets.SocketFlags) async throws -> Swift.Int32 {
         var __thrown : NullableHandle = nil;
         let __return = System_Net_Sockets_SocketTaskExtensions_System_Threading_Tasks_Task_i32___SendAsync_0__3__Socket_System_Collections_Generic_IList_System_System_ArraySegment_u8___SocketFlags(&__thrown, socket.get_handle(), buffers.get_handle(), socketFlags.get_value());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task_1(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task_1(hndl: __return).ToAsync();
         }
     }
     // System.Threading.Tasks.ValueTask<System.Int32> SendAsync(System.Net.Sockets.Socket, System.ReadOnlyMemory<System.Byte>, System.Net.Sockets.SocketFlags, System.Threading.CancellationToken)
@@ -8343,13 +8626,13 @@ public struct SocketTaskExtensions {
     - Returns: An asynchronous task that completes with number of bytes sent if the operation was successful. Otherwise, the task will complete with an invalid socket error.
 
     */
-    public static func SendToAsync(socket : dotnet.System.Net.Sockets.Socket, buffer : dotnet.System.ArraySegment_1<Swift.UInt8>, socketFlags : dotnet.System.Net.Sockets.SocketFlags, remoteEP : dotnet.System.Net.EndPoint) throws -> dotnet.System.Threading.Tasks.Task_1<Swift.Int32> {
+    public static func SendToAsync(socket : dotnet.System.Net.Sockets.Socket, buffer : dotnet.System.ArraySegment_1<Swift.UInt8>, socketFlags : dotnet.System.Net.Sockets.SocketFlags, remoteEP : dotnet.System.Net.EndPoint) async throws -> Swift.Int32 {
         var __thrown : NullableHandle = nil;
         let __return = System_Net_Sockets_SocketTaskExtensions_System_Threading_Tasks_Task_i32___SendToAsync_0__4__Socket_System_ArraySegment_u8__SocketFlags_EndPoint(&__thrown, socket.get_handle(), buffer.get_handle(), socketFlags.get_value(), remoteEP.get_handle());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task_1(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task_1(hndl: __return).ToAsync();
         }
     }
 } // SocketTaskExtensions
@@ -8451,6 +8734,9 @@ open class TcpClient
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Net_Sockets_TcpClient_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -8688,13 +8974,13 @@ open class TcpClient
     - Returns: The task object representing the asynchronous operation.
 
     */
-    open func ConnectAsync(address : dotnet.System.Net.IPAddress, port : Swift.Int32) throws -> dotnet.System.Threading.Tasks.Task {
+    open func ConnectAsync(address : dotnet.System.Net.IPAddress, port : Swift.Int32) async throws {
         var __thrown : NullableHandle = nil;
         let __return = System_Net_Sockets_TcpClient_Task__ConnectAsync_0__2__IPAddress_i32(&__thrown, self.get_handle(), address.get_handle(), port);
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task(hndl: __return).ToAsync();
         }
     }
     // System.Threading.Tasks.Task ConnectAsync(System.Net.IPAddress[], System.Int32)
@@ -8707,13 +8993,13 @@ open class TcpClient
     - Returns: The task object representing the asynchronous operation.
 
     */
-    open func ConnectAsync(addresses : dotnet.System_Arr<dotnet.System.Net.IPAddress>, port : Swift.Int32) throws -> dotnet.System.Threading.Tasks.Task {
+    open func ConnectAsync(addresses : dotnet.System_Arr<dotnet.System.Net.IPAddress>, port : Swift.Int32) async throws {
         var __thrown : NullableHandle = nil;
         let __return = System_Net_Sockets_TcpClient_Task__ConnectAsync_0__2__IPAddressArray_i32(&__thrown, self.get_handle(), addresses.get_handle(), port);
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task(hndl: __return).ToAsync();
         }
     }
     // System.Threading.Tasks.Task ConnectAsync(System.String, System.Int32)
@@ -8726,24 +9012,31 @@ open class TcpClient
     - Returns: The task object representing the asynchronous operation.
 
     */
-    open func ConnectAsync(host : dotnet.System.String, port : Swift.Int32) throws -> dotnet.System.Threading.Tasks.Task {
+    open func ConnectAsync(host : dotnet.System.String, port : Swift.Int32) async throws {
         var __thrown : NullableHandle = nil;
         let __return = System_Net_Sockets_TcpClient_Task__ConnectAsync_0__2__String_i32(&__thrown, self.get_handle(), host.get_handle(), port);
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task(hndl: __return).ToAsync();
         }
     }
     // System.Threading.Tasks.Task ConnectAsync(System.Net.IPEndPoint)
 // docid: M:System.Net.Sockets.TcpClient.ConnectAsync(System.Net.IPEndPoint)
-    open func ConnectAsync(remoteEP : dotnet.System.Net.IPEndPoint) throws -> dotnet.System.Threading.Tasks.Task {
+    /**
+    Connects the client to a remote TCP host using the specified endpoint as an asynchronous operation.
+
+    - Parameter remoteEP: The  to which you intend to connect.
+    - Returns: A task representing the asynchronous operation.
+
+    */
+    open func ConnectAsync(remoteEP : dotnet.System.Net.IPEndPoint) async throws {
         var __thrown : NullableHandle = nil;
         let __return = System_Net_Sockets_TcpClient_Task__ConnectAsync_0__1__IPEndPoint(&__thrown, self.get_handle(), remoteEP.get_handle());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task(hndl: __return).ToAsync();
         }
     }
     // System.Threading.Tasks.ValueTask ConnectAsync(System.Net.IPAddress, System.Int32, System.Threading.CancellationToken)
@@ -8808,6 +9101,14 @@ open class TcpClient
     }
     // System.Threading.Tasks.ValueTask ConnectAsync(System.Net.IPEndPoint, System.Threading.CancellationToken)
 // docid: M:System.Net.Sockets.TcpClient.ConnectAsync(System.Net.IPEndPoint,System.Threading.CancellationToken)
+    /**
+    Connects the client to a remote TCP host using the specified endpoint as an asynchronous operation.
+
+    - Parameter remoteEP: The  to which you intend to connect.
+    - Parameter cancellationToken: A cancellation token used to propagate notification that this operation should be canceled.
+    - Returns: A task representing the asynchronous operation.
+
+    */
     open func ConnectAsync(remoteEP : dotnet.System.Net.IPEndPoint, cancellationToken : dotnet.System.Threading.CancellationToken) throws -> dotnet.System.Threading.Tasks.ValueTask {
         var __thrown : NullableHandle = nil;
         let __return = System_Net_Sockets_TcpClient_ValueTask__ConnectAsync_0__2__IPEndPoint_CancellationToken(&__thrown, self.get_handle(), remoteEP.get_handle(), cancellationToken.get_handle());
@@ -9196,6 +9497,9 @@ open class TcpListener
     open class override func get_type_handle() -> TypeHandle {
         return System_Net_Sockets_TcpListener_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor(System.Int32)
@@ -9272,17 +9576,24 @@ open class TcpListener
     - Returns: The task object representing the asynchronous operation. The  property on the task object returns a  used to send and receive data.
 
     */
-    open func AcceptSocketAsync() throws -> dotnet.System.Threading.Tasks.Task_1<dotnet.System.Net.Sockets.Socket> {
+    open func AcceptSocketAsync() async throws -> dotnet.System.Net.Sockets.Socket {
         var __thrown : NullableHandle = nil;
         let __return = System_Net_Sockets_TcpListener_System_Threading_Tasks_Task_System_Net_Sockets_Socket___AcceptSocketAsync_0__0(&__thrown, self.get_handle());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task_1(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task_1(hndl: __return).ToAsync();
         }
     }
     // System.Threading.Tasks.ValueTask<System.Net.Sockets.Socket> AcceptSocketAsync(System.Threading.CancellationToken)
 // docid: M:System.Net.Sockets.TcpListener.AcceptSocketAsync(System.Threading.CancellationToken)
+    /**
+    Accepts a pending connection request as a cancellable asynchronous operation.
+
+    - Parameter cancellationToken: A cancellation token that can be used to cancel the asynchronous operation.
+    - Returns: The task object representing the asynchronous operation. The  property on the task object returns a  used to send and receive data.
+
+    */
     open func AcceptSocketAsync(cancellationToken : dotnet.System.Threading.CancellationToken) throws -> dotnet.System.Threading.Tasks.ValueTask_1<dotnet.System.Net.Sockets.Socket> {
         var __thrown : NullableHandle = nil;
         let __return = System_Net_Sockets_TcpListener_System_Threading_Tasks_ValueTask_System_Net_Sockets_Socket___AcceptSocketAsync_0__1__CancellationToken(&__thrown, self.get_handle(), cancellationToken.get_handle());
@@ -9317,17 +9628,24 @@ open class TcpListener
     - Returns: The task object representing the asynchronous operation. The  property on the task object returns a  used to send and receive data.
 
     */
-    open func AcceptTcpClientAsync() throws -> dotnet.System.Threading.Tasks.Task_1<dotnet.System.Net.Sockets.TcpClient> {
+    open func AcceptTcpClientAsync() async throws -> dotnet.System.Net.Sockets.TcpClient {
         var __thrown : NullableHandle = nil;
         let __return = System_Net_Sockets_TcpListener_System_Threading_Tasks_Task_System_Net_Sockets_TcpClient___AcceptTcpClientAsync_0__0(&__thrown, self.get_handle());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task_1(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task_1(hndl: __return).ToAsync();
         }
     }
     // System.Threading.Tasks.ValueTask<System.Net.Sockets.TcpClient> AcceptTcpClientAsync(System.Threading.CancellationToken)
 // docid: M:System.Net.Sockets.TcpListener.AcceptTcpClientAsync(System.Threading.CancellationToken)
+    /**
+    Accepts a pending connection request as a cancellable asynchronous operation.
+
+    - Parameter cancellationToken: A cancellation token that can be used to cancel the asynchronous operation
+    - Returns: The task object representing the asynchronous operation. The  property on the task object returns a  used to send and receive data.
+
+    */
     open func AcceptTcpClientAsync(cancellationToken : dotnet.System.Threading.CancellationToken) throws -> dotnet.System.Threading.Tasks.ValueTask_1<dotnet.System.Net.Sockets.TcpClient> {
         var __thrown : NullableHandle = nil;
         let __return = System_Net_Sockets_TcpListener_System_Threading_Tasks_ValueTask_System_Net_Sockets_TcpClient___AcceptTcpClientAsync_0__1__CancellationToken(&__thrown, self.get_handle(), cancellationToken.get_handle());
@@ -9697,6 +10015,9 @@ open class UdpClient
     open class override func get_type_handle() -> TypeHandle {
         return System_Net_Sockets_UdpClient_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor()
@@ -10040,11 +10361,12 @@ open class UdpClient
     - Returns: If successful, an array of bytes that contains datagram data.
 
     */
-    open func EndReceive(asyncResult : dotnet.System.IAsyncResult, remoteEP : inout dotnet.System.Net.IPEndPoint) throws -> dotnet.System_Arr<Swift.UInt8> {
+    open func EndReceive(asyncResult : dotnet.System.IAsyncResult, remoteEP : inout Optional<dotnet.System.Net.IPEndPoint>) throws -> dotnet.System_Arr<Swift.UInt8> {
         var __thrown : NullableHandle = nil;
-            var _tmp_ref_remoteEP = remoteEP.get_handle();
+            var _tmp_ref_remoteEP = (remoteEP != nil) ? (remoteEP!.get_handle()) : nil;
         let __return = System_Net_Sockets_UdpClient_u8Array__EndReceive_0__2__IAsyncResult_refIPEndPoint(&__thrown, self.get_handle(), asyncResult.get_handle(), &_tmp_ref_remoteEP);
-        let _tmp2_remoteEP = dotnet.System.Net.IPEndPoint(hndl: _tmp_ref_remoteEP);
+        let __h__tmp2_remoteEP = _tmp_ref_remoteEP;
+        let _tmp2_remoteEP = (__h__tmp2_remoteEP != nil) ? dotnet.System.Net.IPEndPoint(hndl: __h__tmp2_remoteEP!) : nil;
             remoteEP = _tmp2_remoteEP;
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
@@ -10166,17 +10488,24 @@ open class UdpClient
     - Returns: The task object representing the asynchronous operation.
 
     */
-    open func ReceiveAsync() throws -> dotnet.System.Threading.Tasks.Task_1<dotnet.System.Net.Sockets.UdpReceiveResult> {
+    open func ReceiveAsync() async throws -> dotnet.System.Net.Sockets.UdpReceiveResult {
         var __thrown : NullableHandle = nil;
         let __return = System_Net_Sockets_UdpClient_System_Threading_Tasks_Task_System_Net_Sockets_UdpReceiveResult___ReceiveAsync_0__0(&__thrown, self.get_handle());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task_1(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task_1(hndl: __return).ToAsync();
         }
     }
     // System.Threading.Tasks.ValueTask<System.Net.Sockets.UdpReceiveResult> ReceiveAsync(System.Threading.CancellationToken)
 // docid: M:System.Net.Sockets.UdpClient.ReceiveAsync(System.Threading.CancellationToken)
+    /**
+    Returns a UDP datagram asynchronously that was sent by a remote host.
+
+    - Parameter cancellationToken: The token to monitor for cancellation requests.
+    - Returns: A  representing the asynchronous operation.
+
+    */
     open func ReceiveAsync(cancellationToken : dotnet.System.Threading.CancellationToken) throws -> dotnet.System.Threading.Tasks.ValueTask_1<dotnet.System.Net.Sockets.UdpReceiveResult> {
         var __thrown : NullableHandle = nil;
         let __return = System_Net_Sockets_UdpClient_System_Threading_Tasks_ValueTask_System_Net_Sockets_UdpReceiveResult___ReceiveAsync_0__1__CancellationToken(&__thrown, self.get_handle(), cancellationToken.get_handle());
@@ -10259,17 +10588,25 @@ open class UdpClient
     - Returns: Returns .
 
     */
-    open func SendAsync(datagram : dotnet.System_Arr<Swift.UInt8>, bytes : Swift.Int32) throws -> dotnet.System.Threading.Tasks.Task_1<Swift.Int32> {
+    open func SendAsync(datagram : dotnet.System_Arr<Swift.UInt8>, bytes : Swift.Int32) async throws -> Swift.Int32 {
         var __thrown : NullableHandle = nil;
         let __return = System_Net_Sockets_UdpClient_System_Threading_Tasks_Task_i32___SendAsync_0__2__u8Array_i32(&__thrown, self.get_handle(), datagram.get_handle(), bytes);
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task_1(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task_1(hndl: __return).ToAsync();
         }
     }
     // System.Threading.Tasks.ValueTask<System.Int32> SendAsync(System.ReadOnlyMemory<System.Byte>, System.Threading.CancellationToken)
 // docid: M:System.Net.Sockets.UdpClient.SendAsync(System.ReadOnlyMemory{System.Byte},System.Threading.CancellationToken)
+    /**
+    Sends a UDP datagram asynchronously to a remote host.
+
+    - Parameter datagram: An  of Type  that specifies the UDP datagram that you intend to send.
+    - Parameter cancellationToken: The token to monitor for cancellation requests. The default value is None.
+    - Returns: A  that represents the asynchronous send operation. The value of its Result property contains the number of bytes sent.
+
+    */
     open func SendAsync(datagram : dotnet.System.ReadOnlyMemory_1<Swift.UInt8>, cancellationToken : dotnet.System.Threading.CancellationToken = System.Threading.CancellationToken.None) throws -> dotnet.System.Threading.Tasks.ValueTask_1<Swift.Int32> {
         var __thrown : NullableHandle = nil;
         let __return = System_Net_Sockets_UdpClient_System_Threading_Tasks_ValueTask_i32___SendAsync_0__2__System_ReadOnlyMemory_u8__CancellationToken(&__thrown, self.get_handle(), datagram.get_handle(), cancellationToken.get_handle());
@@ -10290,17 +10627,26 @@ open class UdpClient
     - Returns: Returns .
 
     */
-    open func SendAsync(datagram : dotnet.System_Arr<Swift.UInt8>, bytes : Swift.Int32, endPoint : Optional<dotnet.System.Net.IPEndPoint>) throws -> dotnet.System.Threading.Tasks.Task_1<Swift.Int32> {
+    open func SendAsync(datagram : dotnet.System_Arr<Swift.UInt8>, bytes : Swift.Int32, endPoint : Optional<dotnet.System.Net.IPEndPoint>) async throws -> Swift.Int32 {
         var __thrown : NullableHandle = nil;
         let __return = System_Net_Sockets_UdpClient_System_Threading_Tasks_Task_i32___SendAsync_0__3__u8Array_i32_IPEndPoint(&__thrown, self.get_handle(), datagram.get_handle(), bytes, endPoint?.get_handle() ?? nil);
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task_1(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task_1(hndl: __return).ToAsync();
         }
     }
     // System.Threading.Tasks.ValueTask<System.Int32> SendAsync(System.ReadOnlyMemory<System.Byte>, System.Net.IPEndPoint, System.Threading.CancellationToken)
 // docid: M:System.Net.Sockets.UdpClient.SendAsync(System.ReadOnlyMemory{System.Byte},System.Net.IPEndPoint,System.Threading.CancellationToken)
+    /**
+    Sends a UDP datagram asynchronously to a remote host.
+
+    - Parameter datagram: An  of Type  that specifies the UDP datagram that you intend to send.
+    - Parameter endPoint: An  that represents the host and port to which to send the datagram.
+    - Parameter cancellationToken: The token to monitor for cancellation requests. The default value is None.
+    - Returns: A  that represents the asynchronous send operation. The value of its Result property contains the number of bytes sent.
+
+    */
     open func SendAsync(datagram : dotnet.System.ReadOnlyMemory_1<Swift.UInt8>, endPoint : Optional<dotnet.System.Net.IPEndPoint>, cancellationToken : dotnet.System.Threading.CancellationToken = System.Threading.CancellationToken.None) throws -> dotnet.System.Threading.Tasks.ValueTask_1<Swift.Int32> {
         var __thrown : NullableHandle = nil;
         let __return = System_Net_Sockets_UdpClient_System_Threading_Tasks_ValueTask_i32___SendAsync_0__3__System_ReadOnlyMemory_u8__IPEndPoint_CancellationToken(&__thrown, self.get_handle(), datagram.get_handle(), endPoint?.get_handle() ?? nil, cancellationToken.get_handle());
@@ -10322,17 +10668,27 @@ open class UdpClient
     - Returns: Returns .
 
     */
-    open func SendAsync(datagram : dotnet.System_Arr<Swift.UInt8>, bytes : Swift.Int32, hostname : Optional<dotnet.System.String>, port : Swift.Int32) throws -> dotnet.System.Threading.Tasks.Task_1<Swift.Int32> {
+    open func SendAsync(datagram : dotnet.System_Arr<Swift.UInt8>, bytes : Swift.Int32, hostname : Optional<dotnet.System.String>, port : Swift.Int32) async throws -> Swift.Int32 {
         var __thrown : NullableHandle = nil;
         let __return = System_Net_Sockets_UdpClient_System_Threading_Tasks_Task_i32___SendAsync_0__4__u8Array_i32_String_i32(&__thrown, self.get_handle(), datagram.get_handle(), bytes, hostname?.get_handle() ?? nil, port);
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task_1(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task_1(hndl: __return).ToAsync();
         }
     }
     // System.Threading.Tasks.ValueTask<System.Int32> SendAsync(System.ReadOnlyMemory<System.Byte>, System.String, System.Int32, System.Threading.CancellationToken)
 // docid: M:System.Net.Sockets.UdpClient.SendAsync(System.ReadOnlyMemory{System.Byte},System.String,System.Int32,System.Threading.CancellationToken)
+    /**
+    Sends a UDP datagram asynchronously to a remote host.
+
+    - Parameter datagram: An  of Type  that specifies the UDP datagram that you intend to send.
+    - Parameter hostname: The name of the remote host to which you intend to send the datagram.
+    - Parameter port: The remote port number with which you intend to communicate.
+    - Parameter cancellationToken: The token to monitor for cancellation requests. The default value is None.
+    - Returns: A  that represents the asynchronous send operation. The value of its Result property contains the number of bytes sent.
+
+    */
     open func SendAsync(datagram : dotnet.System.ReadOnlyMemory_1<Swift.UInt8>, hostname : Optional<dotnet.System.String>, port : Swift.Int32, cancellationToken : dotnet.System.Threading.CancellationToken = System.Threading.CancellationToken.None) throws -> dotnet.System.Threading.Tasks.ValueTask_1<Swift.Int32> {
         var __thrown : NullableHandle = nil;
         let __return = System_Net_Sockets_UdpClient_System_Threading_Tasks_ValueTask_i32___SendAsync_0__4__System_ReadOnlyMemory_u8__String_i32_CancellationToken(&__thrown, self.get_handle(), datagram.get_handle(), hostname?.get_handle() ?? nil, port, cancellationToken.get_handle());
@@ -10582,6 +10938,9 @@ public final class UdpReceiveResult
     public class override func get_type_handle() -> TypeHandle {
         return System_Net_Sockets_UdpReceiveResult_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     /**
@@ -10754,6 +11113,9 @@ public final class UnixDomainSocketEndPoint
 {
     public class override func get_type_handle() -> TypeHandle {
         return System_Net_Sockets_UnixDomainSocketEndPoint_get_type_handle();
+    }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }

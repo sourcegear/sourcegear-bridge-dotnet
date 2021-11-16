@@ -63,6 +63,8 @@ struct {
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_Dynamic_DeleteMemberBinder_Type__get_ReturnType_0__0)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h);
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_Dynamic_DeleteMemberBinder_cast)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __h);
     TYP (* _Nonnull  _fp_System_Dynamic_DynamicMetaObject_get_type_handle)(void);
+    SG_HNDL_NONNULL (* _Nonnull  _fp_System_Dynamic_DynamicMetaObject_get_EmptyMetaObjects)(void);
+    void (* _Nonnull  _fp_System_Dynamic_DynamicMetaObject_set_EmptyMetaObjects)(SG_HNDL_NONNULL __v);
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_Dynamic_DynamicMetaObject_ctor_0__2__Expression_BindingRestrictions)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL expression, SG_HNDL_NONNULL restrictions);
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_Dynamic_DynamicMetaObject_ctor_0__3__Expression_BindingRestrictions_Object)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL expression, SG_HNDL_NONNULL restrictions, SG_HNDL_NONNULL value);
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_Dynamic_DynamicMetaObject_DynamicMetaObject__BindBinaryOperation_0__2__BinaryOperationBinder_DynamicMetaObject)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NONNULL binder, SG_HNDL_NONNULL arg);
@@ -97,18 +99,18 @@ struct {
     TYP (* _Nonnull  _fp_System_Dynamic_DynamicObject_get_type_handle)(void);
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_Dynamic_DynamicObject_System_Collections_Generic_IEnumerable_string___GetDynamicMemberNames_0__0)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h);
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_Dynamic_DynamicObject_DynamicMetaObject__GetMetaObject_0__1__Expression)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NONNULL parameter);
-    int32_t (* _Nonnull  _fp_System_Dynamic_DynamicObject_bool__TryBinaryOperation_0__3__BinaryOperationBinder_Object_outObject)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NONNULL binder, SG_HNDL_NONNULL arg, SG_HNDL_NONNULL* _Nonnull __result_out_ptr);
-    int32_t (* _Nonnull  _fp_System_Dynamic_DynamicObject_bool__TryConvert_0__2__ConvertBinder_outObject)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NONNULL binder, SG_HNDL_NONNULL* _Nonnull __result_out_ptr);
-    int32_t (* _Nonnull  _fp_System_Dynamic_DynamicObject_bool__TryCreateInstance_0__3__CreateInstanceBinder_ObjectArray_outObject)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NONNULL binder, SG_HNDL_NULLABLE args, SG_HNDL_NONNULL* _Nonnull __result_out_ptr);
+    int32_t (* _Nonnull  _fp_System_Dynamic_DynamicObject_bool__TryBinaryOperation_0__3__BinaryOperationBinder_Object_outObject)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NONNULL binder, SG_HNDL_NONNULL arg, SG_HNDL_NULLABLE* _Nonnull __result_out_ptr);
+    int32_t (* _Nonnull  _fp_System_Dynamic_DynamicObject_bool__TryConvert_0__2__ConvertBinder_outObject)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NONNULL binder, SG_HNDL_NULLABLE* _Nonnull __result_out_ptr);
+    int32_t (* _Nonnull  _fp_System_Dynamic_DynamicObject_bool__TryCreateInstance_0__3__CreateInstanceBinder_ObjectArray_outObject)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NONNULL binder, SG_HNDL_NULLABLE args, SG_HNDL_NULLABLE* _Nonnull __result_out_ptr);
     int32_t (* _Nonnull  _fp_System_Dynamic_DynamicObject_bool__TryDeleteIndex_0__2__DeleteIndexBinder_ObjectArray)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NONNULL binder, SG_HNDL_NONNULL indexes);
     int32_t (* _Nonnull  _fp_System_Dynamic_DynamicObject_bool__TryDeleteMember_0__1__DeleteMemberBinder)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NONNULL binder);
-    int32_t (* _Nonnull  _fp_System_Dynamic_DynamicObject_bool__TryGetIndex_0__3__GetIndexBinder_ObjectArray_outObject)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NONNULL binder, SG_HNDL_NONNULL indexes, SG_HNDL_NONNULL* _Nonnull __result_out_ptr);
-    int32_t (* _Nonnull  _fp_System_Dynamic_DynamicObject_bool__TryGetMember_0__2__GetMemberBinder_outObject)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NONNULL binder, SG_HNDL_NONNULL* _Nonnull __result_out_ptr);
-    int32_t (* _Nonnull  _fp_System_Dynamic_DynamicObject_bool__TryInvoke_0__3__InvokeBinder_ObjectArray_outObject)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NONNULL binder, SG_HNDL_NULLABLE args, SG_HNDL_NONNULL* _Nonnull __result_out_ptr);
-    int32_t (* _Nonnull  _fp_System_Dynamic_DynamicObject_bool__TryInvokeMember_0__3__InvokeMemberBinder_ObjectArray_outObject)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NONNULL binder, SG_HNDL_NULLABLE args, SG_HNDL_NONNULL* _Nonnull __result_out_ptr);
+    int32_t (* _Nonnull  _fp_System_Dynamic_DynamicObject_bool__TryGetIndex_0__3__GetIndexBinder_ObjectArray_outObject)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NONNULL binder, SG_HNDL_NONNULL indexes, SG_HNDL_NULLABLE* _Nonnull __result_out_ptr);
+    int32_t (* _Nonnull  _fp_System_Dynamic_DynamicObject_bool__TryGetMember_0__2__GetMemberBinder_outObject)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NONNULL binder, SG_HNDL_NULLABLE* _Nonnull __result_out_ptr);
+    int32_t (* _Nonnull  _fp_System_Dynamic_DynamicObject_bool__TryInvoke_0__3__InvokeBinder_ObjectArray_outObject)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NONNULL binder, SG_HNDL_NULLABLE args, SG_HNDL_NULLABLE* _Nonnull __result_out_ptr);
+    int32_t (* _Nonnull  _fp_System_Dynamic_DynamicObject_bool__TryInvokeMember_0__3__InvokeMemberBinder_ObjectArray_outObject)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NONNULL binder, SG_HNDL_NULLABLE args, SG_HNDL_NULLABLE* _Nonnull __result_out_ptr);
     int32_t (* _Nonnull  _fp_System_Dynamic_DynamicObject_bool__TrySetIndex_0__3__SetIndexBinder_ObjectArray_Object)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NONNULL binder, SG_HNDL_NONNULL indexes, SG_HNDL_NULLABLE value);
     int32_t (* _Nonnull  _fp_System_Dynamic_DynamicObject_bool__TrySetMember_0__2__SetMemberBinder_Object)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NONNULL binder, SG_HNDL_NULLABLE value);
-    int32_t (* _Nonnull  _fp_System_Dynamic_DynamicObject_bool__TryUnaryOperation_0__2__UnaryOperationBinder_outObject)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NONNULL binder, SG_HNDL_NONNULL* _Nonnull __result_out_ptr);
+    int32_t (* _Nonnull  _fp_System_Dynamic_DynamicObject_bool__TryUnaryOperation_0__2__UnaryOperationBinder_outObject)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NONNULL binder, SG_HNDL_NULLABLE* _Nonnull __result_out_ptr);
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_Dynamic_DynamicObject_cast)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __h);
     TYP (* _Nonnull  _fp_System_Dynamic_ExpandoObject_get_type_handle)(void);
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_Dynamic_ExpandoObject_ctor_0__0)(SG_HNDL_NULLABLE * _Nonnull __thrown);
@@ -131,9 +133,11 @@ struct {
     TYP (* _Nonnull  _fp_System_Dynamic_IDynamicMetaObjectProvider_get_type_handle)(void);
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_Dynamic_IDynamicMetaObjectProvider_DynamicMetaObject__GetMetaObject_0__1__Expression)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NONNULL parameter);
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_Dynamic_IDynamicMetaObjectProvider_cast)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __h);
+    SG_HNDL_NONNULL (* _Nonnull  _fp_System_Dynamic_IDynamicMetaObjectProvider_create)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL (* _Nonnull  __cb_System_Dynamic_IDynamicMetaObjectProvider_DynamicMetaObject__GetMetaObject_0__1__Expression)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL parameter), const void* _Nonnull __pdata_System_Dynamic_IDynamicMetaObjectProvider_DynamicMetaObject__GetMetaObject_0__1__Expression, void (* _Nullable __deinit)(const void* _Nonnull __pdata));
     TYP (* _Nonnull  _fp_System_Dynamic_IInvokeOnGetBinder_get_type_handle)(void);
     int32_t (* _Nonnull  _fp_System_Dynamic_IInvokeOnGetBinder_bool__get_InvokeOnGet_0__0)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h);
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_Dynamic_IInvokeOnGetBinder_cast)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __h);
+    SG_HNDL_NONNULL (* _Nonnull  _fp_System_Dynamic_IInvokeOnGetBinder_create)(SG_HNDL_NULLABLE * _Nonnull __thrown, void (* _Nullable __deinit)(const void* _Nonnull __pdata));
     TYP (* _Nonnull  _fp_System_Dynamic_InvokeBinder_get_type_handle)(void);
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_Dynamic_InvokeBinder_DynamicMetaObject__Bind_0__2__DynamicMetaObject_DynamicMetaObjectArray)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NONNULL target, SG_HNDL_NONNULL args);
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_Dynamic_InvokeBinder_DynamicMetaObject__FallbackInvoke_0__2__DynamicMetaObject_DynamicMetaObjectArray)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NONNULL target, SG_HNDL_NONNULL args);
@@ -175,8 +179,10 @@ struct {
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_Dynamic_UnaryOperationBinder_cast)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __h);
     TYP (* _Nonnull  _fp_System_Linq_IOrderedQueryable_get_type_handle)(void);
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_Linq_IOrderedQueryable_cast)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __h);
+    SG_HNDL_NONNULL (* _Nonnull  _fp_System_Linq_IOrderedQueryable_create)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL (* _Nonnull  __cb_System_Collections_IEnumerable_IEnumerator__GetEnumerator_0__0)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown), const void* _Nonnull __pdata_System_Collections_IEnumerable_IEnumerator__GetEnumerator_0__0, void (* _Nullable __deinit)(const void* _Nonnull __pdata));
     TYP (* _Nonnull  _fp_System_Linq_IOrderedQueryable_1_get_type_handle)(TYP T);
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_Linq_IOrderedQueryable_1_cast)(TYP T, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __h);
+    SG_HNDL_NONNULL (* _Nonnull  _fp_System_Linq_IOrderedQueryable_1_create)(TYP T, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL (* _Nonnull  __cb_System_Collections_Generic_IEnumerable_1_System_Collections_Generic_IEnumerator_T___GetEnumerator_0__0)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown), const void* _Nonnull __pdata_System_Collections_Generic_IEnumerable_1_System_Collections_Generic_IEnumerator_T___GetEnumerator_0__0, SG_HNDL_NONNULL (* _Nonnull  __cb_System_Collections_IEnumerable_IEnumerator__GetEnumerator_0__0)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown), const void* _Nonnull __pdata_System_Collections_IEnumerable_IEnumerator__GetEnumerator_0__0, void (* _Nullable __deinit)(const void* _Nonnull __pdata));
     TYP (* _Nonnull  _fp_System_Linq_IQueryProvider_get_type_handle)(void);
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_Linq_IQueryProvider_IQueryable__CreateQuery_0__1__Expression)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NONNULL expression);
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_Linq_IQueryProvider_System_Linq_IQueryable_UTElement___CreateQuery_1__1__Expression)(TYP TElement, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NONNULL expression);
@@ -187,13 +193,16 @@ struct {
     SG_HNDL_NONNULL (* _Nonnull  _fp_specialize_System_Linq_IQueryProvider_UTResult__Execute_1__1__Expression)(TYP TResult, SG_HNDL_NULLABLE * _Nonnull __thrown);
     GVAL (* _Nonnull  _fp_invoke_System_Linq_IQueryProvider_UTResult__Execute_1__1__Expression)(SG_HNDL_NONNULL ____hdel, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NONNULL expression);
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_Linq_IQueryProvider_cast)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __h);
+    SG_HNDL_NONNULL (* _Nonnull  _fp_System_Linq_IQueryProvider_create)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL (* _Nonnull  __cb_System_Linq_IQueryProvider_IQueryable__CreateQuery_0__1__Expression)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL expression), const void* _Nonnull __pdata_System_Linq_IQueryProvider_IQueryable__CreateQuery_0__1__Expression, SG_HNDL_NONNULL (* _Nonnull  __cb_System_Linq_IQueryProvider_System_Linq_IQueryable_UTElement___CreateQuery_1__1__Expression)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL expression), const void* _Nonnull __pdata_System_Linq_IQueryProvider_System_Linq_IQueryable_UTElement___CreateQuery_1__1__Expression, SG_HNDL_NULLABLE (* _Nonnull  __cb_System_Linq_IQueryProvider_Object__Execute_0__1__Expression)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL expression), const void* _Nonnull __pdata_System_Linq_IQueryProvider_Object__Execute_0__1__Expression, GVAL (* _Nonnull  __cb_System_Linq_IQueryProvider_UTResult__Execute_1__1__Expression)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL expression), const void* _Nonnull __pdata_System_Linq_IQueryProvider_UTResult__Execute_1__1__Expression, void (* _Nullable __deinit)(const void* _Nonnull __pdata));
     TYP (* _Nonnull  _fp_System_Linq_IQueryable_get_type_handle)(void);
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_Linq_IQueryable_Type__get_ElementType_0__0)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h);
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_Linq_IQueryable_Expression__get_Expression_0__0)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h);
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_Linq_IQueryable_IQueryProvider__get_Provider_0__0)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h);
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_Linq_IQueryable_cast)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __h);
+    SG_HNDL_NONNULL (* _Nonnull  _fp_System_Linq_IQueryable_create)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL (* _Nonnull  __cb_System_Collections_IEnumerable_IEnumerator__GetEnumerator_0__0)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown), const void* _Nonnull __pdata_System_Collections_IEnumerable_IEnumerator__GetEnumerator_0__0, void (* _Nullable __deinit)(const void* _Nonnull __pdata));
     TYP (* _Nonnull  _fp_System_Linq_IQueryable_1_get_type_handle)(TYP T);
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_Linq_IQueryable_1_cast)(TYP T, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __h);
+    SG_HNDL_NONNULL (* _Nonnull  _fp_System_Linq_IQueryable_1_create)(TYP T, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL (* _Nonnull  __cb_System_Collections_Generic_IEnumerable_1_System_Collections_Generic_IEnumerator_T___GetEnumerator_0__0)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown), const void* _Nonnull __pdata_System_Collections_Generic_IEnumerable_1_System_Collections_Generic_IEnumerator_T___GetEnumerator_0__0, SG_HNDL_NONNULL (* _Nonnull  __cb_System_Collections_IEnumerable_IEnumerator__GetEnumerator_0__0)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown), const void* _Nonnull __pdata_System_Collections_IEnumerable_IEnumerator__GetEnumerator_0__0, void (* _Nullable __deinit)(const void* _Nonnull __pdata));
     TYP (* _Nonnull  _fp_System_Linq_Expressions_BinaryExpression_get_type_handle)(void);
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_Linq_Expressions_BinaryExpression_Expression__Reduce_0__0)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h);
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_Linq_Expressions_BinaryExpression_BinaryExpression__Update_0__3__Expression_LambdaExpression_Expression)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NONNULL left, SG_HNDL_NULLABLE conversion, SG_HNDL_NONNULL right);
@@ -592,8 +601,8 @@ struct {
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_Linq_Expressions_Expression_TryExpression__TryCatchFinally_0__3__Expression_Expression_CatchBlockArray)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL body, SG_HNDL_NULLABLE finally_, SG_HNDL_NULLABLE handlers);
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_Linq_Expressions_Expression_TryExpression__TryFault_0__2__Expression_Expression)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL body, SG_HNDL_NULLABLE fault);
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_Linq_Expressions_Expression_TryExpression__TryFinally_0__2__Expression_Expression)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL body, SG_HNDL_NULLABLE finally_);
-    int32_t (* _Nonnull  _fp_System_Linq_Expressions_Expression_bool__TryGetActionType_0__2__TypeArray_outType)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL typeArgs, SG_HNDL_NONNULL* _Nonnull __actionType_out_ptr);
-    int32_t (* _Nonnull  _fp_System_Linq_Expressions_Expression_bool__TryGetFuncType_0__2__TypeArray_outType)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL typeArgs, SG_HNDL_NONNULL* _Nonnull __funcType_out_ptr);
+    int32_t (* _Nonnull  _fp_System_Linq_Expressions_Expression_bool__TryGetActionType_0__2__TypeArray_outType)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL typeArgs, SG_HNDL_NULLABLE* _Nonnull __actionType_out_ptr);
+    int32_t (* _Nonnull  _fp_System_Linq_Expressions_Expression_bool__TryGetFuncType_0__2__TypeArray_outType)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL typeArgs, SG_HNDL_NULLABLE* _Nonnull __funcType_out_ptr);
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_Linq_Expressions_Expression_UnaryExpression__TypeAs_0__2__Expression_Type)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL expression, SG_HNDL_NONNULL type);
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_Linq_Expressions_Expression_TypeBinaryExpression__TypeEqual_0__2__Expression_Type)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL expression, SG_HNDL_NONNULL type);
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_Linq_Expressions_Expression_TypeBinaryExpression__TypeIs_0__2__Expression_Type)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL expression, SG_HNDL_NONNULL type);
@@ -736,11 +745,13 @@ struct {
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_Linq_Expressions_IArgumentProvider_Expression__GetArgument_0__1__i32)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, int32_t index);
     int32_t (* _Nonnull  _fp_System_Linq_Expressions_IArgumentProvider_i32__get_ArgumentCount_0__0)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h);
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_Linq_Expressions_IArgumentProvider_cast)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __h);
+    SG_HNDL_NONNULL (* _Nonnull  _fp_System_Linq_Expressions_IArgumentProvider_create)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL (* _Nonnull  __cb_System_Linq_Expressions_IArgumentProvider_Expression__GetArgument_0__1__i32)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, int32_t index), const void* _Nonnull __pdata_System_Linq_Expressions_IArgumentProvider_Expression__GetArgument_0__1__i32, void (* _Nullable __deinit)(const void* _Nonnull __pdata));
     TYP (* _Nonnull  _fp_System_Linq_Expressions_IDynamicExpression_get_type_handle)(void);
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_Linq_Expressions_IDynamicExpression_Object__CreateCallSite_0__0)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h);
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_Linq_Expressions_IDynamicExpression_Expression__Rewrite_0__1__ExpressionArray)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NONNULL args);
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_Linq_Expressions_IDynamicExpression_Type__get_DelegateType_0__0)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h);
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_Linq_Expressions_IDynamicExpression_cast)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __h);
+    SG_HNDL_NONNULL (* _Nonnull  _fp_System_Linq_Expressions_IDynamicExpression_create)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL (* _Nonnull  __cb_System_Linq_Expressions_IDynamicExpression_Object__CreateCallSite_0__0)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown), const void* _Nonnull __pdata_System_Linq_Expressions_IDynamicExpression_Object__CreateCallSite_0__0, SG_HNDL_NONNULL (* _Nonnull  __cb_System_Linq_Expressions_IDynamicExpression_Expression__Rewrite_0__1__ExpressionArray)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL args), const void* _Nonnull __pdata_System_Linq_Expressions_IDynamicExpression_Expression__Rewrite_0__1__ExpressionArray, SG_HNDL_NONNULL (* _Nonnull  __cb_System_Linq_Expressions_IArgumentProvider_Expression__GetArgument_0__1__i32)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, int32_t index), const void* _Nonnull __pdata_System_Linq_Expressions_IArgumentProvider_Expression__GetArgument_0__1__i32, void (* _Nullable __deinit)(const void* _Nonnull __pdata));
     TYP (* _Nonnull  _fp_System_Linq_Expressions_IndexExpression_get_type_handle)(void);
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_Linq_Expressions_IndexExpression_IndexExpression__Update_0__2__Expression_System_Collections_Generic_IEnumerable_System_Linq_Expressions_Expression_)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NONNULL object_, SG_HNDL_NULLABLE arguments);
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_Linq_Expressions_IndexExpression_System_Collections_ObjectModel_ReadOnlyCollection_System_Linq_Expressions_Expression___get_Arguments_0__0)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h);
@@ -948,6 +959,7 @@ struct {
     SG_HNDL_NULLABLE (* _Nonnull  _fp_System_Runtime_CompilerServices_IRuntimeVariables_Object__get_Item_0__1__i32)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, int32_t index);
     void (* _Nonnull  _fp_System_Runtime_CompilerServices_IRuntimeVariables_void__set_Item_0__2__i32_Object)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, int32_t index, SG_HNDL_NULLABLE value);
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_Runtime_CompilerServices_IRuntimeVariables_cast)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __h);
+    SG_HNDL_NONNULL (* _Nonnull  _fp_System_Runtime_CompilerServices_IRuntimeVariables_create)(SG_HNDL_NULLABLE * _Nonnull __thrown, void (* _Nullable __deinit)(const void* _Nonnull __pdata));
     TYP (* _Nonnull  _fp_System_Runtime_CompilerServices_ReadOnlyCollectionBuilder_1_get_type_handle)(TYP T);
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_Runtime_CompilerServices_ReadOnlyCollectionBuilder_1_ctor_0__0)(TYP T, SG_HNDL_NULLABLE * _Nonnull __thrown);
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_Runtime_CompilerServices_ReadOnlyCollectionBuilder_1_ctor_0__1__System_Collections_Generic_IEnumerable_T_)(TYP T, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL collection);
@@ -1462,6 +1474,21 @@ TYP System_Dynamic_DynamicMetaObject_get_type_handle(void) {
     return ret;
 }
 
+SG_HNDL_NONNULL System_Dynamic_DynamicMetaObject_get_EmptyMetaObjects(void) {
+    if (!_g_System_Linq_Expressions._fp_System_Dynamic_DynamicMetaObject_get_EmptyMetaObjects) {
+        my_init();
+    }
+    SG_HNDL_NONNULL ret = _g_System_Linq_Expressions._fp_System_Dynamic_DynamicMetaObject_get_EmptyMetaObjects();
+    return ret;
+}
+
+void System_Dynamic_DynamicMetaObject_set_EmptyMetaObjects(SG_HNDL_NONNULL __v) {
+    if (!_g_System_Linq_Expressions._fp_System_Dynamic_DynamicMetaObject_set_EmptyMetaObjects) {
+        my_init();
+    }
+    _g_System_Linq_Expressions._fp_System_Dynamic_DynamicMetaObject_set_EmptyMetaObjects(__v);
+}
+
 SG_HNDL_NONNULL System_Dynamic_DynamicMetaObject_ctor_0__2__Expression_BindingRestrictions(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL expression, SG_HNDL_NONNULL restrictions) {
     if (!_g_System_Linq_Expressions._fp_System_Dynamic_DynamicMetaObject_ctor_0__2__Expression_BindingRestrictions) {
         my_init();
@@ -1734,7 +1761,7 @@ SG_HNDL_NONNULL System_Dynamic_DynamicObject_DynamicMetaObject__GetMetaObject_0_
     return ret;
 }
 
-int32_t System_Dynamic_DynamicObject_bool__TryBinaryOperation_0__3__BinaryOperationBinder_Object_outObject(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NONNULL binder, SG_HNDL_NONNULL arg, SG_HNDL_NONNULL* _Nonnull __result_out_ptr) {
+int32_t System_Dynamic_DynamicObject_bool__TryBinaryOperation_0__3__BinaryOperationBinder_Object_outObject(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NONNULL binder, SG_HNDL_NONNULL arg, SG_HNDL_NULLABLE* _Nonnull __result_out_ptr) {
     if (!_g_System_Linq_Expressions._fp_System_Dynamic_DynamicObject_bool__TryBinaryOperation_0__3__BinaryOperationBinder_Object_outObject) {
         my_init();
     }
@@ -1742,7 +1769,7 @@ int32_t System_Dynamic_DynamicObject_bool__TryBinaryOperation_0__3__BinaryOperat
     return ret;
 }
 
-int32_t System_Dynamic_DynamicObject_bool__TryConvert_0__2__ConvertBinder_outObject(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NONNULL binder, SG_HNDL_NONNULL* _Nonnull __result_out_ptr) {
+int32_t System_Dynamic_DynamicObject_bool__TryConvert_0__2__ConvertBinder_outObject(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NONNULL binder, SG_HNDL_NULLABLE* _Nonnull __result_out_ptr) {
     if (!_g_System_Linq_Expressions._fp_System_Dynamic_DynamicObject_bool__TryConvert_0__2__ConvertBinder_outObject) {
         my_init();
     }
@@ -1750,7 +1777,7 @@ int32_t System_Dynamic_DynamicObject_bool__TryConvert_0__2__ConvertBinder_outObj
     return ret;
 }
 
-int32_t System_Dynamic_DynamicObject_bool__TryCreateInstance_0__3__CreateInstanceBinder_ObjectArray_outObject(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NONNULL binder, SG_HNDL_NULLABLE args, SG_HNDL_NONNULL* _Nonnull __result_out_ptr) {
+int32_t System_Dynamic_DynamicObject_bool__TryCreateInstance_0__3__CreateInstanceBinder_ObjectArray_outObject(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NONNULL binder, SG_HNDL_NULLABLE args, SG_HNDL_NULLABLE* _Nonnull __result_out_ptr) {
     if (!_g_System_Linq_Expressions._fp_System_Dynamic_DynamicObject_bool__TryCreateInstance_0__3__CreateInstanceBinder_ObjectArray_outObject) {
         my_init();
     }
@@ -1774,7 +1801,7 @@ int32_t System_Dynamic_DynamicObject_bool__TryDeleteMember_0__1__DeleteMemberBin
     return ret;
 }
 
-int32_t System_Dynamic_DynamicObject_bool__TryGetIndex_0__3__GetIndexBinder_ObjectArray_outObject(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NONNULL binder, SG_HNDL_NONNULL indexes, SG_HNDL_NONNULL* _Nonnull __result_out_ptr) {
+int32_t System_Dynamic_DynamicObject_bool__TryGetIndex_0__3__GetIndexBinder_ObjectArray_outObject(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NONNULL binder, SG_HNDL_NONNULL indexes, SG_HNDL_NULLABLE* _Nonnull __result_out_ptr) {
     if (!_g_System_Linq_Expressions._fp_System_Dynamic_DynamicObject_bool__TryGetIndex_0__3__GetIndexBinder_ObjectArray_outObject) {
         my_init();
     }
@@ -1782,7 +1809,7 @@ int32_t System_Dynamic_DynamicObject_bool__TryGetIndex_0__3__GetIndexBinder_Obje
     return ret;
 }
 
-int32_t System_Dynamic_DynamicObject_bool__TryGetMember_0__2__GetMemberBinder_outObject(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NONNULL binder, SG_HNDL_NONNULL* _Nonnull __result_out_ptr) {
+int32_t System_Dynamic_DynamicObject_bool__TryGetMember_0__2__GetMemberBinder_outObject(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NONNULL binder, SG_HNDL_NULLABLE* _Nonnull __result_out_ptr) {
     if (!_g_System_Linq_Expressions._fp_System_Dynamic_DynamicObject_bool__TryGetMember_0__2__GetMemberBinder_outObject) {
         my_init();
     }
@@ -1790,7 +1817,7 @@ int32_t System_Dynamic_DynamicObject_bool__TryGetMember_0__2__GetMemberBinder_ou
     return ret;
 }
 
-int32_t System_Dynamic_DynamicObject_bool__TryInvoke_0__3__InvokeBinder_ObjectArray_outObject(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NONNULL binder, SG_HNDL_NULLABLE args, SG_HNDL_NONNULL* _Nonnull __result_out_ptr) {
+int32_t System_Dynamic_DynamicObject_bool__TryInvoke_0__3__InvokeBinder_ObjectArray_outObject(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NONNULL binder, SG_HNDL_NULLABLE args, SG_HNDL_NULLABLE* _Nonnull __result_out_ptr) {
     if (!_g_System_Linq_Expressions._fp_System_Dynamic_DynamicObject_bool__TryInvoke_0__3__InvokeBinder_ObjectArray_outObject) {
         my_init();
     }
@@ -1798,7 +1825,7 @@ int32_t System_Dynamic_DynamicObject_bool__TryInvoke_0__3__InvokeBinder_ObjectAr
     return ret;
 }
 
-int32_t System_Dynamic_DynamicObject_bool__TryInvokeMember_0__3__InvokeMemberBinder_ObjectArray_outObject(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NONNULL binder, SG_HNDL_NULLABLE args, SG_HNDL_NONNULL* _Nonnull __result_out_ptr) {
+int32_t System_Dynamic_DynamicObject_bool__TryInvokeMember_0__3__InvokeMemberBinder_ObjectArray_outObject(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NONNULL binder, SG_HNDL_NULLABLE args, SG_HNDL_NULLABLE* _Nonnull __result_out_ptr) {
     if (!_g_System_Linq_Expressions._fp_System_Dynamic_DynamicObject_bool__TryInvokeMember_0__3__InvokeMemberBinder_ObjectArray_outObject) {
         my_init();
     }
@@ -1822,7 +1849,7 @@ int32_t System_Dynamic_DynamicObject_bool__TrySetMember_0__2__SetMemberBinder_Ob
     return ret;
 }
 
-int32_t System_Dynamic_DynamicObject_bool__TryUnaryOperation_0__2__UnaryOperationBinder_outObject(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NONNULL binder, SG_HNDL_NONNULL* _Nonnull __result_out_ptr) {
+int32_t System_Dynamic_DynamicObject_bool__TryUnaryOperation_0__2__UnaryOperationBinder_outObject(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NONNULL binder, SG_HNDL_NULLABLE* _Nonnull __result_out_ptr) {
     if (!_g_System_Linq_Expressions._fp_System_Dynamic_DynamicObject_bool__TryUnaryOperation_0__2__UnaryOperationBinder_outObject) {
         my_init();
     }
@@ -2006,6 +2033,14 @@ SG_HNDL_NONNULL System_Dynamic_IDynamicMetaObjectProvider_cast(SG_HNDL_NULLABLE 
     return ret;
 }
 
+SG_HNDL_NONNULL System_Dynamic_IDynamicMetaObjectProvider_create(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL (* _Nonnull  __cb_System_Dynamic_IDynamicMetaObjectProvider_DynamicMetaObject__GetMetaObject_0__1__Expression)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL parameter), const void* _Nonnull __pdata_System_Dynamic_IDynamicMetaObjectProvider_DynamicMetaObject__GetMetaObject_0__1__Expression, void (* _Nullable __deinit)(const void* _Nonnull __pdata)) {
+    if (!_g_System_Linq_Expressions._fp_System_Dynamic_IDynamicMetaObjectProvider_create) {
+        my_init();
+    }
+    SG_HNDL_NONNULL ret = _g_System_Linq_Expressions._fp_System_Dynamic_IDynamicMetaObjectProvider_create(__thrown, __cb_System_Dynamic_IDynamicMetaObjectProvider_DynamicMetaObject__GetMetaObject_0__1__Expression, __pdata_System_Dynamic_IDynamicMetaObjectProvider_DynamicMetaObject__GetMetaObject_0__1__Expression, __deinit);
+    return ret;
+}
+
 TYP System_Dynamic_IInvokeOnGetBinder_get_type_handle(void) {
     if (!_g_System_Linq_Expressions._fp_System_Dynamic_IInvokeOnGetBinder_get_type_handle) {
         my_init();
@@ -2027,6 +2062,14 @@ SG_HNDL_NONNULL System_Dynamic_IInvokeOnGetBinder_cast(SG_HNDL_NULLABLE * _Nonnu
         my_init();
     }
     SG_HNDL_NONNULL ret = _g_System_Linq_Expressions._fp_System_Dynamic_IInvokeOnGetBinder_cast(__thrown, __h);
+    return ret;
+}
+
+SG_HNDL_NONNULL System_Dynamic_IInvokeOnGetBinder_create(SG_HNDL_NULLABLE * _Nonnull __thrown, void (* _Nullable __deinit)(const void* _Nonnull __pdata)) {
+    if (!_g_System_Linq_Expressions._fp_System_Dynamic_IInvokeOnGetBinder_create) {
+        my_init();
+    }
+    SG_HNDL_NONNULL ret = _g_System_Linq_Expressions._fp_System_Dynamic_IInvokeOnGetBinder_create(__thrown, __deinit);
     return ret;
 }
 
@@ -2358,6 +2401,14 @@ SG_HNDL_NONNULL System_Linq_IOrderedQueryable_cast(SG_HNDL_NULLABLE * _Nonnull _
     return ret;
 }
 
+SG_HNDL_NONNULL System_Linq_IOrderedQueryable_create(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL (* _Nonnull  __cb_System_Collections_IEnumerable_IEnumerator__GetEnumerator_0__0)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown), const void* _Nonnull __pdata_System_Collections_IEnumerable_IEnumerator__GetEnumerator_0__0, void (* _Nullable __deinit)(const void* _Nonnull __pdata)) {
+    if (!_g_System_Linq_Expressions._fp_System_Linq_IOrderedQueryable_create) {
+        my_init();
+    }
+    SG_HNDL_NONNULL ret = _g_System_Linq_Expressions._fp_System_Linq_IOrderedQueryable_create(__thrown, __cb_System_Collections_IEnumerable_IEnumerator__GetEnumerator_0__0, __pdata_System_Collections_IEnumerable_IEnumerator__GetEnumerator_0__0, __deinit);
+    return ret;
+}
+
 TYP System_Linq_IOrderedQueryable_1_get_type_handle(TYP T) {
     if (!_g_System_Linq_Expressions._fp_System_Linq_IOrderedQueryable_1_get_type_handle) {
         my_init();
@@ -2371,6 +2422,14 @@ SG_HNDL_NONNULL System_Linq_IOrderedQueryable_1_cast(TYP T, SG_HNDL_NULLABLE * _
         my_init();
     }
     SG_HNDL_NONNULL ret = _g_System_Linq_Expressions._fp_System_Linq_IOrderedQueryable_1_cast(T, __thrown, __h);
+    return ret;
+}
+
+SG_HNDL_NONNULL System_Linq_IOrderedQueryable_1_create(TYP T, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL (* _Nonnull  __cb_System_Collections_Generic_IEnumerable_1_System_Collections_Generic_IEnumerator_T___GetEnumerator_0__0)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown), const void* _Nonnull __pdata_System_Collections_Generic_IEnumerable_1_System_Collections_Generic_IEnumerator_T___GetEnumerator_0__0, SG_HNDL_NONNULL (* _Nonnull  __cb_System_Collections_IEnumerable_IEnumerator__GetEnumerator_0__0)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown), const void* _Nonnull __pdata_System_Collections_IEnumerable_IEnumerator__GetEnumerator_0__0, void (* _Nullable __deinit)(const void* _Nonnull __pdata)) {
+    if (!_g_System_Linq_Expressions._fp_System_Linq_IOrderedQueryable_1_create) {
+        my_init();
+    }
+    SG_HNDL_NONNULL ret = _g_System_Linq_Expressions._fp_System_Linq_IOrderedQueryable_1_create(T, __thrown, __cb_System_Collections_Generic_IEnumerable_1_System_Collections_Generic_IEnumerator_T___GetEnumerator_0__0, __pdata_System_Collections_Generic_IEnumerable_1_System_Collections_Generic_IEnumerator_T___GetEnumerator_0__0, __cb_System_Collections_IEnumerable_IEnumerator__GetEnumerator_0__0, __pdata_System_Collections_IEnumerable_IEnumerator__GetEnumerator_0__0, __deinit);
     return ret;
 }
 
@@ -2454,6 +2513,14 @@ SG_HNDL_NONNULL System_Linq_IQueryProvider_cast(SG_HNDL_NULLABLE * _Nonnull __th
     return ret;
 }
 
+SG_HNDL_NONNULL System_Linq_IQueryProvider_create(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL (* _Nonnull  __cb_System_Linq_IQueryProvider_IQueryable__CreateQuery_0__1__Expression)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL expression), const void* _Nonnull __pdata_System_Linq_IQueryProvider_IQueryable__CreateQuery_0__1__Expression, SG_HNDL_NONNULL (* _Nonnull  __cb_System_Linq_IQueryProvider_System_Linq_IQueryable_UTElement___CreateQuery_1__1__Expression)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL expression), const void* _Nonnull __pdata_System_Linq_IQueryProvider_System_Linq_IQueryable_UTElement___CreateQuery_1__1__Expression, SG_HNDL_NULLABLE (* _Nonnull  __cb_System_Linq_IQueryProvider_Object__Execute_0__1__Expression)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL expression), const void* _Nonnull __pdata_System_Linq_IQueryProvider_Object__Execute_0__1__Expression, GVAL (* _Nonnull  __cb_System_Linq_IQueryProvider_UTResult__Execute_1__1__Expression)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL expression), const void* _Nonnull __pdata_System_Linq_IQueryProvider_UTResult__Execute_1__1__Expression, void (* _Nullable __deinit)(const void* _Nonnull __pdata)) {
+    if (!_g_System_Linq_Expressions._fp_System_Linq_IQueryProvider_create) {
+        my_init();
+    }
+    SG_HNDL_NONNULL ret = _g_System_Linq_Expressions._fp_System_Linq_IQueryProvider_create(__thrown, __cb_System_Linq_IQueryProvider_IQueryable__CreateQuery_0__1__Expression, __pdata_System_Linq_IQueryProvider_IQueryable__CreateQuery_0__1__Expression, __cb_System_Linq_IQueryProvider_System_Linq_IQueryable_UTElement___CreateQuery_1__1__Expression, __pdata_System_Linq_IQueryProvider_System_Linq_IQueryable_UTElement___CreateQuery_1__1__Expression, __cb_System_Linq_IQueryProvider_Object__Execute_0__1__Expression, __pdata_System_Linq_IQueryProvider_Object__Execute_0__1__Expression, __cb_System_Linq_IQueryProvider_UTResult__Execute_1__1__Expression, __pdata_System_Linq_IQueryProvider_UTResult__Execute_1__1__Expression, __deinit);
+    return ret;
+}
+
 TYP System_Linq_IQueryable_get_type_handle(void) {
     if (!_g_System_Linq_Expressions._fp_System_Linq_IQueryable_get_type_handle) {
         my_init();
@@ -2494,6 +2561,14 @@ SG_HNDL_NONNULL System_Linq_IQueryable_cast(SG_HNDL_NULLABLE * _Nonnull __thrown
     return ret;
 }
 
+SG_HNDL_NONNULL System_Linq_IQueryable_create(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL (* _Nonnull  __cb_System_Collections_IEnumerable_IEnumerator__GetEnumerator_0__0)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown), const void* _Nonnull __pdata_System_Collections_IEnumerable_IEnumerator__GetEnumerator_0__0, void (* _Nullable __deinit)(const void* _Nonnull __pdata)) {
+    if (!_g_System_Linq_Expressions._fp_System_Linq_IQueryable_create) {
+        my_init();
+    }
+    SG_HNDL_NONNULL ret = _g_System_Linq_Expressions._fp_System_Linq_IQueryable_create(__thrown, __cb_System_Collections_IEnumerable_IEnumerator__GetEnumerator_0__0, __pdata_System_Collections_IEnumerable_IEnumerator__GetEnumerator_0__0, __deinit);
+    return ret;
+}
+
 TYP System_Linq_IQueryable_1_get_type_handle(TYP T) {
     if (!_g_System_Linq_Expressions._fp_System_Linq_IQueryable_1_get_type_handle) {
         my_init();
@@ -2507,6 +2582,14 @@ SG_HNDL_NONNULL System_Linq_IQueryable_1_cast(TYP T, SG_HNDL_NULLABLE * _Nonnull
         my_init();
     }
     SG_HNDL_NONNULL ret = _g_System_Linq_Expressions._fp_System_Linq_IQueryable_1_cast(T, __thrown, __h);
+    return ret;
+}
+
+SG_HNDL_NONNULL System_Linq_IQueryable_1_create(TYP T, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL (* _Nonnull  __cb_System_Collections_Generic_IEnumerable_1_System_Collections_Generic_IEnumerator_T___GetEnumerator_0__0)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown), const void* _Nonnull __pdata_System_Collections_Generic_IEnumerable_1_System_Collections_Generic_IEnumerator_T___GetEnumerator_0__0, SG_HNDL_NONNULL (* _Nonnull  __cb_System_Collections_IEnumerable_IEnumerator__GetEnumerator_0__0)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown), const void* _Nonnull __pdata_System_Collections_IEnumerable_IEnumerator__GetEnumerator_0__0, void (* _Nullable __deinit)(const void* _Nonnull __pdata)) {
+    if (!_g_System_Linq_Expressions._fp_System_Linq_IQueryable_1_create) {
+        my_init();
+    }
+    SG_HNDL_NONNULL ret = _g_System_Linq_Expressions._fp_System_Linq_IQueryable_1_create(T, __thrown, __cb_System_Collections_Generic_IEnumerable_1_System_Collections_Generic_IEnumerator_T___GetEnumerator_0__0, __pdata_System_Collections_Generic_IEnumerable_1_System_Collections_Generic_IEnumerator_T___GetEnumerator_0__0, __cb_System_Collections_IEnumerable_IEnumerator__GetEnumerator_0__0, __pdata_System_Collections_IEnumerable_IEnumerator__GetEnumerator_0__0, __deinit);
     return ret;
 }
 
@@ -5694,7 +5777,7 @@ SG_HNDL_NONNULL System_Linq_Expressions_Expression_TryExpression__TryFinally_0__
     return ret;
 }
 
-int32_t System_Linq_Expressions_Expression_bool__TryGetActionType_0__2__TypeArray_outType(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL typeArgs, SG_HNDL_NONNULL* _Nonnull __actionType_out_ptr) {
+int32_t System_Linq_Expressions_Expression_bool__TryGetActionType_0__2__TypeArray_outType(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL typeArgs, SG_HNDL_NULLABLE* _Nonnull __actionType_out_ptr) {
     if (!_g_System_Linq_Expressions._fp_System_Linq_Expressions_Expression_bool__TryGetActionType_0__2__TypeArray_outType) {
         my_init();
     }
@@ -5702,7 +5785,7 @@ int32_t System_Linq_Expressions_Expression_bool__TryGetActionType_0__2__TypeArra
     return ret;
 }
 
-int32_t System_Linq_Expressions_Expression_bool__TryGetFuncType_0__2__TypeArray_outType(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL typeArgs, SG_HNDL_NONNULL* _Nonnull __funcType_out_ptr) {
+int32_t System_Linq_Expressions_Expression_bool__TryGetFuncType_0__2__TypeArray_outType(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL typeArgs, SG_HNDL_NULLABLE* _Nonnull __funcType_out_ptr) {
     if (!_g_System_Linq_Expressions._fp_System_Linq_Expressions_Expression_bool__TryGetFuncType_0__2__TypeArray_outType) {
         my_init();
     }
@@ -6846,6 +6929,14 @@ SG_HNDL_NONNULL System_Linq_Expressions_IArgumentProvider_cast(SG_HNDL_NULLABLE 
     return ret;
 }
 
+SG_HNDL_NONNULL System_Linq_Expressions_IArgumentProvider_create(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL (* _Nonnull  __cb_System_Linq_Expressions_IArgumentProvider_Expression__GetArgument_0__1__i32)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, int32_t index), const void* _Nonnull __pdata_System_Linq_Expressions_IArgumentProvider_Expression__GetArgument_0__1__i32, void (* _Nullable __deinit)(const void* _Nonnull __pdata)) {
+    if (!_g_System_Linq_Expressions._fp_System_Linq_Expressions_IArgumentProvider_create) {
+        my_init();
+    }
+    SG_HNDL_NONNULL ret = _g_System_Linq_Expressions._fp_System_Linq_Expressions_IArgumentProvider_create(__thrown, __cb_System_Linq_Expressions_IArgumentProvider_Expression__GetArgument_0__1__i32, __pdata_System_Linq_Expressions_IArgumentProvider_Expression__GetArgument_0__1__i32, __deinit);
+    return ret;
+}
+
 TYP System_Linq_Expressions_IDynamicExpression_get_type_handle(void) {
     if (!_g_System_Linq_Expressions._fp_System_Linq_Expressions_IDynamicExpression_get_type_handle) {
         my_init();
@@ -6883,6 +6974,14 @@ SG_HNDL_NONNULL System_Linq_Expressions_IDynamicExpression_cast(SG_HNDL_NULLABLE
         my_init();
     }
     SG_HNDL_NONNULL ret = _g_System_Linq_Expressions._fp_System_Linq_Expressions_IDynamicExpression_cast(__thrown, __h);
+    return ret;
+}
+
+SG_HNDL_NONNULL System_Linq_Expressions_IDynamicExpression_create(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL (* _Nonnull  __cb_System_Linq_Expressions_IDynamicExpression_Object__CreateCallSite_0__0)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown), const void* _Nonnull __pdata_System_Linq_Expressions_IDynamicExpression_Object__CreateCallSite_0__0, SG_HNDL_NONNULL (* _Nonnull  __cb_System_Linq_Expressions_IDynamicExpression_Expression__Rewrite_0__1__ExpressionArray)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL args), const void* _Nonnull __pdata_System_Linq_Expressions_IDynamicExpression_Expression__Rewrite_0__1__ExpressionArray, SG_HNDL_NONNULL (* _Nonnull  __cb_System_Linq_Expressions_IArgumentProvider_Expression__GetArgument_0__1__i32)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, int32_t index), const void* _Nonnull __pdata_System_Linq_Expressions_IArgumentProvider_Expression__GetArgument_0__1__i32, void (* _Nullable __deinit)(const void* _Nonnull __pdata)) {
+    if (!_g_System_Linq_Expressions._fp_System_Linq_Expressions_IDynamicExpression_create) {
+        my_init();
+    }
+    SG_HNDL_NONNULL ret = _g_System_Linq_Expressions._fp_System_Linq_Expressions_IDynamicExpression_create(__thrown, __cb_System_Linq_Expressions_IDynamicExpression_Object__CreateCallSite_0__0, __pdata_System_Linq_Expressions_IDynamicExpression_Object__CreateCallSite_0__0, __cb_System_Linq_Expressions_IDynamicExpression_Expression__Rewrite_0__1__ExpressionArray, __pdata_System_Linq_Expressions_IDynamicExpression_Expression__Rewrite_0__1__ExpressionArray, __cb_System_Linq_Expressions_IArgumentProvider_Expression__GetArgument_0__1__i32, __pdata_System_Linq_Expressions_IArgumentProvider_Expression__GetArgument_0__1__i32, __deinit);
     return ret;
 }
 
@@ -8537,6 +8636,14 @@ SG_HNDL_NONNULL System_Runtime_CompilerServices_IRuntimeVariables_cast(SG_HNDL_N
         my_init();
     }
     SG_HNDL_NONNULL ret = _g_System_Linq_Expressions._fp_System_Runtime_CompilerServices_IRuntimeVariables_cast(__thrown, __h);
+    return ret;
+}
+
+SG_HNDL_NONNULL System_Runtime_CompilerServices_IRuntimeVariables_create(SG_HNDL_NULLABLE * _Nonnull __thrown, void (* _Nullable __deinit)(const void* _Nonnull __pdata)) {
+    if (!_g_System_Linq_Expressions._fp_System_Runtime_CompilerServices_IRuntimeVariables_create) {
+        my_init();
+    }
+    SG_HNDL_NONNULL ret = _g_System_Linq_Expressions._fp_System_Runtime_CompilerServices_IRuntimeVariables_create(__thrown, __deinit);
     return ret;
 }
 

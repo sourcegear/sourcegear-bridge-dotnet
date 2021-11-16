@@ -235,6 +235,9 @@ public final class RegistryKey
     public class override func get_type_handle() -> TypeHandle {
         return Microsoft_Win32_RegistryKey_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // void Close()
@@ -1360,10 +1363,17 @@ public final class SafeRegistryHandle
     public class override func get_type_handle() -> TypeHandle {
         return Microsoft_Win32_SafeHandles_SafeRegistryHandle_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor()
 // docid: M:Microsoft.Win32.SafeHandles.SafeRegistryHandle.#ctor
+    /**
+    Creates a .
+
+    */
     public init() throws {
         var __thrown : NullableHandle = nil;
         let h = Microsoft_Win32_SafeHandles_SafeRegistryHandle_ctor_0__0(&__thrown);
@@ -1413,6 +1423,9 @@ public final class RegistryAccessRule
 {
     public class override func get_type_handle() -> TypeHandle {
         return System_Security_AccessControl_RegistryAccessRule_get_type_handle();
+    }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -1526,6 +1539,9 @@ public final class RegistryAuditRule
 {
     public class override func get_type_handle() -> TypeHandle {
         return System_Security_AccessControl_RegistryAuditRule_get_type_handle();
+    }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -1775,6 +1791,9 @@ public final class RegistrySecurity
 {
     public class override func get_type_handle() -> TypeHandle {
         return System_Security_AccessControl_RegistrySecurity_get_type_handle();
+    }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }

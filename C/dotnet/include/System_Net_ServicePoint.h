@@ -22,7 +22,7 @@ SG_HNDL_NULLABLE System_Net_BindIPEndPoint_IAsyncResult__BeginInvoke_0__5__Servi
 
 SG_HNDL_NONNULL System_Net_BindIPEndPoint_IPEndPoint__EndInvoke_0__1__IAsyncResult(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE result);
 
-SG_HNDL_NONNULL System_Net_BindIPEndPoint_create(SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nullable __pdata, void (* _Nullable __deinit)(const void* _Nullable __pdata), SG_HNDL_NONNULL (* _Nonnull  __cb)(const void* _Nullable __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL servicePoint, SG_HNDL_NONNULL remoteEndPoint, int32_t retryCount));
+SG_HNDL_NONNULL System_Net_BindIPEndPoint_create(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL (* _Nonnull  __cb)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL servicePoint, SG_HNDL_NONNULL remoteEndPoint, int32_t retryCount), const void* _Nonnull __pdata, void (* _Nullable __deinit)(const void* _Nonnull __pdata));
 
 TYP System_Net_SecurityProtocolType_get_type_handle(void);
 

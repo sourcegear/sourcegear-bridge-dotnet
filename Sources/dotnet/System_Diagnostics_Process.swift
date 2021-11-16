@@ -18,10 +18,17 @@ public final class SafeProcessHandle
     public class override func get_type_handle() -> TypeHandle {
         return Microsoft_Win32_SafeHandles_SafeProcessHandle_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor()
 // docid: M:Microsoft.Win32.SafeHandles.SafeProcessHandle.#ctor
+    /**
+    Creates a .
+
+    */
     public init() throws {
         var __thrown : NullableHandle = nil;
         let h = Microsoft_Win32_SafeHandles_SafeProcessHandle_ctor_0__0(&__thrown);
@@ -71,6 +78,9 @@ open class DataReceivedEventArgs
     open class override func get_type_handle() -> TypeHandle {
         return System_Diagnostics_DataReceivedEventArgs_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // [IsSpecialName] System.String get_Data()
@@ -112,6 +122,9 @@ public final class DataReceivedEventHandler
     public class override func get_type_handle() -> TypeHandle {
         return System_Diagnostics_DataReceivedEventHandler_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // void Invoke(System.Object, System.Diagnostics.DataReceivedEventArgs)
@@ -151,15 +164,15 @@ public final class DataReceivedEventHandler
             return;
         }
     }
-    public init(_ callback : @escaping (dotnet.System.Object, dotnet.System.Diagnostics.DataReceivedEventArgs) throws -> Void) throws
+    public convenience init(_ __closure_Invoke : @escaping (dotnet.System.Object, dotnet.System.Diagnostics.DataReceivedEventArgs) throws -> Void) throws
     {
-        let __bridge : (UnsafeMutablePointer<NullableHandle>, NonnullHandle, NonnullHandle) -> Void =
+        let __interlude_Invoke : (UnsafeMutablePointer<NullableHandle>, NonnullHandle, NonnullHandle) -> Void =
         {
             (thrown : UnsafeMutablePointer<NullableHandle>, sender : NonnullHandle, e : NonnullHandle) -> Void in
             do
             {
                 thrown.pointee = nil;
-                try callback(dotnet.System.Object(hndl: sender), dotnet.System.Diagnostics.DataReceivedEventArgs(hndl: e));
+                try __closure_Invoke(dotnet.System.Object(hndl: sender), dotnet.System.Diagnostics.DataReceivedEventArgs(hndl: e));
             }
             catch let e as dotnet.System.Exception
             {
@@ -171,24 +184,24 @@ public final class DataReceivedEventHandler
                 thrown.pointee = __copy_handle(e.get_handle());
             }
         };
-        let cbarg = UnsafeRawPointer(Unmanaged.passRetained(__bridge as AnyObject).toOpaque());
-        func __cb(cb : UnsafeRawPointer?, thrown : UnsafeMutablePointer<NullableHandle>, sender : NonnullHandle, e : NonnullHandle) -> Void
+        func __cb_Invoke(pdata_interlude : UnsafeRawPointer, thrown : UnsafeMutablePointer<NullableHandle>, sender : NonnullHandle, e : NonnullHandle) -> Void
         {
-            let f = Unmanaged<AnyObject>.fromOpaque(cb!).takeUnretainedValue() as! (UnsafeMutablePointer<NullableHandle>, NonnullHandle, NonnullHandle) -> Void;
-            f(thrown, sender, e);
+            let f_interlude = Unmanaged<AnyObject>.fromOpaque(pdata_interlude).takeUnretainedValue() as! (UnsafeMutablePointer<NullableHandle>, NonnullHandle, NonnullHandle) -> Void;
+            f_interlude(thrown, sender, e);
         }
+        let __pdata_Invoke = UnsafeRawPointer(Unmanaged.passRetained(__interlude_Invoke as AnyObject).toOpaque());
+
         var __thrown : NullableHandle = nil;
         let h = System_Diagnostics_DataReceivedEventHandler_create(
             &__thrown,
-            cbarg,
-            nil, // TODO deinit
-            __cb
+            __cb_Invoke,
+            __pdata_Invoke,
+            nil
             );
-            // TODO check thrown
         if let __ex = __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-            super.init(hndl: h);
+            self.init(hndl: h);
         }
     }
     // void Invoke(System.Object, System.Diagnostics.DataReceivedEventArgs)
@@ -216,6 +229,9 @@ open class MonitoringDescriptionAttribute
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Diagnostics_MonitoringDescriptionAttribute_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -269,6 +285,9 @@ open class Process
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Diagnostics_Process_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -767,7 +786,7 @@ open class Process
     /**
     Instructs the  component to wait the specified number of milliseconds for the associated process to exit.
 
-    - Parameter milliseconds: The amount of time, in milliseconds, to wait for the associated process to exit. The maximum is the largest possible value of a 32-bit integer, which represents infinity to the operating system.
+    - Parameter milliseconds: The amount of time, in milliseconds, to wait for the associated process to exit. A value of 0 specifies an immediate return, and a value of -1 specifies an infinite wait.
     - Returns: 
          if the associated process has exited; otherwise, .
 
@@ -790,13 +809,13 @@ open class Process
     - Returns: A task that will complete when the process has exited, cancellation has been requested, or an error occurs.
 
     */
-    open func WaitForExitAsync(cancellationToken : dotnet.System.Threading.CancellationToken = System.Threading.CancellationToken.None) throws -> dotnet.System.Threading.Tasks.Task {
+    open func WaitForExitAsync(cancellationToken : dotnet.System.Threading.CancellationToken = System.Threading.CancellationToken.None) async throws {
         var __thrown : NullableHandle = nil;
         let __return = System_Diagnostics_Process_Task__WaitForExitAsync_0__1__CancellationToken(&__thrown, self.get_handle(), cancellationToken.get_handle());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task(hndl: __return).ToAsync();
         }
     }
     // bool WaitForInputIdle()
@@ -2067,6 +2086,9 @@ open class ProcessModule
     open class override func get_type_handle() -> TypeHandle {
         return System_Diagnostics_ProcessModule_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // System.String ToString()
@@ -2229,6 +2251,9 @@ open class ProcessModuleCollection
     open class override func get_type_handle() -> TypeHandle {
         return System_Diagnostics_ProcessModuleCollection_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor(System.Diagnostics.ProcessModule[])
@@ -2303,9 +2328,6 @@ open class ProcessModuleCollection
     }
     // [IsSpecialName] System.Diagnostics.ProcessModule get_Item(System.Int32)
 // docid: M:System.Diagnostics.ProcessModuleCollection.get_Item(System.Int32)
-//BEGIN method_is_override
-//matches_1
-//matches :
     open func get_Item(index : Swift.Int32) throws -> dotnet.System.Diagnostics.ProcessModule {
         var __thrown : NullableHandle = nil;
         let __return = System_Diagnostics_ProcessModuleCollection_ProcessModule__get_Item_0__1__i32(&__thrown, self.get_handle(), index);
@@ -2413,6 +2435,9 @@ public final class ProcessStartInfo
 {
     public class override func get_type_handle() -> TypeHandle {
         return System_Diagnostics_ProcessStartInfo_get_type_handle();
+    }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -3259,6 +3284,9 @@ open class ProcessThread
     open class override func get_type_handle() -> TypeHandle {
         return System_Diagnostics_ProcessThread_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // void ResetIdealProcessor()
@@ -3581,6 +3609,9 @@ open class ProcessThreadCollection
     open class override func get_type_handle() -> TypeHandle {
         return System_Diagnostics_ProcessThreadCollection_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor(System.Diagnostics.ProcessThread[])
@@ -3706,9 +3737,6 @@ open class ProcessThreadCollection
     }
     // [IsSpecialName] System.Diagnostics.ProcessThread get_Item(System.Int32)
 // docid: M:System.Diagnostics.ProcessThreadCollection.get_Item(System.Int32)
-//BEGIN method_is_override
-//matches_1
-//matches :
     open func get_Item(index : Swift.Int32) throws -> dotnet.System.Diagnostics.ProcessThread {
         var __thrown : NullableHandle = nil;
         let __return = System_Diagnostics_ProcessThreadCollection_ProcessThread__get_Item_0__1__i32(&__thrown, self.get_handle(), index);

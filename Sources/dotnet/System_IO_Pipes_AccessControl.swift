@@ -281,6 +281,9 @@ public final class PipeAccessRule
     public class override func get_type_handle() -> TypeHandle {
         return System_IO_Pipes_PipeAccessRule_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor(System.Security.Principal.IdentityReference, System.IO.Pipes.PipeAccessRights, System.Security.AccessControl.AccessControlType)
@@ -353,6 +356,9 @@ public final class PipeAuditRule
 {
     public class override func get_type_handle() -> TypeHandle {
         return System_IO_Pipes_PipeAuditRule_get_type_handle();
+    }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -427,6 +433,9 @@ open class PipeSecurity
     open class override func get_type_handle() -> TypeHandle {
         return System_IO_Pipes_PipeSecurity_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor()
@@ -450,7 +459,7 @@ open class PipeSecurity
     Initializes a new instance of the  class with the specified values.
 
     - Parameter identityReference: The identity that the access rule applies to. It must be an object that can be cast as a  object.
-    - Parameter accessMask: The access mask of this rule. The access mask is a 32-bit collection of anonymous bits, the meaning of which is defined by the individual integrators
+    - Parameter accessMask: The access mask of this rule. The access mask is a 32-bit collection of anonymous bits, the meaning of which is defined by the individual integrators.
     - Parameter isInherited: 
          if this rule is inherited from a parent container; otherwise, .
     - Parameter inheritanceFlags: One of the  values that specifies the inheritance properties of the access rule.
@@ -506,7 +515,7 @@ open class PipeSecurity
     Initializes a new instance of the  class with the specified values.
 
     - Parameter identityReference: The identity that the access rule applies to. It must be an object that can be cast as a  object.
-    - Parameter accessMask: The access mask of this rule. The access mask is a 32-bit collection of anonymous bits, the meaning of which is defined by the individual integrators
+    - Parameter accessMask: The access mask of this rule. The access mask is a 32-bit collection of anonymous bits, the meaning of which is defined by the individual integrators.
     - Parameter isInherited: 
          if this rule is inherited from a parent container; otherwise, false.
     - Parameter inheritanceFlags: One of the  values that specifies the inheritance properties of the access rule.
@@ -566,7 +575,7 @@ open class PipeSecurity
 
     - Parameter rule: The audit rule to remove.
     - Returns: 
-         if the audit rule was removed; otherwise, 
+         if the audit rule was removed; otherwise, .
 
     */
     open func RemoveAuditRule(rule : dotnet.System.IO.Pipes.PipeAuditRule) throws -> Bool {

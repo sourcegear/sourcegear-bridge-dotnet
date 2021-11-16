@@ -18,6 +18,9 @@ public final class CommittableTransaction
     public class override func get_type_handle() -> TypeHandle {
         return System_Transactions_CommittableTransaction_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor()
@@ -35,7 +38,22 @@ public final class CommittableTransaction
             super.init(hndl: h);
         }
     }
-// TODO COPE ctor (span) .ctor(System.TimeSpan)
+    // .ctor(System.TimeSpan)
+// docid: M:System.Transactions.CommittableTransaction.#ctor(System.TimeSpan)
+    /**
+    Initializes a new instance of the  class with the specified  value.
+
+    - Parameter timeout: The maximum amount of time the transaction can exist, before it is aborted.
+    */
+    public init(timeout : dotnet.System.TimeSpan) throws {
+        var __thrown : NullableHandle = nil;
+        let h = System_Transactions_CommittableTransaction_ctor_0__1__TimeSpan(&__thrown, timeout.get_handle());
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            super.init(hndl: h);
+        }
+    }
     // .ctor(System.Transactions.TransactionOptions)
 // docid: M:System.Transactions.CommittableTransaction.#ctor(System.Transactions.TransactionOptions)
     /**
@@ -162,6 +180,9 @@ public final class DependentTransaction
     public class override func get_type_handle() -> TypeHandle {
         return System_Transactions_DependentTransaction_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // void Complete()
@@ -193,6 +214,9 @@ open class Enlistment
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Transactions_Enlistment_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -317,6 +341,9 @@ public final class HostCurrentTransactionCallback
     public class override func get_type_handle() -> TypeHandle {
         return System_Transactions_HostCurrentTransactionCallback_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // System.Transactions.Transaction Invoke()
@@ -364,15 +391,15 @@ public final class HostCurrentTransactionCallback
         }
         }
     }
-    public init(_ callback : @escaping () throws -> dotnet.System.Transactions.Transaction) throws
+    public convenience init(_ __closure_Invoke : @escaping () throws -> dotnet.System.Transactions.Transaction) throws
     {
-        let __bridge : (UnsafeMutablePointer<NullableHandle>) -> NullableHandle =
+        let __interlude_Invoke : (UnsafeMutablePointer<NullableHandle>) -> NullableHandle =
         {
             (thrown : UnsafeMutablePointer<NullableHandle>) -> NullableHandle in
             do
             {
                 thrown.pointee = nil;
-                let ret = try callback();
+                let ret = try __closure_Invoke();
                 return __copy_handle(ret.get_handle());
             }
             catch let e as dotnet.System.Exception
@@ -387,24 +414,24 @@ public final class HostCurrentTransactionCallback
                 return NonnullHandle(bitPattern: 8675309)!;
             }
         };
-        let cbarg = UnsafeRawPointer(Unmanaged.passRetained(__bridge as AnyObject).toOpaque());
-        func __cb(cb : UnsafeRawPointer?, thrown : UnsafeMutablePointer<NullableHandle>) -> NullableHandle
+        func __cb_Invoke(pdata_interlude : UnsafeRawPointer, thrown : UnsafeMutablePointer<NullableHandle>) -> NullableHandle
         {
-            let f = Unmanaged<AnyObject>.fromOpaque(cb!).takeUnretainedValue() as! (UnsafeMutablePointer<NullableHandle>) -> NullableHandle;
-            return f(thrown);
+            let f_interlude = Unmanaged<AnyObject>.fromOpaque(pdata_interlude).takeUnretainedValue() as! (UnsafeMutablePointer<NullableHandle>) -> NullableHandle;
+            return f_interlude(thrown);
         }
+        let __pdata_Invoke = UnsafeRawPointer(Unmanaged.passRetained(__interlude_Invoke as AnyObject).toOpaque());
+
         var __thrown : NullableHandle = nil;
         let h = System_Transactions_HostCurrentTransactionCallback_create(
             &__thrown,
-            cbarg,
-            nil, // TODO deinit
-            __cb
+            __cb_Invoke,
+            __pdata_Invoke,
+            nil
             );
-            // TODO check thrown
         if let __ex = __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-            super.init(hndl: h);
+            self.init(hndl: h);
         }
     }
     // System.Transactions.Transaction Invoke()
@@ -437,6 +464,9 @@ open class IDtcTransaction
 {
     open class func get_type_handle() -> TypeHandle {
         return System_Transactions_IDtcTransaction_get_type_handle();
+    }
+    open class func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     let h : NonnullHandle;
     public func to_gval() -> GVal { return GVal(Swift.Int(bitPattern: self.h)); }
@@ -514,6 +544,9 @@ open class IEnlistmentNotification
 {
     open class func get_type_handle() -> TypeHandle {
         return System_Transactions_IEnlistmentNotification_get_type_handle();
+    }
+    open class func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     let h : NonnullHandle;
     public func to_gval() -> GVal { return GVal(Swift.Int(bitPattern: self.h)); }
@@ -605,6 +638,9 @@ open class IPromotableSinglePhaseNotification
     open class func get_type_handle() -> TypeHandle {
         return System_Transactions_IPromotableSinglePhaseNotification_get_type_handle();
     }
+    open class func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     let h : NonnullHandle;
     public func to_gval() -> GVal { return GVal(Swift.Int(bitPattern: self.h)); }
     public func dup_gval() -> GVal { return GVal(Swift.Int(bitPattern: __copy_handle(self.h))); }
@@ -678,6 +714,9 @@ open class ISimpleTransactionSuperior
     open class func get_type_handle() -> TypeHandle {
         return System_Transactions_ISimpleTransactionSuperior_get_type_handle();
     }
+    open class func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     let h : NonnullHandle;
     public func to_gval() -> GVal { return GVal(Swift.Int(bitPattern: self.h)); }
     public func dup_gval() -> GVal { return GVal(Swift.Int(bitPattern: __copy_handle(self.h))); }
@@ -719,6 +758,9 @@ open class ISinglePhaseNotification
     open class func get_type_handle() -> TypeHandle {
         return System_Transactions_ISinglePhaseNotification_get_type_handle();
     }
+    open class func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     let h : NonnullHandle;
     public func to_gval() -> GVal { return GVal(Swift.Int(bitPattern: self.h)); }
     public func dup_gval() -> GVal { return GVal(Swift.Int(bitPattern: __copy_handle(self.h))); }
@@ -759,6 +801,9 @@ open class ITransactionPromoter
 {
     open class func get_type_handle() -> TypeHandle {
         return System_Transactions_ITransactionPromoter_get_type_handle();
+    }
+    open class func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     let h : NonnullHandle;
     public func to_gval() -> GVal { return GVal(Swift.Int(bitPattern: self.h)); }
@@ -903,6 +948,9 @@ open class PreparingEnlistment
     open class override func get_type_handle() -> TypeHandle {
         return System_Transactions_PreparingEnlistment_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // void ForceRollback()
@@ -982,6 +1030,9 @@ open class SinglePhaseEnlistment
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Transactions_SinglePhaseEnlistment_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -1077,6 +1128,9 @@ public final class SubordinateTransaction
     public class override func get_type_handle() -> TypeHandle {
         return System_Transactions_SubordinateTransaction_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor(System.Transactions.IsolationLevel, System.Transactions.ISimpleTransactionSuperior)
@@ -1084,8 +1138,8 @@ public final class SubordinateTransaction
     /**
     Initializes a new instance of the  class.
 
-    - Parameter isoLevel: The isolation level of the transaction
-    - Parameter superior: A 
+    - Parameter isoLevel: The isolation level of the transaction.
+    - Parameter superior: A .
     */
     public init(isoLevel : dotnet.System.Transactions.IsolationLevel, superior : dotnet.System.Transactions.ISimpleTransactionSuperior) throws {
         var __thrown : NullableHandle = nil;
@@ -1112,6 +1166,9 @@ open class Transaction
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Transactions_Transaction_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -1590,6 +1647,9 @@ open class TransactionAbortedException
     open class override func get_type_handle() -> TypeHandle {
         return System_Transactions_TransactionAbortedException_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor()
@@ -1655,6 +1715,9 @@ public final class TransactionCompletedEventHandler
     public class override func get_type_handle() -> TypeHandle {
         return System_Transactions_TransactionCompletedEventHandler_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // void Invoke(System.Object, System.Transactions.TransactionEventArgs)
@@ -1694,15 +1757,15 @@ public final class TransactionCompletedEventHandler
             return;
         }
     }
-    public init(_ callback : @escaping (Optional<dotnet.System.Object>, dotnet.System.Transactions.TransactionEventArgs) throws -> Void) throws
+    public convenience init(_ __closure_Invoke : @escaping (Optional<dotnet.System.Object>, dotnet.System.Transactions.TransactionEventArgs) throws -> Void) throws
     {
-        let __bridge : (UnsafeMutablePointer<NullableHandle>, NullableHandle, NonnullHandle) -> Void =
+        let __interlude_Invoke : (UnsafeMutablePointer<NullableHandle>, NullableHandle, NonnullHandle) -> Void =
         {
             (thrown : UnsafeMutablePointer<NullableHandle>, sender : NullableHandle, e : NonnullHandle) -> Void in
             do
             {
                 thrown.pointee = nil;
-                try callback((sender != nil) ? (dotnet.System.Object(hndl: sender!)) : nil, dotnet.System.Transactions.TransactionEventArgs(hndl: e));
+                try __closure_Invoke((sender != nil) ? (dotnet.System.Object(hndl: sender!)) : nil, dotnet.System.Transactions.TransactionEventArgs(hndl: e));
             }
             catch let e as dotnet.System.Exception
             {
@@ -1714,24 +1777,24 @@ public final class TransactionCompletedEventHandler
                 thrown.pointee = __copy_handle(e.get_handle());
             }
         };
-        let cbarg = UnsafeRawPointer(Unmanaged.passRetained(__bridge as AnyObject).toOpaque());
-        func __cb(cb : UnsafeRawPointer?, thrown : UnsafeMutablePointer<NullableHandle>, sender : NullableHandle, e : NonnullHandle) -> Void
+        func __cb_Invoke(pdata_interlude : UnsafeRawPointer, thrown : UnsafeMutablePointer<NullableHandle>, sender : NullableHandle, e : NonnullHandle) -> Void
         {
-            let f = Unmanaged<AnyObject>.fromOpaque(cb!).takeUnretainedValue() as! (UnsafeMutablePointer<NullableHandle>, NullableHandle, NonnullHandle) -> Void;
-            f(thrown, sender, e);
+            let f_interlude = Unmanaged<AnyObject>.fromOpaque(pdata_interlude).takeUnretainedValue() as! (UnsafeMutablePointer<NullableHandle>, NullableHandle, NonnullHandle) -> Void;
+            f_interlude(thrown, sender, e);
         }
+        let __pdata_Invoke = UnsafeRawPointer(Unmanaged.passRetained(__interlude_Invoke as AnyObject).toOpaque());
+
         var __thrown : NullableHandle = nil;
         let h = System_Transactions_TransactionCompletedEventHandler_create(
             &__thrown,
-            cbarg,
-            nil, // TODO deinit
-            __cb
+            __cb_Invoke,
+            __pdata_Invoke,
+            nil
             );
-            // TODO check thrown
         if let __ex = __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-            super.init(hndl: h);
+            self.init(hndl: h);
         }
     }
     // void Invoke(System.Object, System.Transactions.TransactionEventArgs)
@@ -1759,6 +1822,9 @@ open class TransactionEventArgs
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Transactions_TransactionEventArgs_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -1815,6 +1881,9 @@ open class TransactionException
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Transactions_TransactionException_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -1881,6 +1950,9 @@ open class TransactionInDoubtException
     open class override func get_type_handle() -> TypeHandle {
         return System_Transactions_TransactionInDoubtException_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor()
@@ -1945,6 +2017,9 @@ open class TransactionInformation
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Transactions_TransactionInformation_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -2343,6 +2418,9 @@ open class TransactionManagerCommunicationException
     open class override func get_type_handle() -> TypeHandle {
         return System_Transactions_TransactionManagerCommunicationException_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor()
@@ -2409,6 +2487,9 @@ public final class TransactionOptions
     public class override func get_type_handle() -> TypeHandle {
         return System_Transactions_TransactionOptions_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     /**
@@ -2431,7 +2512,9 @@ public final class TransactionOptions
         get {
             return try! get_Timeout();
         }
-// TODO COPE prop set (span) [IsSpecialName] void set_Timeout(System.TimeSpan)
+        set(v) {
+            return try! set_Timeout(value: v);
+        }
     }
     public override init() {
         let h = System_Transactions_TransactionOptions_implicit_ctor();
@@ -2546,7 +2629,17 @@ public final class TransactionOptions
         return dotnet.System.TimeSpan(hndl : __return);
         }
     }
-// TODO COPE (write_all_methods) (span) [IsSpecialName] void set_Timeout(System.TimeSpan)
+    // [IsSpecialName] void set_Timeout(System.TimeSpan)
+// docid: M:System.Transactions.TransactionOptions.set_Timeout(System.TimeSpan)
+    public func set_Timeout(value : dotnet.System.TimeSpan) throws {
+        var __thrown : NullableHandle = nil;
+        System_Transactions_TransactionOptions_void__set_Timeout_0__1__TimeSpan(&__thrown, self.get_handle(), value.get_handle());
+        if let __ex =  __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            return;
+        }
+    }
 } // TransactionOptions
 
 
@@ -2561,6 +2654,9 @@ open class TransactionPromotionException
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Transactions_TransactionPromotionException_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -2628,6 +2724,9 @@ public final class TransactionScope
     public class override func get_type_handle() -> TypeHandle {
         return System_Transactions_TransactionScope_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor()
@@ -2661,9 +2760,61 @@ public final class TransactionScope
             super.init(hndl: h);
         }
     }
-// TODO COPE ctor (span) .ctor(System.Transactions.Transaction, System.TimeSpan)
-// TODO COPE ctor (span) .ctor(System.Transactions.Transaction, System.TimeSpan, System.Transactions.EnterpriseServicesInteropOption)
-// TODO COPE ctor (span) .ctor(System.Transactions.Transaction, System.TimeSpan, System.Transactions.TransactionScopeAsyncFlowOption)
+    // .ctor(System.Transactions.Transaction, System.TimeSpan)
+// docid: M:System.Transactions.TransactionScope.#ctor(System.Transactions.Transaction,System.TimeSpan)
+    /**
+    Initializes a new instance of the  class with the specified timeout value, and sets the specified transaction as the ambient transaction, so that transactional work done inside the scope uses this transaction.
+
+    - Parameter transactionToUse: The transaction to be set as the ambient transaction, so that transactional work done inside the scope uses this transaction.
+    - Parameter scopeTimeout: The  after which the transaction scope times out and aborts the transaction.
+    */
+    public init(transactionToUse : dotnet.System.Transactions.Transaction, scopeTimeout : dotnet.System.TimeSpan) throws {
+        var __thrown : NullableHandle = nil;
+        let h = System_Transactions_TransactionScope_ctor_0__2__Transaction_TimeSpan(&__thrown, transactionToUse.get_handle(), scopeTimeout.get_handle());
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            super.init(hndl: h);
+        }
+    }
+    // .ctor(System.Transactions.Transaction, System.TimeSpan, System.Transactions.EnterpriseServicesInteropOption)
+// docid: M:System.Transactions.TransactionScope.#ctor(System.Transactions.Transaction,System.TimeSpan,System.Transactions.EnterpriseServicesInteropOption)
+    /**
+    Initializes a new instance of the  class with the specified timeout value and COM+ interoperability requirements, and sets the specified transaction as the ambient transaction, so that transactional work done inside the scope uses this transaction.
+
+    - Parameter transactionToUse: The transaction to be set as the ambient transaction, so that transactional work done inside the scope uses this transaction.
+    - Parameter scopeTimeout: The  after which the transaction scope times out and aborts the transaction.
+    - Parameter interopOption: An instance of the  enumeration that describes how the associated transaction interacts with COM+ transactions.
+    */
+    public init(transactionToUse : dotnet.System.Transactions.Transaction, scopeTimeout : dotnet.System.TimeSpan, interopOption : dotnet.System.Transactions.EnterpriseServicesInteropOption) throws {
+        var __thrown : NullableHandle = nil;
+        let h = System_Transactions_TransactionScope_ctor_0__3__Transaction_TimeSpan_EnterpriseServicesInteropOption(&__thrown, transactionToUse.get_handle(), scopeTimeout.get_handle(), interopOption.get_value());
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            super.init(hndl: h);
+        }
+    }
+    // .ctor(System.Transactions.Transaction, System.TimeSpan, System.Transactions.TransactionScopeAsyncFlowOption)
+// docid: M:System.Transactions.TransactionScope.#ctor(System.Transactions.Transaction,System.TimeSpan,System.Transactions.TransactionScopeAsyncFlowOption)
+    /**
+    [Supported in the .NET Framework 4.5.1 and later versions]  
+  
+ Initializes a new instance of the  class with the specified timeout value, and sets the specified transaction as the ambient transaction, so that transactional work done inside the scope uses this transaction.
+
+    - Parameter transactionToUse: The transaction to be set as the ambient transaction, so that transactional work done inside the scope uses this transaction.
+    - Parameter scopeTimeout: The  after which the transaction scope times out and aborts the transaction.
+    - Parameter asyncFlowOption: An instance of the  enumeration that describes whether the ambient transaction associated with the transaction scope will flow across thread continuations when using Task or async/await .NET async programming patterns.
+    */
+    public init(transactionToUse : dotnet.System.Transactions.Transaction, scopeTimeout : dotnet.System.TimeSpan, asyncFlowOption : dotnet.System.Transactions.TransactionScopeAsyncFlowOption) throws {
+        var __thrown : NullableHandle = nil;
+        let h = System_Transactions_TransactionScope_ctor_0__3__Transaction_TimeSpan_TransactionScopeAsyncFlowOption(&__thrown, transactionToUse.get_handle(), scopeTimeout.get_handle(), asyncFlowOption.get_value());
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            super.init(hndl: h);
+        }
+    }
     // .ctor(System.Transactions.Transaction, System.Transactions.TransactionScopeAsyncFlowOption)
 // docid: M:System.Transactions.TransactionScope.#ctor(System.Transactions.Transaction,System.Transactions.TransactionScopeAsyncFlowOption)
     /**
@@ -2715,8 +2866,41 @@ public final class TransactionScope
             super.init(hndl: h);
         }
     }
-// TODO COPE ctor (span) .ctor(System.Transactions.TransactionScopeOption, System.TimeSpan)
-// TODO COPE ctor (span) .ctor(System.Transactions.TransactionScopeOption, System.TimeSpan, System.Transactions.TransactionScopeAsyncFlowOption)
+    // .ctor(System.Transactions.TransactionScopeOption, System.TimeSpan)
+// docid: M:System.Transactions.TransactionScope.#ctor(System.Transactions.TransactionScopeOption,System.TimeSpan)
+    /**
+    Initializes a new instance of the  class with the specified timeout value and requirements.
+
+    - Parameter scopeOption: An instance of the  enumeration that describes the transaction requirements associated with this transaction scope.
+    - Parameter scopeTimeout: The  after which the transaction scope times out and aborts the transaction.
+    */
+    public init(scopeOption : dotnet.System.Transactions.TransactionScopeOption, scopeTimeout : dotnet.System.TimeSpan) throws {
+        var __thrown : NullableHandle = nil;
+        let h = System_Transactions_TransactionScope_ctor_0__2__TransactionScopeOption_TimeSpan(&__thrown, scopeOption.get_value(), scopeTimeout.get_handle());
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            super.init(hndl: h);
+        }
+    }
+    // .ctor(System.Transactions.TransactionScopeOption, System.TimeSpan, System.Transactions.TransactionScopeAsyncFlowOption)
+// docid: M:System.Transactions.TransactionScope.#ctor(System.Transactions.TransactionScopeOption,System.TimeSpan,System.Transactions.TransactionScopeAsyncFlowOption)
+    /**
+    Initializes a new instance of the  class with the specified timeout value, requirements, and asynchronous flow option.
+
+    - Parameter scopeOption: An instance of the  enumeration that describes the transaction requirements associated with this transaction scope.
+    - Parameter scopeTimeout: The  after which the transaction scope times out and aborts the transaction.
+    - Parameter asyncFlowOption: An instance of the  enumeration that describes whether the ambient transaction associated with the transaction scope will flow across thread continuations when using Task or async/await .NET async programming patterns.
+    */
+    public init(scopeOption : dotnet.System.Transactions.TransactionScopeOption, scopeTimeout : dotnet.System.TimeSpan, asyncFlowOption : dotnet.System.Transactions.TransactionScopeAsyncFlowOption) throws {
+        var __thrown : NullableHandle = nil;
+        let h = System_Transactions_TransactionScope_ctor_0__3__TransactionScopeOption_TimeSpan_TransactionScopeAsyncFlowOption(&__thrown, scopeOption.get_value(), scopeTimeout.get_handle(), asyncFlowOption.get_value());
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            super.init(hndl: h);
+        }
+    }
     // .ctor(System.Transactions.TransactionScopeOption, System.Transactions.TransactionOptions)
 // docid: M:System.Transactions.TransactionScope.#ctor(System.Transactions.TransactionScopeOption,System.Transactions.TransactionOptions)
     /**
@@ -2925,6 +3109,9 @@ public final class TransactionStartedEventHandler
     public class override func get_type_handle() -> TypeHandle {
         return System_Transactions_TransactionStartedEventHandler_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // void Invoke(System.Object, System.Transactions.TransactionEventArgs)
@@ -2964,15 +3151,15 @@ public final class TransactionStartedEventHandler
             return;
         }
     }
-    public init(_ callback : @escaping (Optional<dotnet.System.Object>, dotnet.System.Transactions.TransactionEventArgs) throws -> Void) throws
+    public convenience init(_ __closure_Invoke : @escaping (Optional<dotnet.System.Object>, dotnet.System.Transactions.TransactionEventArgs) throws -> Void) throws
     {
-        let __bridge : (UnsafeMutablePointer<NullableHandle>, NullableHandle, NonnullHandle) -> Void =
+        let __interlude_Invoke : (UnsafeMutablePointer<NullableHandle>, NullableHandle, NonnullHandle) -> Void =
         {
             (thrown : UnsafeMutablePointer<NullableHandle>, sender : NullableHandle, e : NonnullHandle) -> Void in
             do
             {
                 thrown.pointee = nil;
-                try callback((sender != nil) ? (dotnet.System.Object(hndl: sender!)) : nil, dotnet.System.Transactions.TransactionEventArgs(hndl: e));
+                try __closure_Invoke((sender != nil) ? (dotnet.System.Object(hndl: sender!)) : nil, dotnet.System.Transactions.TransactionEventArgs(hndl: e));
             }
             catch let e as dotnet.System.Exception
             {
@@ -2984,24 +3171,24 @@ public final class TransactionStartedEventHandler
                 thrown.pointee = __copy_handle(e.get_handle());
             }
         };
-        let cbarg = UnsafeRawPointer(Unmanaged.passRetained(__bridge as AnyObject).toOpaque());
-        func __cb(cb : UnsafeRawPointer?, thrown : UnsafeMutablePointer<NullableHandle>, sender : NullableHandle, e : NonnullHandle) -> Void
+        func __cb_Invoke(pdata_interlude : UnsafeRawPointer, thrown : UnsafeMutablePointer<NullableHandle>, sender : NullableHandle, e : NonnullHandle) -> Void
         {
-            let f = Unmanaged<AnyObject>.fromOpaque(cb!).takeUnretainedValue() as! (UnsafeMutablePointer<NullableHandle>, NullableHandle, NonnullHandle) -> Void;
-            f(thrown, sender, e);
+            let f_interlude = Unmanaged<AnyObject>.fromOpaque(pdata_interlude).takeUnretainedValue() as! (UnsafeMutablePointer<NullableHandle>, NullableHandle, NonnullHandle) -> Void;
+            f_interlude(thrown, sender, e);
         }
+        let __pdata_Invoke = UnsafeRawPointer(Unmanaged.passRetained(__interlude_Invoke as AnyObject).toOpaque());
+
         var __thrown : NullableHandle = nil;
         let h = System_Transactions_TransactionStartedEventHandler_create(
             &__thrown,
-            cbarg,
-            nil, // TODO deinit
-            __cb
+            __cb_Invoke,
+            __pdata_Invoke,
+            nil
             );
-            // TODO check thrown
         if let __ex = __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-            super.init(hndl: h);
+            self.init(hndl: h);
         }
     }
     // void Invoke(System.Object, System.Transactions.TransactionEventArgs)

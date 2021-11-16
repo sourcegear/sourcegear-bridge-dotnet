@@ -162,11 +162,11 @@ int32_t System_Net_Mail_MailAddress_bool__Equals_0__1__Object(SG_HNDL_NULLABLE *
 
 int32_t System_Net_Mail_MailAddress_i32__GetHashCode_0__0(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h);
 
-int32_t System_Net_Mail_MailAddress_bool__TryCreate_0__2__String_outMailAddress(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL address, SG_HNDL_NONNULL* _Nonnull __result_out_ptr);
+int32_t System_Net_Mail_MailAddress_bool__TryCreate_0__2__String_outMailAddress(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL address, SG_HNDL_NULLABLE* _Nonnull __result_out_ptr);
 
-int32_t System_Net_Mail_MailAddress_bool__TryCreate_0__3__String_String_outMailAddress(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL address, SG_HNDL_NULLABLE displayName, SG_HNDL_NONNULL* _Nonnull __result_out_ptr);
+int32_t System_Net_Mail_MailAddress_bool__TryCreate_0__3__String_String_outMailAddress(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL address, SG_HNDL_NULLABLE displayName, SG_HNDL_NULLABLE* _Nonnull __result_out_ptr);
 
-int32_t System_Net_Mail_MailAddress_bool__TryCreate_0__4__String_String_Encoding_outMailAddress(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL address, SG_HNDL_NULLABLE displayName, SG_HNDL_NULLABLE displayNameEncoding, SG_HNDL_NONNULL* _Nonnull __result_out_ptr);
+int32_t System_Net_Mail_MailAddress_bool__TryCreate_0__4__String_String_Encoding_outMailAddress(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL address, SG_HNDL_NULLABLE displayName, SG_HNDL_NULLABLE displayNameEncoding, SG_HNDL_NULLABLE* _Nonnull __result_out_ptr);
 
 SG_HNDL_NONNULL System_Net_Mail_MailAddress_String__ToString_0__0(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h);
 
@@ -282,7 +282,7 @@ SG_HNDL_NULLABLE System_Net_Mail_SendCompletedEventHandler_IAsyncResult__BeginIn
 
 void System_Net_Mail_SendCompletedEventHandler_void__EndInvoke_0__1__IAsyncResult(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE result);
 
-SG_HNDL_NONNULL System_Net_Mail_SendCompletedEventHandler_create(SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nullable __pdata, void (* _Nullable __deinit)(const void* _Nullable __pdata), void (* _Nonnull  __cb)(const void* _Nullable __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL sender, SG_HNDL_NONNULL e));
+SG_HNDL_NONNULL System_Net_Mail_SendCompletedEventHandler_create(SG_HNDL_NULLABLE * _Nonnull __thrown, void (* _Nonnull  __cb)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL sender, SG_HNDL_NONNULL e), const void* _Nonnull __pdata, void (* _Nullable __deinit)(const void* _Nonnull __pdata));
 
 TYP System_Net_Mail_SmtpClient_get_type_handle(void);
 

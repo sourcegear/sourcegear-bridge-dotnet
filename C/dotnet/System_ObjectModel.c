@@ -91,6 +91,7 @@ struct {
     void (* _Nonnull  _fp_System_Collections_Specialized_INotifyCollectionChanged_void__add_CollectionChanged_0__1__NotifyCollectionChangedEventHandler)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE value);
     void (* _Nonnull  _fp_System_Collections_Specialized_INotifyCollectionChanged_void__remove_CollectionChanged_0__1__NotifyCollectionChangedEventHandler)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE value);
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_Collections_Specialized_INotifyCollectionChanged_cast)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __h);
+    SG_HNDL_NONNULL (* _Nonnull  _fp_System_Collections_Specialized_INotifyCollectionChanged_create)(SG_HNDL_NULLABLE * _Nonnull __thrown, void (* _Nullable __deinit)(const void* _Nonnull __pdata));
     TYP (* _Nonnull  _fp_System_Collections_Specialized_NotifyCollectionChangedAction_get_type_handle)(void);
     int32_t (* _Nonnull  _fp_System_Collections_Specialized_NotifyCollectionChangedAction_get_Add)(void);
     int32_t (* _Nonnull  _fp_System_Collections_Specialized_NotifyCollectionChangedAction_get_Remove)(void);
@@ -119,7 +120,7 @@ struct {
     void (* _Nonnull  _fp_System_Collections_Specialized_NotifyCollectionChangedEventHandler_void__Invoke_0__2__Object_NotifyCollectionChangedEventArgs)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE sender, SG_HNDL_NONNULL e);
     SG_HNDL_NULLABLE (* _Nonnull  _fp_System_Collections_Specialized_NotifyCollectionChangedEventHandler_IAsyncResult__BeginInvoke_0__4__Object_NotifyCollectionChangedEventArgs_AsyncCallback_Object)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE sender, SG_HNDL_NONNULL e, SG_HNDL_NULLABLE callback, SG_HNDL_NULLABLE object_);
     void (* _Nonnull  _fp_System_Collections_Specialized_NotifyCollectionChangedEventHandler_void__EndInvoke_0__1__IAsyncResult)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE result);
-    SG_HNDL_NONNULL (* _Nonnull  _fp_System_Collections_Specialized_NotifyCollectionChangedEventHandler_create)(SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nullable __pdata, void (* _Nullable __deinit)(const void* _Nullable __pdata), void (* _Nonnull  __cb)(const void* _Nullable __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE sender, SG_HNDL_NONNULL e));
+    SG_HNDL_NONNULL (* _Nonnull  _fp_System_Collections_Specialized_NotifyCollectionChangedEventHandler_create)(SG_HNDL_NULLABLE * _Nonnull __thrown, void (* _Nonnull  __cb)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE sender, SG_HNDL_NONNULL e), const void* _Nonnull __pdata, void (* _Nullable __deinit)(const void* _Nonnull __pdata));
     TYP (* _Nonnull  _fp_System_ComponentModel_DataErrorsChangedEventArgs_get_type_handle)(void);
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_ComponentModel_DataErrorsChangedEventArgs_ctor_0__1__String)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE propertyName);
     SG_HNDL_NULLABLE (* _Nonnull  _fp_System_ComponentModel_DataErrorsChangedEventArgs_String__get_PropertyName_0__0)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h);
@@ -130,14 +131,17 @@ struct {
     void (* _Nonnull  _fp_System_ComponentModel_INotifyDataErrorInfo_void__add_ErrorsChanged_0__1__System_EventHandler_System_ComponentModel_DataErrorsChangedEventArgs_)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE value);
     void (* _Nonnull  _fp_System_ComponentModel_INotifyDataErrorInfo_void__remove_ErrorsChanged_0__1__System_EventHandler_System_ComponentModel_DataErrorsChangedEventArgs_)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE value);
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_ComponentModel_INotifyDataErrorInfo_cast)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __h);
+    SG_HNDL_NONNULL (* _Nonnull  _fp_System_ComponentModel_INotifyDataErrorInfo_create)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL (* _Nonnull  __cb_System_ComponentModel_INotifyDataErrorInfo_IEnumerable__GetErrors_0__1__String)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE propertyName), const void* _Nonnull __pdata_System_ComponentModel_INotifyDataErrorInfo_IEnumerable__GetErrors_0__1__String, void (* _Nullable __deinit)(const void* _Nonnull __pdata));
     TYP (* _Nonnull  _fp_System_ComponentModel_INotifyPropertyChanged_get_type_handle)(void);
     void (* _Nonnull  _fp_System_ComponentModel_INotifyPropertyChanged_void__add_PropertyChanged_0__1__PropertyChangedEventHandler)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE value);
     void (* _Nonnull  _fp_System_ComponentModel_INotifyPropertyChanged_void__remove_PropertyChanged_0__1__PropertyChangedEventHandler)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE value);
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_ComponentModel_INotifyPropertyChanged_cast)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __h);
+    SG_HNDL_NONNULL (* _Nonnull  _fp_System_ComponentModel_INotifyPropertyChanged_create)(SG_HNDL_NULLABLE * _Nonnull __thrown, void (* _Nullable __deinit)(const void* _Nonnull __pdata));
     TYP (* _Nonnull  _fp_System_ComponentModel_INotifyPropertyChanging_get_type_handle)(void);
     void (* _Nonnull  _fp_System_ComponentModel_INotifyPropertyChanging_void__add_PropertyChanging_0__1__PropertyChangingEventHandler)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE value);
     void (* _Nonnull  _fp_System_ComponentModel_INotifyPropertyChanging_void__remove_PropertyChanging_0__1__PropertyChangingEventHandler)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE value);
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_ComponentModel_INotifyPropertyChanging_cast)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __h);
+    SG_HNDL_NONNULL (* _Nonnull  _fp_System_ComponentModel_INotifyPropertyChanging_create)(SG_HNDL_NULLABLE * _Nonnull __thrown, void (* _Nullable __deinit)(const void* _Nonnull __pdata));
     TYP (* _Nonnull  _fp_System_ComponentModel_PropertyChangedEventArgs_get_type_handle)(void);
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_ComponentModel_PropertyChangedEventArgs_ctor_0__1__String)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE propertyName);
     SG_HNDL_NULLABLE (* _Nonnull  _fp_System_ComponentModel_PropertyChangedEventArgs_String__get_PropertyName_0__0)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h);
@@ -146,7 +150,7 @@ struct {
     void (* _Nonnull  _fp_System_ComponentModel_PropertyChangedEventHandler_void__Invoke_0__2__Object_PropertyChangedEventArgs)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE sender, SG_HNDL_NONNULL e);
     SG_HNDL_NULLABLE (* _Nonnull  _fp_System_ComponentModel_PropertyChangedEventHandler_IAsyncResult__BeginInvoke_0__4__Object_PropertyChangedEventArgs_AsyncCallback_Object)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE sender, SG_HNDL_NONNULL e, SG_HNDL_NULLABLE callback, SG_HNDL_NULLABLE object_);
     void (* _Nonnull  _fp_System_ComponentModel_PropertyChangedEventHandler_void__EndInvoke_0__1__IAsyncResult)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE result);
-    SG_HNDL_NONNULL (* _Nonnull  _fp_System_ComponentModel_PropertyChangedEventHandler_create)(SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nullable __pdata, void (* _Nullable __deinit)(const void* _Nullable __pdata), void (* _Nonnull  __cb)(const void* _Nullable __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE sender, SG_HNDL_NONNULL e));
+    SG_HNDL_NONNULL (* _Nonnull  _fp_System_ComponentModel_PropertyChangedEventHandler_create)(SG_HNDL_NULLABLE * _Nonnull __thrown, void (* _Nonnull  __cb)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE sender, SG_HNDL_NONNULL e), const void* _Nonnull __pdata, void (* _Nullable __deinit)(const void* _Nonnull __pdata));
     TYP (* _Nonnull  _fp_System_ComponentModel_PropertyChangingEventArgs_get_type_handle)(void);
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_ComponentModel_PropertyChangingEventArgs_ctor_0__1__String)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE propertyName);
     SG_HNDL_NULLABLE (* _Nonnull  _fp_System_ComponentModel_PropertyChangingEventArgs_String__get_PropertyName_0__0)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h);
@@ -155,7 +159,7 @@ struct {
     void (* _Nonnull  _fp_System_ComponentModel_PropertyChangingEventHandler_void__Invoke_0__2__Object_PropertyChangingEventArgs)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE sender, SG_HNDL_NONNULL e);
     SG_HNDL_NULLABLE (* _Nonnull  _fp_System_ComponentModel_PropertyChangingEventHandler_IAsyncResult__BeginInvoke_0__4__Object_PropertyChangingEventArgs_AsyncCallback_Object)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE sender, SG_HNDL_NONNULL e, SG_HNDL_NULLABLE callback, SG_HNDL_NULLABLE object_);
     void (* _Nonnull  _fp_System_ComponentModel_PropertyChangingEventHandler_void__EndInvoke_0__1__IAsyncResult)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE result);
-    SG_HNDL_NONNULL (* _Nonnull  _fp_System_ComponentModel_PropertyChangingEventHandler_create)(SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nullable __pdata, void (* _Nullable __deinit)(const void* _Nullable __pdata), void (* _Nonnull  __cb)(const void* _Nullable __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE sender, SG_HNDL_NONNULL e));
+    SG_HNDL_NONNULL (* _Nonnull  _fp_System_ComponentModel_PropertyChangingEventHandler_create)(SG_HNDL_NULLABLE * _Nonnull __thrown, void (* _Nonnull  __cb)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE sender, SG_HNDL_NONNULL e), const void* _Nonnull __pdata, void (* _Nullable __deinit)(const void* _Nonnull __pdata));
     TYP (* _Nonnull  _fp_System_ComponentModel_TypeConverterAttribute_get_type_handle)(void);
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_ComponentModel_TypeConverterAttribute_get_Default)(void);
     void (* _Nonnull  _fp_System_ComponentModel_TypeConverterAttribute_set_Default)(SG_HNDL_NONNULL __v);
@@ -174,12 +178,14 @@ struct {
     TYP (* _Nonnull  _fp_System_Reflection_ICustomTypeProvider_get_type_handle)(void);
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_Reflection_ICustomTypeProvider_Type__GetCustomType_0__0)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h);
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_Reflection_ICustomTypeProvider_cast)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __h);
+    SG_HNDL_NONNULL (* _Nonnull  _fp_System_Reflection_ICustomTypeProvider_create)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL (* _Nonnull  __cb_System_Reflection_ICustomTypeProvider_Type__GetCustomType_0__0)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown), const void* _Nonnull __pdata_System_Reflection_ICustomTypeProvider_Type__GetCustomType_0__0, void (* _Nullable __deinit)(const void* _Nonnull __pdata));
     TYP (* _Nonnull  _fp_System_Windows_Input_ICommand_get_type_handle)(void);
     int32_t (* _Nonnull  _fp_System_Windows_Input_ICommand_bool__CanExecute_0__1__Object)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE parameter);
     void (* _Nonnull  _fp_System_Windows_Input_ICommand_void__Execute_0__1__Object)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE parameter);
     void (* _Nonnull  _fp_System_Windows_Input_ICommand_void__add_CanExecuteChanged_0__1__EventHandler)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE value);
     void (* _Nonnull  _fp_System_Windows_Input_ICommand_void__remove_CanExecuteChanged_0__1__EventHandler)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE value);
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_Windows_Input_ICommand_cast)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __h);
+    SG_HNDL_NONNULL (* _Nonnull  _fp_System_Windows_Input_ICommand_create)(SG_HNDL_NULLABLE * _Nonnull __thrown, int32_t (* _Nonnull  __cb_System_Windows_Input_ICommand_bool__CanExecute_0__1__Object)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE parameter), const void* _Nonnull __pdata_System_Windows_Input_ICommand_bool__CanExecute_0__1__Object, void (* _Nonnull  __cb_System_Windows_Input_ICommand_void__Execute_0__1__Object)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE parameter), const void* _Nonnull __pdata_System_Windows_Input_ICommand_void__Execute_0__1__Object, void (* _Nullable __deinit)(const void* _Nonnull __pdata));
     TYP (* _Nonnull  _fp_System_Windows_Markup_ValueSerializerAttribute_get_type_handle)(void);
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_Windows_Markup_ValueSerializerAttribute_ctor_0__1__String)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL valueSerializerTypeName);
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_Windows_Markup_ValueSerializerAttribute_ctor_0__1__Type)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL valueSerializerType);
@@ -852,6 +858,14 @@ SG_HNDL_NONNULL System_Collections_Specialized_INotifyCollectionChanged_cast(SG_
     return ret;
 }
 
+SG_HNDL_NONNULL System_Collections_Specialized_INotifyCollectionChanged_create(SG_HNDL_NULLABLE * _Nonnull __thrown, void (* _Nullable __deinit)(const void* _Nonnull __pdata)) {
+    if (!_g_System_ObjectModel._fp_System_Collections_Specialized_INotifyCollectionChanged_create) {
+        my_init();
+    }
+    SG_HNDL_NONNULL ret = _g_System_ObjectModel._fp_System_Collections_Specialized_INotifyCollectionChanged_create(__thrown, __deinit);
+    return ret;
+}
+
 TYP System_Collections_Specialized_NotifyCollectionChangedAction_get_type_handle(void) {
     if (!_g_System_ObjectModel._fp_System_Collections_Specialized_NotifyCollectionChangedAction_get_type_handle) {
         my_init();
@@ -1074,11 +1088,11 @@ void System_Collections_Specialized_NotifyCollectionChangedEventHandler_void__En
     _g_System_ObjectModel._fp_System_Collections_Specialized_NotifyCollectionChangedEventHandler_void__EndInvoke_0__1__IAsyncResult(__thrown, __self_h, result);
 }
 
-SG_HNDL_NONNULL System_Collections_Specialized_NotifyCollectionChangedEventHandler_create(SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nullable __pdata, void (* _Nullable __deinit)(const void* _Nullable __pdata), void (* _Nonnull  __cb)(const void* _Nullable __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE sender, SG_HNDL_NONNULL e)) {
+SG_HNDL_NONNULL System_Collections_Specialized_NotifyCollectionChangedEventHandler_create(SG_HNDL_NULLABLE * _Nonnull __thrown, void (* _Nonnull  __cb)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE sender, SG_HNDL_NONNULL e), const void* _Nonnull __pdata, void (* _Nullable __deinit)(const void* _Nonnull __pdata)) {
     if (!_g_System_ObjectModel._fp_System_Collections_Specialized_NotifyCollectionChangedEventHandler_create) {
         my_init();
     }
-    SG_HNDL_NONNULL ret = _g_System_ObjectModel._fp_System_Collections_Specialized_NotifyCollectionChangedEventHandler_create(__thrown, __pdata, __deinit, __cb);
+    SG_HNDL_NONNULL ret = _g_System_ObjectModel._fp_System_Collections_Specialized_NotifyCollectionChangedEventHandler_create(__thrown, __cb, __pdata, __deinit);
     return ret;
 }
 
@@ -1160,6 +1174,14 @@ SG_HNDL_NONNULL System_ComponentModel_INotifyDataErrorInfo_cast(SG_HNDL_NULLABLE
     return ret;
 }
 
+SG_HNDL_NONNULL System_ComponentModel_INotifyDataErrorInfo_create(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL (* _Nonnull  __cb_System_ComponentModel_INotifyDataErrorInfo_IEnumerable__GetErrors_0__1__String)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE propertyName), const void* _Nonnull __pdata_System_ComponentModel_INotifyDataErrorInfo_IEnumerable__GetErrors_0__1__String, void (* _Nullable __deinit)(const void* _Nonnull __pdata)) {
+    if (!_g_System_ObjectModel._fp_System_ComponentModel_INotifyDataErrorInfo_create) {
+        my_init();
+    }
+    SG_HNDL_NONNULL ret = _g_System_ObjectModel._fp_System_ComponentModel_INotifyDataErrorInfo_create(__thrown, __cb_System_ComponentModel_INotifyDataErrorInfo_IEnumerable__GetErrors_0__1__String, __pdata_System_ComponentModel_INotifyDataErrorInfo_IEnumerable__GetErrors_0__1__String, __deinit);
+    return ret;
+}
+
 TYP System_ComponentModel_INotifyPropertyChanged_get_type_handle(void) {
     if (!_g_System_ObjectModel._fp_System_ComponentModel_INotifyPropertyChanged_get_type_handle) {
         my_init();
@@ -1190,6 +1212,14 @@ SG_HNDL_NONNULL System_ComponentModel_INotifyPropertyChanged_cast(SG_HNDL_NULLAB
     return ret;
 }
 
+SG_HNDL_NONNULL System_ComponentModel_INotifyPropertyChanged_create(SG_HNDL_NULLABLE * _Nonnull __thrown, void (* _Nullable __deinit)(const void* _Nonnull __pdata)) {
+    if (!_g_System_ObjectModel._fp_System_ComponentModel_INotifyPropertyChanged_create) {
+        my_init();
+    }
+    SG_HNDL_NONNULL ret = _g_System_ObjectModel._fp_System_ComponentModel_INotifyPropertyChanged_create(__thrown, __deinit);
+    return ret;
+}
+
 TYP System_ComponentModel_INotifyPropertyChanging_get_type_handle(void) {
     if (!_g_System_ObjectModel._fp_System_ComponentModel_INotifyPropertyChanging_get_type_handle) {
         my_init();
@@ -1217,6 +1247,14 @@ SG_HNDL_NONNULL System_ComponentModel_INotifyPropertyChanging_cast(SG_HNDL_NULLA
         my_init();
     }
     SG_HNDL_NONNULL ret = _g_System_ObjectModel._fp_System_ComponentModel_INotifyPropertyChanging_cast(__thrown, __h);
+    return ret;
+}
+
+SG_HNDL_NONNULL System_ComponentModel_INotifyPropertyChanging_create(SG_HNDL_NULLABLE * _Nonnull __thrown, void (* _Nullable __deinit)(const void* _Nonnull __pdata)) {
+    if (!_g_System_ObjectModel._fp_System_ComponentModel_INotifyPropertyChanging_create) {
+        my_init();
+    }
+    SG_HNDL_NONNULL ret = _g_System_ObjectModel._fp_System_ComponentModel_INotifyPropertyChanging_create(__thrown, __deinit);
     return ret;
 }
 
@@ -1282,11 +1320,11 @@ void System_ComponentModel_PropertyChangedEventHandler_void__EndInvoke_0__1__IAs
     _g_System_ObjectModel._fp_System_ComponentModel_PropertyChangedEventHandler_void__EndInvoke_0__1__IAsyncResult(__thrown, __self_h, result);
 }
 
-SG_HNDL_NONNULL System_ComponentModel_PropertyChangedEventHandler_create(SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nullable __pdata, void (* _Nullable __deinit)(const void* _Nullable __pdata), void (* _Nonnull  __cb)(const void* _Nullable __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE sender, SG_HNDL_NONNULL e)) {
+SG_HNDL_NONNULL System_ComponentModel_PropertyChangedEventHandler_create(SG_HNDL_NULLABLE * _Nonnull __thrown, void (* _Nonnull  __cb)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE sender, SG_HNDL_NONNULL e), const void* _Nonnull __pdata, void (* _Nullable __deinit)(const void* _Nonnull __pdata)) {
     if (!_g_System_ObjectModel._fp_System_ComponentModel_PropertyChangedEventHandler_create) {
         my_init();
     }
-    SG_HNDL_NONNULL ret = _g_System_ObjectModel._fp_System_ComponentModel_PropertyChangedEventHandler_create(__thrown, __pdata, __deinit, __cb);
+    SG_HNDL_NONNULL ret = _g_System_ObjectModel._fp_System_ComponentModel_PropertyChangedEventHandler_create(__thrown, __cb, __pdata, __deinit);
     return ret;
 }
 
@@ -1352,11 +1390,11 @@ void System_ComponentModel_PropertyChangingEventHandler_void__EndInvoke_0__1__IA
     _g_System_ObjectModel._fp_System_ComponentModel_PropertyChangingEventHandler_void__EndInvoke_0__1__IAsyncResult(__thrown, __self_h, result);
 }
 
-SG_HNDL_NONNULL System_ComponentModel_PropertyChangingEventHandler_create(SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nullable __pdata, void (* _Nullable __deinit)(const void* _Nullable __pdata), void (* _Nonnull  __cb)(const void* _Nullable __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE sender, SG_HNDL_NONNULL e)) {
+SG_HNDL_NONNULL System_ComponentModel_PropertyChangingEventHandler_create(SG_HNDL_NULLABLE * _Nonnull __thrown, void (* _Nonnull  __cb)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE sender, SG_HNDL_NONNULL e), const void* _Nonnull __pdata, void (* _Nullable __deinit)(const void* _Nonnull __pdata)) {
     if (!_g_System_ObjectModel._fp_System_ComponentModel_PropertyChangingEventHandler_create) {
         my_init();
     }
-    SG_HNDL_NONNULL ret = _g_System_ObjectModel._fp_System_ComponentModel_PropertyChangingEventHandler_create(__thrown, __pdata, __deinit, __cb);
+    SG_HNDL_NONNULL ret = _g_System_ObjectModel._fp_System_ComponentModel_PropertyChangingEventHandler_create(__thrown, __cb, __pdata, __deinit);
     return ret;
 }
 
@@ -1503,6 +1541,14 @@ SG_HNDL_NONNULL System_Reflection_ICustomTypeProvider_cast(SG_HNDL_NULLABLE * _N
     return ret;
 }
 
+SG_HNDL_NONNULL System_Reflection_ICustomTypeProvider_create(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL (* _Nonnull  __cb_System_Reflection_ICustomTypeProvider_Type__GetCustomType_0__0)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown), const void* _Nonnull __pdata_System_Reflection_ICustomTypeProvider_Type__GetCustomType_0__0, void (* _Nullable __deinit)(const void* _Nonnull __pdata)) {
+    if (!_g_System_ObjectModel._fp_System_Reflection_ICustomTypeProvider_create) {
+        my_init();
+    }
+    SG_HNDL_NONNULL ret = _g_System_ObjectModel._fp_System_Reflection_ICustomTypeProvider_create(__thrown, __cb_System_Reflection_ICustomTypeProvider_Type__GetCustomType_0__0, __pdata_System_Reflection_ICustomTypeProvider_Type__GetCustomType_0__0, __deinit);
+    return ret;
+}
+
 TYP System_Windows_Input_ICommand_get_type_handle(void) {
     if (!_g_System_ObjectModel._fp_System_Windows_Input_ICommand_get_type_handle) {
         my_init();
@@ -1545,6 +1591,14 @@ SG_HNDL_NONNULL System_Windows_Input_ICommand_cast(SG_HNDL_NULLABLE * _Nonnull _
         my_init();
     }
     SG_HNDL_NONNULL ret = _g_System_ObjectModel._fp_System_Windows_Input_ICommand_cast(__thrown, __h);
+    return ret;
+}
+
+SG_HNDL_NONNULL System_Windows_Input_ICommand_create(SG_HNDL_NULLABLE * _Nonnull __thrown, int32_t (* _Nonnull  __cb_System_Windows_Input_ICommand_bool__CanExecute_0__1__Object)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE parameter), const void* _Nonnull __pdata_System_Windows_Input_ICommand_bool__CanExecute_0__1__Object, void (* _Nonnull  __cb_System_Windows_Input_ICommand_void__Execute_0__1__Object)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE parameter), const void* _Nonnull __pdata_System_Windows_Input_ICommand_void__Execute_0__1__Object, void (* _Nullable __deinit)(const void* _Nonnull __pdata)) {
+    if (!_g_System_ObjectModel._fp_System_Windows_Input_ICommand_create) {
+        my_init();
+    }
+    SG_HNDL_NONNULL ret = _g_System_ObjectModel._fp_System_Windows_Input_ICommand_create(__thrown, __cb_System_Windows_Input_ICommand_bool__CanExecute_0__1__Object, __pdata_System_Windows_Input_ICommand_bool__CanExecute_0__1__Object, __cb_System_Windows_Input_ICommand_void__Execute_0__1__Object, __pdata_System_Windows_Input_ICommand_void__Execute_0__1__Object, __deinit);
     return ret;
 }
 

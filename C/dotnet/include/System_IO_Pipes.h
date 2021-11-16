@@ -230,7 +230,7 @@ SG_HNDL_NULLABLE System_IO_Pipes_PipeStreamImpersonationWorker_IAsyncResult__Beg
 
 void System_IO_Pipes_PipeStreamImpersonationWorker_void__EndInvoke_0__1__IAsyncResult(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE result);
 
-SG_HNDL_NONNULL System_IO_Pipes_PipeStreamImpersonationWorker_create(SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nullable __pdata, void (* _Nullable __deinit)(const void* _Nullable __pdata), void (* _Nonnull  __cb)(const void* _Nullable __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown));
+SG_HNDL_NONNULL System_IO_Pipes_PipeStreamImpersonationWorker_create(SG_HNDL_NULLABLE * _Nonnull __thrown, void (* _Nonnull  __cb)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown), const void* _Nonnull __pdata, void (* _Nullable __deinit)(const void* _Nonnull __pdata));
 
 TYP System_IO_Pipes_PipeTransmissionMode_get_type_handle(void);
 

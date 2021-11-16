@@ -24,7 +24,7 @@ struct {
     void (* _Nonnull  _fp_System_Threading_ParameterizedThreadStart_void__Invoke_0__1__Object)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE obj);
     SG_HNDL_NULLABLE (* _Nonnull  _fp_System_Threading_ParameterizedThreadStart_IAsyncResult__BeginInvoke_0__3__Object_AsyncCallback_Object)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE obj, SG_HNDL_NULLABLE callback, SG_HNDL_NULLABLE object_);
     void (* _Nonnull  _fp_System_Threading_ParameterizedThreadStart_void__EndInvoke_0__1__IAsyncResult)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE result);
-    SG_HNDL_NONNULL (* _Nonnull  _fp_System_Threading_ParameterizedThreadStart_create)(SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nullable __pdata, void (* _Nullable __deinit)(const void* _Nullable __pdata), void (* _Nonnull  __cb)(const void* _Nullable __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE obj));
+    SG_HNDL_NONNULL (* _Nonnull  _fp_System_Threading_ParameterizedThreadStart_create)(SG_HNDL_NULLABLE * _Nonnull __thrown, void (* _Nonnull  __cb)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE obj), const void* _Nonnull __pdata, void (* _Nullable __deinit)(const void* _Nonnull __pdata));
     TYP (* _Nonnull  _fp_System_Threading_Thread_get_type_handle)(void);
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_Threading_Thread_ctor_0__1__ParameterizedThreadStart)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL start);
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_Threading_Thread_ctor_0__2__ParameterizedThreadStart_i32)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL start, int32_t maxStackSize);
@@ -73,7 +73,7 @@ struct {
     int32_t (* _Nonnull  _fp_System_Threading_Thread_i32__VolatileRead_0__1__refi32)(SG_HNDL_NULLABLE * _Nonnull __thrown, int32_t* _Nonnull __address_ref_ptr);
     int64_t (* _Nonnull  _fp_System_Threading_Thread_i64__VolatileRead_0__1__refi64)(SG_HNDL_NULLABLE * _Nonnull __thrown, int64_t* _Nonnull __address_ref_ptr);
     intptr_t (* _Nonnull  _fp_System_Threading_Thread_IntPtr__VolatileRead_0__1__refIntPtr)(SG_HNDL_NULLABLE * _Nonnull __thrown, intptr_t* _Nonnull __address_ref_ptr);
-    SG_HNDL_NULLABLE (* _Nonnull  _fp_System_Threading_Thread_Object__VolatileRead_0__1__refObject)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL* _Nonnull __address_ref_ptr);
+    SG_HNDL_NULLABLE (* _Nonnull  _fp_System_Threading_Thread_Object__VolatileRead_0__1__refObject)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE* _Nonnull __address_ref_ptr);
     int8_t (* _Nonnull  _fp_System_Threading_Thread_i8__VolatileRead_0__1__refi8)(SG_HNDL_NULLABLE * _Nonnull __thrown, int8_t* _Nonnull __address_ref_ptr);
     float (* _Nonnull  _fp_System_Threading_Thread_f32__VolatileRead_0__1__reff32)(SG_HNDL_NULLABLE * _Nonnull __thrown, float* _Nonnull __address_ref_ptr);
     uint16_t (* _Nonnull  _fp_System_Threading_Thread_u16__VolatileRead_0__1__refu16)(SG_HNDL_NULLABLE * _Nonnull __thrown, uint16_t* _Nonnull __address_ref_ptr);
@@ -86,7 +86,7 @@ struct {
     void (* _Nonnull  _fp_System_Threading_Thread_void__VolatileWrite_0__2__refi32_i32)(SG_HNDL_NULLABLE * _Nonnull __thrown, int32_t* _Nonnull __address_ref_ptr, int32_t value);
     void (* _Nonnull  _fp_System_Threading_Thread_void__VolatileWrite_0__2__refi64_i64)(SG_HNDL_NULLABLE * _Nonnull __thrown, int64_t* _Nonnull __address_ref_ptr, int64_t value);
     void (* _Nonnull  _fp_System_Threading_Thread_void__VolatileWrite_0__2__refIntPtr_IntPtr)(SG_HNDL_NULLABLE * _Nonnull __thrown, intptr_t* _Nonnull __address_ref_ptr, intptr_t value);
-    void (* _Nonnull  _fp_System_Threading_Thread_void__VolatileWrite_0__2__refObject_Object)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL* _Nonnull __address_ref_ptr, SG_HNDL_NULLABLE value);
+    void (* _Nonnull  _fp_System_Threading_Thread_void__VolatileWrite_0__2__refObject_Object)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE* _Nonnull __address_ref_ptr, SG_HNDL_NULLABLE value);
     void (* _Nonnull  _fp_System_Threading_Thread_void__VolatileWrite_0__2__refi8_i8)(SG_HNDL_NULLABLE * _Nonnull __thrown, int8_t* _Nonnull __address_ref_ptr, int8_t value);
     void (* _Nonnull  _fp_System_Threading_Thread_void__VolatileWrite_0__2__reff32_f32)(SG_HNDL_NULLABLE * _Nonnull __thrown, float* _Nonnull __address_ref_ptr, float value);
     void (* _Nonnull  _fp_System_Threading_Thread_void__VolatileWrite_0__2__refu16_u16)(SG_HNDL_NULLABLE * _Nonnull __thrown, uint16_t* _Nonnull __address_ref_ptr, uint16_t value);
@@ -126,7 +126,7 @@ struct {
     void (* _Nonnull  _fp_System_Threading_ThreadExceptionEventHandler_void__Invoke_0__2__Object_ThreadExceptionEventArgs)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NONNULL sender, SG_HNDL_NONNULL e);
     SG_HNDL_NULLABLE (* _Nonnull  _fp_System_Threading_ThreadExceptionEventHandler_IAsyncResult__BeginInvoke_0__4__Object_ThreadExceptionEventArgs_AsyncCallback_Object)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NONNULL sender, SG_HNDL_NONNULL e, SG_HNDL_NULLABLE callback, SG_HNDL_NULLABLE object_);
     void (* _Nonnull  _fp_System_Threading_ThreadExceptionEventHandler_void__EndInvoke_0__1__IAsyncResult)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE result);
-    SG_HNDL_NONNULL (* _Nonnull  _fp_System_Threading_ThreadExceptionEventHandler_create)(SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nullable __pdata, void (* _Nullable __deinit)(const void* _Nullable __pdata), void (* _Nonnull  __cb)(const void* _Nullable __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL sender, SG_HNDL_NONNULL e));
+    SG_HNDL_NONNULL (* _Nonnull  _fp_System_Threading_ThreadExceptionEventHandler_create)(SG_HNDL_NULLABLE * _Nonnull __thrown, void (* _Nonnull  __cb)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL sender, SG_HNDL_NONNULL e), const void* _Nonnull __pdata, void (* _Nullable __deinit)(const void* _Nonnull __pdata));
     TYP (* _Nonnull  _fp_System_Threading_ThreadInterruptedException_get_type_handle)(void);
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_Threading_ThreadInterruptedException_ctor_0__0)(SG_HNDL_NULLABLE * _Nonnull __thrown);
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_Threading_ThreadInterruptedException_ctor_0__1__String)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE message);
@@ -142,7 +142,7 @@ struct {
     void (* _Nonnull  _fp_System_Threading_ThreadStart_void__Invoke_0__0)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h);
     SG_HNDL_NULLABLE (* _Nonnull  _fp_System_Threading_ThreadStart_IAsyncResult__BeginInvoke_0__2__AsyncCallback_Object)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE callback, SG_HNDL_NULLABLE object_);
     void (* _Nonnull  _fp_System_Threading_ThreadStart_void__EndInvoke_0__1__IAsyncResult)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE result);
-    SG_HNDL_NONNULL (* _Nonnull  _fp_System_Threading_ThreadStart_create)(SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nullable __pdata, void (* _Nullable __deinit)(const void* _Nullable __pdata), void (* _Nonnull  __cb)(const void* _Nullable __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown));
+    SG_HNDL_NONNULL (* _Nonnull  _fp_System_Threading_ThreadStart_create)(SG_HNDL_NULLABLE * _Nonnull __thrown, void (* _Nonnull  __cb)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown), const void* _Nonnull __pdata, void (* _Nullable __deinit)(const void* _Nonnull __pdata));
     TYP (* _Nonnull  _fp_System_Threading_ThreadStartException_get_type_handle)(void);
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_Threading_ThreadStartException_cast)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __h);
     TYP (* _Nonnull  _fp_System_Threading_ThreadState_get_type_handle)(void);
@@ -299,11 +299,11 @@ void System_Threading_ParameterizedThreadStart_void__EndInvoke_0__1__IAsyncResul
     _g_System_Threading_Thread._fp_System_Threading_ParameterizedThreadStart_void__EndInvoke_0__1__IAsyncResult(__thrown, __self_h, result);
 }
 
-SG_HNDL_NONNULL System_Threading_ParameterizedThreadStart_create(SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nullable __pdata, void (* _Nullable __deinit)(const void* _Nullable __pdata), void (* _Nonnull  __cb)(const void* _Nullable __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE obj)) {
+SG_HNDL_NONNULL System_Threading_ParameterizedThreadStart_create(SG_HNDL_NULLABLE * _Nonnull __thrown, void (* _Nonnull  __cb)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE obj), const void* _Nonnull __pdata, void (* _Nullable __deinit)(const void* _Nonnull __pdata)) {
     if (!_g_System_Threading_Thread._fp_System_Threading_ParameterizedThreadStart_create) {
         my_init();
     }
-    SG_HNDL_NONNULL ret = _g_System_Threading_Thread._fp_System_Threading_ParameterizedThreadStart_create(__thrown, __pdata, __deinit, __cb);
+    SG_HNDL_NONNULL ret = _g_System_Threading_Thread._fp_System_Threading_ParameterizedThreadStart_create(__thrown, __cb, __pdata, __deinit);
     return ret;
 }
 
@@ -667,7 +667,7 @@ intptr_t System_Threading_Thread_IntPtr__VolatileRead_0__1__refIntPtr(SG_HNDL_NU
     return ret;
 }
 
-SG_HNDL_NULLABLE System_Threading_Thread_Object__VolatileRead_0__1__refObject(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL* _Nonnull __address_ref_ptr) {
+SG_HNDL_NULLABLE System_Threading_Thread_Object__VolatileRead_0__1__refObject(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE* _Nonnull __address_ref_ptr) {
     if (!_g_System_Threading_Thread._fp_System_Threading_Thread_Object__VolatileRead_0__1__refObject) {
         my_init();
     }
@@ -765,7 +765,7 @@ void System_Threading_Thread_void__VolatileWrite_0__2__refIntPtr_IntPtr(SG_HNDL_
     _g_System_Threading_Thread._fp_System_Threading_Thread_void__VolatileWrite_0__2__refIntPtr_IntPtr(__thrown, __address_ref_ptr, value);
 }
 
-void System_Threading_Thread_void__VolatileWrite_0__2__refObject_Object(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL* _Nonnull __address_ref_ptr, SG_HNDL_NULLABLE value) {
+void System_Threading_Thread_void__VolatileWrite_0__2__refObject_Object(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE* _Nonnull __address_ref_ptr, SG_HNDL_NULLABLE value) {
     if (!_g_System_Threading_Thread._fp_System_Threading_Thread_void__VolatileWrite_0__2__refObject_Object) {
         my_init();
     }
@@ -1069,11 +1069,11 @@ void System_Threading_ThreadExceptionEventHandler_void__EndInvoke_0__1__IAsyncRe
     _g_System_Threading_Thread._fp_System_Threading_ThreadExceptionEventHandler_void__EndInvoke_0__1__IAsyncResult(__thrown, __self_h, result);
 }
 
-SG_HNDL_NONNULL System_Threading_ThreadExceptionEventHandler_create(SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nullable __pdata, void (* _Nullable __deinit)(const void* _Nullable __pdata), void (* _Nonnull  __cb)(const void* _Nullable __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL sender, SG_HNDL_NONNULL e)) {
+SG_HNDL_NONNULL System_Threading_ThreadExceptionEventHandler_create(SG_HNDL_NULLABLE * _Nonnull __thrown, void (* _Nonnull  __cb)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL sender, SG_HNDL_NONNULL e), const void* _Nonnull __pdata, void (* _Nullable __deinit)(const void* _Nonnull __pdata)) {
     if (!_g_System_Threading_Thread._fp_System_Threading_ThreadExceptionEventHandler_create) {
         my_init();
     }
-    SG_HNDL_NONNULL ret = _g_System_Threading_Thread._fp_System_Threading_ThreadExceptionEventHandler_create(__thrown, __pdata, __deinit, __cb);
+    SG_HNDL_NONNULL ret = _g_System_Threading_Thread._fp_System_Threading_ThreadExceptionEventHandler_create(__thrown, __cb, __pdata, __deinit);
     return ret;
 }
 
@@ -1195,11 +1195,11 @@ void System_Threading_ThreadStart_void__EndInvoke_0__1__IAsyncResult(SG_HNDL_NUL
     _g_System_Threading_Thread._fp_System_Threading_ThreadStart_void__EndInvoke_0__1__IAsyncResult(__thrown, __self_h, result);
 }
 
-SG_HNDL_NONNULL System_Threading_ThreadStart_create(SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nullable __pdata, void (* _Nullable __deinit)(const void* _Nullable __pdata), void (* _Nonnull  __cb)(const void* _Nullable __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown)) {
+SG_HNDL_NONNULL System_Threading_ThreadStart_create(SG_HNDL_NULLABLE * _Nonnull __thrown, void (* _Nonnull  __cb)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown), const void* _Nonnull __pdata, void (* _Nullable __deinit)(const void* _Nonnull __pdata)) {
     if (!_g_System_Threading_Thread._fp_System_Threading_ThreadStart_create) {
         my_init();
     }
-    SG_HNDL_NONNULL ret = _g_System_Threading_Thread._fp_System_Threading_ThreadStart_create(__thrown, __pdata, __deinit, __cb);
+    SG_HNDL_NONNULL ret = _g_System_Threading_Thread._fp_System_Threading_ThreadStart_create(__thrown, __cb, __pdata, __deinit);
     return ret;
 }
 

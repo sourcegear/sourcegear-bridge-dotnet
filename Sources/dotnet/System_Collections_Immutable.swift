@@ -27,6 +27,9 @@ open class IImmutableDictionary_2<TKey : SGBridgeGenericValue,TValue : SGBridgeG
     open class func get_type_handle() -> TypeHandle {
         return System_Collections_Immutable_IImmutableDictionary_2_get_type_handle(TKey.get_type_handle(),TValue.get_type_handle());
     }
+    open class func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     let h : NonnullHandle;
     public func to_gval() -> GVal { return GVal(Swift.Int(bitPattern: self.h)); }
     public func dup_gval() -> GVal { return GVal(Swift.Int(bitPattern: __copy_handle(self.h))); }
@@ -227,6 +230,9 @@ open class IImmutableList_1<T : SGBridgeGenericValue>
     open class func get_type_handle() -> TypeHandle {
         return System_Collections_Immutable_IImmutableList_1_get_type_handle(T.get_type_handle());
     }
+    open class func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     let h : NonnullHandle;
     public func to_gval() -> GVal { return GVal(Swift.Int(bitPattern: self.h)); }
     public func dup_gval() -> GVal { return GVal(Swift.Int(bitPattern: __copy_handle(self.h))); }
@@ -301,9 +307,9 @@ open class IImmutableList_1<T : SGBridgeGenericValue>
     - Returns: The zero-based index of the first occurrence of  within the range of elements in the  that starts at  and contains  number of elements if found; otherwise -1.
 
     */
-    open func IndexOf(item : T, index : Swift.Int32, count : Swift.Int32, equalityComparer : dotnet.System.Collections.Generic.IEqualityComparer_1<T>) throws -> Swift.Int32 {
+    open func IndexOf(item : T, index : Swift.Int32, count : Swift.Int32, equalityComparer : Optional<dotnet.System.Collections.Generic.IEqualityComparer_1<T>>) throws -> Swift.Int32 {
         var __thrown : NullableHandle = nil;
-        let __return = System_Collections_Immutable_IImmutableList_1_i32__IndexOf_0__4__T_i32_i32_System_Collections_Generic_IEqualityComparer_T_(T.get_type_handle(), &__thrown, self.get_handle(), item.to_gval(), index, count, nil);
+        let __return = System_Collections_Immutable_IImmutableList_1_i32__IndexOf_0__4__T_i32_i32_System_Collections_Generic_IEqualityComparer_T_(T.get_type_handle(), &__thrown, self.get_handle(), item.to_gval(), index, count, (equalityComparer?.get_handle()));
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
@@ -360,9 +366,9 @@ open class IImmutableList_1<T : SGBridgeGenericValue>
     - Returns: Returns .
 
     */
-    open func LastIndexOf(item : T, index : Swift.Int32, count : Swift.Int32, equalityComparer : dotnet.System.Collections.Generic.IEqualityComparer_1<T>) throws -> Swift.Int32 {
+    open func LastIndexOf(item : T, index : Swift.Int32, count : Swift.Int32, equalityComparer : Optional<dotnet.System.Collections.Generic.IEqualityComparer_1<T>>) throws -> Swift.Int32 {
         var __thrown : NullableHandle = nil;
-        let __return = System_Collections_Immutable_IImmutableList_1_i32__LastIndexOf_0__4__T_i32_i32_System_Collections_Generic_IEqualityComparer_T_(T.get_type_handle(), &__thrown, self.get_handle(), item.to_gval(), index, count, nil);
+        let __return = System_Collections_Immutable_IImmutableList_1_i32__LastIndexOf_0__4__T_i32_i32_System_Collections_Generic_IEqualityComparer_T_(T.get_type_handle(), &__thrown, self.get_handle(), item.to_gval(), index, count, (equalityComparer?.get_handle()));
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
@@ -379,9 +385,9 @@ open class IImmutableList_1<T : SGBridgeGenericValue>
     - Returns: A new list with the specified object removed.
 
     */
-    open func Remove(value : T, equalityComparer : dotnet.System.Collections.Generic.IEqualityComparer_1<T>) throws -> dotnet.System.Collections.Immutable.IImmutableList_1<T> {
+    open func Remove(value : T, equalityComparer : Optional<dotnet.System.Collections.Generic.IEqualityComparer_1<T>>) throws -> dotnet.System.Collections.Immutable.IImmutableList_1<T> {
         var __thrown : NullableHandle = nil;
-        let __return = System_Collections_Immutable_IImmutableList_1_System_Collections_Immutable_IImmutableList_T___Remove_0__2__T_System_Collections_Generic_IEqualityComparer_T_(T.get_type_handle(), &__thrown, self.get_handle(), value.to_gval(), nil);
+        let __return = System_Collections_Immutable_IImmutableList_1_System_Collections_Immutable_IImmutableList_T___Remove_0__2__T_System_Collections_Generic_IEqualityComparer_T_(T.get_type_handle(), &__thrown, self.get_handle(), value.to_gval(), (equalityComparer?.get_handle()));
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
@@ -439,9 +445,9 @@ open class IImmutableList_1<T : SGBridgeGenericValue>
     - Returns: A new immutable list with the specified objects removed, if  matched objects in the list.
 
     */
-    open func RemoveRange(items : dotnet.System.Collections.Generic.IEnumerable_1<T>, equalityComparer : dotnet.System.Collections.Generic.IEqualityComparer_1<T>) throws -> dotnet.System.Collections.Immutable.IImmutableList_1<T> {
+    open func RemoveRange(items : dotnet.System.Collections.Generic.IEnumerable_1<T>, equalityComparer : Optional<dotnet.System.Collections.Generic.IEqualityComparer_1<T>>) throws -> dotnet.System.Collections.Immutable.IImmutableList_1<T> {
         var __thrown : NullableHandle = nil;
-        let __return = System_Collections_Immutable_IImmutableList_1_System_Collections_Immutable_IImmutableList_T___RemoveRange_0__2__System_Collections_Generic_IEnumerable_T__System_Collections_Generic_IEqualityComparer_T_(T.get_type_handle(), &__thrown, self.get_handle(), items.get_handle(), nil);
+        let __return = System_Collections_Immutable_IImmutableList_1_System_Collections_Immutable_IImmutableList_T___RemoveRange_0__2__System_Collections_Generic_IEnumerable_T__System_Collections_Generic_IEqualityComparer_T_(T.get_type_handle(), &__thrown, self.get_handle(), items.get_handle(), (equalityComparer?.get_handle()));
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
@@ -473,14 +479,14 @@ open class IImmutableList_1<T : SGBridgeGenericValue>
     Returns a new list with the first matching element in the list replaced with the specified element.
 
     - Parameter oldValue: The element to be replaced.
-    - Parameter newValue: The element to replace the first occurrence of  with
+    - Parameter newValue: The element to replace the first occurrence of  with.
     - Parameter equalityComparer: The equality comparer to use for matching .
     - Returns: A new list that contains , even if  is the same as .
 
     */
-    open func Replace(oldValue : T, newValue : T, equalityComparer : dotnet.System.Collections.Generic.IEqualityComparer_1<T>) throws -> dotnet.System.Collections.Immutable.IImmutableList_1<T> {
+    open func Replace(oldValue : T, newValue : T, equalityComparer : Optional<dotnet.System.Collections.Generic.IEqualityComparer_1<T>>) throws -> dotnet.System.Collections.Immutable.IImmutableList_1<T> {
         var __thrown : NullableHandle = nil;
-        let __return = System_Collections_Immutable_IImmutableList_1_System_Collections_Immutable_IImmutableList_T___Replace_0__3__T_T_System_Collections_Generic_IEqualityComparer_T_(T.get_type_handle(), &__thrown, self.get_handle(), oldValue.to_gval(), newValue.to_gval(), nil);
+        let __return = System_Collections_Immutable_IImmutableList_1_System_Collections_Immutable_IImmutableList_T___Replace_0__3__T_T_System_Collections_Generic_IEqualityComparer_T_(T.get_type_handle(), &__thrown, self.get_handle(), oldValue.to_gval(), newValue.to_gval(), (equalityComparer?.get_handle()));
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
@@ -525,6 +531,9 @@ open class IImmutableQueue_1<T : SGBridgeGenericValue>
     public typealias T_IEnumerable_1 = T;
     open class func get_type_handle() -> TypeHandle {
         return System_Collections_Immutable_IImmutableQueue_1_get_type_handle(T.get_type_handle());
+    }
+    open class func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     let h : NonnullHandle;
     public func to_gval() -> GVal { return GVal(Swift.Int(bitPattern: self.h)); }
@@ -635,6 +644,9 @@ open class IImmutableSet_1<T : SGBridgeGenericValue>
     public typealias T_IReadOnlyCollection_1 = T;
     open class func get_type_handle() -> TypeHandle {
         return System_Collections_Immutable_IImmutableSet_1_get_type_handle(T.get_type_handle());
+    }
+    open class func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     let h : NonnullHandle;
     public func to_gval() -> GVal { return GVal(Swift.Int(bitPattern: self.h)); }
@@ -946,6 +958,9 @@ open class IImmutableStack_1<T : SGBridgeGenericValue>
     open class func get_type_handle() -> TypeHandle {
         return System_Collections_Immutable_IImmutableStack_1_get_type_handle(T.get_type_handle());
     }
+    open class func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     let h : NonnullHandle;
     public func to_gval() -> GVal { return GVal(Swift.Int(bitPattern: self.h)); }
     public func dup_gval() -> GVal { return GVal(Swift.Int(bitPattern: __copy_handle(self.h))); }
@@ -994,7 +1009,7 @@ open class IImmutableStack_1<T : SGBridgeGenericValue>
     /**
     Removes the element at the top of the immutable stack and returns the new stack.
 
-    - Returns: The new stack; never 
+    - Returns: The new stack; never .
 
     */
     open func Pop() throws -> dotnet.System.Collections.Immutable.IImmutableStack_1<T> {
@@ -1074,9 +1089,9 @@ public struct ImmutableArray {
     - Returns: The zero-based index of the item in the array, if item is found; otherwise, a negative number that is the bitwise complement of the index of the next element that is larger than  or, if there is no larger element, the bitwise complement of .
 
     */
-    public static func BinarySearch<UT : SGBridgeGenericValue>(array : dotnet.System.Collections.Immutable.ImmutableArray_1<UT>, index : Swift.Int32, length : Swift.Int32, value : UT, comparer : dotnet.System.Collections.Generic.IComparer_1<UT>) throws -> Swift.Int32 {
+    public static func BinarySearch<UT : SGBridgeGenericValue>(array : dotnet.System.Collections.Immutable.ImmutableArray_1<UT>, index : Swift.Int32, length : Swift.Int32, value : UT, comparer : Optional<dotnet.System.Collections.Generic.IComparer_1<UT>>) throws -> Swift.Int32 {
         var __thrown : NullableHandle = nil;
-        let __return = System_Collections_Immutable_ImmutableArray_i32__BinarySearch_1__5__System_Collections_Immutable_ImmutableArray_UT__i32_i32_UT_System_Collections_Generic_IComparer_UT_(UT.get_type_handle(), &__thrown, array.get_handle(), index, length, value.to_gval(), nil);
+        let __return = System_Collections_Immutable_ImmutableArray_i32__BinarySearch_1__5__System_Collections_Immutable_ImmutableArray_UT__i32_i32_UT_System_Collections_Generic_IComparer_UT_(UT.get_type_handle(), &__thrown, array.get_handle(), index, length, value.to_gval(), (comparer?.get_handle()));
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
@@ -1113,9 +1128,9 @@ public struct ImmutableArray {
     - Returns: The zero-based index of the item in the array, if item is found; otherwise, a negative number that is the bitwise complement of the index of the next element that is larger than  or, if there is no larger element, the bitwise complement of .
 
     */
-    public static func BinarySearch<UT : SGBridgeGenericValue>(array : dotnet.System.Collections.Immutable.ImmutableArray_1<UT>, value : UT, comparer : dotnet.System.Collections.Generic.IComparer_1<UT>) throws -> Swift.Int32 {
+    public static func BinarySearch<UT : SGBridgeGenericValue>(array : dotnet.System.Collections.Immutable.ImmutableArray_1<UT>, value : UT, comparer : Optional<dotnet.System.Collections.Generic.IComparer_1<UT>>) throws -> Swift.Int32 {
         var __thrown : NullableHandle = nil;
-        let __return = System_Collections_Immutable_ImmutableArray_i32__BinarySearch_1__3__System_Collections_Immutable_ImmutableArray_UT__UT_System_Collections_Generic_IComparer_UT_(UT.get_type_handle(), &__thrown, array.get_handle(), value.to_gval(), nil);
+        let __return = System_Collections_Immutable_ImmutableArray_i32__BinarySearch_1__3__System_Collections_Immutable_ImmutableArray_UT__UT_System_Collections_Generic_IComparer_UT_(UT.get_type_handle(), &__thrown, array.get_handle(), value.to_gval(), (comparer?.get_handle()));
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
@@ -1397,8 +1412,22 @@ public final class ImmutableArray_1<T : SGBridgeGenericValue>
     public class override func get_type_handle() -> TypeHandle {
         return System_Collections_Immutable_ImmutableArray_1_get_type_handle(T.get_type_handle());
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    // static field:  Empty
+    /**
+    Gets an empty immutable array.
+
+    */
+    public class var Empty : dotnet.System.Collections.Immutable.ImmutableArray_1<T> {
+        get {
+        let __return = dotnet.System.Collections.Immutable.ImmutableArray_1<T>(hndl: System_Collections_Immutable_ImmutableArray_1_get_Empty());
+            return __return;
+        }
+    }
     /**
     Gets a value indicating whether this array was declared but not initialized.
 
@@ -1510,6 +1539,7 @@ public final class ImmutableArray_1<T : SGBridgeGenericValue>
         return dotnet.System.ReadOnlyMemory_1(hndl : __return);
         }
     }
+// TODO COPE (returns byreflike): System.ReadOnlySpan<T> AsSpan()
 // TODO COPE (write_all_methods) (unused generic param) System.Collections.Immutable.ImmutableArray<TOther> As<TOther>()
 // TODO COPE (write_all_methods) (unused generic param) System.Collections.Immutable.ImmutableArray<TOther> CastArray<TOther>()
     // System.Collections.Immutable.ImmutableArray<T> CastUp<TDerived>(System.Collections.Immutable.ImmutableArray<TDerived>)
@@ -1719,9 +1749,9 @@ public final class ImmutableArray_1<T : SGBridgeGenericValue>
     - Returns: The zero-based index position of the item if it is found, or -1 if it is not.
 
     */
-    public func IndexOf(item : T, startIndex : Swift.Int32, equalityComparer : dotnet.System.Collections.Generic.IEqualityComparer_1<T>) throws -> Swift.Int32 {
+    public func IndexOf(item : T, startIndex : Swift.Int32, equalityComparer : Optional<dotnet.System.Collections.Generic.IEqualityComparer_1<T>>) throws -> Swift.Int32 {
         var __thrown : NullableHandle = nil;
-        let __return = System_Collections_Immutable_ImmutableArray_1_i32__IndexOf_0__3__T_i32_System_Collections_Generic_IEqualityComparer_T_(T.get_type_handle(), &__thrown, self.get_handle(), item.to_gval(), startIndex, nil);
+        let __return = System_Collections_Immutable_ImmutableArray_1_i32__IndexOf_0__3__T_i32_System_Collections_Generic_IEqualityComparer_T_(T.get_type_handle(), &__thrown, self.get_handle(), item.to_gval(), startIndex, (equalityComparer?.get_handle()));
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
@@ -1760,9 +1790,9 @@ public final class ImmutableArray_1<T : SGBridgeGenericValue>
     - Returns: The zero-based index position of the item if it is found, or -1 if it is not.
 
     */
-    public func IndexOf(item : T, startIndex : Swift.Int32, count : Swift.Int32, equalityComparer : dotnet.System.Collections.Generic.IEqualityComparer_1<T>) throws -> Swift.Int32 {
+    public func IndexOf(item : T, startIndex : Swift.Int32, count : Swift.Int32, equalityComparer : Optional<dotnet.System.Collections.Generic.IEqualityComparer_1<T>>) throws -> Swift.Int32 {
         var __thrown : NullableHandle = nil;
-        let __return = System_Collections_Immutable_ImmutableArray_1_i32__IndexOf_0__4__T_i32_i32_System_Collections_Generic_IEqualityComparer_T_(T.get_type_handle(), &__thrown, self.get_handle(), item.to_gval(), startIndex, count, nil);
+        let __return = System_Collections_Immutable_ImmutableArray_1_i32__IndexOf_0__4__T_i32_i32_System_Collections_Generic_IEqualityComparer_T_(T.get_type_handle(), &__thrown, self.get_handle(), item.to_gval(), startIndex, count, (equalityComparer?.get_handle()));
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
@@ -1826,6 +1856,7 @@ public final class ImmutableArray_1<T : SGBridgeGenericValue>
         return dotnet.System.Collections.Immutable.ImmutableArray_1(hndl : __return);
         }
     }
+// TODO COPE (returns_byref): ref T ItemRef(System.Int32)
     // System.Int32 LastIndexOf(T)
 // docid: M:System.Collections.Immutable.ImmutableArray`1.LastIndexOf(`0)
     /**
@@ -1895,9 +1926,9 @@ public final class ImmutableArray_1<T : SGBridgeGenericValue>
     - Returns: The 0-based index into the array where the item was found; or -1 if it could not be found.
 
     */
-    public func LastIndexOf(item : T, startIndex : Swift.Int32, count : Swift.Int32, equalityComparer : dotnet.System.Collections.Generic.IEqualityComparer_1<T>) throws -> Swift.Int32 {
+    public func LastIndexOf(item : T, startIndex : Swift.Int32, count : Swift.Int32, equalityComparer : Optional<dotnet.System.Collections.Generic.IEqualityComparer_1<T>>) throws -> Swift.Int32 {
         var __thrown : NullableHandle = nil;
-        let __return = System_Collections_Immutable_ImmutableArray_1_i32__LastIndexOf_0__4__T_i32_i32_System_Collections_Generic_IEqualityComparer_T_(T.get_type_handle(), &__thrown, self.get_handle(), item.to_gval(), startIndex, count, nil);
+        let __return = System_Collections_Immutable_ImmutableArray_1_i32__LastIndexOf_0__4__T_i32_i32_System_Collections_Generic_IEqualityComparer_T_(T.get_type_handle(), &__thrown, self.get_handle(), item.to_gval(), startIndex, count, (equalityComparer?.get_handle()));
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
@@ -2015,9 +2046,9 @@ public final class ImmutableArray_1<T : SGBridgeGenericValue>
     - Returns: A new array with the specified item removed.
 
     */
-    public func Remove(item : T, equalityComparer : dotnet.System.Collections.Generic.IEqualityComparer_1<T>) throws -> dotnet.System.Collections.Immutable.ImmutableArray_1<T> {
+    public func Remove(item : T, equalityComparer : Optional<dotnet.System.Collections.Generic.IEqualityComparer_1<T>>) throws -> dotnet.System.Collections.Immutable.ImmutableArray_1<T> {
         var __thrown : NullableHandle = nil;
-        let __return = System_Collections_Immutable_ImmutableArray_1_System_Collections_Immutable_ImmutableArray_T___Remove_0__2__T_System_Collections_Generic_IEqualityComparer_T_(T.get_type_handle(), &__thrown, self.get_handle(), item.to_gval(), nil);
+        let __return = System_Collections_Immutable_ImmutableArray_1_System_Collections_Immutable_ImmutableArray_T___Remove_0__2__T_System_Collections_Generic_IEqualityComparer_T_(T.get_type_handle(), &__thrown, self.get_handle(), item.to_gval(), (equalityComparer?.get_handle()));
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
@@ -2093,9 +2124,9 @@ public final class ImmutableArray_1<T : SGBridgeGenericValue>
     - Returns: A new array with the elements removed.
 
     */
-    public func RemoveRange(items : dotnet.System.Collections.Generic.IEnumerable_1<T>, equalityComparer : dotnet.System.Collections.Generic.IEqualityComparer_1<T>) throws -> dotnet.System.Collections.Immutable.ImmutableArray_1<T> {
+    public func RemoveRange(items : dotnet.System.Collections.Generic.IEnumerable_1<T>, equalityComparer : Optional<dotnet.System.Collections.Generic.IEqualityComparer_1<T>>) throws -> dotnet.System.Collections.Immutable.ImmutableArray_1<T> {
         var __thrown : NullableHandle = nil;
-        let __return = System_Collections_Immutable_ImmutableArray_1_System_Collections_Immutable_ImmutableArray_T___RemoveRange_0__2__System_Collections_Generic_IEnumerable_T__System_Collections_Generic_IEqualityComparer_T_(T.get_type_handle(), &__thrown, self.get_handle(), items.get_handle(), nil);
+        let __return = System_Collections_Immutable_ImmutableArray_1_System_Collections_Immutable_ImmutableArray_T___RemoveRange_0__2__System_Collections_Generic_IEnumerable_T__System_Collections_Generic_IEqualityComparer_T_(T.get_type_handle(), &__thrown, self.get_handle(), items.get_handle(), (equalityComparer?.get_handle()));
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
@@ -2130,9 +2161,9 @@ public final class ImmutableArray_1<T : SGBridgeGenericValue>
     - Returns: A new array with the elements removed.
 
     */
-    public func RemoveRange(items : dotnet.System.Collections.Immutable.ImmutableArray_1<T>, equalityComparer : dotnet.System.Collections.Generic.IEqualityComparer_1<T>) throws -> dotnet.System.Collections.Immutable.ImmutableArray_1<T> {
+    public func RemoveRange(items : dotnet.System.Collections.Immutable.ImmutableArray_1<T>, equalityComparer : Optional<dotnet.System.Collections.Generic.IEqualityComparer_1<T>>) throws -> dotnet.System.Collections.Immutable.ImmutableArray_1<T> {
         var __thrown : NullableHandle = nil;
-        let __return = System_Collections_Immutable_ImmutableArray_1_System_Collections_Immutable_ImmutableArray_T___RemoveRange_0__2__System_Collections_Immutable_ImmutableArray_T__System_Collections_Generic_IEqualityComparer_T_(T.get_type_handle(), &__thrown, self.get_handle(), items.get_handle(), nil);
+        let __return = System_Collections_Immutable_ImmutableArray_1_System_Collections_Immutable_ImmutableArray_T___RemoveRange_0__2__System_Collections_Immutable_ImmutableArray_T__System_Collections_Generic_IEqualityComparer_T_(T.get_type_handle(), &__thrown, self.get_handle(), items.get_handle(), (equalityComparer?.get_handle()));
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
@@ -2188,9 +2219,9 @@ public final class ImmutableArray_1<T : SGBridgeGenericValue>
     - Returns: A new array that contains  even if the new and old values are the same.
 
     */
-    public func Replace(oldValue : T, newValue : T, equalityComparer : dotnet.System.Collections.Generic.IEqualityComparer_1<T>) throws -> dotnet.System.Collections.Immutable.ImmutableArray_1<T> {
+    public func Replace(oldValue : T, newValue : T, equalityComparer : Optional<dotnet.System.Collections.Generic.IEqualityComparer_1<T>>) throws -> dotnet.System.Collections.Immutable.ImmutableArray_1<T> {
         var __thrown : NullableHandle = nil;
-        let __return = System_Collections_Immutable_ImmutableArray_1_System_Collections_Immutable_ImmutableArray_T___Replace_0__3__T_T_System_Collections_Generic_IEqualityComparer_T_(T.get_type_handle(), &__thrown, self.get_handle(), oldValue.to_gval(), newValue.to_gval(), nil);
+        let __return = System_Collections_Immutable_ImmutableArray_1_System_Collections_Immutable_ImmutableArray_T___Replace_0__3__T_T_System_Collections_Generic_IEqualityComparer_T_(T.get_type_handle(), &__thrown, self.get_handle(), oldValue.to_gval(), newValue.to_gval(), (equalityComparer?.get_handle()));
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
@@ -2238,13 +2269,13 @@ public final class ImmutableArray_1<T : SGBridgeGenericValue>
     /**
     Sorts the elements in the immutable array using the specified comparer.
 
-    - Parameter comparer: The implementation to use when comparing elements, or  to use the default comparer
+    - Parameter comparer: The implementation to use when comparing elements, or  to use the default comparer.
     - Returns: A new immutable array that contains the items in this array, in sorted order.
 
     */
-    public func Sort(comparer : dotnet.System.Collections.Generic.IComparer_1<T>) throws -> dotnet.System.Collections.Immutable.ImmutableArray_1<T> {
+    public func Sort(comparer : Optional<dotnet.System.Collections.Generic.IComparer_1<T>>) throws -> dotnet.System.Collections.Immutable.ImmutableArray_1<T> {
         var __thrown : NullableHandle = nil;
-        let __return = System_Collections_Immutable_ImmutableArray_1_System_Collections_Immutable_ImmutableArray_T___Sort_0__1__System_Collections_Generic_IComparer_T_(T.get_type_handle(), &__thrown, self.get_handle(), nil);
+        let __return = System_Collections_Immutable_ImmutableArray_1_System_Collections_Immutable_ImmutableArray_T___Sort_0__1__System_Collections_Generic_IComparer_T_(T.get_type_handle(), &__thrown, self.get_handle(), (comparer?.get_handle()));
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
@@ -2281,13 +2312,13 @@ public final class ImmutableArray_1<T : SGBridgeGenericValue>
 
     - Parameter index: The index of the first element to sort.
     - Parameter count: The number of elements to include in the sort.
-    - Parameter comparer: The implementation to use when comparing elements, or  to use the default comparer
+    - Parameter comparer: The implementation to use when comparing elements, or  to use the default comparer.
     - Returns: A new immutable array that contains the items in this array, in sorted order.
 
     */
-    public func Sort(index : Swift.Int32, count : Swift.Int32, comparer : dotnet.System.Collections.Generic.IComparer_1<T>) throws -> dotnet.System.Collections.Immutable.ImmutableArray_1<T> {
+    public func Sort(index : Swift.Int32, count : Swift.Int32, comparer : Optional<dotnet.System.Collections.Generic.IComparer_1<T>>) throws -> dotnet.System.Collections.Immutable.ImmutableArray_1<T> {
         var __thrown : NullableHandle = nil;
-        let __return = System_Collections_Immutable_ImmutableArray_1_System_Collections_Immutable_ImmutableArray_T___Sort_0__3__i32_i32_System_Collections_Generic_IComparer_T_(T.get_type_handle(), &__thrown, self.get_handle(), index, count, nil);
+        let __return = System_Collections_Immutable_ImmutableArray_1_System_Collections_Immutable_ImmutableArray_T___Sort_0__3__i32_i32_System_Collections_Generic_IComparer_T_(T.get_type_handle(), &__thrown, self.get_handle(), index, count, (comparer?.get_handle()));
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
@@ -2357,9 +2388,6 @@ public final class ImmutableArray_1<T : SGBridgeGenericValue>
     }
     // [IsSpecialName] T get_Item(System.Int32)
 // docid: M:System.Collections.Immutable.ImmutableArray`1.get_Item(System.Int32)
-//BEGIN method_is_override
-//matches_1
-//matches :
     public func get_Item(index : Swift.Int32) throws -> T {
         var __thrown : NullableHandle = nil;
         let __return = System_Collections_Immutable_ImmutableArray_1_T__get_Item_0__1__i32(T.get_type_handle(), &__thrown, self.get_handle(), index);
@@ -2386,6 +2414,9 @@ public final class ImmutableArray_Builder_1<T : SGBridgeGenericValue>
 {
     public class override func get_type_handle() -> TypeHandle {
         return System_Collections_Immutable_ImmutableArray_1_Builder_get_type_handle(T.get_type_handle());
+    }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -2642,13 +2673,13 @@ public final class ImmutableArray_Builder_1<T : SGBridgeGenericValue>
     - Parameter item: The item to locate in the array.
     - Parameter startIndex: The index at which to begin the search.
     - Parameter count: The starting position of the search.
-    - Parameter equalityComparer: The equality comparer to use in the search
+    - Parameter equalityComparer: The equality comparer to use in the search.
     - Returns: The index of  if it's found in the list; otherwise, -1.
 
     */
-    public func IndexOf(item : T, startIndex : Swift.Int32, count : Swift.Int32, equalityComparer : dotnet.System.Collections.Generic.IEqualityComparer_1<T>) throws -> Swift.Int32 {
+    public func IndexOf(item : T, startIndex : Swift.Int32, count : Swift.Int32, equalityComparer : Optional<dotnet.System.Collections.Generic.IEqualityComparer_1<T>>) throws -> Swift.Int32 {
         var __thrown : NullableHandle = nil;
-        let __return = System_Collections_Immutable_ImmutableArray_1_Builder_i32__IndexOf_0__4__T_i32_i32_System_Collections_Generic_IEqualityComparer_T_(T.get_type_handle(), &__thrown, self.get_handle(), item.to_gval(), startIndex, count, nil);
+        let __return = System_Collections_Immutable_ImmutableArray_1_Builder_i32__IndexOf_0__4__T_i32_i32_System_Collections_Generic_IEqualityComparer_T_(T.get_type_handle(), &__thrown, self.get_handle(), item.to_gval(), startIndex, count, (equalityComparer?.get_handle()));
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
@@ -2672,6 +2703,7 @@ public final class ImmutableArray_Builder_1<T : SGBridgeGenericValue>
             return;
         }
     }
+// TODO COPE (returns_byref): ref T ItemRef(System.Int32)
     // System.Int32 LastIndexOf(T)
 // docid: M:System.Collections.Immutable.ImmutableArray`1.Builder.LastIndexOf(`0)
     /**
@@ -2741,9 +2773,9 @@ public final class ImmutableArray_Builder_1<T : SGBridgeGenericValue>
     - Returns: The 0-based index into the array where the item was found; or -1 if it could not be found.
 
     */
-    public func LastIndexOf(item : T, startIndex : Swift.Int32, count : Swift.Int32, equalityComparer : dotnet.System.Collections.Generic.IEqualityComparer_1<T>) throws -> Swift.Int32 {
+    public func LastIndexOf(item : T, startIndex : Swift.Int32, count : Swift.Int32, equalityComparer : Optional<dotnet.System.Collections.Generic.IEqualityComparer_1<T>>) throws -> Swift.Int32 {
         var __thrown : NullableHandle = nil;
-        let __return = System_Collections_Immutable_ImmutableArray_1_Builder_i32__LastIndexOf_0__4__T_i32_i32_System_Collections_Generic_IEqualityComparer_T_(T.get_type_handle(), &__thrown, self.get_handle(), item.to_gval(), startIndex, count, nil);
+        let __return = System_Collections_Immutable_ImmutableArray_1_Builder_i32__LastIndexOf_0__4__T_i32_i32_System_Collections_Generic_IEqualityComparer_T_(T.get_type_handle(), &__thrown, self.get_handle(), item.to_gval(), startIndex, count, (equalityComparer?.get_handle()));
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
@@ -2839,9 +2871,9 @@ public final class ImmutableArray_Builder_1<T : SGBridgeGenericValue>
 
     - Parameter comparer: The comparer to use for sorting. If comparer is , the default comparer for the elements type in the array is used.
     */
-    public func Sort(comparer : dotnet.System.Collections.Generic.IComparer_1<T>) throws {
+    public func Sort(comparer : Optional<dotnet.System.Collections.Generic.IComparer_1<T>>) throws {
         var __thrown : NullableHandle = nil;
-        System_Collections_Immutable_ImmutableArray_1_Builder_void__Sort_0__1__System_Collections_Generic_IComparer_T_(T.get_type_handle(), &__thrown, self.get_handle(), nil);
+        System_Collections_Immutable_ImmutableArray_1_Builder_void__Sort_0__1__System_Collections_Generic_IComparer_T_(T.get_type_handle(), &__thrown, self.get_handle(), (comparer?.get_handle()));
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
@@ -2878,9 +2910,9 @@ public final class ImmutableArray_Builder_1<T : SGBridgeGenericValue>
     - Parameter count: The number of elements to include in the sort.
     - Parameter comparer: The comparer to use for sorting. If comparer is , the default comparer for the elements type in the array is used.
     */
-    public func Sort(index : Swift.Int32, count : Swift.Int32, comparer : dotnet.System.Collections.Generic.IComparer_1<T>) throws {
+    public func Sort(index : Swift.Int32, count : Swift.Int32, comparer : Optional<dotnet.System.Collections.Generic.IComparer_1<T>>) throws {
         var __thrown : NullableHandle = nil;
-        System_Collections_Immutable_ImmutableArray_1_Builder_void__Sort_0__3__i32_i32_System_Collections_Generic_IComparer_T_(T.get_type_handle(), &__thrown, self.get_handle(), index, count, nil);
+        System_Collections_Immutable_ImmutableArray_1_Builder_void__Sort_0__3__i32_i32_System_Collections_Generic_IComparer_T_(T.get_type_handle(), &__thrown, self.get_handle(), index, count, (comparer?.get_handle()));
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
@@ -2967,9 +2999,6 @@ public final class ImmutableArray_Builder_1<T : SGBridgeGenericValue>
     }
     // [IsSpecialName] T get_Item(System.Int32)
 // docid: M:System.Collections.Immutable.ImmutableArray`1.Builder.get_Item(System.Int32)
-//BEGIN method_is_override
-//matches_1
-//matches :
     public func get_Item(index : Swift.Int32) throws -> T {
         var __thrown : NullableHandle = nil;
         let __return = System_Collections_Immutable_ImmutableArray_1_Builder_T__get_Item_0__1__i32(T.get_type_handle(), &__thrown, self.get_handle(), index);
@@ -3031,6 +3060,9 @@ public final class ImmutableArray_Enumerator_1<T : SGBridgeGenericValue>
 {
     public class override func get_type_handle() -> TypeHandle {
         return System_Collections_Immutable_ImmutableArray_1_Enumerator_get_type_handle(T.get_type_handle());
+    }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -3114,9 +3146,9 @@ public struct ImmutableDictionary {
     - Returns: The new builder.
 
     */
-    public static func CreateBuilder<UTKey : SGBridgeGenericValue,UTValue : SGBridgeGenericValue>(keyComparer : dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>, valueComparer : dotnet.System.Collections.Generic.IEqualityComparer_1<UTValue>) throws -> dotnet.System.Collections.Immutable.ImmutableDictionary_Builder_2<UTKey,UTValue> {
+    public static func CreateBuilder<UTKey : SGBridgeGenericValue,UTValue : SGBridgeGenericValue>(keyComparer : Optional<dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>>, valueComparer : Optional<dotnet.System.Collections.Generic.IEqualityComparer_1<UTValue>>) throws -> dotnet.System.Collections.Immutable.ImmutableDictionary_Builder_2<UTKey,UTValue> {
         var __thrown : NullableHandle = nil;
-        let __return = System_Collections_Immutable_ImmutableDictionary_System_Collections_Immutable_ImmutableDictionary_TKey_TValue__System_Collections_Immutable_Builder_UTKey_UTValue___CreateBuilder_2__2__System_Collections_Generic_IEqualityComparer_UTKey__System_Collections_Generic_IEqualityComparer_UTValue_(UTKey.get_type_handle(), UTValue.get_type_handle(), &__thrown, nil, nil);
+        let __return = System_Collections_Immutable_ImmutableDictionary_System_Collections_Immutable_ImmutableDictionary_TKey_TValue__System_Collections_Immutable_Builder_UTKey_UTValue___CreateBuilder_2__2__System_Collections_Generic_IEqualityComparer_UTKey__System_Collections_Generic_IEqualityComparer_UTValue_(UTKey.get_type_handle(), UTValue.get_type_handle(), &__thrown, (keyComparer?.get_handle()), (valueComparer?.get_handle()));
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
@@ -3151,9 +3183,9 @@ public struct ImmutableDictionary {
     - Returns: A new immutable dictionary that contains the specified items and uses the specified comparer.
 
     */
-    public static func CreateRange<UTKey : SGBridgeGenericValue,UTValue : SGBridgeGenericValue>(keyComparer : dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>, items : dotnet.System.Collections.Generic.IEnumerable_1<dotnet.System.Collections.Generic.KeyValuePair_2<UTKey,UTValue>>) throws -> dotnet.System.Collections.Immutable.ImmutableDictionary_2<UTKey,UTValue> {
+    public static func CreateRange<UTKey : SGBridgeGenericValue,UTValue : SGBridgeGenericValue>(keyComparer : Optional<dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>>, items : dotnet.System.Collections.Generic.IEnumerable_1<dotnet.System.Collections.Generic.KeyValuePair_2<UTKey,UTValue>>) throws -> dotnet.System.Collections.Immutable.ImmutableDictionary_2<UTKey,UTValue> {
         var __thrown : NullableHandle = nil;
-        let __return = System_Collections_Immutable_ImmutableDictionary_System_Collections_Immutable_ImmutableDictionary_UTKey_UTValue___CreateRange_2__2__System_Collections_Generic_IEqualityComparer_UTKey__System_Collections_Generic_IEnumerable_System_Collections_Generic_System_Collections_Generic_KeyValuePair_UTKey_UTValue__(UTKey.get_type_handle(), UTValue.get_type_handle(), &__thrown, nil, items.get_handle());
+        let __return = System_Collections_Immutable_ImmutableDictionary_System_Collections_Immutable_ImmutableDictionary_UTKey_UTValue___CreateRange_2__2__System_Collections_Generic_IEqualityComparer_UTKey__System_Collections_Generic_IEnumerable_System_Collections_Generic_System_Collections_Generic_KeyValuePair_UTKey_UTValue__(UTKey.get_type_handle(), UTValue.get_type_handle(), &__thrown, (keyComparer?.get_handle()), items.get_handle());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
@@ -3171,9 +3203,9 @@ public struct ImmutableDictionary {
     - Returns: A new immutable dictionary that contains the specified items and uses the specified comparer.
 
     */
-    public static func CreateRange<UTKey : SGBridgeGenericValue,UTValue : SGBridgeGenericValue>(keyComparer : dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>, valueComparer : dotnet.System.Collections.Generic.IEqualityComparer_1<UTValue>, items : dotnet.System.Collections.Generic.IEnumerable_1<dotnet.System.Collections.Generic.KeyValuePair_2<UTKey,UTValue>>) throws -> dotnet.System.Collections.Immutable.ImmutableDictionary_2<UTKey,UTValue> {
+    public static func CreateRange<UTKey : SGBridgeGenericValue,UTValue : SGBridgeGenericValue>(keyComparer : Optional<dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>>, valueComparer : Optional<dotnet.System.Collections.Generic.IEqualityComparer_1<UTValue>>, items : dotnet.System.Collections.Generic.IEnumerable_1<dotnet.System.Collections.Generic.KeyValuePair_2<UTKey,UTValue>>) throws -> dotnet.System.Collections.Immutable.ImmutableDictionary_2<UTKey,UTValue> {
         var __thrown : NullableHandle = nil;
-        let __return = System_Collections_Immutable_ImmutableDictionary_System_Collections_Immutable_ImmutableDictionary_UTKey_UTValue___CreateRange_2__3__System_Collections_Generic_IEqualityComparer_UTKey__System_Collections_Generic_IEqualityComparer_UTValue__System_Collections_Generic_IEnumerable_System_Collections_Generic_System_Collections_Generic_KeyValuePair_UTKey_UTValue__(UTKey.get_type_handle(), UTValue.get_type_handle(), &__thrown, nil, nil, items.get_handle());
+        let __return = System_Collections_Immutable_ImmutableDictionary_System_Collections_Immutable_ImmutableDictionary_UTKey_UTValue___CreateRange_2__3__System_Collections_Generic_IEqualityComparer_UTKey__System_Collections_Generic_IEqualityComparer_UTValue__System_Collections_Generic_IEnumerable_System_Collections_Generic_System_Collections_Generic_KeyValuePair_UTKey_UTValue__(UTKey.get_type_handle(), UTValue.get_type_handle(), &__thrown, (keyComparer?.get_handle()), (valueComparer?.get_handle()), items.get_handle());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
@@ -3192,9 +3224,9 @@ public struct ImmutableDictionary {
     - Returns: An empty immutable dictionary.
 
     */
-    public static func Create<UTKey : SGBridgeGenericValue,UTValue : SGBridgeGenericValue>(keyComparer : dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>, valueComparer : dotnet.System.Collections.Generic.IEqualityComparer_1<UTValue>) throws -> dotnet.System.Collections.Immutable.ImmutableDictionary_2<UTKey,UTValue> {
+    public static func Create<UTKey : SGBridgeGenericValue,UTValue : SGBridgeGenericValue>(keyComparer : Optional<dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>>, valueComparer : Optional<dotnet.System.Collections.Generic.IEqualityComparer_1<UTValue>>) throws -> dotnet.System.Collections.Immutable.ImmutableDictionary_2<UTKey,UTValue> {
         var __thrown : NullableHandle = nil;
-        let __return = System_Collections_Immutable_ImmutableDictionary_System_Collections_Immutable_ImmutableDictionary_UTKey_UTValue___Create_2__2__System_Collections_Generic_IEqualityComparer_UTKey__System_Collections_Generic_IEqualityComparer_UTValue_(UTKey.get_type_handle(), UTValue.get_type_handle(), &__thrown, nil, nil);
+        let __return = System_Collections_Immutable_ImmutableDictionary_System_Collections_Immutable_ImmutableDictionary_UTKey_UTValue___Create_2__2__System_Collections_Generic_IEqualityComparer_UTKey__System_Collections_Generic_IEqualityComparer_UTValue_(UTKey.get_type_handle(), UTValue.get_type_handle(), &__thrown, (keyComparer?.get_handle()), (valueComparer?.get_handle()));
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
@@ -3268,9 +3300,9 @@ public struct ImmutableDictionary {
     - Returns: An immutable dictionary that contains the key/value pairs in the specified sequence.
 
     */
-    public static func ToImmutableDictionary<UTKey : SGBridgeGenericValue,UTValue : SGBridgeGenericValue>(source : dotnet.System.Collections.Generic.IEnumerable_1<dotnet.System.Collections.Generic.KeyValuePair_2<UTKey,UTValue>>, keyComparer : dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>) throws -> dotnet.System.Collections.Immutable.ImmutableDictionary_2<UTKey,UTValue> {
+    public static func ToImmutableDictionary<UTKey : SGBridgeGenericValue,UTValue : SGBridgeGenericValue>(source : dotnet.System.Collections.Generic.IEnumerable_1<dotnet.System.Collections.Generic.KeyValuePair_2<UTKey,UTValue>>, keyComparer : Optional<dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>>) throws -> dotnet.System.Collections.Immutable.ImmutableDictionary_2<UTKey,UTValue> {
         var __thrown : NullableHandle = nil;
-        let __return = System_Collections_Immutable_ImmutableDictionary_System_Collections_Immutable_ImmutableDictionary_UTKey_UTValue___ToImmutableDictionary_2__2__System_Collections_Generic_IEnumerable_System_Collections_Generic_System_Collections_Generic_KeyValuePair_UTKey_UTValue___System_Collections_Generic_IEqualityComparer_UTKey_(UTKey.get_type_handle(), UTValue.get_type_handle(), &__thrown, source.get_handle(), nil);
+        let __return = System_Collections_Immutable_ImmutableDictionary_System_Collections_Immutable_ImmutableDictionary_UTKey_UTValue___ToImmutableDictionary_2__2__System_Collections_Generic_IEnumerable_System_Collections_Generic_System_Collections_Generic_KeyValuePair_UTKey_UTValue___System_Collections_Generic_IEqualityComparer_UTKey_(UTKey.get_type_handle(), UTValue.get_type_handle(), &__thrown, source.get_handle(), (keyComparer?.get_handle()));
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
@@ -3288,9 +3320,9 @@ public struct ImmutableDictionary {
     - Returns: An immutable dictionary that contains the key/value pairs in the specified sequence.
 
     */
-    public static func ToImmutableDictionary<UTKey : SGBridgeGenericValue,UTValue : SGBridgeGenericValue>(source : dotnet.System.Collections.Generic.IEnumerable_1<dotnet.System.Collections.Generic.KeyValuePair_2<UTKey,UTValue>>, keyComparer : dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>, valueComparer : dotnet.System.Collections.Generic.IEqualityComparer_1<UTValue>) throws -> dotnet.System.Collections.Immutable.ImmutableDictionary_2<UTKey,UTValue> {
+    public static func ToImmutableDictionary<UTKey : SGBridgeGenericValue,UTValue : SGBridgeGenericValue>(source : dotnet.System.Collections.Generic.IEnumerable_1<dotnet.System.Collections.Generic.KeyValuePair_2<UTKey,UTValue>>, keyComparer : Optional<dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>>, valueComparer : Optional<dotnet.System.Collections.Generic.IEqualityComparer_1<UTValue>>) throws -> dotnet.System.Collections.Immutable.ImmutableDictionary_2<UTKey,UTValue> {
         var __thrown : NullableHandle = nil;
-        let __return = System_Collections_Immutable_ImmutableDictionary_System_Collections_Immutable_ImmutableDictionary_UTKey_UTValue___ToImmutableDictionary_2__3__System_Collections_Generic_IEnumerable_System_Collections_Generic_System_Collections_Generic_KeyValuePair_UTKey_UTValue___System_Collections_Generic_IEqualityComparer_UTKey__System_Collections_Generic_IEqualityComparer_UTValue_(UTKey.get_type_handle(), UTValue.get_type_handle(), &__thrown, source.get_handle(), nil, nil);
+        let __return = System_Collections_Immutable_ImmutableDictionary_System_Collections_Immutable_ImmutableDictionary_UTKey_UTValue___ToImmutableDictionary_2__3__System_Collections_Generic_IEnumerable_System_Collections_Generic_System_Collections_Generic_KeyValuePair_UTKey_UTValue___System_Collections_Generic_IEqualityComparer_UTKey__System_Collections_Generic_IEqualityComparer_UTValue_(UTKey.get_type_handle(), UTValue.get_type_handle(), &__thrown, source.get_handle(), (keyComparer?.get_handle()), (valueComparer?.get_handle()));
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
@@ -3332,9 +3364,9 @@ public struct ImmutableDictionary {
     - Returns: The immutable dictionary that contains elements from , with keys transformed by applying .
 
     */
-    public static func ToImmutableDictionary<UTSource : SGBridgeGenericValue,UTKey : SGBridgeGenericValue>(source : dotnet.System.Collections.Generic.IEnumerable_1<UTSource>, keySelector : dotnet.System.Func_2<UTSource,UTKey>, keyComparer : dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>) throws -> dotnet.System.Collections.Immutable.ImmutableDictionary_2<UTKey,UTSource> {
+    public static func ToImmutableDictionary<UTSource : SGBridgeGenericValue,UTKey : SGBridgeGenericValue>(source : dotnet.System.Collections.Generic.IEnumerable_1<UTSource>, keySelector : dotnet.System.Func_2<UTSource,UTKey>, keyComparer : Optional<dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>>) throws -> dotnet.System.Collections.Immutable.ImmutableDictionary_2<UTKey,UTSource> {
         var __thrown : NullableHandle = nil;
-        let __return = System_Collections_Immutable_ImmutableDictionary_System_Collections_Immutable_ImmutableDictionary_UTKey_UTSource___ToImmutableDictionary_2__3__System_Collections_Generic_IEnumerable_UTSource__System_Func_UTSource_UTKey__System_Collections_Generic_IEqualityComparer_UTKey_(UTSource.get_type_handle(), UTKey.get_type_handle(), &__thrown, source.get_handle(), keySelector.get_handle(), nil);
+        let __return = System_Collections_Immutable_ImmutableDictionary_System_Collections_Immutable_ImmutableDictionary_UTKey_UTSource___ToImmutableDictionary_2__3__System_Collections_Generic_IEnumerable_UTSource__System_Func_UTSource_UTKey__System_Collections_Generic_IEqualityComparer_UTKey_(UTSource.get_type_handle(), UTKey.get_type_handle(), &__thrown, source.get_handle(), keySelector.get_handle(), (keyComparer?.get_handle()));
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
@@ -3342,7 +3374,7 @@ public struct ImmutableDictionary {
         }
     }
     // delegate closure overload
-    public static func ToImmutableDictionary<UTSource : SGBridgeGenericValue,UTKey : SGBridgeGenericValue>(source : dotnet.System.Collections.Generic.IEnumerable_1<UTSource>, keySelector : @escaping (UTSource) throws -> UTKey, keyComparer : dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>) throws -> dotnet.System.Collections.Immutable.ImmutableDictionary_2<UTKey,UTSource> {
+    public static func ToImmutableDictionary<UTSource : SGBridgeGenericValue,UTKey : SGBridgeGenericValue>(source : dotnet.System.Collections.Generic.IEnumerable_1<UTSource>, keySelector : @escaping (UTSource) throws -> UTKey, keyComparer : Optional<dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>>) throws -> dotnet.System.Collections.Immutable.ImmutableDictionary_2<UTKey,UTSource> {
         let del_keySelector = try dotnet.System.Func_2<UTSource,UTKey>(keySelector);
         return try ToImmutableDictionary(source: source, keySelector: del_keySelector, keyComparer: keyComparer);
     }
@@ -3395,9 +3427,9 @@ public struct ImmutableDictionary {
     - Returns: An immutable dictionary that contains the items in the specified sequence.
 
     */
-    public static func ToImmutableDictionary<UTSource : SGBridgeGenericValue,UTKey : SGBridgeGenericValue,UTValue : SGBridgeGenericValue>(source : dotnet.System.Collections.Generic.IEnumerable_1<UTSource>, keySelector : dotnet.System.Func_2<UTSource,UTKey>, elementSelector : dotnet.System.Func_2<UTSource,UTValue>, keyComparer : dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>) throws -> dotnet.System.Collections.Immutable.ImmutableDictionary_2<UTKey,UTValue> {
+    public static func ToImmutableDictionary<UTSource : SGBridgeGenericValue,UTKey : SGBridgeGenericValue,UTValue : SGBridgeGenericValue>(source : dotnet.System.Collections.Generic.IEnumerable_1<UTSource>, keySelector : dotnet.System.Func_2<UTSource,UTKey>, elementSelector : dotnet.System.Func_2<UTSource,UTValue>, keyComparer : Optional<dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>>) throws -> dotnet.System.Collections.Immutable.ImmutableDictionary_2<UTKey,UTValue> {
         var __thrown : NullableHandle = nil;
-        let __return = System_Collections_Immutable_ImmutableDictionary_System_Collections_Immutable_ImmutableDictionary_UTKey_UTValue___ToImmutableDictionary_3__4__System_Collections_Generic_IEnumerable_UTSource__System_Func_UTSource_UTKey__System_Func_UTSource_UTValue__System_Collections_Generic_IEqualityComparer_UTKey_(UTSource.get_type_handle(), UTKey.get_type_handle(), UTValue.get_type_handle(), &__thrown, source.get_handle(), keySelector.get_handle(), elementSelector.get_handle(), nil);
+        let __return = System_Collections_Immutable_ImmutableDictionary_System_Collections_Immutable_ImmutableDictionary_UTKey_UTValue___ToImmutableDictionary_3__4__System_Collections_Generic_IEnumerable_UTSource__System_Func_UTSource_UTKey__System_Func_UTSource_UTValue__System_Collections_Generic_IEqualityComparer_UTKey_(UTSource.get_type_handle(), UTKey.get_type_handle(), UTValue.get_type_handle(), &__thrown, source.get_handle(), keySelector.get_handle(), elementSelector.get_handle(), (keyComparer?.get_handle()));
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
@@ -3405,7 +3437,7 @@ public struct ImmutableDictionary {
         }
     }
     // delegate closure overload
-    public static func ToImmutableDictionary<UTSource : SGBridgeGenericValue,UTKey : SGBridgeGenericValue,UTValue : SGBridgeGenericValue>(source : dotnet.System.Collections.Generic.IEnumerable_1<UTSource>, keySelector : @escaping (UTSource) throws -> UTKey, elementSelector : @escaping (UTSource) throws -> UTValue, keyComparer : dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>) throws -> dotnet.System.Collections.Immutable.ImmutableDictionary_2<UTKey,UTValue> {
+    public static func ToImmutableDictionary<UTSource : SGBridgeGenericValue,UTKey : SGBridgeGenericValue,UTValue : SGBridgeGenericValue>(source : dotnet.System.Collections.Generic.IEnumerable_1<UTSource>, keySelector : @escaping (UTSource) throws -> UTKey, elementSelector : @escaping (UTSource) throws -> UTValue, keyComparer : Optional<dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>>) throws -> dotnet.System.Collections.Immutable.ImmutableDictionary_2<UTKey,UTValue> {
         let del_keySelector = try dotnet.System.Func_2<UTSource,UTKey>(keySelector);
         let del_elementSelector = try dotnet.System.Func_2<UTSource,UTValue>(elementSelector);
         return try ToImmutableDictionary(source: source, keySelector: del_keySelector, elementSelector: del_elementSelector, keyComparer: keyComparer);
@@ -3423,9 +3455,9 @@ public struct ImmutableDictionary {
     - Returns: An immutable dictionary that contains the items in the specified sequence.
 
     */
-    public static func ToImmutableDictionary<UTSource : SGBridgeGenericValue,UTKey : SGBridgeGenericValue,UTValue : SGBridgeGenericValue>(source : dotnet.System.Collections.Generic.IEnumerable_1<UTSource>, keySelector : dotnet.System.Func_2<UTSource,UTKey>, elementSelector : dotnet.System.Func_2<UTSource,UTValue>, keyComparer : dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>, valueComparer : dotnet.System.Collections.Generic.IEqualityComparer_1<UTValue>) throws -> dotnet.System.Collections.Immutable.ImmutableDictionary_2<UTKey,UTValue> {
+    public static func ToImmutableDictionary<UTSource : SGBridgeGenericValue,UTKey : SGBridgeGenericValue,UTValue : SGBridgeGenericValue>(source : dotnet.System.Collections.Generic.IEnumerable_1<UTSource>, keySelector : dotnet.System.Func_2<UTSource,UTKey>, elementSelector : dotnet.System.Func_2<UTSource,UTValue>, keyComparer : Optional<dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>>, valueComparer : Optional<dotnet.System.Collections.Generic.IEqualityComparer_1<UTValue>>) throws -> dotnet.System.Collections.Immutable.ImmutableDictionary_2<UTKey,UTValue> {
         var __thrown : NullableHandle = nil;
-        let __return = System_Collections_Immutable_ImmutableDictionary_System_Collections_Immutable_ImmutableDictionary_UTKey_UTValue___ToImmutableDictionary_3__5__System_Collections_Generic_IEnumerable_UTSource__System_Func_UTSource_UTKey__System_Func_UTSource_UTValue__System_Collections_Generic_IEqualityComparer_UTKey__System_Collections_Generic_IEqualityComparer_UTValue_(UTSource.get_type_handle(), UTKey.get_type_handle(), UTValue.get_type_handle(), &__thrown, source.get_handle(), keySelector.get_handle(), elementSelector.get_handle(), nil, nil);
+        let __return = System_Collections_Immutable_ImmutableDictionary_System_Collections_Immutable_ImmutableDictionary_UTKey_UTValue___ToImmutableDictionary_3__5__System_Collections_Generic_IEnumerable_UTSource__System_Func_UTSource_UTKey__System_Func_UTSource_UTValue__System_Collections_Generic_IEqualityComparer_UTKey__System_Collections_Generic_IEqualityComparer_UTValue_(UTSource.get_type_handle(), UTKey.get_type_handle(), UTValue.get_type_handle(), &__thrown, source.get_handle(), keySelector.get_handle(), elementSelector.get_handle(), (keyComparer?.get_handle()), (valueComparer?.get_handle()));
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
@@ -3433,7 +3465,7 @@ public struct ImmutableDictionary {
         }
     }
     // delegate closure overload
-    public static func ToImmutableDictionary<UTSource : SGBridgeGenericValue,UTKey : SGBridgeGenericValue,UTValue : SGBridgeGenericValue>(source : dotnet.System.Collections.Generic.IEnumerable_1<UTSource>, keySelector : @escaping (UTSource) throws -> UTKey, elementSelector : @escaping (UTSource) throws -> UTValue, keyComparer : dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>, valueComparer : dotnet.System.Collections.Generic.IEqualityComparer_1<UTValue>) throws -> dotnet.System.Collections.Immutable.ImmutableDictionary_2<UTKey,UTValue> {
+    public static func ToImmutableDictionary<UTSource : SGBridgeGenericValue,UTKey : SGBridgeGenericValue,UTValue : SGBridgeGenericValue>(source : dotnet.System.Collections.Generic.IEnumerable_1<UTSource>, keySelector : @escaping (UTSource) throws -> UTKey, elementSelector : @escaping (UTSource) throws -> UTValue, keyComparer : Optional<dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>>, valueComparer : Optional<dotnet.System.Collections.Generic.IEqualityComparer_1<UTValue>>) throws -> dotnet.System.Collections.Immutable.ImmutableDictionary_2<UTKey,UTValue> {
         let del_keySelector = try dotnet.System.Func_2<UTSource,UTKey>(keySelector);
         let del_elementSelector = try dotnet.System.Func_2<UTSource,UTValue>(elementSelector);
         return try ToImmutableDictionary(source: source, keySelector: del_keySelector, elementSelector: del_elementSelector, keyComparer: keyComparer, valueComparer: valueComparer);
@@ -3458,8 +3490,22 @@ public final class ImmutableDictionary_2<TKey : SGBridgeGenericValue,TValue : SG
     public class override func get_type_handle() -> TypeHandle {
         return System_Collections_Immutable_ImmutableDictionary_2_get_type_handle(TKey.get_type_handle(),TValue.get_type_handle());
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    // static field:  Empty
+    /**
+    Gets an empty immutable dictionary.
+
+    */
+    public class var Empty : dotnet.System.Collections.Immutable.ImmutableDictionary_2<TKey,TValue> {
+        get {
+        let __return = dotnet.System.Collections.Immutable.ImmutableDictionary_2<TKey,TValue>(hndl: System_Collections_Immutable_ImmutableDictionary_2_get_Empty());
+            return __return;
+        }
+    }
     // System.Collections.Immutable.ImmutableDictionary<TKey,TValue> Add(TKey, TValue)
 // docid: M:System.Collections.Immutable.ImmutableDictionary`2.Add(`0,`1)
     /**
@@ -3733,9 +3779,9 @@ public final class ImmutableDictionary_2<TKey : SGBridgeGenericValue,TValue : SG
     - Returns: An instance of the immutable dictionary that uses the given comparer.
 
     */
-    public func WithComparers(keyComparer : dotnet.System.Collections.Generic.IEqualityComparer_1<TKey>) throws -> dotnet.System.Collections.Immutable.ImmutableDictionary_2<TKey,TValue> {
+    public func WithComparers(keyComparer : Optional<dotnet.System.Collections.Generic.IEqualityComparer_1<TKey>>) throws -> dotnet.System.Collections.Immutable.ImmutableDictionary_2<TKey,TValue> {
         var __thrown : NullableHandle = nil;
-        let __return = System_Collections_Immutable_ImmutableDictionary_2_System_Collections_Immutable_ImmutableDictionary_TKey_TValue___WithComparers_0__1__System_Collections_Generic_IEqualityComparer_TKey_(TKey.get_type_handle(), TValue.get_type_handle(), &__thrown, self.get_handle(), nil);
+        let __return = System_Collections_Immutable_ImmutableDictionary_2_System_Collections_Immutable_ImmutableDictionary_TKey_TValue___WithComparers_0__1__System_Collections_Generic_IEqualityComparer_TKey_(TKey.get_type_handle(), TValue.get_type_handle(), &__thrown, self.get_handle(), (keyComparer?.get_handle()));
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
@@ -3752,9 +3798,9 @@ public final class ImmutableDictionary_2<TKey : SGBridgeGenericValue,TValue : SG
     - Returns: An instance of the immutable dictionary that uses the given comparers.
 
     */
-    public func WithComparers(keyComparer : dotnet.System.Collections.Generic.IEqualityComparer_1<TKey>, valueComparer : dotnet.System.Collections.Generic.IEqualityComparer_1<TValue>) throws -> dotnet.System.Collections.Immutable.ImmutableDictionary_2<TKey,TValue> {
+    public func WithComparers(keyComparer : Optional<dotnet.System.Collections.Generic.IEqualityComparer_1<TKey>>, valueComparer : Optional<dotnet.System.Collections.Generic.IEqualityComparer_1<TValue>>) throws -> dotnet.System.Collections.Immutable.ImmutableDictionary_2<TKey,TValue> {
         var __thrown : NullableHandle = nil;
-        let __return = System_Collections_Immutable_ImmutableDictionary_2_System_Collections_Immutable_ImmutableDictionary_TKey_TValue___WithComparers_0__2__System_Collections_Generic_IEqualityComparer_TKey__System_Collections_Generic_IEqualityComparer_TValue_(TKey.get_type_handle(), TValue.get_type_handle(), &__thrown, self.get_handle(), nil, nil);
+        let __return = System_Collections_Immutable_ImmutableDictionary_2_System_Collections_Immutable_ImmutableDictionary_TKey_TValue___WithComparers_0__2__System_Collections_Generic_IEqualityComparer_TKey__System_Collections_Generic_IEqualityComparer_TValue_(TKey.get_type_handle(), TValue.get_type_handle(), &__thrown, self.get_handle(), (keyComparer?.get_handle()), (valueComparer?.get_handle()));
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
@@ -3829,9 +3875,6 @@ public final class ImmutableDictionary_2<TKey : SGBridgeGenericValue,TValue : SG
     }
     // [IsSpecialName] TValue get_Item(TKey)
 // docid: M:System.Collections.Immutable.ImmutableDictionary`2.get_Item(`0)
-//BEGIN method_is_override
-//matches_1
-//matches :
     public func get_Item(key : TKey) throws -> TValue {
         var __thrown : NullableHandle = nil;
         let __return = System_Collections_Immutable_ImmutableDictionary_2_TValue__get_Item_0__1__TKey(TKey.get_type_handle(), TValue.get_type_handle(), &__thrown, self.get_handle(), key.to_gval());
@@ -3914,6 +3957,9 @@ public final class ImmutableDictionary_Builder_2<TKey : SGBridgeGenericValue,TVa
 {
     public class override func get_type_handle() -> TypeHandle {
         return System_Collections_Immutable_ImmutableDictionary_2_Builder_get_type_handle(TKey.get_type_handle(),TValue.get_type_handle());
+    }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -4288,9 +4334,6 @@ public final class ImmutableDictionary_Builder_2<TKey : SGBridgeGenericValue,TVa
     }
     // [IsSpecialName] TValue get_Item(TKey)
 // docid: M:System.Collections.Immutable.ImmutableDictionary`2.Builder.get_Item(`0)
-//BEGIN method_is_override
-//matches_1
-//matches :
     public func get_Item(key : TKey) throws -> TValue {
         var __thrown : NullableHandle = nil;
         let __return = System_Collections_Immutable_ImmutableDictionary_2_Builder_TValue__get_Item_0__1__TKey(TKey.get_type_handle(), TValue.get_type_handle(), &__thrown, self.get_handle(), key.to_gval());
@@ -4382,6 +4425,9 @@ public final class ImmutableDictionary_Enumerator_2<TKey : SGBridgeGenericValue,
     public class override func get_type_handle() -> TypeHandle {
         return System_Collections_Immutable_ImmutableDictionary_2_Enumerator_get_type_handle(TKey.get_type_handle(),TValue.get_type_handle());
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     /**
@@ -4471,9 +4517,9 @@ public struct ImmutableHashSet {
     - Returns: The new immutable hash set builder.
 
     */
-    public static func CreateBuilder<UT : SGBridgeGenericValue>(equalityComparer : dotnet.System.Collections.Generic.IEqualityComparer_1<UT>) throws -> dotnet.System.Collections.Immutable.ImmutableHashSet_Builder_1<UT> {
+    public static func CreateBuilder<UT : SGBridgeGenericValue>(equalityComparer : Optional<dotnet.System.Collections.Generic.IEqualityComparer_1<UT>>) throws -> dotnet.System.Collections.Immutable.ImmutableHashSet_Builder_1<UT> {
         var __thrown : NullableHandle = nil;
-        let __return = System_Collections_Immutable_ImmutableHashSet_System_Collections_Immutable_ImmutableHashSet_T__System_Collections_Immutable_Builder_UT___CreateBuilder_1__1__System_Collections_Generic_IEqualityComparer_UT_(UT.get_type_handle(), &__thrown, nil);
+        let __return = System_Collections_Immutable_ImmutableHashSet_System_Collections_Immutable_ImmutableHashSet_T__System_Collections_Immutable_Builder_UT___CreateBuilder_1__1__System_Collections_Generic_IEqualityComparer_UT_(UT.get_type_handle(), &__thrown, (equalityComparer?.get_handle()));
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
@@ -4508,9 +4554,9 @@ public struct ImmutableHashSet {
     - Returns: The new immutable hash set.
 
     */
-    public static func CreateRange<UT : SGBridgeGenericValue>(equalityComparer : dotnet.System.Collections.Generic.IEqualityComparer_1<UT>, items : dotnet.System.Collections.Generic.IEnumerable_1<UT>) throws -> dotnet.System.Collections.Immutable.ImmutableHashSet_1<UT> {
+    public static func CreateRange<UT : SGBridgeGenericValue>(equalityComparer : Optional<dotnet.System.Collections.Generic.IEqualityComparer_1<UT>>, items : dotnet.System.Collections.Generic.IEnumerable_1<UT>) throws -> dotnet.System.Collections.Immutable.ImmutableHashSet_1<UT> {
         var __thrown : NullableHandle = nil;
-        let __return = System_Collections_Immutable_ImmutableHashSet_System_Collections_Immutable_ImmutableHashSet_UT___CreateRange_1__2__System_Collections_Generic_IEqualityComparer_UT__System_Collections_Generic_IEnumerable_UT_(UT.get_type_handle(), &__thrown, nil, items.get_handle());
+        let __return = System_Collections_Immutable_ImmutableHashSet_System_Collections_Immutable_ImmutableHashSet_UT___CreateRange_1__2__System_Collections_Generic_IEqualityComparer_UT__System_Collections_Generic_IEnumerable_UT_(UT.get_type_handle(), &__thrown, (equalityComparer?.get_handle()), items.get_handle());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
@@ -4527,9 +4573,9 @@ public struct ImmutableHashSet {
     - Returns: An empty immutable hash set.
 
     */
-    public static func Create<UT : SGBridgeGenericValue>(equalityComparer : dotnet.System.Collections.Generic.IEqualityComparer_1<UT>) throws -> dotnet.System.Collections.Immutable.ImmutableHashSet_1<UT> {
+    public static func Create<UT : SGBridgeGenericValue>(equalityComparer : Optional<dotnet.System.Collections.Generic.IEqualityComparer_1<UT>>) throws -> dotnet.System.Collections.Immutable.ImmutableHashSet_1<UT> {
         var __thrown : NullableHandle = nil;
-        let __return = System_Collections_Immutable_ImmutableHashSet_System_Collections_Immutable_ImmutableHashSet_UT___Create_1__1__System_Collections_Generic_IEqualityComparer_UT_(UT.get_type_handle(), &__thrown, nil);
+        let __return = System_Collections_Immutable_ImmutableHashSet_System_Collections_Immutable_ImmutableHashSet_UT___Create_1__1__System_Collections_Generic_IEqualityComparer_UT_(UT.get_type_handle(), &__thrown, (equalityComparer?.get_handle()));
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
@@ -4546,9 +4592,9 @@ public struct ImmutableHashSet {
     - Returns: A new immutable hash set that contains the specified item.
 
     */
-    public static func Create<UT : SGBridgeGenericValue>(equalityComparer : dotnet.System.Collections.Generic.IEqualityComparer_1<UT>, item : UT) throws -> dotnet.System.Collections.Immutable.ImmutableHashSet_1<UT> {
+    public static func Create<UT : SGBridgeGenericValue>(equalityComparer : Optional<dotnet.System.Collections.Generic.IEqualityComparer_1<UT>>, item : UT) throws -> dotnet.System.Collections.Immutable.ImmutableHashSet_1<UT> {
         var __thrown : NullableHandle = nil;
-        let __return = System_Collections_Immutable_ImmutableHashSet_System_Collections_Immutable_ImmutableHashSet_UT___Create_1__2__System_Collections_Generic_IEqualityComparer_UT__UT(UT.get_type_handle(), &__thrown, nil, item.to_gval());
+        let __return = System_Collections_Immutable_ImmutableHashSet_System_Collections_Immutable_ImmutableHashSet_UT___Create_1__2__System_Collections_Generic_IEqualityComparer_UT__UT(UT.get_type_handle(), &__thrown, (equalityComparer?.get_handle()), item.to_gval());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
@@ -4557,9 +4603,9 @@ public struct ImmutableHashSet {
     }
     // System.Collections.Immutable.ImmutableHashSet<T> Create<T>(System.Collections.Generic.IEqualityComparer<T>, T[])
 // docid: M:System.Collections.Immutable.ImmutableHashSet.Create``1(System.Collections.Generic.IEqualityComparer{``0},System.Collections.Immutable.T[])
-    public static func Create<UT : SGBridgeGenericValue>(equalityComparer : dotnet.System.Collections.Generic.IEqualityComparer_1<UT>, items : dotnet.System_Arr<UT>) throws -> dotnet.System.Collections.Immutable.ImmutableHashSet_1<UT> {
+    public static func Create<UT : SGBridgeGenericValue>(equalityComparer : Optional<dotnet.System.Collections.Generic.IEqualityComparer_1<UT>>, items : dotnet.System_Arr<UT>) throws -> dotnet.System.Collections.Immutable.ImmutableHashSet_1<UT> {
         var __thrown : NullableHandle = nil;
-        let __return = System_Collections_Immutable_ImmutableHashSet_System_Collections_Immutable_ImmutableHashSet_UT___Create_1__2__System_Collections_Generic_IEqualityComparer_UT__UTArray(UT.get_type_handle(), &__thrown, nil, items.get_handle());
+        let __return = System_Collections_Immutable_ImmutableHashSet_System_Collections_Immutable_ImmutableHashSet_UT___Create_1__2__System_Collections_Generic_IEqualityComparer_UT__UTArray(UT.get_type_handle(), &__thrown, (equalityComparer?.get_handle()), items.get_handle());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
@@ -4613,9 +4659,9 @@ public struct ImmutableHashSet {
     - Returns: An immutable hash set that contains the items in the specified sequence and uses the specified equality comparer.
 
     */
-    public static func ToImmutableHashSet<UTSource : SGBridgeGenericValue>(source : dotnet.System.Collections.Generic.IEnumerable_1<UTSource>, equalityComparer : dotnet.System.Collections.Generic.IEqualityComparer_1<UTSource>) throws -> dotnet.System.Collections.Immutable.ImmutableHashSet_1<UTSource> {
+    public static func ToImmutableHashSet<UTSource : SGBridgeGenericValue>(source : dotnet.System.Collections.Generic.IEnumerable_1<UTSource>, equalityComparer : Optional<dotnet.System.Collections.Generic.IEqualityComparer_1<UTSource>>) throws -> dotnet.System.Collections.Immutable.ImmutableHashSet_1<UTSource> {
         var __thrown : NullableHandle = nil;
-        let __return = System_Collections_Immutable_ImmutableHashSet_System_Collections_Immutable_ImmutableHashSet_UTSource___ToImmutableHashSet_1__2__System_Collections_Generic_IEnumerable_UTSource__System_Collections_Generic_IEqualityComparer_UTSource_(UTSource.get_type_handle(), &__thrown, source.get_handle(), nil);
+        let __return = System_Collections_Immutable_ImmutableHashSet_System_Collections_Immutable_ImmutableHashSet_UTSource___ToImmutableHashSet_1__2__System_Collections_Generic_IEnumerable_UTSource__System_Collections_Generic_IEqualityComparer_UTSource_(UTSource.get_type_handle(), &__thrown, source.get_handle(), (equalityComparer?.get_handle()));
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
@@ -4652,8 +4698,22 @@ public final class ImmutableHashSet_1<T : SGBridgeGenericValue>
     public class override func get_type_handle() -> TypeHandle {
         return System_Collections_Immutable_ImmutableHashSet_1_get_type_handle(T.get_type_handle());
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    // static field:  Empty
+    /**
+    Gets an immutable hash set for this type that uses the default .
+
+    */
+    public class var Empty : dotnet.System.Collections.Immutable.ImmutableHashSet_1<T> {
+        get {
+        let __return = dotnet.System.Collections.Immutable.ImmutableHashSet_1<T>(hndl: System_Collections_Immutable_ImmutableHashSet_1_get_Empty());
+            return __return;
+        }
+    }
     // System.Collections.Immutable.ImmutableHashSet<T> Add(T)
 // docid: M:System.Collections.Immutable.ImmutableHashSet`1.Add(`0)
     /**
@@ -4977,9 +5037,9 @@ public final class ImmutableHashSet_1<T : SGBridgeGenericValue>
     - Returns: An instance of this immutable hash set that uses the given comparer.
 
     */
-    public func WithComparer(equalityComparer : dotnet.System.Collections.Generic.IEqualityComparer_1<T>) throws -> dotnet.System.Collections.Immutable.ImmutableHashSet_1<T> {
+    public func WithComparer(equalityComparer : Optional<dotnet.System.Collections.Generic.IEqualityComparer_1<T>>) throws -> dotnet.System.Collections.Immutable.ImmutableHashSet_1<T> {
         var __thrown : NullableHandle = nil;
-        let __return = System_Collections_Immutable_ImmutableHashSet_1_System_Collections_Immutable_ImmutableHashSet_T___WithComparer_0__1__System_Collections_Generic_IEqualityComparer_T_(T.get_type_handle(), &__thrown, self.get_handle(), nil);
+        let __return = System_Collections_Immutable_ImmutableHashSet_1_System_Collections_Immutable_ImmutableHashSet_T___WithComparer_0__1__System_Collections_Generic_IEqualityComparer_T_(T.get_type_handle(), &__thrown, self.get_handle(), (equalityComparer?.get_handle()));
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
@@ -5063,6 +5123,9 @@ public final class ImmutableHashSet_Builder_1<T : SGBridgeGenericValue>
 {
     public class override func get_type_handle() -> TypeHandle {
         return System_Collections_Immutable_ImmutableHashSet_1_Builder_get_type_handle(T.get_type_handle());
+    }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -5446,6 +5509,9 @@ public final class ImmutableHashSet_Enumerator_1<T : SGBridgeGenericValue>
     public class override func get_type_handle() -> TypeHandle {
         return System_Collections_Immutable_ImmutableHashSet_1_Enumerator_get_type_handle(T.get_type_handle());
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     /**
@@ -5541,7 +5607,7 @@ public struct ImmutableInterlocked {
         var __thrown : NullableHandle = nil;
             var _tmp_ref_location = location.get_handle();
         let __return = System_Collections_Immutable_ImmutableInterlocked_UTValue__AddOrUpdate_2__4__refSystem_Collections_Immutable_ImmutableDictionary_UTKey_UTValue__UTKey_System_Func_UTKey_UTValue__System_Func_UTKey_UTValue_UTValue_(UTKey.get_type_handle(), UTValue.get_type_handle(), &__thrown, &_tmp_ref_location, key.to_gval(), addValueFactory.get_handle(), updateValueFactory.get_handle());
-        let _tmp2_location = dotnet.System.Collections.Immutable.ImmutableDictionary_2<UTKey,UTValue>(hndl : _tmp_ref_location);
+        let _tmp2_location = dotnet.System.Collections.Immutable.ImmutableDictionary_2<UTKey,UTValue>(hndl: _tmp_ref_location);
             location = _tmp2_location;
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
@@ -5571,7 +5637,7 @@ public struct ImmutableInterlocked {
         var __thrown : NullableHandle = nil;
             var _tmp_ref_location = location.get_handle();
         let __return = System_Collections_Immutable_ImmutableInterlocked_UTValue__AddOrUpdate_2__4__refSystem_Collections_Immutable_ImmutableDictionary_UTKey_UTValue__UTKey_UTValue_System_Func_UTKey_UTValue_UTValue_(UTKey.get_type_handle(), UTValue.get_type_handle(), &__thrown, &_tmp_ref_location, key.to_gval(), addValue.to_gval(), updateValueFactory.get_handle());
-        let _tmp2_location = dotnet.System.Collections.Immutable.ImmutableDictionary_2<UTKey,UTValue>(hndl : _tmp_ref_location);
+        let _tmp2_location = dotnet.System.Collections.Immutable.ImmutableDictionary_2<UTKey,UTValue>(hndl: _tmp_ref_location);
             location = _tmp2_location;
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
@@ -5596,7 +5662,7 @@ public struct ImmutableInterlocked {
         var __thrown : NullableHandle = nil;
             var _tmp_ref_location = location.get_handle();
         System_Collections_Immutable_ImmutableInterlocked_void__Enqueue_1__2__refSystem_Collections_Immutable_ImmutableQueue_UT__UT(UT.get_type_handle(), &__thrown, &_tmp_ref_location, value.to_gval());
-        let _tmp2_location = dotnet.System.Collections.Immutable.ImmutableQueue_1<UT>(hndl : _tmp_ref_location);
+        let _tmp2_location = dotnet.System.Collections.Immutable.ImmutableQueue_1<UT>(hndl: _tmp_ref_location);
             location = _tmp2_location;
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
@@ -5619,7 +5685,7 @@ public struct ImmutableInterlocked {
         var __thrown : NullableHandle = nil;
             var _tmp_ref_location = location.get_handle();
         let __return = System_Collections_Immutable_ImmutableInterlocked_UTValue__GetOrAdd_2__3__refSystem_Collections_Immutable_ImmutableDictionary_UTKey_UTValue__UTKey_System_Func_UTKey_UTValue_(UTKey.get_type_handle(), UTValue.get_type_handle(), &__thrown, &_tmp_ref_location, key.to_gval(), valueFactory.get_handle());
-        let _tmp2_location = dotnet.System.Collections.Immutable.ImmutableDictionary_2<UTKey,UTValue>(hndl : _tmp_ref_location);
+        let _tmp2_location = dotnet.System.Collections.Immutable.ImmutableDictionary_2<UTKey,UTValue>(hndl: _tmp_ref_location);
             location = _tmp2_location;
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
@@ -5647,7 +5713,7 @@ public struct ImmutableInterlocked {
         var __thrown : NullableHandle = nil;
             var _tmp_ref_location = location.get_handle();
         let __return = System_Collections_Immutable_ImmutableInterlocked_UTValue__GetOrAdd_2__3__refSystem_Collections_Immutable_ImmutableDictionary_UTKey_UTValue__UTKey_UTValue(UTKey.get_type_handle(), UTValue.get_type_handle(), &__thrown, &_tmp_ref_location, key.to_gval(), value.to_gval());
-        let _tmp2_location = dotnet.System.Collections.Immutable.ImmutableDictionary_2<UTKey,UTValue>(hndl : _tmp_ref_location);
+        let _tmp2_location = dotnet.System.Collections.Immutable.ImmutableDictionary_2<UTKey,UTValue>(hndl: _tmp_ref_location);
             location = _tmp2_location;
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
@@ -5671,7 +5737,7 @@ public struct ImmutableInterlocked {
         var __thrown : NullableHandle = nil;
             var _tmp_ref_location = location.get_handle();
         let __return = System_Collections_Immutable_ImmutableInterlocked_UTValue__GetOrAdd_3__4__refSystem_Collections_Immutable_ImmutableDictionary_UTKey_UTValue__UTKey_System_Func_UTKey_UTArg_UTValue__UTArg(UTKey.get_type_handle(), UTValue.get_type_handle(), UTArg.get_type_handle(), &__thrown, &_tmp_ref_location, key.to_gval(), valueFactory.get_handle(), factoryArgument.to_gval());
-        let _tmp2_location = dotnet.System.Collections.Immutable.ImmutableDictionary_2<UTKey,UTValue>(hndl : _tmp_ref_location);
+        let _tmp2_location = dotnet.System.Collections.Immutable.ImmutableDictionary_2<UTKey,UTValue>(hndl: _tmp_ref_location);
             location = _tmp2_location;
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
@@ -5695,11 +5761,12 @@ public struct ImmutableInterlocked {
     - Returns: The original value in .
 
     */
-    public static func InterlockedCompareExchange<UT : SGBridgeGenericValue>(location : inout dotnet.System.Collections.Immutable.ImmutableArray_1<UT>, value : dotnet.System.Collections.Immutable.ImmutableArray_1<UT>, comparand : dotnet.System.Collections.Immutable.ImmutableArray_1<UT>) throws -> dotnet.System.Collections.Immutable.ImmutableArray_1<UT> {
+    public static func InterlockedCompareExchange<UT : SGBridgeGenericValue>(location : inout Optional<dotnet.System.Collections.Immutable.ImmutableArray_1<UT>>, value : dotnet.System.Collections.Immutable.ImmutableArray_1<UT>, comparand : dotnet.System.Collections.Immutable.ImmutableArray_1<UT>) throws -> dotnet.System.Collections.Immutable.ImmutableArray_1<UT> {
         var __thrown : NullableHandle = nil;
-            var _tmp_ref_location = location.get_handle();
+            var _tmp_ref_location = (location != nil) ? (location!.get_handle()) : nil;
         let __return = System_Collections_Immutable_ImmutableInterlocked_System_Collections_Immutable_ImmutableArray_UT___InterlockedCompareExchange_1__3__refSystem_Collections_Immutable_ImmutableArray_UT__System_Collections_Immutable_ImmutableArray_UT__System_Collections_Immutable_ImmutableArray_UT_(UT.get_type_handle(), &__thrown, &_tmp_ref_location, value.get_handle(), comparand.get_handle());
-        let _tmp2_location = dotnet.System.Collections.Immutable.ImmutableArray_1<UT>(hndl : _tmp_ref_location);
+        let __h__tmp2_location = _tmp_ref_location;
+        let _tmp2_location = (__h__tmp2_location != nil) ? dotnet.System.Collections.Immutable.ImmutableArray_1<UT>(hndl: __h__tmp2_location!) : nil;
             location = _tmp2_location;
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
@@ -5717,11 +5784,12 @@ public struct ImmutableInterlocked {
     - Returns: The original value of .
 
     */
-    public static func InterlockedExchange<UT : SGBridgeGenericValue>(location : inout dotnet.System.Collections.Immutable.ImmutableArray_1<UT>, value : dotnet.System.Collections.Immutable.ImmutableArray_1<UT>) throws -> dotnet.System.Collections.Immutable.ImmutableArray_1<UT> {
+    public static func InterlockedExchange<UT : SGBridgeGenericValue>(location : inout Optional<dotnet.System.Collections.Immutable.ImmutableArray_1<UT>>, value : dotnet.System.Collections.Immutable.ImmutableArray_1<UT>) throws -> dotnet.System.Collections.Immutable.ImmutableArray_1<UT> {
         var __thrown : NullableHandle = nil;
-            var _tmp_ref_location = location.get_handle();
+            var _tmp_ref_location = (location != nil) ? (location!.get_handle()) : nil;
         let __return = System_Collections_Immutable_ImmutableInterlocked_System_Collections_Immutable_ImmutableArray_UT___InterlockedExchange_1__2__refSystem_Collections_Immutable_ImmutableArray_UT__System_Collections_Immutable_ImmutableArray_UT_(UT.get_type_handle(), &__thrown, &_tmp_ref_location, value.get_handle());
-        let _tmp2_location = dotnet.System.Collections.Immutable.ImmutableArray_1<UT>(hndl : _tmp_ref_location);
+        let __h__tmp2_location = _tmp_ref_location;
+        let _tmp2_location = (__h__tmp2_location != nil) ? dotnet.System.Collections.Immutable.ImmutableArray_1<UT>(hndl: __h__tmp2_location!) : nil;
             location = _tmp2_location;
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
@@ -5740,11 +5808,12 @@ public struct ImmutableInterlocked {
          if the array was assigned the specified value;  otherwise, .
 
     */
-    public static func InterlockedInitialize<UT : SGBridgeGenericValue>(location : inout dotnet.System.Collections.Immutable.ImmutableArray_1<UT>, value : dotnet.System.Collections.Immutable.ImmutableArray_1<UT>) throws -> Bool {
+    public static func InterlockedInitialize<UT : SGBridgeGenericValue>(location : inout Optional<dotnet.System.Collections.Immutable.ImmutableArray_1<UT>>, value : dotnet.System.Collections.Immutable.ImmutableArray_1<UT>) throws -> Bool {
         var __thrown : NullableHandle = nil;
-            var _tmp_ref_location = location.get_handle();
+            var _tmp_ref_location = (location != nil) ? (location!.get_handle()) : nil;
         let __return = System_Collections_Immutable_ImmutableInterlocked_bool__InterlockedInitialize_1__2__refSystem_Collections_Immutable_ImmutableArray_UT__System_Collections_Immutable_ImmutableArray_UT_(UT.get_type_handle(), &__thrown, &_tmp_ref_location, value.get_handle());
-        let _tmp2_location = dotnet.System.Collections.Immutable.ImmutableArray_1<UT>(hndl : _tmp_ref_location);
+        let __h__tmp2_location = _tmp_ref_location;
+        let _tmp2_location = (__h__tmp2_location != nil) ? dotnet.System.Collections.Immutable.ImmutableArray_1<UT>(hndl: __h__tmp2_location!) : nil;
             location = _tmp2_location;
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
@@ -5764,7 +5833,7 @@ public struct ImmutableInterlocked {
         var __thrown : NullableHandle = nil;
             var _tmp_ref_location = location.get_handle();
         System_Collections_Immutable_ImmutableInterlocked_void__Push_1__2__refSystem_Collections_Immutable_ImmutableStack_UT__UT(UT.get_type_handle(), &__thrown, &_tmp_ref_location, value.to_gval());
-        let _tmp2_location = dotnet.System.Collections.Immutable.ImmutableStack_1<UT>(hndl : _tmp_ref_location);
+        let _tmp2_location = dotnet.System.Collections.Immutable.ImmutableStack_1<UT>(hndl: _tmp_ref_location);
             location = _tmp2_location;
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
@@ -5788,7 +5857,7 @@ public struct ImmutableInterlocked {
         var __thrown : NullableHandle = nil;
             var _tmp_ref_location = location.get_handle();
         let __return = System_Collections_Immutable_ImmutableInterlocked_bool__TryAdd_2__3__refSystem_Collections_Immutable_ImmutableDictionary_UTKey_UTValue__UTKey_UTValue(UTKey.get_type_handle(), UTValue.get_type_handle(), &__thrown, &_tmp_ref_location, key.to_gval(), value.to_gval());
-        let _tmp2_location = dotnet.System.Collections.Immutable.ImmutableDictionary_2<UTKey,UTValue>(hndl : _tmp_ref_location);
+        let _tmp2_location = dotnet.System.Collections.Immutable.ImmutableDictionary_2<UTKey,UTValue>(hndl: _tmp_ref_location);
             location = _tmp2_location;
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
@@ -5816,7 +5885,7 @@ public struct ImmutableInterlocked {
         var __thrown : NullableHandle = nil;
             var _tmp_ref_location = location.get_handle();
         let __return = System_Collections_Immutable_ImmutableInterlocked_bool__TryUpdate_2__4__refSystem_Collections_Immutable_ImmutableDictionary_UTKey_UTValue__UTKey_UTValue_UTValue(UTKey.get_type_handle(), UTValue.get_type_handle(), &__thrown, &_tmp_ref_location, key.to_gval(), newValue.to_gval(), comparisonValue.to_gval());
-        let _tmp2_location = dotnet.System.Collections.Immutable.ImmutableDictionary_2<UTKey,UTValue>(hndl : _tmp_ref_location);
+        let _tmp2_location = dotnet.System.Collections.Immutable.ImmutableDictionary_2<UTKey,UTValue>(hndl: _tmp_ref_location);
             location = _tmp2_location;
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
@@ -5893,11 +5962,12 @@ public struct ImmutableInterlocked {
          if the location's value is changed by applying the result of the  function;  if the location's value remained the same because the last invocation of  returned the existing value.
 
     */
-    public static func Update<UT : SGBridgeGenericValue>(location : inout dotnet.System.Collections.Immutable.ImmutableArray_1<UT>, transformer : dotnet.System.Func_2<dotnet.System.Collections.Immutable.ImmutableArray_1<UT>,dotnet.System.Collections.Immutable.ImmutableArray_1<UT>>) throws -> Bool {
+    public static func Update<UT : SGBridgeGenericValue>(location : inout Optional<dotnet.System.Collections.Immutable.ImmutableArray_1<UT>>, transformer : dotnet.System.Func_2<dotnet.System.Collections.Immutable.ImmutableArray_1<UT>,dotnet.System.Collections.Immutable.ImmutableArray_1<UT>>) throws -> Bool {
         var __thrown : NullableHandle = nil;
-            var _tmp_ref_location = location.get_handle();
+            var _tmp_ref_location = (location != nil) ? (location!.get_handle()) : nil;
         let __return = System_Collections_Immutable_ImmutableInterlocked_bool__Update_1__2__refSystem_Collections_Immutable_ImmutableArray_UT__System_Func_System_Collections_Immutable_System_Collections_Immutable_ImmutableArray_UT__System_Collections_Immutable_System_Collections_Immutable_ImmutableArray_UT__(UT.get_type_handle(), &__thrown, &_tmp_ref_location, transformer.get_handle());
-        let _tmp2_location = dotnet.System.Collections.Immutable.ImmutableArray_1<UT>(hndl : _tmp_ref_location);
+        let __h__tmp2_location = _tmp_ref_location;
+        let _tmp2_location = (__h__tmp2_location != nil) ? dotnet.System.Collections.Immutable.ImmutableArray_1<UT>(hndl: __h__tmp2_location!) : nil;
             location = _tmp2_location;
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
@@ -5906,7 +5976,7 @@ public struct ImmutableInterlocked {
         }
     }
     // delegate closure overload
-    public static func Update<UT : SGBridgeGenericValue>(location : inout dotnet.System.Collections.Immutable.ImmutableArray_1<UT>, transformer : @escaping (dotnet.System.Collections.Immutable.ImmutableArray_1<UT>) throws -> dotnet.System.Collections.Immutable.ImmutableArray_1<UT>) throws -> Bool {
+    public static func Update<UT : SGBridgeGenericValue>(location : inout Optional<dotnet.System.Collections.Immutable.ImmutableArray_1<UT>>, transformer : @escaping (dotnet.System.Collections.Immutable.ImmutableArray_1<UT>) throws -> dotnet.System.Collections.Immutable.ImmutableArray_1<UT>) throws -> Bool {
         let del_transformer = try dotnet.System.Func_2<dotnet.System.Collections.Immutable.ImmutableArray_1<UT>,dotnet.System.Collections.Immutable.ImmutableArray_1<UT>>(transformer);
         return try Update(location: &location, transformer: del_transformer);
     }
@@ -5923,11 +5993,12 @@ public struct ImmutableInterlocked {
          if the location's value is changed by applying the result of the  function;  if the location's value remained the same because the last invocation of  returned the existing value.
 
     */
-    public static func Update<UT : SGBridgeGenericValue,UTArg : SGBridgeGenericValue>(location : inout dotnet.System.Collections.Immutable.ImmutableArray_1<UT>, transformer : dotnet.System.Func_3<dotnet.System.Collections.Immutable.ImmutableArray_1<UT>,UTArg,dotnet.System.Collections.Immutable.ImmutableArray_1<UT>>, transformerArgument : UTArg) throws -> Bool {
+    public static func Update<UT : SGBridgeGenericValue,UTArg : SGBridgeGenericValue>(location : inout Optional<dotnet.System.Collections.Immutable.ImmutableArray_1<UT>>, transformer : dotnet.System.Func_3<dotnet.System.Collections.Immutable.ImmutableArray_1<UT>,UTArg,dotnet.System.Collections.Immutable.ImmutableArray_1<UT>>, transformerArgument : UTArg) throws -> Bool {
         var __thrown : NullableHandle = nil;
-            var _tmp_ref_location = location.get_handle();
+            var _tmp_ref_location = (location != nil) ? (location!.get_handle()) : nil;
         let __return = System_Collections_Immutable_ImmutableInterlocked_bool__Update_2__3__refSystem_Collections_Immutable_ImmutableArray_UT__System_Func_System_Collections_Immutable_System_Collections_Immutable_ImmutableArray_UT__UTArg_System_Collections_Immutable_System_Collections_Immutable_ImmutableArray_UT___UTArg(UT.get_type_handle(), UTArg.get_type_handle(), &__thrown, &_tmp_ref_location, transformer.get_handle(), transformerArgument.to_gval());
-        let _tmp2_location = dotnet.System.Collections.Immutable.ImmutableArray_1<UT>(hndl : _tmp_ref_location);
+        let __h__tmp2_location = _tmp_ref_location;
+        let _tmp2_location = (__h__tmp2_location != nil) ? dotnet.System.Collections.Immutable.ImmutableArray_1<UT>(hndl: __h__tmp2_location!) : nil;
             location = _tmp2_location;
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
@@ -5936,7 +6007,7 @@ public struct ImmutableInterlocked {
         }
     }
     // delegate closure overload
-    public static func Update<UT : SGBridgeGenericValue,UTArg : SGBridgeGenericValue>(location : inout dotnet.System.Collections.Immutable.ImmutableArray_1<UT>, transformer : @escaping (dotnet.System.Collections.Immutable.ImmutableArray_1<UT>, UTArg) throws -> dotnet.System.Collections.Immutable.ImmutableArray_1<UT>, transformerArgument : UTArg) throws -> Bool {
+    public static func Update<UT : SGBridgeGenericValue,UTArg : SGBridgeGenericValue>(location : inout Optional<dotnet.System.Collections.Immutable.ImmutableArray_1<UT>>, transformer : @escaping (dotnet.System.Collections.Immutable.ImmutableArray_1<UT>, UTArg) throws -> dotnet.System.Collections.Immutable.ImmutableArray_1<UT>, transformerArgument : UTArg) throws -> Bool {
         let del_transformer = try dotnet.System.Func_3<dotnet.System.Collections.Immutable.ImmutableArray_1<UT>,UTArg,dotnet.System.Collections.Immutable.ImmutableArray_1<UT>>(transformer);
         return try Update(location: &location, transformer: del_transformer, transformerArgument: transformerArgument);
     }
@@ -6014,9 +6085,9 @@ public struct ImmutableList {
     - Returns: The zero-based index of the first occurrence of item within the range of elements in the immutable list that extends from index to the last element, if found; otherwise, -1.
 
     */
-    public static func IndexOf<UT : SGBridgeGenericValue>(list : dotnet.System.Collections.Immutable.IImmutableList_1<UT>, item : UT, equalityComparer : dotnet.System.Collections.Generic.IEqualityComparer_1<UT>) throws -> Swift.Int32 {
+    public static func IndexOf<UT : SGBridgeGenericValue>(list : dotnet.System.Collections.Immutable.IImmutableList_1<UT>, item : UT, equalityComparer : Optional<dotnet.System.Collections.Generic.IEqualityComparer_1<UT>>) throws -> Swift.Int32 {
         var __thrown : NullableHandle = nil;
-        let __return = System_Collections_Immutable_ImmutableList_i32__IndexOf_1__3__System_Collections_Immutable_IImmutableList_UT__UT_System_Collections_Generic_IEqualityComparer_UT_(UT.get_type_handle(), &__thrown, list.get_handle(), item.to_gval(), nil);
+        let __return = System_Collections_Immutable_ImmutableList_i32__IndexOf_1__3__System_Collections_Immutable_IImmutableList_UT__UT_System_Collections_Generic_IEqualityComparer_UT_(UT.get_type_handle(), &__thrown, list.get_handle(), item.to_gval(), (equalityComparer?.get_handle()));
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
@@ -6094,9 +6165,9 @@ public struct ImmutableList {
     - Returns: The zero-based index of the last occurrence of item within the entire the Immutable list, if found; otherwise, -1.
 
     */
-    public static func LastIndexOf<UT : SGBridgeGenericValue>(list : dotnet.System.Collections.Immutable.IImmutableList_1<UT>, item : UT, equalityComparer : dotnet.System.Collections.Generic.IEqualityComparer_1<UT>) throws -> Swift.Int32 {
+    public static func LastIndexOf<UT : SGBridgeGenericValue>(list : dotnet.System.Collections.Immutable.IImmutableList_1<UT>, item : UT, equalityComparer : Optional<dotnet.System.Collections.Generic.IEqualityComparer_1<UT>>) throws -> Swift.Int32 {
         var __thrown : NullableHandle = nil;
-        let __return = System_Collections_Immutable_ImmutableList_i32__LastIndexOf_1__3__System_Collections_Immutable_IImmutableList_UT__UT_System_Collections_Generic_IEqualityComparer_UT_(UT.get_type_handle(), &__thrown, list.get_handle(), item.to_gval(), nil);
+        let __return = System_Collections_Immutable_ImmutableList_i32__LastIndexOf_1__3__System_Collections_Immutable_IImmutableList_UT__UT_System_Collections_Generic_IEqualityComparer_UT_(UT.get_type_handle(), &__thrown, list.get_handle(), item.to_gval(), (equalityComparer?.get_handle()));
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
@@ -6251,8 +6322,22 @@ public final class ImmutableList_1<T : SGBridgeGenericValue>
     public class override func get_type_handle() -> TypeHandle {
         return System_Collections_Immutable_ImmutableList_1_get_type_handle(T.get_type_handle());
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    // static field:  Empty
+    /**
+    Gets an empty set with the default sort comparer.
+
+    */
+    public class var Empty : dotnet.System.Collections.Immutable.ImmutableList_1<T> {
+        get {
+        let __return = dotnet.System.Collections.Immutable.ImmutableList_1<T>(hndl: System_Collections_Immutable_ImmutableList_1_get_Empty());
+            return __return;
+        }
+    }
     // System.Collections.Immutable.ImmutableList<T> Add(T)
 // docid: M:System.Collections.Immutable.ImmutableList`1.Add(`0)
     /**
@@ -6301,9 +6386,9 @@ public final class ImmutableList_1<T : SGBridgeGenericValue>
     - Returns: The zero-based index of item in the sorted list, if item is found; otherwise, a negative number that is the bitwise complement of the index of the next element that is larger than item or, if there is no larger element, the bitwise complement of .
 
     */
-    public func BinarySearch(index : Swift.Int32, count : Swift.Int32, item : T, comparer : dotnet.System.Collections.Generic.IComparer_1<T>) throws -> Swift.Int32 {
+    public func BinarySearch(index : Swift.Int32, count : Swift.Int32, item : T, comparer : Optional<dotnet.System.Collections.Generic.IComparer_1<T>>) throws -> Swift.Int32 {
         var __thrown : NullableHandle = nil;
-        let __return = System_Collections_Immutable_ImmutableList_1_i32__BinarySearch_0__4__i32_i32_T_System_Collections_Generic_IComparer_T_(T.get_type_handle(), &__thrown, self.get_handle(), index, count, item.to_gval(), nil);
+        let __return = System_Collections_Immutable_ImmutableList_1_i32__BinarySearch_0__4__i32_i32_T_System_Collections_Generic_IComparer_T_(T.get_type_handle(), &__thrown, self.get_handle(), index, count, item.to_gval(), (comparer?.get_handle()));
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
@@ -6338,9 +6423,9 @@ public final class ImmutableList_1<T : SGBridgeGenericValue>
     - Returns: The zero-based index of item in the sorted List, if item is found; otherwise, a negative number that is the bitwise complement of the index of the next element that is larger than item or, if there is no larger element, the bitwise complement of .
 
     */
-    public func BinarySearch(item : T, comparer : dotnet.System.Collections.Generic.IComparer_1<T>) throws -> Swift.Int32 {
+    public func BinarySearch(item : T, comparer : Optional<dotnet.System.Collections.Generic.IComparer_1<T>>) throws -> Swift.Int32 {
         var __thrown : NullableHandle = nil;
-        let __return = System_Collections_Immutable_ImmutableList_1_i32__BinarySearch_0__2__T_System_Collections_Generic_IComparer_T_(T.get_type_handle(), &__thrown, self.get_handle(), item.to_gval(), nil);
+        let __return = System_Collections_Immutable_ImmutableList_1_i32__BinarySearch_0__2__T_System_Collections_Generic_IComparer_T_(T.get_type_handle(), &__thrown, self.get_handle(), item.to_gval(), (comparer?.get_handle()));
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
@@ -6763,9 +6848,9 @@ public final class ImmutableList_1<T : SGBridgeGenericValue>
     - Returns: The zero-based index of the first occurrence of item within the range of elements in the list that starts at index and contains count number of elements, if found; otherwise, -1.
 
     */
-    public func IndexOf(item : T, index : Swift.Int32, count : Swift.Int32, equalityComparer : dotnet.System.Collections.Generic.IEqualityComparer_1<T>) throws -> Swift.Int32 {
+    public func IndexOf(item : T, index : Swift.Int32, count : Swift.Int32, equalityComparer : Optional<dotnet.System.Collections.Generic.IEqualityComparer_1<T>>) throws -> Swift.Int32 {
         var __thrown : NullableHandle = nil;
-        let __return = System_Collections_Immutable_ImmutableList_1_i32__IndexOf_0__4__T_i32_i32_System_Collections_Generic_IEqualityComparer_T_(T.get_type_handle(), &__thrown, self.get_handle(), item.to_gval(), index, count, nil);
+        let __return = System_Collections_Immutable_ImmutableList_1_i32__IndexOf_0__4__T_i32_i32_System_Collections_Generic_IEqualityComparer_T_(T.get_type_handle(), &__thrown, self.get_handle(), item.to_gval(), index, count, (equalityComparer?.get_handle()));
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
@@ -6810,6 +6895,7 @@ public final class ImmutableList_1<T : SGBridgeGenericValue>
         return dotnet.System.Collections.Immutable.ImmutableList_1(hndl : __return);
         }
     }
+// TODO COPE (returns_byref): ref T ItemRef(System.Int32)
     // System.Int32 LastIndexOf(T, System.Int32, System.Int32, System.Collections.Generic.IEqualityComparer<T>)
 // docid: M:System.Collections.Immutable.ImmutableList`1.LastIndexOf(`0,System.Int32,System.Int32,System.Collections.Generic.IEqualityComparer{`0})
     /**
@@ -6822,9 +6908,9 @@ public final class ImmutableList_1<T : SGBridgeGenericValue>
     - Returns: The zero-based index of the last occurrence of item within the range of elements in the list that contains count number of elements and ends at index, if found; otherwise, -1.
 
     */
-    public func LastIndexOf(item : T, index : Swift.Int32, count : Swift.Int32, equalityComparer : dotnet.System.Collections.Generic.IEqualityComparer_1<T>) throws -> Swift.Int32 {
+    public func LastIndexOf(item : T, index : Swift.Int32, count : Swift.Int32, equalityComparer : Optional<dotnet.System.Collections.Generic.IEqualityComparer_1<T>>) throws -> Swift.Int32 {
         var __thrown : NullableHandle = nil;
-        let __return = System_Collections_Immutable_ImmutableList_1_i32__LastIndexOf_0__4__T_i32_i32_System_Collections_Generic_IEqualityComparer_T_(T.get_type_handle(), &__thrown, self.get_handle(), item.to_gval(), index, count, nil);
+        let __return = System_Collections_Immutable_ImmutableList_1_i32__LastIndexOf_0__4__T_i32_i32_System_Collections_Generic_IEqualityComparer_T_(T.get_type_handle(), &__thrown, self.get_handle(), item.to_gval(), index, count, (equalityComparer?.get_handle()));
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
@@ -6859,9 +6945,9 @@ public final class ImmutableList_1<T : SGBridgeGenericValue>
     - Returns: A new list with the object removed, or this list if the specified object is not in this list.
 
     */
-    public func Remove(value : T, equalityComparer : dotnet.System.Collections.Generic.IEqualityComparer_1<T>) throws -> dotnet.System.Collections.Immutable.ImmutableList_1<T> {
+    public func Remove(value : T, equalityComparer : Optional<dotnet.System.Collections.Generic.IEqualityComparer_1<T>>) throws -> dotnet.System.Collections.Immutable.ImmutableList_1<T> {
         var __thrown : NullableHandle = nil;
-        let __return = System_Collections_Immutable_ImmutableList_1_System_Collections_Immutable_ImmutableList_T___Remove_0__2__T_System_Collections_Generic_IEqualityComparer_T_(T.get_type_handle(), &__thrown, self.get_handle(), value.to_gval(), nil);
+        let __return = System_Collections_Immutable_ImmutableList_1_System_Collections_Immutable_ImmutableList_T___Remove_0__2__T_System_Collections_Generic_IEqualityComparer_T_(T.get_type_handle(), &__thrown, self.get_handle(), value.to_gval(), (equalityComparer?.get_handle()));
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
@@ -6937,9 +7023,9 @@ public final class ImmutableList_1<T : SGBridgeGenericValue>
     - Returns: A new list with the elements removed.
 
     */
-    public func RemoveRange(items : dotnet.System.Collections.Generic.IEnumerable_1<T>, equalityComparer : dotnet.System.Collections.Generic.IEqualityComparer_1<T>) throws -> dotnet.System.Collections.Immutable.ImmutableList_1<T> {
+    public func RemoveRange(items : dotnet.System.Collections.Generic.IEnumerable_1<T>, equalityComparer : Optional<dotnet.System.Collections.Generic.IEqualityComparer_1<T>>) throws -> dotnet.System.Collections.Immutable.ImmutableList_1<T> {
         var __thrown : NullableHandle = nil;
-        let __return = System_Collections_Immutable_ImmutableList_1_System_Collections_Immutable_ImmutableList_T___RemoveRange_0__2__System_Collections_Generic_IEnumerable_T__System_Collections_Generic_IEqualityComparer_T_(T.get_type_handle(), &__thrown, self.get_handle(), items.get_handle(), nil);
+        let __return = System_Collections_Immutable_ImmutableList_1_System_Collections_Immutable_ImmutableList_T___RemoveRange_0__2__System_Collections_Generic_IEnumerable_T__System_Collections_Generic_IEqualityComparer_T_(T.get_type_handle(), &__thrown, self.get_handle(), items.get_handle(), (equalityComparer?.get_handle()));
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
@@ -6995,9 +7081,9 @@ public final class ImmutableList_1<T : SGBridgeGenericValue>
     - Returns: A new list with the object replaced, or this list if the specified object is not in this list.
 
     */
-    public func Replace(oldValue : T, newValue : T, equalityComparer : dotnet.System.Collections.Generic.IEqualityComparer_1<T>) throws -> dotnet.System.Collections.Immutable.ImmutableList_1<T> {
+    public func Replace(oldValue : T, newValue : T, equalityComparer : Optional<dotnet.System.Collections.Generic.IEqualityComparer_1<T>>) throws -> dotnet.System.Collections.Immutable.ImmutableList_1<T> {
         var __thrown : NullableHandle = nil;
-        let __return = System_Collections_Immutable_ImmutableList_1_System_Collections_Immutable_ImmutableList_T___Replace_0__3__T_T_System_Collections_Generic_IEqualityComparer_T_(T.get_type_handle(), &__thrown, self.get_handle(), oldValue.to_gval(), newValue.to_gval(), nil);
+        let __return = System_Collections_Immutable_ImmutableList_1_System_Collections_Immutable_ImmutableList_T___Replace_0__3__T_T_System_Collections_Generic_IEqualityComparer_T_(T.get_type_handle(), &__thrown, self.get_handle(), oldValue.to_gval(), newValue.to_gval(), (equalityComparer?.get_handle()));
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
@@ -7085,9 +7171,9 @@ public final class ImmutableList_1<T : SGBridgeGenericValue>
     - Returns: The sorted list.
 
     */
-    public func Sort(comparer : dotnet.System.Collections.Generic.IComparer_1<T>) throws -> dotnet.System.Collections.Immutable.ImmutableList_1<T> {
+    public func Sort(comparer : Optional<dotnet.System.Collections.Generic.IComparer_1<T>>) throws -> dotnet.System.Collections.Immutable.ImmutableList_1<T> {
         var __thrown : NullableHandle = nil;
-        let __return = System_Collections_Immutable_ImmutableList_1_System_Collections_Immutable_ImmutableList_T___Sort_0__1__System_Collections_Generic_IComparer_T_(T.get_type_handle(), &__thrown, self.get_handle(), nil);
+        let __return = System_Collections_Immutable_ImmutableList_1_System_Collections_Immutable_ImmutableList_T___Sort_0__1__System_Collections_Generic_IComparer_T_(T.get_type_handle(), &__thrown, self.get_handle(), (comparer?.get_handle()));
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
@@ -7128,9 +7214,9 @@ public final class ImmutableList_1<T : SGBridgeGenericValue>
     - Returns: The sorted list.
 
     */
-    public func Sort(index : Swift.Int32, count : Swift.Int32, comparer : dotnet.System.Collections.Generic.IComparer_1<T>) throws -> dotnet.System.Collections.Immutable.ImmutableList_1<T> {
+    public func Sort(index : Swift.Int32, count : Swift.Int32, comparer : Optional<dotnet.System.Collections.Generic.IComparer_1<T>>) throws -> dotnet.System.Collections.Immutable.ImmutableList_1<T> {
         var __thrown : NullableHandle = nil;
-        let __return = System_Collections_Immutable_ImmutableList_1_System_Collections_Immutable_ImmutableList_T___Sort_0__3__i32_i32_System_Collections_Generic_IComparer_T_(T.get_type_handle(), &__thrown, self.get_handle(), index, count, nil);
+        let __return = System_Collections_Immutable_ImmutableList_1_System_Collections_Immutable_ImmutableList_T___Sort_0__3__i32_i32_System_Collections_Generic_IComparer_T_(T.get_type_handle(), &__thrown, self.get_handle(), index, count, (comparer?.get_handle()));
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
@@ -7202,9 +7288,6 @@ public final class ImmutableList_1<T : SGBridgeGenericValue>
     }
     // [IsSpecialName] T get_Item(System.Int32)
 // docid: M:System.Collections.Immutable.ImmutableList`1.get_Item(System.Int32)
-//BEGIN method_is_override
-//matches_1
-//matches :
     public func get_Item(index : Swift.Int32) throws -> T {
         var __thrown : NullableHandle = nil;
         let __return = System_Collections_Immutable_ImmutableList_1_T__get_Item_0__1__i32(T.get_type_handle(), &__thrown, self.get_handle(), index);
@@ -7252,6 +7335,9 @@ public final class ImmutableList_Builder_1<T : SGBridgeGenericValue>
     public class override func get_type_handle() -> TypeHandle {
         return System_Collections_Immutable_ImmutableList_1_Builder_get_type_handle(T.get_type_handle());
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // void Add(T)
@@ -7298,9 +7384,9 @@ public final class ImmutableList_Builder_1<T : SGBridgeGenericValue>
     - Returns: The zero-based index of item in the , if item is found; otherwise, a negative number that is the bitwise complement of the index of the next element that is larger than .
 
     */
-    public func BinarySearch(index : Swift.Int32, count : Swift.Int32, item : T, comparer : dotnet.System.Collections.Generic.IComparer_1<T>) throws -> Swift.Int32 {
+    public func BinarySearch(index : Swift.Int32, count : Swift.Int32, item : T, comparer : Optional<dotnet.System.Collections.Generic.IComparer_1<T>>) throws -> Swift.Int32 {
         var __thrown : NullableHandle = nil;
-        let __return = System_Collections_Immutable_ImmutableList_1_Builder_i32__BinarySearch_0__4__i32_i32_T_System_Collections_Generic_IComparer_T_(T.get_type_handle(), &__thrown, self.get_handle(), index, count, item.to_gval(), nil);
+        let __return = System_Collections_Immutable_ImmutableList_1_Builder_i32__BinarySearch_0__4__i32_i32_T_System_Collections_Generic_IComparer_T_(T.get_type_handle(), &__thrown, self.get_handle(), index, count, item.to_gval(), (comparer?.get_handle()));
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
@@ -7335,9 +7421,9 @@ public final class ImmutableList_Builder_1<T : SGBridgeGenericValue>
     - Returns: The zero-based index of item in the , if item is found; otherwise, a negative number that is the bitwise complement of the index of the next element that is larger than .
 
     */
-    public func BinarySearch(item : T, comparer : dotnet.System.Collections.Generic.IComparer_1<T>) throws -> Swift.Int32 {
+    public func BinarySearch(item : T, comparer : Optional<dotnet.System.Collections.Generic.IComparer_1<T>>) throws -> Swift.Int32 {
         var __thrown : NullableHandle = nil;
-        let __return = System_Collections_Immutable_ImmutableList_1_Builder_i32__BinarySearch_0__2__T_System_Collections_Generic_IComparer_T_(T.get_type_handle(), &__thrown, self.get_handle(), item.to_gval(), nil);
+        let __return = System_Collections_Immutable_ImmutableList_1_Builder_i32__BinarySearch_0__2__T_System_Collections_Generic_IComparer_T_(T.get_type_handle(), &__thrown, self.get_handle(), item.to_gval(), (comparer?.get_handle()));
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
@@ -7797,9 +7883,9 @@ public final class ImmutableList_Builder_1<T : SGBridgeGenericValue>
     - Returns: The zero-based index of the first occurrence of item within the range of elements in the immutable list that starts at  and contains  number of elements, if found; otherwise, -1
 
     */
-    public func IndexOf(item : T, index : Swift.Int32, count : Swift.Int32, equalityComparer : dotnet.System.Collections.Generic.IEqualityComparer_1<T>) throws -> Swift.Int32 {
+    public func IndexOf(item : T, index : Swift.Int32, count : Swift.Int32, equalityComparer : Optional<dotnet.System.Collections.Generic.IEqualityComparer_1<T>>) throws -> Swift.Int32 {
         var __thrown : NullableHandle = nil;
-        let __return = System_Collections_Immutable_ImmutableList_1_Builder_i32__IndexOf_0__4__T_i32_i32_System_Collections_Generic_IEqualityComparer_T_(T.get_type_handle(), &__thrown, self.get_handle(), item.to_gval(), index, count, nil);
+        let __return = System_Collections_Immutable_ImmutableList_1_Builder_i32__IndexOf_0__4__T_i32_i32_System_Collections_Generic_IEqualityComparer_T_(T.get_type_handle(), &__thrown, self.get_handle(), item.to_gval(), index, count, (equalityComparer?.get_handle()));
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
@@ -7840,6 +7926,7 @@ public final class ImmutableList_Builder_1<T : SGBridgeGenericValue>
             return;
         }
     }
+// TODO COPE (returns_byref): ref T ItemRef(System.Int32)
     // System.Int32 LastIndexOf(T)
 // docid: M:System.Collections.Immutable.ImmutableList`1.Builder.LastIndexOf(`0)
     /**
@@ -7909,9 +7996,9 @@ public final class ImmutableList_Builder_1<T : SGBridgeGenericValue>
     - Returns: The zero-based index of the first occurrence of item within the range of elements in the immutable list that starts at  and contains  number of elements, if found; otherwise, -1
 
     */
-    public func LastIndexOf(item : T, startIndex : Swift.Int32, count : Swift.Int32, equalityComparer : dotnet.System.Collections.Generic.IEqualityComparer_1<T>) throws -> Swift.Int32 {
+    public func LastIndexOf(item : T, startIndex : Swift.Int32, count : Swift.Int32, equalityComparer : Optional<dotnet.System.Collections.Generic.IEqualityComparer_1<T>>) throws -> Swift.Int32 {
         var __thrown : NullableHandle = nil;
-        let __return = System_Collections_Immutable_ImmutableList_1_Builder_i32__LastIndexOf_0__4__T_i32_i32_System_Collections_Generic_IEqualityComparer_T_(T.get_type_handle(), &__thrown, self.get_handle(), item.to_gval(), startIndex, count, nil);
+        let __return = System_Collections_Immutable_ImmutableList_1_Builder_i32__LastIndexOf_0__4__T_i32_i32_System_Collections_Generic_IEqualityComparer_T_(T.get_type_handle(), &__thrown, self.get_handle(), item.to_gval(), startIndex, count, (equalityComparer?.get_handle()));
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
@@ -8030,9 +8117,9 @@ public final class ImmutableList_Builder_1<T : SGBridgeGenericValue>
 
     - Parameter comparer: The implementation to use when comparing elements, or  to use the default comparer ().
     */
-    public func Sort(comparer : dotnet.System.Collections.Generic.IComparer_1<T>) throws {
+    public func Sort(comparer : Optional<dotnet.System.Collections.Generic.IComparer_1<T>>) throws {
         var __thrown : NullableHandle = nil;
-        System_Collections_Immutable_ImmutableList_1_Builder_void__Sort_0__1__System_Collections_Generic_IComparer_T_(T.get_type_handle(), &__thrown, self.get_handle(), nil);
+        System_Collections_Immutable_ImmutableList_1_Builder_void__Sort_0__1__System_Collections_Generic_IComparer_T_(T.get_type_handle(), &__thrown, self.get_handle(), (comparer?.get_handle()));
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
@@ -8069,9 +8156,9 @@ public final class ImmutableList_Builder_1<T : SGBridgeGenericValue>
     - Parameter count: The length of the range to sort.
     - Parameter comparer: The implementation to use when comparing elements, or  to use the default comparer ().
     */
-    public func Sort(index : Swift.Int32, count : Swift.Int32, comparer : dotnet.System.Collections.Generic.IComparer_1<T>) throws {
+    public func Sort(index : Swift.Int32, count : Swift.Int32, comparer : Optional<dotnet.System.Collections.Generic.IComparer_1<T>>) throws {
         var __thrown : NullableHandle = nil;
-        System_Collections_Immutable_ImmutableList_1_Builder_void__Sort_0__3__i32_i32_System_Collections_Generic_IComparer_T_(T.get_type_handle(), &__thrown, self.get_handle(), index, count, nil);
+        System_Collections_Immutable_ImmutableList_1_Builder_void__Sort_0__3__i32_i32_System_Collections_Generic_IComparer_T_(T.get_type_handle(), &__thrown, self.get_handle(), index, count, (comparer?.get_handle()));
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
@@ -8132,9 +8219,6 @@ public final class ImmutableList_Builder_1<T : SGBridgeGenericValue>
     }
     // [IsSpecialName] T get_Item(System.Int32)
 // docid: M:System.Collections.Immutable.ImmutableList`1.Builder.get_Item(System.Int32)
-//BEGIN method_is_override
-//matches_1
-//matches :
     public func get_Item(index : Swift.Int32) throws -> T {
         var __thrown : NullableHandle = nil;
         let __return = System_Collections_Immutable_ImmutableList_1_Builder_T__get_Item_0__1__i32(T.get_type_handle(), &__thrown, self.get_handle(), index);
@@ -8183,6 +8267,9 @@ public final class ImmutableList_Enumerator_1<T : SGBridgeGenericValue>
 {
     public class override func get_type_handle() -> TypeHandle {
         return System_Collections_Immutable_ImmutableList_1_Enumerator_get_type_handle(T.get_type_handle());
+    }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -8341,6 +8428,9 @@ public final class ImmutableQueue_1<T : SGBridgeGenericValue>
     public class override func get_type_handle() -> TypeHandle {
         return System_Collections_Immutable_ImmutableQueue_1_get_type_handle(T.get_type_handle());
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // System.Collections.Immutable.ImmutableQueue<T> Clear()
@@ -8450,6 +8540,7 @@ public final class ImmutableQueue_1<T : SGBridgeGenericValue>
             return T(gval: __return);
         }
     }
+// TODO COPE (returns_byref): ref T PeekRef()
     // [IsSpecialName] System.Collections.Immutable.ImmutableQueue<T> get_Empty()
 // docid: M:System.Collections.Immutable.ImmutableQueue`1.get_Empty
     public class func get_Empty() throws -> dotnet.System.Collections.Immutable.ImmutableQueue_1<T> {
@@ -8509,6 +8600,9 @@ public final class ImmutableQueue_Enumerator_1<T : SGBridgeGenericValue>
 {
     public class override func get_type_handle() -> TypeHandle {
         return System_Collections_Immutable_ImmutableQueue_1_Enumerator_get_type_handle(T.get_type_handle());
+    }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -8571,9 +8665,9 @@ public struct ImmutableSortedDictionary {
     - Returns: The immutable collection builder.
 
     */
-    public static func CreateBuilder<UTKey : SGBridgeGenericValue,UTValue : SGBridgeGenericValue>(keyComparer : dotnet.System.Collections.Generic.IComparer_1<UTKey>, valueComparer : dotnet.System.Collections.Generic.IEqualityComparer_1<UTValue>) throws -> dotnet.System.Collections.Immutable.ImmutableSortedDictionary_Builder_2<UTKey,UTValue> {
+    public static func CreateBuilder<UTKey : SGBridgeGenericValue,UTValue : SGBridgeGenericValue>(keyComparer : Optional<dotnet.System.Collections.Generic.IComparer_1<UTKey>>, valueComparer : Optional<dotnet.System.Collections.Generic.IEqualityComparer_1<UTValue>>) throws -> dotnet.System.Collections.Immutable.ImmutableSortedDictionary_Builder_2<UTKey,UTValue> {
         var __thrown : NullableHandle = nil;
-        let __return = System_Collections_Immutable_ImmutableSortedDictionary_System_Collections_Immutable_ImmutableSortedDictionary_TKey_TValue__System_Collections_Immutable_Builder_UTKey_UTValue___CreateBuilder_2__2__System_Collections_Generic_IComparer_UTKey__System_Collections_Generic_IEqualityComparer_UTValue_(UTKey.get_type_handle(), UTValue.get_type_handle(), &__thrown, nil, nil);
+        let __return = System_Collections_Immutable_ImmutableSortedDictionary_System_Collections_Immutable_ImmutableSortedDictionary_TKey_TValue__System_Collections_Immutable_Builder_UTKey_UTValue___CreateBuilder_2__2__System_Collections_Generic_IComparer_UTKey__System_Collections_Generic_IEqualityComparer_UTValue_(UTKey.get_type_handle(), UTValue.get_type_handle(), &__thrown, (keyComparer?.get_handle()), (valueComparer?.get_handle()));
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
@@ -8590,9 +8684,9 @@ public struct ImmutableSortedDictionary {
     - Returns: The new immutable sorted dictionary that contains the specified items and uses the specified key comparer.
 
     */
-    public static func CreateRange<UTKey : SGBridgeGenericValue,UTValue : SGBridgeGenericValue>(keyComparer : dotnet.System.Collections.Generic.IComparer_1<UTKey>, items : dotnet.System.Collections.Generic.IEnumerable_1<dotnet.System.Collections.Generic.KeyValuePair_2<UTKey,UTValue>>) throws -> dotnet.System.Collections.Immutable.ImmutableSortedDictionary_2<UTKey,UTValue> {
+    public static func CreateRange<UTKey : SGBridgeGenericValue,UTValue : SGBridgeGenericValue>(keyComparer : Optional<dotnet.System.Collections.Generic.IComparer_1<UTKey>>, items : dotnet.System.Collections.Generic.IEnumerable_1<dotnet.System.Collections.Generic.KeyValuePair_2<UTKey,UTValue>>) throws -> dotnet.System.Collections.Immutable.ImmutableSortedDictionary_2<UTKey,UTValue> {
         var __thrown : NullableHandle = nil;
-        let __return = System_Collections_Immutable_ImmutableSortedDictionary_System_Collections_Immutable_ImmutableSortedDictionary_UTKey_UTValue___CreateRange_2__2__System_Collections_Generic_IComparer_UTKey__System_Collections_Generic_IEnumerable_System_Collections_Generic_System_Collections_Generic_KeyValuePair_UTKey_UTValue__(UTKey.get_type_handle(), UTValue.get_type_handle(), &__thrown, nil, items.get_handle());
+        let __return = System_Collections_Immutable_ImmutableSortedDictionary_System_Collections_Immutable_ImmutableSortedDictionary_UTKey_UTValue___CreateRange_2__2__System_Collections_Generic_IComparer_UTKey__System_Collections_Generic_IEnumerable_System_Collections_Generic_System_Collections_Generic_KeyValuePair_UTKey_UTValue__(UTKey.get_type_handle(), UTValue.get_type_handle(), &__thrown, (keyComparer?.get_handle()), items.get_handle());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
@@ -8605,14 +8699,14 @@ public struct ImmutableSortedDictionary {
     Creates a new immutable sorted dictionary from the specified range of items with the specified key and value comparers.
 
     - Parameter keyComparer: The comparer implementation to use to compare keys for equality and sorting.
-    - Parameter valueComparer: The comparer implementation to use to compare values for equality and sorting.
+    - Parameter valueComparer: The comparer implementation to use to compare values for equality.
     - Parameter items: The items to add to the sorted dictionary before it's immutable.
     - Returns: An immutable sorted dictionary that contains the specified items and uses the specified comparers.
 
     */
-    public static func CreateRange<UTKey : SGBridgeGenericValue,UTValue : SGBridgeGenericValue>(keyComparer : dotnet.System.Collections.Generic.IComparer_1<UTKey>, valueComparer : dotnet.System.Collections.Generic.IEqualityComparer_1<UTValue>, items : dotnet.System.Collections.Generic.IEnumerable_1<dotnet.System.Collections.Generic.KeyValuePair_2<UTKey,UTValue>>) throws -> dotnet.System.Collections.Immutable.ImmutableSortedDictionary_2<UTKey,UTValue> {
+    public static func CreateRange<UTKey : SGBridgeGenericValue,UTValue : SGBridgeGenericValue>(keyComparer : Optional<dotnet.System.Collections.Generic.IComparer_1<UTKey>>, valueComparer : Optional<dotnet.System.Collections.Generic.IEqualityComparer_1<UTValue>>, items : dotnet.System.Collections.Generic.IEnumerable_1<dotnet.System.Collections.Generic.KeyValuePair_2<UTKey,UTValue>>) throws -> dotnet.System.Collections.Immutable.ImmutableSortedDictionary_2<UTKey,UTValue> {
         var __thrown : NullableHandle = nil;
-        let __return = System_Collections_Immutable_ImmutableSortedDictionary_System_Collections_Immutable_ImmutableSortedDictionary_UTKey_UTValue___CreateRange_2__3__System_Collections_Generic_IComparer_UTKey__System_Collections_Generic_IEqualityComparer_UTValue__System_Collections_Generic_IEnumerable_System_Collections_Generic_System_Collections_Generic_KeyValuePair_UTKey_UTValue__(UTKey.get_type_handle(), UTValue.get_type_handle(), &__thrown, nil, nil, items.get_handle());
+        let __return = System_Collections_Immutable_ImmutableSortedDictionary_System_Collections_Immutable_ImmutableSortedDictionary_UTKey_UTValue___CreateRange_2__3__System_Collections_Generic_IComparer_UTKey__System_Collections_Generic_IEqualityComparer_UTValue__System_Collections_Generic_IEnumerable_System_Collections_Generic_System_Collections_Generic_KeyValuePair_UTKey_UTValue__(UTKey.get_type_handle(), UTValue.get_type_handle(), &__thrown, (keyComparer?.get_handle()), (valueComparer?.get_handle()), items.get_handle());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
@@ -8649,9 +8743,9 @@ public struct ImmutableSortedDictionary {
     - Returns: An empty immutable sorted dictionary.
 
     */
-    public static func Create<UTKey : SGBridgeGenericValue,UTValue : SGBridgeGenericValue>(keyComparer : dotnet.System.Collections.Generic.IComparer_1<UTKey>, valueComparer : dotnet.System.Collections.Generic.IEqualityComparer_1<UTValue>) throws -> dotnet.System.Collections.Immutable.ImmutableSortedDictionary_2<UTKey,UTValue> {
+    public static func Create<UTKey : SGBridgeGenericValue,UTValue : SGBridgeGenericValue>(keyComparer : Optional<dotnet.System.Collections.Generic.IComparer_1<UTKey>>, valueComparer : Optional<dotnet.System.Collections.Generic.IEqualityComparer_1<UTValue>>) throws -> dotnet.System.Collections.Immutable.ImmutableSortedDictionary_2<UTKey,UTValue> {
         var __thrown : NullableHandle = nil;
-        let __return = System_Collections_Immutable_ImmutableSortedDictionary_System_Collections_Immutable_ImmutableSortedDictionary_UTKey_UTValue___Create_2__2__System_Collections_Generic_IComparer_UTKey__System_Collections_Generic_IEqualityComparer_UTValue_(UTKey.get_type_handle(), UTValue.get_type_handle(), &__thrown, nil, nil);
+        let __return = System_Collections_Immutable_ImmutableSortedDictionary_System_Collections_Immutable_ImmutableSortedDictionary_UTKey_UTValue___Create_2__2__System_Collections_Generic_IComparer_UTKey__System_Collections_Generic_IEqualityComparer_UTValue_(UTKey.get_type_handle(), UTValue.get_type_handle(), &__thrown, (keyComparer?.get_handle()), (valueComparer?.get_handle()));
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
@@ -8686,9 +8780,9 @@ public struct ImmutableSortedDictionary {
     - Returns: An immutable sorted dictionary that contains the key/value pairs in the specified sequence.
 
     */
-    public static func ToImmutableSortedDictionary<UTKey : SGBridgeGenericValue,UTValue : SGBridgeGenericValue>(source : dotnet.System.Collections.Generic.IEnumerable_1<dotnet.System.Collections.Generic.KeyValuePair_2<UTKey,UTValue>>, keyComparer : dotnet.System.Collections.Generic.IComparer_1<UTKey>) throws -> dotnet.System.Collections.Immutable.ImmutableSortedDictionary_2<UTKey,UTValue> {
+    public static func ToImmutableSortedDictionary<UTKey : SGBridgeGenericValue,UTValue : SGBridgeGenericValue>(source : dotnet.System.Collections.Generic.IEnumerable_1<dotnet.System.Collections.Generic.KeyValuePair_2<UTKey,UTValue>>, keyComparer : Optional<dotnet.System.Collections.Generic.IComparer_1<UTKey>>) throws -> dotnet.System.Collections.Immutable.ImmutableSortedDictionary_2<UTKey,UTValue> {
         var __thrown : NullableHandle = nil;
-        let __return = System_Collections_Immutable_ImmutableSortedDictionary_System_Collections_Immutable_ImmutableSortedDictionary_UTKey_UTValue___ToImmutableSortedDictionary_2__2__System_Collections_Generic_IEnumerable_System_Collections_Generic_System_Collections_Generic_KeyValuePair_UTKey_UTValue___System_Collections_Generic_IComparer_UTKey_(UTKey.get_type_handle(), UTValue.get_type_handle(), &__thrown, source.get_handle(), nil);
+        let __return = System_Collections_Immutable_ImmutableSortedDictionary_System_Collections_Immutable_ImmutableSortedDictionary_UTKey_UTValue___ToImmutableSortedDictionary_2__2__System_Collections_Generic_IEnumerable_System_Collections_Generic_System_Collections_Generic_KeyValuePair_UTKey_UTValue___System_Collections_Generic_IComparer_UTKey_(UTKey.get_type_handle(), UTValue.get_type_handle(), &__thrown, source.get_handle(), (keyComparer?.get_handle()));
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
@@ -8706,9 +8800,9 @@ public struct ImmutableSortedDictionary {
     - Returns: An immutable sorted dictionary that contains the key/value pairs in the specified sequence.
 
     */
-    public static func ToImmutableSortedDictionary<UTKey : SGBridgeGenericValue,UTValue : SGBridgeGenericValue>(source : dotnet.System.Collections.Generic.IEnumerable_1<dotnet.System.Collections.Generic.KeyValuePair_2<UTKey,UTValue>>, keyComparer : dotnet.System.Collections.Generic.IComparer_1<UTKey>, valueComparer : dotnet.System.Collections.Generic.IEqualityComparer_1<UTValue>) throws -> dotnet.System.Collections.Immutable.ImmutableSortedDictionary_2<UTKey,UTValue> {
+    public static func ToImmutableSortedDictionary<UTKey : SGBridgeGenericValue,UTValue : SGBridgeGenericValue>(source : dotnet.System.Collections.Generic.IEnumerable_1<dotnet.System.Collections.Generic.KeyValuePair_2<UTKey,UTValue>>, keyComparer : Optional<dotnet.System.Collections.Generic.IComparer_1<UTKey>>, valueComparer : Optional<dotnet.System.Collections.Generic.IEqualityComparer_1<UTValue>>) throws -> dotnet.System.Collections.Immutable.ImmutableSortedDictionary_2<UTKey,UTValue> {
         var __thrown : NullableHandle = nil;
-        let __return = System_Collections_Immutable_ImmutableSortedDictionary_System_Collections_Immutable_ImmutableSortedDictionary_UTKey_UTValue___ToImmutableSortedDictionary_2__3__System_Collections_Generic_IEnumerable_System_Collections_Generic_System_Collections_Generic_KeyValuePair_UTKey_UTValue___System_Collections_Generic_IComparer_UTKey__System_Collections_Generic_IEqualityComparer_UTValue_(UTKey.get_type_handle(), UTValue.get_type_handle(), &__thrown, source.get_handle(), nil, nil);
+        let __return = System_Collections_Immutable_ImmutableSortedDictionary_System_Collections_Immutable_ImmutableSortedDictionary_UTKey_UTValue___ToImmutableSortedDictionary_2__3__System_Collections_Generic_IEnumerable_System_Collections_Generic_System_Collections_Generic_KeyValuePair_UTKey_UTValue___System_Collections_Generic_IComparer_UTKey__System_Collections_Generic_IEqualityComparer_UTValue_(UTKey.get_type_handle(), UTValue.get_type_handle(), &__thrown, source.get_handle(), (keyComparer?.get_handle()), (valueComparer?.get_handle()));
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
@@ -8764,9 +8858,9 @@ public struct ImmutableSortedDictionary {
     - Returns: An immutable dictionary that contains the items in the specified sequence.
 
     */
-    public static func ToImmutableSortedDictionary<UTSource : SGBridgeGenericValue,UTKey : SGBridgeGenericValue,UTValue : SGBridgeGenericValue>(source : dotnet.System.Collections.Generic.IEnumerable_1<UTSource>, keySelector : dotnet.System.Func_2<UTSource,UTKey>, elementSelector : dotnet.System.Func_2<UTSource,UTValue>, keyComparer : dotnet.System.Collections.Generic.IComparer_1<UTKey>) throws -> dotnet.System.Collections.Immutable.ImmutableSortedDictionary_2<UTKey,UTValue> {
+    public static func ToImmutableSortedDictionary<UTSource : SGBridgeGenericValue,UTKey : SGBridgeGenericValue,UTValue : SGBridgeGenericValue>(source : dotnet.System.Collections.Generic.IEnumerable_1<UTSource>, keySelector : dotnet.System.Func_2<UTSource,UTKey>, elementSelector : dotnet.System.Func_2<UTSource,UTValue>, keyComparer : Optional<dotnet.System.Collections.Generic.IComparer_1<UTKey>>) throws -> dotnet.System.Collections.Immutable.ImmutableSortedDictionary_2<UTKey,UTValue> {
         var __thrown : NullableHandle = nil;
-        let __return = System_Collections_Immutable_ImmutableSortedDictionary_System_Collections_Immutable_ImmutableSortedDictionary_UTKey_UTValue___ToImmutableSortedDictionary_3__4__System_Collections_Generic_IEnumerable_UTSource__System_Func_UTSource_UTKey__System_Func_UTSource_UTValue__System_Collections_Generic_IComparer_UTKey_(UTSource.get_type_handle(), UTKey.get_type_handle(), UTValue.get_type_handle(), &__thrown, source.get_handle(), keySelector.get_handle(), elementSelector.get_handle(), nil);
+        let __return = System_Collections_Immutable_ImmutableSortedDictionary_System_Collections_Immutable_ImmutableSortedDictionary_UTKey_UTValue___ToImmutableSortedDictionary_3__4__System_Collections_Generic_IEnumerable_UTSource__System_Func_UTSource_UTKey__System_Func_UTSource_UTValue__System_Collections_Generic_IComparer_UTKey_(UTSource.get_type_handle(), UTKey.get_type_handle(), UTValue.get_type_handle(), &__thrown, source.get_handle(), keySelector.get_handle(), elementSelector.get_handle(), (keyComparer?.get_handle()));
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
@@ -8774,7 +8868,7 @@ public struct ImmutableSortedDictionary {
         }
     }
     // delegate closure overload
-    public static func ToImmutableSortedDictionary<UTSource : SGBridgeGenericValue,UTKey : SGBridgeGenericValue,UTValue : SGBridgeGenericValue>(source : dotnet.System.Collections.Generic.IEnumerable_1<UTSource>, keySelector : @escaping (UTSource) throws -> UTKey, elementSelector : @escaping (UTSource) throws -> UTValue, keyComparer : dotnet.System.Collections.Generic.IComparer_1<UTKey>) throws -> dotnet.System.Collections.Immutable.ImmutableSortedDictionary_2<UTKey,UTValue> {
+    public static func ToImmutableSortedDictionary<UTSource : SGBridgeGenericValue,UTKey : SGBridgeGenericValue,UTValue : SGBridgeGenericValue>(source : dotnet.System.Collections.Generic.IEnumerable_1<UTSource>, keySelector : @escaping (UTSource) throws -> UTKey, elementSelector : @escaping (UTSource) throws -> UTValue, keyComparer : Optional<dotnet.System.Collections.Generic.IComparer_1<UTKey>>) throws -> dotnet.System.Collections.Immutable.ImmutableSortedDictionary_2<UTKey,UTValue> {
         let del_keySelector = try dotnet.System.Func_2<UTSource,UTKey>(keySelector);
         let del_elementSelector = try dotnet.System.Func_2<UTSource,UTValue>(elementSelector);
         return try ToImmutableSortedDictionary(source: source, keySelector: del_keySelector, elementSelector: del_elementSelector, keyComparer: keyComparer);
@@ -8792,9 +8886,9 @@ public struct ImmutableSortedDictionary {
     - Returns: An immutable sorted dictionary that contains the items in the specified sequence.
 
     */
-    public static func ToImmutableSortedDictionary<UTSource : SGBridgeGenericValue,UTKey : SGBridgeGenericValue,UTValue : SGBridgeGenericValue>(source : dotnet.System.Collections.Generic.IEnumerable_1<UTSource>, keySelector : dotnet.System.Func_2<UTSource,UTKey>, elementSelector : dotnet.System.Func_2<UTSource,UTValue>, keyComparer : dotnet.System.Collections.Generic.IComparer_1<UTKey>, valueComparer : dotnet.System.Collections.Generic.IEqualityComparer_1<UTValue>) throws -> dotnet.System.Collections.Immutable.ImmutableSortedDictionary_2<UTKey,UTValue> {
+    public static func ToImmutableSortedDictionary<UTSource : SGBridgeGenericValue,UTKey : SGBridgeGenericValue,UTValue : SGBridgeGenericValue>(source : dotnet.System.Collections.Generic.IEnumerable_1<UTSource>, keySelector : dotnet.System.Func_2<UTSource,UTKey>, elementSelector : dotnet.System.Func_2<UTSource,UTValue>, keyComparer : Optional<dotnet.System.Collections.Generic.IComparer_1<UTKey>>, valueComparer : Optional<dotnet.System.Collections.Generic.IEqualityComparer_1<UTValue>>) throws -> dotnet.System.Collections.Immutable.ImmutableSortedDictionary_2<UTKey,UTValue> {
         var __thrown : NullableHandle = nil;
-        let __return = System_Collections_Immutable_ImmutableSortedDictionary_System_Collections_Immutable_ImmutableSortedDictionary_UTKey_UTValue___ToImmutableSortedDictionary_3__5__System_Collections_Generic_IEnumerable_UTSource__System_Func_UTSource_UTKey__System_Func_UTSource_UTValue__System_Collections_Generic_IComparer_UTKey__System_Collections_Generic_IEqualityComparer_UTValue_(UTSource.get_type_handle(), UTKey.get_type_handle(), UTValue.get_type_handle(), &__thrown, source.get_handle(), keySelector.get_handle(), elementSelector.get_handle(), nil, nil);
+        let __return = System_Collections_Immutable_ImmutableSortedDictionary_System_Collections_Immutable_ImmutableSortedDictionary_UTKey_UTValue___ToImmutableSortedDictionary_3__5__System_Collections_Generic_IEnumerable_UTSource__System_Func_UTSource_UTKey__System_Func_UTSource_UTValue__System_Collections_Generic_IComparer_UTKey__System_Collections_Generic_IEqualityComparer_UTValue_(UTSource.get_type_handle(), UTKey.get_type_handle(), UTValue.get_type_handle(), &__thrown, source.get_handle(), keySelector.get_handle(), elementSelector.get_handle(), (keyComparer?.get_handle()), (valueComparer?.get_handle()));
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
@@ -8802,7 +8896,7 @@ public struct ImmutableSortedDictionary {
         }
     }
     // delegate closure overload
-    public static func ToImmutableSortedDictionary<UTSource : SGBridgeGenericValue,UTKey : SGBridgeGenericValue,UTValue : SGBridgeGenericValue>(source : dotnet.System.Collections.Generic.IEnumerable_1<UTSource>, keySelector : @escaping (UTSource) throws -> UTKey, elementSelector : @escaping (UTSource) throws -> UTValue, keyComparer : dotnet.System.Collections.Generic.IComparer_1<UTKey>, valueComparer : dotnet.System.Collections.Generic.IEqualityComparer_1<UTValue>) throws -> dotnet.System.Collections.Immutable.ImmutableSortedDictionary_2<UTKey,UTValue> {
+    public static func ToImmutableSortedDictionary<UTSource : SGBridgeGenericValue,UTKey : SGBridgeGenericValue,UTValue : SGBridgeGenericValue>(source : dotnet.System.Collections.Generic.IEnumerable_1<UTSource>, keySelector : @escaping (UTSource) throws -> UTKey, elementSelector : @escaping (UTSource) throws -> UTValue, keyComparer : Optional<dotnet.System.Collections.Generic.IComparer_1<UTKey>>, valueComparer : Optional<dotnet.System.Collections.Generic.IEqualityComparer_1<UTValue>>) throws -> dotnet.System.Collections.Immutable.ImmutableSortedDictionary_2<UTKey,UTValue> {
         let del_keySelector = try dotnet.System.Func_2<UTSource,UTKey>(keySelector);
         let del_elementSelector = try dotnet.System.Func_2<UTSource,UTValue>(elementSelector);
         return try ToImmutableSortedDictionary(source: source, keySelector: del_keySelector, elementSelector: del_elementSelector, keyComparer: keyComparer, valueComparer: valueComparer);
@@ -8827,8 +8921,22 @@ public final class ImmutableSortedDictionary_2<TKey : SGBridgeGenericValue,TValu
     public class override func get_type_handle() -> TypeHandle {
         return System_Collections_Immutable_ImmutableSortedDictionary_2_get_type_handle(TKey.get_type_handle(),TValue.get_type_handle());
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    // static field:  Empty
+    /**
+    Gets an empty immutable sorted dictionary.
+
+    */
+    public class var Empty : dotnet.System.Collections.Immutable.ImmutableSortedDictionary_2<TKey,TValue> {
+        get {
+        let __return = dotnet.System.Collections.Immutable.ImmutableSortedDictionary_2<TKey,TValue>(hndl: System_Collections_Immutable_ImmutableSortedDictionary_2_get_Empty());
+            return __return;
+        }
+    }
     // System.Collections.Immutable.ImmutableSortedDictionary<TKey,TValue> Add(TKey, TValue)
 // docid: M:System.Collections.Immutable.ImmutableSortedDictionary`2.Add(`0,`1)
     /**
@@ -9093,6 +9201,7 @@ public final class ImmutableSortedDictionary_2<TKey : SGBridgeGenericValue,TValu
         return (__return) != 0;
         }
     }
+// TODO COPE (returns_byref): ref TValue ValueRef(TKey)
     // System.Collections.Immutable.ImmutableSortedDictionary<TKey,TValue> WithComparers(System.Collections.Generic.IComparer<TKey>)
 // docid: M:System.Collections.Immutable.ImmutableSortedDictionary`2.WithComparers(System.Collections.Generic.IComparer{`0})
     /**
@@ -9102,9 +9211,9 @@ public final class ImmutableSortedDictionary_2<TKey : SGBridgeGenericValue,TValu
     - Returns: An instance of the immutable dictionary that uses the given comparer.
 
     */
-    public func WithComparers(keyComparer : dotnet.System.Collections.Generic.IComparer_1<TKey>) throws -> dotnet.System.Collections.Immutable.ImmutableSortedDictionary_2<TKey,TValue> {
+    public func WithComparers(keyComparer : Optional<dotnet.System.Collections.Generic.IComparer_1<TKey>>) throws -> dotnet.System.Collections.Immutable.ImmutableSortedDictionary_2<TKey,TValue> {
         var __thrown : NullableHandle = nil;
-        let __return = System_Collections_Immutable_ImmutableSortedDictionary_2_System_Collections_Immutable_ImmutableSortedDictionary_TKey_TValue___WithComparers_0__1__System_Collections_Generic_IComparer_TKey_(TKey.get_type_handle(), TValue.get_type_handle(), &__thrown, self.get_handle(), nil);
+        let __return = System_Collections_Immutable_ImmutableSortedDictionary_2_System_Collections_Immutable_ImmutableSortedDictionary_TKey_TValue___WithComparers_0__1__System_Collections_Generic_IComparer_TKey_(TKey.get_type_handle(), TValue.get_type_handle(), &__thrown, self.get_handle(), (keyComparer?.get_handle()));
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
@@ -9121,9 +9230,9 @@ public final class ImmutableSortedDictionary_2<TKey : SGBridgeGenericValue,TValu
     - Returns: An instance of the immutable dictionary that uses the given comparers.
 
     */
-    public func WithComparers(keyComparer : dotnet.System.Collections.Generic.IComparer_1<TKey>, valueComparer : dotnet.System.Collections.Generic.IEqualityComparer_1<TValue>) throws -> dotnet.System.Collections.Immutable.ImmutableSortedDictionary_2<TKey,TValue> {
+    public func WithComparers(keyComparer : Optional<dotnet.System.Collections.Generic.IComparer_1<TKey>>, valueComparer : Optional<dotnet.System.Collections.Generic.IEqualityComparer_1<TValue>>) throws -> dotnet.System.Collections.Immutable.ImmutableSortedDictionary_2<TKey,TValue> {
         var __thrown : NullableHandle = nil;
-        let __return = System_Collections_Immutable_ImmutableSortedDictionary_2_System_Collections_Immutable_ImmutableSortedDictionary_TKey_TValue___WithComparers_0__2__System_Collections_Generic_IComparer_TKey__System_Collections_Generic_IEqualityComparer_TValue_(TKey.get_type_handle(), TValue.get_type_handle(), &__thrown, self.get_handle(), nil, nil);
+        let __return = System_Collections_Immutable_ImmutableSortedDictionary_2_System_Collections_Immutable_ImmutableSortedDictionary_TKey_TValue___WithComparers_0__2__System_Collections_Generic_IComparer_TKey__System_Collections_Generic_IEqualityComparer_TValue_(TKey.get_type_handle(), TValue.get_type_handle(), &__thrown, self.get_handle(), (keyComparer?.get_handle()), (valueComparer?.get_handle()));
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
@@ -9198,9 +9307,6 @@ public final class ImmutableSortedDictionary_2<TKey : SGBridgeGenericValue,TValu
     }
     // [IsSpecialName] TValue get_Item(TKey)
 // docid: M:System.Collections.Immutable.ImmutableSortedDictionary`2.get_Item(`0)
-//BEGIN method_is_override
-//matches_1
-//matches :
     public func get_Item(key : TKey) throws -> TValue {
         var __thrown : NullableHandle = nil;
         let __return = System_Collections_Immutable_ImmutableSortedDictionary_2_TValue__get_Item_0__1__TKey(TKey.get_type_handle(), TValue.get_type_handle(), &__thrown, self.get_handle(), key.to_gval());
@@ -9283,6 +9389,9 @@ public final class ImmutableSortedDictionary_Builder_2<TKey : SGBridgeGenericVal
 {
     public class override func get_type_handle() -> TypeHandle {
         return System_Collections_Immutable_ImmutableSortedDictionary_2_Builder_get_type_handle(TKey.get_type_handle(),TValue.get_type_handle());
+    }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -9578,6 +9687,7 @@ public final class ImmutableSortedDictionary_Builder_2<TKey : SGBridgeGenericVal
         return (__return) != 0;
         }
     }
+// TODO COPE (returns_byref): ref TValue ValueRef(TKey)
     // [IsSpecialName] System.Int32 get_Count()
 // docid: M:System.Collections.Immutable.ImmutableSortedDictionary`2.Builder.get_Count
     public func get_Count() throws -> Swift.Int32 {
@@ -9657,9 +9767,6 @@ public final class ImmutableSortedDictionary_Builder_2<TKey : SGBridgeGenericVal
     }
     // [IsSpecialName] TValue get_Item(TKey)
 // docid: M:System.Collections.Immutable.ImmutableSortedDictionary`2.Builder.get_Item(`0)
-//BEGIN method_is_override
-//matches_1
-//matches :
     public func get_Item(key : TKey) throws -> TValue {
         var __thrown : NullableHandle = nil;
         let __return = System_Collections_Immutable_ImmutableSortedDictionary_2_Builder_TValue__get_Item_0__1__TKey(TKey.get_type_handle(), TValue.get_type_handle(), &__thrown, self.get_handle(), key.to_gval());
@@ -9751,6 +9858,9 @@ public final class ImmutableSortedDictionary_Enumerator_2<TKey : SGBridgeGeneric
     public class override func get_type_handle() -> TypeHandle {
         return System_Collections_Immutable_ImmutableSortedDictionary_2_Enumerator_get_type_handle(TKey.get_type_handle(),TValue.get_type_handle());
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     /**
@@ -9840,9 +9950,9 @@ public struct ImmutableSortedSet {
     - Returns: The immutable collection.
 
     */
-    public static func CreateBuilder<UT : SGBridgeGenericValue>(comparer : dotnet.System.Collections.Generic.IComparer_1<UT>) throws -> dotnet.System.Collections.Immutable.ImmutableSortedSet_Builder_1<UT> {
+    public static func CreateBuilder<UT : SGBridgeGenericValue>(comparer : Optional<dotnet.System.Collections.Generic.IComparer_1<UT>>) throws -> dotnet.System.Collections.Immutable.ImmutableSortedSet_Builder_1<UT> {
         var __thrown : NullableHandle = nil;
-        let __return = System_Collections_Immutable_ImmutableSortedSet_System_Collections_Immutable_ImmutableSortedSet_T__System_Collections_Immutable_Builder_UT___CreateBuilder_1__1__System_Collections_Generic_IComparer_UT_(UT.get_type_handle(), &__thrown, nil);
+        let __return = System_Collections_Immutable_ImmutableSortedSet_System_Collections_Immutable_ImmutableSortedSet_T__System_Collections_Immutable_Builder_UT___CreateBuilder_1__1__System_Collections_Generic_IComparer_UT_(UT.get_type_handle(), &__thrown, (comparer?.get_handle()));
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
@@ -9859,9 +9969,9 @@ public struct ImmutableSortedSet {
     - Returns: The new immutable set that contains the specified items.
 
     */
-    public static func CreateRange<UT : SGBridgeGenericValue>(comparer : dotnet.System.Collections.Generic.IComparer_1<UT>, items : dotnet.System.Collections.Generic.IEnumerable_1<UT>) throws -> dotnet.System.Collections.Immutable.ImmutableSortedSet_1<UT> {
+    public static func CreateRange<UT : SGBridgeGenericValue>(comparer : Optional<dotnet.System.Collections.Generic.IComparer_1<UT>>, items : dotnet.System.Collections.Generic.IEnumerable_1<UT>) throws -> dotnet.System.Collections.Immutable.ImmutableSortedSet_1<UT> {
         var __thrown : NullableHandle = nil;
-        let __return = System_Collections_Immutable_ImmutableSortedSet_System_Collections_Immutable_ImmutableSortedSet_UT___CreateRange_1__2__System_Collections_Generic_IComparer_UT__System_Collections_Generic_IEnumerable_UT_(UT.get_type_handle(), &__thrown, nil, items.get_handle());
+        let __return = System_Collections_Immutable_ImmutableSortedSet_System_Collections_Immutable_ImmutableSortedSet_UT___CreateRange_1__2__System_Collections_Generic_IComparer_UT__System_Collections_Generic_IEnumerable_UT_(UT.get_type_handle(), &__thrown, (comparer?.get_handle()), items.get_handle());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
@@ -9896,9 +10006,9 @@ public struct ImmutableSortedSet {
     - Returns: An empty immutable set.
 
     */
-    public static func Create<UT : SGBridgeGenericValue>(comparer : dotnet.System.Collections.Generic.IComparer_1<UT>) throws -> dotnet.System.Collections.Immutable.ImmutableSortedSet_1<UT> {
+    public static func Create<UT : SGBridgeGenericValue>(comparer : Optional<dotnet.System.Collections.Generic.IComparer_1<UT>>) throws -> dotnet.System.Collections.Immutable.ImmutableSortedSet_1<UT> {
         var __thrown : NullableHandle = nil;
-        let __return = System_Collections_Immutable_ImmutableSortedSet_System_Collections_Immutable_ImmutableSortedSet_UT___Create_1__1__System_Collections_Generic_IComparer_UT_(UT.get_type_handle(), &__thrown, nil);
+        let __return = System_Collections_Immutable_ImmutableSortedSet_System_Collections_Immutable_ImmutableSortedSet_UT___Create_1__1__System_Collections_Generic_IComparer_UT_(UT.get_type_handle(), &__thrown, (comparer?.get_handle()));
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
@@ -9915,9 +10025,9 @@ public struct ImmutableSortedSet {
     - Returns: A new immutable set that contains the specified item.
 
     */
-    public static func Create<UT : SGBridgeGenericValue>(comparer : dotnet.System.Collections.Generic.IComparer_1<UT>, item : UT) throws -> dotnet.System.Collections.Immutable.ImmutableSortedSet_1<UT> {
+    public static func Create<UT : SGBridgeGenericValue>(comparer : Optional<dotnet.System.Collections.Generic.IComparer_1<UT>>, item : UT) throws -> dotnet.System.Collections.Immutable.ImmutableSortedSet_1<UT> {
         var __thrown : NullableHandle = nil;
-        let __return = System_Collections_Immutable_ImmutableSortedSet_System_Collections_Immutable_ImmutableSortedSet_UT___Create_1__2__System_Collections_Generic_IComparer_UT__UT(UT.get_type_handle(), &__thrown, nil, item.to_gval());
+        let __return = System_Collections_Immutable_ImmutableSortedSet_System_Collections_Immutable_ImmutableSortedSet_UT___Create_1__2__System_Collections_Generic_IComparer_UT__UT(UT.get_type_handle(), &__thrown, (comparer?.get_handle()), item.to_gval());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
@@ -9926,9 +10036,9 @@ public struct ImmutableSortedSet {
     }
     // System.Collections.Immutable.ImmutableSortedSet<T> Create<T>(System.Collections.Generic.IComparer<T>, T[])
 // docid: M:System.Collections.Immutable.ImmutableSortedSet.Create``1(System.Collections.Generic.IComparer{``0},System.Collections.Immutable.T[])
-    public static func Create<UT : SGBridgeGenericValue>(comparer : dotnet.System.Collections.Generic.IComparer_1<UT>, items : dotnet.System_Arr<UT>) throws -> dotnet.System.Collections.Immutable.ImmutableSortedSet_1<UT> {
+    public static func Create<UT : SGBridgeGenericValue>(comparer : Optional<dotnet.System.Collections.Generic.IComparer_1<UT>>, items : dotnet.System_Arr<UT>) throws -> dotnet.System.Collections.Immutable.ImmutableSortedSet_1<UT> {
         var __thrown : NullableHandle = nil;
-        let __return = System_Collections_Immutable_ImmutableSortedSet_System_Collections_Immutable_ImmutableSortedSet_UT___Create_1__2__System_Collections_Generic_IComparer_UT__UTArray(UT.get_type_handle(), &__thrown, nil, items.get_handle());
+        let __return = System_Collections_Immutable_ImmutableSortedSet_System_Collections_Immutable_ImmutableSortedSet_UT___Create_1__2__System_Collections_Generic_IComparer_UT__UTArray(UT.get_type_handle(), &__thrown, (comparer?.get_handle()), items.get_handle());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
@@ -9982,9 +10092,9 @@ public struct ImmutableSortedSet {
     - Returns: An immutable sorted set that contains the items in the specified sequence.
 
     */
-    public static func ToImmutableSortedSet<UTSource : SGBridgeGenericValue>(source : dotnet.System.Collections.Generic.IEnumerable_1<UTSource>, comparer : dotnet.System.Collections.Generic.IComparer_1<UTSource>) throws -> dotnet.System.Collections.Immutable.ImmutableSortedSet_1<UTSource> {
+    public static func ToImmutableSortedSet<UTSource : SGBridgeGenericValue>(source : dotnet.System.Collections.Generic.IEnumerable_1<UTSource>, comparer : Optional<dotnet.System.Collections.Generic.IComparer_1<UTSource>>) throws -> dotnet.System.Collections.Immutable.ImmutableSortedSet_1<UTSource> {
         var __thrown : NullableHandle = nil;
-        let __return = System_Collections_Immutable_ImmutableSortedSet_System_Collections_Immutable_ImmutableSortedSet_UTSource___ToImmutableSortedSet_1__2__System_Collections_Generic_IEnumerable_UTSource__System_Collections_Generic_IComparer_UTSource_(UTSource.get_type_handle(), &__thrown, source.get_handle(), nil);
+        let __return = System_Collections_Immutable_ImmutableSortedSet_System_Collections_Immutable_ImmutableSortedSet_UTSource___ToImmutableSortedSet_1__2__System_Collections_Generic_IEnumerable_UTSource__System_Collections_Generic_IComparer_UTSource_(UTSource.get_type_handle(), &__thrown, source.get_handle(), (comparer?.get_handle()));
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
@@ -10022,8 +10132,22 @@ public final class ImmutableSortedSet_1<T : SGBridgeGenericValue>
     public class override func get_type_handle() -> TypeHandle {
         return System_Collections_Immutable_ImmutableSortedSet_1_get_type_handle(T.get_type_handle());
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    // static field:  Empty
+    /**
+    Gets an empty immutable sorted set.
+
+    */
+    public class var Empty : dotnet.System.Collections.Immutable.ImmutableSortedSet_1<T> {
+        get {
+        let __return = dotnet.System.Collections.Immutable.ImmutableSortedSet_1<T>(hndl: System_Collections_Immutable_ImmutableSortedSet_1_get_Empty());
+            return __return;
+        }
+    }
     // System.Collections.Immutable.ImmutableSortedSet<T> Add(T)
 // docid: M:System.Collections.Immutable.ImmutableSortedSet`1.Add(`0)
     /**
@@ -10225,6 +10349,7 @@ public final class ImmutableSortedSet_1<T : SGBridgeGenericValue>
         return (__return) != 0;
         }
     }
+// TODO COPE (returns_byref): ref T ItemRef(System.Int32)
     // bool Overlaps(System.Collections.Generic.IEnumerable<T>)
 // docid: M:System.Collections.Immutable.ImmutableSortedSet`1.Overlaps(System.Collections.Generic.IEnumerable{`0})
     /**
@@ -10382,9 +10507,9 @@ public final class ImmutableSortedSet_1<T : SGBridgeGenericValue>
     - Returns: The immutable sorted set that has the specified key comparer.
 
     */
-    public func WithComparer(comparer : dotnet.System.Collections.Generic.IComparer_1<T>) throws -> dotnet.System.Collections.Immutable.ImmutableSortedSet_1<T> {
+    public func WithComparer(comparer : Optional<dotnet.System.Collections.Generic.IComparer_1<T>>) throws -> dotnet.System.Collections.Immutable.ImmutableSortedSet_1<T> {
         var __thrown : NullableHandle = nil;
-        let __return = System_Collections_Immutable_ImmutableSortedSet_1_System_Collections_Immutable_ImmutableSortedSet_T___WithComparer_0__1__System_Collections_Generic_IComparer_T_(T.get_type_handle(), &__thrown, self.get_handle(), nil);
+        let __return = System_Collections_Immutable_ImmutableSortedSet_1_System_Collections_Immutable_ImmutableSortedSet_T___WithComparer_0__1__System_Collections_Generic_IComparer_T_(T.get_type_handle(), &__thrown, self.get_handle(), (comparer?.get_handle()));
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
@@ -10448,9 +10573,6 @@ public final class ImmutableSortedSet_1<T : SGBridgeGenericValue>
     }
     // [IsSpecialName] T get_Item(System.Int32)
 // docid: M:System.Collections.Immutable.ImmutableSortedSet`1.get_Item(System.Int32)
-//BEGIN method_is_override
-//matches_1
-//matches :
     public func get_Item(index : Swift.Int32) throws -> T {
         var __thrown : NullableHandle = nil;
         let __return = System_Collections_Immutable_ImmutableSortedSet_1_T__get_Item_0__1__i32(T.get_type_handle(), &__thrown, self.get_handle(), index);
@@ -10524,6 +10646,9 @@ public final class ImmutableSortedSet_Builder_1<T : SGBridgeGenericValue>
     public class override func get_type_handle() -> TypeHandle {
         return System_Collections_Immutable_ImmutableSortedSet_1_Builder_get_type_handle(T.get_type_handle());
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // bool Add(T)
@@ -10533,7 +10658,7 @@ public final class ImmutableSortedSet_Builder_1<T : SGBridgeGenericValue>
 
     - Parameter item: The element to add to the set.
     - Returns: 
-         if the element is added to the set;  if the element is already in the set
+         if the element is added to the set;  if the element is already in the set.
 
     */
     public func Add(item : T) throws -> Bool {
@@ -10704,6 +10829,7 @@ public final class ImmutableSortedSet_Builder_1<T : SGBridgeGenericValue>
         return (__return) != 0;
         }
     }
+// TODO COPE (returns_byref): ref T ItemRef(System.Int32)
     // bool Overlaps(System.Collections.Generic.IEnumerable<T>)
 // docid: M:System.Collections.Immutable.ImmutableSortedSet`1.Builder.Overlaps(System.Collections.Generic.IEnumerable{`0})
     /**
@@ -10906,9 +11032,6 @@ public final class ImmutableSortedSet_Builder_1<T : SGBridgeGenericValue>
     }
     // [IsSpecialName] T get_Item(System.Int32)
 // docid: M:System.Collections.Immutable.ImmutableSortedSet`1.Builder.get_Item(System.Int32)
-//BEGIN method_is_override
-//matches_1
-//matches :
     public func get_Item(index : Swift.Int32) throws -> T {
         var __thrown : NullableHandle = nil;
         let __return = System_Collections_Immutable_ImmutableSortedSet_1_Builder_T__get_Item_0__1__i32(T.get_type_handle(), &__thrown, self.get_handle(), index);
@@ -10976,6 +11099,9 @@ public final class ImmutableSortedSet_Enumerator_1<T : SGBridgeGenericValue>
 {
     public class override func get_type_handle() -> TypeHandle {
         return System_Collections_Immutable_ImmutableSortedSet_1_Enumerator_get_type_handle(T.get_type_handle());
+    }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -11142,6 +11268,9 @@ public final class ImmutableStack_1<T : SGBridgeGenericValue>
     public class override func get_type_handle() -> TypeHandle {
         return System_Collections_Immutable_ImmutableStack_1_get_type_handle(T.get_type_handle());
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // System.Collections.Immutable.ImmutableStack<T> Clear()
@@ -11195,6 +11324,7 @@ public final class ImmutableStack_1<T : SGBridgeGenericValue>
             return T(gval: __return);
         }
     }
+// TODO COPE (returns_byref): ref T PeekRef()
     // System.Collections.Immutable.ImmutableStack<T> Pop()
 // docid: M:System.Collections.Immutable.ImmutableStack`1.Pop
     /**
@@ -11309,6 +11439,9 @@ public final class ImmutableStack_Enumerator_1<T : SGBridgeGenericValue>
     public class override func get_type_handle() -> TypeHandle {
         return System_Collections_Immutable_ImmutableStack_1_Enumerator_get_type_handle(T.get_type_handle());
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     /**
@@ -11420,7 +11553,7 @@ public struct ImmutableArrayExtensions {
     - Parameter immutableArray: The collection to apply the function to.
     - Parameter seed: The initial accumulator value.
     - Parameter func: A function to be invoked on each element, in a cumulative way.
-    - Parameter resultSelector: 
+    - Parameter resultSelector: A function to transform the final accumulator value into the result type.
     - Returns: The final accumulator value.
 
     */
@@ -11831,9 +11964,9 @@ public struct ImmutableArrayExtensions {
          to indicate the sequences are equal; otherwise, .
 
     */
-    public static func SequenceEqual<UTDerived : SGBridgeGenericValue,UTBase : SGBridgeGenericValue>(immutableArray : dotnet.System.Collections.Immutable.ImmutableArray_1<UTBase>, items : dotnet.System.Collections.Generic.IEnumerable_1<UTDerived>, comparer : dotnet.System.Collections.Generic.IEqualityComparer_1<UTBase>/* TODO default closedgeneric crash */) throws -> Bool {
+    public static func SequenceEqual<UTDerived : SGBridgeGenericValue,UTBase : SGBridgeGenericValue>(immutableArray : dotnet.System.Collections.Immutable.ImmutableArray_1<UTBase>, items : dotnet.System.Collections.Generic.IEnumerable_1<UTDerived>, comparer : Optional<dotnet.System.Collections.Generic.IEqualityComparer_1<UTBase>> = nil) throws -> Bool {
         var __thrown : NullableHandle = nil;
-        let __return = System_Linq_ImmutableArrayExtensions_bool__SequenceEqual_2__3__System_Collections_Immutable_ImmutableArray_UTBase__System_Collections_Generic_IEnumerable_UTDerived__System_Collections_Generic_IEqualityComparer_UTBase_(UTDerived.get_type_handle(), UTBase.get_type_handle(), &__thrown, immutableArray.get_handle(), items.get_handle(), nil);
+        let __return = System_Linq_ImmutableArrayExtensions_bool__SequenceEqual_2__3__System_Collections_Immutable_ImmutableArray_UTBase__System_Collections_Generic_IEnumerable_UTDerived__System_Collections_Generic_IEqualityComparer_UTBase_(UTDerived.get_type_handle(), UTBase.get_type_handle(), &__thrown, immutableArray.get_handle(), items.get_handle(), (comparer?.get_handle()));
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
@@ -11852,9 +11985,9 @@ public struct ImmutableArrayExtensions {
          to indicate the sequences are equal; otherwise, .
 
     */
-    public static func SequenceEqual<UTDerived : SGBridgeGenericValue,UTBase : SGBridgeGenericValue>(immutableArray : dotnet.System.Collections.Immutable.ImmutableArray_1<UTBase>, items : dotnet.System.Collections.Immutable.ImmutableArray_1<UTDerived>, comparer : dotnet.System.Collections.Generic.IEqualityComparer_1<UTBase>/* TODO default closedgeneric crash */) throws -> Bool {
+    public static func SequenceEqual<UTDerived : SGBridgeGenericValue,UTBase : SGBridgeGenericValue>(immutableArray : dotnet.System.Collections.Immutable.ImmutableArray_1<UTBase>, items : dotnet.System.Collections.Immutable.ImmutableArray_1<UTDerived>, comparer : Optional<dotnet.System.Collections.Generic.IEqualityComparer_1<UTBase>> = nil) throws -> Bool {
         var __thrown : NullableHandle = nil;
-        let __return = System_Linq_ImmutableArrayExtensions_bool__SequenceEqual_2__3__System_Collections_Immutable_ImmutableArray_UTBase__System_Collections_Immutable_ImmutableArray_UTDerived__System_Collections_Generic_IEqualityComparer_UTBase_(UTDerived.get_type_handle(), UTBase.get_type_handle(), &__thrown, immutableArray.get_handle(), items.get_handle(), nil);
+        let __return = System_Linq_ImmutableArrayExtensions_bool__SequenceEqual_2__3__System_Collections_Immutable_ImmutableArray_UTBase__System_Collections_Immutable_ImmutableArray_UTDerived__System_Collections_Generic_IEqualityComparer_UTBase_(UTDerived.get_type_handle(), UTBase.get_type_handle(), &__thrown, immutableArray.get_handle(), items.get_handle(), (comparer?.get_handle()));
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
@@ -11952,8 +12085,8 @@ public struct ImmutableArrayExtensions {
     /**
     Returns the only element of a sequence that satisfies a specified condition, and throws an exception if more than one such element exists.
 
-    - Parameter immutableArray: 
-    - Parameter predicate: 
+    - Parameter immutableArray: The immutable array to return a single element from.
+    - Parameter predicate: The function to test whether an element should be returned.
     - Returns: Returns .
 
     */
@@ -11976,7 +12109,7 @@ public struct ImmutableArrayExtensions {
     /**
     Copies the contents of this array to a mutable array.
 
-    - Parameter immutableArray: 
+    - Parameter immutableArray: The immutable array to copy into a mutable one.
     - Returns: The newly instantiated array.
 
     */
@@ -12024,9 +12157,9 @@ public struct ImmutableArrayExtensions {
     - Returns: The newly initialized dictionary.
 
     */
-    public static func ToDictionary<UTKey : SGBridgeGenericValue,UT : SGBridgeGenericValue>(immutableArray : dotnet.System.Collections.Immutable.ImmutableArray_1<UT>, keySelector : dotnet.System.Func_2<UT,UTKey>, comparer : dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>) throws -> dotnet.System.Collections.Generic.Dictionary_2<UTKey,UT> {
+    public static func ToDictionary<UTKey : SGBridgeGenericValue,UT : SGBridgeGenericValue>(immutableArray : dotnet.System.Collections.Immutable.ImmutableArray_1<UT>, keySelector : dotnet.System.Func_2<UT,UTKey>, comparer : Optional<dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>>) throws -> dotnet.System.Collections.Generic.Dictionary_2<UTKey,UT> {
         var __thrown : NullableHandle = nil;
-        let __return = System_Linq_ImmutableArrayExtensions_System_Collections_Generic_Dictionary_UTKey_UT___ToDictionary_2__3__System_Collections_Immutable_ImmutableArray_UT__System_Func_UT_UTKey__System_Collections_Generic_IEqualityComparer_UTKey_(UTKey.get_type_handle(), UT.get_type_handle(), &__thrown, immutableArray.get_handle(), keySelector.get_handle(), nil);
+        let __return = System_Linq_ImmutableArrayExtensions_System_Collections_Generic_Dictionary_UTKey_UT___ToDictionary_2__3__System_Collections_Immutable_ImmutableArray_UT__System_Func_UT_UTKey__System_Collections_Generic_IEqualityComparer_UTKey_(UTKey.get_type_handle(), UT.get_type_handle(), &__thrown, immutableArray.get_handle(), keySelector.get_handle(), (comparer?.get_handle()));
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
@@ -12034,7 +12167,7 @@ public struct ImmutableArrayExtensions {
         }
     }
     // delegate closure overload
-    public static func ToDictionary<UTKey : SGBridgeGenericValue,UT : SGBridgeGenericValue>(immutableArray : dotnet.System.Collections.Immutable.ImmutableArray_1<UT>, keySelector : @escaping (UT) throws -> UTKey, comparer : dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>) throws -> dotnet.System.Collections.Generic.Dictionary_2<UTKey,UT> {
+    public static func ToDictionary<UTKey : SGBridgeGenericValue,UT : SGBridgeGenericValue>(immutableArray : dotnet.System.Collections.Immutable.ImmutableArray_1<UT>, keySelector : @escaping (UT) throws -> UTKey, comparer : Optional<dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>>) throws -> dotnet.System.Collections.Generic.Dictionary_2<UTKey,UT> {
         let del_keySelector = try dotnet.System.Func_2<UT,UTKey>(keySelector);
         return try ToDictionary(immutableArray: immutableArray, keySelector: del_keySelector, comparer: comparer);
     }
@@ -12076,9 +12209,9 @@ public struct ImmutableArrayExtensions {
     - Returns: The newly initialized dictionary.
 
     */
-    public static func ToDictionary<UTKey : SGBridgeGenericValue,UTElement : SGBridgeGenericValue,UT : SGBridgeGenericValue>(immutableArray : dotnet.System.Collections.Immutable.ImmutableArray_1<UT>, keySelector : dotnet.System.Func_2<UT,UTKey>, elementSelector : dotnet.System.Func_2<UT,UTElement>, comparer : dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>) throws -> dotnet.System.Collections.Generic.Dictionary_2<UTKey,UTElement> {
+    public static func ToDictionary<UTKey : SGBridgeGenericValue,UTElement : SGBridgeGenericValue,UT : SGBridgeGenericValue>(immutableArray : dotnet.System.Collections.Immutable.ImmutableArray_1<UT>, keySelector : dotnet.System.Func_2<UT,UTKey>, elementSelector : dotnet.System.Func_2<UT,UTElement>, comparer : Optional<dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>>) throws -> dotnet.System.Collections.Generic.Dictionary_2<UTKey,UTElement> {
         var __thrown : NullableHandle = nil;
-        let __return = System_Linq_ImmutableArrayExtensions_System_Collections_Generic_Dictionary_UTKey_UTElement___ToDictionary_3__4__System_Collections_Immutable_ImmutableArray_UT__System_Func_UT_UTKey__System_Func_UT_UTElement__System_Collections_Generic_IEqualityComparer_UTKey_(UTKey.get_type_handle(), UTElement.get_type_handle(), UT.get_type_handle(), &__thrown, immutableArray.get_handle(), keySelector.get_handle(), elementSelector.get_handle(), nil);
+        let __return = System_Linq_ImmutableArrayExtensions_System_Collections_Generic_Dictionary_UTKey_UTElement___ToDictionary_3__4__System_Collections_Immutable_ImmutableArray_UT__System_Func_UT_UTKey__System_Func_UT_UTElement__System_Collections_Generic_IEqualityComparer_UTKey_(UTKey.get_type_handle(), UTElement.get_type_handle(), UT.get_type_handle(), &__thrown, immutableArray.get_handle(), keySelector.get_handle(), elementSelector.get_handle(), (comparer?.get_handle()));
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
@@ -12086,7 +12219,7 @@ public struct ImmutableArrayExtensions {
         }
     }
     // delegate closure overload
-    public static func ToDictionary<UTKey : SGBridgeGenericValue,UTElement : SGBridgeGenericValue,UT : SGBridgeGenericValue>(immutableArray : dotnet.System.Collections.Immutable.ImmutableArray_1<UT>, keySelector : @escaping (UT) throws -> UTKey, elementSelector : @escaping (UT) throws -> UTElement, comparer : dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>) throws -> dotnet.System.Collections.Generic.Dictionary_2<UTKey,UTElement> {
+    public static func ToDictionary<UTKey : SGBridgeGenericValue,UTElement : SGBridgeGenericValue,UT : SGBridgeGenericValue>(immutableArray : dotnet.System.Collections.Immutable.ImmutableArray_1<UT>, keySelector : @escaping (UT) throws -> UTKey, elementSelector : @escaping (UT) throws -> UTElement, comparer : Optional<dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>>) throws -> dotnet.System.Collections.Generic.Dictionary_2<UTKey,UTElement> {
         let del_keySelector = try dotnet.System.Func_2<UT,UTKey>(keySelector);
         let del_elementSelector = try dotnet.System.Func_2<UT,UTElement>(elementSelector);
         return try ToDictionary(immutableArray: immutableArray, keySelector: del_keySelector, elementSelector: del_elementSelector, comparer: comparer);
@@ -12177,7 +12310,7 @@ extension dotnet.System.Collections.Immutable.ImmutableArray_1 {
 
 // EXTENSION METHOD System.Int32 BinarySearch<T>(System.Collections.Immutable.ImmutableArray<T>, System.Int32, System.Int32, T, System.Collections.Generic.IComparer<T>)
 extension dotnet.System.Collections.Immutable.ImmutableArray_1 {
-    public func BinarySearch(index : Swift.Int32, length : Swift.Int32, value : T, comparer : dotnet.System.Collections.Generic.IComparer_1<T>) throws -> Swift.Int32 {
+    public func BinarySearch(index : Swift.Int32, length : Swift.Int32, value : T, comparer : Optional<dotnet.System.Collections.Generic.IComparer_1<T>>) throws -> Swift.Int32 {
         return try dotnet.System.Collections.Immutable.ImmutableArray.BinarySearch(array: self, index: index, length: length, value: value, comparer: comparer);
     }
 }
@@ -12191,7 +12324,7 @@ extension dotnet.System.Collections.Immutable.ImmutableArray_1 {
 
 // EXTENSION METHOD System.Int32 BinarySearch<T>(System.Collections.Immutable.ImmutableArray<T>, T, System.Collections.Generic.IComparer<T>)
 extension dotnet.System.Collections.Immutable.ImmutableArray_1 {
-    public func BinarySearch(value : T, comparer : dotnet.System.Collections.Generic.IComparer_1<T>) throws -> Swift.Int32 {
+    public func BinarySearch(value : T, comparer : Optional<dotnet.System.Collections.Generic.IComparer_1<T>>) throws -> Swift.Int32 {
         return try dotnet.System.Collections.Immutable.ImmutableArray.BinarySearch(array: self, value: value, comparer: comparer);
     }
 }
@@ -12240,14 +12373,14 @@ extension dotnet.System.Collections.Generic.IEnumerable_1 {
 
 // EXTENSION METHOD System.Collections.Immutable.ImmutableDictionary<TKey,TValue> ToImmutableDictionary<TKey, TValue>(System.Collections.Generic.IEnumerable<System.Collections.Generic.KeyValuePair<TKey,TValue>>, System.Collections.Generic.IEqualityComparer<TKey>)
 extension dotnet.System.Collections.Generic.IEnumerable_1 {
-    public func ToImmutableDictionary<UTKey : SGBridgeGenericValue,UTValue : SGBridgeGenericValue>(keyComparer : dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>) throws -> dotnet.System.Collections.Immutable.ImmutableDictionary_2<UTKey,UTValue> where T == dotnet.System.Collections.Generic.KeyValuePair_2<UTKey,UTValue> {
+    public func ToImmutableDictionary<UTKey : SGBridgeGenericValue,UTValue : SGBridgeGenericValue>(keyComparer : Optional<dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>>) throws -> dotnet.System.Collections.Immutable.ImmutableDictionary_2<UTKey,UTValue> where T == dotnet.System.Collections.Generic.KeyValuePair_2<UTKey,UTValue> {
         return try dotnet.System.Collections.Immutable.ImmutableDictionary.ToImmutableDictionary(source: self, keyComparer: keyComparer);
     }
 }
 
 // EXTENSION METHOD System.Collections.Immutable.ImmutableDictionary<TKey,TValue> ToImmutableDictionary<TKey, TValue>(System.Collections.Generic.IEnumerable<System.Collections.Generic.KeyValuePair<TKey,TValue>>, System.Collections.Generic.IEqualityComparer<TKey>, System.Collections.Generic.IEqualityComparer<TValue>)
 extension dotnet.System.Collections.Generic.IEnumerable_1 {
-    public func ToImmutableDictionary<UTKey : SGBridgeGenericValue,UTValue : SGBridgeGenericValue>(keyComparer : dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>, valueComparer : dotnet.System.Collections.Generic.IEqualityComparer_1<UTValue>) throws -> dotnet.System.Collections.Immutable.ImmutableDictionary_2<UTKey,UTValue> where T == dotnet.System.Collections.Generic.KeyValuePair_2<UTKey,UTValue> {
+    public func ToImmutableDictionary<UTKey : SGBridgeGenericValue,UTValue : SGBridgeGenericValue>(keyComparer : Optional<dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>>, valueComparer : Optional<dotnet.System.Collections.Generic.IEqualityComparer_1<UTValue>>) throws -> dotnet.System.Collections.Immutable.ImmutableDictionary_2<UTKey,UTValue> where T == dotnet.System.Collections.Generic.KeyValuePair_2<UTKey,UTValue> {
         return try dotnet.System.Collections.Immutable.ImmutableDictionary.ToImmutableDictionary(source: self, keyComparer: keyComparer, valueComparer: valueComparer);
     }
 }
@@ -12266,11 +12399,11 @@ extension dotnet.System.Collections.Generic.IEnumerable_1 {
 
 // EXTENSION METHOD System.Collections.Immutable.ImmutableDictionary<TKey,TSource> ToImmutableDictionary<TSource, TKey>(System.Collections.Generic.IEnumerable<TSource>, System.Func<TSource,TKey>, System.Collections.Generic.IEqualityComparer<TKey>)
 extension dotnet.System.Collections.Generic.IEnumerable_1 {
-    public func ToImmutableDictionary<UTKey : SGBridgeGenericValue>(keySelector : dotnet.System.Func_2<T,UTKey>, keyComparer : dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>) throws -> dotnet.System.Collections.Immutable.ImmutableDictionary_2<UTKey,T> {
+    public func ToImmutableDictionary<UTKey : SGBridgeGenericValue>(keySelector : dotnet.System.Func_2<T,UTKey>, keyComparer : Optional<dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>>) throws -> dotnet.System.Collections.Immutable.ImmutableDictionary_2<UTKey,T> {
         return try dotnet.System.Collections.Immutable.ImmutableDictionary.ToImmutableDictionary(source: self, keySelector: keySelector, keyComparer: keyComparer);
     }
     // delegate closure overload
-    public func ToImmutableDictionary<UTKey : SGBridgeGenericValue>(keySelector : @escaping (T) throws -> UTKey, keyComparer : dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>) throws -> dotnet.System.Collections.Immutable.ImmutableDictionary_2<UTKey,T> {
+    public func ToImmutableDictionary<UTKey : SGBridgeGenericValue>(keySelector : @escaping (T) throws -> UTKey, keyComparer : Optional<dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>>) throws -> dotnet.System.Collections.Immutable.ImmutableDictionary_2<UTKey,T> {
         let del_keySelector = try dotnet.System.Func_2<T,UTKey>(keySelector);
         return try dotnet.System.Collections.Immutable.ImmutableDictionary.ToImmutableDictionary(source: self, keySelector: del_keySelector, keyComparer: keyComparer);
     }
@@ -12298,11 +12431,11 @@ extension dotnet.System.Collections.Generic.IEnumerable_1 {
 
 // EXTENSION METHOD System.Collections.Immutable.ImmutableDictionary<TKey,TValue> ToImmutableDictionary<TSource, TKey, TValue>(System.Collections.Generic.IEnumerable<TSource>, System.Func<TSource,TKey>, System.Func<TSource,TValue>, System.Collections.Generic.IEqualityComparer<TKey>)
 extension dotnet.System.Collections.Generic.IEnumerable_1 {
-    public func ToImmutableDictionary<UTKey : SGBridgeGenericValue,UTValue : SGBridgeGenericValue>(keySelector : dotnet.System.Func_2<T,UTKey>, elementSelector : dotnet.System.Func_2<T,UTValue>, keyComparer : dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>) throws -> dotnet.System.Collections.Immutable.ImmutableDictionary_2<UTKey,UTValue> {
+    public func ToImmutableDictionary<UTKey : SGBridgeGenericValue,UTValue : SGBridgeGenericValue>(keySelector : dotnet.System.Func_2<T,UTKey>, elementSelector : dotnet.System.Func_2<T,UTValue>, keyComparer : Optional<dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>>) throws -> dotnet.System.Collections.Immutable.ImmutableDictionary_2<UTKey,UTValue> {
         return try dotnet.System.Collections.Immutable.ImmutableDictionary.ToImmutableDictionary(source: self, keySelector: keySelector, elementSelector: elementSelector, keyComparer: keyComparer);
     }
     // delegate closure overload
-    public func ToImmutableDictionary<UTKey : SGBridgeGenericValue,UTValue : SGBridgeGenericValue>(keySelector : @escaping (T) throws -> UTKey, elementSelector : @escaping (T) throws -> UTValue, keyComparer : dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>) throws -> dotnet.System.Collections.Immutable.ImmutableDictionary_2<UTKey,UTValue> {
+    public func ToImmutableDictionary<UTKey : SGBridgeGenericValue,UTValue : SGBridgeGenericValue>(keySelector : @escaping (T) throws -> UTKey, elementSelector : @escaping (T) throws -> UTValue, keyComparer : Optional<dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>>) throws -> dotnet.System.Collections.Immutable.ImmutableDictionary_2<UTKey,UTValue> {
         let del_keySelector = try dotnet.System.Func_2<T,UTKey>(keySelector);
         let del_elementSelector = try dotnet.System.Func_2<T,UTValue>(elementSelector);
         return try dotnet.System.Collections.Immutable.ImmutableDictionary.ToImmutableDictionary(source: self, keySelector: del_keySelector, elementSelector: del_elementSelector, keyComparer: keyComparer);
@@ -12311,11 +12444,11 @@ extension dotnet.System.Collections.Generic.IEnumerable_1 {
 
 // EXTENSION METHOD System.Collections.Immutable.ImmutableDictionary<TKey,TValue> ToImmutableDictionary<TSource, TKey, TValue>(System.Collections.Generic.IEnumerable<TSource>, System.Func<TSource,TKey>, System.Func<TSource,TValue>, System.Collections.Generic.IEqualityComparer<TKey>, System.Collections.Generic.IEqualityComparer<TValue>)
 extension dotnet.System.Collections.Generic.IEnumerable_1 {
-    public func ToImmutableDictionary<UTKey : SGBridgeGenericValue,UTValue : SGBridgeGenericValue>(keySelector : dotnet.System.Func_2<T,UTKey>, elementSelector : dotnet.System.Func_2<T,UTValue>, keyComparer : dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>, valueComparer : dotnet.System.Collections.Generic.IEqualityComparer_1<UTValue>) throws -> dotnet.System.Collections.Immutable.ImmutableDictionary_2<UTKey,UTValue> {
+    public func ToImmutableDictionary<UTKey : SGBridgeGenericValue,UTValue : SGBridgeGenericValue>(keySelector : dotnet.System.Func_2<T,UTKey>, elementSelector : dotnet.System.Func_2<T,UTValue>, keyComparer : Optional<dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>>, valueComparer : Optional<dotnet.System.Collections.Generic.IEqualityComparer_1<UTValue>>) throws -> dotnet.System.Collections.Immutable.ImmutableDictionary_2<UTKey,UTValue> {
         return try dotnet.System.Collections.Immutable.ImmutableDictionary.ToImmutableDictionary(source: self, keySelector: keySelector, elementSelector: elementSelector, keyComparer: keyComparer, valueComparer: valueComparer);
     }
     // delegate closure overload
-    public func ToImmutableDictionary<UTKey : SGBridgeGenericValue,UTValue : SGBridgeGenericValue>(keySelector : @escaping (T) throws -> UTKey, elementSelector : @escaping (T) throws -> UTValue, keyComparer : dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>, valueComparer : dotnet.System.Collections.Generic.IEqualityComparer_1<UTValue>) throws -> dotnet.System.Collections.Immutable.ImmutableDictionary_2<UTKey,UTValue> {
+    public func ToImmutableDictionary<UTKey : SGBridgeGenericValue,UTValue : SGBridgeGenericValue>(keySelector : @escaping (T) throws -> UTKey, elementSelector : @escaping (T) throws -> UTValue, keyComparer : Optional<dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>>, valueComparer : Optional<dotnet.System.Collections.Generic.IEqualityComparer_1<UTValue>>) throws -> dotnet.System.Collections.Immutable.ImmutableDictionary_2<UTKey,UTValue> {
         let del_keySelector = try dotnet.System.Func_2<T,UTKey>(keySelector);
         let del_elementSelector = try dotnet.System.Func_2<T,UTValue>(elementSelector);
         return try dotnet.System.Collections.Immutable.ImmutableDictionary.ToImmutableDictionary(source: self, keySelector: del_keySelector, elementSelector: del_elementSelector, keyComparer: keyComparer, valueComparer: valueComparer);
@@ -12331,7 +12464,7 @@ extension dotnet.System.Collections.Generic.IEnumerable_1 {
 
 // EXTENSION METHOD System.Collections.Immutable.ImmutableHashSet<TSource> ToImmutableHashSet<TSource>(System.Collections.Generic.IEnumerable<TSource>, System.Collections.Generic.IEqualityComparer<TSource>)
 extension dotnet.System.Collections.Generic.IEnumerable_1 {
-    public func ToImmutableHashSet(equalityComparer : dotnet.System.Collections.Generic.IEqualityComparer_1<T>) throws -> dotnet.System.Collections.Immutable.ImmutableHashSet_1<T> {
+    public func ToImmutableHashSet(equalityComparer : Optional<dotnet.System.Collections.Generic.IEqualityComparer_1<T>>) throws -> dotnet.System.Collections.Immutable.ImmutableHashSet_1<T> {
         return try dotnet.System.Collections.Immutable.ImmutableHashSet.ToImmutableHashSet(source: self, equalityComparer: equalityComparer);
     }
 }
@@ -12352,7 +12485,7 @@ extension dotnet.System.Collections.Immutable.IImmutableList_1 {
 
 // EXTENSION METHOD System.Int32 IndexOf<T>(System.Collections.Immutable.IImmutableList<T>, T, System.Collections.Generic.IEqualityComparer<T>)
 extension dotnet.System.Collections.Immutable.IImmutableList_1 {
-    public func IndexOf(item : T, equalityComparer : dotnet.System.Collections.Generic.IEqualityComparer_1<T>) throws -> Swift.Int32 {
+    public func IndexOf(item : T, equalityComparer : Optional<dotnet.System.Collections.Generic.IEqualityComparer_1<T>>) throws -> Swift.Int32 {
         return try dotnet.System.Collections.Immutable.ImmutableList.IndexOf(list: self, item: item, equalityComparer: equalityComparer);
     }
 }
@@ -12380,7 +12513,7 @@ extension dotnet.System.Collections.Immutable.IImmutableList_1 {
 
 // EXTENSION METHOD System.Int32 LastIndexOf<T>(System.Collections.Immutable.IImmutableList<T>, T, System.Collections.Generic.IEqualityComparer<T>)
 extension dotnet.System.Collections.Immutable.IImmutableList_1 {
-    public func LastIndexOf(item : T, equalityComparer : dotnet.System.Collections.Generic.IEqualityComparer_1<T>) throws -> Swift.Int32 {
+    public func LastIndexOf(item : T, equalityComparer : Optional<dotnet.System.Collections.Generic.IEqualityComparer_1<T>>) throws -> Swift.Int32 {
         return try dotnet.System.Collections.Immutable.ImmutableList.LastIndexOf(list: self, item: item, equalityComparer: equalityComparer);
     }
 }
@@ -12450,14 +12583,14 @@ extension dotnet.System.Collections.Generic.IEnumerable_1 {
 
 // EXTENSION METHOD System.Collections.Immutable.ImmutableSortedDictionary<TKey,TValue> ToImmutableSortedDictionary<TKey, TValue>(System.Collections.Generic.IEnumerable<System.Collections.Generic.KeyValuePair<TKey,TValue>>, System.Collections.Generic.IComparer<TKey>)
 extension dotnet.System.Collections.Generic.IEnumerable_1 {
-    public func ToImmutableSortedDictionary<UTKey : SGBridgeGenericValue,UTValue : SGBridgeGenericValue>(keyComparer : dotnet.System.Collections.Generic.IComparer_1<UTKey>) throws -> dotnet.System.Collections.Immutable.ImmutableSortedDictionary_2<UTKey,UTValue> where T == dotnet.System.Collections.Generic.KeyValuePair_2<UTKey,UTValue> {
+    public func ToImmutableSortedDictionary<UTKey : SGBridgeGenericValue,UTValue : SGBridgeGenericValue>(keyComparer : Optional<dotnet.System.Collections.Generic.IComparer_1<UTKey>>) throws -> dotnet.System.Collections.Immutable.ImmutableSortedDictionary_2<UTKey,UTValue> where T == dotnet.System.Collections.Generic.KeyValuePair_2<UTKey,UTValue> {
         return try dotnet.System.Collections.Immutable.ImmutableSortedDictionary.ToImmutableSortedDictionary(source: self, keyComparer: keyComparer);
     }
 }
 
 // EXTENSION METHOD System.Collections.Immutable.ImmutableSortedDictionary<TKey,TValue> ToImmutableSortedDictionary<TKey, TValue>(System.Collections.Generic.IEnumerable<System.Collections.Generic.KeyValuePair<TKey,TValue>>, System.Collections.Generic.IComparer<TKey>, System.Collections.Generic.IEqualityComparer<TValue>)
 extension dotnet.System.Collections.Generic.IEnumerable_1 {
-    public func ToImmutableSortedDictionary<UTKey : SGBridgeGenericValue,UTValue : SGBridgeGenericValue>(keyComparer : dotnet.System.Collections.Generic.IComparer_1<UTKey>, valueComparer : dotnet.System.Collections.Generic.IEqualityComparer_1<UTValue>) throws -> dotnet.System.Collections.Immutable.ImmutableSortedDictionary_2<UTKey,UTValue> where T == dotnet.System.Collections.Generic.KeyValuePair_2<UTKey,UTValue> {
+    public func ToImmutableSortedDictionary<UTKey : SGBridgeGenericValue,UTValue : SGBridgeGenericValue>(keyComparer : Optional<dotnet.System.Collections.Generic.IComparer_1<UTKey>>, valueComparer : Optional<dotnet.System.Collections.Generic.IEqualityComparer_1<UTValue>>) throws -> dotnet.System.Collections.Immutable.ImmutableSortedDictionary_2<UTKey,UTValue> where T == dotnet.System.Collections.Generic.KeyValuePair_2<UTKey,UTValue> {
         return try dotnet.System.Collections.Immutable.ImmutableSortedDictionary.ToImmutableSortedDictionary(source: self, keyComparer: keyComparer, valueComparer: valueComparer);
     }
 }
@@ -12484,11 +12617,11 @@ extension dotnet.System.Collections.Generic.IEnumerable_1 {
 
 // EXTENSION METHOD System.Collections.Immutable.ImmutableSortedDictionary<TKey,TValue> ToImmutableSortedDictionary<TSource, TKey, TValue>(System.Collections.Generic.IEnumerable<TSource>, System.Func<TSource,TKey>, System.Func<TSource,TValue>, System.Collections.Generic.IComparer<TKey>)
 extension dotnet.System.Collections.Generic.IEnumerable_1 {
-    public func ToImmutableSortedDictionary<UTKey : SGBridgeGenericValue,UTValue : SGBridgeGenericValue>(keySelector : dotnet.System.Func_2<T,UTKey>, elementSelector : dotnet.System.Func_2<T,UTValue>, keyComparer : dotnet.System.Collections.Generic.IComparer_1<UTKey>) throws -> dotnet.System.Collections.Immutable.ImmutableSortedDictionary_2<UTKey,UTValue> {
+    public func ToImmutableSortedDictionary<UTKey : SGBridgeGenericValue,UTValue : SGBridgeGenericValue>(keySelector : dotnet.System.Func_2<T,UTKey>, elementSelector : dotnet.System.Func_2<T,UTValue>, keyComparer : Optional<dotnet.System.Collections.Generic.IComparer_1<UTKey>>) throws -> dotnet.System.Collections.Immutable.ImmutableSortedDictionary_2<UTKey,UTValue> {
         return try dotnet.System.Collections.Immutable.ImmutableSortedDictionary.ToImmutableSortedDictionary(source: self, keySelector: keySelector, elementSelector: elementSelector, keyComparer: keyComparer);
     }
     // delegate closure overload
-    public func ToImmutableSortedDictionary<UTKey : SGBridgeGenericValue,UTValue : SGBridgeGenericValue>(keySelector : @escaping (T) throws -> UTKey, elementSelector : @escaping (T) throws -> UTValue, keyComparer : dotnet.System.Collections.Generic.IComparer_1<UTKey>) throws -> dotnet.System.Collections.Immutable.ImmutableSortedDictionary_2<UTKey,UTValue> {
+    public func ToImmutableSortedDictionary<UTKey : SGBridgeGenericValue,UTValue : SGBridgeGenericValue>(keySelector : @escaping (T) throws -> UTKey, elementSelector : @escaping (T) throws -> UTValue, keyComparer : Optional<dotnet.System.Collections.Generic.IComparer_1<UTKey>>) throws -> dotnet.System.Collections.Immutable.ImmutableSortedDictionary_2<UTKey,UTValue> {
         let del_keySelector = try dotnet.System.Func_2<T,UTKey>(keySelector);
         let del_elementSelector = try dotnet.System.Func_2<T,UTValue>(elementSelector);
         return try dotnet.System.Collections.Immutable.ImmutableSortedDictionary.ToImmutableSortedDictionary(source: self, keySelector: del_keySelector, elementSelector: del_elementSelector, keyComparer: keyComparer);
@@ -12497,11 +12630,11 @@ extension dotnet.System.Collections.Generic.IEnumerable_1 {
 
 // EXTENSION METHOD System.Collections.Immutable.ImmutableSortedDictionary<TKey,TValue> ToImmutableSortedDictionary<TSource, TKey, TValue>(System.Collections.Generic.IEnumerable<TSource>, System.Func<TSource,TKey>, System.Func<TSource,TValue>, System.Collections.Generic.IComparer<TKey>, System.Collections.Generic.IEqualityComparer<TValue>)
 extension dotnet.System.Collections.Generic.IEnumerable_1 {
-    public func ToImmutableSortedDictionary<UTKey : SGBridgeGenericValue,UTValue : SGBridgeGenericValue>(keySelector : dotnet.System.Func_2<T,UTKey>, elementSelector : dotnet.System.Func_2<T,UTValue>, keyComparer : dotnet.System.Collections.Generic.IComparer_1<UTKey>, valueComparer : dotnet.System.Collections.Generic.IEqualityComparer_1<UTValue>) throws -> dotnet.System.Collections.Immutable.ImmutableSortedDictionary_2<UTKey,UTValue> {
+    public func ToImmutableSortedDictionary<UTKey : SGBridgeGenericValue,UTValue : SGBridgeGenericValue>(keySelector : dotnet.System.Func_2<T,UTKey>, elementSelector : dotnet.System.Func_2<T,UTValue>, keyComparer : Optional<dotnet.System.Collections.Generic.IComparer_1<UTKey>>, valueComparer : Optional<dotnet.System.Collections.Generic.IEqualityComparer_1<UTValue>>) throws -> dotnet.System.Collections.Immutable.ImmutableSortedDictionary_2<UTKey,UTValue> {
         return try dotnet.System.Collections.Immutable.ImmutableSortedDictionary.ToImmutableSortedDictionary(source: self, keySelector: keySelector, elementSelector: elementSelector, keyComparer: keyComparer, valueComparer: valueComparer);
     }
     // delegate closure overload
-    public func ToImmutableSortedDictionary<UTKey : SGBridgeGenericValue,UTValue : SGBridgeGenericValue>(keySelector : @escaping (T) throws -> UTKey, elementSelector : @escaping (T) throws -> UTValue, keyComparer : dotnet.System.Collections.Generic.IComparer_1<UTKey>, valueComparer : dotnet.System.Collections.Generic.IEqualityComparer_1<UTValue>) throws -> dotnet.System.Collections.Immutable.ImmutableSortedDictionary_2<UTKey,UTValue> {
+    public func ToImmutableSortedDictionary<UTKey : SGBridgeGenericValue,UTValue : SGBridgeGenericValue>(keySelector : @escaping (T) throws -> UTKey, elementSelector : @escaping (T) throws -> UTValue, keyComparer : Optional<dotnet.System.Collections.Generic.IComparer_1<UTKey>>, valueComparer : Optional<dotnet.System.Collections.Generic.IEqualityComparer_1<UTValue>>) throws -> dotnet.System.Collections.Immutable.ImmutableSortedDictionary_2<UTKey,UTValue> {
         let del_keySelector = try dotnet.System.Func_2<T,UTKey>(keySelector);
         let del_elementSelector = try dotnet.System.Func_2<T,UTValue>(elementSelector);
         return try dotnet.System.Collections.Immutable.ImmutableSortedDictionary.ToImmutableSortedDictionary(source: self, keySelector: del_keySelector, elementSelector: del_elementSelector, keyComparer: keyComparer, valueComparer: valueComparer);
@@ -12517,7 +12650,7 @@ extension dotnet.System.Collections.Generic.IEnumerable_1 {
 
 // EXTENSION METHOD System.Collections.Immutable.ImmutableSortedSet<TSource> ToImmutableSortedSet<TSource>(System.Collections.Generic.IEnumerable<TSource>, System.Collections.Generic.IComparer<TSource>)
 extension dotnet.System.Collections.Generic.IEnumerable_1 {
-    public func ToImmutableSortedSet(comparer : dotnet.System.Collections.Generic.IComparer_1<T>) throws -> dotnet.System.Collections.Immutable.ImmutableSortedSet_1<T> {
+    public func ToImmutableSortedSet(comparer : Optional<dotnet.System.Collections.Generic.IComparer_1<T>>) throws -> dotnet.System.Collections.Immutable.ImmutableSortedSet_1<T> {
         return try dotnet.System.Collections.Immutable.ImmutableSortedSet.ToImmutableSortedSet(source: self, comparer: comparer);
     }
 }
@@ -12756,14 +12889,14 @@ extension dotnet.System.Collections.Immutable.ImmutableArray_1 {
 
 // EXTENSION METHOD bool SequenceEqual<TDerived, TBase>(System.Collections.Immutable.ImmutableArray<TBase>, System.Collections.Generic.IEnumerable<TDerived>, System.Collections.Generic.IEqualityComparer<TBase>)
 extension dotnet.System.Collections.Immutable.ImmutableArray_1 {
-    public func SequenceEqual<UTDerived : SGBridgeGenericValue>(items : dotnet.System.Collections.Generic.IEnumerable_1<UTDerived>, comparer : dotnet.System.Collections.Generic.IEqualityComparer_1<T>/* TODO default closedgeneric crash */) throws -> Bool {
+    public func SequenceEqual<UTDerived : SGBridgeGenericValue>(items : dotnet.System.Collections.Generic.IEnumerable_1<UTDerived>, comparer : Optional<dotnet.System.Collections.Generic.IEqualityComparer_1<T>> = nil) throws -> Bool {
         return try dotnet.System.Linq.ImmutableArrayExtensions.SequenceEqual(immutableArray: self, items: items, comparer: comparer);
     }
 }
 
 // EXTENSION METHOD bool SequenceEqual<TDerived, TBase>(System.Collections.Immutable.ImmutableArray<TBase>, System.Collections.Immutable.ImmutableArray<TDerived>, System.Collections.Generic.IEqualityComparer<TBase>)
 extension dotnet.System.Collections.Immutable.ImmutableArray_1 {
-    public func SequenceEqual<UTDerived : SGBridgeGenericValue>(items : dotnet.System.Collections.Immutable.ImmutableArray_1<UTDerived>, comparer : dotnet.System.Collections.Generic.IEqualityComparer_1<T>/* TODO default closedgeneric crash */) throws -> Bool {
+    public func SequenceEqual<UTDerived : SGBridgeGenericValue>(items : dotnet.System.Collections.Immutable.ImmutableArray_1<UTDerived>, comparer : Optional<dotnet.System.Collections.Generic.IEqualityComparer_1<T>> = nil) throws -> Bool {
         return try dotnet.System.Linq.ImmutableArrayExtensions.SequenceEqual(immutableArray: self, items: items, comparer: comparer);
     }
 }
@@ -12839,11 +12972,11 @@ extension dotnet.System.Collections.Immutable.ImmutableArray_1 {
 
 // EXTENSION METHOD System.Collections.Generic.Dictionary<TKey,T> ToDictionary<TKey, T>(System.Collections.Immutable.ImmutableArray<T>, System.Func<T,TKey>, System.Collections.Generic.IEqualityComparer<TKey>)
 extension dotnet.System.Collections.Immutable.ImmutableArray_1 {
-    public func ToDictionary<UTKey : SGBridgeGenericValue>(keySelector : dotnet.System.Func_2<T,UTKey>, comparer : dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>) throws -> dotnet.System.Collections.Generic.Dictionary_2<UTKey,T> {
+    public func ToDictionary<UTKey : SGBridgeGenericValue>(keySelector : dotnet.System.Func_2<T,UTKey>, comparer : Optional<dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>>) throws -> dotnet.System.Collections.Generic.Dictionary_2<UTKey,T> {
         return try dotnet.System.Linq.ImmutableArrayExtensions.ToDictionary(immutableArray: self, keySelector: keySelector, comparer: comparer);
     }
     // delegate closure overload
-    public func ToDictionary<UTKey : SGBridgeGenericValue>(keySelector : @escaping (T) throws -> UTKey, comparer : dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>) throws -> dotnet.System.Collections.Generic.Dictionary_2<UTKey,T> {
+    public func ToDictionary<UTKey : SGBridgeGenericValue>(keySelector : @escaping (T) throws -> UTKey, comparer : Optional<dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>>) throws -> dotnet.System.Collections.Generic.Dictionary_2<UTKey,T> {
         let del_keySelector = try dotnet.System.Func_2<T,UTKey>(keySelector);
         return try dotnet.System.Linq.ImmutableArrayExtensions.ToDictionary(immutableArray: self, keySelector: del_keySelector, comparer: comparer);
     }
@@ -12864,11 +12997,11 @@ extension dotnet.System.Collections.Immutable.ImmutableArray_1 {
 
 // EXTENSION METHOD System.Collections.Generic.Dictionary<TKey,TElement> ToDictionary<TKey, TElement, T>(System.Collections.Immutable.ImmutableArray<T>, System.Func<T,TKey>, System.Func<T,TElement>, System.Collections.Generic.IEqualityComparer<TKey>)
 extension dotnet.System.Collections.Immutable.ImmutableArray_1 {
-    public func ToDictionary<UTKey : SGBridgeGenericValue,UTElement : SGBridgeGenericValue>(keySelector : dotnet.System.Func_2<T,UTKey>, elementSelector : dotnet.System.Func_2<T,UTElement>, comparer : dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>) throws -> dotnet.System.Collections.Generic.Dictionary_2<UTKey,UTElement> {
+    public func ToDictionary<UTKey : SGBridgeGenericValue,UTElement : SGBridgeGenericValue>(keySelector : dotnet.System.Func_2<T,UTKey>, elementSelector : dotnet.System.Func_2<T,UTElement>, comparer : Optional<dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>>) throws -> dotnet.System.Collections.Generic.Dictionary_2<UTKey,UTElement> {
         return try dotnet.System.Linq.ImmutableArrayExtensions.ToDictionary(immutableArray: self, keySelector: keySelector, elementSelector: elementSelector, comparer: comparer);
     }
     // delegate closure overload
-    public func ToDictionary<UTKey : SGBridgeGenericValue,UTElement : SGBridgeGenericValue>(keySelector : @escaping (T) throws -> UTKey, elementSelector : @escaping (T) throws -> UTElement, comparer : dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>) throws -> dotnet.System.Collections.Generic.Dictionary_2<UTKey,UTElement> {
+    public func ToDictionary<UTKey : SGBridgeGenericValue,UTElement : SGBridgeGenericValue>(keySelector : @escaping (T) throws -> UTKey, elementSelector : @escaping (T) throws -> UTElement, comparer : Optional<dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>>) throws -> dotnet.System.Collections.Generic.Dictionary_2<UTKey,UTElement> {
         let del_keySelector = try dotnet.System.Func_2<T,UTKey>(keySelector);
         let del_elementSelector = try dotnet.System.Func_2<T,UTElement>(elementSelector);
         return try dotnet.System.Linq.ImmutableArrayExtensions.ToDictionary(immutableArray: self, keySelector: del_keySelector, elementSelector: del_elementSelector, comparer: comparer);

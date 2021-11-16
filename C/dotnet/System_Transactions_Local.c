@@ -35,32 +35,38 @@ struct {
     SG_HNDL_NULLABLE (* _Nonnull  _fp_System_Transactions_HostCurrentTransactionCallback_Transaction__Invoke_0__0)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h);
     SG_HNDL_NULLABLE (* _Nonnull  _fp_System_Transactions_HostCurrentTransactionCallback_IAsyncResult__BeginInvoke_0__2__AsyncCallback_Object)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE callback, SG_HNDL_NULLABLE object_);
     SG_HNDL_NULLABLE (* _Nonnull  _fp_System_Transactions_HostCurrentTransactionCallback_Transaction__EndInvoke_0__1__IAsyncResult)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE result);
-    SG_HNDL_NONNULL (* _Nonnull  _fp_System_Transactions_HostCurrentTransactionCallback_create)(SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nullable __pdata, void (* _Nullable __deinit)(const void* _Nullable __pdata), SG_HNDL_NULLABLE (* _Nonnull  __cb)(const void* _Nullable __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown));
+    SG_HNDL_NONNULL (* _Nonnull  _fp_System_Transactions_HostCurrentTransactionCallback_create)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE (* _Nonnull  __cb)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown), const void* _Nonnull __pdata, void (* _Nullable __deinit)(const void* _Nonnull __pdata));
     TYP (* _Nonnull  _fp_System_Transactions_IDtcTransaction_get_type_handle)(void);
     void (* _Nonnull  _fp_System_Transactions_IDtcTransaction_void__Abort_0__3__IntPtr_i32_i32)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, intptr_t reason, int32_t retaining, int32_t async);
     void (* _Nonnull  _fp_System_Transactions_IDtcTransaction_void__Commit_0__3__i32_i32_i32)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, int32_t retaining, int32_t commitType, int32_t reserved);
     void (* _Nonnull  _fp_System_Transactions_IDtcTransaction_void__GetTransactionInfo_0__1__IntPtr)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, intptr_t transactionInformation);
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_Transactions_IDtcTransaction_cast)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __h);
+    SG_HNDL_NONNULL (* _Nonnull  _fp_System_Transactions_IDtcTransaction_create)(SG_HNDL_NULLABLE * _Nonnull __thrown, void (* _Nonnull  __cb_System_Transactions_IDtcTransaction_void__Abort_0__3__IntPtr_i32_i32)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, intptr_t reason, int32_t retaining, int32_t async), const void* _Nonnull __pdata_System_Transactions_IDtcTransaction_void__Abort_0__3__IntPtr_i32_i32, void (* _Nonnull  __cb_System_Transactions_IDtcTransaction_void__Commit_0__3__i32_i32_i32)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, int32_t retaining, int32_t commitType, int32_t reserved), const void* _Nonnull __pdata_System_Transactions_IDtcTransaction_void__Commit_0__3__i32_i32_i32, void (* _Nonnull  __cb_System_Transactions_IDtcTransaction_void__GetTransactionInfo_0__1__IntPtr)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, intptr_t transactionInformation), const void* _Nonnull __pdata_System_Transactions_IDtcTransaction_void__GetTransactionInfo_0__1__IntPtr, void (* _Nullable __deinit)(const void* _Nonnull __pdata));
     TYP (* _Nonnull  _fp_System_Transactions_IEnlistmentNotification_get_type_handle)(void);
     void (* _Nonnull  _fp_System_Transactions_IEnlistmentNotification_void__Commit_0__1__Enlistment)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NONNULL enlistment);
     void (* _Nonnull  _fp_System_Transactions_IEnlistmentNotification_void__InDoubt_0__1__Enlistment)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NONNULL enlistment);
     void (* _Nonnull  _fp_System_Transactions_IEnlistmentNotification_void__Prepare_0__1__PreparingEnlistment)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NONNULL preparingEnlistment);
     void (* _Nonnull  _fp_System_Transactions_IEnlistmentNotification_void__Rollback_0__1__Enlistment)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NONNULL enlistment);
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_Transactions_IEnlistmentNotification_cast)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __h);
+    SG_HNDL_NONNULL (* _Nonnull  _fp_System_Transactions_IEnlistmentNotification_create)(SG_HNDL_NULLABLE * _Nonnull __thrown, void (* _Nonnull  __cb_System_Transactions_IEnlistmentNotification_void__Commit_0__1__Enlistment)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL enlistment), const void* _Nonnull __pdata_System_Transactions_IEnlistmentNotification_void__Commit_0__1__Enlistment, void (* _Nonnull  __cb_System_Transactions_IEnlistmentNotification_void__InDoubt_0__1__Enlistment)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL enlistment), const void* _Nonnull __pdata_System_Transactions_IEnlistmentNotification_void__InDoubt_0__1__Enlistment, void (* _Nonnull  __cb_System_Transactions_IEnlistmentNotification_void__Prepare_0__1__PreparingEnlistment)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL preparingEnlistment), const void* _Nonnull __pdata_System_Transactions_IEnlistmentNotification_void__Prepare_0__1__PreparingEnlistment, void (* _Nonnull  __cb_System_Transactions_IEnlistmentNotification_void__Rollback_0__1__Enlistment)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL enlistment), const void* _Nonnull __pdata_System_Transactions_IEnlistmentNotification_void__Rollback_0__1__Enlistment, void (* _Nullable __deinit)(const void* _Nonnull __pdata));
     TYP (* _Nonnull  _fp_System_Transactions_IPromotableSinglePhaseNotification_get_type_handle)(void);
     void (* _Nonnull  _fp_System_Transactions_IPromotableSinglePhaseNotification_void__Initialize_0__0)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h);
     void (* _Nonnull  _fp_System_Transactions_IPromotableSinglePhaseNotification_void__Rollback_0__1__SinglePhaseEnlistment)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NONNULL singlePhaseEnlistment);
     void (* _Nonnull  _fp_System_Transactions_IPromotableSinglePhaseNotification_void__SinglePhaseCommit_0__1__SinglePhaseEnlistment)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NONNULL singlePhaseEnlistment);
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_Transactions_IPromotableSinglePhaseNotification_cast)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __h);
+    SG_HNDL_NONNULL (* _Nonnull  _fp_System_Transactions_IPromotableSinglePhaseNotification_create)(SG_HNDL_NULLABLE * _Nonnull __thrown, void (* _Nonnull  __cb_System_Transactions_IPromotableSinglePhaseNotification_void__Initialize_0__0)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown), const void* _Nonnull __pdata_System_Transactions_IPromotableSinglePhaseNotification_void__Initialize_0__0, void (* _Nonnull  __cb_System_Transactions_IPromotableSinglePhaseNotification_void__Rollback_0__1__SinglePhaseEnlistment)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL singlePhaseEnlistment), const void* _Nonnull __pdata_System_Transactions_IPromotableSinglePhaseNotification_void__Rollback_0__1__SinglePhaseEnlistment, void (* _Nonnull  __cb_System_Transactions_IPromotableSinglePhaseNotification_void__SinglePhaseCommit_0__1__SinglePhaseEnlistment)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL singlePhaseEnlistment), const void* _Nonnull __pdata_System_Transactions_IPromotableSinglePhaseNotification_void__SinglePhaseCommit_0__1__SinglePhaseEnlistment, SG_HNDL_NULLABLE (* _Nonnull  __cb_System_Transactions_ITransactionPromoter_u8Array__Promote_0__0)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown), const void* _Nonnull __pdata_System_Transactions_ITransactionPromoter_u8Array__Promote_0__0, void (* _Nullable __deinit)(const void* _Nonnull __pdata));
     TYP (* _Nonnull  _fp_System_Transactions_ISimpleTransactionSuperior_get_type_handle)(void);
     void (* _Nonnull  _fp_System_Transactions_ISimpleTransactionSuperior_void__Rollback_0__0)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h);
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_Transactions_ISimpleTransactionSuperior_cast)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __h);
+    SG_HNDL_NONNULL (* _Nonnull  _fp_System_Transactions_ISimpleTransactionSuperior_create)(SG_HNDL_NULLABLE * _Nonnull __thrown, void (* _Nonnull  __cb_System_Transactions_ISimpleTransactionSuperior_void__Rollback_0__0)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown), const void* _Nonnull __pdata_System_Transactions_ISimpleTransactionSuperior_void__Rollback_0__0, SG_HNDL_NULLABLE (* _Nonnull  __cb_System_Transactions_ITransactionPromoter_u8Array__Promote_0__0)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown), const void* _Nonnull __pdata_System_Transactions_ITransactionPromoter_u8Array__Promote_0__0, void (* _Nullable __deinit)(const void* _Nonnull __pdata));
     TYP (* _Nonnull  _fp_System_Transactions_ISinglePhaseNotification_get_type_handle)(void);
     void (* _Nonnull  _fp_System_Transactions_ISinglePhaseNotification_void__SinglePhaseCommit_0__1__SinglePhaseEnlistment)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NONNULL singlePhaseEnlistment);
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_Transactions_ISinglePhaseNotification_cast)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __h);
+    SG_HNDL_NONNULL (* _Nonnull  _fp_System_Transactions_ISinglePhaseNotification_create)(SG_HNDL_NULLABLE * _Nonnull __thrown, void (* _Nonnull  __cb_System_Transactions_ISinglePhaseNotification_void__SinglePhaseCommit_0__1__SinglePhaseEnlistment)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL singlePhaseEnlistment), const void* _Nonnull __pdata_System_Transactions_ISinglePhaseNotification_void__SinglePhaseCommit_0__1__SinglePhaseEnlistment, void (* _Nonnull  __cb_System_Transactions_IEnlistmentNotification_void__Commit_0__1__Enlistment)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL enlistment), const void* _Nonnull __pdata_System_Transactions_IEnlistmentNotification_void__Commit_0__1__Enlistment, void (* _Nonnull  __cb_System_Transactions_IEnlistmentNotification_void__InDoubt_0__1__Enlistment)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL enlistment), const void* _Nonnull __pdata_System_Transactions_IEnlistmentNotification_void__InDoubt_0__1__Enlistment, void (* _Nonnull  __cb_System_Transactions_IEnlistmentNotification_void__Prepare_0__1__PreparingEnlistment)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL preparingEnlistment), const void* _Nonnull __pdata_System_Transactions_IEnlistmentNotification_void__Prepare_0__1__PreparingEnlistment, void (* _Nonnull  __cb_System_Transactions_IEnlistmentNotification_void__Rollback_0__1__Enlistment)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL enlistment), const void* _Nonnull __pdata_System_Transactions_IEnlistmentNotification_void__Rollback_0__1__Enlistment, void (* _Nullable __deinit)(const void* _Nonnull __pdata));
     TYP (* _Nonnull  _fp_System_Transactions_ITransactionPromoter_get_type_handle)(void);
     SG_HNDL_NULLABLE (* _Nonnull  _fp_System_Transactions_ITransactionPromoter_u8Array__Promote_0__0)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h);
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_Transactions_ITransactionPromoter_cast)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __h);
+    SG_HNDL_NONNULL (* _Nonnull  _fp_System_Transactions_ITransactionPromoter_create)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE (* _Nonnull  __cb_System_Transactions_ITransactionPromoter_u8Array__Promote_0__0)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown), const void* _Nonnull __pdata_System_Transactions_ITransactionPromoter_u8Array__Promote_0__0, void (* _Nullable __deinit)(const void* _Nonnull __pdata));
     TYP (* _Nonnull  _fp_System_Transactions_IsolationLevel_get_type_handle)(void);
     int32_t (* _Nonnull  _fp_System_Transactions_IsolationLevel_get_Serializable)(void);
     int32_t (* _Nonnull  _fp_System_Transactions_IsolationLevel_get_RepeatableRead)(void);
@@ -121,7 +127,7 @@ struct {
     void (* _Nonnull  _fp_System_Transactions_TransactionCompletedEventHandler_void__Invoke_0__2__Object_TransactionEventArgs)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE sender, SG_HNDL_NONNULL e);
     SG_HNDL_NULLABLE (* _Nonnull  _fp_System_Transactions_TransactionCompletedEventHandler_IAsyncResult__BeginInvoke_0__4__Object_TransactionEventArgs_AsyncCallback_Object)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE sender, SG_HNDL_NONNULL e, SG_HNDL_NULLABLE callback, SG_HNDL_NULLABLE object_);
     void (* _Nonnull  _fp_System_Transactions_TransactionCompletedEventHandler_void__EndInvoke_0__1__IAsyncResult)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE result);
-    SG_HNDL_NONNULL (* _Nonnull  _fp_System_Transactions_TransactionCompletedEventHandler_create)(SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nullable __pdata, void (* _Nullable __deinit)(const void* _Nullable __pdata), void (* _Nonnull  __cb)(const void* _Nullable __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE sender, SG_HNDL_NONNULL e));
+    SG_HNDL_NONNULL (* _Nonnull  _fp_System_Transactions_TransactionCompletedEventHandler_create)(SG_HNDL_NULLABLE * _Nonnull __thrown, void (* _Nonnull  __cb)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE sender, SG_HNDL_NONNULL e), const void* _Nonnull __pdata, void (* _Nullable __deinit)(const void* _Nonnull __pdata));
     TYP (* _Nonnull  _fp_System_Transactions_TransactionEventArgs_get_type_handle)(void);
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_Transactions_TransactionEventArgs_ctor_0__0)(SG_HNDL_NULLABLE * _Nonnull __thrown);
     SG_HNDL_NULLABLE (* _Nonnull  _fp_System_Transactions_TransactionEventArgs_Transaction__get_Transaction_0__0)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h);
@@ -208,7 +214,7 @@ struct {
     void (* _Nonnull  _fp_System_Transactions_TransactionStartedEventHandler_void__Invoke_0__2__Object_TransactionEventArgs)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE sender, SG_HNDL_NONNULL e);
     SG_HNDL_NULLABLE (* _Nonnull  _fp_System_Transactions_TransactionStartedEventHandler_IAsyncResult__BeginInvoke_0__4__Object_TransactionEventArgs_AsyncCallback_Object)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE sender, SG_HNDL_NONNULL e, SG_HNDL_NULLABLE callback, SG_HNDL_NULLABLE object_);
     void (* _Nonnull  _fp_System_Transactions_TransactionStartedEventHandler_void__EndInvoke_0__1__IAsyncResult)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE result);
-    SG_HNDL_NONNULL (* _Nonnull  _fp_System_Transactions_TransactionStartedEventHandler_create)(SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nullable __pdata, void (* _Nullable __deinit)(const void* _Nullable __pdata), void (* _Nonnull  __cb)(const void* _Nullable __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE sender, SG_HNDL_NONNULL e));
+    SG_HNDL_NONNULL (* _Nonnull  _fp_System_Transactions_TransactionStartedEventHandler_create)(SG_HNDL_NULLABLE * _Nonnull __thrown, void (* _Nonnull  __cb)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE sender, SG_HNDL_NONNULL e), const void* _Nonnull __pdata, void (* _Nullable __deinit)(const void* _Nonnull __pdata));
     TYP (* _Nonnull  _fp_System_Transactions_TransactionStatus_get_type_handle)(void);
     int32_t (* _Nonnull  _fp_System_Transactions_TransactionStatus_get_Active)(void);
     int32_t (* _Nonnull  _fp_System_Transactions_TransactionStatus_get_Committed)(void);
@@ -440,11 +446,11 @@ SG_HNDL_NULLABLE System_Transactions_HostCurrentTransactionCallback_Transaction_
     return ret;
 }
 
-SG_HNDL_NONNULL System_Transactions_HostCurrentTransactionCallback_create(SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nullable __pdata, void (* _Nullable __deinit)(const void* _Nullable __pdata), SG_HNDL_NULLABLE (* _Nonnull  __cb)(const void* _Nullable __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown)) {
+SG_HNDL_NONNULL System_Transactions_HostCurrentTransactionCallback_create(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE (* _Nonnull  __cb)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown), const void* _Nonnull __pdata, void (* _Nullable __deinit)(const void* _Nonnull __pdata)) {
     if (!_g_System_Transactions_Local._fp_System_Transactions_HostCurrentTransactionCallback_create) {
         my_init();
     }
-    SG_HNDL_NONNULL ret = _g_System_Transactions_Local._fp_System_Transactions_HostCurrentTransactionCallback_create(__thrown, __pdata, __deinit, __cb);
+    SG_HNDL_NONNULL ret = _g_System_Transactions_Local._fp_System_Transactions_HostCurrentTransactionCallback_create(__thrown, __cb, __pdata, __deinit);
     return ret;
 }
 
@@ -482,6 +488,14 @@ SG_HNDL_NONNULL System_Transactions_IDtcTransaction_cast(SG_HNDL_NULLABLE * _Non
         my_init();
     }
     SG_HNDL_NONNULL ret = _g_System_Transactions_Local._fp_System_Transactions_IDtcTransaction_cast(__thrown, __h);
+    return ret;
+}
+
+SG_HNDL_NONNULL System_Transactions_IDtcTransaction_create(SG_HNDL_NULLABLE * _Nonnull __thrown, void (* _Nonnull  __cb_System_Transactions_IDtcTransaction_void__Abort_0__3__IntPtr_i32_i32)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, intptr_t reason, int32_t retaining, int32_t async), const void* _Nonnull __pdata_System_Transactions_IDtcTransaction_void__Abort_0__3__IntPtr_i32_i32, void (* _Nonnull  __cb_System_Transactions_IDtcTransaction_void__Commit_0__3__i32_i32_i32)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, int32_t retaining, int32_t commitType, int32_t reserved), const void* _Nonnull __pdata_System_Transactions_IDtcTransaction_void__Commit_0__3__i32_i32_i32, void (* _Nonnull  __cb_System_Transactions_IDtcTransaction_void__GetTransactionInfo_0__1__IntPtr)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, intptr_t transactionInformation), const void* _Nonnull __pdata_System_Transactions_IDtcTransaction_void__GetTransactionInfo_0__1__IntPtr, void (* _Nullable __deinit)(const void* _Nonnull __pdata)) {
+    if (!_g_System_Transactions_Local._fp_System_Transactions_IDtcTransaction_create) {
+        my_init();
+    }
+    SG_HNDL_NONNULL ret = _g_System_Transactions_Local._fp_System_Transactions_IDtcTransaction_create(__thrown, __cb_System_Transactions_IDtcTransaction_void__Abort_0__3__IntPtr_i32_i32, __pdata_System_Transactions_IDtcTransaction_void__Abort_0__3__IntPtr_i32_i32, __cb_System_Transactions_IDtcTransaction_void__Commit_0__3__i32_i32_i32, __pdata_System_Transactions_IDtcTransaction_void__Commit_0__3__i32_i32_i32, __cb_System_Transactions_IDtcTransaction_void__GetTransactionInfo_0__1__IntPtr, __pdata_System_Transactions_IDtcTransaction_void__GetTransactionInfo_0__1__IntPtr, __deinit);
     return ret;
 }
 
@@ -529,6 +543,14 @@ SG_HNDL_NONNULL System_Transactions_IEnlistmentNotification_cast(SG_HNDL_NULLABL
     return ret;
 }
 
+SG_HNDL_NONNULL System_Transactions_IEnlistmentNotification_create(SG_HNDL_NULLABLE * _Nonnull __thrown, void (* _Nonnull  __cb_System_Transactions_IEnlistmentNotification_void__Commit_0__1__Enlistment)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL enlistment), const void* _Nonnull __pdata_System_Transactions_IEnlistmentNotification_void__Commit_0__1__Enlistment, void (* _Nonnull  __cb_System_Transactions_IEnlistmentNotification_void__InDoubt_0__1__Enlistment)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL enlistment), const void* _Nonnull __pdata_System_Transactions_IEnlistmentNotification_void__InDoubt_0__1__Enlistment, void (* _Nonnull  __cb_System_Transactions_IEnlistmentNotification_void__Prepare_0__1__PreparingEnlistment)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL preparingEnlistment), const void* _Nonnull __pdata_System_Transactions_IEnlistmentNotification_void__Prepare_0__1__PreparingEnlistment, void (* _Nonnull  __cb_System_Transactions_IEnlistmentNotification_void__Rollback_0__1__Enlistment)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL enlistment), const void* _Nonnull __pdata_System_Transactions_IEnlistmentNotification_void__Rollback_0__1__Enlistment, void (* _Nullable __deinit)(const void* _Nonnull __pdata)) {
+    if (!_g_System_Transactions_Local._fp_System_Transactions_IEnlistmentNotification_create) {
+        my_init();
+    }
+    SG_HNDL_NONNULL ret = _g_System_Transactions_Local._fp_System_Transactions_IEnlistmentNotification_create(__thrown, __cb_System_Transactions_IEnlistmentNotification_void__Commit_0__1__Enlistment, __pdata_System_Transactions_IEnlistmentNotification_void__Commit_0__1__Enlistment, __cb_System_Transactions_IEnlistmentNotification_void__InDoubt_0__1__Enlistment, __pdata_System_Transactions_IEnlistmentNotification_void__InDoubt_0__1__Enlistment, __cb_System_Transactions_IEnlistmentNotification_void__Prepare_0__1__PreparingEnlistment, __pdata_System_Transactions_IEnlistmentNotification_void__Prepare_0__1__PreparingEnlistment, __cb_System_Transactions_IEnlistmentNotification_void__Rollback_0__1__Enlistment, __pdata_System_Transactions_IEnlistmentNotification_void__Rollback_0__1__Enlistment, __deinit);
+    return ret;
+}
+
 TYP System_Transactions_IPromotableSinglePhaseNotification_get_type_handle(void) {
     if (!_g_System_Transactions_Local._fp_System_Transactions_IPromotableSinglePhaseNotification_get_type_handle) {
         my_init();
@@ -566,6 +588,14 @@ SG_HNDL_NONNULL System_Transactions_IPromotableSinglePhaseNotification_cast(SG_H
     return ret;
 }
 
+SG_HNDL_NONNULL System_Transactions_IPromotableSinglePhaseNotification_create(SG_HNDL_NULLABLE * _Nonnull __thrown, void (* _Nonnull  __cb_System_Transactions_IPromotableSinglePhaseNotification_void__Initialize_0__0)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown), const void* _Nonnull __pdata_System_Transactions_IPromotableSinglePhaseNotification_void__Initialize_0__0, void (* _Nonnull  __cb_System_Transactions_IPromotableSinglePhaseNotification_void__Rollback_0__1__SinglePhaseEnlistment)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL singlePhaseEnlistment), const void* _Nonnull __pdata_System_Transactions_IPromotableSinglePhaseNotification_void__Rollback_0__1__SinglePhaseEnlistment, void (* _Nonnull  __cb_System_Transactions_IPromotableSinglePhaseNotification_void__SinglePhaseCommit_0__1__SinglePhaseEnlistment)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL singlePhaseEnlistment), const void* _Nonnull __pdata_System_Transactions_IPromotableSinglePhaseNotification_void__SinglePhaseCommit_0__1__SinglePhaseEnlistment, SG_HNDL_NULLABLE (* _Nonnull  __cb_System_Transactions_ITransactionPromoter_u8Array__Promote_0__0)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown), const void* _Nonnull __pdata_System_Transactions_ITransactionPromoter_u8Array__Promote_0__0, void (* _Nullable __deinit)(const void* _Nonnull __pdata)) {
+    if (!_g_System_Transactions_Local._fp_System_Transactions_IPromotableSinglePhaseNotification_create) {
+        my_init();
+    }
+    SG_HNDL_NONNULL ret = _g_System_Transactions_Local._fp_System_Transactions_IPromotableSinglePhaseNotification_create(__thrown, __cb_System_Transactions_IPromotableSinglePhaseNotification_void__Initialize_0__0, __pdata_System_Transactions_IPromotableSinglePhaseNotification_void__Initialize_0__0, __cb_System_Transactions_IPromotableSinglePhaseNotification_void__Rollback_0__1__SinglePhaseEnlistment, __pdata_System_Transactions_IPromotableSinglePhaseNotification_void__Rollback_0__1__SinglePhaseEnlistment, __cb_System_Transactions_IPromotableSinglePhaseNotification_void__SinglePhaseCommit_0__1__SinglePhaseEnlistment, __pdata_System_Transactions_IPromotableSinglePhaseNotification_void__SinglePhaseCommit_0__1__SinglePhaseEnlistment, __cb_System_Transactions_ITransactionPromoter_u8Array__Promote_0__0, __pdata_System_Transactions_ITransactionPromoter_u8Array__Promote_0__0, __deinit);
+    return ret;
+}
+
 TYP System_Transactions_ISimpleTransactionSuperior_get_type_handle(void) {
     if (!_g_System_Transactions_Local._fp_System_Transactions_ISimpleTransactionSuperior_get_type_handle) {
         my_init();
@@ -586,6 +616,14 @@ SG_HNDL_NONNULL System_Transactions_ISimpleTransactionSuperior_cast(SG_HNDL_NULL
         my_init();
     }
     SG_HNDL_NONNULL ret = _g_System_Transactions_Local._fp_System_Transactions_ISimpleTransactionSuperior_cast(__thrown, __h);
+    return ret;
+}
+
+SG_HNDL_NONNULL System_Transactions_ISimpleTransactionSuperior_create(SG_HNDL_NULLABLE * _Nonnull __thrown, void (* _Nonnull  __cb_System_Transactions_ISimpleTransactionSuperior_void__Rollback_0__0)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown), const void* _Nonnull __pdata_System_Transactions_ISimpleTransactionSuperior_void__Rollback_0__0, SG_HNDL_NULLABLE (* _Nonnull  __cb_System_Transactions_ITransactionPromoter_u8Array__Promote_0__0)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown), const void* _Nonnull __pdata_System_Transactions_ITransactionPromoter_u8Array__Promote_0__0, void (* _Nullable __deinit)(const void* _Nonnull __pdata)) {
+    if (!_g_System_Transactions_Local._fp_System_Transactions_ISimpleTransactionSuperior_create) {
+        my_init();
+    }
+    SG_HNDL_NONNULL ret = _g_System_Transactions_Local._fp_System_Transactions_ISimpleTransactionSuperior_create(__thrown, __cb_System_Transactions_ISimpleTransactionSuperior_void__Rollback_0__0, __pdata_System_Transactions_ISimpleTransactionSuperior_void__Rollback_0__0, __cb_System_Transactions_ITransactionPromoter_u8Array__Promote_0__0, __pdata_System_Transactions_ITransactionPromoter_u8Array__Promote_0__0, __deinit);
     return ret;
 }
 
@@ -612,6 +650,14 @@ SG_HNDL_NONNULL System_Transactions_ISinglePhaseNotification_cast(SG_HNDL_NULLAB
     return ret;
 }
 
+SG_HNDL_NONNULL System_Transactions_ISinglePhaseNotification_create(SG_HNDL_NULLABLE * _Nonnull __thrown, void (* _Nonnull  __cb_System_Transactions_ISinglePhaseNotification_void__SinglePhaseCommit_0__1__SinglePhaseEnlistment)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL singlePhaseEnlistment), const void* _Nonnull __pdata_System_Transactions_ISinglePhaseNotification_void__SinglePhaseCommit_0__1__SinglePhaseEnlistment, void (* _Nonnull  __cb_System_Transactions_IEnlistmentNotification_void__Commit_0__1__Enlistment)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL enlistment), const void* _Nonnull __pdata_System_Transactions_IEnlistmentNotification_void__Commit_0__1__Enlistment, void (* _Nonnull  __cb_System_Transactions_IEnlistmentNotification_void__InDoubt_0__1__Enlistment)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL enlistment), const void* _Nonnull __pdata_System_Transactions_IEnlistmentNotification_void__InDoubt_0__1__Enlistment, void (* _Nonnull  __cb_System_Transactions_IEnlistmentNotification_void__Prepare_0__1__PreparingEnlistment)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL preparingEnlistment), const void* _Nonnull __pdata_System_Transactions_IEnlistmentNotification_void__Prepare_0__1__PreparingEnlistment, void (* _Nonnull  __cb_System_Transactions_IEnlistmentNotification_void__Rollback_0__1__Enlistment)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL enlistment), const void* _Nonnull __pdata_System_Transactions_IEnlistmentNotification_void__Rollback_0__1__Enlistment, void (* _Nullable __deinit)(const void* _Nonnull __pdata)) {
+    if (!_g_System_Transactions_Local._fp_System_Transactions_ISinglePhaseNotification_create) {
+        my_init();
+    }
+    SG_HNDL_NONNULL ret = _g_System_Transactions_Local._fp_System_Transactions_ISinglePhaseNotification_create(__thrown, __cb_System_Transactions_ISinglePhaseNotification_void__SinglePhaseCommit_0__1__SinglePhaseEnlistment, __pdata_System_Transactions_ISinglePhaseNotification_void__SinglePhaseCommit_0__1__SinglePhaseEnlistment, __cb_System_Transactions_IEnlistmentNotification_void__Commit_0__1__Enlistment, __pdata_System_Transactions_IEnlistmentNotification_void__Commit_0__1__Enlistment, __cb_System_Transactions_IEnlistmentNotification_void__InDoubt_0__1__Enlistment, __pdata_System_Transactions_IEnlistmentNotification_void__InDoubt_0__1__Enlistment, __cb_System_Transactions_IEnlistmentNotification_void__Prepare_0__1__PreparingEnlistment, __pdata_System_Transactions_IEnlistmentNotification_void__Prepare_0__1__PreparingEnlistment, __cb_System_Transactions_IEnlistmentNotification_void__Rollback_0__1__Enlistment, __pdata_System_Transactions_IEnlistmentNotification_void__Rollback_0__1__Enlistment, __deinit);
+    return ret;
+}
+
 TYP System_Transactions_ITransactionPromoter_get_type_handle(void) {
     if (!_g_System_Transactions_Local._fp_System_Transactions_ITransactionPromoter_get_type_handle) {
         my_init();
@@ -633,6 +679,14 @@ SG_HNDL_NONNULL System_Transactions_ITransactionPromoter_cast(SG_HNDL_NULLABLE *
         my_init();
     }
     SG_HNDL_NONNULL ret = _g_System_Transactions_Local._fp_System_Transactions_ITransactionPromoter_cast(__thrown, __h);
+    return ret;
+}
+
+SG_HNDL_NONNULL System_Transactions_ITransactionPromoter_create(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE (* _Nonnull  __cb_System_Transactions_ITransactionPromoter_u8Array__Promote_0__0)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown), const void* _Nonnull __pdata_System_Transactions_ITransactionPromoter_u8Array__Promote_0__0, void (* _Nullable __deinit)(const void* _Nonnull __pdata)) {
+    if (!_g_System_Transactions_Local._fp_System_Transactions_ITransactionPromoter_create) {
+        my_init();
+    }
+    SG_HNDL_NONNULL ret = _g_System_Transactions_Local._fp_System_Transactions_ITransactionPromoter_create(__thrown, __cb_System_Transactions_ITransactionPromoter_u8Array__Promote_0__0, __pdata_System_Transactions_ITransactionPromoter_u8Array__Promote_0__0, __deinit);
     return ret;
 }
 
@@ -1099,11 +1153,11 @@ void System_Transactions_TransactionCompletedEventHandler_void__EndInvoke_0__1__
     _g_System_Transactions_Local._fp_System_Transactions_TransactionCompletedEventHandler_void__EndInvoke_0__1__IAsyncResult(__thrown, __self_h, result);
 }
 
-SG_HNDL_NONNULL System_Transactions_TransactionCompletedEventHandler_create(SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nullable __pdata, void (* _Nullable __deinit)(const void* _Nullable __pdata), void (* _Nonnull  __cb)(const void* _Nullable __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE sender, SG_HNDL_NONNULL e)) {
+SG_HNDL_NONNULL System_Transactions_TransactionCompletedEventHandler_create(SG_HNDL_NULLABLE * _Nonnull __thrown, void (* _Nonnull  __cb)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE sender, SG_HNDL_NONNULL e), const void* _Nonnull __pdata, void (* _Nullable __deinit)(const void* _Nonnull __pdata)) {
     if (!_g_System_Transactions_Local._fp_System_Transactions_TransactionCompletedEventHandler_create) {
         my_init();
     }
-    SG_HNDL_NONNULL ret = _g_System_Transactions_Local._fp_System_Transactions_TransactionCompletedEventHandler_create(__thrown, __pdata, __deinit, __cb);
+    SG_HNDL_NONNULL ret = _g_System_Transactions_Local._fp_System_Transactions_TransactionCompletedEventHandler_create(__thrown, __cb, __pdata, __deinit);
     return ret;
 }
 
@@ -1784,11 +1838,11 @@ void System_Transactions_TransactionStartedEventHandler_void__EndInvoke_0__1__IA
     _g_System_Transactions_Local._fp_System_Transactions_TransactionStartedEventHandler_void__EndInvoke_0__1__IAsyncResult(__thrown, __self_h, result);
 }
 
-SG_HNDL_NONNULL System_Transactions_TransactionStartedEventHandler_create(SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nullable __pdata, void (* _Nullable __deinit)(const void* _Nullable __pdata), void (* _Nonnull  __cb)(const void* _Nullable __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE sender, SG_HNDL_NONNULL e)) {
+SG_HNDL_NONNULL System_Transactions_TransactionStartedEventHandler_create(SG_HNDL_NULLABLE * _Nonnull __thrown, void (* _Nonnull  __cb)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE sender, SG_HNDL_NONNULL e), const void* _Nonnull __pdata, void (* _Nullable __deinit)(const void* _Nonnull __pdata)) {
     if (!_g_System_Transactions_Local._fp_System_Transactions_TransactionStartedEventHandler_create) {
         my_init();
     }
-    SG_HNDL_NONNULL ret = _g_System_Transactions_Local._fp_System_Transactions_TransactionStartedEventHandler_create(__thrown, __pdata, __deinit, __cb);
+    SG_HNDL_NONNULL ret = _g_System_Transactions_Local._fp_System_Transactions_TransactionStartedEventHandler_create(__thrown, __cb, __pdata, __deinit);
     return ret;
 }
 

@@ -10,6 +10,7 @@ struct {
     TYP (* _Nonnull  _fp_System_IServiceProvider_get_type_handle)(void);
     SG_HNDL_NULLABLE (* _Nonnull  _fp_System_IServiceProvider_Object__GetService_0__1__Type)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NONNULL serviceType);
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_IServiceProvider_cast)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __h);
+    SG_HNDL_NONNULL (* _Nonnull  _fp_System_IServiceProvider_create)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE (* _Nonnull  __cb_System_IServiceProvider_Object__GetService_0__1__Type)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL serviceType), const void* _Nonnull __pdata_System_IServiceProvider_Object__GetService_0__1__Type, void (* _Nullable __deinit)(const void* _Nonnull __pdata));
     TYP (* _Nonnull  _fp_System_ComponentModel_CancelEventArgs_get_type_handle)(void);
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_ComponentModel_CancelEventArgs_ctor_0__0)(SG_HNDL_NULLABLE * _Nonnull __thrown);
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_ComponentModel_CancelEventArgs_ctor_0__1__bool)(SG_HNDL_NULLABLE * _Nonnull __thrown, int32_t cancel);
@@ -20,14 +21,17 @@ struct {
     void (* _Nonnull  _fp_System_ComponentModel_IChangeTracking_void__AcceptChanges_0__0)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h);
     int32_t (* _Nonnull  _fp_System_ComponentModel_IChangeTracking_bool__get_IsChanged_0__0)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h);
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_ComponentModel_IChangeTracking_cast)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __h);
+    SG_HNDL_NONNULL (* _Nonnull  _fp_System_ComponentModel_IChangeTracking_create)(SG_HNDL_NULLABLE * _Nonnull __thrown, void (* _Nonnull  __cb_System_ComponentModel_IChangeTracking_void__AcceptChanges_0__0)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown), const void* _Nonnull __pdata_System_ComponentModel_IChangeTracking_void__AcceptChanges_0__0, void (* _Nullable __deinit)(const void* _Nonnull __pdata));
     TYP (* _Nonnull  _fp_System_ComponentModel_IEditableObject_get_type_handle)(void);
     void (* _Nonnull  _fp_System_ComponentModel_IEditableObject_void__BeginEdit_0__0)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h);
     void (* _Nonnull  _fp_System_ComponentModel_IEditableObject_void__CancelEdit_0__0)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h);
     void (* _Nonnull  _fp_System_ComponentModel_IEditableObject_void__EndEdit_0__0)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h);
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_ComponentModel_IEditableObject_cast)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __h);
+    SG_HNDL_NONNULL (* _Nonnull  _fp_System_ComponentModel_IEditableObject_create)(SG_HNDL_NULLABLE * _Nonnull __thrown, void (* _Nonnull  __cb_System_ComponentModel_IEditableObject_void__BeginEdit_0__0)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown), const void* _Nonnull __pdata_System_ComponentModel_IEditableObject_void__BeginEdit_0__0, void (* _Nonnull  __cb_System_ComponentModel_IEditableObject_void__CancelEdit_0__0)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown), const void* _Nonnull __pdata_System_ComponentModel_IEditableObject_void__CancelEdit_0__0, void (* _Nonnull  __cb_System_ComponentModel_IEditableObject_void__EndEdit_0__0)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown), const void* _Nonnull __pdata_System_ComponentModel_IEditableObject_void__EndEdit_0__0, void (* _Nullable __deinit)(const void* _Nonnull __pdata));
     TYP (* _Nonnull  _fp_System_ComponentModel_IRevertibleChangeTracking_get_type_handle)(void);
     void (* _Nonnull  _fp_System_ComponentModel_IRevertibleChangeTracking_void__RejectChanges_0__0)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h);
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_ComponentModel_IRevertibleChangeTracking_cast)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __h);
+    SG_HNDL_NONNULL (* _Nonnull  _fp_System_ComponentModel_IRevertibleChangeTracking_create)(SG_HNDL_NULLABLE * _Nonnull __thrown, void (* _Nonnull  __cb_System_ComponentModel_IRevertibleChangeTracking_void__RejectChanges_0__0)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown), const void* _Nonnull __pdata_System_ComponentModel_IRevertibleChangeTracking_void__RejectChanges_0__0, void (* _Nonnull  __cb_System_ComponentModel_IChangeTracking_void__AcceptChanges_0__0)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown), const void* _Nonnull __pdata_System_ComponentModel_IChangeTracking_void__AcceptChanges_0__0, void (* _Nullable __deinit)(const void* _Nonnull __pdata));
 } _g_System_ComponentModel;
 
 static void my_init() {
@@ -55,6 +59,14 @@ SG_HNDL_NONNULL System_IServiceProvider_cast(SG_HNDL_NULLABLE * _Nonnull __throw
         my_init();
     }
     SG_HNDL_NONNULL ret = _g_System_ComponentModel._fp_System_IServiceProvider_cast(__thrown, __h);
+    return ret;
+}
+
+SG_HNDL_NONNULL System_IServiceProvider_create(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE (* _Nonnull  __cb_System_IServiceProvider_Object__GetService_0__1__Type)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL serviceType), const void* _Nonnull __pdata_System_IServiceProvider_Object__GetService_0__1__Type, void (* _Nullable __deinit)(const void* _Nonnull __pdata)) {
+    if (!_g_System_ComponentModel._fp_System_IServiceProvider_create) {
+        my_init();
+    }
+    SG_HNDL_NONNULL ret = _g_System_ComponentModel._fp_System_IServiceProvider_create(__thrown, __cb_System_IServiceProvider_Object__GetService_0__1__Type, __pdata_System_IServiceProvider_Object__GetService_0__1__Type, __deinit);
     return ret;
 }
 
@@ -136,6 +148,14 @@ SG_HNDL_NONNULL System_ComponentModel_IChangeTracking_cast(SG_HNDL_NULLABLE * _N
     return ret;
 }
 
+SG_HNDL_NONNULL System_ComponentModel_IChangeTracking_create(SG_HNDL_NULLABLE * _Nonnull __thrown, void (* _Nonnull  __cb_System_ComponentModel_IChangeTracking_void__AcceptChanges_0__0)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown), const void* _Nonnull __pdata_System_ComponentModel_IChangeTracking_void__AcceptChanges_0__0, void (* _Nullable __deinit)(const void* _Nonnull __pdata)) {
+    if (!_g_System_ComponentModel._fp_System_ComponentModel_IChangeTracking_create) {
+        my_init();
+    }
+    SG_HNDL_NONNULL ret = _g_System_ComponentModel._fp_System_ComponentModel_IChangeTracking_create(__thrown, __cb_System_ComponentModel_IChangeTracking_void__AcceptChanges_0__0, __pdata_System_ComponentModel_IChangeTracking_void__AcceptChanges_0__0, __deinit);
+    return ret;
+}
+
 TYP System_ComponentModel_IEditableObject_get_type_handle(void) {
     if (!_g_System_ComponentModel._fp_System_ComponentModel_IEditableObject_get_type_handle) {
         my_init();
@@ -173,6 +193,14 @@ SG_HNDL_NONNULL System_ComponentModel_IEditableObject_cast(SG_HNDL_NULLABLE * _N
     return ret;
 }
 
+SG_HNDL_NONNULL System_ComponentModel_IEditableObject_create(SG_HNDL_NULLABLE * _Nonnull __thrown, void (* _Nonnull  __cb_System_ComponentModel_IEditableObject_void__BeginEdit_0__0)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown), const void* _Nonnull __pdata_System_ComponentModel_IEditableObject_void__BeginEdit_0__0, void (* _Nonnull  __cb_System_ComponentModel_IEditableObject_void__CancelEdit_0__0)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown), const void* _Nonnull __pdata_System_ComponentModel_IEditableObject_void__CancelEdit_0__0, void (* _Nonnull  __cb_System_ComponentModel_IEditableObject_void__EndEdit_0__0)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown), const void* _Nonnull __pdata_System_ComponentModel_IEditableObject_void__EndEdit_0__0, void (* _Nullable __deinit)(const void* _Nonnull __pdata)) {
+    if (!_g_System_ComponentModel._fp_System_ComponentModel_IEditableObject_create) {
+        my_init();
+    }
+    SG_HNDL_NONNULL ret = _g_System_ComponentModel._fp_System_ComponentModel_IEditableObject_create(__thrown, __cb_System_ComponentModel_IEditableObject_void__BeginEdit_0__0, __pdata_System_ComponentModel_IEditableObject_void__BeginEdit_0__0, __cb_System_ComponentModel_IEditableObject_void__CancelEdit_0__0, __pdata_System_ComponentModel_IEditableObject_void__CancelEdit_0__0, __cb_System_ComponentModel_IEditableObject_void__EndEdit_0__0, __pdata_System_ComponentModel_IEditableObject_void__EndEdit_0__0, __deinit);
+    return ret;
+}
+
 TYP System_ComponentModel_IRevertibleChangeTracking_get_type_handle(void) {
     if (!_g_System_ComponentModel._fp_System_ComponentModel_IRevertibleChangeTracking_get_type_handle) {
         my_init();
@@ -193,6 +221,14 @@ SG_HNDL_NONNULL System_ComponentModel_IRevertibleChangeTracking_cast(SG_HNDL_NUL
         my_init();
     }
     SG_HNDL_NONNULL ret = _g_System_ComponentModel._fp_System_ComponentModel_IRevertibleChangeTracking_cast(__thrown, __h);
+    return ret;
+}
+
+SG_HNDL_NONNULL System_ComponentModel_IRevertibleChangeTracking_create(SG_HNDL_NULLABLE * _Nonnull __thrown, void (* _Nonnull  __cb_System_ComponentModel_IRevertibleChangeTracking_void__RejectChanges_0__0)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown), const void* _Nonnull __pdata_System_ComponentModel_IRevertibleChangeTracking_void__RejectChanges_0__0, void (* _Nonnull  __cb_System_ComponentModel_IChangeTracking_void__AcceptChanges_0__0)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown), const void* _Nonnull __pdata_System_ComponentModel_IChangeTracking_void__AcceptChanges_0__0, void (* _Nullable __deinit)(const void* _Nonnull __pdata)) {
+    if (!_g_System_ComponentModel._fp_System_ComponentModel_IRevertibleChangeTracking_create) {
+        my_init();
+    }
+    SG_HNDL_NONNULL ret = _g_System_ComponentModel._fp_System_ComponentModel_IRevertibleChangeTracking_create(__thrown, __cb_System_ComponentModel_IRevertibleChangeTracking_void__RejectChanges_0__0, __pdata_System_ComponentModel_IRevertibleChangeTracking_void__RejectChanges_0__0, __cb_System_ComponentModel_IChangeTracking_void__AcceptChanges_0__0, __pdata_System_ComponentModel_IChangeTracking_void__AcceptChanges_0__0, __deinit);
     return ret;
 }
 

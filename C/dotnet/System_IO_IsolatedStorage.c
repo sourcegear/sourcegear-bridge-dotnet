@@ -10,6 +10,7 @@ struct {
     TYP (* _Nonnull  _fp_System_IO_IsolatedStorage_INormalizeForIsolatedStorage_get_type_handle)(void);
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_IO_IsolatedStorage_INormalizeForIsolatedStorage_Object__Normalize_0__0)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h);
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_IO_IsolatedStorage_INormalizeForIsolatedStorage_cast)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __h);
+    SG_HNDL_NONNULL (* _Nonnull  _fp_System_IO_IsolatedStorage_INormalizeForIsolatedStorage_create)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL (* _Nonnull  __cb_System_IO_IsolatedStorage_INormalizeForIsolatedStorage_Object__Normalize_0__0)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown), const void* _Nonnull __pdata_System_IO_IsolatedStorage_INormalizeForIsolatedStorage_Object__Normalize_0__0, void (* _Nullable __deinit)(const void* _Nonnull __pdata));
     TYP (* _Nonnull  _fp_System_IO_IsolatedStorage_IsolatedStorage_get_type_handle)(void);
     int32_t (* _Nonnull  _fp_System_IO_IsolatedStorage_IsolatedStorage_bool__IncreaseQuotaTo_0__1__i64)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, int64_t newQuotaSize);
     void (* _Nonnull  _fp_System_IO_IsolatedStorage_IsolatedStorage_void__Remove_0__0)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h);
@@ -149,6 +150,14 @@ SG_HNDL_NONNULL System_IO_IsolatedStorage_INormalizeForIsolatedStorage_cast(SG_H
         my_init();
     }
     SG_HNDL_NONNULL ret = _g_System_IO_IsolatedStorage._fp_System_IO_IsolatedStorage_INormalizeForIsolatedStorage_cast(__thrown, __h);
+    return ret;
+}
+
+SG_HNDL_NONNULL System_IO_IsolatedStorage_INormalizeForIsolatedStorage_create(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL (* _Nonnull  __cb_System_IO_IsolatedStorage_INormalizeForIsolatedStorage_Object__Normalize_0__0)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown), const void* _Nonnull __pdata_System_IO_IsolatedStorage_INormalizeForIsolatedStorage_Object__Normalize_0__0, void (* _Nullable __deinit)(const void* _Nonnull __pdata)) {
+    if (!_g_System_IO_IsolatedStorage._fp_System_IO_IsolatedStorage_INormalizeForIsolatedStorage_create) {
+        my_init();
+    }
+    SG_HNDL_NONNULL ret = _g_System_IO_IsolatedStorage._fp_System_IO_IsolatedStorage_INormalizeForIsolatedStorage_create(__thrown, __cb_System_IO_IsolatedStorage_INormalizeForIsolatedStorage_Object__Normalize_0__0, __pdata_System_IO_IsolatedStorage_INormalizeForIsolatedStorage_Object__Normalize_0__0, __deinit);
     return ret;
 }
 

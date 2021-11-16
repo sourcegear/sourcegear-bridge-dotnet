@@ -56,7 +56,7 @@ SG_HNDL_NULLABLE System_Net_Security_LocalCertificateSelectionCallback_IAsyncRes
 
 SG_HNDL_NONNULL System_Net_Security_LocalCertificateSelectionCallback_X509Certificate__EndInvoke_0__1__IAsyncResult(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE result);
 
-SG_HNDL_NONNULL System_Net_Security_LocalCertificateSelectionCallback_create(SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nullable __pdata, void (* _Nullable __deinit)(const void* _Nullable __pdata), SG_HNDL_NONNULL (* _Nonnull  __cb)(const void* _Nullable __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL sender, SG_HNDL_NONNULL targetHost, SG_HNDL_NONNULL localCertificates, SG_HNDL_NULLABLE remoteCertificate, SG_HNDL_NONNULL acceptableIssuers));
+SG_HNDL_NONNULL System_Net_Security_LocalCertificateSelectionCallback_create(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL (* _Nonnull  __cb)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL sender, SG_HNDL_NONNULL targetHost, SG_HNDL_NONNULL localCertificates, SG_HNDL_NULLABLE remoteCertificate, SG_HNDL_NONNULL acceptableIssuers), const void* _Nonnull __pdata, void (* _Nullable __deinit)(const void* _Nonnull __pdata));
 
 TYP System_Net_Security_NegotiateStream_get_type_handle(void);
 
@@ -206,7 +206,7 @@ SG_HNDL_NULLABLE System_Net_Security_RemoteCertificateValidationCallback_IAsyncR
 
 int32_t System_Net_Security_RemoteCertificateValidationCallback_bool__EndInvoke_0__1__IAsyncResult(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE result);
 
-SG_HNDL_NONNULL System_Net_Security_RemoteCertificateValidationCallback_create(SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nullable __pdata, void (* _Nullable __deinit)(const void* _Nullable __pdata), int32_t (* _Nonnull  __cb)(const void* _Nullable __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL sender, SG_HNDL_NULLABLE certificate, SG_HNDL_NULLABLE chain, int32_t sslPolicyErrors));
+SG_HNDL_NONNULL System_Net_Security_RemoteCertificateValidationCallback_create(SG_HNDL_NULLABLE * _Nonnull __thrown, int32_t (* _Nonnull  __cb)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL sender, SG_HNDL_NULLABLE certificate, SG_HNDL_NULLABLE chain, int32_t sslPolicyErrors), const void* _Nonnull __pdata, void (* _Nullable __deinit)(const void* _Nonnull __pdata));
 
 TYP System_Net_Security_ServerCertificateSelectionCallback_get_type_handle(void);
 
@@ -216,7 +216,7 @@ SG_HNDL_NULLABLE System_Net_Security_ServerCertificateSelectionCallback_IAsyncRe
 
 SG_HNDL_NONNULL System_Net_Security_ServerCertificateSelectionCallback_X509Certificate__EndInvoke_0__1__IAsyncResult(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE result);
 
-SG_HNDL_NONNULL System_Net_Security_ServerCertificateSelectionCallback_create(SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nullable __pdata, void (* _Nullable __deinit)(const void* _Nullable __pdata), SG_HNDL_NONNULL (* _Nonnull  __cb)(const void* _Nullable __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL sender, SG_HNDL_NULLABLE hostName));
+SG_HNDL_NONNULL System_Net_Security_ServerCertificateSelectionCallback_create(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL (* _Nonnull  __cb)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL sender, SG_HNDL_NULLABLE hostName), const void* _Nonnull __pdata, void (* _Nullable __deinit)(const void* _Nonnull __pdata));
 
 TYP System_Net_Security_ServerOptionsSelectionCallback_get_type_handle(void);
 
@@ -226,7 +226,7 @@ SG_HNDL_NULLABLE System_Net_Security_ServerOptionsSelectionCallback_IAsyncResult
 
 SG_HNDL_NONNULL System_Net_Security_ServerOptionsSelectionCallback_System_Threading_Tasks_ValueTask_System_Net_Security_SslServerAuthenticationOptions___EndInvoke_0__1__IAsyncResult(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE result);
 
-SG_HNDL_NONNULL System_Net_Security_ServerOptionsSelectionCallback_create(SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nullable __pdata, void (* _Nullable __deinit)(const void* _Nullable __pdata), SG_HNDL_NONNULL (* _Nonnull  __cb)(const void* _Nullable __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL stream, SG_HNDL_NONNULL clientHelloInfo, SG_HNDL_NULLABLE state, SG_HNDL_NONNULL cancellationToken));
+SG_HNDL_NONNULL System_Net_Security_ServerOptionsSelectionCallback_create(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL (* _Nonnull  __cb)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL stream, SG_HNDL_NONNULL clientHelloInfo, SG_HNDL_NULLABLE state, SG_HNDL_NONNULL cancellationToken), const void* _Nonnull __pdata, void (* _Nullable __deinit)(const void* _Nonnull __pdata));
 
 TYP System_Net_Security_SslApplicationProtocol_get_type_handle(void);
 

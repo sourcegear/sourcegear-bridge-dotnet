@@ -2,37 +2,81 @@
 // Copyright 2021 SourceGear
 
 @available(macOS 12, *)
-public func make_swift_task<T>(clrtask: dotnet.System.Threading.Tasks.Task_1<T>) async throws -> T
+extension dotnet.System.Threading.Tasks.Task_1
 {
-    try await withCheckedThrowingContinuation
-        {
-            continuation in
+    public func ToAsync() async throws -> TResult
+    {
+        try await withCheckedThrowingContinuation
+            {
+                continuation in
 
-            do
+                do
+                {
+                    let on_success = try dotnet.System.Action_1<dotnet.System.Threading.Tasks.Task_1<TResult>>
+                        {
+                            t in
+                            continuation.resume(returning: t.Result);
+                        };
+                    let _ = try self.ContinueWith(
+                        continuationAction: on_success, 
+                        continuationOptions: dotnet.System.Threading.Tasks.TaskContinuationOptions.OnlyOnRanToCompletion
+                        );
+                    let on_fail = try dotnet.System.Action_1<dotnet.System.Threading.Tasks.Task_1<TResult>>
+                        {
+                            t in
+                            continuation.resume(throwing: t.Exception!);
+                        };
+                    let _ = try self.ContinueWith(
+                        continuationAction: on_fail, 
+                        continuationOptions: dotnet.System.Threading.Tasks.TaskContinuationOptions.OnlyOnFaulted
+                        );
+                }
+                catch
+                {
+                    continuation.resume(throwing: error);
+                }
+            };
+    }
+}
+
+
+@available(macOS 12, *)
+extension dotnet.System.Threading.Tasks.Task
+{
+    public func ToAsync() async throws
+    {
+        let clos : (CheckedContinuation<Void, Error>) -> Void =
             {
-                let on_success = try dotnet.System.Action_1<dotnet.System.Threading.Tasks.Task_1<T>>
-                    {
-                        t in
-                        continuation.resume(returning: t.Result);
-                    };
-                let _ = try clrtask.ContinueWith(
-                    continuationAction: on_success, 
-                    continuationOptions: dotnet.System.Threading.Tasks.TaskContinuationOptions.OnlyOnRanToCompletion
-                    );
-                let on_fail = try dotnet.System.Action_1<dotnet.System.Threading.Tasks.Task_1<T>>
-                    {
-                        t in
-                        continuation.resume(throwing: t.Exception!);
-                    };
-                let _ = try clrtask.ContinueWith(
-                    continuationAction: on_fail, 
-                    continuationOptions: dotnet.System.Threading.Tasks.TaskContinuationOptions.OnlyOnFaulted
-                    );
-            }
-            catch
-            {
-                continuation.resume(throwing: error);
-            }
-        };
+                continuation in
+
+                do
+                {
+                    let on_success = try dotnet.System.Action_1<dotnet.System.Threading.Tasks.Task>
+                        {
+                            t in
+                            continuation.resume();
+                        };
+                    let _ = try self.ContinueWith(
+                        continuationAction: on_success, 
+                        continuationOptions: dotnet.System.Threading.Tasks.TaskContinuationOptions.OnlyOnRanToCompletion
+                        );
+                    let on_fail = try dotnet.System.Action_1<dotnet.System.Threading.Tasks.Task>
+                        {
+                            t in
+                            continuation.resume(throwing: t.Exception!);
+                        };
+                    let _ = try self.ContinueWith(
+                        continuationAction: on_fail, 
+                        continuationOptions: dotnet.System.Threading.Tasks.TaskContinuationOptions.OnlyOnFaulted
+                        );
+                }
+                catch
+                {
+                    continuation.resume(throwing: error);
+                }
+            };
+
+        try await withCheckedThrowingContinuation(clos)
+    }
 }
 

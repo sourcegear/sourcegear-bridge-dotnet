@@ -24,6 +24,8 @@ SG_HNDL_NONNULL System_Net_IWebProxyScript_String__Run_0__2__String_String(SG_HN
 
 SG_HNDL_NONNULL System_Net_IWebProxyScript_cast(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __h);
 
+SG_HNDL_NONNULL System_Net_IWebProxyScript_create(SG_HNDL_NULLABLE * _Nonnull __thrown, void (* _Nonnull  __cb_System_Net_IWebProxyScript_void__Close_0__0)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown), const void* _Nonnull __pdata_System_Net_IWebProxyScript_void__Close_0__0, int32_t (* _Nonnull  __cb_System_Net_IWebProxyScript_bool__Load_0__3__Uri_String_Type)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL scriptLocation, SG_HNDL_NONNULL script, SG_HNDL_NONNULL helperType), const void* _Nonnull __pdata_System_Net_IWebProxyScript_bool__Load_0__3__Uri_String_Type, SG_HNDL_NONNULL (* _Nonnull  __cb_System_Net_IWebProxyScript_String__Run_0__2__String_String)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL url, SG_HNDL_NONNULL host), const void* _Nonnull __pdata_System_Net_IWebProxyScript_String__Run_0__2__String_String, void (* _Nullable __deinit)(const void* _Nonnull __pdata));
+
 TYP System_Net_WebProxy_get_type_handle(void);
 
 SG_HNDL_NONNULL System_Net_WebProxy_ctor_0__0(SG_HNDL_NULLABLE * _Nonnull __thrown);

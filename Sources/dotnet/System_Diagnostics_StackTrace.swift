@@ -17,6 +17,9 @@ open class StackFrame
     open class override func get_type_handle() -> TypeHandle {
         return System_Diagnostics_StackFrame_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // static field: System.Int32 OFFSET_UNKNOWN
@@ -388,6 +391,9 @@ open class StackTrace
     open class override func get_type_handle() -> TypeHandle {
         return System_Diagnostics_StackTrace_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // static field: System.Int32 METHODS_TO_SKIP
@@ -648,6 +654,9 @@ open class ISymbolBinder
     open class func get_type_handle() -> TypeHandle {
         return System_Diagnostics_SymbolStore_ISymbolBinder_get_type_handle();
     }
+    open class func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     let h : NonnullHandle;
     public func to_gval() -> GVal { return GVal(Swift.Int(bitPattern: self.h)); }
     public func dup_gval() -> GVal { return GVal(Swift.Int(bitPattern: __copy_handle(self.h))); }
@@ -697,6 +706,9 @@ open class ISymbolBinder1
     open class func get_type_handle() -> TypeHandle {
         return System_Diagnostics_SymbolStore_ISymbolBinder1_get_type_handle();
     }
+    open class func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     let h : NonnullHandle;
     public func to_gval() -> GVal { return GVal(Swift.Int(bitPattern: self.h)); }
     public func dup_gval() -> GVal { return GVal(Swift.Int(bitPattern: __copy_handle(self.h))); }
@@ -745,6 +757,9 @@ open class ISymbolDocument
 {
     open class func get_type_handle() -> TypeHandle {
         return System_Diagnostics_SymbolStore_ISymbolDocument_get_type_handle();
+    }
+    open class func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     let h : NonnullHandle;
     public func to_gval() -> GVal { return GVal(Swift.Int(bitPattern: self.h)); }
@@ -904,6 +919,9 @@ open class ISymbolDocumentWriter
     open class func get_type_handle() -> TypeHandle {
         return System_Diagnostics_SymbolStore_ISymbolDocumentWriter_get_type_handle();
     }
+    open class func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     let h : NonnullHandle;
     public func to_gval() -> GVal { return GVal(Swift.Int(bitPattern: self.h)); }
     public func dup_gval() -> GVal { return GVal(Swift.Int(bitPattern: __copy_handle(self.h))); }
@@ -961,6 +979,9 @@ open class ISymbolMethod
 {
     open class func get_type_handle() -> TypeHandle {
         return System_Diagnostics_SymbolStore_ISymbolMethod_get_type_handle();
+    }
+    open class func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     let h : NonnullHandle;
     public func to_gval() -> GVal { return GVal(Swift.Int(bitPattern: self.h)); }
@@ -1154,6 +1175,9 @@ open class ISymbolNamespace
     open class func get_type_handle() -> TypeHandle {
         return System_Diagnostics_SymbolStore_ISymbolNamespace_get_type_handle();
     }
+    open class func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     let h : NonnullHandle;
     public func to_gval() -> GVal { return GVal(Swift.Int(bitPattern: self.h)); }
     public func dup_gval() -> GVal { return GVal(Swift.Int(bitPattern: __copy_handle(self.h))); }
@@ -1223,6 +1247,9 @@ open class ISymbolReader
 {
     open class func get_type_handle() -> TypeHandle {
         return System_Diagnostics_SymbolStore_ISymbolReader_get_type_handle();
+    }
+    open class func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     let h : NonnullHandle;
     public func to_gval() -> GVal { return GVal(Swift.Int(bitPattern: self.h)); }
@@ -1438,6 +1465,9 @@ open class ISymbolScope
     open class func get_type_handle() -> TypeHandle {
         return System_Diagnostics_SymbolStore_ISymbolScope_get_type_handle();
     }
+    open class func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     let h : NonnullHandle;
     public func to_gval() -> GVal { return GVal(Swift.Int(bitPattern: self.h)); }
     public func dup_gval() -> GVal { return GVal(Swift.Int(bitPattern: __copy_handle(self.h))); }
@@ -1557,6 +1587,9 @@ open class ISymbolVariable
 {
     open class func get_type_handle() -> TypeHandle {
         return System_Diagnostics_SymbolStore_ISymbolVariable_get_type_handle();
+    }
+    open class func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     let h : NonnullHandle;
     public func to_gval() -> GVal { return GVal(Swift.Int(bitPattern: self.h)); }
@@ -1687,6 +1720,9 @@ open class ISymbolWriter
 {
     open class func get_type_handle() -> TypeHandle {
         return System_Diagnostics_SymbolStore_ISymbolWriter_get_type_handle();
+    }
+    open class func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     let h : NonnullHandle;
     public func to_gval() -> GVal { return GVal(Swift.Int(bitPattern: self.h)); }
@@ -2208,6 +2244,9 @@ open class SymDocumentType
     open class override func get_type_handle() -> TypeHandle {
         return System_Diagnostics_SymbolStore_SymDocumentType_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // static field: System.Guid Text
@@ -2250,6 +2289,9 @@ open class SymLanguageType
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Diagnostics_SymbolStore_SymLanguageType_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -2404,6 +2446,9 @@ open class SymLanguageVendor
     open class override func get_type_handle() -> TypeHandle {
         return System_Diagnostics_SymbolStore_SymLanguageVendor_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // static field: System.Guid Microsoft
@@ -2447,6 +2492,9 @@ public final class SymbolToken
 {
     public class override func get_type_handle() -> TypeHandle {
         return System_Diagnostics_SymbolStore_SymbolToken_get_type_handle();
+    }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }

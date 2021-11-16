@@ -38,7 +38,7 @@ struct {
     int32_t (* _Nonnull  _fp_System_Numerics_Matrix3x2_bool__Equals_0__1__Object)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE obj);
     float (* _Nonnull  _fp_System_Numerics_Matrix3x2_f32__GetDeterminant_0__0)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h);
     int32_t (* _Nonnull  _fp_System_Numerics_Matrix3x2_i32__GetHashCode_0__0)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h);
-    int32_t (* _Nonnull  _fp_System_Numerics_Matrix3x2_bool__Invert_0__2__Matrix3x2_outMatrix3x2)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL matrix, SG_HNDL_NONNULL* _Nonnull __result_out_ptr);
+    int32_t (* _Nonnull  _fp_System_Numerics_Matrix3x2_bool__Invert_0__2__Matrix3x2_outMatrix3x2)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL matrix, SG_HNDL_NULLABLE* _Nonnull __result_out_ptr);
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_Numerics_Matrix3x2_Matrix3x2__Lerp_0__3__Matrix3x2_Matrix3x2_f32)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL matrix1, SG_HNDL_NONNULL matrix2, float amount);
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_Numerics_Matrix3x2_Matrix3x2__Multiply_0__2__Matrix3x2_Matrix3x2)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL value1, SG_HNDL_NONNULL value2);
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_Numerics_Matrix3x2_Matrix3x2__Multiply_0__2__Matrix3x2_f32)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL value1, float value2);
@@ -121,12 +121,12 @@ struct {
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_Numerics_Matrix4x4_Matrix4x4__CreateTranslation_0__1__Vector3)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL position);
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_Numerics_Matrix4x4_Matrix4x4__CreateTranslation_0__3__f32_f32_f32)(SG_HNDL_NULLABLE * _Nonnull __thrown, float xPosition, float yPosition, float zPosition);
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_Numerics_Matrix4x4_Matrix4x4__CreateWorld_0__3__Vector3_Vector3_Vector3)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL position, SG_HNDL_NONNULL forward, SG_HNDL_NONNULL up);
-    int32_t (* _Nonnull  _fp_System_Numerics_Matrix4x4_bool__Decompose_0__4__Matrix4x4_outVector3_outQuaternion_outVector3)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL matrix, SG_HNDL_NONNULL* _Nonnull __scale_out_ptr, SG_HNDL_NONNULL* _Nonnull __rotation_out_ptr, SG_HNDL_NONNULL* _Nonnull __translation_out_ptr);
+    int32_t (* _Nonnull  _fp_System_Numerics_Matrix4x4_bool__Decompose_0__4__Matrix4x4_outVector3_outQuaternion_outVector3)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL matrix, SG_HNDL_NULLABLE* _Nonnull __scale_out_ptr, SG_HNDL_NULLABLE* _Nonnull __rotation_out_ptr, SG_HNDL_NULLABLE* _Nonnull __translation_out_ptr);
     int32_t (* _Nonnull  _fp_System_Numerics_Matrix4x4_bool__Equals_0__1__Matrix4x4)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NONNULL other);
     int32_t (* _Nonnull  _fp_System_Numerics_Matrix4x4_bool__Equals_0__1__Object)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE obj);
     float (* _Nonnull  _fp_System_Numerics_Matrix4x4_f32__GetDeterminant_0__0)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h);
     int32_t (* _Nonnull  _fp_System_Numerics_Matrix4x4_i32__GetHashCode_0__0)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h);
-    int32_t (* _Nonnull  _fp_System_Numerics_Matrix4x4_bool__Invert_0__2__Matrix4x4_outMatrix4x4)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL matrix, SG_HNDL_NONNULL* _Nonnull __result_out_ptr);
+    int32_t (* _Nonnull  _fp_System_Numerics_Matrix4x4_bool__Invert_0__2__Matrix4x4_outMatrix4x4)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL matrix, SG_HNDL_NULLABLE* _Nonnull __result_out_ptr);
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_Numerics_Matrix4x4_Matrix4x4__Lerp_0__3__Matrix4x4_Matrix4x4_f32)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL matrix1, SG_HNDL_NONNULL matrix2, float amount);
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_Numerics_Matrix4x4_Matrix4x4__Multiply_0__2__Matrix4x4_Matrix4x4)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL value1, SG_HNDL_NONNULL value2);
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_Numerics_Matrix4x4_Matrix4x4__Multiply_0__2__Matrix4x4_f32)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL value1, float value2);
@@ -389,13 +389,13 @@ struct {
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_Numerics_Vector_System_Numerics_Vector_UT___Subtract_1__2__System_Numerics_Vector_UT__System_Numerics_Vector_UT_)(TYP T, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL left, SG_HNDL_NONNULL right);
     SG_HNDL_NONNULL (* _Nonnull  _fp_specialize_System_Numerics_Vector_System_Numerics_Vector_UT___Subtract_1__2__System_Numerics_Vector_UT__System_Numerics_Vector_UT_)(TYP T, SG_HNDL_NULLABLE * _Nonnull __thrown);
     SG_HNDL_NONNULL (* _Nonnull  _fp_invoke_System_Numerics_Vector_System_Numerics_Vector_UT___Subtract_1__2__System_Numerics_Vector_UT__System_Numerics_Vector_UT_)(SG_HNDL_NONNULL ____hdel, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL left, SG_HNDL_NONNULL right);
-    void (* _Nonnull  _fp_System_Numerics_Vector_void__Widen_0__3__System_Numerics_Vector_u8__outSystem_Numerics_Vector_u16__outSystem_Numerics_Vector_u16_)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL source, SG_HNDL_NONNULL* _Nonnull __low_out_ptr, SG_HNDL_NONNULL* _Nonnull __high_out_ptr);
-    void (* _Nonnull  _fp_System_Numerics_Vector_void__Widen_0__3__System_Numerics_Vector_i16__outSystem_Numerics_Vector_i32__outSystem_Numerics_Vector_i32_)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL source, SG_HNDL_NONNULL* _Nonnull __low_out_ptr, SG_HNDL_NONNULL* _Nonnull __high_out_ptr);
-    void (* _Nonnull  _fp_System_Numerics_Vector_void__Widen_0__3__System_Numerics_Vector_i32__outSystem_Numerics_Vector_i64__outSystem_Numerics_Vector_i64_)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL source, SG_HNDL_NONNULL* _Nonnull __low_out_ptr, SG_HNDL_NONNULL* _Nonnull __high_out_ptr);
-    void (* _Nonnull  _fp_System_Numerics_Vector_void__Widen_0__3__System_Numerics_Vector_i8__outSystem_Numerics_Vector_i16__outSystem_Numerics_Vector_i16_)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL source, SG_HNDL_NONNULL* _Nonnull __low_out_ptr, SG_HNDL_NONNULL* _Nonnull __high_out_ptr);
-    void (* _Nonnull  _fp_System_Numerics_Vector_void__Widen_0__3__System_Numerics_Vector_f32__outSystem_Numerics_Vector_f64__outSystem_Numerics_Vector_f64_)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL source, SG_HNDL_NONNULL* _Nonnull __low_out_ptr, SG_HNDL_NONNULL* _Nonnull __high_out_ptr);
-    void (* _Nonnull  _fp_System_Numerics_Vector_void__Widen_0__3__System_Numerics_Vector_u16__outSystem_Numerics_Vector_u32__outSystem_Numerics_Vector_u32_)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL source, SG_HNDL_NONNULL* _Nonnull __low_out_ptr, SG_HNDL_NONNULL* _Nonnull __high_out_ptr);
-    void (* _Nonnull  _fp_System_Numerics_Vector_void__Widen_0__3__System_Numerics_Vector_u32__outSystem_Numerics_Vector_u64__outSystem_Numerics_Vector_u64_)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL source, SG_HNDL_NONNULL* _Nonnull __low_out_ptr, SG_HNDL_NONNULL* _Nonnull __high_out_ptr);
+    void (* _Nonnull  _fp_System_Numerics_Vector_void__Widen_0__3__System_Numerics_Vector_u8__outSystem_Numerics_Vector_u16__outSystem_Numerics_Vector_u16_)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL source, SG_HNDL_NULLABLE* _Nonnull __low_out_ptr, SG_HNDL_NULLABLE* _Nonnull __high_out_ptr);
+    void (* _Nonnull  _fp_System_Numerics_Vector_void__Widen_0__3__System_Numerics_Vector_i16__outSystem_Numerics_Vector_i32__outSystem_Numerics_Vector_i32_)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL source, SG_HNDL_NULLABLE* _Nonnull __low_out_ptr, SG_HNDL_NULLABLE* _Nonnull __high_out_ptr);
+    void (* _Nonnull  _fp_System_Numerics_Vector_void__Widen_0__3__System_Numerics_Vector_i32__outSystem_Numerics_Vector_i64__outSystem_Numerics_Vector_i64_)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL source, SG_HNDL_NULLABLE* _Nonnull __low_out_ptr, SG_HNDL_NULLABLE* _Nonnull __high_out_ptr);
+    void (* _Nonnull  _fp_System_Numerics_Vector_void__Widen_0__3__System_Numerics_Vector_i8__outSystem_Numerics_Vector_i16__outSystem_Numerics_Vector_i16_)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL source, SG_HNDL_NULLABLE* _Nonnull __low_out_ptr, SG_HNDL_NULLABLE* _Nonnull __high_out_ptr);
+    void (* _Nonnull  _fp_System_Numerics_Vector_void__Widen_0__3__System_Numerics_Vector_f32__outSystem_Numerics_Vector_f64__outSystem_Numerics_Vector_f64_)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL source, SG_HNDL_NULLABLE* _Nonnull __low_out_ptr, SG_HNDL_NULLABLE* _Nonnull __high_out_ptr);
+    void (* _Nonnull  _fp_System_Numerics_Vector_void__Widen_0__3__System_Numerics_Vector_u16__outSystem_Numerics_Vector_u32__outSystem_Numerics_Vector_u32_)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL source, SG_HNDL_NULLABLE* _Nonnull __low_out_ptr, SG_HNDL_NULLABLE* _Nonnull __high_out_ptr);
+    void (* _Nonnull  _fp_System_Numerics_Vector_void__Widen_0__3__System_Numerics_Vector_u32__outSystem_Numerics_Vector_u64__outSystem_Numerics_Vector_u64_)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL source, SG_HNDL_NULLABLE* _Nonnull __low_out_ptr, SG_HNDL_NULLABLE* _Nonnull __high_out_ptr);
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_Numerics_Vector_System_Numerics_Vector_UT___Xor_1__2__System_Numerics_Vector_UT__System_Numerics_Vector_UT_)(TYP T, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL left, SG_HNDL_NONNULL right);
     SG_HNDL_NONNULL (* _Nonnull  _fp_specialize_System_Numerics_Vector_System_Numerics_Vector_UT___Xor_1__2__System_Numerics_Vector_UT__System_Numerics_Vector_UT_)(TYP T, SG_HNDL_NULLABLE * _Nonnull __thrown);
     SG_HNDL_NONNULL (* _Nonnull  _fp_invoke_System_Numerics_Vector_System_Numerics_Vector_UT___Xor_1__2__System_Numerics_Vector_UT__System_Numerics_Vector_UT_)(SG_HNDL_NONNULL ____hdel, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL left, SG_HNDL_NONNULL right);
@@ -955,7 +955,7 @@ int32_t System_Numerics_Matrix3x2_i32__GetHashCode_0__0(SG_HNDL_NULLABLE * _Nonn
     return ret;
 }
 
-int32_t System_Numerics_Matrix3x2_bool__Invert_0__2__Matrix3x2_outMatrix3x2(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL matrix, SG_HNDL_NONNULL* _Nonnull __result_out_ptr) {
+int32_t System_Numerics_Matrix3x2_bool__Invert_0__2__Matrix3x2_outMatrix3x2(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL matrix, SG_HNDL_NULLABLE* _Nonnull __result_out_ptr) {
     if (!_g_System_Numerics_Vectors._fp_System_Numerics_Matrix3x2_bool__Invert_0__2__Matrix3x2_outMatrix3x2) {
         my_init();
     }
@@ -1602,7 +1602,7 @@ SG_HNDL_NONNULL System_Numerics_Matrix4x4_Matrix4x4__CreateWorld_0__3__Vector3_V
     return ret;
 }
 
-int32_t System_Numerics_Matrix4x4_bool__Decompose_0__4__Matrix4x4_outVector3_outQuaternion_outVector3(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL matrix, SG_HNDL_NONNULL* _Nonnull __scale_out_ptr, SG_HNDL_NONNULL* _Nonnull __rotation_out_ptr, SG_HNDL_NONNULL* _Nonnull __translation_out_ptr) {
+int32_t System_Numerics_Matrix4x4_bool__Decompose_0__4__Matrix4x4_outVector3_outQuaternion_outVector3(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL matrix, SG_HNDL_NULLABLE* _Nonnull __scale_out_ptr, SG_HNDL_NULLABLE* _Nonnull __rotation_out_ptr, SG_HNDL_NULLABLE* _Nonnull __translation_out_ptr) {
     if (!_g_System_Numerics_Vectors._fp_System_Numerics_Matrix4x4_bool__Decompose_0__4__Matrix4x4_outVector3_outQuaternion_outVector3) {
         my_init();
     }
@@ -1642,7 +1642,7 @@ int32_t System_Numerics_Matrix4x4_i32__GetHashCode_0__0(SG_HNDL_NULLABLE * _Nonn
     return ret;
 }
 
-int32_t System_Numerics_Matrix4x4_bool__Invert_0__2__Matrix4x4_outMatrix4x4(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL matrix, SG_HNDL_NONNULL* _Nonnull __result_out_ptr) {
+int32_t System_Numerics_Matrix4x4_bool__Invert_0__2__Matrix4x4_outMatrix4x4(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL matrix, SG_HNDL_NULLABLE* _Nonnull __result_out_ptr) {
     if (!_g_System_Numerics_Vectors._fp_System_Numerics_Matrix4x4_bool__Invert_0__2__Matrix4x4_outMatrix4x4) {
         my_init();
     }
@@ -3739,49 +3739,49 @@ SG_HNDL_NONNULL invoke_System_Numerics_Vector_System_Numerics_Vector_UT___Subtra
     return ret;
 }
 
-void System_Numerics_Vector_void__Widen_0__3__System_Numerics_Vector_u8__outSystem_Numerics_Vector_u16__outSystem_Numerics_Vector_u16_(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL source, SG_HNDL_NONNULL* _Nonnull __low_out_ptr, SG_HNDL_NONNULL* _Nonnull __high_out_ptr) {
+void System_Numerics_Vector_void__Widen_0__3__System_Numerics_Vector_u8__outSystem_Numerics_Vector_u16__outSystem_Numerics_Vector_u16_(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL source, SG_HNDL_NULLABLE* _Nonnull __low_out_ptr, SG_HNDL_NULLABLE* _Nonnull __high_out_ptr) {
     if (!_g_System_Numerics_Vectors._fp_System_Numerics_Vector_void__Widen_0__3__System_Numerics_Vector_u8__outSystem_Numerics_Vector_u16__outSystem_Numerics_Vector_u16_) {
         my_init();
     }
     _g_System_Numerics_Vectors._fp_System_Numerics_Vector_void__Widen_0__3__System_Numerics_Vector_u8__outSystem_Numerics_Vector_u16__outSystem_Numerics_Vector_u16_(__thrown, source, __low_out_ptr, __high_out_ptr);
 }
 
-void System_Numerics_Vector_void__Widen_0__3__System_Numerics_Vector_i16__outSystem_Numerics_Vector_i32__outSystem_Numerics_Vector_i32_(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL source, SG_HNDL_NONNULL* _Nonnull __low_out_ptr, SG_HNDL_NONNULL* _Nonnull __high_out_ptr) {
+void System_Numerics_Vector_void__Widen_0__3__System_Numerics_Vector_i16__outSystem_Numerics_Vector_i32__outSystem_Numerics_Vector_i32_(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL source, SG_HNDL_NULLABLE* _Nonnull __low_out_ptr, SG_HNDL_NULLABLE* _Nonnull __high_out_ptr) {
     if (!_g_System_Numerics_Vectors._fp_System_Numerics_Vector_void__Widen_0__3__System_Numerics_Vector_i16__outSystem_Numerics_Vector_i32__outSystem_Numerics_Vector_i32_) {
         my_init();
     }
     _g_System_Numerics_Vectors._fp_System_Numerics_Vector_void__Widen_0__3__System_Numerics_Vector_i16__outSystem_Numerics_Vector_i32__outSystem_Numerics_Vector_i32_(__thrown, source, __low_out_ptr, __high_out_ptr);
 }
 
-void System_Numerics_Vector_void__Widen_0__3__System_Numerics_Vector_i32__outSystem_Numerics_Vector_i64__outSystem_Numerics_Vector_i64_(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL source, SG_HNDL_NONNULL* _Nonnull __low_out_ptr, SG_HNDL_NONNULL* _Nonnull __high_out_ptr) {
+void System_Numerics_Vector_void__Widen_0__3__System_Numerics_Vector_i32__outSystem_Numerics_Vector_i64__outSystem_Numerics_Vector_i64_(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL source, SG_HNDL_NULLABLE* _Nonnull __low_out_ptr, SG_HNDL_NULLABLE* _Nonnull __high_out_ptr) {
     if (!_g_System_Numerics_Vectors._fp_System_Numerics_Vector_void__Widen_0__3__System_Numerics_Vector_i32__outSystem_Numerics_Vector_i64__outSystem_Numerics_Vector_i64_) {
         my_init();
     }
     _g_System_Numerics_Vectors._fp_System_Numerics_Vector_void__Widen_0__3__System_Numerics_Vector_i32__outSystem_Numerics_Vector_i64__outSystem_Numerics_Vector_i64_(__thrown, source, __low_out_ptr, __high_out_ptr);
 }
 
-void System_Numerics_Vector_void__Widen_0__3__System_Numerics_Vector_i8__outSystem_Numerics_Vector_i16__outSystem_Numerics_Vector_i16_(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL source, SG_HNDL_NONNULL* _Nonnull __low_out_ptr, SG_HNDL_NONNULL* _Nonnull __high_out_ptr) {
+void System_Numerics_Vector_void__Widen_0__3__System_Numerics_Vector_i8__outSystem_Numerics_Vector_i16__outSystem_Numerics_Vector_i16_(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL source, SG_HNDL_NULLABLE* _Nonnull __low_out_ptr, SG_HNDL_NULLABLE* _Nonnull __high_out_ptr) {
     if (!_g_System_Numerics_Vectors._fp_System_Numerics_Vector_void__Widen_0__3__System_Numerics_Vector_i8__outSystem_Numerics_Vector_i16__outSystem_Numerics_Vector_i16_) {
         my_init();
     }
     _g_System_Numerics_Vectors._fp_System_Numerics_Vector_void__Widen_0__3__System_Numerics_Vector_i8__outSystem_Numerics_Vector_i16__outSystem_Numerics_Vector_i16_(__thrown, source, __low_out_ptr, __high_out_ptr);
 }
 
-void System_Numerics_Vector_void__Widen_0__3__System_Numerics_Vector_f32__outSystem_Numerics_Vector_f64__outSystem_Numerics_Vector_f64_(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL source, SG_HNDL_NONNULL* _Nonnull __low_out_ptr, SG_HNDL_NONNULL* _Nonnull __high_out_ptr) {
+void System_Numerics_Vector_void__Widen_0__3__System_Numerics_Vector_f32__outSystem_Numerics_Vector_f64__outSystem_Numerics_Vector_f64_(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL source, SG_HNDL_NULLABLE* _Nonnull __low_out_ptr, SG_HNDL_NULLABLE* _Nonnull __high_out_ptr) {
     if (!_g_System_Numerics_Vectors._fp_System_Numerics_Vector_void__Widen_0__3__System_Numerics_Vector_f32__outSystem_Numerics_Vector_f64__outSystem_Numerics_Vector_f64_) {
         my_init();
     }
     _g_System_Numerics_Vectors._fp_System_Numerics_Vector_void__Widen_0__3__System_Numerics_Vector_f32__outSystem_Numerics_Vector_f64__outSystem_Numerics_Vector_f64_(__thrown, source, __low_out_ptr, __high_out_ptr);
 }
 
-void System_Numerics_Vector_void__Widen_0__3__System_Numerics_Vector_u16__outSystem_Numerics_Vector_u32__outSystem_Numerics_Vector_u32_(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL source, SG_HNDL_NONNULL* _Nonnull __low_out_ptr, SG_HNDL_NONNULL* _Nonnull __high_out_ptr) {
+void System_Numerics_Vector_void__Widen_0__3__System_Numerics_Vector_u16__outSystem_Numerics_Vector_u32__outSystem_Numerics_Vector_u32_(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL source, SG_HNDL_NULLABLE* _Nonnull __low_out_ptr, SG_HNDL_NULLABLE* _Nonnull __high_out_ptr) {
     if (!_g_System_Numerics_Vectors._fp_System_Numerics_Vector_void__Widen_0__3__System_Numerics_Vector_u16__outSystem_Numerics_Vector_u32__outSystem_Numerics_Vector_u32_) {
         my_init();
     }
     _g_System_Numerics_Vectors._fp_System_Numerics_Vector_void__Widen_0__3__System_Numerics_Vector_u16__outSystem_Numerics_Vector_u32__outSystem_Numerics_Vector_u32_(__thrown, source, __low_out_ptr, __high_out_ptr);
 }
 
-void System_Numerics_Vector_void__Widen_0__3__System_Numerics_Vector_u32__outSystem_Numerics_Vector_u64__outSystem_Numerics_Vector_u64_(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL source, SG_HNDL_NONNULL* _Nonnull __low_out_ptr, SG_HNDL_NONNULL* _Nonnull __high_out_ptr) {
+void System_Numerics_Vector_void__Widen_0__3__System_Numerics_Vector_u32__outSystem_Numerics_Vector_u64__outSystem_Numerics_Vector_u64_(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL source, SG_HNDL_NULLABLE* _Nonnull __low_out_ptr, SG_HNDL_NULLABLE* _Nonnull __high_out_ptr) {
     if (!_g_System_Numerics_Vectors._fp_System_Numerics_Vector_void__Widen_0__3__System_Numerics_Vector_u32__outSystem_Numerics_Vector_u64__outSystem_Numerics_Vector_u64_) {
         my_init();
     }

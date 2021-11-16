@@ -322,6 +322,34 @@ int32_t System_Security_Cryptography_DSAParameters_get_Counter(SG_HNDL_NONNULL _
 
 void System_Security_Cryptography_DSAParameters_set_Counter(SG_HNDL_NONNULL __self_h, int32_t __v);
 
+SG_HNDL_NULLABLE System_Security_Cryptography_DSAParameters_get_G(SG_HNDL_NONNULL __self_h);
+
+void System_Security_Cryptography_DSAParameters_set_G(SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE __v);
+
+SG_HNDL_NULLABLE System_Security_Cryptography_DSAParameters_get_J(SG_HNDL_NONNULL __self_h);
+
+void System_Security_Cryptography_DSAParameters_set_J(SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE __v);
+
+SG_HNDL_NULLABLE System_Security_Cryptography_DSAParameters_get_P(SG_HNDL_NONNULL __self_h);
+
+void System_Security_Cryptography_DSAParameters_set_P(SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE __v);
+
+SG_HNDL_NULLABLE System_Security_Cryptography_DSAParameters_get_Q(SG_HNDL_NONNULL __self_h);
+
+void System_Security_Cryptography_DSAParameters_set_Q(SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE __v);
+
+SG_HNDL_NULLABLE System_Security_Cryptography_DSAParameters_get_Seed(SG_HNDL_NONNULL __self_h);
+
+void System_Security_Cryptography_DSAParameters_set_Seed(SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE __v);
+
+SG_HNDL_NULLABLE System_Security_Cryptography_DSAParameters_get_X(SG_HNDL_NONNULL __self_h);
+
+void System_Security_Cryptography_DSAParameters_set_X(SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE __v);
+
+SG_HNDL_NULLABLE System_Security_Cryptography_DSAParameters_get_Y(SG_HNDL_NONNULL __self_h);
+
+void System_Security_Cryptography_DSAParameters_set_Y(SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE __v);
+
 SG_HNDL_NONNULL System_Security_Cryptography_DSAParameters_implicit_ctor(void);
 
 TYP System_Security_Cryptography_DSASignatureDeformatter_get_type_handle(void);
@@ -370,6 +398,18 @@ SG_HNDL_NONNULL System_Security_Cryptography_DeriveBytes_cast(SG_HNDL_NULLABLE *
 
 TYP System_Security_Cryptography_ECCurve_get_type_handle(void);
 
+SG_HNDL_NULLABLE System_Security_Cryptography_ECCurve_get_A(SG_HNDL_NONNULL __self_h);
+
+void System_Security_Cryptography_ECCurve_set_A(SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE __v);
+
+SG_HNDL_NULLABLE System_Security_Cryptography_ECCurve_get_B(SG_HNDL_NONNULL __self_h);
+
+void System_Security_Cryptography_ECCurve_set_B(SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE __v);
+
+SG_HNDL_NULLABLE System_Security_Cryptography_ECCurve_get_Cofactor(SG_HNDL_NONNULL __self_h);
+
+void System_Security_Cryptography_ECCurve_set_Cofactor(SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE __v);
+
 int32_t System_Security_Cryptography_ECCurve_get_CurveType(SG_HNDL_NONNULL __self_h);
 
 void System_Security_Cryptography_ECCurve_set_CurveType(SG_HNDL_NONNULL __self_h, int32_t __v);
@@ -377,6 +417,26 @@ void System_Security_Cryptography_ECCurve_set_CurveType(SG_HNDL_NONNULL __self_h
 SG_HNDL_NONNULL System_Security_Cryptography_ECCurve_get_G(SG_HNDL_NONNULL __self_h);
 
 void System_Security_Cryptography_ECCurve_set_G(SG_HNDL_NONNULL __self_h, SG_HNDL_NONNULL __v);
+
+SG_HNDL_NULLABLE System_Security_Cryptography_ECCurve_get_Hash(SG_HNDL_NONNULL __self_h);
+
+void System_Security_Cryptography_ECCurve_set_Hash(SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE __v);
+
+SG_HNDL_NULLABLE System_Security_Cryptography_ECCurve_get_Order(SG_HNDL_NONNULL __self_h);
+
+void System_Security_Cryptography_ECCurve_set_Order(SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE __v);
+
+SG_HNDL_NULLABLE System_Security_Cryptography_ECCurve_get_Polynomial(SG_HNDL_NONNULL __self_h);
+
+void System_Security_Cryptography_ECCurve_set_Polynomial(SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE __v);
+
+SG_HNDL_NULLABLE System_Security_Cryptography_ECCurve_get_Prime(SG_HNDL_NONNULL __self_h);
+
+void System_Security_Cryptography_ECCurve_set_Prime(SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE __v);
+
+SG_HNDL_NULLABLE System_Security_Cryptography_ECCurve_get_Seed(SG_HNDL_NONNULL __self_h);
+
+void System_Security_Cryptography_ECCurve_set_Seed(SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE __v);
 
 SG_HNDL_NONNULL System_Security_Cryptography_ECCurve_ECCurve__CreateFromFriendlyName_0__1__String(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL oidFriendlyName);
 
@@ -646,6 +706,10 @@ SG_HNDL_NONNULL System_Security_Cryptography_ECParameters_get_Curve(SG_HNDL_NONN
 
 void System_Security_Cryptography_ECParameters_set_Curve(SG_HNDL_NONNULL __self_h, SG_HNDL_NONNULL __v);
 
+SG_HNDL_NULLABLE System_Security_Cryptography_ECParameters_get_D(SG_HNDL_NONNULL __self_h);
+
+void System_Security_Cryptography_ECParameters_set_D(SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE __v);
+
 SG_HNDL_NONNULL System_Security_Cryptography_ECParameters_get_Q(SG_HNDL_NONNULL __self_h);
 
 void System_Security_Cryptography_ECParameters_set_Q(SG_HNDL_NONNULL __self_h, SG_HNDL_NONNULL __v);
@@ -655,6 +719,14 @@ void System_Security_Cryptography_ECParameters_void__Validate_0__0(SG_HNDL_NULLA
 SG_HNDL_NONNULL System_Security_Cryptography_ECParameters_implicit_ctor(void);
 
 TYP System_Security_Cryptography_ECPoint_get_type_handle(void);
+
+SG_HNDL_NULLABLE System_Security_Cryptography_ECPoint_get_X(SG_HNDL_NONNULL __self_h);
+
+void System_Security_Cryptography_ECPoint_set_X(SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE __v);
+
+SG_HNDL_NULLABLE System_Security_Cryptography_ECPoint_get_Y(SG_HNDL_NONNULL __self_h);
+
+void System_Security_Cryptography_ECPoint_set_Y(SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE __v);
 
 SG_HNDL_NONNULL System_Security_Cryptography_ECPoint_implicit_ctor(void);
 
@@ -1115,6 +1187,38 @@ void System_Security_Cryptography_RSAPKCS1SignatureFormatter_void__SetKey_0__1__
 SG_HNDL_NONNULL System_Security_Cryptography_RSAPKCS1SignatureFormatter_cast(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __h);
 
 TYP System_Security_Cryptography_RSAParameters_get_type_handle(void);
+
+SG_HNDL_NULLABLE System_Security_Cryptography_RSAParameters_get_D(SG_HNDL_NONNULL __self_h);
+
+void System_Security_Cryptography_RSAParameters_set_D(SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE __v);
+
+SG_HNDL_NULLABLE System_Security_Cryptography_RSAParameters_get_DP(SG_HNDL_NONNULL __self_h);
+
+void System_Security_Cryptography_RSAParameters_set_DP(SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE __v);
+
+SG_HNDL_NULLABLE System_Security_Cryptography_RSAParameters_get_DQ(SG_HNDL_NONNULL __self_h);
+
+void System_Security_Cryptography_RSAParameters_set_DQ(SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE __v);
+
+SG_HNDL_NULLABLE System_Security_Cryptography_RSAParameters_get_Exponent(SG_HNDL_NONNULL __self_h);
+
+void System_Security_Cryptography_RSAParameters_set_Exponent(SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE __v);
+
+SG_HNDL_NULLABLE System_Security_Cryptography_RSAParameters_get_InverseQ(SG_HNDL_NONNULL __self_h);
+
+void System_Security_Cryptography_RSAParameters_set_InverseQ(SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE __v);
+
+SG_HNDL_NULLABLE System_Security_Cryptography_RSAParameters_get_Modulus(SG_HNDL_NONNULL __self_h);
+
+void System_Security_Cryptography_RSAParameters_set_Modulus(SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE __v);
+
+SG_HNDL_NULLABLE System_Security_Cryptography_RSAParameters_get_P(SG_HNDL_NONNULL __self_h);
+
+void System_Security_Cryptography_RSAParameters_set_P(SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE __v);
+
+SG_HNDL_NULLABLE System_Security_Cryptography_RSAParameters_get_Q(SG_HNDL_NONNULL __self_h);
+
+void System_Security_Cryptography_RSAParameters_set_Q(SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE __v);
 
 SG_HNDL_NONNULL System_Security_Cryptography_RSAParameters_implicit_ctor(void);
 

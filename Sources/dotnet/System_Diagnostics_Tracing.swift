@@ -20,6 +20,9 @@ open class DiagnosticCounter
     open class override func get_type_handle() -> TypeHandle {
         return System_Diagnostics_Tracing_DiagnosticCounter_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // void AddMetadata(System.String, System.String)
@@ -238,6 +241,9 @@ public final class EventAttribute
 {
     public class override func get_type_handle() -> TypeHandle {
         return System_Diagnostics_Tracing_EventAttribute_get_type_handle();
+    }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -737,6 +743,9 @@ open class EventCommandEventArgs
     open class override func get_type_handle() -> TypeHandle {
         return System_Diagnostics_Tracing_EventCommandEventArgs_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // bool DisableEvent(System.Int32)
@@ -836,6 +845,9 @@ open class EventCounter
     open class override func get_type_handle() -> TypeHandle {
         return System_Diagnostics_Tracing_EventCounter_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor(System.String, System.Diagnostics.Tracing.EventSource)
@@ -919,6 +931,9 @@ open class EventDataAttribute
     open class override func get_type_handle() -> TypeHandle {
         return System_Diagnostics_Tracing_EventDataAttribute_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor()
@@ -988,6 +1003,9 @@ open class EventFieldAttribute
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Diagnostics_Tracing_EventFieldAttribute_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -1212,6 +1230,9 @@ open class EventIgnoreAttribute
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Diagnostics_Tracing_EventIgnoreAttribute_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -1458,6 +1479,9 @@ open class EventListener
     open class override func get_type_handle() -> TypeHandle {
         return System_Diagnostics_Tracing_EventListener_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // void DisableEvents(System.Diagnostics.Tracing.EventSource)
@@ -1557,7 +1581,7 @@ open class EventListener
         }
     }
     // delegate closure overload
-    open func add_EventSourceCreated(value : @escaping (Optional<dotnet.System.Object>, Optional<dotnet.System.Diagnostics.Tracing.EventSourceCreatedEventArgs>) throws -> Void) throws {
+    open func add_EventSourceCreated(value : @escaping (Optional<dotnet.System.Object>, dotnet.System.Diagnostics.Tracing.EventSourceCreatedEventArgs) throws -> Void) throws {
         let del_value = try dotnet.System.EventHandler_1<dotnet.System.Diagnostics.Tracing.EventSourceCreatedEventArgs>(value);
         return try add_EventSourceCreated(value: del_value);
     }
@@ -1573,7 +1597,7 @@ open class EventListener
         }
     }
     // delegate closure overload
-    open func remove_EventSourceCreated(value : @escaping (Optional<dotnet.System.Object>, Optional<dotnet.System.Diagnostics.Tracing.EventSourceCreatedEventArgs>) throws -> Void) throws {
+    open func remove_EventSourceCreated(value : @escaping (Optional<dotnet.System.Object>, dotnet.System.Diagnostics.Tracing.EventSourceCreatedEventArgs) throws -> Void) throws {
         let del_value = try dotnet.System.EventHandler_1<dotnet.System.Diagnostics.Tracing.EventSourceCreatedEventArgs>(value);
         return try remove_EventSourceCreated(value: del_value);
     }
@@ -1589,7 +1613,7 @@ open class EventListener
         }
     }
     // delegate closure overload
-    open func add_EventWritten(value : @escaping (Optional<dotnet.System.Object>, Optional<dotnet.System.Diagnostics.Tracing.EventWrittenEventArgs>) throws -> Void) throws {
+    open func add_EventWritten(value : @escaping (Optional<dotnet.System.Object>, dotnet.System.Diagnostics.Tracing.EventWrittenEventArgs) throws -> Void) throws {
         let del_value = try dotnet.System.EventHandler_1<dotnet.System.Diagnostics.Tracing.EventWrittenEventArgs>(value);
         return try add_EventWritten(value: del_value);
     }
@@ -1605,7 +1629,7 @@ open class EventListener
         }
     }
     // delegate closure overload
-    open func remove_EventWritten(value : @escaping (Optional<dotnet.System.Object>, Optional<dotnet.System.Diagnostics.Tracing.EventWrittenEventArgs>) throws -> Void) throws {
+    open func remove_EventWritten(value : @escaping (Optional<dotnet.System.Object>, dotnet.System.Diagnostics.Tracing.EventWrittenEventArgs) throws -> Void) throws {
         let del_value = try dotnet.System.EventHandler_1<dotnet.System.Diagnostics.Tracing.EventWrittenEventArgs>(value);
         return try remove_EventWritten(value: del_value);
     }
@@ -1826,7 +1850,7 @@ public struct EventOpcode : SGBridgeGenericValue {
 
 // type: System.Diagnostics.Tracing.EventSource
     /**
-    Provides the ability to create events for event tracing for Windows (ETW).
+    Provides the ability to create events for event tracing across platforms.
 
     */
 open class EventSource
@@ -1836,6 +1860,9 @@ open class EventSource
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Diagnostics_Tracing_EventSource_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -2130,11 +2157,12 @@ open class EventSource
     - Parameter activityId: The current thread's new activity ID, or  to indicate that work on the current thread is not associated with any activity.
     - Parameter oldActivityThatWillContinue: When this method returns, contains the previous activity ID on the current thread.
     */
-    open class func SetCurrentThreadActivityId(activityId : dotnet.System.Guid, oldActivityThatWillContinue : inout dotnet.System.Guid) throws {
+    open class func SetCurrentThreadActivityId(activityId : dotnet.System.Guid, oldActivityThatWillContinue : inout Optional<dotnet.System.Guid>) throws {
         var __thrown : NullableHandle = nil;
-            var _tmp_out_oldActivityThatWillContinue = oldActivityThatWillContinue.get_handle();
+            var _tmp_out_oldActivityThatWillContinue = (oldActivityThatWillContinue != nil) ? (oldActivityThatWillContinue!.get_handle()) : nil;
         System_Diagnostics_Tracing_EventSource_void__SetCurrentThreadActivityId_0__2__Guid_outGuid(&__thrown, activityId.get_handle(), &_tmp_out_oldActivityThatWillContinue);
-        let _tmp2_oldActivityThatWillContinue = dotnet.System.Guid(hndl: _tmp_out_oldActivityThatWillContinue);
+        let __h__tmp2_oldActivityThatWillContinue = _tmp_out_oldActivityThatWillContinue;
+        let _tmp2_oldActivityThatWillContinue = (__h__tmp2_oldActivityThatWillContinue != nil) ? dotnet.System.Guid(hndl: __h__tmp2_oldActivityThatWillContinue!) : nil;
             oldActivityThatWillContinue = _tmp2_oldActivityThatWillContinue;
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
@@ -2300,7 +2328,7 @@ open class EventSource
         }
     }
     // delegate closure overload
-    open func add_EventCommandExecuted(value : @escaping (Optional<dotnet.System.Object>, Optional<dotnet.System.Diagnostics.Tracing.EventCommandEventArgs>) throws -> Void) throws {
+    open func add_EventCommandExecuted(value : @escaping (Optional<dotnet.System.Object>, dotnet.System.Diagnostics.Tracing.EventCommandEventArgs) throws -> Void) throws {
         let del_value = try dotnet.System.EventHandler_1<dotnet.System.Diagnostics.Tracing.EventCommandEventArgs>(value);
         return try add_EventCommandExecuted(value: del_value);
     }
@@ -2316,7 +2344,7 @@ open class EventSource
         }
     }
     // delegate closure overload
-    open func remove_EventCommandExecuted(value : @escaping (Optional<dotnet.System.Object>, Optional<dotnet.System.Diagnostics.Tracing.EventCommandEventArgs>) throws -> Void) throws {
+    open func remove_EventCommandExecuted(value : @escaping (Optional<dotnet.System.Object>, dotnet.System.Diagnostics.Tracing.EventCommandEventArgs) throws -> Void) throws {
         let del_value = try dotnet.System.EventHandler_1<dotnet.System.Diagnostics.Tracing.EventCommandEventArgs>(value);
         return try remove_EventCommandExecuted(value: del_value);
     }
@@ -2379,6 +2407,9 @@ public final class EventSourceAttribute
 {
     public class override func get_type_handle() -> TypeHandle {
         return System_Diagnostics_Tracing_EventSourceAttribute_get_type_handle();
+    }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -2526,6 +2557,9 @@ open class EventSourceCreatedEventArgs
     open class override func get_type_handle() -> TypeHandle {
         return System_Diagnostics_Tracing_EventSourceCreatedEventArgs_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor()
@@ -2581,6 +2615,9 @@ open class EventSourceException
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Diagnostics_Tracing_EventSourceException_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -2647,6 +2684,9 @@ public final class EventSourceOptions
 {
     public class override func get_type_handle() -> TypeHandle {
         return System_Diagnostics_Tracing_EventSourceOptions_get_type_handle();
+    }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -2958,6 +2998,9 @@ open class EventWrittenEventArgs
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Diagnostics_Tracing_EventWrittenEventArgs_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -3332,6 +3375,9 @@ open class IncrementingEventCounter
     open class override func get_type_handle() -> TypeHandle {
         return System_Diagnostics_Tracing_IncrementingEventCounter_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor(System.String, System.Diagnostics.Tracing.EventSource)
@@ -3395,7 +3441,17 @@ open class IncrementingEventCounter
         return dotnet.System.TimeSpan(hndl : __return);
         }
     }
-// TODO COPE (write_all_methods) (span) [IsSpecialName] void set_DisplayRateTimeScale(System.TimeSpan)
+    // [IsSpecialName] void set_DisplayRateTimeScale(System.TimeSpan)
+// docid: M:System.Diagnostics.Tracing.IncrementingEventCounter.set_DisplayRateTimeScale(System.TimeSpan)
+    open func set_DisplayRateTimeScale(value : dotnet.System.TimeSpan) throws {
+        var __thrown : NullableHandle = nil;
+        System_Diagnostics_Tracing_IncrementingEventCounter_void__set_DisplayRateTimeScale_0__1__TimeSpan(&__thrown, self.get_handle(), value.get_handle());
+        if let __ex =  __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            return;
+        }
+    }
     /**
     Gets or sets the rate at which this metric should be displayed as.
 
@@ -3404,7 +3460,9 @@ open class IncrementingEventCounter
         get {
             return try! get_DisplayRateTimeScale();
         }
-// TODO COPE prop set (span) [IsSpecialName] void set_DisplayRateTimeScale(System.TimeSpan)
+        set(v) {
+            return try! set_DisplayRateTimeScale(value: v);
+        }
     }
 } // IncrementingEventCounter
 
@@ -3420,6 +3478,9 @@ open class IncrementingPollingCounter
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Diagnostics_Tracing_IncrementingPollingCounter_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -3469,7 +3530,17 @@ open class IncrementingPollingCounter
         return dotnet.System.TimeSpan(hndl : __return);
         }
     }
-// TODO COPE (write_all_methods) (span) [IsSpecialName] void set_DisplayRateTimeScale(System.TimeSpan)
+    // [IsSpecialName] void set_DisplayRateTimeScale(System.TimeSpan)
+// docid: M:System.Diagnostics.Tracing.IncrementingPollingCounter.set_DisplayRateTimeScale(System.TimeSpan)
+    open func set_DisplayRateTimeScale(value : dotnet.System.TimeSpan) throws {
+        var __thrown : NullableHandle = nil;
+        System_Diagnostics_Tracing_IncrementingPollingCounter_void__set_DisplayRateTimeScale_0__1__TimeSpan(&__thrown, self.get_handle(), value.get_handle());
+        if let __ex =  __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            return;
+        }
+    }
     /**
     Gets or sets rate at which this metric should be displayed as.
 
@@ -3478,7 +3549,9 @@ open class IncrementingPollingCounter
         get {
             return try! get_DisplayRateTimeScale();
         }
-// TODO COPE prop set (span) [IsSpecialName] void set_DisplayRateTimeScale(System.TimeSpan)
+        set(v) {
+            return try! set_DisplayRateTimeScale(value: v);
+        }
     }
 } // IncrementingPollingCounter
 
@@ -3494,6 +3567,9 @@ public final class NonEventAttribute
 {
     public class override func get_type_handle() -> TypeHandle {
         return System_Diagnostics_Tracing_NonEventAttribute_get_type_handle();
+    }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -3526,6 +3602,9 @@ open class PollingCounter
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Diagnostics_Tracing_PollingCounter_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }

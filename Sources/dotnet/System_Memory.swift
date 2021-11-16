@@ -163,8 +163,29 @@ public struct MemoryExtensions {
 // TODO COPE (write_all_methods) (unused generic param) System.Memory<T> AsMemory<T>(T[], System.Int32)
 // TODO COPE (write_all_methods) (unused generic param) System.Memory<T> AsMemory<T>(T[], System.Int32, System.Int32)
 // TODO COPE (write_all_methods) (unused generic param) System.Memory<T> AsMemory<T>(T[], System.Range)
+// TODO COPE (returns byreflike): System.ReadOnlySpan<System.Char> AsSpan(System.String)
+// TODO COPE (returns byreflike): System.ReadOnlySpan<System.Char> AsSpan(System.String, System.Int32)
+// TODO COPE (returns byreflike): System.ReadOnlySpan<System.Char> AsSpan(System.String, System.Int32, System.Int32)
+// TODO COPE (returns byreflike): System.Span<T> AsSpan<T>(System.ArraySegment<T>)
+// TODO COPE (returns byreflike): System.Span<T> AsSpan<T>(System.ArraySegment<T>, System.Index)
+// TODO COPE (returns byreflike): System.Span<T> AsSpan<T>(System.ArraySegment<T>, System.Int32)
+// TODO COPE (returns byreflike): System.Span<T> AsSpan<T>(System.ArraySegment<T>, System.Int32, System.Int32)
+// TODO COPE (returns byreflike): System.Span<T> AsSpan<T>(System.ArraySegment<T>, System.Range)
+// TODO COPE (returns byreflike): System.Span<T> AsSpan<T>(T[])
+// TODO COPE (returns byreflike): System.Span<T> AsSpan<T>(T[], System.Index)
+// TODO COPE (returns byreflike): System.Span<T> AsSpan<T>(T[], System.Int32)
+// TODO COPE (returns byreflike): System.Span<T> AsSpan<T>(T[], System.Int32, System.Int32)
+// TODO COPE (returns byreflike): System.Span<T> AsSpan<T>(T[], System.Range)
+// TODO COPE (parm span of t): System.Int32 BinarySearch<T>(System.ReadOnlySpan<T>, System.IComparable<T>)
+// TODO COPE (parm span of t): System.Int32 BinarySearch<T>(System.Span<T>, System.IComparable<T>)
+// TODO COPE (parm span of t): System.Int32 BinarySearch<T, TComparer>(System.ReadOnlySpan<T>, T, TComparer)
+// TODO COPE (parm span of t): System.Int32 BinarySearch<T, TComparable>(System.ReadOnlySpan<T>, TComparable)
+// TODO COPE (parm span of t): System.Int32 BinarySearch<T, TComparer>(System.Span<T>, T, TComparer)
+// TODO COPE (parm span of t): System.Int32 BinarySearch<T, TComparable>(System.Span<T>, TComparable)
 // TODO COPE (write_all_methods) (span) System.Int32 CompareTo(System.ReadOnlySpan<System.Char>, System.ReadOnlySpan<System.Char>, System.StringComparison)
 // TODO COPE (write_all_methods) (span) bool Contains(System.ReadOnlySpan<System.Char>, System.ReadOnlySpan<System.Char>, System.StringComparison)
+// TODO COPE (parm span of t): bool Contains<T>(System.ReadOnlySpan<T>, T)
+// TODO COPE (parm span of t): bool Contains<T>(System.Span<T>, T)
     // void CopyTo<T>(T[], System.Memory<T>)
 // docid: M:System.MemoryExtensions.CopyTo``1(System.T[],System.Memory{``0})
     public static func CopyTo<UT : SGBridgeGenericValue>(source : Optional<dotnet.System_Arr<UT>>, destination : dotnet.System.Memory_1<UT>) throws {
@@ -176,12 +197,58 @@ public struct MemoryExtensions {
             return;
         }
     }
+// TODO COPE (parm span of t): void CopyTo<T>(T[], System.Span<T>)
 // TODO COPE (write_all_methods) (span) bool EndsWith(System.ReadOnlySpan<System.Char>, System.ReadOnlySpan<System.Char>, System.StringComparison)
+// TODO COPE (parm span of t): bool EndsWith<T>(System.ReadOnlySpan<T>, System.ReadOnlySpan<T>)
+// TODO COPE (parm span of t): bool EndsWith<T>(System.Span<T>, System.ReadOnlySpan<T>)
+// TODO COPE (returns byreflike): System.Text.SpanLineEnumerator EnumerateLines(System.ReadOnlySpan<System.Char>)
+// TODO COPE (returns byreflike): System.Text.SpanLineEnumerator EnumerateLines(System.Span<System.Char>)
+// TODO COPE (returns byreflike): System.Text.SpanRuneEnumerator EnumerateRunes(System.ReadOnlySpan<System.Char>)
+// TODO COPE (returns byreflike): System.Text.SpanRuneEnumerator EnumerateRunes(System.Span<System.Char>)
 // TODO COPE (write_all_methods) (span) bool Equals(System.ReadOnlySpan<System.Char>, System.ReadOnlySpan<System.Char>, System.StringComparison)
 // TODO COPE (write_all_methods) (span) System.Int32 IndexOf(System.ReadOnlySpan<System.Char>, System.ReadOnlySpan<System.Char>, System.StringComparison)
+// TODO COPE (parm span of t): System.Int32 IndexOfAny<T>(System.ReadOnlySpan<T>, System.ReadOnlySpan<T>)
+// TODO COPE (parm span of t): System.Int32 IndexOfAny<T>(System.ReadOnlySpan<T>, T, T)
+// TODO COPE (parm span of t): System.Int32 IndexOfAny<T>(System.ReadOnlySpan<T>, T, T, T)
+// TODO COPE (parm span of t): System.Int32 IndexOfAny<T>(System.Span<T>, System.ReadOnlySpan<T>)
+// TODO COPE (parm span of t): System.Int32 IndexOfAny<T>(System.Span<T>, T, T)
+// TODO COPE (parm span of t): System.Int32 IndexOfAny<T>(System.Span<T>, T, T, T)
+// TODO COPE (parm span of t): System.Int32 IndexOf<T>(System.ReadOnlySpan<T>, System.ReadOnlySpan<T>)
+// TODO COPE (parm span of t): System.Int32 IndexOf<T>(System.ReadOnlySpan<T>, T)
+// TODO COPE (parm span of t): System.Int32 IndexOf<T>(System.Span<T>, System.ReadOnlySpan<T>)
+// TODO COPE (parm span of t): System.Int32 IndexOf<T>(System.Span<T>, T)
 // TODO COPE (write_all_methods) (span) bool IsWhiteSpace(System.ReadOnlySpan<System.Char>)
 // TODO COPE (write_all_methods) (span) System.Int32 LastIndexOf(System.ReadOnlySpan<System.Char>, System.ReadOnlySpan<System.Char>, System.StringComparison)
+// TODO COPE (parm span of t): System.Int32 LastIndexOfAny<T>(System.ReadOnlySpan<T>, System.ReadOnlySpan<T>)
+// TODO COPE (parm span of t): System.Int32 LastIndexOfAny<T>(System.ReadOnlySpan<T>, T, T)
+// TODO COPE (parm span of t): System.Int32 LastIndexOfAny<T>(System.ReadOnlySpan<T>, T, T, T)
+// TODO COPE (parm span of t): System.Int32 LastIndexOfAny<T>(System.Span<T>, System.ReadOnlySpan<T>)
+// TODO COPE (parm span of t): System.Int32 LastIndexOfAny<T>(System.Span<T>, T, T)
+// TODO COPE (parm span of t): System.Int32 LastIndexOfAny<T>(System.Span<T>, T, T, T)
+// TODO COPE (parm span of t): System.Int32 LastIndexOf<T>(System.ReadOnlySpan<T>, System.ReadOnlySpan<T>)
+// TODO COPE (parm span of t): System.Int32 LastIndexOf<T>(System.ReadOnlySpan<T>, T)
+// TODO COPE (parm span of t): System.Int32 LastIndexOf<T>(System.Span<T>, System.ReadOnlySpan<T>)
+// TODO COPE (parm span of t): System.Int32 LastIndexOf<T>(System.Span<T>, T)
+// TODO COPE (parm span of t): bool Overlaps<T>(System.ReadOnlySpan<T>, System.ReadOnlySpan<T>)
+// TODO COPE (parm span of t): bool Overlaps<T>(System.ReadOnlySpan<T>, System.ReadOnlySpan<T>, ref System.Int32)
+// TODO COPE (parm span of t): bool Overlaps<T>(System.Span<T>, System.ReadOnlySpan<T>)
+// TODO COPE (parm span of t): bool Overlaps<T>(System.Span<T>, System.ReadOnlySpan<T>, ref System.Int32)
+// TODO COPE (parm span of t): void Reverse<T>(System.Span<T>)
+// TODO COPE (parm span of t): System.Int32 SequenceCompareTo<T>(System.ReadOnlySpan<T>, System.ReadOnlySpan<T>)
+// TODO COPE (parm span of t): System.Int32 SequenceCompareTo<T>(System.Span<T>, System.ReadOnlySpan<T>)
+// TODO COPE (parm span of t): bool SequenceEqual<T>(System.ReadOnlySpan<T>, System.ReadOnlySpan<T>)
+// TODO COPE (parm span of t): bool SequenceEqual<T>(System.Span<T>, System.ReadOnlySpan<T>)
+// TODO COPE (parm span of t): bool SequenceEqual<T>(System.ReadOnlySpan<T>, System.ReadOnlySpan<T>, System.Collections.Generic.IEqualityComparer<T>)
+// TODO COPE (parm span of t): bool SequenceEqual<T>(System.Span<T>, System.ReadOnlySpan<T>, System.Collections.Generic.IEqualityComparer<T>)
+// TODO COPE (parm span of t): void Sort<T>(System.Span<T>)
+// TODO COPE (parm span of t): void Sort<T>(System.Span<T>, System.Comparison<T>)
+// TODO COPE (parm span of t): void Sort<TKey, TValue>(System.Span<TKey>, System.Span<TValue>)
+// TODO COPE (parm span of t): void Sort<TKey, TValue>(System.Span<TKey>, System.Span<TValue>, System.Comparison<TKey>)
+// TODO COPE (parm span of t): void Sort<T, TComparer>(System.Span<T>, TComparer)
+// TODO COPE (parm span of t): void Sort<TKey, TValue, TComparer>(System.Span<TKey>, System.Span<TValue>, TComparer)
 // TODO COPE (write_all_methods) (span) bool StartsWith(System.ReadOnlySpan<System.Char>, System.ReadOnlySpan<System.Char>, System.StringComparison)
+// TODO COPE (parm span of t): bool StartsWith<T>(System.ReadOnlySpan<T>, System.ReadOnlySpan<T>)
+// TODO COPE (parm span of t): bool StartsWith<T>(System.Span<T>, System.ReadOnlySpan<T>)
 // TODO COPE (write_all_methods) (span) System.Int32 ToLower(System.ReadOnlySpan<System.Char>, System.Span<System.Char>, System.Globalization.CultureInfo)
 // TODO COPE (write_all_methods) (span) System.Int32 ToLowerInvariant(System.ReadOnlySpan<System.Char>, System.Span<System.Char>)
 // TODO COPE (write_all_methods) (span) System.Int32 ToUpper(System.ReadOnlySpan<System.Char>, System.Span<System.Char>, System.Globalization.CultureInfo)
@@ -222,6 +289,10 @@ public struct MemoryExtensions {
         return dotnet.System.ReadOnlyMemory_1(hndl : __return);
         }
     }
+// TODO COPE (returns byreflike): System.ReadOnlySpan<System.Char> Trim(System.ReadOnlySpan<System.Char>)
+// TODO COPE (returns byreflike): System.ReadOnlySpan<System.Char> Trim(System.ReadOnlySpan<System.Char>, System.Char)
+// TODO COPE (returns byreflike): System.ReadOnlySpan<System.Char> Trim(System.ReadOnlySpan<System.Char>, System.ReadOnlySpan<System.Char>)
+// TODO COPE (returns byreflike): System.Span<System.Char> Trim(System.Span<System.Char>)
     // System.Memory<System.Char> TrimEnd(System.Memory<System.Char>)
 // docid: M:System.MemoryExtensions.TrimEnd(System.Memory{System.Char})
     /**
@@ -258,6 +329,11 @@ public struct MemoryExtensions {
         return dotnet.System.ReadOnlyMemory_1(hndl : __return);
         }
     }
+// TODO COPE (returns byreflike): System.ReadOnlySpan<System.Char> TrimEnd(System.ReadOnlySpan<System.Char>)
+// TODO COPE (returns byreflike): System.ReadOnlySpan<System.Char> TrimEnd(System.ReadOnlySpan<System.Char>, System.Char)
+// TODO COPE (returns byreflike): System.ReadOnlySpan<System.Char> TrimEnd(System.ReadOnlySpan<System.Char>, System.ReadOnlySpan<System.Char>)
+// TODO COPE (returns byreflike): System.Span<System.Char> TrimEnd(System.Span<System.Char>)
+// TODO COPE (parm span of t): System.Memory<T> TrimEnd<T>(System.Memory<T>, System.ReadOnlySpan<T>)
     // System.Memory<T> TrimEnd<T>(System.Memory<T>, T)
 // docid: M:System.MemoryExtensions.TrimEnd``1(System.Memory{``0},``0)
     /**
@@ -277,6 +353,7 @@ public struct MemoryExtensions {
         return dotnet.System.Memory_1(hndl : __return);
         }
     }
+// TODO COPE (parm span of t): System.ReadOnlyMemory<T> TrimEnd<T>(System.ReadOnlyMemory<T>, System.ReadOnlySpan<T>)
     // System.ReadOnlyMemory<T> TrimEnd<T>(System.ReadOnlyMemory<T>, T)
 // docid: M:System.MemoryExtensions.TrimEnd``1(System.ReadOnlyMemory{``0},``0)
     /**
@@ -296,6 +373,10 @@ public struct MemoryExtensions {
         return dotnet.System.ReadOnlyMemory_1(hndl : __return);
         }
     }
+// TODO COPE (parm span of t): System.ReadOnlySpan<T> TrimEnd<T>(System.ReadOnlySpan<T>, System.ReadOnlySpan<T>)
+// TODO COPE (parm span of t): System.ReadOnlySpan<T> TrimEnd<T>(System.ReadOnlySpan<T>, T)
+// TODO COPE (parm span of t): System.Span<T> TrimEnd<T>(System.Span<T>, System.ReadOnlySpan<T>)
+// TODO COPE (parm span of t): System.Span<T> TrimEnd<T>(System.Span<T>, T)
     // System.Memory<System.Char> TrimStart(System.Memory<System.Char>)
 // docid: M:System.MemoryExtensions.TrimStart(System.Memory{System.Char})
     /**
@@ -332,6 +413,11 @@ public struct MemoryExtensions {
         return dotnet.System.ReadOnlyMemory_1(hndl : __return);
         }
     }
+// TODO COPE (returns byreflike): System.ReadOnlySpan<System.Char> TrimStart(System.ReadOnlySpan<System.Char>)
+// TODO COPE (returns byreflike): System.ReadOnlySpan<System.Char> TrimStart(System.ReadOnlySpan<System.Char>, System.Char)
+// TODO COPE (returns byreflike): System.ReadOnlySpan<System.Char> TrimStart(System.ReadOnlySpan<System.Char>, System.ReadOnlySpan<System.Char>)
+// TODO COPE (returns byreflike): System.Span<System.Char> TrimStart(System.Span<System.Char>)
+// TODO COPE (parm span of t): System.Memory<T> TrimStart<T>(System.Memory<T>, System.ReadOnlySpan<T>)
     // System.Memory<T> TrimStart<T>(System.Memory<T>, T)
 // docid: M:System.MemoryExtensions.TrimStart``1(System.Memory{``0},``0)
     /**
@@ -351,6 +437,7 @@ public struct MemoryExtensions {
         return dotnet.System.Memory_1(hndl : __return);
         }
     }
+// TODO COPE (parm span of t): System.ReadOnlyMemory<T> TrimStart<T>(System.ReadOnlyMemory<T>, System.ReadOnlySpan<T>)
     // System.ReadOnlyMemory<T> TrimStart<T>(System.ReadOnlyMemory<T>, T)
 // docid: M:System.MemoryExtensions.TrimStart``1(System.ReadOnlyMemory{``0},``0)
     /**
@@ -370,6 +457,11 @@ public struct MemoryExtensions {
         return dotnet.System.ReadOnlyMemory_1(hndl : __return);
         }
     }
+// TODO COPE (parm span of t): System.ReadOnlySpan<T> TrimStart<T>(System.ReadOnlySpan<T>, System.ReadOnlySpan<T>)
+// TODO COPE (parm span of t): System.ReadOnlySpan<T> TrimStart<T>(System.ReadOnlySpan<T>, T)
+// TODO COPE (parm span of t): System.Span<T> TrimStart<T>(System.Span<T>, System.ReadOnlySpan<T>)
+// TODO COPE (parm span of t): System.Span<T> TrimStart<T>(System.Span<T>, T)
+// TODO COPE (parm span of t): System.Memory<T> Trim<T>(System.Memory<T>, System.ReadOnlySpan<T>)
     // System.Memory<T> Trim<T>(System.Memory<T>, T)
 // docid: M:System.MemoryExtensions.Trim``1(System.Memory{``0},``0)
     /**
@@ -389,6 +481,7 @@ public struct MemoryExtensions {
         return dotnet.System.Memory_1(hndl : __return);
         }
     }
+// TODO COPE (parm span of t): System.ReadOnlyMemory<T> Trim<T>(System.ReadOnlyMemory<T>, System.ReadOnlySpan<T>)
     // System.ReadOnlyMemory<T> Trim<T>(System.ReadOnlyMemory<T>, T)
 // docid: M:System.MemoryExtensions.Trim``1(System.ReadOnlyMemory{``0},``0)
     /**
@@ -408,6 +501,12 @@ public struct MemoryExtensions {
         return dotnet.System.ReadOnlyMemory_1(hndl : __return);
         }
     }
+// TODO COPE (parm span of t): System.ReadOnlySpan<T> Trim<T>(System.ReadOnlySpan<T>, System.ReadOnlySpan<T>)
+// TODO COPE (parm span of t): System.ReadOnlySpan<T> Trim<T>(System.ReadOnlySpan<T>, T)
+// TODO COPE (parm span of t): System.Span<T> Trim<T>(System.Span<T>, System.ReadOnlySpan<T>)
+// TODO COPE (parm span of t): System.Span<T> Trim<T>(System.Span<T>, T)
+// TODO COPE (parm byref span): bool TryWrite(System.Span<System.Char>, ref System.MemoryExtensions.TryWriteInterpolatedStringHandler, ref System.Int32)
+// TODO COPE (parm byref span): bool TryWrite(System.Span<System.Char>, System.IFormatProvider, ref System.MemoryExtensions.TryWriteInterpolatedStringHandler, ref System.Int32)
 } // MemoryExtensions
 
 
@@ -423,6 +522,9 @@ public final class SequencePosition
 {
     public class override func get_type_handle() -> TypeHandle {
         return System_SequencePosition_get_type_handle();
+    }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -558,6 +660,9 @@ public final class ArrayBufferWriter_1<T : SGBridgeGenericValue>
     public class override func get_type_handle() -> TypeHandle {
         return System_Buffers_ArrayBufferWriter_1_get_type_handle(T.get_type_handle());
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor()
@@ -591,10 +696,11 @@ public final class ArrayBufferWriter_1<T : SGBridgeGenericValue>
             super.init(hndl: h);
         }
     }
+// TODO COPE (returns byreflike): [IsSpecialName] System.ReadOnlySpan<T> get_WrittenSpan()
     // void Advance(System.Int32)
 // docid: M:System.Buffers.ArrayBufferWriter`1.Advance(System.Int32)
     /**
-    Notifies the  that  items were written to the output /
+    Notifies the  that  items were written to the output /.
 
     - Parameter count: The number of items written.
     */
@@ -640,6 +746,7 @@ public final class ArrayBufferWriter_1<T : SGBridgeGenericValue>
         return dotnet.System.Memory_1(hndl : __return);
         }
     }
+// TODO COPE (returns byreflike): System.Span<T> GetSpan(System.Int32)
     // [IsSpecialName] System.Int32 get_Capacity()
 // docid: M:System.Buffers.ArrayBufferWriter`1.get_Capacity
     public func get_Capacity() throws -> Swift.Int32 {
@@ -725,11 +832,12 @@ public final class ArrayBufferWriter_1<T : SGBridgeGenericValue>
 
 // type: System.Buffers.BuffersExtensions
 public struct BuffersExtensions {
+// TODO COPE (parm span of t): void CopyTo<T>(ref System.Buffers.ReadOnlySequence<T>, System.Span<T>)
     // System.Nullable<System.SequencePosition> PositionOf<T>(ref System.Buffers.ReadOnlySequence<T>, T)
 // docid: M:System.Buffers.BuffersExtensions.PositionOf``1(System.Buffers.ReadOnlySequence{``0}@,``0)
-    public static func PositionOf<UT : SGBridgeGenericValue>(source : inout dotnet.System.Buffers.ReadOnlySequence_1<UT>, value : UT) throws -> Optional<dotnet.System.SequencePosition> {
+    public static func PositionOf<UT : SGBridgeGenericValue>(source : inout Optional<dotnet.System.Buffers.ReadOnlySequence_1<UT>>, value : UT) throws -> Optional<dotnet.System.SequencePosition> {
         var __thrown : NullableHandle = nil;
-            var _tmp_in_source = source.get_handle();
+            var _tmp_in_source = (source != nil) ? (source!.get_handle()) : nil;
         let __return = System_Buffers_BuffersExtensions_System_Nullable_System_SequencePosition___PositionOf_1__2__inSystem_Buffers_ReadOnlySequence_UT__UT(UT.get_type_handle(), &__thrown, &_tmp_in_source, value.to_gval());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
@@ -738,6 +846,7 @@ public struct BuffersExtensions {
         }
     }
 // TODO COPE (write_all_methods) (unused generic param) T[] ToArray<T>(ref System.Buffers.ReadOnlySequence<T>)
+// TODO COPE (parm span of t): void Write<T>(System.Buffers.IBufferWriter<T>, System.ReadOnlySpan<T>)
 } // BuffersExtensions
 
 
@@ -754,6 +863,9 @@ open class IBufferWriter_1<T : SGBridgeGenericValue>
     public typealias T_IBufferWriter_1 = T;
     open class func get_type_handle() -> TypeHandle {
         return System_Buffers_IBufferWriter_1_get_type_handle(T.get_type_handle());
+    }
+    open class func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     let h : NonnullHandle;
     public func to_gval() -> GVal { return GVal(Swift.Int(bitPattern: self.h)); }
@@ -798,6 +910,7 @@ open class IBufferWriter_1<T : SGBridgeGenericValue>
         return dotnet.System.Memory_1(hndl : __return);
         }
     }
+// TODO COPE (returns byreflike): System.Span<T> GetSpan(System.Int32)
 } // IBufferWriter_1
 
 
@@ -813,6 +926,9 @@ open class MemoryPool_1<T : SGBridgeGenericValue>
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Buffers_MemoryPool_1_get_type_handle(T.get_type_handle());
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -904,6 +1020,9 @@ open class ReadOnlySequenceSegment_1<T : SGBridgeGenericValue>
     open class override func get_type_handle() -> TypeHandle {
         return System_Buffers_ReadOnlySequenceSegment_1_get_type_handle(T.get_type_handle());
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // [IsSpecialName] System.ReadOnlyMemory<T> get_Memory()
@@ -945,9 +1064,9 @@ open class ReadOnlySequenceSegment_1<T : SGBridgeGenericValue>
     }
     // [IsSpecialName] void set_Next(System.Buffers.ReadOnlySequenceSegment<T>)
 // docid: M:System.Buffers.ReadOnlySequenceSegment`1.set_Next(System.Buffers.ReadOnlySequenceSegment{`0})
-    open func set_Next(value : dotnet.System.Buffers.ReadOnlySequenceSegment_1<T>) throws {
+    open func set_Next(value : Optional<dotnet.System.Buffers.ReadOnlySequenceSegment_1<T>>) throws {
         var __thrown : NullableHandle = nil;
-        System_Buffers_ReadOnlySequenceSegment_1_void__set_Next_0__1__System_Buffers_ReadOnlySequenceSegment_T_(T.get_type_handle(), &__thrown, self.get_handle(), nil);
+        System_Buffers_ReadOnlySequenceSegment_1_void__set_Next_0__1__System_Buffers_ReadOnlySequenceSegment_T_(T.get_type_handle(), &__thrown, self.get_handle(), (value?.get_handle()));
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
@@ -1028,8 +1147,22 @@ public final class ReadOnlySequence_1<T : SGBridgeGenericValue>
     public class override func get_type_handle() -> TypeHandle {
         return System_Buffers_ReadOnlySequence_1_get_type_handle(T.get_type_handle());
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    // static field:  Empty
+    /**
+    Returns an empty .
+
+    */
+    public class var Empty : dotnet.System.Buffers.ReadOnlySequence_1<T> {
+        get {
+        let __return = dotnet.System.Buffers.ReadOnlySequence_1<T>(hndl: System_Buffers_ReadOnlySequence_1_get_Empty());
+            return __return;
+        }
+    }
     /**
     Gets the position at the end of the .
 
@@ -1145,6 +1278,7 @@ public final class ReadOnlySequence_1<T : SGBridgeGenericValue>
         let h = System_Buffers_ReadOnlySequence_1_implicit_ctor(T.get_type_handle());
             super.init(hndl: h);
     }
+// TODO COPE (returns byreflike): [IsSpecialName] System.ReadOnlySpan<T> get_FirstSpan()
     // System.Buffers.ReadOnlySequence<T>.Enumerator GetEnumerator()
 // docid: M:System.Buffers.ReadOnlySequence`1.GetEnumerator
     /**
@@ -1415,14 +1549,15 @@ public final class ReadOnlySequence_1<T : SGBridgeGenericValue>
     - Returns: Returns  if the method returned the next segment, or  if the end of the read-only sequence was reached.
 
     */
-    public func TryGet(position : inout dotnet.System.SequencePosition, memory : inout dotnet.System.ReadOnlyMemory_1<T>, advance : Bool = true) throws -> Bool {
+    public func TryGet(position : inout dotnet.System.SequencePosition, memory : inout Optional<dotnet.System.ReadOnlyMemory_1<T>>, advance : Bool = true) throws -> Bool {
         var __thrown : NullableHandle = nil;
             var _tmp_ref_position = position.get_handle();
-            var _tmp_out_memory = memory.get_handle();
+            var _tmp_out_memory = (memory != nil) ? (memory!.get_handle()) : nil;
         let __return = System_Buffers_ReadOnlySequence_1_bool__TryGet_0__3__refSequencePosition_outSystem_ReadOnlyMemory_T__bool(T.get_type_handle(), &__thrown, self.get_handle(), &_tmp_ref_position, &_tmp_out_memory, Swift.Int32(advance ? 1 : 0));
         let _tmp2_position = dotnet.System.SequencePosition(hndl: _tmp_ref_position);
             position = _tmp2_position;
-        let _tmp2_memory = dotnet.System.ReadOnlyMemory_1<T>(hndl : _tmp_out_memory);
+        let __h__tmp2_memory = _tmp_out_memory;
+        let _tmp2_memory = (__h__tmp2_memory != nil) ? dotnet.System.ReadOnlyMemory_1<T>(hndl: __h__tmp2_memory!) : nil;
             memory = _tmp2_memory;
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
@@ -1512,6 +1647,9 @@ public final class ReadOnlySequence_Enumerator_1<T : SGBridgeGenericValue>
     public class override func get_type_handle() -> TypeHandle {
         return System_Buffers_ReadOnlySequence_1_Enumerator_get_type_handle(T.get_type_handle());
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     /**
@@ -1530,9 +1668,9 @@ public final class ReadOnlySequence_Enumerator_1<T : SGBridgeGenericValue>
 
     - Parameter sequence: The  to enumerate.
     */
-    public init(sequence : inout dotnet.System.Buffers.ReadOnlySequence_1<T>) throws {
+    public init(sequence : inout Optional<dotnet.System.Buffers.ReadOnlySequence_1<T>>) throws {
         var __thrown : NullableHandle = nil;
-            var _tmp_in_sequence = sequence.get_handle();
+            var _tmp_in_sequence = (sequence != nil) ? (sequence!.get_handle()) : nil;
         let h = System_Buffers_ReadOnlySequence_1_Enumerator_ctor_0__1__inSystem_Buffers_ReadOnlySequence_T_(T.get_type_handle(), &__thrown, &_tmp_in_sequence);
         if let __ex = __thrown {
             throw dotnet.System.Exception(hndl: __ex);
@@ -1578,6 +1716,12 @@ public final class ReadOnlySequence_Enumerator_1<T : SGBridgeGenericValue>
 
 // type: System.Buffers.SequenceReaderExtensions
 public struct SequenceReaderExtensions {
+// TODO COPE (parm byref span): bool TryReadBigEndian(ref System.Buffers.SequenceReader<System.Byte>, ref System.Int16)
+// TODO COPE (parm byref span): bool TryReadBigEndian(ref System.Buffers.SequenceReader<System.Byte>, ref System.Int32)
+// TODO COPE (parm byref span): bool TryReadBigEndian(ref System.Buffers.SequenceReader<System.Byte>, ref System.Int64)
+// TODO COPE (parm byref span): bool TryReadLittleEndian(ref System.Buffers.SequenceReader<System.Byte>, ref System.Int16)
+// TODO COPE (parm byref span): bool TryReadLittleEndian(ref System.Buffers.SequenceReader<System.Byte>, ref System.Int32)
+// TODO COPE (parm byref span): bool TryReadLittleEndian(ref System.Buffers.SequenceReader<System.Byte>, ref System.Int64)
 } // SequenceReaderExtensions
 
 
@@ -1593,6 +1737,9 @@ public final class StandardFormat
 {
     public class override func get_type_handle() -> TypeHandle {
         return System_Buffers_StandardFormat_get_type_handle();
+    }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -2188,6 +2335,8 @@ public struct Utf8Parser {
 extension System.Runtime.InteropServices {
 // type: System.Runtime.InteropServices.MemoryMarshal
 public struct MemoryMarshal {
+// TODO COPE (parm span of t): System.ReadOnlySpan<System.Byte> AsBytes<T>(System.ReadOnlySpan<T>)
+// TODO COPE (parm span of t): System.Span<System.Byte> AsBytes<T>(System.Span<T>)
     // System.Memory<T> AsMemory<T>(System.ReadOnlyMemory<T>)
 // docid: M:System.Runtime.InteropServices.MemoryMarshal.AsMemory``1(System.ReadOnlyMemory{``0})
     /**
@@ -2206,7 +2355,20 @@ public struct MemoryMarshal {
         return dotnet.System.Memory_1(hndl : __return);
         }
     }
+// TODO COPE (returns_byref): ref T AsRef<T>(System.ReadOnlySpan<System.Byte>)
+// TODO COPE (returns_byref): ref T AsRef<T>(System.Span<System.Byte>)
+// TODO COPE (parm span of t): System.ReadOnlySpan<TTo> Cast<TFrom, TTo>(System.ReadOnlySpan<TFrom>)
+// TODO COPE (parm span of t): System.Span<TTo> Cast<TFrom, TTo>(System.Span<TFrom>)
 // TODO COPE (write_all_methods) (unused generic param) System.Memory<T> CreateFromPinnedArray<T>(T[], System.Int32, System.Int32)
+// TODO COPE (returns byreflike): System.ReadOnlySpan<T> CreateReadOnlySpan<T>(ref T, System.Int32)
+// TODO COPE (returns byreflike): System.ReadOnlySpan<System.Byte> CreateReadOnlySpanFromNullTerminated(System.Byte*)
+// TODO COPE (returns byreflike): System.ReadOnlySpan<System.Char> CreateReadOnlySpanFromNullTerminated(System.Char*)
+// TODO COPE (returns byreflike): System.Span<T> CreateSpan<T>(ref T, System.Int32)
+// TODO COPE (returns_byref): ref T GetArrayDataReference<T>(T[])
+// TODO COPE (returns_byref): ref System.Byte GetArrayDataReference(System.Array)
+// TODO COPE (returns_byref): ref T GetReference<T>(System.ReadOnlySpan<T>)
+// TODO COPE (returns_byref): ref T GetReference<T>(System.Span<T>)
+// TODO COPE (generic method and parm span): T Read<T>(System.ReadOnlySpan<System.Byte>)
     // System.Collections.Generic.IEnumerable<T> ToEnumerable<T>(System.ReadOnlyMemory<T>)
 // docid: M:System.Runtime.InteropServices.MemoryMarshal.ToEnumerable``1(System.ReadOnlyMemory{``0})
     /**
@@ -2236,11 +2398,12 @@ public struct MemoryMarshal {
          if the method call succeeds;  otherwise.
 
     */
-    public static func TryGetArray<UT : SGBridgeGenericValue>(memory : dotnet.System.ReadOnlyMemory_1<UT>, segment : inout dotnet.System.ArraySegment_1<UT>) throws -> Bool {
+    public static func TryGetArray<UT : SGBridgeGenericValue>(memory : dotnet.System.ReadOnlyMemory_1<UT>, segment : inout Optional<dotnet.System.ArraySegment_1<UT>>) throws -> Bool {
         var __thrown : NullableHandle = nil;
-            var _tmp_out_segment = segment.get_handle();
+            var _tmp_out_segment = (segment != nil) ? (segment!.get_handle()) : nil;
         let __return = System_Runtime_InteropServices_MemoryMarshal_bool__TryGetArray_1__2__System_ReadOnlyMemory_UT__outSystem_ArraySegment_UT_(UT.get_type_handle(), &__thrown, memory.get_handle(), &_tmp_out_segment);
-        let _tmp2_segment = dotnet.System.ArraySegment_1<UT>(hndl : _tmp_out_segment);
+        let __h__tmp2_segment = _tmp_out_segment;
+        let _tmp2_segment = (__h__tmp2_segment != nil) ? dotnet.System.ArraySegment_1<UT>(hndl: __h__tmp2_segment!) : nil;
             segment = _tmp2_segment;
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
@@ -2263,13 +2426,14 @@ public struct MemoryMarshal {
          if the method successfully retrieves the underlying string; otherwise, .
 
     */
-    public static func TryGetString(memory : dotnet.System.ReadOnlyMemory_1<dotnet.System.Char>, text : inout dotnet.System.String, start : inout Swift.Int32, length : inout Swift.Int32) throws -> Bool {
+    public static func TryGetString(memory : dotnet.System.ReadOnlyMemory_1<dotnet.System.Char>, text : inout Optional<dotnet.System.String>, start : inout Swift.Int32, length : inout Swift.Int32) throws -> Bool {
         var __thrown : NullableHandle = nil;
-            var _tmp_out_text = text.get_handle();
+            var _tmp_out_text = (text != nil) ? (text!.get_handle()) : nil;
             var _tmp_out_start = start;
             var _tmp_out_length = length;
         let __return = System_Runtime_InteropServices_MemoryMarshal_bool__TryGetString_0__4__System_ReadOnlyMemory_System_Char__outString_outi32_outi32(&__thrown, memory.get_handle(), &_tmp_out_text, &_tmp_out_start, &_tmp_out_length);
-        let _tmp2_text = dotnet.System.String(hndl: _tmp_out_text);
+        let __h__tmp2_text = _tmp_out_text;
+        let _tmp2_text = (__h__tmp2_text != nil) ? dotnet.System.String(hndl: __h__tmp2_text!) : nil;
             text = _tmp2_text;
         let _tmp2_start = _tmp_out_start;
             start = _tmp2_start;
@@ -2281,6 +2445,9 @@ public struct MemoryMarshal {
         return (__return) != 0;
         }
     }
+// TODO COPE (generic method and parm span): bool TryRead<T>(System.ReadOnlySpan<System.Byte>, ref T)
+// TODO COPE (generic method and parm span): bool TryWrite<T>(System.Span<System.Byte>, ref T)
+// TODO COPE (generic method and parm span): void Write<T>(System.Span<System.Byte>, ref T)
 } // MemoryMarshal
 
 
@@ -2297,11 +2464,12 @@ public struct SequenceMarshal {
          if it's possible to retrieve the array segment; otherwise,  and a default array segment is returned.
 
     */
-    public static func TryGetArray<UT : SGBridgeGenericValue>(sequence : dotnet.System.Buffers.ReadOnlySequence_1<UT>, segment : inout dotnet.System.ArraySegment_1<UT>) throws -> Bool {
+    public static func TryGetArray<UT : SGBridgeGenericValue>(sequence : dotnet.System.Buffers.ReadOnlySequence_1<UT>, segment : inout Optional<dotnet.System.ArraySegment_1<UT>>) throws -> Bool {
         var __thrown : NullableHandle = nil;
-            var _tmp_out_segment = segment.get_handle();
+            var _tmp_out_segment = (segment != nil) ? (segment!.get_handle()) : nil;
         let __return = System_Runtime_InteropServices_SequenceMarshal_bool__TryGetArray_1__2__System_Buffers_ReadOnlySequence_UT__outSystem_ArraySegment_UT_(UT.get_type_handle(), &__thrown, sequence.get_handle(), &_tmp_out_segment);
-        let _tmp2_segment = dotnet.System.ArraySegment_1<UT>(hndl : _tmp_out_segment);
+        let __h__tmp2_segment = _tmp_out_segment;
+        let _tmp2_segment = (__h__tmp2_segment != nil) ? dotnet.System.ArraySegment_1<UT>(hndl: __h__tmp2_segment!) : nil;
             segment = _tmp2_segment;
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
@@ -2320,11 +2488,12 @@ public struct SequenceMarshal {
          if the read-only memory can be retrieved; otherwise, .
 
     */
-    public static func TryGetReadOnlyMemory<UT : SGBridgeGenericValue>(sequence : dotnet.System.Buffers.ReadOnlySequence_1<UT>, memory : inout dotnet.System.ReadOnlyMemory_1<UT>) throws -> Bool {
+    public static func TryGetReadOnlyMemory<UT : SGBridgeGenericValue>(sequence : dotnet.System.Buffers.ReadOnlySequence_1<UT>, memory : inout Optional<dotnet.System.ReadOnlyMemory_1<UT>>) throws -> Bool {
         var __thrown : NullableHandle = nil;
-            var _tmp_out_memory = memory.get_handle();
+            var _tmp_out_memory = (memory != nil) ? (memory!.get_handle()) : nil;
         let __return = System_Runtime_InteropServices_SequenceMarshal_bool__TryGetReadOnlyMemory_1__2__System_Buffers_ReadOnlySequence_UT__outSystem_ReadOnlyMemory_UT_(UT.get_type_handle(), &__thrown, sequence.get_handle(), &_tmp_out_memory);
-        let _tmp2_memory = dotnet.System.ReadOnlyMemory_1<UT>(hndl : _tmp_out_memory);
+        let __h__tmp2_memory = _tmp_out_memory;
+        let _tmp2_memory = (__h__tmp2_memory != nil) ? dotnet.System.ReadOnlyMemory_1<UT>(hndl: __h__tmp2_memory!) : nil;
             memory = _tmp2_memory;
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
@@ -2346,18 +2515,20 @@ public struct SequenceMarshal {
          if the read-only sequence segment can be retrieved; otherwise, .
 
     */
-    public static func TryGetReadOnlySequenceSegment<UT : SGBridgeGenericValue>(sequence : dotnet.System.Buffers.ReadOnlySequence_1<UT>, startSegment : inout dotnet.System.Buffers.ReadOnlySequenceSegment_1<UT>, startIndex : inout Swift.Int32, endSegment : inout dotnet.System.Buffers.ReadOnlySequenceSegment_1<UT>, endIndex : inout Swift.Int32) throws -> Bool {
+    public static func TryGetReadOnlySequenceSegment<UT : SGBridgeGenericValue>(sequence : dotnet.System.Buffers.ReadOnlySequence_1<UT>, startSegment : inout Optional<dotnet.System.Buffers.ReadOnlySequenceSegment_1<UT>>, startIndex : inout Swift.Int32, endSegment : inout Optional<dotnet.System.Buffers.ReadOnlySequenceSegment_1<UT>>, endIndex : inout Swift.Int32) throws -> Bool {
         var __thrown : NullableHandle = nil;
-            var _tmp_out_startSegment = startSegment.get_handle();
+            var _tmp_out_startSegment = (startSegment != nil) ? (startSegment!.get_handle()) : nil;
             var _tmp_out_startIndex = startIndex;
-            var _tmp_out_endSegment = endSegment.get_handle();
+            var _tmp_out_endSegment = (endSegment != nil) ? (endSegment!.get_handle()) : nil;
             var _tmp_out_endIndex = endIndex;
         let __return = System_Runtime_InteropServices_SequenceMarshal_bool__TryGetReadOnlySequenceSegment_1__5__System_Buffers_ReadOnlySequence_UT__outSystem_Buffers_ReadOnlySequenceSegment_UT__outi32_outSystem_Buffers_ReadOnlySequenceSegment_UT__outi32(UT.get_type_handle(), &__thrown, sequence.get_handle(), &_tmp_out_startSegment, &_tmp_out_startIndex, &_tmp_out_endSegment, &_tmp_out_endIndex);
-        let _tmp2_startSegment = dotnet.System.Buffers.ReadOnlySequenceSegment_1<UT>(hndl : _tmp_out_startSegment);
+        let __h__tmp2_startSegment = _tmp_out_startSegment;
+        let _tmp2_startSegment = (__h__tmp2_startSegment != nil) ? dotnet.System.Buffers.ReadOnlySequenceSegment_1<UT>(hndl: __h__tmp2_startSegment!) : nil;
             startSegment = _tmp2_startSegment;
         let _tmp2_startIndex = _tmp_out_startIndex;
             startIndex = _tmp2_startIndex;
-        let _tmp2_endSegment = dotnet.System.Buffers.ReadOnlySequenceSegment_1<UT>(hndl : _tmp_out_endSegment);
+        let __h__tmp2_endSegment = _tmp_out_endSegment;
+        let _tmp2_endSegment = (__h__tmp2_endSegment != nil) ? dotnet.System.Buffers.ReadOnlySequenceSegment_1<UT>(hndl: __h__tmp2_endSegment!) : nil;
             endSegment = _tmp2_endSegment;
         let _tmp2_endIndex = _tmp_out_endIndex;
             endIndex = _tmp2_endIndex;
@@ -2367,6 +2538,7 @@ public struct SequenceMarshal {
         return (__return) != 0;
         }
     }
+// TODO COPE (parm byref span): bool TryRead<T>(ref System.Buffers.SequenceReader<System.Byte>, ref T)
 } // SequenceMarshal
 
 
@@ -2391,9 +2563,9 @@ public struct EncodingExtensions {
     - Parameter completed: When this method returns, contains  if  contains no partial internal state; otherwise, .
  If  is , this will always be set to  when the method returns.
     */
-    public static func Convert(decoder : dotnet.System.Text.Decoder, bytes : inout dotnet.System.Buffers.ReadOnlySequence_1<Swift.UInt8>, writer : dotnet.System.Buffers.IBufferWriter_1<dotnet.System.Char>, flush : Bool, charsUsed : inout Swift.Int64, completed : inout Bool) throws {
+    public static func Convert(decoder : dotnet.System.Text.Decoder, bytes : inout Optional<dotnet.System.Buffers.ReadOnlySequence_1<Swift.UInt8>>, writer : dotnet.System.Buffers.IBufferWriter_1<dotnet.System.Char>, flush : Bool, charsUsed : inout Swift.Int64, completed : inout Bool) throws {
         var __thrown : NullableHandle = nil;
-            var _tmp_in_bytes = bytes.get_handle();
+            var _tmp_in_bytes = (bytes != nil) ? (bytes!.get_handle()) : nil;
             var _tmp_out_charsUsed = charsUsed;
             var _tmp_out_completed = Swift.Int32(completed ? 1 : 0);
         System_Text_EncodingExtensions_void__Convert_0__6__Decoder_inSystem_Buffers_ReadOnlySequence_u8__System_Buffers_IBufferWriter_System_Char__bool_outi64_outbool(&__thrown, decoder.get_handle(), &_tmp_in_bytes, writer.get_handle(), Swift.Int32(flush ? 1 : 0), &_tmp_out_charsUsed, &_tmp_out_completed);
@@ -2421,9 +2593,9 @@ public struct EncodingExtensions {
     - Parameter bytesUsed: When this method returns, contains the count of s which were written to .
     - Parameter completed: When this method returns, contains  if all input up until  was converted; otherwise, . If  is , this will always be set to  when the method returns.
     */
-    public static func Convert(encoder : dotnet.System.Text.Encoder, chars : inout dotnet.System.Buffers.ReadOnlySequence_1<dotnet.System.Char>, writer : dotnet.System.Buffers.IBufferWriter_1<Swift.UInt8>, flush : Bool, bytesUsed : inout Swift.Int64, completed : inout Bool) throws {
+    public static func Convert(encoder : dotnet.System.Text.Encoder, chars : inout Optional<dotnet.System.Buffers.ReadOnlySequence_1<dotnet.System.Char>>, writer : dotnet.System.Buffers.IBufferWriter_1<Swift.UInt8>, flush : Bool, bytesUsed : inout Swift.Int64, completed : inout Bool) throws {
         var __thrown : NullableHandle = nil;
-            var _tmp_in_chars = chars.get_handle();
+            var _tmp_in_chars = (chars != nil) ? (chars!.get_handle()) : nil;
             var _tmp_out_bytesUsed = bytesUsed;
             var _tmp_out_completed = Swift.Int32(completed ? 1 : 0);
         System_Text_EncodingExtensions_void__Convert_0__6__Encoder_inSystem_Buffers_ReadOnlySequence_System_Char__System_Buffers_IBufferWriter_u8__bool_outi64_outbool(&__thrown, encoder.get_handle(), &_tmp_in_chars, writer.get_handle(), Swift.Int32(flush ? 1 : 0), &_tmp_out_bytesUsed, &_tmp_out_completed);
@@ -2448,9 +2620,9 @@ public struct EncodingExtensions {
     - Returns: A  array that represents the encoded contents of .
 
     */
-    public static func GetBytes(encoding : dotnet.System.Text.Encoding, chars : inout dotnet.System.Buffers.ReadOnlySequence_1<dotnet.System.Char>) throws -> dotnet.System_Arr<Swift.UInt8> {
+    public static func GetBytes(encoding : dotnet.System.Text.Encoding, chars : inout Optional<dotnet.System.Buffers.ReadOnlySequence_1<dotnet.System.Char>>) throws -> dotnet.System_Arr<Swift.UInt8> {
         var __thrown : NullableHandle = nil;
-            var _tmp_in_chars = chars.get_handle();
+            var _tmp_in_chars = (chars != nil) ? (chars!.get_handle()) : nil;
         let __return = System_Text_EncodingExtensions_u8Array__GetBytes_0__2__Encoding_inSystem_Buffers_ReadOnlySequence_System_Char_(&__thrown, encoding.get_handle(), &_tmp_in_chars);
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
@@ -2469,9 +2641,9 @@ public struct EncodingExtensions {
     - Returns: The number of bytes written to .
 
     */
-    public static func GetBytes(encoding : dotnet.System.Text.Encoding, chars : inout dotnet.System.Buffers.ReadOnlySequence_1<dotnet.System.Char>, writer : dotnet.System.Buffers.IBufferWriter_1<Swift.UInt8>) throws -> Swift.Int64 {
+    public static func GetBytes(encoding : dotnet.System.Text.Encoding, chars : inout Optional<dotnet.System.Buffers.ReadOnlySequence_1<dotnet.System.Char>>, writer : dotnet.System.Buffers.IBufferWriter_1<Swift.UInt8>) throws -> Swift.Int64 {
         var __thrown : NullableHandle = nil;
-            var _tmp_in_chars = chars.get_handle();
+            var _tmp_in_chars = (chars != nil) ? (chars!.get_handle()) : nil;
         let __return = System_Text_EncodingExtensions_i64__GetBytes_0__3__Encoding_inSystem_Buffers_ReadOnlySequence_System_Char__System_Buffers_IBufferWriter_u8_(&__thrown, encoding.get_handle(), &_tmp_in_chars, writer.get_handle());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
@@ -2492,9 +2664,9 @@ public struct EncodingExtensions {
     - Returns: The number of chars written to .
 
     */
-    public static func GetChars(encoding : dotnet.System.Text.Encoding, bytes : inout dotnet.System.Buffers.ReadOnlySequence_1<Swift.UInt8>, writer : dotnet.System.Buffers.IBufferWriter_1<dotnet.System.Char>) throws -> Swift.Int64 {
+    public static func GetChars(encoding : dotnet.System.Text.Encoding, bytes : inout Optional<dotnet.System.Buffers.ReadOnlySequence_1<Swift.UInt8>>, writer : dotnet.System.Buffers.IBufferWriter_1<dotnet.System.Char>) throws -> Swift.Int64 {
         var __thrown : NullableHandle = nil;
-            var _tmp_in_bytes = bytes.get_handle();
+            var _tmp_in_bytes = (bytes != nil) ? (bytes!.get_handle()) : nil;
         let __return = System_Text_EncodingExtensions_i64__GetChars_0__3__Encoding_inSystem_Buffers_ReadOnlySequence_u8__System_Buffers_IBufferWriter_System_Char_(&__thrown, encoding.get_handle(), &_tmp_in_bytes, writer.get_handle());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
@@ -2514,9 +2686,9 @@ public struct EncodingExtensions {
     - Returns: A  which represents the decoded contents of .
 
     */
-    public static func GetString(encoding : dotnet.System.Text.Encoding, bytes : inout dotnet.System.Buffers.ReadOnlySequence_1<Swift.UInt8>) throws -> dotnet.System.String {
+    public static func GetString(encoding : dotnet.System.Text.Encoding, bytes : inout Optional<dotnet.System.Buffers.ReadOnlySequence_1<Swift.UInt8>>) throws -> dotnet.System.String {
         var __thrown : NullableHandle = nil;
-            var _tmp_in_bytes = bytes.get_handle();
+            var _tmp_in_bytes = (bytes != nil) ? (bytes!.get_handle()) : nil;
         let __return = System_Text_EncodingExtensions_String__GetString_0__2__Encoding_inSystem_Buffers_ReadOnlySequence_u8_(&__thrown, encoding.get_handle(), &_tmp_in_bytes);
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
@@ -2537,12 +2709,20 @@ public protocol System_Buffers_IBufferWriter_1
     associatedtype T_IBufferWriter_1 : SGBridgeGenericValue;
 }
 
+// TODO COPE (parm span of t): void CopyTo<T>(ref System.Buffers.ReadOnlySequence<T>, System.Span<T>)
 // EXTENSION METHOD System.Nullable<System.SequencePosition> PositionOf<T>(ref System.Buffers.ReadOnlySequence<T>, T)
 // TODO COPE extension method on byref type
 
 // EXTENSION METHOD T[] ToArray<T>(ref System.Buffers.ReadOnlySequence<T>)
 // TODO COPE extension method (unused generic param) T[] ToArray<T>(ref System.Buffers.ReadOnlySequence<T>)
 
+// TODO COPE (parm span of t): void Write<T>(System.Buffers.IBufferWriter<T>, System.ReadOnlySpan<T>)
+// TODO COPE (parm byref span): bool TryReadBigEndian(ref System.Buffers.SequenceReader<System.Byte>, ref System.Int16)
+// TODO COPE (parm byref span): bool TryReadBigEndian(ref System.Buffers.SequenceReader<System.Byte>, ref System.Int32)
+// TODO COPE (parm byref span): bool TryReadBigEndian(ref System.Buffers.SequenceReader<System.Byte>, ref System.Int64)
+// TODO COPE (parm byref span): bool TryReadLittleEndian(ref System.Buffers.SequenceReader<System.Byte>, ref System.Int16)
+// TODO COPE (parm byref span): bool TryReadLittleEndian(ref System.Buffers.SequenceReader<System.Byte>, ref System.Int32)
+// TODO COPE (parm byref span): bool TryReadLittleEndian(ref System.Buffers.SequenceReader<System.Byte>, ref System.Int64)
 // EXTENSION METHOD System.ReadOnlyMemory<System.Char> AsMemory(System.String)
 extension dotnet.System.String {
     public func AsMemory() throws -> dotnet.System.ReadOnlyMemory_1<dotnet.System.Char> {
@@ -2614,33 +2794,100 @@ extension dotnet.System.ArraySegment_1 {
 // EXTENSION METHOD System.Memory<T> AsMemory<T>(T[], System.Range)
 // TODO COPE extension method (unused generic param) System.Memory<T> AsMemory<T>(T[], System.Range)
 
+// TODO COPE (returns byreflike): System.ReadOnlySpan<System.Char> AsSpan(System.String)
+// TODO COPE (returns byreflike): System.ReadOnlySpan<System.Char> AsSpan(System.String, System.Int32)
+// TODO COPE (returns byreflike): System.ReadOnlySpan<System.Char> AsSpan(System.String, System.Int32, System.Int32)
+// TODO COPE (returns byreflike): System.Span<T> AsSpan<T>(System.ArraySegment<T>)
+// TODO COPE (returns byreflike): System.Span<T> AsSpan<T>(System.ArraySegment<T>, System.Index)
+// TODO COPE (returns byreflike): System.Span<T> AsSpan<T>(System.ArraySegment<T>, System.Int32)
+// TODO COPE (returns byreflike): System.Span<T> AsSpan<T>(System.ArraySegment<T>, System.Int32, System.Int32)
+// TODO COPE (returns byreflike): System.Span<T> AsSpan<T>(System.ArraySegment<T>, System.Range)
+// TODO COPE (returns byreflike): System.Span<T> AsSpan<T>(T[])
+// TODO COPE (returns byreflike): System.Span<T> AsSpan<T>(T[], System.Index)
+// TODO COPE (returns byreflike): System.Span<T> AsSpan<T>(T[], System.Int32)
+// TODO COPE (returns byreflike): System.Span<T> AsSpan<T>(T[], System.Int32, System.Int32)
+// TODO COPE (returns byreflike): System.Span<T> AsSpan<T>(T[], System.Range)
+// TODO COPE (parm span of t): System.Int32 BinarySearch<T>(System.ReadOnlySpan<T>, System.IComparable<T>)
+// TODO COPE (parm span of t): System.Int32 BinarySearch<T>(System.Span<T>, System.IComparable<T>)
+// TODO COPE (parm span of t): System.Int32 BinarySearch<T, TComparer>(System.ReadOnlySpan<T>, T, TComparer)
+// TODO COPE (parm span of t): System.Int32 BinarySearch<T, TComparable>(System.ReadOnlySpan<T>, TComparable)
+// TODO COPE (parm span of t): System.Int32 BinarySearch<T, TComparer>(System.Span<T>, T, TComparer)
+// TODO COPE (parm span of t): System.Int32 BinarySearch<T, TComparable>(System.Span<T>, TComparable)
 // EXTENSION METHOD System.Int32 CompareTo(System.ReadOnlySpan<System.Char>, System.ReadOnlySpan<System.Char>, System.StringComparison)
 // TODO COPE extension method (span) System.Int32 CompareTo(System.ReadOnlySpan<System.Char>, System.ReadOnlySpan<System.Char>, System.StringComparison)
 
 // EXTENSION METHOD bool Contains(System.ReadOnlySpan<System.Char>, System.ReadOnlySpan<System.Char>, System.StringComparison)
 // TODO COPE extension method (span) bool Contains(System.ReadOnlySpan<System.Char>, System.ReadOnlySpan<System.Char>, System.StringComparison)
 
+// TODO COPE (parm span of t): bool Contains<T>(System.ReadOnlySpan<T>, T)
+// TODO COPE (parm span of t): bool Contains<T>(System.Span<T>, T)
 // EXTENSION METHOD void CopyTo<T>(T[], System.Memory<T>)
 // TODO COPE extension method on array type
 
+// TODO COPE (parm span of t): void CopyTo<T>(T[], System.Span<T>)
 // EXTENSION METHOD bool EndsWith(System.ReadOnlySpan<System.Char>, System.ReadOnlySpan<System.Char>, System.StringComparison)
 // TODO COPE extension method (span) bool EndsWith(System.ReadOnlySpan<System.Char>, System.ReadOnlySpan<System.Char>, System.StringComparison)
 
+// TODO COPE (parm span of t): bool EndsWith<T>(System.ReadOnlySpan<T>, System.ReadOnlySpan<T>)
+// TODO COPE (parm span of t): bool EndsWith<T>(System.Span<T>, System.ReadOnlySpan<T>)
+// TODO COPE (returns byreflike): System.Text.SpanLineEnumerator EnumerateLines(System.ReadOnlySpan<System.Char>)
+// TODO COPE (returns byreflike): System.Text.SpanLineEnumerator EnumerateLines(System.Span<System.Char>)
+// TODO COPE (returns byreflike): System.Text.SpanRuneEnumerator EnumerateRunes(System.ReadOnlySpan<System.Char>)
+// TODO COPE (returns byreflike): System.Text.SpanRuneEnumerator EnumerateRunes(System.Span<System.Char>)
 // EXTENSION METHOD bool Equals(System.ReadOnlySpan<System.Char>, System.ReadOnlySpan<System.Char>, System.StringComparison)
 // TODO COPE extension method (span) bool Equals(System.ReadOnlySpan<System.Char>, System.ReadOnlySpan<System.Char>, System.StringComparison)
 
 // EXTENSION METHOD System.Int32 IndexOf(System.ReadOnlySpan<System.Char>, System.ReadOnlySpan<System.Char>, System.StringComparison)
 // TODO COPE extension method (span) System.Int32 IndexOf(System.ReadOnlySpan<System.Char>, System.ReadOnlySpan<System.Char>, System.StringComparison)
 
+// TODO COPE (parm span of t): System.Int32 IndexOfAny<T>(System.ReadOnlySpan<T>, System.ReadOnlySpan<T>)
+// TODO COPE (parm span of t): System.Int32 IndexOfAny<T>(System.ReadOnlySpan<T>, T, T)
+// TODO COPE (parm span of t): System.Int32 IndexOfAny<T>(System.ReadOnlySpan<T>, T, T, T)
+// TODO COPE (parm span of t): System.Int32 IndexOfAny<T>(System.Span<T>, System.ReadOnlySpan<T>)
+// TODO COPE (parm span of t): System.Int32 IndexOfAny<T>(System.Span<T>, T, T)
+// TODO COPE (parm span of t): System.Int32 IndexOfAny<T>(System.Span<T>, T, T, T)
+// TODO COPE (parm span of t): System.Int32 IndexOf<T>(System.ReadOnlySpan<T>, System.ReadOnlySpan<T>)
+// TODO COPE (parm span of t): System.Int32 IndexOf<T>(System.ReadOnlySpan<T>, T)
+// TODO COPE (parm span of t): System.Int32 IndexOf<T>(System.Span<T>, System.ReadOnlySpan<T>)
+// TODO COPE (parm span of t): System.Int32 IndexOf<T>(System.Span<T>, T)
 // EXTENSION METHOD bool IsWhiteSpace(System.ReadOnlySpan<System.Char>)
 // TODO COPE extension method (span) bool IsWhiteSpace(System.ReadOnlySpan<System.Char>)
 
 // EXTENSION METHOD System.Int32 LastIndexOf(System.ReadOnlySpan<System.Char>, System.ReadOnlySpan<System.Char>, System.StringComparison)
 // TODO COPE extension method (span) System.Int32 LastIndexOf(System.ReadOnlySpan<System.Char>, System.ReadOnlySpan<System.Char>, System.StringComparison)
 
+// TODO COPE (parm span of t): System.Int32 LastIndexOfAny<T>(System.ReadOnlySpan<T>, System.ReadOnlySpan<T>)
+// TODO COPE (parm span of t): System.Int32 LastIndexOfAny<T>(System.ReadOnlySpan<T>, T, T)
+// TODO COPE (parm span of t): System.Int32 LastIndexOfAny<T>(System.ReadOnlySpan<T>, T, T, T)
+// TODO COPE (parm span of t): System.Int32 LastIndexOfAny<T>(System.Span<T>, System.ReadOnlySpan<T>)
+// TODO COPE (parm span of t): System.Int32 LastIndexOfAny<T>(System.Span<T>, T, T)
+// TODO COPE (parm span of t): System.Int32 LastIndexOfAny<T>(System.Span<T>, T, T, T)
+// TODO COPE (parm span of t): System.Int32 LastIndexOf<T>(System.ReadOnlySpan<T>, System.ReadOnlySpan<T>)
+// TODO COPE (parm span of t): System.Int32 LastIndexOf<T>(System.ReadOnlySpan<T>, T)
+// TODO COPE (parm span of t): System.Int32 LastIndexOf<T>(System.Span<T>, System.ReadOnlySpan<T>)
+// TODO COPE (parm span of t): System.Int32 LastIndexOf<T>(System.Span<T>, T)
+// TODO COPE (parm span of t): bool Overlaps<T>(System.ReadOnlySpan<T>, System.ReadOnlySpan<T>)
+// TODO COPE (parm span of t): bool Overlaps<T>(System.ReadOnlySpan<T>, System.ReadOnlySpan<T>, ref System.Int32)
+// TODO COPE (parm span of t): bool Overlaps<T>(System.Span<T>, System.ReadOnlySpan<T>)
+// TODO COPE (parm span of t): bool Overlaps<T>(System.Span<T>, System.ReadOnlySpan<T>, ref System.Int32)
+// TODO COPE (parm span of t): void Reverse<T>(System.Span<T>)
+// TODO COPE (parm span of t): System.Int32 SequenceCompareTo<T>(System.ReadOnlySpan<T>, System.ReadOnlySpan<T>)
+// TODO COPE (parm span of t): System.Int32 SequenceCompareTo<T>(System.Span<T>, System.ReadOnlySpan<T>)
+// TODO COPE (parm span of t): bool SequenceEqual<T>(System.ReadOnlySpan<T>, System.ReadOnlySpan<T>)
+// TODO COPE (parm span of t): bool SequenceEqual<T>(System.Span<T>, System.ReadOnlySpan<T>)
+// TODO COPE (parm span of t): bool SequenceEqual<T>(System.ReadOnlySpan<T>, System.ReadOnlySpan<T>, System.Collections.Generic.IEqualityComparer<T>)
+// TODO COPE (parm span of t): bool SequenceEqual<T>(System.Span<T>, System.ReadOnlySpan<T>, System.Collections.Generic.IEqualityComparer<T>)
+// TODO COPE (parm span of t): void Sort<T>(System.Span<T>)
+// TODO COPE (parm span of t): void Sort<T>(System.Span<T>, System.Comparison<T>)
+// TODO COPE (parm span of t): void Sort<TKey, TValue>(System.Span<TKey>, System.Span<TValue>)
+// TODO COPE (parm span of t): void Sort<TKey, TValue>(System.Span<TKey>, System.Span<TValue>, System.Comparison<TKey>)
+// TODO COPE (parm span of t): void Sort<T, TComparer>(System.Span<T>, TComparer)
+// TODO COPE (parm span of t): void Sort<TKey, TValue, TComparer>(System.Span<TKey>, System.Span<TValue>, TComparer)
 // EXTENSION METHOD bool StartsWith(System.ReadOnlySpan<System.Char>, System.ReadOnlySpan<System.Char>, System.StringComparison)
 // TODO COPE extension method (span) bool StartsWith(System.ReadOnlySpan<System.Char>, System.ReadOnlySpan<System.Char>, System.StringComparison)
 
+// TODO COPE (parm span of t): bool StartsWith<T>(System.ReadOnlySpan<T>, System.ReadOnlySpan<T>)
+// TODO COPE (parm span of t): bool StartsWith<T>(System.Span<T>, System.ReadOnlySpan<T>)
 // EXTENSION METHOD System.Int32 ToLower(System.ReadOnlySpan<System.Char>, System.Span<System.Char>, System.Globalization.CultureInfo)
 // TODO COPE extension method (span) System.Int32 ToLower(System.ReadOnlySpan<System.Char>, System.Span<System.Char>, System.Globalization.CultureInfo)
 
@@ -2667,6 +2914,10 @@ extension dotnet.System.ReadOnlyMemory_1 {
     }
 }
 
+// TODO COPE (returns byreflike): System.ReadOnlySpan<System.Char> Trim(System.ReadOnlySpan<System.Char>)
+// TODO COPE (returns byreflike): System.ReadOnlySpan<System.Char> Trim(System.ReadOnlySpan<System.Char>, System.Char)
+// TODO COPE (returns byreflike): System.ReadOnlySpan<System.Char> Trim(System.ReadOnlySpan<System.Char>, System.ReadOnlySpan<System.Char>)
+// TODO COPE (returns byreflike): System.Span<System.Char> Trim(System.Span<System.Char>)
 // EXTENSION METHOD System.Memory<System.Char> TrimEnd(System.Memory<System.Char>)
 extension dotnet.System.Memory_1 {
     public func TrimEnd() throws -> dotnet.System.Memory_1<dotnet.System.Char> where T == dotnet.System.Char {
@@ -2681,6 +2932,11 @@ extension dotnet.System.ReadOnlyMemory_1 {
     }
 }
 
+// TODO COPE (returns byreflike): System.ReadOnlySpan<System.Char> TrimEnd(System.ReadOnlySpan<System.Char>)
+// TODO COPE (returns byreflike): System.ReadOnlySpan<System.Char> TrimEnd(System.ReadOnlySpan<System.Char>, System.Char)
+// TODO COPE (returns byreflike): System.ReadOnlySpan<System.Char> TrimEnd(System.ReadOnlySpan<System.Char>, System.ReadOnlySpan<System.Char>)
+// TODO COPE (returns byreflike): System.Span<System.Char> TrimEnd(System.Span<System.Char>)
+// TODO COPE (parm span of t): System.Memory<T> TrimEnd<T>(System.Memory<T>, System.ReadOnlySpan<T>)
 // EXTENSION METHOD System.Memory<T> TrimEnd<T>(System.Memory<T>, T)
 extension dotnet.System.Memory_1 {
     public func TrimEnd(trimElement : T) throws -> dotnet.System.Memory_1<T> {
@@ -2688,6 +2944,7 @@ extension dotnet.System.Memory_1 {
     }
 }
 
+// TODO COPE (parm span of t): System.ReadOnlyMemory<T> TrimEnd<T>(System.ReadOnlyMemory<T>, System.ReadOnlySpan<T>)
 // EXTENSION METHOD System.ReadOnlyMemory<T> TrimEnd<T>(System.ReadOnlyMemory<T>, T)
 extension dotnet.System.ReadOnlyMemory_1 {
     public func TrimEnd(trimElement : T) throws -> dotnet.System.ReadOnlyMemory_1<T> {
@@ -2695,6 +2952,10 @@ extension dotnet.System.ReadOnlyMemory_1 {
     }
 }
 
+// TODO COPE (parm span of t): System.ReadOnlySpan<T> TrimEnd<T>(System.ReadOnlySpan<T>, System.ReadOnlySpan<T>)
+// TODO COPE (parm span of t): System.ReadOnlySpan<T> TrimEnd<T>(System.ReadOnlySpan<T>, T)
+// TODO COPE (parm span of t): System.Span<T> TrimEnd<T>(System.Span<T>, System.ReadOnlySpan<T>)
+// TODO COPE (parm span of t): System.Span<T> TrimEnd<T>(System.Span<T>, T)
 // EXTENSION METHOD System.Memory<System.Char> TrimStart(System.Memory<System.Char>)
 extension dotnet.System.Memory_1 {
     public func TrimStart() throws -> dotnet.System.Memory_1<dotnet.System.Char> where T == dotnet.System.Char {
@@ -2709,6 +2970,11 @@ extension dotnet.System.ReadOnlyMemory_1 {
     }
 }
 
+// TODO COPE (returns byreflike): System.ReadOnlySpan<System.Char> TrimStart(System.ReadOnlySpan<System.Char>)
+// TODO COPE (returns byreflike): System.ReadOnlySpan<System.Char> TrimStart(System.ReadOnlySpan<System.Char>, System.Char)
+// TODO COPE (returns byreflike): System.ReadOnlySpan<System.Char> TrimStart(System.ReadOnlySpan<System.Char>, System.ReadOnlySpan<System.Char>)
+// TODO COPE (returns byreflike): System.Span<System.Char> TrimStart(System.Span<System.Char>)
+// TODO COPE (parm span of t): System.Memory<T> TrimStart<T>(System.Memory<T>, System.ReadOnlySpan<T>)
 // EXTENSION METHOD System.Memory<T> TrimStart<T>(System.Memory<T>, T)
 extension dotnet.System.Memory_1 {
     public func TrimStart(trimElement : T) throws -> dotnet.System.Memory_1<T> {
@@ -2716,6 +2982,7 @@ extension dotnet.System.Memory_1 {
     }
 }
 
+// TODO COPE (parm span of t): System.ReadOnlyMemory<T> TrimStart<T>(System.ReadOnlyMemory<T>, System.ReadOnlySpan<T>)
 // EXTENSION METHOD System.ReadOnlyMemory<T> TrimStart<T>(System.ReadOnlyMemory<T>, T)
 extension dotnet.System.ReadOnlyMemory_1 {
     public func TrimStart(trimElement : T) throws -> dotnet.System.ReadOnlyMemory_1<T> {
@@ -2723,6 +2990,11 @@ extension dotnet.System.ReadOnlyMemory_1 {
     }
 }
 
+// TODO COPE (parm span of t): System.ReadOnlySpan<T> TrimStart<T>(System.ReadOnlySpan<T>, System.ReadOnlySpan<T>)
+// TODO COPE (parm span of t): System.ReadOnlySpan<T> TrimStart<T>(System.ReadOnlySpan<T>, T)
+// TODO COPE (parm span of t): System.Span<T> TrimStart<T>(System.Span<T>, System.ReadOnlySpan<T>)
+// TODO COPE (parm span of t): System.Span<T> TrimStart<T>(System.Span<T>, T)
+// TODO COPE (parm span of t): System.Memory<T> Trim<T>(System.Memory<T>, System.ReadOnlySpan<T>)
 // EXTENSION METHOD System.Memory<T> Trim<T>(System.Memory<T>, T)
 extension dotnet.System.Memory_1 {
     public func Trim(trimElement : T) throws -> dotnet.System.Memory_1<T> {
@@ -2730,6 +3002,7 @@ extension dotnet.System.Memory_1 {
     }
 }
 
+// TODO COPE (parm span of t): System.ReadOnlyMemory<T> Trim<T>(System.ReadOnlyMemory<T>, System.ReadOnlySpan<T>)
 // EXTENSION METHOD System.ReadOnlyMemory<T> Trim<T>(System.ReadOnlyMemory<T>, T)
 extension dotnet.System.ReadOnlyMemory_1 {
     public func Trim(trimElement : T) throws -> dotnet.System.ReadOnlyMemory_1<T> {
@@ -2737,9 +3010,15 @@ extension dotnet.System.ReadOnlyMemory_1 {
     }
 }
 
+// TODO COPE (parm span of t): System.ReadOnlySpan<T> Trim<T>(System.ReadOnlySpan<T>, System.ReadOnlySpan<T>)
+// TODO COPE (parm span of t): System.ReadOnlySpan<T> Trim<T>(System.ReadOnlySpan<T>, T)
+// TODO COPE (parm span of t): System.Span<T> Trim<T>(System.Span<T>, System.ReadOnlySpan<T>)
+// TODO COPE (parm span of t): System.Span<T> Trim<T>(System.Span<T>, T)
+// TODO COPE (parm byref span): bool TryWrite(System.Span<System.Char>, ref System.MemoryExtensions.TryWriteInterpolatedStringHandler, ref System.Int32)
+// TODO COPE (parm byref span): bool TryWrite(System.Span<System.Char>, System.IFormatProvider, ref System.MemoryExtensions.TryWriteInterpolatedStringHandler, ref System.Int32)
 // EXTENSION METHOD void Convert(System.Text.Decoder, ref System.Buffers.ReadOnlySequence<System.Byte>, System.Buffers.IBufferWriter<System.Char>, bool, ref System.Int64, ref bool)
 extension dotnet.System.Text.Decoder {
-    public func Convert(bytes : inout dotnet.System.Buffers.ReadOnlySequence_1<Swift.UInt8>, writer : dotnet.System.Buffers.IBufferWriter_1<dotnet.System.Char>, flush : Bool, charsUsed : inout Swift.Int64, completed : inout Bool) throws {
+    public func Convert(bytes : inout Optional<dotnet.System.Buffers.ReadOnlySequence_1<Swift.UInt8>>, writer : dotnet.System.Buffers.IBufferWriter_1<dotnet.System.Char>, flush : Bool, charsUsed : inout Swift.Int64, completed : inout Bool) throws {
         try dotnet.System.Text.EncodingExtensions.Convert(decoder: self, bytes: &bytes, writer: writer, flush: flush, charsUsed: &charsUsed, completed: &completed);
     }
 }
@@ -2749,7 +3028,7 @@ extension dotnet.System.Text.Decoder {
 
 // EXTENSION METHOD void Convert(System.Text.Encoder, ref System.Buffers.ReadOnlySequence<System.Char>, System.Buffers.IBufferWriter<System.Byte>, bool, ref System.Int64, ref bool)
 extension dotnet.System.Text.Encoder {
-    public func Convert(chars : inout dotnet.System.Buffers.ReadOnlySequence_1<dotnet.System.Char>, writer : dotnet.System.Buffers.IBufferWriter_1<Swift.UInt8>, flush : Bool, bytesUsed : inout Swift.Int64, completed : inout Bool) throws {
+    public func Convert(chars : inout Optional<dotnet.System.Buffers.ReadOnlySequence_1<dotnet.System.Char>>, writer : dotnet.System.Buffers.IBufferWriter_1<Swift.UInt8>, flush : Bool, bytesUsed : inout Swift.Int64, completed : inout Bool) throws {
         try dotnet.System.Text.EncodingExtensions.Convert(encoder: self, chars: &chars, writer: writer, flush: flush, bytesUsed: &bytesUsed, completed: &completed);
     }
 }
@@ -2759,14 +3038,14 @@ extension dotnet.System.Text.Encoder {
 
 // EXTENSION METHOD System.Byte[] GetBytes(System.Text.Encoding, ref System.Buffers.ReadOnlySequence<System.Char>)
 extension dotnet.System.Text.Encoding {
-    public func GetBytes(chars : inout dotnet.System.Buffers.ReadOnlySequence_1<dotnet.System.Char>) throws -> dotnet.System_Arr<Swift.UInt8> {
+    public func GetBytes(chars : inout Optional<dotnet.System.Buffers.ReadOnlySequence_1<dotnet.System.Char>>) throws -> dotnet.System_Arr<Swift.UInt8> {
         return try dotnet.System.Text.EncodingExtensions.GetBytes(encoding: self, chars: &chars);
     }
 }
 
 // EXTENSION METHOD System.Int64 GetBytes(System.Text.Encoding, ref System.Buffers.ReadOnlySequence<System.Char>, System.Buffers.IBufferWriter<System.Byte>)
 extension dotnet.System.Text.Encoding {
-    public func GetBytes(chars : inout dotnet.System.Buffers.ReadOnlySequence_1<dotnet.System.Char>, writer : dotnet.System.Buffers.IBufferWriter_1<Swift.UInt8>) throws -> Swift.Int64 {
+    public func GetBytes(chars : inout Optional<dotnet.System.Buffers.ReadOnlySequence_1<dotnet.System.Char>>, writer : dotnet.System.Buffers.IBufferWriter_1<Swift.UInt8>) throws -> Swift.Int64 {
         return try dotnet.System.Text.EncodingExtensions.GetBytes(encoding: self, chars: &chars, writer: writer);
     }
 }
@@ -2779,7 +3058,7 @@ extension dotnet.System.Text.Encoding {
 
 // EXTENSION METHOD System.Int64 GetChars(System.Text.Encoding, ref System.Buffers.ReadOnlySequence<System.Byte>, System.Buffers.IBufferWriter<System.Char>)
 extension dotnet.System.Text.Encoding {
-    public func GetChars(bytes : inout dotnet.System.Buffers.ReadOnlySequence_1<Swift.UInt8>, writer : dotnet.System.Buffers.IBufferWriter_1<dotnet.System.Char>) throws -> Swift.Int64 {
+    public func GetChars(bytes : inout Optional<dotnet.System.Buffers.ReadOnlySequence_1<Swift.UInt8>>, writer : dotnet.System.Buffers.IBufferWriter_1<dotnet.System.Char>) throws -> Swift.Int64 {
         return try dotnet.System.Text.EncodingExtensions.GetChars(encoding: self, bytes: &bytes, writer: writer);
     }
 }
@@ -2792,7 +3071,7 @@ extension dotnet.System.Text.Encoding {
 
 // EXTENSION METHOD System.String GetString(System.Text.Encoding, ref System.Buffers.ReadOnlySequence<System.Byte>)
 extension dotnet.System.Text.Encoding {
-    public func GetString(bytes : inout dotnet.System.Buffers.ReadOnlySequence_1<Swift.UInt8>) throws -> dotnet.System.String {
+    public func GetString(bytes : inout Optional<dotnet.System.Buffers.ReadOnlySequence_1<Swift.UInt8>>) throws -> dotnet.System.String {
         return try dotnet.System.Text.EncodingExtensions.GetString(encoding: self, bytes: &bytes);
     }
 }

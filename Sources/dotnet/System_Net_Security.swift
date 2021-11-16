@@ -18,6 +18,9 @@ open class AuthenticatedStream
     open class override func get_type_handle() -> TypeHandle {
         return System_Net_Security_AuthenticatedStream_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // System.Threading.Tasks.ValueTask DisposeAsync()
@@ -172,6 +175,9 @@ public final class CipherSuitesPolicy
     public class override func get_type_handle() -> TypeHandle {
         return System_Net_Security_CipherSuitesPolicy_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor(System.Collections.Generic.IEnumerable<System.Net.Security.TlsCipherSuite>)
@@ -276,6 +282,9 @@ public final class LocalCertificateSelectionCallback
     public class override func get_type_handle() -> TypeHandle {
         return System_Net_Security_LocalCertificateSelectionCallback_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // System.Security.Cryptography.X509Certificates.X509Certificate Invoke(System.Object, System.String, System.Security.Cryptography.X509Certificates.X509CertificateCollection, System.Security.Cryptography.X509Certificates.X509Certificate, System.String[])
@@ -315,15 +324,15 @@ public final class LocalCertificateSelectionCallback
         return dotnet.System.Security.Cryptography.X509Certificates.X509Certificate(hndl : __return);
         }
     }
-    public init(_ callback : @escaping (dotnet.System.Object, dotnet.System.String, dotnet.System.Security.Cryptography.X509Certificates.X509CertificateCollection, Optional<dotnet.System.Security.Cryptography.X509Certificates.X509Certificate>, dotnet.System_Arr<dotnet.System.String>) throws -> dotnet.System.Security.Cryptography.X509Certificates.X509Certificate) throws
+    public convenience init(_ __closure_Invoke : @escaping (dotnet.System.Object, dotnet.System.String, dotnet.System.Security.Cryptography.X509Certificates.X509CertificateCollection, Optional<dotnet.System.Security.Cryptography.X509Certificates.X509Certificate>, dotnet.System_Arr<dotnet.System.String>) throws -> dotnet.System.Security.Cryptography.X509Certificates.X509Certificate) throws
     {
-        let __bridge : (UnsafeMutablePointer<NullableHandle>, NonnullHandle, NonnullHandle, NonnullHandle, NullableHandle, NonnullHandle) -> NonnullHandle =
+        let __interlude_Invoke : (UnsafeMutablePointer<NullableHandle>, NonnullHandle, NonnullHandle, NonnullHandle, NullableHandle, NonnullHandle) -> NonnullHandle =
         {
             (thrown : UnsafeMutablePointer<NullableHandle>, sender : NonnullHandle, targetHost : NonnullHandle, localCertificates : NonnullHandle, remoteCertificate : NullableHandle, acceptableIssuers : NonnullHandle) -> NonnullHandle in
             do
             {
                 thrown.pointee = nil;
-                let ret = try callback(dotnet.System.Object(hndl: sender), dotnet.System.String(hndl: targetHost), dotnet.System.Security.Cryptography.X509Certificates.X509CertificateCollection(hndl: localCertificates), (remoteCertificate != nil) ? (dotnet.System.Security.Cryptography.X509Certificates.X509Certificate(hndl: remoteCertificate!)) : nil, dotnet.System_Arr(hndl: acceptableIssuers));
+                let ret = try __closure_Invoke(dotnet.System.Object(hndl: sender), dotnet.System.String(hndl: targetHost), dotnet.System.Security.Cryptography.X509Certificates.X509CertificateCollection(hndl: localCertificates), (remoteCertificate != nil) ? (dotnet.System.Security.Cryptography.X509Certificates.X509Certificate(hndl: remoteCertificate!)) : nil, dotnet.System_Arr(hndl: acceptableIssuers));
                 return __copy_handle(ret.get_handle());
             }
             catch let e as dotnet.System.Exception
@@ -338,24 +347,24 @@ public final class LocalCertificateSelectionCallback
                 return NonnullHandle(bitPattern: 8675309)!;
             }
         };
-        let cbarg = UnsafeRawPointer(Unmanaged.passRetained(__bridge as AnyObject).toOpaque());
-        func __cb(cb : UnsafeRawPointer?, thrown : UnsafeMutablePointer<NullableHandle>, sender : NonnullHandle, targetHost : NonnullHandle, localCertificates : NonnullHandle, remoteCertificate : NullableHandle, acceptableIssuers : NonnullHandle) -> NonnullHandle
+        func __cb_Invoke(pdata_interlude : UnsafeRawPointer, thrown : UnsafeMutablePointer<NullableHandle>, sender : NonnullHandle, targetHost : NonnullHandle, localCertificates : NonnullHandle, remoteCertificate : NullableHandle, acceptableIssuers : NonnullHandle) -> NonnullHandle
         {
-            let f = Unmanaged<AnyObject>.fromOpaque(cb!).takeUnretainedValue() as! (UnsafeMutablePointer<NullableHandle>, NonnullHandle, NonnullHandle, NonnullHandle, NullableHandle, NonnullHandle) -> NonnullHandle;
-            return f(thrown, sender, targetHost, localCertificates, remoteCertificate, acceptableIssuers);
+            let f_interlude = Unmanaged<AnyObject>.fromOpaque(pdata_interlude).takeUnretainedValue() as! (UnsafeMutablePointer<NullableHandle>, NonnullHandle, NonnullHandle, NonnullHandle, NullableHandle, NonnullHandle) -> NonnullHandle;
+            return f_interlude(thrown, sender, targetHost, localCertificates, remoteCertificate, acceptableIssuers);
         }
+        let __pdata_Invoke = UnsafeRawPointer(Unmanaged.passRetained(__interlude_Invoke as AnyObject).toOpaque());
+
         var __thrown : NullableHandle = nil;
         let h = System_Net_Security_LocalCertificateSelectionCallback_create(
             &__thrown,
-            cbarg,
-            nil, // TODO deinit
-            __cb
+            __cb_Invoke,
+            __pdata_Invoke,
+            nil
             );
-            // TODO check thrown
         if let __ex = __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-            super.init(hndl: h);
+            self.init(hndl: h);
         }
     }
     // System.Security.Cryptography.X509Certificates.X509Certificate Invoke(System.Object, System.String, System.Security.Cryptography.X509Certificates.X509CertificateCollection, System.Security.Cryptography.X509Certificates.X509Certificate, System.String[])
@@ -383,6 +392,9 @@ open class NegotiateStream
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Net_Security_NegotiateStream_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -517,13 +529,13 @@ open class NegotiateStream
     - Returns: The task object representing the asynchronous operation.
 
     */
-    open func AuthenticateAsClientAsync() throws -> dotnet.System.Threading.Tasks.Task {
+    open func AuthenticateAsClientAsync() async throws {
         var __thrown : NullableHandle = nil;
         let __return = System_Net_Security_NegotiateStream_Task__AuthenticateAsClientAsync_0__0(&__thrown, self.get_handle());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task(hndl: __return).ToAsync();
         }
     }
     // System.Threading.Tasks.Task AuthenticateAsClientAsync(System.Net.NetworkCredential, System.Security.Authentication.ExtendedProtection.ChannelBinding, System.String)
@@ -537,13 +549,13 @@ open class NegotiateStream
     - Returns: The task object representing the asynchronous operation.
 
     */
-    open func AuthenticateAsClientAsync(credential : dotnet.System.Net.NetworkCredential, binding : Optional<dotnet.System.Security.Authentication.ExtendedProtection.ChannelBinding>, targetName : dotnet.System.String) throws -> dotnet.System.Threading.Tasks.Task {
+    open func AuthenticateAsClientAsync(credential : dotnet.System.Net.NetworkCredential, binding : Optional<dotnet.System.Security.Authentication.ExtendedProtection.ChannelBinding>, targetName : dotnet.System.String) async throws {
         var __thrown : NullableHandle = nil;
         let __return = System_Net_Security_NegotiateStream_Task__AuthenticateAsClientAsync_0__3__NetworkCredential_ChannelBinding_String(&__thrown, self.get_handle(), credential.get_handle(), binding?.get_handle() ?? nil, targetName.get_handle());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task(hndl: __return).ToAsync();
         }
     }
     // System.Threading.Tasks.Task AuthenticateAsClientAsync(System.Net.NetworkCredential, System.Security.Authentication.ExtendedProtection.ChannelBinding, System.String, System.Net.Security.ProtectionLevel, System.Security.Principal.TokenImpersonationLevel)
@@ -559,13 +571,13 @@ open class NegotiateStream
     - Returns: The task object representing the asynchronous operation.
 
     */
-    open func AuthenticateAsClientAsync(credential : dotnet.System.Net.NetworkCredential, binding : Optional<dotnet.System.Security.Authentication.ExtendedProtection.ChannelBinding>, targetName : dotnet.System.String, requiredProtectionLevel : dotnet.System.Net.Security.ProtectionLevel, allowedImpersonationLevel : dotnet.System.Security.Principal.TokenImpersonationLevel) throws -> dotnet.System.Threading.Tasks.Task {
+    open func AuthenticateAsClientAsync(credential : dotnet.System.Net.NetworkCredential, binding : Optional<dotnet.System.Security.Authentication.ExtendedProtection.ChannelBinding>, targetName : dotnet.System.String, requiredProtectionLevel : dotnet.System.Net.Security.ProtectionLevel, allowedImpersonationLevel : dotnet.System.Security.Principal.TokenImpersonationLevel) async throws {
         var __thrown : NullableHandle = nil;
         let __return = System_Net_Security_NegotiateStream_Task__AuthenticateAsClientAsync_0__5__NetworkCredential_ChannelBinding_String_ProtectionLevel_TokenImpersonationLevel(&__thrown, self.get_handle(), credential.get_handle(), binding?.get_handle() ?? nil, targetName.get_handle(), requiredProtectionLevel.get_value(), allowedImpersonationLevel.get_value());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task(hndl: __return).ToAsync();
         }
     }
     // System.Threading.Tasks.Task AuthenticateAsClientAsync(System.Net.NetworkCredential, System.String)
@@ -578,13 +590,13 @@ open class NegotiateStream
     - Returns: The task object representing the asynchronous operation.
 
     */
-    open func AuthenticateAsClientAsync(credential : dotnet.System.Net.NetworkCredential, targetName : dotnet.System.String) throws -> dotnet.System.Threading.Tasks.Task {
+    open func AuthenticateAsClientAsync(credential : dotnet.System.Net.NetworkCredential, targetName : dotnet.System.String) async throws {
         var __thrown : NullableHandle = nil;
         let __return = System_Net_Security_NegotiateStream_Task__AuthenticateAsClientAsync_0__2__NetworkCredential_String(&__thrown, self.get_handle(), credential.get_handle(), targetName.get_handle());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task(hndl: __return).ToAsync();
         }
     }
     // System.Threading.Tasks.Task AuthenticateAsClientAsync(System.Net.NetworkCredential, System.String, System.Net.Security.ProtectionLevel, System.Security.Principal.TokenImpersonationLevel)
@@ -599,13 +611,13 @@ open class NegotiateStream
     - Returns: The task object representing the asynchronous operation.
 
     */
-    open func AuthenticateAsClientAsync(credential : dotnet.System.Net.NetworkCredential, targetName : dotnet.System.String, requiredProtectionLevel : dotnet.System.Net.Security.ProtectionLevel, allowedImpersonationLevel : dotnet.System.Security.Principal.TokenImpersonationLevel) throws -> dotnet.System.Threading.Tasks.Task {
+    open func AuthenticateAsClientAsync(credential : dotnet.System.Net.NetworkCredential, targetName : dotnet.System.String, requiredProtectionLevel : dotnet.System.Net.Security.ProtectionLevel, allowedImpersonationLevel : dotnet.System.Security.Principal.TokenImpersonationLevel) async throws {
         var __thrown : NullableHandle = nil;
         let __return = System_Net_Security_NegotiateStream_Task__AuthenticateAsClientAsync_0__4__NetworkCredential_String_ProtectionLevel_TokenImpersonationLevel(&__thrown, self.get_handle(), credential.get_handle(), targetName.get_handle(), requiredProtectionLevel.get_value(), allowedImpersonationLevel.get_value());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task(hndl: __return).ToAsync();
         }
     }
     // void AuthenticateAsServer()
@@ -684,13 +696,13 @@ open class NegotiateStream
     - Returns: The task object representing the asynchronous operation.
 
     */
-    open func AuthenticateAsServerAsync() throws -> dotnet.System.Threading.Tasks.Task {
+    open func AuthenticateAsServerAsync() async throws {
         var __thrown : NullableHandle = nil;
         let __return = System_Net_Security_NegotiateStream_Task__AuthenticateAsServerAsync_0__0(&__thrown, self.get_handle());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task(hndl: __return).ToAsync();
         }
     }
     // System.Threading.Tasks.Task AuthenticateAsServerAsync(System.Net.NetworkCredential, System.Net.Security.ProtectionLevel, System.Security.Principal.TokenImpersonationLevel)
@@ -704,13 +716,13 @@ open class NegotiateStream
     - Returns: The task object representing the asynchronous operation.
 
     */
-    open func AuthenticateAsServerAsync(credential : dotnet.System.Net.NetworkCredential, requiredProtectionLevel : dotnet.System.Net.Security.ProtectionLevel, requiredImpersonationLevel : dotnet.System.Security.Principal.TokenImpersonationLevel) throws -> dotnet.System.Threading.Tasks.Task {
+    open func AuthenticateAsServerAsync(credential : dotnet.System.Net.NetworkCredential, requiredProtectionLevel : dotnet.System.Net.Security.ProtectionLevel, requiredImpersonationLevel : dotnet.System.Security.Principal.TokenImpersonationLevel) async throws {
         var __thrown : NullableHandle = nil;
         let __return = System_Net_Security_NegotiateStream_Task__AuthenticateAsServerAsync_0__3__NetworkCredential_ProtectionLevel_TokenImpersonationLevel(&__thrown, self.get_handle(), credential.get_handle(), requiredProtectionLevel.get_value(), requiredImpersonationLevel.get_value());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task(hndl: __return).ToAsync();
         }
     }
     // System.Threading.Tasks.Task AuthenticateAsServerAsync(System.Net.NetworkCredential, System.Security.Authentication.ExtendedProtection.ExtendedProtectionPolicy, System.Net.Security.ProtectionLevel, System.Security.Principal.TokenImpersonationLevel)
@@ -725,13 +737,13 @@ open class NegotiateStream
     - Returns: The task object representing the asynchronous operation.
 
     */
-    open func AuthenticateAsServerAsync(credential : dotnet.System.Net.NetworkCredential, policy : Optional<dotnet.System.Security.Authentication.ExtendedProtection.ExtendedProtectionPolicy>, requiredProtectionLevel : dotnet.System.Net.Security.ProtectionLevel, requiredImpersonationLevel : dotnet.System.Security.Principal.TokenImpersonationLevel) throws -> dotnet.System.Threading.Tasks.Task {
+    open func AuthenticateAsServerAsync(credential : dotnet.System.Net.NetworkCredential, policy : Optional<dotnet.System.Security.Authentication.ExtendedProtection.ExtendedProtectionPolicy>, requiredProtectionLevel : dotnet.System.Net.Security.ProtectionLevel, requiredImpersonationLevel : dotnet.System.Security.Principal.TokenImpersonationLevel) async throws {
         var __thrown : NullableHandle = nil;
         let __return = System_Net_Security_NegotiateStream_Task__AuthenticateAsServerAsync_0__4__NetworkCredential_ExtendedProtectionPolicy_ProtectionLevel_TokenImpersonationLevel(&__thrown, self.get_handle(), credential.get_handle(), policy?.get_handle() ?? nil, requiredProtectionLevel.get_value(), requiredImpersonationLevel.get_value());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task(hndl: __return).ToAsync();
         }
     }
     // System.Threading.Tasks.Task AuthenticateAsServerAsync(System.Security.Authentication.ExtendedProtection.ExtendedProtectionPolicy)
@@ -743,13 +755,13 @@ open class NegotiateStream
     - Returns: The task object representing the asynchronous operation.
 
     */
-    open func AuthenticateAsServerAsync(policy : Optional<dotnet.System.Security.Authentication.ExtendedProtection.ExtendedProtectionPolicy>) throws -> dotnet.System.Threading.Tasks.Task {
+    open func AuthenticateAsServerAsync(policy : Optional<dotnet.System.Security.Authentication.ExtendedProtection.ExtendedProtectionPolicy>) async throws {
         var __thrown : NullableHandle = nil;
         let __return = System_Net_Security_NegotiateStream_Task__AuthenticateAsServerAsync_0__1__ExtendedProtectionPolicy(&__thrown, self.get_handle(), policy?.get_handle() ?? nil);
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task(hndl: __return).ToAsync();
         }
     }
     // System.IAsyncResult BeginAuthenticateAsClient(System.AsyncCallback, System.Object)
@@ -1098,7 +1110,7 @@ open class NegotiateStream
     /**
     Ends an asynchronous read operation that was started with a call to .
 
-    - Parameter asyncResult: An  instance returned by a call to 
+    - Parameter asyncResult: An  instance returned by a call to .
     - Returns: A  value that specifies the number of bytes read from the underlying stream.
 
     */
@@ -1116,7 +1128,7 @@ open class NegotiateStream
     /**
     Ends an asynchronous write operation that was started with a call to .
 
-    - Parameter asyncResult: An  instance returned by a call to 
+    - Parameter asyncResult: An  instance returned by a call to .
     */
     open override func EndWrite(asyncResult : dotnet.System.IAsyncResult) throws {
         var __thrown : NullableHandle = nil;
@@ -1151,13 +1163,13 @@ open class NegotiateStream
     - Returns: A task that represents the asynchronous flush operation.
 
     */
-    open override func FlushAsync(cancellationToken : dotnet.System.Threading.CancellationToken) throws -> dotnet.System.Threading.Tasks.Task {
+    open override func FlushAsync(cancellationToken : dotnet.System.Threading.CancellationToken) async throws {
         var __thrown : NullableHandle = nil;
         let __return = System_Net_Security_NegotiateStream_Task__FlushAsync_0__1__CancellationToken(&__thrown, self.get_handle(), cancellationToken.get_handle());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task(hndl: __return).ToAsync();
         }
     }
     // System.Int32 Read(System.Byte[], System.Int32, System.Int32)
@@ -1192,13 +1204,13 @@ open class NegotiateStream
     - Returns: An  value that specifies the number of bytes read from the underlying stream. When there is no more data to be read, returns 0.
 
     */
-    open override func ReadAsync(buffer : dotnet.System_Arr<Swift.UInt8>, offset : Swift.Int32, count : Swift.Int32, cancellationToken : dotnet.System.Threading.CancellationToken) throws -> dotnet.System.Threading.Tasks.Task_1<Swift.Int32> {
+    open override func ReadAsync(buffer : dotnet.System_Arr<Swift.UInt8>, offset : Swift.Int32, count : Swift.Int32, cancellationToken : dotnet.System.Threading.CancellationToken) async throws -> Swift.Int32 {
         var __thrown : NullableHandle = nil;
         let __return = System_Net_Security_NegotiateStream_System_Threading_Tasks_Task_i32___ReadAsync_0__4__u8Array_i32_i32_CancellationToken(&__thrown, self.get_handle(), buffer.get_handle(), offset, count, cancellationToken.get_handle());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task_1(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task_1(hndl: __return).ToAsync();
         }
     }
     // System.Threading.Tasks.ValueTask<System.Int32> ReadAsync(System.Memory<System.Byte>, System.Threading.CancellationToken)
@@ -1282,14 +1294,16 @@ open class NegotiateStream
     - Parameter offset: An  containing the zero-based location in  at which to begin reading bytes to be written to the stream.
     - Parameter count: A  containing the number of bytes to read from .
     - Parameter cancellationToken: 
+    - Returns: A  that represents the asynchronous read operation.
+
     */
-    open override func WriteAsync(buffer : dotnet.System_Arr<Swift.UInt8>, offset : Swift.Int32, count : Swift.Int32, cancellationToken : dotnet.System.Threading.CancellationToken) throws -> dotnet.System.Threading.Tasks.Task {
+    open override func WriteAsync(buffer : dotnet.System_Arr<Swift.UInt8>, offset : Swift.Int32, count : Swift.Int32, cancellationToken : dotnet.System.Threading.CancellationToken) async throws {
         var __thrown : NullableHandle = nil;
         let __return = System_Net_Security_NegotiateStream_Task__WriteAsync_0__4__u8Array_i32_i32_CancellationToken(&__thrown, self.get_handle(), buffer.get_handle(), offset, count, cancellationToken.get_handle());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task(hndl: __return).ToAsync();
         }
     }
     // System.Threading.Tasks.ValueTask WriteAsync(System.ReadOnlyMemory<System.Byte>, System.Threading.CancellationToken)
@@ -1299,6 +1313,8 @@ open class NegotiateStream
 
     - Parameter buffer: A region of memory that contains the data to write to the .
     - Parameter cancellationToken: The token to monitor for cancellation requests.
+    - Returns: A  that represents the asynchronous read operation.
+
     */
     open override func WriteAsync(buffer : dotnet.System.ReadOnlyMemory_1<Swift.UInt8>, cancellationToken : dotnet.System.Threading.CancellationToken = System.Threading.CancellationToken.None) throws -> dotnet.System.Threading.Tasks.ValueTask {
         var __thrown : NullableHandle = nil;
@@ -1717,6 +1733,9 @@ public final class RemoteCertificateValidationCallback
     public class override func get_type_handle() -> TypeHandle {
         return System_Net_Security_RemoteCertificateValidationCallback_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // bool Invoke(System.Object, System.Security.Cryptography.X509Certificates.X509Certificate, System.Security.Cryptography.X509Certificates.X509Chain, System.Net.Security.SslPolicyErrors)
@@ -1756,15 +1775,15 @@ public final class RemoteCertificateValidationCallback
         return (__return) != 0;
         }
     }
-    public init(_ callback : @escaping (dotnet.System.Object, Optional<dotnet.System.Security.Cryptography.X509Certificates.X509Certificate>, Optional<dotnet.System.Security.Cryptography.X509Certificates.X509Chain>, dotnet.System.Net.Security.SslPolicyErrors) throws -> Bool) throws
+    public convenience init(_ __closure_Invoke : @escaping (dotnet.System.Object, Optional<dotnet.System.Security.Cryptography.X509Certificates.X509Certificate>, Optional<dotnet.System.Security.Cryptography.X509Certificates.X509Chain>, dotnet.System.Net.Security.SslPolicyErrors) throws -> Bool) throws
     {
-        let __bridge : (UnsafeMutablePointer<NullableHandle>, NonnullHandle, NullableHandle, NullableHandle, Swift.Int32) -> Swift.Int32 =
+        let __interlude_Invoke : (UnsafeMutablePointer<NullableHandle>, NonnullHandle, NullableHandle, NullableHandle, Swift.Int32) -> Swift.Int32 =
         {
             (thrown : UnsafeMutablePointer<NullableHandle>, sender : NonnullHandle, certificate : NullableHandle, chain : NullableHandle, sslPolicyErrors : Swift.Int32) -> Swift.Int32 in
             do
             {
                 thrown.pointee = nil;
-                let ret = try callback(dotnet.System.Object(hndl: sender), (certificate != nil) ? (dotnet.System.Security.Cryptography.X509Certificates.X509Certificate(hndl: certificate!)) : nil, (chain != nil) ? (dotnet.System.Security.Cryptography.X509Certificates.X509Chain(hndl: chain!)) : nil, dotnet.System.Net.Security.SslPolicyErrors(val: sslPolicyErrors));
+                let ret = try __closure_Invoke(dotnet.System.Object(hndl: sender), (certificate != nil) ? (dotnet.System.Security.Cryptography.X509Certificates.X509Certificate(hndl: certificate!)) : nil, (chain != nil) ? (dotnet.System.Security.Cryptography.X509Certificates.X509Chain(hndl: chain!)) : nil, dotnet.System.Net.Security.SslPolicyErrors(val: sslPolicyErrors));
                 return ret ? 1 : 0;
             }
             catch let e as dotnet.System.Exception
@@ -1779,24 +1798,24 @@ public final class RemoteCertificateValidationCallback
                 return 0;
             }
         };
-        let cbarg = UnsafeRawPointer(Unmanaged.passRetained(__bridge as AnyObject).toOpaque());
-        func __cb(cb : UnsafeRawPointer?, thrown : UnsafeMutablePointer<NullableHandle>, sender : NonnullHandle, certificate : NullableHandle, chain : NullableHandle, sslPolicyErrors : Swift.Int32) -> Swift.Int32
+        func __cb_Invoke(pdata_interlude : UnsafeRawPointer, thrown : UnsafeMutablePointer<NullableHandle>, sender : NonnullHandle, certificate : NullableHandle, chain : NullableHandle, sslPolicyErrors : Swift.Int32) -> Swift.Int32
         {
-            let f = Unmanaged<AnyObject>.fromOpaque(cb!).takeUnretainedValue() as! (UnsafeMutablePointer<NullableHandle>, NonnullHandle, NullableHandle, NullableHandle, Swift.Int32) -> Swift.Int32;
-            return f(thrown, sender, certificate, chain, sslPolicyErrors);
+            let f_interlude = Unmanaged<AnyObject>.fromOpaque(pdata_interlude).takeUnretainedValue() as! (UnsafeMutablePointer<NullableHandle>, NonnullHandle, NullableHandle, NullableHandle, Swift.Int32) -> Swift.Int32;
+            return f_interlude(thrown, sender, certificate, chain, sslPolicyErrors);
         }
+        let __pdata_Invoke = UnsafeRawPointer(Unmanaged.passRetained(__interlude_Invoke as AnyObject).toOpaque());
+
         var __thrown : NullableHandle = nil;
         let h = System_Net_Security_RemoteCertificateValidationCallback_create(
             &__thrown,
-            cbarg,
-            nil, // TODO deinit
-            __cb
+            __cb_Invoke,
+            __pdata_Invoke,
+            nil
             );
-            // TODO check thrown
         if let __ex = __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-            super.init(hndl: h);
+            self.init(hndl: h);
         }
     }
     // bool Invoke(System.Object, System.Security.Cryptography.X509Certificates.X509Certificate, System.Security.Cryptography.X509Certificates.X509Chain, System.Net.Security.SslPolicyErrors)
@@ -1824,6 +1843,9 @@ public final class ServerCertificateSelectionCallback
 {
     public class override func get_type_handle() -> TypeHandle {
         return System_Net_Security_ServerCertificateSelectionCallback_get_type_handle();
+    }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -1864,15 +1886,15 @@ public final class ServerCertificateSelectionCallback
         return dotnet.System.Security.Cryptography.X509Certificates.X509Certificate(hndl : __return);
         }
     }
-    public init(_ callback : @escaping (dotnet.System.Object, Optional<dotnet.System.String>) throws -> dotnet.System.Security.Cryptography.X509Certificates.X509Certificate) throws
+    public convenience init(_ __closure_Invoke : @escaping (dotnet.System.Object, Optional<dotnet.System.String>) throws -> dotnet.System.Security.Cryptography.X509Certificates.X509Certificate) throws
     {
-        let __bridge : (UnsafeMutablePointer<NullableHandle>, NonnullHandle, NullableHandle) -> NonnullHandle =
+        let __interlude_Invoke : (UnsafeMutablePointer<NullableHandle>, NonnullHandle, NullableHandle) -> NonnullHandle =
         {
             (thrown : UnsafeMutablePointer<NullableHandle>, sender : NonnullHandle, hostName : NullableHandle) -> NonnullHandle in
             do
             {
                 thrown.pointee = nil;
-                let ret = try callback(dotnet.System.Object(hndl: sender), (hostName != nil) ? (dotnet.System.String(hndl: hostName!)) : nil);
+                let ret = try __closure_Invoke(dotnet.System.Object(hndl: sender), (hostName != nil) ? (dotnet.System.String(hndl: hostName!)) : nil);
                 return __copy_handle(ret.get_handle());
             }
             catch let e as dotnet.System.Exception
@@ -1887,24 +1909,24 @@ public final class ServerCertificateSelectionCallback
                 return NonnullHandle(bitPattern: 8675309)!;
             }
         };
-        let cbarg = UnsafeRawPointer(Unmanaged.passRetained(__bridge as AnyObject).toOpaque());
-        func __cb(cb : UnsafeRawPointer?, thrown : UnsafeMutablePointer<NullableHandle>, sender : NonnullHandle, hostName : NullableHandle) -> NonnullHandle
+        func __cb_Invoke(pdata_interlude : UnsafeRawPointer, thrown : UnsafeMutablePointer<NullableHandle>, sender : NonnullHandle, hostName : NullableHandle) -> NonnullHandle
         {
-            let f = Unmanaged<AnyObject>.fromOpaque(cb!).takeUnretainedValue() as! (UnsafeMutablePointer<NullableHandle>, NonnullHandle, NullableHandle) -> NonnullHandle;
-            return f(thrown, sender, hostName);
+            let f_interlude = Unmanaged<AnyObject>.fromOpaque(pdata_interlude).takeUnretainedValue() as! (UnsafeMutablePointer<NullableHandle>, NonnullHandle, NullableHandle) -> NonnullHandle;
+            return f_interlude(thrown, sender, hostName);
         }
+        let __pdata_Invoke = UnsafeRawPointer(Unmanaged.passRetained(__interlude_Invoke as AnyObject).toOpaque());
+
         var __thrown : NullableHandle = nil;
         let h = System_Net_Security_ServerCertificateSelectionCallback_create(
             &__thrown,
-            cbarg,
-            nil, // TODO deinit
-            __cb
+            __cb_Invoke,
+            __pdata_Invoke,
+            nil
             );
-            // TODO check thrown
         if let __ex = __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-            super.init(hndl: h);
+            self.init(hndl: h);
         }
     }
     // System.Security.Cryptography.X509Certificates.X509Certificate Invoke(System.Object, System.String)
@@ -1932,6 +1954,9 @@ public final class ServerOptionsSelectionCallback
 {
     public class override func get_type_handle() -> TypeHandle {
         return System_Net_Security_ServerOptionsSelectionCallback_get_type_handle();
+    }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -1972,15 +1997,15 @@ public final class ServerOptionsSelectionCallback
         return dotnet.System.Threading.Tasks.ValueTask_1(hndl : __return);
         }
     }
-    public init(_ callback : @escaping (dotnet.System.Net.Security.SslStream, dotnet.System.Net.Security.SslClientHelloInfo, Optional<dotnet.System.Object>, dotnet.System.Threading.CancellationToken) throws -> dotnet.System.Threading.Tasks.ValueTask_1<dotnet.System.Net.Security.SslServerAuthenticationOptions>) throws
+    public convenience init(_ __closure_Invoke : @escaping (dotnet.System.Net.Security.SslStream, dotnet.System.Net.Security.SslClientHelloInfo, Optional<dotnet.System.Object>, dotnet.System.Threading.CancellationToken) throws -> dotnet.System.Threading.Tasks.ValueTask_1<dotnet.System.Net.Security.SslServerAuthenticationOptions>) throws
     {
-        let __bridge : (UnsafeMutablePointer<NullableHandle>, NonnullHandle, NonnullHandle, NullableHandle, NonnullHandle) -> NonnullHandle =
+        let __interlude_Invoke : (UnsafeMutablePointer<NullableHandle>, NonnullHandle, NonnullHandle, NullableHandle, NonnullHandle) -> NonnullHandle =
         {
             (thrown : UnsafeMutablePointer<NullableHandle>, stream : NonnullHandle, clientHelloInfo : NonnullHandle, state : NullableHandle, cancellationToken : NonnullHandle) -> NonnullHandle in
             do
             {
                 thrown.pointee = nil;
-                let ret = try callback(dotnet.System.Net.Security.SslStream(hndl: stream), dotnet.System.Net.Security.SslClientHelloInfo(hndl: clientHelloInfo), (state != nil) ? (dotnet.System.Object(hndl: state!)) : nil, dotnet.System.Threading.CancellationToken(hndl: cancellationToken));
+                let ret = try __closure_Invoke(dotnet.System.Net.Security.SslStream(hndl: stream), dotnet.System.Net.Security.SslClientHelloInfo(hndl: clientHelloInfo), (state != nil) ? (dotnet.System.Object(hndl: state!)) : nil, dotnet.System.Threading.CancellationToken(hndl: cancellationToken));
                 return __copy_handle(ret.get_handle());
             }
             catch let e as dotnet.System.Exception
@@ -1995,24 +2020,24 @@ public final class ServerOptionsSelectionCallback
                 return NonnullHandle(bitPattern: 8675309)!;
             }
         };
-        let cbarg = UnsafeRawPointer(Unmanaged.passRetained(__bridge as AnyObject).toOpaque());
-        func __cb(cb : UnsafeRawPointer?, thrown : UnsafeMutablePointer<NullableHandle>, stream : NonnullHandle, clientHelloInfo : NonnullHandle, state : NullableHandle, cancellationToken : NonnullHandle) -> NonnullHandle
+        func __cb_Invoke(pdata_interlude : UnsafeRawPointer, thrown : UnsafeMutablePointer<NullableHandle>, stream : NonnullHandle, clientHelloInfo : NonnullHandle, state : NullableHandle, cancellationToken : NonnullHandle) -> NonnullHandle
         {
-            let f = Unmanaged<AnyObject>.fromOpaque(cb!).takeUnretainedValue() as! (UnsafeMutablePointer<NullableHandle>, NonnullHandle, NonnullHandle, NullableHandle, NonnullHandle) -> NonnullHandle;
-            return f(thrown, stream, clientHelloInfo, state, cancellationToken);
+            let f_interlude = Unmanaged<AnyObject>.fromOpaque(pdata_interlude).takeUnretainedValue() as! (UnsafeMutablePointer<NullableHandle>, NonnullHandle, NonnullHandle, NullableHandle, NonnullHandle) -> NonnullHandle;
+            return f_interlude(thrown, stream, clientHelloInfo, state, cancellationToken);
         }
+        let __pdata_Invoke = UnsafeRawPointer(Unmanaged.passRetained(__interlude_Invoke as AnyObject).toOpaque());
+
         var __thrown : NullableHandle = nil;
         let h = System_Net_Security_ServerOptionsSelectionCallback_create(
             &__thrown,
-            cbarg,
-            nil, // TODO deinit
-            __cb
+            __cb_Invoke,
+            __pdata_Invoke,
+            nil
             );
-            // TODO check thrown
         if let __ex = __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-            super.init(hndl: h);
+            self.init(hndl: h);
         }
     }
     // System.Threading.Tasks.ValueTask<System.Net.Security.SslServerAuthenticationOptions> Invoke(System.Net.Security.SslStream, System.Net.Security.SslClientHelloInfo, System.Object, System.Threading.CancellationToken)
@@ -2042,6 +2067,9 @@ public final class SslApplicationProtocol
     public class override func get_type_handle() -> TypeHandle {
         return System_Net_Security_SslApplicationProtocol_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // static field: System.Net.Security.SslApplicationProtocol Http11
@@ -2067,6 +2095,10 @@ public final class SslApplicationProtocol
         }
     }
     // static field: System.Net.Security.SslApplicationProtocol Http3
+    /**
+    Defines a  instance for HTTP 3.0.
+
+    */
     public class var Http3 : dotnet.System.Net.Security.SslApplicationProtocol {
         get {
         let __return = dotnet.System.Net.Security.SslApplicationProtocol(hndl: System_Net_Security_SslApplicationProtocol_get_Http3());
@@ -2245,6 +2277,10 @@ public final class SslApplicationProtocol
 
 
 // type: System.Net.Security.SslCertificateTrust
+    /**
+    Represents a trust policy for use with SSL/TLS connections.
+
+    */
 public final class SslCertificateTrust
     :
     dotnet.System.Object
@@ -2252,10 +2288,22 @@ public final class SslCertificateTrust
     public class override func get_type_handle() -> TypeHandle {
         return System_Net_Security_SslCertificateTrust_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // System.Net.Security.SslCertificateTrust CreateForX509Store(System.Security.Cryptography.X509Certificates.X509Store, bool)
 // docid: M:System.Net.Security.SslCertificateTrust.CreateForX509Store(System.Security.Cryptography.X509Certificates.X509Store,System.Boolean)
+    /**
+    Creates a new .
+
+    - Parameter store: The store containing the trusted certificates.
+    - Parameter sendTrustInHandshake: 
+         for the server to send a list of trusted certificate authorities during the TLS handshake;  not to send the list.
+    - Returns: Represents a trust policy.
+
+    */
     public class func CreateForX509Store(store : dotnet.System.Security.Cryptography.X509Certificates.X509Store, sendTrustInHandshake : Bool = false) throws -> dotnet.System.Net.Security.SslCertificateTrust {
         var __thrown : NullableHandle = nil;
         let __return = System_Net_Security_SslCertificateTrust_SslCertificateTrust__CreateForX509Store_0__2__X509Store_bool(&__thrown, store.get_handle(), Swift.Int32(sendTrustInHandshake ? 1 : 0));
@@ -2267,6 +2315,15 @@ public final class SslCertificateTrust
     }
     // System.Net.Security.SslCertificateTrust CreateForX509Collection(System.Security.Cryptography.X509Certificates.X509Certificate2Collection, bool)
 // docid: M:System.Net.Security.SslCertificateTrust.CreateForX509Collection(System.Security.Cryptography.X509Certificates.X509Certificate2Collection,System.Boolean)
+    /**
+    Creates a new .
+
+    - Parameter trustList: The collection containing the trusted certificates.
+    - Parameter sendTrustInHandshake: 
+         for the server to send a list of trusted certificate authorities during the TLS handshake;  not to send the list.
+    - Returns: Represents a trust policy.
+
+    */
     public class func CreateForX509Collection(trustList : dotnet.System.Security.Cryptography.X509Certificates.X509Certificate2Collection, sendTrustInHandshake : Bool = false) throws -> dotnet.System.Net.Security.SslCertificateTrust {
         var __thrown : NullableHandle = nil;
         let __return = System_Net_Security_SslCertificateTrust_SslCertificateTrust__CreateForX509Collection_0__2__X509Certificate2Collection_bool(&__thrown, trustList.get_handle(), Swift.Int32(sendTrustInHandshake ? 1 : 0));
@@ -2290,6 +2347,9 @@ open class SslClientAuthenticationOptions
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Net_Security_SslClientAuthenticationOptions_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -2698,6 +2758,9 @@ public final class SslClientHelloInfo
     public class override func get_type_handle() -> TypeHandle {
         return System_Net_Security_SslClientHelloInfo_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     /**
@@ -2758,6 +2821,9 @@ open class SslServerAuthenticationOptions
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Net_Security_SslServerAuthenticationOptions_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -3199,6 +3265,9 @@ open class SslStream
     open class override func get_type_handle() -> TypeHandle {
         return System_Net_Security_SslStream_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor(System.IO.Stream)
@@ -3274,7 +3343,7 @@ open class SslStream
     // .ctor(System.IO.Stream, bool, System.Net.Security.RemoteCertificateValidationCallback, System.Net.Security.LocalCertificateSelectionCallback, System.Net.Security.EncryptionPolicy)
 // docid: M:System.Net.Security.SslStream.#ctor(System.IO.Stream,System.Boolean,System.Net.Security.RemoteCertificateValidationCallback,System.Net.Security.LocalCertificateSelectionCallback,System.Net.Security.EncryptionPolicy)
     /**
-    Initializes a new instance of the  class using the specified 
+    Initializes a new instance of the  class using the specified .
 
     - Parameter innerStream: A  object used by the  for sending and receiving data.
     - Parameter leaveInnerStreamOpen: A Boolean value that indicates the closure behavior of the  object used by the  for sending and receiving data. This parameter indicates if the inner stream is left open.
@@ -3370,13 +3439,13 @@ open class SslStream
     - Returns: The task object representing the asynchronous operation.
 
     */
-    open func AuthenticateAsClientAsync(sslClientAuthenticationOptions : dotnet.System.Net.Security.SslClientAuthenticationOptions, cancellationToken : dotnet.System.Threading.CancellationToken = System.Threading.CancellationToken.None) throws -> dotnet.System.Threading.Tasks.Task {
+    open func AuthenticateAsClientAsync(sslClientAuthenticationOptions : dotnet.System.Net.Security.SslClientAuthenticationOptions, cancellationToken : dotnet.System.Threading.CancellationToken = System.Threading.CancellationToken.None) async throws {
         var __thrown : NullableHandle = nil;
         let __return = System_Net_Security_SslStream_Task__AuthenticateAsClientAsync_0__2__SslClientAuthenticationOptions_CancellationToken(&__thrown, self.get_handle(), sslClientAuthenticationOptions.get_handle(), cancellationToken.get_handle());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task(hndl: __return).ToAsync();
         }
     }
     // System.Threading.Tasks.Task AuthenticateAsClientAsync(System.String)
@@ -3388,13 +3457,13 @@ open class SslStream
     - Returns: The task object representing the asynchronous operation.
 
     */
-    open func AuthenticateAsClientAsync(targetHost : dotnet.System.String) throws -> dotnet.System.Threading.Tasks.Task {
+    open func AuthenticateAsClientAsync(targetHost : dotnet.System.String) async throws {
         var __thrown : NullableHandle = nil;
         let __return = System_Net_Security_SslStream_Task__AuthenticateAsClientAsync_0__1__String(&__thrown, self.get_handle(), targetHost.get_handle());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task(hndl: __return).ToAsync();
         }
     }
     // System.Threading.Tasks.Task AuthenticateAsClientAsync(System.String, System.Security.Cryptography.X509Certificates.X509CertificateCollection, bool)
@@ -3408,13 +3477,13 @@ open class SslStream
     - Returns: The task object representing the asynchronous operation.
 
     */
-    open func AuthenticateAsClientAsync(targetHost : dotnet.System.String, clientCertificates : Optional<dotnet.System.Security.Cryptography.X509Certificates.X509CertificateCollection>, checkCertificateRevocation : Bool) throws -> dotnet.System.Threading.Tasks.Task {
+    open func AuthenticateAsClientAsync(targetHost : dotnet.System.String, clientCertificates : Optional<dotnet.System.Security.Cryptography.X509Certificates.X509CertificateCollection>, checkCertificateRevocation : Bool) async throws {
         var __thrown : NullableHandle = nil;
         let __return = System_Net_Security_SslStream_Task__AuthenticateAsClientAsync_0__3__String_X509CertificateCollection_bool(&__thrown, self.get_handle(), targetHost.get_handle(), clientCertificates?.get_handle() ?? nil, Swift.Int32(checkCertificateRevocation ? 1 : 0));
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task(hndl: __return).ToAsync();
         }
     }
     // System.Threading.Tasks.Task AuthenticateAsClientAsync(System.String, System.Security.Cryptography.X509Certificates.X509CertificateCollection, System.Security.Authentication.SslProtocols, bool)
@@ -3429,13 +3498,13 @@ open class SslStream
     - Returns: The task object representing the asynchronous operation.
 
     */
-    open func AuthenticateAsClientAsync(targetHost : dotnet.System.String, clientCertificates : Optional<dotnet.System.Security.Cryptography.X509Certificates.X509CertificateCollection>, enabledSslProtocols : dotnet.System.Security.Authentication.SslProtocols, checkCertificateRevocation : Bool) throws -> dotnet.System.Threading.Tasks.Task {
+    open func AuthenticateAsClientAsync(targetHost : dotnet.System.String, clientCertificates : Optional<dotnet.System.Security.Cryptography.X509Certificates.X509CertificateCollection>, enabledSslProtocols : dotnet.System.Security.Authentication.SslProtocols, checkCertificateRevocation : Bool) async throws {
         var __thrown : NullableHandle = nil;
         let __return = System_Net_Security_SslStream_Task__AuthenticateAsClientAsync_0__4__String_X509CertificateCollection_SslProtocols_bool(&__thrown, self.get_handle(), targetHost.get_handle(), clientCertificates?.get_handle() ?? nil, enabledSslProtocols.get_value(), Swift.Int32(checkCertificateRevocation ? 1 : 0));
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task(hndl: __return).ToAsync();
         }
     }
     // void AuthenticateAsServer(System.Net.Security.SslServerAuthenticationOptions)
@@ -3517,13 +3586,13 @@ open class SslStream
     - Returns: The task object representing the asynchronous operation.
 
     */
-    open func AuthenticateAsServerAsync(sslServerAuthenticationOptions : dotnet.System.Net.Security.SslServerAuthenticationOptions, cancellationToken : dotnet.System.Threading.CancellationToken = System.Threading.CancellationToken.None) throws -> dotnet.System.Threading.Tasks.Task {
+    open func AuthenticateAsServerAsync(sslServerAuthenticationOptions : dotnet.System.Net.Security.SslServerAuthenticationOptions, cancellationToken : dotnet.System.Threading.CancellationToken = System.Threading.CancellationToken.None) async throws {
         var __thrown : NullableHandle = nil;
         let __return = System_Net_Security_SslStream_Task__AuthenticateAsServerAsync_0__2__SslServerAuthenticationOptions_CancellationToken(&__thrown, self.get_handle(), sslServerAuthenticationOptions.get_handle(), cancellationToken.get_handle());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task(hndl: __return).ToAsync();
         }
     }
     // System.Threading.Tasks.Task AuthenticateAsServerAsync(System.Security.Cryptography.X509Certificates.X509Certificate)
@@ -3535,13 +3604,13 @@ open class SslStream
     - Returns: The task object representing the asynchronous operation.
 
     */
-    open func AuthenticateAsServerAsync(serverCertificate : dotnet.System.Security.Cryptography.X509Certificates.X509Certificate) throws -> dotnet.System.Threading.Tasks.Task {
+    open func AuthenticateAsServerAsync(serverCertificate : dotnet.System.Security.Cryptography.X509Certificates.X509Certificate) async throws {
         var __thrown : NullableHandle = nil;
         let __return = System_Net_Security_SslStream_Task__AuthenticateAsServerAsync_0__1__X509Certificate(&__thrown, self.get_handle(), serverCertificate.get_handle());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task(hndl: __return).ToAsync();
         }
     }
     // System.Threading.Tasks.Task AuthenticateAsServerAsync(System.Security.Cryptography.X509Certificates.X509Certificate, bool, bool)
@@ -3555,13 +3624,13 @@ open class SslStream
     - Returns: The task object representing the asynchronous operation.
 
     */
-    open func AuthenticateAsServerAsync(serverCertificate : dotnet.System.Security.Cryptography.X509Certificates.X509Certificate, clientCertificateRequired : Bool, checkCertificateRevocation : Bool) throws -> dotnet.System.Threading.Tasks.Task {
+    open func AuthenticateAsServerAsync(serverCertificate : dotnet.System.Security.Cryptography.X509Certificates.X509Certificate, clientCertificateRequired : Bool, checkCertificateRevocation : Bool) async throws {
         var __thrown : NullableHandle = nil;
         let __return = System_Net_Security_SslStream_Task__AuthenticateAsServerAsync_0__3__X509Certificate_bool_bool(&__thrown, self.get_handle(), serverCertificate.get_handle(), Swift.Int32(clientCertificateRequired ? 1 : 0), Swift.Int32(checkCertificateRevocation ? 1 : 0));
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task(hndl: __return).ToAsync();
         }
     }
     // System.Threading.Tasks.Task AuthenticateAsServerAsync(System.Security.Cryptography.X509Certificates.X509Certificate, bool, System.Security.Authentication.SslProtocols, bool)
@@ -3576,13 +3645,13 @@ open class SslStream
     - Returns: The task object representing the asynchronous operation.
 
     */
-    open func AuthenticateAsServerAsync(serverCertificate : dotnet.System.Security.Cryptography.X509Certificates.X509Certificate, clientCertificateRequired : Bool, enabledSslProtocols : dotnet.System.Security.Authentication.SslProtocols, checkCertificateRevocation : Bool) throws -> dotnet.System.Threading.Tasks.Task {
+    open func AuthenticateAsServerAsync(serverCertificate : dotnet.System.Security.Cryptography.X509Certificates.X509Certificate, clientCertificateRequired : Bool, enabledSslProtocols : dotnet.System.Security.Authentication.SslProtocols, checkCertificateRevocation : Bool) async throws {
         var __thrown : NullableHandle = nil;
         let __return = System_Net_Security_SslStream_Task__AuthenticateAsServerAsync_0__4__X509Certificate_bool_SslProtocols_bool(&__thrown, self.get_handle(), serverCertificate.get_handle(), Swift.Int32(clientCertificateRequired ? 1 : 0), enabledSslProtocols.get_value(), Swift.Int32(checkCertificateRevocation ? 1 : 0));
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task(hndl: __return).ToAsync();
         }
     }
     // System.Threading.Tasks.Task AuthenticateAsServerAsync(System.Net.Security.ServerOptionsSelectionCallback, System.Object, System.Threading.CancellationToken)
@@ -3596,19 +3665,19 @@ open class SslStream
     - Returns: The task object representing the asynchronous operation.
 
     */
-    open func AuthenticateAsServerAsync(optionsCallback : dotnet.System.Net.Security.ServerOptionsSelectionCallback, state : Optional<dotnet.System.Object>, cancellationToken : dotnet.System.Threading.CancellationToken = System.Threading.CancellationToken.None) throws -> dotnet.System.Threading.Tasks.Task {
+    open func AuthenticateAsServerAsync(optionsCallback : dotnet.System.Net.Security.ServerOptionsSelectionCallback, state : Optional<dotnet.System.Object>, cancellationToken : dotnet.System.Threading.CancellationToken = System.Threading.CancellationToken.None) async throws {
         var __thrown : NullableHandle = nil;
         let __return = System_Net_Security_SslStream_Task__AuthenticateAsServerAsync_0__3__ServerOptionsSelectionCallback_Object_CancellationToken(&__thrown, self.get_handle(), optionsCallback.get_handle(), state?.get_handle() ?? nil, cancellationToken.get_handle());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task(hndl: __return).ToAsync();
         }
     }
     // delegate closure overload
-    open func AuthenticateAsServerAsync(optionsCallback : @escaping (dotnet.System.Net.Security.SslStream, dotnet.System.Net.Security.SslClientHelloInfo, Optional<dotnet.System.Object>, dotnet.System.Threading.CancellationToken) throws -> dotnet.System.Threading.Tasks.ValueTask_1<dotnet.System.Net.Security.SslServerAuthenticationOptions>, state : Optional<dotnet.System.Object>, cancellationToken : dotnet.System.Threading.CancellationToken) throws -> dotnet.System.Threading.Tasks.Task {
+    open func AuthenticateAsServerAsync(optionsCallback : @escaping (dotnet.System.Net.Security.SslStream, dotnet.System.Net.Security.SslClientHelloInfo, Optional<dotnet.System.Object>, dotnet.System.Threading.CancellationToken) throws -> dotnet.System.Threading.Tasks.ValueTask_1<dotnet.System.Net.Security.SslServerAuthenticationOptions>, state : Optional<dotnet.System.Object>, cancellationToken : dotnet.System.Threading.CancellationToken) async throws {
         let del_optionsCallback = try dotnet.System.Net.Security.ServerOptionsSelectionCallback(optionsCallback);
-        return try AuthenticateAsServerAsync(optionsCallback: del_optionsCallback, state: state, cancellationToken: cancellationToken);
+        return try await AuthenticateAsServerAsync(optionsCallback: del_optionsCallback, state: state, cancellationToken: cancellationToken);
     }
     // System.IAsyncResult BeginAuthenticateAsClient(System.String, System.AsyncCallback, System.Object)
 // docid: M:System.Net.Security.SslStream.BeginAuthenticateAsClient(System.String,System.AsyncCallback,System.Object)
@@ -3878,7 +3947,7 @@ open class SslStream
     /**
     Ends an asynchronous read operation started with a previous call to .
 
-    - Parameter asyncResult: An  instance returned by a call to 
+    - Parameter asyncResult: An  instance returned by a call to .
     - Returns: A  value that specifies the number of bytes read from the underlying stream.
 
     */
@@ -3896,7 +3965,7 @@ open class SslStream
     /**
     Ends an asynchronous write operation started with a previous call to .
 
-    - Parameter asyncResult: An  instance returned by a call to 
+    - Parameter asyncResult: An  instance returned by a call to .
     */
     open override func EndWrite(asyncResult : dotnet.System.IAsyncResult) throws {
         var __thrown : NullableHandle = nil;
@@ -3931,24 +4000,31 @@ open class SslStream
     - Returns: A task that represents the asynchronous flush operation.
 
     */
-    open override func FlushAsync(cancellationToken : dotnet.System.Threading.CancellationToken) throws -> dotnet.System.Threading.Tasks.Task {
+    open override func FlushAsync(cancellationToken : dotnet.System.Threading.CancellationToken) async throws {
         var __thrown : NullableHandle = nil;
         let __return = System_Net_Security_SslStream_Task__FlushAsync_0__1__CancellationToken(&__thrown, self.get_handle(), cancellationToken.get_handle());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task(hndl: __return).ToAsync();
         }
     }
     // System.Threading.Tasks.Task NegotiateClientCertificateAsync(System.Threading.CancellationToken)
 // docid: M:System.Net.Security.SslStream.NegotiateClientCertificateAsync(System.Threading.CancellationToken)
-    open func NegotiateClientCertificateAsync(cancellationToken : dotnet.System.Threading.CancellationToken = System.Threading.CancellationToken.None) throws -> dotnet.System.Threading.Tasks.Task {
+    /**
+    Negotiates the client certificate on the authenticated connection.
+
+    - Parameter cancellationToken: The token to monitor for cancellation requests.
+    - Returns: The task object representing the asynchronous operation.
+
+    */
+    open func NegotiateClientCertificateAsync(cancellationToken : dotnet.System.Threading.CancellationToken = System.Threading.CancellationToken.None) async throws {
         var __thrown : NullableHandle = nil;
         let __return = System_Net_Security_SslStream_Task__NegotiateClientCertificateAsync_0__1__CancellationToken(&__thrown, self.get_handle(), cancellationToken.get_handle());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task(hndl: __return).ToAsync();
         }
     }
     // System.Int32 Read(System.Byte[], System.Int32, System.Int32)
@@ -3983,13 +4059,13 @@ open class SslStream
     - Returns: A task that represents the asynchronous read operation. The value of its  property contains the total number of bytes read into . When there is no more data to be read, returns 0.
 
     */
-    open override func ReadAsync(buffer : dotnet.System_Arr<Swift.UInt8>, offset : Swift.Int32, count : Swift.Int32, cancellationToken : dotnet.System.Threading.CancellationToken) throws -> dotnet.System.Threading.Tasks.Task_1<Swift.Int32> {
+    open override func ReadAsync(buffer : dotnet.System_Arr<Swift.UInt8>, offset : Swift.Int32, count : Swift.Int32, cancellationToken : dotnet.System.Threading.CancellationToken) async throws -> Swift.Int32 {
         var __thrown : NullableHandle = nil;
         let __return = System_Net_Security_SslStream_System_Threading_Tasks_Task_i32___ReadAsync_0__4__u8Array_i32_i32_CancellationToken(&__thrown, self.get_handle(), buffer.get_handle(), offset, count, cancellationToken.get_handle());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task_1(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task_1(hndl: __return).ToAsync();
         }
     }
     // System.Threading.Tasks.ValueTask<System.Int32> ReadAsync(System.Memory<System.Byte>, System.Threading.CancellationToken)
@@ -4071,13 +4147,13 @@ open class SslStream
     - Returns: The task object representing the asynchronous operation.
 
     */
-    open func ShutdownAsync() throws -> dotnet.System.Threading.Tasks.Task {
+    open func ShutdownAsync() async throws {
         var __thrown : NullableHandle = nil;
         let __return = System_Net_Security_SslStream_Task__ShutdownAsync_0__0(&__thrown, self.get_handle());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task(hndl: __return).ToAsync();
         }
     }
     // void Write(System.Byte[])
@@ -4126,13 +4202,13 @@ open class SslStream
     - Returns: A task that represents the asynchronous write operation.
 
     */
-    open override func WriteAsync(buffer : dotnet.System_Arr<Swift.UInt8>, offset : Swift.Int32, count : Swift.Int32, cancellationToken : dotnet.System.Threading.CancellationToken) throws -> dotnet.System.Threading.Tasks.Task {
+    open override func WriteAsync(buffer : dotnet.System_Arr<Swift.UInt8>, offset : Swift.Int32, count : Swift.Int32, cancellationToken : dotnet.System.Threading.CancellationToken) async throws {
         var __thrown : NullableHandle = nil;
         let __return = System_Net_Security_SslStream_Task__WriteAsync_0__4__u8Array_i32_i32_CancellationToken(&__thrown, self.get_handle(), buffer.get_handle(), offset, count, cancellationToken.get_handle());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task(hndl: __return).ToAsync();
         }
     }
     // System.Threading.Tasks.ValueTask WriteAsync(System.ReadOnlyMemory<System.Byte>, System.Threading.CancellationToken)
@@ -4759,6 +4835,9 @@ public final class SslStreamCertificateContext
     public class override func get_type_handle() -> TypeHandle {
         return System_Net_Security_SslStreamCertificateContext_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // System.Net.Security.SslStreamCertificateContext Create(System.Security.Cryptography.X509Certificates.X509Certificate2, System.Security.Cryptography.X509Certificates.X509Certificate2Collection, bool)
@@ -4784,6 +4863,17 @@ public final class SslStreamCertificateContext
     }
     // System.Net.Security.SslStreamCertificateContext Create(System.Security.Cryptography.X509Certificates.X509Certificate2, System.Security.Cryptography.X509Certificates.X509Certificate2Collection, bool, System.Net.Security.SslCertificateTrust)
 // docid: M:System.Net.Security.SslStreamCertificateContext.Create(System.Security.Cryptography.X509Certificates.X509Certificate2,System.Security.Cryptography.X509Certificates.X509Certificate2Collection,System.Boolean,System.Net.Security.SslCertificateTrust)
+    /**
+    Attempts to build the certificate chain from the provided certificates.
+
+    - Parameter target: The server certificate.
+    - Parameter additionalCertificates: Supplementary certificates used to build the certificate chain.
+    - Parameter offline: 
+         to indicate that the missing certificates can be downloaded from the network;  to indicate that only available X509Certificate stores should be searched for missing certificates.
+    - Parameter trust: An optional trust policy, to replace the default system trust.
+    - Returns: The certificate context with the newly created certificate chain.
+
+    */
     public class func Create(target : dotnet.System.Security.Cryptography.X509Certificates.X509Certificate2, additionalCertificates : Optional<dotnet.System.Security.Cryptography.X509Certificates.X509Certificate2Collection>, offline : Bool = false, trust : Optional<dotnet.System.Net.Security.SslCertificateTrust> = nil) throws -> dotnet.System.Net.Security.SslStreamCertificateContext {
         var __thrown : NullableHandle = nil;
         let __return = System_Net_Security_SslStreamCertificateContext_SslStreamCertificateContext__Create_0__4__X509Certificate2_X509Certificate2Collection_bool_SslCertificateTrust(&__thrown, target.get_handle(), additionalCertificates?.get_handle() ?? nil, Swift.Int32(offline ? 1 : 0), trust?.get_handle() ?? nil);
@@ -8539,6 +8629,9 @@ open class AuthenticationException
     open class override func get_type_handle() -> TypeHandle {
         return System_Security_Authentication_AuthenticationException_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor()
@@ -8603,6 +8696,9 @@ open class InvalidCredentialException
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Security_Authentication_InvalidCredentialException_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -8672,6 +8768,9 @@ open class ExtendedProtectionPolicy
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Security_Authentication_ExtendedProtection_ExtendedProtectionPolicy_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -8974,6 +9073,9 @@ open class ServiceNameCollection
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Security_Authentication_ExtendedProtection_ServiceNameCollection_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }

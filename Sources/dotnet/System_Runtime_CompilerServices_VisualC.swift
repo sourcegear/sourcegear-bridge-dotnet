@@ -23,6 +23,9 @@ public final class CppInlineNamespaceAttribute
     public class override func get_type_handle() -> TypeHandle {
         return System_Runtime_CompilerServices_CppInlineNamespaceAttribute_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor(System.String)
@@ -46,7 +49,7 @@ public final class CppInlineNamespaceAttribute
 
 // type: System.Runtime.CompilerServices.HasCopySemanticsAttribute
     /**
-    This class is not used in the .NET Framework version 2.0 and is reserved for future use. This class cannot be inherited.
+    This class is obsolete. This class cannot be inherited.
 
     */
 public final class HasCopySemanticsAttribute
@@ -55,6 +58,9 @@ public final class HasCopySemanticsAttribute
 {
     public class override func get_type_handle() -> TypeHandle {
         return System_Runtime_CompilerServices_HasCopySemanticsAttribute_get_type_handle();
+    }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -138,6 +144,9 @@ public final class NativeCppClassAttribute
     public class override func get_type_handle() -> TypeHandle {
         return System_Runtime_CompilerServices_NativeCppClassAttribute_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor()
@@ -169,6 +178,9 @@ public final class RequiredAttributeAttribute
 {
     public class override func get_type_handle() -> TypeHandle {
         return System_Runtime_CompilerServices_RequiredAttributeAttribute_get_type_handle();
+    }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -224,6 +236,9 @@ public final class ScopelessEnumAttribute
 {
     public class override func get_type_handle() -> TypeHandle {
         return System_Runtime_CompilerServices_ScopelessEnumAttribute_get_type_handle();
+    }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }

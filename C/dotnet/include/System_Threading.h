@@ -156,7 +156,7 @@ SG_HNDL_NULLABLE System_Threading_ContextCallback_IAsyncResult__BeginInvoke_0__3
 
 void System_Threading_ContextCallback_void__EndInvoke_0__1__IAsyncResult(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE result);
 
-SG_HNDL_NONNULL System_Threading_ContextCallback_create(SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nullable __pdata, void (* _Nullable __deinit)(const void* _Nullable __pdata), void (* _Nonnull  __cb)(const void* _Nullable __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE state));
+SG_HNDL_NONNULL System_Threading_ContextCallback_create(SG_HNDL_NULLABLE * _Nonnull __thrown, void (* _Nonnull  __cb)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE state), const void* _Nonnull __pdata, void (* _Nullable __deinit)(const void* _Nonnull __pdata));
 
 TYP System_Threading_CountdownEvent_get_type_handle(void);
 
@@ -222,7 +222,7 @@ int32_t System_Threading_EventWaitHandle_bool__Reset_0__0(SG_HNDL_NULLABLE * _No
 
 int32_t System_Threading_EventWaitHandle_bool__Set_0__0(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h);
 
-int32_t System_Threading_EventWaitHandle_bool__TryOpenExisting_0__2__String_outEventWaitHandle(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL name, SG_HNDL_NONNULL* _Nonnull __result_out_ptr);
+int32_t System_Threading_EventWaitHandle_bool__TryOpenExisting_0__2__String_outEventWaitHandle(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL name, SG_HNDL_NULLABLE* _Nonnull __result_out_ptr);
 
 SG_HNDL_NONNULL System_Threading_EventWaitHandle_cast(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __h);
 
@@ -298,7 +298,7 @@ int64_t System_Threading_Interlocked_i64__CompareExchange_0__3__refi64_i64_i64(S
 
 intptr_t System_Threading_Interlocked_IntPtr__CompareExchange_0__3__refIntPtr_IntPtr_IntPtr(SG_HNDL_NULLABLE * _Nonnull __thrown, intptr_t* _Nonnull __location1_ref_ptr, intptr_t value, intptr_t comparand);
 
-SG_HNDL_NULLABLE System_Threading_Interlocked_Object__CompareExchange_0__3__refObject_Object_Object(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL* _Nonnull __location1_ref_ptr, SG_HNDL_NULLABLE value, SG_HNDL_NULLABLE comparand);
+SG_HNDL_NULLABLE System_Threading_Interlocked_Object__CompareExchange_0__3__refObject_Object_Object(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE* _Nonnull __location1_ref_ptr, SG_HNDL_NULLABLE value, SG_HNDL_NULLABLE comparand);
 
 float System_Threading_Interlocked_f32__CompareExchange_0__3__reff32_f32_f32(SG_HNDL_NULLABLE * _Nonnull __thrown, float* _Nonnull __location1_ref_ptr, float value, float comparand);
 
@@ -328,7 +328,7 @@ int64_t System_Threading_Interlocked_i64__Exchange_0__2__refi64_i64(SG_HNDL_NULL
 
 intptr_t System_Threading_Interlocked_IntPtr__Exchange_0__2__refIntPtr_IntPtr(SG_HNDL_NULLABLE * _Nonnull __thrown, intptr_t* _Nonnull __location1_ref_ptr, intptr_t value);
 
-SG_HNDL_NULLABLE System_Threading_Interlocked_Object__Exchange_0__2__refObject_Object(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL* _Nonnull __location1_ref_ptr, SG_HNDL_NULLABLE value);
+SG_HNDL_NULLABLE System_Threading_Interlocked_Object__Exchange_0__2__refObject_Object(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE* _Nonnull __location1_ref_ptr, SG_HNDL_NULLABLE value);
 
 float System_Threading_Interlocked_f32__Exchange_0__2__reff32_f32(SG_HNDL_NULLABLE * _Nonnull __thrown, float* _Nonnull __location1_ref_ptr, float value);
 
@@ -372,17 +372,17 @@ SG_HNDL_NONNULL specialize_System_Threading_LazyInitializer_UT__EnsureInitialize
 
 GVAL invoke_System_Threading_LazyInitializer_UT__EnsureInitialized_1__1__refUT(SG_HNDL_NONNULL ____hdel, SG_HNDL_NULLABLE * _Nonnull __thrown, GVAL* _Nonnull __target_ref_ptr);
 
-GVAL System_Threading_LazyInitializer_UT__EnsureInitialized_1__3__refUT_refbool_refObject(TYP T, SG_HNDL_NULLABLE * _Nonnull __thrown, GVAL* _Nonnull __target_ref_ptr, int32_t* _Nonnull __initialized_ref_ptr, SG_HNDL_NONNULL* _Nonnull __syncLock_ref_ptr);
+GVAL System_Threading_LazyInitializer_UT__EnsureInitialized_1__3__refUT_refbool_refObject(TYP T, SG_HNDL_NULLABLE * _Nonnull __thrown, GVAL* _Nonnull __target_ref_ptr, int32_t* _Nonnull __initialized_ref_ptr, SG_HNDL_NULLABLE* _Nonnull __syncLock_ref_ptr);
 
 SG_HNDL_NONNULL specialize_System_Threading_LazyInitializer_UT__EnsureInitialized_1__3__refUT_refbool_refObject(TYP T, SG_HNDL_NULLABLE * _Nonnull __thrown);
 
-GVAL invoke_System_Threading_LazyInitializer_UT__EnsureInitialized_1__3__refUT_refbool_refObject(SG_HNDL_NONNULL ____hdel, SG_HNDL_NULLABLE * _Nonnull __thrown, GVAL* _Nonnull __target_ref_ptr, int32_t* _Nonnull __initialized_ref_ptr, SG_HNDL_NONNULL* _Nonnull __syncLock_ref_ptr);
+GVAL invoke_System_Threading_LazyInitializer_UT__EnsureInitialized_1__3__refUT_refbool_refObject(SG_HNDL_NONNULL ____hdel, SG_HNDL_NULLABLE * _Nonnull __thrown, GVAL* _Nonnull __target_ref_ptr, int32_t* _Nonnull __initialized_ref_ptr, SG_HNDL_NULLABLE* _Nonnull __syncLock_ref_ptr);
 
-GVAL System_Threading_LazyInitializer_UT__EnsureInitialized_1__4__refUT_refbool_refObject_System_Func_UT_(TYP T, SG_HNDL_NULLABLE * _Nonnull __thrown, GVAL* _Nonnull __target_ref_ptr, int32_t* _Nonnull __initialized_ref_ptr, SG_HNDL_NONNULL* _Nonnull __syncLock_ref_ptr, SG_HNDL_NONNULL valueFactory);
+GVAL System_Threading_LazyInitializer_UT__EnsureInitialized_1__4__refUT_refbool_refObject_System_Func_UT_(TYP T, SG_HNDL_NULLABLE * _Nonnull __thrown, GVAL* _Nonnull __target_ref_ptr, int32_t* _Nonnull __initialized_ref_ptr, SG_HNDL_NULLABLE* _Nonnull __syncLock_ref_ptr, SG_HNDL_NONNULL valueFactory);
 
 SG_HNDL_NONNULL specialize_System_Threading_LazyInitializer_UT__EnsureInitialized_1__4__refUT_refbool_refObject_System_Func_UT_(TYP T, SG_HNDL_NULLABLE * _Nonnull __thrown);
 
-GVAL invoke_System_Threading_LazyInitializer_UT__EnsureInitialized_1__4__refUT_refbool_refObject_System_Func_UT_(SG_HNDL_NONNULL ____hdel, SG_HNDL_NULLABLE * _Nonnull __thrown, GVAL* _Nonnull __target_ref_ptr, int32_t* _Nonnull __initialized_ref_ptr, SG_HNDL_NONNULL* _Nonnull __syncLock_ref_ptr, SG_HNDL_NONNULL valueFactory);
+GVAL invoke_System_Threading_LazyInitializer_UT__EnsureInitialized_1__4__refUT_refbool_refObject_System_Func_UT_(SG_HNDL_NONNULL ____hdel, SG_HNDL_NULLABLE * _Nonnull __thrown, GVAL* _Nonnull __target_ref_ptr, int32_t* _Nonnull __initialized_ref_ptr, SG_HNDL_NULLABLE* _Nonnull __syncLock_ref_ptr, SG_HNDL_NONNULL valueFactory);
 
 GVAL System_Threading_LazyInitializer_UT__EnsureInitialized_1__2__refUT_System_Func_UT_(TYP T, SG_HNDL_NULLABLE * _Nonnull __thrown, GVAL* _Nonnull __target_ref_ptr, SG_HNDL_NONNULL valueFactory);
 
@@ -390,11 +390,11 @@ SG_HNDL_NONNULL specialize_System_Threading_LazyInitializer_UT__EnsureInitialize
 
 GVAL invoke_System_Threading_LazyInitializer_UT__EnsureInitialized_1__2__refUT_System_Func_UT_(SG_HNDL_NONNULL ____hdel, SG_HNDL_NULLABLE * _Nonnull __thrown, GVAL* _Nonnull __target_ref_ptr, SG_HNDL_NONNULL valueFactory);
 
-GVAL System_Threading_LazyInitializer_UT__EnsureInitialized_1__3__refUT_refObject_System_Func_UT_(TYP T, SG_HNDL_NULLABLE * _Nonnull __thrown, GVAL* _Nonnull __target_ref_ptr, SG_HNDL_NONNULL* _Nonnull __syncLock_ref_ptr, SG_HNDL_NONNULL valueFactory);
+GVAL System_Threading_LazyInitializer_UT__EnsureInitialized_1__3__refUT_refObject_System_Func_UT_(TYP T, SG_HNDL_NULLABLE * _Nonnull __thrown, GVAL* _Nonnull __target_ref_ptr, SG_HNDL_NULLABLE* _Nonnull __syncLock_ref_ptr, SG_HNDL_NONNULL valueFactory);
 
 SG_HNDL_NONNULL specialize_System_Threading_LazyInitializer_UT__EnsureInitialized_1__3__refUT_refObject_System_Func_UT_(TYP T, SG_HNDL_NULLABLE * _Nonnull __thrown);
 
-GVAL invoke_System_Threading_LazyInitializer_UT__EnsureInitialized_1__3__refUT_refObject_System_Func_UT_(SG_HNDL_NONNULL ____hdel, SG_HNDL_NULLABLE * _Nonnull __thrown, GVAL* _Nonnull __target_ref_ptr, SG_HNDL_NONNULL* _Nonnull __syncLock_ref_ptr, SG_HNDL_NONNULL valueFactory);
+GVAL invoke_System_Threading_LazyInitializer_UT__EnsureInitialized_1__3__refUT_refObject_System_Func_UT_(SG_HNDL_NONNULL ____hdel, SG_HNDL_NULLABLE * _Nonnull __thrown, GVAL* _Nonnull __target_ref_ptr, SG_HNDL_NULLABLE* _Nonnull __syncLock_ref_ptr, SG_HNDL_NONNULL valueFactory);
 
 TYP System_Threading_LockCookie_get_type_handle(void);
 
@@ -516,7 +516,7 @@ SG_HNDL_NONNULL System_Threading_Mutex_Mutex__OpenExisting_0__1__String(SG_HNDL_
 
 void System_Threading_Mutex_void__ReleaseMutex_0__0(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h);
 
-int32_t System_Threading_Mutex_bool__TryOpenExisting_0__2__String_outMutex(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL name, SG_HNDL_NONNULL* _Nonnull __result_out_ptr);
+int32_t System_Threading_Mutex_bool__TryOpenExisting_0__2__String_outMutex(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL name, SG_HNDL_NULLABLE* _Nonnull __result_out_ptr);
 
 SG_HNDL_NONNULL System_Threading_Mutex_cast(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __h);
 
@@ -534,7 +534,7 @@ void System_Threading_ReaderWriterLock_void__AcquireWriterLock_0__1__TimeSpan(SG
 
 int32_t System_Threading_ReaderWriterLock_bool__AnyWritersSince_0__1__i32(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, int32_t seqNum);
 
-void System_Threading_ReaderWriterLock_void__DowngradeFromWriterLock_0__1__refLockCookie(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NONNULL* _Nonnull __lockCookie_ref_ptr);
+void System_Threading_ReaderWriterLock_void__DowngradeFromWriterLock_0__1__refLockCookie(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE* _Nonnull __lockCookie_ref_ptr);
 
 SG_HNDL_NONNULL System_Threading_ReaderWriterLock_LockCookie__ReleaseLock_0__0(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h);
 
@@ -542,7 +542,7 @@ void System_Threading_ReaderWriterLock_void__ReleaseReaderLock_0__0(SG_HNDL_NULL
 
 void System_Threading_ReaderWriterLock_void__ReleaseWriterLock_0__0(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h);
 
-void System_Threading_ReaderWriterLock_void__RestoreLock_0__1__refLockCookie(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NONNULL* _Nonnull __lockCookie_ref_ptr);
+void System_Threading_ReaderWriterLock_void__RestoreLock_0__1__refLockCookie(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE* _Nonnull __lockCookie_ref_ptr);
 
 SG_HNDL_NONNULL System_Threading_ReaderWriterLock_LockCookie__UpgradeToWriterLock_0__1__i32(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, int32_t millisecondsTimeout);
 
@@ -626,7 +626,7 @@ int32_t System_Threading_Semaphore_i32__Release_0__0(SG_HNDL_NULLABLE * _Nonnull
 
 int32_t System_Threading_Semaphore_i32__Release_0__1__i32(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, int32_t releaseCount);
 
-int32_t System_Threading_Semaphore_bool__TryOpenExisting_0__2__String_outSemaphore(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL name, SG_HNDL_NONNULL* _Nonnull __result_out_ptr);
+int32_t System_Threading_Semaphore_bool__TryOpenExisting_0__2__String_outSemaphore(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL name, SG_HNDL_NULLABLE* _Nonnull __result_out_ptr);
 
 SG_HNDL_NONNULL System_Threading_Semaphore_cast(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __h);
 
@@ -690,7 +690,7 @@ SG_HNDL_NULLABLE System_Threading_SendOrPostCallback_IAsyncResult__BeginInvoke_0
 
 void System_Threading_SendOrPostCallback_void__EndInvoke_0__1__IAsyncResult(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE result);
 
-SG_HNDL_NONNULL System_Threading_SendOrPostCallback_create(SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nullable __pdata, void (* _Nullable __deinit)(const void* _Nullable __pdata), void (* _Nonnull  __cb)(const void* _Nullable __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE state));
+SG_HNDL_NONNULL System_Threading_SendOrPostCallback_create(SG_HNDL_NULLABLE * _Nonnull __thrown, void (* _Nonnull  __cb)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE state), const void* _Nonnull __pdata, void (* _Nullable __deinit)(const void* _Nonnull __pdata));
 
 TYP System_Threading_SpinLock_get_type_handle(void);
 

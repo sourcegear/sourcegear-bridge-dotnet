@@ -19,6 +19,9 @@ public final class ValueWebSocketReceiveResult
     public class override func get_type_handle() -> TypeHandle {
         return System_Net_WebSockets_ValueWebSocketReceiveResult_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     /**
@@ -120,6 +123,9 @@ open class WebSocket
     open class override func get_type_handle() -> TypeHandle {
         return System_Net_WebSockets_WebSocket_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // void Abort()
@@ -148,13 +154,13 @@ open class WebSocket
     - Returns: The task object representing the asynchronous operation.
 
     */
-    open func CloseAsync(closeStatus : dotnet.System.Net.WebSockets.WebSocketCloseStatus, statusDescription : Optional<dotnet.System.String>, cancellationToken : dotnet.System.Threading.CancellationToken) throws -> dotnet.System.Threading.Tasks.Task {
+    open func CloseAsync(closeStatus : dotnet.System.Net.WebSockets.WebSocketCloseStatus, statusDescription : Optional<dotnet.System.String>, cancellationToken : dotnet.System.Threading.CancellationToken) async throws {
         var __thrown : NullableHandle = nil;
         let __return = System_Net_WebSockets_WebSocket_Task__CloseAsync_0__3__WebSocketCloseStatus_String_CancellationToken(&__thrown, self.get_handle(), closeStatus.get_value(), statusDescription?.get_handle() ?? nil, cancellationToken.get_handle());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task(hndl: __return).ToAsync();
         }
     }
     // System.Threading.Tasks.Task CloseOutputAsync(System.Net.WebSockets.WebSocketCloseStatus, System.String, System.Threading.CancellationToken)
@@ -168,13 +174,13 @@ open class WebSocket
     - Returns: The task object representing the asynchronous operation.
 
     */
-    open func CloseOutputAsync(closeStatus : dotnet.System.Net.WebSockets.WebSocketCloseStatus, statusDescription : Optional<dotnet.System.String>, cancellationToken : dotnet.System.Threading.CancellationToken) throws -> dotnet.System.Threading.Tasks.Task {
+    open func CloseOutputAsync(closeStatus : dotnet.System.Net.WebSockets.WebSocketCloseStatus, statusDescription : Optional<dotnet.System.String>, cancellationToken : dotnet.System.Threading.CancellationToken) async throws {
         var __thrown : NullableHandle = nil;
         let __return = System_Net_WebSockets_WebSocket_Task__CloseOutputAsync_0__3__WebSocketCloseStatus_String_CancellationToken(&__thrown, self.get_handle(), closeStatus.get_value(), statusDescription?.get_handle() ?? nil, cancellationToken.get_handle());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task(hndl: __return).ToAsync();
         }
     }
     // System.ArraySegment<System.Byte> CreateClientBuffer(System.Int32, System.Int32)
@@ -196,10 +202,62 @@ open class WebSocket
         return dotnet.System.ArraySegment_1(hndl : __return);
         }
     }
-// TODO COPE (write_all_methods) (span) System.Net.WebSockets.WebSocket CreateClientWebSocket(System.IO.Stream, System.String, System.Int32, System.Int32, System.TimeSpan, bool, System.ArraySegment<System.Byte>)
-// TODO COPE (write_all_methods) (span) System.Net.WebSockets.WebSocket CreateFromStream(System.IO.Stream, bool, System.String, System.TimeSpan)
+    // System.Net.WebSockets.WebSocket CreateClientWebSocket(System.IO.Stream, System.String, System.Int32, System.Int32, System.TimeSpan, bool, System.ArraySegment<System.Byte>)
+// docid: M:System.Net.WebSockets.WebSocket.CreateClientWebSocket(System.IO.Stream,System.String,System.Int32,System.Int32,System.TimeSpan,System.Boolean,System.ArraySegment{System.Byte})
+    /**
+    Allows callers to create a client side WebSocket class which will use the WSPC for framing purposes.
+
+    - Parameter innerStream: The connection to be used for IO operations.
+    - Parameter subProtocol: The subprotocol accepted by the client.
+    - Parameter receiveBufferSize: The size in bytes of the client WebSocket receive buffer.
+    - Parameter sendBufferSize: The size in bytes of the client WebSocket send buffer.
+    - Parameter keepAliveInterval: Determines how regularly a frame is sent over the connection as a keep-alive. Applies only when the connection is idle.
+    - Parameter useZeroMaskingKey: Indicates whether a random key or a static key (just zeros) should be used for the WebSocket masking.
+    - Parameter internalBuffer: Will be used as the internal buffer in the WPC. The size has to be at least 2 (ASTERISK) ReceiveBufferSize + SendBufferSize + 256 + 20 (16 on 32-bit).
+    - Returns: Returns .
+
+    */
+    open class func CreateClientWebSocket(innerStream : dotnet.System.IO.Stream, subProtocol : Optional<dotnet.System.String>, receiveBufferSize : Swift.Int32, sendBufferSize : Swift.Int32, keepAliveInterval : dotnet.System.TimeSpan, useZeroMaskingKey : Bool, internalBuffer : dotnet.System.ArraySegment_1<Swift.UInt8>) throws -> dotnet.System.Net.WebSockets.WebSocket {
+        var __thrown : NullableHandle = nil;
+        let __return = System_Net_WebSockets_WebSocket_WebSocket__CreateClientWebSocket_0__7__Stream_String_i32_i32_TimeSpan_bool_System_ArraySegment_u8_(&__thrown, innerStream.get_handle(), subProtocol?.get_handle() ?? nil, receiveBufferSize, sendBufferSize, keepAliveInterval.get_handle(), Swift.Int32(useZeroMaskingKey ? 1 : 0), internalBuffer.get_handle());
+        if let __ex =  __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+        return dotnet.System.Net.WebSockets.WebSocket(hndl : __return);
+        }
+    }
+    // System.Net.WebSockets.WebSocket CreateFromStream(System.IO.Stream, bool, System.String, System.TimeSpan)
+// docid: M:System.Net.WebSockets.WebSocket.CreateFromStream(System.IO.Stream,System.Boolean,System.String,System.TimeSpan)
+    /**
+    Creates a new  object that operates on the specified stream, which represents a web socket connection.
+
+    - Parameter stream: The stream for the connection.
+    - Parameter isServer: 
+         to indicate it's the server-side of the connection;  if it's the client-side.
+    - Parameter subProtocol: The agreed upon sub-protocol that was used when creating the connection.
+    - Parameter keepAliveInterval: The keep-alive interval to use, or  to disable keep-alives.
+    - Returns: The new web socket.
+
+    */
+    open class func CreateFromStream(stream : dotnet.System.IO.Stream, isServer : Bool, subProtocol : Optional<dotnet.System.String>, keepAliveInterval : dotnet.System.TimeSpan) throws -> dotnet.System.Net.WebSockets.WebSocket {
+        var __thrown : NullableHandle = nil;
+        let __return = System_Net_WebSockets_WebSocket_WebSocket__CreateFromStream_0__4__Stream_bool_String_TimeSpan(&__thrown, stream.get_handle(), Swift.Int32(isServer ? 1 : 0), subProtocol?.get_handle() ?? nil, keepAliveInterval.get_handle());
+        if let __ex =  __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+        return dotnet.System.Net.WebSockets.WebSocket(hndl : __return);
+        }
+    }
     // System.Net.WebSockets.WebSocket CreateFromStream(System.IO.Stream, System.Net.WebSockets.WebSocketCreationOptions)
 // docid: M:System.Net.WebSockets.WebSocket.CreateFromStream(System.IO.Stream,System.Net.WebSockets.WebSocketCreationOptions)
+    /**
+    Creates a  that operates on a  representing a web socket connection.
+
+    - Parameter stream: The  for the connection.
+    - Parameter options: The options with which the websocket must be created.
+    - Returns: The created web socket.
+
+    */
     open class func CreateFromStream(stream : dotnet.System.IO.Stream, options : dotnet.System.Net.WebSockets.WebSocketCreationOptions) throws -> dotnet.System.Net.WebSockets.WebSocket {
         var __thrown : NullableHandle = nil;
         let __return = System_Net_WebSockets_WebSocket_WebSocket__CreateFromStream_0__2__Stream_WebSocketCreationOptions(&__thrown, stream.get_handle(), options.get_handle());
@@ -270,13 +328,13 @@ open class WebSocket
     - Returns: The task object representing the asynchronous operation. The  property on the task object returns a  object that represents the received data.
 
     */
-    open func ReceiveAsync(buffer : dotnet.System.ArraySegment_1<Swift.UInt8>, cancellationToken : dotnet.System.Threading.CancellationToken) throws -> dotnet.System.Threading.Tasks.Task_1<dotnet.System.Net.WebSockets.WebSocketReceiveResult> {
+    open func ReceiveAsync(buffer : dotnet.System.ArraySegment_1<Swift.UInt8>, cancellationToken : dotnet.System.Threading.CancellationToken) async throws -> dotnet.System.Net.WebSockets.WebSocketReceiveResult {
         var __thrown : NullableHandle = nil;
         let __return = System_Net_WebSockets_WebSocket_System_Threading_Tasks_Task_System_Net_WebSockets_WebSocketReceiveResult___ReceiveAsync_0__2__System_ArraySegment_u8__CancellationToken(&__thrown, self.get_handle(), buffer.get_handle(), cancellationToken.get_handle());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task_1(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task_1(hndl: __return).ToAsync();
         }
     }
     // System.Threading.Tasks.ValueTask<System.Net.WebSockets.ValueWebSocketReceiveResult> ReceiveAsync(System.Memory<System.Byte>, System.Threading.CancellationToken)
@@ -325,13 +383,13 @@ open class WebSocket
     - Returns: The task object representing the asynchronous operation.
 
     */
-    open func SendAsync(buffer : dotnet.System.ArraySegment_1<Swift.UInt8>, messageType : dotnet.System.Net.WebSockets.WebSocketMessageType, endOfMessage : Bool, cancellationToken : dotnet.System.Threading.CancellationToken) throws -> dotnet.System.Threading.Tasks.Task {
+    open func SendAsync(buffer : dotnet.System.ArraySegment_1<Swift.UInt8>, messageType : dotnet.System.Net.WebSockets.WebSocketMessageType, endOfMessage : Bool, cancellationToken : dotnet.System.Threading.CancellationToken) async throws {
         var __thrown : NullableHandle = nil;
         let __return = System_Net_WebSockets_WebSocket_Task__SendAsync_0__4__System_ArraySegment_u8__WebSocketMessageType_bool_CancellationToken(&__thrown, self.get_handle(), buffer.get_handle(), messageType.get_value(), Swift.Int32(endOfMessage ? 1 : 0), cancellationToken.get_handle());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task(hndl: __return).ToAsync();
         }
     }
     // System.Threading.Tasks.ValueTask SendAsync(System.ReadOnlyMemory<System.Byte>, System.Net.WebSockets.WebSocketMessageType, bool, System.Threading.CancellationToken)
@@ -358,6 +416,16 @@ open class WebSocket
     }
     // System.Threading.Tasks.ValueTask SendAsync(System.ReadOnlyMemory<System.Byte>, System.Net.WebSockets.WebSocketMessageType, System.Net.WebSockets.WebSocketMessageFlags, System.Threading.CancellationToken)
 // docid: M:System.Net.WebSockets.WebSocket.SendAsync(System.ReadOnlyMemory{System.Byte},System.Net.WebSockets.WebSocketMessageType,System.Net.WebSockets.WebSocketMessageFlags,System.Threading.CancellationToken)
+    /**
+    Sends data over the  connection asynchronously.
+
+    - Parameter buffer: The buffer to be sent over the connection.
+    - Parameter messageType: One of the enumeration values that indicates whether the application is sending a binary or text message.
+    - Parameter messageFlags: Flags for controlling how the  should send a message.
+    - Parameter cancellationToken: The cancellation token to use to cancel the send operation.
+    - Returns: The task object representing the asynchronous operation.
+
+    */
     open func SendAsync(buffer : dotnet.System.ReadOnlyMemory_1<Swift.UInt8>, messageType : dotnet.System.Net.WebSockets.WebSocketMessageType, messageFlags : dotnet.System.Net.WebSockets.WebSocketMessageFlags, cancellationToken : dotnet.System.Threading.CancellationToken) throws -> dotnet.System.Threading.Tasks.ValueTask {
         var __thrown : NullableHandle = nil;
         let __return = System_Net_WebSockets_WebSocket_ValueTask__SendAsync_0__4__System_ReadOnlyMemory_u8__WebSocketMessageType_WebSocketMessageFlags_CancellationToken(&__thrown, self.get_handle(), buffer.get_handle(), messageType.get_value(), messageFlags.get_value(), cancellationToken.get_handle());
@@ -618,6 +686,9 @@ open class WebSocketContext
     open class override func get_type_handle() -> TypeHandle {
         return System_Net_WebSockets_WebSocketContext_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // [IsSpecialName] System.Net.CookieCollection get_CookieCollection()
@@ -868,6 +939,10 @@ open class WebSocketContext
 
 
 // type: System.Net.WebSockets.WebSocketCreationOptions
+    /**
+    Options that control how a  is created.
+
+    */
 public final class WebSocketCreationOptions
     :
     dotnet.System.Object
@@ -875,10 +950,17 @@ public final class WebSocketCreationOptions
     public class override func get_type_handle() -> TypeHandle {
         return System_Net_WebSockets_WebSocketCreationOptions_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor()
 // docid: M:System.Net.WebSockets.WebSocketCreationOptions.#ctor
+    /**
+    Creates an instance of the  class.
+
+    */
     public override init() throws {
         var __thrown : NullableHandle = nil;
         let h = System_Net_WebSockets_WebSocketCreationOptions_ctor_0__0(&__thrown);
@@ -947,7 +1029,17 @@ public final class WebSocketCreationOptions
         return dotnet.System.TimeSpan(hndl : __return);
         }
     }
-// TODO COPE (write_all_methods) (span) [IsSpecialName] void set_KeepAliveInterval(System.TimeSpan)
+    // [IsSpecialName] void set_KeepAliveInterval(System.TimeSpan)
+// docid: M:System.Net.WebSockets.WebSocketCreationOptions.set_KeepAliveInterval(System.TimeSpan)
+    public func set_KeepAliveInterval(value : dotnet.System.TimeSpan) throws {
+        var __thrown : NullableHandle = nil;
+        System_Net_WebSockets_WebSocketCreationOptions_void__set_KeepAliveInterval_0__1__TimeSpan(&__thrown, self.get_handle(), value.get_handle());
+        if let __ex =  __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            return;
+        }
+    }
     // [IsSpecialName] System.Net.WebSockets.WebSocketDeflateOptions get_DangerousDeflateOptions()
 // docid: M:System.Net.WebSockets.WebSocketCreationOptions.get_DangerousDeflateOptions
     public func get_DangerousDeflateOptions() throws -> Optional<dotnet.System.Net.WebSockets.WebSocketDeflateOptions> {
@@ -974,6 +1066,11 @@ public final class WebSocketCreationOptions
             return;
         }
     }
+    /**
+    The agreed upon options for per message deflate. Be aware that enabling compression makes the application subject to CRIME/BREACH type of attacks.
+            It is strongly advised to turn off compression when sending data containing secrets by specifying  flag for such messages.
+
+    */
     public var DangerousDeflateOptions : Optional<dotnet.System.Net.WebSockets.WebSocketDeflateOptions> {
         get {
             return try! get_DangerousDeflateOptions();
@@ -982,6 +1079,10 @@ public final class WebSocketCreationOptions
             return try! set_DangerousDeflateOptions(value: v!);
         }
     }
+    /**
+    Defines if this websocket is the server-side of the connection. The default value is .
+
+    */
     public var IsServer : Bool {
         get {
             return try! get_IsServer();
@@ -990,12 +1091,23 @@ public final class WebSocketCreationOptions
             return try! set_IsServer(value: v);
         }
     }
+    /**
+    The keep-alive interval to use, or  or  to disable keep-alives.
+            The default is .
+
+    */
     public var KeepAliveInterval : dotnet.System.TimeSpan {
         get {
             return try! get_KeepAliveInterval();
         }
-// TODO COPE prop set (span) [IsSpecialName] void set_KeepAliveInterval(System.TimeSpan)
+        set(v) {
+            return try! set_KeepAliveInterval(value: v);
+        }
     }
+    /**
+    The agreed upon sub-protocol that was used when creating the connection.
+
+    */
     public var SubProtocol : Optional<dotnet.System.String> {
         get {
             return try! get_SubProtocol();
@@ -1008,6 +1120,10 @@ public final class WebSocketCreationOptions
 
 
 // type: System.Net.WebSockets.WebSocketDeflateOptions
+    /**
+    Options to enable per-message deflate compression for .
+
+    */
 public final class WebSocketDeflateOptions
     :
     dotnet.System.Object
@@ -1015,10 +1131,17 @@ public final class WebSocketDeflateOptions
     public class override func get_type_handle() -> TypeHandle {
         return System_Net_WebSockets_WebSocketDeflateOptions_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor()
 // docid: M:System.Net.WebSockets.WebSocketDeflateOptions.#ctor
+    /**
+    Creates an instance of the  class.
+
+    */
     public override init() throws {
         var __thrown : NullableHandle = nil;
         let h = System_Net_WebSockets_WebSocketDeflateOptions_ctor_0__0(&__thrown);
@@ -1116,6 +1239,11 @@ public final class WebSocketDeflateOptions
             return;
         }
     }
+    /**
+    When  the client-side of the connection indicates that it will persist the deflate context accross messages.
+            The default is .
+
+    */
     public var ClientContextTakeover : Bool {
         get {
             return try! get_ClientContextTakeover();
@@ -1124,6 +1252,11 @@ public final class WebSocketDeflateOptions
             return try! set_ClientContextTakeover(value: v);
         }
     }
+    /**
+    This parameter indicates the base-2 logarithm for the LZ77 sliding window size used by the client to compress messages and by the server to decompress them.
+            Must be a value between 9 and 15. The default is 15.
+
+    */
     public var ClientMaxWindowBits : Swift.Int32 {
         get {
             return try! get_ClientMaxWindowBits();
@@ -1132,6 +1265,11 @@ public final class WebSocketDeflateOptions
             return try! set_ClientMaxWindowBits(value: v);
         }
     }
+    /**
+    When  the server-side of the connection indicates that it will persist the deflate context accross messages.
+            The default is .
+
+    */
     public var ServerContextTakeover : Bool {
         get {
             return try! get_ServerContextTakeover();
@@ -1140,6 +1278,11 @@ public final class WebSocketDeflateOptions
             return try! set_ServerContextTakeover(value: v);
         }
     }
+    /**
+    This parameter indicates the base-2 logarithm for the LZ77 sliding window size used by the server to compress messages and by the client to decompress them.
+            Must be a value between 9 and 15. The default is 15.
+
+    */
     public var ServerMaxWindowBits : Swift.Int32 {
         get {
             return try! get_ServerMaxWindowBits();
@@ -1290,6 +1433,9 @@ public final class WebSocketException
 {
     public class override func get_type_handle() -> TypeHandle {
         return System_Net_WebSockets_WebSocketException_get_type_handle();
+    }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -1592,6 +1738,10 @@ public final class WebSocketException
 
 
 // type: System.Net.WebSockets.WebSocketMessageFlags
+    /**
+    Flags for controlling how the  should send a message.
+
+    */
 public struct WebSocketMessageFlags : SGBridgeGenericValue {
     let v : Swift.Int32;
     public init(val: Swift.Int32) { self.v = val; }
@@ -1603,6 +1753,10 @@ public struct WebSocketMessageFlags : SGBridgeGenericValue {
     public func dup_gval() -> GVal { return to_gval(); }
     public init(gval: GVal) { self.v = Swift.Int32(gval); }
     // static field: System.Net.WebSockets.WebSocketMessageFlags None
+    /**
+    None
+
+    */
     public static var None : dotnet.System.Net.WebSockets.WebSocketMessageFlags {
         get {
         let __return = dotnet.System.Net.WebSockets.WebSocketMessageFlags(val: System_Net_WebSockets_WebSocketMessageFlags_get_None());
@@ -1610,6 +1764,10 @@ public struct WebSocketMessageFlags : SGBridgeGenericValue {
         }
     }
     // static field: System.Net.WebSockets.WebSocketMessageFlags EndOfMessage
+    /**
+    Indicates that the data in "buffer" is the last part of a message.
+
+    */
     public static var EndOfMessage : dotnet.System.Net.WebSockets.WebSocketMessageFlags {
         get {
         let __return = dotnet.System.Net.WebSockets.WebSocketMessageFlags(val: System_Net_WebSockets_WebSocketMessageFlags_get_EndOfMessage());
@@ -1617,6 +1775,10 @@ public struct WebSocketMessageFlags : SGBridgeGenericValue {
         }
     }
     // static field: System.Net.WebSockets.WebSocketMessageFlags DisableCompression
+    /**
+    Disables compression for the message if compression has been enabled for the  instance.
+
+    */
     public static var DisableCompression : dotnet.System.Net.WebSockets.WebSocketMessageFlags {
         get {
         let __return = dotnet.System.Net.WebSockets.WebSocketMessageFlags(val: System_Net_WebSockets_WebSocketMessageFlags_get_DisableCompression());
@@ -1688,6 +1850,9 @@ open class WebSocketReceiveResult
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Net_WebSockets_WebSocketReceiveResult_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -1919,7 +2084,7 @@ public struct WebSocketState : SGBridgeGenericValue {
     }
     // static field: System.Net.WebSockets.WebSocketState Aborted
     /**
-    Reserved for future use.
+    Indicates that the WebSocket has been aborted.
 
     */
     public static var Aborted : dotnet.System.Net.WebSockets.WebSocketState {

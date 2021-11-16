@@ -96,7 +96,7 @@ struct {
     int32_t (* _Nonnull  _fp_System_Security_Cryptography_OidGroup_get_KeyDerivationFunction)(void);
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_Security_Cryptography_PemEncoding_PemFields__Find_0__1__rospanChar)(SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nonnull __pemData_spanptr);
     int32_t (* _Nonnull  _fp_System_Security_Cryptography_PemEncoding_i32__GetEncodedSize_0__2__i32_i32)(SG_HNDL_NULLABLE * _Nonnull __thrown, int32_t labelLength, int32_t dataLength);
-    int32_t (* _Nonnull  _fp_System_Security_Cryptography_PemEncoding_bool__TryFind_0__2__rospanChar_outPemFields)(SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nonnull __pemData_spanptr, SG_HNDL_NONNULL* _Nonnull __fields_out_ptr);
+    int32_t (* _Nonnull  _fp_System_Security_Cryptography_PemEncoding_bool__TryFind_0__2__rospanChar_outPemFields)(SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nonnull __pemData_spanptr, SG_HNDL_NULLABLE* _Nonnull __fields_out_ptr);
     int32_t (* _Nonnull  _fp_System_Security_Cryptography_PemEncoding_bool__TryWrite_0__4__rospanChar_rospanu8_spanChar_outi32)(SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nonnull __label_spanptr, const void* _Nonnull __data_spanptr, const void* _Nonnull __destination_spanptr, int32_t* _Nonnull __charsWritten_out_ptr);
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_Security_Cryptography_PemEncoding_CharArray__Write_0__2__rospanChar_rospanu8)(SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nonnull __label_spanptr, const void* _Nonnull __data_spanptr);
     TYP (* _Nonnull  _fp_System_Security_Cryptography_PemFields_get_type_handle)(void);
@@ -822,7 +822,7 @@ int32_t System_Security_Cryptography_PemEncoding_i32__GetEncodedSize_0__2__i32_i
     return ret;
 }
 
-int32_t System_Security_Cryptography_PemEncoding_bool__TryFind_0__2__rospanChar_outPemFields(SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nonnull __pemData_spanptr, SG_HNDL_NONNULL* _Nonnull __fields_out_ptr) {
+int32_t System_Security_Cryptography_PemEncoding_bool__TryFind_0__2__rospanChar_outPemFields(SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nonnull __pemData_spanptr, SG_HNDL_NULLABLE* _Nonnull __fields_out_ptr) {
     if (!_g_System_Security_Cryptography_Encoding._fp_System_Security_Cryptography_PemEncoding_bool__TryFind_0__2__rospanChar_outPemFields) {
         my_init();
     }

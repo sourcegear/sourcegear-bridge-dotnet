@@ -19,6 +19,9 @@ public final class Asn1Tag
     public class override func get_type_handle() -> TypeHandle {
         return System_Formats_Asn1_Asn1Tag_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // static field: System.Formats.Asn1.Asn1Tag Boolean
@@ -309,7 +312,7 @@ public final class Asn1Tag
     /**
     Tests if  is an  with the same encoding as this tag.
 
-    - Parameter obj: Object to test for value equality
+    - Parameter obj: Object to test for value equality.
     - Returns: 
          if  is not an ,  otherwise.
 
@@ -466,6 +469,9 @@ open class AsnContentException
     open class override func get_type_handle() -> TypeHandle {
         return System_Formats_Asn1_AsnContentException_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor()
@@ -525,11 +531,15 @@ public struct AsnDecoder {
 // TODO COPE (write_all_methods) (span) bool ReadBoolean(System.ReadOnlySpan<System.Byte>, System.Formats.Asn1.AsnEncodingRules, ref System.Int32, System.Nullable<System.Formats.Asn1.Asn1Tag>)
 // TODO COPE (write_all_methods) (span) System.String ReadCharacterString(System.ReadOnlySpan<System.Byte>, System.Formats.Asn1.AsnEncodingRules, System.Formats.Asn1.UniversalTagNumber, ref System.Int32, System.Nullable<System.Formats.Asn1.Asn1Tag>)
 // TODO COPE (write_all_methods) (span) System.Formats.Asn1.Asn1Tag ReadEncodedValue(System.ReadOnlySpan<System.Byte>, System.Formats.Asn1.AsnEncodingRules, ref System.Int32, ref System.Int32, ref System.Int32)
+// TODO COPE (returns byreflike): System.ReadOnlySpan<System.Byte> ReadEnumeratedBytes(System.ReadOnlySpan<System.Byte>, System.Formats.Asn1.AsnEncodingRules, ref System.Int32, System.Nullable<System.Formats.Asn1.Asn1Tag>)
 // TODO COPE (write_all_methods) (span) System.Enum ReadEnumeratedValue(System.ReadOnlySpan<System.Byte>, System.Formats.Asn1.AsnEncodingRules, System.Type, ref System.Int32, System.Nullable<System.Formats.Asn1.Asn1Tag>)
+// TODO COPE (generic method and parm span): TEnum ReadEnumeratedValue<TEnum>(System.ReadOnlySpan<System.Byte>, System.Formats.Asn1.AsnEncodingRules, ref System.Int32, System.Nullable<System.Formats.Asn1.Asn1Tag>)
 // TODO COPE (write_all_methods) (span) System.DateTimeOffset ReadGeneralizedTime(System.ReadOnlySpan<System.Byte>, System.Formats.Asn1.AsnEncodingRules, ref System.Int32, System.Nullable<System.Formats.Asn1.Asn1Tag>)
 // TODO COPE (write_all_methods) (span) System.Numerics.BigInteger ReadInteger(System.ReadOnlySpan<System.Byte>, System.Formats.Asn1.AsnEncodingRules, ref System.Int32, System.Nullable<System.Formats.Asn1.Asn1Tag>)
+// TODO COPE (returns byreflike): System.ReadOnlySpan<System.Byte> ReadIntegerBytes(System.ReadOnlySpan<System.Byte>, System.Formats.Asn1.AsnEncodingRules, ref System.Int32, System.Nullable<System.Formats.Asn1.Asn1Tag>)
 // TODO COPE (write_all_methods) (span) System.Collections.BitArray ReadNamedBitList(System.ReadOnlySpan<System.Byte>, System.Formats.Asn1.AsnEncodingRules, ref System.Int32, System.Nullable<System.Formats.Asn1.Asn1Tag>)
 // TODO COPE (write_all_methods) (span) System.Enum ReadNamedBitListValue(System.ReadOnlySpan<System.Byte>, System.Formats.Asn1.AsnEncodingRules, System.Type, ref System.Int32, System.Nullable<System.Formats.Asn1.Asn1Tag>)
+// TODO COPE (generic method and parm span): TFlagsEnum ReadNamedBitListValue<TFlagsEnum>(System.ReadOnlySpan<System.Byte>, System.Formats.Asn1.AsnEncodingRules, ref System.Int32, System.Nullable<System.Formats.Asn1.Asn1Tag>)
 // TODO COPE (write_all_methods) (span) void ReadNull(System.ReadOnlySpan<System.Byte>, System.Formats.Asn1.AsnEncodingRules, ref System.Int32, System.Nullable<System.Formats.Asn1.Asn1Tag>)
 // TODO COPE (write_all_methods) (span) System.String ReadObjectIdentifier(System.ReadOnlySpan<System.Byte>, System.Formats.Asn1.AsnEncodingRules, ref System.Int32, System.Nullable<System.Formats.Asn1.Asn1Tag>)
 // TODO COPE (write_all_methods) (span) System.Byte[] ReadOctetString(System.ReadOnlySpan<System.Byte>, System.Formats.Asn1.AsnEncodingRules, ref System.Int32, System.Nullable<System.Formats.Asn1.Asn1Tag>)
@@ -543,6 +553,9 @@ public struct AsnDecoder {
 // TODO COPE (write_all_methods) (span) bool TryReadInt32(System.ReadOnlySpan<System.Byte>, System.Formats.Asn1.AsnEncodingRules, ref System.Int32, ref System.Int32, System.Nullable<System.Formats.Asn1.Asn1Tag>)
 // TODO COPE (write_all_methods) (span) bool TryReadInt64(System.ReadOnlySpan<System.Byte>, System.Formats.Asn1.AsnEncodingRules, ref System.Int64, ref System.Int32, System.Nullable<System.Formats.Asn1.Asn1Tag>)
 // TODO COPE (write_all_methods) (span) bool TryReadOctetString(System.ReadOnlySpan<System.Byte>, System.Span<System.Byte>, System.Formats.Asn1.AsnEncodingRules, ref System.Int32, ref System.Int32, System.Nullable<System.Formats.Asn1.Asn1Tag>)
+// TODO COPE (parm byref span): bool TryReadPrimitiveBitString(System.ReadOnlySpan<System.Byte>, System.Formats.Asn1.AsnEncodingRules, ref System.Int32, ref System.ReadOnlySpan<System.Byte>, ref System.Int32, System.Nullable<System.Formats.Asn1.Asn1Tag>)
+// TODO COPE (parm byref span): bool TryReadPrimitiveCharacterStringBytes(System.ReadOnlySpan<System.Byte>, System.Formats.Asn1.AsnEncodingRules, System.Formats.Asn1.Asn1Tag, ref System.ReadOnlySpan<System.Byte>, ref System.Int32)
+// TODO COPE (parm byref span): bool TryReadPrimitiveOctetString(System.ReadOnlySpan<System.Byte>, System.Formats.Asn1.AsnEncodingRules, ref System.ReadOnlySpan<System.Byte>, ref System.Int32, System.Nullable<System.Formats.Asn1.Asn1Tag>)
 // TODO COPE (write_all_methods) (span) bool TryReadUInt32(System.ReadOnlySpan<System.Byte>, System.Formats.Asn1.AsnEncodingRules, ref System.UInt32, ref System.Int32, System.Nullable<System.Formats.Asn1.Asn1Tag>)
 // TODO COPE (write_all_methods) (span) bool TryReadUInt64(System.ReadOnlySpan<System.Byte>, System.Formats.Asn1.AsnEncodingRules, ref System.UInt64, ref System.Int32, System.Nullable<System.Formats.Asn1.Asn1Tag>)
 } // AsnDecoder
@@ -565,7 +578,7 @@ public struct AsnEncodingRules : SGBridgeGenericValue {
     public init(gval: GVal) { self.v = Swift.Int32(gval); }
     // static field: System.Formats.Asn1.AsnEncodingRules BER
     /**
-    ITU-T X.690 Basic Encoding Rules
+    ITU-T X.690 Basic Encoding Rules.
 
     */
     public static var BER : dotnet.System.Formats.Asn1.AsnEncodingRules {
@@ -576,7 +589,7 @@ public struct AsnEncodingRules : SGBridgeGenericValue {
     }
     // static field: System.Formats.Asn1.AsnEncodingRules CER
     /**
-    ITU-T X.690 Canonical Encoding Rules
+    ITU-T X.690 Canonical Encoding Rules.
 
     */
     public static var CER : dotnet.System.Formats.Asn1.AsnEncodingRules {
@@ -587,7 +600,7 @@ public struct AsnEncodingRules : SGBridgeGenericValue {
     }
     // static field: System.Formats.Asn1.AsnEncodingRules DER
     /**
-    ITU-T X.690 Distinguished Encoding Rules
+    ITU-T X.690 Distinguished Encoding Rules.
 
     */
     public static var DER : dotnet.System.Formats.Asn1.AsnEncodingRules {
@@ -610,6 +623,9 @@ open class AsnReader
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Formats_Asn1_AsnReader_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -1110,14 +1126,15 @@ open class AsnReader
          and advances the reader if the BIT STRING value had a primitive encoding,  and does not advance the reader if it had a constructed encoding.
 
     */
-    open func TryReadPrimitiveBitString(unusedBitCount : inout Swift.Int32, value : inout dotnet.System.ReadOnlyMemory_1<Swift.UInt8>, expectedTag : Optional<dotnet.System.Formats.Asn1.Asn1Tag> = nil) throws -> Bool {
+    open func TryReadPrimitiveBitString(unusedBitCount : inout Swift.Int32, value : inout Optional<dotnet.System.ReadOnlyMemory_1<Swift.UInt8>>, expectedTag : Optional<dotnet.System.Formats.Asn1.Asn1Tag> = nil) throws -> Bool {
         var __thrown : NullableHandle = nil;
             var _tmp_out_unusedBitCount = unusedBitCount;
-            var _tmp_out_value = value.get_handle();
+            var _tmp_out_value = (value != nil) ? (value!.get_handle()) : nil;
         let __return = System_Formats_Asn1_AsnReader_bool__TryReadPrimitiveBitString_0__3__outi32_outSystem_ReadOnlyMemory_u8__System_Nullable_System_Formats_Asn1_Asn1Tag_(&__thrown, self.get_handle(), &_tmp_out_unusedBitCount, &_tmp_out_value, (expectedTag != nil) ? expectedTag!.get_handle() : nil);
         let _tmp2_unusedBitCount = _tmp_out_unusedBitCount;
             unusedBitCount = _tmp2_unusedBitCount;
-        let _tmp2_value = dotnet.System.ReadOnlyMemory_1<Swift.UInt8>(hndl : _tmp_out_value);
+        let __h__tmp2_value = _tmp_out_value;
+        let _tmp2_value = (__h__tmp2_value != nil) ? dotnet.System.ReadOnlyMemory_1<Swift.UInt8>(hndl: __h__tmp2_value!) : nil;
             value = _tmp2_value;
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
@@ -1136,11 +1153,12 @@ open class AsnReader
          and advances the reader if the character string value had a primitive encoding,  and does not advance the reader if it had a constructed encoding.
 
     */
-    open func TryReadPrimitiveCharacterStringBytes(expectedTag : dotnet.System.Formats.Asn1.Asn1Tag, contents : inout dotnet.System.ReadOnlyMemory_1<Swift.UInt8>) throws -> Bool {
+    open func TryReadPrimitiveCharacterStringBytes(expectedTag : dotnet.System.Formats.Asn1.Asn1Tag, contents : inout Optional<dotnet.System.ReadOnlyMemory_1<Swift.UInt8>>) throws -> Bool {
         var __thrown : NullableHandle = nil;
-            var _tmp_out_contents = contents.get_handle();
+            var _tmp_out_contents = (contents != nil) ? (contents!.get_handle()) : nil;
         let __return = System_Formats_Asn1_AsnReader_bool__TryReadPrimitiveCharacterStringBytes_0__2__Asn1Tag_outSystem_ReadOnlyMemory_u8_(&__thrown, self.get_handle(), expectedTag.get_handle(), &_tmp_out_contents);
-        let _tmp2_contents = dotnet.System.ReadOnlyMemory_1<Swift.UInt8>(hndl : _tmp_out_contents);
+        let __h__tmp2_contents = _tmp_out_contents;
+        let _tmp2_contents = (__h__tmp2_contents != nil) ? dotnet.System.ReadOnlyMemory_1<Swift.UInt8>(hndl: __h__tmp2_contents!) : nil;
             contents = _tmp2_contents;
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
@@ -1159,11 +1177,12 @@ open class AsnReader
          and advances the reader if the OCTET STRING value had a primitive encoding,  and does not advance the reader if it had a constructed encoding.
 
     */
-    open func TryReadPrimitiveOctetString(contents : inout dotnet.System.ReadOnlyMemory_1<Swift.UInt8>, expectedTag : Optional<dotnet.System.Formats.Asn1.Asn1Tag> = nil) throws -> Bool {
+    open func TryReadPrimitiveOctetString(contents : inout Optional<dotnet.System.ReadOnlyMemory_1<Swift.UInt8>>, expectedTag : Optional<dotnet.System.Formats.Asn1.Asn1Tag> = nil) throws -> Bool {
         var __thrown : NullableHandle = nil;
-            var _tmp_out_contents = contents.get_handle();
+            var _tmp_out_contents = (contents != nil) ? (contents!.get_handle()) : nil;
         let __return = System_Formats_Asn1_AsnReader_bool__TryReadPrimitiveOctetString_0__2__outSystem_ReadOnlyMemory_u8__System_Nullable_System_Formats_Asn1_Asn1Tag_(&__thrown, self.get_handle(), &_tmp_out_contents, (expectedTag != nil) ? expectedTag!.get_handle() : nil);
-        let _tmp2_contents = dotnet.System.ReadOnlyMemory_1<Swift.UInt8>(hndl : _tmp_out_contents);
+        let __h__tmp2_contents = _tmp_out_contents;
+        let _tmp2_contents = (__h__tmp2_contents != nil) ? dotnet.System.ReadOnlyMemory_1<Swift.UInt8>(hndl: __h__tmp2_contents!) : nil;
             contents = _tmp2_contents;
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
@@ -1273,6 +1292,9 @@ public final class AsnReaderOptions
     public class override func get_type_handle() -> TypeHandle {
         return System_Formats_Asn1_AsnReaderOptions_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     /**
@@ -1361,6 +1383,9 @@ public final class AsnWriter
 {
     public class override func get_type_handle() -> TypeHandle {
         return System_Formats_Asn1_AsnWriter_get_type_handle();
+    }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -1718,7 +1743,7 @@ public final class AsnWriter
     /**
     Write a bit array value as a NamedBitList with a specified tag.
 
-    - Parameter value: The bits to write
+    - Parameter value: The bits to write.
     - Parameter tag: The tag to write, or  for the default tag (Universal 3).
     */
     public func WriteNamedBitList(value : dotnet.System.Collections.BitArray, tag : Optional<dotnet.System.Formats.Asn1.Asn1Tag> = nil) throws {
@@ -1735,7 +1760,7 @@ public final class AsnWriter
     /**
     Write a [] enum value as a NamedBitList with a specified tag.
 
-    - Parameter value: The boxed enumeration value to write
+    - Parameter value: The boxed enumeration value to write.
     - Parameter tag: The tag to write, or  for the default tag (Universal 3).
     */
     public func WriteNamedBitList(value : dotnet.System.Enum, tag : Optional<dotnet.System.Formats.Asn1.Asn1Tag> = nil) throws {
@@ -1752,7 +1777,7 @@ public final class AsnWriter
     /**
     Write a [] enum value as a NamedBitList with a specified tag.
 
-    - Parameter value: The enumeration value to write
+    - Parameter value: The enumeration value to write.
     - Parameter tag: The tag to write, or  for the default tag (Universal 3).
     */
     public func WriteNamedBitList<UTEnum : SGBridgeGenericValue>(value : UTEnum, tag : Optional<dotnet.System.Formats.Asn1.Asn1Tag> = nil) throws {
@@ -1872,6 +1897,9 @@ public final class AsnWriter_Scope
     public class override func get_type_handle() -> TypeHandle {
         return System_Formats_Asn1_AsnWriter_Scope_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     public override init() {
@@ -1913,7 +1941,7 @@ public struct TagClass : SGBridgeGenericValue {
     public init(gval: GVal) { self.v = Swift.Int32(gval); }
     // static field: System.Formats.Asn1.TagClass Universal
     /**
-    The Universal tag class
+    The Universal tag class.
 
     */
     public static var Universal : dotnet.System.Formats.Asn1.TagClass {
@@ -1924,7 +1952,7 @@ public struct TagClass : SGBridgeGenericValue {
     }
     // static field: System.Formats.Asn1.TagClass Application
     /**
-    The Application tag class
+    The Application tag class.
 
     */
     public static var Application : dotnet.System.Formats.Asn1.TagClass {
@@ -1935,7 +1963,7 @@ public struct TagClass : SGBridgeGenericValue {
     }
     // static field: System.Formats.Asn1.TagClass ContextSpecific
     /**
-    The Context-Specific tag class
+    The Context-Specific tag class.
 
     */
     public static var ContextSpecific : dotnet.System.Formats.Asn1.TagClass {
@@ -1946,7 +1974,7 @@ public struct TagClass : SGBridgeGenericValue {
     }
     // static field: System.Formats.Asn1.TagClass Private
     /**
-    The Private tag class
+    The Private tag class.
 
     */
     public static var Private : dotnet.System.Formats.Asn1.TagClass {

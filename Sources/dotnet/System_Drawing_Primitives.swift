@@ -18,6 +18,9 @@ public final class Color
     public class override func get_type_handle() -> TypeHandle {
         return System_Drawing_Color_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // static field: System.Drawing.Color Empty
@@ -1129,6 +1132,10 @@ public final class Color
             return try! get_R();
         }
     }
+    /**
+    Gets a system-defined color that has an ARGB value of #663399.
+
+    */
     public static var RebeccaPurple : dotnet.System.Drawing.Color {
         get {
             return try! get_RebeccaPurple();
@@ -5408,6 +5415,10 @@ public struct KnownColor : SGBridgeGenericValue {
         }
     }
     // static field: System.Drawing.KnownColor RebeccaPurple
+    /**
+    A system-defined color representing the ARGB value #663399.
+
+    */
     public static var RebeccaPurple : dotnet.System.Drawing.KnownColor {
         get {
         let __return = dotnet.System.Drawing.KnownColor(val: System_Drawing_KnownColor_get_RebeccaPurple());
@@ -5429,6 +5440,9 @@ public final class Point
 {
     public class override func get_type_handle() -> TypeHandle {
         return System_Drawing_Point_get_type_handle();
+    }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -5535,7 +5549,7 @@ public final class Point
     Adds the specified  to the specified .
 
     - Parameter pt: The  to add.
-    - Parameter sz: The  to add
+    - Parameter sz: The  to add.
     - Returns: The  that is the result of the addition operation.
 
     */
@@ -5897,6 +5911,9 @@ public final class PointF
     public class override func get_type_handle() -> TypeHandle {
         return System_Drawing_PointF_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // static field: System.Drawing.PointF Empty
@@ -5962,6 +5979,11 @@ public final class PointF
     }
     // .ctor(System.Numerics.Vector2)
 // docid: M:System.Drawing.PointF.#ctor(System.Numerics.Vector2)
+    /**
+    Initializes a new instance of the  struct from the specified .
+
+    - Parameter vector: The source vector.
+    */
     public init(vector : dotnet.System.Numerics.Vector2) throws {
         var __thrown : NullableHandle = nil;
         let h = System_Drawing_PointF_ctor_0__1__Vector2(&__thrown, vector.get_handle());
@@ -6262,6 +6284,12 @@ public final class PointF
     }
     // System.Numerics.Vector2 ToVector2()
 // docid: M:System.Drawing.PointF.ToVector2
+    /**
+    Creates a new  from this .
+
+    - Returns: The vector that was created from this .
+
+    */
     public func ToVector2() throws -> dotnet.System.Numerics.Vector2 {
         var __thrown : NullableHandle = nil;
         let __return = System_Drawing_PointF_Vector2__ToVector2_0__0(&__thrown, self.get_handle());
@@ -6341,6 +6369,9 @@ public final class Rectangle
 {
     public class override func get_type_handle() -> TypeHandle {
         return System_Drawing_Rectangle_get_type_handle();
+    }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -6860,7 +6891,7 @@ public final class Rectangle
     /**
     Converts the attributes of this  to a human-readable string.
 
-    - Returns: A string that contains the position, width, and height of this  structure ¾ for example, {X=20, Y=20, Width=100, Height=50}
+    - Returns: A string that contains the position, width, and height of this  structure ¾ for example, {X=20, Y=20, Width=100, Height=50}.
 
     */
     public override func ToString() throws -> dotnet.System.String {
@@ -7112,6 +7143,9 @@ public final class RectangleF
     public class override func get_type_handle() -> TypeHandle {
         return System_Drawing_RectangleF_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // static field: System.Drawing.RectangleF Empty
@@ -7280,6 +7314,11 @@ public final class RectangleF
     }
     // .ctor(System.Numerics.Vector4)
 // docid: M:System.Drawing.RectangleF.#ctor(System.Numerics.Vector4)
+    /**
+    Initializes a new instance of the  struct from the specified .
+
+    - Parameter vector: The source vector.
+    */
     public init(vector : dotnet.System.Numerics.Vector4) throws {
         var __thrown : NullableHandle = nil;
         let h = System_Drawing_RectangleF_ctor_0__1__Vector4(&__thrown, vector.get_handle());
@@ -7659,6 +7698,12 @@ public final class RectangleF
     }
     // System.Numerics.Vector4 ToVector4()
 // docid: M:System.Drawing.RectangleF.ToVector4
+    /**
+    Creates a new  from this .
+
+    - Returns: The rectangle, converted into a new  instance.
+
+    */
     public func ToVector4() throws -> dotnet.System.Numerics.Vector4 {
         var __thrown : NullableHandle = nil;
         let __return = System_Drawing_RectangleF_Vector4__ToVector4_0__0(&__thrown, self.get_handle());
@@ -7889,6 +7934,9 @@ public final class Size
 {
     public class override func get_type_handle() -> TypeHandle {
         return System_Drawing_Size_get_type_handle();
+    }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -8422,6 +8470,9 @@ public final class SizeF
     public class override func get_type_handle() -> TypeHandle {
         return System_Drawing_SizeF_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // static field: System.Drawing.SizeF Empty
@@ -8519,6 +8570,11 @@ public final class SizeF
     }
     // .ctor(System.Numerics.Vector2)
 // docid: M:System.Drawing.SizeF.#ctor(System.Numerics.Vector2)
+    /**
+    Initializes a new instance of the  struct from the specified .
+
+    - Parameter vector: The source vector.
+    */
     public init(vector : dotnet.System.Numerics.Vector2) throws {
         var __thrown : NullableHandle = nil;
         let h = System_Drawing_SizeF_ctor_0__1__Vector2(&__thrown, vector.get_handle());
@@ -8846,6 +8902,12 @@ public final class SizeF
     }
     // System.Numerics.Vector2 ToVector2()
 // docid: M:System.Drawing.SizeF.ToVector2
+    /**
+    Creates a new  from this .
+
+    - Returns: The vector that was created from this .
+
+    */
     public func ToVector2() throws -> dotnet.System.Numerics.Vector2 {
         var __thrown : NullableHandle = nil;
         let __return = System_Drawing_SizeF_Vector2__ToVector2_0__0(&__thrown, self.get_handle());

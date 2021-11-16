@@ -21,6 +21,9 @@ public final class BigInteger
     public class override func get_type_handle() -> TypeHandle {
         return System_Numerics_BigInteger_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     /**
@@ -395,11 +398,12 @@ public final class BigInteger
     - Returns: The quotient of the division.
 
     */
-    public class func DivRem(dividend : dotnet.System.Numerics.BigInteger, divisor : dotnet.System.Numerics.BigInteger, remainder : inout dotnet.System.Numerics.BigInteger) throws -> dotnet.System.Numerics.BigInteger {
+    public class func DivRem(dividend : dotnet.System.Numerics.BigInteger, divisor : dotnet.System.Numerics.BigInteger, remainder : inout Optional<dotnet.System.Numerics.BigInteger>) throws -> dotnet.System.Numerics.BigInteger {
         var __thrown : NullableHandle = nil;
-            var _tmp_out_remainder = remainder.get_handle();
+            var _tmp_out_remainder = (remainder != nil) ? (remainder!.get_handle()) : nil;
         let __return = System_Numerics_BigInteger_BigInteger__DivRem_0__3__BigInteger_BigInteger_outBigInteger(&__thrown, dividend.get_handle(), divisor.get_handle(), &_tmp_out_remainder);
-        let _tmp2_remainder = dotnet.System.Numerics.BigInteger(hndl: _tmp_out_remainder);
+        let __h__tmp2_remainder = _tmp_out_remainder;
+        let _tmp2_remainder = (__h__tmp2_remainder != nil) ? dotnet.System.Numerics.BigInteger(hndl: __h__tmp2_remainder!) : nil;
             remainder = _tmp2_remainder;
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
@@ -2087,11 +2091,12 @@ public final class BigInteger
          if the  parameter was converted successfully; otherwise, .
 
     */
-    public class func TryParse(value : Optional<dotnet.System.String>, style : dotnet.System.Globalization.NumberStyles, provider : Optional<dotnet.System.IFormatProvider>, result : inout dotnet.System.Numerics.BigInteger) throws -> Bool {
+    public class func TryParse(value : Optional<dotnet.System.String>, style : dotnet.System.Globalization.NumberStyles, provider : Optional<dotnet.System.IFormatProvider>, result : inout Optional<dotnet.System.Numerics.BigInteger>) throws -> Bool {
         var __thrown : NullableHandle = nil;
-            var _tmp_out_result = result.get_handle();
+            var _tmp_out_result = (result != nil) ? (result!.get_handle()) : nil;
         let __return = System_Numerics_BigInteger_bool__TryParse_0__4__String_NumberStyles_IFormatProvider_outBigInteger(&__thrown, value?.get_handle() ?? nil, style.get_value(), provider?.get_handle() ?? nil, &_tmp_out_result);
-        let _tmp2_result = dotnet.System.Numerics.BigInteger(hndl: _tmp_out_result);
+        let __h__tmp2_result = _tmp_out_result;
+        let _tmp2_result = (__h__tmp2_result != nil) ? dotnet.System.Numerics.BigInteger(hndl: __h__tmp2_result!) : nil;
             result = _tmp2_result;
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
@@ -2110,11 +2115,12 @@ public final class BigInteger
          if  was converted successfully; otherwise, .
 
     */
-    public class func TryParse(value : Optional<dotnet.System.String>, result : inout dotnet.System.Numerics.BigInteger) throws -> Bool {
+    public class func TryParse(value : Optional<dotnet.System.String>, result : inout Optional<dotnet.System.Numerics.BigInteger>) throws -> Bool {
         var __thrown : NullableHandle = nil;
-            var _tmp_out_result = result.get_handle();
+            var _tmp_out_result = (result != nil) ? (result!.get_handle()) : nil;
         let __return = System_Numerics_BigInteger_bool__TryParse_0__2__String_outBigInteger(&__thrown, value?.get_handle() ?? nil, &_tmp_out_result);
-        let _tmp2_result = dotnet.System.Numerics.BigInteger(hndl: _tmp_out_result);
+        let __h__tmp2_result = _tmp_out_result;
+        let _tmp2_result = (__h__tmp2_result != nil) ? dotnet.System.Numerics.BigInteger(hndl: __h__tmp2_result!) : nil;
             result = _tmp2_result;
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
@@ -2227,6 +2233,9 @@ public final class Complex
 {
     public class override func get_type_handle() -> TypeHandle {
         return System_Numerics_Complex_get_type_handle();
+    }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }

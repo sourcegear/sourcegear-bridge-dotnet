@@ -17,6 +17,9 @@ public final class BindIPEndPoint
     public class override func get_type_handle() -> TypeHandle {
         return System_Net_BindIPEndPoint_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // System.Net.IPEndPoint Invoke(System.Net.ServicePoint, System.Net.IPEndPoint, System.Int32)
@@ -56,15 +59,15 @@ public final class BindIPEndPoint
         return dotnet.System.Net.IPEndPoint(hndl : __return);
         }
     }
-    public init(_ callback : @escaping (dotnet.System.Net.ServicePoint, dotnet.System.Net.IPEndPoint, Swift.Int32) throws -> dotnet.System.Net.IPEndPoint) throws
+    public convenience init(_ __closure_Invoke : @escaping (dotnet.System.Net.ServicePoint, dotnet.System.Net.IPEndPoint, Swift.Int32) throws -> dotnet.System.Net.IPEndPoint) throws
     {
-        let __bridge : (UnsafeMutablePointer<NullableHandle>, NonnullHandle, NonnullHandle, Swift.Int32) -> NonnullHandle =
+        let __interlude_Invoke : (UnsafeMutablePointer<NullableHandle>, NonnullHandle, NonnullHandle, Swift.Int32) -> NonnullHandle =
         {
             (thrown : UnsafeMutablePointer<NullableHandle>, servicePoint : NonnullHandle, remoteEndPoint : NonnullHandle, retryCount : Swift.Int32) -> NonnullHandle in
             do
             {
                 thrown.pointee = nil;
-                let ret = try callback(dotnet.System.Net.ServicePoint(hndl: servicePoint), dotnet.System.Net.IPEndPoint(hndl: remoteEndPoint), retryCount);
+                let ret = try __closure_Invoke(dotnet.System.Net.ServicePoint(hndl: servicePoint), dotnet.System.Net.IPEndPoint(hndl: remoteEndPoint), retryCount);
                 return __copy_handle(ret.get_handle());
             }
             catch let e as dotnet.System.Exception
@@ -79,24 +82,24 @@ public final class BindIPEndPoint
                 return NonnullHandle(bitPattern: 8675309)!;
             }
         };
-        let cbarg = UnsafeRawPointer(Unmanaged.passRetained(__bridge as AnyObject).toOpaque());
-        func __cb(cb : UnsafeRawPointer?, thrown : UnsafeMutablePointer<NullableHandle>, servicePoint : NonnullHandle, remoteEndPoint : NonnullHandle, retryCount : Swift.Int32) -> NonnullHandle
+        func __cb_Invoke(pdata_interlude : UnsafeRawPointer, thrown : UnsafeMutablePointer<NullableHandle>, servicePoint : NonnullHandle, remoteEndPoint : NonnullHandle, retryCount : Swift.Int32) -> NonnullHandle
         {
-            let f = Unmanaged<AnyObject>.fromOpaque(cb!).takeUnretainedValue() as! (UnsafeMutablePointer<NullableHandle>, NonnullHandle, NonnullHandle, Swift.Int32) -> NonnullHandle;
-            return f(thrown, servicePoint, remoteEndPoint, retryCount);
+            let f_interlude = Unmanaged<AnyObject>.fromOpaque(pdata_interlude).takeUnretainedValue() as! (UnsafeMutablePointer<NullableHandle>, NonnullHandle, NonnullHandle, Swift.Int32) -> NonnullHandle;
+            return f_interlude(thrown, servicePoint, remoteEndPoint, retryCount);
         }
+        let __pdata_Invoke = UnsafeRawPointer(Unmanaged.passRetained(__interlude_Invoke as AnyObject).toOpaque());
+
         var __thrown : NullableHandle = nil;
         let h = System_Net_BindIPEndPoint_create(
             &__thrown,
-            cbarg,
-            nil, // TODO deinit
-            __cb
+            __cb_Invoke,
+            __pdata_Invoke,
+            nil
             );
-            // TODO check thrown
         if let __ex = __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-            super.init(hndl: h);
+            self.init(hndl: h);
         }
     }
     // System.Net.IPEndPoint Invoke(System.Net.ServicePoint, System.Net.IPEndPoint, System.Int32)
@@ -208,6 +211,9 @@ open class ServicePoint
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Net_ServicePoint_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -685,11 +691,14 @@ open class ServicePointManager
     open class override func get_type_handle() -> TypeHandle {
         return System_Net_ServicePointManager_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // static field: System.Int32 DefaultNonPersistentConnectionLimit
     /**
-    The default number of non-persistent connections (4) allowed on a  object connected to an HTTP/1.0 or later server. This field is constant but is no longer used in the .NET Framework 2.0.
+    The default number of non-persistent connections (4) allowed on a  object connected to an HTTP/1.0 or later server. This field is constant but is no longer used as of .NET Framework 2.0.
 
     */
     open class var DefaultNonPersistentConnectionLimit : Swift.Int32 {

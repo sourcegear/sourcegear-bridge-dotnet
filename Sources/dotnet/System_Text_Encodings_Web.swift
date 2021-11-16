@@ -19,6 +19,9 @@ open class HtmlEncoder
     open class override func get_type_handle() -> TypeHandle {
         return System_Text_Encodings_Web_HtmlEncoder_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // System.Text.Encodings.Web.HtmlEncoder Create(System.Text.Encodings.Web.TextEncoderSettings)
@@ -91,6 +94,9 @@ open class JavaScriptEncoder
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Text_Encodings_Web_JavaScriptEncoder_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -184,6 +190,9 @@ open class TextEncoder
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Text_Encodings_Web_TextEncoder_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -360,6 +369,9 @@ open class TextEncoderSettings
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Text_Encodings_Web_TextEncoderSettings_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -601,6 +613,9 @@ open class UrlEncoder
     open class override func get_type_handle() -> TypeHandle {
         return System_Text_Encodings_Web_UrlEncoder_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // System.Text.Encodings.Web.UrlEncoder Create(System.Text.Encodings.Web.TextEncoderSettings)
@@ -678,6 +693,9 @@ public final class UnicodeRange
 {
     public class override func get_type_handle() -> TypeHandle {
         return System_Text_Unicode_UnicodeRange_get_type_handle();
+    }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }

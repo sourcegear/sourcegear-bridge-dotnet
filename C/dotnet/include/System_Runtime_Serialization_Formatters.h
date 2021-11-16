@@ -112,6 +112,8 @@ void System_Runtime_Serialization_IFormatter_void__set_SurrogateSelector_0__1__I
 
 SG_HNDL_NONNULL System_Runtime_Serialization_IFormatter_cast(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __h);
 
+SG_HNDL_NONNULL System_Runtime_Serialization_IFormatter_create(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL (* _Nonnull  __cb_System_Runtime_Serialization_IFormatter_Object__Deserialize_0__1__Stream)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL serializationStream), const void* _Nonnull __pdata_System_Runtime_Serialization_IFormatter_Object__Deserialize_0__1__Stream, void (* _Nonnull  __cb_System_Runtime_Serialization_IFormatter_void__Serialize_0__2__Stream_Object)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL serializationStream, SG_HNDL_NONNULL graph), const void* _Nonnull __pdata_System_Runtime_Serialization_IFormatter_void__Serialize_0__2__Stream_Object, void (* _Nullable __deinit)(const void* _Nonnull __pdata));
+
 TYP System_Runtime_Serialization_ISerializationSurrogate_get_type_handle(void);
 
 void System_Runtime_Serialization_ISerializationSurrogate_void__GetObjectData_0__3__Object_SerializationInfo_StreamingContext(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NONNULL obj, SG_HNDL_NONNULL info, SG_HNDL_NONNULL context);
@@ -119,6 +121,8 @@ void System_Runtime_Serialization_ISerializationSurrogate_void__GetObjectData_0_
 SG_HNDL_NONNULL System_Runtime_Serialization_ISerializationSurrogate_Object__SetObjectData_0__4__Object_SerializationInfo_StreamingContext_ISurrogateSelector(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NONNULL obj, SG_HNDL_NONNULL info, SG_HNDL_NONNULL context, SG_HNDL_NULLABLE selector);
 
 SG_HNDL_NONNULL System_Runtime_Serialization_ISerializationSurrogate_cast(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __h);
+
+SG_HNDL_NONNULL System_Runtime_Serialization_ISerializationSurrogate_create(SG_HNDL_NULLABLE * _Nonnull __thrown, void (* _Nonnull  __cb_System_Runtime_Serialization_ISerializationSurrogate_void__GetObjectData_0__3__Object_SerializationInfo_StreamingContext)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL obj, SG_HNDL_NONNULL info, SG_HNDL_NONNULL context), const void* _Nonnull __pdata_System_Runtime_Serialization_ISerializationSurrogate_void__GetObjectData_0__3__Object_SerializationInfo_StreamingContext, SG_HNDL_NONNULL (* _Nonnull  __cb_System_Runtime_Serialization_ISerializationSurrogate_Object__SetObjectData_0__4__Object_SerializationInfo_StreamingContext_ISurrogateSelector)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL obj, SG_HNDL_NONNULL info, SG_HNDL_NONNULL context, SG_HNDL_NULLABLE selector), const void* _Nonnull __pdata_System_Runtime_Serialization_ISerializationSurrogate_Object__SetObjectData_0__4__Object_SerializationInfo_StreamingContext_ISurrogateSelector, void (* _Nullable __deinit)(const void* _Nonnull __pdata));
 
 TYP System_Runtime_Serialization_ISurrogateSelector_get_type_handle(void);
 
@@ -129,6 +133,8 @@ SG_HNDL_NULLABLE System_Runtime_Serialization_ISurrogateSelector_ISurrogateSelec
 SG_HNDL_NULLABLE System_Runtime_Serialization_ISurrogateSelector_ISerializationSurrogate__GetSurrogate_0__3__Type_StreamingContext_outISurrogateSelector(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NONNULL type, SG_HNDL_NONNULL context, SG_HNDL_NONNULL* _Nonnull __selector_out_ptr);
 
 SG_HNDL_NONNULL System_Runtime_Serialization_ISurrogateSelector_cast(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __h);
+
+SG_HNDL_NONNULL System_Runtime_Serialization_ISurrogateSelector_create(SG_HNDL_NULLABLE * _Nonnull __thrown, void (* _Nonnull  __cb_System_Runtime_Serialization_ISurrogateSelector_void__ChainSelector_0__1__ISurrogateSelector)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL selector), const void* _Nonnull __pdata_System_Runtime_Serialization_ISurrogateSelector_void__ChainSelector_0__1__ISurrogateSelector, SG_HNDL_NULLABLE (* _Nonnull  __cb_System_Runtime_Serialization_ISurrogateSelector_ISurrogateSelector__GetNextSelector_0__0)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown), const void* _Nonnull __pdata_System_Runtime_Serialization_ISurrogateSelector_ISurrogateSelector__GetNextSelector_0__0, SG_HNDL_NULLABLE (* _Nonnull  __cb_System_Runtime_Serialization_ISurrogateSelector_ISerializationSurrogate__GetSurrogate_0__3__Type_StreamingContext_outISurrogateSelector)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL type, SG_HNDL_NONNULL context, SG_HNDL_NONNULL* _Nonnull __selector_out_ptr), const void* _Nonnull __pdata_System_Runtime_Serialization_ISurrogateSelector_ISerializationSurrogate__GetSurrogate_0__3__Type_StreamingContext_outISurrogateSelector, void (* _Nullable __deinit)(const void* _Nonnull __pdata));
 
 TYP System_Runtime_Serialization_ObjectIDGenerator_get_type_handle(void);
 
@@ -172,7 +178,7 @@ SG_HNDL_NONNULL System_Runtime_Serialization_ObjectManager_cast(SG_HNDL_NULLABLE
 
 TYP System_Runtime_Serialization_SerializationBinder_get_type_handle(void);
 
-void System_Runtime_Serialization_SerializationBinder_void__BindToName_0__3__Type_outString_outString(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NONNULL serializedType, SG_HNDL_NONNULL* _Nonnull __assemblyName_out_ptr, SG_HNDL_NONNULL* _Nonnull __typeName_out_ptr);
+void System_Runtime_Serialization_SerializationBinder_void__BindToName_0__3__Type_outString_outString(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NONNULL serializedType, SG_HNDL_NULLABLE* _Nonnull __assemblyName_out_ptr, SG_HNDL_NULLABLE* _Nonnull __typeName_out_ptr);
 
 SG_HNDL_NULLABLE System_Runtime_Serialization_SerializationBinder_Type__BindToType_0__2__String_String(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NONNULL assemblyName, SG_HNDL_NONNULL typeName);
 
@@ -229,6 +235,8 @@ SG_HNDL_NULLABLE System_Runtime_Serialization_Formatters_IFieldInfo_TypeArray__g
 void System_Runtime_Serialization_Formatters_IFieldInfo_void__set_FieldTypes_0__1__TypeArray(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE value);
 
 SG_HNDL_NONNULL System_Runtime_Serialization_Formatters_IFieldInfo_cast(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __h);
+
+SG_HNDL_NONNULL System_Runtime_Serialization_Formatters_IFieldInfo_create(SG_HNDL_NULLABLE * _Nonnull __thrown, void (* _Nullable __deinit)(const void* _Nonnull __pdata));
 
 TYP System_Runtime_Serialization_Formatters_TypeFilterLevel_get_type_handle(void);
 

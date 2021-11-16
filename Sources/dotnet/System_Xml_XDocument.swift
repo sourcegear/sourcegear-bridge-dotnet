@@ -502,6 +502,9 @@ open class XAttribute
     open class override func get_type_handle() -> TypeHandle {
         return System_Xml_Linq_XAttribute_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor(System.Xml.Linq.XAttribute)
@@ -1041,6 +1044,9 @@ open class XCData
     open class override func get_type_handle() -> TypeHandle {
         return System_Xml_Linq_XCData_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor(System.String)
@@ -1101,13 +1107,13 @@ open class XCData
     - Returns: A task representing the asynchronous write operation.
 
     */
-    open override func WriteToAsync(writer : dotnet.System.Xml.XmlWriter, cancellationToken : dotnet.System.Threading.CancellationToken) throws -> dotnet.System.Threading.Tasks.Task {
+    open override func WriteToAsync(writer : dotnet.System.Xml.XmlWriter, cancellationToken : dotnet.System.Threading.CancellationToken) async throws {
         var __thrown : NullableHandle = nil;
         let __return = System_Xml_Linq_XCData_Task__WriteToAsync_0__2__XmlWriter_CancellationToken(&__thrown, self.get_handle(), writer.get_handle(), cancellationToken.get_handle());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task(hndl: __return).ToAsync();
         }
     }
     // [IsSpecialName] System.Xml.XmlNodeType get_NodeType()
@@ -1144,6 +1150,9 @@ open class XComment
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Xml_Linq_XComment_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -1205,13 +1214,13 @@ open class XComment
     - Returns: A task that represents the asynchronous write operation.
 
     */
-    open override func WriteToAsync(writer : dotnet.System.Xml.XmlWriter, cancellationToken : dotnet.System.Threading.CancellationToken) throws -> dotnet.System.Threading.Tasks.Task {
+    open override func WriteToAsync(writer : dotnet.System.Xml.XmlWriter, cancellationToken : dotnet.System.Threading.CancellationToken) async throws {
         var __thrown : NullableHandle = nil;
         let __return = System_Xml_Linq_XComment_Task__WriteToAsync_0__2__XmlWriter_CancellationToken(&__thrown, self.get_handle(), writer.get_handle(), cancellationToken.get_handle());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task(hndl: __return).ToAsync();
         }
     }
     // [IsSpecialName] System.Xml.XmlNodeType get_NodeType()
@@ -1282,6 +1291,9 @@ open class XContainer
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Xml_Linq_XContainer_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -1602,6 +1614,9 @@ open class XDeclaration
     open class override func get_type_handle() -> TypeHandle {
         return System_Xml_Linq_XDeclaration_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor(System.String, System.String, System.String)
@@ -1783,6 +1798,9 @@ open class XDocument
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Xml_Linq_XDocument_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -2009,13 +2027,13 @@ open class XDocument
     - Returns: A new XDocument containing the contents of the specified .
 
     */
-    open class func LoadAsync(stream : dotnet.System.IO.Stream, options : dotnet.System.Xml.Linq.LoadOptions, cancellationToken : dotnet.System.Threading.CancellationToken) throws -> dotnet.System.Threading.Tasks.Task_1<dotnet.System.Xml.Linq.XDocument> {
+    open class func LoadAsync(stream : dotnet.System.IO.Stream, options : dotnet.System.Xml.Linq.LoadOptions, cancellationToken : dotnet.System.Threading.CancellationToken) async throws -> dotnet.System.Xml.Linq.XDocument {
         var __thrown : NullableHandle = nil;
         let __return = System_Xml_Linq_XDocument_System_Threading_Tasks_Task_System_Xml_Linq_XDocument___LoadAsync_0__3__Stream_LoadOptions_CancellationToken(&__thrown, stream.get_handle(), options.get_value(), cancellationToken.get_handle());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task_1(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task_1(hndl: __return).ToAsync();
         }
     }
     // System.Threading.Tasks.Task<System.Xml.Linq.XDocument> LoadAsync(System.IO.TextReader, System.Xml.Linq.LoadOptions, System.Threading.CancellationToken)
@@ -2029,13 +2047,13 @@ open class XDocument
     - Returns: A new XDocument containing the contents of the specified .
 
     */
-    open class func LoadAsync(textReader : dotnet.System.IO.TextReader, options : dotnet.System.Xml.Linq.LoadOptions, cancellationToken : dotnet.System.Threading.CancellationToken) throws -> dotnet.System.Threading.Tasks.Task_1<dotnet.System.Xml.Linq.XDocument> {
+    open class func LoadAsync(textReader : dotnet.System.IO.TextReader, options : dotnet.System.Xml.Linq.LoadOptions, cancellationToken : dotnet.System.Threading.CancellationToken) async throws -> dotnet.System.Xml.Linq.XDocument {
         var __thrown : NullableHandle = nil;
         let __return = System_Xml_Linq_XDocument_System_Threading_Tasks_Task_System_Xml_Linq_XDocument___LoadAsync_0__3__TextReader_LoadOptions_CancellationToken(&__thrown, textReader.get_handle(), options.get_value(), cancellationToken.get_handle());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task_1(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task_1(hndl: __return).ToAsync();
         }
     }
     // System.Threading.Tasks.Task<System.Xml.Linq.XDocument> LoadAsync(System.Xml.XmlReader, System.Xml.Linq.LoadOptions, System.Threading.CancellationToken)
@@ -2049,13 +2067,13 @@ open class XDocument
     - Returns: A new XDocument containing the contents of the specified .
 
     */
-    open class func LoadAsync(reader : dotnet.System.Xml.XmlReader, options : dotnet.System.Xml.Linq.LoadOptions, cancellationToken : dotnet.System.Threading.CancellationToken) throws -> dotnet.System.Threading.Tasks.Task_1<dotnet.System.Xml.Linq.XDocument> {
+    open class func LoadAsync(reader : dotnet.System.Xml.XmlReader, options : dotnet.System.Xml.Linq.LoadOptions, cancellationToken : dotnet.System.Threading.CancellationToken) async throws -> dotnet.System.Xml.Linq.XDocument {
         var __thrown : NullableHandle = nil;
         let __return = System_Xml_Linq_XDocument_System_Threading_Tasks_Task_System_Xml_Linq_XDocument___LoadAsync_0__3__XmlReader_LoadOptions_CancellationToken(&__thrown, reader.get_handle(), options.get_value(), cancellationToken.get_handle());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task_1(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task_1(hndl: __return).ToAsync();
         }
     }
     // System.Xml.Linq.XDocument Parse(System.String)
@@ -2221,13 +2239,13 @@ open class XDocument
     - Returns: A task representing the asynchronous save operation.
 
     */
-    open func SaveAsync(stream : dotnet.System.IO.Stream, options : dotnet.System.Xml.Linq.SaveOptions, cancellationToken : dotnet.System.Threading.CancellationToken) throws -> dotnet.System.Threading.Tasks.Task {
+    open func SaveAsync(stream : dotnet.System.IO.Stream, options : dotnet.System.Xml.Linq.SaveOptions, cancellationToken : dotnet.System.Threading.CancellationToken) async throws {
         var __thrown : NullableHandle = nil;
         let __return = System_Xml_Linq_XDocument_Task__SaveAsync_0__3__Stream_SaveOptions_CancellationToken(&__thrown, self.get_handle(), stream.get_handle(), options.get_value(), cancellationToken.get_handle());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task(hndl: __return).ToAsync();
         }
     }
     // System.Threading.Tasks.Task SaveAsync(System.IO.TextWriter, System.Xml.Linq.SaveOptions, System.Threading.CancellationToken)
@@ -2241,13 +2259,13 @@ open class XDocument
     - Returns: A task representing the asynchronous save operation.
 
     */
-    open func SaveAsync(textWriter : dotnet.System.IO.TextWriter, options : dotnet.System.Xml.Linq.SaveOptions, cancellationToken : dotnet.System.Threading.CancellationToken) throws -> dotnet.System.Threading.Tasks.Task {
+    open func SaveAsync(textWriter : dotnet.System.IO.TextWriter, options : dotnet.System.Xml.Linq.SaveOptions, cancellationToken : dotnet.System.Threading.CancellationToken) async throws {
         var __thrown : NullableHandle = nil;
         let __return = System_Xml_Linq_XDocument_Task__SaveAsync_0__3__TextWriter_SaveOptions_CancellationToken(&__thrown, self.get_handle(), textWriter.get_handle(), options.get_value(), cancellationToken.get_handle());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task(hndl: __return).ToAsync();
         }
     }
     // System.Threading.Tasks.Task SaveAsync(System.Xml.XmlWriter, System.Threading.CancellationToken)
@@ -2260,13 +2278,13 @@ open class XDocument
     - Returns: A task representing the asynchronous save operation.
 
     */
-    open func SaveAsync(writer : dotnet.System.Xml.XmlWriter, cancellationToken : dotnet.System.Threading.CancellationToken) throws -> dotnet.System.Threading.Tasks.Task {
+    open func SaveAsync(writer : dotnet.System.Xml.XmlWriter, cancellationToken : dotnet.System.Threading.CancellationToken) async throws {
         var __thrown : NullableHandle = nil;
         let __return = System_Xml_Linq_XDocument_Task__SaveAsync_0__2__XmlWriter_CancellationToken(&__thrown, self.get_handle(), writer.get_handle(), cancellationToken.get_handle());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task(hndl: __return).ToAsync();
         }
     }
     // void WriteTo(System.Xml.XmlWriter)
@@ -2295,13 +2313,13 @@ open class XDocument
     - Returns: A task representing the asynchronous write operation.
 
     */
-    open override func WriteToAsync(writer : dotnet.System.Xml.XmlWriter, cancellationToken : dotnet.System.Threading.CancellationToken) throws -> dotnet.System.Threading.Tasks.Task {
+    open override func WriteToAsync(writer : dotnet.System.Xml.XmlWriter, cancellationToken : dotnet.System.Threading.CancellationToken) async throws {
         var __thrown : NullableHandle = nil;
         let __return = System_Xml_Linq_XDocument_Task__WriteToAsync_0__2__XmlWriter_CancellationToken(&__thrown, self.get_handle(), writer.get_handle(), cancellationToken.get_handle());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task(hndl: __return).ToAsync();
         }
     }
     // [IsSpecialName] System.Xml.Linq.XDeclaration get_Declaration()
@@ -2425,6 +2443,9 @@ open class XDocumentType
     open class override func get_type_handle() -> TypeHandle {
         return System_Xml_Linq_XDocumentType_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor(System.String, System.String, System.String, System.String)
@@ -2488,13 +2509,13 @@ open class XDocumentType
     - Returns: A task representing the asynchronous write operation.
 
     */
-    open override func WriteToAsync(writer : dotnet.System.Xml.XmlWriter, cancellationToken : dotnet.System.Threading.CancellationToken) throws -> dotnet.System.Threading.Tasks.Task {
+    open override func WriteToAsync(writer : dotnet.System.Xml.XmlWriter, cancellationToken : dotnet.System.Threading.CancellationToken) async throws {
         var __thrown : NullableHandle = nil;
         let __return = System_Xml_Linq_XDocumentType_Task__WriteToAsync_0__2__XmlWriter_CancellationToken(&__thrown, self.get_handle(), writer.get_handle(), cancellationToken.get_handle());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task(hndl: __return).ToAsync();
         }
     }
     // [IsSpecialName] System.String get_InternalSubset()
@@ -2680,6 +2701,9 @@ open class XElement
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Xml_Linq_XElement_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -3129,13 +3153,13 @@ open class XElement
     - Returns: A new  containing the contents of the specified stream.
 
     */
-    open class func LoadAsync(stream : dotnet.System.IO.Stream, options : dotnet.System.Xml.Linq.LoadOptions, cancellationToken : dotnet.System.Threading.CancellationToken) throws -> dotnet.System.Threading.Tasks.Task_1<dotnet.System.Xml.Linq.XElement> {
+    open class func LoadAsync(stream : dotnet.System.IO.Stream, options : dotnet.System.Xml.Linq.LoadOptions, cancellationToken : dotnet.System.Threading.CancellationToken) async throws -> dotnet.System.Xml.Linq.XElement {
         var __thrown : NullableHandle = nil;
         let __return = System_Xml_Linq_XElement_System_Threading_Tasks_Task_System_Xml_Linq_XElement___LoadAsync_0__3__Stream_LoadOptions_CancellationToken(&__thrown, stream.get_handle(), options.get_value(), cancellationToken.get_handle());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task_1(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task_1(hndl: __return).ToAsync();
         }
     }
     // System.Threading.Tasks.Task<System.Xml.Linq.XElement> LoadAsync(System.IO.TextReader, System.Xml.Linq.LoadOptions, System.Threading.CancellationToken)
@@ -3149,13 +3173,13 @@ open class XElement
     - Returns: A new  containing the contents of the specified reader.
 
     */
-    open class func LoadAsync(textReader : dotnet.System.IO.TextReader, options : dotnet.System.Xml.Linq.LoadOptions, cancellationToken : dotnet.System.Threading.CancellationToken) throws -> dotnet.System.Threading.Tasks.Task_1<dotnet.System.Xml.Linq.XElement> {
+    open class func LoadAsync(textReader : dotnet.System.IO.TextReader, options : dotnet.System.Xml.Linq.LoadOptions, cancellationToken : dotnet.System.Threading.CancellationToken) async throws -> dotnet.System.Xml.Linq.XElement {
         var __thrown : NullableHandle = nil;
         let __return = System_Xml_Linq_XElement_System_Threading_Tasks_Task_System_Xml_Linq_XElement___LoadAsync_0__3__TextReader_LoadOptions_CancellationToken(&__thrown, textReader.get_handle(), options.get_value(), cancellationToken.get_handle());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task_1(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task_1(hndl: __return).ToAsync();
         }
     }
     // System.Threading.Tasks.Task<System.Xml.Linq.XElement> LoadAsync(System.Xml.XmlReader, System.Xml.Linq.LoadOptions, System.Threading.CancellationToken)
@@ -3169,13 +3193,13 @@ open class XElement
     - Returns: A new  containing the contents of the specified reader.
 
     */
-    open class func LoadAsync(reader : dotnet.System.Xml.XmlReader, options : dotnet.System.Xml.Linq.LoadOptions, cancellationToken : dotnet.System.Threading.CancellationToken) throws -> dotnet.System.Threading.Tasks.Task_1<dotnet.System.Xml.Linq.XElement> {
+    open class func LoadAsync(reader : dotnet.System.Xml.XmlReader, options : dotnet.System.Xml.Linq.LoadOptions, cancellationToken : dotnet.System.Threading.CancellationToken) async throws -> dotnet.System.Xml.Linq.XElement {
         var __thrown : NullableHandle = nil;
         let __return = System_Xml_Linq_XElement_System_Threading_Tasks_Task_System_Xml_Linq_XElement___LoadAsync_0__3__XmlReader_LoadOptions_CancellationToken(&__thrown, reader.get_handle(), options.get_value(), cancellationToken.get_handle());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task_1(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task_1(hndl: __return).ToAsync();
         }
     }
     // [IsSpecialName] bool op_Explicit(System.Xml.Linq.XElement)
@@ -3714,13 +3738,13 @@ open class XElement
     - Returns: A task representing the asynchronous save operation.
 
     */
-    open func SaveAsync(stream : dotnet.System.IO.Stream, options : dotnet.System.Xml.Linq.SaveOptions, cancellationToken : dotnet.System.Threading.CancellationToken) throws -> dotnet.System.Threading.Tasks.Task {
+    open func SaveAsync(stream : dotnet.System.IO.Stream, options : dotnet.System.Xml.Linq.SaveOptions, cancellationToken : dotnet.System.Threading.CancellationToken) async throws {
         var __thrown : NullableHandle = nil;
         let __return = System_Xml_Linq_XElement_Task__SaveAsync_0__3__Stream_SaveOptions_CancellationToken(&__thrown, self.get_handle(), stream.get_handle(), options.get_value(), cancellationToken.get_handle());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task(hndl: __return).ToAsync();
         }
     }
     // System.Threading.Tasks.Task SaveAsync(System.IO.TextWriter, System.Xml.Linq.SaveOptions, System.Threading.CancellationToken)
@@ -3734,13 +3758,13 @@ open class XElement
     - Returns: A task representing the asynchronous save operation.
 
     */
-    open func SaveAsync(textWriter : dotnet.System.IO.TextWriter, options : dotnet.System.Xml.Linq.SaveOptions, cancellationToken : dotnet.System.Threading.CancellationToken) throws -> dotnet.System.Threading.Tasks.Task {
+    open func SaveAsync(textWriter : dotnet.System.IO.TextWriter, options : dotnet.System.Xml.Linq.SaveOptions, cancellationToken : dotnet.System.Threading.CancellationToken) async throws {
         var __thrown : NullableHandle = nil;
         let __return = System_Xml_Linq_XElement_Task__SaveAsync_0__3__TextWriter_SaveOptions_CancellationToken(&__thrown, self.get_handle(), textWriter.get_handle(), options.get_value(), cancellationToken.get_handle());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task(hndl: __return).ToAsync();
         }
     }
     // System.Threading.Tasks.Task SaveAsync(System.Xml.XmlWriter, System.Threading.CancellationToken)
@@ -3753,13 +3777,13 @@ open class XElement
     - Returns: A task representing the asynchronous save operation.
 
     */
-    open func SaveAsync(writer : dotnet.System.Xml.XmlWriter, cancellationToken : dotnet.System.Threading.CancellationToken) throws -> dotnet.System.Threading.Tasks.Task {
+    open func SaveAsync(writer : dotnet.System.Xml.XmlWriter, cancellationToken : dotnet.System.Threading.CancellationToken) async throws {
         var __thrown : NullableHandle = nil;
         let __return = System_Xml_Linq_XElement_Task__SaveAsync_0__2__XmlWriter_CancellationToken(&__thrown, self.get_handle(), writer.get_handle(), cancellationToken.get_handle());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task(hndl: __return).ToAsync();
         }
     }
     // void SetAttributeValue(System.Xml.Linq.XName, System.Object)
@@ -3838,13 +3862,13 @@ open class XElement
     - Returns: A task representing the asynchronous write operation.
 
     */
-    open override func WriteToAsync(writer : dotnet.System.Xml.XmlWriter, cancellationToken : dotnet.System.Threading.CancellationToken) throws -> dotnet.System.Threading.Tasks.Task {
+    open override func WriteToAsync(writer : dotnet.System.Xml.XmlWriter, cancellationToken : dotnet.System.Threading.CancellationToken) async throws {
         var __thrown : NullableHandle = nil;
         let __return = System_Xml_Linq_XElement_Task__WriteToAsync_0__2__XmlWriter_CancellationToken(&__thrown, self.get_handle(), writer.get_handle(), cancellationToken.get_handle());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task(hndl: __return).ToAsync();
         }
     }
     // [IsSpecialName] System.Collections.Generic.IEnumerable<System.Xml.Linq.XElement> get_EmptySequence()
@@ -4079,6 +4103,9 @@ public final class XName
     public class override func get_type_handle() -> TypeHandle {
         return System_Xml_Linq_XName_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // bool Equals(System.Object)
@@ -4300,6 +4327,9 @@ public final class XNamespace
 {
     public class override func get_type_handle() -> TypeHandle {
         return System_Xml_Linq_XNamespace_get_type_handle();
+    }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -4557,6 +4587,9 @@ open class XNode
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Xml_Linq_XNode_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -4907,13 +4940,13 @@ open class XNode
     - Returns: An XNode that contains the nodes read from the reader.
 
     */
-    open class func ReadFromAsync(reader : dotnet.System.Xml.XmlReader, cancellationToken : dotnet.System.Threading.CancellationToken) throws -> dotnet.System.Threading.Tasks.Task_1<dotnet.System.Xml.Linq.XNode> {
+    open class func ReadFromAsync(reader : dotnet.System.Xml.XmlReader, cancellationToken : dotnet.System.Threading.CancellationToken) async throws -> dotnet.System.Xml.Linq.XNode {
         var __thrown : NullableHandle = nil;
         let __return = System_Xml_Linq_XNode_System_Threading_Tasks_Task_System_Xml_Linq_XNode___ReadFromAsync_0__2__XmlReader_CancellationToken(&__thrown, reader.get_handle(), cancellationToken.get_handle());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task_1(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task_1(hndl: __return).ToAsync();
         }
     }
     // void Remove()
@@ -5024,13 +5057,13 @@ open class XNode
     - Returns: A task representing the asynchronous write operation.
 
     */
-    open func WriteToAsync(writer : dotnet.System.Xml.XmlWriter, cancellationToken : dotnet.System.Threading.CancellationToken) throws -> dotnet.System.Threading.Tasks.Task {
+    open func WriteToAsync(writer : dotnet.System.Xml.XmlWriter, cancellationToken : dotnet.System.Threading.CancellationToken) async throws {
         var __thrown : NullableHandle = nil;
         let __return = System_Xml_Linq_XNode_Task__WriteToAsync_0__2__XmlWriter_CancellationToken(&__thrown, self.get_handle(), writer.get_handle(), cancellationToken.get_handle());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task(hndl: __return).ToAsync();
         }
     }
     // [IsSpecialName] System.Xml.Linq.XNodeDocumentOrderComparer get_DocumentOrderComparer()
@@ -5137,6 +5170,9 @@ public final class XNodeDocumentOrderComparer
     public class override func get_type_handle() -> TypeHandle {
         return System_Xml_Linq_XNodeDocumentOrderComparer_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor()
@@ -5188,6 +5224,9 @@ public final class XNodeEqualityComparer
 {
     public class override func get_type_handle() -> TypeHandle {
         return System_Xml_Linq_XNodeEqualityComparer_get_type_handle();
+    }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -5258,6 +5297,9 @@ open class XObject
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Xml_Linq_XObject_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -5400,7 +5442,7 @@ open class XObject
         }
     }
     // delegate closure overload
-    open func add_Changed(value : @escaping (Optional<dotnet.System.Object>, Optional<dotnet.System.Xml.Linq.XObjectChangeEventArgs>) throws -> Void) throws {
+    open func add_Changed(value : @escaping (Optional<dotnet.System.Object>, dotnet.System.Xml.Linq.XObjectChangeEventArgs) throws -> Void) throws {
         let del_value = try dotnet.System.EventHandler_1<dotnet.System.Xml.Linq.XObjectChangeEventArgs>(value);
         return try add_Changed(value: del_value);
     }
@@ -5416,7 +5458,7 @@ open class XObject
         }
     }
     // delegate closure overload
-    open func remove_Changed(value : @escaping (Optional<dotnet.System.Object>, Optional<dotnet.System.Xml.Linq.XObjectChangeEventArgs>) throws -> Void) throws {
+    open func remove_Changed(value : @escaping (Optional<dotnet.System.Object>, dotnet.System.Xml.Linq.XObjectChangeEventArgs) throws -> Void) throws {
         let del_value = try dotnet.System.EventHandler_1<dotnet.System.Xml.Linq.XObjectChangeEventArgs>(value);
         return try remove_Changed(value: del_value);
     }
@@ -5432,7 +5474,7 @@ open class XObject
         }
     }
     // delegate closure overload
-    open func add_Changing(value : @escaping (Optional<dotnet.System.Object>, Optional<dotnet.System.Xml.Linq.XObjectChangeEventArgs>) throws -> Void) throws {
+    open func add_Changing(value : @escaping (Optional<dotnet.System.Object>, dotnet.System.Xml.Linq.XObjectChangeEventArgs) throws -> Void) throws {
         let del_value = try dotnet.System.EventHandler_1<dotnet.System.Xml.Linq.XObjectChangeEventArgs>(value);
         return try add_Changing(value: del_value);
     }
@@ -5448,7 +5490,7 @@ open class XObject
         }
     }
     // delegate closure overload
-    open func remove_Changing(value : @escaping (Optional<dotnet.System.Object>, Optional<dotnet.System.Xml.Linq.XObjectChangeEventArgs>) throws -> Void) throws {
+    open func remove_Changing(value : @escaping (Optional<dotnet.System.Object>, dotnet.System.Xml.Linq.XObjectChangeEventArgs) throws -> Void) throws {
         let del_value = try dotnet.System.EventHandler_1<dotnet.System.Xml.Linq.XObjectChangeEventArgs>(value);
         return try remove_Changing(value: del_value);
     }
@@ -5565,6 +5607,9 @@ open class XObjectChangeEventArgs
     open class override func get_type_handle() -> TypeHandle {
         return System_Xml_Linq_XObjectChangeEventArgs_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // static field: System.Xml.Linq.XObjectChangeEventArgs Add
@@ -5662,6 +5707,9 @@ open class XProcessingInstruction
     open class override func get_type_handle() -> TypeHandle {
         return System_Xml_Linq_XProcessingInstruction_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor(System.String, System.String)
@@ -5723,13 +5771,13 @@ open class XProcessingInstruction
     - Returns: A task representing the asynchronous write operation.
 
     */
-    open override func WriteToAsync(writer : dotnet.System.Xml.XmlWriter, cancellationToken : dotnet.System.Threading.CancellationToken) throws -> dotnet.System.Threading.Tasks.Task {
+    open override func WriteToAsync(writer : dotnet.System.Xml.XmlWriter, cancellationToken : dotnet.System.Threading.CancellationToken) async throws {
         var __thrown : NullableHandle = nil;
         let __return = System_Xml_Linq_XProcessingInstruction_Task__WriteToAsync_0__2__XmlWriter_CancellationToken(&__thrown, self.get_handle(), writer.get_handle(), cancellationToken.get_handle());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task(hndl: __return).ToAsync();
         }
     }
     // [IsSpecialName] System.String get_Data()
@@ -5834,6 +5882,9 @@ open class XStreamingElement
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Xml_Linq_XStreamingElement_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -6134,6 +6185,9 @@ open class XText
     open class override func get_type_handle() -> TypeHandle {
         return System_Xml_Linq_XText_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor(System.String)
@@ -6194,13 +6248,13 @@ open class XText
     - Returns: A task representing the asynchronous write operation.
 
     */
-    open override func WriteToAsync(writer : dotnet.System.Xml.XmlWriter, cancellationToken : dotnet.System.Threading.CancellationToken) throws -> dotnet.System.Threading.Tasks.Task {
+    open override func WriteToAsync(writer : dotnet.System.Xml.XmlWriter, cancellationToken : dotnet.System.Threading.CancellationToken) async throws {
         var __thrown : NullableHandle = nil;
         let __return = System_Xml_Linq_XText_Task__WriteToAsync_0__2__XmlWriter_CancellationToken(&__thrown, self.get_handle(), writer.get_handle(), cancellationToken.get_handle());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task(hndl: __return).ToAsync();
         }
     }
     // [IsSpecialName] System.Xml.XmlNodeType get_NodeType()

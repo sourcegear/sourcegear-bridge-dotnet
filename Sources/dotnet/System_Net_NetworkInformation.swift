@@ -91,6 +91,9 @@ open class GatewayIPAddressInformation
     open class override func get_type_handle() -> TypeHandle {
         return System_Net_NetworkInformation_GatewayIPAddressInformation_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // [IsSpecialName] System.Net.IPAddress get_Address()
@@ -128,6 +131,9 @@ open class GatewayIPAddressInformationCollection
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Net_NetworkInformation_GatewayIPAddressInformationCollection_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -257,9 +263,6 @@ open class GatewayIPAddressInformationCollection
     }
     // [IsSpecialName] System.Net.NetworkInformation.GatewayIPAddressInformation get_Item(System.Int32)
 // docid: M:System.Net.NetworkInformation.GatewayIPAddressInformationCollection.get_Item(System.Int32)
-//BEGIN method_is_override
-//matches_1
-//matches :
     open func get_Item(index : Swift.Int32) throws -> dotnet.System.Net.NetworkInformation.GatewayIPAddressInformation {
         var __thrown : NullableHandle = nil;
         let __return = System_Net_NetworkInformation_GatewayIPAddressInformationCollection_GatewayIPAddressInformation__get_Item_0__1__i32(&__thrown, self.get_handle(), index);
@@ -301,6 +304,9 @@ open class IPAddressInformation
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Net_NetworkInformation_IPAddressInformation_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -379,6 +385,9 @@ open class IPAddressInformationCollection
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Net_NetworkInformation_IPAddressInformationCollection_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -508,9 +517,6 @@ open class IPAddressInformationCollection
     }
     // [IsSpecialName] System.Net.NetworkInformation.IPAddressInformation get_Item(System.Int32)
 // docid: M:System.Net.NetworkInformation.IPAddressInformationCollection.get_Item(System.Int32)
-//BEGIN method_is_override
-//matches_1
-//matches :
     open func get_Item(index : Swift.Int32) throws -> dotnet.System.Net.NetworkInformation.IPAddressInformation {
         var __thrown : NullableHandle = nil;
         let __return = System_Net_NetworkInformation_IPAddressInformationCollection_IPAddressInformation__get_Item_0__1__i32(&__thrown, self.get_handle(), index);
@@ -552,6 +558,9 @@ open class IPGlobalProperties
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Net_NetworkInformation_IPGlobalProperties_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -826,13 +835,13 @@ open class IPGlobalProperties
     - Returns: The task object representing the asynchronous operation.
 
     */
-    open func GetUnicastAddressesAsync() throws -> dotnet.System.Threading.Tasks.Task_1<dotnet.System.Net.NetworkInformation.UnicastIPAddressInformationCollection> {
+    open func GetUnicastAddressesAsync() async throws -> dotnet.System.Net.NetworkInformation.UnicastIPAddressInformationCollection {
         var __thrown : NullableHandle = nil;
         let __return = System_Net_NetworkInformation_IPGlobalProperties_System_Threading_Tasks_Task_System_Net_NetworkInformation_UnicastIPAddressInformationCollection___GetUnicastAddressesAsync_0__0(&__thrown, self.get_handle());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task_1(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task_1(hndl: __return).ToAsync();
         }
     }
     // [IsSpecialName] System.String get_DhcpScopeName()
@@ -949,6 +958,9 @@ open class IPGlobalStatistics
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Net_NetworkInformation_IPGlobalStatistics_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -1407,6 +1419,9 @@ open class IPInterfaceProperties
     open class override func get_type_handle() -> TypeHandle {
         return System_Net_NetworkInformation_IPInterfaceProperties_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // System.Net.NetworkInformation.IPv4InterfaceProperties GetIPv4Properties()
@@ -1657,6 +1672,9 @@ open class IPInterfaceStatistics
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Net_NetworkInformation_IPInterfaceStatistics_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -1915,6 +1933,9 @@ open class IPv4InterfaceProperties
     open class override func get_type_handle() -> TypeHandle {
         return System_Net_NetworkInformation_IPv4InterfaceProperties_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // [IsSpecialName] System.Int32 get_Index()
@@ -2071,6 +2092,9 @@ open class IPv4InterfaceStatistics
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Net_NetworkInformation_IPv4InterfaceStatistics_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -2329,6 +2353,9 @@ open class IPv6InterfaceProperties
     open class override func get_type_handle() -> TypeHandle {
         return System_Net_NetworkInformation_IPv6InterfaceProperties_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // System.Int64 GetScopeId(System.Net.NetworkInformation.ScopeLevel)
@@ -2403,6 +2430,9 @@ open class IcmpV4Statistics
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Net_NetworkInformation_IcmpV4Statistics_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -2940,6 +2970,9 @@ open class IcmpV6Statistics
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Net_NetworkInformation_IcmpV6Statistics_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -3598,6 +3631,9 @@ open class MulticastIPAddressInformation
     open class override func get_type_handle() -> TypeHandle {
         return System_Net_NetworkInformation_MulticastIPAddressInformation_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // [IsSpecialName] System.Int64 get_AddressPreferredLifetime()
@@ -3736,6 +3772,9 @@ open class MulticastIPAddressInformationCollection
     open class override func get_type_handle() -> TypeHandle {
         return System_Net_NetworkInformation_MulticastIPAddressInformationCollection_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // void Add(System.Net.NetworkInformation.MulticastIPAddressInformation)
@@ -3864,9 +3903,6 @@ open class MulticastIPAddressInformationCollection
     }
     // [IsSpecialName] System.Net.NetworkInformation.MulticastIPAddressInformation get_Item(System.Int32)
 // docid: M:System.Net.NetworkInformation.MulticastIPAddressInformationCollection.get_Item(System.Int32)
-//BEGIN method_is_override
-//matches_1
-//matches :
     open func get_Item(index : Swift.Int32) throws -> dotnet.System.Net.NetworkInformation.MulticastIPAddressInformation {
         var __thrown : NullableHandle = nil;
         let __return = System_Net_NetworkInformation_MulticastIPAddressInformationCollection_MulticastIPAddressInformation__get_Item_0__1__i32(&__thrown, self.get_handle(), index);
@@ -3982,6 +4018,9 @@ public final class NetworkAddressChangedEventHandler
     public class override func get_type_handle() -> TypeHandle {
         return System_Net_NetworkInformation_NetworkAddressChangedEventHandler_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // void Invoke(System.Object, System.EventArgs)
@@ -4021,15 +4060,15 @@ public final class NetworkAddressChangedEventHandler
             return;
         }
     }
-    public init(_ callback : @escaping (Optional<dotnet.System.Object>, dotnet.System.EventArgs) throws -> Void) throws
+    public convenience init(_ __closure_Invoke : @escaping (Optional<dotnet.System.Object>, dotnet.System.EventArgs) throws -> Void) throws
     {
-        let __bridge : (UnsafeMutablePointer<NullableHandle>, NullableHandle, NonnullHandle) -> Void =
+        let __interlude_Invoke : (UnsafeMutablePointer<NullableHandle>, NullableHandle, NonnullHandle) -> Void =
         {
             (thrown : UnsafeMutablePointer<NullableHandle>, sender : NullableHandle, e : NonnullHandle) -> Void in
             do
             {
                 thrown.pointee = nil;
-                try callback((sender != nil) ? (dotnet.System.Object(hndl: sender!)) : nil, dotnet.System.EventArgs(hndl: e));
+                try __closure_Invoke((sender != nil) ? (dotnet.System.Object(hndl: sender!)) : nil, dotnet.System.EventArgs(hndl: e));
             }
             catch let e as dotnet.System.Exception
             {
@@ -4041,24 +4080,24 @@ public final class NetworkAddressChangedEventHandler
                 thrown.pointee = __copy_handle(e.get_handle());
             }
         };
-        let cbarg = UnsafeRawPointer(Unmanaged.passRetained(__bridge as AnyObject).toOpaque());
-        func __cb(cb : UnsafeRawPointer?, thrown : UnsafeMutablePointer<NullableHandle>, sender : NullableHandle, e : NonnullHandle) -> Void
+        func __cb_Invoke(pdata_interlude : UnsafeRawPointer, thrown : UnsafeMutablePointer<NullableHandle>, sender : NullableHandle, e : NonnullHandle) -> Void
         {
-            let f = Unmanaged<AnyObject>.fromOpaque(cb!).takeUnretainedValue() as! (UnsafeMutablePointer<NullableHandle>, NullableHandle, NonnullHandle) -> Void;
-            f(thrown, sender, e);
+            let f_interlude = Unmanaged<AnyObject>.fromOpaque(pdata_interlude).takeUnretainedValue() as! (UnsafeMutablePointer<NullableHandle>, NullableHandle, NonnullHandle) -> Void;
+            f_interlude(thrown, sender, e);
         }
+        let __pdata_Invoke = UnsafeRawPointer(Unmanaged.passRetained(__interlude_Invoke as AnyObject).toOpaque());
+
         var __thrown : NullableHandle = nil;
         let h = System_Net_NetworkInformation_NetworkAddressChangedEventHandler_create(
             &__thrown,
-            cbarg,
-            nil, // TODO deinit
-            __cb
+            __cb_Invoke,
+            __pdata_Invoke,
+            nil
             );
-            // TODO check thrown
         if let __ex = __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-            super.init(hndl: h);
+            self.init(hndl: h);
         }
     }
     // void Invoke(System.Object, System.EventArgs)
@@ -4086,6 +4125,9 @@ public final class NetworkAvailabilityChangedEventHandler
 {
     public class override func get_type_handle() -> TypeHandle {
         return System_Net_NetworkInformation_NetworkAvailabilityChangedEventHandler_get_type_handle();
+    }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -4126,15 +4168,15 @@ public final class NetworkAvailabilityChangedEventHandler
             return;
         }
     }
-    public init(_ callback : @escaping (Optional<dotnet.System.Object>, dotnet.System.Net.NetworkInformation.NetworkAvailabilityEventArgs) throws -> Void) throws
+    public convenience init(_ __closure_Invoke : @escaping (Optional<dotnet.System.Object>, dotnet.System.Net.NetworkInformation.NetworkAvailabilityEventArgs) throws -> Void) throws
     {
-        let __bridge : (UnsafeMutablePointer<NullableHandle>, NullableHandle, NonnullHandle) -> Void =
+        let __interlude_Invoke : (UnsafeMutablePointer<NullableHandle>, NullableHandle, NonnullHandle) -> Void =
         {
             (thrown : UnsafeMutablePointer<NullableHandle>, sender : NullableHandle, e : NonnullHandle) -> Void in
             do
             {
                 thrown.pointee = nil;
-                try callback((sender != nil) ? (dotnet.System.Object(hndl: sender!)) : nil, dotnet.System.Net.NetworkInformation.NetworkAvailabilityEventArgs(hndl: e));
+                try __closure_Invoke((sender != nil) ? (dotnet.System.Object(hndl: sender!)) : nil, dotnet.System.Net.NetworkInformation.NetworkAvailabilityEventArgs(hndl: e));
             }
             catch let e as dotnet.System.Exception
             {
@@ -4146,24 +4188,24 @@ public final class NetworkAvailabilityChangedEventHandler
                 thrown.pointee = __copy_handle(e.get_handle());
             }
         };
-        let cbarg = UnsafeRawPointer(Unmanaged.passRetained(__bridge as AnyObject).toOpaque());
-        func __cb(cb : UnsafeRawPointer?, thrown : UnsafeMutablePointer<NullableHandle>, sender : NullableHandle, e : NonnullHandle) -> Void
+        func __cb_Invoke(pdata_interlude : UnsafeRawPointer, thrown : UnsafeMutablePointer<NullableHandle>, sender : NullableHandle, e : NonnullHandle) -> Void
         {
-            let f = Unmanaged<AnyObject>.fromOpaque(cb!).takeUnretainedValue() as! (UnsafeMutablePointer<NullableHandle>, NullableHandle, NonnullHandle) -> Void;
-            f(thrown, sender, e);
+            let f_interlude = Unmanaged<AnyObject>.fromOpaque(pdata_interlude).takeUnretainedValue() as! (UnsafeMutablePointer<NullableHandle>, NullableHandle, NonnullHandle) -> Void;
+            f_interlude(thrown, sender, e);
         }
+        let __pdata_Invoke = UnsafeRawPointer(Unmanaged.passRetained(__interlude_Invoke as AnyObject).toOpaque());
+
         var __thrown : NullableHandle = nil;
         let h = System_Net_NetworkInformation_NetworkAvailabilityChangedEventHandler_create(
             &__thrown,
-            cbarg,
-            nil, // TODO deinit
-            __cb
+            __cb_Invoke,
+            __pdata_Invoke,
+            nil
             );
-            // TODO check thrown
         if let __ex = __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-            super.init(hndl: h);
+            self.init(hndl: h);
         }
     }
     // void Invoke(System.Object, System.Net.NetworkInformation.NetworkAvailabilityEventArgs)
@@ -4191,6 +4233,9 @@ open class NetworkAvailabilityEventArgs
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Net_NetworkInformation_NetworkAvailabilityEventArgs_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -4228,6 +4273,9 @@ open class NetworkChange
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Net_NetworkInformation_NetworkChange_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -4341,6 +4389,9 @@ open class NetworkInformationException
     open class override func get_type_handle() -> TypeHandle {
         return System_Net_NetworkInformation_NetworkInformationException_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor()
@@ -4408,6 +4459,9 @@ open class NetworkInterface
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Net_NetworkInformation_NetworkInterface_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -5209,6 +5263,9 @@ open class PhysicalAddress
     open class override func get_type_handle() -> TypeHandle {
         return System_Net_NetworkInformation_PhysicalAddress_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // static field: System.Net.NetworkInformation.PhysicalAddress None
@@ -5321,11 +5378,12 @@ open class PhysicalAddress
          if  was converted successfully; otherwise, .
 
     */
-    open class func TryParse(address : Optional<dotnet.System.String>, value : inout dotnet.System.Net.NetworkInformation.PhysicalAddress) throws -> Bool {
+    open class func TryParse(address : Optional<dotnet.System.String>, value : inout Optional<dotnet.System.Net.NetworkInformation.PhysicalAddress>) throws -> Bool {
         var __thrown : NullableHandle = nil;
-            var _tmp_out_value = value.get_handle();
+            var _tmp_out_value = (value != nil) ? (value!.get_handle()) : nil;
         let __return = System_Net_NetworkInformation_PhysicalAddress_bool__TryParse_0__2__String_outPhysicalAddress(&__thrown, address?.get_handle() ?? nil, &_tmp_out_value);
-        let _tmp2_value = dotnet.System.Net.NetworkInformation.PhysicalAddress(hndl: _tmp_out_value);
+        let __h__tmp2_value = _tmp_out_value;
+        let _tmp2_value = (__h__tmp2_value != nil) ? dotnet.System.Net.NetworkInformation.PhysicalAddress(hndl: __h__tmp2_value!) : nil;
             value = _tmp2_value;
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
@@ -5629,6 +5687,9 @@ open class TcpConnectionInformation
     open class override func get_type_handle() -> TypeHandle {
         return System_Net_NetworkInformation_TcpConnectionInformation_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // [IsSpecialName] System.Net.IPEndPoint get_LocalEndPoint()
@@ -5866,6 +5927,9 @@ open class TcpStatistics
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Net_NetworkInformation_TcpStatistics_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -6164,6 +6228,9 @@ open class UdpStatistics
     open class override func get_type_handle() -> TypeHandle {
         return System_Net_NetworkInformation_UdpStatistics_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // [IsSpecialName] System.Int64 get_DatagramsReceived()
@@ -6280,6 +6347,9 @@ open class UnicastIPAddressInformation
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Net_NetworkInformation_UnicastIPAddressInformation_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -6459,6 +6529,9 @@ open class UnicastIPAddressInformationCollection
     open class override func get_type_handle() -> TypeHandle {
         return System_Net_NetworkInformation_UnicastIPAddressInformationCollection_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // void Add(System.Net.NetworkInformation.UnicastIPAddressInformation)
@@ -6587,9 +6660,6 @@ open class UnicastIPAddressInformationCollection
     }
     // [IsSpecialName] System.Net.NetworkInformation.UnicastIPAddressInformation get_Item(System.Int32)
 // docid: M:System.Net.NetworkInformation.UnicastIPAddressInformationCollection.get_Item(System.Int32)
-//BEGIN method_is_override
-//matches_1
-//matches :
     open func get_Item(index : Swift.Int32) throws -> dotnet.System.Net.NetworkInformation.UnicastIPAddressInformation {
         var __thrown : NullableHandle = nil;
         let __return = System_Net_NetworkInformation_UnicastIPAddressInformationCollection_UnicastIPAddressInformation__get_Item_0__1__i32(&__thrown, self.get_handle(), index);

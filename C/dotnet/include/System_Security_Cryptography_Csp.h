@@ -238,6 +238,8 @@ SG_HNDL_NONNULL System_Security_Cryptography_ICspAsymmetricAlgorithm_CspKeyConta
 
 SG_HNDL_NONNULL System_Security_Cryptography_ICspAsymmetricAlgorithm_cast(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __h);
 
+SG_HNDL_NONNULL System_Security_Cryptography_ICspAsymmetricAlgorithm_create(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL (* _Nonnull  __cb_System_Security_Cryptography_ICspAsymmetricAlgorithm_u8Array__ExportCspBlob_0__1__bool)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, int32_t includePrivateParameters), const void* _Nonnull __pdata_System_Security_Cryptography_ICspAsymmetricAlgorithm_u8Array__ExportCspBlob_0__1__bool, void (* _Nonnull  __cb_System_Security_Cryptography_ICspAsymmetricAlgorithm_void__ImportCspBlob_0__1__u8Array)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL rawData), const void* _Nonnull __pdata_System_Security_Cryptography_ICspAsymmetricAlgorithm_void__ImportCspBlob_0__1__u8Array, void (* _Nullable __deinit)(const void* _Nonnull __pdata));
+
 TYP System_Security_Cryptography_KeyNumber_get_type_handle(void);
 
 int32_t System_Security_Cryptography_KeyNumber_get_Exchange(void);

@@ -31,7 +31,7 @@ struct {
     SG_HNDL_NULLABLE (* _Nonnull  _fp_System_Net_Http_HeaderEncodingSelector_1_Encoding__EndInvoke_0__1__IAsyncResult)(TYP TContext, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE result);
     SG_HNDL_NONNULL (* _Nonnull  _fp_specialize_System_Net_Http_HeaderEncodingSelector_1_Encoding__EndInvoke_0__1__IAsyncResult)(TYP TContext, SG_HNDL_NULLABLE * _Nonnull __thrown);
     SG_HNDL_NULLABLE (* _Nonnull  _fp_invoke_System_Net_Http_HeaderEncodingSelector_1_Encoding__EndInvoke_0__1__IAsyncResult)(SG_HNDL_NONNULL ____hdel, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE result);
-    SG_HNDL_NONNULL (* _Nonnull  _fp_System_Net_Http_HeaderEncodingSelector_1_create)(TYP TContext, SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nullable __pdata, void (* _Nullable __deinit)(const void* _Nullable __pdata), SG_HNDL_NULLABLE (* _Nonnull  __cb)(const void* _Nullable __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL headerName, GVAL context));
+    SG_HNDL_NONNULL (* _Nonnull  _fp_System_Net_Http_HeaderEncodingSelector_1_create)(TYP TContext, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE (* _Nonnull  __cb)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL headerName, GVAL context), const void* _Nonnull __pdata, void (* _Nullable __deinit)(const void* _Nonnull __pdata));
     TYP (* _Nonnull  _fp_System_Net_Http_HttpClient_get_type_handle)(void);
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_Net_Http_HttpClient_ctor_0__0)(SG_HNDL_NULLABLE * _Nonnull __thrown);
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_Net_Http_HttpClient_ctor_0__1__HttpMessageHandler)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL handler);
@@ -368,7 +368,7 @@ struct {
     int32_t (* _Nonnull  _fp_System_Net_Http_Headers_AuthenticationHeaderValue_i32__GetHashCode_0__0)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h);
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_Net_Http_Headers_AuthenticationHeaderValue_AuthenticationHeaderValue__Parse_0__1__String)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE input);
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_Net_Http_Headers_AuthenticationHeaderValue_String__ToString_0__0)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h);
-    int32_t (* _Nonnull  _fp_System_Net_Http_Headers_AuthenticationHeaderValue_bool__TryParse_0__2__String_outAuthenticationHeaderValue)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE input, SG_HNDL_NONNULL* _Nonnull __parsedValue_out_ptr);
+    int32_t (* _Nonnull  _fp_System_Net_Http_Headers_AuthenticationHeaderValue_bool__TryParse_0__2__String_outAuthenticationHeaderValue)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE input, SG_HNDL_NULLABLE* _Nonnull __parsedValue_out_ptr);
     SG_HNDL_NULLABLE (* _Nonnull  _fp_System_Net_Http_Headers_AuthenticationHeaderValue_String__get_Parameter_0__0)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h);
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_Net_Http_Headers_AuthenticationHeaderValue_String__get_Scheme_0__0)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h);
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_Net_Http_Headers_AuthenticationHeaderValue_cast)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __h);
@@ -378,7 +378,7 @@ struct {
     int32_t (* _Nonnull  _fp_System_Net_Http_Headers_CacheControlHeaderValue_i32__GetHashCode_0__0)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h);
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_Net_Http_Headers_CacheControlHeaderValue_CacheControlHeaderValue__Parse_0__1__String)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE input);
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_Net_Http_Headers_CacheControlHeaderValue_String__ToString_0__0)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h);
-    int32_t (* _Nonnull  _fp_System_Net_Http_Headers_CacheControlHeaderValue_bool__TryParse_0__2__String_outCacheControlHeaderValue)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE input, SG_HNDL_NONNULL* _Nonnull __parsedValue_out_ptr);
+    int32_t (* _Nonnull  _fp_System_Net_Http_Headers_CacheControlHeaderValue_bool__TryParse_0__2__String_outCacheControlHeaderValue)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE input, SG_HNDL_NULLABLE* _Nonnull __parsedValue_out_ptr);
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_Net_Http_Headers_CacheControlHeaderValue_System_Collections_Generic_ICollection_System_Net_Http_Headers_NameValueHeaderValue___get_Extensions_0__0)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h);
     SG_HNDL_NULLABLE (* _Nonnull  _fp_System_Net_Http_Headers_CacheControlHeaderValue_System_Nullable_System_TimeSpan___get_MaxAge_0__0)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h);
     void (* _Nonnull  _fp_System_Net_Http_Headers_CacheControlHeaderValue_void__set_MaxAge_0__1__System_Nullable_System_TimeSpan_)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE value);
@@ -415,7 +415,7 @@ struct {
     int32_t (* _Nonnull  _fp_System_Net_Http_Headers_ContentDispositionHeaderValue_i32__GetHashCode_0__0)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h);
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_Net_Http_Headers_ContentDispositionHeaderValue_ContentDispositionHeaderValue__Parse_0__1__String)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE input);
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_Net_Http_Headers_ContentDispositionHeaderValue_String__ToString_0__0)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h);
-    int32_t (* _Nonnull  _fp_System_Net_Http_Headers_ContentDispositionHeaderValue_bool__TryParse_0__2__String_outContentDispositionHeaderValue)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE input, SG_HNDL_NONNULL* _Nonnull __parsedValue_out_ptr);
+    int32_t (* _Nonnull  _fp_System_Net_Http_Headers_ContentDispositionHeaderValue_bool__TryParse_0__2__String_outContentDispositionHeaderValue)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE input, SG_HNDL_NULLABLE* _Nonnull __parsedValue_out_ptr);
     SG_HNDL_NULLABLE (* _Nonnull  _fp_System_Net_Http_Headers_ContentDispositionHeaderValue_System_Nullable_System_DateTimeOffset___get_CreationDate_0__0)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h);
     void (* _Nonnull  _fp_System_Net_Http_Headers_ContentDispositionHeaderValue_void__set_CreationDate_0__1__System_Nullable_System_DateTimeOffset_)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE value);
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_Net_Http_Headers_ContentDispositionHeaderValue_String__get_DispositionType_0__0)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h);
@@ -442,7 +442,7 @@ struct {
     int32_t (* _Nonnull  _fp_System_Net_Http_Headers_ContentRangeHeaderValue_i32__GetHashCode_0__0)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h);
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_Net_Http_Headers_ContentRangeHeaderValue_ContentRangeHeaderValue__Parse_0__1__String)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE input);
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_Net_Http_Headers_ContentRangeHeaderValue_String__ToString_0__0)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h);
-    int32_t (* _Nonnull  _fp_System_Net_Http_Headers_ContentRangeHeaderValue_bool__TryParse_0__2__String_outContentRangeHeaderValue)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE input, SG_HNDL_NONNULL* _Nonnull __parsedValue_out_ptr);
+    int32_t (* _Nonnull  _fp_System_Net_Http_Headers_ContentRangeHeaderValue_bool__TryParse_0__2__String_outContentRangeHeaderValue)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE input, SG_HNDL_NULLABLE* _Nonnull __parsedValue_out_ptr);
     SG_HNDL_NULLABLE (* _Nonnull  _fp_System_Net_Http_Headers_ContentRangeHeaderValue_System_Nullable_i64___get_From_0__0)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h);
     int32_t (* _Nonnull  _fp_System_Net_Http_Headers_ContentRangeHeaderValue_bool__get_HasLength_0__0)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h);
     int32_t (* _Nonnull  _fp_System_Net_Http_Headers_ContentRangeHeaderValue_bool__get_HasRange_0__0)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h);
@@ -458,7 +458,7 @@ struct {
     int32_t (* _Nonnull  _fp_System_Net_Http_Headers_EntityTagHeaderValue_i32__GetHashCode_0__0)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h);
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_Net_Http_Headers_EntityTagHeaderValue_EntityTagHeaderValue__Parse_0__1__String)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE input);
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_Net_Http_Headers_EntityTagHeaderValue_String__ToString_0__0)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h);
-    int32_t (* _Nonnull  _fp_System_Net_Http_Headers_EntityTagHeaderValue_bool__TryParse_0__2__String_outEntityTagHeaderValue)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE input, SG_HNDL_NONNULL* _Nonnull __parsedValue_out_ptr);
+    int32_t (* _Nonnull  _fp_System_Net_Http_Headers_EntityTagHeaderValue_bool__TryParse_0__2__String_outEntityTagHeaderValue)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE input, SG_HNDL_NULLABLE* _Nonnull __parsedValue_out_ptr);
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_Net_Http_Headers_EntityTagHeaderValue_EntityTagHeaderValue__get_Any_0__0)(SG_HNDL_NULLABLE * _Nonnull __thrown);
     int32_t (* _Nonnull  _fp_System_Net_Http_Headers_EntityTagHeaderValue_bool__get_IsWeak_0__0)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h);
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_Net_Http_Headers_EntityTagHeaderValue_String__get_Tag_0__0)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h);
@@ -540,7 +540,7 @@ struct {
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_Net_Http_Headers_HttpHeaders_String__ToString_0__0)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h);
     int32_t (* _Nonnull  _fp_System_Net_Http_Headers_HttpHeaders_bool__TryAddWithoutValidation_0__2__String_System_Collections_Generic_IEnumerable_string_)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NONNULL name, SG_HNDL_NONNULL values);
     int32_t (* _Nonnull  _fp_System_Net_Http_Headers_HttpHeaders_bool__TryAddWithoutValidation_0__2__String_String)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NONNULL name, SG_HNDL_NULLABLE value);
-    int32_t (* _Nonnull  _fp_System_Net_Http_Headers_HttpHeaders_bool__TryGetValues_0__2__String_outSystem_Collections_Generic_IEnumerable_string_)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NONNULL name, SG_HNDL_NONNULL* _Nonnull __values_out_ptr);
+    int32_t (* _Nonnull  _fp_System_Net_Http_Headers_HttpHeaders_bool__TryGetValues_0__2__String_outSystem_Collections_Generic_IEnumerable_string_)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NONNULL name, SG_HNDL_NULLABLE* _Nonnull __values_out_ptr);
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_Net_Http_Headers_HttpHeaders_HttpHeadersNonValidated__get_NonValidated_0__0)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h);
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_Net_Http_Headers_HttpHeaders_cast)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __h);
     TYP (* _Nonnull  _fp_System_Net_Http_Headers_HttpHeadersNonValidated_get_type_handle)(void);
@@ -639,7 +639,7 @@ struct {
     int32_t (* _Nonnull  _fp_System_Net_Http_Headers_MediaTypeHeaderValue_i32__GetHashCode_0__0)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h);
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_Net_Http_Headers_MediaTypeHeaderValue_MediaTypeHeaderValue__Parse_0__1__String)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE input);
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_Net_Http_Headers_MediaTypeHeaderValue_String__ToString_0__0)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h);
-    int32_t (* _Nonnull  _fp_System_Net_Http_Headers_MediaTypeHeaderValue_bool__TryParse_0__2__String_outMediaTypeHeaderValue)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE input, SG_HNDL_NONNULL* _Nonnull __parsedValue_out_ptr);
+    int32_t (* _Nonnull  _fp_System_Net_Http_Headers_MediaTypeHeaderValue_bool__TryParse_0__2__String_outMediaTypeHeaderValue)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE input, SG_HNDL_NULLABLE* _Nonnull __parsedValue_out_ptr);
     SG_HNDL_NULLABLE (* _Nonnull  _fp_System_Net_Http_Headers_MediaTypeHeaderValue_String__get_CharSet_0__0)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h);
     void (* _Nonnull  _fp_System_Net_Http_Headers_MediaTypeHeaderValue_void__set_CharSet_0__1__String)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE value);
     SG_HNDL_NULLABLE (* _Nonnull  _fp_System_Net_Http_Headers_MediaTypeHeaderValue_String__get_MediaType_0__0)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h);
@@ -650,7 +650,7 @@ struct {
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_Net_Http_Headers_MediaTypeWithQualityHeaderValue_ctor_0__1__String)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL mediaType);
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_Net_Http_Headers_MediaTypeWithQualityHeaderValue_ctor_0__2__String_f64)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL mediaType, double quality);
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_Net_Http_Headers_MediaTypeWithQualityHeaderValue_MediaTypeWithQualityHeaderValue__Parse_0__1__String)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE input);
-    int32_t (* _Nonnull  _fp_System_Net_Http_Headers_MediaTypeWithQualityHeaderValue_bool__TryParse_0__2__String_outMediaTypeWithQualityHeaderValue)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE input, SG_HNDL_NONNULL* _Nonnull __parsedValue_out_ptr);
+    int32_t (* _Nonnull  _fp_System_Net_Http_Headers_MediaTypeWithQualityHeaderValue_bool__TryParse_0__2__String_outMediaTypeWithQualityHeaderValue)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE input, SG_HNDL_NULLABLE* _Nonnull __parsedValue_out_ptr);
     SG_HNDL_NULLABLE (* _Nonnull  _fp_System_Net_Http_Headers_MediaTypeWithQualityHeaderValue_System_Nullable_f64___get_Quality_0__0)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h);
     void (* _Nonnull  _fp_System_Net_Http_Headers_MediaTypeWithQualityHeaderValue_void__set_Quality_0__1__System_Nullable_f64_)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE value);
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_Net_Http_Headers_MediaTypeWithQualityHeaderValue_cast)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __h);
@@ -661,7 +661,7 @@ struct {
     int32_t (* _Nonnull  _fp_System_Net_Http_Headers_NameValueHeaderValue_i32__GetHashCode_0__0)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h);
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_Net_Http_Headers_NameValueHeaderValue_NameValueHeaderValue__Parse_0__1__String)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE input);
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_Net_Http_Headers_NameValueHeaderValue_String__ToString_0__0)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h);
-    int32_t (* _Nonnull  _fp_System_Net_Http_Headers_NameValueHeaderValue_bool__TryParse_0__2__String_outNameValueHeaderValue)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE input, SG_HNDL_NONNULL* _Nonnull __parsedValue_out_ptr);
+    int32_t (* _Nonnull  _fp_System_Net_Http_Headers_NameValueHeaderValue_bool__TryParse_0__2__String_outNameValueHeaderValue)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE input, SG_HNDL_NULLABLE* _Nonnull __parsedValue_out_ptr);
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_Net_Http_Headers_NameValueHeaderValue_String__get_Name_0__0)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h);
     SG_HNDL_NULLABLE (* _Nonnull  _fp_System_Net_Http_Headers_NameValueHeaderValue_String__get_Value_0__0)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h);
     void (* _Nonnull  _fp_System_Net_Http_Headers_NameValueHeaderValue_void__set_Value_0__1__String)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE value);
@@ -673,7 +673,7 @@ struct {
     int32_t (* _Nonnull  _fp_System_Net_Http_Headers_NameValueWithParametersHeaderValue_i32__GetHashCode_0__0)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h);
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_Net_Http_Headers_NameValueWithParametersHeaderValue_NameValueWithParametersHeaderValue__Parse_0__1__String)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE input);
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_Net_Http_Headers_NameValueWithParametersHeaderValue_String__ToString_0__0)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h);
-    int32_t (* _Nonnull  _fp_System_Net_Http_Headers_NameValueWithParametersHeaderValue_bool__TryParse_0__2__String_outNameValueWithParametersHeaderValue)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE input, SG_HNDL_NONNULL* _Nonnull __parsedValue_out_ptr);
+    int32_t (* _Nonnull  _fp_System_Net_Http_Headers_NameValueWithParametersHeaderValue_bool__TryParse_0__2__String_outNameValueWithParametersHeaderValue)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE input, SG_HNDL_NULLABLE* _Nonnull __parsedValue_out_ptr);
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_Net_Http_Headers_NameValueWithParametersHeaderValue_System_Collections_Generic_ICollection_System_Net_Http_Headers_NameValueHeaderValue___get_Parameters_0__0)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h);
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_Net_Http_Headers_NameValueWithParametersHeaderValue_cast)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __h);
     TYP (* _Nonnull  _fp_System_Net_Http_Headers_ProductHeaderValue_get_type_handle)(void);
@@ -683,7 +683,7 @@ struct {
     int32_t (* _Nonnull  _fp_System_Net_Http_Headers_ProductHeaderValue_i32__GetHashCode_0__0)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h);
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_Net_Http_Headers_ProductHeaderValue_ProductHeaderValue__Parse_0__1__String)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE input);
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_Net_Http_Headers_ProductHeaderValue_String__ToString_0__0)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h);
-    int32_t (* _Nonnull  _fp_System_Net_Http_Headers_ProductHeaderValue_bool__TryParse_0__2__String_outProductHeaderValue)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE input, SG_HNDL_NONNULL* _Nonnull __parsedValue_out_ptr);
+    int32_t (* _Nonnull  _fp_System_Net_Http_Headers_ProductHeaderValue_bool__TryParse_0__2__String_outProductHeaderValue)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE input, SG_HNDL_NULLABLE* _Nonnull __parsedValue_out_ptr);
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_Net_Http_Headers_ProductHeaderValue_String__get_Name_0__0)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h);
     SG_HNDL_NULLABLE (* _Nonnull  _fp_System_Net_Http_Headers_ProductHeaderValue_String__get_Version_0__0)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h);
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_Net_Http_Headers_ProductHeaderValue_cast)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __h);
@@ -695,7 +695,7 @@ struct {
     int32_t (* _Nonnull  _fp_System_Net_Http_Headers_ProductInfoHeaderValue_i32__GetHashCode_0__0)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h);
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_Net_Http_Headers_ProductInfoHeaderValue_ProductInfoHeaderValue__Parse_0__1__String)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL input);
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_Net_Http_Headers_ProductInfoHeaderValue_String__ToString_0__0)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h);
-    int32_t (* _Nonnull  _fp_System_Net_Http_Headers_ProductInfoHeaderValue_bool__TryParse_0__2__String_outProductInfoHeaderValue)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL input, SG_HNDL_NONNULL* _Nonnull __parsedValue_out_ptr);
+    int32_t (* _Nonnull  _fp_System_Net_Http_Headers_ProductInfoHeaderValue_bool__TryParse_0__2__String_outProductInfoHeaderValue)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL input, SG_HNDL_NULLABLE* _Nonnull __parsedValue_out_ptr);
     SG_HNDL_NULLABLE (* _Nonnull  _fp_System_Net_Http_Headers_ProductInfoHeaderValue_String__get_Comment_0__0)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h);
     SG_HNDL_NULLABLE (* _Nonnull  _fp_System_Net_Http_Headers_ProductInfoHeaderValue_ProductHeaderValue__get_Product_0__0)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h);
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_Net_Http_Headers_ProductInfoHeaderValue_cast)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __h);
@@ -707,7 +707,7 @@ struct {
     int32_t (* _Nonnull  _fp_System_Net_Http_Headers_RangeConditionHeaderValue_i32__GetHashCode_0__0)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h);
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_Net_Http_Headers_RangeConditionHeaderValue_RangeConditionHeaderValue__Parse_0__1__String)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE input);
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_Net_Http_Headers_RangeConditionHeaderValue_String__ToString_0__0)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h);
-    int32_t (* _Nonnull  _fp_System_Net_Http_Headers_RangeConditionHeaderValue_bool__TryParse_0__2__String_outRangeConditionHeaderValue)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE input, SG_HNDL_NONNULL* _Nonnull __parsedValue_out_ptr);
+    int32_t (* _Nonnull  _fp_System_Net_Http_Headers_RangeConditionHeaderValue_bool__TryParse_0__2__String_outRangeConditionHeaderValue)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE input, SG_HNDL_NULLABLE* _Nonnull __parsedValue_out_ptr);
     SG_HNDL_NULLABLE (* _Nonnull  _fp_System_Net_Http_Headers_RangeConditionHeaderValue_System_Nullable_System_DateTimeOffset___get_Date_0__0)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h);
     SG_HNDL_NULLABLE (* _Nonnull  _fp_System_Net_Http_Headers_RangeConditionHeaderValue_EntityTagHeaderValue__get_EntityTag_0__0)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h);
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_Net_Http_Headers_RangeConditionHeaderValue_cast)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __h);
@@ -718,7 +718,7 @@ struct {
     int32_t (* _Nonnull  _fp_System_Net_Http_Headers_RangeHeaderValue_i32__GetHashCode_0__0)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h);
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_Net_Http_Headers_RangeHeaderValue_RangeHeaderValue__Parse_0__1__String)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE input);
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_Net_Http_Headers_RangeHeaderValue_String__ToString_0__0)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h);
-    int32_t (* _Nonnull  _fp_System_Net_Http_Headers_RangeHeaderValue_bool__TryParse_0__2__String_outRangeHeaderValue)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE input, SG_HNDL_NONNULL* _Nonnull __parsedValue_out_ptr);
+    int32_t (* _Nonnull  _fp_System_Net_Http_Headers_RangeHeaderValue_bool__TryParse_0__2__String_outRangeHeaderValue)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE input, SG_HNDL_NULLABLE* _Nonnull __parsedValue_out_ptr);
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_Net_Http_Headers_RangeHeaderValue_System_Collections_Generic_ICollection_System_Net_Http_Headers_RangeItemHeaderValue___get_Ranges_0__0)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h);
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_Net_Http_Headers_RangeHeaderValue_String__get_Unit_0__0)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h);
     void (* _Nonnull  _fp_System_Net_Http_Headers_RangeHeaderValue_void__set_Unit_0__1__String)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NONNULL value);
@@ -738,7 +738,7 @@ struct {
     int32_t (* _Nonnull  _fp_System_Net_Http_Headers_RetryConditionHeaderValue_i32__GetHashCode_0__0)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h);
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_Net_Http_Headers_RetryConditionHeaderValue_RetryConditionHeaderValue__Parse_0__1__String)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE input);
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_Net_Http_Headers_RetryConditionHeaderValue_String__ToString_0__0)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h);
-    int32_t (* _Nonnull  _fp_System_Net_Http_Headers_RetryConditionHeaderValue_bool__TryParse_0__2__String_outRetryConditionHeaderValue)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE input, SG_HNDL_NONNULL* _Nonnull __parsedValue_out_ptr);
+    int32_t (* _Nonnull  _fp_System_Net_Http_Headers_RetryConditionHeaderValue_bool__TryParse_0__2__String_outRetryConditionHeaderValue)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE input, SG_HNDL_NULLABLE* _Nonnull __parsedValue_out_ptr);
     SG_HNDL_NULLABLE (* _Nonnull  _fp_System_Net_Http_Headers_RetryConditionHeaderValue_System_Nullable_System_DateTimeOffset___get_Date_0__0)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h);
     SG_HNDL_NULLABLE (* _Nonnull  _fp_System_Net_Http_Headers_RetryConditionHeaderValue_System_Nullable_System_TimeSpan___get_Delta_0__0)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h);
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_Net_Http_Headers_RetryConditionHeaderValue_cast)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __h);
@@ -749,7 +749,7 @@ struct {
     int32_t (* _Nonnull  _fp_System_Net_Http_Headers_StringWithQualityHeaderValue_i32__GetHashCode_0__0)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h);
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_Net_Http_Headers_StringWithQualityHeaderValue_StringWithQualityHeaderValue__Parse_0__1__String)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE input);
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_Net_Http_Headers_StringWithQualityHeaderValue_String__ToString_0__0)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h);
-    int32_t (* _Nonnull  _fp_System_Net_Http_Headers_StringWithQualityHeaderValue_bool__TryParse_0__2__String_outStringWithQualityHeaderValue)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE input, SG_HNDL_NONNULL* _Nonnull __parsedValue_out_ptr);
+    int32_t (* _Nonnull  _fp_System_Net_Http_Headers_StringWithQualityHeaderValue_bool__TryParse_0__2__String_outStringWithQualityHeaderValue)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE input, SG_HNDL_NULLABLE* _Nonnull __parsedValue_out_ptr);
     SG_HNDL_NULLABLE (* _Nonnull  _fp_System_Net_Http_Headers_StringWithQualityHeaderValue_System_Nullable_f64___get_Quality_0__0)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h);
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_Net_Http_Headers_StringWithQualityHeaderValue_String__get_Value_0__0)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h);
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_Net_Http_Headers_StringWithQualityHeaderValue_cast)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __h);
@@ -759,7 +759,7 @@ struct {
     int32_t (* _Nonnull  _fp_System_Net_Http_Headers_TransferCodingHeaderValue_i32__GetHashCode_0__0)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h);
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_Net_Http_Headers_TransferCodingHeaderValue_TransferCodingHeaderValue__Parse_0__1__String)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE input);
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_Net_Http_Headers_TransferCodingHeaderValue_String__ToString_0__0)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h);
-    int32_t (* _Nonnull  _fp_System_Net_Http_Headers_TransferCodingHeaderValue_bool__TryParse_0__2__String_outTransferCodingHeaderValue)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE input, SG_HNDL_NONNULL* _Nonnull __parsedValue_out_ptr);
+    int32_t (* _Nonnull  _fp_System_Net_Http_Headers_TransferCodingHeaderValue_bool__TryParse_0__2__String_outTransferCodingHeaderValue)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE input, SG_HNDL_NULLABLE* _Nonnull __parsedValue_out_ptr);
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_Net_Http_Headers_TransferCodingHeaderValue_System_Collections_Generic_ICollection_System_Net_Http_Headers_NameValueHeaderValue___get_Parameters_0__0)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h);
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_Net_Http_Headers_TransferCodingHeaderValue_String__get_Value_0__0)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h);
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_Net_Http_Headers_TransferCodingHeaderValue_cast)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __h);
@@ -767,7 +767,7 @@ struct {
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_Net_Http_Headers_TransferCodingWithQualityHeaderValue_ctor_0__1__String)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL value);
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_Net_Http_Headers_TransferCodingWithQualityHeaderValue_ctor_0__2__String_f64)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL value, double quality);
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_Net_Http_Headers_TransferCodingWithQualityHeaderValue_TransferCodingWithQualityHeaderValue__Parse_0__1__String)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE input);
-    int32_t (* _Nonnull  _fp_System_Net_Http_Headers_TransferCodingWithQualityHeaderValue_bool__TryParse_0__2__String_outTransferCodingWithQualityHeaderValue)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE input, SG_HNDL_NONNULL* _Nonnull __parsedValue_out_ptr);
+    int32_t (* _Nonnull  _fp_System_Net_Http_Headers_TransferCodingWithQualityHeaderValue_bool__TryParse_0__2__String_outTransferCodingWithQualityHeaderValue)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE input, SG_HNDL_NULLABLE* _Nonnull __parsedValue_out_ptr);
     SG_HNDL_NULLABLE (* _Nonnull  _fp_System_Net_Http_Headers_TransferCodingWithQualityHeaderValue_System_Nullable_f64___get_Quality_0__0)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h);
     void (* _Nonnull  _fp_System_Net_Http_Headers_TransferCodingWithQualityHeaderValue_void__set_Quality_0__1__System_Nullable_f64_)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE value);
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_Net_Http_Headers_TransferCodingWithQualityHeaderValue_cast)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __h);
@@ -779,7 +779,7 @@ struct {
     int32_t (* _Nonnull  _fp_System_Net_Http_Headers_ViaHeaderValue_i32__GetHashCode_0__0)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h);
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_Net_Http_Headers_ViaHeaderValue_ViaHeaderValue__Parse_0__1__String)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE input);
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_Net_Http_Headers_ViaHeaderValue_String__ToString_0__0)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h);
-    int32_t (* _Nonnull  _fp_System_Net_Http_Headers_ViaHeaderValue_bool__TryParse_0__2__String_outViaHeaderValue)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE input, SG_HNDL_NONNULL* _Nonnull __parsedValue_out_ptr);
+    int32_t (* _Nonnull  _fp_System_Net_Http_Headers_ViaHeaderValue_bool__TryParse_0__2__String_outViaHeaderValue)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE input, SG_HNDL_NULLABLE* _Nonnull __parsedValue_out_ptr);
     SG_HNDL_NULLABLE (* _Nonnull  _fp_System_Net_Http_Headers_ViaHeaderValue_String__get_Comment_0__0)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h);
     SG_HNDL_NULLABLE (* _Nonnull  _fp_System_Net_Http_Headers_ViaHeaderValue_String__get_ProtocolName_0__0)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h);
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_Net_Http_Headers_ViaHeaderValue_String__get_ProtocolVersion_0__0)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h);
@@ -792,7 +792,7 @@ struct {
     int32_t (* _Nonnull  _fp_System_Net_Http_Headers_WarningHeaderValue_i32__GetHashCode_0__0)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h);
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_Net_Http_Headers_WarningHeaderValue_WarningHeaderValue__Parse_0__1__String)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE input);
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_Net_Http_Headers_WarningHeaderValue_String__ToString_0__0)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h);
-    int32_t (* _Nonnull  _fp_System_Net_Http_Headers_WarningHeaderValue_bool__TryParse_0__2__String_outWarningHeaderValue)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE input, SG_HNDL_NONNULL* _Nonnull __parsedValue_out_ptr);
+    int32_t (* _Nonnull  _fp_System_Net_Http_Headers_WarningHeaderValue_bool__TryParse_0__2__String_outWarningHeaderValue)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE input, SG_HNDL_NULLABLE* _Nonnull __parsedValue_out_ptr);
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_Net_Http_Headers_WarningHeaderValue_String__get_Agent_0__0)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h);
     int32_t (* _Nonnull  _fp_System_Net_Http_Headers_WarningHeaderValue_i32__get_Code_0__0)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h);
     SG_HNDL_NULLABLE (* _Nonnull  _fp_System_Net_Http_Headers_WarningHeaderValue_System_Nullable_System_DateTimeOffset___get_Date_0__0)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h);
@@ -995,11 +995,11 @@ SG_HNDL_NULLABLE invoke_System_Net_Http_HeaderEncodingSelector_1_Encoding__EndIn
     return ret;
 }
 
-SG_HNDL_NONNULL System_Net_Http_HeaderEncodingSelector_1_create(TYP TContext, SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nullable __pdata, void (* _Nullable __deinit)(const void* _Nullable __pdata), SG_HNDL_NULLABLE (* _Nonnull  __cb)(const void* _Nullable __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL headerName, GVAL context)) {
+SG_HNDL_NONNULL System_Net_Http_HeaderEncodingSelector_1_create(TYP TContext, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE (* _Nonnull  __cb)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL headerName, GVAL context), const void* _Nonnull __pdata, void (* _Nullable __deinit)(const void* _Nonnull __pdata)) {
     if (!_g_System_Net_Http._fp_System_Net_Http_HeaderEncodingSelector_1_create) {
         my_init();
     }
-    SG_HNDL_NONNULL ret = _g_System_Net_Http._fp_System_Net_Http_HeaderEncodingSelector_1_create(TContext, __thrown, __pdata, __deinit, __cb);
+    SG_HNDL_NONNULL ret = _g_System_Net_Http._fp_System_Net_Http_HeaderEncodingSelector_1_create(TContext, __thrown, __cb, __pdata, __deinit);
     return ret;
 }
 
@@ -3614,7 +3614,7 @@ SG_HNDL_NONNULL System_Net_Http_Headers_AuthenticationHeaderValue_String__ToStri
     return ret;
 }
 
-int32_t System_Net_Http_Headers_AuthenticationHeaderValue_bool__TryParse_0__2__String_outAuthenticationHeaderValue(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE input, SG_HNDL_NONNULL* _Nonnull __parsedValue_out_ptr) {
+int32_t System_Net_Http_Headers_AuthenticationHeaderValue_bool__TryParse_0__2__String_outAuthenticationHeaderValue(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE input, SG_HNDL_NULLABLE* _Nonnull __parsedValue_out_ptr) {
     if (!_g_System_Net_Http._fp_System_Net_Http_Headers_AuthenticationHeaderValue_bool__TryParse_0__2__String_outAuthenticationHeaderValue) {
         my_init();
     }
@@ -3694,7 +3694,7 @@ SG_HNDL_NONNULL System_Net_Http_Headers_CacheControlHeaderValue_String__ToString
     return ret;
 }
 
-int32_t System_Net_Http_Headers_CacheControlHeaderValue_bool__TryParse_0__2__String_outCacheControlHeaderValue(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE input, SG_HNDL_NONNULL* _Nonnull __parsedValue_out_ptr) {
+int32_t System_Net_Http_Headers_CacheControlHeaderValue_bool__TryParse_0__2__String_outCacheControlHeaderValue(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE input, SG_HNDL_NULLABLE* _Nonnull __parsedValue_out_ptr) {
     if (!_g_System_Net_Http._fp_System_Net_Http_Headers_CacheControlHeaderValue_bool__TryParse_0__2__String_outCacheControlHeaderValue) {
         my_init();
     }
@@ -3977,7 +3977,7 @@ SG_HNDL_NONNULL System_Net_Http_Headers_ContentDispositionHeaderValue_String__To
     return ret;
 }
 
-int32_t System_Net_Http_Headers_ContentDispositionHeaderValue_bool__TryParse_0__2__String_outContentDispositionHeaderValue(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE input, SG_HNDL_NONNULL* _Nonnull __parsedValue_out_ptr) {
+int32_t System_Net_Http_Headers_ContentDispositionHeaderValue_bool__TryParse_0__2__String_outContentDispositionHeaderValue(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE input, SG_HNDL_NULLABLE* _Nonnull __parsedValue_out_ptr) {
     if (!_g_System_Net_Http._fp_System_Net_Http_Headers_ContentDispositionHeaderValue_bool__TryParse_0__2__String_outContentDispositionHeaderValue) {
         my_init();
     }
@@ -4185,7 +4185,7 @@ SG_HNDL_NONNULL System_Net_Http_Headers_ContentRangeHeaderValue_String__ToString
     return ret;
 }
 
-int32_t System_Net_Http_Headers_ContentRangeHeaderValue_bool__TryParse_0__2__String_outContentRangeHeaderValue(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE input, SG_HNDL_NONNULL* _Nonnull __parsedValue_out_ptr) {
+int32_t System_Net_Http_Headers_ContentRangeHeaderValue_bool__TryParse_0__2__String_outContentRangeHeaderValue(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE input, SG_HNDL_NULLABLE* _Nonnull __parsedValue_out_ptr) {
     if (!_g_System_Net_Http._fp_System_Net_Http_Headers_ContentRangeHeaderValue_bool__TryParse_0__2__String_outContentRangeHeaderValue) {
         my_init();
     }
@@ -4312,7 +4312,7 @@ SG_HNDL_NONNULL System_Net_Http_Headers_EntityTagHeaderValue_String__ToString_0_
     return ret;
 }
 
-int32_t System_Net_Http_Headers_EntityTagHeaderValue_bool__TryParse_0__2__String_outEntityTagHeaderValue(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE input, SG_HNDL_NONNULL* _Nonnull __parsedValue_out_ptr) {
+int32_t System_Net_Http_Headers_EntityTagHeaderValue_bool__TryParse_0__2__String_outEntityTagHeaderValue(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE input, SG_HNDL_NULLABLE* _Nonnull __parsedValue_out_ptr) {
     if (!_g_System_Net_Http._fp_System_Net_Http_Headers_EntityTagHeaderValue_bool__TryParse_0__2__String_outEntityTagHeaderValue) {
         my_init();
     }
@@ -4948,7 +4948,7 @@ int32_t System_Net_Http_Headers_HttpHeaders_bool__TryAddWithoutValidation_0__2__
     return ret;
 }
 
-int32_t System_Net_Http_Headers_HttpHeaders_bool__TryGetValues_0__2__String_outSystem_Collections_Generic_IEnumerable_string_(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NONNULL name, SG_HNDL_NONNULL* _Nonnull __values_out_ptr) {
+int32_t System_Net_Http_Headers_HttpHeaders_bool__TryGetValues_0__2__String_outSystem_Collections_Generic_IEnumerable_string_(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NONNULL name, SG_HNDL_NULLABLE* _Nonnull __values_out_ptr) {
     if (!_g_System_Net_Http._fp_System_Net_Http_Headers_HttpHeaders_bool__TryGetValues_0__2__String_outSystem_Collections_Generic_IEnumerable_string_) {
         my_init();
     }
@@ -5716,7 +5716,7 @@ SG_HNDL_NONNULL System_Net_Http_Headers_MediaTypeHeaderValue_String__ToString_0_
     return ret;
 }
 
-int32_t System_Net_Http_Headers_MediaTypeHeaderValue_bool__TryParse_0__2__String_outMediaTypeHeaderValue(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE input, SG_HNDL_NONNULL* _Nonnull __parsedValue_out_ptr) {
+int32_t System_Net_Http_Headers_MediaTypeHeaderValue_bool__TryParse_0__2__String_outMediaTypeHeaderValue(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE input, SG_HNDL_NULLABLE* _Nonnull __parsedValue_out_ptr) {
     if (!_g_System_Net_Http._fp_System_Net_Http_Headers_MediaTypeHeaderValue_bool__TryParse_0__2__String_outMediaTypeHeaderValue) {
         my_init();
     }
@@ -5802,7 +5802,7 @@ SG_HNDL_NONNULL System_Net_Http_Headers_MediaTypeWithQualityHeaderValue_MediaTyp
     return ret;
 }
 
-int32_t System_Net_Http_Headers_MediaTypeWithQualityHeaderValue_bool__TryParse_0__2__String_outMediaTypeWithQualityHeaderValue(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE input, SG_HNDL_NONNULL* _Nonnull __parsedValue_out_ptr) {
+int32_t System_Net_Http_Headers_MediaTypeWithQualityHeaderValue_bool__TryParse_0__2__String_outMediaTypeWithQualityHeaderValue(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE input, SG_HNDL_NULLABLE* _Nonnull __parsedValue_out_ptr) {
     if (!_g_System_Net_Http._fp_System_Net_Http_Headers_MediaTypeWithQualityHeaderValue_bool__TryParse_0__2__String_outMediaTypeWithQualityHeaderValue) {
         my_init();
     }
@@ -5889,7 +5889,7 @@ SG_HNDL_NONNULL System_Net_Http_Headers_NameValueHeaderValue_String__ToString_0_
     return ret;
 }
 
-int32_t System_Net_Http_Headers_NameValueHeaderValue_bool__TryParse_0__2__String_outNameValueHeaderValue(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE input, SG_HNDL_NONNULL* _Nonnull __parsedValue_out_ptr) {
+int32_t System_Net_Http_Headers_NameValueHeaderValue_bool__TryParse_0__2__String_outNameValueHeaderValue(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE input, SG_HNDL_NULLABLE* _Nonnull __parsedValue_out_ptr) {
     if (!_g_System_Net_Http._fp_System_Net_Http_Headers_NameValueHeaderValue_bool__TryParse_0__2__String_outNameValueHeaderValue) {
         my_init();
     }
@@ -5984,7 +5984,7 @@ SG_HNDL_NONNULL System_Net_Http_Headers_NameValueWithParametersHeaderValue_Strin
     return ret;
 }
 
-int32_t System_Net_Http_Headers_NameValueWithParametersHeaderValue_bool__TryParse_0__2__String_outNameValueWithParametersHeaderValue(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE input, SG_HNDL_NONNULL* _Nonnull __parsedValue_out_ptr) {
+int32_t System_Net_Http_Headers_NameValueWithParametersHeaderValue_bool__TryParse_0__2__String_outNameValueWithParametersHeaderValue(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE input, SG_HNDL_NULLABLE* _Nonnull __parsedValue_out_ptr) {
     if (!_g_System_Net_Http._fp_System_Net_Http_Headers_NameValueWithParametersHeaderValue_bool__TryParse_0__2__String_outNameValueWithParametersHeaderValue) {
         my_init();
     }
@@ -6064,7 +6064,7 @@ SG_HNDL_NONNULL System_Net_Http_Headers_ProductHeaderValue_String__ToString_0__0
     return ret;
 }
 
-int32_t System_Net_Http_Headers_ProductHeaderValue_bool__TryParse_0__2__String_outProductHeaderValue(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE input, SG_HNDL_NONNULL* _Nonnull __parsedValue_out_ptr) {
+int32_t System_Net_Http_Headers_ProductHeaderValue_bool__TryParse_0__2__String_outProductHeaderValue(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE input, SG_HNDL_NULLABLE* _Nonnull __parsedValue_out_ptr) {
     if (!_g_System_Net_Http._fp_System_Net_Http_Headers_ProductHeaderValue_bool__TryParse_0__2__String_outProductHeaderValue) {
         my_init();
     }
@@ -6160,7 +6160,7 @@ SG_HNDL_NONNULL System_Net_Http_Headers_ProductInfoHeaderValue_String__ToString_
     return ret;
 }
 
-int32_t System_Net_Http_Headers_ProductInfoHeaderValue_bool__TryParse_0__2__String_outProductInfoHeaderValue(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL input, SG_HNDL_NONNULL* _Nonnull __parsedValue_out_ptr) {
+int32_t System_Net_Http_Headers_ProductInfoHeaderValue_bool__TryParse_0__2__String_outProductInfoHeaderValue(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL input, SG_HNDL_NULLABLE* _Nonnull __parsedValue_out_ptr) {
     if (!_g_System_Net_Http._fp_System_Net_Http_Headers_ProductInfoHeaderValue_bool__TryParse_0__2__String_outProductInfoHeaderValue) {
         my_init();
     }
@@ -6256,7 +6256,7 @@ SG_HNDL_NONNULL System_Net_Http_Headers_RangeConditionHeaderValue_String__ToStri
     return ret;
 }
 
-int32_t System_Net_Http_Headers_RangeConditionHeaderValue_bool__TryParse_0__2__String_outRangeConditionHeaderValue(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE input, SG_HNDL_NONNULL* _Nonnull __parsedValue_out_ptr) {
+int32_t System_Net_Http_Headers_RangeConditionHeaderValue_bool__TryParse_0__2__String_outRangeConditionHeaderValue(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE input, SG_HNDL_NULLABLE* _Nonnull __parsedValue_out_ptr) {
     if (!_g_System_Net_Http._fp_System_Net_Http_Headers_RangeConditionHeaderValue_bool__TryParse_0__2__String_outRangeConditionHeaderValue) {
         my_init();
     }
@@ -6344,7 +6344,7 @@ SG_HNDL_NONNULL System_Net_Http_Headers_RangeHeaderValue_String__ToString_0__0(S
     return ret;
 }
 
-int32_t System_Net_Http_Headers_RangeHeaderValue_bool__TryParse_0__2__String_outRangeHeaderValue(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE input, SG_HNDL_NONNULL* _Nonnull __parsedValue_out_ptr) {
+int32_t System_Net_Http_Headers_RangeHeaderValue_bool__TryParse_0__2__String_outRangeHeaderValue(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE input, SG_HNDL_NULLABLE* _Nonnull __parsedValue_out_ptr) {
     if (!_g_System_Net_Http._fp_System_Net_Http_Headers_RangeHeaderValue_bool__TryParse_0__2__String_outRangeHeaderValue) {
         my_init();
     }
@@ -6503,7 +6503,7 @@ SG_HNDL_NONNULL System_Net_Http_Headers_RetryConditionHeaderValue_String__ToStri
     return ret;
 }
 
-int32_t System_Net_Http_Headers_RetryConditionHeaderValue_bool__TryParse_0__2__String_outRetryConditionHeaderValue(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE input, SG_HNDL_NONNULL* _Nonnull __parsedValue_out_ptr) {
+int32_t System_Net_Http_Headers_RetryConditionHeaderValue_bool__TryParse_0__2__String_outRetryConditionHeaderValue(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE input, SG_HNDL_NULLABLE* _Nonnull __parsedValue_out_ptr) {
     if (!_g_System_Net_Http._fp_System_Net_Http_Headers_RetryConditionHeaderValue_bool__TryParse_0__2__String_outRetryConditionHeaderValue) {
         my_init();
     }
@@ -6591,7 +6591,7 @@ SG_HNDL_NONNULL System_Net_Http_Headers_StringWithQualityHeaderValue_String__ToS
     return ret;
 }
 
-int32_t System_Net_Http_Headers_StringWithQualityHeaderValue_bool__TryParse_0__2__String_outStringWithQualityHeaderValue(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE input, SG_HNDL_NONNULL* _Nonnull __parsedValue_out_ptr) {
+int32_t System_Net_Http_Headers_StringWithQualityHeaderValue_bool__TryParse_0__2__String_outStringWithQualityHeaderValue(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE input, SG_HNDL_NULLABLE* _Nonnull __parsedValue_out_ptr) {
     if (!_g_System_Net_Http._fp_System_Net_Http_Headers_StringWithQualityHeaderValue_bool__TryParse_0__2__String_outStringWithQualityHeaderValue) {
         my_init();
     }
@@ -6671,7 +6671,7 @@ SG_HNDL_NONNULL System_Net_Http_Headers_TransferCodingHeaderValue_String__ToStri
     return ret;
 }
 
-int32_t System_Net_Http_Headers_TransferCodingHeaderValue_bool__TryParse_0__2__String_outTransferCodingHeaderValue(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE input, SG_HNDL_NONNULL* _Nonnull __parsedValue_out_ptr) {
+int32_t System_Net_Http_Headers_TransferCodingHeaderValue_bool__TryParse_0__2__String_outTransferCodingHeaderValue(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE input, SG_HNDL_NULLABLE* _Nonnull __parsedValue_out_ptr) {
     if (!_g_System_Net_Http._fp_System_Net_Http_Headers_TransferCodingHeaderValue_bool__TryParse_0__2__String_outTransferCodingHeaderValue) {
         my_init();
     }
@@ -6735,7 +6735,7 @@ SG_HNDL_NONNULL System_Net_Http_Headers_TransferCodingWithQualityHeaderValue_Tra
     return ret;
 }
 
-int32_t System_Net_Http_Headers_TransferCodingWithQualityHeaderValue_bool__TryParse_0__2__String_outTransferCodingWithQualityHeaderValue(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE input, SG_HNDL_NONNULL* _Nonnull __parsedValue_out_ptr) {
+int32_t System_Net_Http_Headers_TransferCodingWithQualityHeaderValue_bool__TryParse_0__2__String_outTransferCodingWithQualityHeaderValue(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE input, SG_HNDL_NULLABLE* _Nonnull __parsedValue_out_ptr) {
     if (!_g_System_Net_Http._fp_System_Net_Http_Headers_TransferCodingWithQualityHeaderValue_bool__TryParse_0__2__String_outTransferCodingWithQualityHeaderValue) {
         my_init();
     }
@@ -6830,7 +6830,7 @@ SG_HNDL_NONNULL System_Net_Http_Headers_ViaHeaderValue_String__ToString_0__0(SG_
     return ret;
 }
 
-int32_t System_Net_Http_Headers_ViaHeaderValue_bool__TryParse_0__2__String_outViaHeaderValue(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE input, SG_HNDL_NONNULL* _Nonnull __parsedValue_out_ptr) {
+int32_t System_Net_Http_Headers_ViaHeaderValue_bool__TryParse_0__2__String_outViaHeaderValue(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE input, SG_HNDL_NULLABLE* _Nonnull __parsedValue_out_ptr) {
     if (!_g_System_Net_Http._fp_System_Net_Http_Headers_ViaHeaderValue_bool__TryParse_0__2__String_outViaHeaderValue) {
         my_init();
     }
@@ -6934,7 +6934,7 @@ SG_HNDL_NONNULL System_Net_Http_Headers_WarningHeaderValue_String__ToString_0__0
     return ret;
 }
 
-int32_t System_Net_Http_Headers_WarningHeaderValue_bool__TryParse_0__2__String_outWarningHeaderValue(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE input, SG_HNDL_NONNULL* _Nonnull __parsedValue_out_ptr) {
+int32_t System_Net_Http_Headers_WarningHeaderValue_bool__TryParse_0__2__String_outWarningHeaderValue(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE input, SG_HNDL_NULLABLE* _Nonnull __parsedValue_out_ptr) {
     if (!_g_System_Net_Http._fp_System_Net_Http_Headers_WarningHeaderValue_bool__TryParse_0__2__String_outWarningHeaderValue) {
         my_init();
     }

@@ -18,6 +18,9 @@ open class ByteArrayContent
     open class override func get_type_handle() -> TypeHandle {
         return System_Net_Http_ByteArrayContent_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor(System.Byte[])
@@ -109,6 +112,9 @@ open class DelegatingHandler
     open class override func get_type_handle() -> TypeHandle {
         return System_Net_Http_DelegatingHandler_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // [IsSpecialName] System.Net.Http.HttpMessageHandler get_InnerHandler()
@@ -164,6 +170,9 @@ open class FormUrlEncodedContent
     open class override func get_type_handle() -> TypeHandle {
         return System_Net_Http_FormUrlEncodedContent_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor(System.Collections.Generic.IEnumerable<System.Collections.Generic.KeyValuePair<System.String,System.String>>)
@@ -196,6 +205,9 @@ public final class HeaderEncodingSelector_1<TContext : SGBridgeGenericValue>
 {
     public class override func get_type_handle() -> TypeHandle {
         return System_Net_Http_HeaderEncodingSelector_1_get_type_handle(TContext.get_type_handle());
+    }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -244,15 +256,15 @@ public final class HeaderEncodingSelector_1<TContext : SGBridgeGenericValue>
         }
         }
     }
-    public init(_ callback : @escaping (dotnet.System.String, TContext) throws -> dotnet.System.Text.Encoding) throws
+    public convenience init(_ __closure_Invoke : @escaping (dotnet.System.String, TContext) throws -> dotnet.System.Text.Encoding) throws
     {
-        let __bridge : (UnsafeMutablePointer<NullableHandle>, NonnullHandle, GVal) -> NullableHandle =
+        let __interlude_Invoke : (UnsafeMutablePointer<NullableHandle>, NonnullHandle, GVal) -> NullableHandle =
         {
             (thrown : UnsafeMutablePointer<NullableHandle>, headerName : NonnullHandle, context : GVal) -> NullableHandle in
             do
             {
                 thrown.pointee = nil;
-                let ret = try callback(dotnet.System.String(hndl: headerName), TContext(gval: context));
+                let ret = try __closure_Invoke(dotnet.System.String(hndl: headerName), TContext(gval: context));
                 return __copy_handle(ret.get_handle());
             }
             catch let e as dotnet.System.Exception
@@ -267,25 +279,25 @@ public final class HeaderEncodingSelector_1<TContext : SGBridgeGenericValue>
                 return NonnullHandle(bitPattern: 8675309)!;
             }
         };
-        let cbarg = UnsafeRawPointer(Unmanaged.passRetained(__bridge as AnyObject).toOpaque());
-        func __cb(cb : UnsafeRawPointer?, thrown : UnsafeMutablePointer<NullableHandle>, headerName : NonnullHandle, context : GVal) -> NullableHandle
+        func __cb_Invoke(pdata_interlude : UnsafeRawPointer, thrown : UnsafeMutablePointer<NullableHandle>, headerName : NonnullHandle, context : GVal) -> NullableHandle
         {
-            let f = Unmanaged<AnyObject>.fromOpaque(cb!).takeUnretainedValue() as! (UnsafeMutablePointer<NullableHandle>, NonnullHandle, GVal) -> NullableHandle;
-            return f(thrown, headerName, context);
+            let f_interlude = Unmanaged<AnyObject>.fromOpaque(pdata_interlude).takeUnretainedValue() as! (UnsafeMutablePointer<NullableHandle>, NonnullHandle, GVal) -> NullableHandle;
+            return f_interlude(thrown, headerName, context);
         }
+        let __pdata_Invoke = UnsafeRawPointer(Unmanaged.passRetained(__interlude_Invoke as AnyObject).toOpaque());
+
         var __thrown : NullableHandle = nil;
         let h = System_Net_Http_HeaderEncodingSelector_1_create(
             TContext.get_type_handle(),
             &__thrown,
-            cbarg,
-            nil, // TODO deinit
-            __cb
+            __cb_Invoke,
+            __pdata_Invoke,
+            nil
             );
-            // TODO check thrown
         if let __ex = __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-            super.init(hndl: h);
+            self.init(hndl: h);
         }
     }
     // System.Text.Encoding Invoke(System.String, TContext)
@@ -308,7 +320,7 @@ public final class HeaderEncodingSelector_1<TContext : SGBridgeGenericValue>
 
 // type: System.Net.Http.HttpClient
     /**
-    Provides a base class for sending HTTP requests and receiving HTTP responses from a resource identified by a URI.
+    Provides a class for sending HTTP requests and receiving HTTP responses from a resource identified by a URI.
 
     */
 open class HttpClient
@@ -317,6 +329,9 @@ open class HttpClient
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Net_Http_HttpClient_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -393,13 +408,13 @@ open class HttpClient
     - Returns: The task object representing the asynchronous operation.
 
     */
-    open func DeleteAsync(requestUri : Optional<dotnet.System.String>) throws -> dotnet.System.Threading.Tasks.Task_1<dotnet.System.Net.Http.HttpResponseMessage> {
+    open func DeleteAsync(requestUri : Optional<dotnet.System.String>) async throws -> dotnet.System.Net.Http.HttpResponseMessage {
         var __thrown : NullableHandle = nil;
         let __return = System_Net_Http_HttpClient_System_Threading_Tasks_Task_System_Net_Http_HttpResponseMessage___DeleteAsync_0__1__String(&__thrown, self.get_handle(), requestUri?.get_handle() ?? nil);
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task_1(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task_1(hndl: __return).ToAsync();
         }
     }
     // System.Threading.Tasks.Task<System.Net.Http.HttpResponseMessage> DeleteAsync(System.String, System.Threading.CancellationToken)
@@ -412,13 +427,13 @@ open class HttpClient
     - Returns: The task object representing the asynchronous operation.
 
     */
-    open func DeleteAsync(requestUri : Optional<dotnet.System.String>, cancellationToken : dotnet.System.Threading.CancellationToken) throws -> dotnet.System.Threading.Tasks.Task_1<dotnet.System.Net.Http.HttpResponseMessage> {
+    open func DeleteAsync(requestUri : Optional<dotnet.System.String>, cancellationToken : dotnet.System.Threading.CancellationToken) async throws -> dotnet.System.Net.Http.HttpResponseMessage {
         var __thrown : NullableHandle = nil;
         let __return = System_Net_Http_HttpClient_System_Threading_Tasks_Task_System_Net_Http_HttpResponseMessage___DeleteAsync_0__2__String_CancellationToken(&__thrown, self.get_handle(), requestUri?.get_handle() ?? nil, cancellationToken.get_handle());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task_1(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task_1(hndl: __return).ToAsync();
         }
     }
     // System.Threading.Tasks.Task<System.Net.Http.HttpResponseMessage> DeleteAsync(System.Uri)
@@ -430,13 +445,13 @@ open class HttpClient
     - Returns: The task object representing the asynchronous operation.
 
     */
-    open func DeleteAsync(requestUri : Optional<dotnet.System.Uri>) throws -> dotnet.System.Threading.Tasks.Task_1<dotnet.System.Net.Http.HttpResponseMessage> {
+    open func DeleteAsync(requestUri : Optional<dotnet.System.Uri>) async throws -> dotnet.System.Net.Http.HttpResponseMessage {
         var __thrown : NullableHandle = nil;
         let __return = System_Net_Http_HttpClient_System_Threading_Tasks_Task_System_Net_Http_HttpResponseMessage___DeleteAsync_0__1__Uri(&__thrown, self.get_handle(), requestUri?.get_handle() ?? nil);
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task_1(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task_1(hndl: __return).ToAsync();
         }
     }
     // System.Threading.Tasks.Task<System.Net.Http.HttpResponseMessage> DeleteAsync(System.Uri, System.Threading.CancellationToken)
@@ -449,13 +464,13 @@ open class HttpClient
     - Returns: The task object representing the asynchronous operation.
 
     */
-    open func DeleteAsync(requestUri : Optional<dotnet.System.Uri>, cancellationToken : dotnet.System.Threading.CancellationToken) throws -> dotnet.System.Threading.Tasks.Task_1<dotnet.System.Net.Http.HttpResponseMessage> {
+    open func DeleteAsync(requestUri : Optional<dotnet.System.Uri>, cancellationToken : dotnet.System.Threading.CancellationToken) async throws -> dotnet.System.Net.Http.HttpResponseMessage {
         var __thrown : NullableHandle = nil;
         let __return = System_Net_Http_HttpClient_System_Threading_Tasks_Task_System_Net_Http_HttpResponseMessage___DeleteAsync_0__2__Uri_CancellationToken(&__thrown, self.get_handle(), requestUri?.get_handle() ?? nil, cancellationToken.get_handle());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task_1(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task_1(hndl: __return).ToAsync();
         }
     }
     // System.Threading.Tasks.Task<System.Net.Http.HttpResponseMessage> GetAsync(System.String)
@@ -467,13 +482,13 @@ open class HttpClient
     - Returns: The task object representing the asynchronous operation.
 
     */
-    open func GetAsync(requestUri : Optional<dotnet.System.String>) throws -> dotnet.System.Threading.Tasks.Task_1<dotnet.System.Net.Http.HttpResponseMessage> {
+    open func GetAsync(requestUri : Optional<dotnet.System.String>) async throws -> dotnet.System.Net.Http.HttpResponseMessage {
         var __thrown : NullableHandle = nil;
         let __return = System_Net_Http_HttpClient_System_Threading_Tasks_Task_System_Net_Http_HttpResponseMessage___GetAsync_0__1__String(&__thrown, self.get_handle(), requestUri?.get_handle() ?? nil);
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task_1(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task_1(hndl: __return).ToAsync();
         }
     }
     // System.Threading.Tasks.Task<System.Net.Http.HttpResponseMessage> GetAsync(System.String, System.Net.Http.HttpCompletionOption)
@@ -486,13 +501,13 @@ open class HttpClient
     - Returns: The task object representing the asynchronous operation.
 
     */
-    open func GetAsync(requestUri : Optional<dotnet.System.String>, completionOption : dotnet.System.Net.Http.HttpCompletionOption) throws -> dotnet.System.Threading.Tasks.Task_1<dotnet.System.Net.Http.HttpResponseMessage> {
+    open func GetAsync(requestUri : Optional<dotnet.System.String>, completionOption : dotnet.System.Net.Http.HttpCompletionOption) async throws -> dotnet.System.Net.Http.HttpResponseMessage {
         var __thrown : NullableHandle = nil;
         let __return = System_Net_Http_HttpClient_System_Threading_Tasks_Task_System_Net_Http_HttpResponseMessage___GetAsync_0__2__String_HttpCompletionOption(&__thrown, self.get_handle(), requestUri?.get_handle() ?? nil, completionOption.get_value());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task_1(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task_1(hndl: __return).ToAsync();
         }
     }
     // System.Threading.Tasks.Task<System.Net.Http.HttpResponseMessage> GetAsync(System.String, System.Net.Http.HttpCompletionOption, System.Threading.CancellationToken)
@@ -506,13 +521,13 @@ open class HttpClient
     - Returns: The task object representing the asynchronous operation.
 
     */
-    open func GetAsync(requestUri : Optional<dotnet.System.String>, completionOption : dotnet.System.Net.Http.HttpCompletionOption, cancellationToken : dotnet.System.Threading.CancellationToken) throws -> dotnet.System.Threading.Tasks.Task_1<dotnet.System.Net.Http.HttpResponseMessage> {
+    open func GetAsync(requestUri : Optional<dotnet.System.String>, completionOption : dotnet.System.Net.Http.HttpCompletionOption, cancellationToken : dotnet.System.Threading.CancellationToken) async throws -> dotnet.System.Net.Http.HttpResponseMessage {
         var __thrown : NullableHandle = nil;
         let __return = System_Net_Http_HttpClient_System_Threading_Tasks_Task_System_Net_Http_HttpResponseMessage___GetAsync_0__3__String_HttpCompletionOption_CancellationToken(&__thrown, self.get_handle(), requestUri?.get_handle() ?? nil, completionOption.get_value(), cancellationToken.get_handle());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task_1(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task_1(hndl: __return).ToAsync();
         }
     }
     // System.Threading.Tasks.Task<System.Net.Http.HttpResponseMessage> GetAsync(System.String, System.Threading.CancellationToken)
@@ -525,13 +540,13 @@ open class HttpClient
     - Returns: The task object representing the asynchronous operation.
 
     */
-    open func GetAsync(requestUri : Optional<dotnet.System.String>, cancellationToken : dotnet.System.Threading.CancellationToken) throws -> dotnet.System.Threading.Tasks.Task_1<dotnet.System.Net.Http.HttpResponseMessage> {
+    open func GetAsync(requestUri : Optional<dotnet.System.String>, cancellationToken : dotnet.System.Threading.CancellationToken) async throws -> dotnet.System.Net.Http.HttpResponseMessage {
         var __thrown : NullableHandle = nil;
         let __return = System_Net_Http_HttpClient_System_Threading_Tasks_Task_System_Net_Http_HttpResponseMessage___GetAsync_0__2__String_CancellationToken(&__thrown, self.get_handle(), requestUri?.get_handle() ?? nil, cancellationToken.get_handle());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task_1(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task_1(hndl: __return).ToAsync();
         }
     }
     // System.Threading.Tasks.Task<System.Net.Http.HttpResponseMessage> GetAsync(System.Uri)
@@ -543,13 +558,13 @@ open class HttpClient
     - Returns: The task object representing the asynchronous operation.
 
     */
-    open func GetAsync(requestUri : Optional<dotnet.System.Uri>) throws -> dotnet.System.Threading.Tasks.Task_1<dotnet.System.Net.Http.HttpResponseMessage> {
+    open func GetAsync(requestUri : Optional<dotnet.System.Uri>) async throws -> dotnet.System.Net.Http.HttpResponseMessage {
         var __thrown : NullableHandle = nil;
         let __return = System_Net_Http_HttpClient_System_Threading_Tasks_Task_System_Net_Http_HttpResponseMessage___GetAsync_0__1__Uri(&__thrown, self.get_handle(), requestUri?.get_handle() ?? nil);
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task_1(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task_1(hndl: __return).ToAsync();
         }
     }
     // System.Threading.Tasks.Task<System.Net.Http.HttpResponseMessage> GetAsync(System.Uri, System.Net.Http.HttpCompletionOption)
@@ -562,13 +577,13 @@ open class HttpClient
     - Returns: The task object representing the asynchronous operation.
 
     */
-    open func GetAsync(requestUri : Optional<dotnet.System.Uri>, completionOption : dotnet.System.Net.Http.HttpCompletionOption) throws -> dotnet.System.Threading.Tasks.Task_1<dotnet.System.Net.Http.HttpResponseMessage> {
+    open func GetAsync(requestUri : Optional<dotnet.System.Uri>, completionOption : dotnet.System.Net.Http.HttpCompletionOption) async throws -> dotnet.System.Net.Http.HttpResponseMessage {
         var __thrown : NullableHandle = nil;
         let __return = System_Net_Http_HttpClient_System_Threading_Tasks_Task_System_Net_Http_HttpResponseMessage___GetAsync_0__2__Uri_HttpCompletionOption(&__thrown, self.get_handle(), requestUri?.get_handle() ?? nil, completionOption.get_value());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task_1(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task_1(hndl: __return).ToAsync();
         }
     }
     // System.Threading.Tasks.Task<System.Net.Http.HttpResponseMessage> GetAsync(System.Uri, System.Net.Http.HttpCompletionOption, System.Threading.CancellationToken)
@@ -582,13 +597,13 @@ open class HttpClient
     - Returns: The task object representing the asynchronous operation.
 
     */
-    open func GetAsync(requestUri : Optional<dotnet.System.Uri>, completionOption : dotnet.System.Net.Http.HttpCompletionOption, cancellationToken : dotnet.System.Threading.CancellationToken) throws -> dotnet.System.Threading.Tasks.Task_1<dotnet.System.Net.Http.HttpResponseMessage> {
+    open func GetAsync(requestUri : Optional<dotnet.System.Uri>, completionOption : dotnet.System.Net.Http.HttpCompletionOption, cancellationToken : dotnet.System.Threading.CancellationToken) async throws -> dotnet.System.Net.Http.HttpResponseMessage {
         var __thrown : NullableHandle = nil;
         let __return = System_Net_Http_HttpClient_System_Threading_Tasks_Task_System_Net_Http_HttpResponseMessage___GetAsync_0__3__Uri_HttpCompletionOption_CancellationToken(&__thrown, self.get_handle(), requestUri?.get_handle() ?? nil, completionOption.get_value(), cancellationToken.get_handle());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task_1(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task_1(hndl: __return).ToAsync();
         }
     }
     // System.Threading.Tasks.Task<System.Net.Http.HttpResponseMessage> GetAsync(System.Uri, System.Threading.CancellationToken)
@@ -601,13 +616,13 @@ open class HttpClient
     - Returns: The task object representing the asynchronous operation.
 
     */
-    open func GetAsync(requestUri : Optional<dotnet.System.Uri>, cancellationToken : dotnet.System.Threading.CancellationToken) throws -> dotnet.System.Threading.Tasks.Task_1<dotnet.System.Net.Http.HttpResponseMessage> {
+    open func GetAsync(requestUri : Optional<dotnet.System.Uri>, cancellationToken : dotnet.System.Threading.CancellationToken) async throws -> dotnet.System.Net.Http.HttpResponseMessage {
         var __thrown : NullableHandle = nil;
         let __return = System_Net_Http_HttpClient_System_Threading_Tasks_Task_System_Net_Http_HttpResponseMessage___GetAsync_0__2__Uri_CancellationToken(&__thrown, self.get_handle(), requestUri?.get_handle() ?? nil, cancellationToken.get_handle());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task_1(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task_1(hndl: __return).ToAsync();
         }
     }
     // System.Threading.Tasks.Task<System.Byte[]> GetByteArrayAsync(System.String)
@@ -619,13 +634,13 @@ open class HttpClient
     - Returns: The task object representing the asynchronous operation.
 
     */
-    open func GetByteArrayAsync(requestUri : Optional<dotnet.System.String>) throws -> dotnet.System.Threading.Tasks.Task_1<dotnet.System_Arr<Swift.UInt8>> {
+    open func GetByteArrayAsync(requestUri : Optional<dotnet.System.String>) async throws -> dotnet.System_Arr<Swift.UInt8> {
         var __thrown : NullableHandle = nil;
         let __return = System_Net_Http_HttpClient_System_Threading_Tasks_Task_u8Array___GetByteArrayAsync_0__1__String(&__thrown, self.get_handle(), requestUri?.get_handle() ?? nil);
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task_1(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task_1(hndl: __return).ToAsync();
         }
     }
     // System.Threading.Tasks.Task<System.Byte[]> GetByteArrayAsync(System.String, System.Threading.CancellationToken)
@@ -638,13 +653,13 @@ open class HttpClient
     - Returns: The task object representing the asynchronous operation.
 
     */
-    open func GetByteArrayAsync(requestUri : Optional<dotnet.System.String>, cancellationToken : dotnet.System.Threading.CancellationToken) throws -> dotnet.System.Threading.Tasks.Task_1<dotnet.System_Arr<Swift.UInt8>> {
+    open func GetByteArrayAsync(requestUri : Optional<dotnet.System.String>, cancellationToken : dotnet.System.Threading.CancellationToken) async throws -> dotnet.System_Arr<Swift.UInt8> {
         var __thrown : NullableHandle = nil;
         let __return = System_Net_Http_HttpClient_System_Threading_Tasks_Task_u8Array___GetByteArrayAsync_0__2__String_CancellationToken(&__thrown, self.get_handle(), requestUri?.get_handle() ?? nil, cancellationToken.get_handle());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task_1(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task_1(hndl: __return).ToAsync();
         }
     }
     // System.Threading.Tasks.Task<System.Byte[]> GetByteArrayAsync(System.Uri)
@@ -656,13 +671,13 @@ open class HttpClient
     - Returns: The task object representing the asynchronous operation.
 
     */
-    open func GetByteArrayAsync(requestUri : Optional<dotnet.System.Uri>) throws -> dotnet.System.Threading.Tasks.Task_1<dotnet.System_Arr<Swift.UInt8>> {
+    open func GetByteArrayAsync(requestUri : Optional<dotnet.System.Uri>) async throws -> dotnet.System_Arr<Swift.UInt8> {
         var __thrown : NullableHandle = nil;
         let __return = System_Net_Http_HttpClient_System_Threading_Tasks_Task_u8Array___GetByteArrayAsync_0__1__Uri(&__thrown, self.get_handle(), requestUri?.get_handle() ?? nil);
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task_1(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task_1(hndl: __return).ToAsync();
         }
     }
     // System.Threading.Tasks.Task<System.Byte[]> GetByteArrayAsync(System.Uri, System.Threading.CancellationToken)
@@ -675,13 +690,13 @@ open class HttpClient
     - Returns: The task object representing the asynchronous operation.
 
     */
-    open func GetByteArrayAsync(requestUri : Optional<dotnet.System.Uri>, cancellationToken : dotnet.System.Threading.CancellationToken) throws -> dotnet.System.Threading.Tasks.Task_1<dotnet.System_Arr<Swift.UInt8>> {
+    open func GetByteArrayAsync(requestUri : Optional<dotnet.System.Uri>, cancellationToken : dotnet.System.Threading.CancellationToken) async throws -> dotnet.System_Arr<Swift.UInt8> {
         var __thrown : NullableHandle = nil;
         let __return = System_Net_Http_HttpClient_System_Threading_Tasks_Task_u8Array___GetByteArrayAsync_0__2__Uri_CancellationToken(&__thrown, self.get_handle(), requestUri?.get_handle() ?? nil, cancellationToken.get_handle());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task_1(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task_1(hndl: __return).ToAsync();
         }
     }
     // System.Threading.Tasks.Task<System.IO.Stream> GetStreamAsync(System.String)
@@ -693,13 +708,13 @@ open class HttpClient
     - Returns: The task object representing the asynchronous operation.
 
     */
-    open func GetStreamAsync(requestUri : Optional<dotnet.System.String>) throws -> dotnet.System.Threading.Tasks.Task_1<dotnet.System.IO.Stream> {
+    open func GetStreamAsync(requestUri : Optional<dotnet.System.String>) async throws -> dotnet.System.IO.Stream {
         var __thrown : NullableHandle = nil;
         let __return = System_Net_Http_HttpClient_System_Threading_Tasks_Task_System_IO_Stream___GetStreamAsync_0__1__String(&__thrown, self.get_handle(), requestUri?.get_handle() ?? nil);
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task_1(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task_1(hndl: __return).ToAsync();
         }
     }
     // System.Threading.Tasks.Task<System.IO.Stream> GetStreamAsync(System.String, System.Threading.CancellationToken)
@@ -712,13 +727,13 @@ open class HttpClient
     - Returns: The task object representing the asynchronous operation.
 
     */
-    open func GetStreamAsync(requestUri : Optional<dotnet.System.String>, cancellationToken : dotnet.System.Threading.CancellationToken) throws -> dotnet.System.Threading.Tasks.Task_1<dotnet.System.IO.Stream> {
+    open func GetStreamAsync(requestUri : Optional<dotnet.System.String>, cancellationToken : dotnet.System.Threading.CancellationToken) async throws -> dotnet.System.IO.Stream {
         var __thrown : NullableHandle = nil;
         let __return = System_Net_Http_HttpClient_System_Threading_Tasks_Task_System_IO_Stream___GetStreamAsync_0__2__String_CancellationToken(&__thrown, self.get_handle(), requestUri?.get_handle() ?? nil, cancellationToken.get_handle());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task_1(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task_1(hndl: __return).ToAsync();
         }
     }
     // System.Threading.Tasks.Task<System.IO.Stream> GetStreamAsync(System.Uri)
@@ -730,13 +745,13 @@ open class HttpClient
     - Returns: The task object representing the asynchronous operation.
 
     */
-    open func GetStreamAsync(requestUri : Optional<dotnet.System.Uri>) throws -> dotnet.System.Threading.Tasks.Task_1<dotnet.System.IO.Stream> {
+    open func GetStreamAsync(requestUri : Optional<dotnet.System.Uri>) async throws -> dotnet.System.IO.Stream {
         var __thrown : NullableHandle = nil;
         let __return = System_Net_Http_HttpClient_System_Threading_Tasks_Task_System_IO_Stream___GetStreamAsync_0__1__Uri(&__thrown, self.get_handle(), requestUri?.get_handle() ?? nil);
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task_1(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task_1(hndl: __return).ToAsync();
         }
     }
     // System.Threading.Tasks.Task<System.IO.Stream> GetStreamAsync(System.Uri, System.Threading.CancellationToken)
@@ -749,13 +764,13 @@ open class HttpClient
     - Returns: The task object representing the asynchronous operation.
 
     */
-    open func GetStreamAsync(requestUri : Optional<dotnet.System.Uri>, cancellationToken : dotnet.System.Threading.CancellationToken) throws -> dotnet.System.Threading.Tasks.Task_1<dotnet.System.IO.Stream> {
+    open func GetStreamAsync(requestUri : Optional<dotnet.System.Uri>, cancellationToken : dotnet.System.Threading.CancellationToken) async throws -> dotnet.System.IO.Stream {
         var __thrown : NullableHandle = nil;
         let __return = System_Net_Http_HttpClient_System_Threading_Tasks_Task_System_IO_Stream___GetStreamAsync_0__2__Uri_CancellationToken(&__thrown, self.get_handle(), requestUri?.get_handle() ?? nil, cancellationToken.get_handle());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task_1(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task_1(hndl: __return).ToAsync();
         }
     }
     // System.Threading.Tasks.Task<System.String> GetStringAsync(System.String)
@@ -767,13 +782,13 @@ open class HttpClient
     - Returns: The task object representing the asynchronous operation.
 
     */
-    open func GetStringAsync(requestUri : Optional<dotnet.System.String>) throws -> dotnet.System.Threading.Tasks.Task_1<dotnet.System.String> {
+    open func GetStringAsync(requestUri : Optional<dotnet.System.String>) async throws -> dotnet.System.String {
         var __thrown : NullableHandle = nil;
         let __return = System_Net_Http_HttpClient_System_Threading_Tasks_Task_string___GetStringAsync_0__1__String(&__thrown, self.get_handle(), requestUri?.get_handle() ?? nil);
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task_1(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task_1(hndl: __return).ToAsync();
         }
     }
     // System.Threading.Tasks.Task<System.String> GetStringAsync(System.String, System.Threading.CancellationToken)
@@ -786,13 +801,13 @@ open class HttpClient
     - Returns: The task object representing the asynchronous operation.
 
     */
-    open func GetStringAsync(requestUri : Optional<dotnet.System.String>, cancellationToken : dotnet.System.Threading.CancellationToken) throws -> dotnet.System.Threading.Tasks.Task_1<dotnet.System.String> {
+    open func GetStringAsync(requestUri : Optional<dotnet.System.String>, cancellationToken : dotnet.System.Threading.CancellationToken) async throws -> dotnet.System.String {
         var __thrown : NullableHandle = nil;
         let __return = System_Net_Http_HttpClient_System_Threading_Tasks_Task_string___GetStringAsync_0__2__String_CancellationToken(&__thrown, self.get_handle(), requestUri?.get_handle() ?? nil, cancellationToken.get_handle());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task_1(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task_1(hndl: __return).ToAsync();
         }
     }
     // System.Threading.Tasks.Task<System.String> GetStringAsync(System.Uri)
@@ -804,13 +819,13 @@ open class HttpClient
     - Returns: The task object representing the asynchronous operation.
 
     */
-    open func GetStringAsync(requestUri : Optional<dotnet.System.Uri>) throws -> dotnet.System.Threading.Tasks.Task_1<dotnet.System.String> {
+    open func GetStringAsync(requestUri : Optional<dotnet.System.Uri>) async throws -> dotnet.System.String {
         var __thrown : NullableHandle = nil;
         let __return = System_Net_Http_HttpClient_System_Threading_Tasks_Task_string___GetStringAsync_0__1__Uri(&__thrown, self.get_handle(), requestUri?.get_handle() ?? nil);
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task_1(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task_1(hndl: __return).ToAsync();
         }
     }
     // System.Threading.Tasks.Task<System.String> GetStringAsync(System.Uri, System.Threading.CancellationToken)
@@ -823,13 +838,13 @@ open class HttpClient
     - Returns: The task object representing the asynchronous operation.
 
     */
-    open func GetStringAsync(requestUri : Optional<dotnet.System.Uri>, cancellationToken : dotnet.System.Threading.CancellationToken) throws -> dotnet.System.Threading.Tasks.Task_1<dotnet.System.String> {
+    open func GetStringAsync(requestUri : Optional<dotnet.System.Uri>, cancellationToken : dotnet.System.Threading.CancellationToken) async throws -> dotnet.System.String {
         var __thrown : NullableHandle = nil;
         let __return = System_Net_Http_HttpClient_System_Threading_Tasks_Task_string___GetStringAsync_0__2__Uri_CancellationToken(&__thrown, self.get_handle(), requestUri?.get_handle() ?? nil, cancellationToken.get_handle());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task_1(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task_1(hndl: __return).ToAsync();
         }
     }
     // System.Threading.Tasks.Task<System.Net.Http.HttpResponseMessage> PatchAsync(System.String, System.Net.Http.HttpContent)
@@ -842,13 +857,13 @@ open class HttpClient
     - Returns: The task object representing the asynchronous operation.
 
     */
-    open func PatchAsync(requestUri : Optional<dotnet.System.String>, content : Optional<dotnet.System.Net.Http.HttpContent>) throws -> dotnet.System.Threading.Tasks.Task_1<dotnet.System.Net.Http.HttpResponseMessage> {
+    open func PatchAsync(requestUri : Optional<dotnet.System.String>, content : Optional<dotnet.System.Net.Http.HttpContent>) async throws -> dotnet.System.Net.Http.HttpResponseMessage {
         var __thrown : NullableHandle = nil;
         let __return = System_Net_Http_HttpClient_System_Threading_Tasks_Task_System_Net_Http_HttpResponseMessage___PatchAsync_0__2__String_HttpContent(&__thrown, self.get_handle(), requestUri?.get_handle() ?? nil, content?.get_handle() ?? nil);
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task_1(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task_1(hndl: __return).ToAsync();
         }
     }
     // System.Threading.Tasks.Task<System.Net.Http.HttpResponseMessage> PatchAsync(System.String, System.Net.Http.HttpContent, System.Threading.CancellationToken)
@@ -862,13 +877,13 @@ open class HttpClient
     - Returns: The task object representing the asynchronous operation.
 
     */
-    open func PatchAsync(requestUri : Optional<dotnet.System.String>, content : Optional<dotnet.System.Net.Http.HttpContent>, cancellationToken : dotnet.System.Threading.CancellationToken) throws -> dotnet.System.Threading.Tasks.Task_1<dotnet.System.Net.Http.HttpResponseMessage> {
+    open func PatchAsync(requestUri : Optional<dotnet.System.String>, content : Optional<dotnet.System.Net.Http.HttpContent>, cancellationToken : dotnet.System.Threading.CancellationToken) async throws -> dotnet.System.Net.Http.HttpResponseMessage {
         var __thrown : NullableHandle = nil;
         let __return = System_Net_Http_HttpClient_System_Threading_Tasks_Task_System_Net_Http_HttpResponseMessage___PatchAsync_0__3__String_HttpContent_CancellationToken(&__thrown, self.get_handle(), requestUri?.get_handle() ?? nil, content?.get_handle() ?? nil, cancellationToken.get_handle());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task_1(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task_1(hndl: __return).ToAsync();
         }
     }
     // System.Threading.Tasks.Task<System.Net.Http.HttpResponseMessage> PatchAsync(System.Uri, System.Net.Http.HttpContent)
@@ -881,13 +896,13 @@ open class HttpClient
     - Returns: The task object representing the asynchronous operation.
 
     */
-    open func PatchAsync(requestUri : Optional<dotnet.System.Uri>, content : Optional<dotnet.System.Net.Http.HttpContent>) throws -> dotnet.System.Threading.Tasks.Task_1<dotnet.System.Net.Http.HttpResponseMessage> {
+    open func PatchAsync(requestUri : Optional<dotnet.System.Uri>, content : Optional<dotnet.System.Net.Http.HttpContent>) async throws -> dotnet.System.Net.Http.HttpResponseMessage {
         var __thrown : NullableHandle = nil;
         let __return = System_Net_Http_HttpClient_System_Threading_Tasks_Task_System_Net_Http_HttpResponseMessage___PatchAsync_0__2__Uri_HttpContent(&__thrown, self.get_handle(), requestUri?.get_handle() ?? nil, content?.get_handle() ?? nil);
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task_1(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task_1(hndl: __return).ToAsync();
         }
     }
     // System.Threading.Tasks.Task<System.Net.Http.HttpResponseMessage> PatchAsync(System.Uri, System.Net.Http.HttpContent, System.Threading.CancellationToken)
@@ -901,13 +916,13 @@ open class HttpClient
     - Returns: The task object representing the asynchronous operation.
 
     */
-    open func PatchAsync(requestUri : Optional<dotnet.System.Uri>, content : Optional<dotnet.System.Net.Http.HttpContent>, cancellationToken : dotnet.System.Threading.CancellationToken) throws -> dotnet.System.Threading.Tasks.Task_1<dotnet.System.Net.Http.HttpResponseMessage> {
+    open func PatchAsync(requestUri : Optional<dotnet.System.Uri>, content : Optional<dotnet.System.Net.Http.HttpContent>, cancellationToken : dotnet.System.Threading.CancellationToken) async throws -> dotnet.System.Net.Http.HttpResponseMessage {
         var __thrown : NullableHandle = nil;
         let __return = System_Net_Http_HttpClient_System_Threading_Tasks_Task_System_Net_Http_HttpResponseMessage___PatchAsync_0__3__Uri_HttpContent_CancellationToken(&__thrown, self.get_handle(), requestUri?.get_handle() ?? nil, content?.get_handle() ?? nil, cancellationToken.get_handle());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task_1(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task_1(hndl: __return).ToAsync();
         }
     }
     // System.Threading.Tasks.Task<System.Net.Http.HttpResponseMessage> PostAsync(System.String, System.Net.Http.HttpContent)
@@ -920,13 +935,13 @@ open class HttpClient
     - Returns: The task object representing the asynchronous operation.
 
     */
-    open func PostAsync(requestUri : Optional<dotnet.System.String>, content : Optional<dotnet.System.Net.Http.HttpContent>) throws -> dotnet.System.Threading.Tasks.Task_1<dotnet.System.Net.Http.HttpResponseMessage> {
+    open func PostAsync(requestUri : Optional<dotnet.System.String>, content : Optional<dotnet.System.Net.Http.HttpContent>) async throws -> dotnet.System.Net.Http.HttpResponseMessage {
         var __thrown : NullableHandle = nil;
         let __return = System_Net_Http_HttpClient_System_Threading_Tasks_Task_System_Net_Http_HttpResponseMessage___PostAsync_0__2__String_HttpContent(&__thrown, self.get_handle(), requestUri?.get_handle() ?? nil, content?.get_handle() ?? nil);
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task_1(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task_1(hndl: __return).ToAsync();
         }
     }
     // System.Threading.Tasks.Task<System.Net.Http.HttpResponseMessage> PostAsync(System.String, System.Net.Http.HttpContent, System.Threading.CancellationToken)
@@ -940,13 +955,13 @@ open class HttpClient
     - Returns: The task object representing the asynchronous operation.
 
     */
-    open func PostAsync(requestUri : Optional<dotnet.System.String>, content : Optional<dotnet.System.Net.Http.HttpContent>, cancellationToken : dotnet.System.Threading.CancellationToken) throws -> dotnet.System.Threading.Tasks.Task_1<dotnet.System.Net.Http.HttpResponseMessage> {
+    open func PostAsync(requestUri : Optional<dotnet.System.String>, content : Optional<dotnet.System.Net.Http.HttpContent>, cancellationToken : dotnet.System.Threading.CancellationToken) async throws -> dotnet.System.Net.Http.HttpResponseMessage {
         var __thrown : NullableHandle = nil;
         let __return = System_Net_Http_HttpClient_System_Threading_Tasks_Task_System_Net_Http_HttpResponseMessage___PostAsync_0__3__String_HttpContent_CancellationToken(&__thrown, self.get_handle(), requestUri?.get_handle() ?? nil, content?.get_handle() ?? nil, cancellationToken.get_handle());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task_1(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task_1(hndl: __return).ToAsync();
         }
     }
     // System.Threading.Tasks.Task<System.Net.Http.HttpResponseMessage> PostAsync(System.Uri, System.Net.Http.HttpContent)
@@ -959,13 +974,13 @@ open class HttpClient
     - Returns: The task object representing the asynchronous operation.
 
     */
-    open func PostAsync(requestUri : Optional<dotnet.System.Uri>, content : Optional<dotnet.System.Net.Http.HttpContent>) throws -> dotnet.System.Threading.Tasks.Task_1<dotnet.System.Net.Http.HttpResponseMessage> {
+    open func PostAsync(requestUri : Optional<dotnet.System.Uri>, content : Optional<dotnet.System.Net.Http.HttpContent>) async throws -> dotnet.System.Net.Http.HttpResponseMessage {
         var __thrown : NullableHandle = nil;
         let __return = System_Net_Http_HttpClient_System_Threading_Tasks_Task_System_Net_Http_HttpResponseMessage___PostAsync_0__2__Uri_HttpContent(&__thrown, self.get_handle(), requestUri?.get_handle() ?? nil, content?.get_handle() ?? nil);
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task_1(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task_1(hndl: __return).ToAsync();
         }
     }
     // System.Threading.Tasks.Task<System.Net.Http.HttpResponseMessage> PostAsync(System.Uri, System.Net.Http.HttpContent, System.Threading.CancellationToken)
@@ -979,13 +994,13 @@ open class HttpClient
     - Returns: The task object representing the asynchronous operation.
 
     */
-    open func PostAsync(requestUri : Optional<dotnet.System.Uri>, content : Optional<dotnet.System.Net.Http.HttpContent>, cancellationToken : dotnet.System.Threading.CancellationToken) throws -> dotnet.System.Threading.Tasks.Task_1<dotnet.System.Net.Http.HttpResponseMessage> {
+    open func PostAsync(requestUri : Optional<dotnet.System.Uri>, content : Optional<dotnet.System.Net.Http.HttpContent>, cancellationToken : dotnet.System.Threading.CancellationToken) async throws -> dotnet.System.Net.Http.HttpResponseMessage {
         var __thrown : NullableHandle = nil;
         let __return = System_Net_Http_HttpClient_System_Threading_Tasks_Task_System_Net_Http_HttpResponseMessage___PostAsync_0__3__Uri_HttpContent_CancellationToken(&__thrown, self.get_handle(), requestUri?.get_handle() ?? nil, content?.get_handle() ?? nil, cancellationToken.get_handle());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task_1(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task_1(hndl: __return).ToAsync();
         }
     }
     // System.Threading.Tasks.Task<System.Net.Http.HttpResponseMessage> PutAsync(System.String, System.Net.Http.HttpContent)
@@ -998,13 +1013,13 @@ open class HttpClient
     - Returns: The task object representing the asynchronous operation.
 
     */
-    open func PutAsync(requestUri : Optional<dotnet.System.String>, content : Optional<dotnet.System.Net.Http.HttpContent>) throws -> dotnet.System.Threading.Tasks.Task_1<dotnet.System.Net.Http.HttpResponseMessage> {
+    open func PutAsync(requestUri : Optional<dotnet.System.String>, content : Optional<dotnet.System.Net.Http.HttpContent>) async throws -> dotnet.System.Net.Http.HttpResponseMessage {
         var __thrown : NullableHandle = nil;
         let __return = System_Net_Http_HttpClient_System_Threading_Tasks_Task_System_Net_Http_HttpResponseMessage___PutAsync_0__2__String_HttpContent(&__thrown, self.get_handle(), requestUri?.get_handle() ?? nil, content?.get_handle() ?? nil);
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task_1(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task_1(hndl: __return).ToAsync();
         }
     }
     // System.Threading.Tasks.Task<System.Net.Http.HttpResponseMessage> PutAsync(System.String, System.Net.Http.HttpContent, System.Threading.CancellationToken)
@@ -1018,13 +1033,13 @@ open class HttpClient
     - Returns: The task object representing the asynchronous operation.
 
     */
-    open func PutAsync(requestUri : Optional<dotnet.System.String>, content : Optional<dotnet.System.Net.Http.HttpContent>, cancellationToken : dotnet.System.Threading.CancellationToken) throws -> dotnet.System.Threading.Tasks.Task_1<dotnet.System.Net.Http.HttpResponseMessage> {
+    open func PutAsync(requestUri : Optional<dotnet.System.String>, content : Optional<dotnet.System.Net.Http.HttpContent>, cancellationToken : dotnet.System.Threading.CancellationToken) async throws -> dotnet.System.Net.Http.HttpResponseMessage {
         var __thrown : NullableHandle = nil;
         let __return = System_Net_Http_HttpClient_System_Threading_Tasks_Task_System_Net_Http_HttpResponseMessage___PutAsync_0__3__String_HttpContent_CancellationToken(&__thrown, self.get_handle(), requestUri?.get_handle() ?? nil, content?.get_handle() ?? nil, cancellationToken.get_handle());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task_1(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task_1(hndl: __return).ToAsync();
         }
     }
     // System.Threading.Tasks.Task<System.Net.Http.HttpResponseMessage> PutAsync(System.Uri, System.Net.Http.HttpContent)
@@ -1037,13 +1052,13 @@ open class HttpClient
     - Returns: The task object representing the asynchronous operation.
 
     */
-    open func PutAsync(requestUri : Optional<dotnet.System.Uri>, content : Optional<dotnet.System.Net.Http.HttpContent>) throws -> dotnet.System.Threading.Tasks.Task_1<dotnet.System.Net.Http.HttpResponseMessage> {
+    open func PutAsync(requestUri : Optional<dotnet.System.Uri>, content : Optional<dotnet.System.Net.Http.HttpContent>) async throws -> dotnet.System.Net.Http.HttpResponseMessage {
         var __thrown : NullableHandle = nil;
         let __return = System_Net_Http_HttpClient_System_Threading_Tasks_Task_System_Net_Http_HttpResponseMessage___PutAsync_0__2__Uri_HttpContent(&__thrown, self.get_handle(), requestUri?.get_handle() ?? nil, content?.get_handle() ?? nil);
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task_1(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task_1(hndl: __return).ToAsync();
         }
     }
     // System.Threading.Tasks.Task<System.Net.Http.HttpResponseMessage> PutAsync(System.Uri, System.Net.Http.HttpContent, System.Threading.CancellationToken)
@@ -1057,13 +1072,13 @@ open class HttpClient
     - Returns: The task object representing the asynchronous operation.
 
     */
-    open func PutAsync(requestUri : Optional<dotnet.System.Uri>, content : Optional<dotnet.System.Net.Http.HttpContent>, cancellationToken : dotnet.System.Threading.CancellationToken) throws -> dotnet.System.Threading.Tasks.Task_1<dotnet.System.Net.Http.HttpResponseMessage> {
+    open func PutAsync(requestUri : Optional<dotnet.System.Uri>, content : Optional<dotnet.System.Net.Http.HttpContent>, cancellationToken : dotnet.System.Threading.CancellationToken) async throws -> dotnet.System.Net.Http.HttpResponseMessage {
         var __thrown : NullableHandle = nil;
         let __return = System_Net_Http_HttpClient_System_Threading_Tasks_Task_System_Net_Http_HttpResponseMessage___PutAsync_0__3__Uri_HttpContent_CancellationToken(&__thrown, self.get_handle(), requestUri?.get_handle() ?? nil, content?.get_handle() ?? nil, cancellationToken.get_handle());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task_1(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task_1(hndl: __return).ToAsync();
         }
     }
     // System.Net.Http.HttpResponseMessage Send(System.Net.Http.HttpRequestMessage)
@@ -1151,13 +1166,13 @@ open class HttpClient
     - Returns: The task object representing the asynchronous operation.
 
     */
-    open func SendAsync(request : dotnet.System.Net.Http.HttpRequestMessage) throws -> dotnet.System.Threading.Tasks.Task_1<dotnet.System.Net.Http.HttpResponseMessage> {
+    open func SendAsync(request : dotnet.System.Net.Http.HttpRequestMessage) async throws -> dotnet.System.Net.Http.HttpResponseMessage {
         var __thrown : NullableHandle = nil;
         let __return = System_Net_Http_HttpClient_System_Threading_Tasks_Task_System_Net_Http_HttpResponseMessage___SendAsync_0__1__HttpRequestMessage(&__thrown, self.get_handle(), request.get_handle());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task_1(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task_1(hndl: __return).ToAsync();
         }
     }
     // System.Threading.Tasks.Task<System.Net.Http.HttpResponseMessage> SendAsync(System.Net.Http.HttpRequestMessage, System.Net.Http.HttpCompletionOption)
@@ -1170,13 +1185,13 @@ open class HttpClient
     - Returns: The task object representing the asynchronous operation.
 
     */
-    open func SendAsync(request : dotnet.System.Net.Http.HttpRequestMessage, completionOption : dotnet.System.Net.Http.HttpCompletionOption) throws -> dotnet.System.Threading.Tasks.Task_1<dotnet.System.Net.Http.HttpResponseMessage> {
+    open func SendAsync(request : dotnet.System.Net.Http.HttpRequestMessage, completionOption : dotnet.System.Net.Http.HttpCompletionOption) async throws -> dotnet.System.Net.Http.HttpResponseMessage {
         var __thrown : NullableHandle = nil;
         let __return = System_Net_Http_HttpClient_System_Threading_Tasks_Task_System_Net_Http_HttpResponseMessage___SendAsync_0__2__HttpRequestMessage_HttpCompletionOption(&__thrown, self.get_handle(), request.get_handle(), completionOption.get_value());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task_1(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task_1(hndl: __return).ToAsync();
         }
     }
     // System.Threading.Tasks.Task<System.Net.Http.HttpResponseMessage> SendAsync(System.Net.Http.HttpRequestMessage, System.Net.Http.HttpCompletionOption, System.Threading.CancellationToken)
@@ -1190,13 +1205,13 @@ open class HttpClient
     - Returns: The task object representing the asynchronous operation.
 
     */
-    open func SendAsync(request : dotnet.System.Net.Http.HttpRequestMessage, completionOption : dotnet.System.Net.Http.HttpCompletionOption, cancellationToken : dotnet.System.Threading.CancellationToken) throws -> dotnet.System.Threading.Tasks.Task_1<dotnet.System.Net.Http.HttpResponseMessage> {
+    open func SendAsync(request : dotnet.System.Net.Http.HttpRequestMessage, completionOption : dotnet.System.Net.Http.HttpCompletionOption, cancellationToken : dotnet.System.Threading.CancellationToken) async throws -> dotnet.System.Net.Http.HttpResponseMessage {
         var __thrown : NullableHandle = nil;
         let __return = System_Net_Http_HttpClient_System_Threading_Tasks_Task_System_Net_Http_HttpResponseMessage___SendAsync_0__3__HttpRequestMessage_HttpCompletionOption_CancellationToken(&__thrown, self.get_handle(), request.get_handle(), completionOption.get_value(), cancellationToken.get_handle());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task_1(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task_1(hndl: __return).ToAsync();
         }
     }
     // System.Threading.Tasks.Task<System.Net.Http.HttpResponseMessage> SendAsync(System.Net.Http.HttpRequestMessage, System.Threading.CancellationToken)
@@ -1209,13 +1224,13 @@ open class HttpClient
     - Returns: The task object representing the asynchronous operation.
 
     */
-    open override func SendAsync(request : dotnet.System.Net.Http.HttpRequestMessage, cancellationToken : dotnet.System.Threading.CancellationToken) throws -> dotnet.System.Threading.Tasks.Task_1<dotnet.System.Net.Http.HttpResponseMessage> {
+    open override func SendAsync(request : dotnet.System.Net.Http.HttpRequestMessage, cancellationToken : dotnet.System.Threading.CancellationToken) async throws -> dotnet.System.Net.Http.HttpResponseMessage {
         var __thrown : NullableHandle = nil;
         let __return = System_Net_Http_HttpClient_System_Threading_Tasks_Task_System_Net_Http_HttpResponseMessage___SendAsync_0__2__HttpRequestMessage_CancellationToken(&__thrown, self.get_handle(), request.get_handle(), cancellationToken.get_handle());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task_1(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task_1(hndl: __return).ToAsync();
         }
     }
     // [IsSpecialName] System.Uri get_BaseAddress()
@@ -1354,7 +1369,17 @@ open class HttpClient
         return dotnet.System.TimeSpan(hndl : __return);
         }
     }
-// TODO COPE (write_all_methods) (span) [IsSpecialName] void set_Timeout(System.TimeSpan)
+    // [IsSpecialName] void set_Timeout(System.TimeSpan)
+// docid: M:System.Net.Http.HttpClient.set_Timeout(System.TimeSpan)
+    open func set_Timeout(value : dotnet.System.TimeSpan) throws {
+        var __thrown : NullableHandle = nil;
+        System_Net_Http_HttpClient_void__set_Timeout_0__1__TimeSpan(&__thrown, self.get_handle(), value.get_handle());
+        if let __ex =  __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            return;
+        }
+    }
     /**
     Gets or sets the base address of Uniform Resource Identifier (URI) of the Internet resource used when sending requests.
 
@@ -1432,7 +1457,9 @@ open class HttpClient
         get {
             return try! get_Timeout();
         }
-// TODO COPE prop set (span) [IsSpecialName] void set_Timeout(System.TimeSpan)
+        set(v) {
+            return try! set_Timeout(value: v);
+        }
     }
 } // HttpClient
 
@@ -1448,6 +1475,9 @@ open class HttpClientHandler
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Net_Http_HttpClientHandler_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -1824,7 +1854,7 @@ open class HttpClientHandler
         }
     }
     // delegate closure overload
-    open func set_ServerCertificateCustomValidationCallback(value : @escaping (Optional<dotnet.System.Net.Http.HttpRequestMessage>, Optional<dotnet.System.Security.Cryptography.X509Certificates.X509Certificate2>, Optional<dotnet.System.Security.Cryptography.X509Certificates.X509Chain>, dotnet.System.Net.Security.SslPolicyErrors) throws -> Bool) throws {
+    open func set_ServerCertificateCustomValidationCallback(value : @escaping (dotnet.System.Net.Http.HttpRequestMessage, Optional<dotnet.System.Security.Cryptography.X509Certificates.X509Certificate2>, Optional<dotnet.System.Security.Cryptography.X509Certificates.X509Chain>, dotnet.System.Net.Security.SslPolicyErrors) throws -> Bool) throws {
         let del_value = try dotnet.System.Func_5<dotnet.System.Net.Http.HttpRequestMessage,dotnet.System.Security.Cryptography.X509Certificates.X509Certificate2,dotnet.System.Security.Cryptography.X509Certificates.X509Chain,dotnet.System.Net.Security.SslPolicyErrors,Swift.Bool>(value);
         return try set_ServerCertificateCustomValidationCallback(value: del_value);
     }
@@ -1998,7 +2028,7 @@ open class HttpClientHandler
         }
     }
     /**
-    Gets the collection of security certificates that are associated requests to the server.
+    Gets the collection of security certificates that are associated with requests to the server.
 
     */
     open var ClientCertificates : dotnet.System.Security.Cryptography.X509Certificates.X509CertificateCollection {
@@ -2275,6 +2305,9 @@ open class HttpContent
     open class override func get_type_handle() -> TypeHandle {
         return System_Net_Http_HttpContent_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // void CopyTo(System.IO.Stream, System.Net.TransportContext, System.Threading.CancellationToken)
@@ -2304,13 +2337,13 @@ open class HttpContent
     - Returns: The task object representing the asynchronous operation.
 
     */
-    open func CopyToAsync(stream : dotnet.System.IO.Stream) throws -> dotnet.System.Threading.Tasks.Task {
+    open func CopyToAsync(stream : dotnet.System.IO.Stream) async throws {
         var __thrown : NullableHandle = nil;
         let __return = System_Net_Http_HttpContent_Task__CopyToAsync_0__1__Stream(&__thrown, self.get_handle(), stream.get_handle());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task(hndl: __return).ToAsync();
         }
     }
     // System.Threading.Tasks.Task CopyToAsync(System.IO.Stream, System.Net.TransportContext)
@@ -2323,13 +2356,13 @@ open class HttpContent
     - Returns: The task object representing the asynchronous operation.
 
     */
-    open func CopyToAsync(stream : dotnet.System.IO.Stream, context : Optional<dotnet.System.Net.TransportContext>) throws -> dotnet.System.Threading.Tasks.Task {
+    open func CopyToAsync(stream : dotnet.System.IO.Stream, context : Optional<dotnet.System.Net.TransportContext>) async throws {
         var __thrown : NullableHandle = nil;
         let __return = System_Net_Http_HttpContent_Task__CopyToAsync_0__2__Stream_TransportContext(&__thrown, self.get_handle(), stream.get_handle(), context?.get_handle() ?? nil);
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task(hndl: __return).ToAsync();
         }
     }
     // System.Threading.Tasks.Task CopyToAsync(System.IO.Stream, System.Net.TransportContext, System.Threading.CancellationToken)
@@ -2343,13 +2376,13 @@ open class HttpContent
     - Returns: The task object representing the asynchronous operation.
 
     */
-    open func CopyToAsync(stream : dotnet.System.IO.Stream, context : Optional<dotnet.System.Net.TransportContext>, cancellationToken : dotnet.System.Threading.CancellationToken) throws -> dotnet.System.Threading.Tasks.Task {
+    open func CopyToAsync(stream : dotnet.System.IO.Stream, context : Optional<dotnet.System.Net.TransportContext>, cancellationToken : dotnet.System.Threading.CancellationToken) async throws {
         var __thrown : NullableHandle = nil;
         let __return = System_Net_Http_HttpContent_Task__CopyToAsync_0__3__Stream_TransportContext_CancellationToken(&__thrown, self.get_handle(), stream.get_handle(), context?.get_handle() ?? nil, cancellationToken.get_handle());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task(hndl: __return).ToAsync();
         }
     }
     // System.Threading.Tasks.Task CopyToAsync(System.IO.Stream, System.Threading.CancellationToken)
@@ -2362,13 +2395,13 @@ open class HttpContent
     - Returns: The task object representing the asynchronous operation.
 
     */
-    open func CopyToAsync(stream : dotnet.System.IO.Stream, cancellationToken : dotnet.System.Threading.CancellationToken) throws -> dotnet.System.Threading.Tasks.Task {
+    open func CopyToAsync(stream : dotnet.System.IO.Stream, cancellationToken : dotnet.System.Threading.CancellationToken) async throws {
         var __thrown : NullableHandle = nil;
         let __return = System_Net_Http_HttpContent_Task__CopyToAsync_0__2__Stream_CancellationToken(&__thrown, self.get_handle(), stream.get_handle(), cancellationToken.get_handle());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task(hndl: __return).ToAsync();
         }
     }
     // void Dispose()
@@ -2394,13 +2427,13 @@ open class HttpContent
     - Returns: The task object representing the asynchronous operation.
 
     */
-    open func LoadIntoBufferAsync() throws -> dotnet.System.Threading.Tasks.Task {
+    open func LoadIntoBufferAsync() async throws {
         var __thrown : NullableHandle = nil;
         let __return = System_Net_Http_HttpContent_Task__LoadIntoBufferAsync_0__0(&__thrown, self.get_handle());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task(hndl: __return).ToAsync();
         }
     }
     // System.Threading.Tasks.Task LoadIntoBufferAsync(System.Int64)
@@ -2412,13 +2445,13 @@ open class HttpContent
     - Returns: The task object representing the asynchronous operation.
 
     */
-    open func LoadIntoBufferAsync(maxBufferSize : Swift.Int64) throws -> dotnet.System.Threading.Tasks.Task {
+    open func LoadIntoBufferAsync(maxBufferSize : Swift.Int64) async throws {
         var __thrown : NullableHandle = nil;
         let __return = System_Net_Http_HttpContent_Task__LoadIntoBufferAsync_0__1__i64(&__thrown, self.get_handle(), maxBufferSize);
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task(hndl: __return).ToAsync();
         }
     }
     // System.Threading.Tasks.Task<System.Byte[]> ReadAsByteArrayAsync()
@@ -2429,13 +2462,13 @@ open class HttpContent
     - Returns: The task object representing the asynchronous operation.
 
     */
-    open func ReadAsByteArrayAsync() throws -> dotnet.System.Threading.Tasks.Task_1<dotnet.System_Arr<Swift.UInt8>> {
+    open func ReadAsByteArrayAsync() async throws -> dotnet.System_Arr<Swift.UInt8> {
         var __thrown : NullableHandle = nil;
         let __return = System_Net_Http_HttpContent_System_Threading_Tasks_Task_u8Array___ReadAsByteArrayAsync_0__0(&__thrown, self.get_handle());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task_1(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task_1(hndl: __return).ToAsync();
         }
     }
     // System.Threading.Tasks.Task<System.Byte[]> ReadAsByteArrayAsync(System.Threading.CancellationToken)
@@ -2447,13 +2480,13 @@ open class HttpContent
     - Returns: The task object representing the asynchronous operation.
 
     */
-    open func ReadAsByteArrayAsync(cancellationToken : dotnet.System.Threading.CancellationToken) throws -> dotnet.System.Threading.Tasks.Task_1<dotnet.System_Arr<Swift.UInt8>> {
+    open func ReadAsByteArrayAsync(cancellationToken : dotnet.System.Threading.CancellationToken) async throws -> dotnet.System_Arr<Swift.UInt8> {
         var __thrown : NullableHandle = nil;
         let __return = System_Net_Http_HttpContent_System_Threading_Tasks_Task_u8Array___ReadAsByteArrayAsync_0__1__CancellationToken(&__thrown, self.get_handle(), cancellationToken.get_handle());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task_1(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task_1(hndl: __return).ToAsync();
         }
     }
     // System.IO.Stream ReadAsStream()
@@ -2499,13 +2532,13 @@ open class HttpContent
     - Returns: The task object representing the asynchronous operation.
 
     */
-    open func ReadAsStreamAsync() throws -> dotnet.System.Threading.Tasks.Task_1<dotnet.System.IO.Stream> {
+    open func ReadAsStreamAsync() async throws -> dotnet.System.IO.Stream {
         var __thrown : NullableHandle = nil;
         let __return = System_Net_Http_HttpContent_System_Threading_Tasks_Task_System_IO_Stream___ReadAsStreamAsync_0__0(&__thrown, self.get_handle());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task_1(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task_1(hndl: __return).ToAsync();
         }
     }
     // System.Threading.Tasks.Task<System.IO.Stream> ReadAsStreamAsync(System.Threading.CancellationToken)
@@ -2517,13 +2550,13 @@ open class HttpContent
     - Returns: The task object representing the asynchronous operation.
 
     */
-    open func ReadAsStreamAsync(cancellationToken : dotnet.System.Threading.CancellationToken) throws -> dotnet.System.Threading.Tasks.Task_1<dotnet.System.IO.Stream> {
+    open func ReadAsStreamAsync(cancellationToken : dotnet.System.Threading.CancellationToken) async throws -> dotnet.System.IO.Stream {
         var __thrown : NullableHandle = nil;
         let __return = System_Net_Http_HttpContent_System_Threading_Tasks_Task_System_IO_Stream___ReadAsStreamAsync_0__1__CancellationToken(&__thrown, self.get_handle(), cancellationToken.get_handle());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task_1(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task_1(hndl: __return).ToAsync();
         }
     }
     // System.Threading.Tasks.Task<System.String> ReadAsStringAsync()
@@ -2534,13 +2567,13 @@ open class HttpContent
     - Returns: The task object representing the asynchronous operation.
 
     */
-    open func ReadAsStringAsync() throws -> dotnet.System.Threading.Tasks.Task_1<dotnet.System.String> {
+    open func ReadAsStringAsync() async throws -> dotnet.System.String {
         var __thrown : NullableHandle = nil;
         let __return = System_Net_Http_HttpContent_System_Threading_Tasks_Task_string___ReadAsStringAsync_0__0(&__thrown, self.get_handle());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task_1(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task_1(hndl: __return).ToAsync();
         }
     }
     // System.Threading.Tasks.Task<System.String> ReadAsStringAsync(System.Threading.CancellationToken)
@@ -2552,13 +2585,13 @@ open class HttpContent
     - Returns: The task object representing the asynchronous operation.
 
     */
-    open func ReadAsStringAsync(cancellationToken : dotnet.System.Threading.CancellationToken) throws -> dotnet.System.Threading.Tasks.Task_1<dotnet.System.String> {
+    open func ReadAsStringAsync(cancellationToken : dotnet.System.Threading.CancellationToken) async throws -> dotnet.System.String {
         var __thrown : NullableHandle = nil;
         let __return = System_Net_Http_HttpContent_System_Threading_Tasks_Task_string___ReadAsStringAsync_0__1__CancellationToken(&__thrown, self.get_handle(), cancellationToken.get_handle());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task_1(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task_1(hndl: __return).ToAsync();
         }
     }
     // [IsSpecialName] System.Net.Http.Headers.HttpContentHeaders get_Headers()
@@ -2637,6 +2670,9 @@ open class HttpMessageHandler
     open class override func get_type_handle() -> TypeHandle {
         return System_Net_Http_HttpMessageHandler_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // void Dispose()
@@ -2669,6 +2705,9 @@ open class HttpMessageInvoker
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Net_Http_HttpMessageInvoker_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -2750,13 +2789,13 @@ open class HttpMessageInvoker
     - Returns: The task object representing the asynchronous operation.
 
     */
-    open func SendAsync(request : dotnet.System.Net.Http.HttpRequestMessage, cancellationToken : dotnet.System.Threading.CancellationToken) throws -> dotnet.System.Threading.Tasks.Task_1<dotnet.System.Net.Http.HttpResponseMessage> {
+    open func SendAsync(request : dotnet.System.Net.Http.HttpRequestMessage, cancellationToken : dotnet.System.Threading.CancellationToken) async throws -> dotnet.System.Net.Http.HttpResponseMessage {
         var __thrown : NullableHandle = nil;
         let __return = System_Net_Http_HttpMessageInvoker_System_Threading_Tasks_Task_System_Net_Http_HttpResponseMessage___SendAsync_0__2__HttpRequestMessage_CancellationToken(&__thrown, self.get_handle(), request.get_handle(), cancellationToken.get_handle());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task_1(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task_1(hndl: __return).ToAsync();
         }
     }
 } // HttpMessageInvoker
@@ -2773,6 +2812,9 @@ open class HttpMethod
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Net_Http_HttpMethod_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -3099,6 +3141,9 @@ open class HttpRequestException
     open class override func get_type_handle() -> TypeHandle {
         return System_Net_Http_HttpRequestException_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor()
@@ -3202,6 +3247,9 @@ open class HttpRequestMessage
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Net_Http_HttpRequestMessage_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -3471,6 +3519,8 @@ open class HttpRequestMessage
         }
     }
     /**
+    Gets the collection of options to configure the HTTP request.
+
     */
     open var Options : dotnet.System.Net.Http.HttpRequestOptions {
         get {
@@ -3527,6 +3577,8 @@ open class HttpRequestMessage
 
 // type: System.Net.Http.HttpRequestOptions
     /**
+    Represents a collection of options for an HTTP request.
+
     */
 public final class HttpRequestOptions
     :
@@ -3536,11 +3588,16 @@ public final class HttpRequestOptions
     public class override func get_type_handle() -> TypeHandle {
         return System_Net_Http_HttpRequestOptions_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor()
 // docid: M:System.Net.Http.HttpRequestOptions.#ctor
     /**
+    Initializes a new instance of the HttpRequestOptions class.
+
     */
     public override init() throws {
         var __thrown : NullableHandle = nil;
@@ -3554,8 +3611,13 @@ public final class HttpRequestOptions
     // bool TryGetValue<TValue>(System.Net.Http.HttpRequestOptionsKey<TValue>, ref TValue)
 // docid: M:System.Net.Http.HttpRequestOptions.TryGetValue``1(System.Net.Http.HttpRequestOptionsKey{``0},``0@)
     /**
-    - Parameter key: 
-    - Parameter value: 
+    Gets the value of a specified HTTP request option.
+
+    - Parameter key: The strongly typed key to get the value of an HTTP request option.
+    - Parameter value: When this method returns, contains the value of the specified HTTP request option.
+    - Returns: 
+         if the collection contains an element with the specified key; otherwise, .
+
     */
     public func TryGetValue<UTValue : SGBridgeGenericValue>(key : dotnet.System.Net.Http.HttpRequestOptionsKey_1<UTValue>, value : inout UTValue) throws -> Bool {
         var __thrown : NullableHandle = nil;
@@ -3572,8 +3634,10 @@ public final class HttpRequestOptions
     // void Set<TValue>(System.Net.Http.HttpRequestOptionsKey<TValue>, TValue)
 // docid: M:System.Net.Http.HttpRequestOptions.Set``1(System.Net.Http.HttpRequestOptionsKey{``0},``0)
     /**
-    - Parameter key: 
-    - Parameter value: 
+    Sets the value of a specified HTTP request option.
+
+    - Parameter key: The strongly typed key for the HTTP request option.
+    - Parameter value: The value of the HTTP request option.
     */
     public func Set<UTValue : SGBridgeGenericValue>(key : dotnet.System.Net.Http.HttpRequestOptionsKey_1<UTValue>, value : UTValue) throws {
         var __thrown : NullableHandle = nil;
@@ -3590,6 +3654,8 @@ public final class HttpRequestOptions
 // type: System.Net.Http.HttpRequestOptionsKey`1
 // boxed value type
     /**
+    Represents a key in the options collection for an HTTP request.
+
     */
 public final class HttpRequestOptionsKey_1<TValue : SGBridgeGenericValue>
     :
@@ -3598,9 +3664,14 @@ public final class HttpRequestOptionsKey_1<TValue : SGBridgeGenericValue>
     public class override func get_type_handle() -> TypeHandle {
         return System_Net_Http_HttpRequestOptionsKey_1_get_type_handle(TValue.get_type_handle());
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     /**
+    Gets the name of the option.
+
     */
     public var Key : dotnet.System.String {
         get {
@@ -3610,7 +3681,9 @@ public final class HttpRequestOptionsKey_1<TValue : SGBridgeGenericValue>
     // .ctor(System.String)
 // docid: M:System.Net.Http.HttpRequestOptionsKey`1.#ctor(System.String)
     /**
-    - Parameter key: 
+    Initializes a new instance of the  class using the specified key name.
+
+    - Parameter key: Name of the HTTP request option.
     */
     public init(key : dotnet.System.String) throws {
         var __thrown : NullableHandle = nil;
@@ -3651,6 +3724,9 @@ open class HttpResponseMessage
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Net_Http_HttpResponseMessage_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -3992,7 +4068,10 @@ public struct HttpVersionPolicy : SGBridgeGenericValue {
     public init(gval: GVal) { self.v = Swift.Int32(gval); }
     // static field: System.Net.Http.HttpVersionPolicy RequestVersionOrLower
     /**
-    Use the requested version or downgrade to a lower one. This is the default behavior.
+    
+        Use the requested version or downgrade to a lower one. This is the default behavior.
+        If the server supports the requested version, either negotiated via ALPN (H2) or advertised via Alt-Svc (H3), and a secure connection is being requested, the result is the . Otherwise, the version downgrades to HTTP/1.1. This option does not allow use of a prenegotiated clear text connection, for example, H2C.
+      
 
     */
     public static var RequestVersionOrLower : dotnet.System.Net.Http.HttpVersionPolicy {
@@ -4003,7 +4082,10 @@ public struct HttpVersionPolicy : SGBridgeGenericValue {
     }
     // static field: System.Net.Http.HttpVersionPolicy RequestVersionOrHigher
     /**
-    Use the highest available version, downgrading only to the requested version but not below.
+    
+        Use the highest available version, downgrading only to the requested version but not below.
+        If the server supports a higher version than the requested version (either negotiated via ALPN (H2) or advertised via Alt-Svc (H3)) and a secure connection is requested, the result is the highest available version. Otherwise, the version downgrades to . This option allows use of a prenegotiated clear text connection for the requested version but not for a higher version.
+      
 
     */
     public static var RequestVersionOrHigher : dotnet.System.Net.Http.HttpVersionPolicy {
@@ -4014,7 +4096,10 @@ public struct HttpVersionPolicy : SGBridgeGenericValue {
     }
     // static field: System.Net.Http.HttpVersionPolicy RequestVersionExact
     /**
-    Only use the requested version.
+    
+        Only use the requested version.
+        This option allows for use of a prenegotiated clear text connection for the requested version.
+      
 
     */
     public static var RequestVersionExact : dotnet.System.Net.Http.HttpVersionPolicy {
@@ -4038,6 +4123,9 @@ open class MessageProcessingHandler
     open class override func get_type_handle() -> TypeHandle {
         return System_Net_Http_MessageProcessingHandler_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
 } // MessageProcessingHandler
@@ -4055,6 +4143,9 @@ open class MultipartContent
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Net_Http_MultipartContent_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -4166,7 +4257,7 @@ open class MultipartContent
         }
     }
     // delegate closure overload
-    open func set_HeaderEncodingSelector(value : @escaping (dotnet.System.String, Optional<dotnet.System.Net.Http.HttpContent>) throws -> dotnet.System.Text.Encoding) throws {
+    open func set_HeaderEncodingSelector(value : @escaping (dotnet.System.String, dotnet.System.Net.Http.HttpContent) throws -> dotnet.System.Text.Encoding) throws {
         let del_value = try dotnet.System.Net.Http.HeaderEncodingSelector_1<dotnet.System.Net.Http.HttpContent>(value);
         return try set_HeaderEncodingSelector(value: del_value);
     }
@@ -4196,6 +4287,9 @@ open class MultipartFormDataContent
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Net_Http_MultipartFormDataContent_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -4296,6 +4390,9 @@ public final class ReadOnlyMemoryContent
     public class override func get_type_handle() -> TypeHandle {
         return System_Net_Http_ReadOnlyMemoryContent_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor(System.ReadOnlyMemory<System.Byte>)
@@ -4328,6 +4425,9 @@ public final class SocketsHttpConnectionContext
 {
     public class override func get_type_handle() -> TypeHandle {
         return System_Net_Http_SocketsHttpConnectionContext_get_type_handle();
+    }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -4363,7 +4463,7 @@ public final class SocketsHttpConnectionContext
         }
     }
     /**
-    Gets the initial HTTP request message that is causing the connection to be created.
+    Gets the initial HttpRequestMessage that is causing the connection to be created.
 
     */
     public var InitialRequestMessage : dotnet.System.Net.Http.HttpRequestMessage {
@@ -4385,6 +4485,9 @@ public final class SocketsHttpHandler
 {
     public class override func get_type_handle() -> TypeHandle {
         return System_Net_Http_SocketsHttpHandler_get_type_handle();
+    }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -4491,7 +4594,17 @@ public final class SocketsHttpHandler
         return dotnet.System.TimeSpan(hndl : __return);
         }
     }
-// TODO COPE (write_all_methods) (span) [IsSpecialName] void set_ConnectTimeout(System.TimeSpan)
+    // [IsSpecialName] void set_ConnectTimeout(System.TimeSpan)
+// docid: M:System.Net.Http.SocketsHttpHandler.set_ConnectTimeout(System.TimeSpan)
+    public func set_ConnectTimeout(value : dotnet.System.TimeSpan) throws {
+        var __thrown : NullableHandle = nil;
+        System_Net_Http_SocketsHttpHandler_void__set_ConnectTimeout_0__1__TimeSpan(&__thrown, self.get_handle(), value.get_handle());
+        if let __ex =  __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            return;
+        }
+    }
     // [IsSpecialName] System.Net.CookieContainer get_CookieContainer()
 // docid: M:System.Net.Http.SocketsHttpHandler.get_CookieContainer
     public func get_CookieContainer() throws -> dotnet.System.Net.CookieContainer {
@@ -4577,7 +4690,17 @@ public final class SocketsHttpHandler
         return dotnet.System.TimeSpan(hndl : __return);
         }
     }
-// TODO COPE (write_all_methods) (span) [IsSpecialName] void set_Expect100ContinueTimeout(System.TimeSpan)
+    // [IsSpecialName] void set_Expect100ContinueTimeout(System.TimeSpan)
+// docid: M:System.Net.Http.SocketsHttpHandler.set_Expect100ContinueTimeout(System.TimeSpan)
+    public func set_Expect100ContinueTimeout(value : dotnet.System.TimeSpan) throws {
+        var __thrown : NullableHandle = nil;
+        System_Net_Http_SocketsHttpHandler_void__set_Expect100ContinueTimeout_0__1__TimeSpan(&__thrown, self.get_handle(), value.get_handle());
+        if let __ex =  __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            return;
+        }
+    }
     // [IsSpecialName] System.TimeSpan get_KeepAlivePingDelay()
 // docid: M:System.Net.Http.SocketsHttpHandler.get_KeepAlivePingDelay
     public func get_KeepAlivePingDelay() throws -> dotnet.System.TimeSpan {
@@ -4589,7 +4712,17 @@ public final class SocketsHttpHandler
         return dotnet.System.TimeSpan(hndl : __return);
         }
     }
-// TODO COPE (write_all_methods) (span) [IsSpecialName] void set_KeepAlivePingDelay(System.TimeSpan)
+    // [IsSpecialName] void set_KeepAlivePingDelay(System.TimeSpan)
+// docid: M:System.Net.Http.SocketsHttpHandler.set_KeepAlivePingDelay(System.TimeSpan)
+    public func set_KeepAlivePingDelay(value : dotnet.System.TimeSpan) throws {
+        var __thrown : NullableHandle = nil;
+        System_Net_Http_SocketsHttpHandler_void__set_KeepAlivePingDelay_0__1__TimeSpan(&__thrown, self.get_handle(), value.get_handle());
+        if let __ex =  __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            return;
+        }
+    }
     // [IsSpecialName] System.TimeSpan get_KeepAlivePingTimeout()
 // docid: M:System.Net.Http.SocketsHttpHandler.get_KeepAlivePingTimeout
     public func get_KeepAlivePingTimeout() throws -> dotnet.System.TimeSpan {
@@ -4601,7 +4734,17 @@ public final class SocketsHttpHandler
         return dotnet.System.TimeSpan(hndl : __return);
         }
     }
-// TODO COPE (write_all_methods) (span) [IsSpecialName] void set_KeepAlivePingTimeout(System.TimeSpan)
+    // [IsSpecialName] void set_KeepAlivePingTimeout(System.TimeSpan)
+// docid: M:System.Net.Http.SocketsHttpHandler.set_KeepAlivePingTimeout(System.TimeSpan)
+    public func set_KeepAlivePingTimeout(value : dotnet.System.TimeSpan) throws {
+        var __thrown : NullableHandle = nil;
+        System_Net_Http_SocketsHttpHandler_void__set_KeepAlivePingTimeout_0__1__TimeSpan(&__thrown, self.get_handle(), value.get_handle());
+        if let __ex =  __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            return;
+        }
+    }
     // [IsSpecialName] System.Net.Http.HttpKeepAlivePingPolicy get_KeepAlivePingPolicy()
 // docid: M:System.Net.Http.SocketsHttpHandler.get_KeepAlivePingPolicy
     public func get_KeepAlivePingPolicy() throws -> dotnet.System.Net.Http.HttpKeepAlivePingPolicy {
@@ -4723,7 +4866,17 @@ public final class SocketsHttpHandler
         return dotnet.System.TimeSpan(hndl : __return);
         }
     }
-// TODO COPE (write_all_methods) (span) [IsSpecialName] void set_PooledConnectionIdleTimeout(System.TimeSpan)
+    // [IsSpecialName] void set_PooledConnectionIdleTimeout(System.TimeSpan)
+// docid: M:System.Net.Http.SocketsHttpHandler.set_PooledConnectionIdleTimeout(System.TimeSpan)
+    public func set_PooledConnectionIdleTimeout(value : dotnet.System.TimeSpan) throws {
+        var __thrown : NullableHandle = nil;
+        System_Net_Http_SocketsHttpHandler_void__set_PooledConnectionIdleTimeout_0__1__TimeSpan(&__thrown, self.get_handle(), value.get_handle());
+        if let __ex =  __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            return;
+        }
+    }
     // [IsSpecialName] System.TimeSpan get_PooledConnectionLifetime()
 // docid: M:System.Net.Http.SocketsHttpHandler.get_PooledConnectionLifetime
     public func get_PooledConnectionLifetime() throws -> dotnet.System.TimeSpan {
@@ -4735,7 +4888,17 @@ public final class SocketsHttpHandler
         return dotnet.System.TimeSpan(hndl : __return);
         }
     }
-// TODO COPE (write_all_methods) (span) [IsSpecialName] void set_PooledConnectionLifetime(System.TimeSpan)
+    // [IsSpecialName] void set_PooledConnectionLifetime(System.TimeSpan)
+// docid: M:System.Net.Http.SocketsHttpHandler.set_PooledConnectionLifetime(System.TimeSpan)
+    public func set_PooledConnectionLifetime(value : dotnet.System.TimeSpan) throws {
+        var __thrown : NullableHandle = nil;
+        System_Net_Http_SocketsHttpHandler_void__set_PooledConnectionLifetime_0__1__TimeSpan(&__thrown, self.get_handle(), value.get_handle());
+        if let __ex =  __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            return;
+        }
+    }
     // [IsSpecialName] bool get_PreAuthenticate()
 // docid: M:System.Net.Http.SocketsHttpHandler.get_PreAuthenticate
     public func get_PreAuthenticate() throws -> Bool {
@@ -4822,7 +4985,7 @@ public final class SocketsHttpHandler
         }
     }
     // delegate closure overload
-    public func set_RequestHeaderEncodingSelector(value : @escaping (dotnet.System.String, Optional<dotnet.System.Net.Http.HttpRequestMessage>) throws -> dotnet.System.Text.Encoding) throws {
+    public func set_RequestHeaderEncodingSelector(value : @escaping (dotnet.System.String, dotnet.System.Net.Http.HttpRequestMessage) throws -> dotnet.System.Text.Encoding) throws {
         let del_value = try dotnet.System.Net.Http.HeaderEncodingSelector_1<dotnet.System.Net.Http.HttpRequestMessage>(value);
         return try set_RequestHeaderEncodingSelector(value: del_value);
     }
@@ -4837,7 +5000,17 @@ public final class SocketsHttpHandler
         return dotnet.System.TimeSpan(hndl : __return);
         }
     }
-// TODO COPE (write_all_methods) (span) [IsSpecialName] void set_ResponseDrainTimeout(System.TimeSpan)
+    // [IsSpecialName] void set_ResponseDrainTimeout(System.TimeSpan)
+// docid: M:System.Net.Http.SocketsHttpHandler.set_ResponseDrainTimeout(System.TimeSpan)
+    public func set_ResponseDrainTimeout(value : dotnet.System.TimeSpan) throws {
+        var __thrown : NullableHandle = nil;
+        System_Net_Http_SocketsHttpHandler_void__set_ResponseDrainTimeout_0__1__TimeSpan(&__thrown, self.get_handle(), value.get_handle());
+        if let __ex =  __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            return;
+        }
+    }
     // [IsSpecialName] System.Net.Http.HeaderEncodingSelector<System.Net.Http.HttpRequestMessage> get_ResponseHeaderEncodingSelector()
 // docid: M:System.Net.Http.SocketsHttpHandler.get_ResponseHeaderEncodingSelector
     public func get_ResponseHeaderEncodingSelector() throws -> Optional<dotnet.System.Net.Http.HeaderEncodingSelector_1<dotnet.System.Net.Http.HttpRequestMessage>> {
@@ -4865,7 +5038,7 @@ public final class SocketsHttpHandler
         }
     }
     // delegate closure overload
-    public func set_ResponseHeaderEncodingSelector(value : @escaping (dotnet.System.String, Optional<dotnet.System.Net.Http.HttpRequestMessage>) throws -> dotnet.System.Text.Encoding) throws {
+    public func set_ResponseHeaderEncodingSelector(value : @escaping (dotnet.System.String, dotnet.System.Net.Http.HttpRequestMessage) throws -> dotnet.System.Text.Encoding) throws {
         let del_value = try dotnet.System.Net.Http.HeaderEncodingSelector_1<dotnet.System.Net.Http.HttpRequestMessage>(value);
         return try set_ResponseHeaderEncodingSelector(value: del_value);
     }
@@ -4984,7 +5157,7 @@ public final class SocketsHttpHandler
         }
     }
     // delegate closure overload
-    public func set_ConnectCallback(value : @escaping (Optional<dotnet.System.Net.Http.SocketsHttpConnectionContext>, Optional<dotnet.System.Threading.CancellationToken>) throws -> dotnet.System.Threading.Tasks.ValueTask_1<dotnet.System.IO.Stream>) throws {
+    public func set_ConnectCallback(value : @escaping (dotnet.System.Net.Http.SocketsHttpConnectionContext, dotnet.System.Threading.CancellationToken) throws -> dotnet.System.Threading.Tasks.ValueTask_1<dotnet.System.IO.Stream>) throws {
         let del_value = try dotnet.System.Func_3<dotnet.System.Net.Http.SocketsHttpConnectionContext,dotnet.System.Threading.CancellationToken,dotnet.System.Threading.Tasks.ValueTask_1<dotnet.System.IO.Stream>>(value);
         return try set_ConnectCallback(value: del_value);
     }
@@ -5015,7 +5188,7 @@ public final class SocketsHttpHandler
         }
     }
     // delegate closure overload
-    public func set_PlaintextStreamFilter(value : @escaping (Optional<dotnet.System.Net.Http.SocketsHttpPlaintextStreamFilterContext>, Optional<dotnet.System.Threading.CancellationToken>) throws -> dotnet.System.Threading.Tasks.ValueTask_1<dotnet.System.IO.Stream>) throws {
+    public func set_PlaintextStreamFilter(value : @escaping (dotnet.System.Net.Http.SocketsHttpPlaintextStreamFilterContext, dotnet.System.Threading.CancellationToken) throws -> dotnet.System.Threading.Tasks.ValueTask_1<dotnet.System.IO.Stream>) throws {
         let del_value = try dotnet.System.Func_3<dotnet.System.Net.Http.SocketsHttpPlaintextStreamFilterContext,dotnet.System.Threading.CancellationToken,dotnet.System.Threading.Tasks.ValueTask_1<dotnet.System.IO.Stream>>(value);
         return try set_PlaintextStreamFilter(value: del_value);
     }
@@ -5045,6 +5218,11 @@ public final class SocketsHttpHandler
             return;
         }
     }
+    /**
+    Gets or sets the  to use when propagating the distributed trace and context.
+            Use  to disable propagation. Defaults to .
+
+    */
     public var ActivityHeadersPropagator : Optional<dotnet.System.Diagnostics.DistributedContextPropagator> {
         get {
             return try! get_ActivityHeadersPropagator();
@@ -5097,7 +5275,9 @@ public final class SocketsHttpHandler
         get {
             return try! get_ConnectTimeout();
         }
-// TODO COPE prop set (span) [IsSpecialName] void set_ConnectTimeout(System.TimeSpan)
+        set(v) {
+            return try! set_ConnectTimeout(value: v);
+        }
     }
     /**
     Gets or sets the managed cookie container object.
@@ -5155,8 +5335,14 @@ public final class SocketsHttpHandler
         get {
             return try! get_Expect100ContinueTimeout();
         }
-// TODO COPE prop set (span) [IsSpecialName] void set_Expect100ContinueTimeout(System.TimeSpan)
+        set(v) {
+            return try! set_Expect100ContinueTimeout(value: v);
+        }
     }
+    /**
+    Defines the initial HTTP2 stream receive window size for all connections opened by the this .
+
+    */
     public var InitialHttp2StreamWindowSize : Swift.Int32 {
         get {
             return try! get_InitialHttp2StreamWindowSize();
@@ -5182,7 +5368,9 @@ public final class SocketsHttpHandler
         get {
             return try! get_KeepAlivePingDelay();
         }
-// TODO COPE prop set (span) [IsSpecialName] void set_KeepAlivePingDelay(System.TimeSpan)
+        set(v) {
+            return try! set_KeepAlivePingDelay(value: v);
+        }
     }
     /**
     Gets or sets the keep alive ping behaviour.
@@ -5204,7 +5392,9 @@ public final class SocketsHttpHandler
         get {
             return try! get_KeepAlivePingTimeout();
         }
-// TODO COPE prop set (span) [IsSpecialName] void set_KeepAlivePingTimeout(System.TimeSpan)
+        set(v) {
+            return try! set_KeepAlivePingTimeout(value: v);
+        }
     }
     /**
     Gets or sets the maximum number of allowed HTTP redirects.
@@ -5274,17 +5464,21 @@ public final class SocketsHttpHandler
         get {
             return try! get_PooledConnectionIdleTimeout();
         }
-// TODO COPE prop set (span) [IsSpecialName] void set_PooledConnectionIdleTimeout(System.TimeSpan)
+        set(v) {
+            return try! set_PooledConnectionIdleTimeout(value: v);
+        }
     }
     /**
-    Gets or sets how long a connection can be the pool to be considered reusable.
+    Gets or sets how long a connection can be in the pool to be considered reusable.
 
     */
     public var PooledConnectionLifetime : dotnet.System.TimeSpan {
         get {
             return try! get_PooledConnectionLifetime();
         }
-// TODO COPE prop set (span) [IsSpecialName] void set_PooledConnectionLifetime(System.TimeSpan)
+        set(v) {
+            return try! set_PooledConnectionLifetime(value: v);
+        }
     }
     /**
     Gets or sets a value that indicates whether the handler sends an Authorization header with the request.
@@ -5299,6 +5493,8 @@ public final class SocketsHttpHandler
         }
     }
     /**
+    Gets a writable dictionary (that is, a map) of custom properties for the HttpClient requests. The dictionary is initialized empty; you can insert and query key-value pairs for your custom handlers and special processing.
+
     */
     public var Properties : dotnet.System.Collections.Generic.IDictionary_2<dotnet.System.String,dotnet.System.Object> {
         get {
@@ -5318,7 +5514,7 @@ public final class SocketsHttpHandler
         }
     }
     /**
-    Gets or sets a callback that decodes request headers values.
+    Gets or sets a callback that selects the  to encode request header values.
 
     */
     public var RequestHeaderEncodingSelector : Optional<dotnet.System.Net.Http.HeaderEncodingSelector_1<dotnet.System.Net.Http.HttpRequestMessage>> {
@@ -5337,10 +5533,12 @@ public final class SocketsHttpHandler
         get {
             return try! get_ResponseDrainTimeout();
         }
-// TODO COPE prop set (span) [IsSpecialName] void set_ResponseDrainTimeout(System.TimeSpan)
+        set(v) {
+            return try! set_ResponseDrainTimeout(value: v);
+        }
     }
     /**
-    Gets or sets a callback that decodes response headers values.
+    Gets or sets a callback that selects the  to decode response header values.
 
     */
     public var ResponseHeaderEncodingSelector : Optional<dotnet.System.Net.Http.HeaderEncodingSelector_1<dotnet.System.Net.Http.HttpRequestMessage>> {
@@ -5402,6 +5600,9 @@ public final class SocketsHttpPlaintextStreamFilterContext
     public class override func get_type_handle() -> TypeHandle {
         return System_Net_Http_SocketsHttpPlaintextStreamFilterContext_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // [IsSpecialName] System.IO.Stream get_PlaintextStream()
@@ -5438,7 +5639,7 @@ public final class SocketsHttpPlaintextStreamFilterContext
         }
     }
     /**
-    Gets the initial HTTP request message that is causing the stream to be used.
+    Gets the initial HttpRequestMessage that is causing the stream to be used.
 
     */
     public var InitialRequestMessage : dotnet.System.Net.Http.HttpRequestMessage {
@@ -5456,7 +5657,7 @@ public final class SocketsHttpPlaintextStreamFilterContext
         }
     }
     /**
-    Gets the plaintext stream that will be used for HTTP protocol requests and responses.
+    Gets the plaintext Stream that will be used for HTTP protocol requests and responses.
 
     */
     public var PlaintextStream : dotnet.System.IO.Stream {
@@ -5478,6 +5679,9 @@ open class StreamContent
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Net_Http_StreamContent_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -5528,6 +5732,9 @@ open class StringContent
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Net_Http_StringContent_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -5600,6 +5807,9 @@ open class AuthenticationHeaderValue
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Net_Http_Headers_AuthenticationHeaderValue_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -5718,11 +5928,12 @@ open class AuthenticationHeaderValue
          if  is valid  information; otherwise, .
 
     */
-    open class func TryParse(input : Optional<dotnet.System.String>, parsedValue : inout dotnet.System.Net.Http.Headers.AuthenticationHeaderValue) throws -> Bool {
+    open class func TryParse(input : Optional<dotnet.System.String>, parsedValue : inout Optional<dotnet.System.Net.Http.Headers.AuthenticationHeaderValue>) throws -> Bool {
         var __thrown : NullableHandle = nil;
-            var _tmp_out_parsedValue = parsedValue.get_handle();
+            var _tmp_out_parsedValue = (parsedValue != nil) ? (parsedValue!.get_handle()) : nil;
         let __return = System_Net_Http_Headers_AuthenticationHeaderValue_bool__TryParse_0__2__String_outAuthenticationHeaderValue(&__thrown, input?.get_handle() ?? nil, &_tmp_out_parsedValue);
-        let _tmp2_parsedValue = dotnet.System.Net.Http.Headers.AuthenticationHeaderValue(hndl: _tmp_out_parsedValue);
+        let __h__tmp2_parsedValue = _tmp_out_parsedValue;
+        let _tmp2_parsedValue = (__h__tmp2_parsedValue != nil) ? dotnet.System.Net.Http.Headers.AuthenticationHeaderValue(hndl: __h__tmp2_parsedValue!) : nil;
             parsedValue = _tmp2_parsedValue;
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
@@ -5789,6 +6000,9 @@ open class CacheControlHeaderValue
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Net_Http_Headers_CacheControlHeaderValue_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -5889,11 +6103,12 @@ open class CacheControlHeaderValue
          if  is valid  information; otherwise, .
 
     */
-    open class func TryParse(input : Optional<dotnet.System.String>, parsedValue : inout dotnet.System.Net.Http.Headers.CacheControlHeaderValue) throws -> Bool {
+    open class func TryParse(input : Optional<dotnet.System.String>, parsedValue : inout Optional<dotnet.System.Net.Http.Headers.CacheControlHeaderValue>) throws -> Bool {
         var __thrown : NullableHandle = nil;
-            var _tmp_out_parsedValue = parsedValue.get_handle();
+            var _tmp_out_parsedValue = (parsedValue != nil) ? (parsedValue!.get_handle()) : nil;
         let __return = System_Net_Http_Headers_CacheControlHeaderValue_bool__TryParse_0__2__String_outCacheControlHeaderValue(&__thrown, input?.get_handle() ?? nil, &_tmp_out_parsedValue);
-        let _tmp2_parsedValue = dotnet.System.Net.Http.Headers.CacheControlHeaderValue(hndl: _tmp_out_parsedValue);
+        let __h__tmp2_parsedValue = _tmp_out_parsedValue;
+        let _tmp2_parsedValue = (__h__tmp2_parsedValue != nil) ? dotnet.System.Net.Http.Headers.CacheControlHeaderValue(hndl: __h__tmp2_parsedValue!) : nil;
             parsedValue = _tmp2_parsedValue;
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
@@ -6419,6 +6634,9 @@ open class ContentDispositionHeaderValue
     open class override func get_type_handle() -> TypeHandle {
         return System_Net_Http_Headers_ContentDispositionHeaderValue_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor(System.String)
@@ -6519,11 +6737,12 @@ open class ContentDispositionHeaderValue
          if  is valid  information; otherwise, .
 
     */
-    open class func TryParse(input : Optional<dotnet.System.String>, parsedValue : inout dotnet.System.Net.Http.Headers.ContentDispositionHeaderValue) throws -> Bool {
+    open class func TryParse(input : Optional<dotnet.System.String>, parsedValue : inout Optional<dotnet.System.Net.Http.Headers.ContentDispositionHeaderValue>) throws -> Bool {
         var __thrown : NullableHandle = nil;
-            var _tmp_out_parsedValue = parsedValue.get_handle();
+            var _tmp_out_parsedValue = (parsedValue != nil) ? (parsedValue!.get_handle()) : nil;
         let __return = System_Net_Http_Headers_ContentDispositionHeaderValue_bool__TryParse_0__2__String_outContentDispositionHeaderValue(&__thrown, input?.get_handle() ?? nil, &_tmp_out_parsedValue);
-        let _tmp2_parsedValue = dotnet.System.Net.Http.Headers.ContentDispositionHeaderValue(hndl: _tmp_out_parsedValue);
+        let __h__tmp2_parsedValue = _tmp_out_parsedValue;
+        let _tmp2_parsedValue = (__h__tmp2_parsedValue != nil) ? dotnet.System.Net.Http.Headers.ContentDispositionHeaderValue(hndl: __h__tmp2_parsedValue!) : nil;
             parsedValue = _tmp2_parsedValue;
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
@@ -6851,6 +7070,9 @@ open class ContentRangeHeaderValue
     open class override func get_type_handle() -> TypeHandle {
         return System_Net_Http_Headers_ContentRangeHeaderValue_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor(System.Int64)
@@ -6986,11 +7208,12 @@ open class ContentRangeHeaderValue
          if  is valid  information; otherwise, .
 
     */
-    open class func TryParse(input : Optional<dotnet.System.String>, parsedValue : inout dotnet.System.Net.Http.Headers.ContentRangeHeaderValue) throws -> Bool {
+    open class func TryParse(input : Optional<dotnet.System.String>, parsedValue : inout Optional<dotnet.System.Net.Http.Headers.ContentRangeHeaderValue>) throws -> Bool {
         var __thrown : NullableHandle = nil;
-            var _tmp_out_parsedValue = parsedValue.get_handle();
+            var _tmp_out_parsedValue = (parsedValue != nil) ? (parsedValue!.get_handle()) : nil;
         let __return = System_Net_Http_Headers_ContentRangeHeaderValue_bool__TryParse_0__2__String_outContentRangeHeaderValue(&__thrown, input?.get_handle() ?? nil, &_tmp_out_parsedValue);
-        let _tmp2_parsedValue = dotnet.System.Net.Http.Headers.ContentRangeHeaderValue(hndl: _tmp_out_parsedValue);
+        let __h__tmp2_parsedValue = _tmp_out_parsedValue;
+        let _tmp2_parsedValue = (__h__tmp2_parsedValue != nil) ? dotnet.System.Net.Http.Headers.ContentRangeHeaderValue(hndl: __h__tmp2_parsedValue!) : nil;
             parsedValue = _tmp2_parsedValue;
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
@@ -7148,6 +7371,9 @@ open class EntityTagHeaderValue
     open class override func get_type_handle() -> TypeHandle {
         return System_Net_Http_Headers_EntityTagHeaderValue_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor(System.String)
@@ -7265,11 +7491,12 @@ open class EntityTagHeaderValue
          if  is valid  information; otherwise, .
 
     */
-    open class func TryParse(input : Optional<dotnet.System.String>, parsedValue : inout dotnet.System.Net.Http.Headers.EntityTagHeaderValue) throws -> Bool {
+    open class func TryParse(input : Optional<dotnet.System.String>, parsedValue : inout Optional<dotnet.System.Net.Http.Headers.EntityTagHeaderValue>) throws -> Bool {
         var __thrown : NullableHandle = nil;
-            var _tmp_out_parsedValue = parsedValue.get_handle();
+            var _tmp_out_parsedValue = (parsedValue != nil) ? (parsedValue!.get_handle()) : nil;
         let __return = System_Net_Http_Headers_EntityTagHeaderValue_bool__TryParse_0__2__String_outEntityTagHeaderValue(&__thrown, input?.get_handle() ?? nil, &_tmp_out_parsedValue);
-        let _tmp2_parsedValue = dotnet.System.Net.Http.Headers.EntityTagHeaderValue(hndl: _tmp_out_parsedValue);
+        let __h__tmp2_parsedValue = _tmp_out_parsedValue;
+        let _tmp2_parsedValue = (__h__tmp2_parsedValue != nil) ? dotnet.System.Net.Http.Headers.EntityTagHeaderValue(hndl: __h__tmp2_parsedValue!) : nil;
             parsedValue = _tmp2_parsedValue;
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
@@ -7342,6 +7569,10 @@ open class EntityTagHeaderValue
 
 // type: System.Net.Http.Headers.HeaderStringValues
 // boxed value type
+    /**
+    Provides a collection of header string values.
+
+    */
 public final class HeaderStringValues
     :
     dotnet.System.Object,
@@ -7350,8 +7581,15 @@ public final class HeaderStringValues
     public class override func get_type_handle() -> TypeHandle {
         return System_Net_Http_Headers_HeaderStringValues_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    /**
+    Gets the number of header values in the collection.
+
+    */
     public var Count : Swift.Int32 {
         get {
             return try! get_Count();
@@ -7363,6 +7601,12 @@ public final class HeaderStringValues
     }
     // System.Net.Http.Headers.HeaderStringValues.Enumerator GetEnumerator()
 // docid: M:System.Net.Http.Headers.HeaderStringValues.GetEnumerator
+    /**
+    Gets an enumerator for all of the strings in the collection.
+
+    - Returns: An enumerator for all the strings in the collection.
+
+    */
     public func GetEnumerator() throws -> dotnet.System.Net.Http.Headers.HeaderStringValues_Enumerator {
         var __thrown : NullableHandle = nil;
         let __return = System_Net_Http_Headers_HeaderStringValues_HeaderStringValues_Enumerator__GetEnumerator_0__0(&__thrown, self.get_handle());
@@ -7374,6 +7618,12 @@ public final class HeaderStringValues
     }
     // System.String ToString()
 // docid: M:System.Net.Http.Headers.HeaderStringValues.ToString
+    /**
+    Gets a string containing all the headers in the collection.
+
+    - Returns: The string representation of all the headers in the collection.
+
+    */
     public override func ToString() throws -> dotnet.System.String {
         var __thrown : NullableHandle = nil;
         let __return = System_Net_Http_Headers_HeaderStringValues_String__ToString_0__0(&__thrown, self.get_handle());
@@ -7399,6 +7649,10 @@ public final class HeaderStringValues
 
 // type: System.Net.Http.Headers.HeaderStringValues+Enumerator
 // boxed value type
+    /**
+    Enumerates the elements of a .
+
+    */
 public final class HeaderStringValues_Enumerator
     :
     dotnet.System.Object,
@@ -7408,8 +7662,15 @@ public final class HeaderStringValues_Enumerator
     public class override func get_type_handle() -> TypeHandle {
         return System_Net_Http_Headers_HeaderStringValues_Enumerator_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    /**
+    Gets the element in the collection at the current position of the enumerator.
+
+    */
     public var Current : dotnet.System.String {
         get {
             return try! get_Current();
@@ -7421,6 +7682,10 @@ public final class HeaderStringValues_Enumerator
     }
     // void Dispose()
 // docid: M:System.Net.Http.Headers.HeaderStringValues.Enumerator.Dispose
+    /**
+    Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.
+
+    */
     public func Dispose() throws {
         var __thrown : NullableHandle = nil;
         System_Net_Http_Headers_HeaderStringValues_Enumerator_void__Dispose_0__0(&__thrown, self.get_handle());
@@ -7432,6 +7697,13 @@ public final class HeaderStringValues_Enumerator
     }
     // bool MoveNext()
 // docid: M:System.Net.Http.Headers.HeaderStringValues.Enumerator.MoveNext
+    /**
+    Advances the enumerator to the next element of the collection.
+
+    - Returns: 
+         if the enumerator was successfully advanced to the next element;  if the enumerator has passed the end of the collection.
+
+    */
     public func MoveNext() throws -> Bool {
         var __thrown : NullableHandle = nil;
         let __return = System_Net_Http_Headers_HeaderStringValues_Enumerator_bool__MoveNext_0__0(&__thrown, self.get_handle());
@@ -7466,6 +7738,9 @@ public final class HttpContentHeaders
 {
     public class override func get_type_handle() -> TypeHandle {
         return System_Net_Http_Headers_HttpContentHeaders_get_type_handle();
+    }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -7837,6 +8112,9 @@ public final class HttpHeaderValueCollection_1<T : SGBridgeGenericValue>
     public class override func get_type_handle() -> TypeHandle {
         return System_Net_Http_Headers_HttpHeaderValueCollection_1_get_type_handle(T.get_type_handle());
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // void Add(T)
@@ -7877,7 +8155,7 @@ public final class HttpHeaderValueCollection_1<T : SGBridgeGenericValue>
 
     - Parameter item: The item to find to the header collection.
     - Returns: 
-         if the entry is contained in the  instance; otherwise, 
+         if the entry is contained in the  instance; otherwise, .
 
     */
     public func Contains(item : T) throws -> Bool {
@@ -7940,7 +8218,7 @@ public final class HttpHeaderValueCollection_1<T : SGBridgeGenericValue>
 
     - Parameter item: The item to remove.
     - Returns: 
-         if the  was removed from the  instance; otherwise, 
+         if the  was removed from the  instance; otherwise, .
 
     */
     public func Remove(item : T) throws -> Bool {
@@ -7976,7 +8254,7 @@ public final class HttpHeaderValueCollection_1<T : SGBridgeGenericValue>
 
     - Parameter input: The entry to validate.
     - Returns: 
-         if the  could be parsed and added to the  instance; otherwise, 
+         if the  could be parsed and added to the  instance; otherwise, .
 
     */
     public func TryParseAdd(input : Optional<dotnet.System.String>) throws -> Bool {
@@ -8044,6 +8322,9 @@ open class HttpHeaders
     open class override func get_type_handle() -> TypeHandle {
         return System_Net_Http_Headers_HttpHeaders_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // void Add(System.String, System.Collections.Generic.IEnumerable<System.String>)
@@ -8102,7 +8383,7 @@ open class HttpHeaders
 
     - Parameter name: The specific header.
     - Returns: 
-         is the specified header exists in the collection; otherwise .
+         if the specified header exists in the collection; otherwise .
 
     */
     open func Contains(name : dotnet.System.String) throws -> Bool {
@@ -8232,14 +8513,15 @@ open class HttpHeaders
     - Parameter name: The specified header.
     - Parameter values: The specified header values.
     - Returns: 
-         is the specified header  and  are stored in the collection; otherwise .
+         if the specified header  and  are stored in the collection; otherwise .
 
     */
-    open func TryGetValues(name : dotnet.System.String, values : inout dotnet.System.Collections.Generic.IEnumerable_1<dotnet.System.String>) throws -> Bool {
+    open func TryGetValues(name : dotnet.System.String, values : inout Optional<dotnet.System.Collections.Generic.IEnumerable_1<dotnet.System.String>>) throws -> Bool {
         var __thrown : NullableHandle = nil;
-            var _tmp_out_values = values.get_handle();
+            var _tmp_out_values = (values != nil) ? (values!.get_handle()) : nil;
         let __return = System_Net_Http_Headers_HttpHeaders_bool__TryGetValues_0__2__String_outSystem_Collections_Generic_IEnumerable_string_(&__thrown, self.get_handle(), name.get_handle(), &_tmp_out_values);
-        let _tmp2_values = dotnet.System.Collections.Generic.IEnumerable_1<dotnet.System.String>(hndl : _tmp_out_values);
+        let __h__tmp2_values = _tmp_out_values;
+        let _tmp2_values = (__h__tmp2_values != nil) ? dotnet.System.Collections.Generic.IEnumerable_1<dotnet.System.String>(hndl: __h__tmp2_values!) : nil;
             values = _tmp2_values;
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
@@ -8258,6 +8540,10 @@ open class HttpHeaders
         return dotnet.System.Net.Http.Headers.HttpHeadersNonValidated(hndl : __return);
         }
     }
+    /**
+    Gets a view of the contents of this headers collection that does not parse nor validate the data upon access.
+
+    */
     open var NonValidated : dotnet.System.Net.Http.Headers.HttpHeadersNonValidated {
         get {
             return try! get_NonValidated();
@@ -8268,6 +8554,10 @@ open class HttpHeaders
 
 // type: System.Net.Http.Headers.HttpHeadersNonValidated
 // boxed value type
+    /**
+    Provides a view on top of a  collection that avoids forcing validation or parsing on its contents.
+
+    */
 public final class HttpHeadersNonValidated
     :
     dotnet.System.Object,
@@ -8276,8 +8566,15 @@ public final class HttpHeadersNonValidated
     public class override func get_type_handle() -> TypeHandle {
         return System_Net_Http_Headers_HttpHeadersNonValidated_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    /**
+    Gets the number of headers stored in the collection.
+
+    */
     public var Count : Swift.Int32 {
         get {
             return try! get_Count();
@@ -8289,6 +8586,14 @@ public final class HttpHeadersNonValidated
     }
     // bool Contains(System.String)
 // docid: M:System.Net.Http.Headers.HttpHeadersNonValidated.Contains(System.String)
+    /**
+    Gets whether the collection contains the specified header.
+
+    - Parameter headerName: The name of the header.
+    - Returns: 
+         if the collection contains the header; otherwise, .
+
+    */
     public func Contains(headerName : dotnet.System.String) throws -> Bool {
         var __thrown : NullableHandle = nil;
         let __return = System_Net_Http_Headers_HttpHeadersNonValidated_bool__Contains_0__1__String(&__thrown, self.get_handle(), headerName.get_handle());
@@ -8300,6 +8605,12 @@ public final class HttpHeadersNonValidated
     }
     // System.Net.Http.Headers.HttpHeadersNonValidated.Enumerator GetEnumerator()
 // docid: M:System.Net.Http.Headers.HttpHeadersNonValidated.GetEnumerator
+    /**
+    Gets an enumerator that iterates through the .
+
+    - Returns: An enumerator that iterates through the .
+
+    */
     public func GetEnumerator() throws -> dotnet.System.Net.Http.Headers.HttpHeadersNonValidated_Enumerator {
         var __thrown : NullableHandle = nil;
         let __return = System_Net_Http_Headers_HttpHeadersNonValidated_HttpHeadersNonValidated_Enumerator__GetEnumerator_0__0(&__thrown, self.get_handle());
@@ -8311,6 +8622,15 @@ public final class HttpHeadersNonValidated
     }
     // bool TryGetValues(System.String, ref System.Net.Http.Headers.HeaderStringValues)
 // docid: M:System.Net.Http.Headers.HttpHeadersNonValidated.TryGetValues(System.String,System.Net.Http.Headers.HeaderStringValues@)
+    /**
+    Attempts to retrieve the values associated with the specified header name.
+
+    - Parameter headerName: The name of the header.
+    - Parameter values: The retrieved header values.
+    - Returns: 
+         if the collection contains the specified header; otherwise, .
+
+    */
     public func TryGetValues(headerName : dotnet.System.String, values : inout dotnet.System.Net.Http.Headers.HeaderStringValues) throws -> Bool {
         var __thrown : NullableHandle = nil;
             var _tmp_out_values = values.get_handle();
@@ -8336,9 +8656,6 @@ public final class HttpHeadersNonValidated
     }
     // [IsSpecialName] System.Net.Http.Headers.HeaderStringValues get_Item(System.String)
 // docid: M:System.Net.Http.Headers.HttpHeadersNonValidated.get_Item(System.String)
-//BEGIN method_is_override
-//matches_1
-//matches :
     public func get_Item(headerName : dotnet.System.String) throws -> dotnet.System.Net.Http.Headers.HeaderStringValues {
         var __thrown : NullableHandle = nil;
         let __return = System_Net_Http_Headers_HttpHeadersNonValidated_HeaderStringValues__get_Item_0__1__String(&__thrown, self.get_handle(), headerName.get_handle());
@@ -8353,6 +8670,10 @@ public final class HttpHeadersNonValidated
 
 // type: System.Net.Http.Headers.HttpHeadersNonValidated+Enumerator
 // boxed value type
+    /**
+    Enumerates the elements of a .
+
+    */
 public final class HttpHeadersNonValidated_Enumerator
     :
     dotnet.System.Object,
@@ -8362,8 +8683,15 @@ public final class HttpHeadersNonValidated_Enumerator
     public class override func get_type_handle() -> TypeHandle {
         return System_Net_Http_Headers_HttpHeadersNonValidated_Enumerator_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    /**
+    Gets the element in the collection at the current position of the enumerator.
+
+    */
     public var Current : dotnet.System.Collections.Generic.KeyValuePair_2<dotnet.System.String,dotnet.System.Net.Http.Headers.HeaderStringValues> {
         get {
             return try! get_Current();
@@ -8375,6 +8703,10 @@ public final class HttpHeadersNonValidated_Enumerator
     }
     // void Dispose()
 // docid: M:System.Net.Http.Headers.HttpHeadersNonValidated.Enumerator.Dispose
+    /**
+    Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.
+
+    */
     public func Dispose() throws {
         var __thrown : NullableHandle = nil;
         System_Net_Http_Headers_HttpHeadersNonValidated_Enumerator_void__Dispose_0__0(&__thrown, self.get_handle());
@@ -8386,6 +8718,13 @@ public final class HttpHeadersNonValidated_Enumerator
     }
     // bool MoveNext()
 // docid: M:System.Net.Http.Headers.HttpHeadersNonValidated.Enumerator.MoveNext
+    /**
+    Advances the enumerator to the next element of the collection.
+
+    - Returns: 
+         if the enumerator was successfully advanced to the next element;  if the enumerator has passed the end of the collection.
+
+    */
     public func MoveNext() throws -> Bool {
         var __thrown : NullableHandle = nil;
         let __return = System_Net_Http_Headers_HttpHeadersNonValidated_Enumerator_bool__MoveNext_0__0(&__thrown, self.get_handle());
@@ -8420,6 +8759,9 @@ public final class HttpRequestHeaders
 {
     public class override func get_type_handle() -> TypeHandle {
         return System_Net_Http_Headers_HttpRequestHeaders_get_type_handle();
+    }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -9300,6 +9642,9 @@ public final class HttpResponseHeaders
     public class override func get_type_handle() -> TypeHandle {
         return System_Net_Http_Headers_HttpResponseHeaders_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // [IsSpecialName] System.Net.Http.Headers.HttpHeaderValueCollection<System.String> get_AcceptRanges()
@@ -9846,6 +10191,9 @@ open class MediaTypeHeaderValue
     open class override func get_type_handle() -> TypeHandle {
         return System_Net_Http_Headers_MediaTypeHeaderValue_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor(System.String)
@@ -9946,11 +10294,12 @@ open class MediaTypeHeaderValue
          if  is valid  information; otherwise, .
 
     */
-    open class func TryParse(input : Optional<dotnet.System.String>, parsedValue : inout dotnet.System.Net.Http.Headers.MediaTypeHeaderValue) throws -> Bool {
+    open class func TryParse(input : Optional<dotnet.System.String>, parsedValue : inout Optional<dotnet.System.Net.Http.Headers.MediaTypeHeaderValue>) throws -> Bool {
         var __thrown : NullableHandle = nil;
-            var _tmp_out_parsedValue = parsedValue.get_handle();
+            var _tmp_out_parsedValue = (parsedValue != nil) ? (parsedValue!.get_handle()) : nil;
         let __return = System_Net_Http_Headers_MediaTypeHeaderValue_bool__TryParse_0__2__String_outMediaTypeHeaderValue(&__thrown, input?.get_handle() ?? nil, &_tmp_out_parsedValue);
-        let _tmp2_parsedValue = dotnet.System.Net.Http.Headers.MediaTypeHeaderValue(hndl: _tmp_out_parsedValue);
+        let __h__tmp2_parsedValue = _tmp_out_parsedValue;
+        let _tmp2_parsedValue = (__h__tmp2_parsedValue != nil) ? dotnet.System.Net.Http.Headers.MediaTypeHeaderValue(hndl: __h__tmp2_parsedValue!) : nil;
             parsedValue = _tmp2_parsedValue;
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
@@ -10069,6 +10418,9 @@ public final class MediaTypeWithQualityHeaderValue
     public class override func get_type_handle() -> TypeHandle {
         return System_Net_Http_Headers_MediaTypeWithQualityHeaderValue_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor(System.String)
@@ -10133,11 +10485,12 @@ public final class MediaTypeWithQualityHeaderValue
          if  is valid  information; otherwise, .
 
     */
-    public class func TryParse(input : Optional<dotnet.System.String>, parsedValue : inout dotnet.System.Net.Http.Headers.MediaTypeWithQualityHeaderValue) throws -> Bool {
+    public class func TryParse(input : Optional<dotnet.System.String>, parsedValue : inout Optional<dotnet.System.Net.Http.Headers.MediaTypeWithQualityHeaderValue>) throws -> Bool {
         var __thrown : NullableHandle = nil;
-            var _tmp_out_parsedValue = parsedValue.get_handle();
+            var _tmp_out_parsedValue = (parsedValue != nil) ? (parsedValue!.get_handle()) : nil;
         let __return = System_Net_Http_Headers_MediaTypeWithQualityHeaderValue_bool__TryParse_0__2__String_outMediaTypeWithQualityHeaderValue(&__thrown, input?.get_handle() ?? nil, &_tmp_out_parsedValue);
-        let _tmp2_parsedValue = dotnet.System.Net.Http.Headers.MediaTypeWithQualityHeaderValue(hndl: _tmp_out_parsedValue);
+        let __h__tmp2_parsedValue = _tmp_out_parsedValue;
+        let _tmp2_parsedValue = (__h__tmp2_parsedValue != nil) ? dotnet.System.Net.Http.Headers.MediaTypeWithQualityHeaderValue(hndl: __h__tmp2_parsedValue!) : nil;
             parsedValue = _tmp2_parsedValue;
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
@@ -10194,6 +10547,9 @@ open class NameValueHeaderValue
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Net_Http_Headers_NameValueHeaderValue_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -10312,11 +10668,12 @@ open class NameValueHeaderValue
          if  is valid  information; otherwise, .
 
     */
-    open class func TryParse(input : Optional<dotnet.System.String>, parsedValue : inout dotnet.System.Net.Http.Headers.NameValueHeaderValue) throws -> Bool {
+    open class func TryParse(input : Optional<dotnet.System.String>, parsedValue : inout Optional<dotnet.System.Net.Http.Headers.NameValueHeaderValue>) throws -> Bool {
         var __thrown : NullableHandle = nil;
-            var _tmp_out_parsedValue = parsedValue.get_handle();
+            var _tmp_out_parsedValue = (parsedValue != nil) ? (parsedValue!.get_handle()) : nil;
         let __return = System_Net_Http_Headers_NameValueHeaderValue_bool__TryParse_0__2__String_outNameValueHeaderValue(&__thrown, input?.get_handle() ?? nil, &_tmp_out_parsedValue);
-        let _tmp2_parsedValue = dotnet.System.Net.Http.Headers.NameValueHeaderValue(hndl: _tmp_out_parsedValue);
+        let __h__tmp2_parsedValue = _tmp_out_parsedValue;
+        let _tmp2_parsedValue = (__h__tmp2_parsedValue != nil) ? dotnet.System.Net.Http.Headers.NameValueHeaderValue(hndl: __h__tmp2_parsedValue!) : nil;
             parsedValue = _tmp2_parsedValue;
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
@@ -10396,6 +10753,9 @@ open class NameValueWithParametersHeaderValue
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Net_Http_Headers_NameValueWithParametersHeaderValue_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -10514,11 +10874,12 @@ open class NameValueWithParametersHeaderValue
          if  is valid  information; otherwise, .
 
     */
-    open class func TryParse(input : Optional<dotnet.System.String>, parsedValue : inout dotnet.System.Net.Http.Headers.NameValueWithParametersHeaderValue) throws -> Bool {
+    open class func TryParse(input : Optional<dotnet.System.String>, parsedValue : inout Optional<dotnet.System.Net.Http.Headers.NameValueWithParametersHeaderValue>) throws -> Bool {
         var __thrown : NullableHandle = nil;
-            var _tmp_out_parsedValue = parsedValue.get_handle();
+            var _tmp_out_parsedValue = (parsedValue != nil) ? (parsedValue!.get_handle()) : nil;
         let __return = System_Net_Http_Headers_NameValueWithParametersHeaderValue_bool__TryParse_0__2__String_outNameValueWithParametersHeaderValue(&__thrown, input?.get_handle() ?? nil, &_tmp_out_parsedValue);
-        let _tmp2_parsedValue = dotnet.System.Net.Http.Headers.NameValueWithParametersHeaderValue(hndl: _tmp_out_parsedValue);
+        let __h__tmp2_parsedValue = _tmp_out_parsedValue;
+        let _tmp2_parsedValue = (__h__tmp2_parsedValue != nil) ? dotnet.System.Net.Http.Headers.NameValueWithParametersHeaderValue(hndl: __h__tmp2_parsedValue!) : nil;
             parsedValue = _tmp2_parsedValue;
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
@@ -10561,6 +10922,9 @@ open class ProductHeaderValue
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Net_Http_Headers_ProductHeaderValue_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -10679,11 +11043,12 @@ open class ProductHeaderValue
          if  is valid  information; otherwise, .
 
     */
-    open class func TryParse(input : Optional<dotnet.System.String>, parsedValue : inout dotnet.System.Net.Http.Headers.ProductHeaderValue) throws -> Bool {
+    open class func TryParse(input : Optional<dotnet.System.String>, parsedValue : inout Optional<dotnet.System.Net.Http.Headers.ProductHeaderValue>) throws -> Bool {
         var __thrown : NullableHandle = nil;
-            var _tmp_out_parsedValue = parsedValue.get_handle();
+            var _tmp_out_parsedValue = (parsedValue != nil) ? (parsedValue!.get_handle()) : nil;
         let __return = System_Net_Http_Headers_ProductHeaderValue_bool__TryParse_0__2__String_outProductHeaderValue(&__thrown, input?.get_handle() ?? nil, &_tmp_out_parsedValue);
-        let _tmp2_parsedValue = dotnet.System.Net.Http.Headers.ProductHeaderValue(hndl: _tmp_out_parsedValue);
+        let __h__tmp2_parsedValue = _tmp_out_parsedValue;
+        let _tmp2_parsedValue = (__h__tmp2_parsedValue != nil) ? dotnet.System.Net.Http.Headers.ProductHeaderValue(hndl: __h__tmp2_parsedValue!) : nil;
             parsedValue = _tmp2_parsedValue;
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
@@ -10750,6 +11115,9 @@ open class ProductInfoHeaderValue
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Net_Http_Headers_ProductInfoHeaderValue_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -10884,11 +11252,12 @@ open class ProductInfoHeaderValue
          if  is valid  information; otherwise, .
 
     */
-    open class func TryParse(input : dotnet.System.String, parsedValue : inout dotnet.System.Net.Http.Headers.ProductInfoHeaderValue) throws -> Bool {
+    open class func TryParse(input : dotnet.System.String, parsedValue : inout Optional<dotnet.System.Net.Http.Headers.ProductInfoHeaderValue>) throws -> Bool {
         var __thrown : NullableHandle = nil;
-            var _tmp_out_parsedValue = parsedValue.get_handle();
+            var _tmp_out_parsedValue = (parsedValue != nil) ? (parsedValue!.get_handle()) : nil;
         let __return = System_Net_Http_Headers_ProductInfoHeaderValue_bool__TryParse_0__2__String_outProductInfoHeaderValue(&__thrown, input.get_handle(), &_tmp_out_parsedValue);
-        let _tmp2_parsedValue = dotnet.System.Net.Http.Headers.ProductInfoHeaderValue(hndl: _tmp_out_parsedValue);
+        let __h__tmp2_parsedValue = _tmp_out_parsedValue;
+        let _tmp2_parsedValue = (__h__tmp2_parsedValue != nil) ? dotnet.System.Net.Http.Headers.ProductInfoHeaderValue(hndl: __h__tmp2_parsedValue!) : nil;
             parsedValue = _tmp2_parsedValue;
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
@@ -10959,6 +11328,9 @@ open class RangeConditionHeaderValue
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Net_Http_Headers_RangeConditionHeaderValue_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -11092,11 +11464,12 @@ open class RangeConditionHeaderValue
          if  is valid  information; otherwise, .
 
     */
-    open class func TryParse(input : Optional<dotnet.System.String>, parsedValue : inout dotnet.System.Net.Http.Headers.RangeConditionHeaderValue) throws -> Bool {
+    open class func TryParse(input : Optional<dotnet.System.String>, parsedValue : inout Optional<dotnet.System.Net.Http.Headers.RangeConditionHeaderValue>) throws -> Bool {
         var __thrown : NullableHandle = nil;
-            var _tmp_out_parsedValue = parsedValue.get_handle();
+            var _tmp_out_parsedValue = (parsedValue != nil) ? (parsedValue!.get_handle()) : nil;
         let __return = System_Net_Http_Headers_RangeConditionHeaderValue_bool__TryParse_0__2__String_outRangeConditionHeaderValue(&__thrown, input?.get_handle() ?? nil, &_tmp_out_parsedValue);
-        let _tmp2_parsedValue = dotnet.System.Net.Http.Headers.RangeConditionHeaderValue(hndl: _tmp_out_parsedValue);
+        let __h__tmp2_parsedValue = _tmp_out_parsedValue;
+        let _tmp2_parsedValue = (__h__tmp2_parsedValue != nil) ? dotnet.System.Net.Http.Headers.RangeConditionHeaderValue(hndl: __h__tmp2_parsedValue!) : nil;
             parsedValue = _tmp2_parsedValue;
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
@@ -11163,6 +11536,9 @@ open class RangeHeaderValue
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Net_Http_Headers_RangeHeaderValue_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -11280,11 +11656,12 @@ open class RangeHeaderValue
          if  is valid  information; otherwise, .
 
     */
-    open class func TryParse(input : Optional<dotnet.System.String>, parsedValue : inout dotnet.System.Net.Http.Headers.RangeHeaderValue) throws -> Bool {
+    open class func TryParse(input : Optional<dotnet.System.String>, parsedValue : inout Optional<dotnet.System.Net.Http.Headers.RangeHeaderValue>) throws -> Bool {
         var __thrown : NullableHandle = nil;
-            var _tmp_out_parsedValue = parsedValue.get_handle();
+            var _tmp_out_parsedValue = (parsedValue != nil) ? (parsedValue!.get_handle()) : nil;
         let __return = System_Net_Http_Headers_RangeHeaderValue_bool__TryParse_0__2__String_outRangeHeaderValue(&__thrown, input?.get_handle() ?? nil, &_tmp_out_parsedValue);
-        let _tmp2_parsedValue = dotnet.System.Net.Http.Headers.RangeHeaderValue(hndl: _tmp_out_parsedValue);
+        let __h__tmp2_parsedValue = _tmp_out_parsedValue;
+        let _tmp2_parsedValue = (__h__tmp2_parsedValue != nil) ? dotnet.System.Net.Http.Headers.RangeHeaderValue(hndl: __h__tmp2_parsedValue!) : nil;
             parsedValue = _tmp2_parsedValue;
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
@@ -11361,6 +11738,9 @@ open class RangeItemHeaderValue
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Net_Http_Headers_RangeItemHeaderValue_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -11490,6 +11870,9 @@ open class RetryConditionHeaderValue
     open class override func get_type_handle() -> TypeHandle {
         return System_Net_Http_Headers_RetryConditionHeaderValue_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor(System.DateTimeOffset)
@@ -11508,7 +11891,22 @@ open class RetryConditionHeaderValue
             super.init(hndl: h);
         }
     }
-// TODO COPE ctor (span) .ctor(System.TimeSpan)
+    // .ctor(System.TimeSpan)
+// docid: M:System.Net.Http.Headers.RetryConditionHeaderValue.#ctor(System.TimeSpan)
+    /**
+    Initializes a new instance of the  class.
+
+    - Parameter delta: The delta, in seconds, used to initialize the new instance.
+    */
+    public init(delta : dotnet.System.TimeSpan) throws {
+        var __thrown : NullableHandle = nil;
+        let h = System_Net_Http_Headers_RetryConditionHeaderValue_ctor_0__1__TimeSpan(&__thrown, delta.get_handle());
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            super.init(hndl: h);
+        }
+    }
     // bool Equals(System.Object)
 // docid: M:System.Net.Http.Headers.RetryConditionHeaderValue.Equals(System.Object)
     /**
@@ -11591,11 +11989,12 @@ open class RetryConditionHeaderValue
          if  is valid  information; otherwise, .
 
     */
-    open class func TryParse(input : Optional<dotnet.System.String>, parsedValue : inout dotnet.System.Net.Http.Headers.RetryConditionHeaderValue) throws -> Bool {
+    open class func TryParse(input : Optional<dotnet.System.String>, parsedValue : inout Optional<dotnet.System.Net.Http.Headers.RetryConditionHeaderValue>) throws -> Bool {
         var __thrown : NullableHandle = nil;
-            var _tmp_out_parsedValue = parsedValue.get_handle();
+            var _tmp_out_parsedValue = (parsedValue != nil) ? (parsedValue!.get_handle()) : nil;
         let __return = System_Net_Http_Headers_RetryConditionHeaderValue_bool__TryParse_0__2__String_outRetryConditionHeaderValue(&__thrown, input?.get_handle() ?? nil, &_tmp_out_parsedValue);
-        let _tmp2_parsedValue = dotnet.System.Net.Http.Headers.RetryConditionHeaderValue(hndl: _tmp_out_parsedValue);
+        let __h__tmp2_parsedValue = _tmp_out_parsedValue;
+        let _tmp2_parsedValue = (__h__tmp2_parsedValue != nil) ? dotnet.System.Net.Http.Headers.RetryConditionHeaderValue(hndl: __h__tmp2_parsedValue!) : nil;
             parsedValue = _tmp2_parsedValue;
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
@@ -11658,6 +12057,9 @@ open class StringWithQualityHeaderValue
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Net_Http_Headers_StringWithQualityHeaderValue_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -11776,11 +12178,12 @@ open class StringWithQualityHeaderValue
          if  is valid  information; otherwise, .
 
     */
-    open class func TryParse(input : Optional<dotnet.System.String>, parsedValue : inout dotnet.System.Net.Http.Headers.StringWithQualityHeaderValue) throws -> Bool {
+    open class func TryParse(input : Optional<dotnet.System.String>, parsedValue : inout Optional<dotnet.System.Net.Http.Headers.StringWithQualityHeaderValue>) throws -> Bool {
         var __thrown : NullableHandle = nil;
-            var _tmp_out_parsedValue = parsedValue.get_handle();
+            var _tmp_out_parsedValue = (parsedValue != nil) ? (parsedValue!.get_handle()) : nil;
         let __return = System_Net_Http_Headers_StringWithQualityHeaderValue_bool__TryParse_0__2__String_outStringWithQualityHeaderValue(&__thrown, input?.get_handle() ?? nil, &_tmp_out_parsedValue);
-        let _tmp2_parsedValue = dotnet.System.Net.Http.Headers.StringWithQualityHeaderValue(hndl: _tmp_out_parsedValue);
+        let __h__tmp2_parsedValue = _tmp_out_parsedValue;
+        let _tmp2_parsedValue = (__h__tmp2_parsedValue != nil) ? dotnet.System.Net.Http.Headers.StringWithQualityHeaderValue(hndl: __h__tmp2_parsedValue!) : nil;
             parsedValue = _tmp2_parsedValue;
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
@@ -11843,6 +12246,9 @@ open class TransferCodingHeaderValue
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Net_Http_Headers_TransferCodingHeaderValue_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -11944,11 +12350,12 @@ open class TransferCodingHeaderValue
          if  is valid  information; otherwise, .
 
     */
-    open class func TryParse(input : Optional<dotnet.System.String>, parsedValue : inout dotnet.System.Net.Http.Headers.TransferCodingHeaderValue) throws -> Bool {
+    open class func TryParse(input : Optional<dotnet.System.String>, parsedValue : inout Optional<dotnet.System.Net.Http.Headers.TransferCodingHeaderValue>) throws -> Bool {
         var __thrown : NullableHandle = nil;
-            var _tmp_out_parsedValue = parsedValue.get_handle();
+            var _tmp_out_parsedValue = (parsedValue != nil) ? (parsedValue!.get_handle()) : nil;
         let __return = System_Net_Http_Headers_TransferCodingHeaderValue_bool__TryParse_0__2__String_outTransferCodingHeaderValue(&__thrown, input?.get_handle() ?? nil, &_tmp_out_parsedValue);
-        let _tmp2_parsedValue = dotnet.System.Net.Http.Headers.TransferCodingHeaderValue(hndl: _tmp_out_parsedValue);
+        let __h__tmp2_parsedValue = _tmp_out_parsedValue;
+        let _tmp2_parsedValue = (__h__tmp2_parsedValue != nil) ? dotnet.System.Net.Http.Headers.TransferCodingHeaderValue(hndl: __h__tmp2_parsedValue!) : nil;
             parsedValue = _tmp2_parsedValue;
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
@@ -12001,7 +12408,7 @@ open class TransferCodingHeaderValue
 
 // type: System.Net.Http.Headers.TransferCodingWithQualityHeaderValue
     /**
-    Represents an Accept-Encoding header value.with optional quality factor.
+    Represents an Accept-Encoding header value with optional quality factor.
 
     */
 public final class TransferCodingWithQualityHeaderValue
@@ -12010,6 +12417,9 @@ public final class TransferCodingWithQualityHeaderValue
 {
     public class override func get_type_handle() -> TypeHandle {
         return System_Net_Http_Headers_TransferCodingWithQualityHeaderValue_get_type_handle();
+    }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -12075,11 +12485,12 @@ public final class TransferCodingWithQualityHeaderValue
          if  is valid  information; otherwise, .
 
     */
-    public class func TryParse(input : Optional<dotnet.System.String>, parsedValue : inout dotnet.System.Net.Http.Headers.TransferCodingWithQualityHeaderValue) throws -> Bool {
+    public class func TryParse(input : Optional<dotnet.System.String>, parsedValue : inout Optional<dotnet.System.Net.Http.Headers.TransferCodingWithQualityHeaderValue>) throws -> Bool {
         var __thrown : NullableHandle = nil;
-            var _tmp_out_parsedValue = parsedValue.get_handle();
+            var _tmp_out_parsedValue = (parsedValue != nil) ? (parsedValue!.get_handle()) : nil;
         let __return = System_Net_Http_Headers_TransferCodingWithQualityHeaderValue_bool__TryParse_0__2__String_outTransferCodingWithQualityHeaderValue(&__thrown, input?.get_handle() ?? nil, &_tmp_out_parsedValue);
-        let _tmp2_parsedValue = dotnet.System.Net.Http.Headers.TransferCodingWithQualityHeaderValue(hndl: _tmp_out_parsedValue);
+        let __h__tmp2_parsedValue = _tmp_out_parsedValue;
+        let _tmp2_parsedValue = (__h__tmp2_parsedValue != nil) ? dotnet.System.Net.Http.Headers.TransferCodingWithQualityHeaderValue(hndl: __h__tmp2_parsedValue!) : nil;
             parsedValue = _tmp2_parsedValue;
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
@@ -12136,6 +12547,9 @@ open class ViaHeaderValue
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Net_Http_Headers_ViaHeaderValue_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -12275,11 +12689,12 @@ open class ViaHeaderValue
          if  is valid  information; otherwise, .
 
     */
-    open class func TryParse(input : Optional<dotnet.System.String>, parsedValue : inout dotnet.System.Net.Http.Headers.ViaHeaderValue) throws -> Bool {
+    open class func TryParse(input : Optional<dotnet.System.String>, parsedValue : inout Optional<dotnet.System.Net.Http.Headers.ViaHeaderValue>) throws -> Bool {
         var __thrown : NullableHandle = nil;
-            var _tmp_out_parsedValue = parsedValue.get_handle();
+            var _tmp_out_parsedValue = (parsedValue != nil) ? (parsedValue!.get_handle()) : nil;
         let __return = System_Net_Http_Headers_ViaHeaderValue_bool__TryParse_0__2__String_outViaHeaderValue(&__thrown, input?.get_handle() ?? nil, &_tmp_out_parsedValue);
-        let _tmp2_parsedValue = dotnet.System.Net.Http.Headers.ViaHeaderValue(hndl: _tmp_out_parsedValue);
+        let __h__tmp2_parsedValue = _tmp_out_parsedValue;
+        let _tmp2_parsedValue = (__h__tmp2_parsedValue != nil) ? dotnet.System.Net.Http.Headers.ViaHeaderValue(hndl: __h__tmp2_parsedValue!) : nil;
             parsedValue = _tmp2_parsedValue;
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
@@ -12390,6 +12805,9 @@ open class WarningHeaderValue
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Net_Http_Headers_WarningHeaderValue_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -12512,11 +12930,12 @@ open class WarningHeaderValue
          if  is valid  information; otherwise, .
 
     */
-    open class func TryParse(input : Optional<dotnet.System.String>, parsedValue : inout dotnet.System.Net.Http.Headers.WarningHeaderValue) throws -> Bool {
+    open class func TryParse(input : Optional<dotnet.System.String>, parsedValue : inout Optional<dotnet.System.Net.Http.Headers.WarningHeaderValue>) throws -> Bool {
         var __thrown : NullableHandle = nil;
-            var _tmp_out_parsedValue = parsedValue.get_handle();
+            var _tmp_out_parsedValue = (parsedValue != nil) ? (parsedValue!.get_handle()) : nil;
         let __return = System_Net_Http_Headers_WarningHeaderValue_bool__TryParse_0__2__String_outWarningHeaderValue(&__thrown, input?.get_handle() ?? nil, &_tmp_out_parsedValue);
-        let _tmp2_parsedValue = dotnet.System.Net.Http.Headers.WarningHeaderValue(hndl: _tmp_out_parsedValue);
+        let __h__tmp2_parsedValue = _tmp_out_parsedValue;
+        let _tmp2_parsedValue = (__h__tmp2_parsedValue != nil) ? dotnet.System.Net.Http.Headers.WarningHeaderValue(hndl: __h__tmp2_parsedValue!) : nil;
             parsedValue = _tmp2_parsedValue;
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);

@@ -18,6 +18,9 @@ public final class ClientWebSocket
     public class override func get_type_handle() -> TypeHandle {
         return System_Net_WebSockets_ClientWebSocket_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor()
@@ -61,13 +64,13 @@ public final class ClientWebSocket
     - Returns: The task object representing the asynchronous operation.
 
     */
-    public override func CloseAsync(closeStatus : dotnet.System.Net.WebSockets.WebSocketCloseStatus, statusDescription : Optional<dotnet.System.String>, cancellationToken : dotnet.System.Threading.CancellationToken) throws -> dotnet.System.Threading.Tasks.Task {
+    public override func CloseAsync(closeStatus : dotnet.System.Net.WebSockets.WebSocketCloseStatus, statusDescription : Optional<dotnet.System.String>, cancellationToken : dotnet.System.Threading.CancellationToken) async throws {
         var __thrown : NullableHandle = nil;
         let __return = System_Net_WebSockets_ClientWebSocket_Task__CloseAsync_0__3__WebSocketCloseStatus_String_CancellationToken(&__thrown, self.get_handle(), closeStatus.get_value(), statusDescription?.get_handle() ?? nil, cancellationToken.get_handle());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task(hndl: __return).ToAsync();
         }
     }
     // System.Threading.Tasks.Task CloseOutputAsync(System.Net.WebSockets.WebSocketCloseStatus, System.String, System.Threading.CancellationToken)
@@ -81,13 +84,13 @@ public final class ClientWebSocket
     - Returns: The task object representing the asynchronous operation.
 
     */
-    public override func CloseOutputAsync(closeStatus : dotnet.System.Net.WebSockets.WebSocketCloseStatus, statusDescription : Optional<dotnet.System.String>, cancellationToken : dotnet.System.Threading.CancellationToken) throws -> dotnet.System.Threading.Tasks.Task {
+    public override func CloseOutputAsync(closeStatus : dotnet.System.Net.WebSockets.WebSocketCloseStatus, statusDescription : Optional<dotnet.System.String>, cancellationToken : dotnet.System.Threading.CancellationToken) async throws {
         var __thrown : NullableHandle = nil;
         let __return = System_Net_WebSockets_ClientWebSocket_Task__CloseOutputAsync_0__3__WebSocketCloseStatus_String_CancellationToken(&__thrown, self.get_handle(), closeStatus.get_value(), statusDescription?.get_handle() ?? nil, cancellationToken.get_handle());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task(hndl: __return).ToAsync();
         }
     }
     // System.Threading.Tasks.Task ConnectAsync(System.Uri, System.Threading.CancellationToken)
@@ -100,13 +103,13 @@ public final class ClientWebSocket
     - Returns: The task object representing the asynchronous operation.
 
     */
-    public func ConnectAsync(uri : dotnet.System.Uri, cancellationToken : dotnet.System.Threading.CancellationToken) throws -> dotnet.System.Threading.Tasks.Task {
+    public func ConnectAsync(uri : dotnet.System.Uri, cancellationToken : dotnet.System.Threading.CancellationToken) async throws {
         var __thrown : NullableHandle = nil;
         let __return = System_Net_WebSockets_ClientWebSocket_Task__ConnectAsync_0__2__Uri_CancellationToken(&__thrown, self.get_handle(), uri.get_handle(), cancellationToken.get_handle());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task(hndl: __return).ToAsync();
         }
     }
     // void Dispose()
@@ -134,13 +137,13 @@ public final class ClientWebSocket
     - Returns: The task object representing the asynchronous operation.
 
     */
-    public override func ReceiveAsync(buffer : dotnet.System.ArraySegment_1<Swift.UInt8>, cancellationToken : dotnet.System.Threading.CancellationToken) throws -> dotnet.System.Threading.Tasks.Task_1<dotnet.System.Net.WebSockets.WebSocketReceiveResult> {
+    public override func ReceiveAsync(buffer : dotnet.System.ArraySegment_1<Swift.UInt8>, cancellationToken : dotnet.System.Threading.CancellationToken) async throws -> dotnet.System.Net.WebSockets.WebSocketReceiveResult {
         var __thrown : NullableHandle = nil;
         let __return = System_Net_WebSockets_ClientWebSocket_System_Threading_Tasks_Task_System_Net_WebSockets_WebSocketReceiveResult___ReceiveAsync_0__2__System_ArraySegment_u8__CancellationToken(&__thrown, self.get_handle(), buffer.get_handle(), cancellationToken.get_handle());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task_1(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task_1(hndl: __return).ToAsync();
         }
     }
     // System.Threading.Tasks.ValueTask<System.Net.WebSockets.ValueWebSocketReceiveResult> ReceiveAsync(System.Memory<System.Byte>, System.Threading.CancellationToken)
@@ -175,13 +178,13 @@ public final class ClientWebSocket
     - Returns: The task object representing the asynchronous operation.
 
     */
-    public override func SendAsync(buffer : dotnet.System.ArraySegment_1<Swift.UInt8>, messageType : dotnet.System.Net.WebSockets.WebSocketMessageType, endOfMessage : Bool, cancellationToken : dotnet.System.Threading.CancellationToken) throws -> dotnet.System.Threading.Tasks.Task {
+    public override func SendAsync(buffer : dotnet.System.ArraySegment_1<Swift.UInt8>, messageType : dotnet.System.Net.WebSockets.WebSocketMessageType, endOfMessage : Bool, cancellationToken : dotnet.System.Threading.CancellationToken) async throws {
         var __thrown : NullableHandle = nil;
         let __return = System_Net_WebSockets_ClientWebSocket_Task__SendAsync_0__4__System_ArraySegment_u8__WebSocketMessageType_bool_CancellationToken(&__thrown, self.get_handle(), buffer.get_handle(), messageType.get_value(), Swift.Int32(endOfMessage ? 1 : 0), cancellationToken.get_handle());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task(hndl: __return).ToAsync();
         }
     }
     // System.Threading.Tasks.ValueTask SendAsync(System.ReadOnlyMemory<System.Byte>, System.Net.WebSockets.WebSocketMessageType, bool, System.Threading.CancellationToken)
@@ -320,6 +323,9 @@ public final class ClientWebSocketOptions
 {
     public class override func get_type_handle() -> TypeHandle {
         return System_Net_WebSockets_ClientWebSocketOptions_get_type_handle();
+    }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -476,7 +482,17 @@ public final class ClientWebSocketOptions
         return dotnet.System.TimeSpan(hndl : __return);
         }
     }
-// TODO COPE (write_all_methods) (span) [IsSpecialName] void set_KeepAliveInterval(System.TimeSpan)
+    // [IsSpecialName] void set_KeepAliveInterval(System.TimeSpan)
+// docid: M:System.Net.WebSockets.ClientWebSocketOptions.set_KeepAliveInterval(System.TimeSpan)
+    public func set_KeepAliveInterval(value : dotnet.System.TimeSpan) throws {
+        var __thrown : NullableHandle = nil;
+        System_Net_WebSockets_ClientWebSocketOptions_void__set_KeepAliveInterval_0__1__TimeSpan(&__thrown, self.get_handle(), value.get_handle());
+        if let __ex =  __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            return;
+        }
+    }
     // [IsSpecialName] System.Net.WebSockets.WebSocketDeflateOptions get_DangerousDeflateOptions()
 // docid: M:System.Net.WebSockets.ClientWebSocketOptions.get_DangerousDeflateOptions
     public func get_DangerousDeflateOptions() throws -> Optional<dotnet.System.Net.WebSockets.WebSocketDeflateOptions> {
@@ -618,6 +634,12 @@ public final class ClientWebSocketOptions
             return try! set_Credentials(value: v!);
         }
     }
+    /**
+    Gets or sets the options for the per-message-deflate extension.
+            When present, the options are sent to the server during the handshake phase. If the server supports per-message-deflate and the options are accepted, the  instance will be created with compression enabled by default for all messages. Be aware that enabling compression makes the application subject to CRIME/BREACH type of attacks.
+            It is strongly advised to turn off compression when sending data containing secrets by specifying  flag for such messages.
+
+    */
     public var DangerousDeflateOptions : Optional<dotnet.System.Net.WebSockets.WebSocketDeflateOptions> {
         get {
             return try! get_DangerousDeflateOptions();
@@ -634,7 +656,9 @@ public final class ClientWebSocketOptions
         get {
             return try! get_KeepAliveInterval();
         }
-// TODO COPE prop set (span) [IsSpecialName] void set_KeepAliveInterval(System.TimeSpan)
+        set(v) {
+            return try! set_KeepAliveInterval(value: v);
+        }
     }
     /**
     Gets or sets the proxy for WebSocket requests.

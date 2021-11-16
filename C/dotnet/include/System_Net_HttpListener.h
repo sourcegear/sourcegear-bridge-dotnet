@@ -22,7 +22,7 @@ SG_HNDL_NULLABLE System_Net_AuthenticationSchemeSelector_IAsyncResult__BeginInvo
 
 int32_t System_Net_AuthenticationSchemeSelector_AuthenticationSchemes__EndInvoke_0__1__IAsyncResult(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE result);
 
-SG_HNDL_NONNULL System_Net_AuthenticationSchemeSelector_create(SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nullable __pdata, void (* _Nullable __deinit)(const void* _Nullable __pdata), int32_t (* _Nonnull  __cb)(const void* _Nullable __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL httpRequest));
+SG_HNDL_NONNULL System_Net_AuthenticationSchemeSelector_create(SG_HNDL_NULLABLE * _Nonnull __thrown, int32_t (* _Nonnull  __cb)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL httpRequest), const void* _Nonnull __pdata, void (* _Nullable __deinit)(const void* _Nonnull __pdata));
 
 TYP System_Net_HttpListener_get_type_handle(void);
 
@@ -92,7 +92,7 @@ SG_HNDL_NULLABLE System_Net_HttpListener_ExtendedProtectionSelector_IAsyncResult
 
 SG_HNDL_NONNULL System_Net_HttpListener_ExtendedProtectionSelector_ExtendedProtectionPolicy__EndInvoke_0__1__IAsyncResult(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE result);
 
-SG_HNDL_NONNULL System_Net_HttpListener_ExtendedProtectionSelector_create(SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nullable __pdata, void (* _Nullable __deinit)(const void* _Nullable __pdata), SG_HNDL_NONNULL (* _Nonnull  __cb)(const void* _Nullable __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL request));
+SG_HNDL_NONNULL System_Net_HttpListener_ExtendedProtectionSelector_create(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL (* _Nonnull  __cb)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL request), const void* _Nonnull __pdata, void (* _Nullable __deinit)(const void* _Nonnull __pdata));
 
 TYP System_Net_HttpListenerBasicIdentity_get_type_handle(void);
 

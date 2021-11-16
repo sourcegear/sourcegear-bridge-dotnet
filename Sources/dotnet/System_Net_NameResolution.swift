@@ -224,6 +224,14 @@ public struct Dns {
     }
     // System.Net.IPAddress[] GetHostAddresses(System.String, System.Net.Sockets.AddressFamily)
 // docid: M:System.Net.Dns.GetHostAddresses(System.String,System.Net.Sockets.AddressFamily)
+    /**
+    Returns the Internet Protocol (IP) addresses for the specified host.
+
+    - Parameter hostNameOrAddress: The host name or IP address to resolve.
+    - Parameter family: The address family for which IPs should be retrieved. If , retrieve all IPs regardless of address family.
+    - Returns: An array of type  that holds the IP addresses for the host that is specified by the  parameter.
+
+    */
     public static func GetHostAddresses(hostNameOrAddress : dotnet.System.String, family : dotnet.System.Net.Sockets.AddressFamily) throws -> dotnet.System_Arr<dotnet.System.Net.IPAddress> {
         var __thrown : NullableHandle = nil;
         let __return = System_Net_Dns_IPAddressArray__GetHostAddresses_0__2__String_AddressFamily(&__thrown, hostNameOrAddress.get_handle(), family.get_value());
@@ -242,35 +250,52 @@ public struct Dns {
     - Returns: The task object representing the asynchronous operation. The  property on the task object returns an array of type  that holds the IP addresses for the host that is specified by the  parameter.
 
     */
-    public static func GetHostAddressesAsync(hostNameOrAddress : dotnet.System.String) throws -> dotnet.System.Threading.Tasks.Task_1<dotnet.System_Arr<dotnet.System.Net.IPAddress>> {
+    public static func GetHostAddressesAsync(hostNameOrAddress : dotnet.System.String) async throws -> dotnet.System_Arr<dotnet.System.Net.IPAddress> {
         var __thrown : NullableHandle = nil;
         let __return = System_Net_Dns_System_Threading_Tasks_Task_System_Net_IPAddressArray___GetHostAddressesAsync_0__1__String(&__thrown, hostNameOrAddress.get_handle());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task_1(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task_1(hndl: __return).ToAsync();
         }
     }
     // System.Threading.Tasks.Task<System.Net.IPAddress[]> GetHostAddressesAsync(System.String, System.Net.Sockets.AddressFamily, System.Threading.CancellationToken)
 // docid: M:System.Net.Dns.GetHostAddressesAsync(System.String,System.Net.Sockets.AddressFamily,System.Threading.CancellationToken)
-    public static func GetHostAddressesAsync(hostNameOrAddress : dotnet.System.String, family : dotnet.System.Net.Sockets.AddressFamily, cancellationToken : dotnet.System.Threading.CancellationToken = System.Threading.CancellationToken.None) throws -> dotnet.System.Threading.Tasks.Task_1<dotnet.System_Arr<dotnet.System.Net.IPAddress>> {
+    /**
+    Returns the Internet Protocol (IP) addresses for the specified host as an asynchronous operation.
+
+    - Parameter hostNameOrAddress: The host name or IP address to resolve.
+    - Parameter family: The address family for which IPs should be retrieved. If , retrieve all IPs regardless of address family.
+    - Parameter cancellationToken: A cancellation token that can be used to signal the asynchronous operation should be canceled.
+    - Returns: The task object representing the asynchronous operation. The  property on the task object returns an array of type  that holds the IP addresses for the host that is specified by the  parameter.
+
+    */
+    public static func GetHostAddressesAsync(hostNameOrAddress : dotnet.System.String, family : dotnet.System.Net.Sockets.AddressFamily, cancellationToken : dotnet.System.Threading.CancellationToken = System.Threading.CancellationToken.None) async throws -> dotnet.System_Arr<dotnet.System.Net.IPAddress> {
         var __thrown : NullableHandle = nil;
         let __return = System_Net_Dns_System_Threading_Tasks_Task_System_Net_IPAddressArray___GetHostAddressesAsync_0__3__String_AddressFamily_CancellationToken(&__thrown, hostNameOrAddress.get_handle(), family.get_value(), cancellationToken.get_handle());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task_1(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task_1(hndl: __return).ToAsync();
         }
     }
     // System.Threading.Tasks.Task<System.Net.IPAddress[]> GetHostAddressesAsync(System.String, System.Threading.CancellationToken)
 // docid: M:System.Net.Dns.GetHostAddressesAsync(System.String,System.Threading.CancellationToken)
-    public static func GetHostAddressesAsync(hostNameOrAddress : dotnet.System.String, cancellationToken : dotnet.System.Threading.CancellationToken) throws -> dotnet.System.Threading.Tasks.Task_1<dotnet.System_Arr<dotnet.System.Net.IPAddress>> {
+    /**
+    Returns the Internet Protocol (IP) addresses for the specified host as an asynchronous operation.
+
+    - Parameter hostNameOrAddress: The host name or IP address to resolve.
+    - Parameter cancellationToken: A cancellation token that can be used to signal the asynchronous operation should be canceled.
+    - Returns: The task object representing the asynchronous operation. The  property on the task object returns an array of type  that holds the IP addresses for the host that is specified by the  parameter.
+
+    */
+    public static func GetHostAddressesAsync(hostNameOrAddress : dotnet.System.String, cancellationToken : dotnet.System.Threading.CancellationToken) async throws -> dotnet.System_Arr<dotnet.System.Net.IPAddress> {
         var __thrown : NullableHandle = nil;
         let __return = System_Net_Dns_System_Threading_Tasks_Task_System_Net_IPAddressArray___GetHostAddressesAsync_0__2__String_CancellationToken(&__thrown, hostNameOrAddress.get_handle(), cancellationToken.get_handle());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task_1(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task_1(hndl: __return).ToAsync();
         }
     }
     // System.Net.IPHostEntry GetHostByAddress(System.Net.IPAddress)
@@ -365,6 +390,14 @@ public struct Dns {
     }
     // System.Net.IPHostEntry GetHostEntry(System.String, System.Net.Sockets.AddressFamily)
 // docid: M:System.Net.Dns.GetHostEntry(System.String,System.Net.Sockets.AddressFamily)
+    /**
+    Resolves a host name or IP address to an  instance.
+
+    - Parameter hostNameOrAddress: The host name or IP address to resolve.
+    - Parameter family: The address family for which IPs should be retrieved. If , retrieve all IPs regardless of address family.
+    - Returns: An  instance that contains the address information about the host specified in .
+
+    */
     public static func GetHostEntry(hostNameOrAddress : dotnet.System.String, family : dotnet.System.Net.Sockets.AddressFamily) throws -> dotnet.System.Net.IPHostEntry {
         var __thrown : NullableHandle = nil;
         let __return = System_Net_Dns_IPHostEntry__GetHostEntry_0__2__String_AddressFamily(&__thrown, hostNameOrAddress.get_handle(), family.get_value());
@@ -383,13 +416,13 @@ public struct Dns {
     - Returns: The task object representing the asynchronous operation. The  property on the task object returns an  instance that contains address information about the host specified in .
 
     */
-    public static func GetHostEntryAsync(address : dotnet.System.Net.IPAddress) throws -> dotnet.System.Threading.Tasks.Task_1<dotnet.System.Net.IPHostEntry> {
+    public static func GetHostEntryAsync(address : dotnet.System.Net.IPAddress) async throws -> dotnet.System.Net.IPHostEntry {
         var __thrown : NullableHandle = nil;
         let __return = System_Net_Dns_System_Threading_Tasks_Task_System_Net_IPHostEntry___GetHostEntryAsync_0__1__IPAddress(&__thrown, address.get_handle());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task_1(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task_1(hndl: __return).ToAsync();
         }
     }
     // System.Threading.Tasks.Task<System.Net.IPHostEntry> GetHostEntryAsync(System.String)
@@ -401,35 +434,52 @@ public struct Dns {
     - Returns: The task object representing the asynchronous operation. The  property on the task object returns an  instance that contains address information about the host specified in .
 
     */
-    public static func GetHostEntryAsync(hostNameOrAddress : dotnet.System.String) throws -> dotnet.System.Threading.Tasks.Task_1<dotnet.System.Net.IPHostEntry> {
+    public static func GetHostEntryAsync(hostNameOrAddress : dotnet.System.String) async throws -> dotnet.System.Net.IPHostEntry {
         var __thrown : NullableHandle = nil;
         let __return = System_Net_Dns_System_Threading_Tasks_Task_System_Net_IPHostEntry___GetHostEntryAsync_0__1__String(&__thrown, hostNameOrAddress.get_handle());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task_1(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task_1(hndl: __return).ToAsync();
         }
     }
     // System.Threading.Tasks.Task<System.Net.IPHostEntry> GetHostEntryAsync(System.String, System.Net.Sockets.AddressFamily, System.Threading.CancellationToken)
 // docid: M:System.Net.Dns.GetHostEntryAsync(System.String,System.Net.Sockets.AddressFamily,System.Threading.CancellationToken)
-    public static func GetHostEntryAsync(hostNameOrAddress : dotnet.System.String, family : dotnet.System.Net.Sockets.AddressFamily, cancellationToken : dotnet.System.Threading.CancellationToken = System.Threading.CancellationToken.None) throws -> dotnet.System.Threading.Tasks.Task_1<dotnet.System.Net.IPHostEntry> {
+    /**
+    Resolves a host name or IP address to an  instance as an asynchronous operation.
+
+    - Parameter hostNameOrAddress: The host name or IP address to resolve.
+    - Parameter family: The address family for which IPs should be retrieved. If , retrieve all IPs regardless of address family.
+    - Parameter cancellationToken: A cancellation token that can be used to signal the asynchronous operation should be canceled.
+    - Returns: The task object representing the asynchronous operation. The  property on the task object returns an  instance that contains the address information about the host specified in .
+
+    */
+    public static func GetHostEntryAsync(hostNameOrAddress : dotnet.System.String, family : dotnet.System.Net.Sockets.AddressFamily, cancellationToken : dotnet.System.Threading.CancellationToken = System.Threading.CancellationToken.None) async throws -> dotnet.System.Net.IPHostEntry {
         var __thrown : NullableHandle = nil;
         let __return = System_Net_Dns_System_Threading_Tasks_Task_System_Net_IPHostEntry___GetHostEntryAsync_0__3__String_AddressFamily_CancellationToken(&__thrown, hostNameOrAddress.get_handle(), family.get_value(), cancellationToken.get_handle());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task_1(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task_1(hndl: __return).ToAsync();
         }
     }
     // System.Threading.Tasks.Task<System.Net.IPHostEntry> GetHostEntryAsync(System.String, System.Threading.CancellationToken)
 // docid: M:System.Net.Dns.GetHostEntryAsync(System.String,System.Threading.CancellationToken)
-    public static func GetHostEntryAsync(hostNameOrAddress : dotnet.System.String, cancellationToken : dotnet.System.Threading.CancellationToken) throws -> dotnet.System.Threading.Tasks.Task_1<dotnet.System.Net.IPHostEntry> {
+    /**
+    Resolves a host name or IP address to an  instance as an asynchronous operation.
+
+    - Parameter hostNameOrAddress: The host name or IP address to resolve.
+    - Parameter cancellationToken: A cancellation token that can be used to signal the asynchronous operation should be canceled.
+    - Returns: The task object representing the asynchronous operation. The  property on the task object returns an  instance that contains the address information about the host specified in .
+
+    */
+    public static func GetHostEntryAsync(hostNameOrAddress : dotnet.System.String, cancellationToken : dotnet.System.Threading.CancellationToken) async throws -> dotnet.System.Net.IPHostEntry {
         var __thrown : NullableHandle = nil;
         let __return = System_Net_Dns_System_Threading_Tasks_Task_System_Net_IPHostEntry___GetHostEntryAsync_0__2__String_CancellationToken(&__thrown, hostNameOrAddress.get_handle(), cancellationToken.get_handle());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task_1(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task_1(hndl: __return).ToAsync();
         }
     }
     // System.String GetHostName()
@@ -481,6 +531,9 @@ open class IPHostEntry
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Net_IPHostEntry_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }

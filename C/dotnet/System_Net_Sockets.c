@@ -312,7 +312,7 @@ struct {
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_Net_Sockets_Socket_System_Threading_Tasks_ValueTask_System_Net_Sockets_SocketReceiveFromResult___ReceiveFromAsync_0__4__System_Memory_u8__SocketFlags_EndPoint_CancellationToken)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NONNULL buffer, int32_t socketFlags, SG_HNDL_NONNULL remoteEndPoint, SG_HNDL_NONNULL cancellationToken);
     int32_t (* _Nonnull  _fp_System_Net_Sockets_Socket_bool__ReceiveFromAsync_0__1__SocketAsyncEventArgs)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NONNULL e);
     int32_t (* _Nonnull  _fp_System_Net_Sockets_Socket_i32__ReceiveMessageFrom_0__6__u8Array_i32_i32_refSocketFlags_refEndPoint_outIPPacketInformation)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NONNULL buffer, int32_t offset, int32_t size, int32_t* _Nonnull __socketFlags_ref_ptr, SG_HNDL_NONNULL* _Nonnull __remoteEP_ref_ptr, SG_HNDL_NONNULL* _Nonnull __ipPacketInformation_out_ptr);
-    int32_t (* _Nonnull  _fp_System_Net_Sockets_Socket_i32__ReceiveMessageFrom_0__4__spanu8_refSocketFlags_refEndPoint_outIPPacketInformation)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, const void* _Nonnull __buffer_spanptr, int32_t* _Nonnull __socketFlags_ref_ptr, SG_HNDL_NONNULL* _Nonnull __remoteEP_ref_ptr, SG_HNDL_NONNULL* _Nonnull __ipPacketInformation_out_ptr);
+    int32_t (* _Nonnull  _fp_System_Net_Sockets_Socket_i32__ReceiveMessageFrom_0__4__spanu8_refSocketFlags_refEndPoint_outIPPacketInformation)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, const void* _Nonnull __buffer_spanptr, int32_t* _Nonnull __socketFlags_ref_ptr, SG_HNDL_NONNULL* _Nonnull __remoteEP_ref_ptr, SG_HNDL_NULLABLE* _Nonnull __ipPacketInformation_out_ptr);
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_Net_Sockets_Socket_System_Threading_Tasks_Task_System_Net_Sockets_SocketReceiveMessageFromResult___ReceiveMessageFromAsync_0__3__System_ArraySegment_u8__SocketFlags_EndPoint)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NONNULL buffer, int32_t socketFlags, SG_HNDL_NONNULL remoteEndPoint);
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_Net_Sockets_Socket_System_Threading_Tasks_ValueTask_System_Net_Sockets_SocketReceiveMessageFromResult___ReceiveMessageFromAsync_0__4__System_Memory_u8__SocketFlags_EndPoint_CancellationToken)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NONNULL buffer, int32_t socketFlags, SG_HNDL_NONNULL remoteEndPoint, SG_HNDL_NONNULL cancellationToken);
     int32_t (* _Nonnull  _fp_System_Net_Sockets_Socket_bool__ReceiveMessageFromAsync_0__1__SocketAsyncEventArgs)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NONNULL e);
@@ -665,7 +665,7 @@ struct {
     void (* _Nonnull  _fp_System_Net_Sockets_UdpClient_void__Dispose_0__0)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h);
     void (* _Nonnull  _fp_System_Net_Sockets_UdpClient_void__DropMulticastGroup_0__1__IPAddress)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NONNULL multicastAddr);
     void (* _Nonnull  _fp_System_Net_Sockets_UdpClient_void__DropMulticastGroup_0__2__IPAddress_i32)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NONNULL multicastAddr, int32_t ifindex);
-    SG_HNDL_NONNULL (* _Nonnull  _fp_System_Net_Sockets_UdpClient_u8Array__EndReceive_0__2__IAsyncResult_refIPEndPoint)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NONNULL asyncResult, SG_HNDL_NONNULL* _Nonnull __remoteEP_ref_ptr);
+    SG_HNDL_NONNULL (* _Nonnull  _fp_System_Net_Sockets_UdpClient_u8Array__EndReceive_0__2__IAsyncResult_refIPEndPoint)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NONNULL asyncResult, SG_HNDL_NULLABLE* _Nonnull __remoteEP_ref_ptr);
     int32_t (* _Nonnull  _fp_System_Net_Sockets_UdpClient_i32__EndSend_0__1__IAsyncResult)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NONNULL asyncResult);
     void (* _Nonnull  _fp_System_Net_Sockets_UdpClient_void__JoinMulticastGroup_0__2__i32_IPAddress)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, int32_t ifindex, SG_HNDL_NONNULL multicastAddr);
     void (* _Nonnull  _fp_System_Net_Sockets_UdpClient_void__JoinMulticastGroup_0__1__IPAddress)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NONNULL multicastAddr);
@@ -3126,7 +3126,7 @@ int32_t System_Net_Sockets_Socket_i32__ReceiveMessageFrom_0__6__u8Array_i32_i32_
     return ret;
 }
 
-int32_t System_Net_Sockets_Socket_i32__ReceiveMessageFrom_0__4__spanu8_refSocketFlags_refEndPoint_outIPPacketInformation(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, const void* _Nonnull __buffer_spanptr, int32_t* _Nonnull __socketFlags_ref_ptr, SG_HNDL_NONNULL* _Nonnull __remoteEP_ref_ptr, SG_HNDL_NONNULL* _Nonnull __ipPacketInformation_out_ptr) {
+int32_t System_Net_Sockets_Socket_i32__ReceiveMessageFrom_0__4__spanu8_refSocketFlags_refEndPoint_outIPPacketInformation(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, const void* _Nonnull __buffer_spanptr, int32_t* _Nonnull __socketFlags_ref_ptr, SG_HNDL_NONNULL* _Nonnull __remoteEP_ref_ptr, SG_HNDL_NULLABLE* _Nonnull __ipPacketInformation_out_ptr) {
     if (!_g_System_Net_Sockets._fp_System_Net_Sockets_Socket_i32__ReceiveMessageFrom_0__4__spanu8_refSocketFlags_refEndPoint_outIPPacketInformation) {
         my_init();
     }
@@ -5873,7 +5873,7 @@ void System_Net_Sockets_UdpClient_void__DropMulticastGroup_0__2__IPAddress_i32(S
     _g_System_Net_Sockets._fp_System_Net_Sockets_UdpClient_void__DropMulticastGroup_0__2__IPAddress_i32(__thrown, __self_h, multicastAddr, ifindex);
 }
 
-SG_HNDL_NONNULL System_Net_Sockets_UdpClient_u8Array__EndReceive_0__2__IAsyncResult_refIPEndPoint(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NONNULL asyncResult, SG_HNDL_NONNULL* _Nonnull __remoteEP_ref_ptr) {
+SG_HNDL_NONNULL System_Net_Sockets_UdpClient_u8Array__EndReceive_0__2__IAsyncResult_refIPEndPoint(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NONNULL asyncResult, SG_HNDL_NULLABLE* _Nonnull __remoteEP_ref_ptr) {
     if (!_g_System_Net_Sockets._fp_System_Net_Sockets_UdpClient_u8Array__EndReceive_0__2__IAsyncResult_refIPEndPoint) {
         my_init();
     }

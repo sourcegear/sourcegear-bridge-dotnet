@@ -17,6 +17,9 @@ open class ConsoleTraceListener
     open class override func get_type_handle() -> TypeHandle {
         return System_Diagnostics_ConsoleTraceListener_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor()
@@ -80,6 +83,9 @@ open class DelimitedListTraceListener
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Diagnostics_DelimitedListTraceListener_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -312,6 +318,9 @@ open class TextWriterTraceListener
     open class override func get_type_handle() -> TypeHandle {
         return System_Diagnostics_TextWriterTraceListener_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor()
@@ -542,6 +551,9 @@ open class XmlWriterTraceListener
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Diagnostics_XmlWriterTraceListener_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }

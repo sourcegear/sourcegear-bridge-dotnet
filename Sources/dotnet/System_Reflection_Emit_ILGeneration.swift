@@ -18,6 +18,9 @@ open class CustomAttributeBuilder
     open class override func get_type_handle() -> TypeHandle {
         return System_Reflection_Emit_CustomAttributeBuilder_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor(System.Reflection.ConstructorInfo, System.Object[])
@@ -110,6 +113,9 @@ open class ILGenerator
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Reflection_Emit_ILGenerator_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -721,7 +727,7 @@ open class ILGenerator
     /**
     Specifies the namespace to be used in evaluating locals and watches for the current active lexical scope.
 
-    - Parameter usingNamespace: The namespace to be used in evaluating locals and watches for the current active lexical scope
+    - Parameter usingNamespace: The namespace to be used in evaluating locals and watches for the current active lexical scope.
     */
     open func UsingNamespace(usingNamespace : dotnet.System.String) throws {
         var __thrown : NullableHandle = nil;
@@ -767,6 +773,9 @@ public final class Label
 {
     public class override func get_type_handle() -> TypeHandle {
         return System_Reflection_Emit_Label_get_type_handle();
+    }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -884,6 +893,9 @@ public final class LocalBuilder
     public class override func get_type_handle() -> TypeHandle {
         return System_Reflection_Emit_LocalBuilder_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // [IsSpecialName] bool get_IsPinned()
@@ -960,6 +972,9 @@ open class ParameterBuilder
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Reflection_Emit_ParameterBuilder_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -1150,6 +1165,9 @@ public final class SignatureHelper
 {
     public class override func get_type_handle() -> TypeHandle {
         return System_Reflection_Emit_SignatureHelper_get_type_handle();
+    }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }

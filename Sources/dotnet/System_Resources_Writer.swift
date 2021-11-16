@@ -19,6 +19,9 @@ open class IResourceWriter
     open class func get_type_handle() -> TypeHandle {
         return System_Resources_IResourceWriter_get_type_handle();
     }
+    open class func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     let h : NonnullHandle;
     public func to_gval() -> GVal { return GVal(Swift.Int(bitPattern: self.h)); }
     public func dup_gval() -> GVal { return GVal(Swift.Int(bitPattern: __copy_handle(self.h))); }
@@ -125,6 +128,9 @@ public final class ResourceWriter
 {
     public class override func get_type_handle() -> TypeHandle {
         return System_Resources_ResourceWriter_get_type_handle();
+    }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -337,12 +343,12 @@ public final class ResourceWriter
         }
     }
     // delegate closure overload
-    public func set_TypeNameConverter(value : @escaping (Optional<dotnet.System.Type_>) throws -> dotnet.System.String) throws {
+    public func set_TypeNameConverter(value : @escaping (dotnet.System.Type_) throws -> dotnet.System.String) throws {
         let del_value = try dotnet.System.Func_2<dotnet.System.Type_,dotnet.System.String>(value);
         return try set_TypeNameConverter(value: del_value);
     }
     /**
-    Gets or sets a delegate that enables resource assemblies to be written that target versions of the .NET Framework prior to the .NET Framework 4 by using qualified assembly names.
+    Gets or sets a delegate that enables resource assemblies to be written that target versions of .NET Framework prior to .NET Framework 4 by using qualified assembly names.
 
     */
     public var TypeNameConverter : Optional<dotnet.System.Func_2<dotnet.System.Type_,dotnet.System.String>> {

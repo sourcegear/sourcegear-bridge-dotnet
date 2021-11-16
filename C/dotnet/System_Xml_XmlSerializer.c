@@ -42,6 +42,7 @@ struct {
     int32_t (* _Nonnull  _fp_System_Xml_Serialization_IXmlTextParser_WhitespaceHandling__get_WhitespaceHandling_0__0)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h);
     void (* _Nonnull  _fp_System_Xml_Serialization_IXmlTextParser_void__set_WhitespaceHandling_0__1__WhitespaceHandling)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, int32_t value);
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_Xml_Serialization_IXmlTextParser_cast)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __h);
+    SG_HNDL_NONNULL (* _Nonnull  _fp_System_Xml_Serialization_IXmlTextParser_create)(SG_HNDL_NULLABLE * _Nonnull __thrown, void (* _Nullable __deinit)(const void* _Nonnull __pdata));
     TYP (* _Nonnull  _fp_System_Xml_Serialization_ImportContext_get_type_handle)(void);
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_Xml_Serialization_ImportContext_ctor_0__2__CodeIdentifiers_bool)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE identifiers, int32_t shareTypes);
     int32_t (* _Nonnull  _fp_System_Xml_Serialization_ImportContext_bool__get_ShareTypes_0__0)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h);
@@ -148,7 +149,7 @@ struct {
     void (* _Nonnull  _fp_System_Xml_Serialization_UnreferencedObjectEventHandler_void__Invoke_0__2__Object_UnreferencedObjectEventArgs)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE sender, SG_HNDL_NONNULL e);
     SG_HNDL_NULLABLE (* _Nonnull  _fp_System_Xml_Serialization_UnreferencedObjectEventHandler_IAsyncResult__BeginInvoke_0__4__Object_UnreferencedObjectEventArgs_AsyncCallback_Object)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE sender, SG_HNDL_NONNULL e, SG_HNDL_NULLABLE callback, SG_HNDL_NULLABLE object_);
     void (* _Nonnull  _fp_System_Xml_Serialization_UnreferencedObjectEventHandler_void__EndInvoke_0__1__IAsyncResult)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE result);
-    SG_HNDL_NONNULL (* _Nonnull  _fp_System_Xml_Serialization_UnreferencedObjectEventHandler_create)(SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nullable __pdata, void (* _Nullable __deinit)(const void* _Nullable __pdata), void (* _Nonnull  __cb)(const void* _Nullable __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE sender, SG_HNDL_NONNULL e));
+    SG_HNDL_NONNULL (* _Nonnull  _fp_System_Xml_Serialization_UnreferencedObjectEventHandler_create)(SG_HNDL_NULLABLE * _Nonnull __thrown, void (* _Nonnull  __cb)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE sender, SG_HNDL_NONNULL e), const void* _Nonnull __pdata, void (* _Nullable __deinit)(const void* _Nonnull __pdata));
     TYP (* _Nonnull  _fp_System_Xml_Serialization_XmlAnyElementAttributes_get_type_handle)(void);
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_Xml_Serialization_XmlAnyElementAttributes_ctor_0__0)(SG_HNDL_NULLABLE * _Nonnull __thrown);
     int32_t (* _Nonnull  _fp_System_Xml_Serialization_XmlAnyElementAttributes_i32__Add_0__1__XmlAnyElementAttribute)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE attribute);
@@ -216,7 +217,7 @@ struct {
     void (* _Nonnull  _fp_System_Xml_Serialization_XmlAttributeEventHandler_void__Invoke_0__2__Object_XmlAttributeEventArgs)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE sender, SG_HNDL_NONNULL e);
     SG_HNDL_NULLABLE (* _Nonnull  _fp_System_Xml_Serialization_XmlAttributeEventHandler_IAsyncResult__BeginInvoke_0__4__Object_XmlAttributeEventArgs_AsyncCallback_Object)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE sender, SG_HNDL_NONNULL e, SG_HNDL_NULLABLE callback, SG_HNDL_NULLABLE object_);
     void (* _Nonnull  _fp_System_Xml_Serialization_XmlAttributeEventHandler_void__EndInvoke_0__1__IAsyncResult)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE result);
-    SG_HNDL_NONNULL (* _Nonnull  _fp_System_Xml_Serialization_XmlAttributeEventHandler_create)(SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nullable __pdata, void (* _Nullable __deinit)(const void* _Nullable __pdata), void (* _Nonnull  __cb)(const void* _Nullable __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE sender, SG_HNDL_NONNULL e));
+    SG_HNDL_NONNULL (* _Nonnull  _fp_System_Xml_Serialization_XmlAttributeEventHandler_create)(SG_HNDL_NULLABLE * _Nonnull __thrown, void (* _Nonnull  __cb)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE sender, SG_HNDL_NONNULL e), const void* _Nonnull __pdata, void (* _Nullable __deinit)(const void* _Nonnull __pdata));
     TYP (* _Nonnull  _fp_System_Xml_Serialization_XmlAttributeOverrides_get_type_handle)(void);
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_Xml_Serialization_XmlAttributeOverrides_ctor_0__0)(SG_HNDL_NULLABLE * _Nonnull __thrown);
     void (* _Nonnull  _fp_System_Xml_Serialization_XmlAttributeOverrides_void__Add_0__3__Type_String_XmlAttributes)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NONNULL type, SG_HNDL_NONNULL member, SG_HNDL_NULLABLE attributes);
@@ -290,7 +291,7 @@ struct {
     void (* _Nonnull  _fp_System_Xml_Serialization_XmlElementEventHandler_void__Invoke_0__2__Object_XmlElementEventArgs)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE sender, SG_HNDL_NONNULL e);
     SG_HNDL_NULLABLE (* _Nonnull  _fp_System_Xml_Serialization_XmlElementEventHandler_IAsyncResult__BeginInvoke_0__4__Object_XmlElementEventArgs_AsyncCallback_Object)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE sender, SG_HNDL_NONNULL e, SG_HNDL_NULLABLE callback, SG_HNDL_NULLABLE object_);
     void (* _Nonnull  _fp_System_Xml_Serialization_XmlElementEventHandler_void__EndInvoke_0__1__IAsyncResult)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE result);
-    SG_HNDL_NONNULL (* _Nonnull  _fp_System_Xml_Serialization_XmlElementEventHandler_create)(SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nullable __pdata, void (* _Nullable __deinit)(const void* _Nullable __pdata), void (* _Nonnull  __cb)(const void* _Nullable __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE sender, SG_HNDL_NONNULL e));
+    SG_HNDL_NONNULL (* _Nonnull  _fp_System_Xml_Serialization_XmlElementEventHandler_create)(SG_HNDL_NULLABLE * _Nonnull __thrown, void (* _Nonnull  __cb)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE sender, SG_HNDL_NONNULL e), const void* _Nonnull __pdata, void (* _Nullable __deinit)(const void* _Nonnull __pdata));
     TYP (* _Nonnull  _fp_System_Xml_Serialization_XmlIncludeAttribute_get_type_handle)(void);
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_Xml_Serialization_XmlIncludeAttribute_ctor_0__1__Type)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE type);
     SG_HNDL_NULLABLE (* _Nonnull  _fp_System_Xml_Serialization_XmlIncludeAttribute_Type__get_Type_0__0)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h);
@@ -337,7 +338,7 @@ struct {
     void (* _Nonnull  _fp_System_Xml_Serialization_XmlNodeEventHandler_void__Invoke_0__2__Object_XmlNodeEventArgs)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE sender, SG_HNDL_NONNULL e);
     SG_HNDL_NULLABLE (* _Nonnull  _fp_System_Xml_Serialization_XmlNodeEventHandler_IAsyncResult__BeginInvoke_0__4__Object_XmlNodeEventArgs_AsyncCallback_Object)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE sender, SG_HNDL_NONNULL e, SG_HNDL_NULLABLE callback, SG_HNDL_NULLABLE object_);
     void (* _Nonnull  _fp_System_Xml_Serialization_XmlNodeEventHandler_void__EndInvoke_0__1__IAsyncResult)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE result);
-    SG_HNDL_NONNULL (* _Nonnull  _fp_System_Xml_Serialization_XmlNodeEventHandler_create)(SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nullable __pdata, void (* _Nullable __deinit)(const void* _Nullable __pdata), void (* _Nonnull  __cb)(const void* _Nullable __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE sender, SG_HNDL_NONNULL e));
+    SG_HNDL_NONNULL (* _Nonnull  _fp_System_Xml_Serialization_XmlNodeEventHandler_create)(SG_HNDL_NULLABLE * _Nonnull __thrown, void (* _Nonnull  __cb)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE sender, SG_HNDL_NONNULL e), const void* _Nonnull __pdata, void (* _Nullable __deinit)(const void* _Nonnull __pdata));
     TYP (* _Nonnull  _fp_System_Xml_Serialization_XmlReflectionImporter_get_type_handle)(void);
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_Xml_Serialization_XmlReflectionImporter_ctor_0__0)(SG_HNDL_NULLABLE * _Nonnull __thrown);
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_Xml_Serialization_XmlReflectionImporter_ctor_0__1__String)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE defaultNamespace);
@@ -424,26 +425,26 @@ struct {
     void (* _Nonnull  _fp_System_Xml_Serialization_XmlSerializationCollectionFixupCallback_void__Invoke_0__2__Object_Object)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE collection, SG_HNDL_NULLABLE collectionItems);
     SG_HNDL_NULLABLE (* _Nonnull  _fp_System_Xml_Serialization_XmlSerializationCollectionFixupCallback_IAsyncResult__BeginInvoke_0__4__Object_Object_AsyncCallback_Object)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE collection, SG_HNDL_NULLABLE collectionItems, SG_HNDL_NULLABLE callback, SG_HNDL_NULLABLE object_);
     void (* _Nonnull  _fp_System_Xml_Serialization_XmlSerializationCollectionFixupCallback_void__EndInvoke_0__1__IAsyncResult)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE result);
-    SG_HNDL_NONNULL (* _Nonnull  _fp_System_Xml_Serialization_XmlSerializationCollectionFixupCallback_create)(SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nullable __pdata, void (* _Nullable __deinit)(const void* _Nullable __pdata), void (* _Nonnull  __cb)(const void* _Nullable __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE collection, SG_HNDL_NULLABLE collectionItems));
+    SG_HNDL_NONNULL (* _Nonnull  _fp_System_Xml_Serialization_XmlSerializationCollectionFixupCallback_create)(SG_HNDL_NULLABLE * _Nonnull __thrown, void (* _Nonnull  __cb)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE collection, SG_HNDL_NULLABLE collectionItems), const void* _Nonnull __pdata, void (* _Nullable __deinit)(const void* _Nonnull __pdata));
     TYP (* _Nonnull  _fp_System_Xml_Serialization_XmlSerializationFixupCallback_get_type_handle)(void);
     void (* _Nonnull  _fp_System_Xml_Serialization_XmlSerializationFixupCallback_void__Invoke_0__1__Object)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NONNULL fixup);
     SG_HNDL_NULLABLE (* _Nonnull  _fp_System_Xml_Serialization_XmlSerializationFixupCallback_IAsyncResult__BeginInvoke_0__3__Object_AsyncCallback_Object)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NONNULL fixup, SG_HNDL_NULLABLE callback, SG_HNDL_NULLABLE object_);
     void (* _Nonnull  _fp_System_Xml_Serialization_XmlSerializationFixupCallback_void__EndInvoke_0__1__IAsyncResult)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE result);
-    SG_HNDL_NONNULL (* _Nonnull  _fp_System_Xml_Serialization_XmlSerializationFixupCallback_create)(SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nullable __pdata, void (* _Nullable __deinit)(const void* _Nullable __pdata), void (* _Nonnull  __cb)(const void* _Nullable __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL fixup));
+    SG_HNDL_NONNULL (* _Nonnull  _fp_System_Xml_Serialization_XmlSerializationFixupCallback_create)(SG_HNDL_NULLABLE * _Nonnull __thrown, void (* _Nonnull  __cb)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL fixup), const void* _Nonnull __pdata, void (* _Nullable __deinit)(const void* _Nonnull __pdata));
     TYP (* _Nonnull  _fp_System_Xml_Serialization_XmlSerializationGeneratedCode_get_type_handle)(void);
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_Xml_Serialization_XmlSerializationGeneratedCode_cast)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __h);
     TYP (* _Nonnull  _fp_System_Xml_Serialization_XmlSerializationReadCallback_get_type_handle)(void);
     SG_HNDL_NULLABLE (* _Nonnull  _fp_System_Xml_Serialization_XmlSerializationReadCallback_Object__Invoke_0__0)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h);
     SG_HNDL_NULLABLE (* _Nonnull  _fp_System_Xml_Serialization_XmlSerializationReadCallback_IAsyncResult__BeginInvoke_0__2__AsyncCallback_Object)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE callback, SG_HNDL_NULLABLE object_);
     SG_HNDL_NULLABLE (* _Nonnull  _fp_System_Xml_Serialization_XmlSerializationReadCallback_Object__EndInvoke_0__1__IAsyncResult)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE result);
-    SG_HNDL_NONNULL (* _Nonnull  _fp_System_Xml_Serialization_XmlSerializationReadCallback_create)(SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nullable __pdata, void (* _Nullable __deinit)(const void* _Nullable __pdata), SG_HNDL_NULLABLE (* _Nonnull  __cb)(const void* _Nullable __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown));
+    SG_HNDL_NONNULL (* _Nonnull  _fp_System_Xml_Serialization_XmlSerializationReadCallback_create)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE (* _Nonnull  __cb)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown), const void* _Nonnull __pdata, void (* _Nullable __deinit)(const void* _Nonnull __pdata));
     TYP (* _Nonnull  _fp_System_Xml_Serialization_XmlSerializationReader_get_type_handle)(void);
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_Xml_Serialization_XmlSerializationReader_cast)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __h);
     TYP (* _Nonnull  _fp_System_Xml_Serialization_XmlSerializationWriteCallback_get_type_handle)(void);
     void (* _Nonnull  _fp_System_Xml_Serialization_XmlSerializationWriteCallback_void__Invoke_0__1__Object)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NONNULL o);
     SG_HNDL_NULLABLE (* _Nonnull  _fp_System_Xml_Serialization_XmlSerializationWriteCallback_IAsyncResult__BeginInvoke_0__3__Object_AsyncCallback_Object)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NONNULL o, SG_HNDL_NULLABLE callback, SG_HNDL_NULLABLE object_);
     void (* _Nonnull  _fp_System_Xml_Serialization_XmlSerializationWriteCallback_void__EndInvoke_0__1__IAsyncResult)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE result);
-    SG_HNDL_NONNULL (* _Nonnull  _fp_System_Xml_Serialization_XmlSerializationWriteCallback_create)(SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nullable __pdata, void (* _Nullable __deinit)(const void* _Nullable __pdata), void (* _Nonnull  __cb)(const void* _Nullable __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL o));
+    SG_HNDL_NONNULL (* _Nonnull  _fp_System_Xml_Serialization_XmlSerializationWriteCallback_create)(SG_HNDL_NULLABLE * _Nonnull __thrown, void (* _Nonnull  __cb)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL o), const void* _Nonnull __pdata, void (* _Nullable __deinit)(const void* _Nonnull __pdata));
     TYP (* _Nonnull  _fp_System_Xml_Serialization_XmlSerializationWriter_get_type_handle)(void);
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_Xml_Serialization_XmlSerializationWriter_cast)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __h);
     TYP (* _Nonnull  _fp_System_Xml_Serialization_XmlSerializer_get_type_handle)(void);
@@ -818,6 +819,14 @@ SG_HNDL_NONNULL System_Xml_Serialization_IXmlTextParser_cast(SG_HNDL_NULLABLE * 
         my_init();
     }
     SG_HNDL_NONNULL ret = _g_System_Xml_XmlSerializer._fp_System_Xml_Serialization_IXmlTextParser_cast(__thrown, __h);
+    return ret;
+}
+
+SG_HNDL_NONNULL System_Xml_Serialization_IXmlTextParser_create(SG_HNDL_NULLABLE * _Nonnull __thrown, void (* _Nullable __deinit)(const void* _Nonnull __pdata)) {
+    if (!_g_System_Xml_XmlSerializer._fp_System_Xml_Serialization_IXmlTextParser_create) {
+        my_init();
+    }
+    SG_HNDL_NONNULL ret = _g_System_Xml_XmlSerializer._fp_System_Xml_Serialization_IXmlTextParser_create(__thrown, __deinit);
     return ret;
 }
 
@@ -1644,11 +1653,11 @@ void System_Xml_Serialization_UnreferencedObjectEventHandler_void__EndInvoke_0__
     _g_System_Xml_XmlSerializer._fp_System_Xml_Serialization_UnreferencedObjectEventHandler_void__EndInvoke_0__1__IAsyncResult(__thrown, __self_h, result);
 }
 
-SG_HNDL_NONNULL System_Xml_Serialization_UnreferencedObjectEventHandler_create(SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nullable __pdata, void (* _Nullable __deinit)(const void* _Nullable __pdata), void (* _Nonnull  __cb)(const void* _Nullable __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE sender, SG_HNDL_NONNULL e)) {
+SG_HNDL_NONNULL System_Xml_Serialization_UnreferencedObjectEventHandler_create(SG_HNDL_NULLABLE * _Nonnull __thrown, void (* _Nonnull  __cb)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE sender, SG_HNDL_NONNULL e), const void* _Nonnull __pdata, void (* _Nullable __deinit)(const void* _Nonnull __pdata)) {
     if (!_g_System_Xml_XmlSerializer._fp_System_Xml_Serialization_UnreferencedObjectEventHandler_create) {
         my_init();
     }
-    SG_HNDL_NONNULL ret = _g_System_Xml_XmlSerializer._fp_System_Xml_Serialization_UnreferencedObjectEventHandler_create(__thrown, __pdata, __deinit, __cb);
+    SG_HNDL_NONNULL ret = _g_System_Xml_XmlSerializer._fp_System_Xml_Serialization_UnreferencedObjectEventHandler_create(__thrown, __cb, __pdata, __deinit);
     return ret;
 }
 
@@ -2166,11 +2175,11 @@ void System_Xml_Serialization_XmlAttributeEventHandler_void__EndInvoke_0__1__IAs
     _g_System_Xml_XmlSerializer._fp_System_Xml_Serialization_XmlAttributeEventHandler_void__EndInvoke_0__1__IAsyncResult(__thrown, __self_h, result);
 }
 
-SG_HNDL_NONNULL System_Xml_Serialization_XmlAttributeEventHandler_create(SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nullable __pdata, void (* _Nullable __deinit)(const void* _Nullable __pdata), void (* _Nonnull  __cb)(const void* _Nullable __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE sender, SG_HNDL_NONNULL e)) {
+SG_HNDL_NONNULL System_Xml_Serialization_XmlAttributeEventHandler_create(SG_HNDL_NULLABLE * _Nonnull __thrown, void (* _Nonnull  __cb)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE sender, SG_HNDL_NONNULL e), const void* _Nonnull __pdata, void (* _Nullable __deinit)(const void* _Nonnull __pdata)) {
     if (!_g_System_Xml_XmlSerializer._fp_System_Xml_Serialization_XmlAttributeEventHandler_create) {
         my_init();
     }
-    SG_HNDL_NONNULL ret = _g_System_Xml_XmlSerializer._fp_System_Xml_Serialization_XmlAttributeEventHandler_create(__thrown, __pdata, __deinit, __cb);
+    SG_HNDL_NONNULL ret = _g_System_Xml_XmlSerializer._fp_System_Xml_Serialization_XmlAttributeEventHandler_create(__thrown, __cb, __pdata, __deinit);
     return ret;
 }
 
@@ -2735,11 +2744,11 @@ void System_Xml_Serialization_XmlElementEventHandler_void__EndInvoke_0__1__IAsyn
     _g_System_Xml_XmlSerializer._fp_System_Xml_Serialization_XmlElementEventHandler_void__EndInvoke_0__1__IAsyncResult(__thrown, __self_h, result);
 }
 
-SG_HNDL_NONNULL System_Xml_Serialization_XmlElementEventHandler_create(SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nullable __pdata, void (* _Nullable __deinit)(const void* _Nullable __pdata), void (* _Nonnull  __cb)(const void* _Nullable __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE sender, SG_HNDL_NONNULL e)) {
+SG_HNDL_NONNULL System_Xml_Serialization_XmlElementEventHandler_create(SG_HNDL_NULLABLE * _Nonnull __thrown, void (* _Nonnull  __cb)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE sender, SG_HNDL_NONNULL e), const void* _Nonnull __pdata, void (* _Nullable __deinit)(const void* _Nonnull __pdata)) {
     if (!_g_System_Xml_XmlSerializer._fp_System_Xml_Serialization_XmlElementEventHandler_create) {
         my_init();
     }
-    SG_HNDL_NONNULL ret = _g_System_Xml_XmlSerializer._fp_System_Xml_Serialization_XmlElementEventHandler_create(__thrown, __pdata, __deinit, __cb);
+    SG_HNDL_NONNULL ret = _g_System_Xml_XmlSerializer._fp_System_Xml_Serialization_XmlElementEventHandler_create(__thrown, __cb, __pdata, __deinit);
     return ret;
 }
 
@@ -3107,11 +3116,11 @@ void System_Xml_Serialization_XmlNodeEventHandler_void__EndInvoke_0__1__IAsyncRe
     _g_System_Xml_XmlSerializer._fp_System_Xml_Serialization_XmlNodeEventHandler_void__EndInvoke_0__1__IAsyncResult(__thrown, __self_h, result);
 }
 
-SG_HNDL_NONNULL System_Xml_Serialization_XmlNodeEventHandler_create(SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nullable __pdata, void (* _Nullable __deinit)(const void* _Nullable __pdata), void (* _Nonnull  __cb)(const void* _Nullable __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE sender, SG_HNDL_NONNULL e)) {
+SG_HNDL_NONNULL System_Xml_Serialization_XmlNodeEventHandler_create(SG_HNDL_NULLABLE * _Nonnull __thrown, void (* _Nonnull  __cb)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE sender, SG_HNDL_NONNULL e), const void* _Nonnull __pdata, void (* _Nullable __deinit)(const void* _Nonnull __pdata)) {
     if (!_g_System_Xml_XmlSerializer._fp_System_Xml_Serialization_XmlNodeEventHandler_create) {
         my_init();
     }
-    SG_HNDL_NONNULL ret = _g_System_Xml_XmlSerializer._fp_System_Xml_Serialization_XmlNodeEventHandler_create(__thrown, __pdata, __deinit, __cb);
+    SG_HNDL_NONNULL ret = _g_System_Xml_XmlSerializer._fp_System_Xml_Serialization_XmlNodeEventHandler_create(__thrown, __cb, __pdata, __deinit);
     return ret;
 }
 
@@ -3782,11 +3791,11 @@ void System_Xml_Serialization_XmlSerializationCollectionFixupCallback_void__EndI
     _g_System_Xml_XmlSerializer._fp_System_Xml_Serialization_XmlSerializationCollectionFixupCallback_void__EndInvoke_0__1__IAsyncResult(__thrown, __self_h, result);
 }
 
-SG_HNDL_NONNULL System_Xml_Serialization_XmlSerializationCollectionFixupCallback_create(SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nullable __pdata, void (* _Nullable __deinit)(const void* _Nullable __pdata), void (* _Nonnull  __cb)(const void* _Nullable __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE collection, SG_HNDL_NULLABLE collectionItems)) {
+SG_HNDL_NONNULL System_Xml_Serialization_XmlSerializationCollectionFixupCallback_create(SG_HNDL_NULLABLE * _Nonnull __thrown, void (* _Nonnull  __cb)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE collection, SG_HNDL_NULLABLE collectionItems), const void* _Nonnull __pdata, void (* _Nullable __deinit)(const void* _Nonnull __pdata)) {
     if (!_g_System_Xml_XmlSerializer._fp_System_Xml_Serialization_XmlSerializationCollectionFixupCallback_create) {
         my_init();
     }
-    SG_HNDL_NONNULL ret = _g_System_Xml_XmlSerializer._fp_System_Xml_Serialization_XmlSerializationCollectionFixupCallback_create(__thrown, __pdata, __deinit, __cb);
+    SG_HNDL_NONNULL ret = _g_System_Xml_XmlSerializer._fp_System_Xml_Serialization_XmlSerializationCollectionFixupCallback_create(__thrown, __cb, __pdata, __deinit);
     return ret;
 }
 
@@ -3820,11 +3829,11 @@ void System_Xml_Serialization_XmlSerializationFixupCallback_void__EndInvoke_0__1
     _g_System_Xml_XmlSerializer._fp_System_Xml_Serialization_XmlSerializationFixupCallback_void__EndInvoke_0__1__IAsyncResult(__thrown, __self_h, result);
 }
 
-SG_HNDL_NONNULL System_Xml_Serialization_XmlSerializationFixupCallback_create(SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nullable __pdata, void (* _Nullable __deinit)(const void* _Nullable __pdata), void (* _Nonnull  __cb)(const void* _Nullable __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL fixup)) {
+SG_HNDL_NONNULL System_Xml_Serialization_XmlSerializationFixupCallback_create(SG_HNDL_NULLABLE * _Nonnull __thrown, void (* _Nonnull  __cb)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL fixup), const void* _Nonnull __pdata, void (* _Nullable __deinit)(const void* _Nonnull __pdata)) {
     if (!_g_System_Xml_XmlSerializer._fp_System_Xml_Serialization_XmlSerializationFixupCallback_create) {
         my_init();
     }
-    SG_HNDL_NONNULL ret = _g_System_Xml_XmlSerializer._fp_System_Xml_Serialization_XmlSerializationFixupCallback_create(__thrown, __pdata, __deinit, __cb);
+    SG_HNDL_NONNULL ret = _g_System_Xml_XmlSerializer._fp_System_Xml_Serialization_XmlSerializationFixupCallback_create(__thrown, __cb, __pdata, __deinit);
     return ret;
 }
 
@@ -3876,11 +3885,11 @@ SG_HNDL_NULLABLE System_Xml_Serialization_XmlSerializationReadCallback_Object__E
     return ret;
 }
 
-SG_HNDL_NONNULL System_Xml_Serialization_XmlSerializationReadCallback_create(SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nullable __pdata, void (* _Nullable __deinit)(const void* _Nullable __pdata), SG_HNDL_NULLABLE (* _Nonnull  __cb)(const void* _Nullable __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown)) {
+SG_HNDL_NONNULL System_Xml_Serialization_XmlSerializationReadCallback_create(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE (* _Nonnull  __cb)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown), const void* _Nonnull __pdata, void (* _Nullable __deinit)(const void* _Nonnull __pdata)) {
     if (!_g_System_Xml_XmlSerializer._fp_System_Xml_Serialization_XmlSerializationReadCallback_create) {
         my_init();
     }
-    SG_HNDL_NONNULL ret = _g_System_Xml_XmlSerializer._fp_System_Xml_Serialization_XmlSerializationReadCallback_create(__thrown, __pdata, __deinit, __cb);
+    SG_HNDL_NONNULL ret = _g_System_Xml_XmlSerializer._fp_System_Xml_Serialization_XmlSerializationReadCallback_create(__thrown, __cb, __pdata, __deinit);
     return ret;
 }
 
@@ -3930,11 +3939,11 @@ void System_Xml_Serialization_XmlSerializationWriteCallback_void__EndInvoke_0__1
     _g_System_Xml_XmlSerializer._fp_System_Xml_Serialization_XmlSerializationWriteCallback_void__EndInvoke_0__1__IAsyncResult(__thrown, __self_h, result);
 }
 
-SG_HNDL_NONNULL System_Xml_Serialization_XmlSerializationWriteCallback_create(SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nullable __pdata, void (* _Nullable __deinit)(const void* _Nullable __pdata), void (* _Nonnull  __cb)(const void* _Nullable __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL o)) {
+SG_HNDL_NONNULL System_Xml_Serialization_XmlSerializationWriteCallback_create(SG_HNDL_NULLABLE * _Nonnull __thrown, void (* _Nonnull  __cb)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL o), const void* _Nonnull __pdata, void (* _Nullable __deinit)(const void* _Nonnull __pdata)) {
     if (!_g_System_Xml_XmlSerializer._fp_System_Xml_Serialization_XmlSerializationWriteCallback_create) {
         my_init();
     }
-    SG_HNDL_NONNULL ret = _g_System_Xml_XmlSerializer._fp_System_Xml_Serialization_XmlSerializationWriteCallback_create(__thrown, __pdata, __deinit, __cb);
+    SG_HNDL_NONNULL ret = _g_System_Xml_XmlSerializer._fp_System_Xml_Serialization_XmlSerializationWriteCallback_create(__thrown, __cb, __pdata, __deinit);
     return ret;
 }
 

@@ -139,6 +139,7 @@ struct {
     int32_t (* _Nonnull  _fp_System_Security_Cryptography_ICryptoTransform_i32__get_InputBlockSize_0__0)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h);
     int32_t (* _Nonnull  _fp_System_Security_Cryptography_ICryptoTransform_i32__get_OutputBlockSize_0__0)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h);
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_Security_Cryptography_ICryptoTransform_cast)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __h);
+    SG_HNDL_NONNULL (* _Nonnull  _fp_System_Security_Cryptography_ICryptoTransform_create)(SG_HNDL_NULLABLE * _Nonnull __thrown, int32_t (* _Nonnull  __cb_System_Security_Cryptography_ICryptoTransform_i32__TransformBlock_0__5__u8Array_i32_i32_u8Array_i32)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL inputBuffer, int32_t inputOffset, int32_t inputCount, SG_HNDL_NONNULL outputBuffer, int32_t outputOffset), const void* _Nonnull __pdata_System_Security_Cryptography_ICryptoTransform_i32__TransformBlock_0__5__u8Array_i32_i32_u8Array_i32, SG_HNDL_NONNULL (* _Nonnull  __cb_System_Security_Cryptography_ICryptoTransform_u8Array__TransformFinalBlock_0__3__u8Array_i32_i32)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL inputBuffer, int32_t inputOffset, int32_t inputCount), const void* _Nonnull __pdata_System_Security_Cryptography_ICryptoTransform_u8Array__TransformFinalBlock_0__3__u8Array_i32_i32, void (* _Nonnull  __cb_System_IDisposable_void__Dispose_0__0)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown), const void* _Nonnull __pdata_System_IDisposable_void__Dispose_0__0, void (* _Nullable __deinit)(const void* _Nonnull __pdata));
     TYP (* _Nonnull  _fp_System_Security_Cryptography_KeySizes_get_type_handle)(void);
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_Security_Cryptography_KeySizes_ctor_0__3__i32_i32_i32)(SG_HNDL_NULLABLE * _Nonnull __thrown, int32_t minSize, int32_t maxSize, int32_t skipSize);
     int32_t (* _Nonnull  _fp_System_Security_Cryptography_KeySizes_i32__get_MaxSize_0__0)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h);
@@ -1257,6 +1258,14 @@ SG_HNDL_NONNULL System_Security_Cryptography_ICryptoTransform_cast(SG_HNDL_NULLA
         my_init();
     }
     SG_HNDL_NONNULL ret = _g_System_Security_Cryptography_Primitives._fp_System_Security_Cryptography_ICryptoTransform_cast(__thrown, __h);
+    return ret;
+}
+
+SG_HNDL_NONNULL System_Security_Cryptography_ICryptoTransform_create(SG_HNDL_NULLABLE * _Nonnull __thrown, int32_t (* _Nonnull  __cb_System_Security_Cryptography_ICryptoTransform_i32__TransformBlock_0__5__u8Array_i32_i32_u8Array_i32)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL inputBuffer, int32_t inputOffset, int32_t inputCount, SG_HNDL_NONNULL outputBuffer, int32_t outputOffset), const void* _Nonnull __pdata_System_Security_Cryptography_ICryptoTransform_i32__TransformBlock_0__5__u8Array_i32_i32_u8Array_i32, SG_HNDL_NONNULL (* _Nonnull  __cb_System_Security_Cryptography_ICryptoTransform_u8Array__TransformFinalBlock_0__3__u8Array_i32_i32)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL inputBuffer, int32_t inputOffset, int32_t inputCount), const void* _Nonnull __pdata_System_Security_Cryptography_ICryptoTransform_u8Array__TransformFinalBlock_0__3__u8Array_i32_i32, void (* _Nonnull  __cb_System_IDisposable_void__Dispose_0__0)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown), const void* _Nonnull __pdata_System_IDisposable_void__Dispose_0__0, void (* _Nullable __deinit)(const void* _Nonnull __pdata)) {
+    if (!_g_System_Security_Cryptography_Primitives._fp_System_Security_Cryptography_ICryptoTransform_create) {
+        my_init();
+    }
+    SG_HNDL_NONNULL ret = _g_System_Security_Cryptography_Primitives._fp_System_Security_Cryptography_ICryptoTransform_create(__thrown, __cb_System_Security_Cryptography_ICryptoTransform_i32__TransformBlock_0__5__u8Array_i32_i32_u8Array_i32, __pdata_System_Security_Cryptography_ICryptoTransform_i32__TransformBlock_0__5__u8Array_i32_i32_u8Array_i32, __cb_System_Security_Cryptography_ICryptoTransform_u8Array__TransformFinalBlock_0__3__u8Array_i32_i32, __pdata_System_Security_Cryptography_ICryptoTransform_u8Array__TransformFinalBlock_0__3__u8Array_i32_i32, __cb_System_IDisposable_void__Dispose_0__0, __pdata_System_IDisposable_void__Dispose_0__0, __deinit);
     return ret;
 }
 

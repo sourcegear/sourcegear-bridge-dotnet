@@ -17,6 +17,9 @@ open class BooleanSwitch
     open class override func get_type_handle() -> TypeHandle {
         return System_Diagnostics_BooleanSwitch_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor(System.String, System.String)
@@ -102,6 +105,9 @@ open class CorrelationManager
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Diagnostics_CorrelationManager_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -219,6 +225,9 @@ open class DefaultTraceListener
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Diagnostics_DefaultTraceListener_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -389,6 +398,9 @@ open class EventTypeFilter
     open class override func get_type_handle() -> TypeHandle {
         return System_Diagnostics_EventTypeFilter_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor(System.Diagnostics.SourceLevels)
@@ -481,6 +493,9 @@ open class SourceFilter
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Diagnostics_SourceFilter_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -681,6 +696,9 @@ open class SourceSwitch
     open class override func get_type_handle() -> TypeHandle {
         return System_Diagnostics_SourceSwitch_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor(System.String)
@@ -784,6 +802,9 @@ open class Switch
     open class override func get_type_handle() -> TypeHandle {
         return System_Diagnostics_Switch_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // [IsSpecialName] System.Collections.Specialized.StringDictionary get_Attributes()
@@ -860,6 +881,9 @@ public final class SwitchAttribute
 {
     public class override func get_type_handle() -> TypeHandle {
         return System_Diagnostics_SwitchAttribute_get_type_handle();
+    }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -1019,6 +1043,9 @@ public final class SwitchLevelAttribute
     public class override func get_type_handle() -> TypeHandle {
         return System_Diagnostics_SwitchLevelAttribute_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor(System.Type)
@@ -1085,6 +1112,9 @@ public final class Trace
 {
     public class override func get_type_handle() -> TypeHandle {
         return System_Diagnostics_Trace_get_type_handle();
+    }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -1817,6 +1847,9 @@ open class TraceEventCache
     open class override func get_type_handle() -> TypeHandle {
         return System_Diagnostics_TraceEventCache_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor()
@@ -2097,6 +2130,9 @@ open class TraceFilter
     open class override func get_type_handle() -> TypeHandle {
         return System_Diagnostics_TraceFilter_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // bool ShouldTrace(System.Diagnostics.TraceEventCache, System.String, System.Diagnostics.TraceEventType, System.Int32, System.String, System.Object[], System.Object, System.Object[])
@@ -2213,6 +2249,9 @@ open class TraceListener
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Diagnostics_TraceListener_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -2778,6 +2817,9 @@ open class TraceListenerCollection
     open class override func get_type_handle() -> TypeHandle {
         return System_Diagnostics_TraceListenerCollection_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // System.Int32 Add(System.Diagnostics.TraceListener)
@@ -2994,9 +3036,6 @@ open class TraceListenerCollection
     }
     // [IsSpecialName] System.Diagnostics.TraceListener get_Item(System.Int32)
 // docid: M:System.Diagnostics.TraceListenerCollection.get_Item(System.Int32)
-//BEGIN method_is_override
-//matches_1
-//matches :
     open func get_Item(i : Swift.Int32) throws -> dotnet.System.Diagnostics.TraceListener {
         var __thrown : NullableHandle = nil;
         let __return = System_Diagnostics_TraceListenerCollection_TraceListener__get_Item_0__1__i32(&__thrown, self.get_handle(), i);
@@ -3019,9 +3058,6 @@ open class TraceListenerCollection
     }
     // [IsSpecialName] System.Diagnostics.TraceListener get_Item(System.String)
 // docid: M:System.Diagnostics.TraceListenerCollection.get_Item(System.String)
-//BEGIN method_is_override
-//matches_1
-//matches :
     open func get_Item(name : dotnet.System.String) throws -> Optional<dotnet.System.Diagnostics.TraceListener> {
         var __thrown : NullableHandle = nil;
         let __return = System_Diagnostics_TraceListenerCollection_TraceListener__get_Item_0__1__String(&__thrown, self.get_handle(), name.get_handle());
@@ -3153,6 +3189,9 @@ open class TraceSource
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Diagnostics_TraceSource_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -3468,6 +3507,9 @@ open class TraceSwitch
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Diagnostics_TraceSwitch_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }

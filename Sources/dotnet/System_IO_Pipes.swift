@@ -18,10 +18,17 @@ public final class SafePipeHandle
     public class override func get_type_handle() -> TypeHandle {
         return Microsoft_Win32_SafeHandles_SafePipeHandle_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor()
 // docid: M:Microsoft.Win32.SafeHandles.SafePipeHandle.#ctor
+    /**
+    Creates a .
+
+    */
     public init() throws {
         var __thrown : NullableHandle = nil;
         let h = Microsoft_Win32_SafeHandles_SafePipeHandle_ctor_0__0(&__thrown);
@@ -91,6 +98,9 @@ public final class AnonymousPipeClientStream
 {
     public class override func get_type_handle() -> TypeHandle {
         return System_IO_Pipes_AnonymousPipeClientStream_get_type_handle();
+    }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -193,6 +203,9 @@ public final class AnonymousPipeServerStream
 {
     public class override func get_type_handle() -> TypeHandle {
         return System_IO_Pipes_AnonymousPipeServerStream_get_type_handle();
+    }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -386,6 +399,9 @@ public final class NamedPipeClientStream
     public class override func get_type_handle() -> TypeHandle {
         return System_IO_Pipes_NamedPipeClientStream_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor(System.IO.Pipes.PipeDirection, bool, bool, Microsoft.Win32.SafeHandles.SafePipeHandle)
@@ -559,13 +575,13 @@ public final class NamedPipeClientStream
     - Returns: A task that represents the asynchronous connect operation.
 
     */
-    public func ConnectAsync() throws -> dotnet.System.Threading.Tasks.Task {
+    public func ConnectAsync() async throws {
         var __thrown : NullableHandle = nil;
         let __return = System_IO_Pipes_NamedPipeClientStream_Task__ConnectAsync_0__0(&__thrown, self.get_handle());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task(hndl: __return).ToAsync();
         }
     }
     // System.Threading.Tasks.Task ConnectAsync(System.Int32)
@@ -577,13 +593,13 @@ public final class NamedPipeClientStream
     - Returns: A task that represents the asynchronous connect operation.
 
     */
-    public func ConnectAsync(timeout : Swift.Int32) throws -> dotnet.System.Threading.Tasks.Task {
+    public func ConnectAsync(timeout : Swift.Int32) async throws {
         var __thrown : NullableHandle = nil;
         let __return = System_IO_Pipes_NamedPipeClientStream_Task__ConnectAsync_0__1__i32(&__thrown, self.get_handle(), timeout);
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task(hndl: __return).ToAsync();
         }
     }
     // System.Threading.Tasks.Task ConnectAsync(System.Int32, System.Threading.CancellationToken)
@@ -596,13 +612,13 @@ public final class NamedPipeClientStream
     - Returns: A task that represents the asynchronous connect operation.
 
     */
-    public func ConnectAsync(timeout : Swift.Int32, cancellationToken : dotnet.System.Threading.CancellationToken) throws -> dotnet.System.Threading.Tasks.Task {
+    public func ConnectAsync(timeout : Swift.Int32, cancellationToken : dotnet.System.Threading.CancellationToken) async throws {
         var __thrown : NullableHandle = nil;
         let __return = System_IO_Pipes_NamedPipeClientStream_Task__ConnectAsync_0__2__i32_CancellationToken(&__thrown, self.get_handle(), timeout, cancellationToken.get_handle());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task(hndl: __return).ToAsync();
         }
     }
     // System.Threading.Tasks.Task ConnectAsync(System.Threading.CancellationToken)
@@ -614,13 +630,13 @@ public final class NamedPipeClientStream
     - Returns: A task that represents the asynchronous connect operation.
 
     */
-    public func ConnectAsync(cancellationToken : dotnet.System.Threading.CancellationToken) throws -> dotnet.System.Threading.Tasks.Task {
+    public func ConnectAsync(cancellationToken : dotnet.System.Threading.CancellationToken) async throws {
         var __thrown : NullableHandle = nil;
         let __return = System_IO_Pipes_NamedPipeClientStream_Task__ConnectAsync_0__1__CancellationToken(&__thrown, self.get_handle(), cancellationToken.get_handle());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task(hndl: __return).ToAsync();
         }
     }
     // [IsSpecialName] System.Int32 get_NumberOfServerInstances()
@@ -657,6 +673,9 @@ public final class NamedPipeServerStream
 {
     public class override func get_type_handle() -> TypeHandle {
         return System_IO_Pipes_NamedPipeServerStream_get_type_handle();
+    }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -920,13 +939,13 @@ public final class NamedPipeServerStream
     - Returns: A task that represents the asynchronous wait operation.
 
     */
-    public func WaitForConnectionAsync() throws -> dotnet.System.Threading.Tasks.Task {
+    public func WaitForConnectionAsync() async throws {
         var __thrown : NullableHandle = nil;
         let __return = System_IO_Pipes_NamedPipeServerStream_Task__WaitForConnectionAsync_0__0(&__thrown, self.get_handle());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task(hndl: __return).ToAsync();
         }
     }
     // System.Threading.Tasks.Task WaitForConnectionAsync(System.Threading.CancellationToken)
@@ -938,13 +957,13 @@ public final class NamedPipeServerStream
     - Returns: A task that represents the asynchronous wait operation.
 
     */
-    public func WaitForConnectionAsync(cancellationToken : dotnet.System.Threading.CancellationToken) throws -> dotnet.System.Threading.Tasks.Task {
+    public func WaitForConnectionAsync(cancellationToken : dotnet.System.Threading.CancellationToken) async throws {
         var __thrown : NullableHandle = nil;
         let __return = System_IO_Pipes_NamedPipeServerStream_Task__WaitForConnectionAsync_0__1__CancellationToken(&__thrown, self.get_handle(), cancellationToken.get_handle());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task(hndl: __return).ToAsync();
         }
     }
 } // NamedPipeServerStream
@@ -1075,6 +1094,9 @@ open class PipeStream
     open class override func get_type_handle() -> TypeHandle {
         return System_IO_Pipes_PipeStream_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // System.IAsyncResult BeginRead(System.Byte[], System.Int32, System.Int32, System.AsyncCallback, System.Object)
@@ -1189,13 +1211,13 @@ open class PipeStream
     - Returns: A task that represent the asynchronous flush operation.
 
     */
-    open override func FlushAsync(cancellationToken : dotnet.System.Threading.CancellationToken) throws -> dotnet.System.Threading.Tasks.Task {
+    open override func FlushAsync(cancellationToken : dotnet.System.Threading.CancellationToken) async throws {
         var __thrown : NullableHandle = nil;
         let __return = System_IO_Pipes_PipeStream_Task__FlushAsync_0__1__CancellationToken(&__thrown, self.get_handle(), cancellationToken.get_handle());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task(hndl: __return).ToAsync();
         }
     }
     // System.Int32 Read(System.Byte[], System.Int32, System.Int32)
@@ -1231,13 +1253,13 @@ open class PipeStream
     - Returns: A task that represents the asynchronous read operation. The value of its  property contains the total number of bytes read into the buffer. The result value can be less than the number of bytes requested if the number of bytes currently available is less than the requested number, or it can be 0 (zero) if the end of the stream has been reached.
 
     */
-    open override func ReadAsync(buffer : dotnet.System_Arr<Swift.UInt8>, offset : Swift.Int32, count : Swift.Int32, cancellationToken : dotnet.System.Threading.CancellationToken) throws -> dotnet.System.Threading.Tasks.Task_1<Swift.Int32> {
+    open override func ReadAsync(buffer : dotnet.System_Arr<Swift.UInt8>, offset : Swift.Int32, count : Swift.Int32, cancellationToken : dotnet.System.Threading.CancellationToken) async throws -> Swift.Int32 {
         var __thrown : NullableHandle = nil;
         let __return = System_IO_Pipes_PipeStream_System_Threading_Tasks_Task_i32___ReadAsync_0__4__u8Array_i32_i32_CancellationToken(&__thrown, self.get_handle(), buffer.get_handle(), offset, count, cancellationToken.get_handle());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task_1(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task_1(hndl: __return).ToAsync();
         }
     }
     // System.Threading.Tasks.ValueTask<System.Int32> ReadAsync(System.Memory<System.Byte>, System.Threading.CancellationToken)
@@ -1357,13 +1379,13 @@ open class PipeStream
     - Returns: A task that represents the asynchronous write operation.
 
     */
-    open override func WriteAsync(buffer : dotnet.System_Arr<Swift.UInt8>, offset : Swift.Int32, count : Swift.Int32, cancellationToken : dotnet.System.Threading.CancellationToken) throws -> dotnet.System.Threading.Tasks.Task {
+    open override func WriteAsync(buffer : dotnet.System_Arr<Swift.UInt8>, offset : Swift.Int32, count : Swift.Int32, cancellationToken : dotnet.System.Threading.CancellationToken) async throws {
         var __thrown : NullableHandle = nil;
         let __return = System_IO_Pipes_PipeStream_Task__WriteAsync_0__4__u8Array_i32_i32_CancellationToken(&__thrown, self.get_handle(), buffer.get_handle(), offset, count, cancellationToken.get_handle());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task(hndl: __return).ToAsync();
         }
     }
     // System.Threading.Tasks.ValueTask WriteAsync(System.ReadOnlyMemory<System.Byte>, System.Threading.CancellationToken)
@@ -1718,6 +1740,9 @@ public final class PipeStreamImpersonationWorker
     public class override func get_type_handle() -> TypeHandle {
         return System_IO_Pipes_PipeStreamImpersonationWorker_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // void Invoke()
@@ -1757,15 +1782,15 @@ public final class PipeStreamImpersonationWorker
             return;
         }
     }
-    public init(_ callback : @escaping () throws -> Void) throws
+    public convenience init(_ __closure_Invoke : @escaping () throws -> Void) throws
     {
-        let __bridge : (UnsafeMutablePointer<NullableHandle>) -> Void =
+        let __interlude_Invoke : (UnsafeMutablePointer<NullableHandle>) -> Void =
         {
             (thrown : UnsafeMutablePointer<NullableHandle>) -> Void in
             do
             {
                 thrown.pointee = nil;
-                try callback();
+                try __closure_Invoke();
             }
             catch let e as dotnet.System.Exception
             {
@@ -1777,24 +1802,24 @@ public final class PipeStreamImpersonationWorker
                 thrown.pointee = __copy_handle(e.get_handle());
             }
         };
-        let cbarg = UnsafeRawPointer(Unmanaged.passRetained(__bridge as AnyObject).toOpaque());
-        func __cb(cb : UnsafeRawPointer?, thrown : UnsafeMutablePointer<NullableHandle>) -> Void
+        func __cb_Invoke(pdata_interlude : UnsafeRawPointer, thrown : UnsafeMutablePointer<NullableHandle>) -> Void
         {
-            let f = Unmanaged<AnyObject>.fromOpaque(cb!).takeUnretainedValue() as! (UnsafeMutablePointer<NullableHandle>) -> Void;
-            f(thrown);
+            let f_interlude = Unmanaged<AnyObject>.fromOpaque(pdata_interlude).takeUnretainedValue() as! (UnsafeMutablePointer<NullableHandle>) -> Void;
+            f_interlude(thrown);
         }
+        let __pdata_Invoke = UnsafeRawPointer(Unmanaged.passRetained(__interlude_Invoke as AnyObject).toOpaque());
+
         var __thrown : NullableHandle = nil;
         let h = System_IO_Pipes_PipeStreamImpersonationWorker_create(
             &__thrown,
-            cbarg,
-            nil, // TODO deinit
-            __cb
+            __cb_Invoke,
+            __pdata_Invoke,
+            nil
             );
-            // TODO check thrown
         if let __ex = __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-            super.init(hndl: h);
+            self.init(hndl: h);
         }
     }
     // void Invoke()

@@ -18,6 +18,9 @@ public final class DSAOpenSsl
     public class override func get_type_handle() -> TypeHandle {
         return System_Security_Cryptography_DSAOpenSsl_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor()
@@ -234,6 +237,9 @@ public final class ECDiffieHellmanOpenSsl
 {
     public class override func get_type_handle() -> TypeHandle {
         return System_Security_Cryptography_ECDiffieHellmanOpenSsl_get_type_handle();
+    }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -519,6 +525,9 @@ public final class ECDsaOpenSsl
     public class override func get_type_handle() -> TypeHandle {
         return System_Security_Cryptography_ECDsaOpenSsl_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor()
@@ -794,6 +803,9 @@ public final class RSAOpenSsl
     public class override func get_type_handle() -> TypeHandle {
         return System_Security_Cryptography_RSAOpenSsl_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor()
@@ -1053,10 +1065,17 @@ public final class SafeEvpPKeyHandle
     public class override func get_type_handle() -> TypeHandle {
         return System_Security_Cryptography_SafeEvpPKeyHandle_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor()
 // docid: M:System.Security.Cryptography.SafeEvpPKeyHandle.#ctor
+    /**
+    Initializes a new instance of the  class, representing an invalid handle.
+
+    */
     public init() throws {
         var __thrown : NullableHandle = nil;
         let h = System_Security_Cryptography_SafeEvpPKeyHandle_ctor_0__0(&__thrown);

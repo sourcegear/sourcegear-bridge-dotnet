@@ -182,6 +182,8 @@ void System_Collections_Specialized_INotifyCollectionChanged_void__remove_Collec
 
 SG_HNDL_NONNULL System_Collections_Specialized_INotifyCollectionChanged_cast(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __h);
 
+SG_HNDL_NONNULL System_Collections_Specialized_INotifyCollectionChanged_create(SG_HNDL_NULLABLE * _Nonnull __thrown, void (* _Nullable __deinit)(const void* _Nonnull __pdata));
+
 TYP System_Collections_Specialized_NotifyCollectionChangedAction_get_type_handle(void);
 
 int32_t System_Collections_Specialized_NotifyCollectionChangedAction_get_Add(void);
@@ -238,7 +240,7 @@ SG_HNDL_NULLABLE System_Collections_Specialized_NotifyCollectionChangedEventHand
 
 void System_Collections_Specialized_NotifyCollectionChangedEventHandler_void__EndInvoke_0__1__IAsyncResult(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE result);
 
-SG_HNDL_NONNULL System_Collections_Specialized_NotifyCollectionChangedEventHandler_create(SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nullable __pdata, void (* _Nullable __deinit)(const void* _Nullable __pdata), void (* _Nonnull  __cb)(const void* _Nullable __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE sender, SG_HNDL_NONNULL e));
+SG_HNDL_NONNULL System_Collections_Specialized_NotifyCollectionChangedEventHandler_create(SG_HNDL_NULLABLE * _Nonnull __thrown, void (* _Nonnull  __cb)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE sender, SG_HNDL_NONNULL e), const void* _Nonnull __pdata, void (* _Nullable __deinit)(const void* _Nonnull __pdata));
 
 TYP System_ComponentModel_DataErrorsChangedEventArgs_get_type_handle(void);
 
@@ -260,6 +262,8 @@ void System_ComponentModel_INotifyDataErrorInfo_void__remove_ErrorsChanged_0__1_
 
 SG_HNDL_NONNULL System_ComponentModel_INotifyDataErrorInfo_cast(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __h);
 
+SG_HNDL_NONNULL System_ComponentModel_INotifyDataErrorInfo_create(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL (* _Nonnull  __cb_System_ComponentModel_INotifyDataErrorInfo_IEnumerable__GetErrors_0__1__String)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE propertyName), const void* _Nonnull __pdata_System_ComponentModel_INotifyDataErrorInfo_IEnumerable__GetErrors_0__1__String, void (* _Nullable __deinit)(const void* _Nonnull __pdata));
+
 TYP System_ComponentModel_INotifyPropertyChanged_get_type_handle(void);
 
 void System_ComponentModel_INotifyPropertyChanged_void__add_PropertyChanged_0__1__PropertyChangedEventHandler(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE value);
@@ -268,6 +272,8 @@ void System_ComponentModel_INotifyPropertyChanged_void__remove_PropertyChanged_0
 
 SG_HNDL_NONNULL System_ComponentModel_INotifyPropertyChanged_cast(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __h);
 
+SG_HNDL_NONNULL System_ComponentModel_INotifyPropertyChanged_create(SG_HNDL_NULLABLE * _Nonnull __thrown, void (* _Nullable __deinit)(const void* _Nonnull __pdata));
+
 TYP System_ComponentModel_INotifyPropertyChanging_get_type_handle(void);
 
 void System_ComponentModel_INotifyPropertyChanging_void__add_PropertyChanging_0__1__PropertyChangingEventHandler(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE value);
@@ -275,6 +281,8 @@ void System_ComponentModel_INotifyPropertyChanging_void__add_PropertyChanging_0_
 void System_ComponentModel_INotifyPropertyChanging_void__remove_PropertyChanging_0__1__PropertyChangingEventHandler(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE value);
 
 SG_HNDL_NONNULL System_ComponentModel_INotifyPropertyChanging_cast(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __h);
+
+SG_HNDL_NONNULL System_ComponentModel_INotifyPropertyChanging_create(SG_HNDL_NULLABLE * _Nonnull __thrown, void (* _Nullable __deinit)(const void* _Nonnull __pdata));
 
 TYP System_ComponentModel_PropertyChangedEventArgs_get_type_handle(void);
 
@@ -292,7 +300,7 @@ SG_HNDL_NULLABLE System_ComponentModel_PropertyChangedEventHandler_IAsyncResult_
 
 void System_ComponentModel_PropertyChangedEventHandler_void__EndInvoke_0__1__IAsyncResult(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE result);
 
-SG_HNDL_NONNULL System_ComponentModel_PropertyChangedEventHandler_create(SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nullable __pdata, void (* _Nullable __deinit)(const void* _Nullable __pdata), void (* _Nonnull  __cb)(const void* _Nullable __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE sender, SG_HNDL_NONNULL e));
+SG_HNDL_NONNULL System_ComponentModel_PropertyChangedEventHandler_create(SG_HNDL_NULLABLE * _Nonnull __thrown, void (* _Nonnull  __cb)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE sender, SG_HNDL_NONNULL e), const void* _Nonnull __pdata, void (* _Nullable __deinit)(const void* _Nonnull __pdata));
 
 TYP System_ComponentModel_PropertyChangingEventArgs_get_type_handle(void);
 
@@ -310,7 +318,7 @@ SG_HNDL_NULLABLE System_ComponentModel_PropertyChangingEventHandler_IAsyncResult
 
 void System_ComponentModel_PropertyChangingEventHandler_void__EndInvoke_0__1__IAsyncResult(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE result);
 
-SG_HNDL_NONNULL System_ComponentModel_PropertyChangingEventHandler_create(SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nullable __pdata, void (* _Nullable __deinit)(const void* _Nullable __pdata), void (* _Nonnull  __cb)(const void* _Nullable __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE sender, SG_HNDL_NONNULL e));
+SG_HNDL_NONNULL System_ComponentModel_PropertyChangingEventHandler_create(SG_HNDL_NULLABLE * _Nonnull __thrown, void (* _Nonnull  __cb)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE sender, SG_HNDL_NONNULL e), const void* _Nonnull __pdata, void (* _Nullable __deinit)(const void* _Nonnull __pdata));
 
 TYP System_ComponentModel_TypeConverterAttribute_get_type_handle(void);
 
@@ -348,6 +356,8 @@ SG_HNDL_NONNULL System_Reflection_ICustomTypeProvider_Type__GetCustomType_0__0(S
 
 SG_HNDL_NONNULL System_Reflection_ICustomTypeProvider_cast(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __h);
 
+SG_HNDL_NONNULL System_Reflection_ICustomTypeProvider_create(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL (* _Nonnull  __cb_System_Reflection_ICustomTypeProvider_Type__GetCustomType_0__0)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown), const void* _Nonnull __pdata_System_Reflection_ICustomTypeProvider_Type__GetCustomType_0__0, void (* _Nullable __deinit)(const void* _Nonnull __pdata));
+
 TYP System_Windows_Input_ICommand_get_type_handle(void);
 
 int32_t System_Windows_Input_ICommand_bool__CanExecute_0__1__Object(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE parameter);
@@ -359,6 +369,8 @@ void System_Windows_Input_ICommand_void__add_CanExecuteChanged_0__1__EventHandle
 void System_Windows_Input_ICommand_void__remove_CanExecuteChanged_0__1__EventHandler(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE value);
 
 SG_HNDL_NONNULL System_Windows_Input_ICommand_cast(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __h);
+
+SG_HNDL_NONNULL System_Windows_Input_ICommand_create(SG_HNDL_NULLABLE * _Nonnull __thrown, int32_t (* _Nonnull  __cb_System_Windows_Input_ICommand_bool__CanExecute_0__1__Object)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE parameter), const void* _Nonnull __pdata_System_Windows_Input_ICommand_bool__CanExecute_0__1__Object, void (* _Nonnull  __cb_System_Windows_Input_ICommand_void__Execute_0__1__Object)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE parameter), const void* _Nonnull __pdata_System_Windows_Input_ICommand_void__Execute_0__1__Object, void (* _Nullable __deinit)(const void* _Nonnull __pdata));
 
 TYP System_Windows_Markup_ValueSerializerAttribute_get_type_handle(void);
 

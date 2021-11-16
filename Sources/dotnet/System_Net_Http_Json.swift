@@ -12,40 +12,51 @@ public struct HttpClientJsonExtensions {
     // System.Threading.Tasks.Task<System.Object> GetFromJsonAsync(System.Net.Http.HttpClient, System.String, System.Type, System.Text.Json.JsonSerializerOptions, System.Threading.CancellationToken)
 // docid: M:System.Net.Http.Json.HttpClientJsonExtensions.GetFromJsonAsync(System.Net.Http.HttpClient,System.String,System.Type,System.Text.Json.JsonSerializerOptions,System.Threading.CancellationToken)
     /**
-    Send a GET request to the specified Uri and return the value resulting from deserialize the response body as JSON in an asynchronous operation.
+    Sends a GET request to the specified Uri and returns the value that results from deserializing the response body as JSON in an asynchronous operation.
 
     - Parameter client: The client used to send the request.
     - Parameter requestUri: The Uri the request is sent to.
     - Parameter type: The type of the object to deserialize to and return.
-    - Parameter options: Options to control the behavior during deserialization, the default options are .
+    - Parameter options: Options to control the behavior during deserialization. The default options are those specified by .
     - Parameter cancellationToken: A cancellation token that can be used by other objects or threads to receive notice of cancellation.
     - Returns: The task object representing the asynchronous operation.
 
     */
-    public static func GetFromJsonAsync(client : dotnet.System.Net.Http.HttpClient, requestUri : Optional<dotnet.System.String>, type : dotnet.System.Type_, options : Optional<dotnet.System.Text.Json.JsonSerializerOptions>, cancellationToken : dotnet.System.Threading.CancellationToken = System.Threading.CancellationToken.None) throws -> dotnet.System.Threading.Tasks.Task_1<dotnet.System.Object> {
+    public static func GetFromJsonAsync(client : dotnet.System.Net.Http.HttpClient, requestUri : Optional<dotnet.System.String>, type : dotnet.System.Type_, options : Optional<dotnet.System.Text.Json.JsonSerializerOptions>, cancellationToken : dotnet.System.Threading.CancellationToken = System.Threading.CancellationToken.None) async throws -> dotnet.System.Object {
         var __thrown : NullableHandle = nil;
         let __return = System_Net_Http_Json_HttpClientJsonExtensions_System_Threading_Tasks_Task_object___GetFromJsonAsync_0__5__HttpClient_String_Type_JsonSerializerOptions_CancellationToken(&__thrown, client.get_handle(), requestUri?.get_handle() ?? nil, type.get_handle(), options?.get_handle() ?? nil, cancellationToken.get_handle());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task_1(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task_1(hndl: __return).ToAsync();
         }
     }
     // System.Threading.Tasks.Task<System.Object> GetFromJsonAsync(System.Net.Http.HttpClient, System.String, System.Type, System.Text.Json.Serialization.JsonSerializerContext, System.Threading.CancellationToken)
 // docid: M:System.Net.Http.Json.HttpClientJsonExtensions.GetFromJsonAsync(System.Net.Http.HttpClient,System.String,System.Type,System.Text.Json.Serialization.JsonSerializerContext,System.Threading.CancellationToken)
-    public static func GetFromJsonAsync(client : dotnet.System.Net.Http.HttpClient, requestUri : Optional<dotnet.System.String>, type : dotnet.System.Type_, context : dotnet.System.Text.Json.Serialization.JsonSerializerContext, cancellationToken : dotnet.System.Threading.CancellationToken = System.Threading.CancellationToken.None) throws -> dotnet.System.Threading.Tasks.Task_1<dotnet.System.Object> {
+    /**
+    Sends a GET request to the specified Uri and returns the value that results from deserializing the response body as JSON in an asynchronous operation.
+
+    - Parameter client: The client used to send the request.
+    - Parameter requestUri: The Uri the request is sent to.
+    - Parameter type: The type of the object to deserialize to and return.
+    - Parameter context: Source generated JsonSerializerContext used to control the deserialization behavior.
+    - Parameter cancellationToken: A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+    - Returns: The task object representing the asynchronous operation.
+
+    */
+    public static func GetFromJsonAsync(client : dotnet.System.Net.Http.HttpClient, requestUri : Optional<dotnet.System.String>, type : dotnet.System.Type_, context : dotnet.System.Text.Json.Serialization.JsonSerializerContext, cancellationToken : dotnet.System.Threading.CancellationToken = System.Threading.CancellationToken.None) async throws -> dotnet.System.Object {
         var __thrown : NullableHandle = nil;
         let __return = System_Net_Http_Json_HttpClientJsonExtensions_System_Threading_Tasks_Task_object___GetFromJsonAsync_0__5__HttpClient_String_Type_JsonSerializerContext_CancellationToken(&__thrown, client.get_handle(), requestUri?.get_handle() ?? nil, type.get_handle(), context.get_handle(), cancellationToken.get_handle());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task_1(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task_1(hndl: __return).ToAsync();
         }
     }
     // System.Threading.Tasks.Task<System.Object> GetFromJsonAsync(System.Net.Http.HttpClient, System.String, System.Type, System.Threading.CancellationToken)
 // docid: M:System.Net.Http.Json.HttpClientJsonExtensions.GetFromJsonAsync(System.Net.Http.HttpClient,System.String,System.Type,System.Threading.CancellationToken)
     /**
-    Send a GET request to the specified Uri and return the value resulting from deserialize the response body as JSON in an asynchronous operation.
+    Sends a GET request to the specified Uri and returns the value that results from deserializing the response body as JSON in an asynchronous operation.
 
     - Parameter client: The client used to send the request.
     - Parameter requestUri: The Uri the request is sent to.
@@ -54,52 +65,63 @@ public struct HttpClientJsonExtensions {
     - Returns: The task object representing the asynchronous operation.
 
     */
-    public static func GetFromJsonAsync(client : dotnet.System.Net.Http.HttpClient, requestUri : Optional<dotnet.System.String>, type : dotnet.System.Type_, cancellationToken : dotnet.System.Threading.CancellationToken = System.Threading.CancellationToken.None) throws -> dotnet.System.Threading.Tasks.Task_1<dotnet.System.Object> {
+    public static func GetFromJsonAsync(client : dotnet.System.Net.Http.HttpClient, requestUri : Optional<dotnet.System.String>, type : dotnet.System.Type_, cancellationToken : dotnet.System.Threading.CancellationToken = System.Threading.CancellationToken.None) async throws -> dotnet.System.Object {
         var __thrown : NullableHandle = nil;
         let __return = System_Net_Http_Json_HttpClientJsonExtensions_System_Threading_Tasks_Task_object___GetFromJsonAsync_0__4__HttpClient_String_Type_CancellationToken(&__thrown, client.get_handle(), requestUri?.get_handle() ?? nil, type.get_handle(), cancellationToken.get_handle());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task_1(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task_1(hndl: __return).ToAsync();
         }
     }
     // System.Threading.Tasks.Task<System.Object> GetFromJsonAsync(System.Net.Http.HttpClient, System.Uri, System.Type, System.Text.Json.JsonSerializerOptions, System.Threading.CancellationToken)
 // docid: M:System.Net.Http.Json.HttpClientJsonExtensions.GetFromJsonAsync(System.Net.Http.HttpClient,System.Uri,System.Type,System.Text.Json.JsonSerializerOptions,System.Threading.CancellationToken)
     /**
-    Send a GET request to the specified Uri and return the value resulting from deserialize the response body as JSON in an asynchronous operation.
+    Sends a GET request to the specified Uri and returns the value that results from deserializing the response body as JSON in an asynchronous operation.
 
     - Parameter client: The client used to send the request.
     - Parameter requestUri: The Uri the request is sent to.
     - Parameter type: The type of the object to deserialize to and return.
-    - Parameter options: Options to control the behavior during deserialization, the default options are .
+    - Parameter options: Options to control the behavior during deserialization. The default options are those specified by .
     - Parameter cancellationToken: A cancellation token that can be used by other objects or threads to receive notice of cancellation.
     - Returns: The task object representing the asynchronous operation.
 
     */
-    public static func GetFromJsonAsync(client : dotnet.System.Net.Http.HttpClient, requestUri : Optional<dotnet.System.Uri>, type : dotnet.System.Type_, options : Optional<dotnet.System.Text.Json.JsonSerializerOptions>, cancellationToken : dotnet.System.Threading.CancellationToken = System.Threading.CancellationToken.None) throws -> dotnet.System.Threading.Tasks.Task_1<dotnet.System.Object> {
+    public static func GetFromJsonAsync(client : dotnet.System.Net.Http.HttpClient, requestUri : Optional<dotnet.System.Uri>, type : dotnet.System.Type_, options : Optional<dotnet.System.Text.Json.JsonSerializerOptions>, cancellationToken : dotnet.System.Threading.CancellationToken = System.Threading.CancellationToken.None) async throws -> dotnet.System.Object {
         var __thrown : NullableHandle = nil;
         let __return = System_Net_Http_Json_HttpClientJsonExtensions_System_Threading_Tasks_Task_object___GetFromJsonAsync_0__5__HttpClient_Uri_Type_JsonSerializerOptions_CancellationToken(&__thrown, client.get_handle(), requestUri?.get_handle() ?? nil, type.get_handle(), options?.get_handle() ?? nil, cancellationToken.get_handle());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task_1(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task_1(hndl: __return).ToAsync();
         }
     }
     // System.Threading.Tasks.Task<System.Object> GetFromJsonAsync(System.Net.Http.HttpClient, System.Uri, System.Type, System.Text.Json.Serialization.JsonSerializerContext, System.Threading.CancellationToken)
 // docid: M:System.Net.Http.Json.HttpClientJsonExtensions.GetFromJsonAsync(System.Net.Http.HttpClient,System.Uri,System.Type,System.Text.Json.Serialization.JsonSerializerContext,System.Threading.CancellationToken)
-    public static func GetFromJsonAsync(client : dotnet.System.Net.Http.HttpClient, requestUri : Optional<dotnet.System.Uri>, type : dotnet.System.Type_, context : dotnet.System.Text.Json.Serialization.JsonSerializerContext, cancellationToken : dotnet.System.Threading.CancellationToken = System.Threading.CancellationToken.None) throws -> dotnet.System.Threading.Tasks.Task_1<dotnet.System.Object> {
+    /**
+    Sends a GET request to the specified Uri and returns the value that results from deserializing the response body as JSON in an asynchronous operation.
+
+    - Parameter client: The client used to send the request.
+    - Parameter requestUri: The Uri the request is sent to.
+    - Parameter type: The type of the object to deserialize to and return.
+    - Parameter context: Source generated JsonSerializerContext used to control the deserialization behavior.
+    - Parameter cancellationToken: A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+    - Returns: The task object representing the asynchronous operation.
+
+    */
+    public static func GetFromJsonAsync(client : dotnet.System.Net.Http.HttpClient, requestUri : Optional<dotnet.System.Uri>, type : dotnet.System.Type_, context : dotnet.System.Text.Json.Serialization.JsonSerializerContext, cancellationToken : dotnet.System.Threading.CancellationToken = System.Threading.CancellationToken.None) async throws -> dotnet.System.Object {
         var __thrown : NullableHandle = nil;
         let __return = System_Net_Http_Json_HttpClientJsonExtensions_System_Threading_Tasks_Task_object___GetFromJsonAsync_0__5__HttpClient_Uri_Type_JsonSerializerContext_CancellationToken(&__thrown, client.get_handle(), requestUri?.get_handle() ?? nil, type.get_handle(), context.get_handle(), cancellationToken.get_handle());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task_1(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task_1(hndl: __return).ToAsync();
         }
     }
     // System.Threading.Tasks.Task<System.Object> GetFromJsonAsync(System.Net.Http.HttpClient, System.Uri, System.Type, System.Threading.CancellationToken)
 // docid: M:System.Net.Http.Json.HttpClientJsonExtensions.GetFromJsonAsync(System.Net.Http.HttpClient,System.Uri,System.Type,System.Threading.CancellationToken)
     /**
-    Send a GET request to the specified Uri and return the value resulting from deserialize the response body as JSON in an asynchronous operation.
+    Sends a GET request to the specified Uri and returns the value that results from deserializing the response body as JSON in an asynchronous operation.
 
     - Parameter client: The client used to send the request.
     - Parameter requestUri: The Uri the request is sent to.
@@ -108,78 +130,109 @@ public struct HttpClientJsonExtensions {
     - Returns: The task object representing the asynchronous operation.
 
     */
-    public static func GetFromJsonAsync(client : dotnet.System.Net.Http.HttpClient, requestUri : Optional<dotnet.System.Uri>, type : dotnet.System.Type_, cancellationToken : dotnet.System.Threading.CancellationToken = System.Threading.CancellationToken.None) throws -> dotnet.System.Threading.Tasks.Task_1<dotnet.System.Object> {
+    public static func GetFromJsonAsync(client : dotnet.System.Net.Http.HttpClient, requestUri : Optional<dotnet.System.Uri>, type : dotnet.System.Type_, cancellationToken : dotnet.System.Threading.CancellationToken = System.Threading.CancellationToken.None) async throws -> dotnet.System.Object {
         var __thrown : NullableHandle = nil;
         let __return = System_Net_Http_Json_HttpClientJsonExtensions_System_Threading_Tasks_Task_object___GetFromJsonAsync_0__4__HttpClient_Uri_Type_CancellationToken(&__thrown, client.get_handle(), requestUri?.get_handle() ?? nil, type.get_handle(), cancellationToken.get_handle());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task_1(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task_1(hndl: __return).ToAsync();
         }
     }
 // TODO COPE (write_all_methods) (unused generic param) System.Threading.Tasks.Task<TValue> GetFromJsonAsync<TValue>(System.Net.Http.HttpClient, System.String, System.Text.Json.JsonSerializerOptions, System.Threading.CancellationToken)
     // System.Threading.Tasks.Task<TValue> GetFromJsonAsync<TValue>(System.Net.Http.HttpClient, System.String, System.Text.Json.Serialization.Metadata.JsonTypeInfo<TValue>, System.Threading.CancellationToken)
 // docid: M:System.Net.Http.Json.HttpClientJsonExtensions.GetFromJsonAsync``1(System.Net.Http.HttpClient,System.String,System.Text.Json.Serialization.Metadata.JsonTypeInfo{``0},System.Threading.CancellationToken)
-    public static func GetFromJsonAsync<UTValue : SGBridgeGenericValue>(client : dotnet.System.Net.Http.HttpClient, requestUri : Optional<dotnet.System.String>, jsonTypeInfo : dotnet.System.Text.Json.Serialization.Metadata.JsonTypeInfo_1<UTValue>, cancellationToken : dotnet.System.Threading.CancellationToken = System.Threading.CancellationToken.None) throws -> dotnet.System.Threading.Tasks.Task_1<UTValue> {
+    /**
+    Sends a GET request to the specified Uri and returns the value that results from deserializing the response body as JSON in an asynchronous operation.
+
+    - Parameter client: The client used to send the request.
+    - Parameter requestUri: The Uri the request is sent to.
+    - Parameter jsonTypeInfo: Source generated JsonTypeInfo to control the behavior during deserialization.
+    - Parameter cancellationToken: A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+    - Returns: The task object representing the asynchronous operation.
+
+    */
+    public static func GetFromJsonAsync<UTValue : SGBridgeGenericValue>(client : dotnet.System.Net.Http.HttpClient, requestUri : Optional<dotnet.System.String>, jsonTypeInfo : dotnet.System.Text.Json.Serialization.Metadata.JsonTypeInfo_1<UTValue>, cancellationToken : dotnet.System.Threading.CancellationToken = System.Threading.CancellationToken.None) async throws -> UTValue {
         var __thrown : NullableHandle = nil;
         let __return = System_Net_Http_Json_HttpClientJsonExtensions_System_Threading_Tasks_Task_UTValue___GetFromJsonAsync_1__4__HttpClient_String_System_Text_Json_Serialization_Metadata_JsonTypeInfo_UTValue__CancellationToken(UTValue.get_type_handle(), &__thrown, client.get_handle(), requestUri?.get_handle() ?? nil, jsonTypeInfo.get_handle(), cancellationToken.get_handle());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task_1(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task_1(hndl: __return).ToAsync();
         }
     }
 // TODO COPE (write_all_methods) (unused generic param) System.Threading.Tasks.Task<TValue> GetFromJsonAsync<TValue>(System.Net.Http.HttpClient, System.String, System.Threading.CancellationToken)
 // TODO COPE (write_all_methods) (unused generic param) System.Threading.Tasks.Task<TValue> GetFromJsonAsync<TValue>(System.Net.Http.HttpClient, System.Uri, System.Text.Json.JsonSerializerOptions, System.Threading.CancellationToken)
     // System.Threading.Tasks.Task<TValue> GetFromJsonAsync<TValue>(System.Net.Http.HttpClient, System.Uri, System.Text.Json.Serialization.Metadata.JsonTypeInfo<TValue>, System.Threading.CancellationToken)
 // docid: M:System.Net.Http.Json.HttpClientJsonExtensions.GetFromJsonAsync``1(System.Net.Http.HttpClient,System.Uri,System.Text.Json.Serialization.Metadata.JsonTypeInfo{``0},System.Threading.CancellationToken)
-    public static func GetFromJsonAsync<UTValue : SGBridgeGenericValue>(client : dotnet.System.Net.Http.HttpClient, requestUri : Optional<dotnet.System.Uri>, jsonTypeInfo : dotnet.System.Text.Json.Serialization.Metadata.JsonTypeInfo_1<UTValue>, cancellationToken : dotnet.System.Threading.CancellationToken = System.Threading.CancellationToken.None) throws -> dotnet.System.Threading.Tasks.Task_1<UTValue> {
+    /**
+    Sends a GET request to the specified Uri and returns the value that results from deserializing the response body as JSON in an asynchronous operation.
+
+    - Parameter client: The client used to send the request.
+    - Parameter requestUri: The Uri the request is sent to.
+    - Parameter jsonTypeInfo: Source generated JsonTypeInfo to control the behavior during deserialization.
+    - Parameter cancellationToken: A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+    - Returns: The task object representing the asynchronous operation.
+
+    */
+    public static func GetFromJsonAsync<UTValue : SGBridgeGenericValue>(client : dotnet.System.Net.Http.HttpClient, requestUri : Optional<dotnet.System.Uri>, jsonTypeInfo : dotnet.System.Text.Json.Serialization.Metadata.JsonTypeInfo_1<UTValue>, cancellationToken : dotnet.System.Threading.CancellationToken = System.Threading.CancellationToken.None) async throws -> UTValue {
         var __thrown : NullableHandle = nil;
         let __return = System_Net_Http_Json_HttpClientJsonExtensions_System_Threading_Tasks_Task_UTValue___GetFromJsonAsync_1__4__HttpClient_Uri_System_Text_Json_Serialization_Metadata_JsonTypeInfo_UTValue__CancellationToken(UTValue.get_type_handle(), &__thrown, client.get_handle(), requestUri?.get_handle() ?? nil, jsonTypeInfo.get_handle(), cancellationToken.get_handle());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task_1(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task_1(hndl: __return).ToAsync();
         }
     }
 // TODO COPE (write_all_methods) (unused generic param) System.Threading.Tasks.Task<TValue> GetFromJsonAsync<TValue>(System.Net.Http.HttpClient, System.Uri, System.Threading.CancellationToken)
     // System.Threading.Tasks.Task<System.Net.Http.HttpResponseMessage> PostAsJsonAsync<TValue>(System.Net.Http.HttpClient, System.String, TValue, System.Text.Json.JsonSerializerOptions, System.Threading.CancellationToken)
 // docid: M:System.Net.Http.Json.HttpClientJsonExtensions.PostAsJsonAsync``1(System.Net.Http.HttpClient,System.String,``0,System.Text.Json.JsonSerializerOptions,System.Threading.CancellationToken)
     /**
-    Send a POST request to the specified Uri containing the  serialized as JSON in the request body.
+    Sends a POST request to the specified Uri containing the  serialized as JSON in the request body.
 
     - Parameter client: The client used to send the request.
     - Parameter requestUri: The Uri the request is sent to.
     - Parameter value: The value to serialize.
-    - Parameter options: Options to control the behavior during serialization, the default options are .
+    - Parameter options: Options to control the behavior during serialization. The default options are those specified by .
     - Parameter cancellationToken: A cancellation token that can be used by other objects or threads to receive notice of cancellation.
     - Returns: The task object representing the asynchronous operation.
 
     */
-    public static func PostAsJsonAsync<UTValue : SGBridgeGenericValue>(client : dotnet.System.Net.Http.HttpClient, requestUri : Optional<dotnet.System.String>, value : UTValue, options : Optional<dotnet.System.Text.Json.JsonSerializerOptions> = nil, cancellationToken : dotnet.System.Threading.CancellationToken = System.Threading.CancellationToken.None) throws -> dotnet.System.Threading.Tasks.Task_1<dotnet.System.Net.Http.HttpResponseMessage> {
+    public static func PostAsJsonAsync<UTValue : SGBridgeGenericValue>(client : dotnet.System.Net.Http.HttpClient, requestUri : Optional<dotnet.System.String>, value : UTValue, options : Optional<dotnet.System.Text.Json.JsonSerializerOptions> = nil, cancellationToken : dotnet.System.Threading.CancellationToken = System.Threading.CancellationToken.None) async throws -> dotnet.System.Net.Http.HttpResponseMessage {
         var __thrown : NullableHandle = nil;
         let __return = System_Net_Http_Json_HttpClientJsonExtensions_System_Threading_Tasks_Task_System_Net_Http_HttpResponseMessage___PostAsJsonAsync_1__5__HttpClient_String_UTValue_JsonSerializerOptions_CancellationToken(UTValue.get_type_handle(), &__thrown, client.get_handle(), requestUri?.get_handle() ?? nil, value.to_gval(), options?.get_handle() ?? nil, cancellationToken.get_handle());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task_1(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task_1(hndl: __return).ToAsync();
         }
     }
     // System.Threading.Tasks.Task<System.Net.Http.HttpResponseMessage> PostAsJsonAsync<TValue>(System.Net.Http.HttpClient, System.String, TValue, System.Text.Json.Serialization.Metadata.JsonTypeInfo<TValue>, System.Threading.CancellationToken)
 // docid: M:System.Net.Http.Json.HttpClientJsonExtensions.PostAsJsonAsync``1(System.Net.Http.HttpClient,System.String,``0,System.Text.Json.Serialization.Metadata.JsonTypeInfo{``0},System.Threading.CancellationToken)
-    public static func PostAsJsonAsync<UTValue : SGBridgeGenericValue>(client : dotnet.System.Net.Http.HttpClient, requestUri : Optional<dotnet.System.String>, value : UTValue, jsonTypeInfo : dotnet.System.Text.Json.Serialization.Metadata.JsonTypeInfo_1<UTValue>, cancellationToken : dotnet.System.Threading.CancellationToken = System.Threading.CancellationToken.None) throws -> dotnet.System.Threading.Tasks.Task_1<dotnet.System.Net.Http.HttpResponseMessage> {
+    /**
+    Sends a POST request to the specified Uri containing the  serialized as JSON in the request body.
+
+    - Parameter client: The client used to send the request.
+    - Parameter requestUri: The Uri the request is sent to.
+    - Parameter value: The value to serialize.
+    - Parameter jsonTypeInfo: Source generated JsonTypeInfo to control the behavior during serialization.
+    - Parameter cancellationToken: A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+    - Returns: The task object representing the asynchronous operation.
+
+    */
+    public static func PostAsJsonAsync<UTValue : SGBridgeGenericValue>(client : dotnet.System.Net.Http.HttpClient, requestUri : Optional<dotnet.System.String>, value : UTValue, jsonTypeInfo : dotnet.System.Text.Json.Serialization.Metadata.JsonTypeInfo_1<UTValue>, cancellationToken : dotnet.System.Threading.CancellationToken = System.Threading.CancellationToken.None) async throws -> dotnet.System.Net.Http.HttpResponseMessage {
         var __thrown : NullableHandle = nil;
         let __return = System_Net_Http_Json_HttpClientJsonExtensions_System_Threading_Tasks_Task_System_Net_Http_HttpResponseMessage___PostAsJsonAsync_1__5__HttpClient_String_UTValue_System_Text_Json_Serialization_Metadata_JsonTypeInfo_UTValue__CancellationToken(UTValue.get_type_handle(), &__thrown, client.get_handle(), requestUri?.get_handle() ?? nil, value.to_gval(), jsonTypeInfo.get_handle(), cancellationToken.get_handle());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task_1(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task_1(hndl: __return).ToAsync();
         }
     }
     // System.Threading.Tasks.Task<System.Net.Http.HttpResponseMessage> PostAsJsonAsync<TValue>(System.Net.Http.HttpClient, System.String, TValue, System.Threading.CancellationToken)
 // docid: M:System.Net.Http.Json.HttpClientJsonExtensions.PostAsJsonAsync``1(System.Net.Http.HttpClient,System.String,``0,System.Threading.CancellationToken)
     /**
-    Send a POST request to the specified Uri containing the  serialized as JSON in the request body.
+    Sends a POST request to the specified Uri containing the  serialized as JSON in the request body.
 
     - Parameter client: The client used to send the request.
     - Parameter requestUri: The Uri the request is sent to.
@@ -188,52 +241,63 @@ public struct HttpClientJsonExtensions {
     - Returns: The task object representing the asynchronous operation.
 
     */
-    public static func PostAsJsonAsync<UTValue : SGBridgeGenericValue>(client : dotnet.System.Net.Http.HttpClient, requestUri : Optional<dotnet.System.String>, value : UTValue, cancellationToken : dotnet.System.Threading.CancellationToken) throws -> dotnet.System.Threading.Tasks.Task_1<dotnet.System.Net.Http.HttpResponseMessage> {
+    public static func PostAsJsonAsync<UTValue : SGBridgeGenericValue>(client : dotnet.System.Net.Http.HttpClient, requestUri : Optional<dotnet.System.String>, value : UTValue, cancellationToken : dotnet.System.Threading.CancellationToken) async throws -> dotnet.System.Net.Http.HttpResponseMessage {
         var __thrown : NullableHandle = nil;
         let __return = System_Net_Http_Json_HttpClientJsonExtensions_System_Threading_Tasks_Task_System_Net_Http_HttpResponseMessage___PostAsJsonAsync_1__4__HttpClient_String_UTValue_CancellationToken(UTValue.get_type_handle(), &__thrown, client.get_handle(), requestUri?.get_handle() ?? nil, value.to_gval(), cancellationToken.get_handle());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task_1(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task_1(hndl: __return).ToAsync();
         }
     }
     // System.Threading.Tasks.Task<System.Net.Http.HttpResponseMessage> PostAsJsonAsync<TValue>(System.Net.Http.HttpClient, System.Uri, TValue, System.Text.Json.JsonSerializerOptions, System.Threading.CancellationToken)
 // docid: M:System.Net.Http.Json.HttpClientJsonExtensions.PostAsJsonAsync``1(System.Net.Http.HttpClient,System.Uri,``0,System.Text.Json.JsonSerializerOptions,System.Threading.CancellationToken)
     /**
-    Send a POST request to the specified Uri containing the  serialized as JSON in the request body.
+    Sends a POST request to the specified Uri containing the  serialized as JSON in the request body.
 
     - Parameter client: The client used to send the request.
     - Parameter requestUri: The Uri the request is sent to.
     - Parameter value: The value to serialize.
-    - Parameter options: Options to control the behavior during serialization, the default options are .
+    - Parameter options: Options to control the behavior during serialization. The default options are those specified by .
     - Parameter cancellationToken: A cancellation token that can be used by other objects or threads to receive notice of cancellation.
     - Returns: The task object representing the asynchronous operation.
 
     */
-    public static func PostAsJsonAsync<UTValue : SGBridgeGenericValue>(client : dotnet.System.Net.Http.HttpClient, requestUri : Optional<dotnet.System.Uri>, value : UTValue, options : Optional<dotnet.System.Text.Json.JsonSerializerOptions> = nil, cancellationToken : dotnet.System.Threading.CancellationToken = System.Threading.CancellationToken.None) throws -> dotnet.System.Threading.Tasks.Task_1<dotnet.System.Net.Http.HttpResponseMessage> {
+    public static func PostAsJsonAsync<UTValue : SGBridgeGenericValue>(client : dotnet.System.Net.Http.HttpClient, requestUri : Optional<dotnet.System.Uri>, value : UTValue, options : Optional<dotnet.System.Text.Json.JsonSerializerOptions> = nil, cancellationToken : dotnet.System.Threading.CancellationToken = System.Threading.CancellationToken.None) async throws -> dotnet.System.Net.Http.HttpResponseMessage {
         var __thrown : NullableHandle = nil;
         let __return = System_Net_Http_Json_HttpClientJsonExtensions_System_Threading_Tasks_Task_System_Net_Http_HttpResponseMessage___PostAsJsonAsync_1__5__HttpClient_Uri_UTValue_JsonSerializerOptions_CancellationToken(UTValue.get_type_handle(), &__thrown, client.get_handle(), requestUri?.get_handle() ?? nil, value.to_gval(), options?.get_handle() ?? nil, cancellationToken.get_handle());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task_1(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task_1(hndl: __return).ToAsync();
         }
     }
     // System.Threading.Tasks.Task<System.Net.Http.HttpResponseMessage> PostAsJsonAsync<TValue>(System.Net.Http.HttpClient, System.Uri, TValue, System.Text.Json.Serialization.Metadata.JsonTypeInfo<TValue>, System.Threading.CancellationToken)
 // docid: M:System.Net.Http.Json.HttpClientJsonExtensions.PostAsJsonAsync``1(System.Net.Http.HttpClient,System.Uri,``0,System.Text.Json.Serialization.Metadata.JsonTypeInfo{``0},System.Threading.CancellationToken)
-    public static func PostAsJsonAsync<UTValue : SGBridgeGenericValue>(client : dotnet.System.Net.Http.HttpClient, requestUri : Optional<dotnet.System.Uri>, value : UTValue, jsonTypeInfo : dotnet.System.Text.Json.Serialization.Metadata.JsonTypeInfo_1<UTValue>, cancellationToken : dotnet.System.Threading.CancellationToken = System.Threading.CancellationToken.None) throws -> dotnet.System.Threading.Tasks.Task_1<dotnet.System.Net.Http.HttpResponseMessage> {
+    /**
+    Sends a POST request to the specified Uri containing the  serialized as JSON in the request body.
+
+    - Parameter client: The client used to send the request.
+    - Parameter requestUri: The Uri the request is sent to.
+    - Parameter value: The value to serialize.
+    - Parameter jsonTypeInfo: Source generated JsonTypeInfo to control the behavior during serialization.
+    - Parameter cancellationToken: A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+    - Returns: The task object representing the asynchronous operation.
+
+    */
+    public static func PostAsJsonAsync<UTValue : SGBridgeGenericValue>(client : dotnet.System.Net.Http.HttpClient, requestUri : Optional<dotnet.System.Uri>, value : UTValue, jsonTypeInfo : dotnet.System.Text.Json.Serialization.Metadata.JsonTypeInfo_1<UTValue>, cancellationToken : dotnet.System.Threading.CancellationToken = System.Threading.CancellationToken.None) async throws -> dotnet.System.Net.Http.HttpResponseMessage {
         var __thrown : NullableHandle = nil;
         let __return = System_Net_Http_Json_HttpClientJsonExtensions_System_Threading_Tasks_Task_System_Net_Http_HttpResponseMessage___PostAsJsonAsync_1__5__HttpClient_Uri_UTValue_System_Text_Json_Serialization_Metadata_JsonTypeInfo_UTValue__CancellationToken(UTValue.get_type_handle(), &__thrown, client.get_handle(), requestUri?.get_handle() ?? nil, value.to_gval(), jsonTypeInfo.get_handle(), cancellationToken.get_handle());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task_1(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task_1(hndl: __return).ToAsync();
         }
     }
     // System.Threading.Tasks.Task<System.Net.Http.HttpResponseMessage> PostAsJsonAsync<TValue>(System.Net.Http.HttpClient, System.Uri, TValue, System.Threading.CancellationToken)
 // docid: M:System.Net.Http.Json.HttpClientJsonExtensions.PostAsJsonAsync``1(System.Net.Http.HttpClient,System.Uri,``0,System.Threading.CancellationToken)
     /**
-    Send a POST request to the specified Uri containing the  serialized as JSON in the request body.
+    Sends a POST request to the specified Uri containing the  serialized as JSON in the request body.
 
     - Parameter client: The client used to send the request.
     - Parameter requestUri: The Uri the request is sent to.
@@ -242,13 +306,13 @@ public struct HttpClientJsonExtensions {
     - Returns: The task object representing the asynchronous operation.
 
     */
-    public static func PostAsJsonAsync<UTValue : SGBridgeGenericValue>(client : dotnet.System.Net.Http.HttpClient, requestUri : Optional<dotnet.System.Uri>, value : UTValue, cancellationToken : dotnet.System.Threading.CancellationToken) throws -> dotnet.System.Threading.Tasks.Task_1<dotnet.System.Net.Http.HttpResponseMessage> {
+    public static func PostAsJsonAsync<UTValue : SGBridgeGenericValue>(client : dotnet.System.Net.Http.HttpClient, requestUri : Optional<dotnet.System.Uri>, value : UTValue, cancellationToken : dotnet.System.Threading.CancellationToken) async throws -> dotnet.System.Net.Http.HttpResponseMessage {
         var __thrown : NullableHandle = nil;
         let __return = System_Net_Http_Json_HttpClientJsonExtensions_System_Threading_Tasks_Task_System_Net_Http_HttpResponseMessage___PostAsJsonAsync_1__4__HttpClient_Uri_UTValue_CancellationToken(UTValue.get_type_handle(), &__thrown, client.get_handle(), requestUri?.get_handle() ?? nil, value.to_gval(), cancellationToken.get_handle());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task_1(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task_1(hndl: __return).ToAsync();
         }
     }
     // System.Threading.Tasks.Task<System.Net.Http.HttpResponseMessage> PutAsJsonAsync<TValue>(System.Net.Http.HttpClient, System.String, TValue, System.Text.Json.JsonSerializerOptions, System.Threading.CancellationToken)
@@ -259,29 +323,40 @@ public struct HttpClientJsonExtensions {
     - Parameter client: The client used to send the request.
     - Parameter requestUri: The Uri the request is sent to.
     - Parameter value: The value to serialize.
-    - Parameter options: Options to control the behavior during serialization, the default options are .
+    - Parameter options: Options to control the behavior during serialization. The default options are those specified by .
     - Parameter cancellationToken: A cancellation token that can be used by other objects or threads to receive notice of cancellation.
     - Returns: The task object representing the asynchronous operation.
 
     */
-    public static func PutAsJsonAsync<UTValue : SGBridgeGenericValue>(client : dotnet.System.Net.Http.HttpClient, requestUri : Optional<dotnet.System.String>, value : UTValue, options : Optional<dotnet.System.Text.Json.JsonSerializerOptions> = nil, cancellationToken : dotnet.System.Threading.CancellationToken = System.Threading.CancellationToken.None) throws -> dotnet.System.Threading.Tasks.Task_1<dotnet.System.Net.Http.HttpResponseMessage> {
+    public static func PutAsJsonAsync<UTValue : SGBridgeGenericValue>(client : dotnet.System.Net.Http.HttpClient, requestUri : Optional<dotnet.System.String>, value : UTValue, options : Optional<dotnet.System.Text.Json.JsonSerializerOptions> = nil, cancellationToken : dotnet.System.Threading.CancellationToken = System.Threading.CancellationToken.None) async throws -> dotnet.System.Net.Http.HttpResponseMessage {
         var __thrown : NullableHandle = nil;
         let __return = System_Net_Http_Json_HttpClientJsonExtensions_System_Threading_Tasks_Task_System_Net_Http_HttpResponseMessage___PutAsJsonAsync_1__5__HttpClient_String_UTValue_JsonSerializerOptions_CancellationToken(UTValue.get_type_handle(), &__thrown, client.get_handle(), requestUri?.get_handle() ?? nil, value.to_gval(), options?.get_handle() ?? nil, cancellationToken.get_handle());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task_1(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task_1(hndl: __return).ToAsync();
         }
     }
     // System.Threading.Tasks.Task<System.Net.Http.HttpResponseMessage> PutAsJsonAsync<TValue>(System.Net.Http.HttpClient, System.String, TValue, System.Text.Json.Serialization.Metadata.JsonTypeInfo<TValue>, System.Threading.CancellationToken)
 // docid: M:System.Net.Http.Json.HttpClientJsonExtensions.PutAsJsonAsync``1(System.Net.Http.HttpClient,System.String,``0,System.Text.Json.Serialization.Metadata.JsonTypeInfo{``0},System.Threading.CancellationToken)
-    public static func PutAsJsonAsync<UTValue : SGBridgeGenericValue>(client : dotnet.System.Net.Http.HttpClient, requestUri : Optional<dotnet.System.String>, value : UTValue, jsonTypeInfo : dotnet.System.Text.Json.Serialization.Metadata.JsonTypeInfo_1<UTValue>, cancellationToken : dotnet.System.Threading.CancellationToken = System.Threading.CancellationToken.None) throws -> dotnet.System.Threading.Tasks.Task_1<dotnet.System.Net.Http.HttpResponseMessage> {
+    /**
+    Send a PUT request to the specified Uri containing the  serialized as JSON in the request body.
+
+    - Parameter client: The client used to send the request.
+    - Parameter requestUri: The Uri the request is sent to.
+    - Parameter value: The value to serialize.
+    - Parameter jsonTypeInfo: Source generated JsonTypeInfo to control the behavior during serialization.
+    - Parameter cancellationToken: A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+    - Returns: The task object representing the asynchronous operation.
+
+    */
+    public static func PutAsJsonAsync<UTValue : SGBridgeGenericValue>(client : dotnet.System.Net.Http.HttpClient, requestUri : Optional<dotnet.System.String>, value : UTValue, jsonTypeInfo : dotnet.System.Text.Json.Serialization.Metadata.JsonTypeInfo_1<UTValue>, cancellationToken : dotnet.System.Threading.CancellationToken = System.Threading.CancellationToken.None) async throws -> dotnet.System.Net.Http.HttpResponseMessage {
         var __thrown : NullableHandle = nil;
         let __return = System_Net_Http_Json_HttpClientJsonExtensions_System_Threading_Tasks_Task_System_Net_Http_HttpResponseMessage___PutAsJsonAsync_1__5__HttpClient_String_UTValue_System_Text_Json_Serialization_Metadata_JsonTypeInfo_UTValue__CancellationToken(UTValue.get_type_handle(), &__thrown, client.get_handle(), requestUri?.get_handle() ?? nil, value.to_gval(), jsonTypeInfo.get_handle(), cancellationToken.get_handle());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task_1(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task_1(hndl: __return).ToAsync();
         }
     }
     // System.Threading.Tasks.Task<System.Net.Http.HttpResponseMessage> PutAsJsonAsync<TValue>(System.Net.Http.HttpClient, System.String, TValue, System.Threading.CancellationToken)
@@ -296,13 +371,13 @@ public struct HttpClientJsonExtensions {
     - Returns: The task object representing the asynchronous operation.
 
     */
-    public static func PutAsJsonAsync<UTValue : SGBridgeGenericValue>(client : dotnet.System.Net.Http.HttpClient, requestUri : Optional<dotnet.System.String>, value : UTValue, cancellationToken : dotnet.System.Threading.CancellationToken) throws -> dotnet.System.Threading.Tasks.Task_1<dotnet.System.Net.Http.HttpResponseMessage> {
+    public static func PutAsJsonAsync<UTValue : SGBridgeGenericValue>(client : dotnet.System.Net.Http.HttpClient, requestUri : Optional<dotnet.System.String>, value : UTValue, cancellationToken : dotnet.System.Threading.CancellationToken) async throws -> dotnet.System.Net.Http.HttpResponseMessage {
         var __thrown : NullableHandle = nil;
         let __return = System_Net_Http_Json_HttpClientJsonExtensions_System_Threading_Tasks_Task_System_Net_Http_HttpResponseMessage___PutAsJsonAsync_1__4__HttpClient_String_UTValue_CancellationToken(UTValue.get_type_handle(), &__thrown, client.get_handle(), requestUri?.get_handle() ?? nil, value.to_gval(), cancellationToken.get_handle());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task_1(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task_1(hndl: __return).ToAsync();
         }
     }
     // System.Threading.Tasks.Task<System.Net.Http.HttpResponseMessage> PutAsJsonAsync<TValue>(System.Net.Http.HttpClient, System.Uri, TValue, System.Text.Json.JsonSerializerOptions, System.Threading.CancellationToken)
@@ -313,29 +388,40 @@ public struct HttpClientJsonExtensions {
     - Parameter client: The client used to send the request.
     - Parameter requestUri: The Uri the request is sent to.
     - Parameter value: The value to serialize.
-    - Parameter options: Options to control the behavior during serialization, the default options are .
+    - Parameter options: Options to control the behavior during serialization. The default options are those specified by .
     - Parameter cancellationToken: A cancellation token that can be used by other objects or threads to receive notice of cancellation.
     - Returns: The task object representing the asynchronous operation.
 
     */
-    public static func PutAsJsonAsync<UTValue : SGBridgeGenericValue>(client : dotnet.System.Net.Http.HttpClient, requestUri : Optional<dotnet.System.Uri>, value : UTValue, options : Optional<dotnet.System.Text.Json.JsonSerializerOptions> = nil, cancellationToken : dotnet.System.Threading.CancellationToken = System.Threading.CancellationToken.None) throws -> dotnet.System.Threading.Tasks.Task_1<dotnet.System.Net.Http.HttpResponseMessage> {
+    public static func PutAsJsonAsync<UTValue : SGBridgeGenericValue>(client : dotnet.System.Net.Http.HttpClient, requestUri : Optional<dotnet.System.Uri>, value : UTValue, options : Optional<dotnet.System.Text.Json.JsonSerializerOptions> = nil, cancellationToken : dotnet.System.Threading.CancellationToken = System.Threading.CancellationToken.None) async throws -> dotnet.System.Net.Http.HttpResponseMessage {
         var __thrown : NullableHandle = nil;
         let __return = System_Net_Http_Json_HttpClientJsonExtensions_System_Threading_Tasks_Task_System_Net_Http_HttpResponseMessage___PutAsJsonAsync_1__5__HttpClient_Uri_UTValue_JsonSerializerOptions_CancellationToken(UTValue.get_type_handle(), &__thrown, client.get_handle(), requestUri?.get_handle() ?? nil, value.to_gval(), options?.get_handle() ?? nil, cancellationToken.get_handle());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task_1(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task_1(hndl: __return).ToAsync();
         }
     }
     // System.Threading.Tasks.Task<System.Net.Http.HttpResponseMessage> PutAsJsonAsync<TValue>(System.Net.Http.HttpClient, System.Uri, TValue, System.Text.Json.Serialization.Metadata.JsonTypeInfo<TValue>, System.Threading.CancellationToken)
 // docid: M:System.Net.Http.Json.HttpClientJsonExtensions.PutAsJsonAsync``1(System.Net.Http.HttpClient,System.Uri,``0,System.Text.Json.Serialization.Metadata.JsonTypeInfo{``0},System.Threading.CancellationToken)
-    public static func PutAsJsonAsync<UTValue : SGBridgeGenericValue>(client : dotnet.System.Net.Http.HttpClient, requestUri : Optional<dotnet.System.Uri>, value : UTValue, jsonTypeInfo : dotnet.System.Text.Json.Serialization.Metadata.JsonTypeInfo_1<UTValue>, cancellationToken : dotnet.System.Threading.CancellationToken = System.Threading.CancellationToken.None) throws -> dotnet.System.Threading.Tasks.Task_1<dotnet.System.Net.Http.HttpResponseMessage> {
+    /**
+    Send a PUT request to the specified Uri containing the  serialized as JSON in the request body.
+
+    - Parameter client: The client used to send the request.
+    - Parameter requestUri: The Uri the request is sent to.
+    - Parameter value: The value to serialize.
+    - Parameter jsonTypeInfo: Source generated JsonTypeInfo to control the behavior during serialization.
+    - Parameter cancellationToken: A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+    - Returns: The task object representing the asynchronous operation.
+
+    */
+    public static func PutAsJsonAsync<UTValue : SGBridgeGenericValue>(client : dotnet.System.Net.Http.HttpClient, requestUri : Optional<dotnet.System.Uri>, value : UTValue, jsonTypeInfo : dotnet.System.Text.Json.Serialization.Metadata.JsonTypeInfo_1<UTValue>, cancellationToken : dotnet.System.Threading.CancellationToken = System.Threading.CancellationToken.None) async throws -> dotnet.System.Net.Http.HttpResponseMessage {
         var __thrown : NullableHandle = nil;
         let __return = System_Net_Http_Json_HttpClientJsonExtensions_System_Threading_Tasks_Task_System_Net_Http_HttpResponseMessage___PutAsJsonAsync_1__5__HttpClient_Uri_UTValue_System_Text_Json_Serialization_Metadata_JsonTypeInfo_UTValue__CancellationToken(UTValue.get_type_handle(), &__thrown, client.get_handle(), requestUri?.get_handle() ?? nil, value.to_gval(), jsonTypeInfo.get_handle(), cancellationToken.get_handle());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task_1(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task_1(hndl: __return).ToAsync();
         }
     }
     // System.Threading.Tasks.Task<System.Net.Http.HttpResponseMessage> PutAsJsonAsync<TValue>(System.Net.Http.HttpClient, System.Uri, TValue, System.Threading.CancellationToken)
@@ -350,13 +436,13 @@ public struct HttpClientJsonExtensions {
     - Returns: The task object representing the asynchronous operation.
 
     */
-    public static func PutAsJsonAsync<UTValue : SGBridgeGenericValue>(client : dotnet.System.Net.Http.HttpClient, requestUri : Optional<dotnet.System.Uri>, value : UTValue, cancellationToken : dotnet.System.Threading.CancellationToken) throws -> dotnet.System.Threading.Tasks.Task_1<dotnet.System.Net.Http.HttpResponseMessage> {
+    public static func PutAsJsonAsync<UTValue : SGBridgeGenericValue>(client : dotnet.System.Net.Http.HttpClient, requestUri : Optional<dotnet.System.Uri>, value : UTValue, cancellationToken : dotnet.System.Threading.CancellationToken) async throws -> dotnet.System.Net.Http.HttpResponseMessage {
         var __thrown : NullableHandle = nil;
         let __return = System_Net_Http_Json_HttpClientJsonExtensions_System_Threading_Tasks_Task_System_Net_Http_HttpResponseMessage___PutAsJsonAsync_1__4__HttpClient_Uri_UTValue_CancellationToken(UTValue.get_type_handle(), &__thrown, client.get_handle(), requestUri?.get_handle() ?? nil, value.to_gval(), cancellationToken.get_handle());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task_1(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task_1(hndl: __return).ToAsync();
         }
     }
 } // HttpClientJsonExtensions
@@ -367,45 +453,64 @@ public struct HttpContentJsonExtensions {
     // System.Threading.Tasks.Task<System.Object> ReadFromJsonAsync(System.Net.Http.HttpContent, System.Type, System.Text.Json.JsonSerializerOptions, System.Threading.CancellationToken)
 // docid: M:System.Net.Http.Json.HttpContentJsonExtensions.ReadFromJsonAsync(System.Net.Http.HttpContent,System.Type,System.Text.Json.JsonSerializerOptions,System.Threading.CancellationToken)
     /**
-    Read the HTTP content and return the value resulting from deserialize the content as JSON in an asynchronous operation.
+    Reads the HTTP content and returns the value that results from deserializing the content as JSON in an asynchronous operation.
 
     - Parameter content: The content to read from.
     - Parameter type: The type of the object to deserialize to and return.
-    - Parameter options: Options to control the behavior during deserialization, the default options are .
+    - Parameter options: Options to control the behavior during deserialization. The default options are those specified by .
     - Parameter cancellationToken: A cancellation token that can be used by other objects or threads to receive notice of cancellation.
     - Returns: The task object representing the asynchronous operation.
 
     */
-    public static func ReadFromJsonAsync(content : dotnet.System.Net.Http.HttpContent, type : dotnet.System.Type_, options : Optional<dotnet.System.Text.Json.JsonSerializerOptions> = nil, cancellationToken : dotnet.System.Threading.CancellationToken = System.Threading.CancellationToken.None) throws -> dotnet.System.Threading.Tasks.Task_1<dotnet.System.Object> {
+    public static func ReadFromJsonAsync(content : dotnet.System.Net.Http.HttpContent, type : dotnet.System.Type_, options : Optional<dotnet.System.Text.Json.JsonSerializerOptions> = nil, cancellationToken : dotnet.System.Threading.CancellationToken = System.Threading.CancellationToken.None) async throws -> dotnet.System.Object {
         var __thrown : NullableHandle = nil;
         let __return = System_Net_Http_Json_HttpContentJsonExtensions_System_Threading_Tasks_Task_object___ReadFromJsonAsync_0__4__HttpContent_Type_JsonSerializerOptions_CancellationToken(&__thrown, content.get_handle(), type.get_handle(), options?.get_handle() ?? nil, cancellationToken.get_handle());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task_1(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task_1(hndl: __return).ToAsync();
         }
     }
     // System.Threading.Tasks.Task<System.Object> ReadFromJsonAsync(System.Net.Http.HttpContent, System.Type, System.Text.Json.Serialization.JsonSerializerContext, System.Threading.CancellationToken)
 // docid: M:System.Net.Http.Json.HttpContentJsonExtensions.ReadFromJsonAsync(System.Net.Http.HttpContent,System.Type,System.Text.Json.Serialization.JsonSerializerContext,System.Threading.CancellationToken)
-    public static func ReadFromJsonAsync(content : dotnet.System.Net.Http.HttpContent, type : dotnet.System.Type_, context : dotnet.System.Text.Json.Serialization.JsonSerializerContext, cancellationToken : dotnet.System.Threading.CancellationToken = System.Threading.CancellationToken.None) throws -> dotnet.System.Threading.Tasks.Task_1<dotnet.System.Object> {
+    /**
+    Reads the HTTP content and returns the value that results from deserializing the content as JSON in an asynchronous operation.
+
+    - Parameter content: The content to read from.
+    - Parameter type: The type of the object to deserialize to and return.
+    - Parameter context: Source generated JsonSerializerContext used to control the behavior during deserialization.
+    - Parameter cancellationToken: A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+    - Returns: The task object representing the asynchronous operation.
+
+    */
+    public static func ReadFromJsonAsync(content : dotnet.System.Net.Http.HttpContent, type : dotnet.System.Type_, context : dotnet.System.Text.Json.Serialization.JsonSerializerContext, cancellationToken : dotnet.System.Threading.CancellationToken = System.Threading.CancellationToken.None) async throws -> dotnet.System.Object {
         var __thrown : NullableHandle = nil;
         let __return = System_Net_Http_Json_HttpContentJsonExtensions_System_Threading_Tasks_Task_object___ReadFromJsonAsync_0__4__HttpContent_Type_JsonSerializerContext_CancellationToken(&__thrown, content.get_handle(), type.get_handle(), context.get_handle(), cancellationToken.get_handle());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task_1(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task_1(hndl: __return).ToAsync();
         }
     }
 // TODO COPE (write_all_methods) (unused generic param) System.Threading.Tasks.Task<T> ReadFromJsonAsync<T>(System.Net.Http.HttpContent, System.Text.Json.JsonSerializerOptions, System.Threading.CancellationToken)
     // System.Threading.Tasks.Task<T> ReadFromJsonAsync<T>(System.Net.Http.HttpContent, System.Text.Json.Serialization.Metadata.JsonTypeInfo<T>, System.Threading.CancellationToken)
 // docid: M:System.Net.Http.Json.HttpContentJsonExtensions.ReadFromJsonAsync``1(System.Net.Http.HttpContent,System.Text.Json.Serialization.Metadata.JsonTypeInfo{``0},System.Threading.CancellationToken)
-    public static func ReadFromJsonAsync<UT : SGBridgeGenericValue>(content : dotnet.System.Net.Http.HttpContent, jsonTypeInfo : dotnet.System.Text.Json.Serialization.Metadata.JsonTypeInfo_1<UT>, cancellationToken : dotnet.System.Threading.CancellationToken = System.Threading.CancellationToken.None) throws -> dotnet.System.Threading.Tasks.Task_1<UT> {
+    /**
+    Reads the HTTP content and returns the value that results from deserializing the content as JSON in an asynchronous operation.
+
+    - Parameter content: The content to read from.
+    - Parameter jsonTypeInfo: Source generated JsonTypeInfo to control the behavior during deserialization.
+    - Parameter cancellationToken: A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+    - Returns: The task object representing the asynchronous operation.
+
+    */
+    public static func ReadFromJsonAsync<UT : SGBridgeGenericValue>(content : dotnet.System.Net.Http.HttpContent, jsonTypeInfo : dotnet.System.Text.Json.Serialization.Metadata.JsonTypeInfo_1<UT>, cancellationToken : dotnet.System.Threading.CancellationToken = System.Threading.CancellationToken.None) async throws -> UT {
         var __thrown : NullableHandle = nil;
         let __return = System_Net_Http_Json_HttpContentJsonExtensions_System_Threading_Tasks_Task_UT___ReadFromJsonAsync_1__3__HttpContent_System_Text_Json_Serialization_Metadata_JsonTypeInfo_UT__CancellationToken(UT.get_type_handle(), &__thrown, content.get_handle(), jsonTypeInfo.get_handle(), cancellationToken.get_handle());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task_1(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task_1(hndl: __return).ToAsync();
         }
     }
 } // HttpContentJsonExtensions
@@ -422,6 +527,9 @@ public final class JsonContent
 {
     public class override func get_type_handle() -> TypeHandle {
         return System_Net_Http_Json_JsonContent_get_type_handle();
+    }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -520,43 +628,43 @@ public final class JsonContent
 
 // EXTENSION METHOD System.Threading.Tasks.Task<System.Object> GetFromJsonAsync(System.Net.Http.HttpClient, System.String, System.Type, System.Text.Json.JsonSerializerOptions, System.Threading.CancellationToken)
 extension dotnet.System.Net.Http.HttpClient {
-    public func GetFromJsonAsync(requestUri : Optional<dotnet.System.String>, type : dotnet.System.Type_, options : Optional<dotnet.System.Text.Json.JsonSerializerOptions>, cancellationToken : dotnet.System.Threading.CancellationToken = System.Threading.CancellationToken.None) throws -> dotnet.System.Threading.Tasks.Task_1<dotnet.System.Object> {
-        return try dotnet.System.Net.Http.Json.HttpClientJsonExtensions.GetFromJsonAsync(client: self, requestUri: requestUri, type: type, options: options, cancellationToken: cancellationToken);
+    public func GetFromJsonAsync(requestUri : Optional<dotnet.System.String>, type : dotnet.System.Type_, options : Optional<dotnet.System.Text.Json.JsonSerializerOptions>, cancellationToken : dotnet.System.Threading.CancellationToken = System.Threading.CancellationToken.None) async throws -> dotnet.System.Object {
+        return try await dotnet.System.Net.Http.Json.HttpClientJsonExtensions.GetFromJsonAsync(client: self, requestUri: requestUri, type: type, options: options, cancellationToken: cancellationToken);
     }
 }
 
 // EXTENSION METHOD System.Threading.Tasks.Task<System.Object> GetFromJsonAsync(System.Net.Http.HttpClient, System.String, System.Type, System.Text.Json.Serialization.JsonSerializerContext, System.Threading.CancellationToken)
 extension dotnet.System.Net.Http.HttpClient {
-    public func GetFromJsonAsync(requestUri : Optional<dotnet.System.String>, type : dotnet.System.Type_, context : dotnet.System.Text.Json.Serialization.JsonSerializerContext, cancellationToken : dotnet.System.Threading.CancellationToken = System.Threading.CancellationToken.None) throws -> dotnet.System.Threading.Tasks.Task_1<dotnet.System.Object> {
-        return try dotnet.System.Net.Http.Json.HttpClientJsonExtensions.GetFromJsonAsync(client: self, requestUri: requestUri, type: type, context: context, cancellationToken: cancellationToken);
+    public func GetFromJsonAsync(requestUri : Optional<dotnet.System.String>, type : dotnet.System.Type_, context : dotnet.System.Text.Json.Serialization.JsonSerializerContext, cancellationToken : dotnet.System.Threading.CancellationToken = System.Threading.CancellationToken.None) async throws -> dotnet.System.Object {
+        return try await dotnet.System.Net.Http.Json.HttpClientJsonExtensions.GetFromJsonAsync(client: self, requestUri: requestUri, type: type, context: context, cancellationToken: cancellationToken);
     }
 }
 
 // EXTENSION METHOD System.Threading.Tasks.Task<System.Object> GetFromJsonAsync(System.Net.Http.HttpClient, System.String, System.Type, System.Threading.CancellationToken)
 extension dotnet.System.Net.Http.HttpClient {
-    public func GetFromJsonAsync(requestUri : Optional<dotnet.System.String>, type : dotnet.System.Type_, cancellationToken : dotnet.System.Threading.CancellationToken = System.Threading.CancellationToken.None) throws -> dotnet.System.Threading.Tasks.Task_1<dotnet.System.Object> {
-        return try dotnet.System.Net.Http.Json.HttpClientJsonExtensions.GetFromJsonAsync(client: self, requestUri: requestUri, type: type, cancellationToken: cancellationToken);
+    public func GetFromJsonAsync(requestUri : Optional<dotnet.System.String>, type : dotnet.System.Type_, cancellationToken : dotnet.System.Threading.CancellationToken = System.Threading.CancellationToken.None) async throws -> dotnet.System.Object {
+        return try await dotnet.System.Net.Http.Json.HttpClientJsonExtensions.GetFromJsonAsync(client: self, requestUri: requestUri, type: type, cancellationToken: cancellationToken);
     }
 }
 
 // EXTENSION METHOD System.Threading.Tasks.Task<System.Object> GetFromJsonAsync(System.Net.Http.HttpClient, System.Uri, System.Type, System.Text.Json.JsonSerializerOptions, System.Threading.CancellationToken)
 extension dotnet.System.Net.Http.HttpClient {
-    public func GetFromJsonAsync(requestUri : Optional<dotnet.System.Uri>, type : dotnet.System.Type_, options : Optional<dotnet.System.Text.Json.JsonSerializerOptions>, cancellationToken : dotnet.System.Threading.CancellationToken = System.Threading.CancellationToken.None) throws -> dotnet.System.Threading.Tasks.Task_1<dotnet.System.Object> {
-        return try dotnet.System.Net.Http.Json.HttpClientJsonExtensions.GetFromJsonAsync(client: self, requestUri: requestUri, type: type, options: options, cancellationToken: cancellationToken);
+    public func GetFromJsonAsync(requestUri : Optional<dotnet.System.Uri>, type : dotnet.System.Type_, options : Optional<dotnet.System.Text.Json.JsonSerializerOptions>, cancellationToken : dotnet.System.Threading.CancellationToken = System.Threading.CancellationToken.None) async throws -> dotnet.System.Object {
+        return try await dotnet.System.Net.Http.Json.HttpClientJsonExtensions.GetFromJsonAsync(client: self, requestUri: requestUri, type: type, options: options, cancellationToken: cancellationToken);
     }
 }
 
 // EXTENSION METHOD System.Threading.Tasks.Task<System.Object> GetFromJsonAsync(System.Net.Http.HttpClient, System.Uri, System.Type, System.Text.Json.Serialization.JsonSerializerContext, System.Threading.CancellationToken)
 extension dotnet.System.Net.Http.HttpClient {
-    public func GetFromJsonAsync(requestUri : Optional<dotnet.System.Uri>, type : dotnet.System.Type_, context : dotnet.System.Text.Json.Serialization.JsonSerializerContext, cancellationToken : dotnet.System.Threading.CancellationToken = System.Threading.CancellationToken.None) throws -> dotnet.System.Threading.Tasks.Task_1<dotnet.System.Object> {
-        return try dotnet.System.Net.Http.Json.HttpClientJsonExtensions.GetFromJsonAsync(client: self, requestUri: requestUri, type: type, context: context, cancellationToken: cancellationToken);
+    public func GetFromJsonAsync(requestUri : Optional<dotnet.System.Uri>, type : dotnet.System.Type_, context : dotnet.System.Text.Json.Serialization.JsonSerializerContext, cancellationToken : dotnet.System.Threading.CancellationToken = System.Threading.CancellationToken.None) async throws -> dotnet.System.Object {
+        return try await dotnet.System.Net.Http.Json.HttpClientJsonExtensions.GetFromJsonAsync(client: self, requestUri: requestUri, type: type, context: context, cancellationToken: cancellationToken);
     }
 }
 
 // EXTENSION METHOD System.Threading.Tasks.Task<System.Object> GetFromJsonAsync(System.Net.Http.HttpClient, System.Uri, System.Type, System.Threading.CancellationToken)
 extension dotnet.System.Net.Http.HttpClient {
-    public func GetFromJsonAsync(requestUri : Optional<dotnet.System.Uri>, type : dotnet.System.Type_, cancellationToken : dotnet.System.Threading.CancellationToken = System.Threading.CancellationToken.None) throws -> dotnet.System.Threading.Tasks.Task_1<dotnet.System.Object> {
-        return try dotnet.System.Net.Http.Json.HttpClientJsonExtensions.GetFromJsonAsync(client: self, requestUri: requestUri, type: type, cancellationToken: cancellationToken);
+    public func GetFromJsonAsync(requestUri : Optional<dotnet.System.Uri>, type : dotnet.System.Type_, cancellationToken : dotnet.System.Threading.CancellationToken = System.Threading.CancellationToken.None) async throws -> dotnet.System.Object {
+        return try await dotnet.System.Net.Http.Json.HttpClientJsonExtensions.GetFromJsonAsync(client: self, requestUri: requestUri, type: type, cancellationToken: cancellationToken);
     }
 }
 
@@ -565,8 +673,8 @@ extension dotnet.System.Net.Http.HttpClient {
 
 // EXTENSION METHOD System.Threading.Tasks.Task<TValue> GetFromJsonAsync<TValue>(System.Net.Http.HttpClient, System.String, System.Text.Json.Serialization.Metadata.JsonTypeInfo<TValue>, System.Threading.CancellationToken)
 extension dotnet.System.Net.Http.HttpClient {
-    public func GetFromJsonAsync<UTValue : SGBridgeGenericValue>(requestUri : Optional<dotnet.System.String>, jsonTypeInfo : dotnet.System.Text.Json.Serialization.Metadata.JsonTypeInfo_1<UTValue>, cancellationToken : dotnet.System.Threading.CancellationToken = System.Threading.CancellationToken.None) throws -> dotnet.System.Threading.Tasks.Task_1<UTValue> {
-        return try dotnet.System.Net.Http.Json.HttpClientJsonExtensions.GetFromJsonAsync(client: self, requestUri: requestUri, jsonTypeInfo: jsonTypeInfo, cancellationToken: cancellationToken);
+    public func GetFromJsonAsync<UTValue : SGBridgeGenericValue>(requestUri : Optional<dotnet.System.String>, jsonTypeInfo : dotnet.System.Text.Json.Serialization.Metadata.JsonTypeInfo_1<UTValue>, cancellationToken : dotnet.System.Threading.CancellationToken = System.Threading.CancellationToken.None) async throws -> UTValue {
+        return try await dotnet.System.Net.Http.Json.HttpClientJsonExtensions.GetFromJsonAsync(client: self, requestUri: requestUri, jsonTypeInfo: jsonTypeInfo, cancellationToken: cancellationToken);
     }
 }
 
@@ -578,8 +686,8 @@ extension dotnet.System.Net.Http.HttpClient {
 
 // EXTENSION METHOD System.Threading.Tasks.Task<TValue> GetFromJsonAsync<TValue>(System.Net.Http.HttpClient, System.Uri, System.Text.Json.Serialization.Metadata.JsonTypeInfo<TValue>, System.Threading.CancellationToken)
 extension dotnet.System.Net.Http.HttpClient {
-    public func GetFromJsonAsync<UTValue : SGBridgeGenericValue>(requestUri : Optional<dotnet.System.Uri>, jsonTypeInfo : dotnet.System.Text.Json.Serialization.Metadata.JsonTypeInfo_1<UTValue>, cancellationToken : dotnet.System.Threading.CancellationToken = System.Threading.CancellationToken.None) throws -> dotnet.System.Threading.Tasks.Task_1<UTValue> {
-        return try dotnet.System.Net.Http.Json.HttpClientJsonExtensions.GetFromJsonAsync(client: self, requestUri: requestUri, jsonTypeInfo: jsonTypeInfo, cancellationToken: cancellationToken);
+    public func GetFromJsonAsync<UTValue : SGBridgeGenericValue>(requestUri : Optional<dotnet.System.Uri>, jsonTypeInfo : dotnet.System.Text.Json.Serialization.Metadata.JsonTypeInfo_1<UTValue>, cancellationToken : dotnet.System.Threading.CancellationToken = System.Threading.CancellationToken.None) async throws -> UTValue {
+        return try await dotnet.System.Net.Http.Json.HttpClientJsonExtensions.GetFromJsonAsync(client: self, requestUri: requestUri, jsonTypeInfo: jsonTypeInfo, cancellationToken: cancellationToken);
     }
 }
 
@@ -588,99 +696,99 @@ extension dotnet.System.Net.Http.HttpClient {
 
 // EXTENSION METHOD System.Threading.Tasks.Task<System.Net.Http.HttpResponseMessage> PostAsJsonAsync<TValue>(System.Net.Http.HttpClient, System.String, TValue, System.Text.Json.JsonSerializerOptions, System.Threading.CancellationToken)
 extension dotnet.System.Net.Http.HttpClient {
-    public func PostAsJsonAsync<UTValue : SGBridgeGenericValue>(requestUri : Optional<dotnet.System.String>, value : UTValue, options : Optional<dotnet.System.Text.Json.JsonSerializerOptions> = nil, cancellationToken : dotnet.System.Threading.CancellationToken = System.Threading.CancellationToken.None) throws -> dotnet.System.Threading.Tasks.Task_1<dotnet.System.Net.Http.HttpResponseMessage> {
-        return try dotnet.System.Net.Http.Json.HttpClientJsonExtensions.PostAsJsonAsync(client: self, requestUri: requestUri, value: value, options: options, cancellationToken: cancellationToken);
+    public func PostAsJsonAsync<UTValue : SGBridgeGenericValue>(requestUri : Optional<dotnet.System.String>, value : UTValue, options : Optional<dotnet.System.Text.Json.JsonSerializerOptions> = nil, cancellationToken : dotnet.System.Threading.CancellationToken = System.Threading.CancellationToken.None) async throws -> dotnet.System.Net.Http.HttpResponseMessage {
+        return try await dotnet.System.Net.Http.Json.HttpClientJsonExtensions.PostAsJsonAsync(client: self, requestUri: requestUri, value: value, options: options, cancellationToken: cancellationToken);
     }
 }
 
 // EXTENSION METHOD System.Threading.Tasks.Task<System.Net.Http.HttpResponseMessage> PostAsJsonAsync<TValue>(System.Net.Http.HttpClient, System.String, TValue, System.Text.Json.Serialization.Metadata.JsonTypeInfo<TValue>, System.Threading.CancellationToken)
 extension dotnet.System.Net.Http.HttpClient {
-    public func PostAsJsonAsync<UTValue : SGBridgeGenericValue>(requestUri : Optional<dotnet.System.String>, value : UTValue, jsonTypeInfo : dotnet.System.Text.Json.Serialization.Metadata.JsonTypeInfo_1<UTValue>, cancellationToken : dotnet.System.Threading.CancellationToken = System.Threading.CancellationToken.None) throws -> dotnet.System.Threading.Tasks.Task_1<dotnet.System.Net.Http.HttpResponseMessage> {
-        return try dotnet.System.Net.Http.Json.HttpClientJsonExtensions.PostAsJsonAsync(client: self, requestUri: requestUri, value: value, jsonTypeInfo: jsonTypeInfo, cancellationToken: cancellationToken);
+    public func PostAsJsonAsync<UTValue : SGBridgeGenericValue>(requestUri : Optional<dotnet.System.String>, value : UTValue, jsonTypeInfo : dotnet.System.Text.Json.Serialization.Metadata.JsonTypeInfo_1<UTValue>, cancellationToken : dotnet.System.Threading.CancellationToken = System.Threading.CancellationToken.None) async throws -> dotnet.System.Net.Http.HttpResponseMessage {
+        return try await dotnet.System.Net.Http.Json.HttpClientJsonExtensions.PostAsJsonAsync(client: self, requestUri: requestUri, value: value, jsonTypeInfo: jsonTypeInfo, cancellationToken: cancellationToken);
     }
 }
 
 // EXTENSION METHOD System.Threading.Tasks.Task<System.Net.Http.HttpResponseMessage> PostAsJsonAsync<TValue>(System.Net.Http.HttpClient, System.String, TValue, System.Threading.CancellationToken)
 extension dotnet.System.Net.Http.HttpClient {
-    public func PostAsJsonAsync<UTValue : SGBridgeGenericValue>(requestUri : Optional<dotnet.System.String>, value : UTValue, cancellationToken : dotnet.System.Threading.CancellationToken) throws -> dotnet.System.Threading.Tasks.Task_1<dotnet.System.Net.Http.HttpResponseMessage> {
-        return try dotnet.System.Net.Http.Json.HttpClientJsonExtensions.PostAsJsonAsync(client: self, requestUri: requestUri, value: value, cancellationToken: cancellationToken);
+    public func PostAsJsonAsync<UTValue : SGBridgeGenericValue>(requestUri : Optional<dotnet.System.String>, value : UTValue, cancellationToken : dotnet.System.Threading.CancellationToken) async throws -> dotnet.System.Net.Http.HttpResponseMessage {
+        return try await dotnet.System.Net.Http.Json.HttpClientJsonExtensions.PostAsJsonAsync(client: self, requestUri: requestUri, value: value, cancellationToken: cancellationToken);
     }
 }
 
 // EXTENSION METHOD System.Threading.Tasks.Task<System.Net.Http.HttpResponseMessage> PostAsJsonAsync<TValue>(System.Net.Http.HttpClient, System.Uri, TValue, System.Text.Json.JsonSerializerOptions, System.Threading.CancellationToken)
 extension dotnet.System.Net.Http.HttpClient {
-    public func PostAsJsonAsync<UTValue : SGBridgeGenericValue>(requestUri : Optional<dotnet.System.Uri>, value : UTValue, options : Optional<dotnet.System.Text.Json.JsonSerializerOptions> = nil, cancellationToken : dotnet.System.Threading.CancellationToken = System.Threading.CancellationToken.None) throws -> dotnet.System.Threading.Tasks.Task_1<dotnet.System.Net.Http.HttpResponseMessage> {
-        return try dotnet.System.Net.Http.Json.HttpClientJsonExtensions.PostAsJsonAsync(client: self, requestUri: requestUri, value: value, options: options, cancellationToken: cancellationToken);
+    public func PostAsJsonAsync<UTValue : SGBridgeGenericValue>(requestUri : Optional<dotnet.System.Uri>, value : UTValue, options : Optional<dotnet.System.Text.Json.JsonSerializerOptions> = nil, cancellationToken : dotnet.System.Threading.CancellationToken = System.Threading.CancellationToken.None) async throws -> dotnet.System.Net.Http.HttpResponseMessage {
+        return try await dotnet.System.Net.Http.Json.HttpClientJsonExtensions.PostAsJsonAsync(client: self, requestUri: requestUri, value: value, options: options, cancellationToken: cancellationToken);
     }
 }
 
 // EXTENSION METHOD System.Threading.Tasks.Task<System.Net.Http.HttpResponseMessage> PostAsJsonAsync<TValue>(System.Net.Http.HttpClient, System.Uri, TValue, System.Text.Json.Serialization.Metadata.JsonTypeInfo<TValue>, System.Threading.CancellationToken)
 extension dotnet.System.Net.Http.HttpClient {
-    public func PostAsJsonAsync<UTValue : SGBridgeGenericValue>(requestUri : Optional<dotnet.System.Uri>, value : UTValue, jsonTypeInfo : dotnet.System.Text.Json.Serialization.Metadata.JsonTypeInfo_1<UTValue>, cancellationToken : dotnet.System.Threading.CancellationToken = System.Threading.CancellationToken.None) throws -> dotnet.System.Threading.Tasks.Task_1<dotnet.System.Net.Http.HttpResponseMessage> {
-        return try dotnet.System.Net.Http.Json.HttpClientJsonExtensions.PostAsJsonAsync(client: self, requestUri: requestUri, value: value, jsonTypeInfo: jsonTypeInfo, cancellationToken: cancellationToken);
+    public func PostAsJsonAsync<UTValue : SGBridgeGenericValue>(requestUri : Optional<dotnet.System.Uri>, value : UTValue, jsonTypeInfo : dotnet.System.Text.Json.Serialization.Metadata.JsonTypeInfo_1<UTValue>, cancellationToken : dotnet.System.Threading.CancellationToken = System.Threading.CancellationToken.None) async throws -> dotnet.System.Net.Http.HttpResponseMessage {
+        return try await dotnet.System.Net.Http.Json.HttpClientJsonExtensions.PostAsJsonAsync(client: self, requestUri: requestUri, value: value, jsonTypeInfo: jsonTypeInfo, cancellationToken: cancellationToken);
     }
 }
 
 // EXTENSION METHOD System.Threading.Tasks.Task<System.Net.Http.HttpResponseMessage> PostAsJsonAsync<TValue>(System.Net.Http.HttpClient, System.Uri, TValue, System.Threading.CancellationToken)
 extension dotnet.System.Net.Http.HttpClient {
-    public func PostAsJsonAsync<UTValue : SGBridgeGenericValue>(requestUri : Optional<dotnet.System.Uri>, value : UTValue, cancellationToken : dotnet.System.Threading.CancellationToken) throws -> dotnet.System.Threading.Tasks.Task_1<dotnet.System.Net.Http.HttpResponseMessage> {
-        return try dotnet.System.Net.Http.Json.HttpClientJsonExtensions.PostAsJsonAsync(client: self, requestUri: requestUri, value: value, cancellationToken: cancellationToken);
+    public func PostAsJsonAsync<UTValue : SGBridgeGenericValue>(requestUri : Optional<dotnet.System.Uri>, value : UTValue, cancellationToken : dotnet.System.Threading.CancellationToken) async throws -> dotnet.System.Net.Http.HttpResponseMessage {
+        return try await dotnet.System.Net.Http.Json.HttpClientJsonExtensions.PostAsJsonAsync(client: self, requestUri: requestUri, value: value, cancellationToken: cancellationToken);
     }
 }
 
 // EXTENSION METHOD System.Threading.Tasks.Task<System.Net.Http.HttpResponseMessage> PutAsJsonAsync<TValue>(System.Net.Http.HttpClient, System.String, TValue, System.Text.Json.JsonSerializerOptions, System.Threading.CancellationToken)
 extension dotnet.System.Net.Http.HttpClient {
-    public func PutAsJsonAsync<UTValue : SGBridgeGenericValue>(requestUri : Optional<dotnet.System.String>, value : UTValue, options : Optional<dotnet.System.Text.Json.JsonSerializerOptions> = nil, cancellationToken : dotnet.System.Threading.CancellationToken = System.Threading.CancellationToken.None) throws -> dotnet.System.Threading.Tasks.Task_1<dotnet.System.Net.Http.HttpResponseMessage> {
-        return try dotnet.System.Net.Http.Json.HttpClientJsonExtensions.PutAsJsonAsync(client: self, requestUri: requestUri, value: value, options: options, cancellationToken: cancellationToken);
+    public func PutAsJsonAsync<UTValue : SGBridgeGenericValue>(requestUri : Optional<dotnet.System.String>, value : UTValue, options : Optional<dotnet.System.Text.Json.JsonSerializerOptions> = nil, cancellationToken : dotnet.System.Threading.CancellationToken = System.Threading.CancellationToken.None) async throws -> dotnet.System.Net.Http.HttpResponseMessage {
+        return try await dotnet.System.Net.Http.Json.HttpClientJsonExtensions.PutAsJsonAsync(client: self, requestUri: requestUri, value: value, options: options, cancellationToken: cancellationToken);
     }
 }
 
 // EXTENSION METHOD System.Threading.Tasks.Task<System.Net.Http.HttpResponseMessage> PutAsJsonAsync<TValue>(System.Net.Http.HttpClient, System.String, TValue, System.Text.Json.Serialization.Metadata.JsonTypeInfo<TValue>, System.Threading.CancellationToken)
 extension dotnet.System.Net.Http.HttpClient {
-    public func PutAsJsonAsync<UTValue : SGBridgeGenericValue>(requestUri : Optional<dotnet.System.String>, value : UTValue, jsonTypeInfo : dotnet.System.Text.Json.Serialization.Metadata.JsonTypeInfo_1<UTValue>, cancellationToken : dotnet.System.Threading.CancellationToken = System.Threading.CancellationToken.None) throws -> dotnet.System.Threading.Tasks.Task_1<dotnet.System.Net.Http.HttpResponseMessage> {
-        return try dotnet.System.Net.Http.Json.HttpClientJsonExtensions.PutAsJsonAsync(client: self, requestUri: requestUri, value: value, jsonTypeInfo: jsonTypeInfo, cancellationToken: cancellationToken);
+    public func PutAsJsonAsync<UTValue : SGBridgeGenericValue>(requestUri : Optional<dotnet.System.String>, value : UTValue, jsonTypeInfo : dotnet.System.Text.Json.Serialization.Metadata.JsonTypeInfo_1<UTValue>, cancellationToken : dotnet.System.Threading.CancellationToken = System.Threading.CancellationToken.None) async throws -> dotnet.System.Net.Http.HttpResponseMessage {
+        return try await dotnet.System.Net.Http.Json.HttpClientJsonExtensions.PutAsJsonAsync(client: self, requestUri: requestUri, value: value, jsonTypeInfo: jsonTypeInfo, cancellationToken: cancellationToken);
     }
 }
 
 // EXTENSION METHOD System.Threading.Tasks.Task<System.Net.Http.HttpResponseMessage> PutAsJsonAsync<TValue>(System.Net.Http.HttpClient, System.String, TValue, System.Threading.CancellationToken)
 extension dotnet.System.Net.Http.HttpClient {
-    public func PutAsJsonAsync<UTValue : SGBridgeGenericValue>(requestUri : Optional<dotnet.System.String>, value : UTValue, cancellationToken : dotnet.System.Threading.CancellationToken) throws -> dotnet.System.Threading.Tasks.Task_1<dotnet.System.Net.Http.HttpResponseMessage> {
-        return try dotnet.System.Net.Http.Json.HttpClientJsonExtensions.PutAsJsonAsync(client: self, requestUri: requestUri, value: value, cancellationToken: cancellationToken);
+    public func PutAsJsonAsync<UTValue : SGBridgeGenericValue>(requestUri : Optional<dotnet.System.String>, value : UTValue, cancellationToken : dotnet.System.Threading.CancellationToken) async throws -> dotnet.System.Net.Http.HttpResponseMessage {
+        return try await dotnet.System.Net.Http.Json.HttpClientJsonExtensions.PutAsJsonAsync(client: self, requestUri: requestUri, value: value, cancellationToken: cancellationToken);
     }
 }
 
 // EXTENSION METHOD System.Threading.Tasks.Task<System.Net.Http.HttpResponseMessage> PutAsJsonAsync<TValue>(System.Net.Http.HttpClient, System.Uri, TValue, System.Text.Json.JsonSerializerOptions, System.Threading.CancellationToken)
 extension dotnet.System.Net.Http.HttpClient {
-    public func PutAsJsonAsync<UTValue : SGBridgeGenericValue>(requestUri : Optional<dotnet.System.Uri>, value : UTValue, options : Optional<dotnet.System.Text.Json.JsonSerializerOptions> = nil, cancellationToken : dotnet.System.Threading.CancellationToken = System.Threading.CancellationToken.None) throws -> dotnet.System.Threading.Tasks.Task_1<dotnet.System.Net.Http.HttpResponseMessage> {
-        return try dotnet.System.Net.Http.Json.HttpClientJsonExtensions.PutAsJsonAsync(client: self, requestUri: requestUri, value: value, options: options, cancellationToken: cancellationToken);
+    public func PutAsJsonAsync<UTValue : SGBridgeGenericValue>(requestUri : Optional<dotnet.System.Uri>, value : UTValue, options : Optional<dotnet.System.Text.Json.JsonSerializerOptions> = nil, cancellationToken : dotnet.System.Threading.CancellationToken = System.Threading.CancellationToken.None) async throws -> dotnet.System.Net.Http.HttpResponseMessage {
+        return try await dotnet.System.Net.Http.Json.HttpClientJsonExtensions.PutAsJsonAsync(client: self, requestUri: requestUri, value: value, options: options, cancellationToken: cancellationToken);
     }
 }
 
 // EXTENSION METHOD System.Threading.Tasks.Task<System.Net.Http.HttpResponseMessage> PutAsJsonAsync<TValue>(System.Net.Http.HttpClient, System.Uri, TValue, System.Text.Json.Serialization.Metadata.JsonTypeInfo<TValue>, System.Threading.CancellationToken)
 extension dotnet.System.Net.Http.HttpClient {
-    public func PutAsJsonAsync<UTValue : SGBridgeGenericValue>(requestUri : Optional<dotnet.System.Uri>, value : UTValue, jsonTypeInfo : dotnet.System.Text.Json.Serialization.Metadata.JsonTypeInfo_1<UTValue>, cancellationToken : dotnet.System.Threading.CancellationToken = System.Threading.CancellationToken.None) throws -> dotnet.System.Threading.Tasks.Task_1<dotnet.System.Net.Http.HttpResponseMessage> {
-        return try dotnet.System.Net.Http.Json.HttpClientJsonExtensions.PutAsJsonAsync(client: self, requestUri: requestUri, value: value, jsonTypeInfo: jsonTypeInfo, cancellationToken: cancellationToken);
+    public func PutAsJsonAsync<UTValue : SGBridgeGenericValue>(requestUri : Optional<dotnet.System.Uri>, value : UTValue, jsonTypeInfo : dotnet.System.Text.Json.Serialization.Metadata.JsonTypeInfo_1<UTValue>, cancellationToken : dotnet.System.Threading.CancellationToken = System.Threading.CancellationToken.None) async throws -> dotnet.System.Net.Http.HttpResponseMessage {
+        return try await dotnet.System.Net.Http.Json.HttpClientJsonExtensions.PutAsJsonAsync(client: self, requestUri: requestUri, value: value, jsonTypeInfo: jsonTypeInfo, cancellationToken: cancellationToken);
     }
 }
 
 // EXTENSION METHOD System.Threading.Tasks.Task<System.Net.Http.HttpResponseMessage> PutAsJsonAsync<TValue>(System.Net.Http.HttpClient, System.Uri, TValue, System.Threading.CancellationToken)
 extension dotnet.System.Net.Http.HttpClient {
-    public func PutAsJsonAsync<UTValue : SGBridgeGenericValue>(requestUri : Optional<dotnet.System.Uri>, value : UTValue, cancellationToken : dotnet.System.Threading.CancellationToken) throws -> dotnet.System.Threading.Tasks.Task_1<dotnet.System.Net.Http.HttpResponseMessage> {
-        return try dotnet.System.Net.Http.Json.HttpClientJsonExtensions.PutAsJsonAsync(client: self, requestUri: requestUri, value: value, cancellationToken: cancellationToken);
+    public func PutAsJsonAsync<UTValue : SGBridgeGenericValue>(requestUri : Optional<dotnet.System.Uri>, value : UTValue, cancellationToken : dotnet.System.Threading.CancellationToken) async throws -> dotnet.System.Net.Http.HttpResponseMessage {
+        return try await dotnet.System.Net.Http.Json.HttpClientJsonExtensions.PutAsJsonAsync(client: self, requestUri: requestUri, value: value, cancellationToken: cancellationToken);
     }
 }
 
 // EXTENSION METHOD System.Threading.Tasks.Task<System.Object> ReadFromJsonAsync(System.Net.Http.HttpContent, System.Type, System.Text.Json.JsonSerializerOptions, System.Threading.CancellationToken)
 extension dotnet.System.Net.Http.HttpContent {
-    public func ReadFromJsonAsync(type : dotnet.System.Type_, options : Optional<dotnet.System.Text.Json.JsonSerializerOptions> = nil, cancellationToken : dotnet.System.Threading.CancellationToken = System.Threading.CancellationToken.None) throws -> dotnet.System.Threading.Tasks.Task_1<dotnet.System.Object> {
-        return try dotnet.System.Net.Http.Json.HttpContentJsonExtensions.ReadFromJsonAsync(content: self, type: type, options: options, cancellationToken: cancellationToken);
+    public func ReadFromJsonAsync(type : dotnet.System.Type_, options : Optional<dotnet.System.Text.Json.JsonSerializerOptions> = nil, cancellationToken : dotnet.System.Threading.CancellationToken = System.Threading.CancellationToken.None) async throws -> dotnet.System.Object {
+        return try await dotnet.System.Net.Http.Json.HttpContentJsonExtensions.ReadFromJsonAsync(content: self, type: type, options: options, cancellationToken: cancellationToken);
     }
 }
 
 // EXTENSION METHOD System.Threading.Tasks.Task<System.Object> ReadFromJsonAsync(System.Net.Http.HttpContent, System.Type, System.Text.Json.Serialization.JsonSerializerContext, System.Threading.CancellationToken)
 extension dotnet.System.Net.Http.HttpContent {
-    public func ReadFromJsonAsync(type : dotnet.System.Type_, context : dotnet.System.Text.Json.Serialization.JsonSerializerContext, cancellationToken : dotnet.System.Threading.CancellationToken = System.Threading.CancellationToken.None) throws -> dotnet.System.Threading.Tasks.Task_1<dotnet.System.Object> {
-        return try dotnet.System.Net.Http.Json.HttpContentJsonExtensions.ReadFromJsonAsync(content: self, type: type, context: context, cancellationToken: cancellationToken);
+    public func ReadFromJsonAsync(type : dotnet.System.Type_, context : dotnet.System.Text.Json.Serialization.JsonSerializerContext, cancellationToken : dotnet.System.Threading.CancellationToken = System.Threading.CancellationToken.None) async throws -> dotnet.System.Object {
+        return try await dotnet.System.Net.Http.Json.HttpContentJsonExtensions.ReadFromJsonAsync(content: self, type: type, context: context, cancellationToken: cancellationToken);
     }
 }
 
@@ -689,8 +797,8 @@ extension dotnet.System.Net.Http.HttpContent {
 
 // EXTENSION METHOD System.Threading.Tasks.Task<T> ReadFromJsonAsync<T>(System.Net.Http.HttpContent, System.Text.Json.Serialization.Metadata.JsonTypeInfo<T>, System.Threading.CancellationToken)
 extension dotnet.System.Net.Http.HttpContent {
-    public func ReadFromJsonAsync<UT : SGBridgeGenericValue>(jsonTypeInfo : dotnet.System.Text.Json.Serialization.Metadata.JsonTypeInfo_1<UT>, cancellationToken : dotnet.System.Threading.CancellationToken = System.Threading.CancellationToken.None) throws -> dotnet.System.Threading.Tasks.Task_1<UT> {
-        return try dotnet.System.Net.Http.Json.HttpContentJsonExtensions.ReadFromJsonAsync(content: self, jsonTypeInfo: jsonTypeInfo, cancellationToken: cancellationToken);
+    public func ReadFromJsonAsync<UT : SGBridgeGenericValue>(jsonTypeInfo : dotnet.System.Text.Json.Serialization.Metadata.JsonTypeInfo_1<UT>, cancellationToken : dotnet.System.Threading.CancellationToken = System.Threading.CancellationToken.None) async throws -> UT {
+        return try await dotnet.System.Net.Http.Json.HttpContentJsonExtensions.ReadFromJsonAsync(content: self, jsonTypeInfo: jsonTypeInfo, cancellationToken: cancellationToken);
     }
 }
 

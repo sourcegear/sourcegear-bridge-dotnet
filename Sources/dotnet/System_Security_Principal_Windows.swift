@@ -18,10 +18,17 @@ public final class SafeAccessTokenHandle
     public class override func get_type_handle() -> TypeHandle {
         return Microsoft_Win32_SafeHandles_SafeAccessTokenHandle_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor()
 // docid: M:Microsoft.Win32.SafeHandles.SafeAccessTokenHandle.#ctor
+    /**
+    Creates a .
+
+    */
     public init() throws {
         var __thrown : NullableHandle = nil;
         let h = Microsoft_Win32_SafeHandles_SafeAccessTokenHandle_ctor_0__0(&__thrown);
@@ -109,6 +116,9 @@ public final class IdentityNotMappedException
 {
     public class override func get_type_handle() -> TypeHandle {
         return System_Security_Principal_IdentityNotMappedException_get_type_handle();
+    }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -212,6 +222,9 @@ open class IdentityReference
     open class override func get_type_handle() -> TypeHandle {
         return System_Security_Principal_IdentityReference_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // bool Equals(System.Object)
@@ -257,7 +270,7 @@ open class IdentityReference
 
     - Parameter targetType: The type being queried for validity to serve as a conversion from . The following target types are valid:  
   
- 
+ .
     - Returns: 
          if  is a valid translation type for the  class; otherwise, .
 
@@ -381,6 +394,9 @@ open class IdentityReferenceCollection
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Security_Principal_IdentityReferenceCollection_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -572,9 +588,6 @@ open class IdentityReferenceCollection
     }
     // [IsSpecialName] System.Security.Principal.IdentityReference get_Item(System.Int32)
 // docid: M:System.Security.Principal.IdentityReferenceCollection.get_Item(System.Int32)
-//BEGIN method_is_override
-//matches_1
-//matches :
     open func get_Item(index : Swift.Int32) throws -> dotnet.System.Security.Principal.IdentityReference {
         var __thrown : NullableHandle = nil;
         let __return = System_Security_Principal_IdentityReferenceCollection_IdentityReference__get_Item_0__1__i32(&__thrown, self.get_handle(), index);
@@ -618,6 +631,9 @@ public final class NTAccount
 {
     public class override func get_type_handle() -> TypeHandle {
         return System_Security_Principal_NTAccount_get_type_handle();
+    }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -699,7 +715,7 @@ public final class NTAccount
   
  -   
   
- - 
+ - .
     - Returns: 
          if  is a valid translation type for the  class; otherwise .
 
@@ -823,6 +839,9 @@ public final class SecurityIdentifier
     public class override func get_type_handle() -> TypeHandle {
         return System_Security_Principal_SecurityIdentifier_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // static field: System.Int32 MaxBinaryLength
@@ -912,7 +931,7 @@ public final class SecurityIdentifier
   
  -   
   
- - 
+ - .
     */
     public init(sidType : dotnet.System.Security.Principal.WellKnownSidType, domainSid : Optional<dotnet.System.Security.Principal.SecurityIdentifier>) throws {
         var __thrown : NullableHandle = nil;
@@ -1077,7 +1096,7 @@ public final class SecurityIdentifier
   
  -   
   
- - 
+ - .
     - Returns: 
          if  is a valid translation type for the  class; otherwise, .
 
@@ -2681,6 +2700,9 @@ open class WindowsIdentity
     open class override func get_type_handle() -> TypeHandle {
         return System_Security_Principal_WindowsIdentity_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // static field: System.String DefaultIssuer
@@ -2937,19 +2959,19 @@ open class WindowsIdentity
     - Returns: A task that represents the asynchronous operation of the provided .
 
     */
-    open class func RunImpersonatedAsync(safeAccessTokenHandle : dotnet.Microsoft.Win32.SafeHandles.SafeAccessTokenHandle, func_ : dotnet.System.Func_1<dotnet.System.Threading.Tasks.Task>) throws -> dotnet.System.Threading.Tasks.Task {
+    open class func RunImpersonatedAsync(safeAccessTokenHandle : dotnet.Microsoft.Win32.SafeHandles.SafeAccessTokenHandle, func_ : dotnet.System.Func_1<dotnet.System.Threading.Tasks.Task>) async throws {
         var __thrown : NullableHandle = nil;
         let __return = System_Security_Principal_WindowsIdentity_Task__RunImpersonatedAsync_0__2__SafeAccessTokenHandle_System_Func_Task_(&__thrown, safeAccessTokenHandle.get_handle(), func_.get_handle());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task(hndl: __return).ToAsync();
         }
     }
     // delegate closure overload
-    open class func RunImpersonatedAsync(safeAccessTokenHandle : dotnet.Microsoft.Win32.SafeHandles.SafeAccessTokenHandle, func_ : @escaping () throws -> dotnet.System.Threading.Tasks.Task) throws -> dotnet.System.Threading.Tasks.Task {
+    open class func RunImpersonatedAsync(safeAccessTokenHandle : dotnet.Microsoft.Win32.SafeHandles.SafeAccessTokenHandle, func_ : @escaping () throws -> dotnet.System.Threading.Tasks.Task) async throws {
         let del_func_ = try dotnet.System.Func_1<dotnet.System.Threading.Tasks.Task>(func_);
-        return try RunImpersonatedAsync(safeAccessTokenHandle: safeAccessTokenHandle, func_: del_func_);
+        return try await RunImpersonatedAsync(safeAccessTokenHandle: safeAccessTokenHandle, func_: del_func_);
     }
     // System.Threading.Tasks.Task<T> RunImpersonatedAsync<T>(Microsoft.Win32.SafeHandles.SafeAccessTokenHandle, System.Func<System.Threading.Tasks.Task<T>>)
 // docid: M:System.Security.Principal.WindowsIdentity.RunImpersonatedAsync``1(Microsoft.Win32.SafeHandles.SafeAccessTokenHandle,System.Func{System.Threading.Tasks.Task{``0}})
@@ -2961,19 +2983,19 @@ open class WindowsIdentity
     - Returns: A task that represents the asynchronous operation of .
 
     */
-    open class func RunImpersonatedAsync<UT : SGBridgeGenericValue>(safeAccessTokenHandle : dotnet.Microsoft.Win32.SafeHandles.SafeAccessTokenHandle, func_ : dotnet.System.Func_1<dotnet.System.Threading.Tasks.Task_1<UT>>) throws -> dotnet.System.Threading.Tasks.Task_1<UT> {
+    open class func RunImpersonatedAsync<UT : SGBridgeGenericValue>(safeAccessTokenHandle : dotnet.Microsoft.Win32.SafeHandles.SafeAccessTokenHandle, func_ : dotnet.System.Func_1<dotnet.System.Threading.Tasks.Task_1<UT>>) async throws -> UT {
         var __thrown : NullableHandle = nil;
         let __return = System_Security_Principal_WindowsIdentity_System_Threading_Tasks_Task_UT___RunImpersonatedAsync_1__2__SafeAccessTokenHandle_System_Func_System_Threading_Tasks_System_Threading_Tasks_Task_UT__(UT.get_type_handle(), &__thrown, safeAccessTokenHandle.get_handle(), func_.get_handle());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task_1(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task_1(hndl: __return).ToAsync();
         }
     }
     // delegate closure overload
-    open class func RunImpersonatedAsync<UT : SGBridgeGenericValue>(safeAccessTokenHandle : dotnet.Microsoft.Win32.SafeHandles.SafeAccessTokenHandle, func_ : @escaping () throws -> dotnet.System.Threading.Tasks.Task_1<UT>) throws -> dotnet.System.Threading.Tasks.Task_1<UT> {
+    open class func RunImpersonatedAsync<UT : SGBridgeGenericValue>(safeAccessTokenHandle : dotnet.Microsoft.Win32.SafeHandles.SafeAccessTokenHandle, func_ : @escaping () throws -> dotnet.System.Threading.Tasks.Task_1<UT>) async throws -> UT {
         let del_func_ = try dotnet.System.Func_1<dotnet.System.Threading.Tasks.Task_1<UT>>(func_);
-        return try RunImpersonatedAsync(safeAccessTokenHandle: safeAccessTokenHandle, func_: del_func_);
+        return try await RunImpersonatedAsync(safeAccessTokenHandle: safeAccessTokenHandle, func_: del_func_);
     }
     // T RunImpersonated<T>(Microsoft.Win32.SafeHandles.SafeAccessTokenHandle, System.Func<T>)
 // docid: M:System.Security.Principal.WindowsIdentity.RunImpersonated``1(Microsoft.Win32.SafeHandles.SafeAccessTokenHandle,System.Func{``0})
@@ -3329,6 +3351,9 @@ open class WindowsPrincipal
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Security_Principal_WindowsPrincipal_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }

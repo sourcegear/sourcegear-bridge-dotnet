@@ -19,6 +19,9 @@ open class Formatter
     open class override func get_type_handle() -> TypeHandle {
         return System_Runtime_Serialization_Formatter_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // System.Object Deserialize(System.IO.Stream)
@@ -181,6 +184,9 @@ open class FormatterConverter
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Runtime_Serialization_FormatterConverter_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -702,6 +708,9 @@ open class IFormatter
     open class func get_type_handle() -> TypeHandle {
         return System_Runtime_Serialization_IFormatter_get_type_handle();
     }
+    open class func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     let h : NonnullHandle;
     public func to_gval() -> GVal { return GVal(Swift.Int(bitPattern: self.h)); }
     public func dup_gval() -> GVal { return GVal(Swift.Int(bitPattern: __copy_handle(self.h))); }
@@ -836,6 +845,9 @@ open class ISerializationSurrogate
     open class func get_type_handle() -> TypeHandle {
         return System_Runtime_Serialization_ISerializationSurrogate_get_type_handle();
     }
+    open class func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     let h : NonnullHandle;
     public func to_gval() -> GVal { return GVal(Swift.Int(bitPattern: self.h)); }
     public func dup_gval() -> GVal { return GVal(Swift.Int(bitPattern: __copy_handle(self.h))); }
@@ -899,6 +911,9 @@ open class ISurrogateSelector
 {
     open class func get_type_handle() -> TypeHandle {
         return System_Runtime_Serialization_ISurrogateSelector_get_type_handle();
+    }
+    open class func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     let h : NonnullHandle;
     public func to_gval() -> GVal { return GVal(Swift.Int(bitPattern: self.h)); }
@@ -988,6 +1003,9 @@ open class ObjectIDGenerator
     open class override func get_type_handle() -> TypeHandle {
         return System_Runtime_Serialization_ObjectIDGenerator_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor()
@@ -1065,6 +1083,9 @@ open class ObjectManager
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Runtime_Serialization_ObjectManager_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -1316,6 +1337,9 @@ open class SerializationBinder
     open class override func get_type_handle() -> TypeHandle {
         return System_Runtime_Serialization_SerializationBinder_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // void BindToName(System.Type, ref System.String, ref System.String)
@@ -1327,14 +1351,16 @@ open class SerializationBinder
     - Parameter assemblyName: Specifies the  name of the serialized object.
     - Parameter typeName: Specifies the  name of the serialized object.
     */
-    open func BindToName(serializedType : dotnet.System.Type_, assemblyName : inout dotnet.System.String, typeName : inout dotnet.System.String) throws {
+    open func BindToName(serializedType : dotnet.System.Type_, assemblyName : inout Optional<dotnet.System.String>, typeName : inout Optional<dotnet.System.String>) throws {
         var __thrown : NullableHandle = nil;
-            var _tmp_out_assemblyName = assemblyName.get_handle();
-            var _tmp_out_typeName = typeName.get_handle();
+            var _tmp_out_assemblyName = (assemblyName != nil) ? (assemblyName!.get_handle()) : nil;
+            var _tmp_out_typeName = (typeName != nil) ? (typeName!.get_handle()) : nil;
         System_Runtime_Serialization_SerializationBinder_void__BindToName_0__3__Type_outString_outString(&__thrown, self.get_handle(), serializedType.get_handle(), &_tmp_out_assemblyName, &_tmp_out_typeName);
-        let _tmp2_assemblyName = dotnet.System.String(hndl: _tmp_out_assemblyName);
+        let __h__tmp2_assemblyName = _tmp_out_assemblyName;
+        let _tmp2_assemblyName = (__h__tmp2_assemblyName != nil) ? dotnet.System.String(hndl: __h__tmp2_assemblyName!) : nil;
             assemblyName = _tmp2_assemblyName;
-        let _tmp2_typeName = dotnet.System.String(hndl: _tmp_out_typeName);
+        let __h__tmp2_typeName = _tmp_out_typeName;
+        let _tmp2_typeName = (__h__tmp2_typeName != nil) ? dotnet.System.String(hndl: __h__tmp2_typeName!) : nil;
             typeName = _tmp2_typeName;
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
@@ -1379,6 +1405,9 @@ public final class SerializationObjectManager
 {
     public class override func get_type_handle() -> TypeHandle {
         return System_Runtime_Serialization_SerializationObjectManager_get_type_handle();
+    }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -1444,6 +1473,9 @@ open class SurrogateSelector
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Runtime_Serialization_SurrogateSelector_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -1671,6 +1703,9 @@ open class IFieldInfo
     open class func get_type_handle() -> TypeHandle {
         return System_Runtime_Serialization_Formatters_IFieldInfo_get_type_handle();
     }
+    open class func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     let h : NonnullHandle;
     public func to_gval() -> GVal { return GVal(Swift.Int(bitPattern: self.h)); }
     public func dup_gval() -> GVal { return GVal(Swift.Int(bitPattern: __copy_handle(self.h))); }
@@ -1790,6 +1825,9 @@ public final class BinaryFormatter
 {
     public class override func get_type_handle() -> TypeHandle {
         return System_Runtime_Serialization_Formatters_Binary_BinaryFormatter_get_type_handle();
+    }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }

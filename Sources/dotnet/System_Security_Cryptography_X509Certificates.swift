@@ -18,10 +18,17 @@ public final class SafeX509ChainHandle
     public class override func get_type_handle() -> TypeHandle {
         return Microsoft_Win32_SafeHandles_SafeX509ChainHandle_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor()
 // docid: M:Microsoft.Win32.SafeHandles.SafeX509ChainHandle.#ctor
+    /**
+    Creates a .
+
+    */
     public init() throws {
         var __thrown : NullableHandle = nil;
         let h = Microsoft_Win32_SafeHandles_SafeX509ChainHandle_ctor_0__0(&__thrown);
@@ -54,6 +61,9 @@ public final class CertificateRequest
 {
     public class override func get_type_handle() -> TypeHandle {
         return System_Security_Cryptography_X509Certificates_CertificateRequest_get_type_handle();
+    }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -552,10 +562,18 @@ public final class PublicKey
     public class override func get_type_handle() -> TypeHandle {
         return System_Security_Cryptography_X509Certificates_PublicKey_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor(System.Security.Cryptography.AsymmetricAlgorithm)
 // docid: M:System.Security.Cryptography.X509Certificates.PublicKey.#ctor(System.Security.Cryptography.AsymmetricAlgorithm)
+    /**
+    Initializes a new instance of the  class using SubjectPublicKeyInfo from an .
+
+    - Parameter key: An asymmetric algorithm to obtain the SubjectPublicKeyInfo from.
+    */
     public init(key : dotnet.System.Security.Cryptography.AsymmetricAlgorithm) throws {
         var __thrown : NullableHandle = nil;
         let h = System_Security_Cryptography_X509Certificates_PublicKey_ctor_0__1__AsymmetricAlgorithm(&__thrown, key.get_handle());
@@ -586,6 +604,12 @@ public final class PublicKey
 // TODO COPE (write_all_methods) (span) System.Security.Cryptography.X509Certificates.PublicKey CreateFromSubjectPublicKeyInfo(System.ReadOnlySpan<System.Byte>, ref System.Int32)
     // System.Byte[] ExportSubjectPublicKeyInfo()
 // docid: M:System.Security.Cryptography.X509Certificates.PublicKey.ExportSubjectPublicKeyInfo
+    /**
+    Exports the current key in the X.509 SubjectPublicKeyInfo format.
+
+    - Returns: A byte array containing the X.509 SubjectPublicKeyInfo representation of this key.
+
+    */
     public func ExportSubjectPublicKeyInfo() throws -> dotnet.System_Arr<Swift.UInt8> {
         var __thrown : NullableHandle = nil;
         let __return = System_Security_Cryptography_X509Certificates_PublicKey_u8Array__ExportSubjectPublicKeyInfo_0__0(&__thrown, self.get_handle());
@@ -597,6 +621,12 @@ public final class PublicKey
     }
     // System.Security.Cryptography.DSA GetDSAPublicKey()
 // docid: M:System.Security.Cryptography.X509Certificates.PublicKey.GetDSAPublicKey
+    /**
+    Gets the  public key, or  if the key is not an DSA key.
+
+    - Returns: The public key, or  if the key is not an DSA key.
+
+    */
     public func GetDSAPublicKey() throws -> Optional<dotnet.System.Security.Cryptography.DSA> {
         var __thrown : NullableHandle = nil;
         let __return = System_Security_Cryptography_X509Certificates_PublicKey_DSA__GetDSAPublicKey_0__0(&__thrown, self.get_handle());
@@ -612,6 +642,12 @@ public final class PublicKey
     }
     // System.Security.Cryptography.ECDiffieHellman GetECDiffieHellmanPublicKey()
 // docid: M:System.Security.Cryptography.X509Certificates.PublicKey.GetECDiffieHellmanPublicKey
+    /**
+    Gets the  public key, or  if the key is not an ECDiffieHellman key.
+
+    - Returns: The public key, or  if the key is not an ECDiffieHellman key.
+
+    */
     public func GetECDiffieHellmanPublicKey() throws -> Optional<dotnet.System.Security.Cryptography.ECDiffieHellman> {
         var __thrown : NullableHandle = nil;
         let __return = System_Security_Cryptography_X509Certificates_PublicKey_ECDiffieHellman__GetECDiffieHellmanPublicKey_0__0(&__thrown, self.get_handle());
@@ -627,6 +663,12 @@ public final class PublicKey
     }
     // System.Security.Cryptography.ECDsa GetECDsaPublicKey()
 // docid: M:System.Security.Cryptography.X509Certificates.PublicKey.GetECDsaPublicKey
+    /**
+    Gets the  public key, or  if the key is not an ECDsa key.
+
+    - Returns: The public key, or  if the key is not an ECDsa key.
+
+    */
     public func GetECDsaPublicKey() throws -> Optional<dotnet.System.Security.Cryptography.ECDsa> {
         var __thrown : NullableHandle = nil;
         let __return = System_Security_Cryptography_X509Certificates_PublicKey_ECDsa__GetECDsaPublicKey_0__0(&__thrown, self.get_handle());
@@ -642,6 +684,12 @@ public final class PublicKey
     }
     // System.Security.Cryptography.RSA GetRSAPublicKey()
 // docid: M:System.Security.Cryptography.X509Certificates.PublicKey.GetRSAPublicKey
+    /**
+    Gets the  public key, or  if the key is not an RSA key.
+
+    - Returns: The public key, or  if the key is not an RSA key.
+
+    */
     public func GetRSAPublicKey() throws -> Optional<dotnet.System.Security.Cryptography.RSA> {
         var __thrown : NullableHandle = nil;
         let __return = System_Security_Cryptography_X509Certificates_PublicKey_RSA__GetRSAPublicKey_0__0(&__thrown, self.get_handle());
@@ -965,6 +1013,9 @@ public final class SubjectAlternativeNameBuilder
     public class override func get_type_handle() -> TypeHandle {
         return System_Security_Cryptography_X509Certificates_SubjectAlternativeNameBuilder_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor()
@@ -1095,6 +1146,9 @@ public final class X500DistinguishedName
 {
     public class override func get_type_handle() -> TypeHandle {
         return System_Security_Cryptography_X509Certificates_X500DistinguishedName_get_type_handle();
+    }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -1380,6 +1434,9 @@ public final class X509BasicConstraintsExtension
     public class override func get_type_handle() -> TypeHandle {
         return System_Security_Cryptography_X509Certificates_X509BasicConstraintsExtension_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor()
@@ -1530,6 +1587,9 @@ open class X509Certificate
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Security_Cryptography_X509Certificates_X509Certificate_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -2470,6 +2530,9 @@ open class X509Certificate2
     open class override func get_type_handle() -> TypeHandle {
         return System_Security_Cryptography_X509Certificates_X509Certificate2_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor()
@@ -2696,6 +2759,14 @@ open class X509Certificate2
     }
     // System.Security.Cryptography.X509Certificates.X509Certificate2 CopyWithPrivateKey(System.Security.Cryptography.ECDiffieHellman)
 // docid: M:System.Security.Cryptography.X509Certificates.X509Certificate2.CopyWithPrivateKey(System.Security.Cryptography.ECDiffieHellman)
+    /**
+    Combines a private key with the public key of an  certificate to generate a new ECDiffieHellman certificate.
+
+    - Parameter privateKey: The private ECDiffieHellman key.
+    - Returns: A new ECDiffieHellman certificate with the  property set to .
+            The current certificate isn't modified.
+
+    */
     open func CopyWithPrivateKey(privateKey : dotnet.System.Security.Cryptography.ECDiffieHellman) throws -> dotnet.System.Security.Cryptography.X509Certificates.X509Certificate2 {
         var __thrown : NullableHandle = nil;
         let __return = System_Security_Cryptography_X509Certificates_X509Certificate2_X509Certificate2__CopyWithPrivateKey_0__1__ECDiffieHellman(&__thrown, self.get_handle(), privateKey.get_handle());
@@ -2768,6 +2839,12 @@ open class X509Certificate2
     }
     // System.Security.Cryptography.ECDiffieHellman GetECDiffieHellmanPrivateKey()
 // docid: M:System.Security.Cryptography.X509Certificates.X509Certificate2.GetECDiffieHellmanPrivateKey
+    /**
+    Gets the  private key from this certificate.
+
+    - Returns: The private key, or  if this certificate does not have an ECDiffieHellman private key.
+
+    */
     open func GetECDiffieHellmanPrivateKey() throws -> Optional<dotnet.System.Security.Cryptography.ECDiffieHellman> {
         var __thrown : NullableHandle = nil;
         let __return = System_Security_Cryptography_X509Certificates_X509Certificate2_ECDiffieHellman__GetECDiffieHellmanPrivateKey_0__0(&__thrown, self.get_handle());
@@ -2783,6 +2860,12 @@ open class X509Certificate2
     }
     // System.Security.Cryptography.ECDiffieHellman GetECDiffieHellmanPublicKey()
 // docid: M:System.Security.Cryptography.X509Certificates.X509Certificate2.GetECDiffieHellmanPublicKey
+    /**
+    Gets the  public key from this certificate.
+
+    - Returns: The public key, or  if this certificate does not have an ECDiffieHellman public key.
+
+    */
     open func GetECDiffieHellmanPublicKey() throws -> Optional<dotnet.System.Security.Cryptography.ECDiffieHellman> {
         var __thrown : NullableHandle = nil;
         let __return = System_Security_Cryptography_X509Certificates_X509Certificate2_ECDiffieHellman__GetECDiffieHellmanPublicKey_0__0(&__thrown, self.get_handle());
@@ -3350,6 +3433,9 @@ open class X509Certificate2Collection
     open class override func get_type_handle() -> TypeHandle {
         return System_Security_Cryptography_X509Certificates_X509Certificate2Collection_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor()
@@ -3723,12 +3809,6 @@ open class X509Certificate2Collection
     }
     // [IsSpecialName] System.Security.Cryptography.X509Certificates.X509Certificate2 get_Item(System.Int32)
 // docid: M:System.Security.Cryptography.X509Certificates.X509Certificate2Collection.get_Item(System.Int32)
-//BEGIN method_is_override
-//matches_1
-//    X509CertificateCollection : [IsSpecialName] System.Security.Cryptography.X509Certificates.X509Certificate get_Item(System.Int32) -- X509CertificateCollection -- 100663518
-//EARLY true
-//matches :
-//    X509CertificateCollection : [IsSpecialName] System.Security.Cryptography.X509Certificates.X509Certificate get_Item(System.Int32)
     open override func get_Item(index : Swift.Int32) throws -> dotnet.System.Security.Cryptography.X509Certificates.X509Certificate2 {
         var __thrown : NullableHandle = nil;
         let __return = System_Security_Cryptography_X509Certificates_X509Certificate2Collection_X509Certificate2__get_Item_0__1__i32(&__thrown, self.get_handle(), index);
@@ -3765,6 +3845,9 @@ public final class X509Certificate2Enumerator
 {
     public class override func get_type_handle() -> TypeHandle {
         return System_Security_Cryptography_X509Certificates_X509Certificate2Enumerator_get_type_handle();
+    }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -3835,6 +3918,9 @@ open class X509CertificateCollection
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Security_Cryptography_X509Certificates_X509CertificateCollection_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -4058,9 +4144,6 @@ open class X509CertificateCollection
     }
     // [IsSpecialName] System.Security.Cryptography.X509Certificates.X509Certificate get_Item(System.Int32)
 // docid: M:System.Security.Cryptography.X509Certificates.X509CertificateCollection.get_Item(System.Int32)
-//BEGIN method_is_override
-//matches_1
-//matches :
     open func get_Item(index : Swift.Int32) throws -> dotnet.System.Security.Cryptography.X509Certificates.X509Certificate {
         var __thrown : NullableHandle = nil;
         let __return = System_Security_Cryptography_X509Certificates_X509CertificateCollection_X509Certificate__get_Item_0__1__i32(&__thrown, self.get_handle(), index);
@@ -4096,6 +4179,9 @@ open class X509CertificateCollection_X509CertificateEnumerator
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Security_Cryptography_X509Certificates_X509CertificateCollection_X509CertificateEnumerator_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -4183,6 +4269,9 @@ open class X509Chain
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Security_Cryptography_X509Certificates_X509Chain_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -4433,6 +4522,9 @@ open class X509ChainElement
     open class override func get_type_handle() -> TypeHandle {
         return System_Security_Cryptography_X509Certificates_X509ChainElement_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // [IsSpecialName] System.Security.Cryptography.X509Certificates.X509Certificate2 get_Certificate()
@@ -4512,6 +4604,9 @@ public final class X509ChainElementCollection
     public class override func get_type_handle() -> TypeHandle {
         return System_Security_Cryptography_X509Certificates_X509ChainElementCollection_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // void CopyTo(System.Security.Cryptography.X509Certificates.X509ChainElement[], System.Int32)
@@ -4583,9 +4678,6 @@ public final class X509ChainElementCollection
     }
     // [IsSpecialName] System.Security.Cryptography.X509Certificates.X509ChainElement get_Item(System.Int32)
 // docid: M:System.Security.Cryptography.X509Certificates.X509ChainElementCollection.get_Item(System.Int32)
-//BEGIN method_is_override
-//matches_1
-//matches :
     public func get_Item(index : Swift.Int32) throws -> dotnet.System.Security.Cryptography.X509Certificates.X509ChainElement {
         var __thrown : NullableHandle = nil;
         let __return = System_Security_Cryptography_X509Certificates_X509ChainElementCollection_X509ChainElement__get_Item_0__1__i32(&__thrown, self.get_handle(), index);
@@ -4638,6 +4730,9 @@ public final class X509ChainElementEnumerator
 {
     public class override func get_type_handle() -> TypeHandle {
         return System_Security_Cryptography_X509Certificates_X509ChainElementEnumerator_get_type_handle();
+    }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -4708,6 +4803,9 @@ public final class X509ChainPolicy
 {
     public class override func get_type_handle() -> TypeHandle {
         return System_Security_Cryptography_X509Certificates_X509ChainPolicy_get_type_handle();
+    }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -4884,7 +4982,17 @@ public final class X509ChainPolicy
         return dotnet.System.TimeSpan(hndl : __return);
         }
     }
-// TODO COPE (write_all_methods) (span) [IsSpecialName] void set_UrlRetrievalTimeout(System.TimeSpan)
+    // [IsSpecialName] void set_UrlRetrievalTimeout(System.TimeSpan)
+// docid: M:System.Security.Cryptography.X509Certificates.X509ChainPolicy.set_UrlRetrievalTimeout(System.TimeSpan)
+    public func set_UrlRetrievalTimeout(value : dotnet.System.TimeSpan) throws {
+        var __thrown : NullableHandle = nil;
+        System_Security_Cryptography_X509Certificates_X509ChainPolicy_void__set_UrlRetrievalTimeout_0__1__TimeSpan(&__thrown, self.get_handle(), value.get_handle());
+        if let __ex =  __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            return;
+        }
+    }
     // [IsSpecialName] System.Security.Cryptography.X509Certificates.X509VerificationFlags get_VerificationFlags()
 // docid: M:System.Security.Cryptography.X509Certificates.X509ChainPolicy.get_VerificationFlags
     public func get_VerificationFlags() throws -> dotnet.System.Security.Cryptography.X509Certificates.X509VerificationFlags {
@@ -5021,7 +5129,9 @@ public final class X509ChainPolicy
         get {
             return try! get_UrlRetrievalTimeout();
         }
-// TODO COPE prop set (span) [IsSpecialName] void set_UrlRetrievalTimeout(System.TimeSpan)
+        set(v) {
+            return try! set_UrlRetrievalTimeout(value: v);
+        }
     }
     /**
     Gets verification flags for the certificate.
@@ -5062,6 +5172,9 @@ public final class X509ChainStatus
 {
     public class override func get_type_handle() -> TypeHandle {
         return System_Security_Cryptography_X509Certificates_X509ChainStatus_get_type_handle();
+    }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -5602,6 +5715,9 @@ public final class X509EnhancedKeyUsageExtension
     public class override func get_type_handle() -> TypeHandle {
         return System_Security_Cryptography_X509Certificates_X509EnhancedKeyUsageExtension_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor()
@@ -5705,6 +5821,9 @@ open class X509Extension
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Security_Cryptography_X509Certificates_X509Extension_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -5833,6 +5952,9 @@ public final class X509ExtensionCollection
     public class override func get_type_handle() -> TypeHandle {
         return System_Security_Cryptography_X509Certificates_X509ExtensionCollection_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor()
@@ -5937,9 +6059,6 @@ public final class X509ExtensionCollection
     }
     // [IsSpecialName] System.Security.Cryptography.X509Certificates.X509Extension get_Item(System.Int32)
 // docid: M:System.Security.Cryptography.X509Certificates.X509ExtensionCollection.get_Item(System.Int32)
-//BEGIN method_is_override
-//matches_1
-//matches :
     public func get_Item(index : Swift.Int32) throws -> dotnet.System.Security.Cryptography.X509Certificates.X509Extension {
         var __thrown : NullableHandle = nil;
         let __return = System_Security_Cryptography_X509Certificates_X509ExtensionCollection_X509Extension__get_Item_0__1__i32(&__thrown, self.get_handle(), index);
@@ -5951,9 +6070,6 @@ public final class X509ExtensionCollection
     }
     // [IsSpecialName] System.Security.Cryptography.X509Certificates.X509Extension get_Item(System.String)
 // docid: M:System.Security.Cryptography.X509Certificates.X509ExtensionCollection.get_Item(System.String)
-//BEGIN method_is_override
-//matches_1
-//matches :
     public func get_Item(oid : dotnet.System.String) throws -> Optional<dotnet.System.Security.Cryptography.X509Certificates.X509Extension> {
         var __thrown : NullableHandle = nil;
         let __return = System_Security_Cryptography_X509Certificates_X509ExtensionCollection_X509Extension__get_Item_0__1__String(&__thrown, self.get_handle(), oid.get_handle());
@@ -6010,6 +6126,9 @@ public final class X509ExtensionEnumerator
 {
     public class override func get_type_handle() -> TypeHandle {
         return System_Security_Cryptography_X509Certificates_X509ExtensionEnumerator_get_type_handle();
+    }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -6420,6 +6539,9 @@ public final class X509KeyUsageExtension
 {
     public class override func get_type_handle() -> TypeHandle {
         return System_Security_Cryptography_X509Certificates_X509KeyUsageExtension_get_type_handle();
+    }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -6839,6 +6961,9 @@ open class X509SignatureGenerator
     open class override func get_type_handle() -> TypeHandle {
         return System_Security_Cryptography_X509Certificates_X509SignatureGenerator_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // System.Security.Cryptography.X509Certificates.X509SignatureGenerator CreateForECDsa(System.Security.Cryptography.ECDsa)
@@ -6950,6 +7075,9 @@ public final class X509Store
 {
     public class override func get_type_handle() -> TypeHandle {
         return System_Security_Cryptography_X509Certificates_X509Store_get_type_handle();
+    }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -7331,6 +7459,9 @@ public final class X509SubjectKeyIdentifierExtension
     public class override func get_type_handle() -> TypeHandle {
         return System_Security_Cryptography_X509Certificates_X509SubjectKeyIdentifierExtension_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor()
@@ -7606,7 +7737,7 @@ public struct X509VerificationFlags : SGBridgeGenericValue {
     }
     // static field: System.Security.Cryptography.X509Certificates.X509VerificationFlags AllowUnknownCertificateAuthority
     /**
-    Ignore that the chain cannot be verified due to an unknown certificate authority (CA).
+    Ignore that the chain cannot be verified due to an unknown certificate authority (CA) or partial chains.
 
     */
     public static var AllowUnknownCertificateAuthority : dotnet.System.Security.Cryptography.X509Certificates.X509VerificationFlags {

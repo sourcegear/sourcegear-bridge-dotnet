@@ -17,6 +17,9 @@ open class EnumerableExecutor
     open class override func get_type_handle() -> TypeHandle {
         return System_Linq_EnumerableExecutor_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
 } // EnumerableExecutor
@@ -33,6 +36,9 @@ open class EnumerableExecutor_1<T : SGBridgeGenericValue>
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Linq_EnumerableExecutor_1_get_type_handle(T.get_type_handle());
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -67,6 +73,9 @@ open class EnumerableQuery
     open class override func get_type_handle() -> TypeHandle {
         return System_Linq_EnumerableQuery_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
 } // EnumerableQuery
@@ -87,6 +96,9 @@ open class EnumerableQuery_1<T : SGBridgeGenericValue>
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Linq_EnumerableQuery_1_get_type_handle(T.get_type_handle());
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -394,6 +406,11 @@ public struct Queryable {
         return __return;
         }
     }
+// TODO COPE (parm closedgeneric of nullable): System.Nullable<System.Decimal> Average(System.Linq.IQueryable<System.Nullable<System.Decimal>>)
+// TODO COPE (parm closedgeneric of nullable): System.Nullable<System.Double> Average(System.Linq.IQueryable<System.Nullable<System.Double>>)
+// TODO COPE (parm closedgeneric of nullable): System.Nullable<System.Double> Average(System.Linq.IQueryable<System.Nullable<System.Int32>>)
+// TODO COPE (parm closedgeneric of nullable): System.Nullable<System.Double> Average(System.Linq.IQueryable<System.Nullable<System.Int64>>)
+// TODO COPE (parm closedgeneric of nullable): System.Nullable<System.Single> Average(System.Linq.IQueryable<System.Nullable<System.Single>>)
     // System.Single Average(System.Linq.IQueryable<System.Single>)
 // docid: M:System.Linq.Queryable.Average(System.Linq.IQueryable{System.Single})
     /**
@@ -488,6 +505,11 @@ public struct Queryable {
         return __return;
         }
     }
+// TODO COPE (parm closedgeneric of nullable): System.Nullable<System.Decimal> Average<TSource>(System.Linq.IQueryable<TSource>, System.Linq.Expressions.Expression<System.Func<TSource,System.Nullable<System.Decimal>>>)
+// TODO COPE (parm closedgeneric of nullable): System.Nullable<System.Double> Average<TSource>(System.Linq.IQueryable<TSource>, System.Linq.Expressions.Expression<System.Func<TSource,System.Nullable<System.Double>>>)
+// TODO COPE (parm closedgeneric of nullable): System.Nullable<System.Double> Average<TSource>(System.Linq.IQueryable<TSource>, System.Linq.Expressions.Expression<System.Func<TSource,System.Nullable<System.Int32>>>)
+// TODO COPE (parm closedgeneric of nullable): System.Nullable<System.Double> Average<TSource>(System.Linq.IQueryable<TSource>, System.Linq.Expressions.Expression<System.Func<TSource,System.Nullable<System.Int64>>>)
+// TODO COPE (parm closedgeneric of nullable): System.Nullable<System.Single> Average<TSource>(System.Linq.IQueryable<TSource>, System.Linq.Expressions.Expression<System.Func<TSource,System.Nullable<System.Single>>>)
     // System.Single Average<TSource>(System.Linq.IQueryable<TSource>, System.Linq.Expressions.Expression<System.Func<TSource,System.Single>>)
 // docid: M:System.Linq.Queryable.Average``1(System.Linq.IQueryable{``0},System.Linq.Expressions.Expression{System.Func{``0,System.Single}})
     /**
@@ -510,6 +532,14 @@ public struct Queryable {
 // TODO COPE (write_all_methods) (unused generic param) System.Linq.IQueryable<TResult> Cast<TResult>(System.Linq.IQueryable)
     // System.Linq.IQueryable<TSource[]> Chunk<TSource>(System.Linq.IQueryable<TSource>, System.Int32)
 // docid: M:System.Linq.Queryable.Chunk``1(System.Linq.IQueryable{``0},System.Int32)
+    /**
+    Split the elements of a sequence into chunks of size at most .
+
+    - Parameter source: An  whose elements to chunk.
+    - Parameter size: The maximum size of each chunk.
+    - Returns: An  that contains the elements the input sequence split into chunks of size .
+
+    */
     public static func Chunk<UTSource : SGBridgeGenericValue>(source : dotnet.System.Linq.IQueryable_1<UTSource>, size : Swift.Int32) throws -> dotnet.System.Linq.IQueryable_1<dotnet.System_Arr<UTSource>> {
         var __thrown : NullableHandle = nil;
         let __return = System_Linq_Queryable_System_Linq_IQueryable_UTSourceArray___Chunk_1__2__System_Linq_IQueryable_UTSource__i32(UTSource.get_type_handle(), &__thrown, source.get_handle(), size);
@@ -570,9 +600,9 @@ public struct Queryable {
          if the input sequence contains an element that has the specified value; otherwise, .
 
     */
-    public static func Contains<UTSource : SGBridgeGenericValue>(source : dotnet.System.Linq.IQueryable_1<UTSource>, item : UTSource, comparer : dotnet.System.Collections.Generic.IEqualityComparer_1<UTSource>) throws -> Bool {
+    public static func Contains<UTSource : SGBridgeGenericValue>(source : dotnet.System.Linq.IQueryable_1<UTSource>, item : UTSource, comparer : Optional<dotnet.System.Collections.Generic.IEqualityComparer_1<UTSource>>) throws -> Bool {
         var __thrown : NullableHandle = nil;
-        let __return = System_Linq_Queryable_bool__Contains_1__3__System_Linq_IQueryable_UTSource__UTSource_System_Collections_Generic_IEqualityComparer_UTSource_(UTSource.get_type_handle(), &__thrown, source.get_handle(), item.to_gval(), nil);
+        let __return = System_Linq_Queryable_bool__Contains_1__3__System_Linq_IQueryable_UTSource__UTSource_System_Collections_Generic_IEqualityComparer_UTSource_(UTSource.get_type_handle(), &__thrown, source.get_handle(), item.to_gval(), (comparer?.get_handle()));
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
@@ -655,6 +685,14 @@ public struct Queryable {
     }
     // System.Linq.IQueryable<TSource> DistinctBy<TSource, TKey>(System.Linq.IQueryable<TSource>, System.Linq.Expressions.Expression<System.Func<TSource,TKey>>)
 // docid: M:System.Linq.Queryable.DistinctBy``2(System.Linq.IQueryable{``0},System.Linq.Expressions.Expression{System.Func{``0,``1}})
+    /**
+    Returns distinct elements from a sequence according to a specified key selector function.
+
+    - Parameter source: The sequence to remove duplicate elements from.
+    - Parameter keySelector: A function to extract the key for each element.
+    - Returns: An  that contains distinct elements from the source sequence.
+
+    */
     public static func DistinctBy<UTSource : SGBridgeGenericValue,UTKey : SGBridgeGenericValue>(source : dotnet.System.Linq.IQueryable_1<UTSource>, keySelector : dotnet.System.Linq.Expressions.Expression_1<dotnet.System.Func_2<UTSource,UTKey>>) throws -> dotnet.System.Linq.IQueryable_1<UTSource> {
         var __thrown : NullableHandle = nil;
         let __return = System_Linq_Queryable_System_Linq_IQueryable_UTSource___DistinctBy_2__2__System_Linq_IQueryable_UTSource__System_Linq_Expressions_Expression_System_System_Func_UTSource_UTKey__(UTSource.get_type_handle(), UTKey.get_type_handle(), &__thrown, source.get_handle(), keySelector.get_handle());
@@ -666,9 +704,18 @@ public struct Queryable {
     }
     // System.Linq.IQueryable<TSource> DistinctBy<TSource, TKey>(System.Linq.IQueryable<TSource>, System.Linq.Expressions.Expression<System.Func<TSource,TKey>>, System.Collections.Generic.IEqualityComparer<TKey>)
 // docid: M:System.Linq.Queryable.DistinctBy``2(System.Linq.IQueryable{``0},System.Linq.Expressions.Expression{System.Func{``0,``1}},System.Collections.Generic.IEqualityComparer{``1})
-    public static func DistinctBy<UTSource : SGBridgeGenericValue,UTKey : SGBridgeGenericValue>(source : dotnet.System.Linq.IQueryable_1<UTSource>, keySelector : dotnet.System.Linq.Expressions.Expression_1<dotnet.System.Func_2<UTSource,UTKey>>, comparer : dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>) throws -> dotnet.System.Linq.IQueryable_1<UTSource> {
+    /**
+    Returns distinct elements from a sequence according to a specified key selector function.
+
+    - Parameter source: The sequence to remove duplicate elements from.
+    - Parameter keySelector: A function to extract the key for each element.
+    - Parameter comparer: An  to compare keys.
+    - Returns: An  that contains distinct elements from the source sequence.
+
+    */
+    public static func DistinctBy<UTSource : SGBridgeGenericValue,UTKey : SGBridgeGenericValue>(source : dotnet.System.Linq.IQueryable_1<UTSource>, keySelector : dotnet.System.Linq.Expressions.Expression_1<dotnet.System.Func_2<UTSource,UTKey>>, comparer : Optional<dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>>) throws -> dotnet.System.Linq.IQueryable_1<UTSource> {
         var __thrown : NullableHandle = nil;
-        let __return = System_Linq_Queryable_System_Linq_IQueryable_UTSource___DistinctBy_2__3__System_Linq_IQueryable_UTSource__System_Linq_Expressions_Expression_System_System_Func_UTSource_UTKey___System_Collections_Generic_IEqualityComparer_UTKey_(UTSource.get_type_handle(), UTKey.get_type_handle(), &__thrown, source.get_handle(), keySelector.get_handle(), nil);
+        let __return = System_Linq_Queryable_System_Linq_IQueryable_UTSource___DistinctBy_2__3__System_Linq_IQueryable_UTSource__System_Linq_Expressions_Expression_System_System_Func_UTSource_UTKey___System_Collections_Generic_IEqualityComparer_UTKey_(UTSource.get_type_handle(), UTKey.get_type_handle(), &__thrown, source.get_handle(), keySelector.get_handle(), (comparer?.get_handle()));
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
@@ -703,9 +750,9 @@ public struct Queryable {
     - Returns: An  that contains distinct elements from .
 
     */
-    public static func Distinct<UTSource : SGBridgeGenericValue>(source : dotnet.System.Linq.IQueryable_1<UTSource>, comparer : dotnet.System.Collections.Generic.IEqualityComparer_1<UTSource>) throws -> dotnet.System.Linq.IQueryable_1<UTSource> {
+    public static func Distinct<UTSource : SGBridgeGenericValue>(source : dotnet.System.Linq.IQueryable_1<UTSource>, comparer : Optional<dotnet.System.Collections.Generic.IEqualityComparer_1<UTSource>>) throws -> dotnet.System.Linq.IQueryable_1<UTSource> {
         var __thrown : NullableHandle = nil;
-        let __return = System_Linq_Queryable_System_Linq_IQueryable_UTSource___Distinct_1__2__System_Linq_IQueryable_UTSource__System_Collections_Generic_IEqualityComparer_UTSource_(UTSource.get_type_handle(), &__thrown, source.get_handle(), nil);
+        let __return = System_Linq_Queryable_System_Linq_IQueryable_UTSource___Distinct_1__2__System_Linq_IQueryable_UTSource__System_Collections_Generic_IEqualityComparer_UTSource_(UTSource.get_type_handle(), &__thrown, source.get_handle(), (comparer?.get_handle()));
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
@@ -714,6 +761,15 @@ public struct Queryable {
     }
     // TSource ElementAtOrDefault<TSource>(System.Linq.IQueryable<TSource>, System.Index)
 // docid: M:System.Linq.Queryable.ElementAtOrDefault``1(System.Linq.IQueryable{``0},System.Index)
+    /**
+    Returns the element at a specified index in a sequence or a default value if the index is out of range.
+
+    - Parameter source: An  to return an element from.
+    - Parameter index: The index of the element to retrieve, which is either from the start or the end.
+    - Returns: 
+         if  is outside the bounds of the  sequence; otherwise, the element at the specified position in the  sequence.
+
+    */
     public static func ElementAtOrDefault<UTSource : SGBridgeGenericValue>(source : dotnet.System.Linq.IQueryable_1<UTSource>, index : dotnet.System.Index) throws -> UTSource {
         var __thrown : NullableHandle = nil;
         let __return = System_Linq_Queryable_UTSource__ElementAtOrDefault_1__2__System_Linq_IQueryable_UTSource__Index(UTSource.get_type_handle(), &__thrown, source.get_handle(), index.get_handle());
@@ -745,6 +801,14 @@ public struct Queryable {
     }
     // TSource ElementAt<TSource>(System.Linq.IQueryable<TSource>, System.Index)
 // docid: M:System.Linq.Queryable.ElementAt``1(System.Linq.IQueryable{``0},System.Index)
+    /**
+    Returns the element at a specified index in a sequence.
+
+    - Parameter source: An  to return an element from.
+    - Parameter index: The index of the element to retrieve, which is either from the start or the end.
+    - Returns: The element at the specified position in the  sequence.
+
+    */
     public static func ElementAt<UTSource : SGBridgeGenericValue>(source : dotnet.System.Linq.IQueryable_1<UTSource>, index : dotnet.System.Index) throws -> UTSource {
         var __thrown : NullableHandle = nil;
         let __return = System_Linq_Queryable_UTSource__ElementAt_1__2__System_Linq_IQueryable_UTSource__Index(UTSource.get_type_handle(), &__thrown, source.get_handle(), index.get_handle());
@@ -775,6 +839,15 @@ public struct Queryable {
     }
     // System.Linq.IQueryable<TSource> ExceptBy<TSource, TKey>(System.Linq.IQueryable<TSource>, System.Collections.Generic.IEnumerable<TKey>, System.Linq.Expressions.Expression<System.Func<TSource,TKey>>)
 // docid: M:System.Linq.Queryable.ExceptBy``2(System.Linq.IQueryable{``0},System.Collections.Generic.IEnumerable{``1},System.Linq.Expressions.Expression{System.Func{``0,``1}})
+    /**
+    Produces the set difference of two sequences according to a specified key selector function.
+
+    - Parameter source1: An  whose keys that are not also in  will be returned.
+    - Parameter source2: An  whose keys that also occur in the first sequence will cause those elements to be removed from the returned sequence.
+    - Parameter keySelector: A function to extract the key for each element.
+    - Returns: A  that contains the set difference of the elements of two sequences.
+
+    */
     public static func ExceptBy<UTSource : SGBridgeGenericValue,UTKey : SGBridgeGenericValue>(source1 : dotnet.System.Linq.IQueryable_1<UTSource>, source2 : dotnet.System.Collections.Generic.IEnumerable_1<UTKey>, keySelector : dotnet.System.Linq.Expressions.Expression_1<dotnet.System.Func_2<UTSource,UTKey>>) throws -> dotnet.System.Linq.IQueryable_1<UTSource> {
         var __thrown : NullableHandle = nil;
         let __return = System_Linq_Queryable_System_Linq_IQueryable_UTSource___ExceptBy_2__3__System_Linq_IQueryable_UTSource__System_Collections_Generic_IEnumerable_UTKey__System_Linq_Expressions_Expression_System_System_Func_UTSource_UTKey__(UTSource.get_type_handle(), UTKey.get_type_handle(), &__thrown, source1.get_handle(), source2.get_handle(), keySelector.get_handle());
@@ -786,9 +859,19 @@ public struct Queryable {
     }
     // System.Linq.IQueryable<TSource> ExceptBy<TSource, TKey>(System.Linq.IQueryable<TSource>, System.Collections.Generic.IEnumerable<TKey>, System.Linq.Expressions.Expression<System.Func<TSource,TKey>>, System.Collections.Generic.IEqualityComparer<TKey>)
 // docid: M:System.Linq.Queryable.ExceptBy``2(System.Linq.IQueryable{``0},System.Collections.Generic.IEnumerable{``1},System.Linq.Expressions.Expression{System.Func{``0,``1}},System.Collections.Generic.IEqualityComparer{``1})
-    public static func ExceptBy<UTSource : SGBridgeGenericValue,UTKey : SGBridgeGenericValue>(source1 : dotnet.System.Linq.IQueryable_1<UTSource>, source2 : dotnet.System.Collections.Generic.IEnumerable_1<UTKey>, keySelector : dotnet.System.Linq.Expressions.Expression_1<dotnet.System.Func_2<UTSource,UTKey>>, comparer : dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>) throws -> dotnet.System.Linq.IQueryable_1<UTSource> {
+    /**
+    Produces the set difference of two sequences according to a specified key selector function.
+
+    - Parameter source1: An  whose keys that are not also in  will be returned.
+    - Parameter source2: An  whose keys that also occur in the first sequence will cause those elements to be removed from the returned sequence.
+    - Parameter keySelector: A function to extract the key for each element.
+    - Parameter comparer: An  to compare keys.
+    - Returns: A  that contains the set difference of the elements of two sequences.
+
+    */
+    public static func ExceptBy<UTSource : SGBridgeGenericValue,UTKey : SGBridgeGenericValue>(source1 : dotnet.System.Linq.IQueryable_1<UTSource>, source2 : dotnet.System.Collections.Generic.IEnumerable_1<UTKey>, keySelector : dotnet.System.Linq.Expressions.Expression_1<dotnet.System.Func_2<UTSource,UTKey>>, comparer : Optional<dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>>) throws -> dotnet.System.Linq.IQueryable_1<UTSource> {
         var __thrown : NullableHandle = nil;
-        let __return = System_Linq_Queryable_System_Linq_IQueryable_UTSource___ExceptBy_2__4__System_Linq_IQueryable_UTSource__System_Collections_Generic_IEnumerable_UTKey__System_Linq_Expressions_Expression_System_System_Func_UTSource_UTKey___System_Collections_Generic_IEqualityComparer_UTKey_(UTSource.get_type_handle(), UTKey.get_type_handle(), &__thrown, source1.get_handle(), source2.get_handle(), keySelector.get_handle(), nil);
+        let __return = System_Linq_Queryable_System_Linq_IQueryable_UTSource___ExceptBy_2__4__System_Linq_IQueryable_UTSource__System_Collections_Generic_IEnumerable_UTKey__System_Linq_Expressions_Expression_System_System_Func_UTSource_UTKey___System_Collections_Generic_IEqualityComparer_UTKey_(UTSource.get_type_handle(), UTKey.get_type_handle(), &__thrown, source1.get_handle(), source2.get_handle(), keySelector.get_handle(), (comparer?.get_handle()));
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
@@ -825,9 +908,9 @@ public struct Queryable {
     - Returns: An  that contains the set difference of the two sequences.
 
     */
-    public static func Except<UTSource : SGBridgeGenericValue>(source1 : dotnet.System.Linq.IQueryable_1<UTSource>, source2 : dotnet.System.Collections.Generic.IEnumerable_1<UTSource>, comparer : dotnet.System.Collections.Generic.IEqualityComparer_1<UTSource>) throws -> dotnet.System.Linq.IQueryable_1<UTSource> {
+    public static func Except<UTSource : SGBridgeGenericValue>(source1 : dotnet.System.Linq.IQueryable_1<UTSource>, source2 : dotnet.System.Collections.Generic.IEnumerable_1<UTSource>, comparer : Optional<dotnet.System.Collections.Generic.IEqualityComparer_1<UTSource>>) throws -> dotnet.System.Linq.IQueryable_1<UTSource> {
         var __thrown : NullableHandle = nil;
-        let __return = System_Linq_Queryable_System_Linq_IQueryable_UTSource___Except_1__3__System_Linq_IQueryable_UTSource__System_Collections_Generic_IEnumerable_UTSource__System_Collections_Generic_IEqualityComparer_UTSource_(UTSource.get_type_handle(), &__thrown, source1.get_handle(), source2.get_handle(), nil);
+        let __return = System_Linq_Queryable_System_Linq_IQueryable_UTSource___Except_1__3__System_Linq_IQueryable_UTSource__System_Collections_Generic_IEnumerable_UTSource__System_Collections_Generic_IEqualityComparer_UTSource_(UTSource.get_type_handle(), &__thrown, source1.get_handle(), source2.get_handle(), (comparer?.get_handle()));
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
@@ -875,6 +958,16 @@ public struct Queryable {
     }
     // TSource FirstOrDefault<TSource>(System.Linq.IQueryable<TSource>, System.Linq.Expressions.Expression<System.Func<TSource,bool>>, TSource)
 // docid: M:System.Linq.Queryable.FirstOrDefault``1(System.Linq.IQueryable{``0},System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}},``0)
+    /**
+    Returns the first element of the sequence that satisfies a condition or a default value if no such element is found.
+
+    - Parameter source: An  to return an element from.
+    - Parameter predicate: A function to test each element for a condition.
+    - Parameter defaultValue: The default value to return if the sequence is empty.
+    - Returns: 
+         if  is empty or if no element passes the test specified by ; otherwise, the first element in  that passes the test specified by .
+
+    */
     public static func FirstOrDefault<UTSource : SGBridgeGenericValue>(source : dotnet.System.Linq.IQueryable_1<UTSource>, predicate : dotnet.System.Linq.Expressions.Expression_1<dotnet.System.Func_2<UTSource,Bool>>, defaultValue : UTSource) throws -> UTSource {
         var __thrown : NullableHandle = nil;
         let __return = System_Linq_Queryable_UTSource__FirstOrDefault_1__3__System_Linq_IQueryable_UTSource__System_Linq_Expressions_Expression_System_System_Func_UTSource_bool___UTSource(UTSource.get_type_handle(), &__thrown, source.get_handle(), predicate.get_handle(), defaultValue.to_gval());
@@ -886,6 +979,15 @@ public struct Queryable {
     }
     // TSource FirstOrDefault<TSource>(System.Linq.IQueryable<TSource>, TSource)
 // docid: M:System.Linq.Queryable.FirstOrDefault``1(System.Linq.IQueryable{``0},``0)
+    /**
+    Returns the first element of a sequence, or a default value if the sequence contains no elements.
+
+    - Parameter source: The  to return the first element of.
+    - Parameter defaultValue: The default value to return if the sequence is empty.
+    - Returns: 
+         if  is empty; otherwise, the first element in .
+
+    */
     public static func FirstOrDefault<UTSource : SGBridgeGenericValue>(source : dotnet.System.Linq.IQueryable_1<UTSource>, defaultValue : UTSource) throws -> UTSource {
         var __thrown : NullableHandle = nil;
         let __return = System_Linq_Queryable_UTSource__FirstOrDefault_1__2__System_Linq_IQueryable_UTSource__UTSource(UTSource.get_type_handle(), &__thrown, source.get_handle(), defaultValue.to_gval());
@@ -962,9 +1064,9 @@ public struct Queryable {
     - Returns: An IQueryable<IGrouping<TKey, TSource>> in C# or IQueryable(Of IGrouping(Of TKey, TSource)) in Visual Basic where each  contains a sequence of objects and a key.
 
     */
-    public static func GroupBy<UTSource : SGBridgeGenericValue,UTKey : SGBridgeGenericValue>(source : dotnet.System.Linq.IQueryable_1<UTSource>, keySelector : dotnet.System.Linq.Expressions.Expression_1<dotnet.System.Func_2<UTSource,UTKey>>, comparer : dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>) throws -> dotnet.System.Linq.IQueryable_1<dotnet.System.Linq.IGrouping_2<UTKey,UTSource>> {
+    public static func GroupBy<UTSource : SGBridgeGenericValue,UTKey : SGBridgeGenericValue>(source : dotnet.System.Linq.IQueryable_1<UTSource>, keySelector : dotnet.System.Linq.Expressions.Expression_1<dotnet.System.Func_2<UTSource,UTKey>>, comparer : Optional<dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>>) throws -> dotnet.System.Linq.IQueryable_1<dotnet.System.Linq.IGrouping_2<UTKey,UTSource>> {
         var __thrown : NullableHandle = nil;
-        let __return = System_Linq_Queryable_System_Linq_IQueryable_System_Linq_System_Linq_IGrouping_UTKey_UTSource____GroupBy_2__3__System_Linq_IQueryable_UTSource__System_Linq_Expressions_Expression_System_System_Func_UTSource_UTKey___System_Collections_Generic_IEqualityComparer_UTKey_(UTSource.get_type_handle(), UTKey.get_type_handle(), &__thrown, source.get_handle(), keySelector.get_handle(), nil);
+        let __return = System_Linq_Queryable_System_Linq_IQueryable_System_Linq_System_Linq_IGrouping_UTKey_UTSource____GroupBy_2__3__System_Linq_IQueryable_UTSource__System_Linq_Expressions_Expression_System_System_Func_UTSource_UTKey___System_Collections_Generic_IEqualityComparer_UTKey_(UTSource.get_type_handle(), UTKey.get_type_handle(), &__thrown, source.get_handle(), keySelector.get_handle(), (comparer?.get_handle()));
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
@@ -1003,9 +1105,9 @@ public struct Queryable {
     - Returns: An IQueryable<IGrouping<TKey, TElement>> in C# or IQueryable(Of IGrouping(Of TKey, TElement)) in Visual Basic where each  contains a sequence of objects of type  and a key.
 
     */
-    public static func GroupBy<UTSource : SGBridgeGenericValue,UTKey : SGBridgeGenericValue,UTElement : SGBridgeGenericValue>(source : dotnet.System.Linq.IQueryable_1<UTSource>, keySelector : dotnet.System.Linq.Expressions.Expression_1<dotnet.System.Func_2<UTSource,UTKey>>, elementSelector : dotnet.System.Linq.Expressions.Expression_1<dotnet.System.Func_2<UTSource,UTElement>>, comparer : dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>) throws -> dotnet.System.Linq.IQueryable_1<dotnet.System.Linq.IGrouping_2<UTKey,UTElement>> {
+    public static func GroupBy<UTSource : SGBridgeGenericValue,UTKey : SGBridgeGenericValue,UTElement : SGBridgeGenericValue>(source : dotnet.System.Linq.IQueryable_1<UTSource>, keySelector : dotnet.System.Linq.Expressions.Expression_1<dotnet.System.Func_2<UTSource,UTKey>>, elementSelector : dotnet.System.Linq.Expressions.Expression_1<dotnet.System.Func_2<UTSource,UTElement>>, comparer : Optional<dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>>) throws -> dotnet.System.Linq.IQueryable_1<dotnet.System.Linq.IGrouping_2<UTKey,UTElement>> {
         var __thrown : NullableHandle = nil;
-        let __return = System_Linq_Queryable_System_Linq_IQueryable_System_Linq_System_Linq_IGrouping_UTKey_UTElement____GroupBy_3__4__System_Linq_IQueryable_UTSource__System_Linq_Expressions_Expression_System_System_Func_UTSource_UTKey___System_Linq_Expressions_Expression_System_System_Func_UTSource_UTElement___System_Collections_Generic_IEqualityComparer_UTKey_(UTSource.get_type_handle(), UTKey.get_type_handle(), UTElement.get_type_handle(), &__thrown, source.get_handle(), keySelector.get_handle(), elementSelector.get_handle(), nil);
+        let __return = System_Linq_Queryable_System_Linq_IQueryable_System_Linq_System_Linq_IGrouping_UTKey_UTElement____GroupBy_3__4__System_Linq_IQueryable_UTSource__System_Linq_Expressions_Expression_System_System_Func_UTSource_UTKey___System_Linq_Expressions_Expression_System_System_Func_UTSource_UTElement___System_Collections_Generic_IEqualityComparer_UTKey_(UTSource.get_type_handle(), UTKey.get_type_handle(), UTElement.get_type_handle(), &__thrown, source.get_handle(), keySelector.get_handle(), elementSelector.get_handle(), (comparer?.get_handle()));
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
@@ -1044,9 +1146,9 @@ public struct Queryable {
     - Returns: An T:System.Linq.IQueryable`1 that has a type argument of  and where each element represents a projection over a group and its key.
 
     */
-    public static func GroupBy<UTSource : SGBridgeGenericValue,UTKey : SGBridgeGenericValue,UTResult : SGBridgeGenericValue>(source : dotnet.System.Linq.IQueryable_1<UTSource>, keySelector : dotnet.System.Linq.Expressions.Expression_1<dotnet.System.Func_2<UTSource,UTKey>>, resultSelector : dotnet.System.Linq.Expressions.Expression_1<dotnet.System.Func_3<UTKey,dotnet.System.Collections.Generic.IEnumerable_1<UTSource>,UTResult>>, comparer : dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>) throws -> dotnet.System.Linq.IQueryable_1<UTResult> {
+    public static func GroupBy<UTSource : SGBridgeGenericValue,UTKey : SGBridgeGenericValue,UTResult : SGBridgeGenericValue>(source : dotnet.System.Linq.IQueryable_1<UTSource>, keySelector : dotnet.System.Linq.Expressions.Expression_1<dotnet.System.Func_2<UTSource,UTKey>>, resultSelector : dotnet.System.Linq.Expressions.Expression_1<dotnet.System.Func_3<UTKey,dotnet.System.Collections.Generic.IEnumerable_1<UTSource>,UTResult>>, comparer : Optional<dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>>) throws -> dotnet.System.Linq.IQueryable_1<UTResult> {
         var __thrown : NullableHandle = nil;
-        let __return = System_Linq_Queryable_System_Linq_IQueryable_UTResult___GroupBy_3__4__System_Linq_IQueryable_UTSource__System_Linq_Expressions_Expression_System_System_Func_UTSource_UTKey___System_Linq_Expressions_Expression_System_System_Func_UTKey_System_Collections_Generic_System_Collections_Generic_IEnumerable_UTSource__UTResult___System_Collections_Generic_IEqualityComparer_UTKey_(UTSource.get_type_handle(), UTKey.get_type_handle(), UTResult.get_type_handle(), &__thrown, source.get_handle(), keySelector.get_handle(), resultSelector.get_handle(), nil);
+        let __return = System_Linq_Queryable_System_Linq_IQueryable_UTResult___GroupBy_3__4__System_Linq_IQueryable_UTSource__System_Linq_Expressions_Expression_System_System_Func_UTSource_UTKey___System_Linq_Expressions_Expression_System_System_Func_UTKey_System_Collections_Generic_System_Collections_Generic_IEnumerable_UTSource__UTResult___System_Collections_Generic_IEqualityComparer_UTKey_(UTSource.get_type_handle(), UTKey.get_type_handle(), UTResult.get_type_handle(), &__thrown, source.get_handle(), keySelector.get_handle(), resultSelector.get_handle(), (comparer?.get_handle()));
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
@@ -1087,9 +1189,9 @@ public struct Queryable {
     - Returns: An T:System.Linq.IQueryable`1 that has a type argument of  and where each element represents a projection over a group and its key.
 
     */
-    public static func GroupBy<UTSource : SGBridgeGenericValue,UTKey : SGBridgeGenericValue,UTElement : SGBridgeGenericValue,UTResult : SGBridgeGenericValue>(source : dotnet.System.Linq.IQueryable_1<UTSource>, keySelector : dotnet.System.Linq.Expressions.Expression_1<dotnet.System.Func_2<UTSource,UTKey>>, elementSelector : dotnet.System.Linq.Expressions.Expression_1<dotnet.System.Func_2<UTSource,UTElement>>, resultSelector : dotnet.System.Linq.Expressions.Expression_1<dotnet.System.Func_3<UTKey,dotnet.System.Collections.Generic.IEnumerable_1<UTElement>,UTResult>>, comparer : dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>) throws -> dotnet.System.Linq.IQueryable_1<UTResult> {
+    public static func GroupBy<UTSource : SGBridgeGenericValue,UTKey : SGBridgeGenericValue,UTElement : SGBridgeGenericValue,UTResult : SGBridgeGenericValue>(source : dotnet.System.Linq.IQueryable_1<UTSource>, keySelector : dotnet.System.Linq.Expressions.Expression_1<dotnet.System.Func_2<UTSource,UTKey>>, elementSelector : dotnet.System.Linq.Expressions.Expression_1<dotnet.System.Func_2<UTSource,UTElement>>, resultSelector : dotnet.System.Linq.Expressions.Expression_1<dotnet.System.Func_3<UTKey,dotnet.System.Collections.Generic.IEnumerable_1<UTElement>,UTResult>>, comparer : Optional<dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>>) throws -> dotnet.System.Linq.IQueryable_1<UTResult> {
         var __thrown : NullableHandle = nil;
-        let __return = System_Linq_Queryable_System_Linq_IQueryable_UTResult___GroupBy_4__5__System_Linq_IQueryable_UTSource__System_Linq_Expressions_Expression_System_System_Func_UTSource_UTKey___System_Linq_Expressions_Expression_System_System_Func_UTSource_UTElement___System_Linq_Expressions_Expression_System_System_Func_UTKey_System_Collections_Generic_System_Collections_Generic_IEnumerable_UTElement__UTResult___System_Collections_Generic_IEqualityComparer_UTKey_(UTSource.get_type_handle(), UTKey.get_type_handle(), UTElement.get_type_handle(), UTResult.get_type_handle(), &__thrown, source.get_handle(), keySelector.get_handle(), elementSelector.get_handle(), resultSelector.get_handle(), nil);
+        let __return = System_Linq_Queryable_System_Linq_IQueryable_UTResult___GroupBy_4__5__System_Linq_IQueryable_UTSource__System_Linq_Expressions_Expression_System_System_Func_UTSource_UTKey___System_Linq_Expressions_Expression_System_System_Func_UTSource_UTElement___System_Linq_Expressions_Expression_System_System_Func_UTKey_System_Collections_Generic_System_Collections_Generic_IEnumerable_UTElement__UTResult___System_Collections_Generic_IEqualityComparer_UTKey_(UTSource.get_type_handle(), UTKey.get_type_handle(), UTElement.get_type_handle(), UTResult.get_type_handle(), &__thrown, source.get_handle(), keySelector.get_handle(), elementSelector.get_handle(), resultSelector.get_handle(), (comparer?.get_handle()));
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
@@ -1132,9 +1234,9 @@ public struct Queryable {
     - Returns: An  that contains elements of type  obtained by performing a grouped join on two sequences.
 
     */
-    public static func GroupJoin<UTOuter : SGBridgeGenericValue,UTInner : SGBridgeGenericValue,UTKey : SGBridgeGenericValue,UTResult : SGBridgeGenericValue>(outer : dotnet.System.Linq.IQueryable_1<UTOuter>, inner : dotnet.System.Collections.Generic.IEnumerable_1<UTInner>, outerKeySelector : dotnet.System.Linq.Expressions.Expression_1<dotnet.System.Func_2<UTOuter,UTKey>>, innerKeySelector : dotnet.System.Linq.Expressions.Expression_1<dotnet.System.Func_2<UTInner,UTKey>>, resultSelector : dotnet.System.Linq.Expressions.Expression_1<dotnet.System.Func_3<UTOuter,dotnet.System.Collections.Generic.IEnumerable_1<UTInner>,UTResult>>, comparer : dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>) throws -> dotnet.System.Linq.IQueryable_1<UTResult> {
+    public static func GroupJoin<UTOuter : SGBridgeGenericValue,UTInner : SGBridgeGenericValue,UTKey : SGBridgeGenericValue,UTResult : SGBridgeGenericValue>(outer : dotnet.System.Linq.IQueryable_1<UTOuter>, inner : dotnet.System.Collections.Generic.IEnumerable_1<UTInner>, outerKeySelector : dotnet.System.Linq.Expressions.Expression_1<dotnet.System.Func_2<UTOuter,UTKey>>, innerKeySelector : dotnet.System.Linq.Expressions.Expression_1<dotnet.System.Func_2<UTInner,UTKey>>, resultSelector : dotnet.System.Linq.Expressions.Expression_1<dotnet.System.Func_3<UTOuter,dotnet.System.Collections.Generic.IEnumerable_1<UTInner>,UTResult>>, comparer : Optional<dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>>) throws -> dotnet.System.Linq.IQueryable_1<UTResult> {
         var __thrown : NullableHandle = nil;
-        let __return = System_Linq_Queryable_System_Linq_IQueryable_UTResult___GroupJoin_4__6__System_Linq_IQueryable_UTOuter__System_Collections_Generic_IEnumerable_UTInner__System_Linq_Expressions_Expression_System_System_Func_UTOuter_UTKey___System_Linq_Expressions_Expression_System_System_Func_UTInner_UTKey___System_Linq_Expressions_Expression_System_System_Func_UTOuter_System_Collections_Generic_System_Collections_Generic_IEnumerable_UTInner__UTResult___System_Collections_Generic_IEqualityComparer_UTKey_(UTOuter.get_type_handle(), UTInner.get_type_handle(), UTKey.get_type_handle(), UTResult.get_type_handle(), &__thrown, outer.get_handle(), inner.get_handle(), outerKeySelector.get_handle(), innerKeySelector.get_handle(), resultSelector.get_handle(), nil);
+        let __return = System_Linq_Queryable_System_Linq_IQueryable_UTResult___GroupJoin_4__6__System_Linq_IQueryable_UTOuter__System_Collections_Generic_IEnumerable_UTInner__System_Linq_Expressions_Expression_System_System_Func_UTOuter_UTKey___System_Linq_Expressions_Expression_System_System_Func_UTInner_UTKey___System_Linq_Expressions_Expression_System_System_Func_UTOuter_System_Collections_Generic_System_Collections_Generic_IEnumerable_UTInner__UTResult___System_Collections_Generic_IEqualityComparer_UTKey_(UTOuter.get_type_handle(), UTInner.get_type_handle(), UTKey.get_type_handle(), UTResult.get_type_handle(), &__thrown, outer.get_handle(), inner.get_handle(), outerKeySelector.get_handle(), innerKeySelector.get_handle(), resultSelector.get_handle(), (comparer?.get_handle()));
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
@@ -1143,6 +1245,15 @@ public struct Queryable {
     }
     // System.Linq.IQueryable<TSource> IntersectBy<TSource, TKey>(System.Linq.IQueryable<TSource>, System.Collections.Generic.IEnumerable<TKey>, System.Linq.Expressions.Expression<System.Func<TSource,TKey>>)
 // docid: M:System.Linq.Queryable.IntersectBy``2(System.Linq.IQueryable{``0},System.Collections.Generic.IEnumerable{``1},System.Linq.Expressions.Expression{System.Func{``0,``1}})
+    /**
+    Produces the set intersection of two sequences according to a specified key selector function.
+
+    - Parameter source1: An  whose distinct elements that also appear in  will be returned.
+    - Parameter source2: An  whose distinct elements that also appear in the first sequence will be returned.
+    - Parameter keySelector: A function to extract the key for each element.
+    - Returns: A sequence that contains the elements that form the set intersection of two sequences.
+
+    */
     public static func IntersectBy<UTSource : SGBridgeGenericValue,UTKey : SGBridgeGenericValue>(source1 : dotnet.System.Linq.IQueryable_1<UTSource>, source2 : dotnet.System.Collections.Generic.IEnumerable_1<UTKey>, keySelector : dotnet.System.Linq.Expressions.Expression_1<dotnet.System.Func_2<UTSource,UTKey>>) throws -> dotnet.System.Linq.IQueryable_1<UTSource> {
         var __thrown : NullableHandle = nil;
         let __return = System_Linq_Queryable_System_Linq_IQueryable_UTSource___IntersectBy_2__3__System_Linq_IQueryable_UTSource__System_Collections_Generic_IEnumerable_UTKey__System_Linq_Expressions_Expression_System_System_Func_UTSource_UTKey__(UTSource.get_type_handle(), UTKey.get_type_handle(), &__thrown, source1.get_handle(), source2.get_handle(), keySelector.get_handle());
@@ -1154,9 +1265,19 @@ public struct Queryable {
     }
     // System.Linq.IQueryable<TSource> IntersectBy<TSource, TKey>(System.Linq.IQueryable<TSource>, System.Collections.Generic.IEnumerable<TKey>, System.Linq.Expressions.Expression<System.Func<TSource,TKey>>, System.Collections.Generic.IEqualityComparer<TKey>)
 // docid: M:System.Linq.Queryable.IntersectBy``2(System.Linq.IQueryable{``0},System.Collections.Generic.IEnumerable{``1},System.Linq.Expressions.Expression{System.Func{``0,``1}},System.Collections.Generic.IEqualityComparer{``1})
-    public static func IntersectBy<UTSource : SGBridgeGenericValue,UTKey : SGBridgeGenericValue>(source1 : dotnet.System.Linq.IQueryable_1<UTSource>, source2 : dotnet.System.Collections.Generic.IEnumerable_1<UTKey>, keySelector : dotnet.System.Linq.Expressions.Expression_1<dotnet.System.Func_2<UTSource,UTKey>>, comparer : dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>) throws -> dotnet.System.Linq.IQueryable_1<UTSource> {
+    /**
+    Produces the set intersection of two sequences according to a specified key selector function.
+
+    - Parameter source1: An  whose distinct elements that also appear in  will be returned.
+    - Parameter source2: An  whose distinct elements that also appear in the first sequence will be returned.
+    - Parameter keySelector: A function to extract the key for each element.
+    - Parameter comparer: An  to compare keys.
+    - Returns: A sequence that contains the elements that form the set intersection of two sequences.
+
+    */
+    public static func IntersectBy<UTSource : SGBridgeGenericValue,UTKey : SGBridgeGenericValue>(source1 : dotnet.System.Linq.IQueryable_1<UTSource>, source2 : dotnet.System.Collections.Generic.IEnumerable_1<UTKey>, keySelector : dotnet.System.Linq.Expressions.Expression_1<dotnet.System.Func_2<UTSource,UTKey>>, comparer : Optional<dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>>) throws -> dotnet.System.Linq.IQueryable_1<UTSource> {
         var __thrown : NullableHandle = nil;
-        let __return = System_Linq_Queryable_System_Linq_IQueryable_UTSource___IntersectBy_2__4__System_Linq_IQueryable_UTSource__System_Collections_Generic_IEnumerable_UTKey__System_Linq_Expressions_Expression_System_System_Func_UTSource_UTKey___System_Collections_Generic_IEqualityComparer_UTKey_(UTSource.get_type_handle(), UTKey.get_type_handle(), &__thrown, source1.get_handle(), source2.get_handle(), keySelector.get_handle(), nil);
+        let __return = System_Linq_Queryable_System_Linq_IQueryable_UTSource___IntersectBy_2__4__System_Linq_IQueryable_UTSource__System_Collections_Generic_IEnumerable_UTKey__System_Linq_Expressions_Expression_System_System_Func_UTSource_UTKey___System_Collections_Generic_IEqualityComparer_UTKey_(UTSource.get_type_handle(), UTKey.get_type_handle(), &__thrown, source1.get_handle(), source2.get_handle(), keySelector.get_handle(), (comparer?.get_handle()));
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
@@ -1193,9 +1314,9 @@ public struct Queryable {
     - Returns: An  that contains the set intersection of the two sequences.
 
     */
-    public static func Intersect<UTSource : SGBridgeGenericValue>(source1 : dotnet.System.Linq.IQueryable_1<UTSource>, source2 : dotnet.System.Collections.Generic.IEnumerable_1<UTSource>, comparer : dotnet.System.Collections.Generic.IEqualityComparer_1<UTSource>) throws -> dotnet.System.Linq.IQueryable_1<UTSource> {
+    public static func Intersect<UTSource : SGBridgeGenericValue>(source1 : dotnet.System.Linq.IQueryable_1<UTSource>, source2 : dotnet.System.Collections.Generic.IEnumerable_1<UTSource>, comparer : Optional<dotnet.System.Collections.Generic.IEqualityComparer_1<UTSource>>) throws -> dotnet.System.Linq.IQueryable_1<UTSource> {
         var __thrown : NullableHandle = nil;
-        let __return = System_Linq_Queryable_System_Linq_IQueryable_UTSource___Intersect_1__3__System_Linq_IQueryable_UTSource__System_Collections_Generic_IEnumerable_UTSource__System_Collections_Generic_IEqualityComparer_UTSource_(UTSource.get_type_handle(), &__thrown, source1.get_handle(), source2.get_handle(), nil);
+        let __return = System_Linq_Queryable_System_Linq_IQueryable_UTSource___Intersect_1__3__System_Linq_IQueryable_UTSource__System_Collections_Generic_IEnumerable_UTSource__System_Collections_Generic_IEqualityComparer_UTSource_(UTSource.get_type_handle(), &__thrown, source1.get_handle(), source2.get_handle(), (comparer?.get_handle()));
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
@@ -1238,9 +1359,9 @@ public struct Queryable {
     - Returns: An  that has elements of type  obtained by performing an inner join on two sequences.
 
     */
-    public static func Join<UTOuter : SGBridgeGenericValue,UTInner : SGBridgeGenericValue,UTKey : SGBridgeGenericValue,UTResult : SGBridgeGenericValue>(outer : dotnet.System.Linq.IQueryable_1<UTOuter>, inner : dotnet.System.Collections.Generic.IEnumerable_1<UTInner>, outerKeySelector : dotnet.System.Linq.Expressions.Expression_1<dotnet.System.Func_2<UTOuter,UTKey>>, innerKeySelector : dotnet.System.Linq.Expressions.Expression_1<dotnet.System.Func_2<UTInner,UTKey>>, resultSelector : dotnet.System.Linq.Expressions.Expression_1<dotnet.System.Func_3<UTOuter,UTInner,UTResult>>, comparer : dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>) throws -> dotnet.System.Linq.IQueryable_1<UTResult> {
+    public static func Join<UTOuter : SGBridgeGenericValue,UTInner : SGBridgeGenericValue,UTKey : SGBridgeGenericValue,UTResult : SGBridgeGenericValue>(outer : dotnet.System.Linq.IQueryable_1<UTOuter>, inner : dotnet.System.Collections.Generic.IEnumerable_1<UTInner>, outerKeySelector : dotnet.System.Linq.Expressions.Expression_1<dotnet.System.Func_2<UTOuter,UTKey>>, innerKeySelector : dotnet.System.Linq.Expressions.Expression_1<dotnet.System.Func_2<UTInner,UTKey>>, resultSelector : dotnet.System.Linq.Expressions.Expression_1<dotnet.System.Func_3<UTOuter,UTInner,UTResult>>, comparer : Optional<dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>>) throws -> dotnet.System.Linq.IQueryable_1<UTResult> {
         var __thrown : NullableHandle = nil;
-        let __return = System_Linq_Queryable_System_Linq_IQueryable_UTResult___Join_4__6__System_Linq_IQueryable_UTOuter__System_Collections_Generic_IEnumerable_UTInner__System_Linq_Expressions_Expression_System_System_Func_UTOuter_UTKey___System_Linq_Expressions_Expression_System_System_Func_UTInner_UTKey___System_Linq_Expressions_Expression_System_System_Func_UTOuter_UTInner_UTResult___System_Collections_Generic_IEqualityComparer_UTKey_(UTOuter.get_type_handle(), UTInner.get_type_handle(), UTKey.get_type_handle(), UTResult.get_type_handle(), &__thrown, outer.get_handle(), inner.get_handle(), outerKeySelector.get_handle(), innerKeySelector.get_handle(), resultSelector.get_handle(), nil);
+        let __return = System_Linq_Queryable_System_Linq_IQueryable_UTResult___Join_4__6__System_Linq_IQueryable_UTOuter__System_Collections_Generic_IEnumerable_UTInner__System_Linq_Expressions_Expression_System_System_Func_UTOuter_UTKey___System_Linq_Expressions_Expression_System_System_Func_UTInner_UTKey___System_Linq_Expressions_Expression_System_System_Func_UTOuter_UTInner_UTResult___System_Collections_Generic_IEqualityComparer_UTKey_(UTOuter.get_type_handle(), UTInner.get_type_handle(), UTKey.get_type_handle(), UTResult.get_type_handle(), &__thrown, outer.get_handle(), inner.get_handle(), outerKeySelector.get_handle(), innerKeySelector.get_handle(), resultSelector.get_handle(), (comparer?.get_handle()));
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
@@ -1288,6 +1409,16 @@ public struct Queryable {
     }
     // TSource LastOrDefault<TSource>(System.Linq.IQueryable<TSource>, System.Linq.Expressions.Expression<System.Func<TSource,bool>>, TSource)
 // docid: M:System.Linq.Queryable.LastOrDefault``1(System.Linq.IQueryable{``0},System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}},``0)
+    /**
+    Returns the last element of a sequence that satisfies a condition or a default value if no such element is found.
+
+    - Parameter source: An  to return an element from.
+    - Parameter predicate: A function to test each element for a condition.
+    - Parameter defaultValue: The default value to return if the sequence is empty.
+    - Returns: 
+         if the sequence is empty or if no elements pass the test in the predicate function; otherwise, the last element that passes the test in the predicate function.
+
+    */
     public static func LastOrDefault<UTSource : SGBridgeGenericValue>(source : dotnet.System.Linq.IQueryable_1<UTSource>, predicate : dotnet.System.Linq.Expressions.Expression_1<dotnet.System.Func_2<UTSource,Bool>>, defaultValue : UTSource) throws -> UTSource {
         var __thrown : NullableHandle = nil;
         let __return = System_Linq_Queryable_UTSource__LastOrDefault_1__3__System_Linq_IQueryable_UTSource__System_Linq_Expressions_Expression_System_System_Func_UTSource_bool___UTSource(UTSource.get_type_handle(), &__thrown, source.get_handle(), predicate.get_handle(), defaultValue.to_gval());
@@ -1299,6 +1430,15 @@ public struct Queryable {
     }
     // TSource LastOrDefault<TSource>(System.Linq.IQueryable<TSource>, TSource)
 // docid: M:System.Linq.Queryable.LastOrDefault``1(System.Linq.IQueryable{``0},``0)
+    /**
+    Returns the last element of a sequence, or a default value if the sequence contains no elements.
+
+    - Parameter source: An  to return the last element of.
+    - Parameter defaultValue: The default value to return if the sequence is empty.
+    - Returns: 
+         if the source sequence is empty; otherwise, the last element in the .
+
+    */
     public static func LastOrDefault<UTSource : SGBridgeGenericValue>(source : dotnet.System.Linq.IQueryable_1<UTSource>, defaultValue : UTSource) throws -> UTSource {
         var __thrown : NullableHandle = nil;
         let __return = System_Linq_Queryable_UTSource__LastOrDefault_1__2__System_Linq_IQueryable_UTSource__UTSource(UTSource.get_type_handle(), &__thrown, source.get_handle(), defaultValue.to_gval());
@@ -1384,6 +1524,14 @@ public struct Queryable {
     }
     // TSource MaxBy<TSource, TKey>(System.Linq.IQueryable<TSource>, System.Linq.Expressions.Expression<System.Func<TSource,TKey>>)
 // docid: M:System.Linq.Queryable.MaxBy``2(System.Linq.IQueryable{``0},System.Linq.Expressions.Expression{System.Func{``0,``1}})
+    /**
+    Returns the maximum value in a generic  according to a specified key selector function.
+
+    - Parameter source: A sequence of values to determine the maximum value of.
+    - Parameter keySelector: A function to extract the key for each element.
+    - Returns: The value with the maximum key in the sequence.
+
+    */
     public static func MaxBy<UTSource : SGBridgeGenericValue,UTKey : SGBridgeGenericValue>(source : dotnet.System.Linq.IQueryable_1<UTSource>, keySelector : dotnet.System.Linq.Expressions.Expression_1<dotnet.System.Func_2<UTSource,UTKey>>) throws -> UTSource {
         var __thrown : NullableHandle = nil;
         let __return = System_Linq_Queryable_UTSource__MaxBy_2__2__System_Linq_IQueryable_UTSource__System_Linq_Expressions_Expression_System_System_Func_UTSource_UTKey__(UTSource.get_type_handle(), UTKey.get_type_handle(), &__thrown, source.get_handle(), keySelector.get_handle());
@@ -1395,9 +1543,18 @@ public struct Queryable {
     }
     // TSource MaxBy<TSource, TKey>(System.Linq.IQueryable<TSource>, System.Linq.Expressions.Expression<System.Func<TSource,TKey>>, System.Collections.Generic.IComparer<TSource>)
 // docid: M:System.Linq.Queryable.MaxBy``2(System.Linq.IQueryable{``0},System.Linq.Expressions.Expression{System.Func{``0,``1}},System.Collections.Generic.IComparer{``0})
-    public static func MaxBy<UTSource : SGBridgeGenericValue,UTKey : SGBridgeGenericValue>(source : dotnet.System.Linq.IQueryable_1<UTSource>, keySelector : dotnet.System.Linq.Expressions.Expression_1<dotnet.System.Func_2<UTSource,UTKey>>, comparer : dotnet.System.Collections.Generic.IComparer_1<UTSource>) throws -> UTSource {
+    /**
+    Returns the maximum value in a generic  according to a specified key selector function.
+
+    - Parameter source: A sequence of values to determine the maximum value of.
+    - Parameter keySelector: A function to extract the key for each element.
+    - Parameter comparer: The  to compare keys.
+    - Returns: The value with the maximum key in the sequence.
+
+    */
+    public static func MaxBy<UTSource : SGBridgeGenericValue,UTKey : SGBridgeGenericValue>(source : dotnet.System.Linq.IQueryable_1<UTSource>, keySelector : dotnet.System.Linq.Expressions.Expression_1<dotnet.System.Func_2<UTSource,UTKey>>, comparer : Optional<dotnet.System.Collections.Generic.IComparer_1<UTSource>>) throws -> UTSource {
         var __thrown : NullableHandle = nil;
-        let __return = System_Linq_Queryable_UTSource__MaxBy_2__3__System_Linq_IQueryable_UTSource__System_Linq_Expressions_Expression_System_System_Func_UTSource_UTKey___System_Collections_Generic_IComparer_UTSource_(UTSource.get_type_handle(), UTKey.get_type_handle(), &__thrown, source.get_handle(), keySelector.get_handle(), nil);
+        let __return = System_Linq_Queryable_UTSource__MaxBy_2__3__System_Linq_IQueryable_UTSource__System_Linq_Expressions_Expression_System_System_Func_UTSource_UTKey___System_Collections_Generic_IComparer_UTSource_(UTSource.get_type_handle(), UTKey.get_type_handle(), &__thrown, source.get_handle(), keySelector.get_handle(), (comparer?.get_handle()));
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
@@ -1424,9 +1581,17 @@ public struct Queryable {
     }
     // TSource Max<TSource>(System.Linq.IQueryable<TSource>, System.Collections.Generic.IComparer<TSource>)
 // docid: M:System.Linq.Queryable.Max``1(System.Linq.IQueryable{``0},System.Collections.Generic.IComparer{``0})
-    public static func Max<UTSource : SGBridgeGenericValue>(source : dotnet.System.Linq.IQueryable_1<UTSource>, comparer : dotnet.System.Collections.Generic.IComparer_1<UTSource>) throws -> UTSource {
+    /**
+    Returns the maximum value in a generic .
+
+    - Parameter source: A sequence of values to determine the maximum value of.
+    - Parameter comparer: The  to compare values.
+    - Returns: The maximum value in the sequence.
+
+    */
+    public static func Max<UTSource : SGBridgeGenericValue>(source : dotnet.System.Linq.IQueryable_1<UTSource>, comparer : Optional<dotnet.System.Collections.Generic.IComparer_1<UTSource>>) throws -> UTSource {
         var __thrown : NullableHandle = nil;
-        let __return = System_Linq_Queryable_UTSource__Max_1__2__System_Linq_IQueryable_UTSource__System_Collections_Generic_IComparer_UTSource_(UTSource.get_type_handle(), &__thrown, source.get_handle(), nil);
+        let __return = System_Linq_Queryable_UTSource__Max_1__2__System_Linq_IQueryable_UTSource__System_Collections_Generic_IComparer_UTSource_(UTSource.get_type_handle(), &__thrown, source.get_handle(), (comparer?.get_handle()));
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
@@ -1454,6 +1619,14 @@ public struct Queryable {
     }
     // TSource MinBy<TSource, TKey>(System.Linq.IQueryable<TSource>, System.Linq.Expressions.Expression<System.Func<TSource,TKey>>)
 // docid: M:System.Linq.Queryable.MinBy``2(System.Linq.IQueryable{``0},System.Linq.Expressions.Expression{System.Func{``0,``1}})
+    /**
+    Returns the minimum value in a generic  according to a specified key selector function.
+
+    - Parameter source: A sequence of values to determine the minimum value of.
+    - Parameter keySelector: A function to extract the key for each element.
+    - Returns: The value with the minimum key in the sequence.
+
+    */
     public static func MinBy<UTSource : SGBridgeGenericValue,UTKey : SGBridgeGenericValue>(source : dotnet.System.Linq.IQueryable_1<UTSource>, keySelector : dotnet.System.Linq.Expressions.Expression_1<dotnet.System.Func_2<UTSource,UTKey>>) throws -> UTSource {
         var __thrown : NullableHandle = nil;
         let __return = System_Linq_Queryable_UTSource__MinBy_2__2__System_Linq_IQueryable_UTSource__System_Linq_Expressions_Expression_System_System_Func_UTSource_UTKey__(UTSource.get_type_handle(), UTKey.get_type_handle(), &__thrown, source.get_handle(), keySelector.get_handle());
@@ -1465,9 +1638,18 @@ public struct Queryable {
     }
     // TSource MinBy<TSource, TKey>(System.Linq.IQueryable<TSource>, System.Linq.Expressions.Expression<System.Func<TSource,TKey>>, System.Collections.Generic.IComparer<TSource>)
 // docid: M:System.Linq.Queryable.MinBy``2(System.Linq.IQueryable{``0},System.Linq.Expressions.Expression{System.Func{``0,``1}},System.Collections.Generic.IComparer{``0})
-    public static func MinBy<UTSource : SGBridgeGenericValue,UTKey : SGBridgeGenericValue>(source : dotnet.System.Linq.IQueryable_1<UTSource>, keySelector : dotnet.System.Linq.Expressions.Expression_1<dotnet.System.Func_2<UTSource,UTKey>>, comparer : dotnet.System.Collections.Generic.IComparer_1<UTSource>) throws -> UTSource {
+    /**
+    Returns the minimum value in a generic  according to a specified key selector function.
+
+    - Parameter source: A sequence of values to determine the minimum value of.
+    - Parameter keySelector: A function to extract the key for each element.
+    - Parameter comparer: The  to compare keys.
+    - Returns: The value with the minimum key in the sequence.
+
+    */
+    public static func MinBy<UTSource : SGBridgeGenericValue,UTKey : SGBridgeGenericValue>(source : dotnet.System.Linq.IQueryable_1<UTSource>, keySelector : dotnet.System.Linq.Expressions.Expression_1<dotnet.System.Func_2<UTSource,UTKey>>, comparer : Optional<dotnet.System.Collections.Generic.IComparer_1<UTSource>>) throws -> UTSource {
         var __thrown : NullableHandle = nil;
-        let __return = System_Linq_Queryable_UTSource__MinBy_2__3__System_Linq_IQueryable_UTSource__System_Linq_Expressions_Expression_System_System_Func_UTSource_UTKey___System_Collections_Generic_IComparer_UTSource_(UTSource.get_type_handle(), UTKey.get_type_handle(), &__thrown, source.get_handle(), keySelector.get_handle(), nil);
+        let __return = System_Linq_Queryable_UTSource__MinBy_2__3__System_Linq_IQueryable_UTSource__System_Linq_Expressions_Expression_System_System_Func_UTSource_UTKey___System_Collections_Generic_IComparer_UTSource_(UTSource.get_type_handle(), UTKey.get_type_handle(), &__thrown, source.get_handle(), keySelector.get_handle(), (comparer?.get_handle()));
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
@@ -1494,9 +1676,17 @@ public struct Queryable {
     }
     // TSource Min<TSource>(System.Linq.IQueryable<TSource>, System.Collections.Generic.IComparer<TSource>)
 // docid: M:System.Linq.Queryable.Min``1(System.Linq.IQueryable{``0},System.Collections.Generic.IComparer{``0})
-    public static func Min<UTSource : SGBridgeGenericValue>(source : dotnet.System.Linq.IQueryable_1<UTSource>, comparer : dotnet.System.Collections.Generic.IComparer_1<UTSource>) throws -> UTSource {
+    /**
+    Returns the minimum value in a generic .
+
+    - Parameter source: A sequence of values to determine the minimum value of.
+    - Parameter comparer: The  to compare values.
+    - Returns: The minimum value in the sequence.
+
+    */
+    public static func Min<UTSource : SGBridgeGenericValue>(source : dotnet.System.Linq.IQueryable_1<UTSource>, comparer : Optional<dotnet.System.Collections.Generic.IComparer_1<UTSource>>) throws -> UTSource {
         var __thrown : NullableHandle = nil;
-        let __return = System_Linq_Queryable_UTSource__Min_1__2__System_Linq_IQueryable_UTSource__System_Collections_Generic_IComparer_UTSource_(UTSource.get_type_handle(), &__thrown, source.get_handle(), nil);
+        let __return = System_Linq_Queryable_UTSource__Min_1__2__System_Linq_IQueryable_UTSource__System_Collections_Generic_IComparer_UTSource_(UTSource.get_type_handle(), &__thrown, source.get_handle(), (comparer?.get_handle()));
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
@@ -1553,9 +1743,9 @@ public struct Queryable {
     - Returns: An  whose elements are sorted in descending order according to a key.
 
     */
-    public static func OrderByDescending<UTSource : SGBridgeGenericValue,UTKey : SGBridgeGenericValue>(source : dotnet.System.Linq.IQueryable_1<UTSource>, keySelector : dotnet.System.Linq.Expressions.Expression_1<dotnet.System.Func_2<UTSource,UTKey>>, comparer : dotnet.System.Collections.Generic.IComparer_1<UTKey>) throws -> dotnet.System.Linq.IOrderedQueryable_1<UTSource> {
+    public static func OrderByDescending<UTSource : SGBridgeGenericValue,UTKey : SGBridgeGenericValue>(source : dotnet.System.Linq.IQueryable_1<UTSource>, keySelector : dotnet.System.Linq.Expressions.Expression_1<dotnet.System.Func_2<UTSource,UTKey>>, comparer : Optional<dotnet.System.Collections.Generic.IComparer_1<UTKey>>) throws -> dotnet.System.Linq.IOrderedQueryable_1<UTSource> {
         var __thrown : NullableHandle = nil;
-        let __return = System_Linq_Queryable_System_Linq_IOrderedQueryable_UTSource___OrderByDescending_2__3__System_Linq_IQueryable_UTSource__System_Linq_Expressions_Expression_System_System_Func_UTSource_UTKey___System_Collections_Generic_IComparer_UTKey_(UTSource.get_type_handle(), UTKey.get_type_handle(), &__thrown, source.get_handle(), keySelector.get_handle(), nil);
+        let __return = System_Linq_Queryable_System_Linq_IOrderedQueryable_UTSource___OrderByDescending_2__3__System_Linq_IQueryable_UTSource__System_Linq_Expressions_Expression_System_System_Func_UTSource_UTKey___System_Collections_Generic_IComparer_UTKey_(UTSource.get_type_handle(), UTKey.get_type_handle(), &__thrown, source.get_handle(), keySelector.get_handle(), (comparer?.get_handle()));
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
@@ -1592,9 +1782,9 @@ public struct Queryable {
     - Returns: An  whose elements are sorted according to a key.
 
     */
-    public static func OrderBy<UTSource : SGBridgeGenericValue,UTKey : SGBridgeGenericValue>(source : dotnet.System.Linq.IQueryable_1<UTSource>, keySelector : dotnet.System.Linq.Expressions.Expression_1<dotnet.System.Func_2<UTSource,UTKey>>, comparer : dotnet.System.Collections.Generic.IComparer_1<UTKey>) throws -> dotnet.System.Linq.IOrderedQueryable_1<UTSource> {
+    public static func OrderBy<UTSource : SGBridgeGenericValue,UTKey : SGBridgeGenericValue>(source : dotnet.System.Linq.IQueryable_1<UTSource>, keySelector : dotnet.System.Linq.Expressions.Expression_1<dotnet.System.Func_2<UTSource,UTKey>>, comparer : Optional<dotnet.System.Collections.Generic.IComparer_1<UTKey>>) throws -> dotnet.System.Linq.IOrderedQueryable_1<UTSource> {
         var __thrown : NullableHandle = nil;
-        let __return = System_Linq_Queryable_System_Linq_IOrderedQueryable_UTSource___OrderBy_2__3__System_Linq_IQueryable_UTSource__System_Linq_Expressions_Expression_System_System_Func_UTSource_UTKey___System_Collections_Generic_IComparer_UTKey_(UTSource.get_type_handle(), UTKey.get_type_handle(), &__thrown, source.get_handle(), keySelector.get_handle(), nil);
+        let __return = System_Linq_Queryable_System_Linq_IOrderedQueryable_UTSource___OrderBy_2__3__System_Linq_IQueryable_UTSource__System_Linq_Expressions_Expression_System_System_Func_UTSource_UTKey___System_Collections_Generic_IComparer_UTKey_(UTSource.get_type_handle(), UTKey.get_type_handle(), &__thrown, source.get_handle(), keySelector.get_handle(), (comparer?.get_handle()));
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
@@ -1786,9 +1976,9 @@ public struct Queryable {
          if the two source sequences are of equal length and their corresponding elements compare equal; otherwise, .
 
     */
-    public static func SequenceEqual<UTSource : SGBridgeGenericValue>(source1 : dotnet.System.Linq.IQueryable_1<UTSource>, source2 : dotnet.System.Collections.Generic.IEnumerable_1<UTSource>, comparer : dotnet.System.Collections.Generic.IEqualityComparer_1<UTSource>) throws -> Bool {
+    public static func SequenceEqual<UTSource : SGBridgeGenericValue>(source1 : dotnet.System.Linq.IQueryable_1<UTSource>, source2 : dotnet.System.Collections.Generic.IEnumerable_1<UTSource>, comparer : Optional<dotnet.System.Collections.Generic.IEqualityComparer_1<UTSource>>) throws -> Bool {
         var __thrown : NullableHandle = nil;
-        let __return = System_Linq_Queryable_bool__SequenceEqual_1__3__System_Linq_IQueryable_UTSource__System_Collections_Generic_IEnumerable_UTSource__System_Collections_Generic_IEqualityComparer_UTSource_(UTSource.get_type_handle(), &__thrown, source1.get_handle(), source2.get_handle(), nil);
+        let __return = System_Linq_Queryable_bool__SequenceEqual_1__3__System_Linq_IQueryable_UTSource__System_Collections_Generic_IEnumerable_UTSource__System_Collections_Generic_IEqualityComparer_UTSource_(UTSource.get_type_handle(), &__thrown, source1.get_handle(), source2.get_handle(), (comparer?.get_handle()));
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
@@ -1834,6 +2024,15 @@ public struct Queryable {
     }
     // TSource SingleOrDefault<TSource>(System.Linq.IQueryable<TSource>, System.Linq.Expressions.Expression<System.Func<TSource,bool>>, TSource)
 // docid: M:System.Linq.Queryable.SingleOrDefault``1(System.Linq.IQueryable{``0},System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}},``0)
+    /**
+    Returns the only element of a sequence that satisfies a specified condition or a default value if no such element exists; this method throws an exception if more than one element satisfies the condition.
+
+    - Parameter source: An  to return a single element from.
+    - Parameter predicate: A function to test an element for a condition.
+    - Parameter defaultValue: The default value to return if the sequence is empty.
+    - Returns: The single element of the input sequence that satisfies the condition, or  if no such element is found.
+
+    */
     public static func SingleOrDefault<UTSource : SGBridgeGenericValue>(source : dotnet.System.Linq.IQueryable_1<UTSource>, predicate : dotnet.System.Linq.Expressions.Expression_1<dotnet.System.Func_2<UTSource,Bool>>, defaultValue : UTSource) throws -> UTSource {
         var __thrown : NullableHandle = nil;
         let __return = System_Linq_Queryable_UTSource__SingleOrDefault_1__3__System_Linq_IQueryable_UTSource__System_Linq_Expressions_Expression_System_System_Func_UTSource_bool___UTSource(UTSource.get_type_handle(), &__thrown, source.get_handle(), predicate.get_handle(), defaultValue.to_gval());
@@ -1845,6 +2044,14 @@ public struct Queryable {
     }
     // TSource SingleOrDefault<TSource>(System.Linq.IQueryable<TSource>, TSource)
 // docid: M:System.Linq.Queryable.SingleOrDefault``1(System.Linq.IQueryable{``0},``0)
+    /**
+    Returns the only element of a sequence, or a default value if the sequence is empty; this method throws an exception if there is more than one element in the sequence.
+
+    - Parameter source: An  to return the single element of.
+    - Parameter defaultValue: The default value to return if the sequence is empty.
+    - Returns: The single element of the input sequence, or  if the sequence contains no elements.
+
+    */
     public static func SingleOrDefault<UTSource : SGBridgeGenericValue>(source : dotnet.System.Linq.IQueryable_1<UTSource>, defaultValue : UTSource) throws -> UTSource {
         var __thrown : NullableHandle = nil;
         let __return = System_Linq_Queryable_UTSource__SingleOrDefault_1__2__System_Linq_IQueryable_UTSource__UTSource(UTSource.get_type_handle(), &__thrown, source.get_handle(), defaultValue.to_gval());
@@ -2039,6 +2246,11 @@ public struct Queryable {
         return __return;
         }
     }
+// TODO COPE (parm closedgeneric of nullable): System.Nullable<System.Decimal> Sum(System.Linq.IQueryable<System.Nullable<System.Decimal>>)
+// TODO COPE (parm closedgeneric of nullable): System.Nullable<System.Double> Sum(System.Linq.IQueryable<System.Nullable<System.Double>>)
+// TODO COPE (parm closedgeneric of nullable): System.Nullable<System.Int32> Sum(System.Linq.IQueryable<System.Nullable<System.Int32>>)
+// TODO COPE (parm closedgeneric of nullable): System.Nullable<System.Int64> Sum(System.Linq.IQueryable<System.Nullable<System.Int64>>)
+// TODO COPE (parm closedgeneric of nullable): System.Nullable<System.Single> Sum(System.Linq.IQueryable<System.Nullable<System.Single>>)
     // System.Single Sum(System.Linq.IQueryable<System.Single>)
 // docid: M:System.Linq.Queryable.Sum(System.Linq.IQueryable{System.Single})
     /**
@@ -2133,6 +2345,11 @@ public struct Queryable {
         return __return;
         }
     }
+// TODO COPE (parm closedgeneric of nullable): System.Nullable<System.Decimal> Sum<TSource>(System.Linq.IQueryable<TSource>, System.Linq.Expressions.Expression<System.Func<TSource,System.Nullable<System.Decimal>>>)
+// TODO COPE (parm closedgeneric of nullable): System.Nullable<System.Double> Sum<TSource>(System.Linq.IQueryable<TSource>, System.Linq.Expressions.Expression<System.Func<TSource,System.Nullable<System.Double>>>)
+// TODO COPE (parm closedgeneric of nullable): System.Nullable<System.Int32> Sum<TSource>(System.Linq.IQueryable<TSource>, System.Linq.Expressions.Expression<System.Func<TSource,System.Nullable<System.Int32>>>)
+// TODO COPE (parm closedgeneric of nullable): System.Nullable<System.Int64> Sum<TSource>(System.Linq.IQueryable<TSource>, System.Linq.Expressions.Expression<System.Func<TSource,System.Nullable<System.Int64>>>)
+// TODO COPE (parm closedgeneric of nullable): System.Nullable<System.Single> Sum<TSource>(System.Linq.IQueryable<TSource>, System.Linq.Expressions.Expression<System.Func<TSource,System.Nullable<System.Single>>>)
     // System.Single Sum<TSource>(System.Linq.IQueryable<TSource>, System.Linq.Expressions.Expression<System.Func<TSource,System.Single>>)
 // docid: M:System.Linq.Queryable.Sum``1(System.Linq.IQueryable{``0},System.Linq.Expressions.Expression{System.Func{``0,System.Single}})
     /**
@@ -2230,6 +2447,14 @@ public struct Queryable {
     }
     // System.Linq.IQueryable<TSource> Take<TSource>(System.Linq.IQueryable<TSource>, System.Range)
 // docid: M:System.Linq.Queryable.Take``1(System.Linq.IQueryable{``0},System.Range)
+    /**
+    Returns a specified range of contiguous elements from a sequence.
+
+    - Parameter source: The sequence to return elements from.
+    - Parameter range: The range of elements to return, which has start and end indexes either from the start or the end.
+    - Returns: An  that contains the specified  of elements from the  sequence.
+
+    */
     public static func Take<UTSource : SGBridgeGenericValue>(source : dotnet.System.Linq.IQueryable_1<UTSource>, range : dotnet.System.Range) throws -> dotnet.System.Linq.IQueryable_1<UTSource> {
         var __thrown : NullableHandle = nil;
         let __return = System_Linq_Queryable_System_Linq_IQueryable_UTSource___Take_1__2__System_Linq_IQueryable_UTSource__Range(UTSource.get_type_handle(), &__thrown, source.get_handle(), range.get_handle());
@@ -2269,9 +2494,9 @@ public struct Queryable {
     - Returns: A collection whose elements are sorted in descending order according to a key.
 
     */
-    public static func ThenByDescending<UTSource : SGBridgeGenericValue,UTKey : SGBridgeGenericValue>(source : dotnet.System.Linq.IOrderedQueryable_1<UTSource>, keySelector : dotnet.System.Linq.Expressions.Expression_1<dotnet.System.Func_2<UTSource,UTKey>>, comparer : dotnet.System.Collections.Generic.IComparer_1<UTKey>) throws -> dotnet.System.Linq.IOrderedQueryable_1<UTSource> {
+    public static func ThenByDescending<UTSource : SGBridgeGenericValue,UTKey : SGBridgeGenericValue>(source : dotnet.System.Linq.IOrderedQueryable_1<UTSource>, keySelector : dotnet.System.Linq.Expressions.Expression_1<dotnet.System.Func_2<UTSource,UTKey>>, comparer : Optional<dotnet.System.Collections.Generic.IComparer_1<UTKey>>) throws -> dotnet.System.Linq.IOrderedQueryable_1<UTSource> {
         var __thrown : NullableHandle = nil;
-        let __return = System_Linq_Queryable_System_Linq_IOrderedQueryable_UTSource___ThenByDescending_2__3__System_Linq_IOrderedQueryable_UTSource__System_Linq_Expressions_Expression_System_System_Func_UTSource_UTKey___System_Collections_Generic_IComparer_UTKey_(UTSource.get_type_handle(), UTKey.get_type_handle(), &__thrown, source.get_handle(), keySelector.get_handle(), nil);
+        let __return = System_Linq_Queryable_System_Linq_IOrderedQueryable_UTSource___ThenByDescending_2__3__System_Linq_IOrderedQueryable_UTSource__System_Linq_Expressions_Expression_System_System_Func_UTSource_UTKey___System_Collections_Generic_IComparer_UTKey_(UTSource.get_type_handle(), UTKey.get_type_handle(), &__thrown, source.get_handle(), keySelector.get_handle(), (comparer?.get_handle()));
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
@@ -2308,9 +2533,9 @@ public struct Queryable {
     - Returns: An  whose elements are sorted according to a key.
 
     */
-    public static func ThenBy<UTSource : SGBridgeGenericValue,UTKey : SGBridgeGenericValue>(source : dotnet.System.Linq.IOrderedQueryable_1<UTSource>, keySelector : dotnet.System.Linq.Expressions.Expression_1<dotnet.System.Func_2<UTSource,UTKey>>, comparer : dotnet.System.Collections.Generic.IComparer_1<UTKey>) throws -> dotnet.System.Linq.IOrderedQueryable_1<UTSource> {
+    public static func ThenBy<UTSource : SGBridgeGenericValue,UTKey : SGBridgeGenericValue>(source : dotnet.System.Linq.IOrderedQueryable_1<UTSource>, keySelector : dotnet.System.Linq.Expressions.Expression_1<dotnet.System.Func_2<UTSource,UTKey>>, comparer : Optional<dotnet.System.Collections.Generic.IComparer_1<UTKey>>) throws -> dotnet.System.Linq.IOrderedQueryable_1<UTSource> {
         var __thrown : NullableHandle = nil;
-        let __return = System_Linq_Queryable_System_Linq_IOrderedQueryable_UTSource___ThenBy_2__3__System_Linq_IOrderedQueryable_UTSource__System_Linq_Expressions_Expression_System_System_Func_UTSource_UTKey___System_Collections_Generic_IComparer_UTKey_(UTSource.get_type_handle(), UTKey.get_type_handle(), &__thrown, source.get_handle(), keySelector.get_handle(), nil);
+        let __return = System_Linq_Queryable_System_Linq_IOrderedQueryable_UTSource___ThenBy_2__3__System_Linq_IOrderedQueryable_UTSource__System_Linq_Expressions_Expression_System_System_Func_UTSource_UTKey___System_Collections_Generic_IComparer_UTKey_(UTSource.get_type_handle(), UTKey.get_type_handle(), &__thrown, source.get_handle(), keySelector.get_handle(), (comparer?.get_handle()));
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
@@ -2319,6 +2544,15 @@ public struct Queryable {
     }
     // System.Linq.IQueryable<TSource> UnionBy<TSource, TKey>(System.Linq.IQueryable<TSource>, System.Collections.Generic.IEnumerable<TSource>, System.Linq.Expressions.Expression<System.Func<TSource,TKey>>)
 // docid: M:System.Linq.Queryable.UnionBy``2(System.Linq.IQueryable{``0},System.Collections.Generic.IEnumerable{``0},System.Linq.Expressions.Expression{System.Func{``0,``1}})
+    /**
+    Produces the set union of two sequences according to a specified key selector function.
+
+    - Parameter source1: An  whose distinct elements form the first set for the union.
+    - Parameter source2: An  whose distinct elements form the second set for the union.
+    - Parameter keySelector: A function to extract the key for each element.
+    - Returns: An  that contains the elements from both input sequences, excluding duplicates.
+
+    */
     public static func UnionBy<UTSource : SGBridgeGenericValue,UTKey : SGBridgeGenericValue>(source1 : dotnet.System.Linq.IQueryable_1<UTSource>, source2 : dotnet.System.Collections.Generic.IEnumerable_1<UTSource>, keySelector : dotnet.System.Linq.Expressions.Expression_1<dotnet.System.Func_2<UTSource,UTKey>>) throws -> dotnet.System.Linq.IQueryable_1<UTSource> {
         var __thrown : NullableHandle = nil;
         let __return = System_Linq_Queryable_System_Linq_IQueryable_UTSource___UnionBy_2__3__System_Linq_IQueryable_UTSource__System_Collections_Generic_IEnumerable_UTSource__System_Linq_Expressions_Expression_System_System_Func_UTSource_UTKey__(UTSource.get_type_handle(), UTKey.get_type_handle(), &__thrown, source1.get_handle(), source2.get_handle(), keySelector.get_handle());
@@ -2330,9 +2564,19 @@ public struct Queryable {
     }
     // System.Linq.IQueryable<TSource> UnionBy<TSource, TKey>(System.Linq.IQueryable<TSource>, System.Collections.Generic.IEnumerable<TSource>, System.Linq.Expressions.Expression<System.Func<TSource,TKey>>, System.Collections.Generic.IEqualityComparer<TKey>)
 // docid: M:System.Linq.Queryable.UnionBy``2(System.Linq.IQueryable{``0},System.Collections.Generic.IEnumerable{``0},System.Linq.Expressions.Expression{System.Func{``0,``1}},System.Collections.Generic.IEqualityComparer{``1})
-    public static func UnionBy<UTSource : SGBridgeGenericValue,UTKey : SGBridgeGenericValue>(source1 : dotnet.System.Linq.IQueryable_1<UTSource>, source2 : dotnet.System.Collections.Generic.IEnumerable_1<UTSource>, keySelector : dotnet.System.Linq.Expressions.Expression_1<dotnet.System.Func_2<UTSource,UTKey>>, comparer : dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>) throws -> dotnet.System.Linq.IQueryable_1<UTSource> {
+    /**
+    Produces the set union of two sequences according to a specified key selector function.
+
+    - Parameter source1: An  whose distinct elements form the first set for the union.
+    - Parameter source2: An  whose distinct elements form the second set for the union.
+    - Parameter keySelector: A function to extract the key for each element.
+    - Parameter comparer: The  to compare values.
+    - Returns: An  that contains the elements from both input sequences, excluding duplicates.
+
+    */
+    public static func UnionBy<UTSource : SGBridgeGenericValue,UTKey : SGBridgeGenericValue>(source1 : dotnet.System.Linq.IQueryable_1<UTSource>, source2 : dotnet.System.Collections.Generic.IEnumerable_1<UTSource>, keySelector : dotnet.System.Linq.Expressions.Expression_1<dotnet.System.Func_2<UTSource,UTKey>>, comparer : Optional<dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>>) throws -> dotnet.System.Linq.IQueryable_1<UTSource> {
         var __thrown : NullableHandle = nil;
-        let __return = System_Linq_Queryable_System_Linq_IQueryable_UTSource___UnionBy_2__4__System_Linq_IQueryable_UTSource__System_Collections_Generic_IEnumerable_UTSource__System_Linq_Expressions_Expression_System_System_Func_UTSource_UTKey___System_Collections_Generic_IEqualityComparer_UTKey_(UTSource.get_type_handle(), UTKey.get_type_handle(), &__thrown, source1.get_handle(), source2.get_handle(), keySelector.get_handle(), nil);
+        let __return = System_Linq_Queryable_System_Linq_IQueryable_UTSource___UnionBy_2__4__System_Linq_IQueryable_UTSource__System_Collections_Generic_IEnumerable_UTSource__System_Linq_Expressions_Expression_System_System_Func_UTSource_UTKey___System_Collections_Generic_IEqualityComparer_UTKey_(UTSource.get_type_handle(), UTKey.get_type_handle(), &__thrown, source1.get_handle(), source2.get_handle(), keySelector.get_handle(), (comparer?.get_handle()));
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
@@ -2369,9 +2613,9 @@ public struct Queryable {
     - Returns: An  that contains the elements from both input sequences, excluding duplicates.
 
     */
-    public static func Union<UTSource : SGBridgeGenericValue>(source1 : dotnet.System.Linq.IQueryable_1<UTSource>, source2 : dotnet.System.Collections.Generic.IEnumerable_1<UTSource>, comparer : dotnet.System.Collections.Generic.IEqualityComparer_1<UTSource>) throws -> dotnet.System.Linq.IQueryable_1<UTSource> {
+    public static func Union<UTSource : SGBridgeGenericValue>(source1 : dotnet.System.Linq.IQueryable_1<UTSource>, source2 : dotnet.System.Collections.Generic.IEnumerable_1<UTSource>, comparer : Optional<dotnet.System.Collections.Generic.IEqualityComparer_1<UTSource>>) throws -> dotnet.System.Linq.IQueryable_1<UTSource> {
         var __thrown : NullableHandle = nil;
-        let __return = System_Linq_Queryable_System_Linq_IQueryable_UTSource___Union_1__3__System_Linq_IQueryable_UTSource__System_Collections_Generic_IEnumerable_UTSource__System_Collections_Generic_IEqualityComparer_UTSource_(UTSource.get_type_handle(), &__thrown, source1.get_handle(), source2.get_handle(), nil);
+        let __return = System_Linq_Queryable_System_Linq_IQueryable_UTSource___Union_1__3__System_Linq_IQueryable_UTSource__System_Collections_Generic_IEnumerable_UTSource__System_Collections_Generic_IEqualityComparer_UTSource_(UTSource.get_type_handle(), &__thrown, source1.get_handle(), source2.get_handle(), (comparer?.get_handle()));
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
@@ -2437,6 +2681,15 @@ public struct Queryable {
     }
     // System.Linq.IQueryable<System.ValueTuple<TFirst,TSecond,TThird>> Zip<TFirst, TSecond, TThird>(System.Linq.IQueryable<TFirst>, System.Collections.Generic.IEnumerable<TSecond>, System.Collections.Generic.IEnumerable<TThird>)
 // docid: M:System.Linq.Queryable.Zip``3(System.Linq.IQueryable{``0},System.Collections.Generic.IEnumerable{``1},System.Collections.Generic.IEnumerable{``2})
+    /**
+    Produces a sequence of tuples with elements from the three specified sequences.
+
+    - Parameter source1: The first sequence to merge.
+    - Parameter source2: The second sequence to merge.
+    - Parameter source3: The third sequence to merge.
+    - Returns: A sequence of tuples with elements taken from the first, second and third sequences, in that order.
+
+    */
     public static func Zip<UTFirst : SGBridgeGenericValue,UTSecond : SGBridgeGenericValue,UTThird : SGBridgeGenericValue>(source1 : dotnet.System.Linq.IQueryable_1<UTFirst>, source2 : dotnet.System.Collections.Generic.IEnumerable_1<UTSecond>, source3 : dotnet.System.Collections.Generic.IEnumerable_1<UTThird>) throws -> dotnet.System.Linq.IQueryable_1<dotnet.System.ValueTuple_3<UTFirst,UTSecond,UTThird>> {
         var __thrown : NullableHandle = nil;
         let __return = System_Linq_Queryable_System_Linq_IQueryable_System_System_ValueTuple_UTFirst_UTSecond_UTThird____Zip_3__3__System_Linq_IQueryable_UTFirst__System_Collections_Generic_IEnumerable_UTSecond__System_Collections_Generic_IEnumerable_UTThird_(UTFirst.get_type_handle(), UTSecond.get_type_handle(), UTThird.get_type_handle(), &__thrown, source1.get_handle(), source2.get_handle(), source3.get_handle());
@@ -2563,6 +2816,11 @@ extension dotnet.System.Linq.IQueryable_1 {
     }
 }
 
+// TODO COPE (parm closedgeneric of nullable): System.Nullable<System.Decimal> Average(System.Linq.IQueryable<System.Nullable<System.Decimal>>)
+// TODO COPE (parm closedgeneric of nullable): System.Nullable<System.Double> Average(System.Linq.IQueryable<System.Nullable<System.Double>>)
+// TODO COPE (parm closedgeneric of nullable): System.Nullable<System.Double> Average(System.Linq.IQueryable<System.Nullable<System.Int32>>)
+// TODO COPE (parm closedgeneric of nullable): System.Nullable<System.Double> Average(System.Linq.IQueryable<System.Nullable<System.Int64>>)
+// TODO COPE (parm closedgeneric of nullable): System.Nullable<System.Single> Average(System.Linq.IQueryable<System.Nullable<System.Single>>)
 // EXTENSION METHOD System.Single Average(System.Linq.IQueryable<System.Single>)
 extension dotnet.System.Linq.IQueryable_1 {
     public func Average() throws -> Swift.Float where T == Swift.Float {
@@ -2598,6 +2856,11 @@ extension dotnet.System.Linq.IQueryable_1 {
     }
 }
 
+// TODO COPE (parm closedgeneric of nullable): System.Nullable<System.Decimal> Average<TSource>(System.Linq.IQueryable<TSource>, System.Linq.Expressions.Expression<System.Func<TSource,System.Nullable<System.Decimal>>>)
+// TODO COPE (parm closedgeneric of nullable): System.Nullable<System.Double> Average<TSource>(System.Linq.IQueryable<TSource>, System.Linq.Expressions.Expression<System.Func<TSource,System.Nullable<System.Double>>>)
+// TODO COPE (parm closedgeneric of nullable): System.Nullable<System.Double> Average<TSource>(System.Linq.IQueryable<TSource>, System.Linq.Expressions.Expression<System.Func<TSource,System.Nullable<System.Int32>>>)
+// TODO COPE (parm closedgeneric of nullable): System.Nullable<System.Double> Average<TSource>(System.Linq.IQueryable<TSource>, System.Linq.Expressions.Expression<System.Func<TSource,System.Nullable<System.Int64>>>)
+// TODO COPE (parm closedgeneric of nullable): System.Nullable<System.Single> Average<TSource>(System.Linq.IQueryable<TSource>, System.Linq.Expressions.Expression<System.Func<TSource,System.Nullable<System.Single>>>)
 // EXTENSION METHOD System.Single Average<TSource>(System.Linq.IQueryable<TSource>, System.Linq.Expressions.Expression<System.Func<TSource,System.Single>>)
 extension dotnet.System.Linq.IQueryable_1 {
     public func Average(selector : dotnet.System.Linq.Expressions.Expression_1<dotnet.System.Func_2<T,Swift.Float>>) throws -> Swift.Float {
@@ -2631,7 +2894,7 @@ extension dotnet.System.Linq.IQueryable_1 {
 
 // EXTENSION METHOD bool Contains<TSource>(System.Linq.IQueryable<TSource>, TSource, System.Collections.Generic.IEqualityComparer<TSource>)
 extension dotnet.System.Linq.IQueryable_1 {
-    public func Contains(item : T, comparer : dotnet.System.Collections.Generic.IEqualityComparer_1<T>) throws -> Bool {
+    public func Contains(item : T, comparer : Optional<dotnet.System.Collections.Generic.IEqualityComparer_1<T>>) throws -> Bool {
         return try dotnet.System.Linq.Queryable.Contains(source: self, item: item, comparer: comparer);
     }
 }
@@ -2673,7 +2936,7 @@ extension dotnet.System.Linq.IQueryable_1 {
 
 // EXTENSION METHOD System.Linq.IQueryable<TSource> DistinctBy<TSource, TKey>(System.Linq.IQueryable<TSource>, System.Linq.Expressions.Expression<System.Func<TSource,TKey>>, System.Collections.Generic.IEqualityComparer<TKey>)
 extension dotnet.System.Linq.IQueryable_1 {
-    public func DistinctBy<UTKey : SGBridgeGenericValue>(keySelector : dotnet.System.Linq.Expressions.Expression_1<dotnet.System.Func_2<T,UTKey>>, comparer : dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>) throws -> dotnet.System.Linq.IQueryable_1<T> {
+    public func DistinctBy<UTKey : SGBridgeGenericValue>(keySelector : dotnet.System.Linq.Expressions.Expression_1<dotnet.System.Func_2<T,UTKey>>, comparer : Optional<dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>>) throws -> dotnet.System.Linq.IQueryable_1<T> {
         return try dotnet.System.Linq.Queryable.DistinctBy(source: self, keySelector: keySelector, comparer: comparer);
     }
 }
@@ -2687,7 +2950,7 @@ extension dotnet.System.Linq.IQueryable_1 {
 
 // EXTENSION METHOD System.Linq.IQueryable<TSource> Distinct<TSource>(System.Linq.IQueryable<TSource>, System.Collections.Generic.IEqualityComparer<TSource>)
 extension dotnet.System.Linq.IQueryable_1 {
-    public func Distinct(comparer : dotnet.System.Collections.Generic.IEqualityComparer_1<T>) throws -> dotnet.System.Linq.IQueryable_1<T> {
+    public func Distinct(comparer : Optional<dotnet.System.Collections.Generic.IEqualityComparer_1<T>>) throws -> dotnet.System.Linq.IQueryable_1<T> {
         return try dotnet.System.Linq.Queryable.Distinct(source: self, comparer: comparer);
     }
 }
@@ -2729,7 +2992,7 @@ extension dotnet.System.Linq.IQueryable_1 {
 
 // EXTENSION METHOD System.Linq.IQueryable<TSource> ExceptBy<TSource, TKey>(System.Linq.IQueryable<TSource>, System.Collections.Generic.IEnumerable<TKey>, System.Linq.Expressions.Expression<System.Func<TSource,TKey>>, System.Collections.Generic.IEqualityComparer<TKey>)
 extension dotnet.System.Linq.IQueryable_1 {
-    public func ExceptBy<UTKey : SGBridgeGenericValue>(source2 : dotnet.System.Collections.Generic.IEnumerable_1<UTKey>, keySelector : dotnet.System.Linq.Expressions.Expression_1<dotnet.System.Func_2<T,UTKey>>, comparer : dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>) throws -> dotnet.System.Linq.IQueryable_1<T> {
+    public func ExceptBy<UTKey : SGBridgeGenericValue>(source2 : dotnet.System.Collections.Generic.IEnumerable_1<UTKey>, keySelector : dotnet.System.Linq.Expressions.Expression_1<dotnet.System.Func_2<T,UTKey>>, comparer : Optional<dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>>) throws -> dotnet.System.Linq.IQueryable_1<T> {
         return try dotnet.System.Linq.Queryable.ExceptBy(source1: self, source2: source2, keySelector: keySelector, comparer: comparer);
     }
 }
@@ -2743,7 +3006,7 @@ extension dotnet.System.Linq.IQueryable_1 {
 
 // EXTENSION METHOD System.Linq.IQueryable<TSource> Except<TSource>(System.Linq.IQueryable<TSource>, System.Collections.Generic.IEnumerable<TSource>, System.Collections.Generic.IEqualityComparer<TSource>)
 extension dotnet.System.Linq.IQueryable_1 {
-    public func Except(source2 : dotnet.System.Collections.Generic.IEnumerable_1<T>, comparer : dotnet.System.Collections.Generic.IEqualityComparer_1<T>) throws -> dotnet.System.Linq.IQueryable_1<T> {
+    public func Except(source2 : dotnet.System.Collections.Generic.IEnumerable_1<T>, comparer : Optional<dotnet.System.Collections.Generic.IEqualityComparer_1<T>>) throws -> dotnet.System.Linq.IQueryable_1<T> {
         return try dotnet.System.Linq.Queryable.Except(source1: self, source2: source2, comparer: comparer);
     }
 }
@@ -2799,7 +3062,7 @@ extension dotnet.System.Linq.IQueryable_1 {
 
 // EXTENSION METHOD System.Linq.IQueryable<System.Linq.IGrouping<TKey,TSource>> GroupBy<TSource, TKey>(System.Linq.IQueryable<TSource>, System.Linq.Expressions.Expression<System.Func<TSource,TKey>>, System.Collections.Generic.IEqualityComparer<TKey>)
 extension dotnet.System.Linq.IQueryable_1 {
-    public func GroupBy<UTKey : SGBridgeGenericValue>(keySelector : dotnet.System.Linq.Expressions.Expression_1<dotnet.System.Func_2<T,UTKey>>, comparer : dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>) throws -> dotnet.System.Linq.IQueryable_1<dotnet.System.Linq.IGrouping_2<UTKey,T>> {
+    public func GroupBy<UTKey : SGBridgeGenericValue>(keySelector : dotnet.System.Linq.Expressions.Expression_1<dotnet.System.Func_2<T,UTKey>>, comparer : Optional<dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>>) throws -> dotnet.System.Linq.IQueryable_1<dotnet.System.Linq.IGrouping_2<UTKey,T>> {
         return try dotnet.System.Linq.Queryable.GroupBy(source: self, keySelector: keySelector, comparer: comparer);
     }
 }
@@ -2813,7 +3076,7 @@ extension dotnet.System.Linq.IQueryable_1 {
 
 // EXTENSION METHOD System.Linq.IQueryable<System.Linq.IGrouping<TKey,TElement>> GroupBy<TSource, TKey, TElement>(System.Linq.IQueryable<TSource>, System.Linq.Expressions.Expression<System.Func<TSource,TKey>>, System.Linq.Expressions.Expression<System.Func<TSource,TElement>>, System.Collections.Generic.IEqualityComparer<TKey>)
 extension dotnet.System.Linq.IQueryable_1 {
-    public func GroupBy<UTKey : SGBridgeGenericValue,UTElement : SGBridgeGenericValue>(keySelector : dotnet.System.Linq.Expressions.Expression_1<dotnet.System.Func_2<T,UTKey>>, elementSelector : dotnet.System.Linq.Expressions.Expression_1<dotnet.System.Func_2<T,UTElement>>, comparer : dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>) throws -> dotnet.System.Linq.IQueryable_1<dotnet.System.Linq.IGrouping_2<UTKey,UTElement>> {
+    public func GroupBy<UTKey : SGBridgeGenericValue,UTElement : SGBridgeGenericValue>(keySelector : dotnet.System.Linq.Expressions.Expression_1<dotnet.System.Func_2<T,UTKey>>, elementSelector : dotnet.System.Linq.Expressions.Expression_1<dotnet.System.Func_2<T,UTElement>>, comparer : Optional<dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>>) throws -> dotnet.System.Linq.IQueryable_1<dotnet.System.Linq.IGrouping_2<UTKey,UTElement>> {
         return try dotnet.System.Linq.Queryable.GroupBy(source: self, keySelector: keySelector, elementSelector: elementSelector, comparer: comparer);
     }
 }
@@ -2827,7 +3090,7 @@ extension dotnet.System.Linq.IQueryable_1 {
 
 // EXTENSION METHOD System.Linq.IQueryable<TResult> GroupBy<TSource, TKey, TResult>(System.Linq.IQueryable<TSource>, System.Linq.Expressions.Expression<System.Func<TSource,TKey>>, System.Linq.Expressions.Expression<System.Func<TKey,System.Collections.Generic.IEnumerable<TSource>,TResult>>, System.Collections.Generic.IEqualityComparer<TKey>)
 extension dotnet.System.Linq.IQueryable_1 {
-    public func GroupBy<UTKey : SGBridgeGenericValue,UTResult : SGBridgeGenericValue>(keySelector : dotnet.System.Linq.Expressions.Expression_1<dotnet.System.Func_2<T,UTKey>>, resultSelector : dotnet.System.Linq.Expressions.Expression_1<dotnet.System.Func_3<UTKey,dotnet.System.Collections.Generic.IEnumerable_1<T>,UTResult>>, comparer : dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>) throws -> dotnet.System.Linq.IQueryable_1<UTResult> {
+    public func GroupBy<UTKey : SGBridgeGenericValue,UTResult : SGBridgeGenericValue>(keySelector : dotnet.System.Linq.Expressions.Expression_1<dotnet.System.Func_2<T,UTKey>>, resultSelector : dotnet.System.Linq.Expressions.Expression_1<dotnet.System.Func_3<UTKey,dotnet.System.Collections.Generic.IEnumerable_1<T>,UTResult>>, comparer : Optional<dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>>) throws -> dotnet.System.Linq.IQueryable_1<UTResult> {
         return try dotnet.System.Linq.Queryable.GroupBy(source: self, keySelector: keySelector, resultSelector: resultSelector, comparer: comparer);
     }
 }
@@ -2841,7 +3104,7 @@ extension dotnet.System.Linq.IQueryable_1 {
 
 // EXTENSION METHOD System.Linq.IQueryable<TResult> GroupBy<TSource, TKey, TElement, TResult>(System.Linq.IQueryable<TSource>, System.Linq.Expressions.Expression<System.Func<TSource,TKey>>, System.Linq.Expressions.Expression<System.Func<TSource,TElement>>, System.Linq.Expressions.Expression<System.Func<TKey,System.Collections.Generic.IEnumerable<TElement>,TResult>>, System.Collections.Generic.IEqualityComparer<TKey>)
 extension dotnet.System.Linq.IQueryable_1 {
-    public func GroupBy<UTKey : SGBridgeGenericValue,UTElement : SGBridgeGenericValue,UTResult : SGBridgeGenericValue>(keySelector : dotnet.System.Linq.Expressions.Expression_1<dotnet.System.Func_2<T,UTKey>>, elementSelector : dotnet.System.Linq.Expressions.Expression_1<dotnet.System.Func_2<T,UTElement>>, resultSelector : dotnet.System.Linq.Expressions.Expression_1<dotnet.System.Func_3<UTKey,dotnet.System.Collections.Generic.IEnumerable_1<UTElement>,UTResult>>, comparer : dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>) throws -> dotnet.System.Linq.IQueryable_1<UTResult> {
+    public func GroupBy<UTKey : SGBridgeGenericValue,UTElement : SGBridgeGenericValue,UTResult : SGBridgeGenericValue>(keySelector : dotnet.System.Linq.Expressions.Expression_1<dotnet.System.Func_2<T,UTKey>>, elementSelector : dotnet.System.Linq.Expressions.Expression_1<dotnet.System.Func_2<T,UTElement>>, resultSelector : dotnet.System.Linq.Expressions.Expression_1<dotnet.System.Func_3<UTKey,dotnet.System.Collections.Generic.IEnumerable_1<UTElement>,UTResult>>, comparer : Optional<dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>>) throws -> dotnet.System.Linq.IQueryable_1<UTResult> {
         return try dotnet.System.Linq.Queryable.GroupBy(source: self, keySelector: keySelector, elementSelector: elementSelector, resultSelector: resultSelector, comparer: comparer);
     }
 }
@@ -2855,7 +3118,7 @@ extension dotnet.System.Linq.IQueryable_1 {
 
 // EXTENSION METHOD System.Linq.IQueryable<TResult> GroupJoin<TOuter, TInner, TKey, TResult>(System.Linq.IQueryable<TOuter>, System.Collections.Generic.IEnumerable<TInner>, System.Linq.Expressions.Expression<System.Func<TOuter,TKey>>, System.Linq.Expressions.Expression<System.Func<TInner,TKey>>, System.Linq.Expressions.Expression<System.Func<TOuter,System.Collections.Generic.IEnumerable<TInner>,TResult>>, System.Collections.Generic.IEqualityComparer<TKey>)
 extension dotnet.System.Linq.IQueryable_1 {
-    public func GroupJoin<UTInner : SGBridgeGenericValue,UTKey : SGBridgeGenericValue,UTResult : SGBridgeGenericValue>(inner : dotnet.System.Collections.Generic.IEnumerable_1<UTInner>, outerKeySelector : dotnet.System.Linq.Expressions.Expression_1<dotnet.System.Func_2<T,UTKey>>, innerKeySelector : dotnet.System.Linq.Expressions.Expression_1<dotnet.System.Func_2<UTInner,UTKey>>, resultSelector : dotnet.System.Linq.Expressions.Expression_1<dotnet.System.Func_3<T,dotnet.System.Collections.Generic.IEnumerable_1<UTInner>,UTResult>>, comparer : dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>) throws -> dotnet.System.Linq.IQueryable_1<UTResult> {
+    public func GroupJoin<UTInner : SGBridgeGenericValue,UTKey : SGBridgeGenericValue,UTResult : SGBridgeGenericValue>(inner : dotnet.System.Collections.Generic.IEnumerable_1<UTInner>, outerKeySelector : dotnet.System.Linq.Expressions.Expression_1<dotnet.System.Func_2<T,UTKey>>, innerKeySelector : dotnet.System.Linq.Expressions.Expression_1<dotnet.System.Func_2<UTInner,UTKey>>, resultSelector : dotnet.System.Linq.Expressions.Expression_1<dotnet.System.Func_3<T,dotnet.System.Collections.Generic.IEnumerable_1<UTInner>,UTResult>>, comparer : Optional<dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>>) throws -> dotnet.System.Linq.IQueryable_1<UTResult> {
         return try dotnet.System.Linq.Queryable.GroupJoin(outer: self, inner: inner, outerKeySelector: outerKeySelector, innerKeySelector: innerKeySelector, resultSelector: resultSelector, comparer: comparer);
     }
 }
@@ -2869,7 +3132,7 @@ extension dotnet.System.Linq.IQueryable_1 {
 
 // EXTENSION METHOD System.Linq.IQueryable<TSource> IntersectBy<TSource, TKey>(System.Linq.IQueryable<TSource>, System.Collections.Generic.IEnumerable<TKey>, System.Linq.Expressions.Expression<System.Func<TSource,TKey>>, System.Collections.Generic.IEqualityComparer<TKey>)
 extension dotnet.System.Linq.IQueryable_1 {
-    public func IntersectBy<UTKey : SGBridgeGenericValue>(source2 : dotnet.System.Collections.Generic.IEnumerable_1<UTKey>, keySelector : dotnet.System.Linq.Expressions.Expression_1<dotnet.System.Func_2<T,UTKey>>, comparer : dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>) throws -> dotnet.System.Linq.IQueryable_1<T> {
+    public func IntersectBy<UTKey : SGBridgeGenericValue>(source2 : dotnet.System.Collections.Generic.IEnumerable_1<UTKey>, keySelector : dotnet.System.Linq.Expressions.Expression_1<dotnet.System.Func_2<T,UTKey>>, comparer : Optional<dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>>) throws -> dotnet.System.Linq.IQueryable_1<T> {
         return try dotnet.System.Linq.Queryable.IntersectBy(source1: self, source2: source2, keySelector: keySelector, comparer: comparer);
     }
 }
@@ -2883,7 +3146,7 @@ extension dotnet.System.Linq.IQueryable_1 {
 
 // EXTENSION METHOD System.Linq.IQueryable<TSource> Intersect<TSource>(System.Linq.IQueryable<TSource>, System.Collections.Generic.IEnumerable<TSource>, System.Collections.Generic.IEqualityComparer<TSource>)
 extension dotnet.System.Linq.IQueryable_1 {
-    public func Intersect(source2 : dotnet.System.Collections.Generic.IEnumerable_1<T>, comparer : dotnet.System.Collections.Generic.IEqualityComparer_1<T>) throws -> dotnet.System.Linq.IQueryable_1<T> {
+    public func Intersect(source2 : dotnet.System.Collections.Generic.IEnumerable_1<T>, comparer : Optional<dotnet.System.Collections.Generic.IEqualityComparer_1<T>>) throws -> dotnet.System.Linq.IQueryable_1<T> {
         return try dotnet.System.Linq.Queryable.Intersect(source1: self, source2: source2, comparer: comparer);
     }
 }
@@ -2897,7 +3160,7 @@ extension dotnet.System.Linq.IQueryable_1 {
 
 // EXTENSION METHOD System.Linq.IQueryable<TResult> Join<TOuter, TInner, TKey, TResult>(System.Linq.IQueryable<TOuter>, System.Collections.Generic.IEnumerable<TInner>, System.Linq.Expressions.Expression<System.Func<TOuter,TKey>>, System.Linq.Expressions.Expression<System.Func<TInner,TKey>>, System.Linq.Expressions.Expression<System.Func<TOuter,TInner,TResult>>, System.Collections.Generic.IEqualityComparer<TKey>)
 extension dotnet.System.Linq.IQueryable_1 {
-    public func Join<UTInner : SGBridgeGenericValue,UTKey : SGBridgeGenericValue,UTResult : SGBridgeGenericValue>(inner : dotnet.System.Collections.Generic.IEnumerable_1<UTInner>, outerKeySelector : dotnet.System.Linq.Expressions.Expression_1<dotnet.System.Func_2<T,UTKey>>, innerKeySelector : dotnet.System.Linq.Expressions.Expression_1<dotnet.System.Func_2<UTInner,UTKey>>, resultSelector : dotnet.System.Linq.Expressions.Expression_1<dotnet.System.Func_3<T,UTInner,UTResult>>, comparer : dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>) throws -> dotnet.System.Linq.IQueryable_1<UTResult> {
+    public func Join<UTInner : SGBridgeGenericValue,UTKey : SGBridgeGenericValue,UTResult : SGBridgeGenericValue>(inner : dotnet.System.Collections.Generic.IEnumerable_1<UTInner>, outerKeySelector : dotnet.System.Linq.Expressions.Expression_1<dotnet.System.Func_2<T,UTKey>>, innerKeySelector : dotnet.System.Linq.Expressions.Expression_1<dotnet.System.Func_2<UTInner,UTKey>>, resultSelector : dotnet.System.Linq.Expressions.Expression_1<dotnet.System.Func_3<T,UTInner,UTResult>>, comparer : Optional<dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>>) throws -> dotnet.System.Linq.IQueryable_1<UTResult> {
         return try dotnet.System.Linq.Queryable.Join(outer: self, inner: inner, outerKeySelector: outerKeySelector, innerKeySelector: innerKeySelector, resultSelector: resultSelector, comparer: comparer);
     }
 }
@@ -2967,7 +3230,7 @@ extension dotnet.System.Linq.IQueryable_1 {
 
 // EXTENSION METHOD TSource MaxBy<TSource, TKey>(System.Linq.IQueryable<TSource>, System.Linq.Expressions.Expression<System.Func<TSource,TKey>>, System.Collections.Generic.IComparer<TSource>)
 extension dotnet.System.Linq.IQueryable_1 {
-    public func MaxBy<UTKey : SGBridgeGenericValue>(keySelector : dotnet.System.Linq.Expressions.Expression_1<dotnet.System.Func_2<T,UTKey>>, comparer : dotnet.System.Collections.Generic.IComparer_1<T>) throws -> T {
+    public func MaxBy<UTKey : SGBridgeGenericValue>(keySelector : dotnet.System.Linq.Expressions.Expression_1<dotnet.System.Func_2<T,UTKey>>, comparer : Optional<dotnet.System.Collections.Generic.IComparer_1<T>>) throws -> T {
         return try dotnet.System.Linq.Queryable.MaxBy(source: self, keySelector: keySelector, comparer: comparer);
     }
 }
@@ -2981,7 +3244,7 @@ extension dotnet.System.Linq.IQueryable_1 {
 
 // EXTENSION METHOD TSource Max<TSource>(System.Linq.IQueryable<TSource>, System.Collections.Generic.IComparer<TSource>)
 extension dotnet.System.Linq.IQueryable_1 {
-    public func Max(comparer : dotnet.System.Collections.Generic.IComparer_1<T>) throws -> T {
+    public func Max(comparer : Optional<dotnet.System.Collections.Generic.IComparer_1<T>>) throws -> T {
         return try dotnet.System.Linq.Queryable.Max(source: self, comparer: comparer);
     }
 }
@@ -3002,7 +3265,7 @@ extension dotnet.System.Linq.IQueryable_1 {
 
 // EXTENSION METHOD TSource MinBy<TSource, TKey>(System.Linq.IQueryable<TSource>, System.Linq.Expressions.Expression<System.Func<TSource,TKey>>, System.Collections.Generic.IComparer<TSource>)
 extension dotnet.System.Linq.IQueryable_1 {
-    public func MinBy<UTKey : SGBridgeGenericValue>(keySelector : dotnet.System.Linq.Expressions.Expression_1<dotnet.System.Func_2<T,UTKey>>, comparer : dotnet.System.Collections.Generic.IComparer_1<T>) throws -> T {
+    public func MinBy<UTKey : SGBridgeGenericValue>(keySelector : dotnet.System.Linq.Expressions.Expression_1<dotnet.System.Func_2<T,UTKey>>, comparer : Optional<dotnet.System.Collections.Generic.IComparer_1<T>>) throws -> T {
         return try dotnet.System.Linq.Queryable.MinBy(source: self, keySelector: keySelector, comparer: comparer);
     }
 }
@@ -3016,7 +3279,7 @@ extension dotnet.System.Linq.IQueryable_1 {
 
 // EXTENSION METHOD TSource Min<TSource>(System.Linq.IQueryable<TSource>, System.Collections.Generic.IComparer<TSource>)
 extension dotnet.System.Linq.IQueryable_1 {
-    public func Min(comparer : dotnet.System.Collections.Generic.IComparer_1<T>) throws -> T {
+    public func Min(comparer : Optional<dotnet.System.Collections.Generic.IComparer_1<T>>) throws -> T {
         return try dotnet.System.Linq.Queryable.Min(source: self, comparer: comparer);
     }
 }
@@ -3040,7 +3303,7 @@ extension dotnet.System.Linq.IQueryable_1 {
 
 // EXTENSION METHOD System.Linq.IOrderedQueryable<TSource> OrderByDescending<TSource, TKey>(System.Linq.IQueryable<TSource>, System.Linq.Expressions.Expression<System.Func<TSource,TKey>>, System.Collections.Generic.IComparer<TKey>)
 extension dotnet.System.Linq.IQueryable_1 {
-    public func OrderByDescending<UTKey : SGBridgeGenericValue>(keySelector : dotnet.System.Linq.Expressions.Expression_1<dotnet.System.Func_2<T,UTKey>>, comparer : dotnet.System.Collections.Generic.IComparer_1<UTKey>) throws -> dotnet.System.Linq.IOrderedQueryable_1<T> {
+    public func OrderByDescending<UTKey : SGBridgeGenericValue>(keySelector : dotnet.System.Linq.Expressions.Expression_1<dotnet.System.Func_2<T,UTKey>>, comparer : Optional<dotnet.System.Collections.Generic.IComparer_1<UTKey>>) throws -> dotnet.System.Linq.IOrderedQueryable_1<T> {
         return try dotnet.System.Linq.Queryable.OrderByDescending(source: self, keySelector: keySelector, comparer: comparer);
     }
 }
@@ -3054,7 +3317,7 @@ extension dotnet.System.Linq.IQueryable_1 {
 
 // EXTENSION METHOD System.Linq.IOrderedQueryable<TSource> OrderBy<TSource, TKey>(System.Linq.IQueryable<TSource>, System.Linq.Expressions.Expression<System.Func<TSource,TKey>>, System.Collections.Generic.IComparer<TKey>)
 extension dotnet.System.Linq.IQueryable_1 {
-    public func OrderBy<UTKey : SGBridgeGenericValue>(keySelector : dotnet.System.Linq.Expressions.Expression_1<dotnet.System.Func_2<T,UTKey>>, comparer : dotnet.System.Collections.Generic.IComparer_1<UTKey>) throws -> dotnet.System.Linq.IOrderedQueryable_1<T> {
+    public func OrderBy<UTKey : SGBridgeGenericValue>(keySelector : dotnet.System.Linq.Expressions.Expression_1<dotnet.System.Func_2<T,UTKey>>, comparer : Optional<dotnet.System.Collections.Generic.IComparer_1<UTKey>>) throws -> dotnet.System.Linq.IOrderedQueryable_1<T> {
         return try dotnet.System.Linq.Queryable.OrderBy(source: self, keySelector: keySelector, comparer: comparer);
     }
 }
@@ -3124,7 +3387,7 @@ extension dotnet.System.Linq.IQueryable_1 {
 
 // EXTENSION METHOD bool SequenceEqual<TSource>(System.Linq.IQueryable<TSource>, System.Collections.Generic.IEnumerable<TSource>, System.Collections.Generic.IEqualityComparer<TSource>)
 extension dotnet.System.Linq.IQueryable_1 {
-    public func SequenceEqual(source2 : dotnet.System.Collections.Generic.IEnumerable_1<T>, comparer : dotnet.System.Collections.Generic.IEqualityComparer_1<T>) throws -> Bool {
+    public func SequenceEqual(source2 : dotnet.System.Collections.Generic.IEnumerable_1<T>, comparer : Optional<dotnet.System.Collections.Generic.IEqualityComparer_1<T>>) throws -> Bool {
         return try dotnet.System.Linq.Queryable.SequenceEqual(source1: self, source2: source2, comparer: comparer);
     }
 }
@@ -3227,6 +3490,11 @@ extension dotnet.System.Linq.IQueryable_1 {
     }
 }
 
+// TODO COPE (parm closedgeneric of nullable): System.Nullable<System.Decimal> Sum(System.Linq.IQueryable<System.Nullable<System.Decimal>>)
+// TODO COPE (parm closedgeneric of nullable): System.Nullable<System.Double> Sum(System.Linq.IQueryable<System.Nullable<System.Double>>)
+// TODO COPE (parm closedgeneric of nullable): System.Nullable<System.Int32> Sum(System.Linq.IQueryable<System.Nullable<System.Int32>>)
+// TODO COPE (parm closedgeneric of nullable): System.Nullable<System.Int64> Sum(System.Linq.IQueryable<System.Nullable<System.Int64>>)
+// TODO COPE (parm closedgeneric of nullable): System.Nullable<System.Single> Sum(System.Linq.IQueryable<System.Nullable<System.Single>>)
 // EXTENSION METHOD System.Single Sum(System.Linq.IQueryable<System.Single>)
 extension dotnet.System.Linq.IQueryable_1 {
     public func Sum() throws -> Swift.Float where T == Swift.Float {
@@ -3262,6 +3530,11 @@ extension dotnet.System.Linq.IQueryable_1 {
     }
 }
 
+// TODO COPE (parm closedgeneric of nullable): System.Nullable<System.Decimal> Sum<TSource>(System.Linq.IQueryable<TSource>, System.Linq.Expressions.Expression<System.Func<TSource,System.Nullable<System.Decimal>>>)
+// TODO COPE (parm closedgeneric of nullable): System.Nullable<System.Double> Sum<TSource>(System.Linq.IQueryable<TSource>, System.Linq.Expressions.Expression<System.Func<TSource,System.Nullable<System.Double>>>)
+// TODO COPE (parm closedgeneric of nullable): System.Nullable<System.Int32> Sum<TSource>(System.Linq.IQueryable<TSource>, System.Linq.Expressions.Expression<System.Func<TSource,System.Nullable<System.Int32>>>)
+// TODO COPE (parm closedgeneric of nullable): System.Nullable<System.Int64> Sum<TSource>(System.Linq.IQueryable<TSource>, System.Linq.Expressions.Expression<System.Func<TSource,System.Nullable<System.Int64>>>)
+// TODO COPE (parm closedgeneric of nullable): System.Nullable<System.Single> Sum<TSource>(System.Linq.IQueryable<TSource>, System.Linq.Expressions.Expression<System.Func<TSource,System.Nullable<System.Single>>>)
 // EXTENSION METHOD System.Single Sum<TSource>(System.Linq.IQueryable<TSource>, System.Linq.Expressions.Expression<System.Func<TSource,System.Single>>)
 extension dotnet.System.Linq.IQueryable_1 {
     public func Sum(selector : dotnet.System.Linq.Expressions.Expression_1<dotnet.System.Func_2<T,Swift.Float>>) throws -> Swift.Float {
@@ -3313,7 +3586,7 @@ extension dotnet.System.Linq.IOrderedQueryable_1 {
 
 // EXTENSION METHOD System.Linq.IOrderedQueryable<TSource> ThenByDescending<TSource, TKey>(System.Linq.IOrderedQueryable<TSource>, System.Linq.Expressions.Expression<System.Func<TSource,TKey>>, System.Collections.Generic.IComparer<TKey>)
 extension dotnet.System.Linq.IOrderedQueryable_1 {
-    public func ThenByDescending<UTKey : SGBridgeGenericValue>(keySelector : dotnet.System.Linq.Expressions.Expression_1<dotnet.System.Func_2<T,UTKey>>, comparer : dotnet.System.Collections.Generic.IComparer_1<UTKey>) throws -> dotnet.System.Linq.IOrderedQueryable_1<T> {
+    public func ThenByDescending<UTKey : SGBridgeGenericValue>(keySelector : dotnet.System.Linq.Expressions.Expression_1<dotnet.System.Func_2<T,UTKey>>, comparer : Optional<dotnet.System.Collections.Generic.IComparer_1<UTKey>>) throws -> dotnet.System.Linq.IOrderedQueryable_1<T> {
         return try dotnet.System.Linq.Queryable.ThenByDescending(source: self, keySelector: keySelector, comparer: comparer);
     }
 }
@@ -3327,7 +3600,7 @@ extension dotnet.System.Linq.IOrderedQueryable_1 {
 
 // EXTENSION METHOD System.Linq.IOrderedQueryable<TSource> ThenBy<TSource, TKey>(System.Linq.IOrderedQueryable<TSource>, System.Linq.Expressions.Expression<System.Func<TSource,TKey>>, System.Collections.Generic.IComparer<TKey>)
 extension dotnet.System.Linq.IOrderedQueryable_1 {
-    public func ThenBy<UTKey : SGBridgeGenericValue>(keySelector : dotnet.System.Linq.Expressions.Expression_1<dotnet.System.Func_2<T,UTKey>>, comparer : dotnet.System.Collections.Generic.IComparer_1<UTKey>) throws -> dotnet.System.Linq.IOrderedQueryable_1<T> {
+    public func ThenBy<UTKey : SGBridgeGenericValue>(keySelector : dotnet.System.Linq.Expressions.Expression_1<dotnet.System.Func_2<T,UTKey>>, comparer : Optional<dotnet.System.Collections.Generic.IComparer_1<UTKey>>) throws -> dotnet.System.Linq.IOrderedQueryable_1<T> {
         return try dotnet.System.Linq.Queryable.ThenBy(source: self, keySelector: keySelector, comparer: comparer);
     }
 }
@@ -3341,7 +3614,7 @@ extension dotnet.System.Linq.IQueryable_1 {
 
 // EXTENSION METHOD System.Linq.IQueryable<TSource> UnionBy<TSource, TKey>(System.Linq.IQueryable<TSource>, System.Collections.Generic.IEnumerable<TSource>, System.Linq.Expressions.Expression<System.Func<TSource,TKey>>, System.Collections.Generic.IEqualityComparer<TKey>)
 extension dotnet.System.Linq.IQueryable_1 {
-    public func UnionBy<UTKey : SGBridgeGenericValue>(source2 : dotnet.System.Collections.Generic.IEnumerable_1<T>, keySelector : dotnet.System.Linq.Expressions.Expression_1<dotnet.System.Func_2<T,UTKey>>, comparer : dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>) throws -> dotnet.System.Linq.IQueryable_1<T> {
+    public func UnionBy<UTKey : SGBridgeGenericValue>(source2 : dotnet.System.Collections.Generic.IEnumerable_1<T>, keySelector : dotnet.System.Linq.Expressions.Expression_1<dotnet.System.Func_2<T,UTKey>>, comparer : Optional<dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>>) throws -> dotnet.System.Linq.IQueryable_1<T> {
         return try dotnet.System.Linq.Queryable.UnionBy(source1: self, source2: source2, keySelector: keySelector, comparer: comparer);
     }
 }
@@ -3355,7 +3628,7 @@ extension dotnet.System.Linq.IQueryable_1 {
 
 // EXTENSION METHOD System.Linq.IQueryable<TSource> Union<TSource>(System.Linq.IQueryable<TSource>, System.Collections.Generic.IEnumerable<TSource>, System.Collections.Generic.IEqualityComparer<TSource>)
 extension dotnet.System.Linq.IQueryable_1 {
-    public func Union(source2 : dotnet.System.Collections.Generic.IEnumerable_1<T>, comparer : dotnet.System.Collections.Generic.IEqualityComparer_1<T>) throws -> dotnet.System.Linq.IQueryable_1<T> {
+    public func Union(source2 : dotnet.System.Collections.Generic.IEnumerable_1<T>, comparer : Optional<dotnet.System.Collections.Generic.IEqualityComparer_1<T>>) throws -> dotnet.System.Linq.IQueryable_1<T> {
         return try dotnet.System.Linq.Queryable.Union(source1: self, source2: source2, comparer: comparer);
     }
 }

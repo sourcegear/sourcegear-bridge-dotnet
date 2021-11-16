@@ -11,7 +11,7 @@ struct {
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_Net_BindIPEndPoint_IPEndPoint__Invoke_0__3__ServicePoint_IPEndPoint_i32)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NONNULL servicePoint, SG_HNDL_NONNULL remoteEndPoint, int32_t retryCount);
     SG_HNDL_NULLABLE (* _Nonnull  _fp_System_Net_BindIPEndPoint_IAsyncResult__BeginInvoke_0__5__ServicePoint_IPEndPoint_i32_AsyncCallback_Object)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NONNULL servicePoint, SG_HNDL_NONNULL remoteEndPoint, int32_t retryCount, SG_HNDL_NULLABLE callback, SG_HNDL_NULLABLE object_);
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_Net_BindIPEndPoint_IPEndPoint__EndInvoke_0__1__IAsyncResult)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE result);
-    SG_HNDL_NONNULL (* _Nonnull  _fp_System_Net_BindIPEndPoint_create)(SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nullable __pdata, void (* _Nullable __deinit)(const void* _Nullable __pdata), SG_HNDL_NONNULL (* _Nonnull  __cb)(const void* _Nullable __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL servicePoint, SG_HNDL_NONNULL remoteEndPoint, int32_t retryCount));
+    SG_HNDL_NONNULL (* _Nonnull  _fp_System_Net_BindIPEndPoint_create)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL (* _Nonnull  __cb)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL servicePoint, SG_HNDL_NONNULL remoteEndPoint, int32_t retryCount), const void* _Nonnull __pdata, void (* _Nullable __deinit)(const void* _Nonnull __pdata));
     TYP (* _Nonnull  _fp_System_Net_SecurityProtocolType_get_type_handle)(void);
     int32_t (* _Nonnull  _fp_System_Net_SecurityProtocolType_get_SystemDefault)(void);
     int32_t (* _Nonnull  _fp_System_Net_SecurityProtocolType_get_Ssl3)(void);
@@ -114,11 +114,11 @@ SG_HNDL_NONNULL System_Net_BindIPEndPoint_IPEndPoint__EndInvoke_0__1__IAsyncResu
     return ret;
 }
 
-SG_HNDL_NONNULL System_Net_BindIPEndPoint_create(SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nullable __pdata, void (* _Nullable __deinit)(const void* _Nullable __pdata), SG_HNDL_NONNULL (* _Nonnull  __cb)(const void* _Nullable __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL servicePoint, SG_HNDL_NONNULL remoteEndPoint, int32_t retryCount)) {
+SG_HNDL_NONNULL System_Net_BindIPEndPoint_create(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL (* _Nonnull  __cb)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL servicePoint, SG_HNDL_NONNULL remoteEndPoint, int32_t retryCount), const void* _Nonnull __pdata, void (* _Nullable __deinit)(const void* _Nonnull __pdata)) {
     if (!_g_System_Net_ServicePoint._fp_System_Net_BindIPEndPoint_create) {
         my_init();
     }
-    SG_HNDL_NONNULL ret = _g_System_Net_ServicePoint._fp_System_Net_BindIPEndPoint_create(__thrown, __pdata, __deinit, __cb);
+    SG_HNDL_NONNULL ret = _g_System_Net_ServicePoint._fp_System_Net_BindIPEndPoint_create(__thrown, __cb, __pdata, __deinit);
     return ret;
 }
 

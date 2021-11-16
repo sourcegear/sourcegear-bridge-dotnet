@@ -18,6 +18,9 @@ open class Activity
     open class override func get_type_handle() -> TypeHandle {
         return System_Diagnostics_Activity_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor(System.String)
@@ -137,6 +140,20 @@ open class Activity
     }
     // System.Diagnostics.Activity SetBaggage(System.String, System.String)
 // docid: M:System.Diagnostics.Activity.SetBaggage(System.String,System.String)
+    /**
+    Add or update the Activity baggage with the input key and value.
+            If the input value is  - if the collection has any baggage with the same key, then this baggage will get removed from the collection.
+                - otherwise, nothing will happen and the collection will not change.
+            If the input value is not  - if the collection has any baggage with the same key, then the value mapped to this key will get updated with the new input value.
+                - otherwise, the key and value will get added as a new baggage to the collection.
+            Baggage item will be updated/removed only if it was originaly added to the current activity. Items inherited from the parents will not be changed/removed, new item would be added to current activity baggage instead.
+
+    - Parameter key: The baggage key name
+    - Parameter value: The baggage value mapped to the input key
+    - Returns: 
+         for convenient chaining.
+
+    */
     open func SetBaggage(key : dotnet.System.String, value : Optional<dotnet.System.String>) throws -> dotnet.System.Diagnostics.Activity {
         var __thrown : NullableHandle = nil;
         let __return = System_Diagnostics_Activity_Activity__SetBaggage_0__2__String_String(&__thrown, self.get_handle(), key.get_handle(), value?.get_handle() ?? nil);
@@ -170,6 +187,14 @@ open class Activity
     }
     // System.Object GetTagItem(System.String)
 // docid: M:System.Diagnostics.Activity.GetTagItem(System.String)
+    /**
+    Returns the value of the Activity tag mapped to the input key/>.
+            Returns  if that key does not exist.
+
+    - Parameter key: The tag key string.
+    - Returns: The tag value mapped to the input key.
+
+    */
     open func GetTagItem(key : dotnet.System.String) throws -> Optional<dotnet.System.Object> {
         var __thrown : NullableHandle = nil;
         let __return = System_Diagnostics_Activity_Object__GetTagItem_0__1__String(&__thrown, self.get_handle(), key.get_handle());
@@ -221,7 +246,27 @@ open class Activity
         return dotnet.System.Diagnostics.Activity(hndl : __return);
         }
     }
-// TODO COPE (write_all_methods) (span) System.Diagnostics.Activity SetParentId(System.Diagnostics.ActivityTraceId, System.Diagnostics.ActivitySpanId, System.Diagnostics.ActivityTraceFlags)
+    // System.Diagnostics.Activity SetParentId(System.Diagnostics.ActivityTraceId, System.Diagnostics.ActivitySpanId, System.Diagnostics.ActivityTraceFlags)
+// docid: M:System.Diagnostics.Activity.SetParentId(System.Diagnostics.ActivityTraceId,System.Diagnostics.ActivitySpanId,System.Diagnostics.ActivityTraceFlags)
+    /**
+    Sets the parent ID using the W3C convention of a TraceId and a SpanId.
+
+    - Parameter traceId: The parent activity's TraceId.
+    - Parameter spanId: The parent activity's SpanId.
+    - Parameter activityTraceFlags: One of the enumeration values that specifies flags defined by the W3C standard that are associated with an activity.
+    - Returns: 
+         for convenient chaining.
+
+    */
+    open func SetParentId(traceId : dotnet.System.Diagnostics.ActivityTraceId, spanId : dotnet.System.Diagnostics.ActivitySpanId, activityTraceFlags : dotnet.System.Diagnostics.ActivityTraceFlags/* TODO default enum */) throws -> dotnet.System.Diagnostics.Activity {
+        var __thrown : NullableHandle = nil;
+        let __return = System_Diagnostics_Activity_Activity__SetParentId_0__3__ActivityTraceId_ActivitySpanId_ActivityTraceFlags(&__thrown, self.get_handle(), traceId.get_handle(), spanId.get_handle(), activityTraceFlags.get_value());
+        if let __ex =  __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+        return dotnet.System.Diagnostics.Activity(hndl : __return);
+        }
+    }
     // System.Diagnostics.Activity SetParentId(System.String)
 // docid: M:System.Diagnostics.Activity.SetParentId(System.String)
     /**
@@ -262,6 +307,15 @@ open class Activity
     }
     // System.Diagnostics.Activity SetStatus(System.Diagnostics.ActivityStatusCode, System.String)
 // docid: M:System.Diagnostics.Activity.SetStatus(System.Diagnostics.ActivityStatusCode,System.String)
+    /**
+    Sets the status code and description on the current activity object.
+
+    - Parameter code: The status code
+    - Parameter description: The error status description
+    - Returns: 
+         for convenient chaining.
+
+    */
     open func SetStatus(code : dotnet.System.Diagnostics.ActivityStatusCode, description : Optional<dotnet.System.String> = nil) throws -> dotnet.System.Diagnostics.Activity {
         var __thrown : NullableHandle = nil;
         let __return = System_Diagnostics_Activity_Activity__SetStatus_0__2__ActivityStatusCode_String(&__thrown, self.get_handle(), code.get_value(), description?.get_handle() ?? nil);
@@ -814,7 +868,7 @@ open class Activity
         }
     }
     /**
-    Gets the flags (defined by the W3C ID specification) associated with the activity.
+    Gets or sets the flags (defined by the W3C ID specification) associated with the activity.
 
     */
     open var ActivityTraceFlags : dotnet.System.Diagnostics.ActivityTraceFlags {
@@ -844,7 +898,7 @@ open class Activity
         }
     }
     /**
-    Gets or sets the current operation () for the current thread.  This flows across async calls.
+    Gets or sets the current operation () for the current thread. This flows across async calls.
 
     */
     public static var Current : Optional<dotnet.System.Diagnostics.Activity> {
@@ -898,7 +952,7 @@ open class Activity
         }
     }
     /**
-    Gets or sets a valud that detrmines if the  is always used to define the default ID format.
+    Gets or sets a value that detrmines if the  is always used to define the default ID format.
 
     */
     public static var ForceDefaultIdFormat : Bool {
@@ -928,7 +982,7 @@ open class Activity
         }
     }
     /**
-    Indicates if the this activity should be populated with all the propagation information, as well as all the other properties such as links, tags and events.
+    Gets or sets a value that indicates whether this activity should be populated with all the propagation information, as well as all the other properties, such as links, tags, and events.
 
     */
     open var IsAllDataRequested : Bool {
@@ -1012,7 +1066,7 @@ open class Activity
         }
     }
     /**
-    Get the activity source associated with this activity.
+    Gets the activity source associated with this activity.
 
     */
     open var Source : dotnet.System.Diagnostics.ActivitySource {
@@ -1038,18 +1092,26 @@ open class Activity
             return try! get_StartTimeUtc();
         }
     }
+    /**
+    Gets status code of the current activity object.
+
+    */
     open var Status : dotnet.System.Diagnostics.ActivityStatusCode {
         get {
             return try! get_Status();
         }
     }
+    /**
+    Gets the status description of the current activity object.
+
+    */
     open var StatusDescription : Optional<dotnet.System.String> {
         get {
             return try! get_StatusDescription();
         }
     }
     /**
-    Returns the list of tags representing information to log along with the activity. This information is not passed on to the children of this activity.
+    Gets the list of tags that represent information to log along with the activity. This information is not passed on to the children of this activity.
 
     */
     open var TagObjects : dotnet.System.Collections.Generic.IEnumerable_1<dotnet.System.Collections.Generic.KeyValuePair_2<dotnet.System.String,dotnet.System.Object>> {
@@ -1075,6 +1137,11 @@ open class Activity
             return try! get_TraceId();
         }
     }
+    /**
+    When starting an Activity which does not have a parent context, the Trace Id will automatically be generated using random numbers.
+            TraceIdGenerator can be used to override the runtime's default Trace Id generation algorithm.
+
+    */
     public static var TraceIdGenerator : Optional<dotnet.System.Func_1<dotnet.System.Diagnostics.ActivityTraceId>> {
         get {
             return try! get_TraceIdGenerator();
@@ -1084,7 +1151,7 @@ open class Activity
         }
     }
     /**
-    Gets the W3C  header.
+    Gets or sets the W3C  header.
 
     */
     open var TraceStateString : Optional<dotnet.System.String> {
@@ -1110,6 +1177,9 @@ public final class ActivityContext
 {
     public class override func get_type_handle() -> TypeHandle {
         return System_Diagnostics_ActivityContext_get_type_handle();
+    }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -1158,7 +1228,26 @@ public final class ActivityContext
             return try! get_TraceState();
         }
     }
-// TODO COPE ctor (span) .ctor(System.Diagnostics.ActivityTraceId, System.Diagnostics.ActivitySpanId, System.Diagnostics.ActivityTraceFlags, System.String, bool)
+    // .ctor(System.Diagnostics.ActivityTraceId, System.Diagnostics.ActivitySpanId, System.Diagnostics.ActivityTraceFlags, System.String, bool)
+// docid: M:System.Diagnostics.ActivityContext.#ctor(System.Diagnostics.ActivityTraceId,System.Diagnostics.ActivitySpanId,System.Diagnostics.ActivityTraceFlags,System.String,System.Boolean)
+    /**
+    Construct a new activity context instance using the specified arguments.
+
+    - Parameter traceId: A trace identifier.
+    - Parameter spanId: A span identifier.
+    - Parameter traceFlags: Contain details about the trace.
+    - Parameter traceState: Carries system-specific configuration data.
+    - Parameter isRemote: Indicates if the context is propagated from a remote parent.
+    */
+    public init(traceId : dotnet.System.Diagnostics.ActivityTraceId, spanId : dotnet.System.Diagnostics.ActivitySpanId, traceFlags : dotnet.System.Diagnostics.ActivityTraceFlags, traceState : Optional<dotnet.System.String>, isRemote : Bool) throws {
+        var __thrown : NullableHandle = nil;
+        let h = System_Diagnostics_ActivityContext_ctor_0__5__ActivityTraceId_ActivitySpanId_ActivityTraceFlags_String_bool(&__thrown, traceId.get_handle(), spanId.get_handle(), traceFlags.get_value(), traceState?.get_handle() ?? nil, Swift.Int32(isRemote ? 1 : 0));
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            super.init(hndl: h);
+        }
+    }
     public override init() {
         let h = System_Diagnostics_ActivityContext_implicit_ctor();
             super.init(hndl: h);
@@ -1175,11 +1264,12 @@ public final class ActivityContext
          if the parsing was successful;  otherwise.
 
     */
-    public class func TryParse(traceParent : Optional<dotnet.System.String>, traceState : Optional<dotnet.System.String>, context : inout dotnet.System.Diagnostics.ActivityContext) throws -> Bool {
+    public class func TryParse(traceParent : Optional<dotnet.System.String>, traceState : Optional<dotnet.System.String>, context : inout Optional<dotnet.System.Diagnostics.ActivityContext>) throws -> Bool {
         var __thrown : NullableHandle = nil;
-            var _tmp_out_context = context.get_handle();
+            var _tmp_out_context = (context != nil) ? (context!.get_handle()) : nil;
         let __return = System_Diagnostics_ActivityContext_bool__TryParse_0__3__String_String_outActivityContext(&__thrown, traceParent?.get_handle() ?? nil, traceState?.get_handle() ?? nil, &_tmp_out_context);
-        let _tmp2_context = dotnet.System.Diagnostics.ActivityContext(hndl: _tmp_out_context);
+        let __h__tmp2_context = _tmp_out_context;
+        let _tmp2_context = (__h__tmp2_context != nil) ? dotnet.System.Diagnostics.ActivityContext(hndl: __h__tmp2_context!) : nil;
             context = _tmp2_context;
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
@@ -1378,6 +1468,9 @@ public final class ActivityCreationOptions_1<T : SGBridgeGenericValue>
     public class override func get_type_handle() -> TypeHandle {
         return System_Diagnostics_ActivityCreationOptions_1_get_type_handle(T.get_type_handle());
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     /**
@@ -1567,6 +1660,9 @@ public final class ActivityEvent
 {
     public class override func get_type_handle() -> TypeHandle {
         return System_Diagnostics_ActivityEvent_get_type_handle();
+    }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -1812,6 +1908,9 @@ public final class ActivityLink
     public class override func get_type_handle() -> TypeHandle {
         return System_Diagnostics_ActivityLink_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     /**
@@ -1990,6 +2089,9 @@ public final class ActivityListener
     public class override func get_type_handle() -> TypeHandle {
         return System_Diagnostics_ActivityListener_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor()
@@ -2049,7 +2151,7 @@ public final class ActivityListener
         }
     }
     // delegate closure overload
-    public func set_ActivityStarted(value : @escaping (Optional<dotnet.System.Diagnostics.Activity>) throws -> Void) throws {
+    public func set_ActivityStarted(value : @escaping (dotnet.System.Diagnostics.Activity) throws -> Void) throws {
         let del_value = try dotnet.System.Action_1<dotnet.System.Diagnostics.Activity>(value);
         return try set_ActivityStarted(value: del_value);
     }
@@ -2080,7 +2182,7 @@ public final class ActivityListener
         }
     }
     // delegate closure overload
-    public func set_ActivityStopped(value : @escaping (Optional<dotnet.System.Diagnostics.Activity>) throws -> Void) throws {
+    public func set_ActivityStopped(value : @escaping (dotnet.System.Diagnostics.Activity) throws -> Void) throws {
         let del_value = try dotnet.System.Action_1<dotnet.System.Diagnostics.Activity>(value);
         return try set_ActivityStopped(value: del_value);
     }
@@ -2111,7 +2213,7 @@ public final class ActivityListener
         }
     }
     // delegate closure overload
-    public func set_ShouldListenTo(value : @escaping (Optional<dotnet.System.Diagnostics.ActivitySource>) throws -> Bool) throws {
+    public func set_ShouldListenTo(value : @escaping (dotnet.System.Diagnostics.ActivitySource) throws -> Bool) throws {
         let del_value = try dotnet.System.Func_2<dotnet.System.Diagnostics.ActivitySource,Swift.Bool>(value);
         return try set_ShouldListenTo(value: del_value);
     }
@@ -2305,6 +2407,9 @@ public final class ActivitySource
     public class override func get_type_handle() -> TypeHandle {
         return System_Diagnostics_ActivitySource_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor(System.String, System.String)
@@ -2344,6 +2449,14 @@ public final class ActivitySource
     }
     // System.Diagnostics.Activity CreateActivity(System.String, System.Diagnostics.ActivityKind)
 // docid: M:System.Diagnostics.ActivitySource.CreateActivity(System.String,System.Diagnostics.ActivityKind)
+    /**
+    Creates a new  object if there is any listener to the Activity, returns  otherwise.
+
+    - Parameter name: The operation name of the Activity
+    - Parameter kind: The 
+    - Returns: The created  object or  if there is no any event listener.
+
+    */
     public func CreateActivity(name : dotnet.System.String, kind : dotnet.System.Diagnostics.ActivityKind) throws -> Optional<dotnet.System.Diagnostics.Activity> {
         var __thrown : NullableHandle = nil;
         let __return = System_Diagnostics_ActivitySource_Activity__CreateActivity_0__2__String_ActivityKind(&__thrown, self.get_handle(), name.get_handle(), kind.get_value());
@@ -2359,6 +2472,19 @@ public final class ActivitySource
     }
     // System.Diagnostics.Activity CreateActivity(System.String, System.Diagnostics.ActivityKind, System.Diagnostics.ActivityContext, System.Collections.Generic.IEnumerable<System.Collections.Generic.KeyValuePair<System.String,System.Object>>, System.Collections.Generic.IEnumerable<System.Diagnostics.ActivityLink>, System.Diagnostics.ActivityIdFormat)
 // docid: M:System.Diagnostics.ActivitySource.CreateActivity(System.String,System.Diagnostics.ActivityKind,System.Diagnostics.ActivityContext,System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{System.String,System.Object}},System.Collections.Generic.IEnumerable{System.Diagnostics.ActivityLink},System.Diagnostics.ActivityIdFormat)
+    /**
+    Creates a new  object if there is any listener to the Activity, returns  otherwise.
+            If the Activity object is created, it will not automatically start. Callers will need to call  to start it.
+
+    - Parameter name: The operation name of the Activity.
+    - Parameter kind: The 
+    - Parameter parentContext: The parent  object to initialize the created Activity object with.
+    - Parameter tags: The optional tags list to initialize the created Activity object with.
+    - Parameter links: The optional  list to initialize the created Activity object with.
+    - Parameter idFormat: The default Id format to use.
+    - Returns: The created  object or  if there is no any listener.
+
+    */
     public func CreateActivity(name : dotnet.System.String, kind : dotnet.System.Diagnostics.ActivityKind, parentContext : dotnet.System.Diagnostics.ActivityContext, tags : Optional<dotnet.System.Collections.Generic.IEnumerable_1<dotnet.System.Collections.Generic.KeyValuePair_2<dotnet.System.String,dotnet.System.Object>>> = nil, links : Optional<dotnet.System.Collections.Generic.IEnumerable_1<dotnet.System.Diagnostics.ActivityLink>> = nil, idFormat : dotnet.System.Diagnostics.ActivityIdFormat/* TODO default enum */) throws -> Optional<dotnet.System.Diagnostics.Activity> {
         var __thrown : NullableHandle = nil;
         let __return = System_Diagnostics_ActivitySource_Activity__CreateActivity_0__6__String_ActivityKind_ActivityContext_System_Collections_Generic_IEnumerable_System_Collections_Generic_System_Collections_Generic_KeyValuePair_string_object___System_Collections_Generic_IEnumerable_System_Diagnostics_ActivityLink__ActivityIdFormat(&__thrown, self.get_handle(), name.get_handle(), kind.get_value(), parentContext.get_handle(), (tags?.get_handle()), (links?.get_handle()), idFormat.get_value());
@@ -2374,6 +2500,18 @@ public final class ActivitySource
     }
     // System.Diagnostics.Activity CreateActivity(System.String, System.Diagnostics.ActivityKind, System.String, System.Collections.Generic.IEnumerable<System.Collections.Generic.KeyValuePair<System.String,System.Object>>, System.Collections.Generic.IEnumerable<System.Diagnostics.ActivityLink>, System.Diagnostics.ActivityIdFormat)
 // docid: M:System.Diagnostics.ActivitySource.CreateActivity(System.String,System.Diagnostics.ActivityKind,System.String,System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{System.String,System.Object}},System.Collections.Generic.IEnumerable{System.Diagnostics.ActivityLink},System.Diagnostics.ActivityIdFormat)
+    /**
+    Creates a new  object if there is any listener to the Activity, returns  otherwise.
+
+    - Parameter name: The operation name of the Activity.
+    - Parameter kind: The 
+    - Parameter parentId: The parent Id to initialize the created Activity object with.
+    - Parameter tags: The optional tags list to initialize the created Activity object with.
+    - Parameter links: The optional  list to initialize the created Activity object with.
+    - Parameter idFormat: The default Id format to use.
+    - Returns: The created  object or  if there is no any listener.
+
+    */
     public func CreateActivity(name : dotnet.System.String, kind : dotnet.System.Diagnostics.ActivityKind, parentId : dotnet.System.String, tags : Optional<dotnet.System.Collections.Generic.IEnumerable_1<dotnet.System.Collections.Generic.KeyValuePair_2<dotnet.System.String,dotnet.System.Object>>> = nil, links : Optional<dotnet.System.Collections.Generic.IEnumerable_1<dotnet.System.Diagnostics.ActivityLink>> = nil, idFormat : dotnet.System.Diagnostics.ActivityIdFormat/* TODO default enum */) throws -> Optional<dotnet.System.Diagnostics.Activity> {
         var __thrown : NullableHandle = nil;
         let __return = System_Diagnostics_ActivitySource_Activity__CreateActivity_0__6__String_ActivityKind_String_System_Collections_Generic_IEnumerable_System_Collections_Generic_System_Collections_Generic_KeyValuePair_string_object___System_Collections_Generic_IEnumerable_System_Diagnostics_ActivityLink__ActivityIdFormat(&__thrown, self.get_handle(), name.get_handle(), kind.get_value(), parentId.get_handle(), (tags?.get_handle()), (links?.get_handle()), idFormat.get_value());
@@ -2466,6 +2604,18 @@ public final class ActivitySource
     }
     // System.Diagnostics.Activity StartActivity(System.Diagnostics.ActivityKind, System.Diagnostics.ActivityContext, System.Collections.Generic.IEnumerable<System.Collections.Generic.KeyValuePair<System.String,System.Object>>, System.Collections.Generic.IEnumerable<System.Diagnostics.ActivityLink>, System.DateTimeOffset, System.String)
 // docid: M:System.Diagnostics.ActivitySource.StartActivity(System.Diagnostics.ActivityKind,System.Diagnostics.ActivityContext,System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{System.String,System.Object}},System.Collections.Generic.IEnumerable{System.Diagnostics.ActivityLink},System.DateTimeOffset,System.String)
+    /**
+    Creates and starts a new  object if there is any listener to the Activity events, returns  otherwise.
+
+    - Parameter kind: The 
+    - Parameter parentContext: The parent  object to initialize the created Activity object with.
+    - Parameter tags: The optional tags list to initialize the created Activity object with.
+    - Parameter links: The optional  list to initialize the created Activity object with.
+    - Parameter startTime: The optional start timestamp to set on the created Activity object.
+    - Parameter name: The operation name of the Activity.
+    - Returns: The created  object or  if there is no any listener.
+
+    */
     public func StartActivity(kind : dotnet.System.Diagnostics.ActivityKind, parentContext : dotnet.System.Diagnostics.ActivityContext/* TODO default valuetype */, tags : Optional<dotnet.System.Collections.Generic.IEnumerable_1<dotnet.System.Collections.Generic.KeyValuePair_2<dotnet.System.String,dotnet.System.Object>>> = nil, links : Optional<dotnet.System.Collections.Generic.IEnumerable_1<dotnet.System.Diagnostics.ActivityLink>> = nil, startTime : dotnet.System.DateTimeOffset/* TODO default valuetype */, name : dotnet.System.String) throws -> Optional<dotnet.System.Diagnostics.Activity> {
         var __thrown : NullableHandle = nil;
         let __return = System_Diagnostics_ActivitySource_Activity__StartActivity_0__6__ActivityKind_ActivityContext_System_Collections_Generic_IEnumerable_System_Collections_Generic_System_Collections_Generic_KeyValuePair_string_object___System_Collections_Generic_IEnumerable_System_Diagnostics_ActivityLink__DateTimeOffset_String(&__thrown, self.get_handle(), kind.get_value(), parentContext.get_handle(), (tags?.get_handle()), (links?.get_handle()), startTime.get_handle(), name.get_handle());
@@ -2570,6 +2720,9 @@ public final class ActivitySpanId
     public class override func get_type_handle() -> TypeHandle {
         return System_Diagnostics_ActivitySpanId_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     public override init() {
@@ -2597,7 +2750,25 @@ public final class ActivitySpanId
         return dotnet.System.Diagnostics.ActivitySpanId(hndl : __return);
         }
     }
-// TODO COPE (write_all_methods) (span) bool Equals(System.Diagnostics.ActivitySpanId)
+    // bool Equals(System.Diagnostics.ActivitySpanId)
+// docid: M:System.Diagnostics.ActivitySpanId.Equals(System.Diagnostics.ActivitySpanId)
+    /**
+    Determines whether this instance and the specified  instance have the same value.
+
+    - Parameter spanId: The instance to compare.
+    - Returns: 
+         if  has the same hex value as the current instance; otherwise, .
+
+    */
+    public func Equals(spanId : dotnet.System.Diagnostics.ActivitySpanId) throws -> Bool {
+        var __thrown : NullableHandle = nil;
+        let __return = System_Diagnostics_ActivitySpanId_bool__Equals_0__1__ActivitySpanId(&__thrown, self.get_handle(), spanId.get_handle());
+        if let __ex =  __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+        return (__return) != 0;
+        }
+    }
     // bool Equals(System.Object)
 // docid: M:System.Diagnostics.ActivitySpanId.Equals(System.Object)
     /**
@@ -2634,8 +2805,46 @@ public final class ActivitySpanId
         return __return;
         }
     }
-// TODO COPE (write_all_methods) (span) [IsSpecialName] bool op_Equality(System.Diagnostics.ActivitySpanId, System.Diagnostics.ActivitySpanId)
-// TODO COPE (write_all_methods) (span) [IsSpecialName] bool op_Inequality(System.Diagnostics.ActivitySpanId, System.Diagnostics.ActivitySpanId)
+    // [IsSpecialName] bool op_Equality(System.Diagnostics.ActivitySpanId, System.Diagnostics.ActivitySpanId)
+// docid: M:System.Diagnostics.ActivitySpanId.op_Equality(System.Diagnostics.ActivitySpanId,System.Diagnostics.ActivitySpanId)
+    /**
+    Determines whether two specified  instances have the same value.
+
+    - Parameter spanId1: The first instance to compare.
+    - Parameter spandId2: The second instance to compare.
+    - Returns: 
+         if the SpanId of  is the same as the SpanId of ; otherwise, .
+
+    */
+    public class func op_Equality(spanId1 : dotnet.System.Diagnostics.ActivitySpanId, spandId2 : dotnet.System.Diagnostics.ActivitySpanId) throws -> Bool {
+        var __thrown : NullableHandle = nil;
+        let __return = System_Diagnostics_ActivitySpanId_bool__op_Equality_0__2__ActivitySpanId_ActivitySpanId(&__thrown, spanId1.get_handle(), spandId2.get_handle());
+        if let __ex =  __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+        return (__return) != 0;
+        }
+    }
+    // [IsSpecialName] bool op_Inequality(System.Diagnostics.ActivitySpanId, System.Diagnostics.ActivitySpanId)
+// docid: M:System.Diagnostics.ActivitySpanId.op_Inequality(System.Diagnostics.ActivitySpanId,System.Diagnostics.ActivitySpanId)
+    /**
+    Determine whether two specified  instances have unequal values.
+
+    - Parameter spanId1: The first instance to compare.
+    - Parameter spandId2: The second instance to compare.
+    - Returns: 
+         if the SpanId of  is different from the SpanId of ; otherwise, .
+
+    */
+    public class func op_Inequality(spanId1 : dotnet.System.Diagnostics.ActivitySpanId, spandId2 : dotnet.System.Diagnostics.ActivitySpanId) throws -> Bool {
+        var __thrown : NullableHandle = nil;
+        let __return = System_Diagnostics_ActivitySpanId_bool__op_Inequality_0__2__ActivitySpanId_ActivitySpanId(&__thrown, spanId1.get_handle(), spandId2.get_handle());
+        if let __ex =  __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+        return (__return) != 0;
+        }
+    }
     // System.String ToHexString()
 // docid: M:System.Diagnostics.ActivitySpanId.ToHexString
     /**
@@ -2674,6 +2883,10 @@ public final class ActivitySpanId
 
 
 // type: System.Diagnostics.ActivityStatusCode
+    /**
+    Define the status code of the Activity which indicate the status of the instrumented operation.
+
+    */
 public struct ActivityStatusCode : SGBridgeGenericValue {
     let v : Swift.Int32;
     public init(val: Swift.Int32) { self.v = val; }
@@ -2685,6 +2898,10 @@ public struct ActivityStatusCode : SGBridgeGenericValue {
     public func dup_gval() -> GVal { return to_gval(); }
     public init(gval: GVal) { self.v = Swift.Int32(gval); }
     // static field: System.Diagnostics.ActivityStatusCode Unset
+    /**
+    Unset status code is the default value indicating the status code is not initialized.
+
+    */
     public static var Unset : dotnet.System.Diagnostics.ActivityStatusCode {
         get {
         let __return = dotnet.System.Diagnostics.ActivityStatusCode(val: System_Diagnostics_ActivityStatusCode_get_Unset());
@@ -2692,6 +2909,10 @@ public struct ActivityStatusCode : SGBridgeGenericValue {
         }
     }
     // static field: System.Diagnostics.ActivityStatusCode Ok
+    /**
+    Status code indicating the operation has been validated and completed successfully.
+
+    */
     public static var Ok : dotnet.System.Diagnostics.ActivityStatusCode {
         get {
         let __return = dotnet.System.Diagnostics.ActivityStatusCode(val: System_Diagnostics_ActivityStatusCode_get_Ok());
@@ -2699,6 +2920,10 @@ public struct ActivityStatusCode : SGBridgeGenericValue {
         }
     }
     // static field: System.Diagnostics.ActivityStatusCode Error
+    /**
+    Status code indicating an error is encountered during the operation.
+
+    */
     public static var Error : dotnet.System.Diagnostics.ActivityStatusCode {
         get {
         let __return = dotnet.System.Diagnostics.ActivityStatusCode(val: System_Diagnostics_ActivityStatusCode_get_Error());
@@ -2731,6 +2956,9 @@ open class ActivityTagsCollection
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Diagnostics_ActivityTagsCollection_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -2785,7 +3013,7 @@ open class ActivityTagsCollection
     // void Add(System.Collections.Generic.KeyValuePair<System.String,System.Object>)
 // docid: M:System.Diagnostics.ActivityTagsCollection.Add(System.Collections.Generic.KeyValuePair{System.String,System.Object})
     /**
-    Adds an item to the collection
+    Adds an item to the collection.
 
     - Parameter item: Key and value pair of the tag to add to the collection.
     */
@@ -2910,11 +3138,12 @@ open class ActivityTagsCollection
     - Returns: When this method returns, the value associated with the specified key, if the key is found; otherwise, the default value for the type of the value parameter. This parameter is passed uninitialized.
 
     */
-    open /* method final */ func TryGetValue(key : dotnet.System.String, value : inout dotnet.System.Object) throws -> Bool {
+    open /* method final */ func TryGetValue(key : dotnet.System.String, value : inout Optional<dotnet.System.Object>) throws -> Bool {
         var __thrown : NullableHandle = nil;
-            var _tmp_out_value = value.get_handle();
+            var _tmp_out_value = (value != nil) ? (value!.get_handle()) : nil;
         let __return = System_Diagnostics_ActivityTagsCollection_bool__TryGetValue_0__2__String_outObject(&__thrown, self.get_handle(), key.get_handle(), &_tmp_out_value);
-        let _tmp2_value = dotnet.System.Object(hndl: _tmp_out_value);
+        let __h__tmp2_value = _tmp_out_value;
+        let _tmp2_value = (__h__tmp2_value != nil) ? dotnet.System.Object(hndl: __h__tmp2_value!) : nil;
             value = _tmp2_value;
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
@@ -2985,9 +3214,6 @@ open class ActivityTagsCollection
     }
     // [IsSpecialName] System.Object get_Item(System.String)
 // docid: M:System.Diagnostics.ActivityTagsCollection.get_Item(System.String)
-//BEGIN method_is_override
-//matches_1
-//matches :
     open /* method final */ func get_Item(key : dotnet.System.String) throws -> Optional<dotnet.System.Object> {
         var __thrown : NullableHandle = nil;
         let __return = System_Diagnostics_ActivityTagsCollection_Object__get_Item_0__1__String(&__thrown, self.get_handle(), key.get_handle());
@@ -3065,6 +3291,9 @@ public final class ActivityTagsCollection_Enumerator
 {
     public class override func get_type_handle() -> TypeHandle {
         return System_Diagnostics_ActivityTagsCollection_Enumerator_get_type_handle();
+    }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -3181,6 +3410,9 @@ public final class ActivityTraceId
     public class override func get_type_handle() -> TypeHandle {
         return System_Diagnostics_ActivityTraceId_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     public override init() {
@@ -3196,7 +3428,7 @@ public final class ActivityTraceId
     /**
     Creates a new  based on a random number (that is very likely to be unique).
 
-    - Returns: The new span ID.
+    - Returns: The new .
 
     */
     public class func CreateRandom() throws -> dotnet.System.Diagnostics.ActivityTraceId {
@@ -3353,6 +3585,9 @@ open class DiagnosticListener
     open class override func get_type_handle() -> TypeHandle {
         return System_Diagnostics_DiagnosticListener_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor(System.String)
@@ -3482,7 +3717,7 @@ open class DiagnosticListener
         }
     }
     // delegate closure overload
-    open func Subscribe(observer : dotnet.System.IObserver_1<dotnet.System.Collections.Generic.KeyValuePair_2<dotnet.System.String,dotnet.System.Object>>, isEnabled : @escaping (Optional<dotnet.System.String>, Optional<dotnet.System.Object>, Optional<dotnet.System.Object>) throws -> Bool) throws -> dotnet.System.IDisposable {
+    open func Subscribe(observer : dotnet.System.IObserver_1<dotnet.System.Collections.Generic.KeyValuePair_2<dotnet.System.String,dotnet.System.Object>>, isEnabled : @escaping (dotnet.System.String, Optional<dotnet.System.Object>, Optional<dotnet.System.Object>) throws -> Bool) throws -> dotnet.System.IDisposable {
         let del_isEnabled = try dotnet.System.Func_4<dotnet.System.String,dotnet.System.Object,dotnet.System.Object,Swift.Bool>(isEnabled);
         return try Subscribe(observer: observer, isEnabled: del_isEnabled);
     }
@@ -3506,7 +3741,7 @@ open class DiagnosticListener
         }
     }
     // delegate closure overload
-    open func Subscribe(observer : dotnet.System.IObserver_1<dotnet.System.Collections.Generic.KeyValuePair_2<dotnet.System.String,dotnet.System.Object>>, isEnabled : @escaping (Optional<dotnet.System.String>) throws -> Bool) throws -> dotnet.System.IDisposable {
+    open func Subscribe(observer : dotnet.System.IObserver_1<dotnet.System.Collections.Generic.KeyValuePair_2<dotnet.System.String,dotnet.System.Object>>, isEnabled : @escaping (dotnet.System.String) throws -> Bool) throws -> dotnet.System.IDisposable {
         let del_isEnabled = try dotnet.System.Predicate_1<dotnet.System.String>(isEnabled);
         return try Subscribe(observer: observer, isEnabled: del_isEnabled);
     }
@@ -3600,7 +3835,7 @@ open class DiagnosticListener
         }
     }
     // delegate closure overload
-    open func Subscribe(observer : dotnet.System.IObserver_1<dotnet.System.Collections.Generic.KeyValuePair_2<dotnet.System.String,dotnet.System.Object>>, isEnabled : @escaping (Optional<dotnet.System.String>, Optional<dotnet.System.Object>, Optional<dotnet.System.Object>) throws -> Bool, onActivityImport : @escaping (Optional<dotnet.System.Diagnostics.Activity>, Optional<dotnet.System.Object>) throws -> Void, onActivityExport : @escaping (Optional<dotnet.System.Diagnostics.Activity>, Optional<dotnet.System.Object>) throws -> Void) throws -> dotnet.System.IDisposable {
+    open func Subscribe(observer : dotnet.System.IObserver_1<dotnet.System.Collections.Generic.KeyValuePair_2<dotnet.System.String,dotnet.System.Object>>, isEnabled : @escaping (dotnet.System.String, Optional<dotnet.System.Object>, Optional<dotnet.System.Object>) throws -> Bool, onActivityImport : @escaping (dotnet.System.Diagnostics.Activity, Optional<dotnet.System.Object>) throws -> Void, onActivityExport : @escaping (dotnet.System.Diagnostics.Activity, Optional<dotnet.System.Object>) throws -> Void) throws -> dotnet.System.IDisposable {
         let del_isEnabled = try dotnet.System.Func_4<dotnet.System.String,dotnet.System.Object,dotnet.System.Object,Swift.Bool>(isEnabled);
         let del_onActivityImport = try dotnet.System.Action_2<dotnet.System.Diagnostics.Activity,dotnet.System.Object>(onActivityImport);
         let del_onActivityExport = try dotnet.System.Action_2<dotnet.System.Diagnostics.Activity,dotnet.System.Object>(onActivityExport);
@@ -3660,6 +3895,9 @@ open class DiagnosticSource
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Diagnostics_DiagnosticSource_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -3794,6 +4032,12 @@ open class DiagnosticSource
 
 
 // type: System.Diagnostics.DistributedContextPropagator
+    /**
+    An implementation of  determines if and how distributed context information is encoded and decoded as it traverses the network.
+            The encoding can be transported over any network protocol that supports string key-value pairs. For example, when using HTTP, each key-value pair is an HTTP header.
+             injects values into and extracts values from carriers as string key-value pairs.
+
+    */
 open class DistributedContextPropagator
     :
     dotnet.System.Object
@@ -3801,10 +4045,20 @@ open class DistributedContextPropagator
     open class override func get_type_handle() -> TypeHandle {
         return System_Diagnostics_DistributedContextPropagator_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // void Inject(System.Diagnostics.Activity, System.Object, System.Diagnostics.DistributedContextPropagator.PropagatorSetterCallback)
 // docid: M:System.Diagnostics.DistributedContextPropagator.Inject(System.Diagnostics.Activity,System.Object,System.Diagnostics.DistributedContextPropagator.PropagatorSetterCallback)
+    /**
+    Injects the trace values stroed in the  object into a carrier. For example, into the headers of an HTTP request.
+
+    - Parameter activity: The Activity object has the distributed context to inject to the carrier.
+    - Parameter carrier: The medium in which the distributed context will be stored.
+    - Parameter setter: The callback method to invoke to set a named key-value pair on the carrier.
+    */
     open func Inject(activity : Optional<dotnet.System.Diagnostics.Activity>, carrier : Optional<dotnet.System.Object>, setter : Optional<dotnet.System.Diagnostics.DistributedContextPropagator_PropagatorSetterCallback>) throws {
         var __thrown : NullableHandle = nil;
         System_Diagnostics_DistributedContextPropagator_void__Inject_0__3__Activity_Object_DistributedContextPropagator_PropagatorSetterCallback(&__thrown, self.get_handle(), activity?.get_handle() ?? nil, carrier?.get_handle() ?? nil, setter?.get_handle() ?? nil);
@@ -3821,14 +4075,24 @@ open class DistributedContextPropagator
     }
     // void ExtractTraceIdAndState(System.Object, System.Diagnostics.DistributedContextPropagator.PropagatorGetterCallback, ref System.String, ref System.String)
 // docid: M:System.Diagnostics.DistributedContextPropagator.ExtractTraceIdAndState(System.Object,System.Diagnostics.DistributedContextPropagator.PropagatorGetterCallback,System.String@,System.String@)
-    open func ExtractTraceIdAndState(carrier : Optional<dotnet.System.Object>, getter : Optional<dotnet.System.Diagnostics.DistributedContextPropagator_PropagatorGetterCallback>, traceId : inout dotnet.System.String, traceState : inout dotnet.System.String) throws {
+    /**
+    Extracts the trace ID and trace state from an incoming request represented by the carrier. For example, from the headers of an HTTP request.
+
+    - Parameter carrier: The medium from which values will be read.
+    - Parameter getter: The callback method to invoke to get the propagation trace ID and state from the carrier.
+    - Parameter traceId: When this method returns, contains the trace ID extracted from the carrier.
+    - Parameter traceState: When this method returns, contains the trace state extracted from the carrier.
+    */
+    open func ExtractTraceIdAndState(carrier : Optional<dotnet.System.Object>, getter : Optional<dotnet.System.Diagnostics.DistributedContextPropagator_PropagatorGetterCallback>, traceId : inout Optional<dotnet.System.String>, traceState : inout Optional<dotnet.System.String>) throws {
         var __thrown : NullableHandle = nil;
-            var _tmp_out_traceId = traceId.get_handle();
-            var _tmp_out_traceState = traceState.get_handle();
+            var _tmp_out_traceId = (traceId != nil) ? (traceId!.get_handle()) : nil;
+            var _tmp_out_traceState = (traceState != nil) ? (traceState!.get_handle()) : nil;
         System_Diagnostics_DistributedContextPropagator_void__ExtractTraceIdAndState_0__4__Object_DistributedContextPropagator_PropagatorGetterCallback_outString_outString(&__thrown, self.get_handle(), carrier?.get_handle() ?? nil, getter?.get_handle() ?? nil, &_tmp_out_traceId, &_tmp_out_traceState);
-        let _tmp2_traceId = dotnet.System.String(hndl: _tmp_out_traceId);
+        let __h__tmp2_traceId = _tmp_out_traceId;
+        let _tmp2_traceId = (__h__tmp2_traceId != nil) ? dotnet.System.String(hndl: __h__tmp2_traceId!) : nil;
             traceId = _tmp2_traceId;
-        let _tmp2_traceState = dotnet.System.String(hndl: _tmp_out_traceState);
+        let __h__tmp2_traceState = _tmp_out_traceState;
+        let _tmp2_traceState = (__h__tmp2_traceState != nil) ? dotnet.System.String(hndl: __h__tmp2_traceState!) : nil;
             traceState = _tmp2_traceState;
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
@@ -3838,6 +4102,14 @@ open class DistributedContextPropagator
     }
     // System.Collections.Generic.IEnumerable<System.Collections.Generic.KeyValuePair<System.String,System.String>> ExtractBaggage(System.Object, System.Diagnostics.DistributedContextPropagator.PropagatorGetterCallback)
 // docid: M:System.Diagnostics.DistributedContextPropagator.ExtractBaggage(System.Object,System.Diagnostics.DistributedContextPropagator.PropagatorGetterCallback)
+    /**
+    Extracts the baggage key-value pair list from an incoming request represented by the carrier. For example, from the headers of an HTTP request.
+
+    - Parameter carrier: The medium from which values will be read.
+    - Parameter getter: The callback method to invoke to get the propagation baggage list from the carrier.
+    - Returns: Returns the extracted key-value pair list from the carrier.
+
+    */
     open func ExtractBaggage(carrier : Optional<dotnet.System.Object>, getter : Optional<dotnet.System.Diagnostics.DistributedContextPropagator_PropagatorGetterCallback>) throws -> Optional<dotnet.System.Collections.Generic.IEnumerable_1<dotnet.System.Collections.Generic.KeyValuePair_2<dotnet.System.String,dotnet.System.String>>> {
         var __thrown : NullableHandle = nil;
         let __return = System_Diagnostics_DistributedContextPropagator_System_Collections_Generic_IEnumerable_System_Collections_Generic_System_Collections_Generic_KeyValuePair_string_string____ExtractBaggage_0__2__Object_DistributedContextPropagator_PropagatorGetterCallback(&__thrown, self.get_handle(), carrier?.get_handle() ?? nil, getter?.get_handle() ?? nil);
@@ -3853,6 +4125,12 @@ open class DistributedContextPropagator
     }
     // System.Diagnostics.DistributedContextPropagator CreateDefaultPropagator()
 // docid: M:System.Diagnostics.DistributedContextPropagator.CreateDefaultPropagator
+    /**
+    Returns the default propagator object that  will be initialized with.
+
+    - Returns: An instance of the  class.
+
+    */
     open class func CreateDefaultPropagator() throws -> dotnet.System.Diagnostics.DistributedContextPropagator {
         var __thrown : NullableHandle = nil;
         let __return = System_Diagnostics_DistributedContextPropagator_DistributedContextPropagator__CreateDefaultPropagator_0__0(&__thrown);
@@ -3864,6 +4142,13 @@ open class DistributedContextPropagator
     }
     // System.Diagnostics.DistributedContextPropagator CreatePassThroughPropagator()
 // docid: M:System.Diagnostics.DistributedContextPropagator.CreatePassThroughPropagator
+    /**
+    Returns a propagator that attempts to act transparently, emitting the same data on outbound network requests that was received on the inbound request.
+            When encoding the outbound message, this propagator uses information from the request's root Activity, ignoring any intermediate Activities that may have been created while processing the request.
+
+    - Returns: An instance of the  class.
+
+    */
     open class func CreatePassThroughPropagator() throws -> dotnet.System.Diagnostics.DistributedContextPropagator {
         var __thrown : NullableHandle = nil;
         let __return = System_Diagnostics_DistributedContextPropagator_DistributedContextPropagator__CreatePassThroughPropagator_0__0(&__thrown);
@@ -3875,6 +4160,12 @@ open class DistributedContextPropagator
     }
     // System.Diagnostics.DistributedContextPropagator CreateNoOutputPropagator()
 // docid: M:System.Diagnostics.DistributedContextPropagator.CreateNoOutputPropagator
+    /**
+    Returns a propagator that does not transmit any distributed context information in outbound network messages.
+
+    - Returns: An instance of the  class.
+
+    */
     open class func CreateNoOutputPropagator() throws -> dotnet.System.Diagnostics.DistributedContextPropagator {
         var __thrown : NullableHandle = nil;
         let __return = System_Diagnostics_DistributedContextPropagator_DistributedContextPropagator__CreateNoOutputPropagator_0__0(&__thrown);
@@ -3917,6 +4208,10 @@ open class DistributedContextPropagator
             return;
         }
     }
+    /**
+    Get or set the process-wide propagator object to use as the current selected propagator.
+
+    */
     public static var Current : dotnet.System.Diagnostics.DistributedContextPropagator {
         get {
             return try! get_Current();
@@ -3925,6 +4220,10 @@ open class DistributedContextPropagator
             return try! set_Current(value: v);
         }
     }
+    /**
+    Gets the set of field names this propagator is likely to read or write.
+
+    */
     open var Fields : dotnet.System.Collections.Generic.IReadOnlyCollection_1<dotnet.System.String> {
         get {
             return try! get_Fields();
@@ -3934,6 +4233,10 @@ open class DistributedContextPropagator
 
 
 // type: System.Diagnostics.DistributedContextPropagator+PropagatorGetterCallback
+    /**
+    Represents the callback method that's used in the extract methods of propagators. The callback is invoked to look up the value of a named field.
+
+    */
 public final class DistributedContextPropagator_PropagatorGetterCallback
     :
     dotnet.System.Delegate
@@ -3941,18 +4244,153 @@ public final class DistributedContextPropagator_PropagatorGetterCallback
     public class override func get_type_handle() -> TypeHandle {
         return System_Diagnostics_DistributedContextPropagator_PropagatorGetterCallback_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    // void Invoke(System.Object, System.String, ref System.String, ref System.Collections.Generic.IEnumerable<System.String>)
+// docid: M:System.Diagnostics.DistributedContextPropagator.PropagatorGetterCallback.Invoke(System.Object,System.String,System.String@,System.Collections.Generic.IEnumerable{System.String}@)
+    public func Invoke(carrier : Optional<dotnet.System.Object>, fieldName : dotnet.System.String, fieldValue : inout Optional<dotnet.System.String>, fieldValues : inout Optional<dotnet.System.Collections.Generic.IEnumerable_1<dotnet.System.String>>) throws {
+        var __thrown : NullableHandle = nil;
+            var _tmp_out_fieldValue = (fieldValue != nil) ? (fieldValue!.get_handle()) : nil;
+            var _tmp_out_fieldValues = (fieldValues != nil) ? (fieldValues!.get_handle()) : nil;
+        System_Diagnostics_DistributedContextPropagator_PropagatorGetterCallback_void__Invoke_0__4__Object_String_outString_outSystem_Collections_Generic_IEnumerable_string_(&__thrown, self.get_handle(), carrier?.get_handle() ?? nil, fieldName.get_handle(), &_tmp_out_fieldValue, &_tmp_out_fieldValues);
+        let __h__tmp2_fieldValue = _tmp_out_fieldValue;
+        let _tmp2_fieldValue = (__h__tmp2_fieldValue != nil) ? dotnet.System.String(hndl: __h__tmp2_fieldValue!) : nil;
+            fieldValue = _tmp2_fieldValue;
+        let __h__tmp2_fieldValues = _tmp_out_fieldValues;
+        let _tmp2_fieldValues = (__h__tmp2_fieldValues != nil) ? dotnet.System.Collections.Generic.IEnumerable_1<dotnet.System.String>(hndl: __h__tmp2_fieldValues!) : nil;
+            fieldValues = _tmp2_fieldValues;
+        if let __ex =  __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            return;
+        }
+    }
+    // System.IAsyncResult BeginInvoke(System.Object, System.String, ref System.String, ref System.Collections.Generic.IEnumerable<System.String>, System.AsyncCallback, System.Object)
+// docid: M:System.Diagnostics.DistributedContextPropagator.PropagatorGetterCallback.BeginInvoke(System.Object,System.String,System.String@,System.Collections.Generic.IEnumerable{System.String}@,System.AsyncCallback,System.Object)
+    public func BeginInvoke(carrier : Optional<dotnet.System.Object>, fieldName : dotnet.System.String, fieldValue : inout Optional<dotnet.System.String>, fieldValues : inout Optional<dotnet.System.Collections.Generic.IEnumerable_1<dotnet.System.String>>, callback : Optional<dotnet.System.AsyncCallback>, object : Optional<dotnet.System.Object>) throws -> Optional<dotnet.System.IAsyncResult> {
+        var __thrown : NullableHandle = nil;
+            var _tmp_out_fieldValue = (fieldValue != nil) ? (fieldValue!.get_handle()) : nil;
+            var _tmp_out_fieldValues = (fieldValues != nil) ? (fieldValues!.get_handle()) : nil;
+        let __return = System_Diagnostics_DistributedContextPropagator_PropagatorGetterCallback_IAsyncResult__BeginInvoke_0__6__Object_String_outString_outSystem_Collections_Generic_IEnumerable_string__AsyncCallback_Object(&__thrown, self.get_handle(), carrier?.get_handle() ?? nil, fieldName.get_handle(), &_tmp_out_fieldValue, &_tmp_out_fieldValues, callback?.get_handle() ?? nil, object?.get_handle() ?? nil);
+        let __h__tmp2_fieldValue = _tmp_out_fieldValue;
+        let _tmp2_fieldValue = (__h__tmp2_fieldValue != nil) ? dotnet.System.String(hndl: __h__tmp2_fieldValue!) : nil;
+            fieldValue = _tmp2_fieldValue;
+        let __h__tmp2_fieldValues = _tmp_out_fieldValues;
+        let _tmp2_fieldValues = (__h__tmp2_fieldValues != nil) ? dotnet.System.Collections.Generic.IEnumerable_1<dotnet.System.String>(hndl: __h__tmp2_fieldValues!) : nil;
+            fieldValues = _tmp2_fieldValues;
+        if let __ex =  __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+        if let __ret_unwrapped = __return {
+            return dotnet.System.IAsyncResult(hndl : __ret_unwrapped);
+        } else {
+            return nil;
+        }
+        }
+    }
+    // void EndInvoke(ref System.String, ref System.Collections.Generic.IEnumerable<System.String>, System.IAsyncResult)
+// docid: M:System.Diagnostics.DistributedContextPropagator.PropagatorGetterCallback.EndInvoke(System.String@,System.Collections.Generic.IEnumerable{System.String}@,System.IAsyncResult)
+    public func EndInvoke(fieldValue : inout Optional<dotnet.System.String>, fieldValues : inout Optional<dotnet.System.Collections.Generic.IEnumerable_1<dotnet.System.String>>, result : Optional<dotnet.System.IAsyncResult>) throws {
+        var __thrown : NullableHandle = nil;
+            var _tmp_out_fieldValue = (fieldValue != nil) ? (fieldValue!.get_handle()) : nil;
+            var _tmp_out_fieldValues = (fieldValues != nil) ? (fieldValues!.get_handle()) : nil;
+        System_Diagnostics_DistributedContextPropagator_PropagatorGetterCallback_void__EndInvoke_0__3__outString_outSystem_Collections_Generic_IEnumerable_string__IAsyncResult(&__thrown, self.get_handle(), &_tmp_out_fieldValue, &_tmp_out_fieldValues, result?.get_handle() ?? nil);
+        let __h__tmp2_fieldValue = _tmp_out_fieldValue;
+        let _tmp2_fieldValue = (__h__tmp2_fieldValue != nil) ? dotnet.System.String(hndl: __h__tmp2_fieldValue!) : nil;
+            fieldValue = _tmp2_fieldValue;
+        let __h__tmp2_fieldValues = _tmp_out_fieldValues;
+        let _tmp2_fieldValues = (__h__tmp2_fieldValues != nil) ? dotnet.System.Collections.Generic.IEnumerable_1<dotnet.System.String>(hndl: __h__tmp2_fieldValues!) : nil;
+            fieldValues = _tmp2_fieldValues;
+        if let __ex =  __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            return;
+        }
+    }
+    public convenience init(_ __closure_Invoke : @escaping (Optional<dotnet.System.Object>, dotnet.System.String, inout Optional<dotnet.System.String>, inout Optional<dotnet.System.Collections.Generic.IEnumerable_1<dotnet.System.String>>) throws -> Void) throws
+    {
+        let __interlude_Invoke : (UnsafeMutablePointer<NullableHandle>, NullableHandle, NonnullHandle, UnsafeMutablePointer<NullableHandle>, UnsafeMutablePointer<NullableHandle>) -> Void =
+        {
+            (thrown : UnsafeMutablePointer<NullableHandle>, carrier : NullableHandle, fieldName : NonnullHandle, fieldValue : UnsafeMutablePointer<NullableHandle>, fieldValues : UnsafeMutablePointer<NullableHandle>) -> Void in
+            do
+            {
+                thrown.pointee = nil;
+            var _tmp_out_fieldValue = (fieldValue.pointee != nil) ? (dotnet.System.String(hndl: fieldValue.pointee!)) : nil;
+            var _tmp_out_fieldValues = (fieldValues.pointee != nil) ? (dotnet.System.Collections.Generic.IEnumerable_1<dotnet.System.String>(hndl: fieldValues.pointee!)) : nil;
+                try __closure_Invoke((carrier != nil) ? (dotnet.System.Object(hndl: carrier!)) : nil, dotnet.System.String(hndl: fieldName), &_tmp_out_fieldValue, &_tmp_out_fieldValues);
+            fieldValue.pointee = (_tmp_out_fieldValue != nil) ? (_tmp_out_fieldValue!.get_handle()) : nil;
+            fieldValues.pointee = (_tmp_out_fieldValues != nil) ? (_tmp_out_fieldValues!.get_handle()) : nil;
+            }
+            catch let e as dotnet.System.Exception
+            {
+                thrown.pointee = __copy_handle(e.get_handle());
+            }
+            catch
+            {
+                let e = try! dotnet.System.Exception(message: "TODO fail inside closure");
+                thrown.pointee = __copy_handle(e.get_handle());
+            }
+        };
+        func __cb_Invoke(pdata_interlude : UnsafeRawPointer, thrown : UnsafeMutablePointer<NullableHandle>, carrier : NullableHandle, fieldName : NonnullHandle, fieldValue : UnsafeMutablePointer<NullableHandle>, fieldValues : UnsafeMutablePointer<NullableHandle>) -> Void
+        {
+            let f_interlude = Unmanaged<AnyObject>.fromOpaque(pdata_interlude).takeUnretainedValue() as! (UnsafeMutablePointer<NullableHandle>, NullableHandle, NonnullHandle, UnsafeMutablePointer<NullableHandle>, UnsafeMutablePointer<NullableHandle>) -> Void;
+            f_interlude(thrown, carrier, fieldName, fieldValue, fieldValues);
+        }
+        let __pdata_Invoke = UnsafeRawPointer(Unmanaged.passRetained(__interlude_Invoke as AnyObject).toOpaque());
+
+        var __thrown : NullableHandle = nil;
+        let h = System_Diagnostics_DistributedContextPropagator_PropagatorGetterCallback_create(
+            &__thrown,
+            __cb_Invoke,
+            __pdata_Invoke,
+            nil
+            );
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h);
+        }
+    }
+    // void Invoke(System.Object, System.String, ref System.String, ref System.Collections.Generic.IEnumerable<System.String>)
+// docid: M:System.Diagnostics.DistributedContextPropagator.PropagatorGetterCallback.Invoke(System.Object,System.String,System.String@,System.Collections.Generic.IEnumerable{System.String}@)
+    public func callAsFunction(carrier : Optional<dotnet.System.Object>, fieldName : dotnet.System.String, fieldValue : inout Optional<dotnet.System.String>, fieldValues : inout Optional<dotnet.System.Collections.Generic.IEnumerable_1<dotnet.System.String>>) throws {
+        var __thrown : NullableHandle = nil;
+            var _tmp_out_fieldValue = (fieldValue != nil) ? (fieldValue!.get_handle()) : nil;
+            var _tmp_out_fieldValues = (fieldValues != nil) ? (fieldValues!.get_handle()) : nil;
+        System_Diagnostics_DistributedContextPropagator_PropagatorGetterCallback_void__Invoke_0__4__Object_String_outString_outSystem_Collections_Generic_IEnumerable_string_(&__thrown, self.get_handle(), carrier?.get_handle() ?? nil, fieldName.get_handle(), &_tmp_out_fieldValue, &_tmp_out_fieldValues);
+        let __h__tmp2_fieldValue = _tmp_out_fieldValue;
+        let _tmp2_fieldValue = (__h__tmp2_fieldValue != nil) ? dotnet.System.String(hndl: __h__tmp2_fieldValue!) : nil;
+            fieldValue = _tmp2_fieldValue;
+        let __h__tmp2_fieldValues = _tmp_out_fieldValues;
+        let _tmp2_fieldValues = (__h__tmp2_fieldValues != nil) ? dotnet.System.Collections.Generic.IEnumerable_1<dotnet.System.String>(hndl: __h__tmp2_fieldValues!) : nil;
+            fieldValues = _tmp2_fieldValues;
+        if let __ex =  __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            return;
+        }
+    }
 } // DistributedContextPropagator_PropagatorGetterCallback
 
 
 // type: System.Diagnostics.DistributedContextPropagator+PropagatorSetterCallback
+    /**
+    Represents the callback method that's used in propagators' inject methods. This callback is invoked to set the value of a named field.
+            Propagators may invoke it multiple times in order to set multiple fields.
+
+    */
 public final class DistributedContextPropagator_PropagatorSetterCallback
     :
     dotnet.System.Delegate
 {
     public class override func get_type_handle() -> TypeHandle {
         return System_Diagnostics_DistributedContextPropagator_PropagatorSetterCallback_get_type_handle();
+    }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -3993,15 +4431,15 @@ public final class DistributedContextPropagator_PropagatorSetterCallback
             return;
         }
     }
-    public init(_ callback : @escaping (Optional<dotnet.System.Object>, dotnet.System.String, dotnet.System.String) throws -> Void) throws
+    public convenience init(_ __closure_Invoke : @escaping (Optional<dotnet.System.Object>, dotnet.System.String, dotnet.System.String) throws -> Void) throws
     {
-        let __bridge : (UnsafeMutablePointer<NullableHandle>, NullableHandle, NonnullHandle, NonnullHandle) -> Void =
+        let __interlude_Invoke : (UnsafeMutablePointer<NullableHandle>, NullableHandle, NonnullHandle, NonnullHandle) -> Void =
         {
             (thrown : UnsafeMutablePointer<NullableHandle>, carrier : NullableHandle, fieldName : NonnullHandle, fieldValue : NonnullHandle) -> Void in
             do
             {
                 thrown.pointee = nil;
-                try callback((carrier != nil) ? (dotnet.System.Object(hndl: carrier!)) : nil, dotnet.System.String(hndl: fieldName), dotnet.System.String(hndl: fieldValue));
+                try __closure_Invoke((carrier != nil) ? (dotnet.System.Object(hndl: carrier!)) : nil, dotnet.System.String(hndl: fieldName), dotnet.System.String(hndl: fieldValue));
             }
             catch let e as dotnet.System.Exception
             {
@@ -4013,24 +4451,24 @@ public final class DistributedContextPropagator_PropagatorSetterCallback
                 thrown.pointee = __copy_handle(e.get_handle());
             }
         };
-        let cbarg = UnsafeRawPointer(Unmanaged.passRetained(__bridge as AnyObject).toOpaque());
-        func __cb(cb : UnsafeRawPointer?, thrown : UnsafeMutablePointer<NullableHandle>, carrier : NullableHandle, fieldName : NonnullHandle, fieldValue : NonnullHandle) -> Void
+        func __cb_Invoke(pdata_interlude : UnsafeRawPointer, thrown : UnsafeMutablePointer<NullableHandle>, carrier : NullableHandle, fieldName : NonnullHandle, fieldValue : NonnullHandle) -> Void
         {
-            let f = Unmanaged<AnyObject>.fromOpaque(cb!).takeUnretainedValue() as! (UnsafeMutablePointer<NullableHandle>, NullableHandle, NonnullHandle, NonnullHandle) -> Void;
-            f(thrown, carrier, fieldName, fieldValue);
+            let f_interlude = Unmanaged<AnyObject>.fromOpaque(pdata_interlude).takeUnretainedValue() as! (UnsafeMutablePointer<NullableHandle>, NullableHandle, NonnullHandle, NonnullHandle) -> Void;
+            f_interlude(thrown, carrier, fieldName, fieldValue);
         }
+        let __pdata_Invoke = UnsafeRawPointer(Unmanaged.passRetained(__interlude_Invoke as AnyObject).toOpaque());
+
         var __thrown : NullableHandle = nil;
         let h = System_Diagnostics_DistributedContextPropagator_PropagatorSetterCallback_create(
             &__thrown,
-            cbarg,
-            nil, // TODO deinit
-            __cb
+            __cb_Invoke,
+            __pdata_Invoke,
+            nil
             );
-            // TODO check thrown
         if let __ex = __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-            super.init(hndl: h);
+            self.init(hndl: h);
         }
     }
     // void Invoke(System.Object, System.String, System.String)
@@ -4059,13 +4497,130 @@ public final class SampleActivity_1<T : SGBridgeGenericValue>
     public class override func get_type_handle() -> TypeHandle {
         return System_Diagnostics_SampleActivity_1_get_type_handle(T.get_type_handle());
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    // System.Diagnostics.ActivitySamplingResult Invoke(ref System.Diagnostics.ActivityCreationOptions<T>)
+// docid: M:System.Diagnostics.SampleActivity`1.Invoke(System.Diagnostics.ActivityCreationOptions{`0}@)
+    public func Invoke(options : inout Optional<dotnet.System.Diagnostics.ActivityCreationOptions_1<T>>) throws -> dotnet.System.Diagnostics.ActivitySamplingResult {
+        var __thrown : NullableHandle = nil;
+            var _tmp_ref_options = (options != nil) ? (options!.get_handle()) : nil;
+        let __return = System_Diagnostics_SampleActivity_1_ActivitySamplingResult__Invoke_0__1__refSystem_Diagnostics_ActivityCreationOptions_T_(T.get_type_handle(), &__thrown, self.get_handle(), &_tmp_ref_options);
+        let __h__tmp2_options = _tmp_ref_options;
+        let _tmp2_options = (__h__tmp2_options != nil) ? dotnet.System.Diagnostics.ActivityCreationOptions_1<T>(hndl: __h__tmp2_options!) : nil;
+            options = _tmp2_options;
+        if let __ex =  __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+        return dotnet.System.Diagnostics.ActivitySamplingResult(val: __return);
+        }
+    }
+    // System.IAsyncResult BeginInvoke(ref System.Diagnostics.ActivityCreationOptions<T>, System.AsyncCallback, System.Object)
+// docid: M:System.Diagnostics.SampleActivity`1.BeginInvoke(System.Diagnostics.ActivityCreationOptions{`0}@,System.AsyncCallback,System.Object)
+    public func BeginInvoke(options : inout Optional<dotnet.System.Diagnostics.ActivityCreationOptions_1<T>>, callback : Optional<dotnet.System.AsyncCallback>, object : Optional<dotnet.System.Object>) throws -> Optional<dotnet.System.IAsyncResult> {
+        var __thrown : NullableHandle = nil;
+            var _tmp_ref_options = (options != nil) ? (options!.get_handle()) : nil;
+        let __return = System_Diagnostics_SampleActivity_1_IAsyncResult__BeginInvoke_0__3__refSystem_Diagnostics_ActivityCreationOptions_T__AsyncCallback_Object(T.get_type_handle(), &__thrown, self.get_handle(), &_tmp_ref_options, callback?.get_handle() ?? nil, object?.get_handle() ?? nil);
+        let __h__tmp2_options = _tmp_ref_options;
+        let _tmp2_options = (__h__tmp2_options != nil) ? dotnet.System.Diagnostics.ActivityCreationOptions_1<T>(hndl: __h__tmp2_options!) : nil;
+            options = _tmp2_options;
+        if let __ex =  __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+        if let __ret_unwrapped = __return {
+            return dotnet.System.IAsyncResult(hndl : __ret_unwrapped);
+        } else {
+            return nil;
+        }
+        }
+    }
+    // System.Diagnostics.ActivitySamplingResult EndInvoke(ref System.Diagnostics.ActivityCreationOptions<T>, System.IAsyncResult)
+// docid: M:System.Diagnostics.SampleActivity`1.EndInvoke(System.Diagnostics.ActivityCreationOptions{`0}@,System.IAsyncResult)
+    public func EndInvoke(options : inout Optional<dotnet.System.Diagnostics.ActivityCreationOptions_1<T>>, result : Optional<dotnet.System.IAsyncResult>) throws -> dotnet.System.Diagnostics.ActivitySamplingResult {
+        var __thrown : NullableHandle = nil;
+            var _tmp_ref_options = (options != nil) ? (options!.get_handle()) : nil;
+        let __return = System_Diagnostics_SampleActivity_1_ActivitySamplingResult__EndInvoke_0__2__refSystem_Diagnostics_ActivityCreationOptions_T__IAsyncResult(T.get_type_handle(), &__thrown, self.get_handle(), &_tmp_ref_options, result?.get_handle() ?? nil);
+        let __h__tmp2_options = _tmp_ref_options;
+        let _tmp2_options = (__h__tmp2_options != nil) ? dotnet.System.Diagnostics.ActivityCreationOptions_1<T>(hndl: __h__tmp2_options!) : nil;
+            options = _tmp2_options;
+        if let __ex =  __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+        return dotnet.System.Diagnostics.ActivitySamplingResult(val: __return);
+        }
+    }
+    public convenience init(_ __closure_Invoke : @escaping (inout Optional<dotnet.System.Diagnostics.ActivityCreationOptions_1<T>>) throws -> dotnet.System.Diagnostics.ActivitySamplingResult) throws
+    {
+        let __interlude_Invoke : (UnsafeMutablePointer<NullableHandle>, UnsafeMutablePointer<NullableHandle>) -> Swift.Int32 =
+        {
+            (thrown : UnsafeMutablePointer<NullableHandle>, options : UnsafeMutablePointer<NullableHandle>) -> Swift.Int32 in
+            do
+            {
+                thrown.pointee = nil;
+            var _tmp_ref_options = (options.pointee != nil) ? (dotnet.System.Diagnostics.ActivityCreationOptions_1<T>(hndl: options.pointee!)) : nil;
+                let ret = try __closure_Invoke(&_tmp_ref_options);
+            options.pointee = (_tmp_ref_options != nil) ? (_tmp_ref_options!.get_handle()) : nil;
+                return ret.get_value();
+            }
+            catch let e as dotnet.System.Exception
+            {
+                thrown.pointee = __copy_handle(e.get_handle());
+                return 0;
+            }
+            catch
+            {
+                let e = try! dotnet.System.Exception(message: "TODO fail inside closure");
+                thrown.pointee = __copy_handle(e.get_handle());
+                return 0;
+            }
+        };
+        func __cb_Invoke(pdata_interlude : UnsafeRawPointer, thrown : UnsafeMutablePointer<NullableHandle>, options : UnsafeMutablePointer<NullableHandle>) -> Swift.Int32
+        {
+            let f_interlude = Unmanaged<AnyObject>.fromOpaque(pdata_interlude).takeUnretainedValue() as! (UnsafeMutablePointer<NullableHandle>, UnsafeMutablePointer<NullableHandle>) -> Swift.Int32;
+            return f_interlude(thrown, options);
+        }
+        let __pdata_Invoke = UnsafeRawPointer(Unmanaged.passRetained(__interlude_Invoke as AnyObject).toOpaque());
+
+        var __thrown : NullableHandle = nil;
+        let h = System_Diagnostics_SampleActivity_1_create(
+            T.get_type_handle(),
+            &__thrown,
+            __cb_Invoke,
+            __pdata_Invoke,
+            nil
+            );
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h);
+        }
+    }
+    // System.Diagnostics.ActivitySamplingResult Invoke(ref System.Diagnostics.ActivityCreationOptions<T>)
+// docid: M:System.Diagnostics.SampleActivity`1.Invoke(System.Diagnostics.ActivityCreationOptions{`0}@)
+    public func callAsFunction(options : inout Optional<dotnet.System.Diagnostics.ActivityCreationOptions_1<T>>) throws -> dotnet.System.Diagnostics.ActivitySamplingResult {
+        var __thrown : NullableHandle = nil;
+            var _tmp_ref_options = (options != nil) ? (options!.get_handle()) : nil;
+        let __return = System_Diagnostics_SampleActivity_1_ActivitySamplingResult__Invoke_0__1__refSystem_Diagnostics_ActivityCreationOptions_T_(T.get_type_handle(), &__thrown, self.get_handle(), &_tmp_ref_options);
+        let __h__tmp2_options = _tmp_ref_options;
+        let _tmp2_options = (__h__tmp2_options != nil) ? dotnet.System.Diagnostics.ActivityCreationOptions_1<T>(hndl: __h__tmp2_options!) : nil;
+            options = _tmp2_options;
+        if let __ex =  __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+        return dotnet.System.Diagnostics.ActivitySamplingResult(val: __return);
+        }
+    }
 } // SampleActivity_1
 
 
 // type: System.Diagnostics.TagList
 // boxed value type
+    /**
+    Represents a list of tags that can be accessed by index. Provides methods to search, sort, and manipulate lists.
+
+    */
 public final class TagList
     :
     dotnet.System.Object,
@@ -4074,24 +4629,42 @@ public final class TagList
     public class override func get_type_handle() -> TypeHandle {
         return System_Diagnostics_TagList_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    /**
+    Gets the number of tags contained in the .
+
+    */
     public var Count : Swift.Int32 {
         get {
             return try! get_Count();
         }
     }
+    /**
+    Gets a value indicating whether the  is read-only. This property will always return .
+
+    */
     public var IsReadOnly : Bool {
         get {
             return try! get_IsReadOnly();
         }
     }
+// TODO COPE (parm span other): .ctor(System.ReadOnlySpan<System.Collections.Generic.KeyValuePair<System.String,System.Object>>)
     public override init() {
         let h = System_Diagnostics_TagList_implicit_ctor();
             super.init(hndl: h);
     }
     // void Add(System.String, System.Object)
 // docid: M:System.Diagnostics.TagList.Add(System.String,System.Object)
+    /**
+    Adds a tag with the specified  and  to the list.
+
+    - Parameter key: The tag key.
+    - Parameter value: The tag value.
+    */
     public func Add(key : dotnet.System.String, value : Optional<dotnet.System.Object>) throws {
         var __thrown : NullableHandle = nil;
         System_Diagnostics_TagList_void__Add_0__2__String_Object(&__thrown, self.get_handle(), key.get_handle(), value?.get_handle() ?? nil);
@@ -4103,6 +4676,11 @@ public final class TagList
     }
     // void Add(System.Collections.Generic.KeyValuePair<System.String,System.Object>)
 // docid: M:System.Diagnostics.TagList.Add(System.Collections.Generic.KeyValuePair{System.String,System.Object})
+    /**
+    Adds a tag to the list.
+
+    - Parameter tag: The key-value pair of the tag to add to the list.
+    */
     public func Add(tag : dotnet.System.Collections.Generic.KeyValuePair_2<dotnet.System.String,dotnet.System.Object>) throws {
         var __thrown : NullableHandle = nil;
         System_Diagnostics_TagList_void__Add_0__1__System_Collections_Generic_KeyValuePair_string_object_(&__thrown, self.get_handle(), tag.get_handle());
@@ -4112,8 +4690,15 @@ public final class TagList
             return;
         }
     }
+// TODO COPE (parm span other): void CopyTo(System.Span<System.Collections.Generic.KeyValuePair<System.String,System.Object>>)
     // void Insert(System.Int32, System.Collections.Generic.KeyValuePair<System.String,System.Object>)
 // docid: M:System.Diagnostics.TagList.Insert(System.Int32,System.Collections.Generic.KeyValuePair{System.String,System.Object})
+    /**
+    Inserts an element into the  at the specified index.
+
+    - Parameter index: The zero-based index at which the item should be inserted.
+    - Parameter item: The tag to insert.
+    */
     public func Insert(index : Swift.Int32, item : dotnet.System.Collections.Generic.KeyValuePair_2<dotnet.System.String,dotnet.System.Object>) throws {
         var __thrown : NullableHandle = nil;
         System_Diagnostics_TagList_void__Insert_0__2__i32_System_Collections_Generic_KeyValuePair_string_object_(&__thrown, self.get_handle(), index, item.get_handle());
@@ -4125,6 +4710,11 @@ public final class TagList
     }
     // void RemoveAt(System.Int32)
 // docid: M:System.Diagnostics.TagList.RemoveAt(System.Int32)
+    /**
+    Removes the element at the specified index of the .
+
+    - Parameter index: The zero-based index of the element to remove.
+    */
     public func RemoveAt(index : Swift.Int32) throws {
         var __thrown : NullableHandle = nil;
         System_Diagnostics_TagList_void__RemoveAt_0__1__i32(&__thrown, self.get_handle(), index);
@@ -4136,6 +4726,10 @@ public final class TagList
     }
     // void Clear()
 // docid: M:System.Diagnostics.TagList.Clear
+    /**
+    Removes all elements from the .
+
+    */
     public func Clear() throws {
         var __thrown : NullableHandle = nil;
         System_Diagnostics_TagList_void__Clear_0__0(&__thrown, self.get_handle());
@@ -4147,6 +4741,14 @@ public final class TagList
     }
     // bool Contains(System.Collections.Generic.KeyValuePair<System.String,System.Object>)
 // docid: M:System.Diagnostics.TagList.Contains(System.Collections.Generic.KeyValuePair{System.String,System.Object})
+    /**
+    Determines whether a tag is in the .
+
+    - Parameter item: The tag to locate in the .
+    - Returns: 
+         if item is found in the ; otherwise, .
+
+    */
     public func Contains(item : dotnet.System.Collections.Generic.KeyValuePair_2<dotnet.System.String,dotnet.System.Object>) throws -> Bool {
         var __thrown : NullableHandle = nil;
         let __return = System_Diagnostics_TagList_bool__Contains_0__1__System_Collections_Generic_KeyValuePair_string_object_(&__thrown, self.get_handle(), item.get_handle());
@@ -4169,6 +4771,14 @@ public final class TagList
     }
     // bool Remove(System.Collections.Generic.KeyValuePair<System.String,System.Object>)
 // docid: M:System.Diagnostics.TagList.Remove(System.Collections.Generic.KeyValuePair{System.String,System.Object})
+    /**
+    Removes the first occurrence of a specific object from the .
+
+    - Parameter item: The tag to remove from the .
+    - Returns: 
+         if  is successfully removed; otherwise, . This method also returns  if  was not found in the .
+
+    */
     public func Remove(item : dotnet.System.Collections.Generic.KeyValuePair_2<dotnet.System.String,dotnet.System.Object>) throws -> Bool {
         var __thrown : NullableHandle = nil;
         let __return = System_Diagnostics_TagList_bool__Remove_0__1__System_Collections_Generic_KeyValuePair_string_object_(&__thrown, self.get_handle(), item.get_handle());
@@ -4180,6 +4790,12 @@ public final class TagList
     }
     // System.Collections.Generic.IEnumerator<System.Collections.Generic.KeyValuePair<System.String,System.Object>> GetEnumerator()
 // docid: M:System.Diagnostics.TagList.GetEnumerator
+    /**
+    Returns an enumerator that iterates through the .
+
+    - Returns: An enumerator that iterates through the .
+
+    */
     public func GetEnumerator() throws -> dotnet.System.Collections.Generic.IEnumerator_1<dotnet.System.Collections.Generic.KeyValuePair_2<dotnet.System.String,dotnet.System.Object>> {
         var __thrown : NullableHandle = nil;
         let __return = System_Diagnostics_TagList_System_Collections_Generic_IEnumerator_System_Collections_Generic_System_Collections_Generic_KeyValuePair_string_object____GetEnumerator_0__0(&__thrown, self.get_handle());
@@ -4191,6 +4807,13 @@ public final class TagList
     }
     // System.Int32 IndexOf(System.Collections.Generic.KeyValuePair<System.String,System.Object>)
 // docid: M:System.Diagnostics.TagList.IndexOf(System.Collections.Generic.KeyValuePair{System.String,System.Object})
+    /**
+    Searches for the specified tag and returns the zero-based index of the first occurrence within the entire .
+
+    - Parameter item: The tag to locate in the .
+    - Returns: The zero-based index of the first ocurrence of  in the tag list.
+
+    */
     public func IndexOf(item : dotnet.System.Collections.Generic.KeyValuePair_2<dotnet.System.String,dotnet.System.Object>) throws -> Swift.Int32 {
         var __thrown : NullableHandle = nil;
         let __return = System_Diagnostics_TagList_i32__IndexOf_0__1__System_Collections_Generic_KeyValuePair_string_object_(&__thrown, self.get_handle(), item.get_handle());
@@ -4224,9 +4847,6 @@ public final class TagList
     }
     // [IsSpecialName] System.Collections.Generic.KeyValuePair<System.String,System.Object> get_Item(System.Int32)
 // docid: M:System.Diagnostics.TagList.get_Item(System.Int32)
-//BEGIN method_is_override
-//matches_1
-//matches :
     public func get_Item(index : Swift.Int32) throws -> dotnet.System.Collections.Generic.KeyValuePair_2<dotnet.System.String,dotnet.System.Object> {
         var __thrown : NullableHandle = nil;
         let __return = System_Diagnostics_TagList_System_Collections_Generic_KeyValuePair_string_object___get_Item_0__1__i32(&__thrown, self.get_handle(), index);
@@ -4252,6 +4872,10 @@ public final class TagList
 
 // type: System.Diagnostics.TagList+Enumerator
 // boxed value type
+    /**
+    An enumerator for traversing a tag list collection.
+
+    */
 public final class TagList_Enumerator
     :
     dotnet.System.Object,
@@ -4261,8 +4885,15 @@ public final class TagList_Enumerator
     public class override func get_type_handle() -> TypeHandle {
         return System_Diagnostics_TagList_Enumerator_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    /**
+    Gets the element in the collection at the current position of the enumerator.
+
+    */
     public var Current : dotnet.System.Collections.Generic.KeyValuePair_2<dotnet.System.String,dotnet.System.Object> {
         get {
             return try! get_Current();
@@ -4274,6 +4905,10 @@ public final class TagList_Enumerator
     }
     // void Dispose()
 // docid: M:System.Diagnostics.TagList.Enumerator.Dispose
+    /**
+    Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.
+
+    */
     public func Dispose() throws {
         var __thrown : NullableHandle = nil;
         System_Diagnostics_TagList_Enumerator_void__Dispose_0__0(&__thrown, self.get_handle());
@@ -4285,6 +4920,13 @@ public final class TagList_Enumerator
     }
     // bool MoveNext()
 // docid: M:System.Diagnostics.TagList.Enumerator.MoveNext
+    /**
+    Advances the enumerator to the next element of the collection.
+
+    - Returns: 
+         if the enumerator was successfully advanced to the next element;  if the enumerator has passed the end of the collection.
+
+    */
     public func MoveNext() throws -> Bool {
         var __thrown : NullableHandle = nil;
         let __return = System_Diagnostics_TagList_Enumerator_bool__MoveNext_0__0(&__thrown, self.get_handle());
@@ -4296,6 +4938,10 @@ public final class TagList_Enumerator
     }
     // void Reset()
 // docid: M:System.Diagnostics.TagList.Enumerator.Reset
+    /**
+    Sets the enumerator to its initial position, which is before the first element in the collection.
+
+    */
     public func Reset() throws {
         var __thrown : NullableHandle = nil;
         System_Diagnostics_TagList_Enumerator_void__Reset_0__0(&__thrown, self.get_handle());
@@ -4323,6 +4969,10 @@ public final class TagList_Enumerator
 // System.Diagnostics.Metrics
 extension System.Diagnostics.Metrics {
 // type: System.Diagnostics.Metrics.Counter`1
+    /**
+    Represents an instrument that supports adding non-negative values. For example, you might call counter.Add(1) each time a request is processed to track the total number of requests. Most metric viewers display counters using a rate (requests/sec), by default, but can also display a cumulative total.
+
+    */
 public final class Counter_1<T : SGBridgeGenericValue>
     :
     dotnet.System.Diagnostics.Metrics.Instrument_1<T>
@@ -4330,10 +4980,18 @@ public final class Counter_1<T : SGBridgeGenericValue>
     public class override func get_type_handle() -> TypeHandle {
         return System_Diagnostics_Metrics_Counter_1_get_type_handle(T.get_type_handle());
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // void Add(T)
 // docid: M:System.Diagnostics.Metrics.Counter`1.Add(`0)
+    /**
+    Record the increment value of the measurement.
+
+    - Parameter delta: The increment measurement.
+    */
     public func Add(delta : T) throws {
         var __thrown : NullableHandle = nil;
         System_Diagnostics_Metrics_Counter_1_void__Add_0__1__T(T.get_type_handle(), &__thrown, self.get_handle(), delta.to_gval());
@@ -4345,6 +5003,12 @@ public final class Counter_1<T : SGBridgeGenericValue>
     }
     // void Add(T, System.Collections.Generic.KeyValuePair<System.String,System.Object>)
 // docid: M:System.Diagnostics.Metrics.Counter`1.Add(`0,System.Collections.Generic.KeyValuePair{System.String,System.Object})
+    /**
+    Record the increment value of the measurement.
+
+    - Parameter delta: The increment measurement.
+    - Parameter tag: A key-value pair tag associated with the measurement.
+    */
     public func Add(delta : T, tag : dotnet.System.Collections.Generic.KeyValuePair_2<dotnet.System.String,dotnet.System.Object>) throws {
         var __thrown : NullableHandle = nil;
         System_Diagnostics_Metrics_Counter_1_void__Add_0__2__T_System_Collections_Generic_KeyValuePair_string_object_(T.get_type_handle(), &__thrown, self.get_handle(), delta.to_gval(), tag.get_handle());
@@ -4356,6 +5020,13 @@ public final class Counter_1<T : SGBridgeGenericValue>
     }
     // void Add(T, System.Collections.Generic.KeyValuePair<System.String,System.Object>, System.Collections.Generic.KeyValuePair<System.String,System.Object>)
 // docid: M:System.Diagnostics.Metrics.Counter`1.Add(`0,System.Collections.Generic.KeyValuePair{System.String,System.Object},System.Collections.Generic.KeyValuePair{System.String,System.Object})
+    /**
+    Record the increment value of the measurement.
+
+    - Parameter delta: The increment measurement.
+    - Parameter tag1: A first key-value pair tag associated with the measurement.
+    - Parameter tag2: A second key-value pair tag associated with the measurement.
+    */
     public func Add(delta : T, tag1 : dotnet.System.Collections.Generic.KeyValuePair_2<dotnet.System.String,dotnet.System.Object>, tag2 : dotnet.System.Collections.Generic.KeyValuePair_2<dotnet.System.String,dotnet.System.Object>) throws {
         var __thrown : NullableHandle = nil;
         System_Diagnostics_Metrics_Counter_1_void__Add_0__3__T_System_Collections_Generic_KeyValuePair_string_object__System_Collections_Generic_KeyValuePair_string_object_(T.get_type_handle(), &__thrown, self.get_handle(), delta.to_gval(), tag1.get_handle(), tag2.get_handle());
@@ -4367,6 +5038,14 @@ public final class Counter_1<T : SGBridgeGenericValue>
     }
     // void Add(T, System.Collections.Generic.KeyValuePair<System.String,System.Object>, System.Collections.Generic.KeyValuePair<System.String,System.Object>, System.Collections.Generic.KeyValuePair<System.String,System.Object>)
 // docid: M:System.Diagnostics.Metrics.Counter`1.Add(`0,System.Collections.Generic.KeyValuePair{System.String,System.Object},System.Collections.Generic.KeyValuePair{System.String,System.Object},System.Collections.Generic.KeyValuePair{System.String,System.Object})
+    /**
+    Record the increment value of the measurement.
+
+    - Parameter delta: The increment measurement.
+    - Parameter tag1: A first key-value pair tag associated with the measurement.
+    - Parameter tag2: A second key-value pair tag associated with the measurement.
+    - Parameter tag3: A third key-value pair tag associated with the measurement.
+    */
     public func Add(delta : T, tag1 : dotnet.System.Collections.Generic.KeyValuePair_2<dotnet.System.String,dotnet.System.Object>, tag2 : dotnet.System.Collections.Generic.KeyValuePair_2<dotnet.System.String,dotnet.System.Object>, tag3 : dotnet.System.Collections.Generic.KeyValuePair_2<dotnet.System.String,dotnet.System.Object>) throws {
         var __thrown : NullableHandle = nil;
         System_Diagnostics_Metrics_Counter_1_void__Add_0__4__T_System_Collections_Generic_KeyValuePair_string_object__System_Collections_Generic_KeyValuePair_string_object__System_Collections_Generic_KeyValuePair_string_object_(T.get_type_handle(), &__thrown, self.get_handle(), delta.to_gval(), tag1.get_handle(), tag2.get_handle(), tag3.get_handle());
@@ -4376,6 +5055,7 @@ public final class Counter_1<T : SGBridgeGenericValue>
             return;
         }
     }
+// TODO COPE (parm span other): void Add(T, System.ReadOnlySpan<System.Collections.Generic.KeyValuePair<System.String,System.Object>>)
     // void Add(T, System.Collections.Generic.KeyValuePair<System.String,System.Object>[])
 // docid: M:System.Diagnostics.Metrics.Counter`1.Add(`0,System.Collections.Generic.KeyValuePair`2[])
     public func Add(delta : T, tags : dotnet.System_Arr<dotnet.System.Collections.Generic.KeyValuePair_2<dotnet.System.String,dotnet.System.Object>>) throws {
@@ -4389,9 +5069,15 @@ public final class Counter_1<T : SGBridgeGenericValue>
     }
     // void Add(T, ref System.Diagnostics.TagList)
 // docid: M:System.Diagnostics.Metrics.Counter`1.Add(`0,System.Diagnostics.TagList@)
-    public func Add(delta : T, tagList : inout dotnet.System.Diagnostics.TagList) throws {
+    /**
+    Adds the increment value of the measurement.
+
+    - Parameter delta: The measurement value.
+    - Parameter tagList: The tags associated with the measurement.
+    */
+    public func Add(delta : T, tagList : inout Optional<dotnet.System.Diagnostics.TagList>) throws {
         var __thrown : NullableHandle = nil;
-            var _tmp_in_tagList = tagList.get_handle();
+            var _tmp_in_tagList = (tagList != nil) ? (tagList!.get_handle()) : nil;
         System_Diagnostics_Metrics_Counter_1_void__Add_0__2__T_inTagList(T.get_type_handle(), &__thrown, self.get_handle(), delta.to_gval(), &_tmp_in_tagList);
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
@@ -4403,6 +5089,12 @@ public final class Counter_1<T : SGBridgeGenericValue>
 
 
 // type: System.Diagnostics.Metrics.Histogram`1
+    /**
+    Represents a metrics Instrument that can be used to report arbitrary values that are likely to be statistically meaningful.
+            e.g. the request duration.
+            Use  method to create the Histogram object.
+
+    */
 public final class Histogram_1<T : SGBridgeGenericValue>
     :
     dotnet.System.Diagnostics.Metrics.Instrument_1<T>
@@ -4410,10 +5102,18 @@ public final class Histogram_1<T : SGBridgeGenericValue>
     public class override func get_type_handle() -> TypeHandle {
         return System_Diagnostics_Metrics_Histogram_1_get_type_handle(T.get_type_handle());
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // void Record(T)
 // docid: M:System.Diagnostics.Metrics.Histogram`1.Record(`0)
+    /**
+    Record a measurement value.
+
+    - Parameter value: The measurement value.
+    */
     public func Record(value : T) throws {
         var __thrown : NullableHandle = nil;
         System_Diagnostics_Metrics_Histogram_1_void__Record_0__1__T(T.get_type_handle(), &__thrown, self.get_handle(), value.to_gval());
@@ -4425,6 +5125,12 @@ public final class Histogram_1<T : SGBridgeGenericValue>
     }
     // void Record(T, System.Collections.Generic.KeyValuePair<System.String,System.Object>)
 // docid: M:System.Diagnostics.Metrics.Histogram`1.Record(`0,System.Collections.Generic.KeyValuePair{System.String,System.Object})
+    /**
+    Record a measurement value.
+
+    - Parameter value: The measurement value.
+    - Parameter tag: A key-value pair tag associated with the measurement.
+    */
     public func Record(value : T, tag : dotnet.System.Collections.Generic.KeyValuePair_2<dotnet.System.String,dotnet.System.Object>) throws {
         var __thrown : NullableHandle = nil;
         System_Diagnostics_Metrics_Histogram_1_void__Record_0__2__T_System_Collections_Generic_KeyValuePair_string_object_(T.get_type_handle(), &__thrown, self.get_handle(), value.to_gval(), tag.get_handle());
@@ -4436,6 +5142,13 @@ public final class Histogram_1<T : SGBridgeGenericValue>
     }
     // void Record(T, System.Collections.Generic.KeyValuePair<System.String,System.Object>, System.Collections.Generic.KeyValuePair<System.String,System.Object>)
 // docid: M:System.Diagnostics.Metrics.Histogram`1.Record(`0,System.Collections.Generic.KeyValuePair{System.String,System.Object},System.Collections.Generic.KeyValuePair{System.String,System.Object})
+    /**
+    Record a measurement value.
+
+    - Parameter value: The measurement value.
+    - Parameter tag1: A first key-value pair tag associated with the measurement.
+    - Parameter tag2: A second key-value pair tag associated with the measurement.
+    */
     public func Record(value : T, tag1 : dotnet.System.Collections.Generic.KeyValuePair_2<dotnet.System.String,dotnet.System.Object>, tag2 : dotnet.System.Collections.Generic.KeyValuePair_2<dotnet.System.String,dotnet.System.Object>) throws {
         var __thrown : NullableHandle = nil;
         System_Diagnostics_Metrics_Histogram_1_void__Record_0__3__T_System_Collections_Generic_KeyValuePair_string_object__System_Collections_Generic_KeyValuePair_string_object_(T.get_type_handle(), &__thrown, self.get_handle(), value.to_gval(), tag1.get_handle(), tag2.get_handle());
@@ -4447,6 +5160,14 @@ public final class Histogram_1<T : SGBridgeGenericValue>
     }
     // void Record(T, System.Collections.Generic.KeyValuePair<System.String,System.Object>, System.Collections.Generic.KeyValuePair<System.String,System.Object>, System.Collections.Generic.KeyValuePair<System.String,System.Object>)
 // docid: M:System.Diagnostics.Metrics.Histogram`1.Record(`0,System.Collections.Generic.KeyValuePair{System.String,System.Object},System.Collections.Generic.KeyValuePair{System.String,System.Object},System.Collections.Generic.KeyValuePair{System.String,System.Object})
+    /**
+    Record a measurement value.
+
+    - Parameter value: The measurement value.
+    - Parameter tag1: A first key-value pair tag associated with the measurement.
+    - Parameter tag2: A second key-value pair tag associated with the measurement.
+    - Parameter tag3: A third key-value pair tag associated with the measurement.
+    */
     public func Record(value : T, tag1 : dotnet.System.Collections.Generic.KeyValuePair_2<dotnet.System.String,dotnet.System.Object>, tag2 : dotnet.System.Collections.Generic.KeyValuePair_2<dotnet.System.String,dotnet.System.Object>, tag3 : dotnet.System.Collections.Generic.KeyValuePair_2<dotnet.System.String,dotnet.System.Object>) throws {
         var __thrown : NullableHandle = nil;
         System_Diagnostics_Metrics_Histogram_1_void__Record_0__4__T_System_Collections_Generic_KeyValuePair_string_object__System_Collections_Generic_KeyValuePair_string_object__System_Collections_Generic_KeyValuePair_string_object_(T.get_type_handle(), &__thrown, self.get_handle(), value.to_gval(), tag1.get_handle(), tag2.get_handle(), tag3.get_handle());
@@ -4458,9 +5179,15 @@ public final class Histogram_1<T : SGBridgeGenericValue>
     }
     // void Record(T, ref System.Diagnostics.TagList)
 // docid: M:System.Diagnostics.Metrics.Histogram`1.Record(`0,System.Diagnostics.TagList@)
-    public func Record(value : T, tagList : inout dotnet.System.Diagnostics.TagList) throws {
+    /**
+    Records a measurement value.
+
+    - Parameter value: The measurement value.
+    - Parameter tagList: The tags associated with the measurement.
+    */
+    public func Record(value : T, tagList : inout Optional<dotnet.System.Diagnostics.TagList>) throws {
         var __thrown : NullableHandle = nil;
-            var _tmp_in_tagList = tagList.get_handle();
+            var _tmp_in_tagList = (tagList != nil) ? (tagList!.get_handle()) : nil;
         System_Diagnostics_Metrics_Histogram_1_void__Record_0__2__T_inTagList(T.get_type_handle(), &__thrown, self.get_handle(), value.to_gval(), &_tmp_in_tagList);
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
@@ -4468,6 +5195,7 @@ public final class Histogram_1<T : SGBridgeGenericValue>
             return;
         }
     }
+// TODO COPE (parm span other): void Record(T, System.ReadOnlySpan<System.Collections.Generic.KeyValuePair<System.String,System.Object>>)
     // void Record(T, System.Collections.Generic.KeyValuePair<System.String,System.Object>[])
 // docid: M:System.Diagnostics.Metrics.Histogram`1.Record(`0,System.Collections.Generic.KeyValuePair`2[])
     public func Record(value : T, tags : dotnet.System_Arr<dotnet.System.Collections.Generic.KeyValuePair_2<dotnet.System.String,dotnet.System.Object>>) throws {
@@ -4483,12 +5211,19 @@ public final class Histogram_1<T : SGBridgeGenericValue>
 
 
 // type: System.Diagnostics.Metrics.Instrument
+    /**
+    Base class of all Metrics Instrument classes
+
+    */
 open class Instrument
     :
     dotnet.System.Object
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Diagnostics_Metrics_Instrument_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -4566,31 +5301,55 @@ open class Instrument
         }
         }
     }
+    /**
+    Gets the instrument description.
+
+    */
     open var Description : Optional<dotnet.System.String> {
         get {
             return try! get_Description();
         }
     }
+    /**
+    Checks if there is any listeners for this instrument.
+
+    */
     open var Enabled : Bool {
         get {
             return try! get_Enabled();
         }
     }
+    /**
+    A property tells if the instrument is an observable instrument.
+
+    */
     open var IsObservable : Bool {
         get {
             return try! get_IsObservable();
         }
     }
+    /**
+    Gets the Meter which created the instrument.
+
+    */
     open var Meter : dotnet.System.Diagnostics.Metrics.Meter {
         get {
             return try! get_Meter();
         }
     }
+    /**
+    Gets the instrument name.
+
+    */
     open var Name : dotnet.System.String {
         get {
             return try! get_Name();
         }
     }
+    /**
+    Gets the instrument unit of measurements.
+
+    */
     open var Unit : Optional<dotnet.System.String> {
         get {
             return try! get_Unit();
@@ -4600,6 +5359,10 @@ open class Instrument
 
 
 // type: System.Diagnostics.Metrics.Instrument`1
+    /**
+    The base class for all non-observable instruments.
+
+    */
 open class Instrument_1<T : SGBridgeGenericValue>
     :
     dotnet.System.Diagnostics.Metrics.Instrument
@@ -4607,12 +5370,19 @@ open class Instrument_1<T : SGBridgeGenericValue>
     open class override func get_type_handle() -> TypeHandle {
         return System_Diagnostics_Metrics_Instrument_1_get_type_handle(T.get_type_handle());
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
 } // Instrument_1
 
 
 // type: System.Diagnostics.Metrics.MeasurementCallback`1
+    /**
+    A delegate to represent the Meterlistener callbacks used in measurements recording operation.
+
+    */
 public final class MeasurementCallback_1<T : SGBridgeGenericValue>
     :
     dotnet.System.Delegate
@@ -4620,8 +5390,13 @@ public final class MeasurementCallback_1<T : SGBridgeGenericValue>
     public class override func get_type_handle() -> TypeHandle {
         return System_Diagnostics_Metrics_MeasurementCallback_1_get_type_handle(T.get_type_handle());
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+// TODO COPE (parm span other): void Invoke(System.Diagnostics.Metrics.Instrument, T, System.ReadOnlySpan<System.Collections.Generic.KeyValuePair<System.String,System.Object>>, System.Object)
+// TODO COPE (parm span other): System.IAsyncResult BeginInvoke(System.Diagnostics.Metrics.Instrument, T, System.ReadOnlySpan<System.Collections.Generic.KeyValuePair<System.String,System.Object>>, System.Object, System.AsyncCallback, System.Object)
     // void EndInvoke(System.IAsyncResult)
 // docid: M:System.Diagnostics.Metrics.MeasurementCallback`1.EndInvoke(System.IAsyncResult)
     public func EndInvoke(result : Optional<dotnet.System.IAsyncResult>) throws {
@@ -4633,11 +5408,17 @@ public final class MeasurementCallback_1<T : SGBridgeGenericValue>
             return;
         }
     }
+// TODO COPE (parm span other): void Invoke(System.Diagnostics.Metrics.Instrument, T, System.ReadOnlySpan<System.Collections.Generic.KeyValuePair<System.String,System.Object>>, System.Object)
 } // MeasurementCallback_1
 
 
 // type: System.Diagnostics.Metrics.Measurement`1
 // boxed value type
+    /**
+    Stores one observed metrics value and its associated tags. This type is used by an Observable instrument's Observe() method when reporting current measurements.
+            with the associated tags.
+
+    */
 public final class Measurement_1<T : SGBridgeGenericValue>
     :
     dotnet.System.Object
@@ -4645,8 +5426,15 @@ public final class Measurement_1<T : SGBridgeGenericValue>
     public class override func get_type_handle() -> TypeHandle {
         return System_Diagnostics_Metrics_Measurement_1_get_type_handle(T.get_type_handle());
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    /**
+    Gets the measurement value.
+
+    */
     public var Value : T {
         get {
             return try! get_Value();
@@ -4654,6 +5442,11 @@ public final class Measurement_1<T : SGBridgeGenericValue>
     }
     // .ctor(T)
 // docid: M:System.Diagnostics.Metrics.Measurement`1.#ctor(`0)
+    /**
+    Initializes a new instance of the Measurement using the value and the list of tags.
+
+    - Parameter value: The measurement value.
+    */
     public init(value : T) throws {
         var __thrown : NullableHandle = nil;
         let h = System_Diagnostics_Metrics_Measurement_1_ctor_0__1__T(T.get_type_handle(), &__thrown, value.to_gval());
@@ -4665,6 +5458,12 @@ public final class Measurement_1<T : SGBridgeGenericValue>
     }
     // .ctor(T, System.Collections.Generic.IEnumerable<System.Collections.Generic.KeyValuePair<System.String,System.Object>>)
 // docid: M:System.Diagnostics.Metrics.Measurement`1.#ctor(`0,System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{System.String,System.Object}})
+    /**
+    Initializes a new instance of the Measurement using the value and the list of tags.
+
+    - Parameter value: The measurement value.
+    - Parameter tags: The measurement associated tags list.
+    */
     public init(value : T, tags : Optional<dotnet.System.Collections.Generic.IEnumerable_1<dotnet.System.Collections.Generic.KeyValuePair_2<dotnet.System.String,dotnet.System.Object>>>) throws {
         var __thrown : NullableHandle = nil;
         let h = System_Diagnostics_Metrics_Measurement_1_ctor_0__2__T_System_Collections_Generic_IEnumerable_System_Collections_Generic_System_Collections_Generic_KeyValuePair_string_object__(T.get_type_handle(), &__thrown, value.to_gval(), (tags?.get_handle()));
@@ -4685,10 +5484,12 @@ public final class Measurement_1<T : SGBridgeGenericValue>
             super.init(hndl: h);
         }
     }
+// TODO COPE (parm span other): .ctor(T, System.ReadOnlySpan<System.Collections.Generic.KeyValuePair<System.String,System.Object>>)
     public override init() {
         let h = System_Diagnostics_Metrics_Measurement_1_implicit_ctor(T.get_type_handle());
             super.init(hndl: h);
     }
+// TODO COPE (returns byreflike): [IsSpecialName] System.ReadOnlySpan<System.Collections.Generic.KeyValuePair<System.String,System.Object>> get_Tags()
     // [IsSpecialName] T get_Value()
 // docid: M:System.Diagnostics.Metrics.Measurement`1.get_Value
     public func get_Value() throws -> T {
@@ -4704,6 +5505,10 @@ public final class Measurement_1<T : SGBridgeGenericValue>
 
 
 // type: System.Diagnostics.Metrics.Meter
+    /**
+    Meter is the class responsible for creating and tracking the Instruments.
+
+    */
 open class Meter
     :
     dotnet.System.Object,
@@ -4712,10 +5517,18 @@ open class Meter
     open class override func get_type_handle() -> TypeHandle {
         return System_Diagnostics_Metrics_Meter_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor(System.String)
 // docid: M:System.Diagnostics.Metrics.Meter.#ctor(System.String)
+    /**
+    Initializes a new instance of the Meter using the meter name.
+
+    - Parameter name: The Meter name.
+    */
     public init(name : dotnet.System.String) throws {
         var __thrown : NullableHandle = nil;
         let h = System_Diagnostics_Metrics_Meter_ctor_0__1__String(&__thrown, name.get_handle());
@@ -4727,6 +5540,12 @@ open class Meter
     }
     // .ctor(System.String, System.String)
 // docid: M:System.Diagnostics.Metrics.Meter.#ctor(System.String,System.String)
+    /**
+    Initializes a new instance of the Meter using the meter name and version.
+
+    - Parameter name: The Meter name.
+    - Parameter version: The optional Meter version.
+    */
     public init(name : dotnet.System.String, version : Optional<dotnet.System.String>) throws {
         var __thrown : NullableHandle = nil;
         let h = System_Diagnostics_Metrics_Meter_ctor_0__2__String_String(&__thrown, name.get_handle(), version?.get_handle() ?? nil);
@@ -4740,6 +5559,16 @@ open class Meter
 // TODO COPE (write_all_methods) (unused generic param) System.Diagnostics.Metrics.Histogram<T> CreateHistogram<T>(System.String, System.String, System.String)
     // System.Diagnostics.Metrics.ObservableCounter<T> CreateObservableCounter<T>(System.String, System.Func<T>, System.String, System.String)
 // docid: M:System.Diagnostics.Metrics.Meter.CreateObservableCounter``1(System.String,System.Func{``0},System.String,System.String)
+    /**
+    Creates an ObservableCounter, which is an instrument that reports monotonically increasing values when the instrument is being observed.
+
+    - Parameter name: The instrument name. cannot be .
+    - Parameter observeValue: The callback to call to get the measurements when ObservableCounter{T}.Observe() is called by .
+    - Parameter unit: Optional instrument unit of measurements.
+    - Parameter description: Optional instrument description.
+    - Returns: A new observable counter.
+
+    */
     open func CreateObservableCounter<UT : SGBridgeGenericValue>(name : dotnet.System.String, observeValue : dotnet.System.Func_1<UT>, unit : Optional<dotnet.System.String> = nil, description : Optional<dotnet.System.String> = nil) throws -> dotnet.System.Diagnostics.Metrics.ObservableCounter_1<UT> {
         var __thrown : NullableHandle = nil;
         let __return = System_Diagnostics_Metrics_Meter_System_Diagnostics_Metrics_ObservableCounter_UT___CreateObservableCounter_1__4__String_System_Func_UT__String_String(UT.get_type_handle(), &__thrown, self.get_handle(), name.get_handle(), observeValue.get_handle(), unit?.get_handle() ?? nil, description?.get_handle() ?? nil);
@@ -4756,6 +5585,16 @@ open class Meter
     }
     // System.Diagnostics.Metrics.ObservableCounter<T> CreateObservableCounter<T>(System.String, System.Func<System.Diagnostics.Metrics.Measurement<T>>, System.String, System.String)
 // docid: M:System.Diagnostics.Metrics.Meter.CreateObservableCounter``1(System.String,System.Func{System.Diagnostics.Metrics.Measurement{``0}},System.String,System.String)
+    /**
+    Creates an ObservableCounter, which is an instrument that reports monotonically increasing values when the instrument is being observed.
+
+    - Parameter name: The instrument name. cannot be .
+    - Parameter observeValue: The callback to call to get the measurements when ObservableCounter{T}.Observe() is called by 
+    - Parameter unit: Optional instrument unit of measurements.
+    - Parameter description: Optional instrument description.
+    - Returns: A new observable counter.
+
+    */
     open func CreateObservableCounter<UT : SGBridgeGenericValue>(name : dotnet.System.String, observeValue : dotnet.System.Func_1<dotnet.System.Diagnostics.Metrics.Measurement_1<UT>>, unit : Optional<dotnet.System.String> = nil, description : Optional<dotnet.System.String> = nil) throws -> dotnet.System.Diagnostics.Metrics.ObservableCounter_1<UT> {
         var __thrown : NullableHandle = nil;
         let __return = System_Diagnostics_Metrics_Meter_System_Diagnostics_Metrics_ObservableCounter_UT___CreateObservableCounter_1__4__String_System_Func_System_Diagnostics_Metrics_System_Diagnostics_Metrics_Measurement_UT___String_String(UT.get_type_handle(), &__thrown, self.get_handle(), name.get_handle(), observeValue.get_handle(), unit?.get_handle() ?? nil, description?.get_handle() ?? nil);
@@ -4772,6 +5611,16 @@ open class Meter
     }
     // System.Diagnostics.Metrics.ObservableCounter<T> CreateObservableCounter<T>(System.String, System.Func<System.Collections.Generic.IEnumerable<System.Diagnostics.Metrics.Measurement<T>>>, System.String, System.String)
 // docid: M:System.Diagnostics.Metrics.Meter.CreateObservableCounter``1(System.String,System.Func{System.Collections.Generic.IEnumerable{System.Diagnostics.Metrics.Measurement{``0}}},System.String,System.String)
+    /**
+    Creates an ObservableCounter, which is an instrument that reports monotonically increasing values when the instrument is being observed.
+
+    - Parameter name: The instrument name. cannot be .
+    - Parameter observeValues: The callback to call to get the measurements when ObservableCounter{T}.Observe() is called by .
+    - Parameter unit: Optional instrument unit of measurements.
+    - Parameter description: Optional instrument description.
+    - Returns: A new observable counter.
+
+    */
     open func CreateObservableCounter<UT : SGBridgeGenericValue>(name : dotnet.System.String, observeValues : dotnet.System.Func_1<dotnet.System.Collections.Generic.IEnumerable_1<dotnet.System.Diagnostics.Metrics.Measurement_1<UT>>>, unit : Optional<dotnet.System.String> = nil, description : Optional<dotnet.System.String> = nil) throws -> dotnet.System.Diagnostics.Metrics.ObservableCounter_1<UT> {
         var __thrown : NullableHandle = nil;
         let __return = System_Diagnostics_Metrics_Meter_System_Diagnostics_Metrics_ObservableCounter_UT___CreateObservableCounter_1__4__String_System_Func_System_Collections_Generic_System_Collections_Generic_IEnumerable_System_Diagnostics_Metrics_System_Diagnostics_Metrics_Measurement_UT____String_String(UT.get_type_handle(), &__thrown, self.get_handle(), name.get_handle(), observeValues.get_handle(), unit?.get_handle() ?? nil, description?.get_handle() ?? nil);
@@ -4788,6 +5637,16 @@ open class Meter
     }
     // System.Diagnostics.Metrics.ObservableGauge<T> CreateObservableGauge<T>(System.String, System.Func<T>, System.String, System.String)
 // docid: M:System.Diagnostics.Metrics.Meter.CreateObservableGauge``1(System.String,System.Func{``0},System.String,System.String)
+    /**
+    Creates an ObservableGauge, which is an asynchronous instrument that reports non-additive values when the instrument is being observed. An example of a non-additive value is the room temperature - it makes no sense to report the temperature value from multiple rooms and sum them up.
+
+    - Parameter name: The instrument name. cannot be .
+    - Parameter observeValue: The callback to call to get the measurements when ObservableCounter{T}.Observe() is called by .
+    - Parameter unit: Optional instrument unit of measurements.
+    - Parameter description: Optional instrument description.
+    - Returns: A new observable gauge.
+
+    */
     open func CreateObservableGauge<UT : SGBridgeGenericValue>(name : dotnet.System.String, observeValue : dotnet.System.Func_1<UT>, unit : Optional<dotnet.System.String> = nil, description : Optional<dotnet.System.String> = nil) throws -> dotnet.System.Diagnostics.Metrics.ObservableGauge_1<UT> {
         var __thrown : NullableHandle = nil;
         let __return = System_Diagnostics_Metrics_Meter_System_Diagnostics_Metrics_ObservableGauge_UT___CreateObservableGauge_1__4__String_System_Func_UT__String_String(UT.get_type_handle(), &__thrown, self.get_handle(), name.get_handle(), observeValue.get_handle(), unit?.get_handle() ?? nil, description?.get_handle() ?? nil);
@@ -4804,6 +5663,16 @@ open class Meter
     }
     // System.Diagnostics.Metrics.ObservableGauge<T> CreateObservableGauge<T>(System.String, System.Func<System.Diagnostics.Metrics.Measurement<T>>, System.String, System.String)
 // docid: M:System.Diagnostics.Metrics.Meter.CreateObservableGauge``1(System.String,System.Func{System.Diagnostics.Metrics.Measurement{``0}},System.String,System.String)
+    /**
+    Creates an ObservableGauge, which is an asynchronous instrument that reports non-additive values when the instrument is being observed. An example of a non-additive value is the room temperature - it makes no sense to report the temperature value from multiple rooms and sum them up.
+
+    - Parameter name: The instrument name. cannot be .
+    - Parameter observeValue: The callback to call to get the measurements when ObservableCounter{T}.Observe() is called by .
+    - Parameter unit: Optional instrument unit of measurements.
+    - Parameter description: Optional instrument description.
+    - Returns: A new observable gauge.
+
+    */
     open func CreateObservableGauge<UT : SGBridgeGenericValue>(name : dotnet.System.String, observeValue : dotnet.System.Func_1<dotnet.System.Diagnostics.Metrics.Measurement_1<UT>>, unit : Optional<dotnet.System.String> = nil, description : Optional<dotnet.System.String> = nil) throws -> dotnet.System.Diagnostics.Metrics.ObservableGauge_1<UT> {
         var __thrown : NullableHandle = nil;
         let __return = System_Diagnostics_Metrics_Meter_System_Diagnostics_Metrics_ObservableGauge_UT___CreateObservableGauge_1__4__String_System_Func_System_Diagnostics_Metrics_System_Diagnostics_Metrics_Measurement_UT___String_String(UT.get_type_handle(), &__thrown, self.get_handle(), name.get_handle(), observeValue.get_handle(), unit?.get_handle() ?? nil, description?.get_handle() ?? nil);
@@ -4820,6 +5689,16 @@ open class Meter
     }
     // System.Diagnostics.Metrics.ObservableGauge<T> CreateObservableGauge<T>(System.String, System.Func<System.Collections.Generic.IEnumerable<System.Diagnostics.Metrics.Measurement<T>>>, System.String, System.String)
 // docid: M:System.Diagnostics.Metrics.Meter.CreateObservableGauge``1(System.String,System.Func{System.Collections.Generic.IEnumerable{System.Diagnostics.Metrics.Measurement{``0}}},System.String,System.String)
+    /**
+    Creates an ObservableGauge, which is an asynchronous instrument that reports non-additive values when the instrument is being observed. An example of a non-additive value is the room temperature - it makes no sense to report the temperature value from multiple rooms and sum them up.
+
+    - Parameter name: The instrument name. cannot be .
+    - Parameter observeValues: The callback to call to get the measurements when ObservableCounter{T}.Observe() is called by .
+    - Parameter unit: Optional instrument unit of measurements.
+    - Parameter description: Optional instrument description.
+    - Returns: A new observable gauge.
+
+    */
     open func CreateObservableGauge<UT : SGBridgeGenericValue>(name : dotnet.System.String, observeValues : dotnet.System.Func_1<dotnet.System.Collections.Generic.IEnumerable_1<dotnet.System.Diagnostics.Metrics.Measurement_1<UT>>>, unit : Optional<dotnet.System.String> = nil, description : Optional<dotnet.System.String> = nil) throws -> dotnet.System.Diagnostics.Metrics.ObservableGauge_1<UT> {
         var __thrown : NullableHandle = nil;
         let __return = System_Diagnostics_Metrics_Meter_System_Diagnostics_Metrics_ObservableGauge_UT___CreateObservableGauge_1__4__String_System_Func_System_Collections_Generic_System_Collections_Generic_IEnumerable_System_Diagnostics_Metrics_System_Diagnostics_Metrics_Measurement_UT____String_String(UT.get_type_handle(), &__thrown, self.get_handle(), name.get_handle(), observeValues.get_handle(), unit?.get_handle() ?? nil, description?.get_handle() ?? nil);
@@ -4836,6 +5715,10 @@ open class Meter
     }
     // void Dispose()
 // docid: M:System.Diagnostics.Metrics.Meter.Dispose
+    /**
+    Dispose the Meter which will disable all instruments created by this meter.
+
+    */
     open /* method final */ func Dispose() throws {
         var __thrown : NullableHandle = nil;
         System_Diagnostics_Metrics_Meter_void__Dispose_0__0(&__thrown, self.get_handle());
@@ -4871,11 +5754,19 @@ open class Meter
         }
         }
     }
+    /**
+    Gets the Meter name.
+
+    */
     open var Name : dotnet.System.String {
         get {
             return try! get_Name();
         }
     }
+    /**
+    Gets the Meter version.
+
+    */
     open var Version : Optional<dotnet.System.String> {
         get {
             return try! get_Version();
@@ -4885,6 +5776,10 @@ open class Meter
 
 
 // type: System.Diagnostics.Metrics.MeterListener
+    /**
+    MeterListener is class used to listen to the metrics instrument measurements recording.
+
+    */
 public final class MeterListener
     :
     dotnet.System.Object,
@@ -4893,10 +5788,17 @@ public final class MeterListener
     public class override func get_type_handle() -> TypeHandle {
         return System_Diagnostics_Metrics_MeterListener_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor()
 // docid: M:System.Diagnostics.Metrics.MeterListener.#ctor
+    /**
+    Creates a MeterListener object.
+
+    */
     public override init() throws {
         var __thrown : NullableHandle = nil;
         let h = System_Diagnostics_Metrics_MeterListener_ctor_0__0(&__thrown);
@@ -4908,6 +5810,13 @@ public final class MeterListener
     }
     // System.Object DisableMeasurementEvents(System.Diagnostics.Metrics.Instrument)
 // docid: M:System.Diagnostics.Metrics.MeterListener.DisableMeasurementEvents(System.Diagnostics.Metrics.Instrument)
+    /**
+    Stop listening to a specific instrument measurement recording.
+
+    - Parameter instrument: The instrument to stop listening to.
+    - Returns: The state object originally passed to  method.
+
+    */
     public func DisableMeasurementEvents(instrument : dotnet.System.Diagnostics.Metrics.Instrument) throws -> Optional<dotnet.System.Object> {
         var __thrown : NullableHandle = nil;
         let __return = System_Diagnostics_Metrics_MeterListener_Object__DisableMeasurementEvents_0__1__Instrument(&__thrown, self.get_handle(), instrument.get_handle());
@@ -4923,6 +5832,10 @@ public final class MeterListener
     }
     // void Dispose()
 // docid: M:System.Diagnostics.Metrics.MeterListener.Dispose
+    /**
+    Disposes the listeners which will stop it from listening to any instrument.
+
+    */
     public func Dispose() throws {
         var __thrown : NullableHandle = nil;
         System_Diagnostics_Metrics_MeterListener_void__Dispose_0__0(&__thrown, self.get_handle());
@@ -4934,6 +5847,12 @@ public final class MeterListener
     }
     // void EnableMeasurementEvents(System.Diagnostics.Metrics.Instrument, System.Object)
 // docid: M:System.Diagnostics.Metrics.MeterListener.EnableMeasurementEvents(System.Diagnostics.Metrics.Instrument,System.Object)
+    /**
+    Start listening to a specific instrument measurement recording.
+
+    - Parameter instrument: The instrument to listen to.
+    - Parameter state: A state object which will be passed back to the callback getting measurements events.
+    */
     public func EnableMeasurementEvents(instrument : dotnet.System.Diagnostics.Metrics.Instrument, state : Optional<dotnet.System.Object> = nil) throws {
         var __thrown : NullableHandle = nil;
         System_Diagnostics_Metrics_MeterListener_void__EnableMeasurementEvents_0__2__Instrument_Object(&__thrown, self.get_handle(), instrument.get_handle(), state?.get_handle() ?? nil);
@@ -4945,6 +5864,10 @@ public final class MeterListener
     }
     // void RecordObservableInstruments()
 // docid: M:System.Diagnostics.Metrics.MeterListener.RecordObservableInstruments
+    /**
+    Calls all Observable instruments which the listener is listening to then calls  with every collected measurement.
+
+    */
     public func RecordObservableInstruments() throws {
         var __thrown : NullableHandle = nil;
         System_Diagnostics_Metrics_MeterListener_void__RecordObservableInstruments_0__0(&__thrown, self.get_handle());
@@ -4956,9 +5879,15 @@ public final class MeterListener
     }
     // void SetMeasurementEventCallback<T>(System.Diagnostics.Metrics.MeasurementCallback<T>)
 // docid: M:System.Diagnostics.Metrics.MeterListener.SetMeasurementEventCallback``1(System.Diagnostics.Metrics.MeasurementCallback{``0})
-    public func SetMeasurementEventCallback<UT : SGBridgeGenericValue>(measurementCallback : dotnet.System.Diagnostics.Metrics.MeasurementCallback_1<UT>) throws {
+    /**
+    Sets a callback for a specific numeric type to get the measurement recording notification from all instruments which enabled listening and was created with the same specified numeric type.
+            If a measurement of type T is recorded and a callback of type T is registered, that callback will be used.
+
+    - Parameter measurementCallback: The callback which can be used to get measurement recording of numeric type T.
+    */
+    public func SetMeasurementEventCallback<UT : SGBridgeGenericValue>(measurementCallback : Optional<dotnet.System.Diagnostics.Metrics.MeasurementCallback_1<UT>>) throws {
         var __thrown : NullableHandle = nil;
-        System_Diagnostics_Metrics_MeterListener_void__SetMeasurementEventCallback_1__1__System_Diagnostics_Metrics_MeasurementCallback_UT_(UT.get_type_handle(), &__thrown, self.get_handle(), nil);
+        System_Diagnostics_Metrics_MeterListener_void__SetMeasurementEventCallback_1__1__System_Diagnostics_Metrics_MeasurementCallback_UT_(UT.get_type_handle(), &__thrown, self.get_handle(), (measurementCallback?.get_handle()));
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
@@ -4967,6 +5896,10 @@ public final class MeterListener
     }
     // void Start()
 // docid: M:System.Diagnostics.Metrics.MeterListener.Start
+    /**
+    Enable the listener to start listening to instruments measurement recording.
+
+    */
     public func Start() throws {
         var __thrown : NullableHandle = nil;
         System_Diagnostics_Metrics_MeterListener_void__Start_0__0(&__thrown, self.get_handle());
@@ -5003,7 +5936,7 @@ public final class MeterListener
         }
     }
     // delegate closure overload
-    public func set_InstrumentPublished(value : @escaping (Optional<dotnet.System.Diagnostics.Metrics.Instrument>, Optional<dotnet.System.Diagnostics.Metrics.MeterListener>) throws -> Void) throws {
+    public func set_InstrumentPublished(value : @escaping (dotnet.System.Diagnostics.Metrics.Instrument, dotnet.System.Diagnostics.Metrics.MeterListener) throws -> Void) throws {
         let del_value = try dotnet.System.Action_2<dotnet.System.Diagnostics.Metrics.Instrument,dotnet.System.Diagnostics.Metrics.MeterListener>(value);
         return try set_InstrumentPublished(value: del_value);
     }
@@ -5034,10 +5967,14 @@ public final class MeterListener
         }
     }
     // delegate closure overload
-    public func set_MeasurementsCompleted(value : @escaping (Optional<dotnet.System.Diagnostics.Metrics.Instrument>, Optional<dotnet.System.Object>) throws -> Void) throws {
+    public func set_MeasurementsCompleted(value : @escaping (dotnet.System.Diagnostics.Metrics.Instrument, Optional<dotnet.System.Object>) throws -> Void) throws {
         let del_value = try dotnet.System.Action_2<dotnet.System.Diagnostics.Metrics.Instrument,dotnet.System.Object>(value);
         return try set_MeasurementsCompleted(value: del_value);
     }
+    /**
+    Gets or sets the callback to get notified when an instrument is published.
+
+    */
     public var InstrumentPublished : Optional<dotnet.System.Action_2<dotnet.System.Diagnostics.Metrics.Instrument,dotnet.System.Diagnostics.Metrics.MeterListener>> {
         get {
             return try! get_InstrumentPublished();
@@ -5046,6 +5983,11 @@ public final class MeterListener
             return try! set_InstrumentPublished(value: v!);
         }
     }
+    /**
+    Gets or sets the callback to get notified when the measurement is stopped on some instrument.
+            This can happen when the Meter or the Listener is disposed or calling  on the listener.
+
+    */
     public var MeasurementsCompleted : Optional<dotnet.System.Action_2<dotnet.System.Diagnostics.Metrics.Instrument,dotnet.System.Object>> {
         get {
             return try! get_MeasurementsCompleted();
@@ -5058,6 +6000,12 @@ public final class MeterListener
 
 
 // type: System.Diagnostics.Metrics.ObservableCounter`1
+    /**
+    ObservableCounter is a metrics observable Instrument which reports monotonically increasing value(s) when the instrument is being observed.
+            e.g. CPU time (for different processes, threads, user mode or kernel mode).
+            Use Meter.CreateObservableCounter methods to create the observable counter object.
+
+    */
 public final class ObservableCounter_1<T : SGBridgeGenericValue>
     :
     dotnet.System.Diagnostics.Metrics.ObservableInstrument_1<T>
@@ -5065,12 +6013,20 @@ public final class ObservableCounter_1<T : SGBridgeGenericValue>
     public class override func get_type_handle() -> TypeHandle {
         return System_Diagnostics_Metrics_ObservableCounter_1_get_type_handle(T.get_type_handle());
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
 } // ObservableCounter_1
 
 
 // type: System.Diagnostics.Metrics.ObservableGauge`1
+    /**
+    ObservableGauge is an observable Instrument that reports non-additive value(s) when the instrument is being observed.
+            e.g. the current room temperature Use Meter.CreateObservableGauge methods to create the observable counter object.
+
+    */
 public final class ObservableGauge_1<T : SGBridgeGenericValue>
     :
     dotnet.System.Diagnostics.Metrics.ObservableInstrument_1<T>
@@ -5078,18 +6034,28 @@ public final class ObservableGauge_1<T : SGBridgeGenericValue>
     public class override func get_type_handle() -> TypeHandle {
         return System_Diagnostics_Metrics_ObservableGauge_1_get_type_handle(T.get_type_handle());
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
 } // ObservableGauge_1
 
 
 // type: System.Diagnostics.Metrics.ObservableInstrument`1
+    /**
+    ObservableInstrument{T} is the base class from which all metrics observable instruments will inherit from.
+
+    */
 open class ObservableInstrument_1<T : SGBridgeGenericValue>
     :
     dotnet.System.Diagnostics.Metrics.Instrument
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Diagnostics_Metrics_ObservableInstrument_1_get_type_handle(T.get_type_handle());
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -5104,6 +6070,10 @@ open class ObservableInstrument_1<T : SGBridgeGenericValue>
         return (__return) != 0;
         }
     }
+    /**
+    Gets a value that indicates if the instrument is an observable instrument.
+
+    */
     open override var IsObservable : Bool {
         get {
             return try! get_IsObservable();

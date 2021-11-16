@@ -208,9 +208,11 @@ struct {
     TYP (* _Nonnull  _fp_System_Net_ICredentials_get_type_handle)(void);
     SG_HNDL_NULLABLE (* _Nonnull  _fp_System_Net_ICredentials_NetworkCredential__GetCredential_0__2__Uri_String)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NONNULL uri, SG_HNDL_NONNULL authType);
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_Net_ICredentials_cast)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __h);
+    SG_HNDL_NONNULL (* _Nonnull  _fp_System_Net_ICredentials_create)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE (* _Nonnull  __cb_System_Net_ICredentials_NetworkCredential__GetCredential_0__2__Uri_String)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL uri, SG_HNDL_NONNULL authType), const void* _Nonnull __pdata_System_Net_ICredentials_NetworkCredential__GetCredential_0__2__Uri_String, void (* _Nullable __deinit)(const void* _Nonnull __pdata));
     TYP (* _Nonnull  _fp_System_Net_ICredentialsByHost_get_type_handle)(void);
     SG_HNDL_NULLABLE (* _Nonnull  _fp_System_Net_ICredentialsByHost_NetworkCredential__GetCredential_0__3__String_i32_String)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NONNULL host, int32_t port, SG_HNDL_NONNULL authenticationType);
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_Net_ICredentialsByHost_cast)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __h);
+    SG_HNDL_NONNULL (* _Nonnull  _fp_System_Net_ICredentialsByHost_create)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE (* _Nonnull  __cb_System_Net_ICredentialsByHost_NetworkCredential__GetCredential_0__3__String_i32_String)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL host, int32_t port, SG_HNDL_NONNULL authenticationType), const void* _Nonnull __pdata_System_Net_ICredentialsByHost_NetworkCredential__GetCredential_0__3__String_i32_String, void (* _Nullable __deinit)(const void* _Nonnull __pdata));
     TYP (* _Nonnull  _fp_System_Net_IPAddress_get_type_handle)(void);
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_Net_IPAddress_get_Any)(void);
     void (* _Nonnull  _fp_System_Net_IPAddress_set_Any)(SG_HNDL_NONNULL __v);
@@ -247,8 +249,8 @@ struct {
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_Net_IPAddress_IPAddress__Parse_0__1__String)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL ipString);
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_Net_IPAddress_String__ToString_0__0)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h);
     int32_t (* _Nonnull  _fp_System_Net_IPAddress_bool__TryFormat_0__2__spanChar_outi32)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, const void* _Nonnull __destination_spanptr, int32_t* _Nonnull __charsWritten_out_ptr);
-    int32_t (* _Nonnull  _fp_System_Net_IPAddress_bool__TryParse_0__2__rospanChar_outIPAddress)(SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nonnull __ipSpan_spanptr, SG_HNDL_NONNULL* _Nonnull __address_out_ptr);
-    int32_t (* _Nonnull  _fp_System_Net_IPAddress_bool__TryParse_0__2__String_outIPAddress)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE ipString, SG_HNDL_NONNULL* _Nonnull __address_out_ptr);
+    int32_t (* _Nonnull  _fp_System_Net_IPAddress_bool__TryParse_0__2__rospanChar_outIPAddress)(SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nonnull __ipSpan_spanptr, SG_HNDL_NULLABLE* _Nonnull __address_out_ptr);
+    int32_t (* _Nonnull  _fp_System_Net_IPAddress_bool__TryParse_0__2__String_outIPAddress)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE ipString, SG_HNDL_NULLABLE* _Nonnull __address_out_ptr);
     int32_t (* _Nonnull  _fp_System_Net_IPAddress_bool__TryWriteBytes_0__2__spanu8_outi32)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, const void* _Nonnull __destination_spanptr, int32_t* _Nonnull __bytesWritten_out_ptr);
     int64_t (* _Nonnull  _fp_System_Net_IPAddress_i64__get_Address_0__0)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h);
     void (* _Nonnull  _fp_System_Net_IPAddress_void__set_Address_0__1__i64)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, int64_t value);
@@ -274,8 +276,8 @@ struct {
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_Net_IPEndPoint_IPEndPoint__Parse_0__1__String)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL s);
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_Net_IPEndPoint_SocketAddress__Serialize_0__0)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h);
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_Net_IPEndPoint_String__ToString_0__0)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h);
-    int32_t (* _Nonnull  _fp_System_Net_IPEndPoint_bool__TryParse_0__2__rospanChar_outIPEndPoint)(SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nonnull __s_spanptr, SG_HNDL_NONNULL* _Nonnull __result_out_ptr);
-    int32_t (* _Nonnull  _fp_System_Net_IPEndPoint_bool__TryParse_0__2__String_outIPEndPoint)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL s, SG_HNDL_NONNULL* _Nonnull __result_out_ptr);
+    int32_t (* _Nonnull  _fp_System_Net_IPEndPoint_bool__TryParse_0__2__rospanChar_outIPEndPoint)(SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nonnull __s_spanptr, SG_HNDL_NULLABLE* _Nonnull __result_out_ptr);
+    int32_t (* _Nonnull  _fp_System_Net_IPEndPoint_bool__TryParse_0__2__String_outIPEndPoint)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL s, SG_HNDL_NULLABLE* _Nonnull __result_out_ptr);
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_Net_IPEndPoint_IPAddress__get_Address_0__0)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h);
     void (* _Nonnull  _fp_System_Net_IPEndPoint_void__set_Address_0__1__IPAddress)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NONNULL value);
     int32_t (* _Nonnull  _fp_System_Net_IPEndPoint_AddressFamily__get_AddressFamily_0__0)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h);
@@ -288,6 +290,7 @@ struct {
     SG_HNDL_NULLABLE (* _Nonnull  _fp_System_Net_IWebProxy_ICredentials__get_Credentials_0__0)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h);
     void (* _Nonnull  _fp_System_Net_IWebProxy_void__set_Credentials_0__1__ICredentials)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE value);
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_Net_IWebProxy_cast)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __h);
+    SG_HNDL_NONNULL (* _Nonnull  _fp_System_Net_IWebProxy_create)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE (* _Nonnull  __cb_System_Net_IWebProxy_Uri__GetProxy_0__1__Uri)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL destination), const void* _Nonnull __pdata_System_Net_IWebProxy_Uri__GetProxy_0__1__Uri, int32_t (* _Nonnull  __cb_System_Net_IWebProxy_bool__IsBypassed_0__1__Uri)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL host), const void* _Nonnull __pdata_System_Net_IWebProxy_bool__IsBypassed_0__1__Uri, void (* _Nullable __deinit)(const void* _Nonnull __pdata));
     TYP (* _Nonnull  _fp_System_Net_NetworkCredential_get_type_handle)(void);
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_Net_NetworkCredential_ctor_0__0)(SG_HNDL_NULLABLE * _Nonnull __thrown);
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_Net_NetworkCredential_ctor_0__2__String_SecureString)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE userName, SG_HNDL_NULLABLE password);
@@ -2059,6 +2062,14 @@ SG_HNDL_NONNULL System_Net_ICredentials_cast(SG_HNDL_NULLABLE * _Nonnull __throw
     return ret;
 }
 
+SG_HNDL_NONNULL System_Net_ICredentials_create(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE (* _Nonnull  __cb_System_Net_ICredentials_NetworkCredential__GetCredential_0__2__Uri_String)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL uri, SG_HNDL_NONNULL authType), const void* _Nonnull __pdata_System_Net_ICredentials_NetworkCredential__GetCredential_0__2__Uri_String, void (* _Nullable __deinit)(const void* _Nonnull __pdata)) {
+    if (!_g_System_Net_Primitives._fp_System_Net_ICredentials_create) {
+        my_init();
+    }
+    SG_HNDL_NONNULL ret = _g_System_Net_Primitives._fp_System_Net_ICredentials_create(__thrown, __cb_System_Net_ICredentials_NetworkCredential__GetCredential_0__2__Uri_String, __pdata_System_Net_ICredentials_NetworkCredential__GetCredential_0__2__Uri_String, __deinit);
+    return ret;
+}
+
 TYP System_Net_ICredentialsByHost_get_type_handle(void) {
     if (!_g_System_Net_Primitives._fp_System_Net_ICredentialsByHost_get_type_handle) {
         my_init();
@@ -2080,6 +2091,14 @@ SG_HNDL_NONNULL System_Net_ICredentialsByHost_cast(SG_HNDL_NULLABLE * _Nonnull _
         my_init();
     }
     SG_HNDL_NONNULL ret = _g_System_Net_Primitives._fp_System_Net_ICredentialsByHost_cast(__thrown, __h);
+    return ret;
+}
+
+SG_HNDL_NONNULL System_Net_ICredentialsByHost_create(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE (* _Nonnull  __cb_System_Net_ICredentialsByHost_NetworkCredential__GetCredential_0__3__String_i32_String)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL host, int32_t port, SG_HNDL_NONNULL authenticationType), const void* _Nonnull __pdata_System_Net_ICredentialsByHost_NetworkCredential__GetCredential_0__3__String_i32_String, void (* _Nullable __deinit)(const void* _Nonnull __pdata)) {
+    if (!_g_System_Net_Primitives._fp_System_Net_ICredentialsByHost_create) {
+        my_init();
+    }
+    SG_HNDL_NONNULL ret = _g_System_Net_Primitives._fp_System_Net_ICredentialsByHost_create(__thrown, __cb_System_Net_ICredentialsByHost_NetworkCredential__GetCredential_0__3__String_i32_String, __pdata_System_Net_ICredentialsByHost_NetworkCredential__GetCredential_0__3__String_i32_String, __deinit);
     return ret;
 }
 
@@ -2364,7 +2383,7 @@ int32_t System_Net_IPAddress_bool__TryFormat_0__2__spanChar_outi32(SG_HNDL_NULLA
     return ret;
 }
 
-int32_t System_Net_IPAddress_bool__TryParse_0__2__rospanChar_outIPAddress(SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nonnull __ipSpan_spanptr, SG_HNDL_NONNULL* _Nonnull __address_out_ptr) {
+int32_t System_Net_IPAddress_bool__TryParse_0__2__rospanChar_outIPAddress(SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nonnull __ipSpan_spanptr, SG_HNDL_NULLABLE* _Nonnull __address_out_ptr) {
     if (!_g_System_Net_Primitives._fp_System_Net_IPAddress_bool__TryParse_0__2__rospanChar_outIPAddress) {
         my_init();
     }
@@ -2372,7 +2391,7 @@ int32_t System_Net_IPAddress_bool__TryParse_0__2__rospanChar_outIPAddress(SG_HND
     return ret;
 }
 
-int32_t System_Net_IPAddress_bool__TryParse_0__2__String_outIPAddress(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE ipString, SG_HNDL_NONNULL* _Nonnull __address_out_ptr) {
+int32_t System_Net_IPAddress_bool__TryParse_0__2__String_outIPAddress(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE ipString, SG_HNDL_NULLABLE* _Nonnull __address_out_ptr) {
     if (!_g_System_Net_Primitives._fp_System_Net_IPAddress_bool__TryParse_0__2__String_outIPAddress) {
         my_init();
     }
@@ -2578,7 +2597,7 @@ SG_HNDL_NONNULL System_Net_IPEndPoint_String__ToString_0__0(SG_HNDL_NULLABLE * _
     return ret;
 }
 
-int32_t System_Net_IPEndPoint_bool__TryParse_0__2__rospanChar_outIPEndPoint(SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nonnull __s_spanptr, SG_HNDL_NONNULL* _Nonnull __result_out_ptr) {
+int32_t System_Net_IPEndPoint_bool__TryParse_0__2__rospanChar_outIPEndPoint(SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nonnull __s_spanptr, SG_HNDL_NULLABLE* _Nonnull __result_out_ptr) {
     if (!_g_System_Net_Primitives._fp_System_Net_IPEndPoint_bool__TryParse_0__2__rospanChar_outIPEndPoint) {
         my_init();
     }
@@ -2586,7 +2605,7 @@ int32_t System_Net_IPEndPoint_bool__TryParse_0__2__rospanChar_outIPEndPoint(SG_H
     return ret;
 }
 
-int32_t System_Net_IPEndPoint_bool__TryParse_0__2__String_outIPEndPoint(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL s, SG_HNDL_NONNULL* _Nonnull __result_out_ptr) {
+int32_t System_Net_IPEndPoint_bool__TryParse_0__2__String_outIPEndPoint(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL s, SG_HNDL_NULLABLE* _Nonnull __result_out_ptr) {
     if (!_g_System_Net_Primitives._fp_System_Net_IPEndPoint_bool__TryParse_0__2__String_outIPEndPoint) {
         my_init();
     }
@@ -2684,6 +2703,14 @@ SG_HNDL_NONNULL System_Net_IWebProxy_cast(SG_HNDL_NULLABLE * _Nonnull __thrown, 
         my_init();
     }
     SG_HNDL_NONNULL ret = _g_System_Net_Primitives._fp_System_Net_IWebProxy_cast(__thrown, __h);
+    return ret;
+}
+
+SG_HNDL_NONNULL System_Net_IWebProxy_create(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE (* _Nonnull  __cb_System_Net_IWebProxy_Uri__GetProxy_0__1__Uri)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL destination), const void* _Nonnull __pdata_System_Net_IWebProxy_Uri__GetProxy_0__1__Uri, int32_t (* _Nonnull  __cb_System_Net_IWebProxy_bool__IsBypassed_0__1__Uri)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL host), const void* _Nonnull __pdata_System_Net_IWebProxy_bool__IsBypassed_0__1__Uri, void (* _Nullable __deinit)(const void* _Nonnull __pdata)) {
+    if (!_g_System_Net_Primitives._fp_System_Net_IWebProxy_create) {
+        my_init();
+    }
+    SG_HNDL_NONNULL ret = _g_System_Net_Primitives._fp_System_Net_IWebProxy_create(__thrown, __cb_System_Net_IWebProxy_Uri__GetProxy_0__1__Uri, __pdata_System_Net_IWebProxy_Uri__GetProxy_0__1__Uri, __cb_System_Net_IWebProxy_bool__IsBypassed_0__1__Uri, __pdata_System_Net_IWebProxy_bool__IsBypassed_0__1__Uri, __deinit);
     return ret;
 }
 

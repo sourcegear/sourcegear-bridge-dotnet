@@ -18,6 +18,9 @@ open class CaseInsensitiveComparer
     open class override func get_type_handle() -> TypeHandle {
         return System_Collections_CaseInsensitiveComparer_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor()
@@ -128,6 +131,9 @@ open class CaseInsensitiveHashCodeProvider
     open class override func get_type_handle() -> TypeHandle {
         return System_Collections_CaseInsensitiveHashCodeProvider_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor()
@@ -236,6 +242,9 @@ open class CollectionBase
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Collections_CollectionBase_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -359,6 +368,9 @@ open class DictionaryBase
     open class override func get_type_handle() -> TypeHandle {
         return System_Collections_DictionaryBase_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // void Clear()
@@ -447,6 +459,9 @@ open class Queue
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Collections_Queue_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -784,6 +799,9 @@ open class ReadOnlyCollectionBase
     open class override func get_type_handle() -> TypeHandle {
         return System_Collections_ReadOnlyCollectionBase_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // System.Collections.IEnumerator GetEnumerator()
@@ -841,6 +859,9 @@ open class SortedList
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Collections_SortedList_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -1386,9 +1407,6 @@ open class SortedList
     }
     // [IsSpecialName] System.Object get_Item(System.Object)
 // docid: M:System.Collections.SortedList.get_Item(System.Object)
-//BEGIN method_is_override
-//matches_1
-//matches :
     open func get_Item(key : dotnet.System.Object) throws -> Optional<dotnet.System.Object> {
         var __thrown : NullableHandle = nil;
         let __return = System_Collections_SortedList_Object__get_Item_0__1__Object(&__thrown, self.get_handle(), key.get_handle());
@@ -1505,6 +1523,9 @@ open class Stack
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Collections_Stack_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -1810,6 +1831,9 @@ open class CollectionsUtil
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Collections_Specialized_CollectionsUtil_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }

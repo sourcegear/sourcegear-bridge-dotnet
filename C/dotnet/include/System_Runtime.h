@@ -130,7 +130,7 @@ SG_HNDL_NULLABLE System_Action_IAsyncResult__BeginInvoke_0__2__AsyncCallback_Obj
 
 void System_Action_void__EndInvoke_0__1__IAsyncResult(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE result);
 
-SG_HNDL_NONNULL System_Action_create(SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nullable __pdata, void (* _Nullable __deinit)(const void* _Nullable __pdata), void (* _Nonnull  __cb)(const void* _Nullable __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown));
+SG_HNDL_NONNULL System_Action_create(SG_HNDL_NULLABLE * _Nonnull __thrown, void (* _Nonnull  __cb)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown), const void* _Nonnull __pdata, void (* _Nullable __deinit)(const void* _Nonnull __pdata));
 
 TYP System_Action_1_get_type_handle(TYP T);
 
@@ -152,7 +152,7 @@ SG_HNDL_NONNULL specialize_System_Action_1_void__EndInvoke_0__1__IAsyncResult(TY
 
 void invoke_System_Action_1_void__EndInvoke_0__1__IAsyncResult(SG_HNDL_NONNULL ____hdel, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE result);
 
-SG_HNDL_NONNULL System_Action_1_create(TYP T, SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nullable __pdata, void (* _Nullable __deinit)(const void* _Nullable __pdata), void (* _Nonnull  __cb)(const void* _Nullable __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, GVAL obj));
+SG_HNDL_NONNULL System_Action_1_create(TYP T, SG_HNDL_NULLABLE * _Nonnull __thrown, void (* _Nonnull  __cb)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, GVAL obj), const void* _Nonnull __pdata, void (* _Nullable __deinit)(const void* _Nonnull __pdata));
 
 TYP System_Action_10_get_type_handle(TYP T1, TYP T2, TYP T3, TYP T4, TYP T5, TYP T6, TYP T7, TYP T8, TYP T9, TYP T10);
 
@@ -174,7 +174,7 @@ SG_HNDL_NONNULL specialize_System_Action_10_void__EndInvoke_0__1__IAsyncResult(T
 
 void invoke_System_Action_10_void__EndInvoke_0__1__IAsyncResult(SG_HNDL_NONNULL ____hdel, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE result);
 
-SG_HNDL_NONNULL System_Action_10_create(TYP T1, TYP T2, TYP T3, TYP T4, TYP T5, TYP T6, TYP T7, TYP T8, TYP T9, TYP T10, SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nullable __pdata, void (* _Nullable __deinit)(const void* _Nullable __pdata), void (* _Nonnull  __cb)(const void* _Nullable __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, GVAL arg1, GVAL arg2, GVAL arg3, GVAL arg4, GVAL arg5, GVAL arg6, GVAL arg7, GVAL arg8, GVAL arg9, GVAL arg10));
+SG_HNDL_NONNULL System_Action_10_create(TYP T1, TYP T2, TYP T3, TYP T4, TYP T5, TYP T6, TYP T7, TYP T8, TYP T9, TYP T10, SG_HNDL_NULLABLE * _Nonnull __thrown, void (* _Nonnull  __cb)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, GVAL arg1, GVAL arg2, GVAL arg3, GVAL arg4, GVAL arg5, GVAL arg6, GVAL arg7, GVAL arg8, GVAL arg9, GVAL arg10), const void* _Nonnull __pdata, void (* _Nullable __deinit)(const void* _Nonnull __pdata));
 
 TYP System_Action_11_get_type_handle(TYP T1, TYP T2, TYP T3, TYP T4, TYP T5, TYP T6, TYP T7, TYP T8, TYP T9, TYP T10, TYP T11);
 
@@ -196,7 +196,7 @@ SG_HNDL_NONNULL specialize_System_Action_11_void__EndInvoke_0__1__IAsyncResult(T
 
 void invoke_System_Action_11_void__EndInvoke_0__1__IAsyncResult(SG_HNDL_NONNULL ____hdel, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE result);
 
-SG_HNDL_NONNULL System_Action_11_create(TYP T1, TYP T2, TYP T3, TYP T4, TYP T5, TYP T6, TYP T7, TYP T8, TYP T9, TYP T10, TYP T11, SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nullable __pdata, void (* _Nullable __deinit)(const void* _Nullable __pdata), void (* _Nonnull  __cb)(const void* _Nullable __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, GVAL arg1, GVAL arg2, GVAL arg3, GVAL arg4, GVAL arg5, GVAL arg6, GVAL arg7, GVAL arg8, GVAL arg9, GVAL arg10, GVAL arg11));
+SG_HNDL_NONNULL System_Action_11_create(TYP T1, TYP T2, TYP T3, TYP T4, TYP T5, TYP T6, TYP T7, TYP T8, TYP T9, TYP T10, TYP T11, SG_HNDL_NULLABLE * _Nonnull __thrown, void (* _Nonnull  __cb)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, GVAL arg1, GVAL arg2, GVAL arg3, GVAL arg4, GVAL arg5, GVAL arg6, GVAL arg7, GVAL arg8, GVAL arg9, GVAL arg10, GVAL arg11), const void* _Nonnull __pdata, void (* _Nullable __deinit)(const void* _Nonnull __pdata));
 
 TYP System_Action_12_get_type_handle(TYP T1, TYP T2, TYP T3, TYP T4, TYP T5, TYP T6, TYP T7, TYP T8, TYP T9, TYP T10, TYP T11, TYP T12);
 
@@ -218,7 +218,7 @@ SG_HNDL_NONNULL specialize_System_Action_12_void__EndInvoke_0__1__IAsyncResult(T
 
 void invoke_System_Action_12_void__EndInvoke_0__1__IAsyncResult(SG_HNDL_NONNULL ____hdel, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE result);
 
-SG_HNDL_NONNULL System_Action_12_create(TYP T1, TYP T2, TYP T3, TYP T4, TYP T5, TYP T6, TYP T7, TYP T8, TYP T9, TYP T10, TYP T11, TYP T12, SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nullable __pdata, void (* _Nullable __deinit)(const void* _Nullable __pdata), void (* _Nonnull  __cb)(const void* _Nullable __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, GVAL arg1, GVAL arg2, GVAL arg3, GVAL arg4, GVAL arg5, GVAL arg6, GVAL arg7, GVAL arg8, GVAL arg9, GVAL arg10, GVAL arg11, GVAL arg12));
+SG_HNDL_NONNULL System_Action_12_create(TYP T1, TYP T2, TYP T3, TYP T4, TYP T5, TYP T6, TYP T7, TYP T8, TYP T9, TYP T10, TYP T11, TYP T12, SG_HNDL_NULLABLE * _Nonnull __thrown, void (* _Nonnull  __cb)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, GVAL arg1, GVAL arg2, GVAL arg3, GVAL arg4, GVAL arg5, GVAL arg6, GVAL arg7, GVAL arg8, GVAL arg9, GVAL arg10, GVAL arg11, GVAL arg12), const void* _Nonnull __pdata, void (* _Nullable __deinit)(const void* _Nonnull __pdata));
 
 TYP System_Action_13_get_type_handle(TYP T1, TYP T2, TYP T3, TYP T4, TYP T5, TYP T6, TYP T7, TYP T8, TYP T9, TYP T10, TYP T11, TYP T12, TYP T13);
 
@@ -240,7 +240,7 @@ SG_HNDL_NONNULL specialize_System_Action_13_void__EndInvoke_0__1__IAsyncResult(T
 
 void invoke_System_Action_13_void__EndInvoke_0__1__IAsyncResult(SG_HNDL_NONNULL ____hdel, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE result);
 
-SG_HNDL_NONNULL System_Action_13_create(TYP T1, TYP T2, TYP T3, TYP T4, TYP T5, TYP T6, TYP T7, TYP T8, TYP T9, TYP T10, TYP T11, TYP T12, TYP T13, SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nullable __pdata, void (* _Nullable __deinit)(const void* _Nullable __pdata), void (* _Nonnull  __cb)(const void* _Nullable __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, GVAL arg1, GVAL arg2, GVAL arg3, GVAL arg4, GVAL arg5, GVAL arg6, GVAL arg7, GVAL arg8, GVAL arg9, GVAL arg10, GVAL arg11, GVAL arg12, GVAL arg13));
+SG_HNDL_NONNULL System_Action_13_create(TYP T1, TYP T2, TYP T3, TYP T4, TYP T5, TYP T6, TYP T7, TYP T8, TYP T9, TYP T10, TYP T11, TYP T12, TYP T13, SG_HNDL_NULLABLE * _Nonnull __thrown, void (* _Nonnull  __cb)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, GVAL arg1, GVAL arg2, GVAL arg3, GVAL arg4, GVAL arg5, GVAL arg6, GVAL arg7, GVAL arg8, GVAL arg9, GVAL arg10, GVAL arg11, GVAL arg12, GVAL arg13), const void* _Nonnull __pdata, void (* _Nullable __deinit)(const void* _Nonnull __pdata));
 
 TYP System_Action_14_get_type_handle(TYP T1, TYP T2, TYP T3, TYP T4, TYP T5, TYP T6, TYP T7, TYP T8, TYP T9, TYP T10, TYP T11, TYP T12, TYP T13, TYP T14);
 
@@ -262,7 +262,7 @@ SG_HNDL_NONNULL specialize_System_Action_14_void__EndInvoke_0__1__IAsyncResult(T
 
 void invoke_System_Action_14_void__EndInvoke_0__1__IAsyncResult(SG_HNDL_NONNULL ____hdel, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE result);
 
-SG_HNDL_NONNULL System_Action_14_create(TYP T1, TYP T2, TYP T3, TYP T4, TYP T5, TYP T6, TYP T7, TYP T8, TYP T9, TYP T10, TYP T11, TYP T12, TYP T13, TYP T14, SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nullable __pdata, void (* _Nullable __deinit)(const void* _Nullable __pdata), void (* _Nonnull  __cb)(const void* _Nullable __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, GVAL arg1, GVAL arg2, GVAL arg3, GVAL arg4, GVAL arg5, GVAL arg6, GVAL arg7, GVAL arg8, GVAL arg9, GVAL arg10, GVAL arg11, GVAL arg12, GVAL arg13, GVAL arg14));
+SG_HNDL_NONNULL System_Action_14_create(TYP T1, TYP T2, TYP T3, TYP T4, TYP T5, TYP T6, TYP T7, TYP T8, TYP T9, TYP T10, TYP T11, TYP T12, TYP T13, TYP T14, SG_HNDL_NULLABLE * _Nonnull __thrown, void (* _Nonnull  __cb)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, GVAL arg1, GVAL arg2, GVAL arg3, GVAL arg4, GVAL arg5, GVAL arg6, GVAL arg7, GVAL arg8, GVAL arg9, GVAL arg10, GVAL arg11, GVAL arg12, GVAL arg13, GVAL arg14), const void* _Nonnull __pdata, void (* _Nullable __deinit)(const void* _Nonnull __pdata));
 
 TYP System_Action_15_get_type_handle(TYP T1, TYP T2, TYP T3, TYP T4, TYP T5, TYP T6, TYP T7, TYP T8, TYP T9, TYP T10, TYP T11, TYP T12, TYP T13, TYP T14, TYP T15);
 
@@ -284,7 +284,7 @@ SG_HNDL_NONNULL specialize_System_Action_15_void__EndInvoke_0__1__IAsyncResult(T
 
 void invoke_System_Action_15_void__EndInvoke_0__1__IAsyncResult(SG_HNDL_NONNULL ____hdel, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE result);
 
-SG_HNDL_NONNULL System_Action_15_create(TYP T1, TYP T2, TYP T3, TYP T4, TYP T5, TYP T6, TYP T7, TYP T8, TYP T9, TYP T10, TYP T11, TYP T12, TYP T13, TYP T14, TYP T15, SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nullable __pdata, void (* _Nullable __deinit)(const void* _Nullable __pdata), void (* _Nonnull  __cb)(const void* _Nullable __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, GVAL arg1, GVAL arg2, GVAL arg3, GVAL arg4, GVAL arg5, GVAL arg6, GVAL arg7, GVAL arg8, GVAL arg9, GVAL arg10, GVAL arg11, GVAL arg12, GVAL arg13, GVAL arg14, GVAL arg15));
+SG_HNDL_NONNULL System_Action_15_create(TYP T1, TYP T2, TYP T3, TYP T4, TYP T5, TYP T6, TYP T7, TYP T8, TYP T9, TYP T10, TYP T11, TYP T12, TYP T13, TYP T14, TYP T15, SG_HNDL_NULLABLE * _Nonnull __thrown, void (* _Nonnull  __cb)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, GVAL arg1, GVAL arg2, GVAL arg3, GVAL arg4, GVAL arg5, GVAL arg6, GVAL arg7, GVAL arg8, GVAL arg9, GVAL arg10, GVAL arg11, GVAL arg12, GVAL arg13, GVAL arg14, GVAL arg15), const void* _Nonnull __pdata, void (* _Nullable __deinit)(const void* _Nonnull __pdata));
 
 TYP System_Action_16_get_type_handle(TYP T1, TYP T2, TYP T3, TYP T4, TYP T5, TYP T6, TYP T7, TYP T8, TYP T9, TYP T10, TYP T11, TYP T12, TYP T13, TYP T14, TYP T15, TYP T16);
 
@@ -306,7 +306,7 @@ SG_HNDL_NONNULL specialize_System_Action_16_void__EndInvoke_0__1__IAsyncResult(T
 
 void invoke_System_Action_16_void__EndInvoke_0__1__IAsyncResult(SG_HNDL_NONNULL ____hdel, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE result);
 
-SG_HNDL_NONNULL System_Action_16_create(TYP T1, TYP T2, TYP T3, TYP T4, TYP T5, TYP T6, TYP T7, TYP T8, TYP T9, TYP T10, TYP T11, TYP T12, TYP T13, TYP T14, TYP T15, TYP T16, SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nullable __pdata, void (* _Nullable __deinit)(const void* _Nullable __pdata), void (* _Nonnull  __cb)(const void* _Nullable __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, GVAL arg1, GVAL arg2, GVAL arg3, GVAL arg4, GVAL arg5, GVAL arg6, GVAL arg7, GVAL arg8, GVAL arg9, GVAL arg10, GVAL arg11, GVAL arg12, GVAL arg13, GVAL arg14, GVAL arg15, GVAL arg16));
+SG_HNDL_NONNULL System_Action_16_create(TYP T1, TYP T2, TYP T3, TYP T4, TYP T5, TYP T6, TYP T7, TYP T8, TYP T9, TYP T10, TYP T11, TYP T12, TYP T13, TYP T14, TYP T15, TYP T16, SG_HNDL_NULLABLE * _Nonnull __thrown, void (* _Nonnull  __cb)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, GVAL arg1, GVAL arg2, GVAL arg3, GVAL arg4, GVAL arg5, GVAL arg6, GVAL arg7, GVAL arg8, GVAL arg9, GVAL arg10, GVAL arg11, GVAL arg12, GVAL arg13, GVAL arg14, GVAL arg15, GVAL arg16), const void* _Nonnull __pdata, void (* _Nullable __deinit)(const void* _Nonnull __pdata));
 
 TYP System_Action_2_get_type_handle(TYP T1, TYP T2);
 
@@ -328,7 +328,7 @@ SG_HNDL_NONNULL specialize_System_Action_2_void__EndInvoke_0__1__IAsyncResult(TY
 
 void invoke_System_Action_2_void__EndInvoke_0__1__IAsyncResult(SG_HNDL_NONNULL ____hdel, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE result);
 
-SG_HNDL_NONNULL System_Action_2_create(TYP T1, TYP T2, SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nullable __pdata, void (* _Nullable __deinit)(const void* _Nullable __pdata), void (* _Nonnull  __cb)(const void* _Nullable __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, GVAL arg1, GVAL arg2));
+SG_HNDL_NONNULL System_Action_2_create(TYP T1, TYP T2, SG_HNDL_NULLABLE * _Nonnull __thrown, void (* _Nonnull  __cb)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, GVAL arg1, GVAL arg2), const void* _Nonnull __pdata, void (* _Nullable __deinit)(const void* _Nonnull __pdata));
 
 TYP System_Action_3_get_type_handle(TYP T1, TYP T2, TYP T3);
 
@@ -350,7 +350,7 @@ SG_HNDL_NONNULL specialize_System_Action_3_void__EndInvoke_0__1__IAsyncResult(TY
 
 void invoke_System_Action_3_void__EndInvoke_0__1__IAsyncResult(SG_HNDL_NONNULL ____hdel, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE result);
 
-SG_HNDL_NONNULL System_Action_3_create(TYP T1, TYP T2, TYP T3, SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nullable __pdata, void (* _Nullable __deinit)(const void* _Nullable __pdata), void (* _Nonnull  __cb)(const void* _Nullable __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, GVAL arg1, GVAL arg2, GVAL arg3));
+SG_HNDL_NONNULL System_Action_3_create(TYP T1, TYP T2, TYP T3, SG_HNDL_NULLABLE * _Nonnull __thrown, void (* _Nonnull  __cb)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, GVAL arg1, GVAL arg2, GVAL arg3), const void* _Nonnull __pdata, void (* _Nullable __deinit)(const void* _Nonnull __pdata));
 
 TYP System_Action_4_get_type_handle(TYP T1, TYP T2, TYP T3, TYP T4);
 
@@ -372,7 +372,7 @@ SG_HNDL_NONNULL specialize_System_Action_4_void__EndInvoke_0__1__IAsyncResult(TY
 
 void invoke_System_Action_4_void__EndInvoke_0__1__IAsyncResult(SG_HNDL_NONNULL ____hdel, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE result);
 
-SG_HNDL_NONNULL System_Action_4_create(TYP T1, TYP T2, TYP T3, TYP T4, SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nullable __pdata, void (* _Nullable __deinit)(const void* _Nullable __pdata), void (* _Nonnull  __cb)(const void* _Nullable __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, GVAL arg1, GVAL arg2, GVAL arg3, GVAL arg4));
+SG_HNDL_NONNULL System_Action_4_create(TYP T1, TYP T2, TYP T3, TYP T4, SG_HNDL_NULLABLE * _Nonnull __thrown, void (* _Nonnull  __cb)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, GVAL arg1, GVAL arg2, GVAL arg3, GVAL arg4), const void* _Nonnull __pdata, void (* _Nullable __deinit)(const void* _Nonnull __pdata));
 
 TYP System_Action_5_get_type_handle(TYP T1, TYP T2, TYP T3, TYP T4, TYP T5);
 
@@ -394,7 +394,7 @@ SG_HNDL_NONNULL specialize_System_Action_5_void__EndInvoke_0__1__IAsyncResult(TY
 
 void invoke_System_Action_5_void__EndInvoke_0__1__IAsyncResult(SG_HNDL_NONNULL ____hdel, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE result);
 
-SG_HNDL_NONNULL System_Action_5_create(TYP T1, TYP T2, TYP T3, TYP T4, TYP T5, SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nullable __pdata, void (* _Nullable __deinit)(const void* _Nullable __pdata), void (* _Nonnull  __cb)(const void* _Nullable __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, GVAL arg1, GVAL arg2, GVAL arg3, GVAL arg4, GVAL arg5));
+SG_HNDL_NONNULL System_Action_5_create(TYP T1, TYP T2, TYP T3, TYP T4, TYP T5, SG_HNDL_NULLABLE * _Nonnull __thrown, void (* _Nonnull  __cb)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, GVAL arg1, GVAL arg2, GVAL arg3, GVAL arg4, GVAL arg5), const void* _Nonnull __pdata, void (* _Nullable __deinit)(const void* _Nonnull __pdata));
 
 TYP System_Action_6_get_type_handle(TYP T1, TYP T2, TYP T3, TYP T4, TYP T5, TYP T6);
 
@@ -416,7 +416,7 @@ SG_HNDL_NONNULL specialize_System_Action_6_void__EndInvoke_0__1__IAsyncResult(TY
 
 void invoke_System_Action_6_void__EndInvoke_0__1__IAsyncResult(SG_HNDL_NONNULL ____hdel, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE result);
 
-SG_HNDL_NONNULL System_Action_6_create(TYP T1, TYP T2, TYP T3, TYP T4, TYP T5, TYP T6, SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nullable __pdata, void (* _Nullable __deinit)(const void* _Nullable __pdata), void (* _Nonnull  __cb)(const void* _Nullable __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, GVAL arg1, GVAL arg2, GVAL arg3, GVAL arg4, GVAL arg5, GVAL arg6));
+SG_HNDL_NONNULL System_Action_6_create(TYP T1, TYP T2, TYP T3, TYP T4, TYP T5, TYP T6, SG_HNDL_NULLABLE * _Nonnull __thrown, void (* _Nonnull  __cb)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, GVAL arg1, GVAL arg2, GVAL arg3, GVAL arg4, GVAL arg5, GVAL arg6), const void* _Nonnull __pdata, void (* _Nullable __deinit)(const void* _Nonnull __pdata));
 
 TYP System_Action_7_get_type_handle(TYP T1, TYP T2, TYP T3, TYP T4, TYP T5, TYP T6, TYP T7);
 
@@ -438,7 +438,7 @@ SG_HNDL_NONNULL specialize_System_Action_7_void__EndInvoke_0__1__IAsyncResult(TY
 
 void invoke_System_Action_7_void__EndInvoke_0__1__IAsyncResult(SG_HNDL_NONNULL ____hdel, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE result);
 
-SG_HNDL_NONNULL System_Action_7_create(TYP T1, TYP T2, TYP T3, TYP T4, TYP T5, TYP T6, TYP T7, SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nullable __pdata, void (* _Nullable __deinit)(const void* _Nullable __pdata), void (* _Nonnull  __cb)(const void* _Nullable __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, GVAL arg1, GVAL arg2, GVAL arg3, GVAL arg4, GVAL arg5, GVAL arg6, GVAL arg7));
+SG_HNDL_NONNULL System_Action_7_create(TYP T1, TYP T2, TYP T3, TYP T4, TYP T5, TYP T6, TYP T7, SG_HNDL_NULLABLE * _Nonnull __thrown, void (* _Nonnull  __cb)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, GVAL arg1, GVAL arg2, GVAL arg3, GVAL arg4, GVAL arg5, GVAL arg6, GVAL arg7), const void* _Nonnull __pdata, void (* _Nullable __deinit)(const void* _Nonnull __pdata));
 
 TYP System_Action_8_get_type_handle(TYP T1, TYP T2, TYP T3, TYP T4, TYP T5, TYP T6, TYP T7, TYP T8);
 
@@ -460,7 +460,7 @@ SG_HNDL_NONNULL specialize_System_Action_8_void__EndInvoke_0__1__IAsyncResult(TY
 
 void invoke_System_Action_8_void__EndInvoke_0__1__IAsyncResult(SG_HNDL_NONNULL ____hdel, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE result);
 
-SG_HNDL_NONNULL System_Action_8_create(TYP T1, TYP T2, TYP T3, TYP T4, TYP T5, TYP T6, TYP T7, TYP T8, SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nullable __pdata, void (* _Nullable __deinit)(const void* _Nullable __pdata), void (* _Nonnull  __cb)(const void* _Nullable __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, GVAL arg1, GVAL arg2, GVAL arg3, GVAL arg4, GVAL arg5, GVAL arg6, GVAL arg7, GVAL arg8));
+SG_HNDL_NONNULL System_Action_8_create(TYP T1, TYP T2, TYP T3, TYP T4, TYP T5, TYP T6, TYP T7, TYP T8, SG_HNDL_NULLABLE * _Nonnull __thrown, void (* _Nonnull  __cb)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, GVAL arg1, GVAL arg2, GVAL arg3, GVAL arg4, GVAL arg5, GVAL arg6, GVAL arg7, GVAL arg8), const void* _Nonnull __pdata, void (* _Nullable __deinit)(const void* _Nonnull __pdata));
 
 TYP System_Action_9_get_type_handle(TYP T1, TYP T2, TYP T3, TYP T4, TYP T5, TYP T6, TYP T7, TYP T8, TYP T9);
 
@@ -482,7 +482,7 @@ SG_HNDL_NONNULL specialize_System_Action_9_void__EndInvoke_0__1__IAsyncResult(TY
 
 void invoke_System_Action_9_void__EndInvoke_0__1__IAsyncResult(SG_HNDL_NONNULL ____hdel, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE result);
 
-SG_HNDL_NONNULL System_Action_9_create(TYP T1, TYP T2, TYP T3, TYP T4, TYP T5, TYP T6, TYP T7, TYP T8, TYP T9, SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nullable __pdata, void (* _Nullable __deinit)(const void* _Nullable __pdata), void (* _Nonnull  __cb)(const void* _Nullable __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, GVAL arg1, GVAL arg2, GVAL arg3, GVAL arg4, GVAL arg5, GVAL arg6, GVAL arg7, GVAL arg8, GVAL arg9));
+SG_HNDL_NONNULL System_Action_9_create(TYP T1, TYP T2, TYP T3, TYP T4, TYP T5, TYP T6, TYP T7, TYP T8, TYP T9, SG_HNDL_NULLABLE * _Nonnull __thrown, void (* _Nonnull  __cb)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, GVAL arg1, GVAL arg2, GVAL arg3, GVAL arg4, GVAL arg5, GVAL arg6, GVAL arg7, GVAL arg8, GVAL arg9), const void* _Nonnull __pdata, void (* _Nullable __deinit)(const void* _Nonnull __pdata));
 
 SG_HNDL_NULLABLE System_Activator_ObjectHandle__CreateInstance_0__2__String_String(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL assemblyName, SG_HNDL_NONNULL typeName);
 
@@ -1372,7 +1372,7 @@ SG_HNDL_NULLABLE System_AssemblyLoadEventHandler_IAsyncResult__BeginInvoke_0__4_
 
 void System_AssemblyLoadEventHandler_void__EndInvoke_0__1__IAsyncResult(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE result);
 
-SG_HNDL_NONNULL System_AssemblyLoadEventHandler_create(SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nullable __pdata, void (* _Nullable __deinit)(const void* _Nullable __pdata), void (* _Nonnull  __cb)(const void* _Nullable __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE sender, SG_HNDL_NONNULL args));
+SG_HNDL_NONNULL System_AssemblyLoadEventHandler_create(SG_HNDL_NULLABLE * _Nonnull __thrown, void (* _Nonnull  __cb)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE sender, SG_HNDL_NONNULL args), const void* _Nonnull __pdata, void (* _Nullable __deinit)(const void* _Nonnull __pdata));
 
 TYP System_AsyncCallback_get_type_handle(void);
 
@@ -1382,7 +1382,7 @@ SG_HNDL_NULLABLE System_AsyncCallback_IAsyncResult__BeginInvoke_0__3__IAsyncResu
 
 void System_AsyncCallback_void__EndInvoke_0__1__IAsyncResult(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE result);
 
-SG_HNDL_NONNULL System_AsyncCallback_create(SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nullable __pdata, void (* _Nullable __deinit)(const void* _Nullable __pdata), void (* _Nonnull  __cb)(const void* _Nullable __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL ar));
+SG_HNDL_NONNULL System_AsyncCallback_create(SG_HNDL_NULLABLE * _Nonnull __thrown, void (* _Nonnull  __cb)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL ar), const void* _Nonnull __pdata, void (* _Nullable __deinit)(const void* _Nonnull __pdata));
 
 TYP System_Attribute_get_type_handle(void);
 
@@ -1926,7 +1926,7 @@ SG_HNDL_NONNULL specialize_System_Comparison_1_i32__EndInvoke_0__1__IAsyncResult
 
 int32_t invoke_System_Comparison_1_i32__EndInvoke_0__1__IAsyncResult(SG_HNDL_NONNULL ____hdel, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE result);
 
-SG_HNDL_NONNULL System_Comparison_1_create(TYP T, SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nullable __pdata, void (* _Nullable __deinit)(const void* _Nullable __pdata), int32_t (* _Nonnull  __cb)(const void* _Nullable __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, GVAL x, GVAL y));
+SG_HNDL_NONNULL System_Comparison_1_create(TYP T, SG_HNDL_NULLABLE * _Nonnull __thrown, int32_t (* _Nonnull  __cb)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, GVAL x, GVAL y), const void* _Nonnull __pdata, void (* _Nullable __deinit)(const void* _Nonnull __pdata));
 
 TYP System_ContextBoundObject_get_type_handle(void);
 
@@ -2610,7 +2610,7 @@ SG_HNDL_NONNULL specialize_System_Converter_2_TOutput__EndInvoke_0__1__IAsyncRes
 
 GVAL invoke_System_Converter_2_TOutput__EndInvoke_0__1__IAsyncResult(SG_HNDL_NONNULL ____hdel, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE result);
 
-SG_HNDL_NONNULL System_Converter_2_create(TYP TInput, TYP TOutput, SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nullable __pdata, void (* _Nullable __deinit)(const void* _Nullable __pdata), GVAL (* _Nonnull  __cb)(const void* _Nullable __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, GVAL input));
+SG_HNDL_NONNULL System_Converter_2_create(TYP TInput, TYP TOutput, SG_HNDL_NULLABLE * _Nonnull __thrown, GVAL (* _Nonnull  __cb)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, GVAL input), const void* _Nonnull __pdata, void (* _Nullable __deinit)(const void* _Nonnull __pdata));
 
 TYP System_DBNull_get_type_handle(void);
 
@@ -2690,29 +2690,29 @@ SG_HNDL_NONNULL System_DateOnly_DateOnly__ParseExact_0__2__String_StringArray(SG
 
 SG_HNDL_NONNULL System_DateOnly_DateOnly__ParseExact_0__4__String_StringArray_IFormatProvider_DateTimeStyles(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL s, SG_HNDL_NONNULL formats, SG_HNDL_NULLABLE provider, int32_t style);
 
-int32_t System_DateOnly_bool__TryParse_0__2__rospanChar_outDateOnly(SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nonnull __s_spanptr, SG_HNDL_NONNULL* _Nonnull __result_out_ptr);
+int32_t System_DateOnly_bool__TryParse_0__2__rospanChar_outDateOnly(SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nonnull __s_spanptr, SG_HNDL_NULLABLE* _Nonnull __result_out_ptr);
 
-int32_t System_DateOnly_bool__TryParse_0__4__rospanChar_IFormatProvider_DateTimeStyles_outDateOnly(SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nonnull __s_spanptr, SG_HNDL_NULLABLE provider, int32_t style, SG_HNDL_NONNULL* _Nonnull __result_out_ptr);
+int32_t System_DateOnly_bool__TryParse_0__4__rospanChar_IFormatProvider_DateTimeStyles_outDateOnly(SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nonnull __s_spanptr, SG_HNDL_NULLABLE provider, int32_t style, SG_HNDL_NULLABLE* _Nonnull __result_out_ptr);
 
-int32_t System_DateOnly_bool__TryParseExact_0__3__rospanChar_rospanChar_outDateOnly(SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nonnull __s_spanptr, const void* _Nonnull __format_spanptr, SG_HNDL_NONNULL* _Nonnull __result_out_ptr);
+int32_t System_DateOnly_bool__TryParseExact_0__3__rospanChar_rospanChar_outDateOnly(SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nonnull __s_spanptr, const void* _Nonnull __format_spanptr, SG_HNDL_NULLABLE* _Nonnull __result_out_ptr);
 
-int32_t System_DateOnly_bool__TryParseExact_0__5__rospanChar_rospanChar_IFormatProvider_DateTimeStyles_outDateOnly(SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nonnull __s_spanptr, const void* _Nonnull __format_spanptr, SG_HNDL_NULLABLE provider, int32_t style, SG_HNDL_NONNULL* _Nonnull __result_out_ptr);
+int32_t System_DateOnly_bool__TryParseExact_0__5__rospanChar_rospanChar_IFormatProvider_DateTimeStyles_outDateOnly(SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nonnull __s_spanptr, const void* _Nonnull __format_spanptr, SG_HNDL_NULLABLE provider, int32_t style, SG_HNDL_NULLABLE* _Nonnull __result_out_ptr);
 
-int32_t System_DateOnly_bool__TryParseExact_0__3__rospanChar_StringArray_outDateOnly(SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nonnull __s_spanptr, SG_HNDL_NULLABLE formats, SG_HNDL_NONNULL* _Nonnull __result_out_ptr);
+int32_t System_DateOnly_bool__TryParseExact_0__3__rospanChar_StringArray_outDateOnly(SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nonnull __s_spanptr, SG_HNDL_NULLABLE formats, SG_HNDL_NULLABLE* _Nonnull __result_out_ptr);
 
-int32_t System_DateOnly_bool__TryParseExact_0__5__rospanChar_StringArray_IFormatProvider_DateTimeStyles_outDateOnly(SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nonnull __s_spanptr, SG_HNDL_NULLABLE formats, SG_HNDL_NULLABLE provider, int32_t style, SG_HNDL_NONNULL* _Nonnull __result_out_ptr);
+int32_t System_DateOnly_bool__TryParseExact_0__5__rospanChar_StringArray_IFormatProvider_DateTimeStyles_outDateOnly(SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nonnull __s_spanptr, SG_HNDL_NULLABLE formats, SG_HNDL_NULLABLE provider, int32_t style, SG_HNDL_NULLABLE* _Nonnull __result_out_ptr);
 
-int32_t System_DateOnly_bool__TryParse_0__2__String_outDateOnly(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE s, SG_HNDL_NONNULL* _Nonnull __result_out_ptr);
+int32_t System_DateOnly_bool__TryParse_0__2__String_outDateOnly(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE s, SG_HNDL_NULLABLE* _Nonnull __result_out_ptr);
 
-int32_t System_DateOnly_bool__TryParse_0__4__String_IFormatProvider_DateTimeStyles_outDateOnly(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE s, SG_HNDL_NULLABLE provider, int32_t style, SG_HNDL_NONNULL* _Nonnull __result_out_ptr);
+int32_t System_DateOnly_bool__TryParse_0__4__String_IFormatProvider_DateTimeStyles_outDateOnly(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE s, SG_HNDL_NULLABLE provider, int32_t style, SG_HNDL_NULLABLE* _Nonnull __result_out_ptr);
 
-int32_t System_DateOnly_bool__TryParseExact_0__3__String_String_outDateOnly(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE s, SG_HNDL_NULLABLE format, SG_HNDL_NONNULL* _Nonnull __result_out_ptr);
+int32_t System_DateOnly_bool__TryParseExact_0__3__String_String_outDateOnly(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE s, SG_HNDL_NULLABLE format, SG_HNDL_NULLABLE* _Nonnull __result_out_ptr);
 
-int32_t System_DateOnly_bool__TryParseExact_0__5__String_String_IFormatProvider_DateTimeStyles_outDateOnly(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE s, SG_HNDL_NULLABLE format, SG_HNDL_NULLABLE provider, int32_t style, SG_HNDL_NONNULL* _Nonnull __result_out_ptr);
+int32_t System_DateOnly_bool__TryParseExact_0__5__String_String_IFormatProvider_DateTimeStyles_outDateOnly(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE s, SG_HNDL_NULLABLE format, SG_HNDL_NULLABLE provider, int32_t style, SG_HNDL_NULLABLE* _Nonnull __result_out_ptr);
 
-int32_t System_DateOnly_bool__TryParseExact_0__3__String_StringArray_outDateOnly(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE s, SG_HNDL_NULLABLE formats, SG_HNDL_NONNULL* _Nonnull __result_out_ptr);
+int32_t System_DateOnly_bool__TryParseExact_0__3__String_StringArray_outDateOnly(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE s, SG_HNDL_NULLABLE formats, SG_HNDL_NULLABLE* _Nonnull __result_out_ptr);
 
-int32_t System_DateOnly_bool__TryParseExact_0__5__String_StringArray_IFormatProvider_DateTimeStyles_outDateOnly(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE s, SG_HNDL_NULLABLE formats, SG_HNDL_NULLABLE provider, int32_t style, SG_HNDL_NONNULL* _Nonnull __result_out_ptr);
+int32_t System_DateOnly_bool__TryParseExact_0__5__String_StringArray_IFormatProvider_DateTimeStyles_outDateOnly(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE s, SG_HNDL_NULLABLE formats, SG_HNDL_NULLABLE provider, int32_t style, SG_HNDL_NULLABLE* _Nonnull __result_out_ptr);
 
 SG_HNDL_NONNULL System_DateOnly_String__ToLongDateString_0__0(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h);
 
@@ -2910,21 +2910,21 @@ SG_HNDL_NONNULL System_DateTime_DateTime__ToUniversalTime_0__0(SG_HNDL_NULLABLE 
 
 int32_t System_DateTime_bool__TryFormat_0__4__spanChar_outi32_rospanChar_IFormatProvider(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, const void* _Nonnull __destination_spanptr, int32_t* _Nonnull __charsWritten_out_ptr, const void* _Nonnull __format_spanptr, SG_HNDL_NULLABLE provider);
 
-int32_t System_DateTime_bool__TryParse_0__2__rospanChar_outDateTime(SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nonnull __s_spanptr, SG_HNDL_NONNULL* _Nonnull __result_out_ptr);
+int32_t System_DateTime_bool__TryParse_0__2__rospanChar_outDateTime(SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nonnull __s_spanptr, SG_HNDL_NULLABLE* _Nonnull __result_out_ptr);
 
-int32_t System_DateTime_bool__TryParse_0__4__rospanChar_IFormatProvider_DateTimeStyles_outDateTime(SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nonnull __s_spanptr, SG_HNDL_NULLABLE provider, int32_t styles, SG_HNDL_NONNULL* _Nonnull __result_out_ptr);
+int32_t System_DateTime_bool__TryParse_0__4__rospanChar_IFormatProvider_DateTimeStyles_outDateTime(SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nonnull __s_spanptr, SG_HNDL_NULLABLE provider, int32_t styles, SG_HNDL_NULLABLE* _Nonnull __result_out_ptr);
 
-int32_t System_DateTime_bool__TryParse_0__2__String_outDateTime(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE s, SG_HNDL_NONNULL* _Nonnull __result_out_ptr);
+int32_t System_DateTime_bool__TryParse_0__2__String_outDateTime(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE s, SG_HNDL_NULLABLE* _Nonnull __result_out_ptr);
 
-int32_t System_DateTime_bool__TryParse_0__4__String_IFormatProvider_DateTimeStyles_outDateTime(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE s, SG_HNDL_NULLABLE provider, int32_t styles, SG_HNDL_NONNULL* _Nonnull __result_out_ptr);
+int32_t System_DateTime_bool__TryParse_0__4__String_IFormatProvider_DateTimeStyles_outDateTime(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE s, SG_HNDL_NULLABLE provider, int32_t styles, SG_HNDL_NULLABLE* _Nonnull __result_out_ptr);
 
-int32_t System_DateTime_bool__TryParseExact_0__5__rospanChar_rospanChar_IFormatProvider_DateTimeStyles_outDateTime(SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nonnull __s_spanptr, const void* _Nonnull __format_spanptr, SG_HNDL_NULLABLE provider, int32_t style, SG_HNDL_NONNULL* _Nonnull __result_out_ptr);
+int32_t System_DateTime_bool__TryParseExact_0__5__rospanChar_rospanChar_IFormatProvider_DateTimeStyles_outDateTime(SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nonnull __s_spanptr, const void* _Nonnull __format_spanptr, SG_HNDL_NULLABLE provider, int32_t style, SG_HNDL_NULLABLE* _Nonnull __result_out_ptr);
 
-int32_t System_DateTime_bool__TryParseExact_0__5__rospanChar_StringArray_IFormatProvider_DateTimeStyles_outDateTime(SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nonnull __s_spanptr, SG_HNDL_NULLABLE formats, SG_HNDL_NULLABLE provider, int32_t style, SG_HNDL_NONNULL* _Nonnull __result_out_ptr);
+int32_t System_DateTime_bool__TryParseExact_0__5__rospanChar_StringArray_IFormatProvider_DateTimeStyles_outDateTime(SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nonnull __s_spanptr, SG_HNDL_NULLABLE formats, SG_HNDL_NULLABLE provider, int32_t style, SG_HNDL_NULLABLE* _Nonnull __result_out_ptr);
 
-int32_t System_DateTime_bool__TryParseExact_0__5__String_String_IFormatProvider_DateTimeStyles_outDateTime(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE s, SG_HNDL_NULLABLE format, SG_HNDL_NULLABLE provider, int32_t style, SG_HNDL_NONNULL* _Nonnull __result_out_ptr);
+int32_t System_DateTime_bool__TryParseExact_0__5__String_String_IFormatProvider_DateTimeStyles_outDateTime(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE s, SG_HNDL_NULLABLE format, SG_HNDL_NULLABLE provider, int32_t style, SG_HNDL_NULLABLE* _Nonnull __result_out_ptr);
 
-int32_t System_DateTime_bool__TryParseExact_0__5__String_StringArray_IFormatProvider_DateTimeStyles_outDateTime(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE s, SG_HNDL_NULLABLE formats, SG_HNDL_NULLABLE provider, int32_t style, SG_HNDL_NONNULL* _Nonnull __result_out_ptr);
+int32_t System_DateTime_bool__TryParseExact_0__5__String_StringArray_IFormatProvider_DateTimeStyles_outDateTime(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE s, SG_HNDL_NULLABLE formats, SG_HNDL_NULLABLE provider, int32_t style, SG_HNDL_NULLABLE* _Nonnull __result_out_ptr);
 
 SG_HNDL_NONNULL System_DateTime_DateTime__get_Date_0__0(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h);
 
@@ -3096,21 +3096,21 @@ int64_t System_DateTimeOffset_i64__ToUnixTimeSeconds_0__0(SG_HNDL_NULLABLE * _No
 
 int32_t System_DateTimeOffset_bool__TryFormat_0__4__spanChar_outi32_rospanChar_IFormatProvider(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, const void* _Nonnull __destination_spanptr, int32_t* _Nonnull __charsWritten_out_ptr, const void* _Nonnull __format_spanptr, SG_HNDL_NULLABLE formatProvider);
 
-int32_t System_DateTimeOffset_bool__TryParse_0__2__rospanChar_outDateTimeOffset(SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nonnull __input_spanptr, SG_HNDL_NONNULL* _Nonnull __result_out_ptr);
+int32_t System_DateTimeOffset_bool__TryParse_0__2__rospanChar_outDateTimeOffset(SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nonnull __input_spanptr, SG_HNDL_NULLABLE* _Nonnull __result_out_ptr);
 
-int32_t System_DateTimeOffset_bool__TryParse_0__4__rospanChar_IFormatProvider_DateTimeStyles_outDateTimeOffset(SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nonnull __input_spanptr, SG_HNDL_NULLABLE formatProvider, int32_t styles, SG_HNDL_NONNULL* _Nonnull __result_out_ptr);
+int32_t System_DateTimeOffset_bool__TryParse_0__4__rospanChar_IFormatProvider_DateTimeStyles_outDateTimeOffset(SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nonnull __input_spanptr, SG_HNDL_NULLABLE formatProvider, int32_t styles, SG_HNDL_NULLABLE* _Nonnull __result_out_ptr);
 
-int32_t System_DateTimeOffset_bool__TryParse_0__2__String_outDateTimeOffset(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE input, SG_HNDL_NONNULL* _Nonnull __result_out_ptr);
+int32_t System_DateTimeOffset_bool__TryParse_0__2__String_outDateTimeOffset(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE input, SG_HNDL_NULLABLE* _Nonnull __result_out_ptr);
 
-int32_t System_DateTimeOffset_bool__TryParse_0__4__String_IFormatProvider_DateTimeStyles_outDateTimeOffset(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE input, SG_HNDL_NULLABLE formatProvider, int32_t styles, SG_HNDL_NONNULL* _Nonnull __result_out_ptr);
+int32_t System_DateTimeOffset_bool__TryParse_0__4__String_IFormatProvider_DateTimeStyles_outDateTimeOffset(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE input, SG_HNDL_NULLABLE formatProvider, int32_t styles, SG_HNDL_NULLABLE* _Nonnull __result_out_ptr);
 
-int32_t System_DateTimeOffset_bool__TryParseExact_0__5__rospanChar_rospanChar_IFormatProvider_DateTimeStyles_outDateTimeOffset(SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nonnull __input_spanptr, const void* _Nonnull __format_spanptr, SG_HNDL_NULLABLE formatProvider, int32_t styles, SG_HNDL_NONNULL* _Nonnull __result_out_ptr);
+int32_t System_DateTimeOffset_bool__TryParseExact_0__5__rospanChar_rospanChar_IFormatProvider_DateTimeStyles_outDateTimeOffset(SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nonnull __input_spanptr, const void* _Nonnull __format_spanptr, SG_HNDL_NULLABLE formatProvider, int32_t styles, SG_HNDL_NULLABLE* _Nonnull __result_out_ptr);
 
-int32_t System_DateTimeOffset_bool__TryParseExact_0__5__rospanChar_StringArray_IFormatProvider_DateTimeStyles_outDateTimeOffset(SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nonnull __input_spanptr, SG_HNDL_NULLABLE formats, SG_HNDL_NULLABLE formatProvider, int32_t styles, SG_HNDL_NONNULL* _Nonnull __result_out_ptr);
+int32_t System_DateTimeOffset_bool__TryParseExact_0__5__rospanChar_StringArray_IFormatProvider_DateTimeStyles_outDateTimeOffset(SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nonnull __input_spanptr, SG_HNDL_NULLABLE formats, SG_HNDL_NULLABLE formatProvider, int32_t styles, SG_HNDL_NULLABLE* _Nonnull __result_out_ptr);
 
-int32_t System_DateTimeOffset_bool__TryParseExact_0__5__String_String_IFormatProvider_DateTimeStyles_outDateTimeOffset(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE input, SG_HNDL_NULLABLE format, SG_HNDL_NULLABLE formatProvider, int32_t styles, SG_HNDL_NONNULL* _Nonnull __result_out_ptr);
+int32_t System_DateTimeOffset_bool__TryParseExact_0__5__String_String_IFormatProvider_DateTimeStyles_outDateTimeOffset(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE input, SG_HNDL_NULLABLE format, SG_HNDL_NULLABLE formatProvider, int32_t styles, SG_HNDL_NULLABLE* _Nonnull __result_out_ptr);
 
-int32_t System_DateTimeOffset_bool__TryParseExact_0__5__String_StringArray_IFormatProvider_DateTimeStyles_outDateTimeOffset(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE input, SG_HNDL_NULLABLE formats, SG_HNDL_NULLABLE formatProvider, int32_t styles, SG_HNDL_NONNULL* _Nonnull __result_out_ptr);
+int32_t System_DateTimeOffset_bool__TryParseExact_0__5__String_StringArray_IFormatProvider_DateTimeStyles_outDateTimeOffset(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE input, SG_HNDL_NULLABLE formats, SG_HNDL_NULLABLE formatProvider, int32_t styles, SG_HNDL_NULLABLE* _Nonnull __result_out_ptr);
 
 SG_HNDL_NONNULL System_DateTimeOffset_DateTime__get_Date_0__0(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h);
 
@@ -3374,13 +3374,13 @@ int32_t System_Decimal_bool__TryFormat_0__4__spanChar_outi32_rospanChar_IFormatP
 
 int32_t System_Decimal_bool__TryGetBits_0__3__Decimal_spani32_outi32(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL d, const void* _Nonnull __destination_spanptr, int32_t* _Nonnull __valuesWritten_out_ptr);
 
-int32_t System_Decimal_bool__TryParse_0__2__rospanChar_outDecimal(SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nonnull __s_spanptr, SG_HNDL_NONNULL* _Nonnull __result_out_ptr);
+int32_t System_Decimal_bool__TryParse_0__2__rospanChar_outDecimal(SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nonnull __s_spanptr, SG_HNDL_NULLABLE* _Nonnull __result_out_ptr);
 
-int32_t System_Decimal_bool__TryParse_0__4__rospanChar_NumberStyles_IFormatProvider_outDecimal(SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nonnull __s_spanptr, int32_t style, SG_HNDL_NULLABLE provider, SG_HNDL_NONNULL* _Nonnull __result_out_ptr);
+int32_t System_Decimal_bool__TryParse_0__4__rospanChar_NumberStyles_IFormatProvider_outDecimal(SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nonnull __s_spanptr, int32_t style, SG_HNDL_NULLABLE provider, SG_HNDL_NULLABLE* _Nonnull __result_out_ptr);
 
-int32_t System_Decimal_bool__TryParse_0__2__String_outDecimal(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE s, SG_HNDL_NONNULL* _Nonnull __result_out_ptr);
+int32_t System_Decimal_bool__TryParse_0__2__String_outDecimal(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE s, SG_HNDL_NULLABLE* _Nonnull __result_out_ptr);
 
-int32_t System_Decimal_bool__TryParse_0__4__String_NumberStyles_IFormatProvider_outDecimal(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE s, int32_t style, SG_HNDL_NULLABLE provider, SG_HNDL_NONNULL* _Nonnull __result_out_ptr);
+int32_t System_Decimal_bool__TryParse_0__4__String_NumberStyles_IFormatProvider_outDecimal(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE s, int32_t style, SG_HNDL_NULLABLE provider, SG_HNDL_NULLABLE* _Nonnull __result_out_ptr);
 
 SG_HNDL_NONNULL System_Decimal_implicit_ctor(void);
 
@@ -3644,13 +3644,13 @@ SG_HNDL_NONNULL System_Enum_String__ToString_0__1__String(SG_HNDL_NULLABLE * _No
 
 SG_HNDL_NONNULL System_Enum_String__ToString_0__2__String_IFormatProvider(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE format, SG_HNDL_NULLABLE provider);
 
-int32_t System_Enum_bool__TryParse_0__4__Type_rospanChar_bool_outObject(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL enumType, const void* _Nonnull __value_spanptr, int32_t ignoreCase, SG_HNDL_NONNULL* _Nonnull __result_out_ptr);
+int32_t System_Enum_bool__TryParse_0__4__Type_rospanChar_bool_outObject(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL enumType, const void* _Nonnull __value_spanptr, int32_t ignoreCase, SG_HNDL_NULLABLE* _Nonnull __result_out_ptr);
 
-int32_t System_Enum_bool__TryParse_0__3__Type_rospanChar_outObject(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL enumType, const void* _Nonnull __value_spanptr, SG_HNDL_NONNULL* _Nonnull __result_out_ptr);
+int32_t System_Enum_bool__TryParse_0__3__Type_rospanChar_outObject(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL enumType, const void* _Nonnull __value_spanptr, SG_HNDL_NULLABLE* _Nonnull __result_out_ptr);
 
-int32_t System_Enum_bool__TryParse_0__4__Type_String_bool_outObject(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL enumType, SG_HNDL_NULLABLE value, int32_t ignoreCase, SG_HNDL_NONNULL* _Nonnull __result_out_ptr);
+int32_t System_Enum_bool__TryParse_0__4__Type_String_bool_outObject(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL enumType, SG_HNDL_NULLABLE value, int32_t ignoreCase, SG_HNDL_NULLABLE* _Nonnull __result_out_ptr);
 
-int32_t System_Enum_bool__TryParse_0__3__Type_String_outObject(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL enumType, SG_HNDL_NULLABLE value, SG_HNDL_NONNULL* _Nonnull __result_out_ptr);
+int32_t System_Enum_bool__TryParse_0__3__Type_String_outObject(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL enumType, SG_HNDL_NULLABLE value, SG_HNDL_NULLABLE* _Nonnull __result_out_ptr);
 
 int32_t System_Enum_bool__TryParse_1__3__String_bool_outUTEnum(TYP TEnum, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE value, int32_t ignoreCase, GVAL* _Nonnull __result_out_ptr);
 
@@ -3874,7 +3874,7 @@ SG_HNDL_NULLABLE System_EventHandler_IAsyncResult__BeginInvoke_0__4__Object_Even
 
 void System_EventHandler_void__EndInvoke_0__1__IAsyncResult(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE result);
 
-SG_HNDL_NONNULL System_EventHandler_create(SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nullable __pdata, void (* _Nullable __deinit)(const void* _Nullable __pdata), void (* _Nonnull  __cb)(const void* _Nullable __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE sender, SG_HNDL_NONNULL e));
+SG_HNDL_NONNULL System_EventHandler_create(SG_HNDL_NULLABLE * _Nonnull __thrown, void (* _Nonnull  __cb)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE sender, SG_HNDL_NONNULL e), const void* _Nonnull __pdata, void (* _Nullable __deinit)(const void* _Nonnull __pdata));
 
 TYP System_EventHandler_1_get_type_handle(TYP TEventArgs);
 
@@ -3896,7 +3896,7 @@ SG_HNDL_NONNULL specialize_System_EventHandler_1_void__EndInvoke_0__1__IAsyncRes
 
 void invoke_System_EventHandler_1_void__EndInvoke_0__1__IAsyncResult(SG_HNDL_NONNULL ____hdel, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE result);
 
-SG_HNDL_NONNULL System_EventHandler_1_create(TYP TEventArgs, SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nullable __pdata, void (* _Nullable __deinit)(const void* _Nullable __pdata), void (* _Nonnull  __cb)(const void* _Nullable __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE sender, GVAL e));
+SG_HNDL_NONNULL System_EventHandler_1_create(TYP TEventArgs, SG_HNDL_NULLABLE * _Nonnull __thrown, void (* _Nonnull  __cb)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE sender, GVAL e), const void* _Nonnull __pdata, void (* _Nullable __deinit)(const void* _Nonnull __pdata));
 
 TYP System_Exception_get_type_handle(void);
 
@@ -4026,7 +4026,7 @@ SG_HNDL_NONNULL specialize_System_Func_1_TResult__EndInvoke_0__1__IAsyncResult(T
 
 GVAL invoke_System_Func_1_TResult__EndInvoke_0__1__IAsyncResult(SG_HNDL_NONNULL ____hdel, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE result);
 
-SG_HNDL_NONNULL System_Func_1_create(TYP TResult, SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nullable __pdata, void (* _Nullable __deinit)(const void* _Nullable __pdata), GVAL (* _Nonnull  __cb)(const void* _Nullable __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown));
+SG_HNDL_NONNULL System_Func_1_create(TYP TResult, SG_HNDL_NULLABLE * _Nonnull __thrown, GVAL (* _Nonnull  __cb)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown), const void* _Nonnull __pdata, void (* _Nullable __deinit)(const void* _Nonnull __pdata));
 
 TYP System_Func_10_get_type_handle(TYP T1, TYP T2, TYP T3, TYP T4, TYP T5, TYP T6, TYP T7, TYP T8, TYP T9, TYP TResult);
 
@@ -4048,7 +4048,7 @@ SG_HNDL_NONNULL specialize_System_Func_10_TResult__EndInvoke_0__1__IAsyncResult(
 
 GVAL invoke_System_Func_10_TResult__EndInvoke_0__1__IAsyncResult(SG_HNDL_NONNULL ____hdel, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE result);
 
-SG_HNDL_NONNULL System_Func_10_create(TYP T1, TYP T2, TYP T3, TYP T4, TYP T5, TYP T6, TYP T7, TYP T8, TYP T9, TYP TResult, SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nullable __pdata, void (* _Nullable __deinit)(const void* _Nullable __pdata), GVAL (* _Nonnull  __cb)(const void* _Nullable __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, GVAL arg1, GVAL arg2, GVAL arg3, GVAL arg4, GVAL arg5, GVAL arg6, GVAL arg7, GVAL arg8, GVAL arg9));
+SG_HNDL_NONNULL System_Func_10_create(TYP T1, TYP T2, TYP T3, TYP T4, TYP T5, TYP T6, TYP T7, TYP T8, TYP T9, TYP TResult, SG_HNDL_NULLABLE * _Nonnull __thrown, GVAL (* _Nonnull  __cb)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, GVAL arg1, GVAL arg2, GVAL arg3, GVAL arg4, GVAL arg5, GVAL arg6, GVAL arg7, GVAL arg8, GVAL arg9), const void* _Nonnull __pdata, void (* _Nullable __deinit)(const void* _Nonnull __pdata));
 
 TYP System_Func_11_get_type_handle(TYP T1, TYP T2, TYP T3, TYP T4, TYP T5, TYP T6, TYP T7, TYP T8, TYP T9, TYP T10, TYP TResult);
 
@@ -4070,7 +4070,7 @@ SG_HNDL_NONNULL specialize_System_Func_11_TResult__EndInvoke_0__1__IAsyncResult(
 
 GVAL invoke_System_Func_11_TResult__EndInvoke_0__1__IAsyncResult(SG_HNDL_NONNULL ____hdel, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE result);
 
-SG_HNDL_NONNULL System_Func_11_create(TYP T1, TYP T2, TYP T3, TYP T4, TYP T5, TYP T6, TYP T7, TYP T8, TYP T9, TYP T10, TYP TResult, SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nullable __pdata, void (* _Nullable __deinit)(const void* _Nullable __pdata), GVAL (* _Nonnull  __cb)(const void* _Nullable __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, GVAL arg1, GVAL arg2, GVAL arg3, GVAL arg4, GVAL arg5, GVAL arg6, GVAL arg7, GVAL arg8, GVAL arg9, GVAL arg10));
+SG_HNDL_NONNULL System_Func_11_create(TYP T1, TYP T2, TYP T3, TYP T4, TYP T5, TYP T6, TYP T7, TYP T8, TYP T9, TYP T10, TYP TResult, SG_HNDL_NULLABLE * _Nonnull __thrown, GVAL (* _Nonnull  __cb)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, GVAL arg1, GVAL arg2, GVAL arg3, GVAL arg4, GVAL arg5, GVAL arg6, GVAL arg7, GVAL arg8, GVAL arg9, GVAL arg10), const void* _Nonnull __pdata, void (* _Nullable __deinit)(const void* _Nonnull __pdata));
 
 TYP System_Func_12_get_type_handle(TYP T1, TYP T2, TYP T3, TYP T4, TYP T5, TYP T6, TYP T7, TYP T8, TYP T9, TYP T10, TYP T11, TYP TResult);
 
@@ -4092,7 +4092,7 @@ SG_HNDL_NONNULL specialize_System_Func_12_TResult__EndInvoke_0__1__IAsyncResult(
 
 GVAL invoke_System_Func_12_TResult__EndInvoke_0__1__IAsyncResult(SG_HNDL_NONNULL ____hdel, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE result);
 
-SG_HNDL_NONNULL System_Func_12_create(TYP T1, TYP T2, TYP T3, TYP T4, TYP T5, TYP T6, TYP T7, TYP T8, TYP T9, TYP T10, TYP T11, TYP TResult, SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nullable __pdata, void (* _Nullable __deinit)(const void* _Nullable __pdata), GVAL (* _Nonnull  __cb)(const void* _Nullable __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, GVAL arg1, GVAL arg2, GVAL arg3, GVAL arg4, GVAL arg5, GVAL arg6, GVAL arg7, GVAL arg8, GVAL arg9, GVAL arg10, GVAL arg11));
+SG_HNDL_NONNULL System_Func_12_create(TYP T1, TYP T2, TYP T3, TYP T4, TYP T5, TYP T6, TYP T7, TYP T8, TYP T9, TYP T10, TYP T11, TYP TResult, SG_HNDL_NULLABLE * _Nonnull __thrown, GVAL (* _Nonnull  __cb)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, GVAL arg1, GVAL arg2, GVAL arg3, GVAL arg4, GVAL arg5, GVAL arg6, GVAL arg7, GVAL arg8, GVAL arg9, GVAL arg10, GVAL arg11), const void* _Nonnull __pdata, void (* _Nullable __deinit)(const void* _Nonnull __pdata));
 
 TYP System_Func_13_get_type_handle(TYP T1, TYP T2, TYP T3, TYP T4, TYP T5, TYP T6, TYP T7, TYP T8, TYP T9, TYP T10, TYP T11, TYP T12, TYP TResult);
 
@@ -4114,7 +4114,7 @@ SG_HNDL_NONNULL specialize_System_Func_13_TResult__EndInvoke_0__1__IAsyncResult(
 
 GVAL invoke_System_Func_13_TResult__EndInvoke_0__1__IAsyncResult(SG_HNDL_NONNULL ____hdel, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE result);
 
-SG_HNDL_NONNULL System_Func_13_create(TYP T1, TYP T2, TYP T3, TYP T4, TYP T5, TYP T6, TYP T7, TYP T8, TYP T9, TYP T10, TYP T11, TYP T12, TYP TResult, SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nullable __pdata, void (* _Nullable __deinit)(const void* _Nullable __pdata), GVAL (* _Nonnull  __cb)(const void* _Nullable __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, GVAL arg1, GVAL arg2, GVAL arg3, GVAL arg4, GVAL arg5, GVAL arg6, GVAL arg7, GVAL arg8, GVAL arg9, GVAL arg10, GVAL arg11, GVAL arg12));
+SG_HNDL_NONNULL System_Func_13_create(TYP T1, TYP T2, TYP T3, TYP T4, TYP T5, TYP T6, TYP T7, TYP T8, TYP T9, TYP T10, TYP T11, TYP T12, TYP TResult, SG_HNDL_NULLABLE * _Nonnull __thrown, GVAL (* _Nonnull  __cb)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, GVAL arg1, GVAL arg2, GVAL arg3, GVAL arg4, GVAL arg5, GVAL arg6, GVAL arg7, GVAL arg8, GVAL arg9, GVAL arg10, GVAL arg11, GVAL arg12), const void* _Nonnull __pdata, void (* _Nullable __deinit)(const void* _Nonnull __pdata));
 
 TYP System_Func_14_get_type_handle(TYP T1, TYP T2, TYP T3, TYP T4, TYP T5, TYP T6, TYP T7, TYP T8, TYP T9, TYP T10, TYP T11, TYP T12, TYP T13, TYP TResult);
 
@@ -4136,7 +4136,7 @@ SG_HNDL_NONNULL specialize_System_Func_14_TResult__EndInvoke_0__1__IAsyncResult(
 
 GVAL invoke_System_Func_14_TResult__EndInvoke_0__1__IAsyncResult(SG_HNDL_NONNULL ____hdel, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE result);
 
-SG_HNDL_NONNULL System_Func_14_create(TYP T1, TYP T2, TYP T3, TYP T4, TYP T5, TYP T6, TYP T7, TYP T8, TYP T9, TYP T10, TYP T11, TYP T12, TYP T13, TYP TResult, SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nullable __pdata, void (* _Nullable __deinit)(const void* _Nullable __pdata), GVAL (* _Nonnull  __cb)(const void* _Nullable __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, GVAL arg1, GVAL arg2, GVAL arg3, GVAL arg4, GVAL arg5, GVAL arg6, GVAL arg7, GVAL arg8, GVAL arg9, GVAL arg10, GVAL arg11, GVAL arg12, GVAL arg13));
+SG_HNDL_NONNULL System_Func_14_create(TYP T1, TYP T2, TYP T3, TYP T4, TYP T5, TYP T6, TYP T7, TYP T8, TYP T9, TYP T10, TYP T11, TYP T12, TYP T13, TYP TResult, SG_HNDL_NULLABLE * _Nonnull __thrown, GVAL (* _Nonnull  __cb)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, GVAL arg1, GVAL arg2, GVAL arg3, GVAL arg4, GVAL arg5, GVAL arg6, GVAL arg7, GVAL arg8, GVAL arg9, GVAL arg10, GVAL arg11, GVAL arg12, GVAL arg13), const void* _Nonnull __pdata, void (* _Nullable __deinit)(const void* _Nonnull __pdata));
 
 TYP System_Func_15_get_type_handle(TYP T1, TYP T2, TYP T3, TYP T4, TYP T5, TYP T6, TYP T7, TYP T8, TYP T9, TYP T10, TYP T11, TYP T12, TYP T13, TYP T14, TYP TResult);
 
@@ -4158,7 +4158,7 @@ SG_HNDL_NONNULL specialize_System_Func_15_TResult__EndInvoke_0__1__IAsyncResult(
 
 GVAL invoke_System_Func_15_TResult__EndInvoke_0__1__IAsyncResult(SG_HNDL_NONNULL ____hdel, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE result);
 
-SG_HNDL_NONNULL System_Func_15_create(TYP T1, TYP T2, TYP T3, TYP T4, TYP T5, TYP T6, TYP T7, TYP T8, TYP T9, TYP T10, TYP T11, TYP T12, TYP T13, TYP T14, TYP TResult, SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nullable __pdata, void (* _Nullable __deinit)(const void* _Nullable __pdata), GVAL (* _Nonnull  __cb)(const void* _Nullable __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, GVAL arg1, GVAL arg2, GVAL arg3, GVAL arg4, GVAL arg5, GVAL arg6, GVAL arg7, GVAL arg8, GVAL arg9, GVAL arg10, GVAL arg11, GVAL arg12, GVAL arg13, GVAL arg14));
+SG_HNDL_NONNULL System_Func_15_create(TYP T1, TYP T2, TYP T3, TYP T4, TYP T5, TYP T6, TYP T7, TYP T8, TYP T9, TYP T10, TYP T11, TYP T12, TYP T13, TYP T14, TYP TResult, SG_HNDL_NULLABLE * _Nonnull __thrown, GVAL (* _Nonnull  __cb)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, GVAL arg1, GVAL arg2, GVAL arg3, GVAL arg4, GVAL arg5, GVAL arg6, GVAL arg7, GVAL arg8, GVAL arg9, GVAL arg10, GVAL arg11, GVAL arg12, GVAL arg13, GVAL arg14), const void* _Nonnull __pdata, void (* _Nullable __deinit)(const void* _Nonnull __pdata));
 
 TYP System_Func_16_get_type_handle(TYP T1, TYP T2, TYP T3, TYP T4, TYP T5, TYP T6, TYP T7, TYP T8, TYP T9, TYP T10, TYP T11, TYP T12, TYP T13, TYP T14, TYP T15, TYP TResult);
 
@@ -4180,7 +4180,7 @@ SG_HNDL_NONNULL specialize_System_Func_16_TResult__EndInvoke_0__1__IAsyncResult(
 
 GVAL invoke_System_Func_16_TResult__EndInvoke_0__1__IAsyncResult(SG_HNDL_NONNULL ____hdel, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE result);
 
-SG_HNDL_NONNULL System_Func_16_create(TYP T1, TYP T2, TYP T3, TYP T4, TYP T5, TYP T6, TYP T7, TYP T8, TYP T9, TYP T10, TYP T11, TYP T12, TYP T13, TYP T14, TYP T15, TYP TResult, SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nullable __pdata, void (* _Nullable __deinit)(const void* _Nullable __pdata), GVAL (* _Nonnull  __cb)(const void* _Nullable __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, GVAL arg1, GVAL arg2, GVAL arg3, GVAL arg4, GVAL arg5, GVAL arg6, GVAL arg7, GVAL arg8, GVAL arg9, GVAL arg10, GVAL arg11, GVAL arg12, GVAL arg13, GVAL arg14, GVAL arg15));
+SG_HNDL_NONNULL System_Func_16_create(TYP T1, TYP T2, TYP T3, TYP T4, TYP T5, TYP T6, TYP T7, TYP T8, TYP T9, TYP T10, TYP T11, TYP T12, TYP T13, TYP T14, TYP T15, TYP TResult, SG_HNDL_NULLABLE * _Nonnull __thrown, GVAL (* _Nonnull  __cb)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, GVAL arg1, GVAL arg2, GVAL arg3, GVAL arg4, GVAL arg5, GVAL arg6, GVAL arg7, GVAL arg8, GVAL arg9, GVAL arg10, GVAL arg11, GVAL arg12, GVAL arg13, GVAL arg14, GVAL arg15), const void* _Nonnull __pdata, void (* _Nullable __deinit)(const void* _Nonnull __pdata));
 
 TYP System_Func_17_get_type_handle(TYP T1, TYP T2, TYP T3, TYP T4, TYP T5, TYP T6, TYP T7, TYP T8, TYP T9, TYP T10, TYP T11, TYP T12, TYP T13, TYP T14, TYP T15, TYP T16, TYP TResult);
 
@@ -4202,7 +4202,7 @@ SG_HNDL_NONNULL specialize_System_Func_17_TResult__EndInvoke_0__1__IAsyncResult(
 
 GVAL invoke_System_Func_17_TResult__EndInvoke_0__1__IAsyncResult(SG_HNDL_NONNULL ____hdel, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE result);
 
-SG_HNDL_NONNULL System_Func_17_create(TYP T1, TYP T2, TYP T3, TYP T4, TYP T5, TYP T6, TYP T7, TYP T8, TYP T9, TYP T10, TYP T11, TYP T12, TYP T13, TYP T14, TYP T15, TYP T16, TYP TResult, SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nullable __pdata, void (* _Nullable __deinit)(const void* _Nullable __pdata), GVAL (* _Nonnull  __cb)(const void* _Nullable __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, GVAL arg1, GVAL arg2, GVAL arg3, GVAL arg4, GVAL arg5, GVAL arg6, GVAL arg7, GVAL arg8, GVAL arg9, GVAL arg10, GVAL arg11, GVAL arg12, GVAL arg13, GVAL arg14, GVAL arg15, GVAL arg16));
+SG_HNDL_NONNULL System_Func_17_create(TYP T1, TYP T2, TYP T3, TYP T4, TYP T5, TYP T6, TYP T7, TYP T8, TYP T9, TYP T10, TYP T11, TYP T12, TYP T13, TYP T14, TYP T15, TYP T16, TYP TResult, SG_HNDL_NULLABLE * _Nonnull __thrown, GVAL (* _Nonnull  __cb)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, GVAL arg1, GVAL arg2, GVAL arg3, GVAL arg4, GVAL arg5, GVAL arg6, GVAL arg7, GVAL arg8, GVAL arg9, GVAL arg10, GVAL arg11, GVAL arg12, GVAL arg13, GVAL arg14, GVAL arg15, GVAL arg16), const void* _Nonnull __pdata, void (* _Nullable __deinit)(const void* _Nonnull __pdata));
 
 TYP System_Func_2_get_type_handle(TYP T, TYP TResult);
 
@@ -4224,7 +4224,7 @@ SG_HNDL_NONNULL specialize_System_Func_2_TResult__EndInvoke_0__1__IAsyncResult(T
 
 GVAL invoke_System_Func_2_TResult__EndInvoke_0__1__IAsyncResult(SG_HNDL_NONNULL ____hdel, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE result);
 
-SG_HNDL_NONNULL System_Func_2_create(TYP T, TYP TResult, SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nullable __pdata, void (* _Nullable __deinit)(const void* _Nullable __pdata), GVAL (* _Nonnull  __cb)(const void* _Nullable __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, GVAL arg));
+SG_HNDL_NONNULL System_Func_2_create(TYP T, TYP TResult, SG_HNDL_NULLABLE * _Nonnull __thrown, GVAL (* _Nonnull  __cb)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, GVAL arg), const void* _Nonnull __pdata, void (* _Nullable __deinit)(const void* _Nonnull __pdata));
 
 TYP System_Func_3_get_type_handle(TYP T1, TYP T2, TYP TResult);
 
@@ -4246,7 +4246,7 @@ SG_HNDL_NONNULL specialize_System_Func_3_TResult__EndInvoke_0__1__IAsyncResult(T
 
 GVAL invoke_System_Func_3_TResult__EndInvoke_0__1__IAsyncResult(SG_HNDL_NONNULL ____hdel, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE result);
 
-SG_HNDL_NONNULL System_Func_3_create(TYP T1, TYP T2, TYP TResult, SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nullable __pdata, void (* _Nullable __deinit)(const void* _Nullable __pdata), GVAL (* _Nonnull  __cb)(const void* _Nullable __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, GVAL arg1, GVAL arg2));
+SG_HNDL_NONNULL System_Func_3_create(TYP T1, TYP T2, TYP TResult, SG_HNDL_NULLABLE * _Nonnull __thrown, GVAL (* _Nonnull  __cb)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, GVAL arg1, GVAL arg2), const void* _Nonnull __pdata, void (* _Nullable __deinit)(const void* _Nonnull __pdata));
 
 TYP System_Func_4_get_type_handle(TYP T1, TYP T2, TYP T3, TYP TResult);
 
@@ -4268,7 +4268,7 @@ SG_HNDL_NONNULL specialize_System_Func_4_TResult__EndInvoke_0__1__IAsyncResult(T
 
 GVAL invoke_System_Func_4_TResult__EndInvoke_0__1__IAsyncResult(SG_HNDL_NONNULL ____hdel, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE result);
 
-SG_HNDL_NONNULL System_Func_4_create(TYP T1, TYP T2, TYP T3, TYP TResult, SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nullable __pdata, void (* _Nullable __deinit)(const void* _Nullable __pdata), GVAL (* _Nonnull  __cb)(const void* _Nullable __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, GVAL arg1, GVAL arg2, GVAL arg3));
+SG_HNDL_NONNULL System_Func_4_create(TYP T1, TYP T2, TYP T3, TYP TResult, SG_HNDL_NULLABLE * _Nonnull __thrown, GVAL (* _Nonnull  __cb)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, GVAL arg1, GVAL arg2, GVAL arg3), const void* _Nonnull __pdata, void (* _Nullable __deinit)(const void* _Nonnull __pdata));
 
 TYP System_Func_5_get_type_handle(TYP T1, TYP T2, TYP T3, TYP T4, TYP TResult);
 
@@ -4290,7 +4290,7 @@ SG_HNDL_NONNULL specialize_System_Func_5_TResult__EndInvoke_0__1__IAsyncResult(T
 
 GVAL invoke_System_Func_5_TResult__EndInvoke_0__1__IAsyncResult(SG_HNDL_NONNULL ____hdel, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE result);
 
-SG_HNDL_NONNULL System_Func_5_create(TYP T1, TYP T2, TYP T3, TYP T4, TYP TResult, SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nullable __pdata, void (* _Nullable __deinit)(const void* _Nullable __pdata), GVAL (* _Nonnull  __cb)(const void* _Nullable __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, GVAL arg1, GVAL arg2, GVAL arg3, GVAL arg4));
+SG_HNDL_NONNULL System_Func_5_create(TYP T1, TYP T2, TYP T3, TYP T4, TYP TResult, SG_HNDL_NULLABLE * _Nonnull __thrown, GVAL (* _Nonnull  __cb)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, GVAL arg1, GVAL arg2, GVAL arg3, GVAL arg4), const void* _Nonnull __pdata, void (* _Nullable __deinit)(const void* _Nonnull __pdata));
 
 TYP System_Func_6_get_type_handle(TYP T1, TYP T2, TYP T3, TYP T4, TYP T5, TYP TResult);
 
@@ -4312,7 +4312,7 @@ SG_HNDL_NONNULL specialize_System_Func_6_TResult__EndInvoke_0__1__IAsyncResult(T
 
 GVAL invoke_System_Func_6_TResult__EndInvoke_0__1__IAsyncResult(SG_HNDL_NONNULL ____hdel, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE result);
 
-SG_HNDL_NONNULL System_Func_6_create(TYP T1, TYP T2, TYP T3, TYP T4, TYP T5, TYP TResult, SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nullable __pdata, void (* _Nullable __deinit)(const void* _Nullable __pdata), GVAL (* _Nonnull  __cb)(const void* _Nullable __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, GVAL arg1, GVAL arg2, GVAL arg3, GVAL arg4, GVAL arg5));
+SG_HNDL_NONNULL System_Func_6_create(TYP T1, TYP T2, TYP T3, TYP T4, TYP T5, TYP TResult, SG_HNDL_NULLABLE * _Nonnull __thrown, GVAL (* _Nonnull  __cb)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, GVAL arg1, GVAL arg2, GVAL arg3, GVAL arg4, GVAL arg5), const void* _Nonnull __pdata, void (* _Nullable __deinit)(const void* _Nonnull __pdata));
 
 TYP System_Func_7_get_type_handle(TYP T1, TYP T2, TYP T3, TYP T4, TYP T5, TYP T6, TYP TResult);
 
@@ -4334,7 +4334,7 @@ SG_HNDL_NONNULL specialize_System_Func_7_TResult__EndInvoke_0__1__IAsyncResult(T
 
 GVAL invoke_System_Func_7_TResult__EndInvoke_0__1__IAsyncResult(SG_HNDL_NONNULL ____hdel, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE result);
 
-SG_HNDL_NONNULL System_Func_7_create(TYP T1, TYP T2, TYP T3, TYP T4, TYP T5, TYP T6, TYP TResult, SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nullable __pdata, void (* _Nullable __deinit)(const void* _Nullable __pdata), GVAL (* _Nonnull  __cb)(const void* _Nullable __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, GVAL arg1, GVAL arg2, GVAL arg3, GVAL arg4, GVAL arg5, GVAL arg6));
+SG_HNDL_NONNULL System_Func_7_create(TYP T1, TYP T2, TYP T3, TYP T4, TYP T5, TYP T6, TYP TResult, SG_HNDL_NULLABLE * _Nonnull __thrown, GVAL (* _Nonnull  __cb)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, GVAL arg1, GVAL arg2, GVAL arg3, GVAL arg4, GVAL arg5, GVAL arg6), const void* _Nonnull __pdata, void (* _Nullable __deinit)(const void* _Nonnull __pdata));
 
 TYP System_Func_8_get_type_handle(TYP T1, TYP T2, TYP T3, TYP T4, TYP T5, TYP T6, TYP T7, TYP TResult);
 
@@ -4356,7 +4356,7 @@ SG_HNDL_NONNULL specialize_System_Func_8_TResult__EndInvoke_0__1__IAsyncResult(T
 
 GVAL invoke_System_Func_8_TResult__EndInvoke_0__1__IAsyncResult(SG_HNDL_NONNULL ____hdel, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE result);
 
-SG_HNDL_NONNULL System_Func_8_create(TYP T1, TYP T2, TYP T3, TYP T4, TYP T5, TYP T6, TYP T7, TYP TResult, SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nullable __pdata, void (* _Nullable __deinit)(const void* _Nullable __pdata), GVAL (* _Nonnull  __cb)(const void* _Nullable __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, GVAL arg1, GVAL arg2, GVAL arg3, GVAL arg4, GVAL arg5, GVAL arg6, GVAL arg7));
+SG_HNDL_NONNULL System_Func_8_create(TYP T1, TYP T2, TYP T3, TYP T4, TYP T5, TYP T6, TYP T7, TYP TResult, SG_HNDL_NULLABLE * _Nonnull __thrown, GVAL (* _Nonnull  __cb)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, GVAL arg1, GVAL arg2, GVAL arg3, GVAL arg4, GVAL arg5, GVAL arg6, GVAL arg7), const void* _Nonnull __pdata, void (* _Nullable __deinit)(const void* _Nonnull __pdata));
 
 TYP System_Func_9_get_type_handle(TYP T1, TYP T2, TYP T3, TYP T4, TYP T5, TYP T6, TYP T7, TYP T8, TYP TResult);
 
@@ -4378,7 +4378,7 @@ SG_HNDL_NONNULL specialize_System_Func_9_TResult__EndInvoke_0__1__IAsyncResult(T
 
 GVAL invoke_System_Func_9_TResult__EndInvoke_0__1__IAsyncResult(SG_HNDL_NONNULL ____hdel, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE result);
 
-SG_HNDL_NONNULL System_Func_9_create(TYP T1, TYP T2, TYP T3, TYP T4, TYP T5, TYP T6, TYP T7, TYP T8, TYP TResult, SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nullable __pdata, void (* _Nullable __deinit)(const void* _Nullable __pdata), GVAL (* _Nonnull  __cb)(const void* _Nullable __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, GVAL arg1, GVAL arg2, GVAL arg3, GVAL arg4, GVAL arg5, GVAL arg6, GVAL arg7, GVAL arg8));
+SG_HNDL_NONNULL System_Func_9_create(TYP T1, TYP T2, TYP T3, TYP T4, TYP T5, TYP T6, TYP T7, TYP T8, TYP TResult, SG_HNDL_NULLABLE * _Nonnull __thrown, GVAL (* _Nonnull  __cb)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, GVAL arg1, GVAL arg2, GVAL arg3, GVAL arg4, GVAL arg5, GVAL arg6, GVAL arg7, GVAL arg8), const void* _Nonnull __pdata, void (* _Nullable __deinit)(const void* _Nonnull __pdata));
 
 void System_GC_void__AddMemoryPressure_0__1__i64(SG_HNDL_NULLABLE * _Nonnull __thrown, int64_t bytesAllocated);
 
@@ -4618,13 +4618,13 @@ SG_HNDL_NONNULL System_Guid_String__ToString_0__2__String_IFormatProvider(SG_HND
 
 int32_t System_Guid_bool__TryFormat_0__3__spanChar_outi32_rospanChar(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, const void* _Nonnull __destination_spanptr, int32_t* _Nonnull __charsWritten_out_ptr, const void* _Nonnull __format_spanptr);
 
-int32_t System_Guid_bool__TryParse_0__2__rospanChar_outGuid(SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nonnull __input_spanptr, SG_HNDL_NONNULL* _Nonnull __result_out_ptr);
+int32_t System_Guid_bool__TryParse_0__2__rospanChar_outGuid(SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nonnull __input_spanptr, SG_HNDL_NULLABLE* _Nonnull __result_out_ptr);
 
-int32_t System_Guid_bool__TryParse_0__2__String_outGuid(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE input, SG_HNDL_NONNULL* _Nonnull __result_out_ptr);
+int32_t System_Guid_bool__TryParse_0__2__String_outGuid(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE input, SG_HNDL_NULLABLE* _Nonnull __result_out_ptr);
 
-int32_t System_Guid_bool__TryParseExact_0__3__rospanChar_rospanChar_outGuid(SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nonnull __input_spanptr, const void* _Nonnull __format_spanptr, SG_HNDL_NONNULL* _Nonnull __result_out_ptr);
+int32_t System_Guid_bool__TryParseExact_0__3__rospanChar_rospanChar_outGuid(SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nonnull __input_spanptr, const void* _Nonnull __format_spanptr, SG_HNDL_NULLABLE* _Nonnull __result_out_ptr);
 
-int32_t System_Guid_bool__TryParseExact_0__3__String_String_outGuid(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE input, SG_HNDL_NULLABLE format, SG_HNDL_NONNULL* _Nonnull __result_out_ptr);
+int32_t System_Guid_bool__TryParseExact_0__3__String_String_outGuid(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE input, SG_HNDL_NULLABLE format, SG_HNDL_NULLABLE* _Nonnull __result_out_ptr);
 
 int32_t System_Guid_bool__TryWriteBytes_0__1__spanu8(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, const void* _Nonnull __destination_spanptr);
 
@@ -4698,13 +4698,13 @@ SG_HNDL_NONNULL System_Half_String__ToString_0__2__String_IFormatProvider(SG_HND
 
 int32_t System_Half_bool__TryFormat_0__4__spanChar_outi32_rospanChar_IFormatProvider(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, const void* _Nonnull __destination_spanptr, int32_t* _Nonnull __charsWritten_out_ptr, const void* _Nonnull __format_spanptr, SG_HNDL_NULLABLE provider);
 
-int32_t System_Half_bool__TryParse_0__4__rospanChar_NumberStyles_IFormatProvider_outHalf(SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nonnull __s_spanptr, int32_t style, SG_HNDL_NULLABLE provider, SG_HNDL_NONNULL* _Nonnull __result_out_ptr);
+int32_t System_Half_bool__TryParse_0__4__rospanChar_NumberStyles_IFormatProvider_outHalf(SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nonnull __s_spanptr, int32_t style, SG_HNDL_NULLABLE provider, SG_HNDL_NULLABLE* _Nonnull __result_out_ptr);
 
-int32_t System_Half_bool__TryParse_0__2__rospanChar_outHalf(SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nonnull __s_spanptr, SG_HNDL_NONNULL* _Nonnull __result_out_ptr);
+int32_t System_Half_bool__TryParse_0__2__rospanChar_outHalf(SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nonnull __s_spanptr, SG_HNDL_NULLABLE* _Nonnull __result_out_ptr);
 
-int32_t System_Half_bool__TryParse_0__4__String_NumberStyles_IFormatProvider_outHalf(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE s, int32_t style, SG_HNDL_NULLABLE provider, SG_HNDL_NONNULL* _Nonnull __result_out_ptr);
+int32_t System_Half_bool__TryParse_0__4__String_NumberStyles_IFormatProvider_outHalf(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE s, int32_t style, SG_HNDL_NULLABLE provider, SG_HNDL_NULLABLE* _Nonnull __result_out_ptr);
 
-int32_t System_Half_bool__TryParse_0__2__String_outHalf(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE s, SG_HNDL_NONNULL* _Nonnull __result_out_ptr);
+int32_t System_Half_bool__TryParse_0__2__String_outHalf(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE s, SG_HNDL_NULLABLE* _Nonnull __result_out_ptr);
 
 SG_HNDL_NONNULL System_Half_Half__get_Epsilon_0__0(SG_HNDL_NULLABLE * _Nonnull __thrown);
 
@@ -4804,6 +4804,8 @@ SG_HNDL_NONNULL System_IAsyncDisposable_ValueTask__DisposeAsync_0__0(SG_HNDL_NUL
 
 SG_HNDL_NONNULL System_IAsyncDisposable_cast(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __h);
 
+SG_HNDL_NONNULL System_IAsyncDisposable_create(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL (* _Nonnull  __cb_System_IAsyncDisposable_ValueTask__DisposeAsync_0__0)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown), const void* _Nonnull __pdata_System_IAsyncDisposable_ValueTask__DisposeAsync_0__0, void (* _Nullable __deinit)(const void* _Nonnull __pdata));
+
 TYP System_IAsyncResult_get_type_handle(void);
 
 SG_HNDL_NULLABLE System_IAsyncResult_Object__get_AsyncState_0__0(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h);
@@ -4816,17 +4818,23 @@ int32_t System_IAsyncResult_bool__get_IsCompleted_0__0(SG_HNDL_NULLABLE * _Nonnu
 
 SG_HNDL_NONNULL System_IAsyncResult_cast(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __h);
 
+SG_HNDL_NONNULL System_IAsyncResult_create(SG_HNDL_NULLABLE * _Nonnull __thrown, void (* _Nullable __deinit)(const void* _Nonnull __pdata));
+
 TYP System_ICloneable_get_type_handle(void);
 
 SG_HNDL_NONNULL System_ICloneable_Object__Clone_0__0(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h);
 
 SG_HNDL_NONNULL System_ICloneable_cast(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __h);
 
+SG_HNDL_NONNULL System_ICloneable_create(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL (* _Nonnull  __cb_System_ICloneable_Object__Clone_0__0)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown), const void* _Nonnull __pdata_System_ICloneable_Object__Clone_0__0, void (* _Nullable __deinit)(const void* _Nonnull __pdata));
+
 TYP System_IComparable_get_type_handle(void);
 
 int32_t System_IComparable_i32__CompareTo_0__1__Object(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE obj);
 
 SG_HNDL_NONNULL System_IComparable_cast(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __h);
+
+SG_HNDL_NONNULL System_IComparable_create(SG_HNDL_NULLABLE * _Nonnull __thrown, int32_t (* _Nonnull  __cb_System_IComparable_i32__CompareTo_0__1__Object)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE obj), const void* _Nonnull __pdata_System_IComparable_i32__CompareTo_0__1__Object, void (* _Nullable __deinit)(const void* _Nonnull __pdata));
 
 TYP System_IComparable_1_get_type_handle(TYP T);
 
@@ -4837,6 +4845,8 @@ SG_HNDL_NONNULL specialize_System_IComparable_1_i32__CompareTo_0__1__T(TYP T, SG
 int32_t invoke_System_IComparable_1_i32__CompareTo_0__1__T(SG_HNDL_NONNULL ____hdel, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, GVAL other);
 
 SG_HNDL_NONNULL System_IComparable_1_cast(TYP T, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __h);
+
+SG_HNDL_NONNULL System_IComparable_1_create(TYP T, SG_HNDL_NULLABLE * _Nonnull __thrown, int32_t (* _Nonnull  __cb_System_IComparable_1_i32__CompareTo_0__1__T)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, GVAL other), const void* _Nonnull __pdata_System_IComparable_1_i32__CompareTo_0__1__T, void (* _Nullable __deinit)(const void* _Nonnull __pdata));
 
 TYP System_IConvertible_get_type_handle(void);
 
@@ -4876,17 +4886,23 @@ uint64_t System_IConvertible_u64__ToUInt64_0__1__IFormatProvider(SG_HNDL_NULLABL
 
 SG_HNDL_NONNULL System_IConvertible_cast(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __h);
 
+SG_HNDL_NONNULL System_IConvertible_create(SG_HNDL_NULLABLE * _Nonnull __thrown, int32_t (* _Nonnull  __cb_System_IConvertible_TypeCode__GetTypeCode_0__0)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown), const void* _Nonnull __pdata_System_IConvertible_TypeCode__GetTypeCode_0__0, int32_t (* _Nonnull  __cb_System_IConvertible_bool__ToBoolean_0__1__IFormatProvider)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE provider), const void* _Nonnull __pdata_System_IConvertible_bool__ToBoolean_0__1__IFormatProvider, uint8_t (* _Nonnull  __cb_System_IConvertible_u8__ToByte_0__1__IFormatProvider)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE provider), const void* _Nonnull __pdata_System_IConvertible_u8__ToByte_0__1__IFormatProvider, int16_t (* _Nonnull  __cb_System_IConvertible_Char__ToChar_0__1__IFormatProvider)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE provider), const void* _Nonnull __pdata_System_IConvertible_Char__ToChar_0__1__IFormatProvider, SG_HNDL_NONNULL (* _Nonnull  __cb_System_IConvertible_DateTime__ToDateTime_0__1__IFormatProvider)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE provider), const void* _Nonnull __pdata_System_IConvertible_DateTime__ToDateTime_0__1__IFormatProvider, SG_HNDL_NONNULL (* _Nonnull  __cb_System_IConvertible_Decimal__ToDecimal_0__1__IFormatProvider)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE provider), const void* _Nonnull __pdata_System_IConvertible_Decimal__ToDecimal_0__1__IFormatProvider, double (* _Nonnull  __cb_System_IConvertible_f64__ToDouble_0__1__IFormatProvider)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE provider), const void* _Nonnull __pdata_System_IConvertible_f64__ToDouble_0__1__IFormatProvider, int16_t (* _Nonnull  __cb_System_IConvertible_i16__ToInt16_0__1__IFormatProvider)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE provider), const void* _Nonnull __pdata_System_IConvertible_i16__ToInt16_0__1__IFormatProvider, int32_t (* _Nonnull  __cb_System_IConvertible_i32__ToInt32_0__1__IFormatProvider)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE provider), const void* _Nonnull __pdata_System_IConvertible_i32__ToInt32_0__1__IFormatProvider, int64_t (* _Nonnull  __cb_System_IConvertible_i64__ToInt64_0__1__IFormatProvider)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE provider), const void* _Nonnull __pdata_System_IConvertible_i64__ToInt64_0__1__IFormatProvider, int8_t (* _Nonnull  __cb_System_IConvertible_i8__ToSByte_0__1__IFormatProvider)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE provider), const void* _Nonnull __pdata_System_IConvertible_i8__ToSByte_0__1__IFormatProvider, float (* _Nonnull  __cb_System_IConvertible_f32__ToSingle_0__1__IFormatProvider)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE provider), const void* _Nonnull __pdata_System_IConvertible_f32__ToSingle_0__1__IFormatProvider, SG_HNDL_NONNULL (* _Nonnull  __cb_System_IConvertible_String__ToString_0__1__IFormatProvider)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE provider), const void* _Nonnull __pdata_System_IConvertible_String__ToString_0__1__IFormatProvider, SG_HNDL_NONNULL (* _Nonnull  __cb_System_IConvertible_Object__ToType_0__2__Type_IFormatProvider)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL conversionType, SG_HNDL_NULLABLE provider), const void* _Nonnull __pdata_System_IConvertible_Object__ToType_0__2__Type_IFormatProvider, uint16_t (* _Nonnull  __cb_System_IConvertible_u16__ToUInt16_0__1__IFormatProvider)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE provider), const void* _Nonnull __pdata_System_IConvertible_u16__ToUInt16_0__1__IFormatProvider, uint32_t (* _Nonnull  __cb_System_IConvertible_u32__ToUInt32_0__1__IFormatProvider)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE provider), const void* _Nonnull __pdata_System_IConvertible_u32__ToUInt32_0__1__IFormatProvider, uint64_t (* _Nonnull  __cb_System_IConvertible_u64__ToUInt64_0__1__IFormatProvider)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE provider), const void* _Nonnull __pdata_System_IConvertible_u64__ToUInt64_0__1__IFormatProvider, void (* _Nullable __deinit)(const void* _Nonnull __pdata));
+
 TYP System_ICustomFormatter_get_type_handle(void);
 
 SG_HNDL_NONNULL System_ICustomFormatter_String__Format_0__3__String_Object_IFormatProvider(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE format, SG_HNDL_NULLABLE arg, SG_HNDL_NULLABLE formatProvider);
 
 SG_HNDL_NONNULL System_ICustomFormatter_cast(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __h);
 
+SG_HNDL_NONNULL System_ICustomFormatter_create(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL (* _Nonnull  __cb_System_ICustomFormatter_String__Format_0__3__String_Object_IFormatProvider)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE format, SG_HNDL_NULLABLE arg, SG_HNDL_NULLABLE formatProvider), const void* _Nonnull __pdata_System_ICustomFormatter_String__Format_0__3__String_Object_IFormatProvider, void (* _Nullable __deinit)(const void* _Nonnull __pdata));
+
 TYP System_IDisposable_get_type_handle(void);
 
 void System_IDisposable_void__Dispose_0__0(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h);
 
 SG_HNDL_NONNULL System_IDisposable_cast(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __h);
+
+SG_HNDL_NONNULL System_IDisposable_create(SG_HNDL_NULLABLE * _Nonnull __thrown, void (* _Nonnull  __cb_System_IDisposable_void__Dispose_0__0)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown), const void* _Nonnull __pdata_System_IDisposable_void__Dispose_0__0, void (* _Nullable __deinit)(const void* _Nonnull __pdata));
 
 TYP System_IEquatable_1_get_type_handle(TYP T);
 
@@ -4898,17 +4914,23 @@ int32_t invoke_System_IEquatable_1_bool__Equals_0__1__T(SG_HNDL_NONNULL ____hdel
 
 SG_HNDL_NONNULL System_IEquatable_1_cast(TYP T, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __h);
 
+SG_HNDL_NONNULL System_IEquatable_1_create(TYP T, SG_HNDL_NULLABLE * _Nonnull __thrown, int32_t (* _Nonnull  __cb_System_IEquatable_1_bool__Equals_0__1__T)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, GVAL other), const void* _Nonnull __pdata_System_IEquatable_1_bool__Equals_0__1__T, void (* _Nullable __deinit)(const void* _Nonnull __pdata));
+
 TYP System_IFormatProvider_get_type_handle(void);
 
 SG_HNDL_NULLABLE System_IFormatProvider_Object__GetFormat_0__1__Type(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE formatType);
 
 SG_HNDL_NONNULL System_IFormatProvider_cast(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __h);
 
+SG_HNDL_NONNULL System_IFormatProvider_create(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE (* _Nonnull  __cb_System_IFormatProvider_Object__GetFormat_0__1__Type)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE formatType), const void* _Nonnull __pdata_System_IFormatProvider_Object__GetFormat_0__1__Type, void (* _Nullable __deinit)(const void* _Nonnull __pdata));
+
 TYP System_IFormattable_get_type_handle(void);
 
 SG_HNDL_NONNULL System_IFormattable_String__ToString_0__2__String_IFormatProvider(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE format, SG_HNDL_NULLABLE formatProvider);
 
 SG_HNDL_NONNULL System_IFormattable_cast(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __h);
+
+SG_HNDL_NONNULL System_IFormattable_create(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL (* _Nonnull  __cb_System_IFormattable_String__ToString_0__2__String_IFormatProvider)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE format, SG_HNDL_NULLABLE formatProvider), const void* _Nonnull __pdata_System_IFormattable_String__ToString_0__2__String_IFormatProvider, void (* _Nullable __deinit)(const void* _Nonnull __pdata));
 
 TYP System_IObservable_1_get_type_handle(TYP T);
 
@@ -4919,6 +4941,8 @@ SG_HNDL_NONNULL specialize_System_IObservable_1_IDisposable__Subscribe_0__1__Sys
 SG_HNDL_NONNULL invoke_System_IObservable_1_IDisposable__Subscribe_0__1__System_IObserver_T_(SG_HNDL_NONNULL ____hdel, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NONNULL observer);
 
 SG_HNDL_NONNULL System_IObservable_1_cast(TYP T, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __h);
+
+SG_HNDL_NONNULL System_IObservable_1_create(TYP T, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL (* _Nonnull  __cb_System_IObservable_1_IDisposable__Subscribe_0__1__System_IObserver_T_)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL observer), const void* _Nonnull __pdata_System_IObservable_1_IDisposable__Subscribe_0__1__System_IObserver_T_, void (* _Nullable __deinit)(const void* _Nonnull __pdata));
 
 TYP System_IObserver_1_get_type_handle(TYP T);
 
@@ -4942,6 +4966,8 @@ void invoke_System_IObserver_1_void__OnNext_0__1__T(SG_HNDL_NONNULL ____hdel, SG
 
 SG_HNDL_NONNULL System_IObserver_1_cast(TYP T, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __h);
 
+SG_HNDL_NONNULL System_IObserver_1_create(TYP T, SG_HNDL_NULLABLE * _Nonnull __thrown, void (* _Nonnull  __cb_System_IObserver_1_void__OnCompleted_0__0)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown), const void* _Nonnull __pdata_System_IObserver_1_void__OnCompleted_0__0, void (* _Nonnull  __cb_System_IObserver_1_void__OnError_0__1__Exception)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL error), const void* _Nonnull __pdata_System_IObserver_1_void__OnError_0__1__Exception, void (* _Nonnull  __cb_System_IObserver_1_void__OnNext_0__1__T)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, GVAL value), const void* _Nonnull __pdata_System_IObserver_1_void__OnNext_0__1__T, void (* _Nullable __deinit)(const void* _Nonnull __pdata));
+
 TYP System_IProgress_1_get_type_handle(TYP T);
 
 void System_IProgress_1_void__Report_0__1__T(TYP T, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, GVAL value);
@@ -4952,11 +4978,15 @@ void invoke_System_IProgress_1_void__Report_0__1__T(SG_HNDL_NONNULL ____hdel, SG
 
 SG_HNDL_NONNULL System_IProgress_1_cast(TYP T, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __h);
 
+SG_HNDL_NONNULL System_IProgress_1_create(TYP T, SG_HNDL_NULLABLE * _Nonnull __thrown, void (* _Nonnull  __cb_System_IProgress_1_void__Report_0__1__T)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, GVAL value), const void* _Nonnull __pdata_System_IProgress_1_void__Report_0__1__T, void (* _Nullable __deinit)(const void* _Nonnull __pdata));
+
 TYP System_ISpanFormattable_get_type_handle(void);
 
 int32_t System_ISpanFormattable_bool__TryFormat_0__4__spanChar_outi32_rospanChar_IFormatProvider(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, const void* _Nonnull __destination_spanptr, int32_t* _Nonnull __charsWritten_out_ptr, const void* _Nonnull __format_spanptr, SG_HNDL_NULLABLE provider);
 
 SG_HNDL_NONNULL System_ISpanFormattable_cast(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __h);
+
+SG_HNDL_NONNULL System_ISpanFormattable_create(SG_HNDL_NULLABLE * _Nonnull __thrown, int32_t (* _Nonnull  __cb_System_ISpanFormattable_bool__TryFormat_0__4__spanChar_outi32_rospanChar_IFormatProvider)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nonnull __destination_spanptr, int32_t* _Nonnull __charsWritten_out_ptr, const void* _Nonnull __format_spanptr, SG_HNDL_NULLABLE provider), const void* _Nonnull __pdata_System_ISpanFormattable_bool__TryFormat_0__4__spanChar_outi32_rospanChar_IFormatProvider, SG_HNDL_NONNULL (* _Nonnull  __cb_System_IFormattable_String__ToString_0__2__String_IFormatProvider)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE format, SG_HNDL_NULLABLE formatProvider), const void* _Nonnull __pdata_System_IFormattable_String__ToString_0__2__String_IFormatProvider, void (* _Nullable __deinit)(const void* _Nonnull __pdata));
 
 TYP System_Index_get_type_handle(void);
 
@@ -6036,6 +6066,8 @@ SG_HNDL_NONNULL System_NullReferenceException_ctor_0__2__String_Exception(SG_HND
 
 SG_HNDL_NONNULL System_NullReferenceException_cast(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __h);
 
+TYP System_Nullable_1_get_type_handle(TYP T);
+
 TYP System_Object_get_type_handle(void);
 
 SG_HNDL_NONNULL System_Object_ctor_0__0(SG_HNDL_NULLABLE * _Nonnull __thrown);
@@ -6244,7 +6276,7 @@ SG_HNDL_NONNULL specialize_System_Predicate_1_bool__EndInvoke_0__1__IAsyncResult
 
 int32_t invoke_System_Predicate_1_bool__EndInvoke_0__1__IAsyncResult(SG_HNDL_NONNULL ____hdel, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE result);
 
-SG_HNDL_NONNULL System_Predicate_1_create(TYP T, SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nullable __pdata, void (* _Nullable __deinit)(const void* _Nullable __pdata), int32_t (* _Nonnull  __cb)(const void* _Nullable __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, GVAL obj));
+SG_HNDL_NONNULL System_Predicate_1_create(TYP T, SG_HNDL_NULLABLE * _Nonnull __thrown, int32_t (* _Nonnull  __cb)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, GVAL obj), const void* _Nonnull __pdata, void (* _Nullable __deinit)(const void* _Nonnull __pdata));
 
 TYP System_Progress_1_get_type_handle(TYP T);
 
@@ -6450,7 +6482,7 @@ SG_HNDL_NULLABLE System_ResolveEventHandler_IAsyncResult__BeginInvoke_0__4__Obje
 
 SG_HNDL_NULLABLE System_ResolveEventHandler_Assembly__EndInvoke_0__1__IAsyncResult(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE result);
 
-SG_HNDL_NONNULL System_ResolveEventHandler_create(SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nullable __pdata, void (* _Nullable __deinit)(const void* _Nullable __pdata), SG_HNDL_NULLABLE (* _Nonnull  __cb)(const void* _Nullable __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE sender, SG_HNDL_NONNULL args));
+SG_HNDL_NONNULL System_ResolveEventHandler_create(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE (* _Nonnull  __cb)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE sender, SG_HNDL_NONNULL args), const void* _Nonnull __pdata, void (* _Nullable __deinit)(const void* _Nonnull __pdata));
 
 TYP System_RuntimeFieldHandle_get_type_handle(void);
 
@@ -7036,7 +7068,7 @@ int32_t System_StringComparer_i32__GetHashCode_0__1__Object(SG_HNDL_NULLABLE * _
 
 int32_t System_StringComparer_i32__GetHashCode_0__1__String(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NONNULL obj);
 
-int32_t System_StringComparer_bool__IsWellKnownCultureAwareComparer_0__3__System_Collections_Generic_IEqualityComparer_string__outCompareInfo_outCompareOptions(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE comparer, SG_HNDL_NONNULL* _Nonnull __compareInfo_out_ptr, int32_t* _Nonnull __compareOptions_out_ptr);
+int32_t System_StringComparer_bool__IsWellKnownCultureAwareComparer_0__3__System_Collections_Generic_IEqualityComparer_string__outCompareInfo_outCompareOptions(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE comparer, SG_HNDL_NULLABLE* _Nonnull __compareInfo_out_ptr, int32_t* _Nonnull __compareOptions_out_ptr);
 
 int32_t System_StringComparer_bool__IsWellKnownOrdinalComparer_0__2__System_Collections_Generic_IEqualityComparer_string__outbool(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE comparer, int32_t* _Nonnull __ignoreCase_out_ptr);
 
@@ -7174,29 +7206,29 @@ SG_HNDL_NONNULL System_TimeOnly_TimeOnly__ParseExact_0__2__String_StringArray(SG
 
 SG_HNDL_NONNULL System_TimeOnly_TimeOnly__ParseExact_0__4__String_StringArray_IFormatProvider_DateTimeStyles(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL s, SG_HNDL_NONNULL formats, SG_HNDL_NULLABLE provider, int32_t style);
 
-int32_t System_TimeOnly_bool__TryParse_0__2__rospanChar_outTimeOnly(SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nonnull __s_spanptr, SG_HNDL_NONNULL* _Nonnull __result_out_ptr);
+int32_t System_TimeOnly_bool__TryParse_0__2__rospanChar_outTimeOnly(SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nonnull __s_spanptr, SG_HNDL_NULLABLE* _Nonnull __result_out_ptr);
 
-int32_t System_TimeOnly_bool__TryParse_0__4__rospanChar_IFormatProvider_DateTimeStyles_outTimeOnly(SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nonnull __s_spanptr, SG_HNDL_NULLABLE provider, int32_t style, SG_HNDL_NONNULL* _Nonnull __result_out_ptr);
+int32_t System_TimeOnly_bool__TryParse_0__4__rospanChar_IFormatProvider_DateTimeStyles_outTimeOnly(SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nonnull __s_spanptr, SG_HNDL_NULLABLE provider, int32_t style, SG_HNDL_NULLABLE* _Nonnull __result_out_ptr);
 
-int32_t System_TimeOnly_bool__TryParseExact_0__3__rospanChar_rospanChar_outTimeOnly(SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nonnull __s_spanptr, const void* _Nonnull __format_spanptr, SG_HNDL_NONNULL* _Nonnull __result_out_ptr);
+int32_t System_TimeOnly_bool__TryParseExact_0__3__rospanChar_rospanChar_outTimeOnly(SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nonnull __s_spanptr, const void* _Nonnull __format_spanptr, SG_HNDL_NULLABLE* _Nonnull __result_out_ptr);
 
-int32_t System_TimeOnly_bool__TryParseExact_0__5__rospanChar_rospanChar_IFormatProvider_DateTimeStyles_outTimeOnly(SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nonnull __s_spanptr, const void* _Nonnull __format_spanptr, SG_HNDL_NULLABLE provider, int32_t style, SG_HNDL_NONNULL* _Nonnull __result_out_ptr);
+int32_t System_TimeOnly_bool__TryParseExact_0__5__rospanChar_rospanChar_IFormatProvider_DateTimeStyles_outTimeOnly(SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nonnull __s_spanptr, const void* _Nonnull __format_spanptr, SG_HNDL_NULLABLE provider, int32_t style, SG_HNDL_NULLABLE* _Nonnull __result_out_ptr);
 
-int32_t System_TimeOnly_bool__TryParseExact_0__3__rospanChar_StringArray_outTimeOnly(SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nonnull __s_spanptr, SG_HNDL_NULLABLE formats, SG_HNDL_NONNULL* _Nonnull __result_out_ptr);
+int32_t System_TimeOnly_bool__TryParseExact_0__3__rospanChar_StringArray_outTimeOnly(SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nonnull __s_spanptr, SG_HNDL_NULLABLE formats, SG_HNDL_NULLABLE* _Nonnull __result_out_ptr);
 
-int32_t System_TimeOnly_bool__TryParseExact_0__5__rospanChar_StringArray_IFormatProvider_DateTimeStyles_outTimeOnly(SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nonnull __s_spanptr, SG_HNDL_NULLABLE formats, SG_HNDL_NULLABLE provider, int32_t style, SG_HNDL_NONNULL* _Nonnull __result_out_ptr);
+int32_t System_TimeOnly_bool__TryParseExact_0__5__rospanChar_StringArray_IFormatProvider_DateTimeStyles_outTimeOnly(SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nonnull __s_spanptr, SG_HNDL_NULLABLE formats, SG_HNDL_NULLABLE provider, int32_t style, SG_HNDL_NULLABLE* _Nonnull __result_out_ptr);
 
-int32_t System_TimeOnly_bool__TryParse_0__2__String_outTimeOnly(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE s, SG_HNDL_NONNULL* _Nonnull __result_out_ptr);
+int32_t System_TimeOnly_bool__TryParse_0__2__String_outTimeOnly(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE s, SG_HNDL_NULLABLE* _Nonnull __result_out_ptr);
 
-int32_t System_TimeOnly_bool__TryParse_0__4__String_IFormatProvider_DateTimeStyles_outTimeOnly(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE s, SG_HNDL_NULLABLE provider, int32_t style, SG_HNDL_NONNULL* _Nonnull __result_out_ptr);
+int32_t System_TimeOnly_bool__TryParse_0__4__String_IFormatProvider_DateTimeStyles_outTimeOnly(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE s, SG_HNDL_NULLABLE provider, int32_t style, SG_HNDL_NULLABLE* _Nonnull __result_out_ptr);
 
-int32_t System_TimeOnly_bool__TryParseExact_0__3__String_String_outTimeOnly(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE s, SG_HNDL_NULLABLE format, SG_HNDL_NONNULL* _Nonnull __result_out_ptr);
+int32_t System_TimeOnly_bool__TryParseExact_0__3__String_String_outTimeOnly(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE s, SG_HNDL_NULLABLE format, SG_HNDL_NULLABLE* _Nonnull __result_out_ptr);
 
-int32_t System_TimeOnly_bool__TryParseExact_0__5__String_String_IFormatProvider_DateTimeStyles_outTimeOnly(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE s, SG_HNDL_NULLABLE format, SG_HNDL_NULLABLE provider, int32_t style, SG_HNDL_NONNULL* _Nonnull __result_out_ptr);
+int32_t System_TimeOnly_bool__TryParseExact_0__5__String_String_IFormatProvider_DateTimeStyles_outTimeOnly(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE s, SG_HNDL_NULLABLE format, SG_HNDL_NULLABLE provider, int32_t style, SG_HNDL_NULLABLE* _Nonnull __result_out_ptr);
 
-int32_t System_TimeOnly_bool__TryParseExact_0__3__String_StringArray_outTimeOnly(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE s, SG_HNDL_NULLABLE formats, SG_HNDL_NONNULL* _Nonnull __result_out_ptr);
+int32_t System_TimeOnly_bool__TryParseExact_0__3__String_StringArray_outTimeOnly(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE s, SG_HNDL_NULLABLE formats, SG_HNDL_NULLABLE* _Nonnull __result_out_ptr);
 
-int32_t System_TimeOnly_bool__TryParseExact_0__5__String_StringArray_IFormatProvider_DateTimeStyles_outTimeOnly(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE s, SG_HNDL_NULLABLE formats, SG_HNDL_NULLABLE provider, int32_t style, SG_HNDL_NONNULL* _Nonnull __result_out_ptr);
+int32_t System_TimeOnly_bool__TryParseExact_0__5__String_StringArray_IFormatProvider_DateTimeStyles_outTimeOnly(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE s, SG_HNDL_NULLABLE formats, SG_HNDL_NULLABLE provider, int32_t style, SG_HNDL_NULLABLE* _Nonnull __result_out_ptr);
 
 SG_HNDL_NONNULL System_TimeOnly_String__ToLongTimeString_0__0(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h);
 
@@ -7354,29 +7386,29 @@ SG_HNDL_NONNULL System_TimeSpan_String__ToString_0__2__String_IFormatProvider(SG
 
 int32_t System_TimeSpan_bool__TryFormat_0__4__spanChar_outi32_rospanChar_IFormatProvider(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, const void* _Nonnull __destination_spanptr, int32_t* _Nonnull __charsWritten_out_ptr, const void* _Nonnull __format_spanptr, SG_HNDL_NULLABLE formatProvider);
 
-int32_t System_TimeSpan_bool__TryParse_0__3__rospanChar_IFormatProvider_outTimeSpan(SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nonnull __input_spanptr, SG_HNDL_NULLABLE formatProvider, SG_HNDL_NONNULL* _Nonnull __result_out_ptr);
+int32_t System_TimeSpan_bool__TryParse_0__3__rospanChar_IFormatProvider_outTimeSpan(SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nonnull __input_spanptr, SG_HNDL_NULLABLE formatProvider, SG_HNDL_NULLABLE* _Nonnull __result_out_ptr);
 
-int32_t System_TimeSpan_bool__TryParse_0__2__rospanChar_outTimeSpan(SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nonnull __s_spanptr, SG_HNDL_NONNULL* _Nonnull __result_out_ptr);
+int32_t System_TimeSpan_bool__TryParse_0__2__rospanChar_outTimeSpan(SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nonnull __s_spanptr, SG_HNDL_NULLABLE* _Nonnull __result_out_ptr);
 
-int32_t System_TimeSpan_bool__TryParse_0__3__String_IFormatProvider_outTimeSpan(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE input, SG_HNDL_NULLABLE formatProvider, SG_HNDL_NONNULL* _Nonnull __result_out_ptr);
+int32_t System_TimeSpan_bool__TryParse_0__3__String_IFormatProvider_outTimeSpan(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE input, SG_HNDL_NULLABLE formatProvider, SG_HNDL_NULLABLE* _Nonnull __result_out_ptr);
 
-int32_t System_TimeSpan_bool__TryParse_0__2__String_outTimeSpan(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE s, SG_HNDL_NONNULL* _Nonnull __result_out_ptr);
+int32_t System_TimeSpan_bool__TryParse_0__2__String_outTimeSpan(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE s, SG_HNDL_NULLABLE* _Nonnull __result_out_ptr);
 
-int32_t System_TimeSpan_bool__TryParseExact_0__5__rospanChar_rospanChar_IFormatProvider_TimeSpanStyles_outTimeSpan(SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nonnull __input_spanptr, const void* _Nonnull __format_spanptr, SG_HNDL_NULLABLE formatProvider, int32_t styles, SG_HNDL_NONNULL* _Nonnull __result_out_ptr);
+int32_t System_TimeSpan_bool__TryParseExact_0__5__rospanChar_rospanChar_IFormatProvider_TimeSpanStyles_outTimeSpan(SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nonnull __input_spanptr, const void* _Nonnull __format_spanptr, SG_HNDL_NULLABLE formatProvider, int32_t styles, SG_HNDL_NULLABLE* _Nonnull __result_out_ptr);
 
-int32_t System_TimeSpan_bool__TryParseExact_0__4__rospanChar_rospanChar_IFormatProvider_outTimeSpan(SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nonnull __input_spanptr, const void* _Nonnull __format_spanptr, SG_HNDL_NULLABLE formatProvider, SG_HNDL_NONNULL* _Nonnull __result_out_ptr);
+int32_t System_TimeSpan_bool__TryParseExact_0__4__rospanChar_rospanChar_IFormatProvider_outTimeSpan(SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nonnull __input_spanptr, const void* _Nonnull __format_spanptr, SG_HNDL_NULLABLE formatProvider, SG_HNDL_NULLABLE* _Nonnull __result_out_ptr);
 
-int32_t System_TimeSpan_bool__TryParseExact_0__5__rospanChar_StringArray_IFormatProvider_TimeSpanStyles_outTimeSpan(SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nonnull __input_spanptr, SG_HNDL_NULLABLE formats, SG_HNDL_NULLABLE formatProvider, int32_t styles, SG_HNDL_NONNULL* _Nonnull __result_out_ptr);
+int32_t System_TimeSpan_bool__TryParseExact_0__5__rospanChar_StringArray_IFormatProvider_TimeSpanStyles_outTimeSpan(SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nonnull __input_spanptr, SG_HNDL_NULLABLE formats, SG_HNDL_NULLABLE formatProvider, int32_t styles, SG_HNDL_NULLABLE* _Nonnull __result_out_ptr);
 
-int32_t System_TimeSpan_bool__TryParseExact_0__4__rospanChar_StringArray_IFormatProvider_outTimeSpan(SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nonnull __input_spanptr, SG_HNDL_NULLABLE formats, SG_HNDL_NULLABLE formatProvider, SG_HNDL_NONNULL* _Nonnull __result_out_ptr);
+int32_t System_TimeSpan_bool__TryParseExact_0__4__rospanChar_StringArray_IFormatProvider_outTimeSpan(SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nonnull __input_spanptr, SG_HNDL_NULLABLE formats, SG_HNDL_NULLABLE formatProvider, SG_HNDL_NULLABLE* _Nonnull __result_out_ptr);
 
-int32_t System_TimeSpan_bool__TryParseExact_0__5__String_String_IFormatProvider_TimeSpanStyles_outTimeSpan(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE input, SG_HNDL_NULLABLE format, SG_HNDL_NULLABLE formatProvider, int32_t styles, SG_HNDL_NONNULL* _Nonnull __result_out_ptr);
+int32_t System_TimeSpan_bool__TryParseExact_0__5__String_String_IFormatProvider_TimeSpanStyles_outTimeSpan(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE input, SG_HNDL_NULLABLE format, SG_HNDL_NULLABLE formatProvider, int32_t styles, SG_HNDL_NULLABLE* _Nonnull __result_out_ptr);
 
-int32_t System_TimeSpan_bool__TryParseExact_0__4__String_String_IFormatProvider_outTimeSpan(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE input, SG_HNDL_NULLABLE format, SG_HNDL_NULLABLE formatProvider, SG_HNDL_NONNULL* _Nonnull __result_out_ptr);
+int32_t System_TimeSpan_bool__TryParseExact_0__4__String_String_IFormatProvider_outTimeSpan(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE input, SG_HNDL_NULLABLE format, SG_HNDL_NULLABLE formatProvider, SG_HNDL_NULLABLE* _Nonnull __result_out_ptr);
 
-int32_t System_TimeSpan_bool__TryParseExact_0__5__String_StringArray_IFormatProvider_TimeSpanStyles_outTimeSpan(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE input, SG_HNDL_NULLABLE formats, SG_HNDL_NULLABLE formatProvider, int32_t styles, SG_HNDL_NONNULL* _Nonnull __result_out_ptr);
+int32_t System_TimeSpan_bool__TryParseExact_0__5__String_StringArray_IFormatProvider_TimeSpanStyles_outTimeSpan(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE input, SG_HNDL_NULLABLE formats, SG_HNDL_NULLABLE formatProvider, int32_t styles, SG_HNDL_NULLABLE* _Nonnull __result_out_ptr);
 
-int32_t System_TimeSpan_bool__TryParseExact_0__4__String_StringArray_IFormatProvider_outTimeSpan(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE input, SG_HNDL_NULLABLE formats, SG_HNDL_NULLABLE formatProvider, SG_HNDL_NONNULL* _Nonnull __result_out_ptr);
+int32_t System_TimeSpan_bool__TryParseExact_0__4__String_StringArray_IFormatProvider_outTimeSpan(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE input, SG_HNDL_NULLABLE formats, SG_HNDL_NULLABLE formatProvider, SG_HNDL_NULLABLE* _Nonnull __result_out_ptr);
 
 int32_t System_TimeSpan_i32__get_Days_0__0(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h);
 
@@ -7490,11 +7522,11 @@ SG_HNDL_NONNULL System_TimeZoneInfo_String__ToSerializedString_0__0(SG_HNDL_NULL
 
 SG_HNDL_NONNULL System_TimeZoneInfo_String__ToString_0__0(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h);
 
-int32_t System_TimeZoneInfo_bool__TryConvertIanaIdToWindowsId_0__2__String_outString(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL ianaId, SG_HNDL_NONNULL* _Nonnull __windowsId_out_ptr);
+int32_t System_TimeZoneInfo_bool__TryConvertIanaIdToWindowsId_0__2__String_outString(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL ianaId, SG_HNDL_NULLABLE* _Nonnull __windowsId_out_ptr);
 
-int32_t System_TimeZoneInfo_bool__TryConvertWindowsIdToIanaId_0__2__String_outString(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL windowsId, SG_HNDL_NONNULL* _Nonnull __ianaId_out_ptr);
+int32_t System_TimeZoneInfo_bool__TryConvertWindowsIdToIanaId_0__2__String_outString(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL windowsId, SG_HNDL_NULLABLE* _Nonnull __ianaId_out_ptr);
 
-int32_t System_TimeZoneInfo_bool__TryConvertWindowsIdToIanaId_0__3__String_String_outString(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL windowsId, SG_HNDL_NULLABLE region, SG_HNDL_NONNULL* _Nonnull __ianaId_out_ptr);
+int32_t System_TimeZoneInfo_bool__TryConvertWindowsIdToIanaId_0__3__String_String_outString(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL windowsId, SG_HNDL_NULLABLE region, SG_HNDL_NULLABLE* _Nonnull __ianaId_out_ptr);
 
 SG_HNDL_NONNULL System_TimeZoneInfo_TimeSpan__get_BaseUtcOffset_0__0(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h);
 
@@ -8430,6 +8462,10 @@ int16_t System_Type_get_Delimiter(void);
 
 void System_Type_set_Delimiter(int16_t __v);
 
+SG_HNDL_NONNULL System_Type_get_EmptyTypes(void);
+
+void System_Type_set_EmptyTypes(SG_HNDL_NONNULL __v);
+
 SG_HNDL_NONNULL System_Type_get_FilterAttribute(void);
 
 void System_Type_set_FilterAttribute(SG_HNDL_NONNULL __v);
@@ -9086,13 +9122,13 @@ uint32_t System_UIntPtr_u32__ToUInt32_0__0(SG_HNDL_NULLABLE * _Nonnull __thrown,
 
 uint64_t System_UIntPtr_u64__ToUInt64_0__0(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h);
 
-int32_t System_UIntPtr_bool__TryParse_0__4__String_NumberStyles_IFormatProvider_outUIntPtr(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE s, int32_t style, SG_HNDL_NULLABLE provider, SG_HNDL_NONNULL* _Nonnull __result_out_ptr);
+int32_t System_UIntPtr_bool__TryParse_0__4__String_NumberStyles_IFormatProvider_outUIntPtr(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE s, int32_t style, SG_HNDL_NULLABLE provider, SG_HNDL_NULLABLE* _Nonnull __result_out_ptr);
 
-int32_t System_UIntPtr_bool__TryParse_0__2__String_outUIntPtr(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE s, SG_HNDL_NONNULL* _Nonnull __result_out_ptr);
+int32_t System_UIntPtr_bool__TryParse_0__2__String_outUIntPtr(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE s, SG_HNDL_NULLABLE* _Nonnull __result_out_ptr);
 
-int32_t System_UIntPtr_bool__TryParse_0__2__rospanChar_outUIntPtr(SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nonnull __s_spanptr, SG_HNDL_NONNULL* _Nonnull __result_out_ptr);
+int32_t System_UIntPtr_bool__TryParse_0__2__rospanChar_outUIntPtr(SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nonnull __s_spanptr, SG_HNDL_NULLABLE* _Nonnull __result_out_ptr);
 
-int32_t System_UIntPtr_bool__TryParse_0__4__rospanChar_NumberStyles_IFormatProvider_outUIntPtr(SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nonnull __s_spanptr, int32_t style, SG_HNDL_NULLABLE provider, SG_HNDL_NONNULL* _Nonnull __result_out_ptr);
+int32_t System_UIntPtr_bool__TryParse_0__4__rospanChar_NumberStyles_IFormatProvider_outUIntPtr(SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nonnull __s_spanptr, int32_t style, SG_HNDL_NULLABLE provider, SG_HNDL_NULLABLE* _Nonnull __result_out_ptr);
 
 SG_HNDL_NONNULL System_UIntPtr_UIntPtr__get_MaxValue_0__0(SG_HNDL_NULLABLE * _Nonnull __thrown);
 
@@ -9130,7 +9166,7 @@ SG_HNDL_NULLABLE System_UnhandledExceptionEventHandler_IAsyncResult__BeginInvoke
 
 void System_UnhandledExceptionEventHandler_void__EndInvoke_0__1__IAsyncResult(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE result);
 
-SG_HNDL_NONNULL System_UnhandledExceptionEventHandler_create(SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nullable __pdata, void (* _Nullable __deinit)(const void* _Nullable __pdata), void (* _Nonnull  __cb)(const void* _Nullable __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL sender, SG_HNDL_NONNULL e));
+SG_HNDL_NONNULL System_UnhandledExceptionEventHandler_create(SG_HNDL_NULLABLE * _Nonnull __thrown, void (* _Nonnull  __cb)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL sender, SG_HNDL_NONNULL e), const void* _Nonnull __pdata, void (* _Nullable __deinit)(const void* _Nonnull __pdata));
 
 TYP System_Uri_get_type_handle(void);
 
@@ -9206,6 +9242,8 @@ SG_HNDL_NONNULL System_Uri_ctor_0__1__String(SG_HNDL_NULLABLE * _Nonnull __throw
 
 SG_HNDL_NONNULL System_Uri_ctor_0__2__String_bool(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL uriString, int32_t dontEscape);
 
+SG_HNDL_NONNULL System_Uri_ctor_0__2__String_inUriCreationOptions(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL uriString, SG_HNDL_NONNULL* _Nonnull __creationOptions_in_ptr);
+
 SG_HNDL_NONNULL System_Uri_ctor_0__2__String_UriKind(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL uriString, int32_t uriKind);
 
 SG_HNDL_NONNULL System_Uri_ctor_0__2__Uri_String(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL baseUri, SG_HNDL_NULLABLE relativeUri);
@@ -9258,11 +9296,13 @@ int32_t System_Uri_bool__op_Inequality_0__2__Uri_Uri(SG_HNDL_NULLABLE * _Nonnull
 
 SG_HNDL_NONNULL System_Uri_String__ToString_0__0(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h);
 
-int32_t System_Uri_bool__TryCreate_0__3__String_UriKind_outUri(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE uriString, int32_t uriKind, SG_HNDL_NONNULL* _Nonnull __result_out_ptr);
+int32_t System_Uri_bool__TryCreate_0__3__String_inUriCreationOptions_outUri(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE uriString, SG_HNDL_NULLABLE* _Nonnull __creationOptions_in_ptr, SG_HNDL_NULLABLE* _Nonnull __result_out_ptr);
 
-int32_t System_Uri_bool__TryCreate_0__3__Uri_String_outUri(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE baseUri, SG_HNDL_NULLABLE relativeUri, SG_HNDL_NONNULL* _Nonnull __result_out_ptr);
+int32_t System_Uri_bool__TryCreate_0__3__String_UriKind_outUri(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE uriString, int32_t uriKind, SG_HNDL_NULLABLE* _Nonnull __result_out_ptr);
 
-int32_t System_Uri_bool__TryCreate_0__3__Uri_Uri_outUri(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE baseUri, SG_HNDL_NULLABLE relativeUri, SG_HNDL_NONNULL* _Nonnull __result_out_ptr);
+int32_t System_Uri_bool__TryCreate_0__3__Uri_String_outUri(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE baseUri, SG_HNDL_NULLABLE relativeUri, SG_HNDL_NULLABLE* _Nonnull __result_out_ptr);
+
+int32_t System_Uri_bool__TryCreate_0__3__Uri_Uri_outUri(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE baseUri, SG_HNDL_NULLABLE relativeUri, SG_HNDL_NULLABLE* _Nonnull __result_out_ptr);
 
 SG_HNDL_NONNULL System_Uri_String__UnescapeDataString_0__1__String(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL stringToUnescape);
 
@@ -9405,6 +9445,14 @@ int32_t System_UriComponents_get_StrongAuthority(void);
 int32_t System_UriComponents_get_NormalizedHost(void);
 
 int32_t System_UriComponents_get_KeepDelimiter(void);
+
+TYP System_UriCreationOptions_get_type_handle(void);
+
+int32_t System_UriCreationOptions_bool__get_DangerousDisablePathAndQueryCanonicalization_0__0(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h);
+
+void System_UriCreationOptions_void__set_DangerousDisablePathAndQueryCanonicalization_0__1__bool(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, int32_t value);
+
+SG_HNDL_NONNULL System_UriCreationOptions_implicit_ctor(void);
 
 TYP System_UriFormat_get_type_handle(void);
 
@@ -9872,9 +9920,9 @@ int32_t System_Version_bool__TryFormat_0__3__spanChar_i32_outi32(SG_HNDL_NULLABL
 
 int32_t System_Version_bool__TryFormat_0__2__spanChar_outi32(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, const void* _Nonnull __destination_spanptr, int32_t* _Nonnull __charsWritten_out_ptr);
 
-int32_t System_Version_bool__TryParse_0__2__rospanChar_outVersion(SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nonnull __input_spanptr, SG_HNDL_NONNULL* _Nonnull __result_out_ptr);
+int32_t System_Version_bool__TryParse_0__2__rospanChar_outVersion(SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nonnull __input_spanptr, SG_HNDL_NULLABLE* _Nonnull __result_out_ptr);
 
-int32_t System_Version_bool__TryParse_0__2__String_outVersion(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE input, SG_HNDL_NONNULL* _Nonnull __result_out_ptr);
+int32_t System_Version_bool__TryParse_0__2__String_outVersion(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE input, SG_HNDL_NULLABLE* _Nonnull __result_out_ptr);
 
 int32_t System_Version_i32__get_Build_0__0(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h);
 
@@ -9978,6 +10026,8 @@ SG_HNDL_NONNULL invoke_System_Buffers_IMemoryOwner_1_System_Memory_T___get_Memor
 
 SG_HNDL_NONNULL System_Buffers_IMemoryOwner_1_cast(TYP T, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __h);
 
+SG_HNDL_NONNULL System_Buffers_IMemoryOwner_1_create(TYP T, SG_HNDL_NULLABLE * _Nonnull __thrown, void (* _Nonnull  __cb_System_IDisposable_void__Dispose_0__0)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown), const void* _Nonnull __pdata_System_IDisposable_void__Dispose_0__0, void (* _Nullable __deinit)(const void* _Nonnull __pdata));
+
 TYP System_Buffers_IPinnable_get_type_handle(void);
 
 SG_HNDL_NONNULL System_Buffers_IPinnable_MemoryHandle__Pin_0__1__i32(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, int32_t elementIndex);
@@ -9985,6 +10035,8 @@ SG_HNDL_NONNULL System_Buffers_IPinnable_MemoryHandle__Pin_0__1__i32(SG_HNDL_NUL
 void System_Buffers_IPinnable_void__Unpin_0__0(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h);
 
 SG_HNDL_NONNULL System_Buffers_IPinnable_cast(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __h);
+
+SG_HNDL_NONNULL System_Buffers_IPinnable_create(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL (* _Nonnull  __cb_System_Buffers_IPinnable_MemoryHandle__Pin_0__1__i32)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, int32_t elementIndex), const void* _Nonnull __pdata_System_Buffers_IPinnable_MemoryHandle__Pin_0__1__i32, void (* _Nonnull  __cb_System_Buffers_IPinnable_void__Unpin_0__0)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown), const void* _Nonnull __pdata_System_Buffers_IPinnable_void__Unpin_0__0, void (* _Nullable __deinit)(const void* _Nonnull __pdata));
 
 TYP System_Buffers_MemoryHandle_get_type_handle(void);
 
@@ -10300,7 +10352,7 @@ TYP System_Collections_DictionaryEntry_get_type_handle(void);
 
 SG_HNDL_NONNULL System_Collections_DictionaryEntry_ctor_0__2__Object_Object(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL key, SG_HNDL_NULLABLE value);
 
-void System_Collections_DictionaryEntry_void__Deconstruct_0__2__outObject_outObject(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NONNULL* _Nonnull __key_out_ptr, SG_HNDL_NONNULL* _Nonnull __value_out_ptr);
+void System_Collections_DictionaryEntry_void__Deconstruct_0__2__outObject_outObject(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NONNULL* _Nonnull __key_out_ptr, SG_HNDL_NULLABLE* _Nonnull __value_out_ptr);
 
 SG_HNDL_NONNULL System_Collections_DictionaryEntry_Object__get_Key_0__0(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h);
 
@@ -10400,11 +10452,15 @@ SG_HNDL_NONNULL System_Collections_ICollection_Object__get_SyncRoot_0__0(SG_HNDL
 
 SG_HNDL_NONNULL System_Collections_ICollection_cast(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __h);
 
+SG_HNDL_NONNULL System_Collections_ICollection_create(SG_HNDL_NULLABLE * _Nonnull __thrown, void (* _Nonnull  __cb_System_Collections_ICollection_void__CopyTo_0__2__Array_i32)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL array, int32_t index), const void* _Nonnull __pdata_System_Collections_ICollection_void__CopyTo_0__2__Array_i32, SG_HNDL_NONNULL (* _Nonnull  __cb_System_Collections_IEnumerable_IEnumerator__GetEnumerator_0__0)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown), const void* _Nonnull __pdata_System_Collections_IEnumerable_IEnumerator__GetEnumerator_0__0, void (* _Nullable __deinit)(const void* _Nonnull __pdata));
+
 TYP System_Collections_IComparer_get_type_handle(void);
 
 int32_t System_Collections_IComparer_i32__Compare_0__2__Object_Object(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE x, SG_HNDL_NULLABLE y);
 
 SG_HNDL_NONNULL System_Collections_IComparer_cast(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __h);
+
+SG_HNDL_NONNULL System_Collections_IComparer_create(SG_HNDL_NULLABLE * _Nonnull __thrown, int32_t (* _Nonnull  __cb_System_Collections_IComparer_i32__Compare_0__2__Object_Object)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE x, SG_HNDL_NULLABLE y), const void* _Nonnull __pdata_System_Collections_IComparer_i32__Compare_0__2__Object_Object, void (* _Nullable __deinit)(const void* _Nonnull __pdata));
 
 TYP System_Collections_IDictionary_get_type_handle(void);
 
@@ -10432,6 +10488,8 @@ void System_Collections_IDictionary_void__set_Item_0__2__Object_Object(SG_HNDL_N
 
 SG_HNDL_NONNULL System_Collections_IDictionary_cast(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __h);
 
+SG_HNDL_NONNULL System_Collections_IDictionary_create(SG_HNDL_NULLABLE * _Nonnull __thrown, void (* _Nonnull  __cb_System_Collections_IDictionary_void__Add_0__2__Object_Object)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL key, SG_HNDL_NULLABLE value), const void* _Nonnull __pdata_System_Collections_IDictionary_void__Add_0__2__Object_Object, void (* _Nonnull  __cb_System_Collections_IDictionary_void__Clear_0__0)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown), const void* _Nonnull __pdata_System_Collections_IDictionary_void__Clear_0__0, int32_t (* _Nonnull  __cb_System_Collections_IDictionary_bool__Contains_0__1__Object)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL key), const void* _Nonnull __pdata_System_Collections_IDictionary_bool__Contains_0__1__Object, SG_HNDL_NONNULL (* _Nonnull  __cb_System_Collections_IDictionary_IDictionaryEnumerator__GetEnumerator_0__0)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown), const void* _Nonnull __pdata_System_Collections_IDictionary_IDictionaryEnumerator__GetEnumerator_0__0, void (* _Nonnull  __cb_System_Collections_IDictionary_void__Remove_0__1__Object)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL key), const void* _Nonnull __pdata_System_Collections_IDictionary_void__Remove_0__1__Object, void (* _Nonnull  __cb_System_Collections_ICollection_void__CopyTo_0__2__Array_i32)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL array, int32_t index), const void* _Nonnull __pdata_System_Collections_ICollection_void__CopyTo_0__2__Array_i32, SG_HNDL_NONNULL (* _Nonnull  __cb_System_Collections_IEnumerable_IEnumerator__GetEnumerator_0__0)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown), const void* _Nonnull __pdata_System_Collections_IEnumerable_IEnumerator__GetEnumerator_0__0, void (* _Nullable __deinit)(const void* _Nonnull __pdata));
+
 TYP System_Collections_IDictionaryEnumerator_get_type_handle(void);
 
 SG_HNDL_NONNULL System_Collections_IDictionaryEnumerator_DictionaryEntry__get_Entry_0__0(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h);
@@ -10442,11 +10500,15 @@ SG_HNDL_NULLABLE System_Collections_IDictionaryEnumerator_Object__get_Value_0__0
 
 SG_HNDL_NONNULL System_Collections_IDictionaryEnumerator_cast(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __h);
 
+SG_HNDL_NONNULL System_Collections_IDictionaryEnumerator_create(SG_HNDL_NULLABLE * _Nonnull __thrown, int32_t (* _Nonnull  __cb_System_Collections_IEnumerator_bool__MoveNext_0__0)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown), const void* _Nonnull __pdata_System_Collections_IEnumerator_bool__MoveNext_0__0, void (* _Nonnull  __cb_System_Collections_IEnumerator_void__Reset_0__0)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown), const void* _Nonnull __pdata_System_Collections_IEnumerator_void__Reset_0__0, void (* _Nullable __deinit)(const void* _Nonnull __pdata));
+
 TYP System_Collections_IEnumerable_get_type_handle(void);
 
 SG_HNDL_NONNULL System_Collections_IEnumerable_IEnumerator__GetEnumerator_0__0(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h);
 
 SG_HNDL_NONNULL System_Collections_IEnumerable_cast(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __h);
+
+SG_HNDL_NONNULL System_Collections_IEnumerable_create(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL (* _Nonnull  __cb_System_Collections_IEnumerable_IEnumerator__GetEnumerator_0__0)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown), const void* _Nonnull __pdata_System_Collections_IEnumerable_IEnumerator__GetEnumerator_0__0, void (* _Nullable __deinit)(const void* _Nonnull __pdata));
 
 TYP System_Collections_IEnumerator_get_type_handle(void);
 
@@ -10458,6 +10520,8 @@ SG_HNDL_NULLABLE System_Collections_IEnumerator_Object__get_Current_0__0(SG_HNDL
 
 SG_HNDL_NONNULL System_Collections_IEnumerator_cast(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __h);
 
+SG_HNDL_NONNULL System_Collections_IEnumerator_create(SG_HNDL_NULLABLE * _Nonnull __thrown, int32_t (* _Nonnull  __cb_System_Collections_IEnumerator_bool__MoveNext_0__0)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown), const void* _Nonnull __pdata_System_Collections_IEnumerator_bool__MoveNext_0__0, void (* _Nonnull  __cb_System_Collections_IEnumerator_void__Reset_0__0)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown), const void* _Nonnull __pdata_System_Collections_IEnumerator_void__Reset_0__0, void (* _Nullable __deinit)(const void* _Nonnull __pdata));
+
 TYP System_Collections_IEqualityComparer_get_type_handle(void);
 
 int32_t System_Collections_IEqualityComparer_bool__Equals_0__2__Object_Object(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE x, SG_HNDL_NULLABLE y);
@@ -10466,11 +10530,15 @@ int32_t System_Collections_IEqualityComparer_i32__GetHashCode_0__1__Object(SG_HN
 
 SG_HNDL_NONNULL System_Collections_IEqualityComparer_cast(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __h);
 
+SG_HNDL_NONNULL System_Collections_IEqualityComparer_create(SG_HNDL_NULLABLE * _Nonnull __thrown, int32_t (* _Nonnull  __cb_System_Collections_IEqualityComparer_bool__Equals_0__2__Object_Object)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE x, SG_HNDL_NULLABLE y), const void* _Nonnull __pdata_System_Collections_IEqualityComparer_bool__Equals_0__2__Object_Object, int32_t (* _Nonnull  __cb_System_Collections_IEqualityComparer_i32__GetHashCode_0__1__Object)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL obj), const void* _Nonnull __pdata_System_Collections_IEqualityComparer_i32__GetHashCode_0__1__Object, void (* _Nullable __deinit)(const void* _Nonnull __pdata));
+
 TYP System_Collections_IHashCodeProvider_get_type_handle(void);
 
 int32_t System_Collections_IHashCodeProvider_i32__GetHashCode_0__1__Object(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NONNULL obj);
 
 SG_HNDL_NONNULL System_Collections_IHashCodeProvider_cast(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __h);
+
+SG_HNDL_NONNULL System_Collections_IHashCodeProvider_create(SG_HNDL_NULLABLE * _Nonnull __thrown, int32_t (* _Nonnull  __cb_System_Collections_IHashCodeProvider_i32__GetHashCode_0__1__Object)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL obj), const void* _Nonnull __pdata_System_Collections_IHashCodeProvider_i32__GetHashCode_0__1__Object, void (* _Nullable __deinit)(const void* _Nonnull __pdata));
 
 TYP System_Collections_IList_get_type_handle(void);
 
@@ -10498,11 +10566,15 @@ void System_Collections_IList_void__set_Item_0__2__i32_Object(SG_HNDL_NULLABLE *
 
 SG_HNDL_NONNULL System_Collections_IList_cast(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __h);
 
+SG_HNDL_NONNULL System_Collections_IList_create(SG_HNDL_NULLABLE * _Nonnull __thrown, int32_t (* _Nonnull  __cb_System_Collections_IList_i32__Add_0__1__Object)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE value), const void* _Nonnull __pdata_System_Collections_IList_i32__Add_0__1__Object, void (* _Nonnull  __cb_System_Collections_IList_void__Clear_0__0)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown), const void* _Nonnull __pdata_System_Collections_IList_void__Clear_0__0, int32_t (* _Nonnull  __cb_System_Collections_IList_bool__Contains_0__1__Object)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE value), const void* _Nonnull __pdata_System_Collections_IList_bool__Contains_0__1__Object, int32_t (* _Nonnull  __cb_System_Collections_IList_i32__IndexOf_0__1__Object)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE value), const void* _Nonnull __pdata_System_Collections_IList_i32__IndexOf_0__1__Object, void (* _Nonnull  __cb_System_Collections_IList_void__Insert_0__2__i32_Object)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, int32_t index, SG_HNDL_NULLABLE value), const void* _Nonnull __pdata_System_Collections_IList_void__Insert_0__2__i32_Object, void (* _Nonnull  __cb_System_Collections_IList_void__Remove_0__1__Object)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE value), const void* _Nonnull __pdata_System_Collections_IList_void__Remove_0__1__Object, void (* _Nonnull  __cb_System_Collections_IList_void__RemoveAt_0__1__i32)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, int32_t index), const void* _Nonnull __pdata_System_Collections_IList_void__RemoveAt_0__1__i32, void (* _Nonnull  __cb_System_Collections_ICollection_void__CopyTo_0__2__Array_i32)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL array, int32_t index), const void* _Nonnull __pdata_System_Collections_ICollection_void__CopyTo_0__2__Array_i32, SG_HNDL_NONNULL (* _Nonnull  __cb_System_Collections_IEnumerable_IEnumerator__GetEnumerator_0__0)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown), const void* _Nonnull __pdata_System_Collections_IEnumerable_IEnumerator__GetEnumerator_0__0, void (* _Nullable __deinit)(const void* _Nonnull __pdata));
+
 TYP System_Collections_IStructuralComparable_get_type_handle(void);
 
 int32_t System_Collections_IStructuralComparable_i32__CompareTo_0__2__Object_IComparer(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE other, SG_HNDL_NONNULL comparer);
 
 SG_HNDL_NONNULL System_Collections_IStructuralComparable_cast(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __h);
+
+SG_HNDL_NONNULL System_Collections_IStructuralComparable_create(SG_HNDL_NULLABLE * _Nonnull __thrown, int32_t (* _Nonnull  __cb_System_Collections_IStructuralComparable_i32__CompareTo_0__2__Object_IComparer)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE other, SG_HNDL_NONNULL comparer), const void* _Nonnull __pdata_System_Collections_IStructuralComparable_i32__CompareTo_0__2__Object_IComparer, void (* _Nullable __deinit)(const void* _Nonnull __pdata));
 
 TYP System_Collections_IStructuralEquatable_get_type_handle(void);
 
@@ -10511,6 +10583,8 @@ int32_t System_Collections_IStructuralEquatable_bool__Equals_0__2__Object_IEqual
 int32_t System_Collections_IStructuralEquatable_i32__GetHashCode_0__1__IEqualityComparer(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NONNULL comparer);
 
 SG_HNDL_NONNULL System_Collections_IStructuralEquatable_cast(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __h);
+
+SG_HNDL_NONNULL System_Collections_IStructuralEquatable_create(SG_HNDL_NULLABLE * _Nonnull __thrown, int32_t (* _Nonnull  __cb_System_Collections_IStructuralEquatable_bool__Equals_0__2__Object_IEqualityComparer)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE other, SG_HNDL_NONNULL comparer), const void* _Nonnull __pdata_System_Collections_IStructuralEquatable_bool__Equals_0__2__Object_IEqualityComparer, int32_t (* _Nonnull  __cb_System_Collections_IStructuralEquatable_i32__GetHashCode_0__1__IEqualityComparer)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL comparer), const void* _Nonnull __pdata_System_Collections_IStructuralEquatable_i32__GetHashCode_0__1__IEqualityComparer, void (* _Nullable __deinit)(const void* _Nonnull __pdata));
 
 TYP System_Collections_Generic_IAsyncEnumerable_1_get_type_handle(TYP T);
 
@@ -10521,6 +10595,8 @@ SG_HNDL_NONNULL specialize_System_Collections_Generic_IAsyncEnumerable_1_System_
 SG_HNDL_NONNULL invoke_System_Collections_Generic_IAsyncEnumerable_1_System_Collections_Generic_IAsyncEnumerator_T___GetAsyncEnumerator_0__1__CancellationToken(SG_HNDL_NONNULL ____hdel, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NONNULL cancellationToken);
 
 SG_HNDL_NONNULL System_Collections_Generic_IAsyncEnumerable_1_cast(TYP T, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __h);
+
+SG_HNDL_NONNULL System_Collections_Generic_IAsyncEnumerable_1_create(TYP T, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL (* _Nonnull  __cb_System_Collections_Generic_IAsyncEnumerable_1_System_Collections_Generic_IAsyncEnumerator_T___GetAsyncEnumerator_0__1__CancellationToken)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL cancellationToken), const void* _Nonnull __pdata_System_Collections_Generic_IAsyncEnumerable_1_System_Collections_Generic_IAsyncEnumerator_T___GetAsyncEnumerator_0__1__CancellationToken, void (* _Nullable __deinit)(const void* _Nonnull __pdata));
 
 TYP System_Collections_Generic_IAsyncEnumerator_1_get_type_handle(TYP T);
 
@@ -10537,6 +10613,8 @@ SG_HNDL_NONNULL specialize_System_Collections_Generic_IAsyncEnumerator_1_T__get_
 GVAL invoke_System_Collections_Generic_IAsyncEnumerator_1_T__get_Current_0__0(SG_HNDL_NONNULL ____hdel, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h);
 
 SG_HNDL_NONNULL System_Collections_Generic_IAsyncEnumerator_1_cast(TYP T, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __h);
+
+SG_HNDL_NONNULL System_Collections_Generic_IAsyncEnumerator_1_create(TYP T, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL (* _Nonnull  __cb_System_Collections_Generic_IAsyncEnumerator_1_System_Threading_Tasks_ValueTask_bool___MoveNextAsync_0__0)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown), const void* _Nonnull __pdata_System_Collections_Generic_IAsyncEnumerator_1_System_Threading_Tasks_ValueTask_bool___MoveNextAsync_0__0, SG_HNDL_NONNULL (* _Nonnull  __cb_System_IAsyncDisposable_ValueTask__DisposeAsync_0__0)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown), const void* _Nonnull __pdata_System_IAsyncDisposable_ValueTask__DisposeAsync_0__0, void (* _Nullable __deinit)(const void* _Nonnull __pdata));
 
 TYP System_Collections_Generic_ICollection_1_get_type_handle(TYP T);
 
@@ -10584,6 +10662,8 @@ int32_t invoke_System_Collections_Generic_ICollection_1_bool__get_IsReadOnly_0__
 
 SG_HNDL_NONNULL System_Collections_Generic_ICollection_1_cast(TYP T, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __h);
 
+SG_HNDL_NONNULL System_Collections_Generic_ICollection_1_create(TYP T, SG_HNDL_NULLABLE * _Nonnull __thrown, void (* _Nonnull  __cb_System_Collections_Generic_ICollection_1_void__Add_0__1__T)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, GVAL item), const void* _Nonnull __pdata_System_Collections_Generic_ICollection_1_void__Add_0__1__T, void (* _Nonnull  __cb_System_Collections_Generic_ICollection_1_void__Clear_0__0)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown), const void* _Nonnull __pdata_System_Collections_Generic_ICollection_1_void__Clear_0__0, int32_t (* _Nonnull  __cb_System_Collections_Generic_ICollection_1_bool__Contains_0__1__T)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, GVAL item), const void* _Nonnull __pdata_System_Collections_Generic_ICollection_1_bool__Contains_0__1__T, void (* _Nonnull  __cb_System_Collections_Generic_ICollection_1_void__CopyTo_0__2__TArray_i32)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL array, int32_t arrayIndex), const void* _Nonnull __pdata_System_Collections_Generic_ICollection_1_void__CopyTo_0__2__TArray_i32, int32_t (* _Nonnull  __cb_System_Collections_Generic_ICollection_1_bool__Remove_0__1__T)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, GVAL item), const void* _Nonnull __pdata_System_Collections_Generic_ICollection_1_bool__Remove_0__1__T, SG_HNDL_NONNULL (* _Nonnull  __cb_System_Collections_Generic_IEnumerable_1_System_Collections_Generic_IEnumerator_T___GetEnumerator_0__0)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown), const void* _Nonnull __pdata_System_Collections_Generic_IEnumerable_1_System_Collections_Generic_IEnumerator_T___GetEnumerator_0__0, SG_HNDL_NONNULL (* _Nonnull  __cb_System_Collections_IEnumerable_IEnumerator__GetEnumerator_0__0)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown), const void* _Nonnull __pdata_System_Collections_IEnumerable_IEnumerator__GetEnumerator_0__0, void (* _Nullable __deinit)(const void* _Nonnull __pdata));
+
 TYP System_Collections_Generic_IComparer_1_get_type_handle(TYP T);
 
 int32_t System_Collections_Generic_IComparer_1_i32__Compare_0__2__T_T(TYP T, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, GVAL x, GVAL y);
@@ -10593,6 +10673,8 @@ SG_HNDL_NONNULL specialize_System_Collections_Generic_IComparer_1_i32__Compare_0
 int32_t invoke_System_Collections_Generic_IComparer_1_i32__Compare_0__2__T_T(SG_HNDL_NONNULL ____hdel, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, GVAL x, GVAL y);
 
 SG_HNDL_NONNULL System_Collections_Generic_IComparer_1_cast(TYP T, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __h);
+
+SG_HNDL_NONNULL System_Collections_Generic_IComparer_1_create(TYP T, SG_HNDL_NULLABLE * _Nonnull __thrown, int32_t (* _Nonnull  __cb_System_Collections_Generic_IComparer_1_i32__Compare_0__2__T_T)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, GVAL x, GVAL y), const void* _Nonnull __pdata_System_Collections_Generic_IComparer_1_i32__Compare_0__2__T_T, void (* _Nullable __deinit)(const void* _Nonnull __pdata));
 
 TYP System_Collections_Generic_IDictionary_2_get_type_handle(TYP TKey, TYP TValue);
 
@@ -10646,6 +10728,8 @@ void invoke_System_Collections_Generic_IDictionary_2_void__set_Item_0__2__TKey_T
 
 SG_HNDL_NONNULL System_Collections_Generic_IDictionary_2_cast(TYP TKey, TYP TValue, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __h);
 
+SG_HNDL_NONNULL System_Collections_Generic_IDictionary_2_create(TYP TKey, TYP TValue, SG_HNDL_NULLABLE * _Nonnull __thrown, void (* _Nonnull  __cb_System_Collections_Generic_IDictionary_2_void__Add_0__2__TKey_TValue)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, GVAL key, GVAL value), const void* _Nonnull __pdata_System_Collections_Generic_IDictionary_2_void__Add_0__2__TKey_TValue, int32_t (* _Nonnull  __cb_System_Collections_Generic_IDictionary_2_bool__ContainsKey_0__1__TKey)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, GVAL key), const void* _Nonnull __pdata_System_Collections_Generic_IDictionary_2_bool__ContainsKey_0__1__TKey, int32_t (* _Nonnull  __cb_System_Collections_Generic_IDictionary_2_bool__Remove_0__1__TKey)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, GVAL key), const void* _Nonnull __pdata_System_Collections_Generic_IDictionary_2_bool__Remove_0__1__TKey, int32_t (* _Nonnull  __cb_System_Collections_Generic_IDictionary_2_bool__TryGetValue_0__2__TKey_outTValue)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, GVAL key, GVAL* _Nonnull __value_out_ptr), const void* _Nonnull __pdata_System_Collections_Generic_IDictionary_2_bool__TryGetValue_0__2__TKey_outTValue, void (* _Nonnull  __cb_System_Collections_Generic_ICollection_1_void__Add_0__1__System_Collections_Generic_KeyValuePair_TKey_TValue_)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE item), const void* _Nonnull __pdata_System_Collections_Generic_ICollection_1_void__Add_0__1__System_Collections_Generic_KeyValuePair_TKey_TValue_, void (* _Nonnull  __cb_System_Collections_Generic_ICollection_1_void__Clear_0__0)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown), const void* _Nonnull __pdata_System_Collections_Generic_ICollection_1_void__Clear_0__0, int32_t (* _Nonnull  __cb_System_Collections_Generic_ICollection_1_bool__Contains_0__1__System_Collections_Generic_KeyValuePair_TKey_TValue_)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE item), const void* _Nonnull __pdata_System_Collections_Generic_ICollection_1_bool__Contains_0__1__System_Collections_Generic_KeyValuePair_TKey_TValue_, void (* _Nonnull  __cb_System_Collections_Generic_ICollection_1_void__CopyTo_0__2__System_Collections_Generic_KeyValuePair_TKey_TValue_Array_i32)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL array, int32_t arrayIndex), const void* _Nonnull __pdata_System_Collections_Generic_ICollection_1_void__CopyTo_0__2__System_Collections_Generic_KeyValuePair_TKey_TValue_Array_i32, int32_t (* _Nonnull  __cb_System_Collections_Generic_ICollection_1_bool__Remove_0__1__System_Collections_Generic_KeyValuePair_TKey_TValue_)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE item), const void* _Nonnull __pdata_System_Collections_Generic_ICollection_1_bool__Remove_0__1__System_Collections_Generic_KeyValuePair_TKey_TValue_, SG_HNDL_NONNULL (* _Nonnull  __cb_System_Collections_Generic_IEnumerable_1_System_Collections_Generic_IEnumerator_System_Collections_Generic_System_Collections_Generic_KeyValuePair_TKey_TValue____GetEnumerator_0__0)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown), const void* _Nonnull __pdata_System_Collections_Generic_IEnumerable_1_System_Collections_Generic_IEnumerator_System_Collections_Generic_System_Collections_Generic_KeyValuePair_TKey_TValue____GetEnumerator_0__0, SG_HNDL_NONNULL (* _Nonnull  __cb_System_Collections_IEnumerable_IEnumerator__GetEnumerator_0__0)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown), const void* _Nonnull __pdata_System_Collections_IEnumerable_IEnumerator__GetEnumerator_0__0, void (* _Nullable __deinit)(const void* _Nonnull __pdata));
+
 TYP System_Collections_Generic_IEnumerable_1_get_type_handle(TYP T);
 
 SG_HNDL_NONNULL System_Collections_Generic_IEnumerable_1_System_Collections_Generic_IEnumerator_T___GetEnumerator_0__0(TYP T, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h);
@@ -10656,6 +10740,8 @@ SG_HNDL_NONNULL invoke_System_Collections_Generic_IEnumerable_1_System_Collectio
 
 SG_HNDL_NONNULL System_Collections_Generic_IEnumerable_1_cast(TYP T, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __h);
 
+SG_HNDL_NONNULL System_Collections_Generic_IEnumerable_1_create(TYP T, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL (* _Nonnull  __cb_System_Collections_Generic_IEnumerable_1_System_Collections_Generic_IEnumerator_T___GetEnumerator_0__0)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown), const void* _Nonnull __pdata_System_Collections_Generic_IEnumerable_1_System_Collections_Generic_IEnumerator_T___GetEnumerator_0__0, SG_HNDL_NONNULL (* _Nonnull  __cb_System_Collections_IEnumerable_IEnumerator__GetEnumerator_0__0)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown), const void* _Nonnull __pdata_System_Collections_IEnumerable_IEnumerator__GetEnumerator_0__0, void (* _Nullable __deinit)(const void* _Nonnull __pdata));
+
 TYP System_Collections_Generic_IEnumerator_1_get_type_handle(TYP T);
 
 GVAL System_Collections_Generic_IEnumerator_1_T__get_Current_0__0(TYP T, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h);
@@ -10665,6 +10751,8 @@ SG_HNDL_NONNULL specialize_System_Collections_Generic_IEnumerator_1_T__get_Curre
 GVAL invoke_System_Collections_Generic_IEnumerator_1_T__get_Current_0__0(SG_HNDL_NONNULL ____hdel, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h);
 
 SG_HNDL_NONNULL System_Collections_Generic_IEnumerator_1_cast(TYP T, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __h);
+
+SG_HNDL_NONNULL System_Collections_Generic_IEnumerator_1_create(TYP T, SG_HNDL_NULLABLE * _Nonnull __thrown, int32_t (* _Nonnull  __cb_System_Collections_IEnumerator_bool__MoveNext_0__0)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown), const void* _Nonnull __pdata_System_Collections_IEnumerator_bool__MoveNext_0__0, void (* _Nonnull  __cb_System_Collections_IEnumerator_void__Reset_0__0)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown), const void* _Nonnull __pdata_System_Collections_IEnumerator_void__Reset_0__0, void (* _Nonnull  __cb_System_IDisposable_void__Dispose_0__0)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown), const void* _Nonnull __pdata_System_IDisposable_void__Dispose_0__0, void (* _Nullable __deinit)(const void* _Nonnull __pdata));
 
 TYP System_Collections_Generic_IEqualityComparer_1_get_type_handle(TYP T);
 
@@ -10681,6 +10769,8 @@ SG_HNDL_NONNULL specialize_System_Collections_Generic_IEqualityComparer_1_i32__G
 int32_t invoke_System_Collections_Generic_IEqualityComparer_1_i32__GetHashCode_0__1__T(SG_HNDL_NONNULL ____hdel, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, GVAL obj);
 
 SG_HNDL_NONNULL System_Collections_Generic_IEqualityComparer_1_cast(TYP T, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __h);
+
+SG_HNDL_NONNULL System_Collections_Generic_IEqualityComparer_1_create(TYP T, SG_HNDL_NULLABLE * _Nonnull __thrown, int32_t (* _Nonnull  __cb_System_Collections_Generic_IEqualityComparer_1_bool__Equals_0__2__T_T)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, GVAL x, GVAL y), const void* _Nonnull __pdata_System_Collections_Generic_IEqualityComparer_1_bool__Equals_0__2__T_T, int32_t (* _Nonnull  __cb_System_Collections_Generic_IEqualityComparer_1_i32__GetHashCode_0__1__T)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, GVAL obj), const void* _Nonnull __pdata_System_Collections_Generic_IEqualityComparer_1_i32__GetHashCode_0__1__T, void (* _Nullable __deinit)(const void* _Nonnull __pdata));
 
 TYP System_Collections_Generic_IList_1_get_type_handle(TYP T);
 
@@ -10716,6 +10806,8 @@ void invoke_System_Collections_Generic_IList_1_void__set_Item_0__2__i32_T(SG_HND
 
 SG_HNDL_NONNULL System_Collections_Generic_IList_1_cast(TYP T, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __h);
 
+SG_HNDL_NONNULL System_Collections_Generic_IList_1_create(TYP T, SG_HNDL_NULLABLE * _Nonnull __thrown, int32_t (* _Nonnull  __cb_System_Collections_Generic_IList_1_i32__IndexOf_0__1__T)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, GVAL item), const void* _Nonnull __pdata_System_Collections_Generic_IList_1_i32__IndexOf_0__1__T, void (* _Nonnull  __cb_System_Collections_Generic_IList_1_void__Insert_0__2__i32_T)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, int32_t index, GVAL item), const void* _Nonnull __pdata_System_Collections_Generic_IList_1_void__Insert_0__2__i32_T, void (* _Nonnull  __cb_System_Collections_Generic_IList_1_void__RemoveAt_0__1__i32)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, int32_t index), const void* _Nonnull __pdata_System_Collections_Generic_IList_1_void__RemoveAt_0__1__i32, void (* _Nonnull  __cb_System_Collections_Generic_ICollection_1_void__Add_0__1__T)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, GVAL item), const void* _Nonnull __pdata_System_Collections_Generic_ICollection_1_void__Add_0__1__T, void (* _Nonnull  __cb_System_Collections_Generic_ICollection_1_void__Clear_0__0)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown), const void* _Nonnull __pdata_System_Collections_Generic_ICollection_1_void__Clear_0__0, int32_t (* _Nonnull  __cb_System_Collections_Generic_ICollection_1_bool__Contains_0__1__T)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, GVAL item), const void* _Nonnull __pdata_System_Collections_Generic_ICollection_1_bool__Contains_0__1__T, void (* _Nonnull  __cb_System_Collections_Generic_ICollection_1_void__CopyTo_0__2__TArray_i32)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL array, int32_t arrayIndex), const void* _Nonnull __pdata_System_Collections_Generic_ICollection_1_void__CopyTo_0__2__TArray_i32, int32_t (* _Nonnull  __cb_System_Collections_Generic_ICollection_1_bool__Remove_0__1__T)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, GVAL item), const void* _Nonnull __pdata_System_Collections_Generic_ICollection_1_bool__Remove_0__1__T, SG_HNDL_NONNULL (* _Nonnull  __cb_System_Collections_Generic_IEnumerable_1_System_Collections_Generic_IEnumerator_T___GetEnumerator_0__0)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown), const void* _Nonnull __pdata_System_Collections_Generic_IEnumerable_1_System_Collections_Generic_IEnumerator_T___GetEnumerator_0__0, SG_HNDL_NONNULL (* _Nonnull  __cb_System_Collections_IEnumerable_IEnumerator__GetEnumerator_0__0)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown), const void* _Nonnull __pdata_System_Collections_IEnumerable_IEnumerator__GetEnumerator_0__0, void (* _Nullable __deinit)(const void* _Nonnull __pdata));
+
 TYP System_Collections_Generic_IReadOnlyCollection_1_get_type_handle(TYP T);
 
 int32_t System_Collections_Generic_IReadOnlyCollection_1_i32__get_Count_0__0(TYP T, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h);
@@ -10725,6 +10817,8 @@ SG_HNDL_NONNULL specialize_System_Collections_Generic_IReadOnlyCollection_1_i32_
 int32_t invoke_System_Collections_Generic_IReadOnlyCollection_1_i32__get_Count_0__0(SG_HNDL_NONNULL ____hdel, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h);
 
 SG_HNDL_NONNULL System_Collections_Generic_IReadOnlyCollection_1_cast(TYP T, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __h);
+
+SG_HNDL_NONNULL System_Collections_Generic_IReadOnlyCollection_1_create(TYP T, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL (* _Nonnull  __cb_System_Collections_Generic_IEnumerable_1_System_Collections_Generic_IEnumerator_T___GetEnumerator_0__0)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown), const void* _Nonnull __pdata_System_Collections_Generic_IEnumerable_1_System_Collections_Generic_IEnumerator_T___GetEnumerator_0__0, SG_HNDL_NONNULL (* _Nonnull  __cb_System_Collections_IEnumerable_IEnumerator__GetEnumerator_0__0)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown), const void* _Nonnull __pdata_System_Collections_IEnumerable_IEnumerator__GetEnumerator_0__0, void (* _Nullable __deinit)(const void* _Nonnull __pdata));
 
 TYP System_Collections_Generic_IReadOnlyDictionary_2_get_type_handle(TYP TKey, TYP TValue);
 
@@ -10760,6 +10854,8 @@ GVAL invoke_System_Collections_Generic_IReadOnlyDictionary_2_TValue__get_Item_0_
 
 SG_HNDL_NONNULL System_Collections_Generic_IReadOnlyDictionary_2_cast(TYP TKey, TYP TValue, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __h);
 
+SG_HNDL_NONNULL System_Collections_Generic_IReadOnlyDictionary_2_create(TYP TKey, TYP TValue, SG_HNDL_NULLABLE * _Nonnull __thrown, int32_t (* _Nonnull  __cb_System_Collections_Generic_IReadOnlyDictionary_2_bool__ContainsKey_0__1__TKey)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, GVAL key), const void* _Nonnull __pdata_System_Collections_Generic_IReadOnlyDictionary_2_bool__ContainsKey_0__1__TKey, int32_t (* _Nonnull  __cb_System_Collections_Generic_IReadOnlyDictionary_2_bool__TryGetValue_0__2__TKey_outTValue)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, GVAL key, GVAL* _Nonnull __value_out_ptr), const void* _Nonnull __pdata_System_Collections_Generic_IReadOnlyDictionary_2_bool__TryGetValue_0__2__TKey_outTValue, SG_HNDL_NONNULL (* _Nonnull  __cb_System_Collections_Generic_IEnumerable_1_System_Collections_Generic_IEnumerator_System_Collections_Generic_System_Collections_Generic_KeyValuePair_TKey_TValue____GetEnumerator_0__0)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown), const void* _Nonnull __pdata_System_Collections_Generic_IEnumerable_1_System_Collections_Generic_IEnumerator_System_Collections_Generic_System_Collections_Generic_KeyValuePair_TKey_TValue____GetEnumerator_0__0, SG_HNDL_NONNULL (* _Nonnull  __cb_System_Collections_IEnumerable_IEnumerator__GetEnumerator_0__0)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown), const void* _Nonnull __pdata_System_Collections_IEnumerable_IEnumerator__GetEnumerator_0__0, void (* _Nullable __deinit)(const void* _Nonnull __pdata));
+
 TYP System_Collections_Generic_IReadOnlyList_1_get_type_handle(TYP T);
 
 GVAL System_Collections_Generic_IReadOnlyList_1_T__get_Item_0__1__i32(TYP T, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, int32_t index);
@@ -10769,6 +10865,8 @@ SG_HNDL_NONNULL specialize_System_Collections_Generic_IReadOnlyList_1_T__get_Ite
 GVAL invoke_System_Collections_Generic_IReadOnlyList_1_T__get_Item_0__1__i32(SG_HNDL_NONNULL ____hdel, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, int32_t index);
 
 SG_HNDL_NONNULL System_Collections_Generic_IReadOnlyList_1_cast(TYP T, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __h);
+
+SG_HNDL_NONNULL System_Collections_Generic_IReadOnlyList_1_create(TYP T, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL (* _Nonnull  __cb_System_Collections_Generic_IEnumerable_1_System_Collections_Generic_IEnumerator_T___GetEnumerator_0__0)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown), const void* _Nonnull __pdata_System_Collections_Generic_IEnumerable_1_System_Collections_Generic_IEnumerator_T___GetEnumerator_0__0, SG_HNDL_NONNULL (* _Nonnull  __cb_System_Collections_IEnumerable_IEnumerator__GetEnumerator_0__0)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown), const void* _Nonnull __pdata_System_Collections_IEnumerable_IEnumerator__GetEnumerator_0__0, void (* _Nullable __deinit)(const void* _Nonnull __pdata));
 
 TYP System_Collections_Generic_IReadOnlySet_1_get_type_handle(TYP T);
 
@@ -10815,6 +10913,8 @@ SG_HNDL_NONNULL specialize_System_Collections_Generic_IReadOnlySet_1_bool__SetEq
 int32_t invoke_System_Collections_Generic_IReadOnlySet_1_bool__SetEquals_0__1__System_Collections_Generic_IEnumerable_T_(SG_HNDL_NONNULL ____hdel, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NONNULL other);
 
 SG_HNDL_NONNULL System_Collections_Generic_IReadOnlySet_1_cast(TYP T, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __h);
+
+SG_HNDL_NONNULL System_Collections_Generic_IReadOnlySet_1_create(TYP T, SG_HNDL_NULLABLE * _Nonnull __thrown, int32_t (* _Nonnull  __cb_System_Collections_Generic_IReadOnlySet_1_bool__Contains_0__1__T)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, GVAL item), const void* _Nonnull __pdata_System_Collections_Generic_IReadOnlySet_1_bool__Contains_0__1__T, int32_t (* _Nonnull  __cb_System_Collections_Generic_IReadOnlySet_1_bool__IsProperSubsetOf_0__1__System_Collections_Generic_IEnumerable_T_)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL other), const void* _Nonnull __pdata_System_Collections_Generic_IReadOnlySet_1_bool__IsProperSubsetOf_0__1__System_Collections_Generic_IEnumerable_T_, int32_t (* _Nonnull  __cb_System_Collections_Generic_IReadOnlySet_1_bool__IsProperSupersetOf_0__1__System_Collections_Generic_IEnumerable_T_)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL other), const void* _Nonnull __pdata_System_Collections_Generic_IReadOnlySet_1_bool__IsProperSupersetOf_0__1__System_Collections_Generic_IEnumerable_T_, int32_t (* _Nonnull  __cb_System_Collections_Generic_IReadOnlySet_1_bool__IsSubsetOf_0__1__System_Collections_Generic_IEnumerable_T_)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL other), const void* _Nonnull __pdata_System_Collections_Generic_IReadOnlySet_1_bool__IsSubsetOf_0__1__System_Collections_Generic_IEnumerable_T_, int32_t (* _Nonnull  __cb_System_Collections_Generic_IReadOnlySet_1_bool__IsSupersetOf_0__1__System_Collections_Generic_IEnumerable_T_)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL other), const void* _Nonnull __pdata_System_Collections_Generic_IReadOnlySet_1_bool__IsSupersetOf_0__1__System_Collections_Generic_IEnumerable_T_, int32_t (* _Nonnull  __cb_System_Collections_Generic_IReadOnlySet_1_bool__Overlaps_0__1__System_Collections_Generic_IEnumerable_T_)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL other), const void* _Nonnull __pdata_System_Collections_Generic_IReadOnlySet_1_bool__Overlaps_0__1__System_Collections_Generic_IEnumerable_T_, int32_t (* _Nonnull  __cb_System_Collections_Generic_IReadOnlySet_1_bool__SetEquals_0__1__System_Collections_Generic_IEnumerable_T_)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL other), const void* _Nonnull __pdata_System_Collections_Generic_IReadOnlySet_1_bool__SetEquals_0__1__System_Collections_Generic_IEnumerable_T_, SG_HNDL_NONNULL (* _Nonnull  __cb_System_Collections_Generic_IEnumerable_1_System_Collections_Generic_IEnumerator_T___GetEnumerator_0__0)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown), const void* _Nonnull __pdata_System_Collections_Generic_IEnumerable_1_System_Collections_Generic_IEnumerator_T___GetEnumerator_0__0, SG_HNDL_NONNULL (* _Nonnull  __cb_System_Collections_IEnumerable_IEnumerator__GetEnumerator_0__0)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown), const void* _Nonnull __pdata_System_Collections_IEnumerable_IEnumerator__GetEnumerator_0__0, void (* _Nullable __deinit)(const void* _Nonnull __pdata));
 
 TYP System_Collections_Generic_ISet_1_get_type_handle(TYP T);
 
@@ -10885,6 +10985,8 @@ SG_HNDL_NONNULL specialize_System_Collections_Generic_ISet_1_void__UnionWith_0__
 void invoke_System_Collections_Generic_ISet_1_void__UnionWith_0__1__System_Collections_Generic_IEnumerable_T_(SG_HNDL_NONNULL ____hdel, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NONNULL other);
 
 SG_HNDL_NONNULL System_Collections_Generic_ISet_1_cast(TYP T, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __h);
+
+SG_HNDL_NONNULL System_Collections_Generic_ISet_1_create(TYP T, SG_HNDL_NULLABLE * _Nonnull __thrown, int32_t (* _Nonnull  __cb_System_Collections_Generic_ISet_1_bool__Add_0__1__T)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, GVAL item), const void* _Nonnull __pdata_System_Collections_Generic_ISet_1_bool__Add_0__1__T, void (* _Nonnull  __cb_System_Collections_Generic_ISet_1_void__ExceptWith_0__1__System_Collections_Generic_IEnumerable_T_)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL other), const void* _Nonnull __pdata_System_Collections_Generic_ISet_1_void__ExceptWith_0__1__System_Collections_Generic_IEnumerable_T_, void (* _Nonnull  __cb_System_Collections_Generic_ISet_1_void__IntersectWith_0__1__System_Collections_Generic_IEnumerable_T_)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL other), const void* _Nonnull __pdata_System_Collections_Generic_ISet_1_void__IntersectWith_0__1__System_Collections_Generic_IEnumerable_T_, int32_t (* _Nonnull  __cb_System_Collections_Generic_ISet_1_bool__IsProperSubsetOf_0__1__System_Collections_Generic_IEnumerable_T_)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL other), const void* _Nonnull __pdata_System_Collections_Generic_ISet_1_bool__IsProperSubsetOf_0__1__System_Collections_Generic_IEnumerable_T_, int32_t (* _Nonnull  __cb_System_Collections_Generic_ISet_1_bool__IsProperSupersetOf_0__1__System_Collections_Generic_IEnumerable_T_)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL other), const void* _Nonnull __pdata_System_Collections_Generic_ISet_1_bool__IsProperSupersetOf_0__1__System_Collections_Generic_IEnumerable_T_, int32_t (* _Nonnull  __cb_System_Collections_Generic_ISet_1_bool__IsSubsetOf_0__1__System_Collections_Generic_IEnumerable_T_)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL other), const void* _Nonnull __pdata_System_Collections_Generic_ISet_1_bool__IsSubsetOf_0__1__System_Collections_Generic_IEnumerable_T_, int32_t (* _Nonnull  __cb_System_Collections_Generic_ISet_1_bool__IsSupersetOf_0__1__System_Collections_Generic_IEnumerable_T_)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL other), const void* _Nonnull __pdata_System_Collections_Generic_ISet_1_bool__IsSupersetOf_0__1__System_Collections_Generic_IEnumerable_T_, int32_t (* _Nonnull  __cb_System_Collections_Generic_ISet_1_bool__Overlaps_0__1__System_Collections_Generic_IEnumerable_T_)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL other), const void* _Nonnull __pdata_System_Collections_Generic_ISet_1_bool__Overlaps_0__1__System_Collections_Generic_IEnumerable_T_, int32_t (* _Nonnull  __cb_System_Collections_Generic_ISet_1_bool__SetEquals_0__1__System_Collections_Generic_IEnumerable_T_)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL other), const void* _Nonnull __pdata_System_Collections_Generic_ISet_1_bool__SetEquals_0__1__System_Collections_Generic_IEnumerable_T_, void (* _Nonnull  __cb_System_Collections_Generic_ISet_1_void__SymmetricExceptWith_0__1__System_Collections_Generic_IEnumerable_T_)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL other), const void* _Nonnull __pdata_System_Collections_Generic_ISet_1_void__SymmetricExceptWith_0__1__System_Collections_Generic_IEnumerable_T_, void (* _Nonnull  __cb_System_Collections_Generic_ISet_1_void__UnionWith_0__1__System_Collections_Generic_IEnumerable_T_)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL other), const void* _Nonnull __pdata_System_Collections_Generic_ISet_1_void__UnionWith_0__1__System_Collections_Generic_IEnumerable_T_, void (* _Nonnull  __cb_System_Collections_Generic_ICollection_1_void__Add_0__1__T)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, GVAL item), const void* _Nonnull __pdata_System_Collections_Generic_ICollection_1_void__Add_0__1__T, void (* _Nonnull  __cb_System_Collections_Generic_ICollection_1_void__Clear_0__0)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown), const void* _Nonnull __pdata_System_Collections_Generic_ICollection_1_void__Clear_0__0, int32_t (* _Nonnull  __cb_System_Collections_Generic_ICollection_1_bool__Contains_0__1__T)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, GVAL item), const void* _Nonnull __pdata_System_Collections_Generic_ICollection_1_bool__Contains_0__1__T, void (* _Nonnull  __cb_System_Collections_Generic_ICollection_1_void__CopyTo_0__2__TArray_i32)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL array, int32_t arrayIndex), const void* _Nonnull __pdata_System_Collections_Generic_ICollection_1_void__CopyTo_0__2__TArray_i32, int32_t (* _Nonnull  __cb_System_Collections_Generic_ICollection_1_bool__Remove_0__1__T)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, GVAL item), const void* _Nonnull __pdata_System_Collections_Generic_ICollection_1_bool__Remove_0__1__T, SG_HNDL_NONNULL (* _Nonnull  __cb_System_Collections_Generic_IEnumerable_1_System_Collections_Generic_IEnumerator_T___GetEnumerator_0__0)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown), const void* _Nonnull __pdata_System_Collections_Generic_IEnumerable_1_System_Collections_Generic_IEnumerator_T___GetEnumerator_0__0, SG_HNDL_NONNULL (* _Nonnull  __cb_System_Collections_IEnumerable_IEnumerator__GetEnumerator_0__0)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown), const void* _Nonnull __pdata_System_Collections_IEnumerable_IEnumerator__GetEnumerator_0__0, void (* _Nullable __deinit)(const void* _Nonnull __pdata));
 
 TYP System_Collections_Generic_KeyNotFoundException_get_type_handle(void);
 
@@ -11150,11 +11252,11 @@ void System_Diagnostics_Debug_void__Assert_0__1__bool(SG_HNDL_NULLABLE * _Nonnul
 
 void System_Diagnostics_Debug_void__Assert_0__2__bool_String(SG_HNDL_NULLABLE * _Nonnull __thrown, int32_t condition, SG_HNDL_NULLABLE message);
 
-void System_Diagnostics_Debug_void__Assert_0__2__bool_refDebug_AssertInterpolatedStringHandler(SG_HNDL_NULLABLE * _Nonnull __thrown, int32_t condition, SG_HNDL_NONNULL* _Nonnull __message_ref_ptr);
+void System_Diagnostics_Debug_void__Assert_0__2__bool_refDebug_AssertInterpolatedStringHandler(SG_HNDL_NULLABLE * _Nonnull __thrown, int32_t condition, SG_HNDL_NULLABLE* _Nonnull __message_ref_ptr);
 
 void System_Diagnostics_Debug_void__Assert_0__3__bool_String_String(SG_HNDL_NULLABLE * _Nonnull __thrown, int32_t condition, SG_HNDL_NULLABLE message, SG_HNDL_NULLABLE detailMessage);
 
-void System_Diagnostics_Debug_void__Assert_0__3__bool_refDebug_AssertInterpolatedStringHandler_refDebug_AssertInterpolatedStringHandler(SG_HNDL_NULLABLE * _Nonnull __thrown, int32_t condition, SG_HNDL_NONNULL* _Nonnull __message_ref_ptr, SG_HNDL_NONNULL* _Nonnull __detailMessage_ref_ptr);
+void System_Diagnostics_Debug_void__Assert_0__3__bool_refDebug_AssertInterpolatedStringHandler_refDebug_AssertInterpolatedStringHandler(SG_HNDL_NULLABLE * _Nonnull __thrown, int32_t condition, SG_HNDL_NULLABLE* _Nonnull __message_ref_ptr, SG_HNDL_NULLABLE* _Nonnull __detailMessage_ref_ptr);
 
 void System_Diagnostics_Debug_void__Assert_0__4__bool_String_String_ObjectArray(SG_HNDL_NULLABLE * _Nonnull __thrown, int32_t condition, SG_HNDL_NULLABLE message, SG_HNDL_NONNULL detailMessageFormat, SG_HNDL_NONNULL args);
 
@@ -11188,11 +11290,11 @@ void System_Diagnostics_Debug_void__WriteIf_0__3__bool_Object_String(SG_HNDL_NUL
 
 void System_Diagnostics_Debug_void__WriteIf_0__2__bool_String(SG_HNDL_NULLABLE * _Nonnull __thrown, int32_t condition, SG_HNDL_NULLABLE message);
 
-void System_Diagnostics_Debug_void__WriteIf_0__2__bool_refDebug_WriteIfInterpolatedStringHandler(SG_HNDL_NULLABLE * _Nonnull __thrown, int32_t condition, SG_HNDL_NONNULL* _Nonnull __message_ref_ptr);
+void System_Diagnostics_Debug_void__WriteIf_0__2__bool_refDebug_WriteIfInterpolatedStringHandler(SG_HNDL_NULLABLE * _Nonnull __thrown, int32_t condition, SG_HNDL_NULLABLE* _Nonnull __message_ref_ptr);
 
 void System_Diagnostics_Debug_void__WriteIf_0__3__bool_String_String(SG_HNDL_NULLABLE * _Nonnull __thrown, int32_t condition, SG_HNDL_NULLABLE message, SG_HNDL_NULLABLE category);
 
-void System_Diagnostics_Debug_void__WriteIf_0__3__bool_refDebug_WriteIfInterpolatedStringHandler_String(SG_HNDL_NULLABLE * _Nonnull __thrown, int32_t condition, SG_HNDL_NONNULL* _Nonnull __message_ref_ptr, SG_HNDL_NULLABLE category);
+void System_Diagnostics_Debug_void__WriteIf_0__3__bool_refDebug_WriteIfInterpolatedStringHandler_String(SG_HNDL_NULLABLE * _Nonnull __thrown, int32_t condition, SG_HNDL_NULLABLE* _Nonnull __message_ref_ptr, SG_HNDL_NULLABLE category);
 
 void System_Diagnostics_Debug_void__WriteLine_0__1__Object(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE value);
 
@@ -11210,11 +11312,11 @@ void System_Diagnostics_Debug_void__WriteLineIf_0__3__bool_Object_String(SG_HNDL
 
 void System_Diagnostics_Debug_void__WriteLineIf_0__2__bool_String(SG_HNDL_NULLABLE * _Nonnull __thrown, int32_t condition, SG_HNDL_NULLABLE message);
 
-void System_Diagnostics_Debug_void__WriteLineIf_0__2__bool_refDebug_WriteIfInterpolatedStringHandler(SG_HNDL_NULLABLE * _Nonnull __thrown, int32_t condition, SG_HNDL_NONNULL* _Nonnull __message_ref_ptr);
+void System_Diagnostics_Debug_void__WriteLineIf_0__2__bool_refDebug_WriteIfInterpolatedStringHandler(SG_HNDL_NULLABLE * _Nonnull __thrown, int32_t condition, SG_HNDL_NULLABLE* _Nonnull __message_ref_ptr);
 
 void System_Diagnostics_Debug_void__WriteLineIf_0__3__bool_String_String(SG_HNDL_NULLABLE * _Nonnull __thrown, int32_t condition, SG_HNDL_NULLABLE message, SG_HNDL_NULLABLE category);
 
-void System_Diagnostics_Debug_void__WriteLineIf_0__3__bool_refDebug_WriteIfInterpolatedStringHandler_String(SG_HNDL_NULLABLE * _Nonnull __thrown, int32_t condition, SG_HNDL_NONNULL* _Nonnull __message_ref_ptr, SG_HNDL_NULLABLE category);
+void System_Diagnostics_Debug_void__WriteLineIf_0__3__bool_refDebug_WriteIfInterpolatedStringHandler_String(SG_HNDL_NULLABLE * _Nonnull __thrown, int32_t condition, SG_HNDL_NULLABLE* _Nonnull __message_ref_ptr, SG_HNDL_NULLABLE category);
 
 int32_t System_Diagnostics_Debug_bool__get_AutoFlush_0__0(SG_HNDL_NULLABLE * _Nonnull __thrown);
 
@@ -14544,7 +14646,7 @@ void System_IO_MemoryStream_void__SetLength_0__1__i64(SG_HNDL_NULLABLE * _Nonnul
 
 SG_HNDL_NONNULL System_IO_MemoryStream_u8Array__ToArray_0__0(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h);
 
-int32_t System_IO_MemoryStream_bool__TryGetBuffer_0__1__outSystem_ArraySegment_u8_(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NONNULL* _Nonnull __buffer_out_ptr);
+int32_t System_IO_MemoryStream_bool__TryGetBuffer_0__1__outSystem_ArraySegment_u8_(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE* _Nonnull __buffer_out_ptr);
 
 void System_IO_MemoryStream_void__Write_0__3__u8Array_i32_i32(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NONNULL buffer, int32_t offset, int32_t count);
 
@@ -14583,6 +14685,10 @@ void System_IO_Path_set_AltDirectorySeparatorChar(int16_t __v);
 int16_t System_IO_Path_get_DirectorySeparatorChar(void);
 
 void System_IO_Path_set_DirectorySeparatorChar(int16_t __v);
+
+SG_HNDL_NONNULL System_IO_Path_get_InvalidPathChars(void);
+
+void System_IO_Path_set_InvalidPathChars(SG_HNDL_NONNULL __v);
 
 int16_t System_IO_Path_get_PathSeparator(void);
 
@@ -15850,7 +15956,7 @@ TYP System_Reflection_Binder_get_type_handle(void);
 
 SG_HNDL_NONNULL System_Reflection_Binder_FieldInfo__BindToField_0__4__BindingFlags_FieldInfoArray_Object_CultureInfo(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, int32_t bindingAttr, SG_HNDL_NONNULL match, SG_HNDL_NONNULL value, SG_HNDL_NULLABLE culture);
 
-SG_HNDL_NONNULL System_Reflection_Binder_MethodBase__BindToMethod_0__7__BindingFlags_MethodBaseArray_refObjectArray_ParameterModifierArray_CultureInfo_StringArray_outObject(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, int32_t bindingAttr, SG_HNDL_NONNULL match, SG_HNDL_NONNULL* _Nonnull __args_ref_ptr, SG_HNDL_NULLABLE modifiers, SG_HNDL_NULLABLE culture, SG_HNDL_NULLABLE names, SG_HNDL_NONNULL* _Nonnull __state_out_ptr);
+SG_HNDL_NONNULL System_Reflection_Binder_MethodBase__BindToMethod_0__7__BindingFlags_MethodBaseArray_refObjectArray_ParameterModifierArray_CultureInfo_StringArray_outObject(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, int32_t bindingAttr, SG_HNDL_NONNULL match, SG_HNDL_NONNULL* _Nonnull __args_ref_ptr, SG_HNDL_NULLABLE modifiers, SG_HNDL_NULLABLE culture, SG_HNDL_NULLABLE names, SG_HNDL_NULLABLE* _Nonnull __state_out_ptr);
 
 SG_HNDL_NONNULL System_Reflection_Binder_Object__ChangeType_0__3__Object_Type_CultureInfo(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NONNULL value, SG_HNDL_NONNULL type, SG_HNDL_NULLABLE culture);
 
@@ -16378,6 +16484,8 @@ int32_t System_Reflection_ICustomAttributeProvider_bool__IsDefined_0__2__Type_bo
 
 SG_HNDL_NONNULL System_Reflection_ICustomAttributeProvider_cast(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __h);
 
+SG_HNDL_NONNULL System_Reflection_ICustomAttributeProvider_create(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL (* _Nonnull  __cb_System_Reflection_ICustomAttributeProvider_ObjectArray__GetCustomAttributes_0__1__bool)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, int32_t inherit), const void* _Nonnull __pdata_System_Reflection_ICustomAttributeProvider_ObjectArray__GetCustomAttributes_0__1__bool, SG_HNDL_NONNULL (* _Nonnull  __cb_System_Reflection_ICustomAttributeProvider_ObjectArray__GetCustomAttributes_0__2__Type_bool)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL attributeType, int32_t inherit), const void* _Nonnull __pdata_System_Reflection_ICustomAttributeProvider_ObjectArray__GetCustomAttributes_0__2__Type_bool, int32_t (* _Nonnull  __cb_System_Reflection_ICustomAttributeProvider_bool__IsDefined_0__2__Type_bool)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL attributeType, int32_t inherit), const void* _Nonnull __pdata_System_Reflection_ICustomAttributeProvider_bool__IsDefined_0__2__Type_bool, void (* _Nullable __deinit)(const void* _Nonnull __pdata));
+
 TYP System_Reflection_IReflect_get_type_handle(void);
 
 SG_HNDL_NULLABLE System_Reflection_IReflect_FieldInfo__GetField_0__2__String_BindingFlags(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NONNULL name, int32_t bindingAttr);
@@ -16406,11 +16514,15 @@ SG_HNDL_NONNULL System_Reflection_IReflect_Type__get_UnderlyingSystemType_0__0(S
 
 SG_HNDL_NONNULL System_Reflection_IReflect_cast(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __h);
 
+SG_HNDL_NONNULL System_Reflection_IReflect_create(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE (* _Nonnull  __cb_System_Reflection_IReflect_FieldInfo__GetField_0__2__String_BindingFlags)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL name, int32_t bindingAttr), const void* _Nonnull __pdata_System_Reflection_IReflect_FieldInfo__GetField_0__2__String_BindingFlags, SG_HNDL_NONNULL (* _Nonnull  __cb_System_Reflection_IReflect_FieldInfoArray__GetFields_0__1__BindingFlags)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, int32_t bindingAttr), const void* _Nonnull __pdata_System_Reflection_IReflect_FieldInfoArray__GetFields_0__1__BindingFlags, SG_HNDL_NONNULL (* _Nonnull  __cb_System_Reflection_IReflect_MemberInfoArray__GetMember_0__2__String_BindingFlags)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL name, int32_t bindingAttr), const void* _Nonnull __pdata_System_Reflection_IReflect_MemberInfoArray__GetMember_0__2__String_BindingFlags, SG_HNDL_NONNULL (* _Nonnull  __cb_System_Reflection_IReflect_MemberInfoArray__GetMembers_0__1__BindingFlags)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, int32_t bindingAttr), const void* _Nonnull __pdata_System_Reflection_IReflect_MemberInfoArray__GetMembers_0__1__BindingFlags, SG_HNDL_NULLABLE (* _Nonnull  __cb_System_Reflection_IReflect_MethodInfo__GetMethod_0__2__String_BindingFlags)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL name, int32_t bindingAttr), const void* _Nonnull __pdata_System_Reflection_IReflect_MethodInfo__GetMethod_0__2__String_BindingFlags, SG_HNDL_NULLABLE (* _Nonnull  __cb_System_Reflection_IReflect_MethodInfo__GetMethod_0__5__String_BindingFlags_Binder_TypeArray_ParameterModifierArray)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL name, int32_t bindingAttr, SG_HNDL_NULLABLE binder, SG_HNDL_NONNULL types, SG_HNDL_NULLABLE modifiers), const void* _Nonnull __pdata_System_Reflection_IReflect_MethodInfo__GetMethod_0__5__String_BindingFlags_Binder_TypeArray_ParameterModifierArray, SG_HNDL_NONNULL (* _Nonnull  __cb_System_Reflection_IReflect_MethodInfoArray__GetMethods_0__1__BindingFlags)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, int32_t bindingAttr), const void* _Nonnull __pdata_System_Reflection_IReflect_MethodInfoArray__GetMethods_0__1__BindingFlags, SG_HNDL_NONNULL (* _Nonnull  __cb_System_Reflection_IReflect_PropertyInfoArray__GetProperties_0__1__BindingFlags)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, int32_t bindingAttr), const void* _Nonnull __pdata_System_Reflection_IReflect_PropertyInfoArray__GetProperties_0__1__BindingFlags, SG_HNDL_NULLABLE (* _Nonnull  __cb_System_Reflection_IReflect_PropertyInfo__GetProperty_0__2__String_BindingFlags)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL name, int32_t bindingAttr), const void* _Nonnull __pdata_System_Reflection_IReflect_PropertyInfo__GetProperty_0__2__String_BindingFlags, SG_HNDL_NULLABLE (* _Nonnull  __cb_System_Reflection_IReflect_PropertyInfo__GetProperty_0__6__String_BindingFlags_Binder_Type_TypeArray_ParameterModifierArray)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL name, int32_t bindingAttr, SG_HNDL_NULLABLE binder, SG_HNDL_NULLABLE returnType, SG_HNDL_NONNULL types, SG_HNDL_NULLABLE modifiers), const void* _Nonnull __pdata_System_Reflection_IReflect_PropertyInfo__GetProperty_0__6__String_BindingFlags_Binder_Type_TypeArray_ParameterModifierArray, SG_HNDL_NULLABLE (* _Nonnull  __cb_System_Reflection_IReflect_Object__InvokeMember_0__8__String_BindingFlags_Binder_Object_ObjectArray_ParameterModifierArray_CultureInfo_StringArray)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL name, int32_t invokeAttr, SG_HNDL_NULLABLE binder, SG_HNDL_NULLABLE target, SG_HNDL_NULLABLE args, SG_HNDL_NULLABLE modifiers, SG_HNDL_NULLABLE culture, SG_HNDL_NULLABLE namedParameters), const void* _Nonnull __pdata_System_Reflection_IReflect_Object__InvokeMember_0__8__String_BindingFlags_Binder_Object_ObjectArray_ParameterModifierArray_CultureInfo_StringArray, void (* _Nullable __deinit)(const void* _Nonnull __pdata));
+
 TYP System_Reflection_IReflectableType_get_type_handle(void);
 
 SG_HNDL_NONNULL System_Reflection_IReflectableType_TypeInfo__GetTypeInfo_0__0(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h);
 
 SG_HNDL_NONNULL System_Reflection_IReflectableType_cast(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __h);
+
+SG_HNDL_NONNULL System_Reflection_IReflectableType_create(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL (* _Nonnull  __cb_System_Reflection_IReflectableType_TypeInfo__GetTypeInfo_0__0)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown), const void* _Nonnull __pdata_System_Reflection_IReflectableType_TypeInfo__GetTypeInfo_0__0, void (* _Nullable __deinit)(const void* _Nonnull __pdata));
 
 TYP System_Reflection_ImageFileMachine_get_type_handle(void);
 
@@ -16424,9 +16536,17 @@ int32_t System_Reflection_ImageFileMachine_get_AMD64(void);
 
 TYP System_Reflection_InterfaceMapping_get_type_handle(void);
 
+SG_HNDL_NONNULL System_Reflection_InterfaceMapping_get_InterfaceMethods(SG_HNDL_NONNULL __self_h);
+
+void System_Reflection_InterfaceMapping_set_InterfaceMethods(SG_HNDL_NONNULL __self_h, SG_HNDL_NONNULL __v);
+
 SG_HNDL_NONNULL System_Reflection_InterfaceMapping_get_InterfaceType(SG_HNDL_NONNULL __self_h);
 
 void System_Reflection_InterfaceMapping_set_InterfaceType(SG_HNDL_NONNULL __self_h, SG_HNDL_NONNULL __v);
+
+SG_HNDL_NONNULL System_Reflection_InterfaceMapping_get_TargetMethods(SG_HNDL_NONNULL __self_h);
+
+void System_Reflection_InterfaceMapping_set_TargetMethods(SG_HNDL_NONNULL __self_h, SG_HNDL_NONNULL __v);
 
 SG_HNDL_NONNULL System_Reflection_InterfaceMapping_get_TargetType(SG_HNDL_NONNULL __self_h);
 
@@ -16478,7 +16598,7 @@ SG_HNDL_NULLABLE System_Reflection_MemberFilter_IAsyncResult__BeginInvoke_0__4__
 
 int32_t System_Reflection_MemberFilter_bool__EndInvoke_0__1__IAsyncResult(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE result);
 
-SG_HNDL_NONNULL System_Reflection_MemberFilter_create(SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nullable __pdata, void (* _Nullable __deinit)(const void* _Nullable __pdata), int32_t (* _Nonnull  __cb)(const void* _Nullable __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL m, SG_HNDL_NULLABLE filterCriteria));
+SG_HNDL_NONNULL System_Reflection_MemberFilter_create(SG_HNDL_NULLABLE * _Nonnull __thrown, int32_t (* _Nonnull  __cb)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL m, SG_HNDL_NULLABLE filterCriteria), const void* _Nonnull __pdata, void (* _Nullable __deinit)(const void* _Nonnull __pdata));
 
 TYP System_Reflection_MemberInfo_get_type_handle(void);
 
@@ -16880,7 +17000,7 @@ SG_HNDL_NULLABLE System_Reflection_ModuleResolveEventHandler_IAsyncResult__Begin
 
 SG_HNDL_NONNULL System_Reflection_ModuleResolveEventHandler_Module__EndInvoke_0__1__IAsyncResult(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE result);
 
-SG_HNDL_NONNULL System_Reflection_ModuleResolveEventHandler_create(SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nullable __pdata, void (* _Nullable __deinit)(const void* _Nullable __pdata), SG_HNDL_NONNULL (* _Nonnull  __cb)(const void* _Nullable __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL sender, SG_HNDL_NONNULL e));
+SG_HNDL_NONNULL System_Reflection_ModuleResolveEventHandler_create(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL (* _Nonnull  __cb)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL sender, SG_HNDL_NONNULL e), const void* _Nonnull __pdata, void (* _Nullable __deinit)(const void* _Nonnull __pdata));
 
 TYP System_Reflection_NullabilityInfo_get_type_handle(void);
 
@@ -17420,7 +17540,7 @@ SG_HNDL_NULLABLE System_Reflection_TypeFilter_IAsyncResult__BeginInvoke_0__4__Ty
 
 int32_t System_Reflection_TypeFilter_bool__EndInvoke_0__1__IAsyncResult(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE result);
 
-SG_HNDL_NONNULL System_Reflection_TypeFilter_create(SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nullable __pdata, void (* _Nullable __deinit)(const void* _Nullable __pdata), int32_t (* _Nonnull  __cb)(const void* _Nullable __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL m, SG_HNDL_NULLABLE filterCriteria));
+SG_HNDL_NONNULL System_Reflection_TypeFilter_create(SG_HNDL_NULLABLE * _Nonnull __thrown, int32_t (* _Nonnull  __cb)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL m, SG_HNDL_NULLABLE filterCriteria), const void* _Nonnull __pdata, void (* _Nullable __deinit)(const void* _Nonnull __pdata));
 
 TYP System_Reflection_TypeInfo_get_type_handle(void);
 
@@ -17467,6 +17587,8 @@ void System_Resources_IResourceReader_void__Close_0__0(SG_HNDL_NULLABLE * _Nonnu
 SG_HNDL_NONNULL System_Resources_IResourceReader_IDictionaryEnumerator__GetEnumerator_0__0(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h);
 
 SG_HNDL_NONNULL System_Resources_IResourceReader_cast(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __h);
+
+SG_HNDL_NONNULL System_Resources_IResourceReader_create(SG_HNDL_NULLABLE * _Nonnull __thrown, void (* _Nonnull  __cb_System_Resources_IResourceReader_void__Close_0__0)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown), const void* _Nonnull __pdata_System_Resources_IResourceReader_void__Close_0__0, SG_HNDL_NONNULL (* _Nonnull  __cb_System_Resources_IResourceReader_IDictionaryEnumerator__GetEnumerator_0__0)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown), const void* _Nonnull __pdata_System_Resources_IResourceReader_IDictionaryEnumerator__GetEnumerator_0__0, SG_HNDL_NONNULL (* _Nonnull  __cb_System_Collections_IEnumerable_IEnumerator__GetEnumerator_0__0)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown), const void* _Nonnull __pdata_System_Collections_IEnumerable_IEnumerator__GetEnumerator_0__0, void (* _Nonnull  __cb_System_IDisposable_void__Dispose_0__0)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown), const void* _Nonnull __pdata_System_IDisposable_void__Dispose_0__0, void (* _Nullable __deinit)(const void* _Nonnull __pdata));
 
 TYP System_Resources_MissingManifestResourceException_get_type_handle(void);
 
@@ -18106,7 +18228,7 @@ SG_HNDL_NONNULL specialize_System_Runtime_CompilerServices_ConditionalWeakTable_
 
 GVAL invoke_System_Runtime_CompilerServices_ConditionalWeakTable_2_CreateValueCallback_TValue__EndInvoke_0__1__IAsyncResult(SG_HNDL_NONNULL ____hdel, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE result);
 
-SG_HNDL_NONNULL System_Runtime_CompilerServices_ConditionalWeakTable_2_CreateValueCallback_create(TYP TKey, TYP TValue, SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nullable __pdata, void (* _Nullable __deinit)(const void* _Nullable __pdata), GVAL (* _Nonnull  __cb)(const void* _Nullable __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, GVAL key));
+SG_HNDL_NONNULL System_Runtime_CompilerServices_ConditionalWeakTable_2_CreateValueCallback_create(TYP TKey, TYP TValue, SG_HNDL_NULLABLE * _Nonnull __thrown, GVAL (* _Nonnull  __cb)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, GVAL key), const void* _Nonnull __pdata, void (* _Nullable __deinit)(const void* _Nonnull __pdata));
 
 TYP System_Runtime_CompilerServices_ConfiguredAsyncDisposable_get_type_handle(void);
 
@@ -18362,17 +18484,23 @@ void System_Runtime_CompilerServices_IAsyncStateMachine_void__SetStateMachine_0_
 
 SG_HNDL_NONNULL System_Runtime_CompilerServices_IAsyncStateMachine_cast(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __h);
 
+SG_HNDL_NONNULL System_Runtime_CompilerServices_IAsyncStateMachine_create(SG_HNDL_NULLABLE * _Nonnull __thrown, void (* _Nonnull  __cb_System_Runtime_CompilerServices_IAsyncStateMachine_void__MoveNext_0__0)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown), const void* _Nonnull __pdata_System_Runtime_CompilerServices_IAsyncStateMachine_void__MoveNext_0__0, void (* _Nonnull  __cb_System_Runtime_CompilerServices_IAsyncStateMachine_void__SetStateMachine_0__1__IAsyncStateMachine)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL stateMachine), const void* _Nonnull __pdata_System_Runtime_CompilerServices_IAsyncStateMachine_void__SetStateMachine_0__1__IAsyncStateMachine, void (* _Nullable __deinit)(const void* _Nonnull __pdata));
+
 TYP System_Runtime_CompilerServices_ICriticalNotifyCompletion_get_type_handle(void);
 
 void System_Runtime_CompilerServices_ICriticalNotifyCompletion_void__UnsafeOnCompleted_0__1__Action(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NONNULL continuation);
 
 SG_HNDL_NONNULL System_Runtime_CompilerServices_ICriticalNotifyCompletion_cast(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __h);
 
+SG_HNDL_NONNULL System_Runtime_CompilerServices_ICriticalNotifyCompletion_create(SG_HNDL_NULLABLE * _Nonnull __thrown, void (* _Nonnull  __cb_System_Runtime_CompilerServices_ICriticalNotifyCompletion_void__UnsafeOnCompleted_0__1__Action)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL continuation), const void* _Nonnull __pdata_System_Runtime_CompilerServices_ICriticalNotifyCompletion_void__UnsafeOnCompleted_0__1__Action, void (* _Nonnull  __cb_System_Runtime_CompilerServices_INotifyCompletion_void__OnCompleted_0__1__Action)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL continuation), const void* _Nonnull __pdata_System_Runtime_CompilerServices_INotifyCompletion_void__OnCompleted_0__1__Action, void (* _Nullable __deinit)(const void* _Nonnull __pdata));
+
 TYP System_Runtime_CompilerServices_INotifyCompletion_get_type_handle(void);
 
 void System_Runtime_CompilerServices_INotifyCompletion_void__OnCompleted_0__1__Action(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NONNULL continuation);
 
 SG_HNDL_NONNULL System_Runtime_CompilerServices_INotifyCompletion_cast(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __h);
+
+SG_HNDL_NONNULL System_Runtime_CompilerServices_INotifyCompletion_create(SG_HNDL_NULLABLE * _Nonnull __thrown, void (* _Nonnull  __cb_System_Runtime_CompilerServices_INotifyCompletion_void__OnCompleted_0__1__Action)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL continuation), const void* _Nonnull __pdata_System_Runtime_CompilerServices_INotifyCompletion_void__OnCompleted_0__1__Action, void (* _Nullable __deinit)(const void* _Nonnull __pdata));
 
 TYP System_Runtime_CompilerServices_IStrongBox_get_type_handle(void);
 
@@ -18382,6 +18510,8 @@ void System_Runtime_CompilerServices_IStrongBox_void__set_Value_0__1__Object(SG_
 
 SG_HNDL_NONNULL System_Runtime_CompilerServices_IStrongBox_cast(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __h);
 
+SG_HNDL_NONNULL System_Runtime_CompilerServices_IStrongBox_create(SG_HNDL_NULLABLE * _Nonnull __thrown, void (* _Nullable __deinit)(const void* _Nonnull __pdata));
+
 TYP System_Runtime_CompilerServices_ITuple_get_type_handle(void);
 
 int32_t System_Runtime_CompilerServices_ITuple_i32__get_Length_0__0(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h);
@@ -18389,6 +18519,8 @@ int32_t System_Runtime_CompilerServices_ITuple_i32__get_Length_0__0(SG_HNDL_NULL
 SG_HNDL_NULLABLE System_Runtime_CompilerServices_ITuple_Object__get_Item_0__1__i32(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, int32_t index);
 
 SG_HNDL_NONNULL System_Runtime_CompilerServices_ITuple_cast(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __h);
+
+SG_HNDL_NONNULL System_Runtime_CompilerServices_ITuple_create(SG_HNDL_NULLABLE * _Nonnull __thrown, void (* _Nullable __deinit)(const void* _Nonnull __pdata));
 
 TYP System_Runtime_CompilerServices_IndexerNameAttribute_get_type_handle(void);
 
@@ -18686,7 +18818,7 @@ SG_HNDL_NULLABLE System_Runtime_CompilerServices_RuntimeHelpers_CleanupCode_IAsy
 
 void System_Runtime_CompilerServices_RuntimeHelpers_CleanupCode_void__EndInvoke_0__1__IAsyncResult(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE result);
 
-SG_HNDL_NONNULL System_Runtime_CompilerServices_RuntimeHelpers_CleanupCode_create(SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nullable __pdata, void (* _Nullable __deinit)(const void* _Nullable __pdata), void (* _Nonnull  __cb)(const void* _Nullable __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE userData, int32_t exceptionThrown));
+SG_HNDL_NONNULL System_Runtime_CompilerServices_RuntimeHelpers_CleanupCode_create(SG_HNDL_NULLABLE * _Nonnull __thrown, void (* _Nonnull  __cb)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE userData, int32_t exceptionThrown), const void* _Nonnull __pdata, void (* _Nullable __deinit)(const void* _Nonnull __pdata));
 
 TYP System_Runtime_CompilerServices_RuntimeHelpers_TryCode_get_type_handle(void);
 
@@ -18696,7 +18828,7 @@ SG_HNDL_NULLABLE System_Runtime_CompilerServices_RuntimeHelpers_TryCode_IAsyncRe
 
 void System_Runtime_CompilerServices_RuntimeHelpers_TryCode_void__EndInvoke_0__1__IAsyncResult(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE result);
 
-SG_HNDL_NONNULL System_Runtime_CompilerServices_RuntimeHelpers_TryCode_create(SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nullable __pdata, void (* _Nullable __deinit)(const void* _Nullable __pdata), void (* _Nonnull  __cb)(const void* _Nullable __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE userData));
+SG_HNDL_NONNULL System_Runtime_CompilerServices_RuntimeHelpers_TryCode_create(SG_HNDL_NULLABLE * _Nonnull __thrown, void (* _Nonnull  __cb)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE userData), const void* _Nonnull __pdata, void (* _Nullable __deinit)(const void* _Nonnull __pdata));
 
 TYP System_Runtime_CompilerServices_RuntimeWrappedException_get_type_handle(void);
 
@@ -19188,6 +19320,8 @@ void System_Runtime_Serialization_IDeserializationCallback_void__OnDeserializati
 
 SG_HNDL_NONNULL System_Runtime_Serialization_IDeserializationCallback_cast(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __h);
 
+SG_HNDL_NONNULL System_Runtime_Serialization_IDeserializationCallback_create(SG_HNDL_NULLABLE * _Nonnull __thrown, void (* _Nonnull  __cb_System_Runtime_Serialization_IDeserializationCallback_void__OnDeserialization_0__1__Object)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE sender), const void* _Nonnull __pdata_System_Runtime_Serialization_IDeserializationCallback_void__OnDeserialization_0__1__Object, void (* _Nullable __deinit)(const void* _Nonnull __pdata));
+
 TYP System_Runtime_Serialization_IFormatterConverter_get_type_handle(void);
 
 SG_HNDL_NONNULL System_Runtime_Serialization_IFormatterConverter_Object__Convert_0__2__Object_Type(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NONNULL value, SG_HNDL_NONNULL type);
@@ -19226,11 +19360,15 @@ uint64_t System_Runtime_Serialization_IFormatterConverter_u64__ToUInt64_0__1__Ob
 
 SG_HNDL_NONNULL System_Runtime_Serialization_IFormatterConverter_cast(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __h);
 
+SG_HNDL_NONNULL System_Runtime_Serialization_IFormatterConverter_create(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL (* _Nonnull  __cb_System_Runtime_Serialization_IFormatterConverter_Object__Convert_0__2__Object_Type)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL value, SG_HNDL_NONNULL type), const void* _Nonnull __pdata_System_Runtime_Serialization_IFormatterConverter_Object__Convert_0__2__Object_Type, SG_HNDL_NONNULL (* _Nonnull  __cb_System_Runtime_Serialization_IFormatterConverter_Object__Convert_0__2__Object_TypeCode)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL value, int32_t typeCode), const void* _Nonnull __pdata_System_Runtime_Serialization_IFormatterConverter_Object__Convert_0__2__Object_TypeCode, int32_t (* _Nonnull  __cb_System_Runtime_Serialization_IFormatterConverter_bool__ToBoolean_0__1__Object)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL value), const void* _Nonnull __pdata_System_Runtime_Serialization_IFormatterConverter_bool__ToBoolean_0__1__Object, uint8_t (* _Nonnull  __cb_System_Runtime_Serialization_IFormatterConverter_u8__ToByte_0__1__Object)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL value), const void* _Nonnull __pdata_System_Runtime_Serialization_IFormatterConverter_u8__ToByte_0__1__Object, int16_t (* _Nonnull  __cb_System_Runtime_Serialization_IFormatterConverter_Char__ToChar_0__1__Object)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL value), const void* _Nonnull __pdata_System_Runtime_Serialization_IFormatterConverter_Char__ToChar_0__1__Object, SG_HNDL_NONNULL (* _Nonnull  __cb_System_Runtime_Serialization_IFormatterConverter_DateTime__ToDateTime_0__1__Object)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL value), const void* _Nonnull __pdata_System_Runtime_Serialization_IFormatterConverter_DateTime__ToDateTime_0__1__Object, SG_HNDL_NONNULL (* _Nonnull  __cb_System_Runtime_Serialization_IFormatterConverter_Decimal__ToDecimal_0__1__Object)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL value), const void* _Nonnull __pdata_System_Runtime_Serialization_IFormatterConverter_Decimal__ToDecimal_0__1__Object, double (* _Nonnull  __cb_System_Runtime_Serialization_IFormatterConverter_f64__ToDouble_0__1__Object)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL value), const void* _Nonnull __pdata_System_Runtime_Serialization_IFormatterConverter_f64__ToDouble_0__1__Object, int16_t (* _Nonnull  __cb_System_Runtime_Serialization_IFormatterConverter_i16__ToInt16_0__1__Object)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL value), const void* _Nonnull __pdata_System_Runtime_Serialization_IFormatterConverter_i16__ToInt16_0__1__Object, int32_t (* _Nonnull  __cb_System_Runtime_Serialization_IFormatterConverter_i32__ToInt32_0__1__Object)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL value), const void* _Nonnull __pdata_System_Runtime_Serialization_IFormatterConverter_i32__ToInt32_0__1__Object, int64_t (* _Nonnull  __cb_System_Runtime_Serialization_IFormatterConverter_i64__ToInt64_0__1__Object)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL value), const void* _Nonnull __pdata_System_Runtime_Serialization_IFormatterConverter_i64__ToInt64_0__1__Object, int8_t (* _Nonnull  __cb_System_Runtime_Serialization_IFormatterConverter_i8__ToSByte_0__1__Object)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL value), const void* _Nonnull __pdata_System_Runtime_Serialization_IFormatterConverter_i8__ToSByte_0__1__Object, float (* _Nonnull  __cb_System_Runtime_Serialization_IFormatterConverter_f32__ToSingle_0__1__Object)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL value), const void* _Nonnull __pdata_System_Runtime_Serialization_IFormatterConverter_f32__ToSingle_0__1__Object, SG_HNDL_NULLABLE (* _Nonnull  __cb_System_Runtime_Serialization_IFormatterConverter_String__ToString_0__1__Object)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL value), const void* _Nonnull __pdata_System_Runtime_Serialization_IFormatterConverter_String__ToString_0__1__Object, uint16_t (* _Nonnull  __cb_System_Runtime_Serialization_IFormatterConverter_u16__ToUInt16_0__1__Object)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL value), const void* _Nonnull __pdata_System_Runtime_Serialization_IFormatterConverter_u16__ToUInt16_0__1__Object, uint32_t (* _Nonnull  __cb_System_Runtime_Serialization_IFormatterConverter_u32__ToUInt32_0__1__Object)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL value), const void* _Nonnull __pdata_System_Runtime_Serialization_IFormatterConverter_u32__ToUInt32_0__1__Object, uint64_t (* _Nonnull  __cb_System_Runtime_Serialization_IFormatterConverter_u64__ToUInt64_0__1__Object)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL value), const void* _Nonnull __pdata_System_Runtime_Serialization_IFormatterConverter_u64__ToUInt64_0__1__Object, void (* _Nullable __deinit)(const void* _Nonnull __pdata));
+
 TYP System_Runtime_Serialization_IObjectReference_get_type_handle(void);
 
 SG_HNDL_NONNULL System_Runtime_Serialization_IObjectReference_Object__GetRealObject_0__1__StreamingContext(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NONNULL context);
 
 SG_HNDL_NONNULL System_Runtime_Serialization_IObjectReference_cast(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __h);
+
+SG_HNDL_NONNULL System_Runtime_Serialization_IObjectReference_create(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL (* _Nonnull  __cb_System_Runtime_Serialization_IObjectReference_Object__GetRealObject_0__1__StreamingContext)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL context), const void* _Nonnull __pdata_System_Runtime_Serialization_IObjectReference_Object__GetRealObject_0__1__StreamingContext, void (* _Nullable __deinit)(const void* _Nonnull __pdata));
 
 TYP System_Runtime_Serialization_ISafeSerializationData_get_type_handle(void);
 
@@ -19238,11 +19376,15 @@ void System_Runtime_Serialization_ISafeSerializationData_void__CompleteDeseriali
 
 SG_HNDL_NONNULL System_Runtime_Serialization_ISafeSerializationData_cast(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __h);
 
+SG_HNDL_NONNULL System_Runtime_Serialization_ISafeSerializationData_create(SG_HNDL_NULLABLE * _Nonnull __thrown, void (* _Nonnull  __cb_System_Runtime_Serialization_ISafeSerializationData_void__CompleteDeserialization_0__1__Object)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL deserialized), const void* _Nonnull __pdata_System_Runtime_Serialization_ISafeSerializationData_void__CompleteDeserialization_0__1__Object, void (* _Nullable __deinit)(const void* _Nonnull __pdata));
+
 TYP System_Runtime_Serialization_ISerializable_get_type_handle(void);
 
 void System_Runtime_Serialization_ISerializable_void__GetObjectData_0__2__SerializationInfo_StreamingContext(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NONNULL info, SG_HNDL_NONNULL context);
 
 SG_HNDL_NONNULL System_Runtime_Serialization_ISerializable_cast(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __h);
+
+SG_HNDL_NONNULL System_Runtime_Serialization_ISerializable_create(SG_HNDL_NULLABLE * _Nonnull __thrown, void (* _Nonnull  __cb_System_Runtime_Serialization_ISerializable_void__GetObjectData_0__2__SerializationInfo_StreamingContext)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL info, SG_HNDL_NONNULL context), const void* _Nonnull __pdata_System_Runtime_Serialization_ISerializable_void__GetObjectData_0__2__SerializationInfo_StreamingContext, void (* _Nullable __deinit)(const void* _Nonnull __pdata));
 
 TYP System_Runtime_Serialization_OnDeserializedAttribute_get_type_handle(void);
 
@@ -19624,6 +19766,8 @@ SG_HNDL_NULLABLE System_Security_IPermission_IPermission__Union_0__1__IPermissio
 
 SG_HNDL_NONNULL System_Security_IPermission_cast(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __h);
 
+SG_HNDL_NONNULL System_Security_IPermission_create(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL (* _Nonnull  __cb_System_Security_IPermission_IPermission__Copy_0__0)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown), const void* _Nonnull __pdata_System_Security_IPermission_IPermission__Copy_0__0, void (* _Nonnull  __cb_System_Security_IPermission_void__Demand_0__0)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown), const void* _Nonnull __pdata_System_Security_IPermission_void__Demand_0__0, SG_HNDL_NULLABLE (* _Nonnull  __cb_System_Security_IPermission_IPermission__Intersect_0__1__IPermission)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE target), const void* _Nonnull __pdata_System_Security_IPermission_IPermission__Intersect_0__1__IPermission, int32_t (* _Nonnull  __cb_System_Security_IPermission_bool__IsSubsetOf_0__1__IPermission)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE target), const void* _Nonnull __pdata_System_Security_IPermission_bool__IsSubsetOf_0__1__IPermission, SG_HNDL_NULLABLE (* _Nonnull  __cb_System_Security_IPermission_IPermission__Union_0__1__IPermission)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE target), const void* _Nonnull __pdata_System_Security_IPermission_IPermission__Union_0__1__IPermission, void (* _Nonnull  __cb_System_Security_ISecurityEncodable_void__FromXml_0__1__SecurityElement)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL e), const void* _Nonnull __pdata_System_Security_ISecurityEncodable_void__FromXml_0__1__SecurityElement, SG_HNDL_NULLABLE (* _Nonnull  __cb_System_Security_ISecurityEncodable_SecurityElement__ToXml_0__0)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown), const void* _Nonnull __pdata_System_Security_ISecurityEncodable_SecurityElement__ToXml_0__0, void (* _Nullable __deinit)(const void* _Nonnull __pdata));
+
 TYP System_Security_ISecurityEncodable_get_type_handle(void);
 
 void System_Security_ISecurityEncodable_void__FromXml_0__1__SecurityElement(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NONNULL e);
@@ -19631,6 +19775,8 @@ void System_Security_ISecurityEncodable_void__FromXml_0__1__SecurityElement(SG_H
 SG_HNDL_NULLABLE System_Security_ISecurityEncodable_SecurityElement__ToXml_0__0(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h);
 
 SG_HNDL_NONNULL System_Security_ISecurityEncodable_cast(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __h);
+
+SG_HNDL_NONNULL System_Security_ISecurityEncodable_create(SG_HNDL_NULLABLE * _Nonnull __thrown, void (* _Nonnull  __cb_System_Security_ISecurityEncodable_void__FromXml_0__1__SecurityElement)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL e), const void* _Nonnull __pdata_System_Security_ISecurityEncodable_void__FromXml_0__1__SecurityElement, SG_HNDL_NULLABLE (* _Nonnull  __cb_System_Security_ISecurityEncodable_SecurityElement__ToXml_0__0)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown), const void* _Nonnull __pdata_System_Security_ISecurityEncodable_SecurityElement__ToXml_0__0, void (* _Nullable __deinit)(const void* _Nonnull __pdata));
 
 TYP System_Security_IStackWalk_get_type_handle(void);
 
@@ -19643,6 +19789,8 @@ void System_Security_IStackWalk_void__Deny_0__0(SG_HNDL_NULLABLE * _Nonnull __th
 void System_Security_IStackWalk_void__PermitOnly_0__0(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h);
 
 SG_HNDL_NONNULL System_Security_IStackWalk_cast(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __h);
+
+SG_HNDL_NONNULL System_Security_IStackWalk_create(SG_HNDL_NULLABLE * _Nonnull __thrown, void (* _Nonnull  __cb_System_Security_IStackWalk_void__Assert_0__0)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown), const void* _Nonnull __pdata_System_Security_IStackWalk_void__Assert_0__0, void (* _Nonnull  __cb_System_Security_IStackWalk_void__Demand_0__0)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown), const void* _Nonnull __pdata_System_Security_IStackWalk_void__Demand_0__0, void (* _Nonnull  __cb_System_Security_IStackWalk_void__Deny_0__0)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown), const void* _Nonnull __pdata_System_Security_IStackWalk_void__Deny_0__0, void (* _Nonnull  __cb_System_Security_IStackWalk_void__PermitOnly_0__0)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown), const void* _Nonnull __pdata_System_Security_IStackWalk_void__PermitOnly_0__0, void (* _Nullable __deinit)(const void* _Nonnull __pdata));
 
 TYP System_Security_PartialTrustVisibilityLevel_get_type_handle(void);
 
@@ -20070,6 +20218,8 @@ SG_HNDL_NULLABLE System_Security_Principal_IIdentity_String__get_Name_0__0(SG_HN
 
 SG_HNDL_NONNULL System_Security_Principal_IIdentity_cast(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __h);
 
+SG_HNDL_NONNULL System_Security_Principal_IIdentity_create(SG_HNDL_NULLABLE * _Nonnull __thrown, void (* _Nullable __deinit)(const void* _Nonnull __pdata));
+
 TYP System_Security_Principal_IPrincipal_get_type_handle(void);
 
 int32_t System_Security_Principal_IPrincipal_bool__IsInRole_0__1__String(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NONNULL role);
@@ -20077,6 +20227,8 @@ int32_t System_Security_Principal_IPrincipal_bool__IsInRole_0__1__String(SG_HNDL
 SG_HNDL_NULLABLE System_Security_Principal_IPrincipal_IIdentity__get_Identity_0__0(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h);
 
 SG_HNDL_NONNULL System_Security_Principal_IPrincipal_cast(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __h);
+
+SG_HNDL_NONNULL System_Security_Principal_IPrincipal_create(SG_HNDL_NULLABLE * _Nonnull __thrown, int32_t (* _Nonnull  __cb_System_Security_Principal_IPrincipal_bool__IsInRole_0__1__String)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL role), const void* _Nonnull __pdata_System_Security_Principal_IPrincipal_bool__IsInRole_0__1__String, void (* _Nullable __deinit)(const void* _Nonnull __pdata));
 
 TYP System_Security_Principal_PrincipalPolicy_get_type_handle(void);
 
@@ -21102,7 +21254,7 @@ SG_HNDL_NULLABLE System_Threading_TimerCallback_IAsyncResult__BeginInvoke_0__3__
 
 void System_Threading_TimerCallback_void__EndInvoke_0__1__IAsyncResult(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE result);
 
-SG_HNDL_NONNULL System_Threading_TimerCallback_create(SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nullable __pdata, void (* _Nullable __deinit)(const void* _Nullable __pdata), void (* _Nonnull  __cb)(const void* _Nullable __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE state));
+SG_HNDL_NONNULL System_Threading_TimerCallback_create(SG_HNDL_NULLABLE * _Nonnull __thrown, void (* _Nonnull  __cb)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE state), const void* _Nonnull __pdata, void (* _Nullable __deinit)(const void* _Nonnull __pdata));
 
 TYP System_Threading_WaitHandle_get_type_handle(void);
 
@@ -22674,6 +22826,8 @@ void System_Threading_Tasks_Sources_IValueTaskSource_void__OnCompleted_0__4__Sys
 
 SG_HNDL_NONNULL System_Threading_Tasks_Sources_IValueTaskSource_cast(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __h);
 
+SG_HNDL_NONNULL System_Threading_Tasks_Sources_IValueTaskSource_create(SG_HNDL_NULLABLE * _Nonnull __thrown, void (* _Nonnull  __cb_System_Threading_Tasks_Sources_IValueTaskSource_void__GetResult_0__1__i16)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, int16_t token), const void* _Nonnull __pdata_System_Threading_Tasks_Sources_IValueTaskSource_void__GetResult_0__1__i16, int32_t (* _Nonnull  __cb_System_Threading_Tasks_Sources_IValueTaskSource_ValueTaskSourceStatus__GetStatus_0__1__i16)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, int16_t token), const void* _Nonnull __pdata_System_Threading_Tasks_Sources_IValueTaskSource_ValueTaskSourceStatus__GetStatus_0__1__i16, void (* _Nonnull  __cb_System_Threading_Tasks_Sources_IValueTaskSource_void__OnCompleted_0__4__System_Action_object__Object_i16_ValueTaskSourceOnCompletedFlags)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL continuation, SG_HNDL_NULLABLE state, int16_t token, int32_t flags), const void* _Nonnull __pdata_System_Threading_Tasks_Sources_IValueTaskSource_void__OnCompleted_0__4__System_Action_object__Object_i16_ValueTaskSourceOnCompletedFlags, void (* _Nullable __deinit)(const void* _Nonnull __pdata));
+
 TYP System_Threading_Tasks_Sources_IValueTaskSource_1_get_type_handle(TYP TResult);
 
 GVAL System_Threading_Tasks_Sources_IValueTaskSource_1_TResult__GetResult_0__1__i16(TYP TResult, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, int16_t token);
@@ -22695,6 +22849,8 @@ SG_HNDL_NONNULL specialize_System_Threading_Tasks_Sources_IValueTaskSource_1_voi
 void invoke_System_Threading_Tasks_Sources_IValueTaskSource_1_void__OnCompleted_0__4__System_Action_object__Object_i16_ValueTaskSourceOnCompletedFlags(SG_HNDL_NONNULL ____hdel, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NONNULL continuation, SG_HNDL_NULLABLE state, int16_t token, int32_t flags);
 
 SG_HNDL_NONNULL System_Threading_Tasks_Sources_IValueTaskSource_1_cast(TYP TResult, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __h);
+
+SG_HNDL_NONNULL System_Threading_Tasks_Sources_IValueTaskSource_1_create(TYP TResult, SG_HNDL_NULLABLE * _Nonnull __thrown, GVAL (* _Nonnull  __cb_System_Threading_Tasks_Sources_IValueTaskSource_1_TResult__GetResult_0__1__i16)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, int16_t token), const void* _Nonnull __pdata_System_Threading_Tasks_Sources_IValueTaskSource_1_TResult__GetResult_0__1__i16, int32_t (* _Nonnull  __cb_System_Threading_Tasks_Sources_IValueTaskSource_1_ValueTaskSourceStatus__GetStatus_0__1__i16)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, int16_t token), const void* _Nonnull __pdata_System_Threading_Tasks_Sources_IValueTaskSource_1_ValueTaskSourceStatus__GetStatus_0__1__i16, void (* _Nonnull  __cb_System_Threading_Tasks_Sources_IValueTaskSource_1_void__OnCompleted_0__4__System_Action_object__Object_i16_ValueTaskSourceOnCompletedFlags)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL continuation, SG_HNDL_NULLABLE state, int16_t token, int32_t flags), const void* _Nonnull __pdata_System_Threading_Tasks_Sources_IValueTaskSource_1_void__OnCompleted_0__4__System_Action_object__Object_i16_ValueTaskSourceOnCompletedFlags, void (* _Nullable __deinit)(const void* _Nonnull __pdata));
 
 TYP System_Threading_Tasks_Sources_ManualResetValueTaskSourceCore_1_get_type_handle(TYP TResult);
 

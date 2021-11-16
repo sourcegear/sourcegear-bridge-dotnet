@@ -20,6 +20,8 @@ SG_HNDL_NONNULL System_IO_IsolatedStorage_INormalizeForIsolatedStorage_Object__N
 
 SG_HNDL_NONNULL System_IO_IsolatedStorage_INormalizeForIsolatedStorage_cast(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __h);
 
+SG_HNDL_NONNULL System_IO_IsolatedStorage_INormalizeForIsolatedStorage_create(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL (* _Nonnull  __cb_System_IO_IsolatedStorage_INormalizeForIsolatedStorage_Object__Normalize_0__0)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown), const void* _Nonnull __pdata_System_IO_IsolatedStorage_INormalizeForIsolatedStorage_Object__Normalize_0__0, void (* _Nullable __deinit)(const void* _Nonnull __pdata));
+
 TYP System_IO_IsolatedStorage_IsolatedStorage_get_type_handle(void);
 
 int32_t System_IO_IsolatedStorage_IsolatedStorage_bool__IncreaseQuotaTo_0__1__i64(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, int64_t newQuotaSize);

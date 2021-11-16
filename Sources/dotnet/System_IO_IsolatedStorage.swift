@@ -19,6 +19,9 @@ open class INormalizeForIsolatedStorage
     open class func get_type_handle() -> TypeHandle {
         return System_IO_IsolatedStorage_INormalizeForIsolatedStorage_get_type_handle();
     }
+    open class func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     let h : NonnullHandle;
     public func to_gval() -> GVal { return GVal(Swift.Int(bitPattern: self.h)); }
     public func dup_gval() -> GVal { return GVal(Swift.Int(bitPattern: __copy_handle(self.h))); }
@@ -59,6 +62,9 @@ open class IsolatedStorage
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_IO_IsolatedStorage_IsolatedStorage_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -291,6 +297,9 @@ open class IsolatedStorageException
     open class override func get_type_handle() -> TypeHandle {
         return System_IO_IsolatedStorage_IsolatedStorageException_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor()
@@ -356,6 +365,9 @@ public final class IsolatedStorageFile
 {
     public class override func get_type_handle() -> TypeHandle {
         return System_IO_IsolatedStorage_IsolatedStorageFile_get_type_handle();
+    }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -967,7 +979,7 @@ public final class IsolatedStorageFile
 
     - Parameter path: The relative path of the file within the isolated store.
     - Parameter mode: One of the enumeration values that specifies how to open or create the file.
-    - Parameter access: One of the enumeration values that specifies whether the file will be opened with read, write, or read/write access
+    - Parameter access: One of the enumeration values that specifies whether the file will be opened with read, write, or read/write access.
     - Parameter share: A bitwise combination of enumeration values that specify the type of access other  objects have to this file.
     - Returns: A file that is opened in the specified mode and access, and with the specified sharing options.
 
@@ -1147,6 +1159,9 @@ open class IsolatedStorageFileStream
     open class override func get_type_handle() -> TypeHandle {
         return System_IO_IsolatedStorage_IsolatedStorageFileStream_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor(System.String, System.IO.FileMode)
@@ -1231,7 +1246,7 @@ open class IsolatedStorageFileStream
     - Parameter path: The relative path of the file within isolated storage.
     - Parameter mode: One of the  values.
     - Parameter access: A bitwise combination of the  values.
-    - Parameter share: A bitwise combination of the  values
+    - Parameter share: A bitwise combination of the  values.
     - Parameter bufferSize: The  buffer size.
     - Parameter isf: The  in which to open the .
     */
@@ -1447,13 +1462,13 @@ open class IsolatedStorageFileStream
     - Returns: A task that represents the asynchronous flush operation.
 
     */
-    open override func FlushAsync(cancellationToken : dotnet.System.Threading.CancellationToken) throws -> dotnet.System.Threading.Tasks.Task {
+    open override func FlushAsync(cancellationToken : dotnet.System.Threading.CancellationToken) async throws {
         var __thrown : NullableHandle = nil;
         let __return = System_IO_IsolatedStorage_IsolatedStorageFileStream_Task__FlushAsync_0__1__CancellationToken(&__thrown, self.get_handle(), cancellationToken.get_handle());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task(hndl: __return).ToAsync();
         }
     }
     // void Lock(System.Int64, System.Int64)
@@ -1506,13 +1521,13 @@ open class IsolatedStorageFileStream
     - Returns: A task that represents the asynchronous read operation. It wraps the total number of bytes read into the . This can be less than the number of bytes requested if that many bytes are not currently available, or zero if the end of the stream is reached.
 
     */
-    open override func ReadAsync(buffer : dotnet.System_Arr<Swift.UInt8>, offset : Swift.Int32, count : Swift.Int32, cancellationToken : dotnet.System.Threading.CancellationToken) throws -> dotnet.System.Threading.Tasks.Task_1<Swift.Int32> {
+    open override func ReadAsync(buffer : dotnet.System_Arr<Swift.UInt8>, offset : Swift.Int32, count : Swift.Int32, cancellationToken : dotnet.System.Threading.CancellationToken) async throws -> Swift.Int32 {
         var __thrown : NullableHandle = nil;
         let __return = System_IO_IsolatedStorage_IsolatedStorageFileStream_System_Threading_Tasks_Task_i32___ReadAsync_0__4__u8Array_i32_i32_CancellationToken(&__thrown, self.get_handle(), buffer.get_handle(), offset, count, cancellationToken.get_handle());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task_1(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task_1(hndl: __return).ToAsync();
         }
     }
     // System.Threading.Tasks.ValueTask<System.Int32> ReadAsync(System.Memory<System.Byte>, System.Threading.CancellationToken)
@@ -1634,13 +1649,13 @@ open class IsolatedStorageFileStream
     - Returns: A task that represents the asynchronous write operation.
 
     */
-    open override func WriteAsync(buffer : dotnet.System_Arr<Swift.UInt8>, offset : Swift.Int32, count : Swift.Int32, cancellationToken : dotnet.System.Threading.CancellationToken) throws -> dotnet.System.Threading.Tasks.Task {
+    open override func WriteAsync(buffer : dotnet.System_Arr<Swift.UInt8>, offset : Swift.Int32, count : Swift.Int32, cancellationToken : dotnet.System.Threading.CancellationToken) async throws {
         var __thrown : NullableHandle = nil;
         let __return = System_IO_IsolatedStorage_IsolatedStorageFileStream_Task__WriteAsync_0__4__u8Array_i32_i32_CancellationToken(&__thrown, self.get_handle(), buffer.get_handle(), offset, count, cancellationToken.get_handle());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task(hndl: __return).ToAsync();
         }
     }
     // System.Threading.Tasks.ValueTask WriteAsync(System.ReadOnlyMemory<System.Byte>, System.Threading.CancellationToken)

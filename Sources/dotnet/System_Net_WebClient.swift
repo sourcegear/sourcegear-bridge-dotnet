@@ -17,6 +17,9 @@ open class DownloadDataCompletedEventArgs
     open class override func get_type_handle() -> TypeHandle {
         return System_Net_DownloadDataCompletedEventArgs_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // [IsSpecialName] System.Byte[] get_Result()
@@ -53,6 +56,9 @@ public final class DownloadDataCompletedEventHandler
 {
     public class override func get_type_handle() -> TypeHandle {
         return System_Net_DownloadDataCompletedEventHandler_get_type_handle();
+    }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -93,15 +99,15 @@ public final class DownloadDataCompletedEventHandler
             return;
         }
     }
-    public init(_ callback : @escaping (dotnet.System.Object, dotnet.System.Net.DownloadDataCompletedEventArgs) throws -> Void) throws
+    public convenience init(_ __closure_Invoke : @escaping (dotnet.System.Object, dotnet.System.Net.DownloadDataCompletedEventArgs) throws -> Void) throws
     {
-        let __bridge : (UnsafeMutablePointer<NullableHandle>, NonnullHandle, NonnullHandle) -> Void =
+        let __interlude_Invoke : (UnsafeMutablePointer<NullableHandle>, NonnullHandle, NonnullHandle) -> Void =
         {
             (thrown : UnsafeMutablePointer<NullableHandle>, sender : NonnullHandle, e : NonnullHandle) -> Void in
             do
             {
                 thrown.pointee = nil;
-                try callback(dotnet.System.Object(hndl: sender), dotnet.System.Net.DownloadDataCompletedEventArgs(hndl: e));
+                try __closure_Invoke(dotnet.System.Object(hndl: sender), dotnet.System.Net.DownloadDataCompletedEventArgs(hndl: e));
             }
             catch let e as dotnet.System.Exception
             {
@@ -113,24 +119,24 @@ public final class DownloadDataCompletedEventHandler
                 thrown.pointee = __copy_handle(e.get_handle());
             }
         };
-        let cbarg = UnsafeRawPointer(Unmanaged.passRetained(__bridge as AnyObject).toOpaque());
-        func __cb(cb : UnsafeRawPointer?, thrown : UnsafeMutablePointer<NullableHandle>, sender : NonnullHandle, e : NonnullHandle) -> Void
+        func __cb_Invoke(pdata_interlude : UnsafeRawPointer, thrown : UnsafeMutablePointer<NullableHandle>, sender : NonnullHandle, e : NonnullHandle) -> Void
         {
-            let f = Unmanaged<AnyObject>.fromOpaque(cb!).takeUnretainedValue() as! (UnsafeMutablePointer<NullableHandle>, NonnullHandle, NonnullHandle) -> Void;
-            f(thrown, sender, e);
+            let f_interlude = Unmanaged<AnyObject>.fromOpaque(pdata_interlude).takeUnretainedValue() as! (UnsafeMutablePointer<NullableHandle>, NonnullHandle, NonnullHandle) -> Void;
+            f_interlude(thrown, sender, e);
         }
+        let __pdata_Invoke = UnsafeRawPointer(Unmanaged.passRetained(__interlude_Invoke as AnyObject).toOpaque());
+
         var __thrown : NullableHandle = nil;
         let h = System_Net_DownloadDataCompletedEventHandler_create(
             &__thrown,
-            cbarg,
-            nil, // TODO deinit
-            __cb
+            __cb_Invoke,
+            __pdata_Invoke,
+            nil
             );
-            // TODO check thrown
         if let __ex = __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-            super.init(hndl: h);
+            self.init(hndl: h);
         }
     }
     // void Invoke(System.Object, System.Net.DownloadDataCompletedEventArgs)
@@ -158,6 +164,9 @@ open class DownloadProgressChangedEventArgs
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Net_DownloadProgressChangedEventArgs_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -216,6 +225,9 @@ public final class DownloadProgressChangedEventHandler
     public class override func get_type_handle() -> TypeHandle {
         return System_Net_DownloadProgressChangedEventHandler_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // void Invoke(System.Object, System.Net.DownloadProgressChangedEventArgs)
@@ -255,15 +267,15 @@ public final class DownloadProgressChangedEventHandler
             return;
         }
     }
-    public init(_ callback : @escaping (dotnet.System.Object, dotnet.System.Net.DownloadProgressChangedEventArgs) throws -> Void) throws
+    public convenience init(_ __closure_Invoke : @escaping (dotnet.System.Object, dotnet.System.Net.DownloadProgressChangedEventArgs) throws -> Void) throws
     {
-        let __bridge : (UnsafeMutablePointer<NullableHandle>, NonnullHandle, NonnullHandle) -> Void =
+        let __interlude_Invoke : (UnsafeMutablePointer<NullableHandle>, NonnullHandle, NonnullHandle) -> Void =
         {
             (thrown : UnsafeMutablePointer<NullableHandle>, sender : NonnullHandle, e : NonnullHandle) -> Void in
             do
             {
                 thrown.pointee = nil;
-                try callback(dotnet.System.Object(hndl: sender), dotnet.System.Net.DownloadProgressChangedEventArgs(hndl: e));
+                try __closure_Invoke(dotnet.System.Object(hndl: sender), dotnet.System.Net.DownloadProgressChangedEventArgs(hndl: e));
             }
             catch let e as dotnet.System.Exception
             {
@@ -275,24 +287,24 @@ public final class DownloadProgressChangedEventHandler
                 thrown.pointee = __copy_handle(e.get_handle());
             }
         };
-        let cbarg = UnsafeRawPointer(Unmanaged.passRetained(__bridge as AnyObject).toOpaque());
-        func __cb(cb : UnsafeRawPointer?, thrown : UnsafeMutablePointer<NullableHandle>, sender : NonnullHandle, e : NonnullHandle) -> Void
+        func __cb_Invoke(pdata_interlude : UnsafeRawPointer, thrown : UnsafeMutablePointer<NullableHandle>, sender : NonnullHandle, e : NonnullHandle) -> Void
         {
-            let f = Unmanaged<AnyObject>.fromOpaque(cb!).takeUnretainedValue() as! (UnsafeMutablePointer<NullableHandle>, NonnullHandle, NonnullHandle) -> Void;
-            f(thrown, sender, e);
+            let f_interlude = Unmanaged<AnyObject>.fromOpaque(pdata_interlude).takeUnretainedValue() as! (UnsafeMutablePointer<NullableHandle>, NonnullHandle, NonnullHandle) -> Void;
+            f_interlude(thrown, sender, e);
         }
+        let __pdata_Invoke = UnsafeRawPointer(Unmanaged.passRetained(__interlude_Invoke as AnyObject).toOpaque());
+
         var __thrown : NullableHandle = nil;
         let h = System_Net_DownloadProgressChangedEventHandler_create(
             &__thrown,
-            cbarg,
-            nil, // TODO deinit
-            __cb
+            __cb_Invoke,
+            __pdata_Invoke,
+            nil
             );
-            // TODO check thrown
         if let __ex = __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-            super.init(hndl: h);
+            self.init(hndl: h);
         }
     }
     // void Invoke(System.Object, System.Net.DownloadProgressChangedEventArgs)
@@ -320,6 +332,9 @@ open class DownloadStringCompletedEventArgs
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Net_DownloadStringCompletedEventArgs_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -357,6 +372,9 @@ public final class DownloadStringCompletedEventHandler
 {
     public class override func get_type_handle() -> TypeHandle {
         return System_Net_DownloadStringCompletedEventHandler_get_type_handle();
+    }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -397,15 +415,15 @@ public final class DownloadStringCompletedEventHandler
             return;
         }
     }
-    public init(_ callback : @escaping (dotnet.System.Object, dotnet.System.Net.DownloadStringCompletedEventArgs) throws -> Void) throws
+    public convenience init(_ __closure_Invoke : @escaping (dotnet.System.Object, dotnet.System.Net.DownloadStringCompletedEventArgs) throws -> Void) throws
     {
-        let __bridge : (UnsafeMutablePointer<NullableHandle>, NonnullHandle, NonnullHandle) -> Void =
+        let __interlude_Invoke : (UnsafeMutablePointer<NullableHandle>, NonnullHandle, NonnullHandle) -> Void =
         {
             (thrown : UnsafeMutablePointer<NullableHandle>, sender : NonnullHandle, e : NonnullHandle) -> Void in
             do
             {
                 thrown.pointee = nil;
-                try callback(dotnet.System.Object(hndl: sender), dotnet.System.Net.DownloadStringCompletedEventArgs(hndl: e));
+                try __closure_Invoke(dotnet.System.Object(hndl: sender), dotnet.System.Net.DownloadStringCompletedEventArgs(hndl: e));
             }
             catch let e as dotnet.System.Exception
             {
@@ -417,24 +435,24 @@ public final class DownloadStringCompletedEventHandler
                 thrown.pointee = __copy_handle(e.get_handle());
             }
         };
-        let cbarg = UnsafeRawPointer(Unmanaged.passRetained(__bridge as AnyObject).toOpaque());
-        func __cb(cb : UnsafeRawPointer?, thrown : UnsafeMutablePointer<NullableHandle>, sender : NonnullHandle, e : NonnullHandle) -> Void
+        func __cb_Invoke(pdata_interlude : UnsafeRawPointer, thrown : UnsafeMutablePointer<NullableHandle>, sender : NonnullHandle, e : NonnullHandle) -> Void
         {
-            let f = Unmanaged<AnyObject>.fromOpaque(cb!).takeUnretainedValue() as! (UnsafeMutablePointer<NullableHandle>, NonnullHandle, NonnullHandle) -> Void;
-            f(thrown, sender, e);
+            let f_interlude = Unmanaged<AnyObject>.fromOpaque(pdata_interlude).takeUnretainedValue() as! (UnsafeMutablePointer<NullableHandle>, NonnullHandle, NonnullHandle) -> Void;
+            f_interlude(thrown, sender, e);
         }
+        let __pdata_Invoke = UnsafeRawPointer(Unmanaged.passRetained(__interlude_Invoke as AnyObject).toOpaque());
+
         var __thrown : NullableHandle = nil;
         let h = System_Net_DownloadStringCompletedEventHandler_create(
             &__thrown,
-            cbarg,
-            nil, // TODO deinit
-            __cb
+            __cb_Invoke,
+            __pdata_Invoke,
+            nil
             );
-            // TODO check thrown
         if let __ex = __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-            super.init(hndl: h);
+            self.init(hndl: h);
         }
     }
     // void Invoke(System.Object, System.Net.DownloadStringCompletedEventArgs)
@@ -462,6 +480,9 @@ open class OpenReadCompletedEventArgs
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Net_OpenReadCompletedEventArgs_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -499,6 +520,9 @@ public final class OpenReadCompletedEventHandler
 {
     public class override func get_type_handle() -> TypeHandle {
         return System_Net_OpenReadCompletedEventHandler_get_type_handle();
+    }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -539,15 +563,15 @@ public final class OpenReadCompletedEventHandler
             return;
         }
     }
-    public init(_ callback : @escaping (dotnet.System.Object, dotnet.System.Net.OpenReadCompletedEventArgs) throws -> Void) throws
+    public convenience init(_ __closure_Invoke : @escaping (dotnet.System.Object, dotnet.System.Net.OpenReadCompletedEventArgs) throws -> Void) throws
     {
-        let __bridge : (UnsafeMutablePointer<NullableHandle>, NonnullHandle, NonnullHandle) -> Void =
+        let __interlude_Invoke : (UnsafeMutablePointer<NullableHandle>, NonnullHandle, NonnullHandle) -> Void =
         {
             (thrown : UnsafeMutablePointer<NullableHandle>, sender : NonnullHandle, e : NonnullHandle) -> Void in
             do
             {
                 thrown.pointee = nil;
-                try callback(dotnet.System.Object(hndl: sender), dotnet.System.Net.OpenReadCompletedEventArgs(hndl: e));
+                try __closure_Invoke(dotnet.System.Object(hndl: sender), dotnet.System.Net.OpenReadCompletedEventArgs(hndl: e));
             }
             catch let e as dotnet.System.Exception
             {
@@ -559,24 +583,24 @@ public final class OpenReadCompletedEventHandler
                 thrown.pointee = __copy_handle(e.get_handle());
             }
         };
-        let cbarg = UnsafeRawPointer(Unmanaged.passRetained(__bridge as AnyObject).toOpaque());
-        func __cb(cb : UnsafeRawPointer?, thrown : UnsafeMutablePointer<NullableHandle>, sender : NonnullHandle, e : NonnullHandle) -> Void
+        func __cb_Invoke(pdata_interlude : UnsafeRawPointer, thrown : UnsafeMutablePointer<NullableHandle>, sender : NonnullHandle, e : NonnullHandle) -> Void
         {
-            let f = Unmanaged<AnyObject>.fromOpaque(cb!).takeUnretainedValue() as! (UnsafeMutablePointer<NullableHandle>, NonnullHandle, NonnullHandle) -> Void;
-            f(thrown, sender, e);
+            let f_interlude = Unmanaged<AnyObject>.fromOpaque(pdata_interlude).takeUnretainedValue() as! (UnsafeMutablePointer<NullableHandle>, NonnullHandle, NonnullHandle) -> Void;
+            f_interlude(thrown, sender, e);
         }
+        let __pdata_Invoke = UnsafeRawPointer(Unmanaged.passRetained(__interlude_Invoke as AnyObject).toOpaque());
+
         var __thrown : NullableHandle = nil;
         let h = System_Net_OpenReadCompletedEventHandler_create(
             &__thrown,
-            cbarg,
-            nil, // TODO deinit
-            __cb
+            __cb_Invoke,
+            __pdata_Invoke,
+            nil
             );
-            // TODO check thrown
         if let __ex = __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-            super.init(hndl: h);
+            self.init(hndl: h);
         }
     }
     // void Invoke(System.Object, System.Net.OpenReadCompletedEventArgs)
@@ -604,6 +628,9 @@ open class OpenWriteCompletedEventArgs
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Net_OpenWriteCompletedEventArgs_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -641,6 +668,9 @@ public final class OpenWriteCompletedEventHandler
 {
     public class override func get_type_handle() -> TypeHandle {
         return System_Net_OpenWriteCompletedEventHandler_get_type_handle();
+    }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -681,15 +711,15 @@ public final class OpenWriteCompletedEventHandler
             return;
         }
     }
-    public init(_ callback : @escaping (dotnet.System.Object, dotnet.System.Net.OpenWriteCompletedEventArgs) throws -> Void) throws
+    public convenience init(_ __closure_Invoke : @escaping (dotnet.System.Object, dotnet.System.Net.OpenWriteCompletedEventArgs) throws -> Void) throws
     {
-        let __bridge : (UnsafeMutablePointer<NullableHandle>, NonnullHandle, NonnullHandle) -> Void =
+        let __interlude_Invoke : (UnsafeMutablePointer<NullableHandle>, NonnullHandle, NonnullHandle) -> Void =
         {
             (thrown : UnsafeMutablePointer<NullableHandle>, sender : NonnullHandle, e : NonnullHandle) -> Void in
             do
             {
                 thrown.pointee = nil;
-                try callback(dotnet.System.Object(hndl: sender), dotnet.System.Net.OpenWriteCompletedEventArgs(hndl: e));
+                try __closure_Invoke(dotnet.System.Object(hndl: sender), dotnet.System.Net.OpenWriteCompletedEventArgs(hndl: e));
             }
             catch let e as dotnet.System.Exception
             {
@@ -701,24 +731,24 @@ public final class OpenWriteCompletedEventHandler
                 thrown.pointee = __copy_handle(e.get_handle());
             }
         };
-        let cbarg = UnsafeRawPointer(Unmanaged.passRetained(__bridge as AnyObject).toOpaque());
-        func __cb(cb : UnsafeRawPointer?, thrown : UnsafeMutablePointer<NullableHandle>, sender : NonnullHandle, e : NonnullHandle) -> Void
+        func __cb_Invoke(pdata_interlude : UnsafeRawPointer, thrown : UnsafeMutablePointer<NullableHandle>, sender : NonnullHandle, e : NonnullHandle) -> Void
         {
-            let f = Unmanaged<AnyObject>.fromOpaque(cb!).takeUnretainedValue() as! (UnsafeMutablePointer<NullableHandle>, NonnullHandle, NonnullHandle) -> Void;
-            f(thrown, sender, e);
+            let f_interlude = Unmanaged<AnyObject>.fromOpaque(pdata_interlude).takeUnretainedValue() as! (UnsafeMutablePointer<NullableHandle>, NonnullHandle, NonnullHandle) -> Void;
+            f_interlude(thrown, sender, e);
         }
+        let __pdata_Invoke = UnsafeRawPointer(Unmanaged.passRetained(__interlude_Invoke as AnyObject).toOpaque());
+
         var __thrown : NullableHandle = nil;
         let h = System_Net_OpenWriteCompletedEventHandler_create(
             &__thrown,
-            cbarg,
-            nil, // TODO deinit
-            __cb
+            __cb_Invoke,
+            __pdata_Invoke,
+            nil
             );
-            // TODO check thrown
         if let __ex = __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-            super.init(hndl: h);
+            self.init(hndl: h);
         }
     }
     // void Invoke(System.Object, System.Net.OpenWriteCompletedEventArgs)
@@ -746,6 +776,9 @@ open class UploadDataCompletedEventArgs
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Net_UploadDataCompletedEventArgs_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -783,6 +816,9 @@ public final class UploadDataCompletedEventHandler
 {
     public class override func get_type_handle() -> TypeHandle {
         return System_Net_UploadDataCompletedEventHandler_get_type_handle();
+    }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -823,15 +859,15 @@ public final class UploadDataCompletedEventHandler
             return;
         }
     }
-    public init(_ callback : @escaping (dotnet.System.Object, dotnet.System.Net.UploadDataCompletedEventArgs) throws -> Void) throws
+    public convenience init(_ __closure_Invoke : @escaping (dotnet.System.Object, dotnet.System.Net.UploadDataCompletedEventArgs) throws -> Void) throws
     {
-        let __bridge : (UnsafeMutablePointer<NullableHandle>, NonnullHandle, NonnullHandle) -> Void =
+        let __interlude_Invoke : (UnsafeMutablePointer<NullableHandle>, NonnullHandle, NonnullHandle) -> Void =
         {
             (thrown : UnsafeMutablePointer<NullableHandle>, sender : NonnullHandle, e : NonnullHandle) -> Void in
             do
             {
                 thrown.pointee = nil;
-                try callback(dotnet.System.Object(hndl: sender), dotnet.System.Net.UploadDataCompletedEventArgs(hndl: e));
+                try __closure_Invoke(dotnet.System.Object(hndl: sender), dotnet.System.Net.UploadDataCompletedEventArgs(hndl: e));
             }
             catch let e as dotnet.System.Exception
             {
@@ -843,24 +879,24 @@ public final class UploadDataCompletedEventHandler
                 thrown.pointee = __copy_handle(e.get_handle());
             }
         };
-        let cbarg = UnsafeRawPointer(Unmanaged.passRetained(__bridge as AnyObject).toOpaque());
-        func __cb(cb : UnsafeRawPointer?, thrown : UnsafeMutablePointer<NullableHandle>, sender : NonnullHandle, e : NonnullHandle) -> Void
+        func __cb_Invoke(pdata_interlude : UnsafeRawPointer, thrown : UnsafeMutablePointer<NullableHandle>, sender : NonnullHandle, e : NonnullHandle) -> Void
         {
-            let f = Unmanaged<AnyObject>.fromOpaque(cb!).takeUnretainedValue() as! (UnsafeMutablePointer<NullableHandle>, NonnullHandle, NonnullHandle) -> Void;
-            f(thrown, sender, e);
+            let f_interlude = Unmanaged<AnyObject>.fromOpaque(pdata_interlude).takeUnretainedValue() as! (UnsafeMutablePointer<NullableHandle>, NonnullHandle, NonnullHandle) -> Void;
+            f_interlude(thrown, sender, e);
         }
+        let __pdata_Invoke = UnsafeRawPointer(Unmanaged.passRetained(__interlude_Invoke as AnyObject).toOpaque());
+
         var __thrown : NullableHandle = nil;
         let h = System_Net_UploadDataCompletedEventHandler_create(
             &__thrown,
-            cbarg,
-            nil, // TODO deinit
-            __cb
+            __cb_Invoke,
+            __pdata_Invoke,
+            nil
             );
-            // TODO check thrown
         if let __ex = __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-            super.init(hndl: h);
+            self.init(hndl: h);
         }
     }
     // void Invoke(System.Object, System.Net.UploadDataCompletedEventArgs)
@@ -888,6 +924,9 @@ open class UploadFileCompletedEventArgs
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Net_UploadFileCompletedEventArgs_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -925,6 +964,9 @@ public final class UploadFileCompletedEventHandler
 {
     public class override func get_type_handle() -> TypeHandle {
         return System_Net_UploadFileCompletedEventHandler_get_type_handle();
+    }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -965,15 +1007,15 @@ public final class UploadFileCompletedEventHandler
             return;
         }
     }
-    public init(_ callback : @escaping (dotnet.System.Object, dotnet.System.Net.UploadFileCompletedEventArgs) throws -> Void) throws
+    public convenience init(_ __closure_Invoke : @escaping (dotnet.System.Object, dotnet.System.Net.UploadFileCompletedEventArgs) throws -> Void) throws
     {
-        let __bridge : (UnsafeMutablePointer<NullableHandle>, NonnullHandle, NonnullHandle) -> Void =
+        let __interlude_Invoke : (UnsafeMutablePointer<NullableHandle>, NonnullHandle, NonnullHandle) -> Void =
         {
             (thrown : UnsafeMutablePointer<NullableHandle>, sender : NonnullHandle, e : NonnullHandle) -> Void in
             do
             {
                 thrown.pointee = nil;
-                try callback(dotnet.System.Object(hndl: sender), dotnet.System.Net.UploadFileCompletedEventArgs(hndl: e));
+                try __closure_Invoke(dotnet.System.Object(hndl: sender), dotnet.System.Net.UploadFileCompletedEventArgs(hndl: e));
             }
             catch let e as dotnet.System.Exception
             {
@@ -985,24 +1027,24 @@ public final class UploadFileCompletedEventHandler
                 thrown.pointee = __copy_handle(e.get_handle());
             }
         };
-        let cbarg = UnsafeRawPointer(Unmanaged.passRetained(__bridge as AnyObject).toOpaque());
-        func __cb(cb : UnsafeRawPointer?, thrown : UnsafeMutablePointer<NullableHandle>, sender : NonnullHandle, e : NonnullHandle) -> Void
+        func __cb_Invoke(pdata_interlude : UnsafeRawPointer, thrown : UnsafeMutablePointer<NullableHandle>, sender : NonnullHandle, e : NonnullHandle) -> Void
         {
-            let f = Unmanaged<AnyObject>.fromOpaque(cb!).takeUnretainedValue() as! (UnsafeMutablePointer<NullableHandle>, NonnullHandle, NonnullHandle) -> Void;
-            f(thrown, sender, e);
+            let f_interlude = Unmanaged<AnyObject>.fromOpaque(pdata_interlude).takeUnretainedValue() as! (UnsafeMutablePointer<NullableHandle>, NonnullHandle, NonnullHandle) -> Void;
+            f_interlude(thrown, sender, e);
         }
+        let __pdata_Invoke = UnsafeRawPointer(Unmanaged.passRetained(__interlude_Invoke as AnyObject).toOpaque());
+
         var __thrown : NullableHandle = nil;
         let h = System_Net_UploadFileCompletedEventHandler_create(
             &__thrown,
-            cbarg,
-            nil, // TODO deinit
-            __cb
+            __cb_Invoke,
+            __pdata_Invoke,
+            nil
             );
-            // TODO check thrown
         if let __ex = __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-            super.init(hndl: h);
+            self.init(hndl: h);
         }
     }
     // void Invoke(System.Object, System.Net.UploadFileCompletedEventArgs)
@@ -1030,6 +1072,9 @@ open class UploadProgressChangedEventArgs
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Net_UploadProgressChangedEventArgs_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -1128,6 +1173,9 @@ public final class UploadProgressChangedEventHandler
     public class override func get_type_handle() -> TypeHandle {
         return System_Net_UploadProgressChangedEventHandler_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // void Invoke(System.Object, System.Net.UploadProgressChangedEventArgs)
@@ -1167,15 +1215,15 @@ public final class UploadProgressChangedEventHandler
             return;
         }
     }
-    public init(_ callback : @escaping (dotnet.System.Object, dotnet.System.Net.UploadProgressChangedEventArgs) throws -> Void) throws
+    public convenience init(_ __closure_Invoke : @escaping (dotnet.System.Object, dotnet.System.Net.UploadProgressChangedEventArgs) throws -> Void) throws
     {
-        let __bridge : (UnsafeMutablePointer<NullableHandle>, NonnullHandle, NonnullHandle) -> Void =
+        let __interlude_Invoke : (UnsafeMutablePointer<NullableHandle>, NonnullHandle, NonnullHandle) -> Void =
         {
             (thrown : UnsafeMutablePointer<NullableHandle>, sender : NonnullHandle, e : NonnullHandle) -> Void in
             do
             {
                 thrown.pointee = nil;
-                try callback(dotnet.System.Object(hndl: sender), dotnet.System.Net.UploadProgressChangedEventArgs(hndl: e));
+                try __closure_Invoke(dotnet.System.Object(hndl: sender), dotnet.System.Net.UploadProgressChangedEventArgs(hndl: e));
             }
             catch let e as dotnet.System.Exception
             {
@@ -1187,24 +1235,24 @@ public final class UploadProgressChangedEventHandler
                 thrown.pointee = __copy_handle(e.get_handle());
             }
         };
-        let cbarg = UnsafeRawPointer(Unmanaged.passRetained(__bridge as AnyObject).toOpaque());
-        func __cb(cb : UnsafeRawPointer?, thrown : UnsafeMutablePointer<NullableHandle>, sender : NonnullHandle, e : NonnullHandle) -> Void
+        func __cb_Invoke(pdata_interlude : UnsafeRawPointer, thrown : UnsafeMutablePointer<NullableHandle>, sender : NonnullHandle, e : NonnullHandle) -> Void
         {
-            let f = Unmanaged<AnyObject>.fromOpaque(cb!).takeUnretainedValue() as! (UnsafeMutablePointer<NullableHandle>, NonnullHandle, NonnullHandle) -> Void;
-            f(thrown, sender, e);
+            let f_interlude = Unmanaged<AnyObject>.fromOpaque(pdata_interlude).takeUnretainedValue() as! (UnsafeMutablePointer<NullableHandle>, NonnullHandle, NonnullHandle) -> Void;
+            f_interlude(thrown, sender, e);
         }
+        let __pdata_Invoke = UnsafeRawPointer(Unmanaged.passRetained(__interlude_Invoke as AnyObject).toOpaque());
+
         var __thrown : NullableHandle = nil;
         let h = System_Net_UploadProgressChangedEventHandler_create(
             &__thrown,
-            cbarg,
-            nil, // TODO deinit
-            __cb
+            __cb_Invoke,
+            __pdata_Invoke,
+            nil
             );
-            // TODO check thrown
         if let __ex = __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-            super.init(hndl: h);
+            self.init(hndl: h);
         }
     }
     // void Invoke(System.Object, System.Net.UploadProgressChangedEventArgs)
@@ -1232,6 +1280,9 @@ open class UploadStringCompletedEventArgs
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Net_UploadStringCompletedEventArgs_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -1269,6 +1320,9 @@ public final class UploadStringCompletedEventHandler
 {
     public class override func get_type_handle() -> TypeHandle {
         return System_Net_UploadStringCompletedEventHandler_get_type_handle();
+    }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -1309,15 +1363,15 @@ public final class UploadStringCompletedEventHandler
             return;
         }
     }
-    public init(_ callback : @escaping (dotnet.System.Object, dotnet.System.Net.UploadStringCompletedEventArgs) throws -> Void) throws
+    public convenience init(_ __closure_Invoke : @escaping (dotnet.System.Object, dotnet.System.Net.UploadStringCompletedEventArgs) throws -> Void) throws
     {
-        let __bridge : (UnsafeMutablePointer<NullableHandle>, NonnullHandle, NonnullHandle) -> Void =
+        let __interlude_Invoke : (UnsafeMutablePointer<NullableHandle>, NonnullHandle, NonnullHandle) -> Void =
         {
             (thrown : UnsafeMutablePointer<NullableHandle>, sender : NonnullHandle, e : NonnullHandle) -> Void in
             do
             {
                 thrown.pointee = nil;
-                try callback(dotnet.System.Object(hndl: sender), dotnet.System.Net.UploadStringCompletedEventArgs(hndl: e));
+                try __closure_Invoke(dotnet.System.Object(hndl: sender), dotnet.System.Net.UploadStringCompletedEventArgs(hndl: e));
             }
             catch let e as dotnet.System.Exception
             {
@@ -1329,24 +1383,24 @@ public final class UploadStringCompletedEventHandler
                 thrown.pointee = __copy_handle(e.get_handle());
             }
         };
-        let cbarg = UnsafeRawPointer(Unmanaged.passRetained(__bridge as AnyObject).toOpaque());
-        func __cb(cb : UnsafeRawPointer?, thrown : UnsafeMutablePointer<NullableHandle>, sender : NonnullHandle, e : NonnullHandle) -> Void
+        func __cb_Invoke(pdata_interlude : UnsafeRawPointer, thrown : UnsafeMutablePointer<NullableHandle>, sender : NonnullHandle, e : NonnullHandle) -> Void
         {
-            let f = Unmanaged<AnyObject>.fromOpaque(cb!).takeUnretainedValue() as! (UnsafeMutablePointer<NullableHandle>, NonnullHandle, NonnullHandle) -> Void;
-            f(thrown, sender, e);
+            let f_interlude = Unmanaged<AnyObject>.fromOpaque(pdata_interlude).takeUnretainedValue() as! (UnsafeMutablePointer<NullableHandle>, NonnullHandle, NonnullHandle) -> Void;
+            f_interlude(thrown, sender, e);
         }
+        let __pdata_Invoke = UnsafeRawPointer(Unmanaged.passRetained(__interlude_Invoke as AnyObject).toOpaque());
+
         var __thrown : NullableHandle = nil;
         let h = System_Net_UploadStringCompletedEventHandler_create(
             &__thrown,
-            cbarg,
-            nil, // TODO deinit
-            __cb
+            __cb_Invoke,
+            __pdata_Invoke,
+            nil
             );
-            // TODO check thrown
         if let __ex = __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-            super.init(hndl: h);
+            self.init(hndl: h);
         }
     }
     // void Invoke(System.Object, System.Net.UploadStringCompletedEventArgs)
@@ -1374,6 +1428,9 @@ open class UploadValuesCompletedEventArgs
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Net_UploadValuesCompletedEventArgs_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -1411,6 +1468,9 @@ public final class UploadValuesCompletedEventHandler
 {
     public class override func get_type_handle() -> TypeHandle {
         return System_Net_UploadValuesCompletedEventHandler_get_type_handle();
+    }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -1451,15 +1511,15 @@ public final class UploadValuesCompletedEventHandler
             return;
         }
     }
-    public init(_ callback : @escaping (dotnet.System.Object, dotnet.System.Net.UploadValuesCompletedEventArgs) throws -> Void) throws
+    public convenience init(_ __closure_Invoke : @escaping (dotnet.System.Object, dotnet.System.Net.UploadValuesCompletedEventArgs) throws -> Void) throws
     {
-        let __bridge : (UnsafeMutablePointer<NullableHandle>, NonnullHandle, NonnullHandle) -> Void =
+        let __interlude_Invoke : (UnsafeMutablePointer<NullableHandle>, NonnullHandle, NonnullHandle) -> Void =
         {
             (thrown : UnsafeMutablePointer<NullableHandle>, sender : NonnullHandle, e : NonnullHandle) -> Void in
             do
             {
                 thrown.pointee = nil;
-                try callback(dotnet.System.Object(hndl: sender), dotnet.System.Net.UploadValuesCompletedEventArgs(hndl: e));
+                try __closure_Invoke(dotnet.System.Object(hndl: sender), dotnet.System.Net.UploadValuesCompletedEventArgs(hndl: e));
             }
             catch let e as dotnet.System.Exception
             {
@@ -1471,24 +1531,24 @@ public final class UploadValuesCompletedEventHandler
                 thrown.pointee = __copy_handle(e.get_handle());
             }
         };
-        let cbarg = UnsafeRawPointer(Unmanaged.passRetained(__bridge as AnyObject).toOpaque());
-        func __cb(cb : UnsafeRawPointer?, thrown : UnsafeMutablePointer<NullableHandle>, sender : NonnullHandle, e : NonnullHandle) -> Void
+        func __cb_Invoke(pdata_interlude : UnsafeRawPointer, thrown : UnsafeMutablePointer<NullableHandle>, sender : NonnullHandle, e : NonnullHandle) -> Void
         {
-            let f = Unmanaged<AnyObject>.fromOpaque(cb!).takeUnretainedValue() as! (UnsafeMutablePointer<NullableHandle>, NonnullHandle, NonnullHandle) -> Void;
-            f(thrown, sender, e);
+            let f_interlude = Unmanaged<AnyObject>.fromOpaque(pdata_interlude).takeUnretainedValue() as! (UnsafeMutablePointer<NullableHandle>, NonnullHandle, NonnullHandle) -> Void;
+            f_interlude(thrown, sender, e);
         }
+        let __pdata_Invoke = UnsafeRawPointer(Unmanaged.passRetained(__interlude_Invoke as AnyObject).toOpaque());
+
         var __thrown : NullableHandle = nil;
         let h = System_Net_UploadValuesCompletedEventHandler_create(
             &__thrown,
-            cbarg,
-            nil, // TODO deinit
-            __cb
+            __cb_Invoke,
+            __pdata_Invoke,
+            nil
             );
-            // TODO check thrown
         if let __ex = __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-            super.init(hndl: h);
+            self.init(hndl: h);
         }
     }
     // void Invoke(System.Object, System.Net.UploadValuesCompletedEventArgs)
@@ -1516,6 +1576,9 @@ open class WebClient
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Net_WebClient_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -1627,13 +1690,13 @@ open class WebClient
     - Returns: The task object representing the asynchronous operation. The  property on the task object returns a  array containing the downloaded resource.
 
     */
-    open func DownloadDataTaskAsync(address : dotnet.System.String) throws -> dotnet.System.Threading.Tasks.Task_1<dotnet.System_Arr<Swift.UInt8>> {
+    open func DownloadDataTaskAsync(address : dotnet.System.String) async throws -> dotnet.System_Arr<Swift.UInt8> {
         var __thrown : NullableHandle = nil;
         let __return = System_Net_WebClient_System_Threading_Tasks_Task_u8Array___DownloadDataTaskAsync_0__1__String(&__thrown, self.get_handle(), address.get_handle());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task_1(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task_1(hndl: __return).ToAsync();
         }
     }
     // System.Threading.Tasks.Task<System.Byte[]> DownloadDataTaskAsync(System.Uri)
@@ -1645,13 +1708,13 @@ open class WebClient
     - Returns: The task object representing the asynchronous operation. The  property on the task object returns a  array containing the downloaded resource.
 
     */
-    open func DownloadDataTaskAsync(address : dotnet.System.Uri) throws -> dotnet.System.Threading.Tasks.Task_1<dotnet.System_Arr<Swift.UInt8>> {
+    open func DownloadDataTaskAsync(address : dotnet.System.Uri) async throws -> dotnet.System_Arr<Swift.UInt8> {
         var __thrown : NullableHandle = nil;
         let __return = System_Net_WebClient_System_Threading_Tasks_Task_u8Array___DownloadDataTaskAsync_0__1__Uri(&__thrown, self.get_handle(), address.get_handle());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task_1(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task_1(hndl: __return).ToAsync();
         }
     }
     // void DownloadFile(System.String, System.String)
@@ -1733,13 +1796,13 @@ open class WebClient
     - Returns: The task object representing the asynchronous operation.
 
     */
-    open func DownloadFileTaskAsync(address : dotnet.System.String, fileName : dotnet.System.String) throws -> dotnet.System.Threading.Tasks.Task {
+    open func DownloadFileTaskAsync(address : dotnet.System.String, fileName : dotnet.System.String) async throws {
         var __thrown : NullableHandle = nil;
         let __return = System_Net_WebClient_Task__DownloadFileTaskAsync_0__2__String_String(&__thrown, self.get_handle(), address.get_handle(), fileName.get_handle());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task(hndl: __return).ToAsync();
         }
     }
     // System.Threading.Tasks.Task DownloadFileTaskAsync(System.Uri, System.String)
@@ -1752,13 +1815,13 @@ open class WebClient
     - Returns: The task object representing the asynchronous operation.
 
     */
-    open func DownloadFileTaskAsync(address : dotnet.System.Uri, fileName : dotnet.System.String) throws -> dotnet.System.Threading.Tasks.Task {
+    open func DownloadFileTaskAsync(address : dotnet.System.Uri, fileName : dotnet.System.String) async throws {
         var __thrown : NullableHandle = nil;
         let __return = System_Net_WebClient_Task__DownloadFileTaskAsync_0__2__Uri_String(&__thrown, self.get_handle(), address.get_handle(), fileName.get_handle());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task(hndl: __return).ToAsync();
         }
     }
     // System.String DownloadString(System.String)
@@ -1839,13 +1902,13 @@ open class WebClient
     - Returns: The task object representing the asynchronous operation. The  property on the task object returns a  array containing the downloaded resource.
 
     */
-    open func DownloadStringTaskAsync(address : dotnet.System.String) throws -> dotnet.System.Threading.Tasks.Task_1<dotnet.System.String> {
+    open func DownloadStringTaskAsync(address : dotnet.System.String) async throws -> dotnet.System.String {
         var __thrown : NullableHandle = nil;
         let __return = System_Net_WebClient_System_Threading_Tasks_Task_string___DownloadStringTaskAsync_0__1__String(&__thrown, self.get_handle(), address.get_handle());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task_1(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task_1(hndl: __return).ToAsync();
         }
     }
     // System.Threading.Tasks.Task<System.String> DownloadStringTaskAsync(System.Uri)
@@ -1857,13 +1920,13 @@ open class WebClient
     - Returns: The task object representing the asynchronous operation. The  property on the task object returns a  array containing the downloaded resource.
 
     */
-    open func DownloadStringTaskAsync(address : dotnet.System.Uri) throws -> dotnet.System.Threading.Tasks.Task_1<dotnet.System.String> {
+    open func DownloadStringTaskAsync(address : dotnet.System.Uri) async throws -> dotnet.System.String {
         var __thrown : NullableHandle = nil;
         let __return = System_Net_WebClient_System_Threading_Tasks_Task_string___DownloadStringTaskAsync_0__1__Uri(&__thrown, self.get_handle(), address.get_handle());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task_1(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task_1(hndl: __return).ToAsync();
         }
     }
     // System.IO.Stream OpenRead(System.String)
@@ -1887,7 +1950,7 @@ open class WebClient
     // System.IO.Stream OpenRead(System.Uri)
 // docid: M:System.Net.WebClient.OpenRead(System.Uri)
     /**
-    Opens a readable stream for the data downloaded from a resource with the URI specified as a 
+    Opens a readable stream for the data downloaded from a resource with the URI specified as a .
 
     - Parameter address: The URI specified as a  from which to download data.
     - Returns: A  used to read data from a resource.
@@ -1944,13 +2007,13 @@ open class WebClient
     - Returns: The task object representing the asynchronous operation. The  property on the task object returns a  used to read data from a resource.
 
     */
-    open func OpenReadTaskAsync(address : dotnet.System.String) throws -> dotnet.System.Threading.Tasks.Task_1<dotnet.System.IO.Stream> {
+    open func OpenReadTaskAsync(address : dotnet.System.String) async throws -> dotnet.System.IO.Stream {
         var __thrown : NullableHandle = nil;
         let __return = System_Net_WebClient_System_Threading_Tasks_Task_System_IO_Stream___OpenReadTaskAsync_0__1__String(&__thrown, self.get_handle(), address.get_handle());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task_1(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task_1(hndl: __return).ToAsync();
         }
     }
     // System.Threading.Tasks.Task<System.IO.Stream> OpenReadTaskAsync(System.Uri)
@@ -1962,13 +2025,13 @@ open class WebClient
     - Returns: The task object representing the asynchronous operation. The  property on the task object returns a  used to read data from a resource.
 
     */
-    open func OpenReadTaskAsync(address : dotnet.System.Uri) throws -> dotnet.System.Threading.Tasks.Task_1<dotnet.System.IO.Stream> {
+    open func OpenReadTaskAsync(address : dotnet.System.Uri) async throws -> dotnet.System.IO.Stream {
         var __thrown : NullableHandle = nil;
         let __return = System_Net_WebClient_System_Threading_Tasks_Task_System_IO_Stream___OpenReadTaskAsync_0__1__Uri(&__thrown, self.get_handle(), address.get_handle());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task_1(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task_1(hndl: __return).ToAsync();
         }
     }
     // System.IO.Stream OpenWrite(System.String)
@@ -2085,7 +2148,7 @@ open class WebClient
 
     - Parameter address: The URI of the resource to receive the data.
     - Parameter method: The method used to send the data to the resource. If null, the default is POST for http and STOR for ftp.
-    - Parameter userToken: A user-defined object that is passed to the method invoked when the asynchronous operation completes
+    - Parameter userToken: A user-defined object that is passed to the method invoked when the asynchronous operation completes.
     */
     open func OpenWriteAsync(address : dotnet.System.Uri, method : Optional<dotnet.System.String>, userToken : Optional<dotnet.System.Object>) throws {
         var __thrown : NullableHandle = nil;
@@ -2105,13 +2168,13 @@ open class WebClient
     - Returns: The task object representing the asynchronous operation. The  property on the task object returns a  used to write data to the resource.
 
     */
-    open func OpenWriteTaskAsync(address : dotnet.System.String) throws -> dotnet.System.Threading.Tasks.Task_1<dotnet.System.IO.Stream> {
+    open func OpenWriteTaskAsync(address : dotnet.System.String) async throws -> dotnet.System.IO.Stream {
         var __thrown : NullableHandle = nil;
         let __return = System_Net_WebClient_System_Threading_Tasks_Task_System_IO_Stream___OpenWriteTaskAsync_0__1__String(&__thrown, self.get_handle(), address.get_handle());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task_1(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task_1(hndl: __return).ToAsync();
         }
     }
     // System.Threading.Tasks.Task<System.IO.Stream> OpenWriteTaskAsync(System.String, System.String)
@@ -2124,13 +2187,13 @@ open class WebClient
     - Returns: The task object representing the asynchronous operation. The  property on the task object returns a  used to write data to the resource.
 
     */
-    open func OpenWriteTaskAsync(address : dotnet.System.String, method : Optional<dotnet.System.String>) throws -> dotnet.System.Threading.Tasks.Task_1<dotnet.System.IO.Stream> {
+    open func OpenWriteTaskAsync(address : dotnet.System.String, method : Optional<dotnet.System.String>) async throws -> dotnet.System.IO.Stream {
         var __thrown : NullableHandle = nil;
         let __return = System_Net_WebClient_System_Threading_Tasks_Task_System_IO_Stream___OpenWriteTaskAsync_0__2__String_String(&__thrown, self.get_handle(), address.get_handle(), method?.get_handle() ?? nil);
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task_1(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task_1(hndl: __return).ToAsync();
         }
     }
     // System.Threading.Tasks.Task<System.IO.Stream> OpenWriteTaskAsync(System.Uri)
@@ -2142,13 +2205,13 @@ open class WebClient
     - Returns: The task object representing the asynchronous operation. The  property on the task object returns a  used to write data to the resource.
 
     */
-    open func OpenWriteTaskAsync(address : dotnet.System.Uri) throws -> dotnet.System.Threading.Tasks.Task_1<dotnet.System.IO.Stream> {
+    open func OpenWriteTaskAsync(address : dotnet.System.Uri) async throws -> dotnet.System.IO.Stream {
         var __thrown : NullableHandle = nil;
         let __return = System_Net_WebClient_System_Threading_Tasks_Task_System_IO_Stream___OpenWriteTaskAsync_0__1__Uri(&__thrown, self.get_handle(), address.get_handle());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task_1(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task_1(hndl: __return).ToAsync();
         }
     }
     // System.Threading.Tasks.Task<System.IO.Stream> OpenWriteTaskAsync(System.Uri, System.String)
@@ -2161,13 +2224,13 @@ open class WebClient
     - Returns: The task object representing the asynchronous operation. The  property on the task object returns a  used to write data to the resource.
 
     */
-    open func OpenWriteTaskAsync(address : dotnet.System.Uri, method : Optional<dotnet.System.String>) throws -> dotnet.System.Threading.Tasks.Task_1<dotnet.System.IO.Stream> {
+    open func OpenWriteTaskAsync(address : dotnet.System.Uri, method : Optional<dotnet.System.String>) async throws -> dotnet.System.IO.Stream {
         var __thrown : NullableHandle = nil;
         let __return = System_Net_WebClient_System_Threading_Tasks_Task_System_IO_Stream___OpenWriteTaskAsync_0__2__Uri_String(&__thrown, self.get_handle(), address.get_handle(), method?.get_handle() ?? nil);
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task_1(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task_1(hndl: __return).ToAsync();
         }
     }
     // System.Byte[] UploadData(System.String, System.Byte[])
@@ -2312,13 +2375,13 @@ open class WebClient
     - Returns: The task object representing the asynchronous operation. The  property on the task object returns a  array containing the body of the response received from the resource when the data buffer was uploaded.
 
     */
-    open func UploadDataTaskAsync(address : dotnet.System.String, data : dotnet.System_Arr<Swift.UInt8>) throws -> dotnet.System.Threading.Tasks.Task_1<dotnet.System_Arr<Swift.UInt8>> {
+    open func UploadDataTaskAsync(address : dotnet.System.String, data : dotnet.System_Arr<Swift.UInt8>) async throws -> dotnet.System_Arr<Swift.UInt8> {
         var __thrown : NullableHandle = nil;
         let __return = System_Net_WebClient_System_Threading_Tasks_Task_u8Array___UploadDataTaskAsync_0__2__String_u8Array(&__thrown, self.get_handle(), address.get_handle(), data.get_handle());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task_1(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task_1(hndl: __return).ToAsync();
         }
     }
     // System.Threading.Tasks.Task<System.Byte[]> UploadDataTaskAsync(System.String, System.String, System.Byte[])
@@ -2332,13 +2395,13 @@ open class WebClient
     - Returns: The task object representing the asynchronous operation. The  property on the task object returns a  array containing the body of the response received from the resource when the data buffer was uploaded.
 
     */
-    open func UploadDataTaskAsync(address : dotnet.System.String, method : Optional<dotnet.System.String>, data : dotnet.System_Arr<Swift.UInt8>) throws -> dotnet.System.Threading.Tasks.Task_1<dotnet.System_Arr<Swift.UInt8>> {
+    open func UploadDataTaskAsync(address : dotnet.System.String, method : Optional<dotnet.System.String>, data : dotnet.System_Arr<Swift.UInt8>) async throws -> dotnet.System_Arr<Swift.UInt8> {
         var __thrown : NullableHandle = nil;
         let __return = System_Net_WebClient_System_Threading_Tasks_Task_u8Array___UploadDataTaskAsync_0__3__String_String_u8Array(&__thrown, self.get_handle(), address.get_handle(), method?.get_handle() ?? nil, data.get_handle());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task_1(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task_1(hndl: __return).ToAsync();
         }
     }
     // System.Threading.Tasks.Task<System.Byte[]> UploadDataTaskAsync(System.Uri, System.Byte[])
@@ -2351,13 +2414,13 @@ open class WebClient
     - Returns: The task object representing the asynchronous operation. The  property on the task object returns a  array containing the body of the response received from the resource when the data buffer was uploaded.
 
     */
-    open func UploadDataTaskAsync(address : dotnet.System.Uri, data : dotnet.System_Arr<Swift.UInt8>) throws -> dotnet.System.Threading.Tasks.Task_1<dotnet.System_Arr<Swift.UInt8>> {
+    open func UploadDataTaskAsync(address : dotnet.System.Uri, data : dotnet.System_Arr<Swift.UInt8>) async throws -> dotnet.System_Arr<Swift.UInt8> {
         var __thrown : NullableHandle = nil;
         let __return = System_Net_WebClient_System_Threading_Tasks_Task_u8Array___UploadDataTaskAsync_0__2__Uri_u8Array(&__thrown, self.get_handle(), address.get_handle(), data.get_handle());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task_1(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task_1(hndl: __return).ToAsync();
         }
     }
     // System.Threading.Tasks.Task<System.Byte[]> UploadDataTaskAsync(System.Uri, System.String, System.Byte[])
@@ -2371,13 +2434,13 @@ open class WebClient
     - Returns: The task object representing the asynchronous operation. The  property on the task object returns a  array containing the body of the response received from the resource when the data buffer was uploaded.
 
     */
-    open func UploadDataTaskAsync(address : dotnet.System.Uri, method : Optional<dotnet.System.String>, data : dotnet.System_Arr<Swift.UInt8>) throws -> dotnet.System.Threading.Tasks.Task_1<dotnet.System_Arr<Swift.UInt8>> {
+    open func UploadDataTaskAsync(address : dotnet.System.Uri, method : Optional<dotnet.System.String>, data : dotnet.System_Arr<Swift.UInt8>) async throws -> dotnet.System_Arr<Swift.UInt8> {
         var __thrown : NullableHandle = nil;
         let __return = System_Net_WebClient_System_Threading_Tasks_Task_u8Array___UploadDataTaskAsync_0__3__Uri_String_u8Array(&__thrown, self.get_handle(), address.get_handle(), method?.get_handle() ?? nil, data.get_handle());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task_1(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task_1(hndl: __return).ToAsync();
         }
     }
     // System.Byte[] UploadFile(System.String, System.String)
@@ -2522,13 +2585,13 @@ open class WebClient
     - Returns: The task object representing the asynchronous operation. The  property on the task object returns a  array containing the body of the response received from the resource when the file was uploaded.
 
     */
-    open func UploadFileTaskAsync(address : dotnet.System.String, fileName : dotnet.System.String) throws -> dotnet.System.Threading.Tasks.Task_1<dotnet.System_Arr<Swift.UInt8>> {
+    open func UploadFileTaskAsync(address : dotnet.System.String, fileName : dotnet.System.String) async throws -> dotnet.System_Arr<Swift.UInt8> {
         var __thrown : NullableHandle = nil;
         let __return = System_Net_WebClient_System_Threading_Tasks_Task_u8Array___UploadFileTaskAsync_0__2__String_String(&__thrown, self.get_handle(), address.get_handle(), fileName.get_handle());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task_1(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task_1(hndl: __return).ToAsync();
         }
     }
     // System.Threading.Tasks.Task<System.Byte[]> UploadFileTaskAsync(System.String, System.String, System.String)
@@ -2542,13 +2605,13 @@ open class WebClient
     - Returns: The task object representing the asynchronous operation. The  property on the task object returns a  array containing the body of the response received from the resource when the file was uploaded.
 
     */
-    open func UploadFileTaskAsync(address : dotnet.System.String, method : Optional<dotnet.System.String>, fileName : dotnet.System.String) throws -> dotnet.System.Threading.Tasks.Task_1<dotnet.System_Arr<Swift.UInt8>> {
+    open func UploadFileTaskAsync(address : dotnet.System.String, method : Optional<dotnet.System.String>, fileName : dotnet.System.String) async throws -> dotnet.System_Arr<Swift.UInt8> {
         var __thrown : NullableHandle = nil;
         let __return = System_Net_WebClient_System_Threading_Tasks_Task_u8Array___UploadFileTaskAsync_0__3__String_String_String(&__thrown, self.get_handle(), address.get_handle(), method?.get_handle() ?? nil, fileName.get_handle());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task_1(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task_1(hndl: __return).ToAsync();
         }
     }
     // System.Threading.Tasks.Task<System.Byte[]> UploadFileTaskAsync(System.Uri, System.String)
@@ -2561,13 +2624,13 @@ open class WebClient
     - Returns: The task object representing the asynchronous operation. The  property on the task object returns a  array containing the body of the response received from the resource when the file was uploaded.
 
     */
-    open func UploadFileTaskAsync(address : dotnet.System.Uri, fileName : dotnet.System.String) throws -> dotnet.System.Threading.Tasks.Task_1<dotnet.System_Arr<Swift.UInt8>> {
+    open func UploadFileTaskAsync(address : dotnet.System.Uri, fileName : dotnet.System.String) async throws -> dotnet.System_Arr<Swift.UInt8> {
         var __thrown : NullableHandle = nil;
         let __return = System_Net_WebClient_System_Threading_Tasks_Task_u8Array___UploadFileTaskAsync_0__2__Uri_String(&__thrown, self.get_handle(), address.get_handle(), fileName.get_handle());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task_1(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task_1(hndl: __return).ToAsync();
         }
     }
     // System.Threading.Tasks.Task<System.Byte[]> UploadFileTaskAsync(System.Uri, System.String, System.String)
@@ -2581,13 +2644,13 @@ open class WebClient
     - Returns: The task object representing the asynchronous operation. The  property on the task object returns a  array containing the body of the response received from the resource when the file was uploaded.
 
     */
-    open func UploadFileTaskAsync(address : dotnet.System.Uri, method : Optional<dotnet.System.String>, fileName : dotnet.System.String) throws -> dotnet.System.Threading.Tasks.Task_1<dotnet.System_Arr<Swift.UInt8>> {
+    open func UploadFileTaskAsync(address : dotnet.System.Uri, method : Optional<dotnet.System.String>, fileName : dotnet.System.String) async throws -> dotnet.System_Arr<Swift.UInt8> {
         var __thrown : NullableHandle = nil;
         let __return = System_Net_WebClient_System_Threading_Tasks_Task_u8Array___UploadFileTaskAsync_0__3__Uri_String_String(&__thrown, self.get_handle(), address.get_handle(), method?.get_handle() ?? nil, fileName.get_handle());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task_1(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task_1(hndl: __return).ToAsync();
         }
     }
     // System.String UploadString(System.String, System.String)
@@ -2732,13 +2795,13 @@ open class WebClient
     - Returns: The task object representing the asynchronous operation. The  property on the task object returns a  containing the response sent by the server.
 
     */
-    open func UploadStringTaskAsync(address : dotnet.System.String, data : dotnet.System.String) throws -> dotnet.System.Threading.Tasks.Task_1<dotnet.System.String> {
+    open func UploadStringTaskAsync(address : dotnet.System.String, data : dotnet.System.String) async throws -> dotnet.System.String {
         var __thrown : NullableHandle = nil;
         let __return = System_Net_WebClient_System_Threading_Tasks_Task_string___UploadStringTaskAsync_0__2__String_String(&__thrown, self.get_handle(), address.get_handle(), data.get_handle());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task_1(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task_1(hndl: __return).ToAsync();
         }
     }
     // System.Threading.Tasks.Task<System.String> UploadStringTaskAsync(System.String, System.String, System.String)
@@ -2752,13 +2815,13 @@ open class WebClient
     - Returns: The task object representing the asynchronous operation. The  property on the task object returns a  containing the response sent by the server.
 
     */
-    open func UploadStringTaskAsync(address : dotnet.System.String, method : Optional<dotnet.System.String>, data : dotnet.System.String) throws -> dotnet.System.Threading.Tasks.Task_1<dotnet.System.String> {
+    open func UploadStringTaskAsync(address : dotnet.System.String, method : Optional<dotnet.System.String>, data : dotnet.System.String) async throws -> dotnet.System.String {
         var __thrown : NullableHandle = nil;
         let __return = System_Net_WebClient_System_Threading_Tasks_Task_string___UploadStringTaskAsync_0__3__String_String_String(&__thrown, self.get_handle(), address.get_handle(), method?.get_handle() ?? nil, data.get_handle());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task_1(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task_1(hndl: __return).ToAsync();
         }
     }
     // System.Threading.Tasks.Task<System.String> UploadStringTaskAsync(System.Uri, System.String)
@@ -2771,13 +2834,13 @@ open class WebClient
     - Returns: The task object representing the asynchronous operation. The  property on the task object returns a  containing the response sent by the server.
 
     */
-    open func UploadStringTaskAsync(address : dotnet.System.Uri, data : dotnet.System.String) throws -> dotnet.System.Threading.Tasks.Task_1<dotnet.System.String> {
+    open func UploadStringTaskAsync(address : dotnet.System.Uri, data : dotnet.System.String) async throws -> dotnet.System.String {
         var __thrown : NullableHandle = nil;
         let __return = System_Net_WebClient_System_Threading_Tasks_Task_string___UploadStringTaskAsync_0__2__Uri_String(&__thrown, self.get_handle(), address.get_handle(), data.get_handle());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task_1(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task_1(hndl: __return).ToAsync();
         }
     }
     // System.Threading.Tasks.Task<System.String> UploadStringTaskAsync(System.Uri, System.String, System.String)
@@ -2791,13 +2854,13 @@ open class WebClient
     - Returns: The task object representing the asynchronous operation. The  property on the task object returns a  containing the response sent by the server.
 
     */
-    open func UploadStringTaskAsync(address : dotnet.System.Uri, method : Optional<dotnet.System.String>, data : dotnet.System.String) throws -> dotnet.System.Threading.Tasks.Task_1<dotnet.System.String> {
+    open func UploadStringTaskAsync(address : dotnet.System.Uri, method : Optional<dotnet.System.String>, data : dotnet.System.String) async throws -> dotnet.System.String {
         var __thrown : NullableHandle = nil;
         let __return = System_Net_WebClient_System_Threading_Tasks_Task_string___UploadStringTaskAsync_0__3__Uri_String_String(&__thrown, self.get_handle(), address.get_handle(), method?.get_handle() ?? nil, data.get_handle());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task_1(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task_1(hndl: __return).ToAsync();
         }
     }
     // System.Byte[] UploadValues(System.String, System.Collections.Specialized.NameValueCollection)
@@ -2942,13 +3005,13 @@ open class WebClient
     - Returns: The task object representing the asynchronous operation. The  property on the task object returns a  array containing the response sent by the server.
 
     */
-    open func UploadValuesTaskAsync(address : dotnet.System.String, data : dotnet.System.Collections.Specialized.NameValueCollection) throws -> dotnet.System.Threading.Tasks.Task_1<dotnet.System_Arr<Swift.UInt8>> {
+    open func UploadValuesTaskAsync(address : dotnet.System.String, data : dotnet.System.Collections.Specialized.NameValueCollection) async throws -> dotnet.System_Arr<Swift.UInt8> {
         var __thrown : NullableHandle = nil;
         let __return = System_Net_WebClient_System_Threading_Tasks_Task_u8Array___UploadValuesTaskAsync_0__2__String_NameValueCollection(&__thrown, self.get_handle(), address.get_handle(), data.get_handle());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task_1(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task_1(hndl: __return).ToAsync();
         }
     }
     // System.Threading.Tasks.Task<System.Byte[]> UploadValuesTaskAsync(System.String, System.String, System.Collections.Specialized.NameValueCollection)
@@ -2962,13 +3025,13 @@ open class WebClient
     - Returns: The task object representing the asynchronous operation. The  property on the task object returns a  array containing the response sent by the server.
 
     */
-    open func UploadValuesTaskAsync(address : dotnet.System.String, method : Optional<dotnet.System.String>, data : dotnet.System.Collections.Specialized.NameValueCollection) throws -> dotnet.System.Threading.Tasks.Task_1<dotnet.System_Arr<Swift.UInt8>> {
+    open func UploadValuesTaskAsync(address : dotnet.System.String, method : Optional<dotnet.System.String>, data : dotnet.System.Collections.Specialized.NameValueCollection) async throws -> dotnet.System_Arr<Swift.UInt8> {
         var __thrown : NullableHandle = nil;
         let __return = System_Net_WebClient_System_Threading_Tasks_Task_u8Array___UploadValuesTaskAsync_0__3__String_String_NameValueCollection(&__thrown, self.get_handle(), address.get_handle(), method?.get_handle() ?? nil, data.get_handle());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task_1(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task_1(hndl: __return).ToAsync();
         }
     }
     // System.Threading.Tasks.Task<System.Byte[]> UploadValuesTaskAsync(System.Uri, System.Collections.Specialized.NameValueCollection)
@@ -2981,13 +3044,13 @@ open class WebClient
     - Returns: The task object representing the asynchronous operation. The  property on the task object returns a  array containing the response sent by the server.
 
     */
-    open func UploadValuesTaskAsync(address : dotnet.System.Uri, data : dotnet.System.Collections.Specialized.NameValueCollection) throws -> dotnet.System.Threading.Tasks.Task_1<dotnet.System_Arr<Swift.UInt8>> {
+    open func UploadValuesTaskAsync(address : dotnet.System.Uri, data : dotnet.System.Collections.Specialized.NameValueCollection) async throws -> dotnet.System_Arr<Swift.UInt8> {
         var __thrown : NullableHandle = nil;
         let __return = System_Net_WebClient_System_Threading_Tasks_Task_u8Array___UploadValuesTaskAsync_0__2__Uri_NameValueCollection(&__thrown, self.get_handle(), address.get_handle(), data.get_handle());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task_1(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task_1(hndl: __return).ToAsync();
         }
     }
     // System.Threading.Tasks.Task<System.Byte[]> UploadValuesTaskAsync(System.Uri, System.String, System.Collections.Specialized.NameValueCollection)
@@ -3001,13 +3064,13 @@ open class WebClient
     - Returns: The task object representing the asynchronous operation. The  property on the task object returns a  array containing the response sent by the server.
 
     */
-    open func UploadValuesTaskAsync(address : dotnet.System.Uri, method : Optional<dotnet.System.String>, data : dotnet.System.Collections.Specialized.NameValueCollection) throws -> dotnet.System.Threading.Tasks.Task_1<dotnet.System_Arr<Swift.UInt8>> {
+    open func UploadValuesTaskAsync(address : dotnet.System.Uri, method : Optional<dotnet.System.String>, data : dotnet.System.Collections.Specialized.NameValueCollection) async throws -> dotnet.System_Arr<Swift.UInt8> {
         var __thrown : NullableHandle = nil;
         let __return = System_Net_WebClient_System_Threading_Tasks_Task_u8Array___UploadValuesTaskAsync_0__3__Uri_String_NameValueCollection(&__thrown, self.get_handle(), address.get_handle(), method?.get_handle() ?? nil, data.get_handle());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task_1(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task_1(hndl: __return).ToAsync();
         }
     }
     // [IsSpecialName] System.String get_BaseAddress()
@@ -3705,6 +3768,9 @@ open class WriteStreamClosedEventArgs
     open class override func get_type_handle() -> TypeHandle {
         return System_Net_WriteStreamClosedEventArgs_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor()
@@ -3736,6 +3802,9 @@ public final class WriteStreamClosedEventHandler
 {
     public class override func get_type_handle() -> TypeHandle {
         return System_Net_WriteStreamClosedEventHandler_get_type_handle();
+    }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -3776,15 +3845,15 @@ public final class WriteStreamClosedEventHandler
             return;
         }
     }
-    public init(_ callback : @escaping (dotnet.System.Object, dotnet.System.Net.WriteStreamClosedEventArgs) throws -> Void) throws
+    public convenience init(_ __closure_Invoke : @escaping (dotnet.System.Object, dotnet.System.Net.WriteStreamClosedEventArgs) throws -> Void) throws
     {
-        let __bridge : (UnsafeMutablePointer<NullableHandle>, NonnullHandle, NonnullHandle) -> Void =
+        let __interlude_Invoke : (UnsafeMutablePointer<NullableHandle>, NonnullHandle, NonnullHandle) -> Void =
         {
             (thrown : UnsafeMutablePointer<NullableHandle>, sender : NonnullHandle, e : NonnullHandle) -> Void in
             do
             {
                 thrown.pointee = nil;
-                try callback(dotnet.System.Object(hndl: sender), dotnet.System.Net.WriteStreamClosedEventArgs(hndl: e));
+                try __closure_Invoke(dotnet.System.Object(hndl: sender), dotnet.System.Net.WriteStreamClosedEventArgs(hndl: e));
             }
             catch let e as dotnet.System.Exception
             {
@@ -3796,24 +3865,24 @@ public final class WriteStreamClosedEventHandler
                 thrown.pointee = __copy_handle(e.get_handle());
             }
         };
-        let cbarg = UnsafeRawPointer(Unmanaged.passRetained(__bridge as AnyObject).toOpaque());
-        func __cb(cb : UnsafeRawPointer?, thrown : UnsafeMutablePointer<NullableHandle>, sender : NonnullHandle, e : NonnullHandle) -> Void
+        func __cb_Invoke(pdata_interlude : UnsafeRawPointer, thrown : UnsafeMutablePointer<NullableHandle>, sender : NonnullHandle, e : NonnullHandle) -> Void
         {
-            let f = Unmanaged<AnyObject>.fromOpaque(cb!).takeUnretainedValue() as! (UnsafeMutablePointer<NullableHandle>, NonnullHandle, NonnullHandle) -> Void;
-            f(thrown, sender, e);
+            let f_interlude = Unmanaged<AnyObject>.fromOpaque(pdata_interlude).takeUnretainedValue() as! (UnsafeMutablePointer<NullableHandle>, NonnullHandle, NonnullHandle) -> Void;
+            f_interlude(thrown, sender, e);
         }
+        let __pdata_Invoke = UnsafeRawPointer(Unmanaged.passRetained(__interlude_Invoke as AnyObject).toOpaque());
+
         var __thrown : NullableHandle = nil;
         let h = System_Net_WriteStreamClosedEventHandler_create(
             &__thrown,
-            cbarg,
-            nil, // TODO deinit
-            __cb
+            __cb_Invoke,
+            __pdata_Invoke,
+            nil
             );
-            // TODO check thrown
         if let __ex = __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-            super.init(hndl: h);
+            self.init(hndl: h);
         }
     }
     // void Invoke(System.Object, System.Net.WriteStreamClosedEventArgs)

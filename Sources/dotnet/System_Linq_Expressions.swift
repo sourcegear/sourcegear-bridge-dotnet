@@ -17,6 +17,9 @@ open class BinaryOperationBinder
     open class override func get_type_handle() -> TypeHandle {
         return System_Dynamic_BinaryOperationBinder_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // System.Dynamic.DynamicMetaObject Bind(System.Dynamic.DynamicMetaObject, System.Dynamic.DynamicMetaObject[])
@@ -131,6 +134,9 @@ open class BindingRestrictions
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Dynamic_BindingRestrictions_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -269,6 +275,9 @@ public final class CallInfo
     public class override func get_type_handle() -> TypeHandle {
         return System_Dynamic_CallInfo_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor(System.Int32, System.Collections.Generic.IEnumerable<System.String>)
@@ -395,6 +404,9 @@ open class ConvertBinder
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Dynamic_ConvertBinder_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -529,6 +541,9 @@ open class CreateInstanceBinder
     open class override func get_type_handle() -> TypeHandle {
         return System_Dynamic_CreateInstanceBinder_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // System.Dynamic.DynamicMetaObject Bind(System.Dynamic.DynamicMetaObject, System.Dynamic.DynamicMetaObject[])
@@ -644,6 +659,9 @@ open class DeleteIndexBinder
     open class override func get_type_handle() -> TypeHandle {
         return System_Dynamic_DeleteIndexBinder_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // System.Dynamic.DynamicMetaObject Bind(System.Dynamic.DynamicMetaObject, System.Dynamic.DynamicMetaObject[])
@@ -758,6 +776,9 @@ open class DeleteMemberBinder
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Dynamic_DeleteMemberBinder_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -892,8 +913,22 @@ open class DynamicMetaObject
     open class override func get_type_handle() -> TypeHandle {
         return System_Dynamic_DynamicMetaObject_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    // static field: System.Dynamic.DynamicMetaObject[] EmptyMetaObjects
+    /**
+    Represents an empty array of type . This field is read only.
+
+    */
+    open class var EmptyMetaObjects : dotnet.System_Arr<dotnet.System.Dynamic.DynamicMetaObject> {
+        get {
+        let __return = dotnet.System_Arr<dotnet.System.Dynamic.DynamicMetaObject>(hndl: System_Dynamic_DynamicMetaObject_get_EmptyMetaObjects());
+            return __return;
+        }
+    }
     // .ctor(System.Linq.Expressions.Expression, System.Dynamic.BindingRestrictions)
 // docid: M:System.Dynamic.DynamicMetaObject.#ctor(System.Linq.Expressions.Expression,System.Dynamic.BindingRestrictions)
     /**
@@ -1333,6 +1368,9 @@ open class DynamicMetaObjectBinder
     open class override func get_type_handle() -> TypeHandle {
         return System_Dynamic_DynamicMetaObjectBinder_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // System.Dynamic.DynamicMetaObject Bind(System.Dynamic.DynamicMetaObject, System.Dynamic.DynamicMetaObject[])
@@ -1465,6 +1503,9 @@ open class DynamicObject
     open class override func get_type_handle() -> TypeHandle {
         return System_Dynamic_DynamicObject_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // System.Collections.Generic.IEnumerable<System.String> GetDynamicMemberNames()
@@ -1514,11 +1555,12 @@ open class DynamicObject
          if the operation is successful; otherwise, . If this method returns , the run-time binder of the language determines the behavior. (In most cases, a language-specific run-time exception is thrown.)
 
     */
-    open func TryBinaryOperation(binder : dotnet.System.Dynamic.BinaryOperationBinder, arg : dotnet.System.Object, result : inout dotnet.System.Object) throws -> Bool {
+    open func TryBinaryOperation(binder : dotnet.System.Dynamic.BinaryOperationBinder, arg : dotnet.System.Object, result : inout Optional<dotnet.System.Object>) throws -> Bool {
         var __thrown : NullableHandle = nil;
-            var _tmp_out_result = result.get_handle();
+            var _tmp_out_result = (result != nil) ? (result!.get_handle()) : nil;
         let __return = System_Dynamic_DynamicObject_bool__TryBinaryOperation_0__3__BinaryOperationBinder_Object_outObject(&__thrown, self.get_handle(), binder.get_handle(), arg.get_handle(), &_tmp_out_result);
-        let _tmp2_result = dotnet.System.Object(hndl: _tmp_out_result);
+        let __h__tmp2_result = _tmp_out_result;
+        let _tmp2_result = (__h__tmp2_result != nil) ? dotnet.System.Object(hndl: __h__tmp2_result!) : nil;
             result = _tmp2_result;
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
@@ -1537,11 +1579,12 @@ open class DynamicObject
          if the operation is successful; otherwise, . If this method returns , the run-time binder of the language determines the behavior. (In most cases, a language-specific run-time exception is thrown.)
 
     */
-    open func TryConvert(binder : dotnet.System.Dynamic.ConvertBinder, result : inout dotnet.System.Object) throws -> Bool {
+    open func TryConvert(binder : dotnet.System.Dynamic.ConvertBinder, result : inout Optional<dotnet.System.Object>) throws -> Bool {
         var __thrown : NullableHandle = nil;
-            var _tmp_out_result = result.get_handle();
+            var _tmp_out_result = (result != nil) ? (result!.get_handle()) : nil;
         let __return = System_Dynamic_DynamicObject_bool__TryConvert_0__2__ConvertBinder_outObject(&__thrown, self.get_handle(), binder.get_handle(), &_tmp_out_result);
-        let _tmp2_result = dotnet.System.Object(hndl: _tmp_out_result);
+        let __h__tmp2_result = _tmp_out_result;
+        let _tmp2_result = (__h__tmp2_result != nil) ? dotnet.System.Object(hndl: __h__tmp2_result!) : nil;
             result = _tmp2_result;
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
@@ -1561,11 +1604,12 @@ open class DynamicObject
          if the operation is successful; otherwise, . If this method returns , the run-time binder of the language determines the behavior. (In most cases, a language-specific run-time exception is thrown.)
 
     */
-    open func TryCreateInstance(binder : dotnet.System.Dynamic.CreateInstanceBinder, args : Optional<dotnet.System_Arr<dotnet.System.Object>>, result : inout dotnet.System.Object) throws -> Bool {
+    open func TryCreateInstance(binder : dotnet.System.Dynamic.CreateInstanceBinder, args : Optional<dotnet.System_Arr<dotnet.System.Object>>, result : inout Optional<dotnet.System.Object>) throws -> Bool {
         var __thrown : NullableHandle = nil;
-            var _tmp_out_result = result.get_handle();
+            var _tmp_out_result = (result != nil) ? (result!.get_handle()) : nil;
         let __return = System_Dynamic_DynamicObject_bool__TryCreateInstance_0__3__CreateInstanceBinder_ObjectArray_outObject(&__thrown, self.get_handle(), binder.get_handle(), (args?.get_handle()), &_tmp_out_result);
-        let _tmp2_result = dotnet.System.Object(hndl: _tmp_out_result);
+        let __h__tmp2_result = _tmp_out_result;
+        let _tmp2_result = (__h__tmp2_result != nil) ? dotnet.System.Object(hndl: __h__tmp2_result!) : nil;
             result = _tmp2_result;
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
@@ -1624,11 +1668,12 @@ open class DynamicObject
          if the operation is successful; otherwise, . If this method returns , the run-time binder of the language determines the behavior. (In most cases, a run-time exception is thrown.)
 
     */
-    open func TryGetIndex(binder : dotnet.System.Dynamic.GetIndexBinder, indexes : dotnet.System_Arr<dotnet.System.Object>, result : inout dotnet.System.Object) throws -> Bool {
+    open func TryGetIndex(binder : dotnet.System.Dynamic.GetIndexBinder, indexes : dotnet.System_Arr<dotnet.System.Object>, result : inout Optional<dotnet.System.Object>) throws -> Bool {
         var __thrown : NullableHandle = nil;
-            var _tmp_out_result = result.get_handle();
+            var _tmp_out_result = (result != nil) ? (result!.get_handle()) : nil;
         let __return = System_Dynamic_DynamicObject_bool__TryGetIndex_0__3__GetIndexBinder_ObjectArray_outObject(&__thrown, self.get_handle(), binder.get_handle(), indexes.get_handle(), &_tmp_out_result);
-        let _tmp2_result = dotnet.System.Object(hndl: _tmp_out_result);
+        let __h__tmp2_result = _tmp_out_result;
+        let _tmp2_result = (__h__tmp2_result != nil) ? dotnet.System.Object(hndl: __h__tmp2_result!) : nil;
             result = _tmp2_result;
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
@@ -1647,11 +1692,12 @@ open class DynamicObject
          if the operation is successful; otherwise, . If this method returns , the run-time binder of the language determines the behavior. (In most cases, a run-time exception is thrown.)
 
     */
-    open func TryGetMember(binder : dotnet.System.Dynamic.GetMemberBinder, result : inout dotnet.System.Object) throws -> Bool {
+    open func TryGetMember(binder : dotnet.System.Dynamic.GetMemberBinder, result : inout Optional<dotnet.System.Object>) throws -> Bool {
         var __thrown : NullableHandle = nil;
-            var _tmp_out_result = result.get_handle();
+            var _tmp_out_result = (result != nil) ? (result!.get_handle()) : nil;
         let __return = System_Dynamic_DynamicObject_bool__TryGetMember_0__2__GetMemberBinder_outObject(&__thrown, self.get_handle(), binder.get_handle(), &_tmp_out_result);
-        let _tmp2_result = dotnet.System.Object(hndl: _tmp_out_result);
+        let __h__tmp2_result = _tmp_out_result;
+        let _tmp2_result = (__h__tmp2_result != nil) ? dotnet.System.Object(hndl: __h__tmp2_result!) : nil;
             result = _tmp2_result;
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
@@ -1671,11 +1717,12 @@ open class DynamicObject
          if the operation is successful; otherwise, . If this method returns , the run-time binder of the language determines the behavior. (In most cases, a language-specific run-time exception is thrown.
 
     */
-    open func TryInvoke(binder : dotnet.System.Dynamic.InvokeBinder, args : Optional<dotnet.System_Arr<dotnet.System.Object>>, result : inout dotnet.System.Object) throws -> Bool {
+    open func TryInvoke(binder : dotnet.System.Dynamic.InvokeBinder, args : Optional<dotnet.System_Arr<dotnet.System.Object>>, result : inout Optional<dotnet.System.Object>) throws -> Bool {
         var __thrown : NullableHandle = nil;
-            var _tmp_out_result = result.get_handle();
+            var _tmp_out_result = (result != nil) ? (result!.get_handle()) : nil;
         let __return = System_Dynamic_DynamicObject_bool__TryInvoke_0__3__InvokeBinder_ObjectArray_outObject(&__thrown, self.get_handle(), binder.get_handle(), (args?.get_handle()), &_tmp_out_result);
-        let _tmp2_result = dotnet.System.Object(hndl: _tmp_out_result);
+        let __h__tmp2_result = _tmp_out_result;
+        let _tmp2_result = (__h__tmp2_result != nil) ? dotnet.System.Object(hndl: __h__tmp2_result!) : nil;
             result = _tmp2_result;
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
@@ -1695,11 +1742,12 @@ open class DynamicObject
          if the operation is successful; otherwise, . If this method returns , the run-time binder of the language determines the behavior. (In most cases, a language-specific run-time exception is thrown.)
 
     */
-    open func TryInvokeMember(binder : dotnet.System.Dynamic.InvokeMemberBinder, args : Optional<dotnet.System_Arr<dotnet.System.Object>>, result : inout dotnet.System.Object) throws -> Bool {
+    open func TryInvokeMember(binder : dotnet.System.Dynamic.InvokeMemberBinder, args : Optional<dotnet.System_Arr<dotnet.System.Object>>, result : inout Optional<dotnet.System.Object>) throws -> Bool {
         var __thrown : NullableHandle = nil;
-            var _tmp_out_result = result.get_handle();
+            var _tmp_out_result = (result != nil) ? (result!.get_handle()) : nil;
         let __return = System_Dynamic_DynamicObject_bool__TryInvokeMember_0__3__InvokeMemberBinder_ObjectArray_outObject(&__thrown, self.get_handle(), binder.get_handle(), (args?.get_handle()), &_tmp_out_result);
-        let _tmp2_result = dotnet.System.Object(hndl: _tmp_out_result);
+        let __h__tmp2_result = _tmp_out_result;
+        let _tmp2_result = (__h__tmp2_result != nil) ? dotnet.System.Object(hndl: __h__tmp2_result!) : nil;
             result = _tmp2_result;
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
@@ -1759,11 +1807,12 @@ open class DynamicObject
          if the operation is successful; otherwise, . If this method returns , the run-time binder of the language determines the behavior. (In most cases, a language-specific run-time exception is thrown.)
 
     */
-    open func TryUnaryOperation(binder : dotnet.System.Dynamic.UnaryOperationBinder, result : inout dotnet.System.Object) throws -> Bool {
+    open func TryUnaryOperation(binder : dotnet.System.Dynamic.UnaryOperationBinder, result : inout Optional<dotnet.System.Object>) throws -> Bool {
         var __thrown : NullableHandle = nil;
-            var _tmp_out_result = result.get_handle();
+            var _tmp_out_result = (result != nil) ? (result!.get_handle()) : nil;
         let __return = System_Dynamic_DynamicObject_bool__TryUnaryOperation_0__2__UnaryOperationBinder_outObject(&__thrown, self.get_handle(), binder.get_handle(), &_tmp_out_result);
-        let _tmp2_result = dotnet.System.Object(hndl: _tmp_out_result);
+        let __h__tmp2_result = _tmp_out_result;
+        let _tmp2_result = (__h__tmp2_result != nil) ? dotnet.System.Object(hndl: __h__tmp2_result!) : nil;
             result = _tmp2_result;
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
@@ -1788,6 +1837,9 @@ public final class ExpandoObject
 {
     public class override func get_type_handle() -> TypeHandle {
         return System_Dynamic_ExpandoObject_get_type_handle();
+    }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -1820,6 +1872,9 @@ open class GetIndexBinder
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Dynamic_GetIndexBinder_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -1935,6 +1990,9 @@ open class GetMemberBinder
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Dynamic_GetMemberBinder_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -2070,6 +2128,9 @@ open class IDynamicMetaObjectProvider
     open class func get_type_handle() -> TypeHandle {
         return System_Dynamic_IDynamicMetaObjectProvider_get_type_handle();
     }
+    open class func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     let h : NonnullHandle;
     public func to_gval() -> GVal { return GVal(Swift.Int(bitPattern: self.h)); }
     public func dup_gval() -> GVal { return GVal(Swift.Int(bitPattern: __copy_handle(self.h))); }
@@ -2113,6 +2174,9 @@ open class IInvokeOnGetBinder
     open class func get_type_handle() -> TypeHandle {
         return System_Dynamic_IInvokeOnGetBinder_get_type_handle();
     }
+    open class func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     let h : NonnullHandle;
     public func to_gval() -> GVal { return GVal(Swift.Int(bitPattern: self.h)); }
     public func dup_gval() -> GVal { return GVal(Swift.Int(bitPattern: __copy_handle(self.h))); }
@@ -2147,6 +2211,9 @@ open class InvokeBinder
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Dynamic_InvokeBinder_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -2262,6 +2329,9 @@ open class InvokeMemberBinder
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Dynamic_InvokeMemberBinder_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -2438,6 +2508,9 @@ open class SetIndexBinder
     open class override func get_type_handle() -> TypeHandle {
         return System_Dynamic_SetIndexBinder_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // System.Dynamic.DynamicMetaObject Bind(System.Dynamic.DynamicMetaObject, System.Dynamic.DynamicMetaObject[])
@@ -2554,6 +2627,9 @@ open class SetMemberBinder
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Dynamic_SetMemberBinder_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -2690,6 +2766,9 @@ open class UnaryOperationBinder
     open class override func get_type_handle() -> TypeHandle {
         return System_Dynamic_UnaryOperationBinder_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // System.Dynamic.DynamicMetaObject Bind(System.Dynamic.DynamicMetaObject, System.Dynamic.DynamicMetaObject[])
@@ -2809,6 +2888,9 @@ open class IOrderedQueryable
     open class func get_type_handle() -> TypeHandle {
         return System_Linq_IOrderedQueryable_get_type_handle();
     }
+    open class func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     let h : NonnullHandle;
     public func to_gval() -> GVal { return GVal(Swift.Int(bitPattern: self.h)); }
     public func dup_gval() -> GVal { return GVal(Swift.Int(bitPattern: __copy_handle(self.h))); }
@@ -2838,6 +2920,9 @@ open class IOrderedQueryable_1<T : SGBridgeGenericValue>
     open class func get_type_handle() -> TypeHandle {
         return System_Linq_IOrderedQueryable_1_get_type_handle(T.get_type_handle());
     }
+    open class func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     let h : NonnullHandle;
     public func to_gval() -> GVal { return GVal(Swift.Int(bitPattern: self.h)); }
     public func dup_gval() -> GVal { return GVal(Swift.Int(bitPattern: __copy_handle(self.h))); }
@@ -2862,6 +2947,9 @@ open class IQueryProvider
 {
     open class func get_type_handle() -> TypeHandle {
         return System_Linq_IQueryProvider_get_type_handle();
+    }
+    open class func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     let h : NonnullHandle;
     public func to_gval() -> GVal { return GVal(Swift.Int(bitPattern: self.h)); }
@@ -2931,6 +3019,9 @@ open class IQueryable
     open class func get_type_handle() -> TypeHandle {
         return System_Linq_IQueryable_get_type_handle();
     }
+    open class func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     let h : NonnullHandle;
     public func to_gval() -> GVal { return GVal(Swift.Int(bitPattern: self.h)); }
     public func dup_gval() -> GVal { return GVal(Swift.Int(bitPattern: __copy_handle(self.h))); }
@@ -2992,6 +3083,9 @@ open class IQueryable_1<T : SGBridgeGenericValue>
     open class func get_type_handle() -> TypeHandle {
         return System_Linq_IQueryable_1_get_type_handle(T.get_type_handle());
     }
+    open class func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     let h : NonnullHandle;
     public func to_gval() -> GVal { return GVal(Swift.Int(bitPattern: self.h)); }
     public func dup_gval() -> GVal { return GVal(Swift.Int(bitPattern: __copy_handle(self.h))); }
@@ -3018,6 +3112,9 @@ open class BinaryExpression
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Linq_Expressions_BinaryExpression_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -3221,6 +3318,9 @@ open class BlockExpression
     open class override func get_type_handle() -> TypeHandle {
         return System_Linq_Expressions_BlockExpression_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // System.Linq.Expressions.BlockExpression Update(System.Collections.Generic.IEnumerable<System.Linq.Expressions.ParameterExpression>, System.Collections.Generic.IEnumerable<System.Linq.Expressions.Expression>)
@@ -3356,6 +3456,9 @@ public final class CatchBlock
 {
     public class override func get_type_handle() -> TypeHandle {
         return System_Linq_Expressions_CatchBlock_get_type_handle();
+    }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -3499,6 +3602,9 @@ open class ConditionalExpression
     open class override func get_type_handle() -> TypeHandle {
         return System_Linq_Expressions_ConditionalExpression_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // System.Linq.Expressions.ConditionalExpression Update(System.Linq.Expressions.Expression, System.Linq.Expressions.Expression, System.Linq.Expressions.Expression)
@@ -3636,6 +3742,9 @@ open class ConstantExpression
     open class override func get_type_handle() -> TypeHandle {
         return System_Linq_Expressions_ConstantExpression_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // [IsSpecialName] System.Linq.Expressions.ExpressionType get_NodeType()
@@ -3716,6 +3825,9 @@ open class DebugInfoExpression
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Linq_Expressions_DebugInfoExpression_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -3894,6 +4006,9 @@ public final class DefaultExpression
     public class override func get_type_handle() -> TypeHandle {
         return System_Linq_Expressions_DefaultExpression_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // [IsSpecialName] System.Linq.Expressions.ExpressionType get_NodeType()
@@ -3952,6 +4067,9 @@ open class DynamicExpression
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Linq_Expressions_DynamicExpression_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -4340,6 +4458,9 @@ open class DynamicExpressionVisitor
     open class override func get_type_handle() -> TypeHandle {
         return System_Linq_Expressions_DynamicExpressionVisitor_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
 } // DynamicExpressionVisitor
@@ -4357,6 +4478,9 @@ public final class ElementInit
 {
     public class override func get_type_handle() -> TypeHandle {
         return System_Linq_Expressions_ElementInit_get_type_handle();
+    }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -4449,6 +4573,9 @@ open class Expression
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Linq_Expressions_Expression_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -6441,10 +6568,10 @@ open class Expression
     // System.Type GetActionType(System.Type[])
 // docid: M:System.Linq.Expressions.Expression.GetActionType(System.Type[])
     /**
-    Creates a  object that represents a generic System.Action delegate type that has specific type arguments.
+    Creates a  object that represents a generic  delegate type that has specific type arguments.
 
     - Parameter typeArgs: An array of up to sixteen  objects that specify the type arguments for the  delegate type.
-    - Returns: The type of a System.Action delegate that has the specified type arguments.
+    - Returns: The type of a  delegate that has the specified type arguments.
 
     */
     open class func GetActionType(typeArgs : Optional<dotnet.System_Arr<dotnet.System.Type_>>) throws -> dotnet.System.Type_ {
@@ -6459,7 +6586,7 @@ open class Expression
     // System.Type GetDelegateType(System.Type[])
 // docid: M:System.Linq.Expressions.Expression.GetDelegateType(System.Type[])
     /**
-    Gets a  object that represents a generic System.Func or System.Action delegate type that has specific type arguments.
+    Gets a  object that represents a generic  or  delegate type that has specific type arguments.
 
     - Parameter typeArgs: The type arguments of the delegate.
     - Returns: The delegate type.
@@ -6477,10 +6604,10 @@ open class Expression
     // System.Type GetFuncType(System.Type[])
 // docid: M:System.Linq.Expressions.Expression.GetFuncType(System.Type[])
     /**
-    Creates a  object that represents a generic System.Func delegate type that has specific type arguments. The last type argument specifies the return type of the created delegate.
+    Creates a  object that represents a generic  delegate type that has specific type arguments. The last type argument specifies the return type of the created delegate.
 
     - Parameter typeArgs: An array of one to seventeen  objects that specify the type arguments for the  delegate type.
-    - Returns: The type of a System.Func delegate that has the specified type arguments.
+    - Returns: The type of a  delegate that has the specified type arguments.
 
     */
     open class func GetFuncType(typeArgs : Optional<dotnet.System_Arr<dotnet.System.Type_>>) throws -> dotnet.System.Type_ {
@@ -9318,7 +9445,7 @@ open class Expression
     /**
     Creates a  that represents accessing a property or field.
 
-    - Parameter expression: An  whose  contains a property or field named . This can be null for static members.
+    - Parameter expression: An  whose  contains a property or field named .
     - Parameter propertyOrFieldName: The name of a property or field to be accessed.
     - Returns: A  that has the  property equal to , the  property set to , and the  property set to the  or  that represents the property or field denoted by .
 
@@ -10266,11 +10393,12 @@ open class Expression
          if generic System.Action delegate type was created for specific ; otherwise, .
 
     */
-    open class func TryGetActionType(typeArgs : dotnet.System_Arr<dotnet.System.Type_>, actionType : inout dotnet.System.Type_) throws -> Bool {
+    open class func TryGetActionType(typeArgs : dotnet.System_Arr<dotnet.System.Type_>, actionType : inout Optional<dotnet.System.Type_>) throws -> Bool {
         var __thrown : NullableHandle = nil;
-            var _tmp_out_actionType = actionType.get_handle();
+            var _tmp_out_actionType = (actionType != nil) ? (actionType!.get_handle()) : nil;
         let __return = System_Linq_Expressions_Expression_bool__TryGetActionType_0__2__TypeArray_outType(&__thrown, typeArgs.get_handle(), &_tmp_out_actionType);
-        let _tmp2_actionType = dotnet.System.Type_(hndl: _tmp_out_actionType);
+        let __h__tmp2_actionType = _tmp_out_actionType;
+        let _tmp2_actionType = (__h__tmp2_actionType != nil) ? dotnet.System.Type_(hndl: __h__tmp2_actionType!) : nil;
             actionType = _tmp2_actionType;
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
@@ -10289,11 +10417,12 @@ open class Expression
          if generic System.Func delegate type was created for specific ; otherwise, .
 
     */
-    open class func TryGetFuncType(typeArgs : dotnet.System_Arr<dotnet.System.Type_>, funcType : inout dotnet.System.Type_) throws -> Bool {
+    open class func TryGetFuncType(typeArgs : dotnet.System_Arr<dotnet.System.Type_>, funcType : inout Optional<dotnet.System.Type_>) throws -> Bool {
         var __thrown : NullableHandle = nil;
-            var _tmp_out_funcType = funcType.get_handle();
+            var _tmp_out_funcType = (funcType != nil) ? (funcType!.get_handle()) : nil;
         let __return = System_Linq_Expressions_Expression_bool__TryGetFuncType_0__2__TypeArray_outType(&__thrown, typeArgs.get_handle(), &_tmp_out_funcType);
-        let _tmp2_funcType = dotnet.System.Type_(hndl: _tmp_out_funcType);
+        let __h__tmp2_funcType = _tmp_out_funcType;
+        let _tmp2_funcType = (__h__tmp2_funcType != nil) ? dotnet.System.Type_(hndl: __h__tmp2_funcType!) : nil;
             funcType = _tmp2_funcType;
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
@@ -10420,7 +10549,7 @@ open class Expression
     Creates a  node that can be used to identify a parameter or a variable in an expression tree.
 
     - Parameter type: The type of the parameter or variable.
-    - Returns: A  node with the specified name and type
+    - Returns: A  node with the specified name and type.
 
     */
     open class func Variable(type : dotnet.System.Type_) throws -> dotnet.System.Linq.Expressions.ParameterExpression {
@@ -11479,6 +11608,9 @@ open class ExpressionVisitor
     open class override func get_type_handle() -> TypeHandle {
         return System_Linq_Expressions_ExpressionVisitor_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // System.Collections.ObjectModel.ReadOnlyCollection<System.Linq.Expressions.Expression> Visit(System.Collections.ObjectModel.ReadOnlyCollection<System.Linq.Expressions.Expression>)
@@ -11598,6 +11730,9 @@ public final class Expression_1<TDelegate : SGBridgeGenericValue>
     public class override func get_type_handle() -> TypeHandle {
         return System_Linq_Expressions_Expression_1_get_type_handle(TDelegate.get_type_handle());
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // TDelegate Compile()
@@ -11687,6 +11822,9 @@ public final class GotoExpression
 {
     public class override func get_type_handle() -> TypeHandle {
         return System_Linq_Expressions_GotoExpression_get_type_handle();
+    }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -11891,6 +12029,9 @@ open class IArgumentProvider
     open class func get_type_handle() -> TypeHandle {
         return System_Linq_Expressions_IArgumentProvider_get_type_handle();
     }
+    open class func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     let h : NonnullHandle;
     public func to_gval() -> GVal { return GVal(Swift.Int(bitPattern: self.h)); }
     public func dup_gval() -> GVal { return GVal(Swift.Int(bitPattern: __copy_handle(self.h))); }
@@ -11945,6 +12086,9 @@ open class IDynamicExpression
 {
     open class func get_type_handle() -> TypeHandle {
         return System_Linq_Expressions_IDynamicExpression_get_type_handle();
+    }
+    open class func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     let h : NonnullHandle;
     public func to_gval() -> GVal { return GVal(Swift.Int(bitPattern: self.h)); }
@@ -12016,6 +12160,9 @@ public final class IndexExpression
 {
     public class override func get_type_handle() -> TypeHandle {
         return System_Linq_Expressions_IndexExpression_get_type_handle();
+    }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -12162,6 +12309,9 @@ public final class InvocationExpression
     public class override func get_type_handle() -> TypeHandle {
         return System_Linq_Expressions_InvocationExpression_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // System.Linq.Expressions.InvocationExpression Update(System.Linq.Expressions.Expression, System.Collections.Generic.IEnumerable<System.Linq.Expressions.Expression>)
@@ -12278,6 +12428,9 @@ public final class LabelExpression
     public class override func get_type_handle() -> TypeHandle {
         return System_Linq_Expressions_LabelExpression_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // System.Linq.Expressions.LabelExpression Update(System.Linq.Expressions.LabelTarget, System.Linq.Expressions.Expression)
@@ -12286,7 +12439,7 @@ public final class LabelExpression
     Creates a new expression that is like this one, but using the supplied children. If all of the children are the same, it will return this expression.
 
     - Parameter target: The  property of the result.
-    - Parameter defaultValue: The  property of the result
+    - Parameter defaultValue: The  property of the result.
     - Returns: This expression if no children are changed or an expression with the updated children.
 
     */
@@ -12398,6 +12551,9 @@ public final class LabelTarget
     public class override func get_type_handle() -> TypeHandle {
         return System_Linq_Expressions_LabelTarget_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // System.String ToString()
@@ -12475,6 +12631,9 @@ open class LambdaExpression
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Linq_Expressions_LambdaExpression_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -12691,6 +12850,9 @@ public final class ListInitExpression
     public class override func get_type_handle() -> TypeHandle {
         return System_Linq_Expressions_ListInitExpression_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // System.Linq.Expressions.Expression Reduce()
@@ -12844,6 +13006,9 @@ public final class LoopExpression
     public class override func get_type_handle() -> TypeHandle {
         return System_Linq_Expressions_LoopExpression_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // System.Linq.Expressions.LoopExpression Update(System.Linq.Expressions.LabelTarget, System.Linq.Expressions.LabelTarget, System.Linq.Expressions.Expression)
@@ -12989,6 +13154,9 @@ public final class MemberAssignment
     public class override func get_type_handle() -> TypeHandle {
         return System_Linq_Expressions_MemberAssignment_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // System.Linq.Expressions.MemberAssignment Update(System.Linq.Expressions.Expression)
@@ -13043,6 +13211,9 @@ open class MemberBinding
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Linq_Expressions_MemberBinding_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -13169,6 +13340,9 @@ open class MemberExpression
     open class override func get_type_handle() -> TypeHandle {
         return System_Linq_Expressions_MemberExpression_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // System.Linq.Expressions.MemberExpression Update(System.Linq.Expressions.Expression)
@@ -13267,6 +13441,9 @@ public final class MemberInitExpression
 {
     public class override func get_type_handle() -> TypeHandle {
         return System_Linq_Expressions_MemberInitExpression_get_type_handle();
+    }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -13421,6 +13598,9 @@ public final class MemberListBinding
     public class override func get_type_handle() -> TypeHandle {
         return System_Linq_Expressions_MemberListBinding_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // System.Linq.Expressions.MemberListBinding Update(System.Collections.Generic.IEnumerable<System.Linq.Expressions.ElementInit>)
@@ -13475,6 +13655,9 @@ public final class MemberMemberBinding
 {
     public class override func get_type_handle() -> TypeHandle {
         return System_Linq_Expressions_MemberMemberBinding_get_type_handle();
+    }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -13531,6 +13714,9 @@ open class MethodCallExpression
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Linq_Expressions_MethodCallExpression_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -13672,6 +13858,9 @@ open class NewArrayExpression
     open class override func get_type_handle() -> TypeHandle {
         return System_Linq_Expressions_NewArrayExpression_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // System.Linq.Expressions.NewArrayExpression Update(System.Collections.Generic.IEnumerable<System.Linq.Expressions.Expression>)
@@ -13747,6 +13936,9 @@ open class NewExpression
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Linq_Expressions_NewExpression_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -13891,6 +14083,9 @@ open class ParameterExpression
     open class override func get_type_handle() -> TypeHandle {
         return System_Linq_Expressions_ParameterExpression_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // [IsSpecialName] bool get_IsByRef()
@@ -13992,6 +14187,9 @@ public final class RuntimeVariablesExpression
     public class override func get_type_handle() -> TypeHandle {
         return System_Linq_Expressions_RuntimeVariablesExpression_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // System.Linq.Expressions.RuntimeVariablesExpression Update(System.Collections.Generic.IEnumerable<System.Linq.Expressions.ParameterExpression>)
@@ -14087,6 +14285,9 @@ public final class SwitchCase
     public class override func get_type_handle() -> TypeHandle {
         return System_Linq_Expressions_SwitchCase_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // System.String ToString()
@@ -14179,6 +14380,9 @@ public final class SwitchExpression
 {
     public class override func get_type_handle() -> TypeHandle {
         return System_Linq_Expressions_SwitchExpression_get_type_handle();
+    }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -14345,6 +14549,9 @@ open class SymbolDocumentInfo
     open class override func get_type_handle() -> TypeHandle {
         return System_Linq_Expressions_SymbolDocumentInfo_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // [IsSpecialName] System.Guid get_DocumentType()
@@ -14441,6 +14648,9 @@ public final class TryExpression
 {
     public class override func get_type_handle() -> TypeHandle {
         return System_Linq_Expressions_TryExpression_get_type_handle();
+    }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -14608,6 +14818,9 @@ public final class TypeBinaryExpression
     public class override func get_type_handle() -> TypeHandle {
         return System_Linq_Expressions_TypeBinaryExpression_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // System.Linq.Expressions.TypeBinaryExpression Update(System.Linq.Expressions.Expression)
@@ -14722,6 +14935,9 @@ public final class UnaryExpression
 {
     public class override func get_type_handle() -> TypeHandle {
         return System_Linq_Expressions_UnaryExpression_get_type_handle();
+    }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -14925,6 +15141,9 @@ open class CallSite
     open class override func get_type_handle() -> TypeHandle {
         return System_Runtime_CompilerServices_CallSite_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // System.Runtime.CompilerServices.CallSite Create(System.Type, System.Runtime.CompilerServices.CallSiteBinder)
@@ -14984,6 +15203,9 @@ open class CallSiteBinder
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Runtime_CompilerServices_CallSiteBinder_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -15056,7 +15278,7 @@ public struct CallSiteHelpers {
     /**
     Checks if a  is internally used by DLR and should not be displayed on the language code's stack.
 
-    - Parameter mb: The input 
+    - Parameter mb: The input .
     - Returns: 
          if the input  is internally used by DLR and should not be displayed on the language code's stack. Otherwise, .
 
@@ -15085,8 +15307,13 @@ open class CallSite_1<T : SGBridgeGenericValue>
     open class override func get_type_handle() -> TypeHandle {
         return System_Runtime_CompilerServices_CallSite_1_get_type_handle(T.get_type_handle());
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+// TODO COPE (field class type param): System.Runtime.CompilerServices.CallSite`1.Target
+// TODO COPE (field class type param): System.Runtime.CompilerServices.CallSite`1.Target
     // System.Runtime.CompilerServices.CallSite<T> Create(System.Runtime.CompilerServices.CallSiteBinder)
 // docid: M:System.Runtime.CompilerServices.CallSite`1.Create(System.Runtime.CompilerServices.CallSiteBinder)
     /**
@@ -15140,6 +15367,9 @@ open class DebugInfoGenerator
     open class override func get_type_handle() -> TypeHandle {
         return System_Runtime_CompilerServices_DebugInfoGenerator_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // System.Runtime.CompilerServices.DebugInfoGenerator CreatePdbGenerator()
@@ -15191,6 +15421,9 @@ public final class DynamicAttribute
 {
     public class override func get_type_handle() -> TypeHandle {
         return System_Runtime_CompilerServices_DynamicAttribute_get_type_handle();
+    }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -15261,6 +15494,9 @@ open class IRuntimeVariables
     open class func get_type_handle() -> TypeHandle {
         return System_Runtime_CompilerServices_IRuntimeVariables_get_type_handle();
     }
+    open class func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     let h : NonnullHandle;
     public func to_gval() -> GVal { return GVal(Swift.Int(bitPattern: self.h)); }
     public func dup_gval() -> GVal { return GVal(Swift.Int(bitPattern: __copy_handle(self.h))); }
@@ -15283,9 +15519,6 @@ open class IRuntimeVariables
     }
     // [IsSpecialName] System.Object get_Item(System.Int32)
 // docid: M:System.Runtime.CompilerServices.IRuntimeVariables.get_Item(System.Int32)
-//BEGIN method_is_override
-//matches_1
-//matches :
     open func get_Item(index : Swift.Int32) throws -> Optional<dotnet.System.Object> {
         var __thrown : NullableHandle = nil;
         let __return = System_Runtime_CompilerServices_IRuntimeVariables_Object__get_Item_0__1__i32(&__thrown, self.get_handle(), index);
@@ -15327,6 +15560,9 @@ public final class ReadOnlyCollectionBuilder_1<T : SGBridgeGenericValue>
 {
     public class override func get_type_handle() -> TypeHandle {
         return System_Runtime_CompilerServices_ReadOnlyCollectionBuilder_1_get_type_handle(T.get_type_handle());
+    }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -15626,9 +15862,6 @@ public final class ReadOnlyCollectionBuilder_1<T : SGBridgeGenericValue>
     }
     // [IsSpecialName] T get_Item(System.Int32)
 // docid: M:System.Runtime.CompilerServices.ReadOnlyCollectionBuilder`1.get_Item(System.Int32)
-//BEGIN method_is_override
-//matches_1
-//matches :
     public func get_Item(index : Swift.Int32) throws -> T {
         var __thrown : NullableHandle = nil;
         let __return = System_Runtime_CompilerServices_ReadOnlyCollectionBuilder_1_T__get_Item_0__1__i32(T.get_type_handle(), &__thrown, self.get_handle(), index);
@@ -15684,6 +15917,9 @@ open class RuleCache_1<T : SGBridgeGenericValue>
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Runtime_CompilerServices_RuleCache_1_get_type_handle(T.get_type_handle());
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }

@@ -230,6 +230,9 @@ open class DirectoryObjectSecurity
     open class override func get_type_handle() -> TypeHandle {
         return System_Security_AccessControl_DirectoryObjectSecurity_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // System.Security.AccessControl.AccessRule AccessRuleFactory(System.Security.Principal.IdentityReference, System.Int32, bool, System.Security.AccessControl.InheritanceFlags, System.Security.AccessControl.PropagationFlags, System.Security.AccessControl.AccessControlType, System.Guid, System.Guid)
@@ -342,6 +345,9 @@ public final class DirectorySecurity
     public class override func get_type_handle() -> TypeHandle {
         return System_Security_AccessControl_DirectorySecurity_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor()
@@ -391,6 +397,9 @@ public final class FileSecurity
     public class override func get_type_handle() -> TypeHandle {
         return System_Security_AccessControl_FileSecurity_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor()
@@ -439,6 +448,9 @@ public final class FileSystemAccessRule
 {
     public class override func get_type_handle() -> TypeHandle {
         return System_Security_AccessControl_FileSystemAccessRule_get_type_handle();
+    }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -552,6 +564,9 @@ public final class FileSystemAuditRule
 {
     public class override func get_type_handle() -> TypeHandle {
         return System_Security_AccessControl_FileSystemAuditRule_get_type_handle();
+    }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -937,6 +952,9 @@ open class FileSystemSecurity
     open class override func get_type_handle() -> TypeHandle {
         return System_Security_AccessControl_FileSystemSecurity_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // System.Security.AccessControl.AccessRule AccessRuleFactory(System.Security.Principal.IdentityReference, System.Int32, bool, System.Security.AccessControl.InheritanceFlags, System.Security.AccessControl.PropagationFlags, System.Security.AccessControl.AccessControlType)
@@ -1077,7 +1095,7 @@ open class FileSystemSecurity
 
     - Parameter rule: A  object that represents an audit rule to remove from a file or directory.
     - Returns: 
-         if the audit rule was removed; otherwise, 
+         if the audit rule was removed; otherwise, .
 
     */
     open func RemoveAuditRule(rule : dotnet.System.Security.AccessControl.FileSystemAuditRule) throws -> Bool {

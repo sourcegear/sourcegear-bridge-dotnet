@@ -136,6 +136,9 @@ public final class OpCode
     public class override func get_type_handle() -> TypeHandle {
         return System_Reflection_Emit_OpCode_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     /**
@@ -520,6 +523,9 @@ open class OpCodes
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Reflection_Emit_OpCodes_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -2802,7 +2808,7 @@ open class OpCodes
     }
     // static field: System.Reflection.Emit.OpCode Stloc
     /**
-    Pops the current value from the top of the evaluation stack and stores it in a the local variable list at a specified index.
+    Pops the current value from the top of the evaluation stack and stores it in the local variable list at a specified index.
 
     */
     open class var Stloc : dotnet.System.Reflection.Emit.OpCode {
@@ -2813,7 +2819,7 @@ open class OpCodes
     }
     // static field: System.Reflection.Emit.OpCode Stloc_0
     /**
-    Pops the current value from the top of the evaluation stack and stores it in a the local variable list at index 0.
+    Pops the current value from the top of the evaluation stack and stores it in the local variable list at index 0.
 
     */
     open class var Stloc_0 : dotnet.System.Reflection.Emit.OpCode {
@@ -2824,7 +2830,7 @@ open class OpCodes
     }
     // static field: System.Reflection.Emit.OpCode Stloc_1
     /**
-    Pops the current value from the top of the evaluation stack and stores it in a the local variable list at index 1.
+    Pops the current value from the top of the evaluation stack and stores it in the local variable list at index 1.
 
     */
     open class var Stloc_1 : dotnet.System.Reflection.Emit.OpCode {
@@ -2835,7 +2841,7 @@ open class OpCodes
     }
     // static field: System.Reflection.Emit.OpCode Stloc_2
     /**
-    Pops the current value from the top of the evaluation stack and stores it in a the local variable list at index 2.
+    Pops the current value from the top of the evaluation stack and stores it in the local variable list at index 2.
 
     */
     open class var Stloc_2 : dotnet.System.Reflection.Emit.OpCode {
@@ -2846,7 +2852,7 @@ open class OpCodes
     }
     // static field: System.Reflection.Emit.OpCode Stloc_3
     /**
-    Pops the current value from the top of the evaluation stack and stores it in a the local variable list at index 3.
+    Pops the current value from the top of the evaluation stack and stores it in the local variable list at index 3.
 
     */
     open class var Stloc_3 : dotnet.System.Reflection.Emit.OpCode {
@@ -2857,7 +2863,7 @@ open class OpCodes
     }
     // static field: System.Reflection.Emit.OpCode Stloc_S
     /**
-    Pops the current value from the top of the evaluation stack and stores it in a the local variable list at  (short form).
+    Pops the current value from the top of the evaluation stack and stores it in the local variable list at  (short form).
 
     */
     open class var Stloc_S : dotnet.System.Reflection.Emit.OpCode {

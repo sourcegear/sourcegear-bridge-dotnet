@@ -181,7 +181,7 @@ struct {
     void (* _Nonnull  _fp_System_Net_HttpContinueDelegate_void__Invoke_0__2__i32_WebHeaderCollection)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, int32_t StatusCode, SG_HNDL_NONNULL httpHeaders);
     SG_HNDL_NULLABLE (* _Nonnull  _fp_System_Net_HttpContinueDelegate_IAsyncResult__BeginInvoke_0__4__i32_WebHeaderCollection_AsyncCallback_Object)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, int32_t StatusCode, SG_HNDL_NONNULL httpHeaders, SG_HNDL_NULLABLE callback, SG_HNDL_NULLABLE object_);
     void (* _Nonnull  _fp_System_Net_HttpContinueDelegate_void__EndInvoke_0__1__IAsyncResult)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE result);
-    SG_HNDL_NONNULL (* _Nonnull  _fp_System_Net_HttpContinueDelegate_create)(SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nullable __pdata, void (* _Nullable __deinit)(const void* _Nullable __pdata), void (* _Nonnull  __cb)(const void* _Nullable __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, int32_t StatusCode, SG_HNDL_NONNULL httpHeaders));
+    SG_HNDL_NONNULL (* _Nonnull  _fp_System_Net_HttpContinueDelegate_create)(SG_HNDL_NULLABLE * _Nonnull __thrown, void (* _Nonnull  __cb)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, int32_t StatusCode, SG_HNDL_NONNULL httpHeaders), const void* _Nonnull __pdata, void (* _Nullable __deinit)(const void* _Nonnull __pdata));
     TYP (* _Nonnull  _fp_System_Net_HttpWebRequest_get_type_handle)(void);
     void (* _Nonnull  _fp_System_Net_HttpWebRequest_void__Abort_0__0)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h);
     void (* _Nonnull  _fp_System_Net_HttpWebRequest_void__AddRange_0__1__i32)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, int32_t range);
@@ -195,10 +195,10 @@ struct {
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_Net_HttpWebRequest_IAsyncResult__BeginGetRequestStream_0__2__AsyncCallback_Object)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE callback, SG_HNDL_NULLABLE state);
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_Net_HttpWebRequest_IAsyncResult__BeginGetResponse_0__2__AsyncCallback_Object)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE callback, SG_HNDL_NULLABLE state);
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_Net_HttpWebRequest_Stream__EndGetRequestStream_0__1__IAsyncResult)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NONNULL asyncResult);
-    SG_HNDL_NONNULL (* _Nonnull  _fp_System_Net_HttpWebRequest_Stream__EndGetRequestStream_0__2__IAsyncResult_outTransportContext)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NONNULL asyncResult, SG_HNDL_NONNULL* _Nonnull __context_out_ptr);
+    SG_HNDL_NONNULL (* _Nonnull  _fp_System_Net_HttpWebRequest_Stream__EndGetRequestStream_0__2__IAsyncResult_outTransportContext)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NONNULL asyncResult, SG_HNDL_NULLABLE* _Nonnull __context_out_ptr);
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_Net_HttpWebRequest_WebResponse__EndGetResponse_0__1__IAsyncResult)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NONNULL asyncResult);
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_Net_HttpWebRequest_Stream__GetRequestStream_0__0)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h);
-    SG_HNDL_NONNULL (* _Nonnull  _fp_System_Net_HttpWebRequest_Stream__GetRequestStream_0__1__outTransportContext)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NONNULL* _Nonnull __context_out_ptr);
+    SG_HNDL_NONNULL (* _Nonnull  _fp_System_Net_HttpWebRequest_Stream__GetRequestStream_0__1__outTransportContext)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE* _Nonnull __context_out_ptr);
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_Net_HttpWebRequest_WebResponse__GetResponse_0__0)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h);
     SG_HNDL_NULLABLE (* _Nonnull  _fp_System_Net_HttpWebRequest_String__get_Accept_0__0)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h);
     void (* _Nonnull  _fp_System_Net_HttpWebRequest_void__set_Accept_0__1__String)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE value);
@@ -314,12 +314,15 @@ struct {
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_Net_IAuthenticationModule_String__get_AuthenticationType_0__0)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h);
     int32_t (* _Nonnull  _fp_System_Net_IAuthenticationModule_bool__get_CanPreAuthenticate_0__0)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h);
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_Net_IAuthenticationModule_cast)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __h);
+    SG_HNDL_NONNULL (* _Nonnull  _fp_System_Net_IAuthenticationModule_create)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE (* _Nonnull  __cb_System_Net_IAuthenticationModule_Authorization__Authenticate_0__3__String_WebRequest_ICredentials)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL challenge, SG_HNDL_NONNULL request, SG_HNDL_NONNULL credentials), const void* _Nonnull __pdata_System_Net_IAuthenticationModule_Authorization__Authenticate_0__3__String_WebRequest_ICredentials, SG_HNDL_NULLABLE (* _Nonnull  __cb_System_Net_IAuthenticationModule_Authorization__PreAuthenticate_0__2__WebRequest_ICredentials)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL request, SG_HNDL_NONNULL credentials), const void* _Nonnull __pdata_System_Net_IAuthenticationModule_Authorization__PreAuthenticate_0__2__WebRequest_ICredentials, void (* _Nullable __deinit)(const void* _Nonnull __pdata));
     TYP (* _Nonnull  _fp_System_Net_ICredentialPolicy_get_type_handle)(void);
     int32_t (* _Nonnull  _fp_System_Net_ICredentialPolicy_bool__ShouldSendCredential_0__4__Uri_WebRequest_NetworkCredential_IAuthenticationModule)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NONNULL challengeUri, SG_HNDL_NONNULL request, SG_HNDL_NONNULL credential, SG_HNDL_NONNULL authenticationModule);
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_Net_ICredentialPolicy_cast)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __h);
+    SG_HNDL_NONNULL (* _Nonnull  _fp_System_Net_ICredentialPolicy_create)(SG_HNDL_NULLABLE * _Nonnull __thrown, int32_t (* _Nonnull  __cb_System_Net_ICredentialPolicy_bool__ShouldSendCredential_0__4__Uri_WebRequest_NetworkCredential_IAuthenticationModule)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL challengeUri, SG_HNDL_NONNULL request, SG_HNDL_NONNULL credential, SG_HNDL_NONNULL authenticationModule), const void* _Nonnull __pdata_System_Net_ICredentialPolicy_bool__ShouldSendCredential_0__4__Uri_WebRequest_NetworkCredential_IAuthenticationModule, void (* _Nullable __deinit)(const void* _Nonnull __pdata));
     TYP (* _Nonnull  _fp_System_Net_IWebRequestCreate_get_type_handle)(void);
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_Net_IWebRequestCreate_WebRequest__Create_0__1__Uri)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NONNULL uri);
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_Net_IWebRequestCreate_cast)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __h);
+    SG_HNDL_NONNULL (* _Nonnull  _fp_System_Net_IWebRequestCreate_create)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL (* _Nonnull  __cb_System_Net_IWebRequestCreate_WebRequest__Create_0__1__Uri)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL uri), const void* _Nonnull __pdata_System_Net_IWebRequestCreate_WebRequest__Create_0__1__Uri, void (* _Nullable __deinit)(const void* _Nonnull __pdata));
     TYP (* _Nonnull  _fp_System_Net_ProtocolViolationException_get_type_handle)(void);
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_Net_ProtocolViolationException_ctor_0__0)(SG_HNDL_NULLABLE * _Nonnull __thrown);
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_Net_ProtocolViolationException_ctor_0__1__String)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE message);
@@ -1829,11 +1832,11 @@ void System_Net_HttpContinueDelegate_void__EndInvoke_0__1__IAsyncResult(SG_HNDL_
     _g_System_Net_Requests._fp_System_Net_HttpContinueDelegate_void__EndInvoke_0__1__IAsyncResult(__thrown, __self_h, result);
 }
 
-SG_HNDL_NONNULL System_Net_HttpContinueDelegate_create(SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nullable __pdata, void (* _Nullable __deinit)(const void* _Nullable __pdata), void (* _Nonnull  __cb)(const void* _Nullable __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, int32_t StatusCode, SG_HNDL_NONNULL httpHeaders)) {
+SG_HNDL_NONNULL System_Net_HttpContinueDelegate_create(SG_HNDL_NULLABLE * _Nonnull __thrown, void (* _Nonnull  __cb)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, int32_t StatusCode, SG_HNDL_NONNULL httpHeaders), const void* _Nonnull __pdata, void (* _Nullable __deinit)(const void* _Nonnull __pdata)) {
     if (!_g_System_Net_Requests._fp_System_Net_HttpContinueDelegate_create) {
         my_init();
     }
-    SG_HNDL_NONNULL ret = _g_System_Net_Requests._fp_System_Net_HttpContinueDelegate_create(__thrown, __pdata, __deinit, __cb);
+    SG_HNDL_NONNULL ret = _g_System_Net_Requests._fp_System_Net_HttpContinueDelegate_create(__thrown, __cb, __pdata, __deinit);
     return ret;
 }
 
@@ -1932,7 +1935,7 @@ SG_HNDL_NONNULL System_Net_HttpWebRequest_Stream__EndGetRequestStream_0__1__IAsy
     return ret;
 }
 
-SG_HNDL_NONNULL System_Net_HttpWebRequest_Stream__EndGetRequestStream_0__2__IAsyncResult_outTransportContext(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NONNULL asyncResult, SG_HNDL_NONNULL* _Nonnull __context_out_ptr) {
+SG_HNDL_NONNULL System_Net_HttpWebRequest_Stream__EndGetRequestStream_0__2__IAsyncResult_outTransportContext(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NONNULL asyncResult, SG_HNDL_NULLABLE* _Nonnull __context_out_ptr) {
     if (!_g_System_Net_Requests._fp_System_Net_HttpWebRequest_Stream__EndGetRequestStream_0__2__IAsyncResult_outTransportContext) {
         my_init();
     }
@@ -1956,7 +1959,7 @@ SG_HNDL_NONNULL System_Net_HttpWebRequest_Stream__GetRequestStream_0__0(SG_HNDL_
     return ret;
 }
 
-SG_HNDL_NONNULL System_Net_HttpWebRequest_Stream__GetRequestStream_0__1__outTransportContext(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NONNULL* _Nonnull __context_out_ptr) {
+SG_HNDL_NONNULL System_Net_HttpWebRequest_Stream__GetRequestStream_0__1__outTransportContext(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE* _Nonnull __context_out_ptr) {
     if (!_g_System_Net_Requests._fp_System_Net_HttpWebRequest_Stream__GetRequestStream_0__1__outTransportContext) {
         my_init();
     }
@@ -2842,6 +2845,14 @@ SG_HNDL_NONNULL System_Net_IAuthenticationModule_cast(SG_HNDL_NULLABLE * _Nonnul
     return ret;
 }
 
+SG_HNDL_NONNULL System_Net_IAuthenticationModule_create(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE (* _Nonnull  __cb_System_Net_IAuthenticationModule_Authorization__Authenticate_0__3__String_WebRequest_ICredentials)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL challenge, SG_HNDL_NONNULL request, SG_HNDL_NONNULL credentials), const void* _Nonnull __pdata_System_Net_IAuthenticationModule_Authorization__Authenticate_0__3__String_WebRequest_ICredentials, SG_HNDL_NULLABLE (* _Nonnull  __cb_System_Net_IAuthenticationModule_Authorization__PreAuthenticate_0__2__WebRequest_ICredentials)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL request, SG_HNDL_NONNULL credentials), const void* _Nonnull __pdata_System_Net_IAuthenticationModule_Authorization__PreAuthenticate_0__2__WebRequest_ICredentials, void (* _Nullable __deinit)(const void* _Nonnull __pdata)) {
+    if (!_g_System_Net_Requests._fp_System_Net_IAuthenticationModule_create) {
+        my_init();
+    }
+    SG_HNDL_NONNULL ret = _g_System_Net_Requests._fp_System_Net_IAuthenticationModule_create(__thrown, __cb_System_Net_IAuthenticationModule_Authorization__Authenticate_0__3__String_WebRequest_ICredentials, __pdata_System_Net_IAuthenticationModule_Authorization__Authenticate_0__3__String_WebRequest_ICredentials, __cb_System_Net_IAuthenticationModule_Authorization__PreAuthenticate_0__2__WebRequest_ICredentials, __pdata_System_Net_IAuthenticationModule_Authorization__PreAuthenticate_0__2__WebRequest_ICredentials, __deinit);
+    return ret;
+}
+
 TYP System_Net_ICredentialPolicy_get_type_handle(void) {
     if (!_g_System_Net_Requests._fp_System_Net_ICredentialPolicy_get_type_handle) {
         my_init();
@@ -2866,6 +2877,14 @@ SG_HNDL_NONNULL System_Net_ICredentialPolicy_cast(SG_HNDL_NULLABLE * _Nonnull __
     return ret;
 }
 
+SG_HNDL_NONNULL System_Net_ICredentialPolicy_create(SG_HNDL_NULLABLE * _Nonnull __thrown, int32_t (* _Nonnull  __cb_System_Net_ICredentialPolicy_bool__ShouldSendCredential_0__4__Uri_WebRequest_NetworkCredential_IAuthenticationModule)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL challengeUri, SG_HNDL_NONNULL request, SG_HNDL_NONNULL credential, SG_HNDL_NONNULL authenticationModule), const void* _Nonnull __pdata_System_Net_ICredentialPolicy_bool__ShouldSendCredential_0__4__Uri_WebRequest_NetworkCredential_IAuthenticationModule, void (* _Nullable __deinit)(const void* _Nonnull __pdata)) {
+    if (!_g_System_Net_Requests._fp_System_Net_ICredentialPolicy_create) {
+        my_init();
+    }
+    SG_HNDL_NONNULL ret = _g_System_Net_Requests._fp_System_Net_ICredentialPolicy_create(__thrown, __cb_System_Net_ICredentialPolicy_bool__ShouldSendCredential_0__4__Uri_WebRequest_NetworkCredential_IAuthenticationModule, __pdata_System_Net_ICredentialPolicy_bool__ShouldSendCredential_0__4__Uri_WebRequest_NetworkCredential_IAuthenticationModule, __deinit);
+    return ret;
+}
+
 TYP System_Net_IWebRequestCreate_get_type_handle(void) {
     if (!_g_System_Net_Requests._fp_System_Net_IWebRequestCreate_get_type_handle) {
         my_init();
@@ -2887,6 +2906,14 @@ SG_HNDL_NONNULL System_Net_IWebRequestCreate_cast(SG_HNDL_NULLABLE * _Nonnull __
         my_init();
     }
     SG_HNDL_NONNULL ret = _g_System_Net_Requests._fp_System_Net_IWebRequestCreate_cast(__thrown, __h);
+    return ret;
+}
+
+SG_HNDL_NONNULL System_Net_IWebRequestCreate_create(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL (* _Nonnull  __cb_System_Net_IWebRequestCreate_WebRequest__Create_0__1__Uri)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL uri), const void* _Nonnull __pdata_System_Net_IWebRequestCreate_WebRequest__Create_0__1__Uri, void (* _Nullable __deinit)(const void* _Nonnull __pdata)) {
+    if (!_g_System_Net_Requests._fp_System_Net_IWebRequestCreate_create) {
+        my_init();
+    }
+    SG_HNDL_NONNULL ret = _g_System_Net_Requests._fp_System_Net_IWebRequestCreate_create(__thrown, __cb_System_Net_IWebRequestCreate_WebRequest__Create_0__1__Uri, __pdata_System_Net_IWebRequestCreate_WebRequest__Create_0__1__Uri, __deinit);
     return ret;
 }
 

@@ -300,6 +300,9 @@ open class Ping
     open class override func get_type_handle() -> TypeHandle {
         return System_Net_NetworkInformation_Ping_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor()
@@ -645,13 +648,13 @@ open class Ping
     - Returns: The task object representing the asynchronous operation.
 
     */
-    open func SendPingAsync(address : dotnet.System.Net.IPAddress) throws -> dotnet.System.Threading.Tasks.Task_1<dotnet.System.Net.NetworkInformation.PingReply> {
+    open func SendPingAsync(address : dotnet.System.Net.IPAddress) async throws -> dotnet.System.Net.NetworkInformation.PingReply {
         var __thrown : NullableHandle = nil;
         let __return = System_Net_NetworkInformation_Ping_System_Threading_Tasks_Task_System_Net_NetworkInformation_PingReply___SendPingAsync_0__1__IPAddress(&__thrown, self.get_handle(), address.get_handle());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task_1(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task_1(hndl: __return).ToAsync();
         }
     }
     // System.Threading.Tasks.Task<System.Net.NetworkInformation.PingReply> SendPingAsync(System.Net.IPAddress, System.Int32)
@@ -664,13 +667,13 @@ open class Ping
     - Returns: The task object representing the asynchronous operation.
 
     */
-    open func SendPingAsync(address : dotnet.System.Net.IPAddress, timeout : Swift.Int32) throws -> dotnet.System.Threading.Tasks.Task_1<dotnet.System.Net.NetworkInformation.PingReply> {
+    open func SendPingAsync(address : dotnet.System.Net.IPAddress, timeout : Swift.Int32) async throws -> dotnet.System.Net.NetworkInformation.PingReply {
         var __thrown : NullableHandle = nil;
         let __return = System_Net_NetworkInformation_Ping_System_Threading_Tasks_Task_System_Net_NetworkInformation_PingReply___SendPingAsync_0__2__IPAddress_i32(&__thrown, self.get_handle(), address.get_handle(), timeout);
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task_1(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task_1(hndl: __return).ToAsync();
         }
     }
     // System.Threading.Tasks.Task<System.Net.NetworkInformation.PingReply> SendPingAsync(System.Net.IPAddress, System.Int32, System.Byte[])
@@ -684,13 +687,13 @@ open class Ping
     - Returns: The task object representing the asynchronous operation.
 
     */
-    open func SendPingAsync(address : dotnet.System.Net.IPAddress, timeout : Swift.Int32, buffer : dotnet.System_Arr<Swift.UInt8>) throws -> dotnet.System.Threading.Tasks.Task_1<dotnet.System.Net.NetworkInformation.PingReply> {
+    open func SendPingAsync(address : dotnet.System.Net.IPAddress, timeout : Swift.Int32, buffer : dotnet.System_Arr<Swift.UInt8>) async throws -> dotnet.System.Net.NetworkInformation.PingReply {
         var __thrown : NullableHandle = nil;
         let __return = System_Net_NetworkInformation_Ping_System_Threading_Tasks_Task_System_Net_NetworkInformation_PingReply___SendPingAsync_0__3__IPAddress_i32_u8Array(&__thrown, self.get_handle(), address.get_handle(), timeout, buffer.get_handle());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task_1(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task_1(hndl: __return).ToAsync();
         }
     }
     // System.Threading.Tasks.Task<System.Net.NetworkInformation.PingReply> SendPingAsync(System.Net.IPAddress, System.Int32, System.Byte[], System.Net.NetworkInformation.PingOptions)
@@ -705,13 +708,13 @@ open class Ping
     - Returns: The task object representing the asynchronous operation.
 
     */
-    open func SendPingAsync(address : dotnet.System.Net.IPAddress, timeout : Swift.Int32, buffer : dotnet.System_Arr<Swift.UInt8>, options : Optional<dotnet.System.Net.NetworkInformation.PingOptions>) throws -> dotnet.System.Threading.Tasks.Task_1<dotnet.System.Net.NetworkInformation.PingReply> {
+    open func SendPingAsync(address : dotnet.System.Net.IPAddress, timeout : Swift.Int32, buffer : dotnet.System_Arr<Swift.UInt8>, options : Optional<dotnet.System.Net.NetworkInformation.PingOptions>) async throws -> dotnet.System.Net.NetworkInformation.PingReply {
         var __thrown : NullableHandle = nil;
         let __return = System_Net_NetworkInformation_Ping_System_Threading_Tasks_Task_System_Net_NetworkInformation_PingReply___SendPingAsync_0__4__IPAddress_i32_u8Array_PingOptions(&__thrown, self.get_handle(), address.get_handle(), timeout, buffer.get_handle(), options?.get_handle() ?? nil);
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task_1(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task_1(hndl: __return).ToAsync();
         }
     }
     // System.Threading.Tasks.Task<System.Net.NetworkInformation.PingReply> SendPingAsync(System.String)
@@ -723,13 +726,13 @@ open class Ping
     - Returns: The task object representing the asynchronous operation.
 
     */
-    open func SendPingAsync(hostNameOrAddress : dotnet.System.String) throws -> dotnet.System.Threading.Tasks.Task_1<dotnet.System.Net.NetworkInformation.PingReply> {
+    open func SendPingAsync(hostNameOrAddress : dotnet.System.String) async throws -> dotnet.System.Net.NetworkInformation.PingReply {
         var __thrown : NullableHandle = nil;
         let __return = System_Net_NetworkInformation_Ping_System_Threading_Tasks_Task_System_Net_NetworkInformation_PingReply___SendPingAsync_0__1__String(&__thrown, self.get_handle(), hostNameOrAddress.get_handle());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task_1(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task_1(hndl: __return).ToAsync();
         }
     }
     // System.Threading.Tasks.Task<System.Net.NetworkInformation.PingReply> SendPingAsync(System.String, System.Int32)
@@ -742,13 +745,13 @@ open class Ping
     - Returns: The task object representing the asynchronous operation.
 
     */
-    open func SendPingAsync(hostNameOrAddress : dotnet.System.String, timeout : Swift.Int32) throws -> dotnet.System.Threading.Tasks.Task_1<dotnet.System.Net.NetworkInformation.PingReply> {
+    open func SendPingAsync(hostNameOrAddress : dotnet.System.String, timeout : Swift.Int32) async throws -> dotnet.System.Net.NetworkInformation.PingReply {
         var __thrown : NullableHandle = nil;
         let __return = System_Net_NetworkInformation_Ping_System_Threading_Tasks_Task_System_Net_NetworkInformation_PingReply___SendPingAsync_0__2__String_i32(&__thrown, self.get_handle(), hostNameOrAddress.get_handle(), timeout);
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task_1(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task_1(hndl: __return).ToAsync();
         }
     }
     // System.Threading.Tasks.Task<System.Net.NetworkInformation.PingReply> SendPingAsync(System.String, System.Int32, System.Byte[])
@@ -762,13 +765,13 @@ open class Ping
     - Returns: The task object representing the asynchronous operation.
 
     */
-    open func SendPingAsync(hostNameOrAddress : dotnet.System.String, timeout : Swift.Int32, buffer : dotnet.System_Arr<Swift.UInt8>) throws -> dotnet.System.Threading.Tasks.Task_1<dotnet.System.Net.NetworkInformation.PingReply> {
+    open func SendPingAsync(hostNameOrAddress : dotnet.System.String, timeout : Swift.Int32, buffer : dotnet.System_Arr<Swift.UInt8>) async throws -> dotnet.System.Net.NetworkInformation.PingReply {
         var __thrown : NullableHandle = nil;
         let __return = System_Net_NetworkInformation_Ping_System_Threading_Tasks_Task_System_Net_NetworkInformation_PingReply___SendPingAsync_0__3__String_i32_u8Array(&__thrown, self.get_handle(), hostNameOrAddress.get_handle(), timeout, buffer.get_handle());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task_1(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task_1(hndl: __return).ToAsync();
         }
     }
     // System.Threading.Tasks.Task<System.Net.NetworkInformation.PingReply> SendPingAsync(System.String, System.Int32, System.Byte[], System.Net.NetworkInformation.PingOptions)
@@ -783,13 +786,13 @@ open class Ping
     - Returns: The task object representing the asynchronous operation.
 
     */
-    open func SendPingAsync(hostNameOrAddress : dotnet.System.String, timeout : Swift.Int32, buffer : dotnet.System_Arr<Swift.UInt8>, options : Optional<dotnet.System.Net.NetworkInformation.PingOptions>) throws -> dotnet.System.Threading.Tasks.Task_1<dotnet.System.Net.NetworkInformation.PingReply> {
+    open func SendPingAsync(hostNameOrAddress : dotnet.System.String, timeout : Swift.Int32, buffer : dotnet.System_Arr<Swift.UInt8>, options : Optional<dotnet.System.Net.NetworkInformation.PingOptions>) async throws -> dotnet.System.Net.NetworkInformation.PingReply {
         var __thrown : NullableHandle = nil;
         let __return = System_Net_NetworkInformation_Ping_System_Threading_Tasks_Task_System_Net_NetworkInformation_PingReply___SendPingAsync_0__4__String_i32_u8Array_PingOptions(&__thrown, self.get_handle(), hostNameOrAddress.get_handle(), timeout, buffer.get_handle(), options?.get_handle() ?? nil);
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task_1(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task_1(hndl: __return).ToAsync();
         }
     }
     // [IsSpecialName] void add_PingCompleted(System.Net.NetworkInformation.PingCompletedEventHandler)
@@ -839,6 +842,9 @@ open class PingCompletedEventArgs
     open class override func get_type_handle() -> TypeHandle {
         return System_Net_NetworkInformation_PingCompletedEventArgs_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // [IsSpecialName] System.Net.NetworkInformation.PingReply get_Reply()
@@ -880,6 +886,9 @@ public final class PingCompletedEventHandler
     public class override func get_type_handle() -> TypeHandle {
         return System_Net_NetworkInformation_PingCompletedEventHandler_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // void Invoke(System.Object, System.Net.NetworkInformation.PingCompletedEventArgs)
@@ -919,15 +928,15 @@ public final class PingCompletedEventHandler
             return;
         }
     }
-    public init(_ callback : @escaping (dotnet.System.Object, dotnet.System.Net.NetworkInformation.PingCompletedEventArgs) throws -> Void) throws
+    public convenience init(_ __closure_Invoke : @escaping (dotnet.System.Object, dotnet.System.Net.NetworkInformation.PingCompletedEventArgs) throws -> Void) throws
     {
-        let __bridge : (UnsafeMutablePointer<NullableHandle>, NonnullHandle, NonnullHandle) -> Void =
+        let __interlude_Invoke : (UnsafeMutablePointer<NullableHandle>, NonnullHandle, NonnullHandle) -> Void =
         {
             (thrown : UnsafeMutablePointer<NullableHandle>, sender : NonnullHandle, e : NonnullHandle) -> Void in
             do
             {
                 thrown.pointee = nil;
-                try callback(dotnet.System.Object(hndl: sender), dotnet.System.Net.NetworkInformation.PingCompletedEventArgs(hndl: e));
+                try __closure_Invoke(dotnet.System.Object(hndl: sender), dotnet.System.Net.NetworkInformation.PingCompletedEventArgs(hndl: e));
             }
             catch let e as dotnet.System.Exception
             {
@@ -939,24 +948,24 @@ public final class PingCompletedEventHandler
                 thrown.pointee = __copy_handle(e.get_handle());
             }
         };
-        let cbarg = UnsafeRawPointer(Unmanaged.passRetained(__bridge as AnyObject).toOpaque());
-        func __cb(cb : UnsafeRawPointer?, thrown : UnsafeMutablePointer<NullableHandle>, sender : NonnullHandle, e : NonnullHandle) -> Void
+        func __cb_Invoke(pdata_interlude : UnsafeRawPointer, thrown : UnsafeMutablePointer<NullableHandle>, sender : NonnullHandle, e : NonnullHandle) -> Void
         {
-            let f = Unmanaged<AnyObject>.fromOpaque(cb!).takeUnretainedValue() as! (UnsafeMutablePointer<NullableHandle>, NonnullHandle, NonnullHandle) -> Void;
-            f(thrown, sender, e);
+            let f_interlude = Unmanaged<AnyObject>.fromOpaque(pdata_interlude).takeUnretainedValue() as! (UnsafeMutablePointer<NullableHandle>, NonnullHandle, NonnullHandle) -> Void;
+            f_interlude(thrown, sender, e);
         }
+        let __pdata_Invoke = UnsafeRawPointer(Unmanaged.passRetained(__interlude_Invoke as AnyObject).toOpaque());
+
         var __thrown : NullableHandle = nil;
         let h = System_Net_NetworkInformation_PingCompletedEventHandler_create(
             &__thrown,
-            cbarg,
-            nil, // TODO deinit
-            __cb
+            __cb_Invoke,
+            __pdata_Invoke,
+            nil
             );
-            // TODO check thrown
         if let __ex = __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-            super.init(hndl: h);
+            self.init(hndl: h);
         }
     }
     // void Invoke(System.Object, System.Net.NetworkInformation.PingCompletedEventArgs)
@@ -984,6 +993,9 @@ open class PingException
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Net_NetworkInformation_PingException_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -1034,6 +1046,9 @@ open class PingOptions
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Net_NetworkInformation_PingOptions_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -1152,6 +1167,9 @@ open class PingReply
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Net_NetworkInformation_PingReply_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }

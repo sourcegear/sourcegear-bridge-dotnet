@@ -17,6 +17,9 @@ public final class HttpUtility
     public class override func get_type_handle() -> TypeHandle {
         return System_Web_HttpUtility_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor()
@@ -61,7 +64,7 @@ public final class HttpUtility
     /**
     Minimally converts a string into an HTML-encoded string and sends the encoded string to a  output stream.
 
-    - Parameter s: The string to encode
+    - Parameter s: The string to encode.
     - Parameter output: A  output stream.
     */
     public class func HtmlAttributeEncode(s : Optional<dotnet.System.String>, output : dotnet.System.IO.TextWriter) throws {
@@ -161,7 +164,7 @@ public final class HttpUtility
     /**
     Converts a string into an HTML-encoded string, and returns the output as a  stream of output.
 
-    - Parameter s: The string to encode
+    - Parameter s: The string to encode.
     - Parameter output: A  output stream.
     */
     public class func HtmlEncode(s : Optional<dotnet.System.String>, output : dotnet.System.IO.TextWriter) throws {
@@ -595,7 +598,7 @@ public final class HttpUtility
     /**
     Converts a string into a URL-encoded array of bytes using the specified encoding object.
 
-    - Parameter str: The string to encode
+    - Parameter str: The string to encode.
     - Parameter e: The  that specifies the encoding scheme.
     - Returns: An encoded array of bytes.
 

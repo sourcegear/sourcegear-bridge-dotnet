@@ -11,7 +11,7 @@ struct {
     int32_t (* _Nonnull  _fp_System_Net_AuthenticationSchemeSelector_AuthenticationSchemes__Invoke_0__1__HttpListenerRequest)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NONNULL httpRequest);
     SG_HNDL_NULLABLE (* _Nonnull  _fp_System_Net_AuthenticationSchemeSelector_IAsyncResult__BeginInvoke_0__3__HttpListenerRequest_AsyncCallback_Object)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NONNULL httpRequest, SG_HNDL_NULLABLE callback, SG_HNDL_NULLABLE object_);
     int32_t (* _Nonnull  _fp_System_Net_AuthenticationSchemeSelector_AuthenticationSchemes__EndInvoke_0__1__IAsyncResult)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE result);
-    SG_HNDL_NONNULL (* _Nonnull  _fp_System_Net_AuthenticationSchemeSelector_create)(SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nullable __pdata, void (* _Nullable __deinit)(const void* _Nullable __pdata), int32_t (* _Nonnull  __cb)(const void* _Nullable __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL httpRequest));
+    SG_HNDL_NONNULL (* _Nonnull  _fp_System_Net_AuthenticationSchemeSelector_create)(SG_HNDL_NULLABLE * _Nonnull __thrown, int32_t (* _Nonnull  __cb)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL httpRequest), const void* _Nonnull __pdata, void (* _Nullable __deinit)(const void* _Nonnull __pdata));
     TYP (* _Nonnull  _fp_System_Net_HttpListener_get_type_handle)(void);
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_Net_HttpListener_ctor_0__0)(SG_HNDL_NULLABLE * _Nonnull __thrown);
     void (* _Nonnull  _fp_System_Net_HttpListener_void__Abort_0__0)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h);
@@ -46,7 +46,7 @@ struct {
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_Net_HttpListener_ExtendedProtectionSelector_ExtendedProtectionPolicy__Invoke_0__1__HttpListenerRequest)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NONNULL request);
     SG_HNDL_NULLABLE (* _Nonnull  _fp_System_Net_HttpListener_ExtendedProtectionSelector_IAsyncResult__BeginInvoke_0__3__HttpListenerRequest_AsyncCallback_Object)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NONNULL request, SG_HNDL_NULLABLE callback, SG_HNDL_NULLABLE object_);
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_Net_HttpListener_ExtendedProtectionSelector_ExtendedProtectionPolicy__EndInvoke_0__1__IAsyncResult)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE result);
-    SG_HNDL_NONNULL (* _Nonnull  _fp_System_Net_HttpListener_ExtendedProtectionSelector_create)(SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nullable __pdata, void (* _Nullable __deinit)(const void* _Nullable __pdata), SG_HNDL_NONNULL (* _Nonnull  __cb)(const void* _Nullable __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL request));
+    SG_HNDL_NONNULL (* _Nonnull  _fp_System_Net_HttpListener_ExtendedProtectionSelector_create)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL (* _Nonnull  __cb)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL request), const void* _Nonnull __pdata, void (* _Nullable __deinit)(const void* _Nonnull __pdata));
     TYP (* _Nonnull  _fp_System_Net_HttpListenerBasicIdentity_get_type_handle)(void);
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_Net_HttpListenerBasicIdentity_ctor_0__2__String_String)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL username, SG_HNDL_NONNULL password);
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_Net_HttpListenerBasicIdentity_String__get_Password_0__0)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h);
@@ -213,11 +213,11 @@ int32_t System_Net_AuthenticationSchemeSelector_AuthenticationSchemes__EndInvoke
     return ret;
 }
 
-SG_HNDL_NONNULL System_Net_AuthenticationSchemeSelector_create(SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nullable __pdata, void (* _Nullable __deinit)(const void* _Nullable __pdata), int32_t (* _Nonnull  __cb)(const void* _Nullable __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL httpRequest)) {
+SG_HNDL_NONNULL System_Net_AuthenticationSchemeSelector_create(SG_HNDL_NULLABLE * _Nonnull __thrown, int32_t (* _Nonnull  __cb)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL httpRequest), const void* _Nonnull __pdata, void (* _Nullable __deinit)(const void* _Nonnull __pdata)) {
     if (!_g_System_Net_HttpListener._fp_System_Net_AuthenticationSchemeSelector_create) {
         my_init();
     }
-    SG_HNDL_NONNULL ret = _g_System_Net_HttpListener._fp_System_Net_AuthenticationSchemeSelector_create(__thrown, __pdata, __deinit, __cb);
+    SG_HNDL_NONNULL ret = _g_System_Net_HttpListener._fp_System_Net_AuthenticationSchemeSelector_create(__thrown, __cb, __pdata, __deinit);
     return ret;
 }
 
@@ -482,11 +482,11 @@ SG_HNDL_NONNULL System_Net_HttpListener_ExtendedProtectionSelector_ExtendedProte
     return ret;
 }
 
-SG_HNDL_NONNULL System_Net_HttpListener_ExtendedProtectionSelector_create(SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nullable __pdata, void (* _Nullable __deinit)(const void* _Nullable __pdata), SG_HNDL_NONNULL (* _Nonnull  __cb)(const void* _Nullable __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL request)) {
+SG_HNDL_NONNULL System_Net_HttpListener_ExtendedProtectionSelector_create(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL (* _Nonnull  __cb)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL request), const void* _Nonnull __pdata, void (* _Nullable __deinit)(const void* _Nonnull __pdata)) {
     if (!_g_System_Net_HttpListener._fp_System_Net_HttpListener_ExtendedProtectionSelector_create) {
         my_init();
     }
-    SG_HNDL_NONNULL ret = _g_System_Net_HttpListener._fp_System_Net_HttpListener_ExtendedProtectionSelector_create(__thrown, __pdata, __deinit, __cb);
+    SG_HNDL_NONNULL ret = _g_System_Net_HttpListener._fp_System_Net_HttpListener_ExtendedProtectionSelector_create(__thrown, __cb, __pdata, __deinit);
     return ret;
 }
 

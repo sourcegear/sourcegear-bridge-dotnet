@@ -261,6 +261,11 @@ public struct Enumerable {
         return __return;
         }
     }
+// TODO COPE (parm closedgeneric of nullable): System.Nullable<System.Decimal> Average(System.Collections.Generic.IEnumerable<System.Nullable<System.Decimal>>)
+// TODO COPE (parm closedgeneric of nullable): System.Nullable<System.Double> Average(System.Collections.Generic.IEnumerable<System.Nullable<System.Double>>)
+// TODO COPE (parm closedgeneric of nullable): System.Nullable<System.Double> Average(System.Collections.Generic.IEnumerable<System.Nullable<System.Int32>>)
+// TODO COPE (parm closedgeneric of nullable): System.Nullable<System.Double> Average(System.Collections.Generic.IEnumerable<System.Nullable<System.Int64>>)
+// TODO COPE (parm closedgeneric of nullable): System.Nullable<System.Single> Average(System.Collections.Generic.IEnumerable<System.Nullable<System.Single>>)
     // System.Single Average(System.Collections.Generic.IEnumerable<System.Single>)
 // docid: M:System.Linq.Enumerable.Average(System.Collections.Generic.IEnumerable{System.Single})
     /**
@@ -375,6 +380,11 @@ public struct Enumerable {
         let del_selector = try dotnet.System.Func_2<UTSource,Swift.Int64>(selector);
         return try Average(source: source, selector: del_selector);
     }
+// TODO COPE (parm closedgeneric of nullable): System.Nullable<System.Decimal> Average<TSource>(System.Collections.Generic.IEnumerable<TSource>, System.Func<TSource,System.Nullable<System.Decimal>>)
+// TODO COPE (parm closedgeneric of nullable): System.Nullable<System.Double> Average<TSource>(System.Collections.Generic.IEnumerable<TSource>, System.Func<TSource,System.Nullable<System.Double>>)
+// TODO COPE (parm closedgeneric of nullable): System.Nullable<System.Double> Average<TSource>(System.Collections.Generic.IEnumerable<TSource>, System.Func<TSource,System.Nullable<System.Int32>>)
+// TODO COPE (parm closedgeneric of nullable): System.Nullable<System.Double> Average<TSource>(System.Collections.Generic.IEnumerable<TSource>, System.Func<TSource,System.Nullable<System.Int64>>)
+// TODO COPE (parm closedgeneric of nullable): System.Nullable<System.Single> Average<TSource>(System.Collections.Generic.IEnumerable<TSource>, System.Func<TSource,System.Nullable<System.Single>>)
     // System.Single Average<TSource>(System.Collections.Generic.IEnumerable<TSource>, System.Func<TSource,System.Single>)
 // docid: M:System.Linq.Enumerable.Average``1(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.Single})
     /**
@@ -402,6 +412,14 @@ public struct Enumerable {
 // TODO COPE (write_all_methods) (unused generic param) System.Collections.Generic.IEnumerable<TResult> Cast<TResult>(System.Collections.IEnumerable)
     // System.Collections.Generic.IEnumerable<TSource[]> Chunk<TSource>(System.Collections.Generic.IEnumerable<TSource>, System.Int32)
 // docid: M:System.Linq.Enumerable.Chunk``1(System.Collections.Generic.IEnumerable{``0},System.Int32)
+    /**
+    Split the elements of a sequence into chunks of size at most .
+
+    - Parameter source: An  whose elements to chunk.
+    - Parameter size: The maximum size of each chunk.
+    - Returns: An  that contains the elements the input sequence split into chunks of size .
+
+    */
     public static func Chunk<UTSource : SGBridgeGenericValue>(source : dotnet.System.Collections.Generic.IEnumerable_1<UTSource>, size : Swift.Int32) throws -> dotnet.System.Collections.Generic.IEnumerable_1<dotnet.System_Arr<UTSource>> {
         var __thrown : NullableHandle = nil;
         let __return = System_Linq_Enumerable_System_Collections_Generic_IEnumerable_UTSourceArray___Chunk_1__2__System_Collections_Generic_IEnumerable_UTSource__i32(UTSource.get_type_handle(), &__thrown, source.get_handle(), size);
@@ -462,9 +480,9 @@ public struct Enumerable {
          if the source sequence contains an element that has the specified value; otherwise, .
 
     */
-    public static func Contains<UTSource : SGBridgeGenericValue>(source : dotnet.System.Collections.Generic.IEnumerable_1<UTSource>, value : UTSource, comparer : dotnet.System.Collections.Generic.IEqualityComparer_1<UTSource>) throws -> Bool {
+    public static func Contains<UTSource : SGBridgeGenericValue>(source : dotnet.System.Collections.Generic.IEnumerable_1<UTSource>, value : UTSource, comparer : Optional<dotnet.System.Collections.Generic.IEqualityComparer_1<UTSource>>) throws -> Bool {
         var __thrown : NullableHandle = nil;
-        let __return = System_Linq_Enumerable_bool__Contains_1__3__System_Collections_Generic_IEnumerable_UTSource__UTSource_System_Collections_Generic_IEqualityComparer_UTSource_(UTSource.get_type_handle(), &__thrown, source.get_handle(), value.to_gval(), nil);
+        let __return = System_Linq_Enumerable_bool__Contains_1__3__System_Collections_Generic_IEnumerable_UTSource__UTSource_System_Collections_Generic_IEqualityComparer_UTSource_(UTSource.get_type_handle(), &__thrown, source.get_handle(), value.to_gval(), (comparer?.get_handle()));
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
@@ -552,6 +570,14 @@ public struct Enumerable {
     }
     // System.Collections.Generic.IEnumerable<TSource> DistinctBy<TSource, TKey>(System.Collections.Generic.IEnumerable<TSource>, System.Func<TSource,TKey>)
 // docid: M:System.Linq.Enumerable.DistinctBy``2(System.Collections.Generic.IEnumerable{``0},System.Func{``0,``1})
+    /**
+    Returns distinct elements from a sequence according to a specified key selector function.
+
+    - Parameter source: The sequence to remove duplicate elements from.
+    - Parameter keySelector: A function to extract the key for each element.
+    - Returns: An  that contains distinct elements from the source sequence.
+
+    */
     public static func DistinctBy<UTSource : SGBridgeGenericValue,UTKey : SGBridgeGenericValue>(source : dotnet.System.Collections.Generic.IEnumerable_1<UTSource>, keySelector : dotnet.System.Func_2<UTSource,UTKey>) throws -> dotnet.System.Collections.Generic.IEnumerable_1<UTSource> {
         var __thrown : NullableHandle = nil;
         let __return = System_Linq_Enumerable_System_Collections_Generic_IEnumerable_UTSource___DistinctBy_2__2__System_Collections_Generic_IEnumerable_UTSource__System_Func_UTSource_UTKey_(UTSource.get_type_handle(), UTKey.get_type_handle(), &__thrown, source.get_handle(), keySelector.get_handle());
@@ -568,9 +594,18 @@ public struct Enumerable {
     }
     // System.Collections.Generic.IEnumerable<TSource> DistinctBy<TSource, TKey>(System.Collections.Generic.IEnumerable<TSource>, System.Func<TSource,TKey>, System.Collections.Generic.IEqualityComparer<TKey>)
 // docid: M:System.Linq.Enumerable.DistinctBy``2(System.Collections.Generic.IEnumerable{``0},System.Func{``0,``1},System.Collections.Generic.IEqualityComparer{``1})
-    public static func DistinctBy<UTSource : SGBridgeGenericValue,UTKey : SGBridgeGenericValue>(source : dotnet.System.Collections.Generic.IEnumerable_1<UTSource>, keySelector : dotnet.System.Func_2<UTSource,UTKey>, comparer : dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>) throws -> dotnet.System.Collections.Generic.IEnumerable_1<UTSource> {
+    /**
+    Returns distinct elements from a sequence according to a specified key selector function.
+
+    - Parameter source: The sequence to remove duplicate elements from.
+    - Parameter keySelector: A function to extract the key for each element.
+    - Parameter comparer: An  to compare keys.
+    - Returns: An  that contains distinct elements from the source sequence.
+
+    */
+    public static func DistinctBy<UTSource : SGBridgeGenericValue,UTKey : SGBridgeGenericValue>(source : dotnet.System.Collections.Generic.IEnumerable_1<UTSource>, keySelector : dotnet.System.Func_2<UTSource,UTKey>, comparer : Optional<dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>>) throws -> dotnet.System.Collections.Generic.IEnumerable_1<UTSource> {
         var __thrown : NullableHandle = nil;
-        let __return = System_Linq_Enumerable_System_Collections_Generic_IEnumerable_UTSource___DistinctBy_2__3__System_Collections_Generic_IEnumerable_UTSource__System_Func_UTSource_UTKey__System_Collections_Generic_IEqualityComparer_UTKey_(UTSource.get_type_handle(), UTKey.get_type_handle(), &__thrown, source.get_handle(), keySelector.get_handle(), nil);
+        let __return = System_Linq_Enumerable_System_Collections_Generic_IEnumerable_UTSource___DistinctBy_2__3__System_Collections_Generic_IEnumerable_UTSource__System_Func_UTSource_UTKey__System_Collections_Generic_IEqualityComparer_UTKey_(UTSource.get_type_handle(), UTKey.get_type_handle(), &__thrown, source.get_handle(), keySelector.get_handle(), (comparer?.get_handle()));
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
@@ -578,7 +613,7 @@ public struct Enumerable {
         }
     }
     // delegate closure overload
-    public static func DistinctBy<UTSource : SGBridgeGenericValue,UTKey : SGBridgeGenericValue>(source : dotnet.System.Collections.Generic.IEnumerable_1<UTSource>, keySelector : @escaping (UTSource) throws -> UTKey, comparer : dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>) throws -> dotnet.System.Collections.Generic.IEnumerable_1<UTSource> {
+    public static func DistinctBy<UTSource : SGBridgeGenericValue,UTKey : SGBridgeGenericValue>(source : dotnet.System.Collections.Generic.IEnumerable_1<UTSource>, keySelector : @escaping (UTSource) throws -> UTKey, comparer : Optional<dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>>) throws -> dotnet.System.Collections.Generic.IEnumerable_1<UTSource> {
         let del_keySelector = try dotnet.System.Func_2<UTSource,UTKey>(keySelector);
         return try DistinctBy(source: source, keySelector: del_keySelector, comparer: comparer);
     }
@@ -610,9 +645,9 @@ public struct Enumerable {
     - Returns: An  that contains distinct elements from the source sequence.
 
     */
-    public static func Distinct<UTSource : SGBridgeGenericValue>(source : dotnet.System.Collections.Generic.IEnumerable_1<UTSource>, comparer : dotnet.System.Collections.Generic.IEqualityComparer_1<UTSource>) throws -> dotnet.System.Collections.Generic.IEnumerable_1<UTSource> {
+    public static func Distinct<UTSource : SGBridgeGenericValue>(source : dotnet.System.Collections.Generic.IEnumerable_1<UTSource>, comparer : Optional<dotnet.System.Collections.Generic.IEqualityComparer_1<UTSource>>) throws -> dotnet.System.Collections.Generic.IEnumerable_1<UTSource> {
         var __thrown : NullableHandle = nil;
-        let __return = System_Linq_Enumerable_System_Collections_Generic_IEnumerable_UTSource___Distinct_1__2__System_Collections_Generic_IEnumerable_UTSource__System_Collections_Generic_IEqualityComparer_UTSource_(UTSource.get_type_handle(), &__thrown, source.get_handle(), nil);
+        let __return = System_Linq_Enumerable_System_Collections_Generic_IEnumerable_UTSource___Distinct_1__2__System_Collections_Generic_IEnumerable_UTSource__System_Collections_Generic_IEqualityComparer_UTSource_(UTSource.get_type_handle(), &__thrown, source.get_handle(), (comparer?.get_handle()));
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
@@ -621,6 +656,15 @@ public struct Enumerable {
     }
     // TSource ElementAtOrDefault<TSource>(System.Collections.Generic.IEnumerable<TSource>, System.Index)
 // docid: M:System.Linq.Enumerable.ElementAtOrDefault``1(System.Collections.Generic.IEnumerable{``0},System.Index)
+    /**
+    Returns the element at a specified index in a sequence or a default value if the index is out of range.
+
+    - Parameter source: An  to return an element from.
+    - Parameter index: The index of the element to retrieve, which is either from the start or the end.
+    - Returns: 
+         if  is outside the bounds of the  sequence; otherwise, the element at the specified position in the  sequence.
+
+    */
     public static func ElementAtOrDefault<UTSource : SGBridgeGenericValue>(source : dotnet.System.Collections.Generic.IEnumerable_1<UTSource>, index : dotnet.System.Index) throws -> UTSource {
         var __thrown : NullableHandle = nil;
         let __return = System_Linq_Enumerable_UTSource__ElementAtOrDefault_1__2__System_Collections_Generic_IEnumerable_UTSource__Index(UTSource.get_type_handle(), &__thrown, source.get_handle(), index.get_handle());
@@ -652,6 +696,14 @@ public struct Enumerable {
     }
     // TSource ElementAt<TSource>(System.Collections.Generic.IEnumerable<TSource>, System.Index)
 // docid: M:System.Linq.Enumerable.ElementAt``1(System.Collections.Generic.IEnumerable{``0},System.Index)
+    /**
+    Returns the element at a specified index in a sequence.
+
+    - Parameter source: An  to return an element from.
+    - Parameter index: The index of the element to retrieve, which is either from the start or the end.
+    - Returns: The element at the specified position in the  sequence.
+
+    */
     public static func ElementAt<UTSource : SGBridgeGenericValue>(source : dotnet.System.Collections.Generic.IEnumerable_1<UTSource>, index : dotnet.System.Index) throws -> UTSource {
         var __thrown : NullableHandle = nil;
         let __return = System_Linq_Enumerable_UTSource__ElementAt_1__2__System_Collections_Generic_IEnumerable_UTSource__Index(UTSource.get_type_handle(), &__thrown, source.get_handle(), index.get_handle());
@@ -683,6 +735,15 @@ public struct Enumerable {
 // TODO COPE (write_all_methods) (unused generic param) System.Collections.Generic.IEnumerable<TResult> Empty<TResult>()
     // System.Collections.Generic.IEnumerable<TSource> ExceptBy<TSource, TKey>(System.Collections.Generic.IEnumerable<TSource>, System.Collections.Generic.IEnumerable<TKey>, System.Func<TSource,TKey>)
 // docid: M:System.Linq.Enumerable.ExceptBy``2(System.Collections.Generic.IEnumerable{``0},System.Collections.Generic.IEnumerable{``1},System.Func{``0,``1})
+    /**
+    Produces the set difference of two sequences according to a specified key selector function.
+
+    - Parameter first: An  whose keys that are not also in  will be returned.
+    - Parameter second: An  whose keys that also occur in the first sequence will cause those elements to be removed from the returned sequence.
+    - Parameter keySelector: A function to extract the key for each element.
+    - Returns: A sequence that contains the set difference of the elements of two sequences.
+
+    */
     public static func ExceptBy<UTSource : SGBridgeGenericValue,UTKey : SGBridgeGenericValue>(first : dotnet.System.Collections.Generic.IEnumerable_1<UTSource>, second : dotnet.System.Collections.Generic.IEnumerable_1<UTKey>, keySelector : dotnet.System.Func_2<UTSource,UTKey>) throws -> dotnet.System.Collections.Generic.IEnumerable_1<UTSource> {
         var __thrown : NullableHandle = nil;
         let __return = System_Linq_Enumerable_System_Collections_Generic_IEnumerable_UTSource___ExceptBy_2__3__System_Collections_Generic_IEnumerable_UTSource__System_Collections_Generic_IEnumerable_UTKey__System_Func_UTSource_UTKey_(UTSource.get_type_handle(), UTKey.get_type_handle(), &__thrown, first.get_handle(), second.get_handle(), keySelector.get_handle());
@@ -699,9 +760,19 @@ public struct Enumerable {
     }
     // System.Collections.Generic.IEnumerable<TSource> ExceptBy<TSource, TKey>(System.Collections.Generic.IEnumerable<TSource>, System.Collections.Generic.IEnumerable<TKey>, System.Func<TSource,TKey>, System.Collections.Generic.IEqualityComparer<TKey>)
 // docid: M:System.Linq.Enumerable.ExceptBy``2(System.Collections.Generic.IEnumerable{``0},System.Collections.Generic.IEnumerable{``1},System.Func{``0,``1},System.Collections.Generic.IEqualityComparer{``1})
-    public static func ExceptBy<UTSource : SGBridgeGenericValue,UTKey : SGBridgeGenericValue>(first : dotnet.System.Collections.Generic.IEnumerable_1<UTSource>, second : dotnet.System.Collections.Generic.IEnumerable_1<UTKey>, keySelector : dotnet.System.Func_2<UTSource,UTKey>, comparer : dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>) throws -> dotnet.System.Collections.Generic.IEnumerable_1<UTSource> {
+    /**
+    Produces the set difference of two sequences according to a specified key selector function.
+
+    - Parameter first: An  whose keys that are not also in  will be returned.
+    - Parameter second: An  whose keys that also occur in the first sequence will cause those elements to be removed from the returned sequence.
+    - Parameter keySelector: A function to extract the key for each element.
+    - Parameter comparer: The  to compare values.
+    - Returns: A sequence that contains the set difference of the elements of two sequences.
+
+    */
+    public static func ExceptBy<UTSource : SGBridgeGenericValue,UTKey : SGBridgeGenericValue>(first : dotnet.System.Collections.Generic.IEnumerable_1<UTSource>, second : dotnet.System.Collections.Generic.IEnumerable_1<UTKey>, keySelector : dotnet.System.Func_2<UTSource,UTKey>, comparer : Optional<dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>>) throws -> dotnet.System.Collections.Generic.IEnumerable_1<UTSource> {
         var __thrown : NullableHandle = nil;
-        let __return = System_Linq_Enumerable_System_Collections_Generic_IEnumerable_UTSource___ExceptBy_2__4__System_Collections_Generic_IEnumerable_UTSource__System_Collections_Generic_IEnumerable_UTKey__System_Func_UTSource_UTKey__System_Collections_Generic_IEqualityComparer_UTKey_(UTSource.get_type_handle(), UTKey.get_type_handle(), &__thrown, first.get_handle(), second.get_handle(), keySelector.get_handle(), nil);
+        let __return = System_Linq_Enumerable_System_Collections_Generic_IEnumerable_UTSource___ExceptBy_2__4__System_Collections_Generic_IEnumerable_UTSource__System_Collections_Generic_IEnumerable_UTKey__System_Func_UTSource_UTKey__System_Collections_Generic_IEqualityComparer_UTKey_(UTSource.get_type_handle(), UTKey.get_type_handle(), &__thrown, first.get_handle(), second.get_handle(), keySelector.get_handle(), (comparer?.get_handle()));
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
@@ -709,7 +780,7 @@ public struct Enumerable {
         }
     }
     // delegate closure overload
-    public static func ExceptBy<UTSource : SGBridgeGenericValue,UTKey : SGBridgeGenericValue>(first : dotnet.System.Collections.Generic.IEnumerable_1<UTSource>, second : dotnet.System.Collections.Generic.IEnumerable_1<UTKey>, keySelector : @escaping (UTSource) throws -> UTKey, comparer : dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>) throws -> dotnet.System.Collections.Generic.IEnumerable_1<UTSource> {
+    public static func ExceptBy<UTSource : SGBridgeGenericValue,UTKey : SGBridgeGenericValue>(first : dotnet.System.Collections.Generic.IEnumerable_1<UTSource>, second : dotnet.System.Collections.Generic.IEnumerable_1<UTKey>, keySelector : @escaping (UTSource) throws -> UTKey, comparer : Optional<dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>>) throws -> dotnet.System.Collections.Generic.IEnumerable_1<UTSource> {
         let del_keySelector = try dotnet.System.Func_2<UTSource,UTKey>(keySelector);
         return try ExceptBy(first: first, second: second, keySelector: del_keySelector, comparer: comparer);
     }
@@ -743,9 +814,9 @@ public struct Enumerable {
     - Returns: A sequence that contains the set difference of the elements of two sequences.
 
     */
-    public static func Except<UTSource : SGBridgeGenericValue>(first : dotnet.System.Collections.Generic.IEnumerable_1<UTSource>, second : dotnet.System.Collections.Generic.IEnumerable_1<UTSource>, comparer : dotnet.System.Collections.Generic.IEqualityComparer_1<UTSource>) throws -> dotnet.System.Collections.Generic.IEnumerable_1<UTSource> {
+    public static func Except<UTSource : SGBridgeGenericValue>(first : dotnet.System.Collections.Generic.IEnumerable_1<UTSource>, second : dotnet.System.Collections.Generic.IEnumerable_1<UTSource>, comparer : Optional<dotnet.System.Collections.Generic.IEqualityComparer_1<UTSource>>) throws -> dotnet.System.Collections.Generic.IEnumerable_1<UTSource> {
         var __thrown : NullableHandle = nil;
-        let __return = System_Linq_Enumerable_System_Collections_Generic_IEnumerable_UTSource___Except_1__3__System_Collections_Generic_IEnumerable_UTSource__System_Collections_Generic_IEnumerable_UTSource__System_Collections_Generic_IEqualityComparer_UTSource_(UTSource.get_type_handle(), &__thrown, first.get_handle(), second.get_handle(), nil);
+        let __return = System_Linq_Enumerable_System_Collections_Generic_IEnumerable_UTSource___Except_1__3__System_Collections_Generic_IEnumerable_UTSource__System_Collections_Generic_IEnumerable_UTSource__System_Collections_Generic_IEqualityComparer_UTSource_(UTSource.get_type_handle(), &__thrown, first.get_handle(), second.get_handle(), (comparer?.get_handle()));
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
@@ -773,6 +844,15 @@ public struct Enumerable {
     }
     // TSource FirstOrDefault<TSource>(System.Collections.Generic.IEnumerable<TSource>, TSource)
 // docid: M:System.Linq.Enumerable.FirstOrDefault``1(System.Collections.Generic.IEnumerable{``0},``0)
+    /**
+    Returns the first element of a sequence, or a default value if the sequence contains no elements.
+
+    - Parameter source: The  to return the first element of.
+    - Parameter defaultValue: The default value to return if the sequence is empty.
+    - Returns: 
+         if  is empty; otherwise, the first element in .
+
+    */
     public static func FirstOrDefault<UTSource : SGBridgeGenericValue>(source : dotnet.System.Collections.Generic.IEnumerable_1<UTSource>, defaultValue : UTSource) throws -> UTSource {
         var __thrown : NullableHandle = nil;
         let __return = System_Linq_Enumerable_UTSource__FirstOrDefault_1__2__System_Collections_Generic_IEnumerable_UTSource__UTSource(UTSource.get_type_handle(), &__thrown, source.get_handle(), defaultValue.to_gval());
@@ -809,6 +889,16 @@ public struct Enumerable {
     }
     // TSource FirstOrDefault<TSource>(System.Collections.Generic.IEnumerable<TSource>, System.Func<TSource,bool>, TSource)
 // docid: M:System.Linq.Enumerable.FirstOrDefault``1(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.Boolean},``0)
+    /**
+    Returns the first element of the sequence that satisfies a condition or a default value if no such element is found.
+
+    - Parameter source: An  to return an element from.
+    - Parameter predicate: A function to test each element for a condition.
+    - Parameter defaultValue: The default value to return if the sequence is empty.
+    - Returns: 
+         if  is empty or if no element passes the test specified by ; otherwise, the first element in  that passes the test specified by .
+
+    */
     public static func FirstOrDefault<UTSource : SGBridgeGenericValue>(source : dotnet.System.Collections.Generic.IEnumerable_1<UTSource>, predicate : dotnet.System.Func_2<UTSource,Bool>, defaultValue : UTSource) throws -> UTSource {
         var __thrown : NullableHandle = nil;
         let __return = System_Linq_Enumerable_UTSource__FirstOrDefault_1__3__System_Collections_Generic_IEnumerable_UTSource__System_Func_UTSource_bool__UTSource(UTSource.get_type_handle(), &__thrown, source.get_handle(), predicate.get_handle(), defaultValue.to_gval());
@@ -900,9 +990,9 @@ public struct Enumerable {
     - Returns: An IEnumerable<IGrouping<TKey, TSource>> in C# or IEnumerable(Of IGrouping(Of TKey, TSource)) in Visual Basic where each  object contains a collection of objects and a key.
 
     */
-    public static func GroupBy<UTSource : SGBridgeGenericValue,UTKey : SGBridgeGenericValue>(source : dotnet.System.Collections.Generic.IEnumerable_1<UTSource>, keySelector : dotnet.System.Func_2<UTSource,UTKey>, comparer : dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>) throws -> dotnet.System.Collections.Generic.IEnumerable_1<dotnet.System.Linq.IGrouping_2<UTKey,UTSource>> {
+    public static func GroupBy<UTSource : SGBridgeGenericValue,UTKey : SGBridgeGenericValue>(source : dotnet.System.Collections.Generic.IEnumerable_1<UTSource>, keySelector : dotnet.System.Func_2<UTSource,UTKey>, comparer : Optional<dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>>) throws -> dotnet.System.Collections.Generic.IEnumerable_1<dotnet.System.Linq.IGrouping_2<UTKey,UTSource>> {
         var __thrown : NullableHandle = nil;
-        let __return = System_Linq_Enumerable_System_Collections_Generic_IEnumerable_System_Linq_System_Linq_IGrouping_UTKey_UTSource____GroupBy_2__3__System_Collections_Generic_IEnumerable_UTSource__System_Func_UTSource_UTKey__System_Collections_Generic_IEqualityComparer_UTKey_(UTSource.get_type_handle(), UTKey.get_type_handle(), &__thrown, source.get_handle(), keySelector.get_handle(), nil);
+        let __return = System_Linq_Enumerable_System_Collections_Generic_IEnumerable_System_Linq_System_Linq_IGrouping_UTKey_UTSource____GroupBy_2__3__System_Collections_Generic_IEnumerable_UTSource__System_Func_UTSource_UTKey__System_Collections_Generic_IEqualityComparer_UTKey_(UTSource.get_type_handle(), UTKey.get_type_handle(), &__thrown, source.get_handle(), keySelector.get_handle(), (comparer?.get_handle()));
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
@@ -910,7 +1000,7 @@ public struct Enumerable {
         }
     }
     // delegate closure overload
-    public static func GroupBy<UTSource : SGBridgeGenericValue,UTKey : SGBridgeGenericValue>(source : dotnet.System.Collections.Generic.IEnumerable_1<UTSource>, keySelector : @escaping (UTSource) throws -> UTKey, comparer : dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>) throws -> dotnet.System.Collections.Generic.IEnumerable_1<dotnet.System.Linq.IGrouping_2<UTKey,UTSource>> {
+    public static func GroupBy<UTSource : SGBridgeGenericValue,UTKey : SGBridgeGenericValue>(source : dotnet.System.Collections.Generic.IEnumerable_1<UTSource>, keySelector : @escaping (UTSource) throws -> UTKey, comparer : Optional<dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>>) throws -> dotnet.System.Collections.Generic.IEnumerable_1<dotnet.System.Linq.IGrouping_2<UTKey,UTSource>> {
         let del_keySelector = try dotnet.System.Func_2<UTSource,UTKey>(keySelector);
         return try GroupBy(source: source, keySelector: del_keySelector, comparer: comparer);
     }
@@ -952,9 +1042,9 @@ public struct Enumerable {
     - Returns: An IEnumerable<IGrouping<TKey, TElement>> in C# or IEnumerable(Of IGrouping(Of TKey, TElement)) in Visual Basic where each  object contains a collection of objects of type  and a key.
 
     */
-    public static func GroupBy<UTSource : SGBridgeGenericValue,UTKey : SGBridgeGenericValue,UTElement : SGBridgeGenericValue>(source : dotnet.System.Collections.Generic.IEnumerable_1<UTSource>, keySelector : dotnet.System.Func_2<UTSource,UTKey>, elementSelector : dotnet.System.Func_2<UTSource,UTElement>, comparer : dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>) throws -> dotnet.System.Collections.Generic.IEnumerable_1<dotnet.System.Linq.IGrouping_2<UTKey,UTElement>> {
+    public static func GroupBy<UTSource : SGBridgeGenericValue,UTKey : SGBridgeGenericValue,UTElement : SGBridgeGenericValue>(source : dotnet.System.Collections.Generic.IEnumerable_1<UTSource>, keySelector : dotnet.System.Func_2<UTSource,UTKey>, elementSelector : dotnet.System.Func_2<UTSource,UTElement>, comparer : Optional<dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>>) throws -> dotnet.System.Collections.Generic.IEnumerable_1<dotnet.System.Linq.IGrouping_2<UTKey,UTElement>> {
         var __thrown : NullableHandle = nil;
-        let __return = System_Linq_Enumerable_System_Collections_Generic_IEnumerable_System_Linq_System_Linq_IGrouping_UTKey_UTElement____GroupBy_3__4__System_Collections_Generic_IEnumerable_UTSource__System_Func_UTSource_UTKey__System_Func_UTSource_UTElement__System_Collections_Generic_IEqualityComparer_UTKey_(UTSource.get_type_handle(), UTKey.get_type_handle(), UTElement.get_type_handle(), &__thrown, source.get_handle(), keySelector.get_handle(), elementSelector.get_handle(), nil);
+        let __return = System_Linq_Enumerable_System_Collections_Generic_IEnumerable_System_Linq_System_Linq_IGrouping_UTKey_UTElement____GroupBy_3__4__System_Collections_Generic_IEnumerable_UTSource__System_Func_UTSource_UTKey__System_Func_UTSource_UTElement__System_Collections_Generic_IEqualityComparer_UTKey_(UTSource.get_type_handle(), UTKey.get_type_handle(), UTElement.get_type_handle(), &__thrown, source.get_handle(), keySelector.get_handle(), elementSelector.get_handle(), (comparer?.get_handle()));
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
@@ -962,7 +1052,7 @@ public struct Enumerable {
         }
     }
     // delegate closure overload
-    public static func GroupBy<UTSource : SGBridgeGenericValue,UTKey : SGBridgeGenericValue,UTElement : SGBridgeGenericValue>(source : dotnet.System.Collections.Generic.IEnumerable_1<UTSource>, keySelector : @escaping (UTSource) throws -> UTKey, elementSelector : @escaping (UTSource) throws -> UTElement, comparer : dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>) throws -> dotnet.System.Collections.Generic.IEnumerable_1<dotnet.System.Linq.IGrouping_2<UTKey,UTElement>> {
+    public static func GroupBy<UTSource : SGBridgeGenericValue,UTKey : SGBridgeGenericValue,UTElement : SGBridgeGenericValue>(source : dotnet.System.Collections.Generic.IEnumerable_1<UTSource>, keySelector : @escaping (UTSource) throws -> UTKey, elementSelector : @escaping (UTSource) throws -> UTElement, comparer : Optional<dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>>) throws -> dotnet.System.Collections.Generic.IEnumerable_1<dotnet.System.Linq.IGrouping_2<UTKey,UTElement>> {
         let del_keySelector = try dotnet.System.Func_2<UTSource,UTKey>(keySelector);
         let del_elementSelector = try dotnet.System.Func_2<UTSource,UTElement>(elementSelector);
         return try GroupBy(source: source, keySelector: del_keySelector, elementSelector: del_elementSelector, comparer: comparer);
@@ -1005,9 +1095,9 @@ public struct Enumerable {
     - Returns: A collection of elements of type  where each element represents a projection over a group and its key.
 
     */
-    public static func GroupBy<UTSource : SGBridgeGenericValue,UTKey : SGBridgeGenericValue,UTResult : SGBridgeGenericValue>(source : dotnet.System.Collections.Generic.IEnumerable_1<UTSource>, keySelector : dotnet.System.Func_2<UTSource,UTKey>, resultSelector : dotnet.System.Func_3<UTKey,dotnet.System.Collections.Generic.IEnumerable_1<UTSource>,UTResult>, comparer : dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>) throws -> dotnet.System.Collections.Generic.IEnumerable_1<UTResult> {
+    public static func GroupBy<UTSource : SGBridgeGenericValue,UTKey : SGBridgeGenericValue,UTResult : SGBridgeGenericValue>(source : dotnet.System.Collections.Generic.IEnumerable_1<UTSource>, keySelector : dotnet.System.Func_2<UTSource,UTKey>, resultSelector : dotnet.System.Func_3<UTKey,dotnet.System.Collections.Generic.IEnumerable_1<UTSource>,UTResult>, comparer : Optional<dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>>) throws -> dotnet.System.Collections.Generic.IEnumerable_1<UTResult> {
         var __thrown : NullableHandle = nil;
-        let __return = System_Linq_Enumerable_System_Collections_Generic_IEnumerable_UTResult___GroupBy_3__4__System_Collections_Generic_IEnumerable_UTSource__System_Func_UTSource_UTKey__System_Func_UTKey_System_Collections_Generic_System_Collections_Generic_IEnumerable_UTSource__UTResult__System_Collections_Generic_IEqualityComparer_UTKey_(UTSource.get_type_handle(), UTKey.get_type_handle(), UTResult.get_type_handle(), &__thrown, source.get_handle(), keySelector.get_handle(), resultSelector.get_handle(), nil);
+        let __return = System_Linq_Enumerable_System_Collections_Generic_IEnumerable_UTResult___GroupBy_3__4__System_Collections_Generic_IEnumerable_UTSource__System_Func_UTSource_UTKey__System_Func_UTKey_System_Collections_Generic_System_Collections_Generic_IEnumerable_UTSource__UTResult__System_Collections_Generic_IEqualityComparer_UTKey_(UTSource.get_type_handle(), UTKey.get_type_handle(), UTResult.get_type_handle(), &__thrown, source.get_handle(), keySelector.get_handle(), resultSelector.get_handle(), (comparer?.get_handle()));
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
@@ -1015,7 +1105,7 @@ public struct Enumerable {
         }
     }
     // delegate closure overload
-    public static func GroupBy<UTSource : SGBridgeGenericValue,UTKey : SGBridgeGenericValue,UTResult : SGBridgeGenericValue>(source : dotnet.System.Collections.Generic.IEnumerable_1<UTSource>, keySelector : @escaping (UTSource) throws -> UTKey, resultSelector : @escaping (UTKey, dotnet.System.Collections.Generic.IEnumerable_1<UTSource>) throws -> UTResult, comparer : dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>) throws -> dotnet.System.Collections.Generic.IEnumerable_1<UTResult> {
+    public static func GroupBy<UTSource : SGBridgeGenericValue,UTKey : SGBridgeGenericValue,UTResult : SGBridgeGenericValue>(source : dotnet.System.Collections.Generic.IEnumerable_1<UTSource>, keySelector : @escaping (UTSource) throws -> UTKey, resultSelector : @escaping (UTKey, dotnet.System.Collections.Generic.IEnumerable_1<UTSource>) throws -> UTResult, comparer : Optional<dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>>) throws -> dotnet.System.Collections.Generic.IEnumerable_1<UTResult> {
         let del_keySelector = try dotnet.System.Func_2<UTSource,UTKey>(keySelector);
         let del_resultSelector = try dotnet.System.Func_3<UTKey,dotnet.System.Collections.Generic.IEnumerable_1<UTSource>,UTResult>(resultSelector);
         return try GroupBy(source: source, keySelector: del_keySelector, resultSelector: del_resultSelector, comparer: comparer);
@@ -1061,9 +1151,9 @@ public struct Enumerable {
     - Returns: A collection of elements of type  where each element represents a projection over a group and its key.
 
     */
-    public static func GroupBy<UTSource : SGBridgeGenericValue,UTKey : SGBridgeGenericValue,UTElement : SGBridgeGenericValue,UTResult : SGBridgeGenericValue>(source : dotnet.System.Collections.Generic.IEnumerable_1<UTSource>, keySelector : dotnet.System.Func_2<UTSource,UTKey>, elementSelector : dotnet.System.Func_2<UTSource,UTElement>, resultSelector : dotnet.System.Func_3<UTKey,dotnet.System.Collections.Generic.IEnumerable_1<UTElement>,UTResult>, comparer : dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>) throws -> dotnet.System.Collections.Generic.IEnumerable_1<UTResult> {
+    public static func GroupBy<UTSource : SGBridgeGenericValue,UTKey : SGBridgeGenericValue,UTElement : SGBridgeGenericValue,UTResult : SGBridgeGenericValue>(source : dotnet.System.Collections.Generic.IEnumerable_1<UTSource>, keySelector : dotnet.System.Func_2<UTSource,UTKey>, elementSelector : dotnet.System.Func_2<UTSource,UTElement>, resultSelector : dotnet.System.Func_3<UTKey,dotnet.System.Collections.Generic.IEnumerable_1<UTElement>,UTResult>, comparer : Optional<dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>>) throws -> dotnet.System.Collections.Generic.IEnumerable_1<UTResult> {
         var __thrown : NullableHandle = nil;
-        let __return = System_Linq_Enumerable_System_Collections_Generic_IEnumerable_UTResult___GroupBy_4__5__System_Collections_Generic_IEnumerable_UTSource__System_Func_UTSource_UTKey__System_Func_UTSource_UTElement__System_Func_UTKey_System_Collections_Generic_System_Collections_Generic_IEnumerable_UTElement__UTResult__System_Collections_Generic_IEqualityComparer_UTKey_(UTSource.get_type_handle(), UTKey.get_type_handle(), UTElement.get_type_handle(), UTResult.get_type_handle(), &__thrown, source.get_handle(), keySelector.get_handle(), elementSelector.get_handle(), resultSelector.get_handle(), nil);
+        let __return = System_Linq_Enumerable_System_Collections_Generic_IEnumerable_UTResult___GroupBy_4__5__System_Collections_Generic_IEnumerable_UTSource__System_Func_UTSource_UTKey__System_Func_UTSource_UTElement__System_Func_UTKey_System_Collections_Generic_System_Collections_Generic_IEnumerable_UTElement__UTResult__System_Collections_Generic_IEqualityComparer_UTKey_(UTSource.get_type_handle(), UTKey.get_type_handle(), UTElement.get_type_handle(), UTResult.get_type_handle(), &__thrown, source.get_handle(), keySelector.get_handle(), elementSelector.get_handle(), resultSelector.get_handle(), (comparer?.get_handle()));
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
@@ -1071,7 +1161,7 @@ public struct Enumerable {
         }
     }
     // delegate closure overload
-    public static func GroupBy<UTSource : SGBridgeGenericValue,UTKey : SGBridgeGenericValue,UTElement : SGBridgeGenericValue,UTResult : SGBridgeGenericValue>(source : dotnet.System.Collections.Generic.IEnumerable_1<UTSource>, keySelector : @escaping (UTSource) throws -> UTKey, elementSelector : @escaping (UTSource) throws -> UTElement, resultSelector : @escaping (UTKey, dotnet.System.Collections.Generic.IEnumerable_1<UTElement>) throws -> UTResult, comparer : dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>) throws -> dotnet.System.Collections.Generic.IEnumerable_1<UTResult> {
+    public static func GroupBy<UTSource : SGBridgeGenericValue,UTKey : SGBridgeGenericValue,UTElement : SGBridgeGenericValue,UTResult : SGBridgeGenericValue>(source : dotnet.System.Collections.Generic.IEnumerable_1<UTSource>, keySelector : @escaping (UTSource) throws -> UTKey, elementSelector : @escaping (UTSource) throws -> UTElement, resultSelector : @escaping (UTKey, dotnet.System.Collections.Generic.IEnumerable_1<UTElement>) throws -> UTResult, comparer : Optional<dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>>) throws -> dotnet.System.Collections.Generic.IEnumerable_1<UTResult> {
         let del_keySelector = try dotnet.System.Func_2<UTSource,UTKey>(keySelector);
         let del_elementSelector = try dotnet.System.Func_2<UTSource,UTElement>(elementSelector);
         let del_resultSelector = try dotnet.System.Func_3<UTKey,dotnet.System.Collections.Generic.IEnumerable_1<UTElement>,UTResult>(resultSelector);
@@ -1120,9 +1210,9 @@ public struct Enumerable {
     - Returns: An  that contains elements of type  that are obtained by performing a grouped join on two sequences.
 
     */
-    public static func GroupJoin<UTOuter : SGBridgeGenericValue,UTInner : SGBridgeGenericValue,UTKey : SGBridgeGenericValue,UTResult : SGBridgeGenericValue>(outer : dotnet.System.Collections.Generic.IEnumerable_1<UTOuter>, inner : dotnet.System.Collections.Generic.IEnumerable_1<UTInner>, outerKeySelector : dotnet.System.Func_2<UTOuter,UTKey>, innerKeySelector : dotnet.System.Func_2<UTInner,UTKey>, resultSelector : dotnet.System.Func_3<UTOuter,dotnet.System.Collections.Generic.IEnumerable_1<UTInner>,UTResult>, comparer : dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>) throws -> dotnet.System.Collections.Generic.IEnumerable_1<UTResult> {
+    public static func GroupJoin<UTOuter : SGBridgeGenericValue,UTInner : SGBridgeGenericValue,UTKey : SGBridgeGenericValue,UTResult : SGBridgeGenericValue>(outer : dotnet.System.Collections.Generic.IEnumerable_1<UTOuter>, inner : dotnet.System.Collections.Generic.IEnumerable_1<UTInner>, outerKeySelector : dotnet.System.Func_2<UTOuter,UTKey>, innerKeySelector : dotnet.System.Func_2<UTInner,UTKey>, resultSelector : dotnet.System.Func_3<UTOuter,dotnet.System.Collections.Generic.IEnumerable_1<UTInner>,UTResult>, comparer : Optional<dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>>) throws -> dotnet.System.Collections.Generic.IEnumerable_1<UTResult> {
         var __thrown : NullableHandle = nil;
-        let __return = System_Linq_Enumerable_System_Collections_Generic_IEnumerable_UTResult___GroupJoin_4__6__System_Collections_Generic_IEnumerable_UTOuter__System_Collections_Generic_IEnumerable_UTInner__System_Func_UTOuter_UTKey__System_Func_UTInner_UTKey__System_Func_UTOuter_System_Collections_Generic_System_Collections_Generic_IEnumerable_UTInner__UTResult__System_Collections_Generic_IEqualityComparer_UTKey_(UTOuter.get_type_handle(), UTInner.get_type_handle(), UTKey.get_type_handle(), UTResult.get_type_handle(), &__thrown, outer.get_handle(), inner.get_handle(), outerKeySelector.get_handle(), innerKeySelector.get_handle(), resultSelector.get_handle(), nil);
+        let __return = System_Linq_Enumerable_System_Collections_Generic_IEnumerable_UTResult___GroupJoin_4__6__System_Collections_Generic_IEnumerable_UTOuter__System_Collections_Generic_IEnumerable_UTInner__System_Func_UTOuter_UTKey__System_Func_UTInner_UTKey__System_Func_UTOuter_System_Collections_Generic_System_Collections_Generic_IEnumerable_UTInner__UTResult__System_Collections_Generic_IEqualityComparer_UTKey_(UTOuter.get_type_handle(), UTInner.get_type_handle(), UTKey.get_type_handle(), UTResult.get_type_handle(), &__thrown, outer.get_handle(), inner.get_handle(), outerKeySelector.get_handle(), innerKeySelector.get_handle(), resultSelector.get_handle(), (comparer?.get_handle()));
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
@@ -1130,7 +1220,7 @@ public struct Enumerable {
         }
     }
     // delegate closure overload
-    public static func GroupJoin<UTOuter : SGBridgeGenericValue,UTInner : SGBridgeGenericValue,UTKey : SGBridgeGenericValue,UTResult : SGBridgeGenericValue>(outer : dotnet.System.Collections.Generic.IEnumerable_1<UTOuter>, inner : dotnet.System.Collections.Generic.IEnumerable_1<UTInner>, outerKeySelector : @escaping (UTOuter) throws -> UTKey, innerKeySelector : @escaping (UTInner) throws -> UTKey, resultSelector : @escaping (UTOuter, dotnet.System.Collections.Generic.IEnumerable_1<UTInner>) throws -> UTResult, comparer : dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>) throws -> dotnet.System.Collections.Generic.IEnumerable_1<UTResult> {
+    public static func GroupJoin<UTOuter : SGBridgeGenericValue,UTInner : SGBridgeGenericValue,UTKey : SGBridgeGenericValue,UTResult : SGBridgeGenericValue>(outer : dotnet.System.Collections.Generic.IEnumerable_1<UTOuter>, inner : dotnet.System.Collections.Generic.IEnumerable_1<UTInner>, outerKeySelector : @escaping (UTOuter) throws -> UTKey, innerKeySelector : @escaping (UTInner) throws -> UTKey, resultSelector : @escaping (UTOuter, dotnet.System.Collections.Generic.IEnumerable_1<UTInner>) throws -> UTResult, comparer : Optional<dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>>) throws -> dotnet.System.Collections.Generic.IEnumerable_1<UTResult> {
         let del_outerKeySelector = try dotnet.System.Func_2<UTOuter,UTKey>(outerKeySelector);
         let del_innerKeySelector = try dotnet.System.Func_2<UTInner,UTKey>(innerKeySelector);
         let del_resultSelector = try dotnet.System.Func_3<UTOuter,dotnet.System.Collections.Generic.IEnumerable_1<UTInner>,UTResult>(resultSelector);
@@ -1138,6 +1228,15 @@ public struct Enumerable {
     }
     // System.Collections.Generic.IEnumerable<TSource> IntersectBy<TSource, TKey>(System.Collections.Generic.IEnumerable<TSource>, System.Collections.Generic.IEnumerable<TKey>, System.Func<TSource,TKey>)
 // docid: M:System.Linq.Enumerable.IntersectBy``2(System.Collections.Generic.IEnumerable{``0},System.Collections.Generic.IEnumerable{``1},System.Func{``0,``1})
+    /**
+    Produces the set intersection of two sequences according to a specified key selector function.
+
+    - Parameter first: An  whose distinct elements that also appear in  will be returned.
+    - Parameter second: An  whose distinct elements that also appear in the first sequence will be returned.
+    - Parameter keySelector: A function to extract the key for each element.
+    - Returns: A sequence that contains the elements that form the set intersection of two sequences.
+
+    */
     public static func IntersectBy<UTSource : SGBridgeGenericValue,UTKey : SGBridgeGenericValue>(first : dotnet.System.Collections.Generic.IEnumerable_1<UTSource>, second : dotnet.System.Collections.Generic.IEnumerable_1<UTKey>, keySelector : dotnet.System.Func_2<UTSource,UTKey>) throws -> dotnet.System.Collections.Generic.IEnumerable_1<UTSource> {
         var __thrown : NullableHandle = nil;
         let __return = System_Linq_Enumerable_System_Collections_Generic_IEnumerable_UTSource___IntersectBy_2__3__System_Collections_Generic_IEnumerable_UTSource__System_Collections_Generic_IEnumerable_UTKey__System_Func_UTSource_UTKey_(UTSource.get_type_handle(), UTKey.get_type_handle(), &__thrown, first.get_handle(), second.get_handle(), keySelector.get_handle());
@@ -1154,9 +1253,19 @@ public struct Enumerable {
     }
     // System.Collections.Generic.IEnumerable<TSource> IntersectBy<TSource, TKey>(System.Collections.Generic.IEnumerable<TSource>, System.Collections.Generic.IEnumerable<TKey>, System.Func<TSource,TKey>, System.Collections.Generic.IEqualityComparer<TKey>)
 // docid: M:System.Linq.Enumerable.IntersectBy``2(System.Collections.Generic.IEnumerable{``0},System.Collections.Generic.IEnumerable{``1},System.Func{``0,``1},System.Collections.Generic.IEqualityComparer{``1})
-    public static func IntersectBy<UTSource : SGBridgeGenericValue,UTKey : SGBridgeGenericValue>(first : dotnet.System.Collections.Generic.IEnumerable_1<UTSource>, second : dotnet.System.Collections.Generic.IEnumerable_1<UTKey>, keySelector : dotnet.System.Func_2<UTSource,UTKey>, comparer : dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>) throws -> dotnet.System.Collections.Generic.IEnumerable_1<UTSource> {
+    /**
+    Produces the set intersection of two sequences according to a specified key selector function.
+
+    - Parameter first: An  whose distinct elements that also appear in  will be returned.
+    - Parameter second: An  whose distinct elements that also appear in the first sequence will be returned.
+    - Parameter keySelector: A function to extract the key for each element.
+    - Parameter comparer: An  to compare keys.
+    - Returns: A sequence that contains the elements that form the set intersection of two sequences.
+
+    */
+    public static func IntersectBy<UTSource : SGBridgeGenericValue,UTKey : SGBridgeGenericValue>(first : dotnet.System.Collections.Generic.IEnumerable_1<UTSource>, second : dotnet.System.Collections.Generic.IEnumerable_1<UTKey>, keySelector : dotnet.System.Func_2<UTSource,UTKey>, comparer : Optional<dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>>) throws -> dotnet.System.Collections.Generic.IEnumerable_1<UTSource> {
         var __thrown : NullableHandle = nil;
-        let __return = System_Linq_Enumerable_System_Collections_Generic_IEnumerable_UTSource___IntersectBy_2__4__System_Collections_Generic_IEnumerable_UTSource__System_Collections_Generic_IEnumerable_UTKey__System_Func_UTSource_UTKey__System_Collections_Generic_IEqualityComparer_UTKey_(UTSource.get_type_handle(), UTKey.get_type_handle(), &__thrown, first.get_handle(), second.get_handle(), keySelector.get_handle(), nil);
+        let __return = System_Linq_Enumerable_System_Collections_Generic_IEnumerable_UTSource___IntersectBy_2__4__System_Collections_Generic_IEnumerable_UTSource__System_Collections_Generic_IEnumerable_UTKey__System_Func_UTSource_UTKey__System_Collections_Generic_IEqualityComparer_UTKey_(UTSource.get_type_handle(), UTKey.get_type_handle(), &__thrown, first.get_handle(), second.get_handle(), keySelector.get_handle(), (comparer?.get_handle()));
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
@@ -1164,7 +1273,7 @@ public struct Enumerable {
         }
     }
     // delegate closure overload
-    public static func IntersectBy<UTSource : SGBridgeGenericValue,UTKey : SGBridgeGenericValue>(first : dotnet.System.Collections.Generic.IEnumerable_1<UTSource>, second : dotnet.System.Collections.Generic.IEnumerable_1<UTKey>, keySelector : @escaping (UTSource) throws -> UTKey, comparer : dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>) throws -> dotnet.System.Collections.Generic.IEnumerable_1<UTSource> {
+    public static func IntersectBy<UTSource : SGBridgeGenericValue,UTKey : SGBridgeGenericValue>(first : dotnet.System.Collections.Generic.IEnumerable_1<UTSource>, second : dotnet.System.Collections.Generic.IEnumerable_1<UTKey>, keySelector : @escaping (UTSource) throws -> UTKey, comparer : Optional<dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>>) throws -> dotnet.System.Collections.Generic.IEnumerable_1<UTSource> {
         let del_keySelector = try dotnet.System.Func_2<UTSource,UTKey>(keySelector);
         return try IntersectBy(first: first, second: second, keySelector: del_keySelector, comparer: comparer);
     }
@@ -1198,9 +1307,9 @@ public struct Enumerable {
     - Returns: A sequence that contains the elements that form the set intersection of two sequences.
 
     */
-    public static func Intersect<UTSource : SGBridgeGenericValue>(first : dotnet.System.Collections.Generic.IEnumerable_1<UTSource>, second : dotnet.System.Collections.Generic.IEnumerable_1<UTSource>, comparer : dotnet.System.Collections.Generic.IEqualityComparer_1<UTSource>) throws -> dotnet.System.Collections.Generic.IEnumerable_1<UTSource> {
+    public static func Intersect<UTSource : SGBridgeGenericValue>(first : dotnet.System.Collections.Generic.IEnumerable_1<UTSource>, second : dotnet.System.Collections.Generic.IEnumerable_1<UTSource>, comparer : Optional<dotnet.System.Collections.Generic.IEqualityComparer_1<UTSource>>) throws -> dotnet.System.Collections.Generic.IEnumerable_1<UTSource> {
         var __thrown : NullableHandle = nil;
-        let __return = System_Linq_Enumerable_System_Collections_Generic_IEnumerable_UTSource___Intersect_1__3__System_Collections_Generic_IEnumerable_UTSource__System_Collections_Generic_IEnumerable_UTSource__System_Collections_Generic_IEqualityComparer_UTSource_(UTSource.get_type_handle(), &__thrown, first.get_handle(), second.get_handle(), nil);
+        let __return = System_Linq_Enumerable_System_Collections_Generic_IEnumerable_UTSource___Intersect_1__3__System_Collections_Generic_IEnumerable_UTSource__System_Collections_Generic_IEnumerable_UTSource__System_Collections_Generic_IEqualityComparer_UTSource_(UTSource.get_type_handle(), &__thrown, first.get_handle(), second.get_handle(), (comparer?.get_handle()));
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
@@ -1250,9 +1359,9 @@ public struct Enumerable {
     - Returns: An  that has elements of type  that are obtained by performing an inner join on two sequences.
 
     */
-    public static func Join<UTOuter : SGBridgeGenericValue,UTInner : SGBridgeGenericValue,UTKey : SGBridgeGenericValue,UTResult : SGBridgeGenericValue>(outer : dotnet.System.Collections.Generic.IEnumerable_1<UTOuter>, inner : dotnet.System.Collections.Generic.IEnumerable_1<UTInner>, outerKeySelector : dotnet.System.Func_2<UTOuter,UTKey>, innerKeySelector : dotnet.System.Func_2<UTInner,UTKey>, resultSelector : dotnet.System.Func_3<UTOuter,UTInner,UTResult>, comparer : dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>) throws -> dotnet.System.Collections.Generic.IEnumerable_1<UTResult> {
+    public static func Join<UTOuter : SGBridgeGenericValue,UTInner : SGBridgeGenericValue,UTKey : SGBridgeGenericValue,UTResult : SGBridgeGenericValue>(outer : dotnet.System.Collections.Generic.IEnumerable_1<UTOuter>, inner : dotnet.System.Collections.Generic.IEnumerable_1<UTInner>, outerKeySelector : dotnet.System.Func_2<UTOuter,UTKey>, innerKeySelector : dotnet.System.Func_2<UTInner,UTKey>, resultSelector : dotnet.System.Func_3<UTOuter,UTInner,UTResult>, comparer : Optional<dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>>) throws -> dotnet.System.Collections.Generic.IEnumerable_1<UTResult> {
         var __thrown : NullableHandle = nil;
-        let __return = System_Linq_Enumerable_System_Collections_Generic_IEnumerable_UTResult___Join_4__6__System_Collections_Generic_IEnumerable_UTOuter__System_Collections_Generic_IEnumerable_UTInner__System_Func_UTOuter_UTKey__System_Func_UTInner_UTKey__System_Func_UTOuter_UTInner_UTResult__System_Collections_Generic_IEqualityComparer_UTKey_(UTOuter.get_type_handle(), UTInner.get_type_handle(), UTKey.get_type_handle(), UTResult.get_type_handle(), &__thrown, outer.get_handle(), inner.get_handle(), outerKeySelector.get_handle(), innerKeySelector.get_handle(), resultSelector.get_handle(), nil);
+        let __return = System_Linq_Enumerable_System_Collections_Generic_IEnumerable_UTResult___Join_4__6__System_Collections_Generic_IEnumerable_UTOuter__System_Collections_Generic_IEnumerable_UTInner__System_Func_UTOuter_UTKey__System_Func_UTInner_UTKey__System_Func_UTOuter_UTInner_UTResult__System_Collections_Generic_IEqualityComparer_UTKey_(UTOuter.get_type_handle(), UTInner.get_type_handle(), UTKey.get_type_handle(), UTResult.get_type_handle(), &__thrown, outer.get_handle(), inner.get_handle(), outerKeySelector.get_handle(), innerKeySelector.get_handle(), resultSelector.get_handle(), (comparer?.get_handle()));
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
@@ -1260,7 +1369,7 @@ public struct Enumerable {
         }
     }
     // delegate closure overload
-    public static func Join<UTOuter : SGBridgeGenericValue,UTInner : SGBridgeGenericValue,UTKey : SGBridgeGenericValue,UTResult : SGBridgeGenericValue>(outer : dotnet.System.Collections.Generic.IEnumerable_1<UTOuter>, inner : dotnet.System.Collections.Generic.IEnumerable_1<UTInner>, outerKeySelector : @escaping (UTOuter) throws -> UTKey, innerKeySelector : @escaping (UTInner) throws -> UTKey, resultSelector : @escaping (UTOuter, UTInner) throws -> UTResult, comparer : dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>) throws -> dotnet.System.Collections.Generic.IEnumerable_1<UTResult> {
+    public static func Join<UTOuter : SGBridgeGenericValue,UTInner : SGBridgeGenericValue,UTKey : SGBridgeGenericValue,UTResult : SGBridgeGenericValue>(outer : dotnet.System.Collections.Generic.IEnumerable_1<UTOuter>, inner : dotnet.System.Collections.Generic.IEnumerable_1<UTInner>, outerKeySelector : @escaping (UTOuter) throws -> UTKey, innerKeySelector : @escaping (UTInner) throws -> UTKey, resultSelector : @escaping (UTOuter, UTInner) throws -> UTResult, comparer : Optional<dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>>) throws -> dotnet.System.Collections.Generic.IEnumerable_1<UTResult> {
         let del_outerKeySelector = try dotnet.System.Func_2<UTOuter,UTKey>(outerKeySelector);
         let del_innerKeySelector = try dotnet.System.Func_2<UTInner,UTKey>(innerKeySelector);
         let del_resultSelector = try dotnet.System.Func_3<UTOuter,UTInner,UTResult>(resultSelector);
@@ -1287,6 +1396,15 @@ public struct Enumerable {
     }
     // TSource LastOrDefault<TSource>(System.Collections.Generic.IEnumerable<TSource>, TSource)
 // docid: M:System.Linq.Enumerable.LastOrDefault``1(System.Collections.Generic.IEnumerable{``0},``0)
+    /**
+    Returns the last element of a sequence, or a default value if the sequence contains no elements.
+
+    - Parameter source: An  to return the last element of.
+    - Parameter defaultValue: The default value to return if the sequence is empty.
+    - Returns: 
+         if the source sequence is empty; otherwise, the last element in the .
+
+    */
     public static func LastOrDefault<UTSource : SGBridgeGenericValue>(source : dotnet.System.Collections.Generic.IEnumerable_1<UTSource>, defaultValue : UTSource) throws -> UTSource {
         var __thrown : NullableHandle = nil;
         let __return = System_Linq_Enumerable_UTSource__LastOrDefault_1__2__System_Collections_Generic_IEnumerable_UTSource__UTSource(UTSource.get_type_handle(), &__thrown, source.get_handle(), defaultValue.to_gval());
@@ -1323,6 +1441,16 @@ public struct Enumerable {
     }
     // TSource LastOrDefault<TSource>(System.Collections.Generic.IEnumerable<TSource>, System.Func<TSource,bool>, TSource)
 // docid: M:System.Linq.Enumerable.LastOrDefault``1(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.Boolean},``0)
+    /**
+    Returns the last element of a sequence that satisfies a condition or a default value if no such element is found.
+
+    - Parameter source: An  to return an element from.
+    - Parameter predicate: A function to test each element for a condition.
+    - Parameter defaultValue: The default value to return if the sequence is empty.
+    - Returns: 
+         if the sequence is empty or if no elements pass the test in the predicate function; otherwise, the last element that passes the test in the predicate function.
+
+    */
     public static func LastOrDefault<UTSource : SGBridgeGenericValue>(source : dotnet.System.Collections.Generic.IEnumerable_1<UTSource>, predicate : dotnet.System.Func_2<UTSource,Bool>, defaultValue : UTSource) throws -> UTSource {
         var __thrown : NullableHandle = nil;
         let __return = System_Linq_Enumerable_UTSource__LastOrDefault_1__3__System_Collections_Generic_IEnumerable_UTSource__System_Func_UTSource_bool__UTSource(UTSource.get_type_handle(), &__thrown, source.get_handle(), predicate.get_handle(), defaultValue.to_gval());
@@ -1493,6 +1621,11 @@ public struct Enumerable {
         return __return;
         }
     }
+// TODO COPE (parm closedgeneric of nullable): System.Nullable<System.Decimal> Max(System.Collections.Generic.IEnumerable<System.Nullable<System.Decimal>>)
+// TODO COPE (parm closedgeneric of nullable): System.Nullable<System.Double> Max(System.Collections.Generic.IEnumerable<System.Nullable<System.Double>>)
+// TODO COPE (parm closedgeneric of nullable): System.Nullable<System.Int32> Max(System.Collections.Generic.IEnumerable<System.Nullable<System.Int32>>)
+// TODO COPE (parm closedgeneric of nullable): System.Nullable<System.Int64> Max(System.Collections.Generic.IEnumerable<System.Nullable<System.Int64>>)
+// TODO COPE (parm closedgeneric of nullable): System.Nullable<System.Single> Max(System.Collections.Generic.IEnumerable<System.Nullable<System.Single>>)
     // System.Single Max(System.Collections.Generic.IEnumerable<System.Single>)
 // docid: M:System.Linq.Enumerable.Max(System.Collections.Generic.IEnumerable{System.Single})
     /**
@@ -1513,6 +1646,14 @@ public struct Enumerable {
     }
     // TSource MaxBy<TSource, TKey>(System.Collections.Generic.IEnumerable<TSource>, System.Func<TSource,TKey>)
 // docid: M:System.Linq.Enumerable.MaxBy``2(System.Collections.Generic.IEnumerable{``0},System.Func{``0,``1})
+    /**
+    Returns the maximum value in a generic sequence according to a specified key selector function.
+
+    - Parameter source: A sequence of values to determine the maximum value of.
+    - Parameter keySelector: A function to extract the key for each element.
+    - Returns: The value with the maximum key in the sequence.
+
+    */
     public static func MaxBy<UTSource : SGBridgeGenericValue,UTKey : SGBridgeGenericValue>(source : dotnet.System.Collections.Generic.IEnumerable_1<UTSource>, keySelector : dotnet.System.Func_2<UTSource,UTKey>) throws -> UTSource {
         var __thrown : NullableHandle = nil;
         let __return = System_Linq_Enumerable_UTSource__MaxBy_2__2__System_Collections_Generic_IEnumerable_UTSource__System_Func_UTSource_UTKey_(UTSource.get_type_handle(), UTKey.get_type_handle(), &__thrown, source.get_handle(), keySelector.get_handle());
@@ -1529,9 +1670,18 @@ public struct Enumerable {
     }
     // TSource MaxBy<TSource, TKey>(System.Collections.Generic.IEnumerable<TSource>, System.Func<TSource,TKey>, System.Collections.Generic.IComparer<TKey>)
 // docid: M:System.Linq.Enumerable.MaxBy``2(System.Collections.Generic.IEnumerable{``0},System.Func{``0,``1},System.Collections.Generic.IComparer{``1})
-    public static func MaxBy<UTSource : SGBridgeGenericValue,UTKey : SGBridgeGenericValue>(source : dotnet.System.Collections.Generic.IEnumerable_1<UTSource>, keySelector : dotnet.System.Func_2<UTSource,UTKey>, comparer : dotnet.System.Collections.Generic.IComparer_1<UTKey>) throws -> UTSource {
+    /**
+    Returns the maximum value in a generic sequence according to a specified key selector function.
+
+    - Parameter source: A sequence of values to determine the maximum value of.
+    - Parameter keySelector: A function to extract the key for each element.
+    - Parameter comparer: The  to compare keys.
+    - Returns: The value with the maximum key in the sequence.
+
+    */
+    public static func MaxBy<UTSource : SGBridgeGenericValue,UTKey : SGBridgeGenericValue>(source : dotnet.System.Collections.Generic.IEnumerable_1<UTSource>, keySelector : dotnet.System.Func_2<UTSource,UTKey>, comparer : Optional<dotnet.System.Collections.Generic.IComparer_1<UTKey>>) throws -> UTSource {
         var __thrown : NullableHandle = nil;
-        let __return = System_Linq_Enumerable_UTSource__MaxBy_2__3__System_Collections_Generic_IEnumerable_UTSource__System_Func_UTSource_UTKey__System_Collections_Generic_IComparer_UTKey_(UTSource.get_type_handle(), UTKey.get_type_handle(), &__thrown, source.get_handle(), keySelector.get_handle(), nil);
+        let __return = System_Linq_Enumerable_UTSource__MaxBy_2__3__System_Collections_Generic_IEnumerable_UTSource__System_Func_UTSource_UTKey__System_Collections_Generic_IComparer_UTKey_(UTSource.get_type_handle(), UTKey.get_type_handle(), &__thrown, source.get_handle(), keySelector.get_handle(), (comparer?.get_handle()));
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
@@ -1539,7 +1689,7 @@ public struct Enumerable {
         }
     }
     // delegate closure overload
-    public static func MaxBy<UTSource : SGBridgeGenericValue,UTKey : SGBridgeGenericValue>(source : dotnet.System.Collections.Generic.IEnumerable_1<UTSource>, keySelector : @escaping (UTSource) throws -> UTKey, comparer : dotnet.System.Collections.Generic.IComparer_1<UTKey>) throws -> UTSource {
+    public static func MaxBy<UTSource : SGBridgeGenericValue,UTKey : SGBridgeGenericValue>(source : dotnet.System.Collections.Generic.IEnumerable_1<UTSource>, keySelector : @escaping (UTSource) throws -> UTKey, comparer : Optional<dotnet.System.Collections.Generic.IComparer_1<UTKey>>) throws -> UTSource {
         let del_keySelector = try dotnet.System.Func_2<UTSource,UTKey>(keySelector);
         return try MaxBy(source: source, keySelector: del_keySelector, comparer: comparer);
     }
@@ -1563,9 +1713,17 @@ public struct Enumerable {
     }
     // TSource Max<TSource>(System.Collections.Generic.IEnumerable<TSource>, System.Collections.Generic.IComparer<TSource>)
 // docid: M:System.Linq.Enumerable.Max``1(System.Collections.Generic.IEnumerable{``0},System.Collections.Generic.IComparer{``0})
-    public static func Max<UTSource : SGBridgeGenericValue>(source : dotnet.System.Collections.Generic.IEnumerable_1<UTSource>, comparer : dotnet.System.Collections.Generic.IComparer_1<UTSource>) throws -> UTSource {
+    /**
+    Returns the maximum value in a generic sequence.
+
+    - Parameter source: A sequence of values to determine the maximum value of.
+    - Parameter comparer: The  to compare values.
+    - Returns: The maximum value in the sequence.
+
+    */
+    public static func Max<UTSource : SGBridgeGenericValue>(source : dotnet.System.Collections.Generic.IEnumerable_1<UTSource>, comparer : Optional<dotnet.System.Collections.Generic.IComparer_1<UTSource>>) throws -> UTSource {
         var __thrown : NullableHandle = nil;
-        let __return = System_Linq_Enumerable_UTSource__Max_1__2__System_Collections_Generic_IEnumerable_UTSource__System_Collections_Generic_IComparer_UTSource_(UTSource.get_type_handle(), &__thrown, source.get_handle(), nil);
+        let __return = System_Linq_Enumerable_UTSource__Max_1__2__System_Collections_Generic_IEnumerable_UTSource__System_Collections_Generic_IComparer_UTSource_(UTSource.get_type_handle(), &__thrown, source.get_handle(), (comparer?.get_handle()));
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
@@ -1668,6 +1826,11 @@ public struct Enumerable {
         let del_selector = try dotnet.System.Func_2<UTSource,Swift.Int64>(selector);
         return try Max(source: source, selector: del_selector);
     }
+// TODO COPE (parm closedgeneric of nullable): System.Nullable<System.Decimal> Max<TSource>(System.Collections.Generic.IEnumerable<TSource>, System.Func<TSource,System.Nullable<System.Decimal>>)
+// TODO COPE (parm closedgeneric of nullable): System.Nullable<System.Double> Max<TSource>(System.Collections.Generic.IEnumerable<TSource>, System.Func<TSource,System.Nullable<System.Double>>)
+// TODO COPE (parm closedgeneric of nullable): System.Nullable<System.Int32> Max<TSource>(System.Collections.Generic.IEnumerable<TSource>, System.Func<TSource,System.Nullable<System.Int32>>)
+// TODO COPE (parm closedgeneric of nullable): System.Nullable<System.Int64> Max<TSource>(System.Collections.Generic.IEnumerable<TSource>, System.Func<TSource,System.Nullable<System.Int64>>)
+// TODO COPE (parm closedgeneric of nullable): System.Nullable<System.Single> Max<TSource>(System.Collections.Generic.IEnumerable<TSource>, System.Func<TSource,System.Nullable<System.Single>>)
     // System.Single Max<TSource>(System.Collections.Generic.IEnumerable<TSource>, System.Func<TSource,System.Single>)
 // docid: M:System.Linq.Enumerable.Max``1(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.Single})
     /**
@@ -1788,6 +1951,11 @@ public struct Enumerable {
         return __return;
         }
     }
+// TODO COPE (parm closedgeneric of nullable): System.Nullable<System.Decimal> Min(System.Collections.Generic.IEnumerable<System.Nullable<System.Decimal>>)
+// TODO COPE (parm closedgeneric of nullable): System.Nullable<System.Double> Min(System.Collections.Generic.IEnumerable<System.Nullable<System.Double>>)
+// TODO COPE (parm closedgeneric of nullable): System.Nullable<System.Int32> Min(System.Collections.Generic.IEnumerable<System.Nullable<System.Int32>>)
+// TODO COPE (parm closedgeneric of nullable): System.Nullable<System.Int64> Min(System.Collections.Generic.IEnumerable<System.Nullable<System.Int64>>)
+// TODO COPE (parm closedgeneric of nullable): System.Nullable<System.Single> Min(System.Collections.Generic.IEnumerable<System.Nullable<System.Single>>)
     // System.Single Min(System.Collections.Generic.IEnumerable<System.Single>)
 // docid: M:System.Linq.Enumerable.Min(System.Collections.Generic.IEnumerable{System.Single})
     /**
@@ -1808,6 +1976,14 @@ public struct Enumerable {
     }
     // TSource MinBy<TSource, TKey>(System.Collections.Generic.IEnumerable<TSource>, System.Func<TSource,TKey>)
 // docid: M:System.Linq.Enumerable.MinBy``2(System.Collections.Generic.IEnumerable{``0},System.Func{``0,``1})
+    /**
+    Returns the minimum value in a generic sequence according to a specified key selector function.
+
+    - Parameter source: A sequence of values to determine the minimum value of.
+    - Parameter keySelector: A function to extract the key for each element.
+    - Returns: The value with the minimum key in the sequence.
+
+    */
     public static func MinBy<UTSource : SGBridgeGenericValue,UTKey : SGBridgeGenericValue>(source : dotnet.System.Collections.Generic.IEnumerable_1<UTSource>, keySelector : dotnet.System.Func_2<UTSource,UTKey>) throws -> UTSource {
         var __thrown : NullableHandle = nil;
         let __return = System_Linq_Enumerable_UTSource__MinBy_2__2__System_Collections_Generic_IEnumerable_UTSource__System_Func_UTSource_UTKey_(UTSource.get_type_handle(), UTKey.get_type_handle(), &__thrown, source.get_handle(), keySelector.get_handle());
@@ -1824,9 +2000,18 @@ public struct Enumerable {
     }
     // TSource MinBy<TSource, TKey>(System.Collections.Generic.IEnumerable<TSource>, System.Func<TSource,TKey>, System.Collections.Generic.IComparer<TKey>)
 // docid: M:System.Linq.Enumerable.MinBy``2(System.Collections.Generic.IEnumerable{``0},System.Func{``0,``1},System.Collections.Generic.IComparer{``1})
-    public static func MinBy<UTSource : SGBridgeGenericValue,UTKey : SGBridgeGenericValue>(source : dotnet.System.Collections.Generic.IEnumerable_1<UTSource>, keySelector : dotnet.System.Func_2<UTSource,UTKey>, comparer : dotnet.System.Collections.Generic.IComparer_1<UTKey>) throws -> UTSource {
+    /**
+    Returns the minimum value in a generic sequence according to a specified key selector function.
+
+    - Parameter source: A sequence of values to determine the minimum value of.
+    - Parameter keySelector: A function to extract the key for each element.
+    - Parameter comparer: The  to compare keys.
+    - Returns: The value with the minimum key in the sequence.
+
+    */
+    public static func MinBy<UTSource : SGBridgeGenericValue,UTKey : SGBridgeGenericValue>(source : dotnet.System.Collections.Generic.IEnumerable_1<UTSource>, keySelector : dotnet.System.Func_2<UTSource,UTKey>, comparer : Optional<dotnet.System.Collections.Generic.IComparer_1<UTKey>>) throws -> UTSource {
         var __thrown : NullableHandle = nil;
-        let __return = System_Linq_Enumerable_UTSource__MinBy_2__3__System_Collections_Generic_IEnumerable_UTSource__System_Func_UTSource_UTKey__System_Collections_Generic_IComparer_UTKey_(UTSource.get_type_handle(), UTKey.get_type_handle(), &__thrown, source.get_handle(), keySelector.get_handle(), nil);
+        let __return = System_Linq_Enumerable_UTSource__MinBy_2__3__System_Collections_Generic_IEnumerable_UTSource__System_Func_UTSource_UTKey__System_Collections_Generic_IComparer_UTKey_(UTSource.get_type_handle(), UTKey.get_type_handle(), &__thrown, source.get_handle(), keySelector.get_handle(), (comparer?.get_handle()));
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
@@ -1834,7 +2019,7 @@ public struct Enumerable {
         }
     }
     // delegate closure overload
-    public static func MinBy<UTSource : SGBridgeGenericValue,UTKey : SGBridgeGenericValue>(source : dotnet.System.Collections.Generic.IEnumerable_1<UTSource>, keySelector : @escaping (UTSource) throws -> UTKey, comparer : dotnet.System.Collections.Generic.IComparer_1<UTKey>) throws -> UTSource {
+    public static func MinBy<UTSource : SGBridgeGenericValue,UTKey : SGBridgeGenericValue>(source : dotnet.System.Collections.Generic.IEnumerable_1<UTSource>, keySelector : @escaping (UTSource) throws -> UTKey, comparer : Optional<dotnet.System.Collections.Generic.IComparer_1<UTKey>>) throws -> UTSource {
         let del_keySelector = try dotnet.System.Func_2<UTSource,UTKey>(keySelector);
         return try MinBy(source: source, keySelector: del_keySelector, comparer: comparer);
     }
@@ -1858,9 +2043,17 @@ public struct Enumerable {
     }
     // TSource Min<TSource>(System.Collections.Generic.IEnumerable<TSource>, System.Collections.Generic.IComparer<TSource>)
 // docid: M:System.Linq.Enumerable.Min``1(System.Collections.Generic.IEnumerable{``0},System.Collections.Generic.IComparer{``0})
-    public static func Min<UTSource : SGBridgeGenericValue>(source : dotnet.System.Collections.Generic.IEnumerable_1<UTSource>, comparer : dotnet.System.Collections.Generic.IComparer_1<UTSource>) throws -> UTSource {
+    /**
+    Returns the minimum value in a generic sequence.
+
+    - Parameter source: A sequence of values to determine the minimum value of.
+    - Parameter comparer: The  to compare values.
+    - Returns: The minimum value in the sequence.
+
+    */
+    public static func Min<UTSource : SGBridgeGenericValue>(source : dotnet.System.Collections.Generic.IEnumerable_1<UTSource>, comparer : Optional<dotnet.System.Collections.Generic.IComparer_1<UTSource>>) throws -> UTSource {
         var __thrown : NullableHandle = nil;
-        let __return = System_Linq_Enumerable_UTSource__Min_1__2__System_Collections_Generic_IEnumerable_UTSource__System_Collections_Generic_IComparer_UTSource_(UTSource.get_type_handle(), &__thrown, source.get_handle(), nil);
+        let __return = System_Linq_Enumerable_UTSource__Min_1__2__System_Collections_Generic_IEnumerable_UTSource__System_Collections_Generic_IComparer_UTSource_(UTSource.get_type_handle(), &__thrown, source.get_handle(), (comparer?.get_handle()));
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
@@ -1963,6 +2156,11 @@ public struct Enumerable {
         let del_selector = try dotnet.System.Func_2<UTSource,Swift.Int64>(selector);
         return try Min(source: source, selector: del_selector);
     }
+// TODO COPE (parm closedgeneric of nullable): System.Nullable<System.Decimal> Min<TSource>(System.Collections.Generic.IEnumerable<TSource>, System.Func<TSource,System.Nullable<System.Decimal>>)
+// TODO COPE (parm closedgeneric of nullable): System.Nullable<System.Double> Min<TSource>(System.Collections.Generic.IEnumerable<TSource>, System.Func<TSource,System.Nullable<System.Double>>)
+// TODO COPE (parm closedgeneric of nullable): System.Nullable<System.Int32> Min<TSource>(System.Collections.Generic.IEnumerable<TSource>, System.Func<TSource,System.Nullable<System.Int32>>)
+// TODO COPE (parm closedgeneric of nullable): System.Nullable<System.Int64> Min<TSource>(System.Collections.Generic.IEnumerable<TSource>, System.Func<TSource,System.Nullable<System.Int64>>)
+// TODO COPE (parm closedgeneric of nullable): System.Nullable<System.Single> Min<TSource>(System.Collections.Generic.IEnumerable<TSource>, System.Func<TSource,System.Nullable<System.Single>>)
     // System.Single Min<TSource>(System.Collections.Generic.IEnumerable<TSource>, System.Func<TSource,System.Single>)
 // docid: M:System.Linq.Enumerable.Min``1(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.Single})
     /**
@@ -2047,9 +2245,9 @@ public struct Enumerable {
     - Returns: An  whose elements are sorted in descending order according to a key.
 
     */
-    public static func OrderByDescending<UTSource : SGBridgeGenericValue,UTKey : SGBridgeGenericValue>(source : dotnet.System.Collections.Generic.IEnumerable_1<UTSource>, keySelector : dotnet.System.Func_2<UTSource,UTKey>, comparer : dotnet.System.Collections.Generic.IComparer_1<UTKey>) throws -> dotnet.System.Linq.IOrderedEnumerable_1<UTSource> {
+    public static func OrderByDescending<UTSource : SGBridgeGenericValue,UTKey : SGBridgeGenericValue>(source : dotnet.System.Collections.Generic.IEnumerable_1<UTSource>, keySelector : dotnet.System.Func_2<UTSource,UTKey>, comparer : Optional<dotnet.System.Collections.Generic.IComparer_1<UTKey>>) throws -> dotnet.System.Linq.IOrderedEnumerable_1<UTSource> {
         var __thrown : NullableHandle = nil;
-        let __return = System_Linq_Enumerable_System_Linq_IOrderedEnumerable_UTSource___OrderByDescending_2__3__System_Collections_Generic_IEnumerable_UTSource__System_Func_UTSource_UTKey__System_Collections_Generic_IComparer_UTKey_(UTSource.get_type_handle(), UTKey.get_type_handle(), &__thrown, source.get_handle(), keySelector.get_handle(), nil);
+        let __return = System_Linq_Enumerable_System_Linq_IOrderedEnumerable_UTSource___OrderByDescending_2__3__System_Collections_Generic_IEnumerable_UTSource__System_Func_UTSource_UTKey__System_Collections_Generic_IComparer_UTKey_(UTSource.get_type_handle(), UTKey.get_type_handle(), &__thrown, source.get_handle(), keySelector.get_handle(), (comparer?.get_handle()));
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
@@ -2057,7 +2255,7 @@ public struct Enumerable {
         }
     }
     // delegate closure overload
-    public static func OrderByDescending<UTSource : SGBridgeGenericValue,UTKey : SGBridgeGenericValue>(source : dotnet.System.Collections.Generic.IEnumerable_1<UTSource>, keySelector : @escaping (UTSource) throws -> UTKey, comparer : dotnet.System.Collections.Generic.IComparer_1<UTKey>) throws -> dotnet.System.Linq.IOrderedEnumerable_1<UTSource> {
+    public static func OrderByDescending<UTSource : SGBridgeGenericValue,UTKey : SGBridgeGenericValue>(source : dotnet.System.Collections.Generic.IEnumerable_1<UTSource>, keySelector : @escaping (UTSource) throws -> UTKey, comparer : Optional<dotnet.System.Collections.Generic.IComparer_1<UTKey>>) throws -> dotnet.System.Linq.IOrderedEnumerable_1<UTSource> {
         let del_keySelector = try dotnet.System.Func_2<UTSource,UTKey>(keySelector);
         return try OrderByDescending(source: source, keySelector: del_keySelector, comparer: comparer);
     }
@@ -2096,9 +2294,9 @@ public struct Enumerable {
     - Returns: An  whose elements are sorted according to a key.
 
     */
-    public static func OrderBy<UTSource : SGBridgeGenericValue,UTKey : SGBridgeGenericValue>(source : dotnet.System.Collections.Generic.IEnumerable_1<UTSource>, keySelector : dotnet.System.Func_2<UTSource,UTKey>, comparer : dotnet.System.Collections.Generic.IComparer_1<UTKey>) throws -> dotnet.System.Linq.IOrderedEnumerable_1<UTSource> {
+    public static func OrderBy<UTSource : SGBridgeGenericValue,UTKey : SGBridgeGenericValue>(source : dotnet.System.Collections.Generic.IEnumerable_1<UTSource>, keySelector : dotnet.System.Func_2<UTSource,UTKey>, comparer : Optional<dotnet.System.Collections.Generic.IComparer_1<UTKey>>) throws -> dotnet.System.Linq.IOrderedEnumerable_1<UTSource> {
         var __thrown : NullableHandle = nil;
-        let __return = System_Linq_Enumerable_System_Linq_IOrderedEnumerable_UTSource___OrderBy_2__3__System_Collections_Generic_IEnumerable_UTSource__System_Func_UTSource_UTKey__System_Collections_Generic_IComparer_UTKey_(UTSource.get_type_handle(), UTKey.get_type_handle(), &__thrown, source.get_handle(), keySelector.get_handle(), nil);
+        let __return = System_Linq_Enumerable_System_Linq_IOrderedEnumerable_UTSource___OrderBy_2__3__System_Collections_Generic_IEnumerable_UTSource__System_Func_UTSource_UTKey__System_Collections_Generic_IComparer_UTKey_(UTSource.get_type_handle(), UTKey.get_type_handle(), &__thrown, source.get_handle(), keySelector.get_handle(), (comparer?.get_handle()));
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
@@ -2106,7 +2304,7 @@ public struct Enumerable {
         }
     }
     // delegate closure overload
-    public static func OrderBy<UTSource : SGBridgeGenericValue,UTKey : SGBridgeGenericValue>(source : dotnet.System.Collections.Generic.IEnumerable_1<UTSource>, keySelector : @escaping (UTSource) throws -> UTKey, comparer : dotnet.System.Collections.Generic.IComparer_1<UTKey>) throws -> dotnet.System.Linq.IOrderedEnumerable_1<UTSource> {
+    public static func OrderBy<UTSource : SGBridgeGenericValue,UTKey : SGBridgeGenericValue>(source : dotnet.System.Collections.Generic.IEnumerable_1<UTSource>, keySelector : @escaping (UTSource) throws -> UTKey, comparer : Optional<dotnet.System.Collections.Generic.IComparer_1<UTKey>>) throws -> dotnet.System.Linq.IOrderedEnumerable_1<UTSource> {
         let del_keySelector = try dotnet.System.Func_2<UTSource,UTKey>(keySelector);
         return try OrderBy(source: source, keySelector: del_keySelector, comparer: comparer);
     }
@@ -2365,9 +2563,9 @@ public struct Enumerable {
          if the two source sequences are of equal length and their corresponding elements compare equal according to ; otherwise, .
 
     */
-    public static func SequenceEqual<UTSource : SGBridgeGenericValue>(first : dotnet.System.Collections.Generic.IEnumerable_1<UTSource>, second : dotnet.System.Collections.Generic.IEnumerable_1<UTSource>, comparer : dotnet.System.Collections.Generic.IEqualityComparer_1<UTSource>) throws -> Bool {
+    public static func SequenceEqual<UTSource : SGBridgeGenericValue>(first : dotnet.System.Collections.Generic.IEnumerable_1<UTSource>, second : dotnet.System.Collections.Generic.IEnumerable_1<UTSource>, comparer : Optional<dotnet.System.Collections.Generic.IEqualityComparer_1<UTSource>>) throws -> Bool {
         var __thrown : NullableHandle = nil;
-        let __return = System_Linq_Enumerable_bool__SequenceEqual_1__3__System_Collections_Generic_IEnumerable_UTSource__System_Collections_Generic_IEnumerable_UTSource__System_Collections_Generic_IEqualityComparer_UTSource_(UTSource.get_type_handle(), &__thrown, first.get_handle(), second.get_handle(), nil);
+        let __return = System_Linq_Enumerable_bool__SequenceEqual_1__3__System_Collections_Generic_IEnumerable_UTSource__System_Collections_Generic_IEnumerable_UTSource__System_Collections_Generic_IEqualityComparer_UTSource_(UTSource.get_type_handle(), &__thrown, first.get_handle(), second.get_handle(), (comparer?.get_handle()));
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
@@ -2394,6 +2592,14 @@ public struct Enumerable {
     }
     // TSource SingleOrDefault<TSource>(System.Collections.Generic.IEnumerable<TSource>, TSource)
 // docid: M:System.Linq.Enumerable.SingleOrDefault``1(System.Collections.Generic.IEnumerable{``0},``0)
+    /**
+    Returns the only element of a sequence, or a default value if the sequence is empty; this method throws an exception if there is more than one element in the sequence.
+
+    - Parameter source: An  to return the single element of.
+    - Parameter defaultValue: The default value to return if the sequence is empty.
+    - Returns: The single element of the input sequence, or  if the sequence contains no elements.
+
+    */
     public static func SingleOrDefault<UTSource : SGBridgeGenericValue>(source : dotnet.System.Collections.Generic.IEnumerable_1<UTSource>, defaultValue : UTSource) throws -> UTSource {
         var __thrown : NullableHandle = nil;
         let __return = System_Linq_Enumerable_UTSource__SingleOrDefault_1__2__System_Collections_Generic_IEnumerable_UTSource__UTSource(UTSource.get_type_handle(), &__thrown, source.get_handle(), defaultValue.to_gval());
@@ -2429,6 +2635,15 @@ public struct Enumerable {
     }
     // TSource SingleOrDefault<TSource>(System.Collections.Generic.IEnumerable<TSource>, System.Func<TSource,bool>, TSource)
 // docid: M:System.Linq.Enumerable.SingleOrDefault``1(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.Boolean},``0)
+    /**
+    Returns the only element of a sequence that satisfies a specified condition or a default value if no such element exists; this method throws an exception if more than one element satisfies the condition.
+
+    - Parameter source: An  to return a single element from.
+    - Parameter predicate: A function to test an element for a condition.
+    - Parameter defaultValue: The default value to return if the sequence is empty.
+    - Returns: The single element of the input sequence that satisfies the condition, or  if no such element is found.
+
+    */
     public static func SingleOrDefault<UTSource : SGBridgeGenericValue>(source : dotnet.System.Collections.Generic.IEnumerable_1<UTSource>, predicate : dotnet.System.Func_2<UTSource,Bool>, defaultValue : UTSource) throws -> UTSource {
         var __thrown : NullableHandle = nil;
         let __return = System_Linq_Enumerable_UTSource__SingleOrDefault_1__3__System_Collections_Generic_IEnumerable_UTSource__System_Func_UTSource_bool__UTSource(UTSource.get_type_handle(), &__thrown, source.get_handle(), predicate.get_handle(), defaultValue.to_gval());
@@ -2643,6 +2858,11 @@ public struct Enumerable {
         return __return;
         }
     }
+// TODO COPE (parm closedgeneric of nullable): System.Nullable<System.Decimal> Sum(System.Collections.Generic.IEnumerable<System.Nullable<System.Decimal>>)
+// TODO COPE (parm closedgeneric of nullable): System.Nullable<System.Double> Sum(System.Collections.Generic.IEnumerable<System.Nullable<System.Double>>)
+// TODO COPE (parm closedgeneric of nullable): System.Nullable<System.Int32> Sum(System.Collections.Generic.IEnumerable<System.Nullable<System.Int32>>)
+// TODO COPE (parm closedgeneric of nullable): System.Nullable<System.Int64> Sum(System.Collections.Generic.IEnumerable<System.Nullable<System.Int64>>)
+// TODO COPE (parm closedgeneric of nullable): System.Nullable<System.Single> Sum(System.Collections.Generic.IEnumerable<System.Nullable<System.Single>>)
     // System.Single Sum(System.Collections.Generic.IEnumerable<System.Single>)
 // docid: M:System.Linq.Enumerable.Sum(System.Collections.Generic.IEnumerable{System.Single})
     /**
@@ -2757,6 +2977,11 @@ public struct Enumerable {
         let del_selector = try dotnet.System.Func_2<UTSource,Swift.Int64>(selector);
         return try Sum(source: source, selector: del_selector);
     }
+// TODO COPE (parm closedgeneric of nullable): System.Nullable<System.Decimal> Sum<TSource>(System.Collections.Generic.IEnumerable<TSource>, System.Func<TSource,System.Nullable<System.Decimal>>)
+// TODO COPE (parm closedgeneric of nullable): System.Nullable<System.Double> Sum<TSource>(System.Collections.Generic.IEnumerable<TSource>, System.Func<TSource,System.Nullable<System.Double>>)
+// TODO COPE (parm closedgeneric of nullable): System.Nullable<System.Int32> Sum<TSource>(System.Collections.Generic.IEnumerable<TSource>, System.Func<TSource,System.Nullable<System.Int32>>)
+// TODO COPE (parm closedgeneric of nullable): System.Nullable<System.Int64> Sum<TSource>(System.Collections.Generic.IEnumerable<TSource>, System.Func<TSource,System.Nullable<System.Int64>>)
+// TODO COPE (parm closedgeneric of nullable): System.Nullable<System.Single> Sum<TSource>(System.Collections.Generic.IEnumerable<TSource>, System.Func<TSource,System.Nullable<System.Single>>)
     // System.Single Sum<TSource>(System.Collections.Generic.IEnumerable<TSource>, System.Func<TSource,System.Single>)
 // docid: M:System.Linq.Enumerable.Sum``1(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.Single})
     /**
@@ -2869,6 +3094,14 @@ public struct Enumerable {
     }
     // System.Collections.Generic.IEnumerable<TSource> Take<TSource>(System.Collections.Generic.IEnumerable<TSource>, System.Range)
 // docid: M:System.Linq.Enumerable.Take``1(System.Collections.Generic.IEnumerable{``0},System.Range)
+    /**
+    Returns a specified range of contiguous elements from a sequence.
+
+    - Parameter source: The sequence to return elements from.
+    - Parameter range: The range of elements to return, which has start and end indexes either from the start or the end.
+    - Returns: An  that contains the specified  of elements from the  sequence.
+
+    */
     public static func Take<UTSource : SGBridgeGenericValue>(source : dotnet.System.Collections.Generic.IEnumerable_1<UTSource>, range : dotnet.System.Range) throws -> dotnet.System.Collections.Generic.IEnumerable_1<UTSource> {
         var __thrown : NullableHandle = nil;
         let __return = System_Linq_Enumerable_System_Collections_Generic_IEnumerable_UTSource___Take_1__2__System_Collections_Generic_IEnumerable_UTSource__Range(UTSource.get_type_handle(), &__thrown, source.get_handle(), range.get_handle());
@@ -2913,9 +3146,9 @@ public struct Enumerable {
     - Returns: An  whose elements are sorted in descending order according to a key.
 
     */
-    public static func ThenByDescending<UTSource : SGBridgeGenericValue,UTKey : SGBridgeGenericValue>(source : dotnet.System.Linq.IOrderedEnumerable_1<UTSource>, keySelector : dotnet.System.Func_2<UTSource,UTKey>, comparer : dotnet.System.Collections.Generic.IComparer_1<UTKey>) throws -> dotnet.System.Linq.IOrderedEnumerable_1<UTSource> {
+    public static func ThenByDescending<UTSource : SGBridgeGenericValue,UTKey : SGBridgeGenericValue>(source : dotnet.System.Linq.IOrderedEnumerable_1<UTSource>, keySelector : dotnet.System.Func_2<UTSource,UTKey>, comparer : Optional<dotnet.System.Collections.Generic.IComparer_1<UTKey>>) throws -> dotnet.System.Linq.IOrderedEnumerable_1<UTSource> {
         var __thrown : NullableHandle = nil;
-        let __return = System_Linq_Enumerable_System_Linq_IOrderedEnumerable_UTSource___ThenByDescending_2__3__System_Linq_IOrderedEnumerable_UTSource__System_Func_UTSource_UTKey__System_Collections_Generic_IComparer_UTKey_(UTSource.get_type_handle(), UTKey.get_type_handle(), &__thrown, source.get_handle(), keySelector.get_handle(), nil);
+        let __return = System_Linq_Enumerable_System_Linq_IOrderedEnumerable_UTSource___ThenByDescending_2__3__System_Linq_IOrderedEnumerable_UTSource__System_Func_UTSource_UTKey__System_Collections_Generic_IComparer_UTKey_(UTSource.get_type_handle(), UTKey.get_type_handle(), &__thrown, source.get_handle(), keySelector.get_handle(), (comparer?.get_handle()));
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
@@ -2923,7 +3156,7 @@ public struct Enumerable {
         }
     }
     // delegate closure overload
-    public static func ThenByDescending<UTSource : SGBridgeGenericValue,UTKey : SGBridgeGenericValue>(source : dotnet.System.Linq.IOrderedEnumerable_1<UTSource>, keySelector : @escaping (UTSource) throws -> UTKey, comparer : dotnet.System.Collections.Generic.IComparer_1<UTKey>) throws -> dotnet.System.Linq.IOrderedEnumerable_1<UTSource> {
+    public static func ThenByDescending<UTSource : SGBridgeGenericValue,UTKey : SGBridgeGenericValue>(source : dotnet.System.Linq.IOrderedEnumerable_1<UTSource>, keySelector : @escaping (UTSource) throws -> UTKey, comparer : Optional<dotnet.System.Collections.Generic.IComparer_1<UTKey>>) throws -> dotnet.System.Linq.IOrderedEnumerable_1<UTSource> {
         let del_keySelector = try dotnet.System.Func_2<UTSource,UTKey>(keySelector);
         return try ThenByDescending(source: source, keySelector: del_keySelector, comparer: comparer);
     }
@@ -2962,9 +3195,9 @@ public struct Enumerable {
     - Returns: An  whose elements are sorted according to a key.
 
     */
-    public static func ThenBy<UTSource : SGBridgeGenericValue,UTKey : SGBridgeGenericValue>(source : dotnet.System.Linq.IOrderedEnumerable_1<UTSource>, keySelector : dotnet.System.Func_2<UTSource,UTKey>, comparer : dotnet.System.Collections.Generic.IComparer_1<UTKey>) throws -> dotnet.System.Linq.IOrderedEnumerable_1<UTSource> {
+    public static func ThenBy<UTSource : SGBridgeGenericValue,UTKey : SGBridgeGenericValue>(source : dotnet.System.Linq.IOrderedEnumerable_1<UTSource>, keySelector : dotnet.System.Func_2<UTSource,UTKey>, comparer : Optional<dotnet.System.Collections.Generic.IComparer_1<UTKey>>) throws -> dotnet.System.Linq.IOrderedEnumerable_1<UTSource> {
         var __thrown : NullableHandle = nil;
-        let __return = System_Linq_Enumerable_System_Linq_IOrderedEnumerable_UTSource___ThenBy_2__3__System_Linq_IOrderedEnumerable_UTSource__System_Func_UTSource_UTKey__System_Collections_Generic_IComparer_UTKey_(UTSource.get_type_handle(), UTKey.get_type_handle(), &__thrown, source.get_handle(), keySelector.get_handle(), nil);
+        let __return = System_Linq_Enumerable_System_Linq_IOrderedEnumerable_UTSource___ThenBy_2__3__System_Linq_IOrderedEnumerable_UTSource__System_Func_UTSource_UTKey__System_Collections_Generic_IComparer_UTKey_(UTSource.get_type_handle(), UTKey.get_type_handle(), &__thrown, source.get_handle(), keySelector.get_handle(), (comparer?.get_handle()));
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
@@ -2972,7 +3205,7 @@ public struct Enumerable {
         }
     }
     // delegate closure overload
-    public static func ThenBy<UTSource : SGBridgeGenericValue,UTKey : SGBridgeGenericValue>(source : dotnet.System.Linq.IOrderedEnumerable_1<UTSource>, keySelector : @escaping (UTSource) throws -> UTKey, comparer : dotnet.System.Collections.Generic.IComparer_1<UTKey>) throws -> dotnet.System.Linq.IOrderedEnumerable_1<UTSource> {
+    public static func ThenBy<UTSource : SGBridgeGenericValue,UTKey : SGBridgeGenericValue>(source : dotnet.System.Linq.IOrderedEnumerable_1<UTSource>, keySelector : @escaping (UTSource) throws -> UTKey, comparer : Optional<dotnet.System.Collections.Generic.IComparer_1<UTKey>>) throws -> dotnet.System.Linq.IOrderedEnumerable_1<UTSource> {
         let del_keySelector = try dotnet.System.Func_2<UTSource,UTKey>(keySelector);
         return try ThenBy(source: source, keySelector: del_keySelector, comparer: comparer);
     }
@@ -3029,9 +3262,9 @@ public struct Enumerable {
     - Returns: A  that contains keys and values. The values within each group are in the same order as in .
 
     */
-    public static func ToDictionary<UTSource : SGBridgeGenericValue,UTKey : SGBridgeGenericValue>(source : dotnet.System.Collections.Generic.IEnumerable_1<UTSource>, keySelector : dotnet.System.Func_2<UTSource,UTKey>, comparer : dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>) throws -> dotnet.System.Collections.Generic.Dictionary_2<UTKey,UTSource> {
+    public static func ToDictionary<UTSource : SGBridgeGenericValue,UTKey : SGBridgeGenericValue>(source : dotnet.System.Collections.Generic.IEnumerable_1<UTSource>, keySelector : dotnet.System.Func_2<UTSource,UTKey>, comparer : Optional<dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>>) throws -> dotnet.System.Collections.Generic.Dictionary_2<UTKey,UTSource> {
         var __thrown : NullableHandle = nil;
-        let __return = System_Linq_Enumerable_System_Collections_Generic_Dictionary_UTKey_UTSource___ToDictionary_2__3__System_Collections_Generic_IEnumerable_UTSource__System_Func_UTSource_UTKey__System_Collections_Generic_IEqualityComparer_UTKey_(UTSource.get_type_handle(), UTKey.get_type_handle(), &__thrown, source.get_handle(), keySelector.get_handle(), nil);
+        let __return = System_Linq_Enumerable_System_Collections_Generic_Dictionary_UTKey_UTSource___ToDictionary_2__3__System_Collections_Generic_IEnumerable_UTSource__System_Func_UTSource_UTKey__System_Collections_Generic_IEqualityComparer_UTKey_(UTSource.get_type_handle(), UTKey.get_type_handle(), &__thrown, source.get_handle(), keySelector.get_handle(), (comparer?.get_handle()));
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
@@ -3039,7 +3272,7 @@ public struct Enumerable {
         }
     }
     // delegate closure overload
-    public static func ToDictionary<UTSource : SGBridgeGenericValue,UTKey : SGBridgeGenericValue>(source : dotnet.System.Collections.Generic.IEnumerable_1<UTSource>, keySelector : @escaping (UTSource) throws -> UTKey, comparer : dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>) throws -> dotnet.System.Collections.Generic.Dictionary_2<UTKey,UTSource> {
+    public static func ToDictionary<UTSource : SGBridgeGenericValue,UTKey : SGBridgeGenericValue>(source : dotnet.System.Collections.Generic.IEnumerable_1<UTSource>, keySelector : @escaping (UTSource) throws -> UTKey, comparer : Optional<dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>>) throws -> dotnet.System.Collections.Generic.Dictionary_2<UTKey,UTSource> {
         let del_keySelector = try dotnet.System.Func_2<UTSource,UTKey>(keySelector);
         return try ToDictionary(source: source, keySelector: del_keySelector, comparer: comparer);
     }
@@ -3081,9 +3314,9 @@ public struct Enumerable {
     - Returns: A  that contains values of type  selected from the input sequence.
 
     */
-    public static func ToDictionary<UTSource : SGBridgeGenericValue,UTKey : SGBridgeGenericValue,UTElement : SGBridgeGenericValue>(source : dotnet.System.Collections.Generic.IEnumerable_1<UTSource>, keySelector : dotnet.System.Func_2<UTSource,UTKey>, elementSelector : dotnet.System.Func_2<UTSource,UTElement>, comparer : dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>) throws -> dotnet.System.Collections.Generic.Dictionary_2<UTKey,UTElement> {
+    public static func ToDictionary<UTSource : SGBridgeGenericValue,UTKey : SGBridgeGenericValue,UTElement : SGBridgeGenericValue>(source : dotnet.System.Collections.Generic.IEnumerable_1<UTSource>, keySelector : dotnet.System.Func_2<UTSource,UTKey>, elementSelector : dotnet.System.Func_2<UTSource,UTElement>, comparer : Optional<dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>>) throws -> dotnet.System.Collections.Generic.Dictionary_2<UTKey,UTElement> {
         var __thrown : NullableHandle = nil;
-        let __return = System_Linq_Enumerable_System_Collections_Generic_Dictionary_UTKey_UTElement___ToDictionary_3__4__System_Collections_Generic_IEnumerable_UTSource__System_Func_UTSource_UTKey__System_Func_UTSource_UTElement__System_Collections_Generic_IEqualityComparer_UTKey_(UTSource.get_type_handle(), UTKey.get_type_handle(), UTElement.get_type_handle(), &__thrown, source.get_handle(), keySelector.get_handle(), elementSelector.get_handle(), nil);
+        let __return = System_Linq_Enumerable_System_Collections_Generic_Dictionary_UTKey_UTElement___ToDictionary_3__4__System_Collections_Generic_IEnumerable_UTSource__System_Func_UTSource_UTKey__System_Func_UTSource_UTElement__System_Collections_Generic_IEqualityComparer_UTKey_(UTSource.get_type_handle(), UTKey.get_type_handle(), UTElement.get_type_handle(), &__thrown, source.get_handle(), keySelector.get_handle(), elementSelector.get_handle(), (comparer?.get_handle()));
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
@@ -3091,7 +3324,7 @@ public struct Enumerable {
         }
     }
     // delegate closure overload
-    public static func ToDictionary<UTSource : SGBridgeGenericValue,UTKey : SGBridgeGenericValue,UTElement : SGBridgeGenericValue>(source : dotnet.System.Collections.Generic.IEnumerable_1<UTSource>, keySelector : @escaping (UTSource) throws -> UTKey, elementSelector : @escaping (UTSource) throws -> UTElement, comparer : dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>) throws -> dotnet.System.Collections.Generic.Dictionary_2<UTKey,UTElement> {
+    public static func ToDictionary<UTSource : SGBridgeGenericValue,UTKey : SGBridgeGenericValue,UTElement : SGBridgeGenericValue>(source : dotnet.System.Collections.Generic.IEnumerable_1<UTSource>, keySelector : @escaping (UTSource) throws -> UTKey, elementSelector : @escaping (UTSource) throws -> UTElement, comparer : Optional<dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>>) throws -> dotnet.System.Collections.Generic.Dictionary_2<UTKey,UTElement> {
         let del_keySelector = try dotnet.System.Func_2<UTSource,UTKey>(keySelector);
         let del_elementSelector = try dotnet.System.Func_2<UTSource,UTElement>(elementSelector);
         return try ToDictionary(source: source, keySelector: del_keySelector, elementSelector: del_elementSelector, comparer: comparer);
@@ -3102,7 +3335,7 @@ public struct Enumerable {
     Creates a  from an .
 
     - Parameter source: An  to create a  from.
-    - Returns: A  that contains values of type TSource selected from the input sequence.
+    - Returns: A  that contains values of type  selected from the input sequence.
 
     */
     public static func ToHashSet<UTSource : SGBridgeGenericValue>(source : dotnet.System.Collections.Generic.IEnumerable_1<UTSource>) throws -> dotnet.System.Collections.Generic.HashSet_1<UTSource> {
@@ -3124,9 +3357,9 @@ public struct Enumerable {
     - Returns: A  that contains values of type  selected from the input sequence.
 
     */
-    public static func ToHashSet<UTSource : SGBridgeGenericValue>(source : dotnet.System.Collections.Generic.IEnumerable_1<UTSource>, comparer : dotnet.System.Collections.Generic.IEqualityComparer_1<UTSource>) throws -> dotnet.System.Collections.Generic.HashSet_1<UTSource> {
+    public static func ToHashSet<UTSource : SGBridgeGenericValue>(source : dotnet.System.Collections.Generic.IEnumerable_1<UTSource>, comparer : Optional<dotnet.System.Collections.Generic.IEqualityComparer_1<UTSource>>) throws -> dotnet.System.Collections.Generic.HashSet_1<UTSource> {
         var __thrown : NullableHandle = nil;
-        let __return = System_Linq_Enumerable_System_Collections_Generic_HashSet_UTSource___ToHashSet_1__2__System_Collections_Generic_IEnumerable_UTSource__System_Collections_Generic_IEqualityComparer_UTSource_(UTSource.get_type_handle(), &__thrown, source.get_handle(), nil);
+        let __return = System_Linq_Enumerable_System_Collections_Generic_HashSet_UTSource___ToHashSet_1__2__System_Collections_Generic_IEnumerable_UTSource__System_Collections_Generic_IEqualityComparer_UTSource_(UTSource.get_type_handle(), &__thrown, source.get_handle(), (comparer?.get_handle()));
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
@@ -3186,9 +3419,9 @@ public struct Enumerable {
     - Returns: A  that contains keys and values. The values within each group are in the same order as in .
 
     */
-    public static func ToLookup<UTSource : SGBridgeGenericValue,UTKey : SGBridgeGenericValue>(source : dotnet.System.Collections.Generic.IEnumerable_1<UTSource>, keySelector : dotnet.System.Func_2<UTSource,UTKey>, comparer : dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>) throws -> dotnet.System.Linq.ILookup_2<UTKey,UTSource> {
+    public static func ToLookup<UTSource : SGBridgeGenericValue,UTKey : SGBridgeGenericValue>(source : dotnet.System.Collections.Generic.IEnumerable_1<UTSource>, keySelector : dotnet.System.Func_2<UTSource,UTKey>, comparer : Optional<dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>>) throws -> dotnet.System.Linq.ILookup_2<UTKey,UTSource> {
         var __thrown : NullableHandle = nil;
-        let __return = System_Linq_Enumerable_System_Linq_ILookup_UTKey_UTSource___ToLookup_2__3__System_Collections_Generic_IEnumerable_UTSource__System_Func_UTSource_UTKey__System_Collections_Generic_IEqualityComparer_UTKey_(UTSource.get_type_handle(), UTKey.get_type_handle(), &__thrown, source.get_handle(), keySelector.get_handle(), nil);
+        let __return = System_Linq_Enumerable_System_Linq_ILookup_UTKey_UTSource___ToLookup_2__3__System_Collections_Generic_IEnumerable_UTSource__System_Func_UTSource_UTKey__System_Collections_Generic_IEqualityComparer_UTKey_(UTSource.get_type_handle(), UTKey.get_type_handle(), &__thrown, source.get_handle(), keySelector.get_handle(), (comparer?.get_handle()));
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
@@ -3196,7 +3429,7 @@ public struct Enumerable {
         }
     }
     // delegate closure overload
-    public static func ToLookup<UTSource : SGBridgeGenericValue,UTKey : SGBridgeGenericValue>(source : dotnet.System.Collections.Generic.IEnumerable_1<UTSource>, keySelector : @escaping (UTSource) throws -> UTKey, comparer : dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>) throws -> dotnet.System.Linq.ILookup_2<UTKey,UTSource> {
+    public static func ToLookup<UTSource : SGBridgeGenericValue,UTKey : SGBridgeGenericValue>(source : dotnet.System.Collections.Generic.IEnumerable_1<UTSource>, keySelector : @escaping (UTSource) throws -> UTKey, comparer : Optional<dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>>) throws -> dotnet.System.Linq.ILookup_2<UTKey,UTSource> {
         let del_keySelector = try dotnet.System.Func_2<UTSource,UTKey>(keySelector);
         return try ToLookup(source: source, keySelector: del_keySelector, comparer: comparer);
     }
@@ -3238,9 +3471,9 @@ public struct Enumerable {
     - Returns: A  that contains values of type  selected from the input sequence.
 
     */
-    public static func ToLookup<UTSource : SGBridgeGenericValue,UTKey : SGBridgeGenericValue,UTElement : SGBridgeGenericValue>(source : dotnet.System.Collections.Generic.IEnumerable_1<UTSource>, keySelector : dotnet.System.Func_2<UTSource,UTKey>, elementSelector : dotnet.System.Func_2<UTSource,UTElement>, comparer : dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>) throws -> dotnet.System.Linq.ILookup_2<UTKey,UTElement> {
+    public static func ToLookup<UTSource : SGBridgeGenericValue,UTKey : SGBridgeGenericValue,UTElement : SGBridgeGenericValue>(source : dotnet.System.Collections.Generic.IEnumerable_1<UTSource>, keySelector : dotnet.System.Func_2<UTSource,UTKey>, elementSelector : dotnet.System.Func_2<UTSource,UTElement>, comparer : Optional<dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>>) throws -> dotnet.System.Linq.ILookup_2<UTKey,UTElement> {
         var __thrown : NullableHandle = nil;
-        let __return = System_Linq_Enumerable_System_Linq_ILookup_UTKey_UTElement___ToLookup_3__4__System_Collections_Generic_IEnumerable_UTSource__System_Func_UTSource_UTKey__System_Func_UTSource_UTElement__System_Collections_Generic_IEqualityComparer_UTKey_(UTSource.get_type_handle(), UTKey.get_type_handle(), UTElement.get_type_handle(), &__thrown, source.get_handle(), keySelector.get_handle(), elementSelector.get_handle(), nil);
+        let __return = System_Linq_Enumerable_System_Linq_ILookup_UTKey_UTElement___ToLookup_3__4__System_Collections_Generic_IEnumerable_UTSource__System_Func_UTSource_UTKey__System_Func_UTSource_UTElement__System_Collections_Generic_IEqualityComparer_UTKey_(UTSource.get_type_handle(), UTKey.get_type_handle(), UTElement.get_type_handle(), &__thrown, source.get_handle(), keySelector.get_handle(), elementSelector.get_handle(), (comparer?.get_handle()));
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
@@ -3248,13 +3481,22 @@ public struct Enumerable {
         }
     }
     // delegate closure overload
-    public static func ToLookup<UTSource : SGBridgeGenericValue,UTKey : SGBridgeGenericValue,UTElement : SGBridgeGenericValue>(source : dotnet.System.Collections.Generic.IEnumerable_1<UTSource>, keySelector : @escaping (UTSource) throws -> UTKey, elementSelector : @escaping (UTSource) throws -> UTElement, comparer : dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>) throws -> dotnet.System.Linq.ILookup_2<UTKey,UTElement> {
+    public static func ToLookup<UTSource : SGBridgeGenericValue,UTKey : SGBridgeGenericValue,UTElement : SGBridgeGenericValue>(source : dotnet.System.Collections.Generic.IEnumerable_1<UTSource>, keySelector : @escaping (UTSource) throws -> UTKey, elementSelector : @escaping (UTSource) throws -> UTElement, comparer : Optional<dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>>) throws -> dotnet.System.Linq.ILookup_2<UTKey,UTElement> {
         let del_keySelector = try dotnet.System.Func_2<UTSource,UTKey>(keySelector);
         let del_elementSelector = try dotnet.System.Func_2<UTSource,UTElement>(elementSelector);
         return try ToLookup(source: source, keySelector: del_keySelector, elementSelector: del_elementSelector, comparer: comparer);
     }
     // bool TryGetNonEnumeratedCount<TSource>(System.Collections.Generic.IEnumerable<TSource>, ref System.Int32)
 // docid: M:System.Linq.Enumerable.TryGetNonEnumeratedCount``1(System.Collections.Generic.IEnumerable{``0},System.Int32@)
+    /**
+    Attempts to determine the number of elements in a sequence without forcing an enumeration.
+
+    - Parameter source: A sequence that contains elements to be counted.
+    - Parameter count: When this method returns, contains the count of  if successful, or zero if the method failed to determine the count.
+    - Returns: 
+         if the count of  can be determined without enumeration; otherwise, .
+
+    */
     public static func TryGetNonEnumeratedCount<UTSource : SGBridgeGenericValue>(source : dotnet.System.Collections.Generic.IEnumerable_1<UTSource>, count : inout Swift.Int32) throws -> Bool {
         var __thrown : NullableHandle = nil;
             var _tmp_out_count = count;
@@ -3269,6 +3511,15 @@ public struct Enumerable {
     }
     // System.Collections.Generic.IEnumerable<TSource> UnionBy<TSource, TKey>(System.Collections.Generic.IEnumerable<TSource>, System.Collections.Generic.IEnumerable<TSource>, System.Func<TSource,TKey>)
 // docid: M:System.Linq.Enumerable.UnionBy``2(System.Collections.Generic.IEnumerable{``0},System.Collections.Generic.IEnumerable{``0},System.Func{``0,``1})
+    /**
+    Produces the set union of two sequences according to a specified key selector function.
+
+    - Parameter first: An  whose distinct elements form the first set for the union.
+    - Parameter second: An  whose distinct elements form the second set for the union.
+    - Parameter keySelector: A function to extract the key for each element.
+    - Returns: An  that contains the elements from both input sequences, excluding duplicates.
+
+    */
     public static func UnionBy<UTSource : SGBridgeGenericValue,UTKey : SGBridgeGenericValue>(first : dotnet.System.Collections.Generic.IEnumerable_1<UTSource>, second : dotnet.System.Collections.Generic.IEnumerable_1<UTSource>, keySelector : dotnet.System.Func_2<UTSource,UTKey>) throws -> dotnet.System.Collections.Generic.IEnumerable_1<UTSource> {
         var __thrown : NullableHandle = nil;
         let __return = System_Linq_Enumerable_System_Collections_Generic_IEnumerable_UTSource___UnionBy_2__3__System_Collections_Generic_IEnumerable_UTSource__System_Collections_Generic_IEnumerable_UTSource__System_Func_UTSource_UTKey_(UTSource.get_type_handle(), UTKey.get_type_handle(), &__thrown, first.get_handle(), second.get_handle(), keySelector.get_handle());
@@ -3285,9 +3536,19 @@ public struct Enumerable {
     }
     // System.Collections.Generic.IEnumerable<TSource> UnionBy<TSource, TKey>(System.Collections.Generic.IEnumerable<TSource>, System.Collections.Generic.IEnumerable<TSource>, System.Func<TSource,TKey>, System.Collections.Generic.IEqualityComparer<TKey>)
 // docid: M:System.Linq.Enumerable.UnionBy``2(System.Collections.Generic.IEnumerable{``0},System.Collections.Generic.IEnumerable{``0},System.Func{``0,``1},System.Collections.Generic.IEqualityComparer{``1})
-    public static func UnionBy<UTSource : SGBridgeGenericValue,UTKey : SGBridgeGenericValue>(first : dotnet.System.Collections.Generic.IEnumerable_1<UTSource>, second : dotnet.System.Collections.Generic.IEnumerable_1<UTSource>, keySelector : dotnet.System.Func_2<UTSource,UTKey>, comparer : dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>) throws -> dotnet.System.Collections.Generic.IEnumerable_1<UTSource> {
+    /**
+    Produces the set union of two sequences according to a specified key selector function.
+
+    - Parameter first: An  whose distinct elements form the first set for the union.
+    - Parameter second: An  whose distinct elements form the second set for the union.
+    - Parameter keySelector: A function to extract the key for each element.
+    - Parameter comparer: The  to compare values.
+    - Returns: An  that contains the elements from both input sequences, excluding duplicates.
+
+    */
+    public static func UnionBy<UTSource : SGBridgeGenericValue,UTKey : SGBridgeGenericValue>(first : dotnet.System.Collections.Generic.IEnumerable_1<UTSource>, second : dotnet.System.Collections.Generic.IEnumerable_1<UTSource>, keySelector : dotnet.System.Func_2<UTSource,UTKey>, comparer : Optional<dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>>) throws -> dotnet.System.Collections.Generic.IEnumerable_1<UTSource> {
         var __thrown : NullableHandle = nil;
-        let __return = System_Linq_Enumerable_System_Collections_Generic_IEnumerable_UTSource___UnionBy_2__4__System_Collections_Generic_IEnumerable_UTSource__System_Collections_Generic_IEnumerable_UTSource__System_Func_UTSource_UTKey__System_Collections_Generic_IEqualityComparer_UTKey_(UTSource.get_type_handle(), UTKey.get_type_handle(), &__thrown, first.get_handle(), second.get_handle(), keySelector.get_handle(), nil);
+        let __return = System_Linq_Enumerable_System_Collections_Generic_IEnumerable_UTSource___UnionBy_2__4__System_Collections_Generic_IEnumerable_UTSource__System_Collections_Generic_IEnumerable_UTSource__System_Func_UTSource_UTKey__System_Collections_Generic_IEqualityComparer_UTKey_(UTSource.get_type_handle(), UTKey.get_type_handle(), &__thrown, first.get_handle(), second.get_handle(), keySelector.get_handle(), (comparer?.get_handle()));
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
@@ -3295,7 +3556,7 @@ public struct Enumerable {
         }
     }
     // delegate closure overload
-    public static func UnionBy<UTSource : SGBridgeGenericValue,UTKey : SGBridgeGenericValue>(first : dotnet.System.Collections.Generic.IEnumerable_1<UTSource>, second : dotnet.System.Collections.Generic.IEnumerable_1<UTSource>, keySelector : @escaping (UTSource) throws -> UTKey, comparer : dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>) throws -> dotnet.System.Collections.Generic.IEnumerable_1<UTSource> {
+    public static func UnionBy<UTSource : SGBridgeGenericValue,UTKey : SGBridgeGenericValue>(first : dotnet.System.Collections.Generic.IEnumerable_1<UTSource>, second : dotnet.System.Collections.Generic.IEnumerable_1<UTSource>, keySelector : @escaping (UTSource) throws -> UTKey, comparer : Optional<dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>>) throws -> dotnet.System.Collections.Generic.IEnumerable_1<UTSource> {
         let del_keySelector = try dotnet.System.Func_2<UTSource,UTKey>(keySelector);
         return try UnionBy(first: first, second: second, keySelector: del_keySelector, comparer: comparer);
     }
@@ -3329,9 +3590,9 @@ public struct Enumerable {
     - Returns: An  that contains the elements from both input sequences, excluding duplicates.
 
     */
-    public static func Union<UTSource : SGBridgeGenericValue>(first : dotnet.System.Collections.Generic.IEnumerable_1<UTSource>, second : dotnet.System.Collections.Generic.IEnumerable_1<UTSource>, comparer : dotnet.System.Collections.Generic.IEqualityComparer_1<UTSource>) throws -> dotnet.System.Collections.Generic.IEnumerable_1<UTSource> {
+    public static func Union<UTSource : SGBridgeGenericValue>(first : dotnet.System.Collections.Generic.IEnumerable_1<UTSource>, second : dotnet.System.Collections.Generic.IEnumerable_1<UTSource>, comparer : Optional<dotnet.System.Collections.Generic.IEqualityComparer_1<UTSource>>) throws -> dotnet.System.Collections.Generic.IEnumerable_1<UTSource> {
         var __thrown : NullableHandle = nil;
-        let __return = System_Linq_Enumerable_System_Collections_Generic_IEnumerable_UTSource___Union_1__3__System_Collections_Generic_IEnumerable_UTSource__System_Collections_Generic_IEnumerable_UTSource__System_Collections_Generic_IEqualityComparer_UTSource_(UTSource.get_type_handle(), &__thrown, first.get_handle(), second.get_handle(), nil);
+        let __return = System_Linq_Enumerable_System_Collections_Generic_IEnumerable_UTSource___Union_1__3__System_Collections_Generic_IEnumerable_UTSource__System_Collections_Generic_IEnumerable_UTSource__System_Collections_Generic_IEqualityComparer_UTSource_(UTSource.get_type_handle(), &__thrown, first.get_handle(), second.get_handle(), (comparer?.get_handle()));
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
@@ -3407,6 +3668,15 @@ public struct Enumerable {
     }
     // System.Collections.Generic.IEnumerable<System.ValueTuple<TFirst,TSecond,TThird>> Zip<TFirst, TSecond, TThird>(System.Collections.Generic.IEnumerable<TFirst>, System.Collections.Generic.IEnumerable<TSecond>, System.Collections.Generic.IEnumerable<TThird>)
 // docid: M:System.Linq.Enumerable.Zip``3(System.Collections.Generic.IEnumerable{``0},System.Collections.Generic.IEnumerable{``1},System.Collections.Generic.IEnumerable{``2})
+    /**
+    Produces a sequence of tuples with elements from the three specified sequences.
+
+    - Parameter first: The first sequence to merge.
+    - Parameter second: The second sequence to merge.
+    - Parameter third: The third sequence to merge.
+    - Returns: A sequence of tuples with elements taken from the first, second, and third sequences, in that order.
+
+    */
     public static func Zip<UTFirst : SGBridgeGenericValue,UTSecond : SGBridgeGenericValue,UTThird : SGBridgeGenericValue>(first : dotnet.System.Collections.Generic.IEnumerable_1<UTFirst>, second : dotnet.System.Collections.Generic.IEnumerable_1<UTSecond>, third : dotnet.System.Collections.Generic.IEnumerable_1<UTThird>) throws -> dotnet.System.Collections.Generic.IEnumerable_1<dotnet.System.ValueTuple_3<UTFirst,UTSecond,UTThird>> {
         var __thrown : NullableHandle = nil;
         let __return = System_Linq_Enumerable_System_Collections_Generic_IEnumerable_System_System_ValueTuple_UTFirst_UTSecond_UTThird____Zip_3__3__System_Collections_Generic_IEnumerable_UTFirst__System_Collections_Generic_IEnumerable_UTSecond__System_Collections_Generic_IEnumerable_UTThird_(UTFirst.get_type_handle(), UTSecond.get_type_handle(), UTThird.get_type_handle(), &__thrown, first.get_handle(), second.get_handle(), third.get_handle());
@@ -3460,6 +3730,9 @@ open class IGrouping_2<TKey : SGBridgeGenericValue,TElement : SGBridgeGenericVal
     open class func get_type_handle() -> TypeHandle {
         return System_Linq_IGrouping_2_get_type_handle(TKey.get_type_handle(),TElement.get_type_handle());
     }
+    open class func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     let h : NonnullHandle;
     public func to_gval() -> GVal { return GVal(Swift.Int(bitPattern: self.h)); }
     public func dup_gval() -> GVal { return GVal(Swift.Int(bitPattern: __copy_handle(self.h))); }
@@ -3498,6 +3771,9 @@ open class ILookup_2<TKey : SGBridgeGenericValue,TElement : SGBridgeGenericValue
     public typealias T_IEnumerable_1 = dotnet.System.Linq.IGrouping_2<TKey,TElement>;
     open class func get_type_handle() -> TypeHandle {
         return System_Linq_ILookup_2_get_type_handle(TKey.get_type_handle(),TElement.get_type_handle());
+    }
+    open class func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     let h : NonnullHandle;
     public func to_gval() -> GVal { return GVal(Swift.Int(bitPattern: self.h)); }
@@ -3540,9 +3816,6 @@ open class ILookup_2<TKey : SGBridgeGenericValue,TElement : SGBridgeGenericValue
     }
     // [IsSpecialName] System.Collections.Generic.IEnumerable<TElement> get_Item(TKey)
 // docid: M:System.Linq.ILookup`2.get_Item(`0)
-//BEGIN method_is_override
-//matches_1
-//matches :
     open func get_Item(key : TKey) throws -> dotnet.System.Collections.Generic.IEnumerable_1<TElement> {
         var __thrown : NullableHandle = nil;
         let __return = System_Linq_ILookup_2_System_Collections_Generic_IEnumerable_TElement___get_Item_0__1__TKey(TKey.get_type_handle(), TElement.get_type_handle(), &__thrown, self.get_handle(), key.to_gval());
@@ -3570,6 +3843,9 @@ open class IOrderedEnumerable_1<TElement : SGBridgeGenericValue>
     open class func get_type_handle() -> TypeHandle {
         return System_Linq_IOrderedEnumerable_1_get_type_handle(TElement.get_type_handle());
     }
+    open class func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     let h : NonnullHandle;
     public func to_gval() -> GVal { return GVal(Swift.Int(bitPattern: self.h)); }
     public func dup_gval() -> GVal { return GVal(Swift.Int(bitPattern: __copy_handle(self.h))); }
@@ -3591,9 +3867,9 @@ open class IOrderedEnumerable_1<TElement : SGBridgeGenericValue>
     - Returns: An  whose elements are sorted according to a key.
 
     */
-    open func CreateOrderedEnumerable<UTKey : SGBridgeGenericValue>(keySelector : dotnet.System.Func_2<TElement,UTKey>, comparer : dotnet.System.Collections.Generic.IComparer_1<UTKey>, descending : Bool) throws -> dotnet.System.Linq.IOrderedEnumerable_1<TElement> {
+    open func CreateOrderedEnumerable<UTKey : SGBridgeGenericValue>(keySelector : dotnet.System.Func_2<TElement,UTKey>, comparer : Optional<dotnet.System.Collections.Generic.IComparer_1<UTKey>>, descending : Bool) throws -> dotnet.System.Linq.IOrderedEnumerable_1<TElement> {
         var __thrown : NullableHandle = nil;
-        let __return = System_Linq_IOrderedEnumerable_1_System_Linq_IOrderedEnumerable_TElement___CreateOrderedEnumerable_1__3__System_Func_TElement_UTKey__System_Collections_Generic_IComparer_UTKey__bool(TElement.get_type_handle(), UTKey.get_type_handle(), &__thrown, self.get_handle(), keySelector.get_handle(), nil, Swift.Int32(descending ? 1 : 0));
+        let __return = System_Linq_IOrderedEnumerable_1_System_Linq_IOrderedEnumerable_TElement___CreateOrderedEnumerable_1__3__System_Func_TElement_UTKey__System_Collections_Generic_IComparer_UTKey__bool(TElement.get_type_handle(), UTKey.get_type_handle(), &__thrown, self.get_handle(), keySelector.get_handle(), (comparer?.get_handle()), Swift.Int32(descending ? 1 : 0));
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
@@ -3601,7 +3877,7 @@ open class IOrderedEnumerable_1<TElement : SGBridgeGenericValue>
         }
     }
     // delegate closure overload
-    open func CreateOrderedEnumerable<UTKey : SGBridgeGenericValue>(keySelector : @escaping (TElement) throws -> UTKey, comparer : dotnet.System.Collections.Generic.IComparer_1<UTKey>, descending : Bool) throws -> dotnet.System.Linq.IOrderedEnumerable_1<TElement> {
+    open func CreateOrderedEnumerable<UTKey : SGBridgeGenericValue>(keySelector : @escaping (TElement) throws -> UTKey, comparer : Optional<dotnet.System.Collections.Generic.IComparer_1<UTKey>>, descending : Bool) throws -> dotnet.System.Linq.IOrderedEnumerable_1<TElement> {
         let del_keySelector = try dotnet.System.Func_2<TElement,UTKey>(keySelector);
         return try CreateOrderedEnumerable(keySelector: del_keySelector, comparer: comparer, descending: descending);
     }
@@ -3620,6 +3896,9 @@ open class Lookup_2<TKey : SGBridgeGenericValue,TElement : SGBridgeGenericValue>
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Linq_Lookup_2_get_type_handle(TKey.get_type_handle(),TElement.get_type_handle());
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -3695,9 +3974,6 @@ open class Lookup_2<TKey : SGBridgeGenericValue,TElement : SGBridgeGenericValue>
     }
     // [IsSpecialName] System.Collections.Generic.IEnumerable<TElement> get_Item(TKey)
 // docid: M:System.Linq.Lookup`2.get_Item(`0)
-//BEGIN method_is_override
-//matches_1
-//matches :
     open /* method final */ func get_Item(key : TKey) throws -> dotnet.System.Collections.Generic.IEnumerable_1<TElement> {
         var __thrown : NullableHandle = nil;
         let __return = System_Linq_Lookup_2_System_Collections_Generic_IEnumerable_TElement___get_Item_0__1__TKey(TKey.get_type_handle(), TElement.get_type_handle(), &__thrown, self.get_handle(), key.to_gval());
@@ -3861,6 +4137,11 @@ extension dotnet.System.Collections.Generic.IEnumerable_1 {
     }
 }
 
+// TODO COPE (parm closedgeneric of nullable): System.Nullable<System.Decimal> Average(System.Collections.Generic.IEnumerable<System.Nullable<System.Decimal>>)
+// TODO COPE (parm closedgeneric of nullable): System.Nullable<System.Double> Average(System.Collections.Generic.IEnumerable<System.Nullable<System.Double>>)
+// TODO COPE (parm closedgeneric of nullable): System.Nullable<System.Double> Average(System.Collections.Generic.IEnumerable<System.Nullable<System.Int32>>)
+// TODO COPE (parm closedgeneric of nullable): System.Nullable<System.Double> Average(System.Collections.Generic.IEnumerable<System.Nullable<System.Int64>>)
+// TODO COPE (parm closedgeneric of nullable): System.Nullable<System.Single> Average(System.Collections.Generic.IEnumerable<System.Nullable<System.Single>>)
 // EXTENSION METHOD System.Single Average(System.Collections.Generic.IEnumerable<System.Single>)
 extension dotnet.System.Collections.Generic.IEnumerable_1 {
     public func Average() throws -> Swift.Float where T == Swift.Float {
@@ -3916,6 +4197,11 @@ extension dotnet.System.Collections.Generic.IEnumerable_1 {
     }
 }
 
+// TODO COPE (parm closedgeneric of nullable): System.Nullable<System.Decimal> Average<TSource>(System.Collections.Generic.IEnumerable<TSource>, System.Func<TSource,System.Nullable<System.Decimal>>)
+// TODO COPE (parm closedgeneric of nullable): System.Nullable<System.Double> Average<TSource>(System.Collections.Generic.IEnumerable<TSource>, System.Func<TSource,System.Nullable<System.Double>>)
+// TODO COPE (parm closedgeneric of nullable): System.Nullable<System.Double> Average<TSource>(System.Collections.Generic.IEnumerable<TSource>, System.Func<TSource,System.Nullable<System.Int32>>)
+// TODO COPE (parm closedgeneric of nullable): System.Nullable<System.Double> Average<TSource>(System.Collections.Generic.IEnumerable<TSource>, System.Func<TSource,System.Nullable<System.Int64>>)
+// TODO COPE (parm closedgeneric of nullable): System.Nullable<System.Single> Average<TSource>(System.Collections.Generic.IEnumerable<TSource>, System.Func<TSource,System.Nullable<System.Single>>)
 // EXTENSION METHOD System.Single Average<TSource>(System.Collections.Generic.IEnumerable<TSource>, System.Func<TSource,System.Single>)
 extension dotnet.System.Collections.Generic.IEnumerable_1 {
     public func Average(selector : dotnet.System.Func_2<T,Swift.Float>) throws -> Swift.Float {
@@ -3954,7 +4240,7 @@ extension dotnet.System.Collections.Generic.IEnumerable_1 {
 
 // EXTENSION METHOD bool Contains<TSource>(System.Collections.Generic.IEnumerable<TSource>, TSource, System.Collections.Generic.IEqualityComparer<TSource>)
 extension dotnet.System.Collections.Generic.IEnumerable_1 {
-    public func Contains(value : T, comparer : dotnet.System.Collections.Generic.IEqualityComparer_1<T>) throws -> Bool {
+    public func Contains(value : T, comparer : Optional<dotnet.System.Collections.Generic.IEqualityComparer_1<T>>) throws -> Bool {
         return try dotnet.System.Linq.Enumerable.Contains(source: self, value: value, comparer: comparer);
     }
 }
@@ -4006,11 +4292,11 @@ extension dotnet.System.Collections.Generic.IEnumerable_1 {
 
 // EXTENSION METHOD System.Collections.Generic.IEnumerable<TSource> DistinctBy<TSource, TKey>(System.Collections.Generic.IEnumerable<TSource>, System.Func<TSource,TKey>, System.Collections.Generic.IEqualityComparer<TKey>)
 extension dotnet.System.Collections.Generic.IEnumerable_1 {
-    public func DistinctBy<UTKey : SGBridgeGenericValue>(keySelector : dotnet.System.Func_2<T,UTKey>, comparer : dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>) throws -> dotnet.System.Collections.Generic.IEnumerable_1<T> {
+    public func DistinctBy<UTKey : SGBridgeGenericValue>(keySelector : dotnet.System.Func_2<T,UTKey>, comparer : Optional<dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>>) throws -> dotnet.System.Collections.Generic.IEnumerable_1<T> {
         return try dotnet.System.Linq.Enumerable.DistinctBy(source: self, keySelector: keySelector, comparer: comparer);
     }
     // delegate closure overload
-    public func DistinctBy<UTKey : SGBridgeGenericValue>(keySelector : @escaping (T) throws -> UTKey, comparer : dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>) throws -> dotnet.System.Collections.Generic.IEnumerable_1<T> {
+    public func DistinctBy<UTKey : SGBridgeGenericValue>(keySelector : @escaping (T) throws -> UTKey, comparer : Optional<dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>>) throws -> dotnet.System.Collections.Generic.IEnumerable_1<T> {
         let del_keySelector = try dotnet.System.Func_2<T,UTKey>(keySelector);
         return try dotnet.System.Linq.Enumerable.DistinctBy(source: self, keySelector: del_keySelector, comparer: comparer);
     }
@@ -4025,7 +4311,7 @@ extension dotnet.System.Collections.Generic.IEnumerable_1 {
 
 // EXTENSION METHOD System.Collections.Generic.IEnumerable<TSource> Distinct<TSource>(System.Collections.Generic.IEnumerable<TSource>, System.Collections.Generic.IEqualityComparer<TSource>)
 extension dotnet.System.Collections.Generic.IEnumerable_1 {
-    public func Distinct(comparer : dotnet.System.Collections.Generic.IEqualityComparer_1<T>) throws -> dotnet.System.Collections.Generic.IEnumerable_1<T> {
+    public func Distinct(comparer : Optional<dotnet.System.Collections.Generic.IEqualityComparer_1<T>>) throws -> dotnet.System.Collections.Generic.IEnumerable_1<T> {
         return try dotnet.System.Linq.Enumerable.Distinct(source: self, comparer: comparer);
     }
 }
@@ -4072,11 +4358,11 @@ extension dotnet.System.Collections.Generic.IEnumerable_1 {
 
 // EXTENSION METHOD System.Collections.Generic.IEnumerable<TSource> ExceptBy<TSource, TKey>(System.Collections.Generic.IEnumerable<TSource>, System.Collections.Generic.IEnumerable<TKey>, System.Func<TSource,TKey>, System.Collections.Generic.IEqualityComparer<TKey>)
 extension dotnet.System.Collections.Generic.IEnumerable_1 {
-    public func ExceptBy<UTKey : SGBridgeGenericValue>(second : dotnet.System.Collections.Generic.IEnumerable_1<UTKey>, keySelector : dotnet.System.Func_2<T,UTKey>, comparer : dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>) throws -> dotnet.System.Collections.Generic.IEnumerable_1<T> {
+    public func ExceptBy<UTKey : SGBridgeGenericValue>(second : dotnet.System.Collections.Generic.IEnumerable_1<UTKey>, keySelector : dotnet.System.Func_2<T,UTKey>, comparer : Optional<dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>>) throws -> dotnet.System.Collections.Generic.IEnumerable_1<T> {
         return try dotnet.System.Linq.Enumerable.ExceptBy(first: self, second: second, keySelector: keySelector, comparer: comparer);
     }
     // delegate closure overload
-    public func ExceptBy<UTKey : SGBridgeGenericValue>(second : dotnet.System.Collections.Generic.IEnumerable_1<UTKey>, keySelector : @escaping (T) throws -> UTKey, comparer : dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>) throws -> dotnet.System.Collections.Generic.IEnumerable_1<T> {
+    public func ExceptBy<UTKey : SGBridgeGenericValue>(second : dotnet.System.Collections.Generic.IEnumerable_1<UTKey>, keySelector : @escaping (T) throws -> UTKey, comparer : Optional<dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>>) throws -> dotnet.System.Collections.Generic.IEnumerable_1<T> {
         let del_keySelector = try dotnet.System.Func_2<T,UTKey>(keySelector);
         return try dotnet.System.Linq.Enumerable.ExceptBy(first: self, second: second, keySelector: del_keySelector, comparer: comparer);
     }
@@ -4091,7 +4377,7 @@ extension dotnet.System.Collections.Generic.IEnumerable_1 {
 
 // EXTENSION METHOD System.Collections.Generic.IEnumerable<TSource> Except<TSource>(System.Collections.Generic.IEnumerable<TSource>, System.Collections.Generic.IEnumerable<TSource>, System.Collections.Generic.IEqualityComparer<TSource>)
 extension dotnet.System.Collections.Generic.IEnumerable_1 {
-    public func Except(second : dotnet.System.Collections.Generic.IEnumerable_1<T>, comparer : dotnet.System.Collections.Generic.IEqualityComparer_1<T>) throws -> dotnet.System.Collections.Generic.IEnumerable_1<T> {
+    public func Except(second : dotnet.System.Collections.Generic.IEnumerable_1<T>, comparer : Optional<dotnet.System.Collections.Generic.IEqualityComparer_1<T>>) throws -> dotnet.System.Collections.Generic.IEnumerable_1<T> {
         return try dotnet.System.Linq.Enumerable.Except(first: self, second: second, comparer: comparer);
     }
 }
@@ -4167,11 +4453,11 @@ extension dotnet.System.Collections.Generic.IEnumerable_1 {
 
 // EXTENSION METHOD System.Collections.Generic.IEnumerable<System.Linq.IGrouping<TKey,TSource>> GroupBy<TSource, TKey>(System.Collections.Generic.IEnumerable<TSource>, System.Func<TSource,TKey>, System.Collections.Generic.IEqualityComparer<TKey>)
 extension dotnet.System.Collections.Generic.IEnumerable_1 {
-    public func GroupBy<UTKey : SGBridgeGenericValue>(keySelector : dotnet.System.Func_2<T,UTKey>, comparer : dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>) throws -> dotnet.System.Collections.Generic.IEnumerable_1<dotnet.System.Linq.IGrouping_2<UTKey,T>> {
+    public func GroupBy<UTKey : SGBridgeGenericValue>(keySelector : dotnet.System.Func_2<T,UTKey>, comparer : Optional<dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>>) throws -> dotnet.System.Collections.Generic.IEnumerable_1<dotnet.System.Linq.IGrouping_2<UTKey,T>> {
         return try dotnet.System.Linq.Enumerable.GroupBy(source: self, keySelector: keySelector, comparer: comparer);
     }
     // delegate closure overload
-    public func GroupBy<UTKey : SGBridgeGenericValue>(keySelector : @escaping (T) throws -> UTKey, comparer : dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>) throws -> dotnet.System.Collections.Generic.IEnumerable_1<dotnet.System.Linq.IGrouping_2<UTKey,T>> {
+    public func GroupBy<UTKey : SGBridgeGenericValue>(keySelector : @escaping (T) throws -> UTKey, comparer : Optional<dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>>) throws -> dotnet.System.Collections.Generic.IEnumerable_1<dotnet.System.Linq.IGrouping_2<UTKey,T>> {
         let del_keySelector = try dotnet.System.Func_2<T,UTKey>(keySelector);
         return try dotnet.System.Linq.Enumerable.GroupBy(source: self, keySelector: del_keySelector, comparer: comparer);
     }
@@ -4192,11 +4478,11 @@ extension dotnet.System.Collections.Generic.IEnumerable_1 {
 
 // EXTENSION METHOD System.Collections.Generic.IEnumerable<System.Linq.IGrouping<TKey,TElement>> GroupBy<TSource, TKey, TElement>(System.Collections.Generic.IEnumerable<TSource>, System.Func<TSource,TKey>, System.Func<TSource,TElement>, System.Collections.Generic.IEqualityComparer<TKey>)
 extension dotnet.System.Collections.Generic.IEnumerable_1 {
-    public func GroupBy<UTKey : SGBridgeGenericValue,UTElement : SGBridgeGenericValue>(keySelector : dotnet.System.Func_2<T,UTKey>, elementSelector : dotnet.System.Func_2<T,UTElement>, comparer : dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>) throws -> dotnet.System.Collections.Generic.IEnumerable_1<dotnet.System.Linq.IGrouping_2<UTKey,UTElement>> {
+    public func GroupBy<UTKey : SGBridgeGenericValue,UTElement : SGBridgeGenericValue>(keySelector : dotnet.System.Func_2<T,UTKey>, elementSelector : dotnet.System.Func_2<T,UTElement>, comparer : Optional<dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>>) throws -> dotnet.System.Collections.Generic.IEnumerable_1<dotnet.System.Linq.IGrouping_2<UTKey,UTElement>> {
         return try dotnet.System.Linq.Enumerable.GroupBy(source: self, keySelector: keySelector, elementSelector: elementSelector, comparer: comparer);
     }
     // delegate closure overload
-    public func GroupBy<UTKey : SGBridgeGenericValue,UTElement : SGBridgeGenericValue>(keySelector : @escaping (T) throws -> UTKey, elementSelector : @escaping (T) throws -> UTElement, comparer : dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>) throws -> dotnet.System.Collections.Generic.IEnumerable_1<dotnet.System.Linq.IGrouping_2<UTKey,UTElement>> {
+    public func GroupBy<UTKey : SGBridgeGenericValue,UTElement : SGBridgeGenericValue>(keySelector : @escaping (T) throws -> UTKey, elementSelector : @escaping (T) throws -> UTElement, comparer : Optional<dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>>) throws -> dotnet.System.Collections.Generic.IEnumerable_1<dotnet.System.Linq.IGrouping_2<UTKey,UTElement>> {
         let del_keySelector = try dotnet.System.Func_2<T,UTKey>(keySelector);
         let del_elementSelector = try dotnet.System.Func_2<T,UTElement>(elementSelector);
         return try dotnet.System.Linq.Enumerable.GroupBy(source: self, keySelector: del_keySelector, elementSelector: del_elementSelector, comparer: comparer);
@@ -4218,11 +4504,11 @@ extension dotnet.System.Collections.Generic.IEnumerable_1 {
 
 // EXTENSION METHOD System.Collections.Generic.IEnumerable<TResult> GroupBy<TSource, TKey, TResult>(System.Collections.Generic.IEnumerable<TSource>, System.Func<TSource,TKey>, System.Func<TKey,System.Collections.Generic.IEnumerable<TSource>,TResult>, System.Collections.Generic.IEqualityComparer<TKey>)
 extension dotnet.System.Collections.Generic.IEnumerable_1 {
-    public func GroupBy<UTKey : SGBridgeGenericValue,UTResult : SGBridgeGenericValue>(keySelector : dotnet.System.Func_2<T,UTKey>, resultSelector : dotnet.System.Func_3<UTKey,dotnet.System.Collections.Generic.IEnumerable_1<T>,UTResult>, comparer : dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>) throws -> dotnet.System.Collections.Generic.IEnumerable_1<UTResult> {
+    public func GroupBy<UTKey : SGBridgeGenericValue,UTResult : SGBridgeGenericValue>(keySelector : dotnet.System.Func_2<T,UTKey>, resultSelector : dotnet.System.Func_3<UTKey,dotnet.System.Collections.Generic.IEnumerable_1<T>,UTResult>, comparer : Optional<dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>>) throws -> dotnet.System.Collections.Generic.IEnumerable_1<UTResult> {
         return try dotnet.System.Linq.Enumerable.GroupBy(source: self, keySelector: keySelector, resultSelector: resultSelector, comparer: comparer);
     }
     // delegate closure overload
-    public func GroupBy<UTKey : SGBridgeGenericValue,UTResult : SGBridgeGenericValue>(keySelector : @escaping (T) throws -> UTKey, resultSelector : @escaping (UTKey, dotnet.System.Collections.Generic.IEnumerable_1<T>) throws -> UTResult, comparer : dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>) throws -> dotnet.System.Collections.Generic.IEnumerable_1<UTResult> {
+    public func GroupBy<UTKey : SGBridgeGenericValue,UTResult : SGBridgeGenericValue>(keySelector : @escaping (T) throws -> UTKey, resultSelector : @escaping (UTKey, dotnet.System.Collections.Generic.IEnumerable_1<T>) throws -> UTResult, comparer : Optional<dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>>) throws -> dotnet.System.Collections.Generic.IEnumerable_1<UTResult> {
         let del_keySelector = try dotnet.System.Func_2<T,UTKey>(keySelector);
         let del_resultSelector = try dotnet.System.Func_3<UTKey,dotnet.System.Collections.Generic.IEnumerable_1<T>,UTResult>(resultSelector);
         return try dotnet.System.Linq.Enumerable.GroupBy(source: self, keySelector: del_keySelector, resultSelector: del_resultSelector, comparer: comparer);
@@ -4245,11 +4531,11 @@ extension dotnet.System.Collections.Generic.IEnumerable_1 {
 
 // EXTENSION METHOD System.Collections.Generic.IEnumerable<TResult> GroupBy<TSource, TKey, TElement, TResult>(System.Collections.Generic.IEnumerable<TSource>, System.Func<TSource,TKey>, System.Func<TSource,TElement>, System.Func<TKey,System.Collections.Generic.IEnumerable<TElement>,TResult>, System.Collections.Generic.IEqualityComparer<TKey>)
 extension dotnet.System.Collections.Generic.IEnumerable_1 {
-    public func GroupBy<UTKey : SGBridgeGenericValue,UTElement : SGBridgeGenericValue,UTResult : SGBridgeGenericValue>(keySelector : dotnet.System.Func_2<T,UTKey>, elementSelector : dotnet.System.Func_2<T,UTElement>, resultSelector : dotnet.System.Func_3<UTKey,dotnet.System.Collections.Generic.IEnumerable_1<UTElement>,UTResult>, comparer : dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>) throws -> dotnet.System.Collections.Generic.IEnumerable_1<UTResult> {
+    public func GroupBy<UTKey : SGBridgeGenericValue,UTElement : SGBridgeGenericValue,UTResult : SGBridgeGenericValue>(keySelector : dotnet.System.Func_2<T,UTKey>, elementSelector : dotnet.System.Func_2<T,UTElement>, resultSelector : dotnet.System.Func_3<UTKey,dotnet.System.Collections.Generic.IEnumerable_1<UTElement>,UTResult>, comparer : Optional<dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>>) throws -> dotnet.System.Collections.Generic.IEnumerable_1<UTResult> {
         return try dotnet.System.Linq.Enumerable.GroupBy(source: self, keySelector: keySelector, elementSelector: elementSelector, resultSelector: resultSelector, comparer: comparer);
     }
     // delegate closure overload
-    public func GroupBy<UTKey : SGBridgeGenericValue,UTElement : SGBridgeGenericValue,UTResult : SGBridgeGenericValue>(keySelector : @escaping (T) throws -> UTKey, elementSelector : @escaping (T) throws -> UTElement, resultSelector : @escaping (UTKey, dotnet.System.Collections.Generic.IEnumerable_1<UTElement>) throws -> UTResult, comparer : dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>) throws -> dotnet.System.Collections.Generic.IEnumerable_1<UTResult> {
+    public func GroupBy<UTKey : SGBridgeGenericValue,UTElement : SGBridgeGenericValue,UTResult : SGBridgeGenericValue>(keySelector : @escaping (T) throws -> UTKey, elementSelector : @escaping (T) throws -> UTElement, resultSelector : @escaping (UTKey, dotnet.System.Collections.Generic.IEnumerable_1<UTElement>) throws -> UTResult, comparer : Optional<dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>>) throws -> dotnet.System.Collections.Generic.IEnumerable_1<UTResult> {
         let del_keySelector = try dotnet.System.Func_2<T,UTKey>(keySelector);
         let del_elementSelector = try dotnet.System.Func_2<T,UTElement>(elementSelector);
         let del_resultSelector = try dotnet.System.Func_3<UTKey,dotnet.System.Collections.Generic.IEnumerable_1<UTElement>,UTResult>(resultSelector);
@@ -4273,11 +4559,11 @@ extension dotnet.System.Collections.Generic.IEnumerable_1 {
 
 // EXTENSION METHOD System.Collections.Generic.IEnumerable<TResult> GroupJoin<TOuter, TInner, TKey, TResult>(System.Collections.Generic.IEnumerable<TOuter>, System.Collections.Generic.IEnumerable<TInner>, System.Func<TOuter,TKey>, System.Func<TInner,TKey>, System.Func<TOuter,System.Collections.Generic.IEnumerable<TInner>,TResult>, System.Collections.Generic.IEqualityComparer<TKey>)
 extension dotnet.System.Collections.Generic.IEnumerable_1 {
-    public func GroupJoin<UTInner : SGBridgeGenericValue,UTKey : SGBridgeGenericValue,UTResult : SGBridgeGenericValue>(inner : dotnet.System.Collections.Generic.IEnumerable_1<UTInner>, outerKeySelector : dotnet.System.Func_2<T,UTKey>, innerKeySelector : dotnet.System.Func_2<UTInner,UTKey>, resultSelector : dotnet.System.Func_3<T,dotnet.System.Collections.Generic.IEnumerable_1<UTInner>,UTResult>, comparer : dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>) throws -> dotnet.System.Collections.Generic.IEnumerable_1<UTResult> {
+    public func GroupJoin<UTInner : SGBridgeGenericValue,UTKey : SGBridgeGenericValue,UTResult : SGBridgeGenericValue>(inner : dotnet.System.Collections.Generic.IEnumerable_1<UTInner>, outerKeySelector : dotnet.System.Func_2<T,UTKey>, innerKeySelector : dotnet.System.Func_2<UTInner,UTKey>, resultSelector : dotnet.System.Func_3<T,dotnet.System.Collections.Generic.IEnumerable_1<UTInner>,UTResult>, comparer : Optional<dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>>) throws -> dotnet.System.Collections.Generic.IEnumerable_1<UTResult> {
         return try dotnet.System.Linq.Enumerable.GroupJoin(outer: self, inner: inner, outerKeySelector: outerKeySelector, innerKeySelector: innerKeySelector, resultSelector: resultSelector, comparer: comparer);
     }
     // delegate closure overload
-    public func GroupJoin<UTInner : SGBridgeGenericValue,UTKey : SGBridgeGenericValue,UTResult : SGBridgeGenericValue>(inner : dotnet.System.Collections.Generic.IEnumerable_1<UTInner>, outerKeySelector : @escaping (T) throws -> UTKey, innerKeySelector : @escaping (UTInner) throws -> UTKey, resultSelector : @escaping (T, dotnet.System.Collections.Generic.IEnumerable_1<UTInner>) throws -> UTResult, comparer : dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>) throws -> dotnet.System.Collections.Generic.IEnumerable_1<UTResult> {
+    public func GroupJoin<UTInner : SGBridgeGenericValue,UTKey : SGBridgeGenericValue,UTResult : SGBridgeGenericValue>(inner : dotnet.System.Collections.Generic.IEnumerable_1<UTInner>, outerKeySelector : @escaping (T) throws -> UTKey, innerKeySelector : @escaping (UTInner) throws -> UTKey, resultSelector : @escaping (T, dotnet.System.Collections.Generic.IEnumerable_1<UTInner>) throws -> UTResult, comparer : Optional<dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>>) throws -> dotnet.System.Collections.Generic.IEnumerable_1<UTResult> {
         let del_outerKeySelector = try dotnet.System.Func_2<T,UTKey>(outerKeySelector);
         let del_innerKeySelector = try dotnet.System.Func_2<UTInner,UTKey>(innerKeySelector);
         let del_resultSelector = try dotnet.System.Func_3<T,dotnet.System.Collections.Generic.IEnumerable_1<UTInner>,UTResult>(resultSelector);
@@ -4299,11 +4585,11 @@ extension dotnet.System.Collections.Generic.IEnumerable_1 {
 
 // EXTENSION METHOD System.Collections.Generic.IEnumerable<TSource> IntersectBy<TSource, TKey>(System.Collections.Generic.IEnumerable<TSource>, System.Collections.Generic.IEnumerable<TKey>, System.Func<TSource,TKey>, System.Collections.Generic.IEqualityComparer<TKey>)
 extension dotnet.System.Collections.Generic.IEnumerable_1 {
-    public func IntersectBy<UTKey : SGBridgeGenericValue>(second : dotnet.System.Collections.Generic.IEnumerable_1<UTKey>, keySelector : dotnet.System.Func_2<T,UTKey>, comparer : dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>) throws -> dotnet.System.Collections.Generic.IEnumerable_1<T> {
+    public func IntersectBy<UTKey : SGBridgeGenericValue>(second : dotnet.System.Collections.Generic.IEnumerable_1<UTKey>, keySelector : dotnet.System.Func_2<T,UTKey>, comparer : Optional<dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>>) throws -> dotnet.System.Collections.Generic.IEnumerable_1<T> {
         return try dotnet.System.Linq.Enumerable.IntersectBy(first: self, second: second, keySelector: keySelector, comparer: comparer);
     }
     // delegate closure overload
-    public func IntersectBy<UTKey : SGBridgeGenericValue>(second : dotnet.System.Collections.Generic.IEnumerable_1<UTKey>, keySelector : @escaping (T) throws -> UTKey, comparer : dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>) throws -> dotnet.System.Collections.Generic.IEnumerable_1<T> {
+    public func IntersectBy<UTKey : SGBridgeGenericValue>(second : dotnet.System.Collections.Generic.IEnumerable_1<UTKey>, keySelector : @escaping (T) throws -> UTKey, comparer : Optional<dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>>) throws -> dotnet.System.Collections.Generic.IEnumerable_1<T> {
         let del_keySelector = try dotnet.System.Func_2<T,UTKey>(keySelector);
         return try dotnet.System.Linq.Enumerable.IntersectBy(first: self, second: second, keySelector: del_keySelector, comparer: comparer);
     }
@@ -4318,7 +4604,7 @@ extension dotnet.System.Collections.Generic.IEnumerable_1 {
 
 // EXTENSION METHOD System.Collections.Generic.IEnumerable<TSource> Intersect<TSource>(System.Collections.Generic.IEnumerable<TSource>, System.Collections.Generic.IEnumerable<TSource>, System.Collections.Generic.IEqualityComparer<TSource>)
 extension dotnet.System.Collections.Generic.IEnumerable_1 {
-    public func Intersect(second : dotnet.System.Collections.Generic.IEnumerable_1<T>, comparer : dotnet.System.Collections.Generic.IEqualityComparer_1<T>) throws -> dotnet.System.Collections.Generic.IEnumerable_1<T> {
+    public func Intersect(second : dotnet.System.Collections.Generic.IEnumerable_1<T>, comparer : Optional<dotnet.System.Collections.Generic.IEqualityComparer_1<T>>) throws -> dotnet.System.Collections.Generic.IEnumerable_1<T> {
         return try dotnet.System.Linq.Enumerable.Intersect(first: self, second: second, comparer: comparer);
     }
 }
@@ -4339,11 +4625,11 @@ extension dotnet.System.Collections.Generic.IEnumerable_1 {
 
 // EXTENSION METHOD System.Collections.Generic.IEnumerable<TResult> Join<TOuter, TInner, TKey, TResult>(System.Collections.Generic.IEnumerable<TOuter>, System.Collections.Generic.IEnumerable<TInner>, System.Func<TOuter,TKey>, System.Func<TInner,TKey>, System.Func<TOuter,TInner,TResult>, System.Collections.Generic.IEqualityComparer<TKey>)
 extension dotnet.System.Collections.Generic.IEnumerable_1 {
-    public func Join<UTInner : SGBridgeGenericValue,UTKey : SGBridgeGenericValue,UTResult : SGBridgeGenericValue>(inner : dotnet.System.Collections.Generic.IEnumerable_1<UTInner>, outerKeySelector : dotnet.System.Func_2<T,UTKey>, innerKeySelector : dotnet.System.Func_2<UTInner,UTKey>, resultSelector : dotnet.System.Func_3<T,UTInner,UTResult>, comparer : dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>) throws -> dotnet.System.Collections.Generic.IEnumerable_1<UTResult> {
+    public func Join<UTInner : SGBridgeGenericValue,UTKey : SGBridgeGenericValue,UTResult : SGBridgeGenericValue>(inner : dotnet.System.Collections.Generic.IEnumerable_1<UTInner>, outerKeySelector : dotnet.System.Func_2<T,UTKey>, innerKeySelector : dotnet.System.Func_2<UTInner,UTKey>, resultSelector : dotnet.System.Func_3<T,UTInner,UTResult>, comparer : Optional<dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>>) throws -> dotnet.System.Collections.Generic.IEnumerable_1<UTResult> {
         return try dotnet.System.Linq.Enumerable.Join(outer: self, inner: inner, outerKeySelector: outerKeySelector, innerKeySelector: innerKeySelector, resultSelector: resultSelector, comparer: comparer);
     }
     // delegate closure overload
-    public func Join<UTInner : SGBridgeGenericValue,UTKey : SGBridgeGenericValue,UTResult : SGBridgeGenericValue>(inner : dotnet.System.Collections.Generic.IEnumerable_1<UTInner>, outerKeySelector : @escaping (T) throws -> UTKey, innerKeySelector : @escaping (UTInner) throws -> UTKey, resultSelector : @escaping (T, UTInner) throws -> UTResult, comparer : dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>) throws -> dotnet.System.Collections.Generic.IEnumerable_1<UTResult> {
+    public func Join<UTInner : SGBridgeGenericValue,UTKey : SGBridgeGenericValue,UTResult : SGBridgeGenericValue>(inner : dotnet.System.Collections.Generic.IEnumerable_1<UTInner>, outerKeySelector : @escaping (T) throws -> UTKey, innerKeySelector : @escaping (UTInner) throws -> UTKey, resultSelector : @escaping (T, UTInner) throws -> UTResult, comparer : Optional<dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>>) throws -> dotnet.System.Collections.Generic.IEnumerable_1<UTResult> {
         let del_outerKeySelector = try dotnet.System.Func_2<T,UTKey>(outerKeySelector);
         let del_innerKeySelector = try dotnet.System.Func_2<UTInner,UTKey>(innerKeySelector);
         let del_resultSelector = try dotnet.System.Func_3<T,UTInner,UTResult>(resultSelector);
@@ -4455,6 +4741,11 @@ extension dotnet.System.Collections.Generic.IEnumerable_1 {
     }
 }
 
+// TODO COPE (parm closedgeneric of nullable): System.Nullable<System.Decimal> Max(System.Collections.Generic.IEnumerable<System.Nullable<System.Decimal>>)
+// TODO COPE (parm closedgeneric of nullable): System.Nullable<System.Double> Max(System.Collections.Generic.IEnumerable<System.Nullable<System.Double>>)
+// TODO COPE (parm closedgeneric of nullable): System.Nullable<System.Int32> Max(System.Collections.Generic.IEnumerable<System.Nullable<System.Int32>>)
+// TODO COPE (parm closedgeneric of nullable): System.Nullable<System.Int64> Max(System.Collections.Generic.IEnumerable<System.Nullable<System.Int64>>)
+// TODO COPE (parm closedgeneric of nullable): System.Nullable<System.Single> Max(System.Collections.Generic.IEnumerable<System.Nullable<System.Single>>)
 // EXTENSION METHOD System.Single Max(System.Collections.Generic.IEnumerable<System.Single>)
 extension dotnet.System.Collections.Generic.IEnumerable_1 {
     public func Max() throws -> Swift.Float where T == Swift.Float {
@@ -4476,11 +4767,11 @@ extension dotnet.System.Collections.Generic.IEnumerable_1 {
 
 // EXTENSION METHOD TSource MaxBy<TSource, TKey>(System.Collections.Generic.IEnumerable<TSource>, System.Func<TSource,TKey>, System.Collections.Generic.IComparer<TKey>)
 extension dotnet.System.Collections.Generic.IEnumerable_1 {
-    public func MaxBy<UTKey : SGBridgeGenericValue>(keySelector : dotnet.System.Func_2<T,UTKey>, comparer : dotnet.System.Collections.Generic.IComparer_1<UTKey>) throws -> T {
+    public func MaxBy<UTKey : SGBridgeGenericValue>(keySelector : dotnet.System.Func_2<T,UTKey>, comparer : Optional<dotnet.System.Collections.Generic.IComparer_1<UTKey>>) throws -> T {
         return try dotnet.System.Linq.Enumerable.MaxBy(source: self, keySelector: keySelector, comparer: comparer);
     }
     // delegate closure overload
-    public func MaxBy<UTKey : SGBridgeGenericValue>(keySelector : @escaping (T) throws -> UTKey, comparer : dotnet.System.Collections.Generic.IComparer_1<UTKey>) throws -> T {
+    public func MaxBy<UTKey : SGBridgeGenericValue>(keySelector : @escaping (T) throws -> UTKey, comparer : Optional<dotnet.System.Collections.Generic.IComparer_1<UTKey>>) throws -> T {
         let del_keySelector = try dotnet.System.Func_2<T,UTKey>(keySelector);
         return try dotnet.System.Linq.Enumerable.MaxBy(source: self, keySelector: del_keySelector, comparer: comparer);
     }
@@ -4495,7 +4786,7 @@ extension dotnet.System.Collections.Generic.IEnumerable_1 {
 
 // EXTENSION METHOD TSource Max<TSource>(System.Collections.Generic.IEnumerable<TSource>, System.Collections.Generic.IComparer<TSource>)
 extension dotnet.System.Collections.Generic.IEnumerable_1 {
-    public func Max(comparer : dotnet.System.Collections.Generic.IComparer_1<T>) throws -> T {
+    public func Max(comparer : Optional<dotnet.System.Collections.Generic.IComparer_1<T>>) throws -> T {
         return try dotnet.System.Linq.Enumerable.Max(source: self, comparer: comparer);
     }
 }
@@ -4548,6 +4839,11 @@ extension dotnet.System.Collections.Generic.IEnumerable_1 {
     }
 }
 
+// TODO COPE (parm closedgeneric of nullable): System.Nullable<System.Decimal> Max<TSource>(System.Collections.Generic.IEnumerable<TSource>, System.Func<TSource,System.Nullable<System.Decimal>>)
+// TODO COPE (parm closedgeneric of nullable): System.Nullable<System.Double> Max<TSource>(System.Collections.Generic.IEnumerable<TSource>, System.Func<TSource,System.Nullable<System.Double>>)
+// TODO COPE (parm closedgeneric of nullable): System.Nullable<System.Int32> Max<TSource>(System.Collections.Generic.IEnumerable<TSource>, System.Func<TSource,System.Nullable<System.Int32>>)
+// TODO COPE (parm closedgeneric of nullable): System.Nullable<System.Int64> Max<TSource>(System.Collections.Generic.IEnumerable<TSource>, System.Func<TSource,System.Nullable<System.Int64>>)
+// TODO COPE (parm closedgeneric of nullable): System.Nullable<System.Single> Max<TSource>(System.Collections.Generic.IEnumerable<TSource>, System.Func<TSource,System.Nullable<System.Single>>)
 // EXTENSION METHOD System.Single Max<TSource>(System.Collections.Generic.IEnumerable<TSource>, System.Func<TSource,System.Single>)
 extension dotnet.System.Collections.Generic.IEnumerable_1 {
     public func Max(selector : dotnet.System.Func_2<T,Swift.Float>) throws -> Swift.Float {
@@ -4600,6 +4896,11 @@ extension dotnet.System.Collections.Generic.IEnumerable_1 {
     }
 }
 
+// TODO COPE (parm closedgeneric of nullable): System.Nullable<System.Decimal> Min(System.Collections.Generic.IEnumerable<System.Nullable<System.Decimal>>)
+// TODO COPE (parm closedgeneric of nullable): System.Nullable<System.Double> Min(System.Collections.Generic.IEnumerable<System.Nullable<System.Double>>)
+// TODO COPE (parm closedgeneric of nullable): System.Nullable<System.Int32> Min(System.Collections.Generic.IEnumerable<System.Nullable<System.Int32>>)
+// TODO COPE (parm closedgeneric of nullable): System.Nullable<System.Int64> Min(System.Collections.Generic.IEnumerable<System.Nullable<System.Int64>>)
+// TODO COPE (parm closedgeneric of nullable): System.Nullable<System.Single> Min(System.Collections.Generic.IEnumerable<System.Nullable<System.Single>>)
 // EXTENSION METHOD System.Single Min(System.Collections.Generic.IEnumerable<System.Single>)
 extension dotnet.System.Collections.Generic.IEnumerable_1 {
     public func Min() throws -> Swift.Float where T == Swift.Float {
@@ -4621,11 +4922,11 @@ extension dotnet.System.Collections.Generic.IEnumerable_1 {
 
 // EXTENSION METHOD TSource MinBy<TSource, TKey>(System.Collections.Generic.IEnumerable<TSource>, System.Func<TSource,TKey>, System.Collections.Generic.IComparer<TKey>)
 extension dotnet.System.Collections.Generic.IEnumerable_1 {
-    public func MinBy<UTKey : SGBridgeGenericValue>(keySelector : dotnet.System.Func_2<T,UTKey>, comparer : dotnet.System.Collections.Generic.IComparer_1<UTKey>) throws -> T {
+    public func MinBy<UTKey : SGBridgeGenericValue>(keySelector : dotnet.System.Func_2<T,UTKey>, comparer : Optional<dotnet.System.Collections.Generic.IComparer_1<UTKey>>) throws -> T {
         return try dotnet.System.Linq.Enumerable.MinBy(source: self, keySelector: keySelector, comparer: comparer);
     }
     // delegate closure overload
-    public func MinBy<UTKey : SGBridgeGenericValue>(keySelector : @escaping (T) throws -> UTKey, comparer : dotnet.System.Collections.Generic.IComparer_1<UTKey>) throws -> T {
+    public func MinBy<UTKey : SGBridgeGenericValue>(keySelector : @escaping (T) throws -> UTKey, comparer : Optional<dotnet.System.Collections.Generic.IComparer_1<UTKey>>) throws -> T {
         let del_keySelector = try dotnet.System.Func_2<T,UTKey>(keySelector);
         return try dotnet.System.Linq.Enumerable.MinBy(source: self, keySelector: del_keySelector, comparer: comparer);
     }
@@ -4640,7 +4941,7 @@ extension dotnet.System.Collections.Generic.IEnumerable_1 {
 
 // EXTENSION METHOD TSource Min<TSource>(System.Collections.Generic.IEnumerable<TSource>, System.Collections.Generic.IComparer<TSource>)
 extension dotnet.System.Collections.Generic.IEnumerable_1 {
-    public func Min(comparer : dotnet.System.Collections.Generic.IComparer_1<T>) throws -> T {
+    public func Min(comparer : Optional<dotnet.System.Collections.Generic.IComparer_1<T>>) throws -> T {
         return try dotnet.System.Linq.Enumerable.Min(source: self, comparer: comparer);
     }
 }
@@ -4693,6 +4994,11 @@ extension dotnet.System.Collections.Generic.IEnumerable_1 {
     }
 }
 
+// TODO COPE (parm closedgeneric of nullable): System.Nullable<System.Decimal> Min<TSource>(System.Collections.Generic.IEnumerable<TSource>, System.Func<TSource,System.Nullable<System.Decimal>>)
+// TODO COPE (parm closedgeneric of nullable): System.Nullable<System.Double> Min<TSource>(System.Collections.Generic.IEnumerable<TSource>, System.Func<TSource,System.Nullable<System.Double>>)
+// TODO COPE (parm closedgeneric of nullable): System.Nullable<System.Int32> Min<TSource>(System.Collections.Generic.IEnumerable<TSource>, System.Func<TSource,System.Nullable<System.Int32>>)
+// TODO COPE (parm closedgeneric of nullable): System.Nullable<System.Int64> Min<TSource>(System.Collections.Generic.IEnumerable<TSource>, System.Func<TSource,System.Nullable<System.Int64>>)
+// TODO COPE (parm closedgeneric of nullable): System.Nullable<System.Single> Min<TSource>(System.Collections.Generic.IEnumerable<TSource>, System.Func<TSource,System.Nullable<System.Single>>)
 // EXTENSION METHOD System.Single Min<TSource>(System.Collections.Generic.IEnumerable<TSource>, System.Func<TSource,System.Single>)
 extension dotnet.System.Collections.Generic.IEnumerable_1 {
     public func Min(selector : dotnet.System.Func_2<T,Swift.Float>) throws -> Swift.Float {
@@ -4734,11 +5040,11 @@ extension dotnet.System.Collections.Generic.IEnumerable_1 {
 
 // EXTENSION METHOD System.Linq.IOrderedEnumerable<TSource> OrderByDescending<TSource, TKey>(System.Collections.Generic.IEnumerable<TSource>, System.Func<TSource,TKey>, System.Collections.Generic.IComparer<TKey>)
 extension dotnet.System.Collections.Generic.IEnumerable_1 {
-    public func OrderByDescending<UTKey : SGBridgeGenericValue>(keySelector : dotnet.System.Func_2<T,UTKey>, comparer : dotnet.System.Collections.Generic.IComparer_1<UTKey>) throws -> dotnet.System.Linq.IOrderedEnumerable_1<T> {
+    public func OrderByDescending<UTKey : SGBridgeGenericValue>(keySelector : dotnet.System.Func_2<T,UTKey>, comparer : Optional<dotnet.System.Collections.Generic.IComparer_1<UTKey>>) throws -> dotnet.System.Linq.IOrderedEnumerable_1<T> {
         return try dotnet.System.Linq.Enumerable.OrderByDescending(source: self, keySelector: keySelector, comparer: comparer);
     }
     // delegate closure overload
-    public func OrderByDescending<UTKey : SGBridgeGenericValue>(keySelector : @escaping (T) throws -> UTKey, comparer : dotnet.System.Collections.Generic.IComparer_1<UTKey>) throws -> dotnet.System.Linq.IOrderedEnumerable_1<T> {
+    public func OrderByDescending<UTKey : SGBridgeGenericValue>(keySelector : @escaping (T) throws -> UTKey, comparer : Optional<dotnet.System.Collections.Generic.IComparer_1<UTKey>>) throws -> dotnet.System.Linq.IOrderedEnumerable_1<T> {
         let del_keySelector = try dotnet.System.Func_2<T,UTKey>(keySelector);
         return try dotnet.System.Linq.Enumerable.OrderByDescending(source: self, keySelector: del_keySelector, comparer: comparer);
     }
@@ -4758,11 +5064,11 @@ extension dotnet.System.Collections.Generic.IEnumerable_1 {
 
 // EXTENSION METHOD System.Linq.IOrderedEnumerable<TSource> OrderBy<TSource, TKey>(System.Collections.Generic.IEnumerable<TSource>, System.Func<TSource,TKey>, System.Collections.Generic.IComparer<TKey>)
 extension dotnet.System.Collections.Generic.IEnumerable_1 {
-    public func OrderBy<UTKey : SGBridgeGenericValue>(keySelector : dotnet.System.Func_2<T,UTKey>, comparer : dotnet.System.Collections.Generic.IComparer_1<UTKey>) throws -> dotnet.System.Linq.IOrderedEnumerable_1<T> {
+    public func OrderBy<UTKey : SGBridgeGenericValue>(keySelector : dotnet.System.Func_2<T,UTKey>, comparer : Optional<dotnet.System.Collections.Generic.IComparer_1<UTKey>>) throws -> dotnet.System.Linq.IOrderedEnumerable_1<T> {
         return try dotnet.System.Linq.Enumerable.OrderBy(source: self, keySelector: keySelector, comparer: comparer);
     }
     // delegate closure overload
-    public func OrderBy<UTKey : SGBridgeGenericValue>(keySelector : @escaping (T) throws -> UTKey, comparer : dotnet.System.Collections.Generic.IComparer_1<UTKey>) throws -> dotnet.System.Linq.IOrderedEnumerable_1<T> {
+    public func OrderBy<UTKey : SGBridgeGenericValue>(keySelector : @escaping (T) throws -> UTKey, comparer : Optional<dotnet.System.Collections.Generic.IComparer_1<UTKey>>) throws -> dotnet.System.Linq.IOrderedEnumerable_1<T> {
         let del_keySelector = try dotnet.System.Func_2<T,UTKey>(keySelector);
         return try dotnet.System.Linq.Enumerable.OrderBy(source: self, keySelector: del_keySelector, comparer: comparer);
     }
@@ -4865,7 +5171,7 @@ extension dotnet.System.Collections.Generic.IEnumerable_1 {
 
 // EXTENSION METHOD bool SequenceEqual<TSource>(System.Collections.Generic.IEnumerable<TSource>, System.Collections.Generic.IEnumerable<TSource>, System.Collections.Generic.IEqualityComparer<TSource>)
 extension dotnet.System.Collections.Generic.IEnumerable_1 {
-    public func SequenceEqual(second : dotnet.System.Collections.Generic.IEnumerable_1<T>, comparer : dotnet.System.Collections.Generic.IEqualityComparer_1<T>) throws -> Bool {
+    public func SequenceEqual(second : dotnet.System.Collections.Generic.IEnumerable_1<T>, comparer : Optional<dotnet.System.Collections.Generic.IEqualityComparer_1<T>>) throws -> Bool {
         return try dotnet.System.Linq.Enumerable.SequenceEqual(first: self, second: second, comparer: comparer);
     }
 }
@@ -4993,6 +5299,11 @@ extension dotnet.System.Collections.Generic.IEnumerable_1 {
     }
 }
 
+// TODO COPE (parm closedgeneric of nullable): System.Nullable<System.Decimal> Sum(System.Collections.Generic.IEnumerable<System.Nullable<System.Decimal>>)
+// TODO COPE (parm closedgeneric of nullable): System.Nullable<System.Double> Sum(System.Collections.Generic.IEnumerable<System.Nullable<System.Double>>)
+// TODO COPE (parm closedgeneric of nullable): System.Nullable<System.Int32> Sum(System.Collections.Generic.IEnumerable<System.Nullable<System.Int32>>)
+// TODO COPE (parm closedgeneric of nullable): System.Nullable<System.Int64> Sum(System.Collections.Generic.IEnumerable<System.Nullable<System.Int64>>)
+// TODO COPE (parm closedgeneric of nullable): System.Nullable<System.Single> Sum(System.Collections.Generic.IEnumerable<System.Nullable<System.Single>>)
 // EXTENSION METHOD System.Single Sum(System.Collections.Generic.IEnumerable<System.Single>)
 extension dotnet.System.Collections.Generic.IEnumerable_1 {
     public func Sum() throws -> Swift.Float where T == Swift.Float {
@@ -5048,6 +5359,11 @@ extension dotnet.System.Collections.Generic.IEnumerable_1 {
     }
 }
 
+// TODO COPE (parm closedgeneric of nullable): System.Nullable<System.Decimal> Sum<TSource>(System.Collections.Generic.IEnumerable<TSource>, System.Func<TSource,System.Nullable<System.Decimal>>)
+// TODO COPE (parm closedgeneric of nullable): System.Nullable<System.Double> Sum<TSource>(System.Collections.Generic.IEnumerable<TSource>, System.Func<TSource,System.Nullable<System.Double>>)
+// TODO COPE (parm closedgeneric of nullable): System.Nullable<System.Int32> Sum<TSource>(System.Collections.Generic.IEnumerable<TSource>, System.Func<TSource,System.Nullable<System.Int32>>)
+// TODO COPE (parm closedgeneric of nullable): System.Nullable<System.Int64> Sum<TSource>(System.Collections.Generic.IEnumerable<TSource>, System.Func<TSource,System.Nullable<System.Int64>>)
+// TODO COPE (parm closedgeneric of nullable): System.Nullable<System.Single> Sum<TSource>(System.Collections.Generic.IEnumerable<TSource>, System.Func<TSource,System.Nullable<System.Single>>)
 // EXTENSION METHOD System.Single Sum<TSource>(System.Collections.Generic.IEnumerable<TSource>, System.Func<TSource,System.Single>)
 extension dotnet.System.Collections.Generic.IEnumerable_1 {
     public func Sum(selector : dotnet.System.Func_2<T,Swift.Float>) throws -> Swift.Float {
@@ -5119,11 +5435,11 @@ extension dotnet.System.Linq.IOrderedEnumerable_1 {
 
 // EXTENSION METHOD System.Linq.IOrderedEnumerable<TSource> ThenByDescending<TSource, TKey>(System.Linq.IOrderedEnumerable<TSource>, System.Func<TSource,TKey>, System.Collections.Generic.IComparer<TKey>)
 extension dotnet.System.Linq.IOrderedEnumerable_1 {
-    public func ThenByDescending<UTKey : SGBridgeGenericValue>(keySelector : dotnet.System.Func_2<TElement,UTKey>, comparer : dotnet.System.Collections.Generic.IComparer_1<UTKey>) throws -> dotnet.System.Linq.IOrderedEnumerable_1<TElement> {
+    public func ThenByDescending<UTKey : SGBridgeGenericValue>(keySelector : dotnet.System.Func_2<TElement,UTKey>, comparer : Optional<dotnet.System.Collections.Generic.IComparer_1<UTKey>>) throws -> dotnet.System.Linq.IOrderedEnumerable_1<TElement> {
         return try dotnet.System.Linq.Enumerable.ThenByDescending(source: self, keySelector: keySelector, comparer: comparer);
     }
     // delegate closure overload
-    public func ThenByDescending<UTKey : SGBridgeGenericValue>(keySelector : @escaping (TElement) throws -> UTKey, comparer : dotnet.System.Collections.Generic.IComparer_1<UTKey>) throws -> dotnet.System.Linq.IOrderedEnumerable_1<TElement> {
+    public func ThenByDescending<UTKey : SGBridgeGenericValue>(keySelector : @escaping (TElement) throws -> UTKey, comparer : Optional<dotnet.System.Collections.Generic.IComparer_1<UTKey>>) throws -> dotnet.System.Linq.IOrderedEnumerable_1<TElement> {
         let del_keySelector = try dotnet.System.Func_2<TElement,UTKey>(keySelector);
         return try dotnet.System.Linq.Enumerable.ThenByDescending(source: self, keySelector: del_keySelector, comparer: comparer);
     }
@@ -5143,11 +5459,11 @@ extension dotnet.System.Linq.IOrderedEnumerable_1 {
 
 // EXTENSION METHOD System.Linq.IOrderedEnumerable<TSource> ThenBy<TSource, TKey>(System.Linq.IOrderedEnumerable<TSource>, System.Func<TSource,TKey>, System.Collections.Generic.IComparer<TKey>)
 extension dotnet.System.Linq.IOrderedEnumerable_1 {
-    public func ThenBy<UTKey : SGBridgeGenericValue>(keySelector : dotnet.System.Func_2<TElement,UTKey>, comparer : dotnet.System.Collections.Generic.IComparer_1<UTKey>) throws -> dotnet.System.Linq.IOrderedEnumerable_1<TElement> {
+    public func ThenBy<UTKey : SGBridgeGenericValue>(keySelector : dotnet.System.Func_2<TElement,UTKey>, comparer : Optional<dotnet.System.Collections.Generic.IComparer_1<UTKey>>) throws -> dotnet.System.Linq.IOrderedEnumerable_1<TElement> {
         return try dotnet.System.Linq.Enumerable.ThenBy(source: self, keySelector: keySelector, comparer: comparer);
     }
     // delegate closure overload
-    public func ThenBy<UTKey : SGBridgeGenericValue>(keySelector : @escaping (TElement) throws -> UTKey, comparer : dotnet.System.Collections.Generic.IComparer_1<UTKey>) throws -> dotnet.System.Linq.IOrderedEnumerable_1<TElement> {
+    public func ThenBy<UTKey : SGBridgeGenericValue>(keySelector : @escaping (TElement) throws -> UTKey, comparer : Optional<dotnet.System.Collections.Generic.IComparer_1<UTKey>>) throws -> dotnet.System.Linq.IOrderedEnumerable_1<TElement> {
         let del_keySelector = try dotnet.System.Func_2<TElement,UTKey>(keySelector);
         return try dotnet.System.Linq.Enumerable.ThenBy(source: self, keySelector: del_keySelector, comparer: comparer);
     }
@@ -5174,11 +5490,11 @@ extension dotnet.System.Collections.Generic.IEnumerable_1 {
 
 // EXTENSION METHOD System.Collections.Generic.Dictionary<TKey,TSource> ToDictionary<TSource, TKey>(System.Collections.Generic.IEnumerable<TSource>, System.Func<TSource,TKey>, System.Collections.Generic.IEqualityComparer<TKey>)
 extension dotnet.System.Collections.Generic.IEnumerable_1 {
-    public func ToDictionary<UTKey : SGBridgeGenericValue>(keySelector : dotnet.System.Func_2<T,UTKey>, comparer : dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>) throws -> dotnet.System.Collections.Generic.Dictionary_2<UTKey,T> {
+    public func ToDictionary<UTKey : SGBridgeGenericValue>(keySelector : dotnet.System.Func_2<T,UTKey>, comparer : Optional<dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>>) throws -> dotnet.System.Collections.Generic.Dictionary_2<UTKey,T> {
         return try dotnet.System.Linq.Enumerable.ToDictionary(source: self, keySelector: keySelector, comparer: comparer);
     }
     // delegate closure overload
-    public func ToDictionary<UTKey : SGBridgeGenericValue>(keySelector : @escaping (T) throws -> UTKey, comparer : dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>) throws -> dotnet.System.Collections.Generic.Dictionary_2<UTKey,T> {
+    public func ToDictionary<UTKey : SGBridgeGenericValue>(keySelector : @escaping (T) throws -> UTKey, comparer : Optional<dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>>) throws -> dotnet.System.Collections.Generic.Dictionary_2<UTKey,T> {
         let del_keySelector = try dotnet.System.Func_2<T,UTKey>(keySelector);
         return try dotnet.System.Linq.Enumerable.ToDictionary(source: self, keySelector: del_keySelector, comparer: comparer);
     }
@@ -5199,11 +5515,11 @@ extension dotnet.System.Collections.Generic.IEnumerable_1 {
 
 // EXTENSION METHOD System.Collections.Generic.Dictionary<TKey,TElement> ToDictionary<TSource, TKey, TElement>(System.Collections.Generic.IEnumerable<TSource>, System.Func<TSource,TKey>, System.Func<TSource,TElement>, System.Collections.Generic.IEqualityComparer<TKey>)
 extension dotnet.System.Collections.Generic.IEnumerable_1 {
-    public func ToDictionary<UTKey : SGBridgeGenericValue,UTElement : SGBridgeGenericValue>(keySelector : dotnet.System.Func_2<T,UTKey>, elementSelector : dotnet.System.Func_2<T,UTElement>, comparer : dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>) throws -> dotnet.System.Collections.Generic.Dictionary_2<UTKey,UTElement> {
+    public func ToDictionary<UTKey : SGBridgeGenericValue,UTElement : SGBridgeGenericValue>(keySelector : dotnet.System.Func_2<T,UTKey>, elementSelector : dotnet.System.Func_2<T,UTElement>, comparer : Optional<dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>>) throws -> dotnet.System.Collections.Generic.Dictionary_2<UTKey,UTElement> {
         return try dotnet.System.Linq.Enumerable.ToDictionary(source: self, keySelector: keySelector, elementSelector: elementSelector, comparer: comparer);
     }
     // delegate closure overload
-    public func ToDictionary<UTKey : SGBridgeGenericValue,UTElement : SGBridgeGenericValue>(keySelector : @escaping (T) throws -> UTKey, elementSelector : @escaping (T) throws -> UTElement, comparer : dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>) throws -> dotnet.System.Collections.Generic.Dictionary_2<UTKey,UTElement> {
+    public func ToDictionary<UTKey : SGBridgeGenericValue,UTElement : SGBridgeGenericValue>(keySelector : @escaping (T) throws -> UTKey, elementSelector : @escaping (T) throws -> UTElement, comparer : Optional<dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>>) throws -> dotnet.System.Collections.Generic.Dictionary_2<UTKey,UTElement> {
         let del_keySelector = try dotnet.System.Func_2<T,UTKey>(keySelector);
         let del_elementSelector = try dotnet.System.Func_2<T,UTElement>(elementSelector);
         return try dotnet.System.Linq.Enumerable.ToDictionary(source: self, keySelector: del_keySelector, elementSelector: del_elementSelector, comparer: comparer);
@@ -5219,7 +5535,7 @@ extension dotnet.System.Collections.Generic.IEnumerable_1 {
 
 // EXTENSION METHOD System.Collections.Generic.HashSet<TSource> ToHashSet<TSource>(System.Collections.Generic.IEnumerable<TSource>, System.Collections.Generic.IEqualityComparer<TSource>)
 extension dotnet.System.Collections.Generic.IEnumerable_1 {
-    public func ToHashSet(comparer : dotnet.System.Collections.Generic.IEqualityComparer_1<T>) throws -> dotnet.System.Collections.Generic.HashSet_1<T> {
+    public func ToHashSet(comparer : Optional<dotnet.System.Collections.Generic.IEqualityComparer_1<T>>) throws -> dotnet.System.Collections.Generic.HashSet_1<T> {
         return try dotnet.System.Linq.Enumerable.ToHashSet(source: self, comparer: comparer);
     }
 }
@@ -5245,11 +5561,11 @@ extension dotnet.System.Collections.Generic.IEnumerable_1 {
 
 // EXTENSION METHOD System.Linq.ILookup<TKey,TSource> ToLookup<TSource, TKey>(System.Collections.Generic.IEnumerable<TSource>, System.Func<TSource,TKey>, System.Collections.Generic.IEqualityComparer<TKey>)
 extension dotnet.System.Collections.Generic.IEnumerable_1 {
-    public func ToLookup<UTKey : SGBridgeGenericValue>(keySelector : dotnet.System.Func_2<T,UTKey>, comparer : dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>) throws -> dotnet.System.Linq.ILookup_2<UTKey,T> {
+    public func ToLookup<UTKey : SGBridgeGenericValue>(keySelector : dotnet.System.Func_2<T,UTKey>, comparer : Optional<dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>>) throws -> dotnet.System.Linq.ILookup_2<UTKey,T> {
         return try dotnet.System.Linq.Enumerable.ToLookup(source: self, keySelector: keySelector, comparer: comparer);
     }
     // delegate closure overload
-    public func ToLookup<UTKey : SGBridgeGenericValue>(keySelector : @escaping (T) throws -> UTKey, comparer : dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>) throws -> dotnet.System.Linq.ILookup_2<UTKey,T> {
+    public func ToLookup<UTKey : SGBridgeGenericValue>(keySelector : @escaping (T) throws -> UTKey, comparer : Optional<dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>>) throws -> dotnet.System.Linq.ILookup_2<UTKey,T> {
         let del_keySelector = try dotnet.System.Func_2<T,UTKey>(keySelector);
         return try dotnet.System.Linq.Enumerable.ToLookup(source: self, keySelector: del_keySelector, comparer: comparer);
     }
@@ -5270,11 +5586,11 @@ extension dotnet.System.Collections.Generic.IEnumerable_1 {
 
 // EXTENSION METHOD System.Linq.ILookup<TKey,TElement> ToLookup<TSource, TKey, TElement>(System.Collections.Generic.IEnumerable<TSource>, System.Func<TSource,TKey>, System.Func<TSource,TElement>, System.Collections.Generic.IEqualityComparer<TKey>)
 extension dotnet.System.Collections.Generic.IEnumerable_1 {
-    public func ToLookup<UTKey : SGBridgeGenericValue,UTElement : SGBridgeGenericValue>(keySelector : dotnet.System.Func_2<T,UTKey>, elementSelector : dotnet.System.Func_2<T,UTElement>, comparer : dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>) throws -> dotnet.System.Linq.ILookup_2<UTKey,UTElement> {
+    public func ToLookup<UTKey : SGBridgeGenericValue,UTElement : SGBridgeGenericValue>(keySelector : dotnet.System.Func_2<T,UTKey>, elementSelector : dotnet.System.Func_2<T,UTElement>, comparer : Optional<dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>>) throws -> dotnet.System.Linq.ILookup_2<UTKey,UTElement> {
         return try dotnet.System.Linq.Enumerable.ToLookup(source: self, keySelector: keySelector, elementSelector: elementSelector, comparer: comparer);
     }
     // delegate closure overload
-    public func ToLookup<UTKey : SGBridgeGenericValue,UTElement : SGBridgeGenericValue>(keySelector : @escaping (T) throws -> UTKey, elementSelector : @escaping (T) throws -> UTElement, comparer : dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>) throws -> dotnet.System.Linq.ILookup_2<UTKey,UTElement> {
+    public func ToLookup<UTKey : SGBridgeGenericValue,UTElement : SGBridgeGenericValue>(keySelector : @escaping (T) throws -> UTKey, elementSelector : @escaping (T) throws -> UTElement, comparer : Optional<dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>>) throws -> dotnet.System.Linq.ILookup_2<UTKey,UTElement> {
         let del_keySelector = try dotnet.System.Func_2<T,UTKey>(keySelector);
         let del_elementSelector = try dotnet.System.Func_2<T,UTElement>(elementSelector);
         return try dotnet.System.Linq.Enumerable.ToLookup(source: self, keySelector: del_keySelector, elementSelector: del_elementSelector, comparer: comparer);
@@ -5302,11 +5618,11 @@ extension dotnet.System.Collections.Generic.IEnumerable_1 {
 
 // EXTENSION METHOD System.Collections.Generic.IEnumerable<TSource> UnionBy<TSource, TKey>(System.Collections.Generic.IEnumerable<TSource>, System.Collections.Generic.IEnumerable<TSource>, System.Func<TSource,TKey>, System.Collections.Generic.IEqualityComparer<TKey>)
 extension dotnet.System.Collections.Generic.IEnumerable_1 {
-    public func UnionBy<UTKey : SGBridgeGenericValue>(second : dotnet.System.Collections.Generic.IEnumerable_1<T>, keySelector : dotnet.System.Func_2<T,UTKey>, comparer : dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>) throws -> dotnet.System.Collections.Generic.IEnumerable_1<T> {
+    public func UnionBy<UTKey : SGBridgeGenericValue>(second : dotnet.System.Collections.Generic.IEnumerable_1<T>, keySelector : dotnet.System.Func_2<T,UTKey>, comparer : Optional<dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>>) throws -> dotnet.System.Collections.Generic.IEnumerable_1<T> {
         return try dotnet.System.Linq.Enumerable.UnionBy(first: self, second: second, keySelector: keySelector, comparer: comparer);
     }
     // delegate closure overload
-    public func UnionBy<UTKey : SGBridgeGenericValue>(second : dotnet.System.Collections.Generic.IEnumerable_1<T>, keySelector : @escaping (T) throws -> UTKey, comparer : dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>) throws -> dotnet.System.Collections.Generic.IEnumerable_1<T> {
+    public func UnionBy<UTKey : SGBridgeGenericValue>(second : dotnet.System.Collections.Generic.IEnumerable_1<T>, keySelector : @escaping (T) throws -> UTKey, comparer : Optional<dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>>) throws -> dotnet.System.Collections.Generic.IEnumerable_1<T> {
         let del_keySelector = try dotnet.System.Func_2<T,UTKey>(keySelector);
         return try dotnet.System.Linq.Enumerable.UnionBy(first: self, second: second, keySelector: del_keySelector, comparer: comparer);
     }
@@ -5321,7 +5637,7 @@ extension dotnet.System.Collections.Generic.IEnumerable_1 {
 
 // EXTENSION METHOD System.Collections.Generic.IEnumerable<TSource> Union<TSource>(System.Collections.Generic.IEnumerable<TSource>, System.Collections.Generic.IEnumerable<TSource>, System.Collections.Generic.IEqualityComparer<TSource>)
 extension dotnet.System.Collections.Generic.IEnumerable_1 {
-    public func Union(second : dotnet.System.Collections.Generic.IEnumerable_1<T>, comparer : dotnet.System.Collections.Generic.IEqualityComparer_1<T>) throws -> dotnet.System.Collections.Generic.IEnumerable_1<T> {
+    public func Union(second : dotnet.System.Collections.Generic.IEnumerable_1<T>, comparer : Optional<dotnet.System.Collections.Generic.IEqualityComparer_1<T>>) throws -> dotnet.System.Collections.Generic.IEnumerable_1<T> {
         return try dotnet.System.Linq.Enumerable.Union(first: self, second: second, comparer: comparer);
     }
 }

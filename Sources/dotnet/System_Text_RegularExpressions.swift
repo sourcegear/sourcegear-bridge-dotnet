@@ -18,8 +18,12 @@ open class Capture
     open class override func get_type_handle() -> TypeHandle {
         return System_Text_RegularExpressions_Capture_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+// TODO COPE (returns byreflike): [IsSpecialName] System.ReadOnlySpan<System.Char> get_ValueSpan()
     // System.String ToString()
 // docid: M:System.Text.RegularExpressions.Capture.ToString
     /**
@@ -114,6 +118,9 @@ open class CaptureCollection
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Text_RegularExpressions_CaptureCollection_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -214,9 +221,6 @@ open class CaptureCollection
     }
     // [IsSpecialName] System.Text.RegularExpressions.Capture get_Item(System.Int32)
 // docid: M:System.Text.RegularExpressions.CaptureCollection.get_Item(System.Int32)
-//BEGIN method_is_override
-//matches_1
-//matches :
     open /* method final */ func get_Item(i : Swift.Int32) throws -> dotnet.System.Text.RegularExpressions.Capture {
         var __thrown : NullableHandle = nil;
         let __return = System_Text_RegularExpressions_CaptureCollection_Capture__get_Item_0__1__i32(&__thrown, self.get_handle(), i);
@@ -276,6 +280,9 @@ open class Group
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Text_RegularExpressions_Group_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -375,6 +382,9 @@ open class GroupCollection
     open class override func get_type_handle() -> TypeHandle {
         return System_Text_RegularExpressions_GroupCollection_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // bool ContainsKey(System.String)
@@ -458,11 +468,12 @@ open class GroupCollection
          if a group identified by the provided name key exists;  otherwise.
 
     */
-    open /* method final */ func TryGetValue(key : dotnet.System.String, value : inout dotnet.System.Text.RegularExpressions.Group) throws -> Bool {
+    open /* method final */ func TryGetValue(key : dotnet.System.String, value : inout Optional<dotnet.System.Text.RegularExpressions.Group>) throws -> Bool {
         var __thrown : NullableHandle = nil;
-            var _tmp_out_value = value.get_handle();
+            var _tmp_out_value = (value != nil) ? (value!.get_handle()) : nil;
         let __return = System_Text_RegularExpressions_GroupCollection_bool__TryGetValue_0__2__String_outGroup(&__thrown, self.get_handle(), key.get_handle(), &_tmp_out_value);
-        let _tmp2_value = dotnet.System.Text.RegularExpressions.Group(hndl: _tmp_out_value);
+        let __h__tmp2_value = _tmp_out_value;
+        let _tmp2_value = (__h__tmp2_value != nil) ? dotnet.System.Text.RegularExpressions.Group(hndl: __h__tmp2_value!) : nil;
             value = _tmp2_value;
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
@@ -538,9 +549,6 @@ open class GroupCollection
     }
     // [IsSpecialName] System.Text.RegularExpressions.Group get_Item(System.Int32)
 // docid: M:System.Text.RegularExpressions.GroupCollection.get_Item(System.Int32)
-//BEGIN method_is_override
-//matches_1
-//matches :
     open /* method final */ func get_Item(groupnum : Swift.Int32) throws -> dotnet.System.Text.RegularExpressions.Group {
         var __thrown : NullableHandle = nil;
         let __return = System_Text_RegularExpressions_GroupCollection_Group__get_Item_0__1__i32(&__thrown, self.get_handle(), groupnum);
@@ -552,9 +560,6 @@ open class GroupCollection
     }
     // [IsSpecialName] System.Text.RegularExpressions.Group get_Item(System.String)
 // docid: M:System.Text.RegularExpressions.GroupCollection.get_Item(System.String)
-//BEGIN method_is_override
-//matches_1
-//matches :
     open /* method final */ func get_Item(groupname : dotnet.System.String) throws -> dotnet.System.Text.RegularExpressions.Group {
         var __thrown : NullableHandle = nil;
         let __return = System_Text_RegularExpressions_GroupCollection_Group__get_Item_0__1__String(&__thrown, self.get_handle(), groupname.get_handle());
@@ -632,6 +637,9 @@ open class Match
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Text_RegularExpressions_Match_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -746,6 +754,9 @@ open class MatchCollection
     open class override func get_type_handle() -> TypeHandle {
         return System_Text_RegularExpressions_MatchCollection_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // void CopyTo(System.Array, System.Int32)
@@ -845,9 +856,6 @@ open class MatchCollection
     }
     // [IsSpecialName] System.Text.RegularExpressions.Match get_Item(System.Int32)
 // docid: M:System.Text.RegularExpressions.MatchCollection.get_Item(System.Int32)
-//BEGIN method_is_override
-//matches_1
-//matches :
     open func get_Item(i : Swift.Int32) throws -> dotnet.System.Text.RegularExpressions.Match {
         var __thrown : NullableHandle = nil;
         let __return = System_Text_RegularExpressions_MatchCollection_Match__get_Item_0__1__i32(&__thrown, self.get_handle(), i);
@@ -908,6 +916,9 @@ public final class MatchEvaluator
     public class override func get_type_handle() -> TypeHandle {
         return System_Text_RegularExpressions_MatchEvaluator_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // System.String Invoke(System.Text.RegularExpressions.Match)
@@ -947,15 +958,15 @@ public final class MatchEvaluator
         return dotnet.System.String(hndl : __return);
         }
     }
-    public init(_ callback : @escaping (dotnet.System.Text.RegularExpressions.Match) throws -> dotnet.System.String) throws
+    public convenience init(_ __closure_Invoke : @escaping (dotnet.System.Text.RegularExpressions.Match) throws -> dotnet.System.String) throws
     {
-        let __bridge : (UnsafeMutablePointer<NullableHandle>, NonnullHandle) -> NonnullHandle =
+        let __interlude_Invoke : (UnsafeMutablePointer<NullableHandle>, NonnullHandle) -> NonnullHandle =
         {
             (thrown : UnsafeMutablePointer<NullableHandle>, match : NonnullHandle) -> NonnullHandle in
             do
             {
                 thrown.pointee = nil;
-                let ret = try callback(dotnet.System.Text.RegularExpressions.Match(hndl: match));
+                let ret = try __closure_Invoke(dotnet.System.Text.RegularExpressions.Match(hndl: match));
                 return __copy_handle(ret.get_handle());
             }
             catch let e as dotnet.System.Exception
@@ -970,24 +981,24 @@ public final class MatchEvaluator
                 return NonnullHandle(bitPattern: 8675309)!;
             }
         };
-        let cbarg = UnsafeRawPointer(Unmanaged.passRetained(__bridge as AnyObject).toOpaque());
-        func __cb(cb : UnsafeRawPointer?, thrown : UnsafeMutablePointer<NullableHandle>, match : NonnullHandle) -> NonnullHandle
+        func __cb_Invoke(pdata_interlude : UnsafeRawPointer, thrown : UnsafeMutablePointer<NullableHandle>, match : NonnullHandle) -> NonnullHandle
         {
-            let f = Unmanaged<AnyObject>.fromOpaque(cb!).takeUnretainedValue() as! (UnsafeMutablePointer<NullableHandle>, NonnullHandle) -> NonnullHandle;
-            return f(thrown, match);
+            let f_interlude = Unmanaged<AnyObject>.fromOpaque(pdata_interlude).takeUnretainedValue() as! (UnsafeMutablePointer<NullableHandle>, NonnullHandle) -> NonnullHandle;
+            return f_interlude(thrown, match);
         }
+        let __pdata_Invoke = UnsafeRawPointer(Unmanaged.passRetained(__interlude_Invoke as AnyObject).toOpaque());
+
         var __thrown : NullableHandle = nil;
         let h = System_Text_RegularExpressions_MatchEvaluator_create(
             &__thrown,
-            cbarg,
-            nil, // TODO deinit
-            __cb
+            __cb_Invoke,
+            __pdata_Invoke,
+            nil
             );
-            // TODO check thrown
         if let __ex = __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-            super.init(hndl: h);
+            self.init(hndl: h);
         }
     }
     // System.String Invoke(System.Text.RegularExpressions.Match)
@@ -1016,6 +1027,9 @@ open class Regex
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Text_RegularExpressions_Regex_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -1063,7 +1077,24 @@ open class Regex
             super.init(hndl: h);
         }
     }
-// TODO COPE ctor (span) .ctor(System.String, System.Text.RegularExpressions.RegexOptions, System.TimeSpan)
+    // .ctor(System.String, System.Text.RegularExpressions.RegexOptions, System.TimeSpan)
+// docid: M:System.Text.RegularExpressions.Regex.#ctor(System.String,System.Text.RegularExpressions.RegexOptions,System.TimeSpan)
+    /**
+    Initializes a new instance of the  class for the specified regular expression, with options that modify the pattern and a value that specifies how long a pattern matching method should attempt a match before it times out.
+
+    - Parameter pattern: The regular expression pattern to match.
+    - Parameter options: A bitwise combination of the enumeration values that modify the regular expression.
+    - Parameter matchTimeout: A time-out interval, or  to indicate that the method should not time out.
+    */
+    public init(pattern : dotnet.System.String, options : dotnet.System.Text.RegularExpressions.RegexOptions, matchTimeout : dotnet.System.TimeSpan) throws {
+        var __thrown : NullableHandle = nil;
+        let h = System_Text_RegularExpressions_Regex_ctor_0__3__String_RegexOptions_TimeSpan(&__thrown, pattern.get_handle(), options.get_value(), matchTimeout.get_handle());
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            super.init(hndl: h);
+        }
+    }
     // void CompileToAssembly(System.Text.RegularExpressions.RegexCompilationInfo[], System.Reflection.AssemblyName)
 // docid: M:System.Text.RegularExpressions.Regex.CompileToAssembly(System.Text.RegularExpressions.RegexCompilationInfo[],System.Reflection.AssemblyName)
     /**
@@ -1286,7 +1317,28 @@ open class Regex
         return (__return) != 0;
         }
     }
-// TODO COPE (write_all_methods) (span) bool IsMatch(System.String, System.String, System.Text.RegularExpressions.RegexOptions, System.TimeSpan)
+    // bool IsMatch(System.String, System.String, System.Text.RegularExpressions.RegexOptions, System.TimeSpan)
+// docid: M:System.Text.RegularExpressions.Regex.IsMatch(System.String,System.String,System.Text.RegularExpressions.RegexOptions,System.TimeSpan)
+    /**
+    Indicates whether the specified regular expression finds a match in the specified input string, using the specified matching options and time-out interval.
+
+    - Parameter input: The string to search for a match.
+    - Parameter pattern: The regular expression pattern to match.
+    - Parameter options: A bitwise combination of the enumeration values that provide options for matching.
+    - Parameter matchTimeout: A time-out interval, or  to indicate that the method should not time out.
+    - Returns: 
+         if the regular expression finds a match; otherwise, .
+
+    */
+    open class func IsMatch(input : dotnet.System.String, pattern : dotnet.System.String, options : dotnet.System.Text.RegularExpressions.RegexOptions, matchTimeout : dotnet.System.TimeSpan) throws -> Bool {
+        var __thrown : NullableHandle = nil;
+        let __return = System_Text_RegularExpressions_Regex_bool__IsMatch_0__4__String_String_RegexOptions_TimeSpan(&__thrown, input.get_handle(), pattern.get_handle(), options.get_value(), matchTimeout.get_handle());
+        if let __ex =  __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+        return (__return) != 0;
+        }
+    }
     // System.Text.RegularExpressions.Match Match(System.String)
 // docid: M:System.Text.RegularExpressions.Regex.Match(System.String)
     /**
@@ -1383,7 +1435,27 @@ open class Regex
         return dotnet.System.Text.RegularExpressions.Match(hndl : __return);
         }
     }
-// TODO COPE (write_all_methods) (span) System.Text.RegularExpressions.Match Match(System.String, System.String, System.Text.RegularExpressions.RegexOptions, System.TimeSpan)
+    // System.Text.RegularExpressions.Match Match(System.String, System.String, System.Text.RegularExpressions.RegexOptions, System.TimeSpan)
+// docid: M:System.Text.RegularExpressions.Regex.Match(System.String,System.String,System.Text.RegularExpressions.RegexOptions,System.TimeSpan)
+    /**
+    Searches the input string for the first occurrence of the specified regular expression, using the specified matching options and time-out interval.
+
+    - Parameter input: The string to search for a match.
+    - Parameter pattern: The regular expression pattern to match.
+    - Parameter options: A bitwise combination of the enumeration values that provide options for matching.
+    - Parameter matchTimeout: A time-out interval, or  to indicate that the method should not time out.
+    - Returns: An object that contains information about the match.
+
+    */
+    open class func Match(input : dotnet.System.String, pattern : dotnet.System.String, options : dotnet.System.Text.RegularExpressions.RegexOptions, matchTimeout : dotnet.System.TimeSpan) throws -> dotnet.System.Text.RegularExpressions.Match {
+        var __thrown : NullableHandle = nil;
+        let __return = System_Text_RegularExpressions_Regex_Match__Match_0__4__String_String_RegexOptions_TimeSpan(&__thrown, input.get_handle(), pattern.get_handle(), options.get_value(), matchTimeout.get_handle());
+        if let __ex =  __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+        return dotnet.System.Text.RegularExpressions.Match(hndl : __return);
+        }
+    }
     // System.Text.RegularExpressions.MatchCollection Matches(System.String)
 // docid: M:System.Text.RegularExpressions.Regex.Matches(System.String)
     /**
@@ -1460,7 +1532,27 @@ open class Regex
         return dotnet.System.Text.RegularExpressions.MatchCollection(hndl : __return);
         }
     }
-// TODO COPE (write_all_methods) (span) System.Text.RegularExpressions.MatchCollection Matches(System.String, System.String, System.Text.RegularExpressions.RegexOptions, System.TimeSpan)
+    // System.Text.RegularExpressions.MatchCollection Matches(System.String, System.String, System.Text.RegularExpressions.RegexOptions, System.TimeSpan)
+// docid: M:System.Text.RegularExpressions.Regex.Matches(System.String,System.String,System.Text.RegularExpressions.RegexOptions,System.TimeSpan)
+    /**
+    Searches the specified input string for all occurrences of a specified regular expression, using the specified matching options and time-out interval.
+
+    - Parameter input: The string to search for a match.
+    - Parameter pattern: The regular expression pattern to match.
+    - Parameter options: A bitwise combination of the enumeration values that specify options for matching.
+    - Parameter matchTimeout: A time-out interval, or  to indicate that the method should not time out.
+    - Returns: A collection of the  objects found by the search. If no matches are found, the method returns an empty collection object.
+
+    */
+    open class func Matches(input : dotnet.System.String, pattern : dotnet.System.String, options : dotnet.System.Text.RegularExpressions.RegexOptions, matchTimeout : dotnet.System.TimeSpan) throws -> dotnet.System.Text.RegularExpressions.MatchCollection {
+        var __thrown : NullableHandle = nil;
+        let __return = System_Text_RegularExpressions_Regex_MatchCollection__Matches_0__4__String_String_RegexOptions_TimeSpan(&__thrown, input.get_handle(), pattern.get_handle(), options.get_value(), matchTimeout.get_handle());
+        if let __ex =  __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+        return dotnet.System.Text.RegularExpressions.MatchCollection(hndl : __return);
+        }
+    }
     // System.String Replace(System.String, System.String)
 // docid: M:System.Text.RegularExpressions.Regex.Replace(System.String,System.String)
     /**
@@ -1562,7 +1654,28 @@ open class Regex
         return dotnet.System.String(hndl : __return);
         }
     }
-// TODO COPE (write_all_methods) (span) System.String Replace(System.String, System.String, System.String, System.Text.RegularExpressions.RegexOptions, System.TimeSpan)
+    // System.String Replace(System.String, System.String, System.String, System.Text.RegularExpressions.RegexOptions, System.TimeSpan)
+// docid: M:System.Text.RegularExpressions.Regex.Replace(System.String,System.String,System.String,System.Text.RegularExpressions.RegexOptions,System.TimeSpan)
+    /**
+    In a specified input string, replaces all strings that match a specified regular expression with a specified replacement string. Additional parameters specify options that modify the matching operation and a time-out interval if no match is found.
+
+    - Parameter input: The string to search for a match.
+    - Parameter pattern: The regular expression pattern to match.
+    - Parameter replacement: The replacement string.
+    - Parameter options: A bitwise combination of the enumeration values that provide options for matching.
+    - Parameter matchTimeout: A time-out interval, or  to indicate that the method should not time out.
+    - Returns: A new string that is identical to the input string, except that the replacement string takes the place of each matched string. If  is not matched in the current instance, the method returns the current instance unchanged.
+
+    */
+    open class func Replace(input : dotnet.System.String, pattern : dotnet.System.String, replacement : dotnet.System.String, options : dotnet.System.Text.RegularExpressions.RegexOptions, matchTimeout : dotnet.System.TimeSpan) throws -> dotnet.System.String {
+        var __thrown : NullableHandle = nil;
+        let __return = System_Text_RegularExpressions_Regex_String__Replace_0__5__String_String_String_RegexOptions_TimeSpan(&__thrown, input.get_handle(), pattern.get_handle(), replacement.get_handle(), options.get_value(), matchTimeout.get_handle());
+        if let __ex =  __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+        return dotnet.System.String(hndl : __return);
+        }
+    }
     // System.String Replace(System.String, System.String, System.Text.RegularExpressions.MatchEvaluator)
 // docid: M:System.Text.RegularExpressions.Regex.Replace(System.String,System.String,System.Text.RegularExpressions.MatchEvaluator)
     /**
@@ -1614,7 +1727,33 @@ open class Regex
         let del_evaluator = try dotnet.System.Text.RegularExpressions.MatchEvaluator(evaluator);
         return try Replace(input: input, pattern: pattern, evaluator: del_evaluator, options: options);
     }
-// TODO COPE (write_all_methods) (span) System.String Replace(System.String, System.String, System.Text.RegularExpressions.MatchEvaluator, System.Text.RegularExpressions.RegexOptions, System.TimeSpan)
+    // System.String Replace(System.String, System.String, System.Text.RegularExpressions.MatchEvaluator, System.Text.RegularExpressions.RegexOptions, System.TimeSpan)
+// docid: M:System.Text.RegularExpressions.Regex.Replace(System.String,System.String,System.Text.RegularExpressions.MatchEvaluator,System.Text.RegularExpressions.RegexOptions,System.TimeSpan)
+    /**
+    In a specified input string, replaces all substrings that match a specified regular expression with a string returned by a  delegate. Additional parameters specify options that modify the matching operation and a time-out interval if no match is found.
+
+    - Parameter input: The string to search for a match.
+    - Parameter pattern: The regular expression pattern to match.
+    - Parameter evaluator: A custom method that examines each match and returns either the original matched string or a replacement string.
+    - Parameter options: A bitwise combination of enumeration values that provide options for matching.
+    - Parameter matchTimeout: A time-out interval, or  to indicate that the method should not time out.
+    - Returns: A new string that is identical to the input string, except that the replacement string takes the place of each matched string. If  is not matched in the current instance, the method returns the current instance unchanged.
+
+    */
+    open class func Replace(input : dotnet.System.String, pattern : dotnet.System.String, evaluator : dotnet.System.Text.RegularExpressions.MatchEvaluator, options : dotnet.System.Text.RegularExpressions.RegexOptions, matchTimeout : dotnet.System.TimeSpan) throws -> dotnet.System.String {
+        var __thrown : NullableHandle = nil;
+        let __return = System_Text_RegularExpressions_Regex_String__Replace_0__5__String_String_MatchEvaluator_RegexOptions_TimeSpan(&__thrown, input.get_handle(), pattern.get_handle(), evaluator.get_handle(), options.get_value(), matchTimeout.get_handle());
+        if let __ex =  __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+        return dotnet.System.String(hndl : __return);
+        }
+    }
+    // delegate closure overload
+    open class func Replace(input : dotnet.System.String, pattern : dotnet.System.String, evaluator : @escaping (dotnet.System.Text.RegularExpressions.Match) throws -> dotnet.System.String, options : dotnet.System.Text.RegularExpressions.RegexOptions, matchTimeout : dotnet.System.TimeSpan) throws -> dotnet.System.String {
+        let del_evaluator = try dotnet.System.Text.RegularExpressions.MatchEvaluator(evaluator);
+        return try Replace(input: input, pattern: pattern, evaluator: del_evaluator, options: options, matchTimeout: matchTimeout);
+    }
     // System.String Replace(System.String, System.Text.RegularExpressions.MatchEvaluator)
 // docid: M:System.Text.RegularExpressions.Regex.Replace(System.String,System.Text.RegularExpressions.MatchEvaluator)
     /**
@@ -1786,7 +1925,27 @@ open class Regex
         return dotnet.System_Arr<dotnet.System.String>(hndl : __return);
         }
     }
-// TODO COPE (write_all_methods) (span) System.String[] Split(System.String, System.String, System.Text.RegularExpressions.RegexOptions, System.TimeSpan)
+    // System.String[] Split(System.String, System.String, System.Text.RegularExpressions.RegexOptions, System.TimeSpan)
+// docid: M:System.Text.RegularExpressions.Regex.Split(System.String,System.String,System.Text.RegularExpressions.RegexOptions,System.TimeSpan)
+    /**
+    Splits an input string into an array of substrings at the positions defined by a specified regular expression pattern. Additional parameters specify options that modify the matching operation and a time-out interval if no match is found.
+
+    - Parameter input: The string to split.
+    - Parameter pattern: The regular expression pattern to match.
+    - Parameter options: A bitwise combination of the enumeration values that provide options for matching.
+    - Parameter matchTimeout: A time-out interval, or  to indicate that the method should not time out.
+    - Returns: A string array.
+
+    */
+    open class func Split(input : dotnet.System.String, pattern : dotnet.System.String, options : dotnet.System.Text.RegularExpressions.RegexOptions, matchTimeout : dotnet.System.TimeSpan) throws -> dotnet.System_Arr<dotnet.System.String> {
+        var __thrown : NullableHandle = nil;
+        let __return = System_Text_RegularExpressions_Regex_StringArray__Split_0__4__String_String_RegexOptions_TimeSpan(&__thrown, input.get_handle(), pattern.get_handle(), options.get_value(), matchTimeout.get_handle());
+        if let __ex =  __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+        return dotnet.System_Arr<dotnet.System.String>(hndl : __return);
+        }
+    }
     // System.String ToString()
 // docid: M:System.Text.RegularExpressions.Regex.ToString
     /**
@@ -1931,6 +2090,9 @@ open class RegexCompilationInfo
     open class override func get_type_handle() -> TypeHandle {
         return System_Text_RegularExpressions_RegexCompilationInfo_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor(System.String, System.Text.RegularExpressions.RegexOptions, System.String, System.String, bool)
@@ -1954,7 +2116,28 @@ open class RegexCompilationInfo
             super.init(hndl: h);
         }
     }
-// TODO COPE ctor (span) .ctor(System.String, System.Text.RegularExpressions.RegexOptions, System.String, System.String, bool, System.TimeSpan)
+    // .ctor(System.String, System.Text.RegularExpressions.RegexOptions, System.String, System.String, bool, System.TimeSpan)
+// docid: M:System.Text.RegularExpressions.RegexCompilationInfo.#ctor(System.String,System.Text.RegularExpressions.RegexOptions,System.String,System.String,System.Boolean,System.TimeSpan)
+    /**
+    Initializes a new instance of the  class that contains information about a regular expression with a specified time-out value to be included in an assembly.
+
+    - Parameter pattern: The regular expression to compile.
+    - Parameter options: The regular expression options to use when compiling the regular expression.
+    - Parameter name: The name of the type that represents the compiled regular expression.
+    - Parameter fullnamespace: The namespace to which the new type belongs.
+    - Parameter ispublic: 
+         to make the compiled regular expression publicly visible; otherwise, .
+    - Parameter matchTimeout: The default time-out interval for the regular expression.
+    */
+    public init(pattern : dotnet.System.String, options : dotnet.System.Text.RegularExpressions.RegexOptions, name : dotnet.System.String, fullnamespace : dotnet.System.String, ispublic : Bool, matchTimeout : dotnet.System.TimeSpan) throws {
+        var __thrown : NullableHandle = nil;
+        let h = System_Text_RegularExpressions_RegexCompilationInfo_ctor_0__6__String_RegexOptions_String_String_bool_TimeSpan(&__thrown, pattern.get_handle(), options.get_value(), name.get_handle(), fullnamespace.get_handle(), Swift.Int32(ispublic ? 1 : 0), matchTimeout.get_handle());
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            super.init(hndl: h);
+        }
+    }
     // [IsSpecialName] bool get_IsPublic()
 // docid: M:System.Text.RegularExpressions.RegexCompilationInfo.get_IsPublic
     open func get_IsPublic() throws -> Bool {
@@ -1988,7 +2171,17 @@ open class RegexCompilationInfo
         return dotnet.System.TimeSpan(hndl : __return);
         }
     }
-// TODO COPE (write_all_methods) (span) [IsSpecialName] void set_MatchTimeout(System.TimeSpan)
+    // [IsSpecialName] void set_MatchTimeout(System.TimeSpan)
+// docid: M:System.Text.RegularExpressions.RegexCompilationInfo.set_MatchTimeout(System.TimeSpan)
+    open func set_MatchTimeout(value : dotnet.System.TimeSpan) throws {
+        var __thrown : NullableHandle = nil;
+        System_Text_RegularExpressions_RegexCompilationInfo_void__set_MatchTimeout_0__1__TimeSpan(&__thrown, self.get_handle(), value.get_handle());
+        if let __ex =  __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            return;
+        }
+    }
     // [IsSpecialName] System.String get_Name()
 // docid: M:System.Text.RegularExpressions.RegexCompilationInfo.get_Name
     open func get_Name() throws -> dotnet.System.String {
@@ -2097,7 +2290,9 @@ open class RegexCompilationInfo
         get {
             return try! get_MatchTimeout();
         }
-// TODO COPE prop set (span) [IsSpecialName] void set_MatchTimeout(System.TimeSpan)
+        set(v) {
+            return try! set_MatchTimeout(value: v);
+        }
     }
     /**
     Gets or sets the name of the type that represents the compiled regular expression.
@@ -2162,6 +2357,9 @@ open class RegexMatchTimeoutException
     open class override func get_type_handle() -> TypeHandle {
         return System_Text_RegularExpressions_RegexMatchTimeoutException_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor()
@@ -2212,7 +2410,24 @@ open class RegexMatchTimeoutException
             super.init(hndl: h);
         }
     }
-// TODO COPE ctor (span) .ctor(System.String, System.String, System.TimeSpan)
+    // .ctor(System.String, System.String, System.TimeSpan)
+// docid: M:System.Text.RegularExpressions.RegexMatchTimeoutException.#ctor(System.String,System.String,System.TimeSpan)
+    /**
+    Initializes a new instance of the  class with information about the regular expression pattern, the input text, and the time-out interval.
+
+    - Parameter regexInput: The input text processed by the regular expression engine when the time-out occurred.
+    - Parameter regexPattern: The pattern used by the regular expression engine when the time-out occurred.
+    - Parameter matchTimeout: The time-out interval.
+    */
+    public init(regexInput : dotnet.System.String, regexPattern : dotnet.System.String, matchTimeout : dotnet.System.TimeSpan) throws {
+        var __thrown : NullableHandle = nil;
+        let h = System_Text_RegularExpressions_RegexMatchTimeoutException_ctor_0__3__String_String_TimeSpan(&__thrown, regexInput.get_handle(), regexPattern.get_handle(), matchTimeout.get_handle());
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            super.init(hndl: h);
+        }
+    }
     // [IsSpecialName] System.String get_Input()
 // docid: M:System.Text.RegularExpressions.RegexMatchTimeoutException.get_Input
     open func get_Input() throws -> dotnet.System.String {
@@ -2337,7 +2552,7 @@ public struct RegexOptions : SGBridgeGenericValue {
     }
     // static field: System.Text.RegularExpressions.RegexOptions Compiled
     /**
-    Specifies that the regular expression is compiled to an assembly. This yields faster execution but increases startup time. This value should not be assigned to the  property when calling the  method. For more information, see the "Compiled Regular Expressions" section in the Regular Expression Options article.
+    Specifies that the regular expression is compiled to MSIL code, instead of being interpreted. Compiled regular expressions maximize run-time performance at the expense of initialization time. This value should not be assigned to the  property when calling the  method. For more information, see the "Compiled Regular Expressions" section in the Regular Expression Options article.
 
     */
     public static var Compiled : dotnet.System.Text.RegularExpressions.RegexOptions {
@@ -2788,6 +3003,9 @@ public final class RegexParseException
     public class override func get_type_handle() -> TypeHandle {
         return System_Text_RegularExpressions_RegexParseException_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // void GetObjectData(System.Runtime.Serialization.SerializationInfo, System.Runtime.Serialization.StreamingContext)
@@ -2862,6 +3080,9 @@ open class RegexRunner
     open class override func get_type_handle() -> TypeHandle {
         return System_Text_RegularExpressions_RegexRunner_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
 } // RegexRunner
@@ -2878,6 +3099,9 @@ open class RegexRunnerFactory
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Text_RegularExpressions_RegexRunnerFactory_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }

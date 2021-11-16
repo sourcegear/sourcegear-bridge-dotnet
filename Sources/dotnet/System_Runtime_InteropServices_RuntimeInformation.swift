@@ -77,6 +77,10 @@ public struct Architecture : SGBridgeGenericValue {
         }
     }
     // static field: System.Runtime.InteropServices.Architecture S390x
+    /**
+    The S390x platform architecture.
+
+    */
     public static var S390x : dotnet.System.Runtime.InteropServices.Architecture {
         get {
         let __return = dotnet.System.Runtime.InteropServices.Architecture(val: System_Runtime_InteropServices_Architecture_get_S390x());
@@ -98,6 +102,9 @@ public final class OSPlatform
 {
     public class override func get_type_handle() -> TypeHandle {
         return System_Runtime_InteropServices_OSPlatform_get_type_handle();
+    }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -396,7 +403,7 @@ public struct RuntimeInformation {
         }
     }
     /**
-    Returns a string that indicates the name of the .NET installation on which an app is running.
+    Gets the name of the .NET installation on which an app is running.
 
     */
     public static var FrameworkDescription : dotnet.System.String {
@@ -432,7 +439,7 @@ public struct RuntimeInformation {
         }
     }
     /**
-    Returns an opaque string that identifies the platform on which an app is running.
+    Gets the platform on which an app is running.
 
     */
     public static var RuntimeIdentifier : dotnet.System.String {

@@ -81,9 +81,9 @@ struct {
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_Net_Mail_MailAddress_ctor_0__3__String_String_Encoding)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL address, SG_HNDL_NULLABLE displayName, SG_HNDL_NULLABLE displayNameEncoding);
     int32_t (* _Nonnull  _fp_System_Net_Mail_MailAddress_bool__Equals_0__1__Object)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE value);
     int32_t (* _Nonnull  _fp_System_Net_Mail_MailAddress_i32__GetHashCode_0__0)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h);
-    int32_t (* _Nonnull  _fp_System_Net_Mail_MailAddress_bool__TryCreate_0__2__String_outMailAddress)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL address, SG_HNDL_NONNULL* _Nonnull __result_out_ptr);
-    int32_t (* _Nonnull  _fp_System_Net_Mail_MailAddress_bool__TryCreate_0__3__String_String_outMailAddress)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL address, SG_HNDL_NULLABLE displayName, SG_HNDL_NONNULL* _Nonnull __result_out_ptr);
-    int32_t (* _Nonnull  _fp_System_Net_Mail_MailAddress_bool__TryCreate_0__4__String_String_Encoding_outMailAddress)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL address, SG_HNDL_NULLABLE displayName, SG_HNDL_NULLABLE displayNameEncoding, SG_HNDL_NONNULL* _Nonnull __result_out_ptr);
+    int32_t (* _Nonnull  _fp_System_Net_Mail_MailAddress_bool__TryCreate_0__2__String_outMailAddress)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL address, SG_HNDL_NULLABLE* _Nonnull __result_out_ptr);
+    int32_t (* _Nonnull  _fp_System_Net_Mail_MailAddress_bool__TryCreate_0__3__String_String_outMailAddress)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL address, SG_HNDL_NULLABLE displayName, SG_HNDL_NULLABLE* _Nonnull __result_out_ptr);
+    int32_t (* _Nonnull  _fp_System_Net_Mail_MailAddress_bool__TryCreate_0__4__String_String_Encoding_outMailAddress)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL address, SG_HNDL_NULLABLE displayName, SG_HNDL_NULLABLE displayNameEncoding, SG_HNDL_NULLABLE* _Nonnull __result_out_ptr);
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_Net_Mail_MailAddress_String__ToString_0__0)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h);
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_Net_Mail_MailAddress_String__get_Address_0__0)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h);
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_Net_Mail_MailAddress_String__get_DisplayName_0__0)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h);
@@ -141,7 +141,7 @@ struct {
     void (* _Nonnull  _fp_System_Net_Mail_SendCompletedEventHandler_void__Invoke_0__2__Object_AsyncCompletedEventArgs)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NONNULL sender, SG_HNDL_NONNULL e);
     SG_HNDL_NULLABLE (* _Nonnull  _fp_System_Net_Mail_SendCompletedEventHandler_IAsyncResult__BeginInvoke_0__4__Object_AsyncCompletedEventArgs_AsyncCallback_Object)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NONNULL sender, SG_HNDL_NONNULL e, SG_HNDL_NULLABLE callback, SG_HNDL_NULLABLE object_);
     void (* _Nonnull  _fp_System_Net_Mail_SendCompletedEventHandler_void__EndInvoke_0__1__IAsyncResult)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE result);
-    SG_HNDL_NONNULL (* _Nonnull  _fp_System_Net_Mail_SendCompletedEventHandler_create)(SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nullable __pdata, void (* _Nullable __deinit)(const void* _Nullable __pdata), void (* _Nonnull  __cb)(const void* _Nullable __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL sender, SG_HNDL_NONNULL e));
+    SG_HNDL_NONNULL (* _Nonnull  _fp_System_Net_Mail_SendCompletedEventHandler_create)(SG_HNDL_NULLABLE * _Nonnull __thrown, void (* _Nonnull  __cb)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL sender, SG_HNDL_NONNULL e), const void* _Nonnull __pdata, void (* _Nullable __deinit)(const void* _Nonnull __pdata));
     TYP (* _Nonnull  _fp_System_Net_Mail_SmtpClient_get_type_handle)(void);
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_Net_Mail_SmtpClient_ctor_0__0)(SG_HNDL_NULLABLE * _Nonnull __thrown);
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_Net_Mail_SmtpClient_ctor_0__1__String)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE host);
@@ -889,7 +889,7 @@ int32_t System_Net_Mail_MailAddress_i32__GetHashCode_0__0(SG_HNDL_NULLABLE * _No
     return ret;
 }
 
-int32_t System_Net_Mail_MailAddress_bool__TryCreate_0__2__String_outMailAddress(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL address, SG_HNDL_NONNULL* _Nonnull __result_out_ptr) {
+int32_t System_Net_Mail_MailAddress_bool__TryCreate_0__2__String_outMailAddress(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL address, SG_HNDL_NULLABLE* _Nonnull __result_out_ptr) {
     if (!_g_System_Net_Mail._fp_System_Net_Mail_MailAddress_bool__TryCreate_0__2__String_outMailAddress) {
         my_init();
     }
@@ -897,7 +897,7 @@ int32_t System_Net_Mail_MailAddress_bool__TryCreate_0__2__String_outMailAddress(
     return ret;
 }
 
-int32_t System_Net_Mail_MailAddress_bool__TryCreate_0__3__String_String_outMailAddress(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL address, SG_HNDL_NULLABLE displayName, SG_HNDL_NONNULL* _Nonnull __result_out_ptr) {
+int32_t System_Net_Mail_MailAddress_bool__TryCreate_0__3__String_String_outMailAddress(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL address, SG_HNDL_NULLABLE displayName, SG_HNDL_NULLABLE* _Nonnull __result_out_ptr) {
     if (!_g_System_Net_Mail._fp_System_Net_Mail_MailAddress_bool__TryCreate_0__3__String_String_outMailAddress) {
         my_init();
     }
@@ -905,7 +905,7 @@ int32_t System_Net_Mail_MailAddress_bool__TryCreate_0__3__String_String_outMailA
     return ret;
 }
 
-int32_t System_Net_Mail_MailAddress_bool__TryCreate_0__4__String_String_Encoding_outMailAddress(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL address, SG_HNDL_NULLABLE displayName, SG_HNDL_NULLABLE displayNameEncoding, SG_HNDL_NONNULL* _Nonnull __result_out_ptr) {
+int32_t System_Net_Mail_MailAddress_bool__TryCreate_0__4__String_String_Encoding_outMailAddress(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL address, SG_HNDL_NULLABLE displayName, SG_HNDL_NULLABLE displayNameEncoding, SG_HNDL_NULLABLE* _Nonnull __result_out_ptr) {
     if (!_g_System_Net_Mail._fp_System_Net_Mail_MailAddress_bool__TryCreate_0__4__String_String_Encoding_outMailAddress) {
         my_init();
     }
@@ -1353,11 +1353,11 @@ void System_Net_Mail_SendCompletedEventHandler_void__EndInvoke_0__1__IAsyncResul
     _g_System_Net_Mail._fp_System_Net_Mail_SendCompletedEventHandler_void__EndInvoke_0__1__IAsyncResult(__thrown, __self_h, result);
 }
 
-SG_HNDL_NONNULL System_Net_Mail_SendCompletedEventHandler_create(SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nullable __pdata, void (* _Nullable __deinit)(const void* _Nullable __pdata), void (* _Nonnull  __cb)(const void* _Nullable __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL sender, SG_HNDL_NONNULL e)) {
+SG_HNDL_NONNULL System_Net_Mail_SendCompletedEventHandler_create(SG_HNDL_NULLABLE * _Nonnull __thrown, void (* _Nonnull  __cb)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL sender, SG_HNDL_NONNULL e), const void* _Nonnull __pdata, void (* _Nullable __deinit)(const void* _Nonnull __pdata)) {
     if (!_g_System_Net_Mail._fp_System_Net_Mail_SendCompletedEventHandler_create) {
         my_init();
     }
-    SG_HNDL_NONNULL ret = _g_System_Net_Mail._fp_System_Net_Mail_SendCompletedEventHandler_create(__thrown, __pdata, __deinit, __cb);
+    SG_HNDL_NONNULL ret = _g_System_Net_Mail._fp_System_Net_Mail_SendCompletedEventHandler_create(__thrown, __cb, __pdata, __deinit);
     return ret;
 }
 

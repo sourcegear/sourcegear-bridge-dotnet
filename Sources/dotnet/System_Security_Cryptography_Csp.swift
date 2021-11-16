@@ -18,6 +18,9 @@ public final class AesCryptoServiceProvider
     public class override func get_type_handle() -> TypeHandle {
         return System_Security_Cryptography_AesCryptoServiceProvider_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor()
@@ -430,6 +433,9 @@ public final class CspKeyContainerInfo
     public class override func get_type_handle() -> TypeHandle {
         return System_Security_Cryptography_CspKeyContainerInfo_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor(System.Security.Cryptography.CspParameters)
@@ -711,6 +717,9 @@ public final class CspParameters
     public class override func get_type_handle() -> TypeHandle {
         return System_Security_Cryptography_CspParameters_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // instance field: System.String KeyContainerName
@@ -720,8 +729,8 @@ public final class CspParameters
     */
     public var KeyContainerName : Optional<dotnet.System.String> {
         get {
-        let __h = System_Security_Cryptography_CspParameters_get_KeyContainerName(self.get_handle());
-        let __return = (__h != nil) ? dotnet.System.String(hndl: __h!) : nil;
+        let __h___return = System_Security_Cryptography_CspParameters_get_KeyContainerName(self.get_handle());
+        let __return = (__h___return != nil) ? dotnet.System.String(hndl: __h___return!) : nil;
             return __return;
         }
         set(v) {
@@ -749,8 +758,8 @@ public final class CspParameters
     */
     public var ProviderName : Optional<dotnet.System.String> {
         get {
-        let __h = System_Security_Cryptography_CspParameters_get_ProviderName(self.get_handle());
-        let __return = (__h != nil) ? dotnet.System.String(hndl: __h!) : nil;
+        let __h___return = System_Security_Cryptography_CspParameters_get_ProviderName(self.get_handle());
+        let __return = (__h___return != nil) ? dotnet.System.String(hndl: __h___return!) : nil;
             return __return;
         }
         set(v) {
@@ -1075,6 +1084,9 @@ public final class DESCryptoServiceProvider
     public class override func get_type_handle() -> TypeHandle {
         return System_Security_Cryptography_DESCryptoServiceProvider_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor()
@@ -1209,6 +1221,9 @@ public final class DSACryptoServiceProvider
 {
     public class override func get_type_handle() -> TypeHandle {
         return System_Security_Cryptography_DSACryptoServiceProvider_get_type_handle();
+    }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -1700,6 +1715,9 @@ open class ICspAsymmetricAlgorithm
     open class func get_type_handle() -> TypeHandle {
         return System_Security_Cryptography_ICspAsymmetricAlgorithm_get_type_handle();
     }
+    open class func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     let h : NonnullHandle;
     public func to_gval() -> GVal { return GVal(Swift.Int(bitPattern: self.h)); }
     public func dup_gval() -> GVal { return GVal(Swift.Int(bitPattern: __copy_handle(self.h))); }
@@ -1810,6 +1828,9 @@ public final class MD5CryptoServiceProvider
     public class override func get_type_handle() -> TypeHandle {
         return System_Security_Cryptography_MD5CryptoServiceProvider_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor()
@@ -1856,6 +1877,9 @@ open class PasswordDeriveBytes
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Security_Cryptography_PasswordDeriveBytes_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -2182,6 +2206,9 @@ public final class RC2CryptoServiceProvider
     public class override func get_type_handle() -> TypeHandle {
         return System_Security_Cryptography_RC2CryptoServiceProvider_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor()
@@ -2350,6 +2377,9 @@ public final class RNGCryptoServiceProvider
     public class override func get_type_handle() -> TypeHandle {
         return System_Security_Cryptography_RNGCryptoServiceProvider_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor()
@@ -2482,6 +2512,9 @@ public final class RSACryptoServiceProvider
 {
     public class override func get_type_handle() -> TypeHandle {
         return System_Security_Cryptography_RSACryptoServiceProvider_get_type_handle();
+    }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -3094,6 +3127,9 @@ public final class SHA1CryptoServiceProvider
     public class override func get_type_handle() -> TypeHandle {
         return System_Security_Cryptography_SHA1CryptoServiceProvider_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor()
@@ -3140,6 +3176,9 @@ public final class SHA256CryptoServiceProvider
 {
     public class override func get_type_handle() -> TypeHandle {
         return System_Security_Cryptography_SHA256CryptoServiceProvider_get_type_handle();
+    }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -3188,6 +3227,9 @@ public final class SHA384CryptoServiceProvider
     public class override func get_type_handle() -> TypeHandle {
         return System_Security_Cryptography_SHA384CryptoServiceProvider_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor()
@@ -3235,6 +3277,9 @@ public final class SHA512CryptoServiceProvider
     public class override func get_type_handle() -> TypeHandle {
         return System_Security_Cryptography_SHA512CryptoServiceProvider_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor()
@@ -3281,6 +3326,9 @@ public final class TripleDESCryptoServiceProvider
 {
     public class override func get_type_handle() -> TypeHandle {
         return System_Security_Cryptography_TripleDESCryptoServiceProvider_get_type_handle();
+    }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }

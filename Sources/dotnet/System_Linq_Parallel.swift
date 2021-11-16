@@ -17,6 +17,9 @@ open class OrderedParallelQuery_1<TSource : SGBridgeGenericValue>
     open class override func get_type_handle() -> TypeHandle {
         return System_Linq_OrderedParallelQuery_1_get_type_handle(TSource.get_type_handle());
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // System.Collections.Generic.IEnumerator<TSource> GetEnumerator()
@@ -461,6 +464,11 @@ public struct ParallelEnumerable {
         return __return;
         }
     }
+// TODO COPE (parm closedgeneric of nullable): System.Nullable<System.Decimal> Average(System.Linq.ParallelQuery<System.Nullable<System.Decimal>>)
+// TODO COPE (parm closedgeneric of nullable): System.Nullable<System.Double> Average(System.Linq.ParallelQuery<System.Nullable<System.Double>>)
+// TODO COPE (parm closedgeneric of nullable): System.Nullable<System.Double> Average(System.Linq.ParallelQuery<System.Nullable<System.Int32>>)
+// TODO COPE (parm closedgeneric of nullable): System.Nullable<System.Double> Average(System.Linq.ParallelQuery<System.Nullable<System.Int64>>)
+// TODO COPE (parm closedgeneric of nullable): System.Nullable<System.Single> Average(System.Linq.ParallelQuery<System.Nullable<System.Single>>)
     // System.Single Average(System.Linq.ParallelQuery<System.Single>)
 // docid: M:System.Linq.ParallelEnumerable.Average(System.Linq.ParallelQuery{System.Single})
     /**
@@ -575,6 +583,11 @@ public struct ParallelEnumerable {
         let del_selector = try dotnet.System.Func_2<UTSource,Swift.Int64>(selector);
         return try Average(source: source, selector: del_selector);
     }
+// TODO COPE (parm closedgeneric of nullable): System.Nullable<System.Decimal> Average<TSource>(System.Linq.ParallelQuery<TSource>, System.Func<TSource,System.Nullable<System.Decimal>>)
+// TODO COPE (parm closedgeneric of nullable): System.Nullable<System.Double> Average<TSource>(System.Linq.ParallelQuery<TSource>, System.Func<TSource,System.Nullable<System.Double>>)
+// TODO COPE (parm closedgeneric of nullable): System.Nullable<System.Double> Average<TSource>(System.Linq.ParallelQuery<TSource>, System.Func<TSource,System.Nullable<System.Int32>>)
+// TODO COPE (parm closedgeneric of nullable): System.Nullable<System.Double> Average<TSource>(System.Linq.ParallelQuery<TSource>, System.Func<TSource,System.Nullable<System.Int64>>)
+// TODO COPE (parm closedgeneric of nullable): System.Nullable<System.Single> Average<TSource>(System.Linq.ParallelQuery<TSource>, System.Func<TSource,System.Nullable<System.Single>>)
     // System.Single Average<TSource>(System.Linq.ParallelQuery<TSource>, System.Func<TSource,System.Single>)
 // docid: M:System.Linq.ParallelEnumerable.Average``1(System.Linq.ParallelQuery{``0},System.Func{``0,System.Single})
     /**
@@ -670,9 +683,9 @@ public struct ParallelEnumerable {
          if the source sequence contains an element that has the specified value; otherwise, .
 
     */
-    public static func Contains<UTSource : SGBridgeGenericValue>(source : dotnet.System.Linq.ParallelQuery_1<UTSource>, value : UTSource, comparer : dotnet.System.Collections.Generic.IEqualityComparer_1<UTSource>) throws -> Bool {
+    public static func Contains<UTSource : SGBridgeGenericValue>(source : dotnet.System.Linq.ParallelQuery_1<UTSource>, value : UTSource, comparer : Optional<dotnet.System.Collections.Generic.IEqualityComparer_1<UTSource>>) throws -> Bool {
         var __thrown : NullableHandle = nil;
-        let __return = System_Linq_ParallelEnumerable_bool__Contains_1__3__System_Linq_ParallelQuery_UTSource__UTSource_System_Collections_Generic_IEqualityComparer_UTSource_(UTSource.get_type_handle(), &__thrown, source.get_handle(), value.to_gval(), nil);
+        let __return = System_Linq_ParallelEnumerable_bool__Contains_1__3__System_Linq_ParallelQuery_UTSource__UTSource_System_Collections_Generic_IEqualityComparer_UTSource_(UTSource.get_type_handle(), &__thrown, source.get_handle(), value.to_gval(), (comparer?.get_handle()));
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
@@ -786,9 +799,9 @@ public struct ParallelEnumerable {
     - Returns: A sequence that contains distinct elements from the source sequence.
 
     */
-    public static func Distinct<UTSource : SGBridgeGenericValue>(source : dotnet.System.Linq.ParallelQuery_1<UTSource>, comparer : dotnet.System.Collections.Generic.IEqualityComparer_1<UTSource>) throws -> dotnet.System.Linq.ParallelQuery_1<UTSource> {
+    public static func Distinct<UTSource : SGBridgeGenericValue>(source : dotnet.System.Linq.ParallelQuery_1<UTSource>, comparer : Optional<dotnet.System.Collections.Generic.IEqualityComparer_1<UTSource>>) throws -> dotnet.System.Linq.ParallelQuery_1<UTSource> {
         var __thrown : NullableHandle = nil;
-        let __return = System_Linq_ParallelEnumerable_System_Linq_ParallelQuery_UTSource___Distinct_1__2__System_Linq_ParallelQuery_UTSource__System_Collections_Generic_IEqualityComparer_UTSource_(UTSource.get_type_handle(), &__thrown, source.get_handle(), nil);
+        let __return = System_Linq_ParallelEnumerable_System_Linq_ParallelQuery_UTSource___Distinct_1__2__System_Linq_ParallelQuery_UTSource__System_Collections_Generic_IEqualityComparer_UTSource_(UTSource.get_type_handle(), &__thrown, source.get_handle(), (comparer?.get_handle()));
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
@@ -864,9 +877,9 @@ public struct ParallelEnumerable {
     - Returns: This overload always throws a .
 
     */
-    public static func Except<UTSource : SGBridgeGenericValue>(first : dotnet.System.Linq.ParallelQuery_1<UTSource>, second : dotnet.System.Collections.Generic.IEnumerable_1<UTSource>, comparer : dotnet.System.Collections.Generic.IEqualityComparer_1<UTSource>) throws -> dotnet.System.Linq.ParallelQuery_1<UTSource> {
+    public static func Except<UTSource : SGBridgeGenericValue>(first : dotnet.System.Linq.ParallelQuery_1<UTSource>, second : dotnet.System.Collections.Generic.IEnumerable_1<UTSource>, comparer : Optional<dotnet.System.Collections.Generic.IEqualityComparer_1<UTSource>>) throws -> dotnet.System.Linq.ParallelQuery_1<UTSource> {
         var __thrown : NullableHandle = nil;
-        let __return = System_Linq_ParallelEnumerable_System_Linq_ParallelQuery_UTSource___Except_1__3__System_Linq_ParallelQuery_UTSource__System_Collections_Generic_IEnumerable_UTSource__System_Collections_Generic_IEqualityComparer_UTSource_(UTSource.get_type_handle(), &__thrown, first.get_handle(), second.get_handle(), nil);
+        let __return = System_Linq_ParallelEnumerable_System_Linq_ParallelQuery_UTSource___Except_1__3__System_Linq_ParallelQuery_UTSource__System_Collections_Generic_IEnumerable_UTSource__System_Collections_Generic_IEqualityComparer_UTSource_(UTSource.get_type_handle(), &__thrown, first.get_handle(), second.get_handle(), (comparer?.get_handle()));
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
@@ -904,9 +917,9 @@ public struct ParallelEnumerable {
     - Returns: A sequence that contains the set difference of the elements of two sequences.
 
     */
-    public static func Except<UTSource : SGBridgeGenericValue>(first : dotnet.System.Linq.ParallelQuery_1<UTSource>, second : dotnet.System.Linq.ParallelQuery_1<UTSource>, comparer : dotnet.System.Collections.Generic.IEqualityComparer_1<UTSource>) throws -> dotnet.System.Linq.ParallelQuery_1<UTSource> {
+    public static func Except<UTSource : SGBridgeGenericValue>(first : dotnet.System.Linq.ParallelQuery_1<UTSource>, second : dotnet.System.Linq.ParallelQuery_1<UTSource>, comparer : Optional<dotnet.System.Collections.Generic.IEqualityComparer_1<UTSource>>) throws -> dotnet.System.Linq.ParallelQuery_1<UTSource> {
         var __thrown : NullableHandle = nil;
-        let __return = System_Linq_ParallelEnumerable_System_Linq_ParallelQuery_UTSource___Except_1__3__System_Linq_ParallelQuery_UTSource__System_Linq_ParallelQuery_UTSource__System_Collections_Generic_IEqualityComparer_UTSource_(UTSource.get_type_handle(), &__thrown, first.get_handle(), second.get_handle(), nil);
+        let __return = System_Linq_ParallelEnumerable_System_Linq_ParallelQuery_UTSource___Except_1__3__System_Linq_ParallelQuery_UTSource__System_Linq_ParallelQuery_UTSource__System_Collections_Generic_IEqualityComparer_UTSource_(UTSource.get_type_handle(), &__thrown, first.get_handle(), second.get_handle(), (comparer?.get_handle()));
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
@@ -1054,9 +1067,9 @@ public struct ParallelEnumerable {
     - Returns: A sequence of groups that are sorted descending according to .
 
     */
-    public static func GroupBy<UTSource : SGBridgeGenericValue,UTKey : SGBridgeGenericValue>(source : dotnet.System.Linq.ParallelQuery_1<UTSource>, keySelector : dotnet.System.Func_2<UTSource,UTKey>, comparer : dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>) throws -> dotnet.System.Linq.ParallelQuery_1<dotnet.System.Linq.IGrouping_2<UTKey,UTSource>> {
+    public static func GroupBy<UTSource : SGBridgeGenericValue,UTKey : SGBridgeGenericValue>(source : dotnet.System.Linq.ParallelQuery_1<UTSource>, keySelector : dotnet.System.Func_2<UTSource,UTKey>, comparer : Optional<dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>>) throws -> dotnet.System.Linq.ParallelQuery_1<dotnet.System.Linq.IGrouping_2<UTKey,UTSource>> {
         var __thrown : NullableHandle = nil;
-        let __return = System_Linq_ParallelEnumerable_System_Linq_ParallelQuery_System_Linq_System_Linq_IGrouping_UTKey_UTSource____GroupBy_2__3__System_Linq_ParallelQuery_UTSource__System_Func_UTSource_UTKey__System_Collections_Generic_IEqualityComparer_UTKey_(UTSource.get_type_handle(), UTKey.get_type_handle(), &__thrown, source.get_handle(), keySelector.get_handle(), nil);
+        let __return = System_Linq_ParallelEnumerable_System_Linq_ParallelQuery_System_Linq_System_Linq_IGrouping_UTKey_UTSource____GroupBy_2__3__System_Linq_ParallelQuery_UTSource__System_Func_UTSource_UTKey__System_Collections_Generic_IEqualityComparer_UTKey_(UTSource.get_type_handle(), UTKey.get_type_handle(), &__thrown, source.get_handle(), keySelector.get_handle(), (comparer?.get_handle()));
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
@@ -1064,7 +1077,7 @@ public struct ParallelEnumerable {
         }
     }
     // delegate closure overload
-    public static func GroupBy<UTSource : SGBridgeGenericValue,UTKey : SGBridgeGenericValue>(source : dotnet.System.Linq.ParallelQuery_1<UTSource>, keySelector : @escaping (UTSource) throws -> UTKey, comparer : dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>) throws -> dotnet.System.Linq.ParallelQuery_1<dotnet.System.Linq.IGrouping_2<UTKey,UTSource>> {
+    public static func GroupBy<UTSource : SGBridgeGenericValue,UTKey : SGBridgeGenericValue>(source : dotnet.System.Linq.ParallelQuery_1<UTSource>, keySelector : @escaping (UTSource) throws -> UTKey, comparer : Optional<dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>>) throws -> dotnet.System.Linq.ParallelQuery_1<dotnet.System.Linq.IGrouping_2<UTKey,UTSource>> {
         let del_keySelector = try dotnet.System.Func_2<UTSource,UTKey>(keySelector);
         return try GroupBy(source: source, keySelector: del_keySelector, comparer: comparer);
     }
@@ -1106,9 +1119,9 @@ public struct ParallelEnumerable {
     - Returns: A sequence of groups that are sorted descending according to .
 
     */
-    public static func GroupBy<UTSource : SGBridgeGenericValue,UTKey : SGBridgeGenericValue,UTElement : SGBridgeGenericValue>(source : dotnet.System.Linq.ParallelQuery_1<UTSource>, keySelector : dotnet.System.Func_2<UTSource,UTKey>, elementSelector : dotnet.System.Func_2<UTSource,UTElement>, comparer : dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>) throws -> dotnet.System.Linq.ParallelQuery_1<dotnet.System.Linq.IGrouping_2<UTKey,UTElement>> {
+    public static func GroupBy<UTSource : SGBridgeGenericValue,UTKey : SGBridgeGenericValue,UTElement : SGBridgeGenericValue>(source : dotnet.System.Linq.ParallelQuery_1<UTSource>, keySelector : dotnet.System.Func_2<UTSource,UTKey>, elementSelector : dotnet.System.Func_2<UTSource,UTElement>, comparer : Optional<dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>>) throws -> dotnet.System.Linq.ParallelQuery_1<dotnet.System.Linq.IGrouping_2<UTKey,UTElement>> {
         var __thrown : NullableHandle = nil;
-        let __return = System_Linq_ParallelEnumerable_System_Linq_ParallelQuery_System_Linq_System_Linq_IGrouping_UTKey_UTElement____GroupBy_3__4__System_Linq_ParallelQuery_UTSource__System_Func_UTSource_UTKey__System_Func_UTSource_UTElement__System_Collections_Generic_IEqualityComparer_UTKey_(UTSource.get_type_handle(), UTKey.get_type_handle(), UTElement.get_type_handle(), &__thrown, source.get_handle(), keySelector.get_handle(), elementSelector.get_handle(), nil);
+        let __return = System_Linq_ParallelEnumerable_System_Linq_ParallelQuery_System_Linq_System_Linq_IGrouping_UTKey_UTElement____GroupBy_3__4__System_Linq_ParallelQuery_UTSource__System_Func_UTSource_UTKey__System_Func_UTSource_UTElement__System_Collections_Generic_IEqualityComparer_UTKey_(UTSource.get_type_handle(), UTKey.get_type_handle(), UTElement.get_type_handle(), &__thrown, source.get_handle(), keySelector.get_handle(), elementSelector.get_handle(), (comparer?.get_handle()));
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
@@ -1116,7 +1129,7 @@ public struct ParallelEnumerable {
         }
     }
     // delegate closure overload
-    public static func GroupBy<UTSource : SGBridgeGenericValue,UTKey : SGBridgeGenericValue,UTElement : SGBridgeGenericValue>(source : dotnet.System.Linq.ParallelQuery_1<UTSource>, keySelector : @escaping (UTSource) throws -> UTKey, elementSelector : @escaping (UTSource) throws -> UTElement, comparer : dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>) throws -> dotnet.System.Linq.ParallelQuery_1<dotnet.System.Linq.IGrouping_2<UTKey,UTElement>> {
+    public static func GroupBy<UTSource : SGBridgeGenericValue,UTKey : SGBridgeGenericValue,UTElement : SGBridgeGenericValue>(source : dotnet.System.Linq.ParallelQuery_1<UTSource>, keySelector : @escaping (UTSource) throws -> UTKey, elementSelector : @escaping (UTSource) throws -> UTElement, comparer : Optional<dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>>) throws -> dotnet.System.Linq.ParallelQuery_1<dotnet.System.Linq.IGrouping_2<UTKey,UTElement>> {
         let del_keySelector = try dotnet.System.Func_2<UTSource,UTKey>(keySelector);
         let del_elementSelector = try dotnet.System.Func_2<UTSource,UTElement>(elementSelector);
         return try GroupBy(source: source, keySelector: del_keySelector, elementSelector: del_elementSelector, comparer: comparer);
@@ -1159,9 +1172,9 @@ public struct ParallelEnumerable {
     - Returns: A sequence of groups.
 
     */
-    public static func GroupBy<UTSource : SGBridgeGenericValue,UTKey : SGBridgeGenericValue,UTResult : SGBridgeGenericValue>(source : dotnet.System.Linq.ParallelQuery_1<UTSource>, keySelector : dotnet.System.Func_2<UTSource,UTKey>, resultSelector : dotnet.System.Func_3<UTKey,dotnet.System.Collections.Generic.IEnumerable_1<UTSource>,UTResult>, comparer : dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>) throws -> dotnet.System.Linq.ParallelQuery_1<UTResult> {
+    public static func GroupBy<UTSource : SGBridgeGenericValue,UTKey : SGBridgeGenericValue,UTResult : SGBridgeGenericValue>(source : dotnet.System.Linq.ParallelQuery_1<UTSource>, keySelector : dotnet.System.Func_2<UTSource,UTKey>, resultSelector : dotnet.System.Func_3<UTKey,dotnet.System.Collections.Generic.IEnumerable_1<UTSource>,UTResult>, comparer : Optional<dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>>) throws -> dotnet.System.Linq.ParallelQuery_1<UTResult> {
         var __thrown : NullableHandle = nil;
-        let __return = System_Linq_ParallelEnumerable_System_Linq_ParallelQuery_UTResult___GroupBy_3__4__System_Linq_ParallelQuery_UTSource__System_Func_UTSource_UTKey__System_Func_UTKey_System_Collections_Generic_System_Collections_Generic_IEnumerable_UTSource__UTResult__System_Collections_Generic_IEqualityComparer_UTKey_(UTSource.get_type_handle(), UTKey.get_type_handle(), UTResult.get_type_handle(), &__thrown, source.get_handle(), keySelector.get_handle(), resultSelector.get_handle(), nil);
+        let __return = System_Linq_ParallelEnumerable_System_Linq_ParallelQuery_UTResult___GroupBy_3__4__System_Linq_ParallelQuery_UTSource__System_Func_UTSource_UTKey__System_Func_UTKey_System_Collections_Generic_System_Collections_Generic_IEnumerable_UTSource__UTResult__System_Collections_Generic_IEqualityComparer_UTKey_(UTSource.get_type_handle(), UTKey.get_type_handle(), UTResult.get_type_handle(), &__thrown, source.get_handle(), keySelector.get_handle(), resultSelector.get_handle(), (comparer?.get_handle()));
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
@@ -1169,7 +1182,7 @@ public struct ParallelEnumerable {
         }
     }
     // delegate closure overload
-    public static func GroupBy<UTSource : SGBridgeGenericValue,UTKey : SGBridgeGenericValue,UTResult : SGBridgeGenericValue>(source : dotnet.System.Linq.ParallelQuery_1<UTSource>, keySelector : @escaping (UTSource) throws -> UTKey, resultSelector : @escaping (UTKey, dotnet.System.Collections.Generic.IEnumerable_1<UTSource>) throws -> UTResult, comparer : dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>) throws -> dotnet.System.Linq.ParallelQuery_1<UTResult> {
+    public static func GroupBy<UTSource : SGBridgeGenericValue,UTKey : SGBridgeGenericValue,UTResult : SGBridgeGenericValue>(source : dotnet.System.Linq.ParallelQuery_1<UTSource>, keySelector : @escaping (UTSource) throws -> UTKey, resultSelector : @escaping (UTKey, dotnet.System.Collections.Generic.IEnumerable_1<UTSource>) throws -> UTResult, comparer : Optional<dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>>) throws -> dotnet.System.Linq.ParallelQuery_1<UTResult> {
         let del_keySelector = try dotnet.System.Func_2<UTSource,UTKey>(keySelector);
         let del_resultSelector = try dotnet.System.Func_3<UTKey,dotnet.System.Collections.Generic.IEnumerable_1<UTSource>,UTResult>(resultSelector);
         return try GroupBy(source: source, keySelector: del_keySelector, resultSelector: del_resultSelector, comparer: comparer);
@@ -1215,9 +1228,9 @@ public struct ParallelEnumerable {
     - Returns: A sequence of elements of type  where each element represents a projection over a group and its key.
 
     */
-    public static func GroupBy<UTSource : SGBridgeGenericValue,UTKey : SGBridgeGenericValue,UTElement : SGBridgeGenericValue,UTResult : SGBridgeGenericValue>(source : dotnet.System.Linq.ParallelQuery_1<UTSource>, keySelector : dotnet.System.Func_2<UTSource,UTKey>, elementSelector : dotnet.System.Func_2<UTSource,UTElement>, resultSelector : dotnet.System.Func_3<UTKey,dotnet.System.Collections.Generic.IEnumerable_1<UTElement>,UTResult>, comparer : dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>) throws -> dotnet.System.Linq.ParallelQuery_1<UTResult> {
+    public static func GroupBy<UTSource : SGBridgeGenericValue,UTKey : SGBridgeGenericValue,UTElement : SGBridgeGenericValue,UTResult : SGBridgeGenericValue>(source : dotnet.System.Linq.ParallelQuery_1<UTSource>, keySelector : dotnet.System.Func_2<UTSource,UTKey>, elementSelector : dotnet.System.Func_2<UTSource,UTElement>, resultSelector : dotnet.System.Func_3<UTKey,dotnet.System.Collections.Generic.IEnumerable_1<UTElement>,UTResult>, comparer : Optional<dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>>) throws -> dotnet.System.Linq.ParallelQuery_1<UTResult> {
         var __thrown : NullableHandle = nil;
-        let __return = System_Linq_ParallelEnumerable_System_Linq_ParallelQuery_UTResult___GroupBy_4__5__System_Linq_ParallelQuery_UTSource__System_Func_UTSource_UTKey__System_Func_UTSource_UTElement__System_Func_UTKey_System_Collections_Generic_System_Collections_Generic_IEnumerable_UTElement__UTResult__System_Collections_Generic_IEqualityComparer_UTKey_(UTSource.get_type_handle(), UTKey.get_type_handle(), UTElement.get_type_handle(), UTResult.get_type_handle(), &__thrown, source.get_handle(), keySelector.get_handle(), elementSelector.get_handle(), resultSelector.get_handle(), nil);
+        let __return = System_Linq_ParallelEnumerable_System_Linq_ParallelQuery_UTResult___GroupBy_4__5__System_Linq_ParallelQuery_UTSource__System_Func_UTSource_UTKey__System_Func_UTSource_UTElement__System_Func_UTKey_System_Collections_Generic_System_Collections_Generic_IEnumerable_UTElement__UTResult__System_Collections_Generic_IEqualityComparer_UTKey_(UTSource.get_type_handle(), UTKey.get_type_handle(), UTElement.get_type_handle(), UTResult.get_type_handle(), &__thrown, source.get_handle(), keySelector.get_handle(), elementSelector.get_handle(), resultSelector.get_handle(), (comparer?.get_handle()));
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
@@ -1225,7 +1238,7 @@ public struct ParallelEnumerable {
         }
     }
     // delegate closure overload
-    public static func GroupBy<UTSource : SGBridgeGenericValue,UTKey : SGBridgeGenericValue,UTElement : SGBridgeGenericValue,UTResult : SGBridgeGenericValue>(source : dotnet.System.Linq.ParallelQuery_1<UTSource>, keySelector : @escaping (UTSource) throws -> UTKey, elementSelector : @escaping (UTSource) throws -> UTElement, resultSelector : @escaping (UTKey, dotnet.System.Collections.Generic.IEnumerable_1<UTElement>) throws -> UTResult, comparer : dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>) throws -> dotnet.System.Linq.ParallelQuery_1<UTResult> {
+    public static func GroupBy<UTSource : SGBridgeGenericValue,UTKey : SGBridgeGenericValue,UTElement : SGBridgeGenericValue,UTResult : SGBridgeGenericValue>(source : dotnet.System.Linq.ParallelQuery_1<UTSource>, keySelector : @escaping (UTSource) throws -> UTKey, elementSelector : @escaping (UTSource) throws -> UTElement, resultSelector : @escaping (UTKey, dotnet.System.Collections.Generic.IEnumerable_1<UTElement>) throws -> UTResult, comparer : Optional<dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>>) throws -> dotnet.System.Linq.ParallelQuery_1<UTResult> {
         let del_keySelector = try dotnet.System.Func_2<UTSource,UTKey>(keySelector);
         let del_elementSelector = try dotnet.System.Func_2<UTSource,UTElement>(elementSelector);
         let del_resultSelector = try dotnet.System.Func_3<UTKey,dotnet.System.Collections.Generic.IEnumerable_1<UTElement>,UTResult>(resultSelector);
@@ -1274,9 +1287,9 @@ public struct ParallelEnumerable {
     - Returns: This overload always throws a .
 
     */
-    public static func GroupJoin<UTOuter : SGBridgeGenericValue,UTInner : SGBridgeGenericValue,UTKey : SGBridgeGenericValue,UTResult : SGBridgeGenericValue>(outer : dotnet.System.Linq.ParallelQuery_1<UTOuter>, inner : dotnet.System.Collections.Generic.IEnumerable_1<UTInner>, outerKeySelector : dotnet.System.Func_2<UTOuter,UTKey>, innerKeySelector : dotnet.System.Func_2<UTInner,UTKey>, resultSelector : dotnet.System.Func_3<UTOuter,dotnet.System.Collections.Generic.IEnumerable_1<UTInner>,UTResult>, comparer : dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>) throws -> dotnet.System.Linq.ParallelQuery_1<UTResult> {
+    public static func GroupJoin<UTOuter : SGBridgeGenericValue,UTInner : SGBridgeGenericValue,UTKey : SGBridgeGenericValue,UTResult : SGBridgeGenericValue>(outer : dotnet.System.Linq.ParallelQuery_1<UTOuter>, inner : dotnet.System.Collections.Generic.IEnumerable_1<UTInner>, outerKeySelector : dotnet.System.Func_2<UTOuter,UTKey>, innerKeySelector : dotnet.System.Func_2<UTInner,UTKey>, resultSelector : dotnet.System.Func_3<UTOuter,dotnet.System.Collections.Generic.IEnumerable_1<UTInner>,UTResult>, comparer : Optional<dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>>) throws -> dotnet.System.Linq.ParallelQuery_1<UTResult> {
         var __thrown : NullableHandle = nil;
-        let __return = System_Linq_ParallelEnumerable_System_Linq_ParallelQuery_UTResult___GroupJoin_4__6__System_Linq_ParallelQuery_UTOuter__System_Collections_Generic_IEnumerable_UTInner__System_Func_UTOuter_UTKey__System_Func_UTInner_UTKey__System_Func_UTOuter_System_Collections_Generic_System_Collections_Generic_IEnumerable_UTInner__UTResult__System_Collections_Generic_IEqualityComparer_UTKey_(UTOuter.get_type_handle(), UTInner.get_type_handle(), UTKey.get_type_handle(), UTResult.get_type_handle(), &__thrown, outer.get_handle(), inner.get_handle(), outerKeySelector.get_handle(), innerKeySelector.get_handle(), resultSelector.get_handle(), nil);
+        let __return = System_Linq_ParallelEnumerable_System_Linq_ParallelQuery_UTResult___GroupJoin_4__6__System_Linq_ParallelQuery_UTOuter__System_Collections_Generic_IEnumerable_UTInner__System_Func_UTOuter_UTKey__System_Func_UTInner_UTKey__System_Func_UTOuter_System_Collections_Generic_System_Collections_Generic_IEnumerable_UTInner__UTResult__System_Collections_Generic_IEqualityComparer_UTKey_(UTOuter.get_type_handle(), UTInner.get_type_handle(), UTKey.get_type_handle(), UTResult.get_type_handle(), &__thrown, outer.get_handle(), inner.get_handle(), outerKeySelector.get_handle(), innerKeySelector.get_handle(), resultSelector.get_handle(), (comparer?.get_handle()));
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
@@ -1284,7 +1297,7 @@ public struct ParallelEnumerable {
         }
     }
     // delegate closure overload
-    public static func GroupJoin<UTOuter : SGBridgeGenericValue,UTInner : SGBridgeGenericValue,UTKey : SGBridgeGenericValue,UTResult : SGBridgeGenericValue>(outer : dotnet.System.Linq.ParallelQuery_1<UTOuter>, inner : dotnet.System.Collections.Generic.IEnumerable_1<UTInner>, outerKeySelector : @escaping (UTOuter) throws -> UTKey, innerKeySelector : @escaping (UTInner) throws -> UTKey, resultSelector : @escaping (UTOuter, dotnet.System.Collections.Generic.IEnumerable_1<UTInner>) throws -> UTResult, comparer : dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>) throws -> dotnet.System.Linq.ParallelQuery_1<UTResult> {
+    public static func GroupJoin<UTOuter : SGBridgeGenericValue,UTInner : SGBridgeGenericValue,UTKey : SGBridgeGenericValue,UTResult : SGBridgeGenericValue>(outer : dotnet.System.Linq.ParallelQuery_1<UTOuter>, inner : dotnet.System.Collections.Generic.IEnumerable_1<UTInner>, outerKeySelector : @escaping (UTOuter) throws -> UTKey, innerKeySelector : @escaping (UTInner) throws -> UTKey, resultSelector : @escaping (UTOuter, dotnet.System.Collections.Generic.IEnumerable_1<UTInner>) throws -> UTResult, comparer : Optional<dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>>) throws -> dotnet.System.Linq.ParallelQuery_1<UTResult> {
         let del_outerKeySelector = try dotnet.System.Func_2<UTOuter,UTKey>(outerKeySelector);
         let del_innerKeySelector = try dotnet.System.Func_2<UTInner,UTKey>(innerKeySelector);
         let del_resultSelector = try dotnet.System.Func_3<UTOuter,dotnet.System.Collections.Generic.IEnumerable_1<UTInner>,UTResult>(resultSelector);
@@ -1333,9 +1346,9 @@ public struct ParallelEnumerable {
     - Returns: A sequence that has elements of type  that are obtained by performing a grouped join on two sequences.
 
     */
-    public static func GroupJoin<UTOuter : SGBridgeGenericValue,UTInner : SGBridgeGenericValue,UTKey : SGBridgeGenericValue,UTResult : SGBridgeGenericValue>(outer : dotnet.System.Linq.ParallelQuery_1<UTOuter>, inner : dotnet.System.Linq.ParallelQuery_1<UTInner>, outerKeySelector : dotnet.System.Func_2<UTOuter,UTKey>, innerKeySelector : dotnet.System.Func_2<UTInner,UTKey>, resultSelector : dotnet.System.Func_3<UTOuter,dotnet.System.Collections.Generic.IEnumerable_1<UTInner>,UTResult>, comparer : dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>) throws -> dotnet.System.Linq.ParallelQuery_1<UTResult> {
+    public static func GroupJoin<UTOuter : SGBridgeGenericValue,UTInner : SGBridgeGenericValue,UTKey : SGBridgeGenericValue,UTResult : SGBridgeGenericValue>(outer : dotnet.System.Linq.ParallelQuery_1<UTOuter>, inner : dotnet.System.Linq.ParallelQuery_1<UTInner>, outerKeySelector : dotnet.System.Func_2<UTOuter,UTKey>, innerKeySelector : dotnet.System.Func_2<UTInner,UTKey>, resultSelector : dotnet.System.Func_3<UTOuter,dotnet.System.Collections.Generic.IEnumerable_1<UTInner>,UTResult>, comparer : Optional<dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>>) throws -> dotnet.System.Linq.ParallelQuery_1<UTResult> {
         var __thrown : NullableHandle = nil;
-        let __return = System_Linq_ParallelEnumerable_System_Linq_ParallelQuery_UTResult___GroupJoin_4__6__System_Linq_ParallelQuery_UTOuter__System_Linq_ParallelQuery_UTInner__System_Func_UTOuter_UTKey__System_Func_UTInner_UTKey__System_Func_UTOuter_System_Collections_Generic_System_Collections_Generic_IEnumerable_UTInner__UTResult__System_Collections_Generic_IEqualityComparer_UTKey_(UTOuter.get_type_handle(), UTInner.get_type_handle(), UTKey.get_type_handle(), UTResult.get_type_handle(), &__thrown, outer.get_handle(), inner.get_handle(), outerKeySelector.get_handle(), innerKeySelector.get_handle(), resultSelector.get_handle(), nil);
+        let __return = System_Linq_ParallelEnumerable_System_Linq_ParallelQuery_UTResult___GroupJoin_4__6__System_Linq_ParallelQuery_UTOuter__System_Linq_ParallelQuery_UTInner__System_Func_UTOuter_UTKey__System_Func_UTInner_UTKey__System_Func_UTOuter_System_Collections_Generic_System_Collections_Generic_IEnumerable_UTInner__UTResult__System_Collections_Generic_IEqualityComparer_UTKey_(UTOuter.get_type_handle(), UTInner.get_type_handle(), UTKey.get_type_handle(), UTResult.get_type_handle(), &__thrown, outer.get_handle(), inner.get_handle(), outerKeySelector.get_handle(), innerKeySelector.get_handle(), resultSelector.get_handle(), (comparer?.get_handle()));
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
@@ -1343,7 +1356,7 @@ public struct ParallelEnumerable {
         }
     }
     // delegate closure overload
-    public static func GroupJoin<UTOuter : SGBridgeGenericValue,UTInner : SGBridgeGenericValue,UTKey : SGBridgeGenericValue,UTResult : SGBridgeGenericValue>(outer : dotnet.System.Linq.ParallelQuery_1<UTOuter>, inner : dotnet.System.Linq.ParallelQuery_1<UTInner>, outerKeySelector : @escaping (UTOuter) throws -> UTKey, innerKeySelector : @escaping (UTInner) throws -> UTKey, resultSelector : @escaping (UTOuter, dotnet.System.Collections.Generic.IEnumerable_1<UTInner>) throws -> UTResult, comparer : dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>) throws -> dotnet.System.Linq.ParallelQuery_1<UTResult> {
+    public static func GroupJoin<UTOuter : SGBridgeGenericValue,UTInner : SGBridgeGenericValue,UTKey : SGBridgeGenericValue,UTResult : SGBridgeGenericValue>(outer : dotnet.System.Linq.ParallelQuery_1<UTOuter>, inner : dotnet.System.Linq.ParallelQuery_1<UTInner>, outerKeySelector : @escaping (UTOuter) throws -> UTKey, innerKeySelector : @escaping (UTInner) throws -> UTKey, resultSelector : @escaping (UTOuter, dotnet.System.Collections.Generic.IEnumerable_1<UTInner>) throws -> UTResult, comparer : Optional<dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>>) throws -> dotnet.System.Linq.ParallelQuery_1<UTResult> {
         let del_outerKeySelector = try dotnet.System.Func_2<UTOuter,UTKey>(outerKeySelector);
         let del_innerKeySelector = try dotnet.System.Func_2<UTInner,UTKey>(innerKeySelector);
         let del_resultSelector = try dotnet.System.Func_3<UTOuter,dotnet.System.Collections.Generic.IEnumerable_1<UTInner>,UTResult>(resultSelector);
@@ -1379,9 +1392,9 @@ public struct ParallelEnumerable {
     - Returns: This overload always throws a .
 
     */
-    public static func Intersect<UTSource : SGBridgeGenericValue>(first : dotnet.System.Linq.ParallelQuery_1<UTSource>, second : dotnet.System.Collections.Generic.IEnumerable_1<UTSource>, comparer : dotnet.System.Collections.Generic.IEqualityComparer_1<UTSource>) throws -> dotnet.System.Linq.ParallelQuery_1<UTSource> {
+    public static func Intersect<UTSource : SGBridgeGenericValue>(first : dotnet.System.Linq.ParallelQuery_1<UTSource>, second : dotnet.System.Collections.Generic.IEnumerable_1<UTSource>, comparer : Optional<dotnet.System.Collections.Generic.IEqualityComparer_1<UTSource>>) throws -> dotnet.System.Linq.ParallelQuery_1<UTSource> {
         var __thrown : NullableHandle = nil;
-        let __return = System_Linq_ParallelEnumerable_System_Linq_ParallelQuery_UTSource___Intersect_1__3__System_Linq_ParallelQuery_UTSource__System_Collections_Generic_IEnumerable_UTSource__System_Collections_Generic_IEqualityComparer_UTSource_(UTSource.get_type_handle(), &__thrown, first.get_handle(), second.get_handle(), nil);
+        let __return = System_Linq_ParallelEnumerable_System_Linq_ParallelQuery_UTSource___Intersect_1__3__System_Linq_ParallelQuery_UTSource__System_Collections_Generic_IEnumerable_UTSource__System_Collections_Generic_IEqualityComparer_UTSource_(UTSource.get_type_handle(), &__thrown, first.get_handle(), second.get_handle(), (comparer?.get_handle()));
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
@@ -1418,9 +1431,9 @@ public struct ParallelEnumerable {
     - Returns: A sequence that contains the elements that form the set intersection of two sequences.
 
     */
-    public static func Intersect<UTSource : SGBridgeGenericValue>(first : dotnet.System.Linq.ParallelQuery_1<UTSource>, second : dotnet.System.Linq.ParallelQuery_1<UTSource>, comparer : dotnet.System.Collections.Generic.IEqualityComparer_1<UTSource>) throws -> dotnet.System.Linq.ParallelQuery_1<UTSource> {
+    public static func Intersect<UTSource : SGBridgeGenericValue>(first : dotnet.System.Linq.ParallelQuery_1<UTSource>, second : dotnet.System.Linq.ParallelQuery_1<UTSource>, comparer : Optional<dotnet.System.Collections.Generic.IEqualityComparer_1<UTSource>>) throws -> dotnet.System.Linq.ParallelQuery_1<UTSource> {
         var __thrown : NullableHandle = nil;
-        let __return = System_Linq_ParallelEnumerable_System_Linq_ParallelQuery_UTSource___Intersect_1__3__System_Linq_ParallelQuery_UTSource__System_Linq_ParallelQuery_UTSource__System_Collections_Generic_IEqualityComparer_UTSource_(UTSource.get_type_handle(), &__thrown, first.get_handle(), second.get_handle(), nil);
+        let __return = System_Linq_ParallelEnumerable_System_Linq_ParallelQuery_UTSource___Intersect_1__3__System_Linq_ParallelQuery_UTSource__System_Linq_ParallelQuery_UTSource__System_Collections_Generic_IEqualityComparer_UTSource_(UTSource.get_type_handle(), &__thrown, first.get_handle(), second.get_handle(), (comparer?.get_handle()));
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
@@ -1470,9 +1483,9 @@ public struct ParallelEnumerable {
     - Returns: This overload always throws a .
 
     */
-    public static func Join<UTOuter : SGBridgeGenericValue,UTInner : SGBridgeGenericValue,UTKey : SGBridgeGenericValue,UTResult : SGBridgeGenericValue>(outer : dotnet.System.Linq.ParallelQuery_1<UTOuter>, inner : dotnet.System.Collections.Generic.IEnumerable_1<UTInner>, outerKeySelector : dotnet.System.Func_2<UTOuter,UTKey>, innerKeySelector : dotnet.System.Func_2<UTInner,UTKey>, resultSelector : dotnet.System.Func_3<UTOuter,UTInner,UTResult>, comparer : dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>) throws -> dotnet.System.Linq.ParallelQuery_1<UTResult> {
+    public static func Join<UTOuter : SGBridgeGenericValue,UTInner : SGBridgeGenericValue,UTKey : SGBridgeGenericValue,UTResult : SGBridgeGenericValue>(outer : dotnet.System.Linq.ParallelQuery_1<UTOuter>, inner : dotnet.System.Collections.Generic.IEnumerable_1<UTInner>, outerKeySelector : dotnet.System.Func_2<UTOuter,UTKey>, innerKeySelector : dotnet.System.Func_2<UTInner,UTKey>, resultSelector : dotnet.System.Func_3<UTOuter,UTInner,UTResult>, comparer : Optional<dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>>) throws -> dotnet.System.Linq.ParallelQuery_1<UTResult> {
         var __thrown : NullableHandle = nil;
-        let __return = System_Linq_ParallelEnumerable_System_Linq_ParallelQuery_UTResult___Join_4__6__System_Linq_ParallelQuery_UTOuter__System_Collections_Generic_IEnumerable_UTInner__System_Func_UTOuter_UTKey__System_Func_UTInner_UTKey__System_Func_UTOuter_UTInner_UTResult__System_Collections_Generic_IEqualityComparer_UTKey_(UTOuter.get_type_handle(), UTInner.get_type_handle(), UTKey.get_type_handle(), UTResult.get_type_handle(), &__thrown, outer.get_handle(), inner.get_handle(), outerKeySelector.get_handle(), innerKeySelector.get_handle(), resultSelector.get_handle(), nil);
+        let __return = System_Linq_ParallelEnumerable_System_Linq_ParallelQuery_UTResult___Join_4__6__System_Linq_ParallelQuery_UTOuter__System_Collections_Generic_IEnumerable_UTInner__System_Func_UTOuter_UTKey__System_Func_UTInner_UTKey__System_Func_UTOuter_UTInner_UTResult__System_Collections_Generic_IEqualityComparer_UTKey_(UTOuter.get_type_handle(), UTInner.get_type_handle(), UTKey.get_type_handle(), UTResult.get_type_handle(), &__thrown, outer.get_handle(), inner.get_handle(), outerKeySelector.get_handle(), innerKeySelector.get_handle(), resultSelector.get_handle(), (comparer?.get_handle()));
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
@@ -1480,7 +1493,7 @@ public struct ParallelEnumerable {
         }
     }
     // delegate closure overload
-    public static func Join<UTOuter : SGBridgeGenericValue,UTInner : SGBridgeGenericValue,UTKey : SGBridgeGenericValue,UTResult : SGBridgeGenericValue>(outer : dotnet.System.Linq.ParallelQuery_1<UTOuter>, inner : dotnet.System.Collections.Generic.IEnumerable_1<UTInner>, outerKeySelector : @escaping (UTOuter) throws -> UTKey, innerKeySelector : @escaping (UTInner) throws -> UTKey, resultSelector : @escaping (UTOuter, UTInner) throws -> UTResult, comparer : dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>) throws -> dotnet.System.Linq.ParallelQuery_1<UTResult> {
+    public static func Join<UTOuter : SGBridgeGenericValue,UTInner : SGBridgeGenericValue,UTKey : SGBridgeGenericValue,UTResult : SGBridgeGenericValue>(outer : dotnet.System.Linq.ParallelQuery_1<UTOuter>, inner : dotnet.System.Collections.Generic.IEnumerable_1<UTInner>, outerKeySelector : @escaping (UTOuter) throws -> UTKey, innerKeySelector : @escaping (UTInner) throws -> UTKey, resultSelector : @escaping (UTOuter, UTInner) throws -> UTResult, comparer : Optional<dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>>) throws -> dotnet.System.Linq.ParallelQuery_1<UTResult> {
         let del_outerKeySelector = try dotnet.System.Func_2<UTOuter,UTKey>(outerKeySelector);
         let del_innerKeySelector = try dotnet.System.Func_2<UTInner,UTKey>(innerKeySelector);
         let del_resultSelector = try dotnet.System.Func_3<UTOuter,UTInner,UTResult>(resultSelector);
@@ -1529,9 +1542,9 @@ public struct ParallelEnumerable {
     - Returns: A sequence that has elements of type  that are obtained by performing an inner join on two sequences.
 
     */
-    public static func Join<UTOuter : SGBridgeGenericValue,UTInner : SGBridgeGenericValue,UTKey : SGBridgeGenericValue,UTResult : SGBridgeGenericValue>(outer : dotnet.System.Linq.ParallelQuery_1<UTOuter>, inner : dotnet.System.Linq.ParallelQuery_1<UTInner>, outerKeySelector : dotnet.System.Func_2<UTOuter,UTKey>, innerKeySelector : dotnet.System.Func_2<UTInner,UTKey>, resultSelector : dotnet.System.Func_3<UTOuter,UTInner,UTResult>, comparer : dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>) throws -> dotnet.System.Linq.ParallelQuery_1<UTResult> {
+    public static func Join<UTOuter : SGBridgeGenericValue,UTInner : SGBridgeGenericValue,UTKey : SGBridgeGenericValue,UTResult : SGBridgeGenericValue>(outer : dotnet.System.Linq.ParallelQuery_1<UTOuter>, inner : dotnet.System.Linq.ParallelQuery_1<UTInner>, outerKeySelector : dotnet.System.Func_2<UTOuter,UTKey>, innerKeySelector : dotnet.System.Func_2<UTInner,UTKey>, resultSelector : dotnet.System.Func_3<UTOuter,UTInner,UTResult>, comparer : Optional<dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>>) throws -> dotnet.System.Linq.ParallelQuery_1<UTResult> {
         var __thrown : NullableHandle = nil;
-        let __return = System_Linq_ParallelEnumerable_System_Linq_ParallelQuery_UTResult___Join_4__6__System_Linq_ParallelQuery_UTOuter__System_Linq_ParallelQuery_UTInner__System_Func_UTOuter_UTKey__System_Func_UTInner_UTKey__System_Func_UTOuter_UTInner_UTResult__System_Collections_Generic_IEqualityComparer_UTKey_(UTOuter.get_type_handle(), UTInner.get_type_handle(), UTKey.get_type_handle(), UTResult.get_type_handle(), &__thrown, outer.get_handle(), inner.get_handle(), outerKeySelector.get_handle(), innerKeySelector.get_handle(), resultSelector.get_handle(), nil);
+        let __return = System_Linq_ParallelEnumerable_System_Linq_ParallelQuery_UTResult___Join_4__6__System_Linq_ParallelQuery_UTOuter__System_Linq_ParallelQuery_UTInner__System_Func_UTOuter_UTKey__System_Func_UTInner_UTKey__System_Func_UTOuter_UTInner_UTResult__System_Collections_Generic_IEqualityComparer_UTKey_(UTOuter.get_type_handle(), UTInner.get_type_handle(), UTKey.get_type_handle(), UTResult.get_type_handle(), &__thrown, outer.get_handle(), inner.get_handle(), outerKeySelector.get_handle(), innerKeySelector.get_handle(), resultSelector.get_handle(), (comparer?.get_handle()));
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
@@ -1539,7 +1552,7 @@ public struct ParallelEnumerable {
         }
     }
     // delegate closure overload
-    public static func Join<UTOuter : SGBridgeGenericValue,UTInner : SGBridgeGenericValue,UTKey : SGBridgeGenericValue,UTResult : SGBridgeGenericValue>(outer : dotnet.System.Linq.ParallelQuery_1<UTOuter>, inner : dotnet.System.Linq.ParallelQuery_1<UTInner>, outerKeySelector : @escaping (UTOuter) throws -> UTKey, innerKeySelector : @escaping (UTInner) throws -> UTKey, resultSelector : @escaping (UTOuter, UTInner) throws -> UTResult, comparer : dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>) throws -> dotnet.System.Linq.ParallelQuery_1<UTResult> {
+    public static func Join<UTOuter : SGBridgeGenericValue,UTInner : SGBridgeGenericValue,UTKey : SGBridgeGenericValue,UTResult : SGBridgeGenericValue>(outer : dotnet.System.Linq.ParallelQuery_1<UTOuter>, inner : dotnet.System.Linq.ParallelQuery_1<UTInner>, outerKeySelector : @escaping (UTOuter) throws -> UTKey, innerKeySelector : @escaping (UTInner) throws -> UTKey, resultSelector : @escaping (UTOuter, UTInner) throws -> UTResult, comparer : Optional<dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>>) throws -> dotnet.System.Linq.ParallelQuery_1<UTResult> {
         let del_outerKeySelector = try dotnet.System.Func_2<UTOuter,UTKey>(outerKeySelector);
         let del_innerKeySelector = try dotnet.System.Func_2<UTInner,UTKey>(innerKeySelector);
         let del_resultSelector = try dotnet.System.Func_3<UTOuter,UTInner,UTResult>(resultSelector);
@@ -1743,6 +1756,11 @@ public struct ParallelEnumerable {
         return __return;
         }
     }
+// TODO COPE (parm closedgeneric of nullable): System.Nullable<System.Decimal> Max(System.Linq.ParallelQuery<System.Nullable<System.Decimal>>)
+// TODO COPE (parm closedgeneric of nullable): System.Nullable<System.Double> Max(System.Linq.ParallelQuery<System.Nullable<System.Double>>)
+// TODO COPE (parm closedgeneric of nullable): System.Nullable<System.Int32> Max(System.Linq.ParallelQuery<System.Nullable<System.Int32>>)
+// TODO COPE (parm closedgeneric of nullable): System.Nullable<System.Int64> Max(System.Linq.ParallelQuery<System.Nullable<System.Int64>>)
+// TODO COPE (parm closedgeneric of nullable): System.Nullable<System.Single> Max(System.Linq.ParallelQuery<System.Nullable<System.Single>>)
     // System.Single Max(System.Linq.ParallelQuery<System.Single>)
 // docid: M:System.Linq.ParallelEnumerable.Max(System.Linq.ParallelQuery{System.Single})
     /**
@@ -1875,6 +1893,11 @@ public struct ParallelEnumerable {
         let del_selector = try dotnet.System.Func_2<UTSource,Swift.Int64>(selector);
         return try Max(source: source, selector: del_selector);
     }
+// TODO COPE (parm closedgeneric of nullable): System.Nullable<System.Decimal> Max<TSource>(System.Linq.ParallelQuery<TSource>, System.Func<TSource,System.Nullable<System.Decimal>>)
+// TODO COPE (parm closedgeneric of nullable): System.Nullable<System.Double> Max<TSource>(System.Linq.ParallelQuery<TSource>, System.Func<TSource,System.Nullable<System.Double>>)
+// TODO COPE (parm closedgeneric of nullable): System.Nullable<System.Int32> Max<TSource>(System.Linq.ParallelQuery<TSource>, System.Func<TSource,System.Nullable<System.Int32>>)
+// TODO COPE (parm closedgeneric of nullable): System.Nullable<System.Int64> Max<TSource>(System.Linq.ParallelQuery<TSource>, System.Func<TSource,System.Nullable<System.Int64>>)
+// TODO COPE (parm closedgeneric of nullable): System.Nullable<System.Single> Max<TSource>(System.Linq.ParallelQuery<TSource>, System.Func<TSource,System.Nullable<System.Single>>)
     // System.Single Max<TSource>(System.Linq.ParallelQuery<TSource>, System.Func<TSource,System.Single>)
 // docid: M:System.Linq.ParallelEnumerable.Max``1(System.Linq.ParallelQuery{``0},System.Func{``0,System.Single})
     /**
@@ -1995,6 +2018,11 @@ public struct ParallelEnumerable {
         return __return;
         }
     }
+// TODO COPE (parm closedgeneric of nullable): System.Nullable<System.Decimal> Min(System.Linq.ParallelQuery<System.Nullable<System.Decimal>>)
+// TODO COPE (parm closedgeneric of nullable): System.Nullable<System.Double> Min(System.Linq.ParallelQuery<System.Nullable<System.Double>>)
+// TODO COPE (parm closedgeneric of nullable): System.Nullable<System.Int32> Min(System.Linq.ParallelQuery<System.Nullable<System.Int32>>)
+// TODO COPE (parm closedgeneric of nullable): System.Nullable<System.Int64> Min(System.Linq.ParallelQuery<System.Nullable<System.Int64>>)
+// TODO COPE (parm closedgeneric of nullable): System.Nullable<System.Single> Min(System.Linq.ParallelQuery<System.Nullable<System.Single>>)
     // System.Single Min(System.Linq.ParallelQuery<System.Single>)
 // docid: M:System.Linq.ParallelEnumerable.Min(System.Linq.ParallelQuery{System.Single})
     /**
@@ -2127,6 +2155,11 @@ public struct ParallelEnumerable {
         let del_selector = try dotnet.System.Func_2<UTSource,Swift.Int64>(selector);
         return try Min(source: source, selector: del_selector);
     }
+// TODO COPE (parm closedgeneric of nullable): System.Nullable<System.Decimal> Min<TSource>(System.Linq.ParallelQuery<TSource>, System.Func<TSource,System.Nullable<System.Decimal>>)
+// TODO COPE (parm closedgeneric of nullable): System.Nullable<System.Double> Min<TSource>(System.Linq.ParallelQuery<TSource>, System.Func<TSource,System.Nullable<System.Double>>)
+// TODO COPE (parm closedgeneric of nullable): System.Nullable<System.Int32> Min<TSource>(System.Linq.ParallelQuery<TSource>, System.Func<TSource,System.Nullable<System.Int32>>)
+// TODO COPE (parm closedgeneric of nullable): System.Nullable<System.Int64> Min<TSource>(System.Linq.ParallelQuery<TSource>, System.Func<TSource,System.Nullable<System.Int64>>)
+// TODO COPE (parm closedgeneric of nullable): System.Nullable<System.Single> Min<TSource>(System.Linq.ParallelQuery<TSource>, System.Func<TSource,System.Nullable<System.Single>>)
     // System.Single Min<TSource>(System.Linq.ParallelQuery<TSource>, System.Func<TSource,System.Single>)
 // docid: M:System.Linq.ParallelEnumerable.Min``1(System.Linq.ParallelQuery{``0},System.Func{``0,System.Single})
     /**
@@ -2211,9 +2244,9 @@ public struct ParallelEnumerable {
     - Returns: An OrderedParallelQuery{TSource} whose elements are sorted descending according to a key.
 
     */
-    public static func OrderByDescending<UTSource : SGBridgeGenericValue,UTKey : SGBridgeGenericValue>(source : dotnet.System.Linq.ParallelQuery_1<UTSource>, keySelector : dotnet.System.Func_2<UTSource,UTKey>, comparer : dotnet.System.Collections.Generic.IComparer_1<UTKey>) throws -> dotnet.System.Linq.OrderedParallelQuery_1<UTSource> {
+    public static func OrderByDescending<UTSource : SGBridgeGenericValue,UTKey : SGBridgeGenericValue>(source : dotnet.System.Linq.ParallelQuery_1<UTSource>, keySelector : dotnet.System.Func_2<UTSource,UTKey>, comparer : Optional<dotnet.System.Collections.Generic.IComparer_1<UTKey>>) throws -> dotnet.System.Linq.OrderedParallelQuery_1<UTSource> {
         var __thrown : NullableHandle = nil;
-        let __return = System_Linq_ParallelEnumerable_System_Linq_OrderedParallelQuery_UTSource___OrderByDescending_2__3__System_Linq_ParallelQuery_UTSource__System_Func_UTSource_UTKey__System_Collections_Generic_IComparer_UTKey_(UTSource.get_type_handle(), UTKey.get_type_handle(), &__thrown, source.get_handle(), keySelector.get_handle(), nil);
+        let __return = System_Linq_ParallelEnumerable_System_Linq_OrderedParallelQuery_UTSource___OrderByDescending_2__3__System_Linq_ParallelQuery_UTSource__System_Func_UTSource_UTKey__System_Collections_Generic_IComparer_UTKey_(UTSource.get_type_handle(), UTKey.get_type_handle(), &__thrown, source.get_handle(), keySelector.get_handle(), (comparer?.get_handle()));
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
@@ -2221,7 +2254,7 @@ public struct ParallelEnumerable {
         }
     }
     // delegate closure overload
-    public static func OrderByDescending<UTSource : SGBridgeGenericValue,UTKey : SGBridgeGenericValue>(source : dotnet.System.Linq.ParallelQuery_1<UTSource>, keySelector : @escaping (UTSource) throws -> UTKey, comparer : dotnet.System.Collections.Generic.IComparer_1<UTKey>) throws -> dotnet.System.Linq.OrderedParallelQuery_1<UTSource> {
+    public static func OrderByDescending<UTSource : SGBridgeGenericValue,UTKey : SGBridgeGenericValue>(source : dotnet.System.Linq.ParallelQuery_1<UTSource>, keySelector : @escaping (UTSource) throws -> UTKey, comparer : Optional<dotnet.System.Collections.Generic.IComparer_1<UTKey>>) throws -> dotnet.System.Linq.OrderedParallelQuery_1<UTSource> {
         let del_keySelector = try dotnet.System.Func_2<UTSource,UTKey>(keySelector);
         return try OrderByDescending(source: source, keySelector: del_keySelector, comparer: comparer);
     }
@@ -2260,9 +2293,9 @@ public struct ParallelEnumerable {
     - Returns: An OrderedParallelQuery{TSource} whose elements are sorted according to a key.
 
     */
-    public static func OrderBy<UTSource : SGBridgeGenericValue,UTKey : SGBridgeGenericValue>(source : dotnet.System.Linq.ParallelQuery_1<UTSource>, keySelector : dotnet.System.Func_2<UTSource,UTKey>, comparer : dotnet.System.Collections.Generic.IComparer_1<UTKey>) throws -> dotnet.System.Linq.OrderedParallelQuery_1<UTSource> {
+    public static func OrderBy<UTSource : SGBridgeGenericValue,UTKey : SGBridgeGenericValue>(source : dotnet.System.Linq.ParallelQuery_1<UTSource>, keySelector : dotnet.System.Func_2<UTSource,UTKey>, comparer : Optional<dotnet.System.Collections.Generic.IComparer_1<UTKey>>) throws -> dotnet.System.Linq.OrderedParallelQuery_1<UTSource> {
         var __thrown : NullableHandle = nil;
-        let __return = System_Linq_ParallelEnumerable_System_Linq_OrderedParallelQuery_UTSource___OrderBy_2__3__System_Linq_ParallelQuery_UTSource__System_Func_UTSource_UTKey__System_Collections_Generic_IComparer_UTKey_(UTSource.get_type_handle(), UTKey.get_type_handle(), &__thrown, source.get_handle(), keySelector.get_handle(), nil);
+        let __return = System_Linq_ParallelEnumerable_System_Linq_OrderedParallelQuery_UTSource___OrderBy_2__3__System_Linq_ParallelQuery_UTSource__System_Func_UTSource_UTKey__System_Collections_Generic_IComparer_UTKey_(UTSource.get_type_handle(), UTKey.get_type_handle(), &__thrown, source.get_handle(), keySelector.get_handle(), (comparer?.get_handle()));
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
@@ -2270,7 +2303,7 @@ public struct ParallelEnumerable {
         }
     }
     // delegate closure overload
-    public static func OrderBy<UTSource : SGBridgeGenericValue,UTKey : SGBridgeGenericValue>(source : dotnet.System.Linq.ParallelQuery_1<UTSource>, keySelector : @escaping (UTSource) throws -> UTKey, comparer : dotnet.System.Collections.Generic.IComparer_1<UTKey>) throws -> dotnet.System.Linq.OrderedParallelQuery_1<UTSource> {
+    public static func OrderBy<UTSource : SGBridgeGenericValue,UTKey : SGBridgeGenericValue>(source : dotnet.System.Linq.ParallelQuery_1<UTSource>, keySelector : @escaping (UTSource) throws -> UTKey, comparer : Optional<dotnet.System.Collections.Generic.IComparer_1<UTKey>>) throws -> dotnet.System.Linq.OrderedParallelQuery_1<UTSource> {
         let del_keySelector = try dotnet.System.Func_2<UTSource,UTKey>(keySelector);
         return try OrderBy(source: source, keySelector: del_keySelector, comparer: comparer);
     }
@@ -2508,9 +2541,9 @@ public struct ParallelEnumerable {
     - Returns: This overload always throws a .
 
     */
-    public static func SequenceEqual<UTSource : SGBridgeGenericValue>(first : dotnet.System.Linq.ParallelQuery_1<UTSource>, second : dotnet.System.Collections.Generic.IEnumerable_1<UTSource>, comparer : dotnet.System.Collections.Generic.IEqualityComparer_1<UTSource>) throws -> Bool {
+    public static func SequenceEqual<UTSource : SGBridgeGenericValue>(first : dotnet.System.Linq.ParallelQuery_1<UTSource>, second : dotnet.System.Collections.Generic.IEnumerable_1<UTSource>, comparer : Optional<dotnet.System.Collections.Generic.IEqualityComparer_1<UTSource>>) throws -> Bool {
         var __thrown : NullableHandle = nil;
-        let __return = System_Linq_ParallelEnumerable_bool__SequenceEqual_1__3__System_Linq_ParallelQuery_UTSource__System_Collections_Generic_IEnumerable_UTSource__System_Collections_Generic_IEqualityComparer_UTSource_(UTSource.get_type_handle(), &__thrown, first.get_handle(), second.get_handle(), nil);
+        let __return = System_Linq_ParallelEnumerable_bool__SequenceEqual_1__3__System_Linq_ParallelQuery_UTSource__System_Collections_Generic_IEnumerable_UTSource__System_Collections_Generic_IEqualityComparer_UTSource_(UTSource.get_type_handle(), &__thrown, first.get_handle(), second.get_handle(), (comparer?.get_handle()));
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
@@ -2549,9 +2582,9 @@ public struct ParallelEnumerable {
          if the two source sequences are of equal length and their corresponding elements are equal according to the default equality comparer for their type; otherwise, .
 
     */
-    public static func SequenceEqual<UTSource : SGBridgeGenericValue>(first : dotnet.System.Linq.ParallelQuery_1<UTSource>, second : dotnet.System.Linq.ParallelQuery_1<UTSource>, comparer : dotnet.System.Collections.Generic.IEqualityComparer_1<UTSource>) throws -> Bool {
+    public static func SequenceEqual<UTSource : SGBridgeGenericValue>(first : dotnet.System.Linq.ParallelQuery_1<UTSource>, second : dotnet.System.Linq.ParallelQuery_1<UTSource>, comparer : Optional<dotnet.System.Collections.Generic.IEqualityComparer_1<UTSource>>) throws -> Bool {
         var __thrown : NullableHandle = nil;
-        let __return = System_Linq_ParallelEnumerable_bool__SequenceEqual_1__3__System_Linq_ParallelQuery_UTSource__System_Linq_ParallelQuery_UTSource__System_Collections_Generic_IEqualityComparer_UTSource_(UTSource.get_type_handle(), &__thrown, first.get_handle(), second.get_handle(), nil);
+        let __return = System_Linq_ParallelEnumerable_bool__SequenceEqual_1__3__System_Linq_ParallelQuery_UTSource__System_Linq_ParallelQuery_UTSource__System_Collections_Generic_IEqualityComparer_UTSource_(UTSource.get_type_handle(), &__thrown, first.get_handle(), second.get_handle(), (comparer?.get_handle()));
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
@@ -2781,6 +2814,11 @@ public struct ParallelEnumerable {
         return __return;
         }
     }
+// TODO COPE (parm closedgeneric of nullable): System.Nullable<System.Decimal> Sum(System.Linq.ParallelQuery<System.Nullable<System.Decimal>>)
+// TODO COPE (parm closedgeneric of nullable): System.Nullable<System.Double> Sum(System.Linq.ParallelQuery<System.Nullable<System.Double>>)
+// TODO COPE (parm closedgeneric of nullable): System.Nullable<System.Int32> Sum(System.Linq.ParallelQuery<System.Nullable<System.Int32>>)
+// TODO COPE (parm closedgeneric of nullable): System.Nullable<System.Int64> Sum(System.Linq.ParallelQuery<System.Nullable<System.Int64>>)
+// TODO COPE (parm closedgeneric of nullable): System.Nullable<System.Single> Sum(System.Linq.ParallelQuery<System.Nullable<System.Single>>)
     // System.Single Sum(System.Linq.ParallelQuery<System.Single>)
 // docid: M:System.Linq.ParallelEnumerable.Sum(System.Linq.ParallelQuery{System.Single})
     /**
@@ -2895,6 +2933,11 @@ public struct ParallelEnumerable {
         let del_selector = try dotnet.System.Func_2<UTSource,Swift.Int64>(selector);
         return try Sum(source: source, selector: del_selector);
     }
+// TODO COPE (parm closedgeneric of nullable): System.Nullable<System.Decimal> Sum<TSource>(System.Linq.ParallelQuery<TSource>, System.Func<TSource,System.Nullable<System.Decimal>>)
+// TODO COPE (parm closedgeneric of nullable): System.Nullable<System.Double> Sum<TSource>(System.Linq.ParallelQuery<TSource>, System.Func<TSource,System.Nullable<System.Double>>)
+// TODO COPE (parm closedgeneric of nullable): System.Nullable<System.Int32> Sum<TSource>(System.Linq.ParallelQuery<TSource>, System.Func<TSource,System.Nullable<System.Int32>>)
+// TODO COPE (parm closedgeneric of nullable): System.Nullable<System.Int64> Sum<TSource>(System.Linq.ParallelQuery<TSource>, System.Func<TSource,System.Nullable<System.Int64>>)
+// TODO COPE (parm closedgeneric of nullable): System.Nullable<System.Single> Sum<TSource>(System.Linq.ParallelQuery<TSource>, System.Func<TSource,System.Nullable<System.Single>>)
     // System.Single Sum<TSource>(System.Linq.ParallelQuery<TSource>, System.Func<TSource,System.Single>)
 // docid: M:System.Linq.ParallelEnumerable.Sum``1(System.Linq.ParallelQuery{``0},System.Func{``0,System.Single})
     /**
@@ -3021,9 +3064,9 @@ public struct ParallelEnumerable {
     - Returns: A sequence whose elements are sorted descending according to a key.
 
     */
-    public static func ThenByDescending<UTSource : SGBridgeGenericValue,UTKey : SGBridgeGenericValue>(source : dotnet.System.Linq.OrderedParallelQuery_1<UTSource>, keySelector : dotnet.System.Func_2<UTSource,UTKey>, comparer : dotnet.System.Collections.Generic.IComparer_1<UTKey>) throws -> dotnet.System.Linq.OrderedParallelQuery_1<UTSource> {
+    public static func ThenByDescending<UTSource : SGBridgeGenericValue,UTKey : SGBridgeGenericValue>(source : dotnet.System.Linq.OrderedParallelQuery_1<UTSource>, keySelector : dotnet.System.Func_2<UTSource,UTKey>, comparer : Optional<dotnet.System.Collections.Generic.IComparer_1<UTKey>>) throws -> dotnet.System.Linq.OrderedParallelQuery_1<UTSource> {
         var __thrown : NullableHandle = nil;
-        let __return = System_Linq_ParallelEnumerable_System_Linq_OrderedParallelQuery_UTSource___ThenByDescending_2__3__System_Linq_OrderedParallelQuery_UTSource__System_Func_UTSource_UTKey__System_Collections_Generic_IComparer_UTKey_(UTSource.get_type_handle(), UTKey.get_type_handle(), &__thrown, source.get_handle(), keySelector.get_handle(), nil);
+        let __return = System_Linq_ParallelEnumerable_System_Linq_OrderedParallelQuery_UTSource___ThenByDescending_2__3__System_Linq_OrderedParallelQuery_UTSource__System_Func_UTSource_UTKey__System_Collections_Generic_IComparer_UTKey_(UTSource.get_type_handle(), UTKey.get_type_handle(), &__thrown, source.get_handle(), keySelector.get_handle(), (comparer?.get_handle()));
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
@@ -3031,7 +3074,7 @@ public struct ParallelEnumerable {
         }
     }
     // delegate closure overload
-    public static func ThenByDescending<UTSource : SGBridgeGenericValue,UTKey : SGBridgeGenericValue>(source : dotnet.System.Linq.OrderedParallelQuery_1<UTSource>, keySelector : @escaping (UTSource) throws -> UTKey, comparer : dotnet.System.Collections.Generic.IComparer_1<UTKey>) throws -> dotnet.System.Linq.OrderedParallelQuery_1<UTSource> {
+    public static func ThenByDescending<UTSource : SGBridgeGenericValue,UTKey : SGBridgeGenericValue>(source : dotnet.System.Linq.OrderedParallelQuery_1<UTSource>, keySelector : @escaping (UTSource) throws -> UTKey, comparer : Optional<dotnet.System.Collections.Generic.IComparer_1<UTKey>>) throws -> dotnet.System.Linq.OrderedParallelQuery_1<UTSource> {
         let del_keySelector = try dotnet.System.Func_2<UTSource,UTKey>(keySelector);
         return try ThenByDescending(source: source, keySelector: del_keySelector, comparer: comparer);
     }
@@ -3070,9 +3113,9 @@ public struct ParallelEnumerable {
     - Returns: An OrderedParallelQuery{TSource} whose elements are sorted according to a key.
 
     */
-    public static func ThenBy<UTSource : SGBridgeGenericValue,UTKey : SGBridgeGenericValue>(source : dotnet.System.Linq.OrderedParallelQuery_1<UTSource>, keySelector : dotnet.System.Func_2<UTSource,UTKey>, comparer : dotnet.System.Collections.Generic.IComparer_1<UTKey>) throws -> dotnet.System.Linq.OrderedParallelQuery_1<UTSource> {
+    public static func ThenBy<UTSource : SGBridgeGenericValue,UTKey : SGBridgeGenericValue>(source : dotnet.System.Linq.OrderedParallelQuery_1<UTSource>, keySelector : dotnet.System.Func_2<UTSource,UTKey>, comparer : Optional<dotnet.System.Collections.Generic.IComparer_1<UTKey>>) throws -> dotnet.System.Linq.OrderedParallelQuery_1<UTSource> {
         var __thrown : NullableHandle = nil;
-        let __return = System_Linq_ParallelEnumerable_System_Linq_OrderedParallelQuery_UTSource___ThenBy_2__3__System_Linq_OrderedParallelQuery_UTSource__System_Func_UTSource_UTKey__System_Collections_Generic_IComparer_UTKey_(UTSource.get_type_handle(), UTKey.get_type_handle(), &__thrown, source.get_handle(), keySelector.get_handle(), nil);
+        let __return = System_Linq_ParallelEnumerable_System_Linq_OrderedParallelQuery_UTSource___ThenBy_2__3__System_Linq_OrderedParallelQuery_UTSource__System_Func_UTSource_UTKey__System_Collections_Generic_IComparer_UTKey_(UTSource.get_type_handle(), UTKey.get_type_handle(), &__thrown, source.get_handle(), keySelector.get_handle(), (comparer?.get_handle()));
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
@@ -3080,7 +3123,7 @@ public struct ParallelEnumerable {
         }
     }
     // delegate closure overload
-    public static func ThenBy<UTSource : SGBridgeGenericValue,UTKey : SGBridgeGenericValue>(source : dotnet.System.Linq.OrderedParallelQuery_1<UTSource>, keySelector : @escaping (UTSource) throws -> UTKey, comparer : dotnet.System.Collections.Generic.IComparer_1<UTKey>) throws -> dotnet.System.Linq.OrderedParallelQuery_1<UTSource> {
+    public static func ThenBy<UTSource : SGBridgeGenericValue,UTKey : SGBridgeGenericValue>(source : dotnet.System.Linq.OrderedParallelQuery_1<UTSource>, keySelector : @escaping (UTSource) throws -> UTKey, comparer : Optional<dotnet.System.Collections.Generic.IComparer_1<UTKey>>) throws -> dotnet.System.Linq.OrderedParallelQuery_1<UTSource> {
         let del_keySelector = try dotnet.System.Func_2<UTSource,UTKey>(keySelector);
         return try ThenBy(source: source, keySelector: del_keySelector, comparer: comparer);
     }
@@ -3137,9 +3180,9 @@ public struct ParallelEnumerable {
     - Returns: A  that contains keys and values.
 
     */
-    public static func ToDictionary<UTSource : SGBridgeGenericValue,UTKey : SGBridgeGenericValue>(source : dotnet.System.Linq.ParallelQuery_1<UTSource>, keySelector : dotnet.System.Func_2<UTSource,UTKey>, comparer : dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>) throws -> dotnet.System.Collections.Generic.Dictionary_2<UTKey,UTSource> {
+    public static func ToDictionary<UTSource : SGBridgeGenericValue,UTKey : SGBridgeGenericValue>(source : dotnet.System.Linq.ParallelQuery_1<UTSource>, keySelector : dotnet.System.Func_2<UTSource,UTKey>, comparer : Optional<dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>>) throws -> dotnet.System.Collections.Generic.Dictionary_2<UTKey,UTSource> {
         var __thrown : NullableHandle = nil;
-        let __return = System_Linq_ParallelEnumerable_System_Collections_Generic_Dictionary_UTKey_UTSource___ToDictionary_2__3__System_Linq_ParallelQuery_UTSource__System_Func_UTSource_UTKey__System_Collections_Generic_IEqualityComparer_UTKey_(UTSource.get_type_handle(), UTKey.get_type_handle(), &__thrown, source.get_handle(), keySelector.get_handle(), nil);
+        let __return = System_Linq_ParallelEnumerable_System_Collections_Generic_Dictionary_UTKey_UTSource___ToDictionary_2__3__System_Linq_ParallelQuery_UTSource__System_Func_UTSource_UTKey__System_Collections_Generic_IEqualityComparer_UTKey_(UTSource.get_type_handle(), UTKey.get_type_handle(), &__thrown, source.get_handle(), keySelector.get_handle(), (comparer?.get_handle()));
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
@@ -3147,7 +3190,7 @@ public struct ParallelEnumerable {
         }
     }
     // delegate closure overload
-    public static func ToDictionary<UTSource : SGBridgeGenericValue,UTKey : SGBridgeGenericValue>(source : dotnet.System.Linq.ParallelQuery_1<UTSource>, keySelector : @escaping (UTSource) throws -> UTKey, comparer : dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>) throws -> dotnet.System.Collections.Generic.Dictionary_2<UTKey,UTSource> {
+    public static func ToDictionary<UTSource : SGBridgeGenericValue,UTKey : SGBridgeGenericValue>(source : dotnet.System.Linq.ParallelQuery_1<UTSource>, keySelector : @escaping (UTSource) throws -> UTKey, comparer : Optional<dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>>) throws -> dotnet.System.Collections.Generic.Dictionary_2<UTKey,UTSource> {
         let del_keySelector = try dotnet.System.Func_2<UTSource,UTKey>(keySelector);
         return try ToDictionary(source: source, keySelector: del_keySelector, comparer: comparer);
     }
@@ -3159,7 +3202,7 @@ public struct ParallelEnumerable {
     - Parameter source: A sequence to create a  from.
     - Parameter keySelector: A function to extract a key from each element.
     - Parameter elementSelector: A transform function to produce a result element value from each element.
-    - Returns: A  that contains values of type  selected from the input sequence
+    - Returns: A  that contains values of type  selected from the input sequence.
 
     */
     public static func ToDictionary<UTSource : SGBridgeGenericValue,UTKey : SGBridgeGenericValue,UTElement : SGBridgeGenericValue>(source : dotnet.System.Linq.ParallelQuery_1<UTSource>, keySelector : dotnet.System.Func_2<UTSource,UTKey>, elementSelector : dotnet.System.Func_2<UTSource,UTElement>) throws -> dotnet.System.Collections.Generic.Dictionary_2<UTKey,UTElement> {
@@ -3186,12 +3229,12 @@ public struct ParallelEnumerable {
     - Parameter keySelector: A function to extract a key from each element.
     - Parameter elementSelector: A transform function to produce a result element value from each element.
     - Parameter comparer: An  to compare keys.
-    - Returns: A  that contains values of type  selected from the input sequence
+    - Returns: A  that contains values of type  selected from the input sequence.
 
     */
-    public static func ToDictionary<UTSource : SGBridgeGenericValue,UTKey : SGBridgeGenericValue,UTElement : SGBridgeGenericValue>(source : dotnet.System.Linq.ParallelQuery_1<UTSource>, keySelector : dotnet.System.Func_2<UTSource,UTKey>, elementSelector : dotnet.System.Func_2<UTSource,UTElement>, comparer : dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>) throws -> dotnet.System.Collections.Generic.Dictionary_2<UTKey,UTElement> {
+    public static func ToDictionary<UTSource : SGBridgeGenericValue,UTKey : SGBridgeGenericValue,UTElement : SGBridgeGenericValue>(source : dotnet.System.Linq.ParallelQuery_1<UTSource>, keySelector : dotnet.System.Func_2<UTSource,UTKey>, elementSelector : dotnet.System.Func_2<UTSource,UTElement>, comparer : Optional<dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>>) throws -> dotnet.System.Collections.Generic.Dictionary_2<UTKey,UTElement> {
         var __thrown : NullableHandle = nil;
-        let __return = System_Linq_ParallelEnumerable_System_Collections_Generic_Dictionary_UTKey_UTElement___ToDictionary_3__4__System_Linq_ParallelQuery_UTSource__System_Func_UTSource_UTKey__System_Func_UTSource_UTElement__System_Collections_Generic_IEqualityComparer_UTKey_(UTSource.get_type_handle(), UTKey.get_type_handle(), UTElement.get_type_handle(), &__thrown, source.get_handle(), keySelector.get_handle(), elementSelector.get_handle(), nil);
+        let __return = System_Linq_ParallelEnumerable_System_Collections_Generic_Dictionary_UTKey_UTElement___ToDictionary_3__4__System_Linq_ParallelQuery_UTSource__System_Func_UTSource_UTKey__System_Func_UTSource_UTElement__System_Collections_Generic_IEqualityComparer_UTKey_(UTSource.get_type_handle(), UTKey.get_type_handle(), UTElement.get_type_handle(), &__thrown, source.get_handle(), keySelector.get_handle(), elementSelector.get_handle(), (comparer?.get_handle()));
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
@@ -3199,7 +3242,7 @@ public struct ParallelEnumerable {
         }
     }
     // delegate closure overload
-    public static func ToDictionary<UTSource : SGBridgeGenericValue,UTKey : SGBridgeGenericValue,UTElement : SGBridgeGenericValue>(source : dotnet.System.Linq.ParallelQuery_1<UTSource>, keySelector : @escaping (UTSource) throws -> UTKey, elementSelector : @escaping (UTSource) throws -> UTElement, comparer : dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>) throws -> dotnet.System.Collections.Generic.Dictionary_2<UTKey,UTElement> {
+    public static func ToDictionary<UTSource : SGBridgeGenericValue,UTKey : SGBridgeGenericValue,UTElement : SGBridgeGenericValue>(source : dotnet.System.Linq.ParallelQuery_1<UTSource>, keySelector : @escaping (UTSource) throws -> UTKey, elementSelector : @escaping (UTSource) throws -> UTElement, comparer : Optional<dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>>) throws -> dotnet.System.Collections.Generic.Dictionary_2<UTKey,UTElement> {
         let del_keySelector = try dotnet.System.Func_2<UTSource,UTKey>(keySelector);
         let del_elementSelector = try dotnet.System.Func_2<UTSource,UTElement>(elementSelector);
         return try ToDictionary(source: source, keySelector: del_keySelector, elementSelector: del_elementSelector, comparer: comparer);
@@ -3257,9 +3300,9 @@ public struct ParallelEnumerable {
     - Returns: A  that contains keys and values.
 
     */
-    public static func ToLookup<UTSource : SGBridgeGenericValue,UTKey : SGBridgeGenericValue>(source : dotnet.System.Linq.ParallelQuery_1<UTSource>, keySelector : dotnet.System.Func_2<UTSource,UTKey>, comparer : dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>) throws -> dotnet.System.Linq.ILookup_2<UTKey,UTSource> {
+    public static func ToLookup<UTSource : SGBridgeGenericValue,UTKey : SGBridgeGenericValue>(source : dotnet.System.Linq.ParallelQuery_1<UTSource>, keySelector : dotnet.System.Func_2<UTSource,UTKey>, comparer : Optional<dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>>) throws -> dotnet.System.Linq.ILookup_2<UTKey,UTSource> {
         var __thrown : NullableHandle = nil;
-        let __return = System_Linq_ParallelEnumerable_System_Linq_ILookup_UTKey_UTSource___ToLookup_2__3__System_Linq_ParallelQuery_UTSource__System_Func_UTSource_UTKey__System_Collections_Generic_IEqualityComparer_UTKey_(UTSource.get_type_handle(), UTKey.get_type_handle(), &__thrown, source.get_handle(), keySelector.get_handle(), nil);
+        let __return = System_Linq_ParallelEnumerable_System_Linq_ILookup_UTKey_UTSource___ToLookup_2__3__System_Linq_ParallelQuery_UTSource__System_Func_UTSource_UTKey__System_Collections_Generic_IEqualityComparer_UTKey_(UTSource.get_type_handle(), UTKey.get_type_handle(), &__thrown, source.get_handle(), keySelector.get_handle(), (comparer?.get_handle()));
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
@@ -3267,7 +3310,7 @@ public struct ParallelEnumerable {
         }
     }
     // delegate closure overload
-    public static func ToLookup<UTSource : SGBridgeGenericValue,UTKey : SGBridgeGenericValue>(source : dotnet.System.Linq.ParallelQuery_1<UTSource>, keySelector : @escaping (UTSource) throws -> UTKey, comparer : dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>) throws -> dotnet.System.Linq.ILookup_2<UTKey,UTSource> {
+    public static func ToLookup<UTSource : SGBridgeGenericValue,UTKey : SGBridgeGenericValue>(source : dotnet.System.Linq.ParallelQuery_1<UTSource>, keySelector : @escaping (UTSource) throws -> UTKey, comparer : Optional<dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>>) throws -> dotnet.System.Linq.ILookup_2<UTKey,UTSource> {
         let del_keySelector = try dotnet.System.Func_2<UTSource,UTKey>(keySelector);
         return try ToLookup(source: source, keySelector: del_keySelector, comparer: comparer);
     }
@@ -3309,9 +3352,9 @@ public struct ParallelEnumerable {
     - Returns: A Lookup<(Of <(TKey, TElement>)>) that contains values of type TElement selected from the input sequence.
 
     */
-    public static func ToLookup<UTSource : SGBridgeGenericValue,UTKey : SGBridgeGenericValue,UTElement : SGBridgeGenericValue>(source : dotnet.System.Linq.ParallelQuery_1<UTSource>, keySelector : dotnet.System.Func_2<UTSource,UTKey>, elementSelector : dotnet.System.Func_2<UTSource,UTElement>, comparer : dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>) throws -> dotnet.System.Linq.ILookup_2<UTKey,UTElement> {
+    public static func ToLookup<UTSource : SGBridgeGenericValue,UTKey : SGBridgeGenericValue,UTElement : SGBridgeGenericValue>(source : dotnet.System.Linq.ParallelQuery_1<UTSource>, keySelector : dotnet.System.Func_2<UTSource,UTKey>, elementSelector : dotnet.System.Func_2<UTSource,UTElement>, comparer : Optional<dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>>) throws -> dotnet.System.Linq.ILookup_2<UTKey,UTElement> {
         var __thrown : NullableHandle = nil;
-        let __return = System_Linq_ParallelEnumerable_System_Linq_ILookup_UTKey_UTElement___ToLookup_3__4__System_Linq_ParallelQuery_UTSource__System_Func_UTSource_UTKey__System_Func_UTSource_UTElement__System_Collections_Generic_IEqualityComparer_UTKey_(UTSource.get_type_handle(), UTKey.get_type_handle(), UTElement.get_type_handle(), &__thrown, source.get_handle(), keySelector.get_handle(), elementSelector.get_handle(), nil);
+        let __return = System_Linq_ParallelEnumerable_System_Linq_ILookup_UTKey_UTElement___ToLookup_3__4__System_Linq_ParallelQuery_UTSource__System_Func_UTSource_UTKey__System_Func_UTSource_UTElement__System_Collections_Generic_IEqualityComparer_UTKey_(UTSource.get_type_handle(), UTKey.get_type_handle(), UTElement.get_type_handle(), &__thrown, source.get_handle(), keySelector.get_handle(), elementSelector.get_handle(), (comparer?.get_handle()));
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
@@ -3319,7 +3362,7 @@ public struct ParallelEnumerable {
         }
     }
     // delegate closure overload
-    public static func ToLookup<UTSource : SGBridgeGenericValue,UTKey : SGBridgeGenericValue,UTElement : SGBridgeGenericValue>(source : dotnet.System.Linq.ParallelQuery_1<UTSource>, keySelector : @escaping (UTSource) throws -> UTKey, elementSelector : @escaping (UTSource) throws -> UTElement, comparer : dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>) throws -> dotnet.System.Linq.ILookup_2<UTKey,UTElement> {
+    public static func ToLookup<UTSource : SGBridgeGenericValue,UTKey : SGBridgeGenericValue,UTElement : SGBridgeGenericValue>(source : dotnet.System.Linq.ParallelQuery_1<UTSource>, keySelector : @escaping (UTSource) throws -> UTKey, elementSelector : @escaping (UTSource) throws -> UTElement, comparer : Optional<dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>>) throws -> dotnet.System.Linq.ILookup_2<UTKey,UTElement> {
         let del_keySelector = try dotnet.System.Func_2<UTSource,UTKey>(keySelector);
         let del_elementSelector = try dotnet.System.Func_2<UTSource,UTElement>(elementSelector);
         return try ToLookup(source: source, keySelector: del_keySelector, elementSelector: del_elementSelector, comparer: comparer);
@@ -3354,9 +3397,9 @@ public struct ParallelEnumerable {
     - Returns: This overload always throws a .
 
     */
-    public static func Union<UTSource : SGBridgeGenericValue>(first : dotnet.System.Linq.ParallelQuery_1<UTSource>, second : dotnet.System.Collections.Generic.IEnumerable_1<UTSource>, comparer : dotnet.System.Collections.Generic.IEqualityComparer_1<UTSource>) throws -> dotnet.System.Linq.ParallelQuery_1<UTSource> {
+    public static func Union<UTSource : SGBridgeGenericValue>(first : dotnet.System.Linq.ParallelQuery_1<UTSource>, second : dotnet.System.Collections.Generic.IEnumerable_1<UTSource>, comparer : Optional<dotnet.System.Collections.Generic.IEqualityComparer_1<UTSource>>) throws -> dotnet.System.Linq.ParallelQuery_1<UTSource> {
         var __thrown : NullableHandle = nil;
-        let __return = System_Linq_ParallelEnumerable_System_Linq_ParallelQuery_UTSource___Union_1__3__System_Linq_ParallelQuery_UTSource__System_Collections_Generic_IEnumerable_UTSource__System_Collections_Generic_IEqualityComparer_UTSource_(UTSource.get_type_handle(), &__thrown, first.get_handle(), second.get_handle(), nil);
+        let __return = System_Linq_ParallelEnumerable_System_Linq_ParallelQuery_UTSource___Union_1__3__System_Linq_ParallelQuery_UTSource__System_Collections_Generic_IEnumerable_UTSource__System_Collections_Generic_IEqualityComparer_UTSource_(UTSource.get_type_handle(), &__thrown, first.get_handle(), second.get_handle(), (comparer?.get_handle()));
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
@@ -3393,9 +3436,9 @@ public struct ParallelEnumerable {
     - Returns: A sequence that contains the elements from both input sequences, excluding duplicates.
 
     */
-    public static func Union<UTSource : SGBridgeGenericValue>(first : dotnet.System.Linq.ParallelQuery_1<UTSource>, second : dotnet.System.Linq.ParallelQuery_1<UTSource>, comparer : dotnet.System.Collections.Generic.IEqualityComparer_1<UTSource>) throws -> dotnet.System.Linq.ParallelQuery_1<UTSource> {
+    public static func Union<UTSource : SGBridgeGenericValue>(first : dotnet.System.Linq.ParallelQuery_1<UTSource>, second : dotnet.System.Linq.ParallelQuery_1<UTSource>, comparer : Optional<dotnet.System.Collections.Generic.IEqualityComparer_1<UTSource>>) throws -> dotnet.System.Linq.ParallelQuery_1<UTSource> {
         var __thrown : NullableHandle = nil;
-        let __return = System_Linq_ParallelEnumerable_System_Linq_ParallelQuery_UTSource___Union_1__3__System_Linq_ParallelQuery_UTSource__System_Linq_ParallelQuery_UTSource__System_Collections_Generic_IEqualityComparer_UTSource_(UTSource.get_type_handle(), &__thrown, first.get_handle(), second.get_handle(), nil);
+        let __return = System_Linq_ParallelEnumerable_System_Linq_ParallelQuery_UTSource___Union_1__3__System_Linq_ParallelQuery_UTSource__System_Linq_ParallelQuery_UTSource__System_Collections_Generic_IEqualityComparer_UTSource_(UTSource.get_type_handle(), &__thrown, first.get_handle(), second.get_handle(), (comparer?.get_handle()));
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
@@ -3694,6 +3737,9 @@ open class ParallelQuery
     open class override func get_type_handle() -> TypeHandle {
         return System_Linq_ParallelQuery_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
 } // ParallelQuery
@@ -3710,6 +3756,9 @@ open class ParallelQuery_1<TSource : SGBridgeGenericValue>
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Linq_ParallelQuery_1_get_type_handle(TSource.get_type_handle());
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -3909,6 +3958,11 @@ extension dotnet.System.Linq.ParallelQuery_1 {
     }
 }
 
+// TODO COPE (parm closedgeneric of nullable): System.Nullable<System.Decimal> Average(System.Linq.ParallelQuery<System.Nullable<System.Decimal>>)
+// TODO COPE (parm closedgeneric of nullable): System.Nullable<System.Double> Average(System.Linq.ParallelQuery<System.Nullable<System.Double>>)
+// TODO COPE (parm closedgeneric of nullable): System.Nullable<System.Double> Average(System.Linq.ParallelQuery<System.Nullable<System.Int32>>)
+// TODO COPE (parm closedgeneric of nullable): System.Nullable<System.Double> Average(System.Linq.ParallelQuery<System.Nullable<System.Int64>>)
+// TODO COPE (parm closedgeneric of nullable): System.Nullable<System.Single> Average(System.Linq.ParallelQuery<System.Nullable<System.Single>>)
 // EXTENSION METHOD System.Single Average(System.Linq.ParallelQuery<System.Single>)
 extension dotnet.System.Linq.ParallelQuery_1 {
     public func Average() throws -> Swift.Float where TSource == Swift.Float {
@@ -3964,6 +4018,11 @@ extension dotnet.System.Linq.ParallelQuery_1 {
     }
 }
 
+// TODO COPE (parm closedgeneric of nullable): System.Nullable<System.Decimal> Average<TSource>(System.Linq.ParallelQuery<TSource>, System.Func<TSource,System.Nullable<System.Decimal>>)
+// TODO COPE (parm closedgeneric of nullable): System.Nullable<System.Double> Average<TSource>(System.Linq.ParallelQuery<TSource>, System.Func<TSource,System.Nullable<System.Double>>)
+// TODO COPE (parm closedgeneric of nullable): System.Nullable<System.Double> Average<TSource>(System.Linq.ParallelQuery<TSource>, System.Func<TSource,System.Nullable<System.Int32>>)
+// TODO COPE (parm closedgeneric of nullable): System.Nullable<System.Double> Average<TSource>(System.Linq.ParallelQuery<TSource>, System.Func<TSource,System.Nullable<System.Int64>>)
+// TODO COPE (parm closedgeneric of nullable): System.Nullable<System.Single> Average<TSource>(System.Linq.ParallelQuery<TSource>, System.Func<TSource,System.Nullable<System.Single>>)
 // EXTENSION METHOD System.Single Average<TSource>(System.Linq.ParallelQuery<TSource>, System.Func<TSource,System.Single>)
 extension dotnet.System.Linq.ParallelQuery_1 {
     public func Average(selector : dotnet.System.Func_2<TSource,Swift.Float>) throws -> Swift.Float {
@@ -4002,7 +4061,7 @@ extension dotnet.System.Linq.ParallelQuery_1 {
 
 // EXTENSION METHOD bool Contains<TSource>(System.Linq.ParallelQuery<TSource>, TSource, System.Collections.Generic.IEqualityComparer<TSource>)
 extension dotnet.System.Linq.ParallelQuery_1 {
-    public func Contains(value : TSource, comparer : dotnet.System.Collections.Generic.IEqualityComparer_1<TSource>) throws -> Bool {
+    public func Contains(value : TSource, comparer : Optional<dotnet.System.Collections.Generic.IEqualityComparer_1<TSource>>) throws -> Bool {
         return try dotnet.System.Linq.ParallelEnumerable.Contains(source: self, value: value, comparer: comparer);
     }
 }
@@ -4049,7 +4108,7 @@ extension dotnet.System.Linq.ParallelQuery_1 {
 
 // EXTENSION METHOD System.Linq.ParallelQuery<TSource> Distinct<TSource>(System.Linq.ParallelQuery<TSource>, System.Collections.Generic.IEqualityComparer<TSource>)
 extension dotnet.System.Linq.ParallelQuery_1 {
-    public func Distinct(comparer : dotnet.System.Collections.Generic.IEqualityComparer_1<TSource>) throws -> dotnet.System.Linq.ParallelQuery_1<TSource> {
+    public func Distinct(comparer : Optional<dotnet.System.Collections.Generic.IEqualityComparer_1<TSource>>) throws -> dotnet.System.Linq.ParallelQuery_1<TSource> {
         return try dotnet.System.Linq.ParallelEnumerable.Distinct(source: self, comparer: comparer);
     }
 }
@@ -4077,7 +4136,7 @@ extension dotnet.System.Linq.ParallelQuery_1 {
 
 // EXTENSION METHOD System.Linq.ParallelQuery<TSource> Except<TSource>(System.Linq.ParallelQuery<TSource>, System.Collections.Generic.IEnumerable<TSource>, System.Collections.Generic.IEqualityComparer<TSource>)
 extension dotnet.System.Linq.ParallelQuery_1 {
-    public func Except(second : dotnet.System.Collections.Generic.IEnumerable_1<TSource>, comparer : dotnet.System.Collections.Generic.IEqualityComparer_1<TSource>) throws -> dotnet.System.Linq.ParallelQuery_1<TSource> {
+    public func Except(second : dotnet.System.Collections.Generic.IEnumerable_1<TSource>, comparer : Optional<dotnet.System.Collections.Generic.IEqualityComparer_1<TSource>>) throws -> dotnet.System.Linq.ParallelQuery_1<TSource> {
         return try dotnet.System.Linq.ParallelEnumerable.Except(first: self, second: second, comparer: comparer);
     }
 }
@@ -4091,7 +4150,7 @@ extension dotnet.System.Linq.ParallelQuery_1 {
 
 // EXTENSION METHOD System.Linq.ParallelQuery<TSource> Except<TSource>(System.Linq.ParallelQuery<TSource>, System.Linq.ParallelQuery<TSource>, System.Collections.Generic.IEqualityComparer<TSource>)
 extension dotnet.System.Linq.ParallelQuery_1 {
-    public func Except(second : dotnet.System.Linq.ParallelQuery_1<TSource>, comparer : dotnet.System.Collections.Generic.IEqualityComparer_1<TSource>) throws -> dotnet.System.Linq.ParallelQuery_1<TSource> {
+    public func Except(second : dotnet.System.Linq.ParallelQuery_1<TSource>, comparer : Optional<dotnet.System.Collections.Generic.IEqualityComparer_1<TSource>>) throws -> dotnet.System.Linq.ParallelQuery_1<TSource> {
         return try dotnet.System.Linq.ParallelEnumerable.Except(first: self, second: second, comparer: comparer);
     }
 }
@@ -4160,11 +4219,11 @@ extension dotnet.System.Linq.ParallelQuery_1 {
 
 // EXTENSION METHOD System.Linq.ParallelQuery<System.Linq.IGrouping<TKey,TSource>> GroupBy<TSource, TKey>(System.Linq.ParallelQuery<TSource>, System.Func<TSource,TKey>, System.Collections.Generic.IEqualityComparer<TKey>)
 extension dotnet.System.Linq.ParallelQuery_1 {
-    public func GroupBy<UTKey : SGBridgeGenericValue>(keySelector : dotnet.System.Func_2<TSource,UTKey>, comparer : dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>) throws -> dotnet.System.Linq.ParallelQuery_1<dotnet.System.Linq.IGrouping_2<UTKey,TSource>> {
+    public func GroupBy<UTKey : SGBridgeGenericValue>(keySelector : dotnet.System.Func_2<TSource,UTKey>, comparer : Optional<dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>>) throws -> dotnet.System.Linq.ParallelQuery_1<dotnet.System.Linq.IGrouping_2<UTKey,TSource>> {
         return try dotnet.System.Linq.ParallelEnumerable.GroupBy(source: self, keySelector: keySelector, comparer: comparer);
     }
     // delegate closure overload
-    public func GroupBy<UTKey : SGBridgeGenericValue>(keySelector : @escaping (TSource) throws -> UTKey, comparer : dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>) throws -> dotnet.System.Linq.ParallelQuery_1<dotnet.System.Linq.IGrouping_2<UTKey,TSource>> {
+    public func GroupBy<UTKey : SGBridgeGenericValue>(keySelector : @escaping (TSource) throws -> UTKey, comparer : Optional<dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>>) throws -> dotnet.System.Linq.ParallelQuery_1<dotnet.System.Linq.IGrouping_2<UTKey,TSource>> {
         let del_keySelector = try dotnet.System.Func_2<TSource,UTKey>(keySelector);
         return try dotnet.System.Linq.ParallelEnumerable.GroupBy(source: self, keySelector: del_keySelector, comparer: comparer);
     }
@@ -4185,11 +4244,11 @@ extension dotnet.System.Linq.ParallelQuery_1 {
 
 // EXTENSION METHOD System.Linq.ParallelQuery<System.Linq.IGrouping<TKey,TElement>> GroupBy<TSource, TKey, TElement>(System.Linq.ParallelQuery<TSource>, System.Func<TSource,TKey>, System.Func<TSource,TElement>, System.Collections.Generic.IEqualityComparer<TKey>)
 extension dotnet.System.Linq.ParallelQuery_1 {
-    public func GroupBy<UTKey : SGBridgeGenericValue,UTElement : SGBridgeGenericValue>(keySelector : dotnet.System.Func_2<TSource,UTKey>, elementSelector : dotnet.System.Func_2<TSource,UTElement>, comparer : dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>) throws -> dotnet.System.Linq.ParallelQuery_1<dotnet.System.Linq.IGrouping_2<UTKey,UTElement>> {
+    public func GroupBy<UTKey : SGBridgeGenericValue,UTElement : SGBridgeGenericValue>(keySelector : dotnet.System.Func_2<TSource,UTKey>, elementSelector : dotnet.System.Func_2<TSource,UTElement>, comparer : Optional<dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>>) throws -> dotnet.System.Linq.ParallelQuery_1<dotnet.System.Linq.IGrouping_2<UTKey,UTElement>> {
         return try dotnet.System.Linq.ParallelEnumerable.GroupBy(source: self, keySelector: keySelector, elementSelector: elementSelector, comparer: comparer);
     }
     // delegate closure overload
-    public func GroupBy<UTKey : SGBridgeGenericValue,UTElement : SGBridgeGenericValue>(keySelector : @escaping (TSource) throws -> UTKey, elementSelector : @escaping (TSource) throws -> UTElement, comparer : dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>) throws -> dotnet.System.Linq.ParallelQuery_1<dotnet.System.Linq.IGrouping_2<UTKey,UTElement>> {
+    public func GroupBy<UTKey : SGBridgeGenericValue,UTElement : SGBridgeGenericValue>(keySelector : @escaping (TSource) throws -> UTKey, elementSelector : @escaping (TSource) throws -> UTElement, comparer : Optional<dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>>) throws -> dotnet.System.Linq.ParallelQuery_1<dotnet.System.Linq.IGrouping_2<UTKey,UTElement>> {
         let del_keySelector = try dotnet.System.Func_2<TSource,UTKey>(keySelector);
         let del_elementSelector = try dotnet.System.Func_2<TSource,UTElement>(elementSelector);
         return try dotnet.System.Linq.ParallelEnumerable.GroupBy(source: self, keySelector: del_keySelector, elementSelector: del_elementSelector, comparer: comparer);
@@ -4211,11 +4270,11 @@ extension dotnet.System.Linq.ParallelQuery_1 {
 
 // EXTENSION METHOD System.Linq.ParallelQuery<TResult> GroupBy<TSource, TKey, TResult>(System.Linq.ParallelQuery<TSource>, System.Func<TSource,TKey>, System.Func<TKey,System.Collections.Generic.IEnumerable<TSource>,TResult>, System.Collections.Generic.IEqualityComparer<TKey>)
 extension dotnet.System.Linq.ParallelQuery_1 {
-    public func GroupBy<UTKey : SGBridgeGenericValue,UTResult : SGBridgeGenericValue>(keySelector : dotnet.System.Func_2<TSource,UTKey>, resultSelector : dotnet.System.Func_3<UTKey,dotnet.System.Collections.Generic.IEnumerable_1<TSource>,UTResult>, comparer : dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>) throws -> dotnet.System.Linq.ParallelQuery_1<UTResult> {
+    public func GroupBy<UTKey : SGBridgeGenericValue,UTResult : SGBridgeGenericValue>(keySelector : dotnet.System.Func_2<TSource,UTKey>, resultSelector : dotnet.System.Func_3<UTKey,dotnet.System.Collections.Generic.IEnumerable_1<TSource>,UTResult>, comparer : Optional<dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>>) throws -> dotnet.System.Linq.ParallelQuery_1<UTResult> {
         return try dotnet.System.Linq.ParallelEnumerable.GroupBy(source: self, keySelector: keySelector, resultSelector: resultSelector, comparer: comparer);
     }
     // delegate closure overload
-    public func GroupBy<UTKey : SGBridgeGenericValue,UTResult : SGBridgeGenericValue>(keySelector : @escaping (TSource) throws -> UTKey, resultSelector : @escaping (UTKey, dotnet.System.Collections.Generic.IEnumerable_1<TSource>) throws -> UTResult, comparer : dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>) throws -> dotnet.System.Linq.ParallelQuery_1<UTResult> {
+    public func GroupBy<UTKey : SGBridgeGenericValue,UTResult : SGBridgeGenericValue>(keySelector : @escaping (TSource) throws -> UTKey, resultSelector : @escaping (UTKey, dotnet.System.Collections.Generic.IEnumerable_1<TSource>) throws -> UTResult, comparer : Optional<dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>>) throws -> dotnet.System.Linq.ParallelQuery_1<UTResult> {
         let del_keySelector = try dotnet.System.Func_2<TSource,UTKey>(keySelector);
         let del_resultSelector = try dotnet.System.Func_3<UTKey,dotnet.System.Collections.Generic.IEnumerable_1<TSource>,UTResult>(resultSelector);
         return try dotnet.System.Linq.ParallelEnumerable.GroupBy(source: self, keySelector: del_keySelector, resultSelector: del_resultSelector, comparer: comparer);
@@ -4238,11 +4297,11 @@ extension dotnet.System.Linq.ParallelQuery_1 {
 
 // EXTENSION METHOD System.Linq.ParallelQuery<TResult> GroupBy<TSource, TKey, TElement, TResult>(System.Linq.ParallelQuery<TSource>, System.Func<TSource,TKey>, System.Func<TSource,TElement>, System.Func<TKey,System.Collections.Generic.IEnumerable<TElement>,TResult>, System.Collections.Generic.IEqualityComparer<TKey>)
 extension dotnet.System.Linq.ParallelQuery_1 {
-    public func GroupBy<UTKey : SGBridgeGenericValue,UTElement : SGBridgeGenericValue,UTResult : SGBridgeGenericValue>(keySelector : dotnet.System.Func_2<TSource,UTKey>, elementSelector : dotnet.System.Func_2<TSource,UTElement>, resultSelector : dotnet.System.Func_3<UTKey,dotnet.System.Collections.Generic.IEnumerable_1<UTElement>,UTResult>, comparer : dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>) throws -> dotnet.System.Linq.ParallelQuery_1<UTResult> {
+    public func GroupBy<UTKey : SGBridgeGenericValue,UTElement : SGBridgeGenericValue,UTResult : SGBridgeGenericValue>(keySelector : dotnet.System.Func_2<TSource,UTKey>, elementSelector : dotnet.System.Func_2<TSource,UTElement>, resultSelector : dotnet.System.Func_3<UTKey,dotnet.System.Collections.Generic.IEnumerable_1<UTElement>,UTResult>, comparer : Optional<dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>>) throws -> dotnet.System.Linq.ParallelQuery_1<UTResult> {
         return try dotnet.System.Linq.ParallelEnumerable.GroupBy(source: self, keySelector: keySelector, elementSelector: elementSelector, resultSelector: resultSelector, comparer: comparer);
     }
     // delegate closure overload
-    public func GroupBy<UTKey : SGBridgeGenericValue,UTElement : SGBridgeGenericValue,UTResult : SGBridgeGenericValue>(keySelector : @escaping (TSource) throws -> UTKey, elementSelector : @escaping (TSource) throws -> UTElement, resultSelector : @escaping (UTKey, dotnet.System.Collections.Generic.IEnumerable_1<UTElement>) throws -> UTResult, comparer : dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>) throws -> dotnet.System.Linq.ParallelQuery_1<UTResult> {
+    public func GroupBy<UTKey : SGBridgeGenericValue,UTElement : SGBridgeGenericValue,UTResult : SGBridgeGenericValue>(keySelector : @escaping (TSource) throws -> UTKey, elementSelector : @escaping (TSource) throws -> UTElement, resultSelector : @escaping (UTKey, dotnet.System.Collections.Generic.IEnumerable_1<UTElement>) throws -> UTResult, comparer : Optional<dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>>) throws -> dotnet.System.Linq.ParallelQuery_1<UTResult> {
         let del_keySelector = try dotnet.System.Func_2<TSource,UTKey>(keySelector);
         let del_elementSelector = try dotnet.System.Func_2<TSource,UTElement>(elementSelector);
         let del_resultSelector = try dotnet.System.Func_3<UTKey,dotnet.System.Collections.Generic.IEnumerable_1<UTElement>,UTResult>(resultSelector);
@@ -4266,11 +4325,11 @@ extension dotnet.System.Linq.ParallelQuery_1 {
 
 // EXTENSION METHOD System.Linq.ParallelQuery<TResult> GroupJoin<TOuter, TInner, TKey, TResult>(System.Linq.ParallelQuery<TOuter>, System.Collections.Generic.IEnumerable<TInner>, System.Func<TOuter,TKey>, System.Func<TInner,TKey>, System.Func<TOuter,System.Collections.Generic.IEnumerable<TInner>,TResult>, System.Collections.Generic.IEqualityComparer<TKey>)
 extension dotnet.System.Linq.ParallelQuery_1 {
-    public func GroupJoin<UTInner : SGBridgeGenericValue,UTKey : SGBridgeGenericValue,UTResult : SGBridgeGenericValue>(inner : dotnet.System.Collections.Generic.IEnumerable_1<UTInner>, outerKeySelector : dotnet.System.Func_2<TSource,UTKey>, innerKeySelector : dotnet.System.Func_2<UTInner,UTKey>, resultSelector : dotnet.System.Func_3<TSource,dotnet.System.Collections.Generic.IEnumerable_1<UTInner>,UTResult>, comparer : dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>) throws -> dotnet.System.Linq.ParallelQuery_1<UTResult> {
+    public func GroupJoin<UTInner : SGBridgeGenericValue,UTKey : SGBridgeGenericValue,UTResult : SGBridgeGenericValue>(inner : dotnet.System.Collections.Generic.IEnumerable_1<UTInner>, outerKeySelector : dotnet.System.Func_2<TSource,UTKey>, innerKeySelector : dotnet.System.Func_2<UTInner,UTKey>, resultSelector : dotnet.System.Func_3<TSource,dotnet.System.Collections.Generic.IEnumerable_1<UTInner>,UTResult>, comparer : Optional<dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>>) throws -> dotnet.System.Linq.ParallelQuery_1<UTResult> {
         return try dotnet.System.Linq.ParallelEnumerable.GroupJoin(outer: self, inner: inner, outerKeySelector: outerKeySelector, innerKeySelector: innerKeySelector, resultSelector: resultSelector, comparer: comparer);
     }
     // delegate closure overload
-    public func GroupJoin<UTInner : SGBridgeGenericValue,UTKey : SGBridgeGenericValue,UTResult : SGBridgeGenericValue>(inner : dotnet.System.Collections.Generic.IEnumerable_1<UTInner>, outerKeySelector : @escaping (TSource) throws -> UTKey, innerKeySelector : @escaping (UTInner) throws -> UTKey, resultSelector : @escaping (TSource, dotnet.System.Collections.Generic.IEnumerable_1<UTInner>) throws -> UTResult, comparer : dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>) throws -> dotnet.System.Linq.ParallelQuery_1<UTResult> {
+    public func GroupJoin<UTInner : SGBridgeGenericValue,UTKey : SGBridgeGenericValue,UTResult : SGBridgeGenericValue>(inner : dotnet.System.Collections.Generic.IEnumerable_1<UTInner>, outerKeySelector : @escaping (TSource) throws -> UTKey, innerKeySelector : @escaping (UTInner) throws -> UTKey, resultSelector : @escaping (TSource, dotnet.System.Collections.Generic.IEnumerable_1<UTInner>) throws -> UTResult, comparer : Optional<dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>>) throws -> dotnet.System.Linq.ParallelQuery_1<UTResult> {
         let del_outerKeySelector = try dotnet.System.Func_2<TSource,UTKey>(outerKeySelector);
         let del_innerKeySelector = try dotnet.System.Func_2<UTInner,UTKey>(innerKeySelector);
         let del_resultSelector = try dotnet.System.Func_3<TSource,dotnet.System.Collections.Generic.IEnumerable_1<UTInner>,UTResult>(resultSelector);
@@ -4294,11 +4353,11 @@ extension dotnet.System.Linq.ParallelQuery_1 {
 
 // EXTENSION METHOD System.Linq.ParallelQuery<TResult> GroupJoin<TOuter, TInner, TKey, TResult>(System.Linq.ParallelQuery<TOuter>, System.Linq.ParallelQuery<TInner>, System.Func<TOuter,TKey>, System.Func<TInner,TKey>, System.Func<TOuter,System.Collections.Generic.IEnumerable<TInner>,TResult>, System.Collections.Generic.IEqualityComparer<TKey>)
 extension dotnet.System.Linq.ParallelQuery_1 {
-    public func GroupJoin<UTInner : SGBridgeGenericValue,UTKey : SGBridgeGenericValue,UTResult : SGBridgeGenericValue>(inner : dotnet.System.Linq.ParallelQuery_1<UTInner>, outerKeySelector : dotnet.System.Func_2<TSource,UTKey>, innerKeySelector : dotnet.System.Func_2<UTInner,UTKey>, resultSelector : dotnet.System.Func_3<TSource,dotnet.System.Collections.Generic.IEnumerable_1<UTInner>,UTResult>, comparer : dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>) throws -> dotnet.System.Linq.ParallelQuery_1<UTResult> {
+    public func GroupJoin<UTInner : SGBridgeGenericValue,UTKey : SGBridgeGenericValue,UTResult : SGBridgeGenericValue>(inner : dotnet.System.Linq.ParallelQuery_1<UTInner>, outerKeySelector : dotnet.System.Func_2<TSource,UTKey>, innerKeySelector : dotnet.System.Func_2<UTInner,UTKey>, resultSelector : dotnet.System.Func_3<TSource,dotnet.System.Collections.Generic.IEnumerable_1<UTInner>,UTResult>, comparer : Optional<dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>>) throws -> dotnet.System.Linq.ParallelQuery_1<UTResult> {
         return try dotnet.System.Linq.ParallelEnumerable.GroupJoin(outer: self, inner: inner, outerKeySelector: outerKeySelector, innerKeySelector: innerKeySelector, resultSelector: resultSelector, comparer: comparer);
     }
     // delegate closure overload
-    public func GroupJoin<UTInner : SGBridgeGenericValue,UTKey : SGBridgeGenericValue,UTResult : SGBridgeGenericValue>(inner : dotnet.System.Linq.ParallelQuery_1<UTInner>, outerKeySelector : @escaping (TSource) throws -> UTKey, innerKeySelector : @escaping (UTInner) throws -> UTKey, resultSelector : @escaping (TSource, dotnet.System.Collections.Generic.IEnumerable_1<UTInner>) throws -> UTResult, comparer : dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>) throws -> dotnet.System.Linq.ParallelQuery_1<UTResult> {
+    public func GroupJoin<UTInner : SGBridgeGenericValue,UTKey : SGBridgeGenericValue,UTResult : SGBridgeGenericValue>(inner : dotnet.System.Linq.ParallelQuery_1<UTInner>, outerKeySelector : @escaping (TSource) throws -> UTKey, innerKeySelector : @escaping (UTInner) throws -> UTKey, resultSelector : @escaping (TSource, dotnet.System.Collections.Generic.IEnumerable_1<UTInner>) throws -> UTResult, comparer : Optional<dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>>) throws -> dotnet.System.Linq.ParallelQuery_1<UTResult> {
         let del_outerKeySelector = try dotnet.System.Func_2<TSource,UTKey>(outerKeySelector);
         let del_innerKeySelector = try dotnet.System.Func_2<UTInner,UTKey>(innerKeySelector);
         let del_resultSelector = try dotnet.System.Func_3<TSource,dotnet.System.Collections.Generic.IEnumerable_1<UTInner>,UTResult>(resultSelector);
@@ -4315,7 +4374,7 @@ extension dotnet.System.Linq.ParallelQuery_1 {
 
 // EXTENSION METHOD System.Linq.ParallelQuery<TSource> Intersect<TSource>(System.Linq.ParallelQuery<TSource>, System.Collections.Generic.IEnumerable<TSource>, System.Collections.Generic.IEqualityComparer<TSource>)
 extension dotnet.System.Linq.ParallelQuery_1 {
-    public func Intersect(second : dotnet.System.Collections.Generic.IEnumerable_1<TSource>, comparer : dotnet.System.Collections.Generic.IEqualityComparer_1<TSource>) throws -> dotnet.System.Linq.ParallelQuery_1<TSource> {
+    public func Intersect(second : dotnet.System.Collections.Generic.IEnumerable_1<TSource>, comparer : Optional<dotnet.System.Collections.Generic.IEqualityComparer_1<TSource>>) throws -> dotnet.System.Linq.ParallelQuery_1<TSource> {
         return try dotnet.System.Linq.ParallelEnumerable.Intersect(first: self, second: second, comparer: comparer);
     }
 }
@@ -4329,7 +4388,7 @@ extension dotnet.System.Linq.ParallelQuery_1 {
 
 // EXTENSION METHOD System.Linq.ParallelQuery<TSource> Intersect<TSource>(System.Linq.ParallelQuery<TSource>, System.Linq.ParallelQuery<TSource>, System.Collections.Generic.IEqualityComparer<TSource>)
 extension dotnet.System.Linq.ParallelQuery_1 {
-    public func Intersect(second : dotnet.System.Linq.ParallelQuery_1<TSource>, comparer : dotnet.System.Collections.Generic.IEqualityComparer_1<TSource>) throws -> dotnet.System.Linq.ParallelQuery_1<TSource> {
+    public func Intersect(second : dotnet.System.Linq.ParallelQuery_1<TSource>, comparer : Optional<dotnet.System.Collections.Generic.IEqualityComparer_1<TSource>>) throws -> dotnet.System.Linq.ParallelQuery_1<TSource> {
         return try dotnet.System.Linq.ParallelEnumerable.Intersect(first: self, second: second, comparer: comparer);
     }
 }
@@ -4350,11 +4409,11 @@ extension dotnet.System.Linq.ParallelQuery_1 {
 
 // EXTENSION METHOD System.Linq.ParallelQuery<TResult> Join<TOuter, TInner, TKey, TResult>(System.Linq.ParallelQuery<TOuter>, System.Collections.Generic.IEnumerable<TInner>, System.Func<TOuter,TKey>, System.Func<TInner,TKey>, System.Func<TOuter,TInner,TResult>, System.Collections.Generic.IEqualityComparer<TKey>)
 extension dotnet.System.Linq.ParallelQuery_1 {
-    public func Join<UTInner : SGBridgeGenericValue,UTKey : SGBridgeGenericValue,UTResult : SGBridgeGenericValue>(inner : dotnet.System.Collections.Generic.IEnumerable_1<UTInner>, outerKeySelector : dotnet.System.Func_2<TSource,UTKey>, innerKeySelector : dotnet.System.Func_2<UTInner,UTKey>, resultSelector : dotnet.System.Func_3<TSource,UTInner,UTResult>, comparer : dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>) throws -> dotnet.System.Linq.ParallelQuery_1<UTResult> {
+    public func Join<UTInner : SGBridgeGenericValue,UTKey : SGBridgeGenericValue,UTResult : SGBridgeGenericValue>(inner : dotnet.System.Collections.Generic.IEnumerable_1<UTInner>, outerKeySelector : dotnet.System.Func_2<TSource,UTKey>, innerKeySelector : dotnet.System.Func_2<UTInner,UTKey>, resultSelector : dotnet.System.Func_3<TSource,UTInner,UTResult>, comparer : Optional<dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>>) throws -> dotnet.System.Linq.ParallelQuery_1<UTResult> {
         return try dotnet.System.Linq.ParallelEnumerable.Join(outer: self, inner: inner, outerKeySelector: outerKeySelector, innerKeySelector: innerKeySelector, resultSelector: resultSelector, comparer: comparer);
     }
     // delegate closure overload
-    public func Join<UTInner : SGBridgeGenericValue,UTKey : SGBridgeGenericValue,UTResult : SGBridgeGenericValue>(inner : dotnet.System.Collections.Generic.IEnumerable_1<UTInner>, outerKeySelector : @escaping (TSource) throws -> UTKey, innerKeySelector : @escaping (UTInner) throws -> UTKey, resultSelector : @escaping (TSource, UTInner) throws -> UTResult, comparer : dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>) throws -> dotnet.System.Linq.ParallelQuery_1<UTResult> {
+    public func Join<UTInner : SGBridgeGenericValue,UTKey : SGBridgeGenericValue,UTResult : SGBridgeGenericValue>(inner : dotnet.System.Collections.Generic.IEnumerable_1<UTInner>, outerKeySelector : @escaping (TSource) throws -> UTKey, innerKeySelector : @escaping (UTInner) throws -> UTKey, resultSelector : @escaping (TSource, UTInner) throws -> UTResult, comparer : Optional<dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>>) throws -> dotnet.System.Linq.ParallelQuery_1<UTResult> {
         let del_outerKeySelector = try dotnet.System.Func_2<TSource,UTKey>(outerKeySelector);
         let del_innerKeySelector = try dotnet.System.Func_2<UTInner,UTKey>(innerKeySelector);
         let del_resultSelector = try dotnet.System.Func_3<TSource,UTInner,UTResult>(resultSelector);
@@ -4378,11 +4437,11 @@ extension dotnet.System.Linq.ParallelQuery_1 {
 
 // EXTENSION METHOD System.Linq.ParallelQuery<TResult> Join<TOuter, TInner, TKey, TResult>(System.Linq.ParallelQuery<TOuter>, System.Linq.ParallelQuery<TInner>, System.Func<TOuter,TKey>, System.Func<TInner,TKey>, System.Func<TOuter,TInner,TResult>, System.Collections.Generic.IEqualityComparer<TKey>)
 extension dotnet.System.Linq.ParallelQuery_1 {
-    public func Join<UTInner : SGBridgeGenericValue,UTKey : SGBridgeGenericValue,UTResult : SGBridgeGenericValue>(inner : dotnet.System.Linq.ParallelQuery_1<UTInner>, outerKeySelector : dotnet.System.Func_2<TSource,UTKey>, innerKeySelector : dotnet.System.Func_2<UTInner,UTKey>, resultSelector : dotnet.System.Func_3<TSource,UTInner,UTResult>, comparer : dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>) throws -> dotnet.System.Linq.ParallelQuery_1<UTResult> {
+    public func Join<UTInner : SGBridgeGenericValue,UTKey : SGBridgeGenericValue,UTResult : SGBridgeGenericValue>(inner : dotnet.System.Linq.ParallelQuery_1<UTInner>, outerKeySelector : dotnet.System.Func_2<TSource,UTKey>, innerKeySelector : dotnet.System.Func_2<UTInner,UTKey>, resultSelector : dotnet.System.Func_3<TSource,UTInner,UTResult>, comparer : Optional<dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>>) throws -> dotnet.System.Linq.ParallelQuery_1<UTResult> {
         return try dotnet.System.Linq.ParallelEnumerable.Join(outer: self, inner: inner, outerKeySelector: outerKeySelector, innerKeySelector: innerKeySelector, resultSelector: resultSelector, comparer: comparer);
     }
     // delegate closure overload
-    public func Join<UTInner : SGBridgeGenericValue,UTKey : SGBridgeGenericValue,UTResult : SGBridgeGenericValue>(inner : dotnet.System.Linq.ParallelQuery_1<UTInner>, outerKeySelector : @escaping (TSource) throws -> UTKey, innerKeySelector : @escaping (UTInner) throws -> UTKey, resultSelector : @escaping (TSource, UTInner) throws -> UTResult, comparer : dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>) throws -> dotnet.System.Linq.ParallelQuery_1<UTResult> {
+    public func Join<UTInner : SGBridgeGenericValue,UTKey : SGBridgeGenericValue,UTResult : SGBridgeGenericValue>(inner : dotnet.System.Linq.ParallelQuery_1<UTInner>, outerKeySelector : @escaping (TSource) throws -> UTKey, innerKeySelector : @escaping (UTInner) throws -> UTKey, resultSelector : @escaping (TSource, UTInner) throws -> UTResult, comparer : Optional<dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>>) throws -> dotnet.System.Linq.ParallelQuery_1<UTResult> {
         let del_outerKeySelector = try dotnet.System.Func_2<TSource,UTKey>(outerKeySelector);
         let del_innerKeySelector = try dotnet.System.Func_2<UTInner,UTKey>(innerKeySelector);
         let del_resultSelector = try dotnet.System.Func_3<TSource,UTInner,UTResult>(resultSelector);
@@ -4475,6 +4534,11 @@ extension dotnet.System.Linq.ParallelQuery_1 {
     }
 }
 
+// TODO COPE (parm closedgeneric of nullable): System.Nullable<System.Decimal> Max(System.Linq.ParallelQuery<System.Nullable<System.Decimal>>)
+// TODO COPE (parm closedgeneric of nullable): System.Nullable<System.Double> Max(System.Linq.ParallelQuery<System.Nullable<System.Double>>)
+// TODO COPE (parm closedgeneric of nullable): System.Nullable<System.Int32> Max(System.Linq.ParallelQuery<System.Nullable<System.Int32>>)
+// TODO COPE (parm closedgeneric of nullable): System.Nullable<System.Int64> Max(System.Linq.ParallelQuery<System.Nullable<System.Int64>>)
+// TODO COPE (parm closedgeneric of nullable): System.Nullable<System.Single> Max(System.Linq.ParallelQuery<System.Nullable<System.Single>>)
 // EXTENSION METHOD System.Single Max(System.Linq.ParallelQuery<System.Single>)
 extension dotnet.System.Linq.ParallelQuery_1 {
     public func Max() throws -> Swift.Float where TSource == Swift.Float {
@@ -4537,6 +4601,11 @@ extension dotnet.System.Linq.ParallelQuery_1 {
     }
 }
 
+// TODO COPE (parm closedgeneric of nullable): System.Nullable<System.Decimal> Max<TSource>(System.Linq.ParallelQuery<TSource>, System.Func<TSource,System.Nullable<System.Decimal>>)
+// TODO COPE (parm closedgeneric of nullable): System.Nullable<System.Double> Max<TSource>(System.Linq.ParallelQuery<TSource>, System.Func<TSource,System.Nullable<System.Double>>)
+// TODO COPE (parm closedgeneric of nullable): System.Nullable<System.Int32> Max<TSource>(System.Linq.ParallelQuery<TSource>, System.Func<TSource,System.Nullable<System.Int32>>)
+// TODO COPE (parm closedgeneric of nullable): System.Nullable<System.Int64> Max<TSource>(System.Linq.ParallelQuery<TSource>, System.Func<TSource,System.Nullable<System.Int64>>)
+// TODO COPE (parm closedgeneric of nullable): System.Nullable<System.Single> Max<TSource>(System.Linq.ParallelQuery<TSource>, System.Func<TSource,System.Nullable<System.Single>>)
 // EXTENSION METHOD System.Single Max<TSource>(System.Linq.ParallelQuery<TSource>, System.Func<TSource,System.Single>)
 extension dotnet.System.Linq.ParallelQuery_1 {
     public func Max(selector : dotnet.System.Func_2<TSource,Swift.Float>) throws -> Swift.Float {
@@ -4589,6 +4658,11 @@ extension dotnet.System.Linq.ParallelQuery_1 {
     }
 }
 
+// TODO COPE (parm closedgeneric of nullable): System.Nullable<System.Decimal> Min(System.Linq.ParallelQuery<System.Nullable<System.Decimal>>)
+// TODO COPE (parm closedgeneric of nullable): System.Nullable<System.Double> Min(System.Linq.ParallelQuery<System.Nullable<System.Double>>)
+// TODO COPE (parm closedgeneric of nullable): System.Nullable<System.Int32> Min(System.Linq.ParallelQuery<System.Nullable<System.Int32>>)
+// TODO COPE (parm closedgeneric of nullable): System.Nullable<System.Int64> Min(System.Linq.ParallelQuery<System.Nullable<System.Int64>>)
+// TODO COPE (parm closedgeneric of nullable): System.Nullable<System.Single> Min(System.Linq.ParallelQuery<System.Nullable<System.Single>>)
 // EXTENSION METHOD System.Single Min(System.Linq.ParallelQuery<System.Single>)
 extension dotnet.System.Linq.ParallelQuery_1 {
     public func Min() throws -> Swift.Float where TSource == Swift.Float {
@@ -4651,6 +4725,11 @@ extension dotnet.System.Linq.ParallelQuery_1 {
     }
 }
 
+// TODO COPE (parm closedgeneric of nullable): System.Nullable<System.Decimal> Min<TSource>(System.Linq.ParallelQuery<TSource>, System.Func<TSource,System.Nullable<System.Decimal>>)
+// TODO COPE (parm closedgeneric of nullable): System.Nullable<System.Double> Min<TSource>(System.Linq.ParallelQuery<TSource>, System.Func<TSource,System.Nullable<System.Double>>)
+// TODO COPE (parm closedgeneric of nullable): System.Nullable<System.Int32> Min<TSource>(System.Linq.ParallelQuery<TSource>, System.Func<TSource,System.Nullable<System.Int32>>)
+// TODO COPE (parm closedgeneric of nullable): System.Nullable<System.Int64> Min<TSource>(System.Linq.ParallelQuery<TSource>, System.Func<TSource,System.Nullable<System.Int64>>)
+// TODO COPE (parm closedgeneric of nullable): System.Nullable<System.Single> Min<TSource>(System.Linq.ParallelQuery<TSource>, System.Func<TSource,System.Nullable<System.Single>>)
 // EXTENSION METHOD System.Single Min<TSource>(System.Linq.ParallelQuery<TSource>, System.Func<TSource,System.Single>)
 extension dotnet.System.Linq.ParallelQuery_1 {
     public func Min(selector : dotnet.System.Func_2<TSource,Swift.Float>) throws -> Swift.Float {
@@ -4692,11 +4771,11 @@ extension dotnet.System.Linq.ParallelQuery_1 {
 
 // EXTENSION METHOD System.Linq.OrderedParallelQuery<TSource> OrderByDescending<TSource, TKey>(System.Linq.ParallelQuery<TSource>, System.Func<TSource,TKey>, System.Collections.Generic.IComparer<TKey>)
 extension dotnet.System.Linq.ParallelQuery_1 {
-    public func OrderByDescending<UTKey : SGBridgeGenericValue>(keySelector : dotnet.System.Func_2<TSource,UTKey>, comparer : dotnet.System.Collections.Generic.IComparer_1<UTKey>) throws -> dotnet.System.Linq.OrderedParallelQuery_1<TSource> {
+    public func OrderByDescending<UTKey : SGBridgeGenericValue>(keySelector : dotnet.System.Func_2<TSource,UTKey>, comparer : Optional<dotnet.System.Collections.Generic.IComparer_1<UTKey>>) throws -> dotnet.System.Linq.OrderedParallelQuery_1<TSource> {
         return try dotnet.System.Linq.ParallelEnumerable.OrderByDescending(source: self, keySelector: keySelector, comparer: comparer);
     }
     // delegate closure overload
-    public func OrderByDescending<UTKey : SGBridgeGenericValue>(keySelector : @escaping (TSource) throws -> UTKey, comparer : dotnet.System.Collections.Generic.IComparer_1<UTKey>) throws -> dotnet.System.Linq.OrderedParallelQuery_1<TSource> {
+    public func OrderByDescending<UTKey : SGBridgeGenericValue>(keySelector : @escaping (TSource) throws -> UTKey, comparer : Optional<dotnet.System.Collections.Generic.IComparer_1<UTKey>>) throws -> dotnet.System.Linq.OrderedParallelQuery_1<TSource> {
         let del_keySelector = try dotnet.System.Func_2<TSource,UTKey>(keySelector);
         return try dotnet.System.Linq.ParallelEnumerable.OrderByDescending(source: self, keySelector: del_keySelector, comparer: comparer);
     }
@@ -4716,11 +4795,11 @@ extension dotnet.System.Linq.ParallelQuery_1 {
 
 // EXTENSION METHOD System.Linq.OrderedParallelQuery<TSource> OrderBy<TSource, TKey>(System.Linq.ParallelQuery<TSource>, System.Func<TSource,TKey>, System.Collections.Generic.IComparer<TKey>)
 extension dotnet.System.Linq.ParallelQuery_1 {
-    public func OrderBy<UTKey : SGBridgeGenericValue>(keySelector : dotnet.System.Func_2<TSource,UTKey>, comparer : dotnet.System.Collections.Generic.IComparer_1<UTKey>) throws -> dotnet.System.Linq.OrderedParallelQuery_1<TSource> {
+    public func OrderBy<UTKey : SGBridgeGenericValue>(keySelector : dotnet.System.Func_2<TSource,UTKey>, comparer : Optional<dotnet.System.Collections.Generic.IComparer_1<UTKey>>) throws -> dotnet.System.Linq.OrderedParallelQuery_1<TSource> {
         return try dotnet.System.Linq.ParallelEnumerable.OrderBy(source: self, keySelector: keySelector, comparer: comparer);
     }
     // delegate closure overload
-    public func OrderBy<UTKey : SGBridgeGenericValue>(keySelector : @escaping (TSource) throws -> UTKey, comparer : dotnet.System.Collections.Generic.IComparer_1<UTKey>) throws -> dotnet.System.Linq.OrderedParallelQuery_1<TSource> {
+    public func OrderBy<UTKey : SGBridgeGenericValue>(keySelector : @escaping (TSource) throws -> UTKey, comparer : Optional<dotnet.System.Collections.Generic.IComparer_1<UTKey>>) throws -> dotnet.System.Linq.OrderedParallelQuery_1<TSource> {
         let del_keySelector = try dotnet.System.Func_2<TSource,UTKey>(keySelector);
         return try dotnet.System.Linq.ParallelEnumerable.OrderBy(source: self, keySelector: del_keySelector, comparer: comparer);
     }
@@ -4816,7 +4895,7 @@ extension dotnet.System.Linq.ParallelQuery_1 {
 
 // EXTENSION METHOD bool SequenceEqual<TSource>(System.Linq.ParallelQuery<TSource>, System.Collections.Generic.IEnumerable<TSource>, System.Collections.Generic.IEqualityComparer<TSource>)
 extension dotnet.System.Linq.ParallelQuery_1 {
-    public func SequenceEqual(second : dotnet.System.Collections.Generic.IEnumerable_1<TSource>, comparer : dotnet.System.Collections.Generic.IEqualityComparer_1<TSource>) throws -> Bool {
+    public func SequenceEqual(second : dotnet.System.Collections.Generic.IEnumerable_1<TSource>, comparer : Optional<dotnet.System.Collections.Generic.IEqualityComparer_1<TSource>>) throws -> Bool {
         return try dotnet.System.Linq.ParallelEnumerable.SequenceEqual(first: self, second: second, comparer: comparer);
     }
 }
@@ -4830,7 +4909,7 @@ extension dotnet.System.Linq.ParallelQuery_1 {
 
 // EXTENSION METHOD bool SequenceEqual<TSource>(System.Linq.ParallelQuery<TSource>, System.Linq.ParallelQuery<TSource>, System.Collections.Generic.IEqualityComparer<TSource>)
 extension dotnet.System.Linq.ParallelQuery_1 {
-    public func SequenceEqual(second : dotnet.System.Linq.ParallelQuery_1<TSource>, comparer : dotnet.System.Collections.Generic.IEqualityComparer_1<TSource>) throws -> Bool {
+    public func SequenceEqual(second : dotnet.System.Linq.ParallelQuery_1<TSource>, comparer : Optional<dotnet.System.Collections.Generic.IEqualityComparer_1<TSource>>) throws -> Bool {
         return try dotnet.System.Linq.ParallelEnumerable.SequenceEqual(first: self, second: second, comparer: comparer);
     }
 }
@@ -4932,6 +5011,11 @@ extension dotnet.System.Linq.ParallelQuery_1 {
     }
 }
 
+// TODO COPE (parm closedgeneric of nullable): System.Nullable<System.Decimal> Sum(System.Linq.ParallelQuery<System.Nullable<System.Decimal>>)
+// TODO COPE (parm closedgeneric of nullable): System.Nullable<System.Double> Sum(System.Linq.ParallelQuery<System.Nullable<System.Double>>)
+// TODO COPE (parm closedgeneric of nullable): System.Nullable<System.Int32> Sum(System.Linq.ParallelQuery<System.Nullable<System.Int32>>)
+// TODO COPE (parm closedgeneric of nullable): System.Nullable<System.Int64> Sum(System.Linq.ParallelQuery<System.Nullable<System.Int64>>)
+// TODO COPE (parm closedgeneric of nullable): System.Nullable<System.Single> Sum(System.Linq.ParallelQuery<System.Nullable<System.Single>>)
 // EXTENSION METHOD System.Single Sum(System.Linq.ParallelQuery<System.Single>)
 extension dotnet.System.Linq.ParallelQuery_1 {
     public func Sum() throws -> Swift.Float where TSource == Swift.Float {
@@ -4987,6 +5071,11 @@ extension dotnet.System.Linq.ParallelQuery_1 {
     }
 }
 
+// TODO COPE (parm closedgeneric of nullable): System.Nullable<System.Decimal> Sum<TSource>(System.Linq.ParallelQuery<TSource>, System.Func<TSource,System.Nullable<System.Decimal>>)
+// TODO COPE (parm closedgeneric of nullable): System.Nullable<System.Double> Sum<TSource>(System.Linq.ParallelQuery<TSource>, System.Func<TSource,System.Nullable<System.Double>>)
+// TODO COPE (parm closedgeneric of nullable): System.Nullable<System.Int32> Sum<TSource>(System.Linq.ParallelQuery<TSource>, System.Func<TSource,System.Nullable<System.Int32>>)
+// TODO COPE (parm closedgeneric of nullable): System.Nullable<System.Int64> Sum<TSource>(System.Linq.ParallelQuery<TSource>, System.Func<TSource,System.Nullable<System.Int64>>)
+// TODO COPE (parm closedgeneric of nullable): System.Nullable<System.Single> Sum<TSource>(System.Linq.ParallelQuery<TSource>, System.Func<TSource,System.Nullable<System.Single>>)
 // EXTENSION METHOD System.Single Sum<TSource>(System.Linq.ParallelQuery<TSource>, System.Func<TSource,System.Single>)
 extension dotnet.System.Linq.ParallelQuery_1 {
     public func Sum(selector : dotnet.System.Func_2<TSource,Swift.Float>) throws -> Swift.Float {
@@ -5044,11 +5133,11 @@ extension dotnet.System.Linq.OrderedParallelQuery_1 {
 
 // EXTENSION METHOD System.Linq.OrderedParallelQuery<TSource> ThenByDescending<TSource, TKey>(System.Linq.OrderedParallelQuery<TSource>, System.Func<TSource,TKey>, System.Collections.Generic.IComparer<TKey>)
 extension dotnet.System.Linq.OrderedParallelQuery_1 {
-    public func ThenByDescending<UTKey : SGBridgeGenericValue>(keySelector : dotnet.System.Func_2<TSource,UTKey>, comparer : dotnet.System.Collections.Generic.IComparer_1<UTKey>) throws -> dotnet.System.Linq.OrderedParallelQuery_1<TSource> {
+    public func ThenByDescending<UTKey : SGBridgeGenericValue>(keySelector : dotnet.System.Func_2<TSource,UTKey>, comparer : Optional<dotnet.System.Collections.Generic.IComparer_1<UTKey>>) throws -> dotnet.System.Linq.OrderedParallelQuery_1<TSource> {
         return try dotnet.System.Linq.ParallelEnumerable.ThenByDescending(source: self, keySelector: keySelector, comparer: comparer);
     }
     // delegate closure overload
-    public func ThenByDescending<UTKey : SGBridgeGenericValue>(keySelector : @escaping (TSource) throws -> UTKey, comparer : dotnet.System.Collections.Generic.IComparer_1<UTKey>) throws -> dotnet.System.Linq.OrderedParallelQuery_1<TSource> {
+    public func ThenByDescending<UTKey : SGBridgeGenericValue>(keySelector : @escaping (TSource) throws -> UTKey, comparer : Optional<dotnet.System.Collections.Generic.IComparer_1<UTKey>>) throws -> dotnet.System.Linq.OrderedParallelQuery_1<TSource> {
         let del_keySelector = try dotnet.System.Func_2<TSource,UTKey>(keySelector);
         return try dotnet.System.Linq.ParallelEnumerable.ThenByDescending(source: self, keySelector: del_keySelector, comparer: comparer);
     }
@@ -5068,11 +5157,11 @@ extension dotnet.System.Linq.OrderedParallelQuery_1 {
 
 // EXTENSION METHOD System.Linq.OrderedParallelQuery<TSource> ThenBy<TSource, TKey>(System.Linq.OrderedParallelQuery<TSource>, System.Func<TSource,TKey>, System.Collections.Generic.IComparer<TKey>)
 extension dotnet.System.Linq.OrderedParallelQuery_1 {
-    public func ThenBy<UTKey : SGBridgeGenericValue>(keySelector : dotnet.System.Func_2<TSource,UTKey>, comparer : dotnet.System.Collections.Generic.IComparer_1<UTKey>) throws -> dotnet.System.Linq.OrderedParallelQuery_1<TSource> {
+    public func ThenBy<UTKey : SGBridgeGenericValue>(keySelector : dotnet.System.Func_2<TSource,UTKey>, comparer : Optional<dotnet.System.Collections.Generic.IComparer_1<UTKey>>) throws -> dotnet.System.Linq.OrderedParallelQuery_1<TSource> {
         return try dotnet.System.Linq.ParallelEnumerable.ThenBy(source: self, keySelector: keySelector, comparer: comparer);
     }
     // delegate closure overload
-    public func ThenBy<UTKey : SGBridgeGenericValue>(keySelector : @escaping (TSource) throws -> UTKey, comparer : dotnet.System.Collections.Generic.IComparer_1<UTKey>) throws -> dotnet.System.Linq.OrderedParallelQuery_1<TSource> {
+    public func ThenBy<UTKey : SGBridgeGenericValue>(keySelector : @escaping (TSource) throws -> UTKey, comparer : Optional<dotnet.System.Collections.Generic.IComparer_1<UTKey>>) throws -> dotnet.System.Linq.OrderedParallelQuery_1<TSource> {
         let del_keySelector = try dotnet.System.Func_2<TSource,UTKey>(keySelector);
         return try dotnet.System.Linq.ParallelEnumerable.ThenBy(source: self, keySelector: del_keySelector, comparer: comparer);
     }
@@ -5099,11 +5188,11 @@ extension dotnet.System.Linq.ParallelQuery_1 {
 
 // EXTENSION METHOD System.Collections.Generic.Dictionary<TKey,TSource> ToDictionary<TSource, TKey>(System.Linq.ParallelQuery<TSource>, System.Func<TSource,TKey>, System.Collections.Generic.IEqualityComparer<TKey>)
 extension dotnet.System.Linq.ParallelQuery_1 {
-    public func ToDictionary<UTKey : SGBridgeGenericValue>(keySelector : dotnet.System.Func_2<TSource,UTKey>, comparer : dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>) throws -> dotnet.System.Collections.Generic.Dictionary_2<UTKey,TSource> {
+    public func ToDictionary<UTKey : SGBridgeGenericValue>(keySelector : dotnet.System.Func_2<TSource,UTKey>, comparer : Optional<dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>>) throws -> dotnet.System.Collections.Generic.Dictionary_2<UTKey,TSource> {
         return try dotnet.System.Linq.ParallelEnumerable.ToDictionary(source: self, keySelector: keySelector, comparer: comparer);
     }
     // delegate closure overload
-    public func ToDictionary<UTKey : SGBridgeGenericValue>(keySelector : @escaping (TSource) throws -> UTKey, comparer : dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>) throws -> dotnet.System.Collections.Generic.Dictionary_2<UTKey,TSource> {
+    public func ToDictionary<UTKey : SGBridgeGenericValue>(keySelector : @escaping (TSource) throws -> UTKey, comparer : Optional<dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>>) throws -> dotnet.System.Collections.Generic.Dictionary_2<UTKey,TSource> {
         let del_keySelector = try dotnet.System.Func_2<TSource,UTKey>(keySelector);
         return try dotnet.System.Linq.ParallelEnumerable.ToDictionary(source: self, keySelector: del_keySelector, comparer: comparer);
     }
@@ -5124,11 +5213,11 @@ extension dotnet.System.Linq.ParallelQuery_1 {
 
 // EXTENSION METHOD System.Collections.Generic.Dictionary<TKey,TElement> ToDictionary<TSource, TKey, TElement>(System.Linq.ParallelQuery<TSource>, System.Func<TSource,TKey>, System.Func<TSource,TElement>, System.Collections.Generic.IEqualityComparer<TKey>)
 extension dotnet.System.Linq.ParallelQuery_1 {
-    public func ToDictionary<UTKey : SGBridgeGenericValue,UTElement : SGBridgeGenericValue>(keySelector : dotnet.System.Func_2<TSource,UTKey>, elementSelector : dotnet.System.Func_2<TSource,UTElement>, comparer : dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>) throws -> dotnet.System.Collections.Generic.Dictionary_2<UTKey,UTElement> {
+    public func ToDictionary<UTKey : SGBridgeGenericValue,UTElement : SGBridgeGenericValue>(keySelector : dotnet.System.Func_2<TSource,UTKey>, elementSelector : dotnet.System.Func_2<TSource,UTElement>, comparer : Optional<dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>>) throws -> dotnet.System.Collections.Generic.Dictionary_2<UTKey,UTElement> {
         return try dotnet.System.Linq.ParallelEnumerable.ToDictionary(source: self, keySelector: keySelector, elementSelector: elementSelector, comparer: comparer);
     }
     // delegate closure overload
-    public func ToDictionary<UTKey : SGBridgeGenericValue,UTElement : SGBridgeGenericValue>(keySelector : @escaping (TSource) throws -> UTKey, elementSelector : @escaping (TSource) throws -> UTElement, comparer : dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>) throws -> dotnet.System.Collections.Generic.Dictionary_2<UTKey,UTElement> {
+    public func ToDictionary<UTKey : SGBridgeGenericValue,UTElement : SGBridgeGenericValue>(keySelector : @escaping (TSource) throws -> UTKey, elementSelector : @escaping (TSource) throws -> UTElement, comparer : Optional<dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>>) throws -> dotnet.System.Collections.Generic.Dictionary_2<UTKey,UTElement> {
         let del_keySelector = try dotnet.System.Func_2<TSource,UTKey>(keySelector);
         let del_elementSelector = try dotnet.System.Func_2<TSource,UTElement>(elementSelector);
         return try dotnet.System.Linq.ParallelEnumerable.ToDictionary(source: self, keySelector: del_keySelector, elementSelector: del_elementSelector, comparer: comparer);
@@ -5156,11 +5245,11 @@ extension dotnet.System.Linq.ParallelQuery_1 {
 
 // EXTENSION METHOD System.Linq.ILookup<TKey,TSource> ToLookup<TSource, TKey>(System.Linq.ParallelQuery<TSource>, System.Func<TSource,TKey>, System.Collections.Generic.IEqualityComparer<TKey>)
 extension dotnet.System.Linq.ParallelQuery_1 {
-    public func ToLookup<UTKey : SGBridgeGenericValue>(keySelector : dotnet.System.Func_2<TSource,UTKey>, comparer : dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>) throws -> dotnet.System.Linq.ILookup_2<UTKey,TSource> {
+    public func ToLookup<UTKey : SGBridgeGenericValue>(keySelector : dotnet.System.Func_2<TSource,UTKey>, comparer : Optional<dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>>) throws -> dotnet.System.Linq.ILookup_2<UTKey,TSource> {
         return try dotnet.System.Linq.ParallelEnumerable.ToLookup(source: self, keySelector: keySelector, comparer: comparer);
     }
     // delegate closure overload
-    public func ToLookup<UTKey : SGBridgeGenericValue>(keySelector : @escaping (TSource) throws -> UTKey, comparer : dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>) throws -> dotnet.System.Linq.ILookup_2<UTKey,TSource> {
+    public func ToLookup<UTKey : SGBridgeGenericValue>(keySelector : @escaping (TSource) throws -> UTKey, comparer : Optional<dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>>) throws -> dotnet.System.Linq.ILookup_2<UTKey,TSource> {
         let del_keySelector = try dotnet.System.Func_2<TSource,UTKey>(keySelector);
         return try dotnet.System.Linq.ParallelEnumerable.ToLookup(source: self, keySelector: del_keySelector, comparer: comparer);
     }
@@ -5181,11 +5270,11 @@ extension dotnet.System.Linq.ParallelQuery_1 {
 
 // EXTENSION METHOD System.Linq.ILookup<TKey,TElement> ToLookup<TSource, TKey, TElement>(System.Linq.ParallelQuery<TSource>, System.Func<TSource,TKey>, System.Func<TSource,TElement>, System.Collections.Generic.IEqualityComparer<TKey>)
 extension dotnet.System.Linq.ParallelQuery_1 {
-    public func ToLookup<UTKey : SGBridgeGenericValue,UTElement : SGBridgeGenericValue>(keySelector : dotnet.System.Func_2<TSource,UTKey>, elementSelector : dotnet.System.Func_2<TSource,UTElement>, comparer : dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>) throws -> dotnet.System.Linq.ILookup_2<UTKey,UTElement> {
+    public func ToLookup<UTKey : SGBridgeGenericValue,UTElement : SGBridgeGenericValue>(keySelector : dotnet.System.Func_2<TSource,UTKey>, elementSelector : dotnet.System.Func_2<TSource,UTElement>, comparer : Optional<dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>>) throws -> dotnet.System.Linq.ILookup_2<UTKey,UTElement> {
         return try dotnet.System.Linq.ParallelEnumerable.ToLookup(source: self, keySelector: keySelector, elementSelector: elementSelector, comparer: comparer);
     }
     // delegate closure overload
-    public func ToLookup<UTKey : SGBridgeGenericValue,UTElement : SGBridgeGenericValue>(keySelector : @escaping (TSource) throws -> UTKey, elementSelector : @escaping (TSource) throws -> UTElement, comparer : dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>) throws -> dotnet.System.Linq.ILookup_2<UTKey,UTElement> {
+    public func ToLookup<UTKey : SGBridgeGenericValue,UTElement : SGBridgeGenericValue>(keySelector : @escaping (TSource) throws -> UTKey, elementSelector : @escaping (TSource) throws -> UTElement, comparer : Optional<dotnet.System.Collections.Generic.IEqualityComparer_1<UTKey>>) throws -> dotnet.System.Linq.ILookup_2<UTKey,UTElement> {
         let del_keySelector = try dotnet.System.Func_2<TSource,UTKey>(keySelector);
         let del_elementSelector = try dotnet.System.Func_2<TSource,UTElement>(elementSelector);
         return try dotnet.System.Linq.ParallelEnumerable.ToLookup(source: self, keySelector: del_keySelector, elementSelector: del_elementSelector, comparer: comparer);
@@ -5201,7 +5290,7 @@ extension dotnet.System.Linq.ParallelQuery_1 {
 
 // EXTENSION METHOD System.Linq.ParallelQuery<TSource> Union<TSource>(System.Linq.ParallelQuery<TSource>, System.Collections.Generic.IEnumerable<TSource>, System.Collections.Generic.IEqualityComparer<TSource>)
 extension dotnet.System.Linq.ParallelQuery_1 {
-    public func Union(second : dotnet.System.Collections.Generic.IEnumerable_1<TSource>, comparer : dotnet.System.Collections.Generic.IEqualityComparer_1<TSource>) throws -> dotnet.System.Linq.ParallelQuery_1<TSource> {
+    public func Union(second : dotnet.System.Collections.Generic.IEnumerable_1<TSource>, comparer : Optional<dotnet.System.Collections.Generic.IEqualityComparer_1<TSource>>) throws -> dotnet.System.Linq.ParallelQuery_1<TSource> {
         return try dotnet.System.Linq.ParallelEnumerable.Union(first: self, second: second, comparer: comparer);
     }
 }
@@ -5215,7 +5304,7 @@ extension dotnet.System.Linq.ParallelQuery_1 {
 
 // EXTENSION METHOD System.Linq.ParallelQuery<TSource> Union<TSource>(System.Linq.ParallelQuery<TSource>, System.Linq.ParallelQuery<TSource>, System.Collections.Generic.IEqualityComparer<TSource>)
 extension dotnet.System.Linq.ParallelQuery_1 {
-    public func Union(second : dotnet.System.Linq.ParallelQuery_1<TSource>, comparer : dotnet.System.Collections.Generic.IEqualityComparer_1<TSource>) throws -> dotnet.System.Linq.ParallelQuery_1<TSource> {
+    public func Union(second : dotnet.System.Linq.ParallelQuery_1<TSource>, comparer : Optional<dotnet.System.Collections.Generic.IEqualityComparer_1<TSource>>) throws -> dotnet.System.Linq.ParallelQuery_1<TSource> {
         return try dotnet.System.Linq.ParallelEnumerable.Union(first: self, second: second, comparer: comparer);
     }
 }

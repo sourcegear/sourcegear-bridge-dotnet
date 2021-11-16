@@ -197,49 +197,6 @@ This option indents element content only; mixed content is not affected. For the
 } // Formatting
 
 
-// type: System.Xml.IApplicationResourceStreamResolver
-    /**
-    Represents an application resource stream resolver.
-
-    */
-open class IApplicationResourceStreamResolver
-    :
-    SGBridgeGenericValue,
-    System_Xml_IApplicationResourceStreamResolver
-{
-    open class func get_type_handle() -> TypeHandle {
-        return System_Xml_IApplicationResourceStreamResolver_get_type_handle();
-    }
-    let h : NonnullHandle;
-    public func to_gval() -> GVal { return GVal(Swift.Int(bitPattern: self.h)); }
-    public func dup_gval() -> GVal { return GVal(Swift.Int(bitPattern: __copy_handle(self.h))); }
-    public required init(gval: GVal) { self.h = NonnullHandle(bitPattern: Swift.Int(truncatingIfNeeded: gval))!; }
-    public required init(hndl: NonnullHandle) { self.h = hndl; }
-    public func get_handle() -> NonnullHandle { return self.h; }
-
-    deinit { __drop_handle(self.h); }
-
-    // System.IO.Stream GetApplicationResourceStream(System.Uri)
-// docid: M:System.Xml.IApplicationResourceStreamResolver.GetApplicationResourceStream(System.Uri)
-    /**
-    Returns an application resource stream from the specified URI.
-
-    - Parameter relativeUri: The relative URI.
-    - Returns: An application resource stream.
-
-    */
-    open func GetApplicationResourceStream(relativeUri : dotnet.System.Uri) throws -> dotnet.System.IO.Stream {
-        var __thrown : NullableHandle = nil;
-        let __return = System_Xml_IApplicationResourceStreamResolver_Stream__GetApplicationResourceStream_0__1__Uri(&__thrown, self.get_handle(), relativeUri.get_handle());
-        if let __ex =  __thrown {
-            throw dotnet.System.Exception(hndl: __ex);
-        } else {
-        return dotnet.System.IO.Stream(hndl : __return);
-        }
-    }
-} // IApplicationResourceStreamResolver
-
-
 // type: System.Xml.IHasXmlNode
     /**
     Enables a class to return an  from the current context or position.
@@ -252,6 +209,9 @@ open class IHasXmlNode
 {
     open class func get_type_handle() -> TypeHandle {
         return System_Xml_IHasXmlNode_get_type_handle();
+    }
+    open class func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     let h : NonnullHandle;
     public func to_gval() -> GVal { return GVal(Swift.Int(bitPattern: self.h)); }
@@ -294,6 +254,9 @@ open class IXmlLineInfo
 {
     open class func get_type_handle() -> TypeHandle {
         return System_Xml_IXmlLineInfo_get_type_handle();
+    }
+    open class func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     let h : NonnullHandle;
     public func to_gval() -> GVal { return GVal(Swift.Int(bitPattern: self.h)); }
@@ -359,6 +322,9 @@ open class IXmlNamespaceResolver
 {
     open class func get_type_handle() -> TypeHandle {
         return System_Xml_IXmlNamespaceResolver_get_type_handle();
+    }
+    open class func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     let h : NonnullHandle;
     public func to_gval() -> GVal { return GVal(Swift.Int(bitPattern: self.h)); }
@@ -445,6 +411,9 @@ open class NameTable
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Xml_NameTable_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -953,6 +922,9 @@ open class XmlAttribute
     open class override func get_type_handle() -> TypeHandle {
         return System_Xml_XmlAttribute_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // System.Xml.XmlNode AppendChild(System.Xml.XmlNode)
@@ -983,7 +955,7 @@ open class XmlAttribute
     Creates a duplicate of this node.
 
     - Parameter deep: 
-         to recursively clone the subtree under the specified node;  to clone only the node itself
+         to recursively clone the subtree under the specified node;  to clone only the node itself.
     - Returns: The duplicate node.
 
     */
@@ -1436,6 +1408,9 @@ public final class XmlAttributeCollection
     public class override func get_type_handle() -> TypeHandle {
         return System_Xml_XmlAttributeCollection_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // System.Xml.XmlAttribute Append(System.Xml.XmlAttribute)
@@ -1666,6 +1641,9 @@ open class XmlCDataSection
     open class override func get_type_handle() -> TypeHandle {
         return System_Xml_XmlCDataSection_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // System.Xml.XmlNode CloneNode(bool)
@@ -1841,6 +1819,9 @@ open class XmlCharacterData
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Xml_XmlCharacterData_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -2072,6 +2053,9 @@ open class XmlComment
     open class override func get_type_handle() -> TypeHandle {
         return System_Xml_XmlComment_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // System.Xml.XmlNode CloneNode(bool)
@@ -2199,6 +2183,9 @@ open class XmlConvert
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Xml_XmlConvert_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -2554,9 +2541,7 @@ open class XmlConvert
     /**
     Converts the supplied  to a  equivalent.
 
-    - Parameter s: The string to convert.  
-  
- Note The string must conform to a subset of the W3C Recommendation for the XML dateTime type. For more information, see the dateTime section of the XML Schema specification..
+    - Parameter s: The string to convert. The string must conform to a subset of the W3C Recommendation for the XML dateTime type. For more information, see the dateTime section of the XML Schema specification.
     - Returns: The  equivalent of the supplied string.
 
     */
@@ -3042,7 +3027,24 @@ open class XmlConvert
         return dotnet.System.String(hndl : __return);
         }
     }
-// TODO COPE (write_all_methods) (span) System.String ToString(System.TimeSpan)
+    // System.String ToString(System.TimeSpan)
+// docid: M:System.Xml.XmlConvert.ToString(System.TimeSpan)
+    /**
+    Converts the  to a .
+
+    - Parameter value: The value to convert.
+    - Returns: A string representation of the .
+
+    */
+    open class func ToString(value : dotnet.System.TimeSpan) throws -> dotnet.System.String {
+        var __thrown : NullableHandle = nil;
+        let __return = System_Xml_XmlConvert_String__ToString_0__1__TimeSpan(&__thrown, value.get_handle());
+        if let __ex =  __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+        return dotnet.System.String(hndl : __return);
+        }
+    }
     // System.String ToString(System.UInt16)
 // docid: M:System.Xml.XmlConvert.ToString(System.UInt16)
     /**
@@ -3379,6 +3381,9 @@ open class XmlDeclaration
     open class override func get_type_handle() -> TypeHandle {
         return System_Xml_XmlDeclaration_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // System.Xml.XmlNode CloneNode(bool)
@@ -3666,6 +3671,9 @@ open class XmlDocument
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Xml_XmlDocument_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -4031,7 +4039,7 @@ open class XmlDocument
     /**
     Creates an  node.
 
-    - Parameter text: The string must contain only the following characters &#20; &#10; &#13; and &#9;
+    - Parameter text: The string must contain only the following characters &#20; &#10; &#13; and &#9;.
     - Returns: A new  node.
 
     */
@@ -4067,7 +4075,7 @@ open class XmlDocument
     /**
     Creates an  node.
 
-    - Parameter text: The string must contain only the following characters &#20; &#10; &#13; and &#9;
+    - Parameter text: The string must contain only the following characters &#20; &#10; &#13; and &#9;.
     - Returns: A new  node.
 
     */
@@ -4266,7 +4274,7 @@ open class XmlDocument
     /**
     Creates an  object based on the information in the . The reader must be positioned on a node or attribute.
 
-    - Parameter reader: The XML source
+    - Parameter reader: The XML source.
     - Returns: The new  or  if no more nodes exist.
 
     */
@@ -5009,6 +5017,9 @@ open class XmlDocumentFragment
     open class override func get_type_handle() -> TypeHandle {
         return System_Xml_XmlDocumentFragment_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // System.Xml.XmlNode CloneNode(bool)
@@ -5214,6 +5225,9 @@ open class XmlDocumentType
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Xml_XmlDocumentType_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -5474,6 +5488,9 @@ open class XmlElement
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Xml_XmlElement_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -6257,6 +6274,9 @@ open class XmlEntity
     open class override func get_type_handle() -> TypeHandle {
         return System_Xml_XmlEntity_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // System.Xml.XmlNode CloneNode(bool)
@@ -6585,6 +6605,9 @@ open class XmlEntityReference
     open class override func get_type_handle() -> TypeHandle {
         return System_Xml_XmlEntityReference_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // System.Xml.XmlNode CloneNode(bool)
@@ -6791,6 +6814,9 @@ open class XmlException
     open class override func get_type_handle() -> TypeHandle {
         return System_Xml_XmlException_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor()
@@ -6976,6 +7002,9 @@ open class XmlImplementation
     open class override func get_type_handle() -> TypeHandle {
         return System_Xml_XmlImplementation_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor()
@@ -7065,6 +7094,9 @@ open class XmlLinkedNode
     open class override func get_type_handle() -> TypeHandle {
         return System_Xml_XmlLinkedNode_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // [IsSpecialName] System.Xml.XmlNode get_NextSibling()
@@ -7129,6 +7161,9 @@ open class XmlNameTable
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Xml_XmlNameTable_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -7231,6 +7266,9 @@ open class XmlNamedNodeMap
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Xml_XmlNamedNodeMap_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -7422,6 +7460,9 @@ open class XmlNamespaceManager
     open class override func get_type_handle() -> TypeHandle {
         return System_Xml_XmlNamespaceManager_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor(System.Xml.XmlNameTable)
@@ -7447,7 +7488,7 @@ open class XmlNamespaceManager
 
     - Parameter prefix: The prefix to associate with the namespace being added. Use String.Empty to add a default namespace.  
   
- NoteIf the  will be used for resolving namespaces in an XML Path Language (XPath) expression, a prefix must be specified. If an XPath expression does not include a prefix, it is assumed that the namespace Uniform Resource Identifier (URI) is the empty namespace. For more information about XPath expressions and the , refer to the  and  methods.
+ Note If the  will be used for resolving namespaces in an XML Path Language (XPath) expression, a prefix must be specified. If an XPath expression does not include a prefix, it is assumed that the namespace Uniform Resource Identifier (URI) is the empty namespace. For more information about XPath expressions and the , refer to the  and  methods.
     - Parameter uri: The namespace to add.
     */
     open func AddNamespace(prefix : dotnet.System.String, uri : dotnet.System.String) throws {
@@ -7597,7 +7638,7 @@ open class XmlNamespaceManager
     /**
     Removes the given namespace for the given prefix.
 
-    - Parameter prefix: The prefix for the namespace
+    - Parameter prefix: The prefix for the namespace.
     - Parameter uri: The namespace to remove for the given prefix. The namespace removed is from the current namespace scope. Namespaces outside the current scope are ignored.
     */
     open func RemoveNamespace(prefix : dotnet.System.String, uri : dotnet.System.String) throws {
@@ -7721,6 +7762,9 @@ open class XmlNode
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Xml_XmlNode_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -8459,9 +8503,6 @@ open class XmlNode
     }
     // [IsSpecialName] System.Xml.XmlElement get_Item(System.String)
 // docid: M:System.Xml.XmlNode.get_Item(System.String)
-//BEGIN method_is_override
-//matches_1
-//matches :
     open func get_Item(name : dotnet.System.String) throws -> Optional<dotnet.System.Xml.XmlElement> {
         var __thrown : NullableHandle = nil;
         let __return = System_Xml_XmlNode_XmlElement__get_Item_0__1__String(&__thrown, self.get_handle(), name.get_handle());
@@ -8477,9 +8518,6 @@ open class XmlNode
     }
     // [IsSpecialName] System.Xml.XmlElement get_Item(System.String, System.String)
 // docid: M:System.Xml.XmlNode.get_Item(System.String,System.String)
-//BEGIN method_is_override
-//matches_1
-//matches :
     open func get_Item(localname : dotnet.System.String, ns : dotnet.System.String) throws -> Optional<dotnet.System.Xml.XmlElement> {
         var __thrown : NullableHandle = nil;
         let __return = System_Xml_XmlNode_XmlElement__get_Item_0__2__String_String(&__thrown, self.get_handle(), localname.get_handle(), ns.get_handle());
@@ -8769,6 +8807,9 @@ open class XmlNodeChangedEventArgs
     open class override func get_type_handle() -> TypeHandle {
         return System_Xml_XmlNodeChangedEventArgs_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor(System.Xml.XmlNode, System.Xml.XmlNode, System.Xml.XmlNode, System.String, System.String, System.Xml.XmlNodeChangedAction)
@@ -8947,6 +8988,9 @@ public final class XmlNodeChangedEventHandler
     public class override func get_type_handle() -> TypeHandle {
         return System_Xml_XmlNodeChangedEventHandler_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // void Invoke(System.Object, System.Xml.XmlNodeChangedEventArgs)
@@ -8986,15 +9030,15 @@ public final class XmlNodeChangedEventHandler
             return;
         }
     }
-    public init(_ callback : @escaping (dotnet.System.Object, dotnet.System.Xml.XmlNodeChangedEventArgs) throws -> Void) throws
+    public convenience init(_ __closure_Invoke : @escaping (dotnet.System.Object, dotnet.System.Xml.XmlNodeChangedEventArgs) throws -> Void) throws
     {
-        let __bridge : (UnsafeMutablePointer<NullableHandle>, NonnullHandle, NonnullHandle) -> Void =
+        let __interlude_Invoke : (UnsafeMutablePointer<NullableHandle>, NonnullHandle, NonnullHandle) -> Void =
         {
             (thrown : UnsafeMutablePointer<NullableHandle>, sender : NonnullHandle, e : NonnullHandle) -> Void in
             do
             {
                 thrown.pointee = nil;
-                try callback(dotnet.System.Object(hndl: sender), dotnet.System.Xml.XmlNodeChangedEventArgs(hndl: e));
+                try __closure_Invoke(dotnet.System.Object(hndl: sender), dotnet.System.Xml.XmlNodeChangedEventArgs(hndl: e));
             }
             catch let e as dotnet.System.Exception
             {
@@ -9006,24 +9050,24 @@ public final class XmlNodeChangedEventHandler
                 thrown.pointee = __copy_handle(e.get_handle());
             }
         };
-        let cbarg = UnsafeRawPointer(Unmanaged.passRetained(__bridge as AnyObject).toOpaque());
-        func __cb(cb : UnsafeRawPointer?, thrown : UnsafeMutablePointer<NullableHandle>, sender : NonnullHandle, e : NonnullHandle) -> Void
+        func __cb_Invoke(pdata_interlude : UnsafeRawPointer, thrown : UnsafeMutablePointer<NullableHandle>, sender : NonnullHandle, e : NonnullHandle) -> Void
         {
-            let f = Unmanaged<AnyObject>.fromOpaque(cb!).takeUnretainedValue() as! (UnsafeMutablePointer<NullableHandle>, NonnullHandle, NonnullHandle) -> Void;
-            f(thrown, sender, e);
+            let f_interlude = Unmanaged<AnyObject>.fromOpaque(pdata_interlude).takeUnretainedValue() as! (UnsafeMutablePointer<NullableHandle>, NonnullHandle, NonnullHandle) -> Void;
+            f_interlude(thrown, sender, e);
         }
+        let __pdata_Invoke = UnsafeRawPointer(Unmanaged.passRetained(__interlude_Invoke as AnyObject).toOpaque());
+
         var __thrown : NullableHandle = nil;
         let h = System_Xml_XmlNodeChangedEventHandler_create(
             &__thrown,
-            cbarg,
-            nil, // TODO deinit
-            __cb
+            __cb_Invoke,
+            __pdata_Invoke,
+            nil
             );
-            // TODO check thrown
         if let __ex = __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-            super.init(hndl: h);
+            self.init(hndl: h);
         }
     }
     // void Invoke(System.Object, System.Xml.XmlNodeChangedEventArgs)
@@ -9053,6 +9097,9 @@ open class XmlNodeList
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Xml_XmlNodeList_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -9207,6 +9254,9 @@ open class XmlNodeReader
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Xml_XmlNodeReader_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -10081,7 +10131,10 @@ public struct XmlNodeType : SGBridgeGenericValue {
     }
     // static field: System.Xml.XmlNodeType Text
     /**
-    The text content of a node.
+    
+        The text content of a node.
+        A  node cannot have any child nodes. It can appear as the child node of the , , , and  nodes.
+      
 
     */
     public static var Text : dotnet.System.Xml.XmlNodeType {
@@ -10235,7 +10288,10 @@ public struct XmlNodeType : SGBridgeGenericValue {
     }
     // static field: System.Xml.XmlNodeType XmlDeclaration
     /**
-    The XML declaration (for example, <?xml version='1.0'?> ).
+    
+        The XML declaration (for example, <?xml version='1.0'?> ).
+        The  node must be the first node in the document. It cannot have children. It is a child of the  node. It can have attributes that provide version and encoding information.
+      
 
     */
     public static var XmlDeclaration : dotnet.System.Xml.XmlNodeType {
@@ -10258,6 +10314,9 @@ open class XmlNotation
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Xml_XmlNotation_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -10570,6 +10629,9 @@ open class XmlParserContext
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Xml_XmlParserContext_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -11028,6 +11090,9 @@ open class XmlProcessingInstruction
     open class override func get_type_handle() -> TypeHandle {
         return System_Xml_XmlProcessingInstruction_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // System.Xml.XmlNode CloneNode(bool)
@@ -11270,6 +11335,9 @@ open class XmlQualifiedName
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Xml_XmlQualifiedName_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -11519,6 +11587,9 @@ open class XmlReader
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Xml_XmlReader_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -11873,13 +11944,13 @@ open class XmlReader
     - Returns: The value of the current node.
 
     */
-    open func GetValueAsync() throws -> dotnet.System.Threading.Tasks.Task_1<dotnet.System.String> {
+    open func GetValueAsync() async throws -> dotnet.System.String {
         var __thrown : NullableHandle = nil;
         let __return = System_Xml_XmlReader_System_Threading_Tasks_Task_string___GetValueAsync_0__0(&__thrown, self.get_handle());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task_1(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task_1(hndl: __return).ToAsync();
         }
     }
     // bool IsName(System.String)
@@ -12079,13 +12150,13 @@ open class XmlReader
     - Returns: The  of the current node found by the method or  if the reader has reached the end of the input stream.
 
     */
-    open func MoveToContentAsync() throws -> dotnet.System.Threading.Tasks.Task_1<dotnet.System.Xml.XmlNodeType> {
+    open func MoveToContentAsync() async throws -> dotnet.System.Xml.XmlNodeType {
         var __thrown : NullableHandle = nil;
         let __return = System_Xml_XmlReader_System_Threading_Tasks_Task_System_Xml_XmlNodeType___MoveToContentAsync_0__0(&__thrown, self.get_handle());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task_1(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task_1(hndl: __return).ToAsync();
         }
     }
     // bool MoveToElement()
@@ -12169,13 +12240,13 @@ open class XmlReader
          if the next node was read successfully;  if there are no more nodes to read.
 
     */
-    open func ReadAsync() throws -> dotnet.System.Threading.Tasks.Task_1<Bool> {
+    open func ReadAsync() async throws -> Bool {
         var __thrown : NullableHandle = nil;
         let __return = System_Xml_XmlReader_System_Threading_Tasks_Task_bool___ReadAsync_0__0(&__thrown, self.get_handle());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task_1(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task_1(hndl: __return).ToAsync();
         }
     }
     // bool ReadAttributeValue()
@@ -12233,13 +12304,13 @@ open class XmlReader
     - Returns: The concatenated text content or attribute value converted to the requested type.
 
     */
-    open func ReadContentAsAsync(returnType : dotnet.System.Type_, namespaceResolver : Optional<dotnet.System.Xml.IXmlNamespaceResolver>) throws -> dotnet.System.Threading.Tasks.Task_1<dotnet.System.Object> {
+    open func ReadContentAsAsync(returnType : dotnet.System.Type_, namespaceResolver : Optional<dotnet.System.Xml.IXmlNamespaceResolver>) async throws -> dotnet.System.Object {
         var __thrown : NullableHandle = nil;
         let __return = System_Xml_XmlReader_System_Threading_Tasks_Task_object___ReadContentAsAsync_0__2__Type_IXmlNamespaceResolver(&__thrown, self.get_handle(), returnType.get_handle(), namespaceResolver?.get_handle() ?? nil);
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task_1(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task_1(hndl: __return).ToAsync();
         }
     }
     // System.Int32 ReadContentAsBase64(System.Byte[], System.Int32, System.Int32)
@@ -12273,13 +12344,13 @@ open class XmlReader
     - Returns: The number of bytes written to the buffer.
 
     */
-    open func ReadContentAsBase64Async(buffer : dotnet.System_Arr<Swift.UInt8>, index : Swift.Int32, count : Swift.Int32) throws -> dotnet.System.Threading.Tasks.Task_1<Swift.Int32> {
+    open func ReadContentAsBase64Async(buffer : dotnet.System_Arr<Swift.UInt8>, index : Swift.Int32, count : Swift.Int32) async throws -> Swift.Int32 {
         var __thrown : NullableHandle = nil;
         let __return = System_Xml_XmlReader_System_Threading_Tasks_Task_i32___ReadContentAsBase64Async_0__3__u8Array_i32_i32(&__thrown, self.get_handle(), buffer.get_handle(), index, count);
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task_1(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task_1(hndl: __return).ToAsync();
         }
     }
     // System.Int32 ReadContentAsBinHex(System.Byte[], System.Int32, System.Int32)
@@ -12313,13 +12384,13 @@ open class XmlReader
     - Returns: The number of bytes written to the buffer.
 
     */
-    open func ReadContentAsBinHexAsync(buffer : dotnet.System_Arr<Swift.UInt8>, index : Swift.Int32, count : Swift.Int32) throws -> dotnet.System.Threading.Tasks.Task_1<Swift.Int32> {
+    open func ReadContentAsBinHexAsync(buffer : dotnet.System_Arr<Swift.UInt8>, index : Swift.Int32, count : Swift.Int32) async throws -> Swift.Int32 {
         var __thrown : NullableHandle = nil;
         let __return = System_Xml_XmlReader_System_Threading_Tasks_Task_i32___ReadContentAsBinHexAsync_0__3__u8Array_i32_i32(&__thrown, self.get_handle(), buffer.get_handle(), index, count);
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task_1(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task_1(hndl: __return).ToAsync();
         }
     }
     // bool ReadContentAsBoolean()
@@ -12483,13 +12554,13 @@ open class XmlReader
     - Returns: The text content as the most appropriate common language runtime (CLR) object.
 
     */
-    open func ReadContentAsObjectAsync() throws -> dotnet.System.Threading.Tasks.Task_1<dotnet.System.Object> {
+    open func ReadContentAsObjectAsync() async throws -> dotnet.System.Object {
         var __thrown : NullableHandle = nil;
         let __return = System_Xml_XmlReader_System_Threading_Tasks_Task_object___ReadContentAsObjectAsync_0__0(&__thrown, self.get_handle());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task_1(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task_1(hndl: __return).ToAsync();
         }
     }
     // System.String ReadContentAsString()
@@ -12517,13 +12588,13 @@ open class XmlReader
     - Returns: The text content as a  object.
 
     */
-    open func ReadContentAsStringAsync() throws -> dotnet.System.Threading.Tasks.Task_1<dotnet.System.String> {
+    open func ReadContentAsStringAsync() async throws -> dotnet.System.String {
         var __thrown : NullableHandle = nil;
         let __return = System_Xml_XmlReader_System_Threading_Tasks_Task_string___ReadContentAsStringAsync_0__0(&__thrown, self.get_handle());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task_1(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task_1(hndl: __return).ToAsync();
         }
     }
     // System.Object ReadElementContentAs(System.Type, System.Xml.IXmlNamespaceResolver)
@@ -12580,13 +12651,13 @@ open class XmlReader
     - Returns: The element content converted to the requested typed object.
 
     */
-    open func ReadElementContentAsAsync(returnType : dotnet.System.Type_, namespaceResolver : dotnet.System.Xml.IXmlNamespaceResolver) throws -> dotnet.System.Threading.Tasks.Task_1<dotnet.System.Object> {
+    open func ReadElementContentAsAsync(returnType : dotnet.System.Type_, namespaceResolver : dotnet.System.Xml.IXmlNamespaceResolver) async throws -> dotnet.System.Object {
         var __thrown : NullableHandle = nil;
         let __return = System_Xml_XmlReader_System_Threading_Tasks_Task_object___ReadElementContentAsAsync_0__2__Type_IXmlNamespaceResolver(&__thrown, self.get_handle(), returnType.get_handle(), namespaceResolver.get_handle());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task_1(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task_1(hndl: __return).ToAsync();
         }
     }
     // System.Int32 ReadElementContentAsBase64(System.Byte[], System.Int32, System.Int32)
@@ -12620,13 +12691,13 @@ open class XmlReader
     - Returns: The number of bytes written to the buffer.
 
     */
-    open func ReadElementContentAsBase64Async(buffer : dotnet.System_Arr<Swift.UInt8>, index : Swift.Int32, count : Swift.Int32) throws -> dotnet.System.Threading.Tasks.Task_1<Swift.Int32> {
+    open func ReadElementContentAsBase64Async(buffer : dotnet.System_Arr<Swift.UInt8>, index : Swift.Int32, count : Swift.Int32) async throws -> Swift.Int32 {
         var __thrown : NullableHandle = nil;
         let __return = System_Xml_XmlReader_System_Threading_Tasks_Task_i32___ReadElementContentAsBase64Async_0__3__u8Array_i32_i32(&__thrown, self.get_handle(), buffer.get_handle(), index, count);
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task_1(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task_1(hndl: __return).ToAsync();
         }
     }
     // System.Int32 ReadElementContentAsBinHex(System.Byte[], System.Int32, System.Int32)
@@ -12660,13 +12731,13 @@ open class XmlReader
     - Returns: The number of bytes written to the buffer.
 
     */
-    open func ReadElementContentAsBinHexAsync(buffer : dotnet.System_Arr<Swift.UInt8>, index : Swift.Int32, count : Swift.Int32) throws -> dotnet.System.Threading.Tasks.Task_1<Swift.Int32> {
+    open func ReadElementContentAsBinHexAsync(buffer : dotnet.System_Arr<Swift.UInt8>, index : Swift.Int32, count : Swift.Int32) async throws -> Swift.Int32 {
         var __thrown : NullableHandle = nil;
         let __return = System_Xml_XmlReader_System_Threading_Tasks_Task_i32___ReadElementContentAsBinHexAsync_0__3__u8Array_i32_i32(&__thrown, self.get_handle(), buffer.get_handle(), index, count);
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task_1(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task_1(hndl: __return).ToAsync();
         }
     }
     // bool ReadElementContentAsBoolean()
@@ -12965,13 +13036,13 @@ open class XmlReader
     - Returns: A boxed common language runtime (CLR) object of the most appropriate type. The  property determines the appropriate CLR type. If the content is typed as a list type, this method returns an array of boxed objects of the appropriate type.
 
     */
-    open func ReadElementContentAsObjectAsync() throws -> dotnet.System.Threading.Tasks.Task_1<dotnet.System.Object> {
+    open func ReadElementContentAsObjectAsync() async throws -> dotnet.System.Object {
         var __thrown : NullableHandle = nil;
         let __return = System_Xml_XmlReader_System_Threading_Tasks_Task_object___ReadElementContentAsObjectAsync_0__0(&__thrown, self.get_handle());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task_1(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task_1(hndl: __return).ToAsync();
         }
     }
     // System.String ReadElementContentAsString()
@@ -13018,13 +13089,13 @@ open class XmlReader
     - Returns: The element content as a  object.
 
     */
-    open func ReadElementContentAsStringAsync() throws -> dotnet.System.Threading.Tasks.Task_1<dotnet.System.String> {
+    open func ReadElementContentAsStringAsync() async throws -> dotnet.System.String {
         var __thrown : NullableHandle = nil;
         let __return = System_Xml_XmlReader_System_Threading_Tasks_Task_string___ReadElementContentAsStringAsync_0__0(&__thrown, self.get_handle());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task_1(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task_1(hndl: __return).ToAsync();
         }
     }
     // System.String ReadElementString()
@@ -13123,13 +13194,13 @@ open class XmlReader
     - Returns: All the XML content, including markup, in the current node. If the current node has no children, an empty string is returned.
 
     */
-    open func ReadInnerXmlAsync() throws -> dotnet.System.Threading.Tasks.Task_1<dotnet.System.String> {
+    open func ReadInnerXmlAsync() async throws -> dotnet.System.String {
         var __thrown : NullableHandle = nil;
         let __return = System_Xml_XmlReader_System_Threading_Tasks_Task_string___ReadInnerXmlAsync_0__0(&__thrown, self.get_handle());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task_1(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task_1(hndl: __return).ToAsync();
         }
     }
     // System.String ReadOuterXml()
@@ -13157,13 +13228,13 @@ open class XmlReader
     - Returns: If the reader is positioned on an element or an attribute node, this method returns all the XML content, including markup, of the current node and all its children; otherwise, it returns an empty string.
 
     */
-    open func ReadOuterXmlAsync() throws -> dotnet.System.Threading.Tasks.Task_1<dotnet.System.String> {
+    open func ReadOuterXmlAsync() async throws -> dotnet.System.String {
         var __thrown : NullableHandle = nil;
         let __return = System_Xml_XmlReader_System_Threading_Tasks_Task_string___ReadOuterXmlAsync_0__0(&__thrown, self.get_handle());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task_1(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task_1(hndl: __return).ToAsync();
         }
     }
     // void ReadStartElement()
@@ -13400,13 +13471,13 @@ open class XmlReader
     - Returns: The number of characters read into the buffer. The value zero is returned when there is no more text content.
 
     */
-    open func ReadValueChunkAsync(buffer : dotnet.System_Arr<dotnet.System.Char>, index : Swift.Int32, count : Swift.Int32) throws -> dotnet.System.Threading.Tasks.Task_1<Swift.Int32> {
+    open func ReadValueChunkAsync(buffer : dotnet.System_Arr<dotnet.System.Char>, index : Swift.Int32, count : Swift.Int32) async throws -> Swift.Int32 {
         var __thrown : NullableHandle = nil;
         let __return = System_Xml_XmlReader_System_Threading_Tasks_Task_i32___ReadValueChunkAsync_0__3__CharArray_i32_i32(&__thrown, self.get_handle(), buffer.get_handle(), index, count);
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task_1(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task_1(hndl: __return).ToAsync();
         }
     }
     // void ResolveEntity()
@@ -13447,13 +13518,13 @@ open class XmlReader
     - Returns: The current node.
 
     */
-    open func SkipAsync() throws -> dotnet.System.Threading.Tasks.Task {
+    open func SkipAsync() async throws {
         var __thrown : NullableHandle = nil;
         let __return = System_Xml_XmlReader_Task__SkipAsync_0__0(&__thrown, self.get_handle());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task(hndl: __return).ToAsync();
         }
     }
     // [IsSpecialName] System.Int32 get_AttributeCount()
@@ -13741,9 +13812,6 @@ open class XmlReader
     }
     // [IsSpecialName] System.String get_Item(System.Int32)
 // docid: M:System.Xml.XmlReader.get_Item(System.Int32)
-//BEGIN method_is_override
-//matches_1
-//matches :
     open func get_Item(i : Swift.Int32) throws -> dotnet.System.String {
         var __thrown : NullableHandle = nil;
         let __return = System_Xml_XmlReader_String__get_Item_0__1__i32(&__thrown, self.get_handle(), i);
@@ -13755,9 +13823,6 @@ open class XmlReader
     }
     // [IsSpecialName] System.String get_Item(System.String)
 // docid: M:System.Xml.XmlReader.get_Item(System.String)
-//BEGIN method_is_override
-//matches_1
-//matches :
     open func get_Item(name : dotnet.System.String) throws -> Optional<dotnet.System.String> {
         var __thrown : NullableHandle = nil;
         let __return = System_Xml_XmlReader_String__get_Item_0__1__String(&__thrown, self.get_handle(), name.get_handle());
@@ -13773,9 +13838,6 @@ open class XmlReader
     }
     // [IsSpecialName] System.String get_Item(System.String, System.String)
 // docid: M:System.Xml.XmlReader.get_Item(System.String,System.String)
-//BEGIN method_is_override
-//matches_1
-//matches :
     open func get_Item(name : dotnet.System.String, namespaceURI : Optional<dotnet.System.String>) throws -> Optional<dotnet.System.String> {
         var __thrown : NullableHandle = nil;
         let __return = System_Xml_XmlReader_String__get_Item_0__2__String_String(&__thrown, self.get_handle(), name.get_handle(), namespaceURI?.get_handle() ?? nil);
@@ -14028,6 +14090,9 @@ public final class XmlReaderSettings
 {
     public class override func get_type_handle() -> TypeHandle {
         return System_Xml_XmlReaderSettings_get_type_handle();
+    }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -14718,6 +14783,9 @@ open class XmlResolver
     open class override func get_type_handle() -> TypeHandle {
         return System_Xml_XmlResolver_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // System.Object GetEntity(System.Uri, System.String, System.Type)
@@ -14755,13 +14823,13 @@ open class XmlResolver
     - Returns: A stream object or  if a type other than stream is specified.
 
     */
-    open func GetEntityAsync(absoluteUri : dotnet.System.Uri, role : Optional<dotnet.System.String>, ofObjectToReturn : Optional<dotnet.System.Type_>) throws -> dotnet.System.Threading.Tasks.Task_1<dotnet.System.Object> {
+    open func GetEntityAsync(absoluteUri : dotnet.System.Uri, role : Optional<dotnet.System.String>, ofObjectToReturn : Optional<dotnet.System.Type_>) async throws -> dotnet.System.Object {
         var __thrown : NullableHandle = nil;
         let __return = System_Xml_XmlResolver_System_Threading_Tasks_Task_object___GetEntityAsync_0__3__Uri_String_Type(&__thrown, self.get_handle(), absoluteUri.get_handle(), role?.get_handle() ?? nil, ofObjectToReturn?.get_handle() ?? nil);
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task_1(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task_1(hndl: __return).ToAsync();
         }
     }
     // System.Uri ResolveUri(System.Uri, System.String)
@@ -14829,6 +14897,9 @@ open class XmlSecureResolver
     open class override func get_type_handle() -> TypeHandle {
         return System_Xml_XmlSecureResolver_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor(System.Xml.XmlResolver, System.String)
@@ -14883,13 +14954,13 @@ open class XmlSecureResolver
     - Returns: The stream returned by calling  on the underlying . If a type other than  is specified, the method returns .
 
     */
-    open override func GetEntityAsync(absoluteUri : dotnet.System.Uri, role : Optional<dotnet.System.String>, ofObjectToReturn : Optional<dotnet.System.Type_>) throws -> dotnet.System.Threading.Tasks.Task_1<dotnet.System.Object> {
+    open override func GetEntityAsync(absoluteUri : dotnet.System.Uri, role : Optional<dotnet.System.String>, ofObjectToReturn : Optional<dotnet.System.Type_>) async throws -> dotnet.System.Object {
         var __thrown : NullableHandle = nil;
         let __return = System_Xml_XmlSecureResolver_System_Threading_Tasks_Task_object___GetEntityAsync_0__3__Uri_String_Type(&__thrown, self.get_handle(), absoluteUri.get_handle(), role?.get_handle() ?? nil, ofObjectToReturn?.get_handle() ?? nil);
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task_1(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task_1(hndl: __return).ToAsync();
         }
     }
     // System.Uri ResolveUri(System.Uri, System.String)
@@ -14936,6 +15007,9 @@ open class XmlSignificantWhitespace
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Xml_XmlSignificantWhitespace_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -15202,6 +15276,9 @@ open class XmlText
     open class override func get_type_handle() -> TypeHandle {
         return System_Xml_XmlText_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // System.Xml.XmlNode CloneNode(bool)
@@ -15437,6 +15514,9 @@ open class XmlTextReader
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Xml_XmlTextReader_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -16867,6 +16947,9 @@ open class XmlTextWriter
     open class override func get_type_handle() -> TypeHandle {
         return System_Xml_XmlTextWriter_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor(System.IO.Stream, System.Text.Encoding)
@@ -17278,7 +17361,7 @@ open class XmlTextWriter
     - Parameter localName: 
          of the attribute.
     - Parameter ns: 
-         of the attribute
+         of the attribute.
     */
     open override func WriteStartAttribute(prefix : Optional<dotnet.System.String>, localName : dotnet.System.String, ns : Optional<dotnet.System.String>) throws {
         var __thrown : NullableHandle = nil;
@@ -17821,6 +17904,9 @@ open class XmlUrlResolver
     open class override func get_type_handle() -> TypeHandle {
         return System_Xml_XmlUrlResolver_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor()
@@ -17873,13 +17959,13 @@ open class XmlUrlResolver
     - Returns: A stream object or  if a type other than stream is specified.
 
     */
-    open override func GetEntityAsync(absoluteUri : dotnet.System.Uri, role : Optional<dotnet.System.String>, ofObjectToReturn : Optional<dotnet.System.Type_>) throws -> dotnet.System.Threading.Tasks.Task_1<dotnet.System.Object> {
+    open override func GetEntityAsync(absoluteUri : dotnet.System.Uri, role : Optional<dotnet.System.String>, ofObjectToReturn : Optional<dotnet.System.Type_>) async throws -> dotnet.System.Object {
         var __thrown : NullableHandle = nil;
         let __return = System_Xml_XmlUrlResolver_System_Threading_Tasks_Task_object___GetEntityAsync_0__3__Uri_String_Type(&__thrown, self.get_handle(), absoluteUri.get_handle(), role?.get_handle() ?? nil, ofObjectToReturn?.get_handle() ?? nil);
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task_1(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task_1(hndl: __return).ToAsync();
         }
     }
     // System.Uri ResolveUri(System.Uri, System.String)
@@ -17952,6 +18038,9 @@ open class XmlValidatingReader
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Xml_XmlValidatingReader_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -18359,10 +18448,7 @@ open class XmlValidatingReader
     /**
     Reads the contents of an element or text node as a string.
 
-    - Returns: The contents of the element or text node. This can be an empty string if the reader is positioned on something other than an element or text node, or if there is no more text content to return in the current context.  
-  
-   
- The text node can be either an element or an attribute text node.
+    - Returns: The contents of the element or text node. This can be an empty string if the reader is positioned on something other than an element or text node, or if there is no more text content to return in the current context.
 
     */
     open override func ReadString() throws -> dotnet.System.String {
@@ -19098,6 +19184,9 @@ open class XmlWhitespace
     open class override func get_type_handle() -> TypeHandle {
         return System_Xml_XmlWhitespace_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // System.Xml.XmlNode CloneNode(bool)
@@ -19313,6 +19402,9 @@ open class XmlWriter
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Xml_XmlWriter_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -19564,13 +19656,13 @@ open class XmlWriter
     - Returns: The task that represents the asynchronous  operation.
 
     */
-    open func FlushAsync() throws -> dotnet.System.Threading.Tasks.Task {
+    open func FlushAsync() async throws {
         var __thrown : NullableHandle = nil;
         let __return = System_Xml_XmlWriter_Task__FlushAsync_0__0(&__thrown, self.get_handle());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task(hndl: __return).ToAsync();
         }
     }
     // System.String LookupPrefix(System.String)
@@ -19624,13 +19716,13 @@ open class XmlWriter
     - Returns: The task that represents the asynchronous  operation.
 
     */
-    open func WriteAttributesAsync(reader : dotnet.System.Xml.XmlReader, defattr : Bool) throws -> dotnet.System.Threading.Tasks.Task {
+    open func WriteAttributesAsync(reader : dotnet.System.Xml.XmlReader, defattr : Bool) async throws {
         var __thrown : NullableHandle = nil;
         let __return = System_Xml_XmlWriter_Task__WriteAttributesAsync_0__2__XmlReader_bool(&__thrown, self.get_handle(), reader.get_handle(), Swift.Int32(defattr ? 1 : 0));
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task(hndl: __return).ToAsync();
         }
     }
     // void WriteAttributeString(System.String, System.String)
@@ -19699,13 +19791,13 @@ open class XmlWriter
     - Returns: The task that represents the asynchronous  operation.
 
     */
-    open func WriteAttributeStringAsync(prefix : Optional<dotnet.System.String>, localName : dotnet.System.String, ns : Optional<dotnet.System.String>, value : Optional<dotnet.System.String>) throws -> dotnet.System.Threading.Tasks.Task {
+    open func WriteAttributeStringAsync(prefix : Optional<dotnet.System.String>, localName : dotnet.System.String, ns : Optional<dotnet.System.String>, value : Optional<dotnet.System.String>) async throws {
         var __thrown : NullableHandle = nil;
         let __return = System_Xml_XmlWriter_Task__WriteAttributeStringAsync_0__4__String_String_String_String(&__thrown, self.get_handle(), prefix?.get_handle() ?? nil, localName.get_handle(), ns?.get_handle() ?? nil, value?.get_handle() ?? nil);
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task(hndl: __return).ToAsync();
         }
     }
     // void WriteBase64(System.Byte[], System.Int32, System.Int32)
@@ -19737,13 +19829,13 @@ open class XmlWriter
     - Returns: The task that represents the asynchronous  operation.
 
     */
-    open func WriteBase64Async(buffer : dotnet.System_Arr<Swift.UInt8>, index : Swift.Int32, count : Swift.Int32) throws -> dotnet.System.Threading.Tasks.Task {
+    open func WriteBase64Async(buffer : dotnet.System_Arr<Swift.UInt8>, index : Swift.Int32, count : Swift.Int32) async throws {
         var __thrown : NullableHandle = nil;
         let __return = System_Xml_XmlWriter_Task__WriteBase64Async_0__3__u8Array_i32_i32(&__thrown, self.get_handle(), buffer.get_handle(), index, count);
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task(hndl: __return).ToAsync();
         }
     }
     // void WriteBinHex(System.Byte[], System.Int32, System.Int32)
@@ -19775,13 +19867,13 @@ open class XmlWriter
     - Returns: The task that represents the asynchronous  operation.
 
     */
-    open func WriteBinHexAsync(buffer : dotnet.System_Arr<Swift.UInt8>, index : Swift.Int32, count : Swift.Int32) throws -> dotnet.System.Threading.Tasks.Task {
+    open func WriteBinHexAsync(buffer : dotnet.System_Arr<Swift.UInt8>, index : Swift.Int32, count : Swift.Int32) async throws {
         var __thrown : NullableHandle = nil;
         let __return = System_Xml_XmlWriter_Task__WriteBinHexAsync_0__3__u8Array_i32_i32(&__thrown, self.get_handle(), buffer.get_handle(), index, count);
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task(hndl: __return).ToAsync();
         }
     }
     // void WriteCData(System.String)
@@ -19809,13 +19901,13 @@ open class XmlWriter
     - Returns: The task that represents the asynchronous  operation.
 
     */
-    open func WriteCDataAsync(text : Optional<dotnet.System.String>) throws -> dotnet.System.Threading.Tasks.Task {
+    open func WriteCDataAsync(text : Optional<dotnet.System.String>) async throws {
         var __thrown : NullableHandle = nil;
         let __return = System_Xml_XmlWriter_Task__WriteCDataAsync_0__1__String(&__thrown, self.get_handle(), text?.get_handle() ?? nil);
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task(hndl: __return).ToAsync();
         }
     }
     // void WriteCharEntity(System.Char)
@@ -19843,13 +19935,13 @@ open class XmlWriter
     - Returns: The task that represents the asynchronous  operation.
 
     */
-    open func WriteCharEntityAsync(ch : dotnet.System.Char) throws -> dotnet.System.Threading.Tasks.Task {
+    open func WriteCharEntityAsync(ch : dotnet.System.Char) async throws {
         var __thrown : NullableHandle = nil;
         let __return = System_Xml_XmlWriter_Task__WriteCharEntityAsync_0__1__Char(&__thrown, self.get_handle(), ch.get_value());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task(hndl: __return).ToAsync();
         }
     }
     // void WriteChars(System.Char[], System.Int32, System.Int32)
@@ -19881,13 +19973,13 @@ open class XmlWriter
     - Returns: The task that represents the asynchronous  operation.
 
     */
-    open func WriteCharsAsync(buffer : dotnet.System_Arr<dotnet.System.Char>, index : Swift.Int32, count : Swift.Int32) throws -> dotnet.System.Threading.Tasks.Task {
+    open func WriteCharsAsync(buffer : dotnet.System_Arr<dotnet.System.Char>, index : Swift.Int32, count : Swift.Int32) async throws {
         var __thrown : NullableHandle = nil;
         let __return = System_Xml_XmlWriter_Task__WriteCharsAsync_0__3__CharArray_i32_i32(&__thrown, self.get_handle(), buffer.get_handle(), index, count);
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task(hndl: __return).ToAsync();
         }
     }
     // void WriteComment(System.String)
@@ -19915,13 +20007,13 @@ open class XmlWriter
     - Returns: The task that represents the asynchronous  operation.
 
     */
-    open func WriteCommentAsync(text : Optional<dotnet.System.String>) throws -> dotnet.System.Threading.Tasks.Task {
+    open func WriteCommentAsync(text : Optional<dotnet.System.String>) async throws {
         var __thrown : NullableHandle = nil;
         let __return = System_Xml_XmlWriter_Task__WriteCommentAsync_0__1__String(&__thrown, self.get_handle(), text?.get_handle() ?? nil);
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task(hndl: __return).ToAsync();
         }
     }
     // void WriteDocType(System.String, System.String, System.String, System.String)
@@ -19955,13 +20047,13 @@ open class XmlWriter
     - Returns: The task that represents the asynchronous  operation.
 
     */
-    open func WriteDocTypeAsync(name : dotnet.System.String, pubid : Optional<dotnet.System.String>, sysid : Optional<dotnet.System.String>, subset : Optional<dotnet.System.String>) throws -> dotnet.System.Threading.Tasks.Task {
+    open func WriteDocTypeAsync(name : dotnet.System.String, pubid : Optional<dotnet.System.String>, sysid : Optional<dotnet.System.String>, subset : Optional<dotnet.System.String>) async throws {
         var __thrown : NullableHandle = nil;
         let __return = System_Xml_XmlWriter_Task__WriteDocTypeAsync_0__4__String_String_String_String(&__thrown, self.get_handle(), name.get_handle(), pubid?.get_handle() ?? nil, sysid?.get_handle() ?? nil, subset?.get_handle() ?? nil);
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task(hndl: __return).ToAsync();
         }
     }
     // void WriteElementString(System.String, System.String)
@@ -20030,13 +20122,13 @@ open class XmlWriter
     - Returns: The task that represents the asynchronous  operation.
 
     */
-    open func WriteElementStringAsync(prefix : Optional<dotnet.System.String>, localName : dotnet.System.String, ns : Optional<dotnet.System.String>, value : dotnet.System.String) throws -> dotnet.System.Threading.Tasks.Task {
+    open func WriteElementStringAsync(prefix : Optional<dotnet.System.String>, localName : dotnet.System.String, ns : Optional<dotnet.System.String>, value : dotnet.System.String) async throws {
         var __thrown : NullableHandle = nil;
         let __return = System_Xml_XmlWriter_Task__WriteElementStringAsync_0__4__String_String_String_String(&__thrown, self.get_handle(), prefix?.get_handle() ?? nil, localName.get_handle(), ns?.get_handle() ?? nil, value.get_handle());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task(hndl: __return).ToAsync();
         }
     }
     // void WriteEndAttribute()
@@ -20077,13 +20169,13 @@ open class XmlWriter
     - Returns: The task that represents the asynchronous  operation.
 
     */
-    open func WriteEndDocumentAsync() throws -> dotnet.System.Threading.Tasks.Task {
+    open func WriteEndDocumentAsync() async throws {
         var __thrown : NullableHandle = nil;
         let __return = System_Xml_XmlWriter_Task__WriteEndDocumentAsync_0__0(&__thrown, self.get_handle());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task(hndl: __return).ToAsync();
         }
     }
     // void WriteEndElement()
@@ -20109,13 +20201,13 @@ open class XmlWriter
     - Returns: The task that represents the asynchronous  operation.
 
     */
-    open func WriteEndElementAsync() throws -> dotnet.System.Threading.Tasks.Task {
+    open func WriteEndElementAsync() async throws {
         var __thrown : NullableHandle = nil;
         let __return = System_Xml_XmlWriter_Task__WriteEndElementAsync_0__0(&__thrown, self.get_handle());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task(hndl: __return).ToAsync();
         }
     }
     // void WriteEntityRef(System.String)
@@ -20143,13 +20235,13 @@ open class XmlWriter
     - Returns: The task that represents the asynchronous  operation.
 
     */
-    open func WriteEntityRefAsync(name : dotnet.System.String) throws -> dotnet.System.Threading.Tasks.Task {
+    open func WriteEntityRefAsync(name : dotnet.System.String) async throws {
         var __thrown : NullableHandle = nil;
         let __return = System_Xml_XmlWriter_Task__WriteEntityRefAsync_0__1__String(&__thrown, self.get_handle(), name.get_handle());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task(hndl: __return).ToAsync();
         }
     }
     // void WriteFullEndElement()
@@ -20175,13 +20267,13 @@ open class XmlWriter
     - Returns: The task that represents the asynchronous  operation.
 
     */
-    open func WriteFullEndElementAsync() throws -> dotnet.System.Threading.Tasks.Task {
+    open func WriteFullEndElementAsync() async throws {
         var __thrown : NullableHandle = nil;
         let __return = System_Xml_XmlWriter_Task__WriteFullEndElementAsync_0__0(&__thrown, self.get_handle());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task(hndl: __return).ToAsync();
         }
     }
     // void WriteName(System.String)
@@ -20209,13 +20301,13 @@ open class XmlWriter
     - Returns: The task that represents the asynchronous  operation.
 
     */
-    open func WriteNameAsync(name : dotnet.System.String) throws -> dotnet.System.Threading.Tasks.Task {
+    open func WriteNameAsync(name : dotnet.System.String) async throws {
         var __thrown : NullableHandle = nil;
         let __return = System_Xml_XmlWriter_Task__WriteNameAsync_0__1__String(&__thrown, self.get_handle(), name.get_handle());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task(hndl: __return).ToAsync();
         }
     }
     // void WriteNmToken(System.String)
@@ -20243,13 +20335,13 @@ open class XmlWriter
     - Returns: The task that represents the asynchronous  operation.
 
     */
-    open func WriteNmTokenAsync(name : dotnet.System.String) throws -> dotnet.System.Threading.Tasks.Task {
+    open func WriteNmTokenAsync(name : dotnet.System.String) async throws {
         var __thrown : NullableHandle = nil;
         let __return = System_Xml_XmlWriter_Task__WriteNmTokenAsync_0__1__String(&__thrown, self.get_handle(), name.get_handle());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task(hndl: __return).ToAsync();
         }
     }
     // void WriteNode(System.Xml.XmlReader, bool)
@@ -20299,13 +20391,13 @@ open class XmlWriter
     - Returns: The task that represents the asynchronous  operation.
 
     */
-    open func WriteNodeAsync(reader : dotnet.System.Xml.XmlReader, defattr : Bool) throws -> dotnet.System.Threading.Tasks.Task {
+    open func WriteNodeAsync(reader : dotnet.System.Xml.XmlReader, defattr : Bool) async throws {
         var __thrown : NullableHandle = nil;
         let __return = System_Xml_XmlWriter_Task__WriteNodeAsync_0__2__XmlReader_bool(&__thrown, self.get_handle(), reader.get_handle(), Swift.Int32(defattr ? 1 : 0));
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task(hndl: __return).ToAsync();
         }
     }
     // System.Threading.Tasks.Task WriteNodeAsync(System.Xml.XPath.XPathNavigator, bool)
@@ -20319,13 +20411,13 @@ open class XmlWriter
     - Returns: The task that represents the asynchronous  operation.
 
     */
-    open func WriteNodeAsync(navigator : dotnet.System.Xml.XPath.XPathNavigator, defattr : Bool) throws -> dotnet.System.Threading.Tasks.Task {
+    open func WriteNodeAsync(navigator : dotnet.System.Xml.XPath.XPathNavigator, defattr : Bool) async throws {
         var __thrown : NullableHandle = nil;
         let __return = System_Xml_XmlWriter_Task__WriteNodeAsync_0__2__XPathNavigator_bool(&__thrown, self.get_handle(), navigator.get_handle(), Swift.Int32(defattr ? 1 : 0));
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task(hndl: __return).ToAsync();
         }
     }
     // void WriteProcessingInstruction(System.String, System.String)
@@ -20355,13 +20447,13 @@ open class XmlWriter
     - Returns: The task that represents the asynchronous  operation.
 
     */
-    open func WriteProcessingInstructionAsync(name : dotnet.System.String, text : Optional<dotnet.System.String>) throws -> dotnet.System.Threading.Tasks.Task {
+    open func WriteProcessingInstructionAsync(name : dotnet.System.String, text : Optional<dotnet.System.String>) async throws {
         var __thrown : NullableHandle = nil;
         let __return = System_Xml_XmlWriter_Task__WriteProcessingInstructionAsync_0__2__String_String(&__thrown, self.get_handle(), name.get_handle(), text?.get_handle() ?? nil);
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task(hndl: __return).ToAsync();
         }
     }
     // void WriteQualifiedName(System.String, System.String)
@@ -20391,13 +20483,13 @@ open class XmlWriter
     - Returns: The task that represents the asynchronous  operation.
 
     */
-    open func WriteQualifiedNameAsync(localName : dotnet.System.String, ns : Optional<dotnet.System.String>) throws -> dotnet.System.Threading.Tasks.Task {
+    open func WriteQualifiedNameAsync(localName : dotnet.System.String, ns : Optional<dotnet.System.String>) async throws {
         var __thrown : NullableHandle = nil;
         let __return = System_Xml_XmlWriter_Task__WriteQualifiedNameAsync_0__2__String_String(&__thrown, self.get_handle(), localName.get_handle(), ns?.get_handle() ?? nil);
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task(hndl: __return).ToAsync();
         }
     }
     // void WriteRaw(System.Char[], System.Int32, System.Int32)
@@ -20445,13 +20537,13 @@ open class XmlWriter
     - Returns: The task that represents the asynchronous  operation.
 
     */
-    open func WriteRawAsync(buffer : dotnet.System_Arr<dotnet.System.Char>, index : Swift.Int32, count : Swift.Int32) throws -> dotnet.System.Threading.Tasks.Task {
+    open func WriteRawAsync(buffer : dotnet.System_Arr<dotnet.System.Char>, index : Swift.Int32, count : Swift.Int32) async throws {
         var __thrown : NullableHandle = nil;
         let __return = System_Xml_XmlWriter_Task__WriteRawAsync_0__3__CharArray_i32_i32(&__thrown, self.get_handle(), buffer.get_handle(), index, count);
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task(hndl: __return).ToAsync();
         }
     }
     // System.Threading.Tasks.Task WriteRawAsync(System.String)
@@ -20463,13 +20555,13 @@ open class XmlWriter
     - Returns: The task that represents the asynchronous  operation.
 
     */
-    open func WriteRawAsync(data : dotnet.System.String) throws -> dotnet.System.Threading.Tasks.Task {
+    open func WriteRawAsync(data : dotnet.System.String) async throws {
         var __thrown : NullableHandle = nil;
         let __return = System_Xml_XmlWriter_Task__WriteRawAsync_0__1__String(&__thrown, self.get_handle(), data.get_handle());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task(hndl: __return).ToAsync();
         }
     }
     // void WriteStartAttribute(System.String)
@@ -20562,13 +20654,13 @@ open class XmlWriter
     - Returns: The task that represents the asynchronous  operation.
 
     */
-    open func WriteStartDocumentAsync() throws -> dotnet.System.Threading.Tasks.Task {
+    open func WriteStartDocumentAsync() async throws {
         var __thrown : NullableHandle = nil;
         let __return = System_Xml_XmlWriter_Task__WriteStartDocumentAsync_0__0(&__thrown, self.get_handle());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task(hndl: __return).ToAsync();
         }
     }
     // System.Threading.Tasks.Task WriteStartDocumentAsync(bool)
@@ -20580,13 +20672,13 @@ open class XmlWriter
     - Returns: The task that represents the asynchronous  operation.
 
     */
-    open func WriteStartDocumentAsync(standalone : Bool) throws -> dotnet.System.Threading.Tasks.Task {
+    open func WriteStartDocumentAsync(standalone : Bool) async throws {
         var __thrown : NullableHandle = nil;
         let __return = System_Xml_XmlWriter_Task__WriteStartDocumentAsync_0__1__bool(&__thrown, self.get_handle(), Swift.Int32(standalone ? 1 : 0));
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task(hndl: __return).ToAsync();
         }
     }
     // void WriteStartElement(System.String)
@@ -20651,13 +20743,13 @@ open class XmlWriter
     - Returns: The task that represents the asynchronous  operation.
 
     */
-    open func WriteStartElementAsync(prefix : Optional<dotnet.System.String>, localName : dotnet.System.String, ns : Optional<dotnet.System.String>) throws -> dotnet.System.Threading.Tasks.Task {
+    open func WriteStartElementAsync(prefix : Optional<dotnet.System.String>, localName : dotnet.System.String, ns : Optional<dotnet.System.String>) async throws {
         var __thrown : NullableHandle = nil;
         let __return = System_Xml_XmlWriter_Task__WriteStartElementAsync_0__3__String_String_String(&__thrown, self.get_handle(), prefix?.get_handle() ?? nil, localName.get_handle(), ns?.get_handle() ?? nil);
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task(hndl: __return).ToAsync();
         }
     }
     // void WriteString(System.String)
@@ -20685,13 +20777,13 @@ open class XmlWriter
     - Returns: The task that represents the asynchronous  operation.
 
     */
-    open func WriteStringAsync(text : Optional<dotnet.System.String>) throws -> dotnet.System.Threading.Tasks.Task {
+    open func WriteStringAsync(text : Optional<dotnet.System.String>) async throws {
         var __thrown : NullableHandle = nil;
         let __return = System_Xml_XmlWriter_Task__WriteStringAsync_0__1__String(&__thrown, self.get_handle(), text?.get_handle() ?? nil);
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task(hndl: __return).ToAsync();
         }
     }
     // void WriteSurrogateCharEntity(System.Char, System.Char)
@@ -20721,13 +20813,13 @@ open class XmlWriter
     - Returns: The task that represents the asynchronous  operation.
 
     */
-    open func WriteSurrogateCharEntityAsync(lowChar : dotnet.System.Char, highChar : dotnet.System.Char) throws -> dotnet.System.Threading.Tasks.Task {
+    open func WriteSurrogateCharEntityAsync(lowChar : dotnet.System.Char, highChar : dotnet.System.Char) async throws {
         var __thrown : NullableHandle = nil;
         let __return = System_Xml_XmlWriter_Task__WriteSurrogateCharEntityAsync_0__2__Char_Char(&__thrown, self.get_handle(), lowChar.get_value(), highChar.get_value());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task(hndl: __return).ToAsync();
         }
     }
     // void WriteValue(bool)
@@ -20917,13 +21009,13 @@ open class XmlWriter
     - Returns: The task that represents the asynchronous  operation.
 
     */
-    open func WriteWhitespaceAsync(ws : Optional<dotnet.System.String>) throws -> dotnet.System.Threading.Tasks.Task {
+    open func WriteWhitespaceAsync(ws : Optional<dotnet.System.String>) async throws {
         var __thrown : NullableHandle = nil;
         let __return = System_Xml_XmlWriter_Task__WriteWhitespaceAsync_0__1__String(&__thrown, self.get_handle(), ws?.get_handle() ?? nil);
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task(hndl: __return).ToAsync();
         }
     }
     // System.Threading.Tasks.ValueTask DisposeAsync()
@@ -21045,6 +21137,9 @@ public final class XmlWriterSettings
 {
     public class override func get_type_handle() -> TypeHandle {
         return System_Xml_XmlWriterSettings_get_type_handle();
+    }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -21671,6 +21766,9 @@ open class XmlPreloadedResolver
     open class override func get_type_handle() -> TypeHandle {
         return System_Xml_Resolvers_XmlPreloadedResolver_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor()
@@ -21860,13 +21958,13 @@ open class XmlPreloadedResolver
     - Returns: A  or  object that corresponds to the actual source.
 
     */
-    open override func GetEntityAsync(absoluteUri : dotnet.System.Uri, role : Optional<dotnet.System.String>, ofObjectToReturn : Optional<dotnet.System.Type_>) throws -> dotnet.System.Threading.Tasks.Task_1<dotnet.System.Object> {
+    open override func GetEntityAsync(absoluteUri : dotnet.System.Uri, role : Optional<dotnet.System.String>, ofObjectToReturn : Optional<dotnet.System.Type_>) async throws -> dotnet.System.Object {
         var __thrown : NullableHandle = nil;
         let __return = System_Xml_Resolvers_XmlPreloadedResolver_System_Threading_Tasks_Task_object___GetEntityAsync_0__3__Uri_String_Type(&__thrown, self.get_handle(), absoluteUri.get_handle(), role?.get_handle() ?? nil, ofObjectToReturn?.get_handle() ?? nil);
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task_1(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task_1(hndl: __return).ToAsync();
         }
     }
     // void Remove(System.Uri)
@@ -21974,6 +22072,9 @@ open class IXmlSchemaInfo
 {
     open class func get_type_handle() -> TypeHandle {
         return System_Xml_Schema_IXmlSchemaInfo_get_type_handle();
+    }
+    open class func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     let h : NonnullHandle;
     public func to_gval() -> GVal { return GVal(Swift.Int(bitPattern: self.h)); }
@@ -22092,6 +22193,9 @@ open class ValidationEventArgs
     open class override func get_type_handle() -> TypeHandle {
         return System_Xml_Schema_ValidationEventArgs_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // [IsSpecialName] System.Xml.Schema.XmlSchemaException get_Exception()
@@ -22169,6 +22273,9 @@ public final class ValidationEventHandler
     public class override func get_type_handle() -> TypeHandle {
         return System_Xml_Schema_ValidationEventHandler_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // void Invoke(System.Object, System.Xml.Schema.ValidationEventArgs)
@@ -22208,15 +22315,15 @@ public final class ValidationEventHandler
             return;
         }
     }
-    public init(_ callback : @escaping (Optional<dotnet.System.Object>, dotnet.System.Xml.Schema.ValidationEventArgs) throws -> Void) throws
+    public convenience init(_ __closure_Invoke : @escaping (Optional<dotnet.System.Object>, dotnet.System.Xml.Schema.ValidationEventArgs) throws -> Void) throws
     {
-        let __bridge : (UnsafeMutablePointer<NullableHandle>, NullableHandle, NonnullHandle) -> Void =
+        let __interlude_Invoke : (UnsafeMutablePointer<NullableHandle>, NullableHandle, NonnullHandle) -> Void =
         {
             (thrown : UnsafeMutablePointer<NullableHandle>, sender : NullableHandle, e : NonnullHandle) -> Void in
             do
             {
                 thrown.pointee = nil;
-                try callback((sender != nil) ? (dotnet.System.Object(hndl: sender!)) : nil, dotnet.System.Xml.Schema.ValidationEventArgs(hndl: e));
+                try __closure_Invoke((sender != nil) ? (dotnet.System.Object(hndl: sender!)) : nil, dotnet.System.Xml.Schema.ValidationEventArgs(hndl: e));
             }
             catch let e as dotnet.System.Exception
             {
@@ -22228,24 +22335,24 @@ public final class ValidationEventHandler
                 thrown.pointee = __copy_handle(e.get_handle());
             }
         };
-        let cbarg = UnsafeRawPointer(Unmanaged.passRetained(__bridge as AnyObject).toOpaque());
-        func __cb(cb : UnsafeRawPointer?, thrown : UnsafeMutablePointer<NullableHandle>, sender : NullableHandle, e : NonnullHandle) -> Void
+        func __cb_Invoke(pdata_interlude : UnsafeRawPointer, thrown : UnsafeMutablePointer<NullableHandle>, sender : NullableHandle, e : NonnullHandle) -> Void
         {
-            let f = Unmanaged<AnyObject>.fromOpaque(cb!).takeUnretainedValue() as! (UnsafeMutablePointer<NullableHandle>, NullableHandle, NonnullHandle) -> Void;
-            f(thrown, sender, e);
+            let f_interlude = Unmanaged<AnyObject>.fromOpaque(pdata_interlude).takeUnretainedValue() as! (UnsafeMutablePointer<NullableHandle>, NullableHandle, NonnullHandle) -> Void;
+            f_interlude(thrown, sender, e);
         }
+        let __pdata_Invoke = UnsafeRawPointer(Unmanaged.passRetained(__interlude_Invoke as AnyObject).toOpaque());
+
         var __thrown : NullableHandle = nil;
         let h = System_Xml_Schema_ValidationEventHandler_create(
             &__thrown,
-            cbarg,
-            nil, // TODO deinit
-            __cb
+            __cb_Invoke,
+            __pdata_Invoke,
+            nil
             );
-            // TODO check thrown
         if let __ex = __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-            super.init(hndl: h);
+            self.init(hndl: h);
         }
     }
     // void Invoke(System.Object, System.Xml.Schema.ValidationEventArgs)
@@ -22274,6 +22381,9 @@ public final class XmlAtomicValue
 {
     public class override func get_type_handle() -> TypeHandle {
         return System_Xml_Schema_XmlAtomicValue_get_type_handle();
+    }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -22450,7 +22560,7 @@ public final class XmlAtomicValue
         }
     }
     /**
-    Gets the current validated XML element or attribute as a boxed object of the most appropriate Microsoft .NET Framework type according to its schema type.
+    Gets the current validated XML element or attribute as a boxed object of the most appropriate .NET type according to its schema type.
 
     */
     public override var TypedValue : dotnet.System.Object {
@@ -22513,7 +22623,7 @@ public final class XmlAtomicValue
         }
     }
     /**
-    Gets the Microsoft .NET Framework type of the validated XML element or attribute.
+    Gets the .NET type of the validated XML element or attribute.
 
     */
     public override var ValueType : dotnet.System.Type_ {
@@ -22544,6 +22654,9 @@ open class XmlSchema
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Xml_Schema_XmlSchema_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -23293,6 +23406,9 @@ open class XmlSchemaAll
     open class override func get_type_handle() -> TypeHandle {
         return System_Xml_Schema_XmlSchemaAll_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor()
@@ -23344,6 +23460,9 @@ open class XmlSchemaAnnotated
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Xml_Schema_XmlSchemaAnnotated_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -23491,6 +23610,9 @@ open class XmlSchemaAnnotation
     open class override func get_type_handle() -> TypeHandle {
         return System_Xml_Schema_XmlSchemaAnnotation_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor()
@@ -23619,6 +23741,9 @@ open class XmlSchemaAny
     open class override func get_type_handle() -> TypeHandle {
         return System_Xml_Schema_XmlSchemaAny_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor()
@@ -23723,6 +23848,9 @@ open class XmlSchemaAnyAttribute
     open class override func get_type_handle() -> TypeHandle {
         return System_Xml_Schema_XmlSchemaAnyAttribute_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor()
@@ -23826,6 +23954,9 @@ open class XmlSchemaAppInfo
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Xml_Schema_XmlSchemaAppInfo_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -23934,6 +24065,9 @@ open class XmlSchemaAttribute
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Xml_Schema_XmlSchemaAttribute_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -24323,6 +24457,9 @@ open class XmlSchemaAttributeGroup
     open class override func get_type_handle() -> TypeHandle {
         return System_Xml_Schema_XmlSchemaAttributeGroup_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor()
@@ -24495,6 +24632,9 @@ open class XmlSchemaAttributeGroupRef
     open class override func get_type_handle() -> TypeHandle {
         return System_Xml_Schema_XmlSchemaAttributeGroupRef_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor()
@@ -24561,6 +24701,9 @@ open class XmlSchemaChoice
     open class override func get_type_handle() -> TypeHandle {
         return System_Xml_Schema_XmlSchemaChoice_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor()
@@ -24614,6 +24757,9 @@ public final class XmlSchemaCollection
 {
     public class override func get_type_handle() -> TypeHandle {
         return System_Xml_Schema_XmlSchemaCollection_get_type_handle();
+    }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -24877,9 +25023,6 @@ public final class XmlSchemaCollection
     }
     // [IsSpecialName] System.Xml.Schema.XmlSchema get_Item(System.String)
 // docid: M:System.Xml.Schema.XmlSchemaCollection.get_Item(System.String)
-//BEGIN method_is_override
-//matches_1
-//matches :
     public func get_Item(ns : Optional<dotnet.System.String>) throws -> Optional<dotnet.System.Xml.Schema.XmlSchema> {
         var __thrown : NullableHandle = nil;
         let __return = System_Xml_Schema_XmlSchemaCollection_XmlSchema__get_Item_0__1__String(&__thrown, self.get_handle(), ns?.get_handle() ?? nil);
@@ -24959,6 +25102,9 @@ public final class XmlSchemaCollectionEnumerator
     public class override func get_type_handle() -> TypeHandle {
         return System_Xml_Schema_XmlSchemaCollectionEnumerator_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // bool MoveNext()
@@ -25017,6 +25163,9 @@ public final class XmlSchemaCompilationSettings
 {
     public class override func get_type_handle() -> TypeHandle {
         return System_Xml_Schema_XmlSchemaCompilationSettings_get_type_handle();
+    }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -25083,6 +25232,9 @@ open class XmlSchemaComplexContent
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Xml_Schema_XmlSchemaComplexContent_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -25187,6 +25339,9 @@ open class XmlSchemaComplexContentExtension
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Xml_Schema_XmlSchemaComplexContentExtension_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -25350,6 +25505,9 @@ open class XmlSchemaComplexContentRestriction
     open class override func get_type_handle() -> TypeHandle {
         return System_Xml_Schema_XmlSchemaComplexContentRestriction_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor()
@@ -25511,6 +25669,9 @@ open class XmlSchemaComplexType
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Xml_Schema_XmlSchemaComplexType_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -25884,6 +26045,9 @@ open class XmlSchemaContent
     open class override func get_type_handle() -> TypeHandle {
         return System_Xml_Schema_XmlSchemaContent_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
 } // XmlSchemaContent
@@ -25900,6 +26064,9 @@ open class XmlSchemaContentModel
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Xml_Schema_XmlSchemaContentModel_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -26085,6 +26252,9 @@ open class XmlSchemaDatatype
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Xml_Schema_XmlSchemaDatatype_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -26418,6 +26588,9 @@ open class XmlSchemaDocumentation
     open class override func get_type_handle() -> TypeHandle {
         return System_Xml_Schema_XmlSchemaDocumentation_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor()
@@ -26563,6 +26736,9 @@ open class XmlSchemaElement
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Xml_Schema_XmlSchemaElement_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -27148,6 +27324,9 @@ open class XmlSchemaEnumerationFacet
     open class override func get_type_handle() -> TypeHandle {
         return System_Xml_Schema_XmlSchemaEnumerationFacet_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor()
@@ -27179,6 +27358,9 @@ open class XmlSchemaException
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Xml_Schema_XmlSchemaException_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -27389,6 +27571,9 @@ open class XmlSchemaExternal
     open class override func get_type_handle() -> TypeHandle {
         return System_Xml_Schema_XmlSchemaExternal_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // [IsSpecialName] System.String get_Id()
@@ -27558,6 +27743,9 @@ open class XmlSchemaFacet
     open class override func get_type_handle() -> TypeHandle {
         return System_Xml_Schema_XmlSchemaFacet_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // [IsSpecialName] bool get_IsFixed()
@@ -27698,6 +27886,9 @@ open class XmlSchemaFractionDigitsFacet
     open class override func get_type_handle() -> TypeHandle {
         return System_Xml_Schema_XmlSchemaFractionDigitsFacet_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor()
@@ -27729,6 +27920,9 @@ open class XmlSchemaGroup
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Xml_Schema_XmlSchemaGroup_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -27858,6 +28052,9 @@ open class XmlSchemaGroupBase
     open class override func get_type_handle() -> TypeHandle {
         return System_Xml_Schema_XmlSchemaGroupBase_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // [IsSpecialName] System.Xml.Schema.XmlSchemaObjectCollection get_Items()
@@ -27894,6 +28091,9 @@ open class XmlSchemaGroupRef
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Xml_Schema_XmlSchemaGroupRef_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -27984,6 +28184,9 @@ open class XmlSchemaIdentityConstraint
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Xml_Schema_XmlSchemaIdentityConstraint_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -28133,6 +28336,9 @@ open class XmlSchemaImport
     open class override func get_type_handle() -> TypeHandle {
         return System_Xml_Schema_XmlSchemaImport_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor()
@@ -28241,6 +28447,9 @@ open class XmlSchemaInclude
     open class override func get_type_handle() -> TypeHandle {
         return System_Xml_Schema_XmlSchemaInclude_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor()
@@ -28310,6 +28519,9 @@ public final class XmlSchemaInference
 {
     public class override func get_type_handle() -> TypeHandle {
         return System_Xml_Schema_XmlSchemaInference_get_type_handle();
+    }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -28488,6 +28700,9 @@ open class XmlSchemaInferenceException
     open class override func get_type_handle() -> TypeHandle {
         return System_Xml_Schema_XmlSchemaInferenceException_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor()
@@ -28589,6 +28804,9 @@ open class XmlSchemaInfo
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Xml_Schema_XmlSchemaInfo_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -28910,6 +29128,9 @@ open class XmlSchemaKey
     open class override func get_type_handle() -> TypeHandle {
         return System_Xml_Schema_XmlSchemaKey_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor()
@@ -28941,6 +29162,9 @@ open class XmlSchemaKeyref
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Xml_Schema_XmlSchemaKeyref_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -29008,6 +29232,9 @@ open class XmlSchemaLengthFacet
     open class override func get_type_handle() -> TypeHandle {
         return System_Xml_Schema_XmlSchemaLengthFacet_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor()
@@ -29039,6 +29266,9 @@ open class XmlSchemaMaxExclusiveFacet
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Xml_Schema_XmlSchemaMaxExclusiveFacet_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -29072,6 +29302,9 @@ open class XmlSchemaMaxInclusiveFacet
     open class override func get_type_handle() -> TypeHandle {
         return System_Xml_Schema_XmlSchemaMaxInclusiveFacet_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor()
@@ -29103,6 +29336,9 @@ open class XmlSchemaMaxLengthFacet
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Xml_Schema_XmlSchemaMaxLengthFacet_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -29136,6 +29372,9 @@ open class XmlSchemaMinExclusiveFacet
     open class override func get_type_handle() -> TypeHandle {
         return System_Xml_Schema_XmlSchemaMinExclusiveFacet_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor()
@@ -29167,6 +29406,9 @@ open class XmlSchemaMinInclusiveFacet
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Xml_Schema_XmlSchemaMinInclusiveFacet_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -29200,6 +29442,9 @@ open class XmlSchemaMinLengthFacet
     open class override func get_type_handle() -> TypeHandle {
         return System_Xml_Schema_XmlSchemaMinLengthFacet_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor()
@@ -29231,6 +29476,9 @@ open class XmlSchemaNotation
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Xml_Schema_XmlSchemaNotation_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -29368,7 +29616,7 @@ open class XmlSchemaNotation
 
 // type: System.Xml.Schema.XmlSchemaNumericFacet
     /**
-    Abstract class for defining  facets. This class is the base class for numeric facet classes such as 
+    Abstract class for defining  facets. This class is the base class for numeric facet classes such as .
 
     */
 open class XmlSchemaNumericFacet
@@ -29377,6 +29625,9 @@ open class XmlSchemaNumericFacet
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Xml_Schema_XmlSchemaNumericFacet_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -29394,6 +29645,9 @@ open class XmlSchemaObject
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Xml_Schema_XmlSchemaObject_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -29590,6 +29844,9 @@ open class XmlSchemaObjectCollection
     open class override func get_type_handle() -> TypeHandle {
         return System_Xml_Schema_XmlSchemaObjectCollection_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor()
@@ -29747,9 +30004,6 @@ open class XmlSchemaObjectCollection
     }
     // [IsSpecialName] System.Xml.Schema.XmlSchemaObject get_Item(System.Int32)
 // docid: M:System.Xml.Schema.XmlSchemaObjectCollection.get_Item(System.Int32)
-//BEGIN method_is_override
-//matches_1
-//matches :
     open func get_Item(index : Swift.Int32) throws -> dotnet.System.Xml.Schema.XmlSchemaObject {
         var __thrown : NullableHandle = nil;
         let __return = System_Xml_Schema_XmlSchemaObjectCollection_XmlSchemaObject__get_Item_0__1__i32(&__thrown, self.get_handle(), index);
@@ -29785,6 +30039,9 @@ open class XmlSchemaObjectEnumerator
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Xml_Schema_XmlSchemaObjectEnumerator_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -29855,6 +30112,9 @@ open class XmlSchemaObjectTable
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Xml_Schema_XmlSchemaObjectTable_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -29929,9 +30189,6 @@ open class XmlSchemaObjectTable
     }
     // [IsSpecialName] System.Xml.Schema.XmlSchemaObject get_Item(System.Xml.XmlQualifiedName)
 // docid: M:System.Xml.Schema.XmlSchemaObjectTable.get_Item(System.Xml.XmlQualifiedName)
-//BEGIN method_is_override
-//matches_1
-//matches :
     open func get_Item(name : dotnet.System.Xml.XmlQualifiedName) throws -> Optional<dotnet.System.Xml.Schema.XmlSchemaObject> {
         var __thrown : NullableHandle = nil;
         let __return = System_Xml_Schema_XmlSchemaObjectTable_XmlSchemaObject__get_Item_0__1__XmlQualifiedName(&__thrown, self.get_handle(), name.get_handle());
@@ -29986,6 +30243,9 @@ open class XmlSchemaParticle
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Xml_Schema_XmlSchemaParticle_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -30148,6 +30408,9 @@ open class XmlSchemaPatternFacet
     open class override func get_type_handle() -> TypeHandle {
         return System_Xml_Schema_XmlSchemaPatternFacet_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor()
@@ -30179,6 +30442,9 @@ open class XmlSchemaRedefine
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Xml_Schema_XmlSchemaRedefine_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -30292,6 +30558,9 @@ open class XmlSchemaSequence
     open class override func get_type_handle() -> TypeHandle {
         return System_Xml_Schema_XmlSchemaSequence_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor()
@@ -30343,6 +30612,9 @@ open class XmlSchemaSet
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Xml_Schema_XmlSchemaSet_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -30837,6 +31109,9 @@ open class XmlSchemaSimpleContent
     open class override func get_type_handle() -> TypeHandle {
         return System_Xml_Schema_XmlSchemaSimpleContent_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor()
@@ -30906,6 +31181,9 @@ open class XmlSchemaSimpleContentExtension
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Xml_Schema_XmlSchemaSimpleContentExtension_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -31030,6 +31308,9 @@ open class XmlSchemaSimpleContentRestriction
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Xml_Schema_XmlSchemaSimpleContentRestriction_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -31213,6 +31494,9 @@ open class XmlSchemaSimpleType
     open class override func get_type_handle() -> TypeHandle {
         return System_Xml_Schema_XmlSchemaSimpleType_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor()
@@ -31283,6 +31567,9 @@ open class XmlSchemaSimpleTypeContent
     open class override func get_type_handle() -> TypeHandle {
         return System_Xml_Schema_XmlSchemaSimpleTypeContent_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
 } // XmlSchemaSimpleTypeContent
@@ -31299,6 +31586,9 @@ open class XmlSchemaSimpleTypeList
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Xml_Schema_XmlSchemaSimpleTypeList_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -31442,6 +31732,9 @@ open class XmlSchemaSimpleTypeRestriction
     open class override func get_type_handle() -> TypeHandle {
         return System_Xml_Schema_XmlSchemaSimpleTypeRestriction_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor()
@@ -31566,6 +31859,9 @@ open class XmlSchemaSimpleTypeUnion
     open class override func get_type_handle() -> TypeHandle {
         return System_Xml_Schema_XmlSchemaSimpleTypeUnion_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor()
@@ -31680,6 +31976,9 @@ open class XmlSchemaTotalDigitsFacet
     open class override func get_type_handle() -> TypeHandle {
         return System_Xml_Schema_XmlSchemaTotalDigitsFacet_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor()
@@ -31711,6 +32010,9 @@ open class XmlSchemaType
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Xml_Schema_XmlSchemaType_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -32107,6 +32409,9 @@ open class XmlSchemaUnique
     open class override func get_type_handle() -> TypeHandle {
         return System_Xml_Schema_XmlSchemaUnique_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor()
@@ -32200,6 +32505,9 @@ open class XmlSchemaValidationException
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Xml_Schema_XmlSchemaValidationException_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -32413,6 +32721,9 @@ public final class XmlSchemaValidator
 {
     public class override func get_type_handle() -> TypeHandle {
         return System_Xml_Schema_XmlSchemaValidator_get_type_handle();
+    }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -33008,6 +33319,9 @@ open class XmlSchemaWhiteSpaceFacet
     open class override func get_type_handle() -> TypeHandle {
         return System_Xml_Schema_XmlSchemaWhiteSpaceFacet_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor()
@@ -33039,6 +33353,9 @@ open class XmlSchemaXPath
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Xml_Schema_XmlSchemaXPath_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -33773,6 +34090,9 @@ public final class XmlValueGetter
     public class override func get_type_handle() -> TypeHandle {
         return System_Xml_Schema_XmlValueGetter_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // System.Object Invoke()
@@ -33820,15 +34140,15 @@ public final class XmlValueGetter
         }
         }
     }
-    public init(_ callback : @escaping () throws -> dotnet.System.Object) throws
+    public convenience init(_ __closure_Invoke : @escaping () throws -> dotnet.System.Object) throws
     {
-        let __bridge : (UnsafeMutablePointer<NullableHandle>) -> NullableHandle =
+        let __interlude_Invoke : (UnsafeMutablePointer<NullableHandle>) -> NullableHandle =
         {
             (thrown : UnsafeMutablePointer<NullableHandle>) -> NullableHandle in
             do
             {
                 thrown.pointee = nil;
-                let ret = try callback();
+                let ret = try __closure_Invoke();
                 return __copy_handle(ret.get_handle());
             }
             catch let e as dotnet.System.Exception
@@ -33843,24 +34163,24 @@ public final class XmlValueGetter
                 return NonnullHandle(bitPattern: 8675309)!;
             }
         };
-        let cbarg = UnsafeRawPointer(Unmanaged.passRetained(__bridge as AnyObject).toOpaque());
-        func __cb(cb : UnsafeRawPointer?, thrown : UnsafeMutablePointer<NullableHandle>) -> NullableHandle
+        func __cb_Invoke(pdata_interlude : UnsafeRawPointer, thrown : UnsafeMutablePointer<NullableHandle>) -> NullableHandle
         {
-            let f = Unmanaged<AnyObject>.fromOpaque(cb!).takeUnretainedValue() as! (UnsafeMutablePointer<NullableHandle>) -> NullableHandle;
-            return f(thrown);
+            let f_interlude = Unmanaged<AnyObject>.fromOpaque(pdata_interlude).takeUnretainedValue() as! (UnsafeMutablePointer<NullableHandle>) -> NullableHandle;
+            return f_interlude(thrown);
         }
+        let __pdata_Invoke = UnsafeRawPointer(Unmanaged.passRetained(__interlude_Invoke as AnyObject).toOpaque());
+
         var __thrown : NullableHandle = nil;
         let h = System_Xml_Schema_XmlValueGetter_create(
             &__thrown,
-            cbarg,
-            nil, // TODO deinit
-            __cb
+            __cb_Invoke,
+            __pdata_Invoke,
+            nil
             );
-            // TODO check thrown
         if let __ex = __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-            super.init(hndl: h);
+            self.init(hndl: h);
         }
     }
     // System.Object Invoke()
@@ -33897,6 +34217,9 @@ open class IXmlSerializable
 {
     open class func get_type_handle() -> TypeHandle {
         return System_Xml_Serialization_IXmlSerializable_get_type_handle();
+    }
+    open class func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     let h : NonnullHandle;
     public func to_gval() -> GVal { return GVal(Swift.Int(bitPattern: self.h)); }
@@ -33975,6 +34298,9 @@ open class XmlAnyAttributeAttribute
     open class override func get_type_handle() -> TypeHandle {
         return System_Xml_Serialization_XmlAnyAttributeAttribute_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor()
@@ -34006,6 +34332,9 @@ open class XmlAnyElementAttribute
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Xml_Serialization_XmlAnyElementAttribute_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -34177,6 +34506,9 @@ open class XmlAttributeAttribute
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Xml_Serialization_XmlAttributeAttribute_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -34436,6 +34768,9 @@ open class XmlElementAttribute
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Xml_Serialization_XmlElementAttribute_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -34764,6 +35099,9 @@ open class XmlEnumAttribute
     open class override func get_type_handle() -> TypeHandle {
         return System_Xml_Serialization_XmlEnumAttribute_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor()
@@ -34850,6 +35188,9 @@ open class XmlIgnoreAttribute
     open class override func get_type_handle() -> TypeHandle {
         return System_Xml_Serialization_XmlIgnoreAttribute_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor()
@@ -34882,6 +35223,9 @@ open class XmlNamespaceDeclarationsAttribute
     open class override func get_type_handle() -> TypeHandle {
         return System_Xml_Serialization_XmlNamespaceDeclarationsAttribute_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor()
@@ -34913,6 +35257,9 @@ open class XmlRootAttribute
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Xml_Serialization_XmlRootAttribute_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -35102,6 +35449,9 @@ public final class XmlSchemaProviderAttribute
     public class override func get_type_handle() -> TypeHandle {
         return System_Xml_Serialization_XmlSchemaProviderAttribute_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor(System.String)
@@ -35192,6 +35542,9 @@ open class XmlSerializerNamespaces
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Xml_Serialization_XmlSerializerNamespaces_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -35310,6 +35663,9 @@ open class XmlTextAttribute
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Xml_Serialization_XmlTextAttribute_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -35436,6 +35792,9 @@ open class IXPathNavigable
     open class func get_type_handle() -> TypeHandle {
         return System_Xml_XPath_IXPathNavigable_get_type_handle();
     }
+    open class func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     let h : NonnullHandle;
     public func to_gval() -> GVal { return GVal(Swift.Int(bitPattern: self.h)); }
     public func dup_gval() -> GVal { return GVal(Swift.Int(bitPattern: __copy_handle(self.h))); }
@@ -35480,6 +35839,9 @@ open class XPathExpression
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Xml_XPath_XPathExpression_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -35660,6 +36022,9 @@ open class XPathItem
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Xml_XPath_XPathItem_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -35972,6 +36337,9 @@ open class XPathNavigator
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Xml_XPath_XPathNavigator_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -38051,7 +38419,7 @@ open class XPathNavigator
         }
     }
     /**
-    Gets the current node as a boxed object of the most appropriate .NET Framework type.
+    Gets the current node as a boxed object of the most appropriate .NET type.
 
     */
     open override var TypedValue : dotnet.System.Object {
@@ -38114,7 +38482,7 @@ open class XPathNavigator
         }
     }
     /**
-    Gets the .NET Framework  of the current node.
+    Gets the .NET  of the current node.
 
     */
     open override var ValueType : dotnet.System.Type_ {
@@ -38156,6 +38524,9 @@ open class XPathNodeIterator
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Xml_XPath_XPathNodeIterator_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -38383,7 +38754,7 @@ public struct XPathNodeType : SGBridgeGenericValue {
     }
     // static field: System.Xml.XPath.XPathNodeType Comment
     /**
-    A comment, such as <!-- my comment -->
+    A comment, such as <!-- my comment -->.
 
     */
     public static var Comment : dotnet.System.Xml.XPath.XPathNodeType {
@@ -38649,6 +39020,9 @@ open class IXsltContextFunction
     open class func get_type_handle() -> TypeHandle {
         return System_Xml_Xsl_IXsltContextFunction_get_type_handle();
     }
+    open class func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     let h : NonnullHandle;
     public func to_gval() -> GVal { return GVal(Swift.Int(bitPattern: self.h)); }
     public func dup_gval() -> GVal { return GVal(Swift.Int(bitPattern: __copy_handle(self.h))); }
@@ -38738,6 +39112,9 @@ open class IXsltContextVariable
     open class func get_type_handle() -> TypeHandle {
         return System_Xml_Xsl_IXsltContextVariable_get_type_handle();
     }
+    open class func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     let h : NonnullHandle;
     public func to_gval() -> GVal { return GVal(Swift.Int(bitPattern: self.h)); }
     public func dup_gval() -> GVal { return GVal(Swift.Int(bitPattern: __copy_handle(self.h))); }
@@ -38812,6 +39189,9 @@ public final class XslCompiledTransform
 {
     public class override func get_type_handle() -> TypeHandle {
         return System_Xml_Xsl_XslCompiledTransform_get_type_handle();
+    }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -39307,6 +39687,9 @@ public final class XslTransform
 {
     public class override func get_type_handle() -> TypeHandle {
         return System_Xml_Xsl_XslTransform_get_type_handle();
+    }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -39846,6 +40229,9 @@ open class XsltArgumentList
     open class override func get_type_handle() -> TypeHandle {
         return System_Xml_Xsl_XsltArgumentList_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor()
@@ -40050,6 +40436,9 @@ open class XsltCompileException
     open class override func get_type_handle() -> TypeHandle {
         return System_Xml_Xsl_XsltCompileException_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor()
@@ -40150,6 +40539,9 @@ open class XsltContext
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Xml_Xsl_XsltContext_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -40264,6 +40656,9 @@ open class XsltException
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Xml_Xsl_XsltException_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -40431,6 +40826,9 @@ open class XsltMessageEncounteredEventArgs
     open class override func get_type_handle() -> TypeHandle {
         return System_Xml_Xsl_XsltMessageEncounteredEventArgs_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // [IsSpecialName] System.String get_Message()
@@ -40467,6 +40865,9 @@ public final class XsltMessageEncounteredEventHandler
 {
     public class override func get_type_handle() -> TypeHandle {
         return System_Xml_Xsl_XsltMessageEncounteredEventHandler_get_type_handle();
+    }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -40507,15 +40908,15 @@ public final class XsltMessageEncounteredEventHandler
             return;
         }
     }
-    public init(_ callback : @escaping (dotnet.System.Object, dotnet.System.Xml.Xsl.XsltMessageEncounteredEventArgs) throws -> Void) throws
+    public convenience init(_ __closure_Invoke : @escaping (dotnet.System.Object, dotnet.System.Xml.Xsl.XsltMessageEncounteredEventArgs) throws -> Void) throws
     {
-        let __bridge : (UnsafeMutablePointer<NullableHandle>, NonnullHandle, NonnullHandle) -> Void =
+        let __interlude_Invoke : (UnsafeMutablePointer<NullableHandle>, NonnullHandle, NonnullHandle) -> Void =
         {
             (thrown : UnsafeMutablePointer<NullableHandle>, sender : NonnullHandle, e : NonnullHandle) -> Void in
             do
             {
                 thrown.pointee = nil;
-                try callback(dotnet.System.Object(hndl: sender), dotnet.System.Xml.Xsl.XsltMessageEncounteredEventArgs(hndl: e));
+                try __closure_Invoke(dotnet.System.Object(hndl: sender), dotnet.System.Xml.Xsl.XsltMessageEncounteredEventArgs(hndl: e));
             }
             catch let e as dotnet.System.Exception
             {
@@ -40527,24 +40928,24 @@ public final class XsltMessageEncounteredEventHandler
                 thrown.pointee = __copy_handle(e.get_handle());
             }
         };
-        let cbarg = UnsafeRawPointer(Unmanaged.passRetained(__bridge as AnyObject).toOpaque());
-        func __cb(cb : UnsafeRawPointer?, thrown : UnsafeMutablePointer<NullableHandle>, sender : NonnullHandle, e : NonnullHandle) -> Void
+        func __cb_Invoke(pdata_interlude : UnsafeRawPointer, thrown : UnsafeMutablePointer<NullableHandle>, sender : NonnullHandle, e : NonnullHandle) -> Void
         {
-            let f = Unmanaged<AnyObject>.fromOpaque(cb!).takeUnretainedValue() as! (UnsafeMutablePointer<NullableHandle>, NonnullHandle, NonnullHandle) -> Void;
-            f(thrown, sender, e);
+            let f_interlude = Unmanaged<AnyObject>.fromOpaque(pdata_interlude).takeUnretainedValue() as! (UnsafeMutablePointer<NullableHandle>, NonnullHandle, NonnullHandle) -> Void;
+            f_interlude(thrown, sender, e);
         }
+        let __pdata_Invoke = UnsafeRawPointer(Unmanaged.passRetained(__interlude_Invoke as AnyObject).toOpaque());
+
         var __thrown : NullableHandle = nil;
         let h = System_Xml_Xsl_XsltMessageEncounteredEventHandler_create(
             &__thrown,
-            cbarg,
-            nil, // TODO deinit
-            __cb
+            __cb_Invoke,
+            __pdata_Invoke,
+            nil
             );
-            // TODO check thrown
         if let __ex = __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-            super.init(hndl: h);
+            self.init(hndl: h);
         }
     }
     // void Invoke(System.Object, System.Xml.Xsl.XsltMessageEncounteredEventArgs)
@@ -40572,6 +40973,9 @@ public final class XsltSettings
 {
     public class override func get_type_handle() -> TypeHandle {
         return System_Xml_Xsl_XsltSettings_get_type_handle();
+    }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -40723,12 +41127,6 @@ public final class XsltSettings
 }
 
 
-
-public protocol System_Xml_IApplicationResourceStreamResolver
-    :
-    SGBridgeGetHandle
-{
-}
 
 public protocol System_Xml_IHasXmlNode
     :

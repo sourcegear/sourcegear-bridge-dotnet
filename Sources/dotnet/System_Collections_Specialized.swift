@@ -19,6 +19,9 @@ public final class BitVector32
     public class override func get_type_handle() -> TypeHandle {
         return System_Collections_Specialized_BitVector32_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     /**
@@ -222,9 +225,6 @@ public final class BitVector32
     }
     // [IsSpecialName] System.Int32 get_Item(System.Collections.Specialized.BitVector32.Section)
 // docid: M:System.Collections.Specialized.BitVector32.get_Item(System.Collections.Specialized.BitVector32.Section)
-//BEGIN method_is_override
-//matches_1
-//matches :
     public func get_Item(section : dotnet.System.Collections.Specialized.BitVector32_Section) throws -> Swift.Int32 {
         var __thrown : NullableHandle = nil;
         let __return = System_Collections_Specialized_BitVector32_i32__get_Item_0__1__BitVector32_Section(&__thrown, self.get_handle(), section.get_handle());
@@ -247,9 +247,6 @@ public final class BitVector32
     }
     // [IsSpecialName] bool get_Item(System.Int32)
 // docid: M:System.Collections.Specialized.BitVector32.get_Item(System.Int32)
-//BEGIN method_is_override
-//matches_1
-//matches :
     public func get_Item(bit : Swift.Int32) throws -> Bool {
         var __thrown : NullableHandle = nil;
         let __return = System_Collections_Specialized_BitVector32_bool__get_Item_0__1__i32(&__thrown, self.get_handle(), bit);
@@ -285,6 +282,9 @@ public final class BitVector32_Section
 {
     public class override func get_type_handle() -> TypeHandle {
         return System_Collections_Specialized_BitVector32_Section_get_type_handle();
+    }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -479,6 +479,9 @@ open class HybridDictionary
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Collections_Specialized_HybridDictionary_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -726,9 +729,6 @@ open class HybridDictionary
     }
     // [IsSpecialName] System.Object get_Item(System.Object)
 // docid: M:System.Collections.Specialized.HybridDictionary.get_Item(System.Object)
-//BEGIN method_is_override
-//matches_1
-//matches :
     open /* method final */ func get_Item(key : dotnet.System.Object) throws -> Optional<dotnet.System.Object> {
         var __thrown : NullableHandle = nil;
         let __return = System_Collections_Specialized_HybridDictionary_Object__get_Item_0__1__Object(&__thrown, self.get_handle(), key.get_handle());
@@ -833,6 +833,9 @@ open class IOrderedDictionary
     open class func get_type_handle() -> TypeHandle {
         return System_Collections_Specialized_IOrderedDictionary_get_type_handle();
     }
+    open class func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     let h : NonnullHandle;
     public func to_gval() -> GVal { return GVal(Swift.Int(bitPattern: self.h)); }
     public func dup_gval() -> GVal { return GVal(Swift.Int(bitPattern: __copy_handle(self.h))); }
@@ -895,9 +898,6 @@ open class IOrderedDictionary
     }
     // [IsSpecialName] System.Object get_Item(System.Int32)
 // docid: M:System.Collections.Specialized.IOrderedDictionary.get_Item(System.Int32)
-//BEGIN method_is_override
-//matches_1
-//matches :
     open func get_Item(index : Swift.Int32) throws -> Optional<dotnet.System.Object> {
         var __thrown : NullableHandle = nil;
         let __return = System_Collections_Specialized_IOrderedDictionary_Object__get_Item_0__1__i32(&__thrown, self.get_handle(), index);
@@ -939,6 +939,9 @@ open class ListDictionary
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Collections_Specialized_ListDictionary_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -1157,9 +1160,6 @@ open class ListDictionary
     }
     // [IsSpecialName] System.Object get_Item(System.Object)
 // docid: M:System.Collections.Specialized.ListDictionary.get_Item(System.Object)
-//BEGIN method_is_override
-//matches_1
-//matches :
     open /* method final */ func get_Item(key : dotnet.System.Object) throws -> Optional<dotnet.System.Object> {
         var __thrown : NullableHandle = nil;
         let __return = System_Collections_Specialized_ListDictionary_Object__get_Item_0__1__Object(&__thrown, self.get_handle(), key.get_handle());
@@ -1265,6 +1265,9 @@ open class NameObjectCollectionBase
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Collections_Specialized_NameObjectCollectionBase_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -1375,6 +1378,9 @@ open class NameObjectCollectionBase_KeysCollection
     open class override func get_type_handle() -> TypeHandle {
         return System_Collections_Specialized_NameObjectCollectionBase_KeysCollection_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // System.String Get(System.Int32)
@@ -1429,9 +1435,6 @@ open class NameObjectCollectionBase_KeysCollection
     }
     // [IsSpecialName] System.String get_Item(System.Int32)
 // docid: M:System.Collections.Specialized.NameObjectCollectionBase.KeysCollection.get_Item(System.Int32)
-//BEGIN method_is_override
-//matches_1
-//matches :
     open func get_Item(index : Swift.Int32) throws -> Optional<dotnet.System.String> {
         var __thrown : NullableHandle = nil;
         let __return = System_Collections_Specialized_NameObjectCollectionBase_KeysCollection_String__get_Item_0__1__i32(&__thrown, self.get_handle(), index);
@@ -1468,6 +1471,9 @@ open class NameValueCollection
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Collections_Specialized_NameValueCollection_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -1842,9 +1848,6 @@ open class NameValueCollection
     }
     // [IsSpecialName] System.String get_Item(System.Int32)
 // docid: M:System.Collections.Specialized.NameValueCollection.get_Item(System.Int32)
-//BEGIN method_is_override
-//matches_1
-//matches :
     open func get_Item(index : Swift.Int32) throws -> Optional<dotnet.System.String> {
         var __thrown : NullableHandle = nil;
         let __return = System_Collections_Specialized_NameValueCollection_String__get_Item_0__1__i32(&__thrown, self.get_handle(), index);
@@ -1860,9 +1863,6 @@ open class NameValueCollection
     }
     // [IsSpecialName] System.String get_Item(System.String)
 // docid: M:System.Collections.Specialized.NameValueCollection.get_Item(System.String)
-//BEGIN method_is_override
-//matches_1
-//matches :
     open func get_Item(name : Optional<dotnet.System.String>) throws -> Optional<dotnet.System.String> {
         var __thrown : NullableHandle = nil;
         let __return = System_Collections_Specialized_NameValueCollection_String__get_Item_0__1__String(&__thrown, self.get_handle(), name?.get_handle() ?? nil);
@@ -1916,6 +1916,9 @@ open class OrderedDictionary
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Collections_Specialized_OrderedDictionary_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -2206,9 +2209,6 @@ open class OrderedDictionary
     }
     // [IsSpecialName] System.Object get_Item(System.Int32)
 // docid: M:System.Collections.Specialized.OrderedDictionary.get_Item(System.Int32)
-//BEGIN method_is_override
-//matches_1
-//matches :
     open /* method final */ func get_Item(index : Swift.Int32) throws -> Optional<dotnet.System.Object> {
         var __thrown : NullableHandle = nil;
         let __return = System_Collections_Specialized_OrderedDictionary_Object__get_Item_0__1__i32(&__thrown, self.get_handle(), index);
@@ -2235,9 +2235,6 @@ open class OrderedDictionary
     }
     // [IsSpecialName] System.Object get_Item(System.Object)
 // docid: M:System.Collections.Specialized.OrderedDictionary.get_Item(System.Object)
-//BEGIN method_is_override
-//matches_1
-//matches :
     open /* method final */ func get_Item(key : dotnet.System.Object) throws -> Optional<dotnet.System.Object> {
         var __thrown : NullableHandle = nil;
         let __return = System_Collections_Specialized_OrderedDictionary_Object__get_Item_0__1__Object(&__thrown, self.get_handle(), key.get_handle());
@@ -2315,6 +2312,9 @@ open class StringCollection
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Collections_Specialized_StringCollection_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -2548,9 +2548,6 @@ open class StringCollection
     }
     // [IsSpecialName] System.String get_Item(System.Int32)
 // docid: M:System.Collections.Specialized.StringCollection.get_Item(System.Int32)
-//BEGIN method_is_override
-//matches_1
-//matches :
     open func get_Item(index : Swift.Int32) throws -> Optional<dotnet.System.String> {
         var __thrown : NullableHandle = nil;
         let __return = System_Collections_Specialized_StringCollection_String__get_Item_0__1__i32(&__thrown, self.get_handle(), index);
@@ -2626,6 +2623,9 @@ open class StringDictionary
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Collections_Specialized_StringDictionary_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -2821,9 +2821,6 @@ open class StringDictionary
     }
     // [IsSpecialName] System.String get_Item(System.String)
 // docid: M:System.Collections.Specialized.StringDictionary.get_Item(System.String)
-//BEGIN method_is_override
-//matches_1
-//matches :
     open func get_Item(key : dotnet.System.String) throws -> Optional<dotnet.System.String> {
         var __thrown : NullableHandle = nil;
         let __return = System_Collections_Specialized_StringDictionary_String__get_Item_0__1__String(&__thrown, self.get_handle(), key.get_handle());
@@ -2907,6 +2904,9 @@ open class StringEnumerator
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Collections_Specialized_StringEnumerator_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }

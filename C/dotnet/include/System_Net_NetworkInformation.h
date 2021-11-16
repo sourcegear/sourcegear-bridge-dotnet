@@ -474,7 +474,7 @@ SG_HNDL_NULLABLE System_Net_NetworkInformation_NetworkAddressChangedEventHandler
 
 void System_Net_NetworkInformation_NetworkAddressChangedEventHandler_void__EndInvoke_0__1__IAsyncResult(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE result);
 
-SG_HNDL_NONNULL System_Net_NetworkInformation_NetworkAddressChangedEventHandler_create(SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nullable __pdata, void (* _Nullable __deinit)(const void* _Nullable __pdata), void (* _Nonnull  __cb)(const void* _Nullable __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE sender, SG_HNDL_NONNULL e));
+SG_HNDL_NONNULL System_Net_NetworkInformation_NetworkAddressChangedEventHandler_create(SG_HNDL_NULLABLE * _Nonnull __thrown, void (* _Nonnull  __cb)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE sender, SG_HNDL_NONNULL e), const void* _Nonnull __pdata, void (* _Nullable __deinit)(const void* _Nonnull __pdata));
 
 TYP System_Net_NetworkInformation_NetworkAvailabilityChangedEventHandler_get_type_handle(void);
 
@@ -484,7 +484,7 @@ SG_HNDL_NULLABLE System_Net_NetworkInformation_NetworkAvailabilityChangedEventHa
 
 void System_Net_NetworkInformation_NetworkAvailabilityChangedEventHandler_void__EndInvoke_0__1__IAsyncResult(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE result);
 
-SG_HNDL_NONNULL System_Net_NetworkInformation_NetworkAvailabilityChangedEventHandler_create(SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nullable __pdata, void (* _Nullable __deinit)(const void* _Nullable __pdata), void (* _Nonnull  __cb)(const void* _Nullable __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE sender, SG_HNDL_NONNULL e));
+SG_HNDL_NONNULL System_Net_NetworkInformation_NetworkAvailabilityChangedEventHandler_create(SG_HNDL_NULLABLE * _Nonnull __thrown, void (* _Nonnull  __cb)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE sender, SG_HNDL_NONNULL e), const void* _Nonnull __pdata, void (* _Nullable __deinit)(const void* _Nonnull __pdata));
 
 TYP System_Net_NetworkInformation_NetworkAvailabilityEventArgs_get_type_handle(void);
 
@@ -654,9 +654,9 @@ SG_HNDL_NONNULL System_Net_NetworkInformation_PhysicalAddress_PhysicalAddress__P
 
 SG_HNDL_NONNULL System_Net_NetworkInformation_PhysicalAddress_PhysicalAddress__Parse_0__1__rospanChar(SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nonnull __address_spanptr);
 
-int32_t System_Net_NetworkInformation_PhysicalAddress_bool__TryParse_0__2__String_outPhysicalAddress(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE address, SG_HNDL_NONNULL* _Nonnull __value_out_ptr);
+int32_t System_Net_NetworkInformation_PhysicalAddress_bool__TryParse_0__2__String_outPhysicalAddress(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE address, SG_HNDL_NULLABLE* _Nonnull __value_out_ptr);
 
-int32_t System_Net_NetworkInformation_PhysicalAddress_bool__TryParse_0__2__rospanChar_outPhysicalAddress(SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nonnull __address_spanptr, SG_HNDL_NONNULL* _Nonnull __value_out_ptr);
+int32_t System_Net_NetworkInformation_PhysicalAddress_bool__TryParse_0__2__rospanChar_outPhysicalAddress(SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nonnull __address_spanptr, SG_HNDL_NULLABLE* _Nonnull __value_out_ptr);
 
 SG_HNDL_NONNULL System_Net_NetworkInformation_PhysicalAddress_String__ToString_0__0(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h);
 

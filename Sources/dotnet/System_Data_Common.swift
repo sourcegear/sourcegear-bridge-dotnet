@@ -106,7 +106,7 @@ public struct CommandBehavior : SGBridgeGenericValue {
     }
     // static field: System.Data.CommandBehavior SingleRow
     /**
-    The query is expected to return a single row of the first result set. Execution of the query may affect the database state. Some .NET Framework data providers may, but are not required to, use this information to optimize the performance of the command. When you specify  with the  method of the  object, the .NET Framework Data Provider for OLE DB performs binding using the OLE DB  interface if it is available. Otherwise, it uses the  interface. If your SQL statement is expected to return only a single row, specifying  can also improve application performance. It is possible to specify  when executing queries that are expected to return multiple result sets.  In that case, where both a multi-result set SQL query and single row are specified, the result returned will contain only the first row of the first result set. The other result sets of the query will not be returned.
+    The query is expected to return a single row of the first result set. Execution of the query may affect the database state. Some .NET data providers may, but are not required to, use this information to optimize the performance of the command. When you specify  with the  method of the  object, the .NET Framework Data Provider for OLE DB performs binding using the OLE DB  interface if it is available. Otherwise, it uses the  interface. If your SQL statement is expected to return only a single row, specifying  can also improve application performance. It is possible to specify  when executing queries that are expected to return multiple result sets.  In that case, where both a multi-result set SQL query and single row are specified, the result returned will contain only the first row of the first result set. The other result sets of the query will not be returned.
 
     */
     public static var SingleRow : dotnet.System.Data.CommandBehavior {
@@ -338,6 +338,9 @@ open class Constraint
     open class override func get_type_handle() -> TypeHandle {
         return System_Data_Constraint_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // System.String ToString()
@@ -449,6 +452,9 @@ public final class ConstraintCollection
 {
     public class override func get_type_handle() -> TypeHandle {
         return System_Data_ConstraintCollection_get_type_handle();
+    }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -720,9 +726,6 @@ public final class ConstraintCollection
     }
     // [IsSpecialName] System.Data.Constraint get_Item(System.Int32)
 // docid: M:System.Data.ConstraintCollection.get_Item(System.Int32)
-//BEGIN method_is_override
-//matches_1
-//matches :
     public func get_Item(index : Swift.Int32) throws -> dotnet.System.Data.Constraint {
         var __thrown : NullableHandle = nil;
         let __return = System_Data_ConstraintCollection_Constraint__get_Item_0__1__i32(&__thrown, self.get_handle(), index);
@@ -734,9 +737,6 @@ public final class ConstraintCollection
     }
     // [IsSpecialName] System.Data.Constraint get_Item(System.String)
 // docid: M:System.Data.ConstraintCollection.get_Item(System.String)
-//BEGIN method_is_override
-//matches_1
-//matches :
     public func get_Item(name : Optional<dotnet.System.String>) throws -> Optional<dotnet.System.Data.Constraint> {
         var __thrown : NullableHandle = nil;
         let __return = System_Data_ConstraintCollection_Constraint__get_Item_0__1__String(&__thrown, self.get_handle(), name?.get_handle() ?? nil);
@@ -796,6 +796,9 @@ open class ConstraintException
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Data_ConstraintException_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -861,6 +864,9 @@ public final class DBConcurrencyException
 {
     public class override func get_type_handle() -> TypeHandle {
         return System_Data_DBConcurrencyException_get_type_handle();
+    }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -1052,6 +1058,9 @@ open class DataColumn
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Data_DataColumn_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -1796,6 +1805,9 @@ open class DataColumnChangeEventArgs
     open class override func get_type_handle() -> TypeHandle {
         return System_Data_DataColumnChangeEventArgs_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor(System.Data.DataRow, System.Data.DataColumn, System.Object)
@@ -1913,6 +1925,9 @@ public final class DataColumnChangeEventHandler
     public class override func get_type_handle() -> TypeHandle {
         return System_Data_DataColumnChangeEventHandler_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // void Invoke(System.Object, System.Data.DataColumnChangeEventArgs)
@@ -1952,15 +1967,15 @@ public final class DataColumnChangeEventHandler
             return;
         }
     }
-    public init(_ callback : @escaping (dotnet.System.Object, dotnet.System.Data.DataColumnChangeEventArgs) throws -> Void) throws
+    public convenience init(_ __closure_Invoke : @escaping (dotnet.System.Object, dotnet.System.Data.DataColumnChangeEventArgs) throws -> Void) throws
     {
-        let __bridge : (UnsafeMutablePointer<NullableHandle>, NonnullHandle, NonnullHandle) -> Void =
+        let __interlude_Invoke : (UnsafeMutablePointer<NullableHandle>, NonnullHandle, NonnullHandle) -> Void =
         {
             (thrown : UnsafeMutablePointer<NullableHandle>, sender : NonnullHandle, e : NonnullHandle) -> Void in
             do
             {
                 thrown.pointee = nil;
-                try callback(dotnet.System.Object(hndl: sender), dotnet.System.Data.DataColumnChangeEventArgs(hndl: e));
+                try __closure_Invoke(dotnet.System.Object(hndl: sender), dotnet.System.Data.DataColumnChangeEventArgs(hndl: e));
             }
             catch let e as dotnet.System.Exception
             {
@@ -1972,24 +1987,24 @@ public final class DataColumnChangeEventHandler
                 thrown.pointee = __copy_handle(e.get_handle());
             }
         };
-        let cbarg = UnsafeRawPointer(Unmanaged.passRetained(__bridge as AnyObject).toOpaque());
-        func __cb(cb : UnsafeRawPointer?, thrown : UnsafeMutablePointer<NullableHandle>, sender : NonnullHandle, e : NonnullHandle) -> Void
+        func __cb_Invoke(pdata_interlude : UnsafeRawPointer, thrown : UnsafeMutablePointer<NullableHandle>, sender : NonnullHandle, e : NonnullHandle) -> Void
         {
-            let f = Unmanaged<AnyObject>.fromOpaque(cb!).takeUnretainedValue() as! (UnsafeMutablePointer<NullableHandle>, NonnullHandle, NonnullHandle) -> Void;
-            f(thrown, sender, e);
+            let f_interlude = Unmanaged<AnyObject>.fromOpaque(pdata_interlude).takeUnretainedValue() as! (UnsafeMutablePointer<NullableHandle>, NonnullHandle, NonnullHandle) -> Void;
+            f_interlude(thrown, sender, e);
         }
+        let __pdata_Invoke = UnsafeRawPointer(Unmanaged.passRetained(__interlude_Invoke as AnyObject).toOpaque());
+
         var __thrown : NullableHandle = nil;
         let h = System_Data_DataColumnChangeEventHandler_create(
             &__thrown,
-            cbarg,
-            nil, // TODO deinit
-            __cb
+            __cb_Invoke,
+            __pdata_Invoke,
+            nil
             );
-            // TODO check thrown
         if let __ex = __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-            super.init(hndl: h);
+            self.init(hndl: h);
         }
     }
     // void Invoke(System.Object, System.Data.DataColumnChangeEventArgs)
@@ -2017,6 +2032,9 @@ public final class DataColumnCollection
 {
     public class override func get_type_handle() -> TypeHandle {
         return System_Data_DataColumnCollection_get_type_handle();
+    }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -2290,9 +2308,6 @@ public final class DataColumnCollection
     }
     // [IsSpecialName] System.Data.DataColumn get_Item(System.Int32)
 // docid: M:System.Data.DataColumnCollection.get_Item(System.Int32)
-//BEGIN method_is_override
-//matches_1
-//matches :
     public func get_Item(index : Swift.Int32) throws -> dotnet.System.Data.DataColumn {
         var __thrown : NullableHandle = nil;
         let __return = System_Data_DataColumnCollection_DataColumn__get_Item_0__1__i32(&__thrown, self.get_handle(), index);
@@ -2304,9 +2319,6 @@ public final class DataColumnCollection
     }
     // [IsSpecialName] System.Data.DataColumn get_Item(System.String)
 // docid: M:System.Data.DataColumnCollection.get_Item(System.String)
-//BEGIN method_is_override
-//matches_1
-//matches :
     public func get_Item(name : dotnet.System.String) throws -> Optional<dotnet.System.Data.DataColumn> {
         var __thrown : NullableHandle = nil;
         let __return = System_Data_DataColumnCollection_DataColumn__get_Item_0__1__String(&__thrown, self.get_handle(), name.get_handle());
@@ -2366,6 +2378,9 @@ open class DataException
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Data_DataException_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -2881,13 +2896,13 @@ public struct DataReaderExtensions {
     - Returns: A  whose  property is  if the specified column value is equivalent to  or  if it is not.
 
     */
-    public static func IsDBNullAsync(reader : dotnet.System.Data.Common.DbDataReader, name : dotnet.System.String, cancellationToken : dotnet.System.Threading.CancellationToken = System.Threading.CancellationToken.None) throws -> dotnet.System.Threading.Tasks.Task_1<Bool> {
+    public static func IsDBNullAsync(reader : dotnet.System.Data.Common.DbDataReader, name : dotnet.System.String, cancellationToken : dotnet.System.Threading.CancellationToken = System.Threading.CancellationToken.None) async throws -> Bool {
         var __thrown : NullableHandle = nil;
         let __return = System_Data_DataReaderExtensions_System_Threading_Tasks_Task_bool___IsDBNullAsync_0__3__DbDataReader_String_CancellationToken(&__thrown, reader.get_handle(), name.get_handle(), cancellationToken.get_handle());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task_1(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task_1(hndl: __return).ToAsync();
         }
     }
 } // DataReaderExtensions
@@ -2904,6 +2919,9 @@ open class DataRelation
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Data_DataRelation_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -3297,6 +3315,9 @@ open class DataRelationCollection
     open class override func get_type_handle() -> TypeHandle {
         return System_Data_DataRelationCollection_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // System.Data.DataRelation Add(System.Data.DataColumn, System.Data.DataColumn)
@@ -3609,9 +3630,6 @@ open class DataRelationCollection
     }
     // [IsSpecialName] System.Data.DataRelation get_Item(System.Int32)
 // docid: M:System.Data.DataRelationCollection.get_Item(System.Int32)
-//BEGIN method_is_override
-//matches_1
-//matches :
     open func get_Item(index : Swift.Int32) throws -> dotnet.System.Data.DataRelation {
         var __thrown : NullableHandle = nil;
         let __return = System_Data_DataRelationCollection_DataRelation__get_Item_0__1__i32(&__thrown, self.get_handle(), index);
@@ -3623,9 +3641,6 @@ open class DataRelationCollection
     }
     // [IsSpecialName] System.Data.DataRelation get_Item(System.String)
 // docid: M:System.Data.DataRelationCollection.get_Item(System.String)
-//BEGIN method_is_override
-//matches_1
-//matches :
     open func get_Item(name : Optional<dotnet.System.String>) throws -> Optional<dotnet.System.Data.DataRelation> {
         var __thrown : NullableHandle = nil;
         let __return = System_Data_DataRelationCollection_DataRelation__get_Item_0__1__String(&__thrown, self.get_handle(), name?.get_handle() ?? nil);
@@ -3685,6 +3700,9 @@ open class DataRow
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Data_DataRow_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -4391,9 +4409,6 @@ open class DataRow
     }
     // [IsSpecialName] System.Object get_Item(System.Data.DataColumn)
 // docid: M:System.Data.DataRow.get_Item(System.Data.DataColumn)
-//BEGIN method_is_override
-//matches_1
-//matches :
     open func get_Item(column : dotnet.System.Data.DataColumn) throws -> dotnet.System.Object {
         var __thrown : NullableHandle = nil;
         let __return = System_Data_DataRow_Object__get_Item_0__1__DataColumn(&__thrown, self.get_handle(), column.get_handle());
@@ -4416,9 +4431,6 @@ open class DataRow
     }
     // [IsSpecialName] System.Object get_Item(System.Data.DataColumn, System.Data.DataRowVersion)
 // docid: M:System.Data.DataRow.get_Item(System.Data.DataColumn,System.Data.DataRowVersion)
-//BEGIN method_is_override
-//matches_1
-//matches :
     open func get_Item(column : dotnet.System.Data.DataColumn, version : dotnet.System.Data.DataRowVersion) throws -> dotnet.System.Object {
         var __thrown : NullableHandle = nil;
         let __return = System_Data_DataRow_Object__get_Item_0__2__DataColumn_DataRowVersion(&__thrown, self.get_handle(), column.get_handle(), version.get_value());
@@ -4430,9 +4442,6 @@ open class DataRow
     }
     // [IsSpecialName] System.Object get_Item(System.Int32)
 // docid: M:System.Data.DataRow.get_Item(System.Int32)
-//BEGIN method_is_override
-//matches_1
-//matches :
     open func get_Item(columnIndex : Swift.Int32) throws -> dotnet.System.Object {
         var __thrown : NullableHandle = nil;
         let __return = System_Data_DataRow_Object__get_Item_0__1__i32(&__thrown, self.get_handle(), columnIndex);
@@ -4455,9 +4464,6 @@ open class DataRow
     }
     // [IsSpecialName] System.Object get_Item(System.Int32, System.Data.DataRowVersion)
 // docid: M:System.Data.DataRow.get_Item(System.Int32,System.Data.DataRowVersion)
-//BEGIN method_is_override
-//matches_1
-//matches :
     open func get_Item(columnIndex : Swift.Int32, version : dotnet.System.Data.DataRowVersion) throws -> dotnet.System.Object {
         var __thrown : NullableHandle = nil;
         let __return = System_Data_DataRow_Object__get_Item_0__2__i32_DataRowVersion(&__thrown, self.get_handle(), columnIndex, version.get_value());
@@ -4469,9 +4475,6 @@ open class DataRow
     }
     // [IsSpecialName] System.Object get_Item(System.String)
 // docid: M:System.Data.DataRow.get_Item(System.String)
-//BEGIN method_is_override
-//matches_1
-//matches :
     open func get_Item(columnName : dotnet.System.String) throws -> dotnet.System.Object {
         var __thrown : NullableHandle = nil;
         let __return = System_Data_DataRow_Object__get_Item_0__1__String(&__thrown, self.get_handle(), columnName.get_handle());
@@ -4494,9 +4497,6 @@ open class DataRow
     }
     // [IsSpecialName] System.Object get_Item(System.String, System.Data.DataRowVersion)
 // docid: M:System.Data.DataRow.get_Item(System.String,System.Data.DataRowVersion)
-//BEGIN method_is_override
-//matches_1
-//matches :
     open func get_Item(columnName : dotnet.System.String, version : dotnet.System.Data.DataRowVersion) throws -> dotnet.System.Object {
         var __thrown : NullableHandle = nil;
         let __return = System_Data_DataRow_Object__get_Item_0__2__String_DataRowVersion(&__thrown, self.get_handle(), columnName.get_handle(), version.get_value());
@@ -4668,7 +4668,7 @@ public struct DataRowAction : SGBridgeGenericValue {
 
 // type: System.Data.DataRowBuilder
     /**
-    The  type supports the .NET Framework infrastructure and is not intended to be used directly from your code.
+    The  type supports the .NET infrastructure and is not intended to be used directly from your code.
 
     */
 public final class DataRowBuilder
@@ -4677,6 +4677,9 @@ public final class DataRowBuilder
 {
     public class override func get_type_handle() -> TypeHandle {
         return System_Data_DataRowBuilder_get_type_handle();
+    }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -4694,6 +4697,9 @@ open class DataRowChangeEventArgs
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Data_DataRowChangeEventArgs_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -4769,6 +4775,9 @@ public final class DataRowChangeEventHandler
     public class override func get_type_handle() -> TypeHandle {
         return System_Data_DataRowChangeEventHandler_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // void Invoke(System.Object, System.Data.DataRowChangeEventArgs)
@@ -4808,15 +4817,15 @@ public final class DataRowChangeEventHandler
             return;
         }
     }
-    public init(_ callback : @escaping (dotnet.System.Object, dotnet.System.Data.DataRowChangeEventArgs) throws -> Void) throws
+    public convenience init(_ __closure_Invoke : @escaping (dotnet.System.Object, dotnet.System.Data.DataRowChangeEventArgs) throws -> Void) throws
     {
-        let __bridge : (UnsafeMutablePointer<NullableHandle>, NonnullHandle, NonnullHandle) -> Void =
+        let __interlude_Invoke : (UnsafeMutablePointer<NullableHandle>, NonnullHandle, NonnullHandle) -> Void =
         {
             (thrown : UnsafeMutablePointer<NullableHandle>, sender : NonnullHandle, e : NonnullHandle) -> Void in
             do
             {
                 thrown.pointee = nil;
-                try callback(dotnet.System.Object(hndl: sender), dotnet.System.Data.DataRowChangeEventArgs(hndl: e));
+                try __closure_Invoke(dotnet.System.Object(hndl: sender), dotnet.System.Data.DataRowChangeEventArgs(hndl: e));
             }
             catch let e as dotnet.System.Exception
             {
@@ -4828,24 +4837,24 @@ public final class DataRowChangeEventHandler
                 thrown.pointee = __copy_handle(e.get_handle());
             }
         };
-        let cbarg = UnsafeRawPointer(Unmanaged.passRetained(__bridge as AnyObject).toOpaque());
-        func __cb(cb : UnsafeRawPointer?, thrown : UnsafeMutablePointer<NullableHandle>, sender : NonnullHandle, e : NonnullHandle) -> Void
+        func __cb_Invoke(pdata_interlude : UnsafeRawPointer, thrown : UnsafeMutablePointer<NullableHandle>, sender : NonnullHandle, e : NonnullHandle) -> Void
         {
-            let f = Unmanaged<AnyObject>.fromOpaque(cb!).takeUnretainedValue() as! (UnsafeMutablePointer<NullableHandle>, NonnullHandle, NonnullHandle) -> Void;
-            f(thrown, sender, e);
+            let f_interlude = Unmanaged<AnyObject>.fromOpaque(pdata_interlude).takeUnretainedValue() as! (UnsafeMutablePointer<NullableHandle>, NonnullHandle, NonnullHandle) -> Void;
+            f_interlude(thrown, sender, e);
         }
+        let __pdata_Invoke = UnsafeRawPointer(Unmanaged.passRetained(__interlude_Invoke as AnyObject).toOpaque());
+
         var __thrown : NullableHandle = nil;
         let h = System_Data_DataRowChangeEventHandler_create(
             &__thrown,
-            cbarg,
-            nil, // TODO deinit
-            __cb
+            __cb_Invoke,
+            __pdata_Invoke,
+            nil
             );
-            // TODO check thrown
         if let __ex = __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-            super.init(hndl: h);
+            self.init(hndl: h);
         }
     }
     // void Invoke(System.Object, System.Data.DataRowChangeEventArgs)
@@ -4874,6 +4883,9 @@ public final class DataRowCollection
     public class override func get_type_handle() -> TypeHandle {
         return System_Data_DataRowCollection_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // void Add(System.Data.DataRow)
@@ -4898,7 +4910,7 @@ public final class DataRowCollection
     Creates a row using specified values and adds it to the .
 
     - Parameter values: The array of values that are used to create the new row.
-    - Returns: None.
+    - Returns: The new row.
 
     */
     public func Add(values : dotnet.System_Arr<dotnet.System.Object>) throws -> dotnet.System.Data.DataRow {
@@ -5138,9 +5150,6 @@ public final class DataRowCollection
     }
     // [IsSpecialName] System.Data.DataRow get_Item(System.Int32)
 // docid: M:System.Data.DataRowCollection.get_Item(System.Int32)
-//BEGIN method_is_override
-//matches_1
-//matches :
     public func get_Item(index : Swift.Int32) throws -> dotnet.System.Data.DataRow {
         var __thrown : NullableHandle = nil;
         let __return = System_Data_DataRowCollection_DataRow__get_Item_0__1__i32(&__thrown, self.get_handle(), index);
@@ -5198,6 +5207,9 @@ public final class DataRowComparer_1<TRow : SGBridgeGenericValue>
 {
     public class override func get_type_handle() -> TypeHandle {
         return System_Data_DataRowComparer_1_get_type_handle(TRow.get_type_handle());
+    }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -5478,6 +5490,9 @@ open class DataRowView
     open class override func get_type_handle() -> TypeHandle {
         return System_Data_DataRowView_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // void BeginEdit()
@@ -5708,9 +5723,6 @@ open class DataRowView
     }
     // [IsSpecialName] System.Object get_Item(System.Int32)
 // docid: M:System.Data.DataRowView.get_Item(System.Int32)
-//BEGIN method_is_override
-//matches_1
-//matches :
     open func get_Item(ndx : Swift.Int32) throws -> dotnet.System.Object {
         var __thrown : NullableHandle = nil;
         let __return = System_Data_DataRowView_Object__get_Item_0__1__i32(&__thrown, self.get_handle(), ndx);
@@ -5733,9 +5745,6 @@ open class DataRowView
     }
     // [IsSpecialName] System.Object get_Item(System.String)
 // docid: M:System.Data.DataRowView.get_Item(System.String)
-//BEGIN method_is_override
-//matches_1
-//matches :
     open func get_Item(property : dotnet.System.String) throws -> dotnet.System.Object {
         var __thrown : NullableHandle = nil;
         let __return = System_Data_DataRowView_Object__get_Item_0__1__String(&__thrown, self.get_handle(), property.get_handle());
@@ -5853,6 +5862,9 @@ open class DataSet
     open class override func get_type_handle() -> TypeHandle {
         return System_Data_DataSet_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor()
@@ -5953,10 +5965,7 @@ open class DataSet
     /**
     Copies both the structure and data for this .
 
-    - Returns: A new  with the same structure (table schemas, relations, and constraints) and data as this .  
-  
-   
- If these classes have been subclassed, the copy will also be of the same subclasses.
+    - Returns: A new  with the same structure (table schemas, relations, and constraints) and data as this .
 
     */
     open func Copy() throws -> dotnet.System.Data.DataSet {
@@ -6826,7 +6835,7 @@ open class DataSet
         }
     }
     // delegate closure overload
-    open func WriteXmlSchema(stream : Optional<dotnet.System.IO.Stream>, multipleTargetConverter : @escaping (Optional<dotnet.System.Type_>) throws -> dotnet.System.String) throws {
+    open func WriteXmlSchema(stream : Optional<dotnet.System.IO.Stream>, multipleTargetConverter : @escaping (dotnet.System.Type_) throws -> dotnet.System.String) throws {
         let del_multipleTargetConverter = try dotnet.System.Converter_2<dotnet.System.Type_,dotnet.System.String>(multipleTargetConverter);
         return try WriteXmlSchema(stream: stream, multipleTargetConverter: del_multipleTargetConverter);
     }
@@ -6864,7 +6873,7 @@ open class DataSet
         }
     }
     // delegate closure overload
-    open func WriteXmlSchema(writer : Optional<dotnet.System.IO.TextWriter>, multipleTargetConverter : @escaping (Optional<dotnet.System.Type_>) throws -> dotnet.System.String) throws {
+    open func WriteXmlSchema(writer : Optional<dotnet.System.IO.TextWriter>, multipleTargetConverter : @escaping (dotnet.System.Type_) throws -> dotnet.System.String) throws {
         let del_multipleTargetConverter = try dotnet.System.Converter_2<dotnet.System.Type_,dotnet.System.String>(multipleTargetConverter);
         return try WriteXmlSchema(writer: writer, multipleTargetConverter: del_multipleTargetConverter);
     }
@@ -6902,7 +6911,7 @@ open class DataSet
         }
     }
     // delegate closure overload
-    open func WriteXmlSchema(fileName : dotnet.System.String, multipleTargetConverter : @escaping (Optional<dotnet.System.Type_>) throws -> dotnet.System.String) throws {
+    open func WriteXmlSchema(fileName : dotnet.System.String, multipleTargetConverter : @escaping (dotnet.System.Type_) throws -> dotnet.System.String) throws {
         let del_multipleTargetConverter = try dotnet.System.Converter_2<dotnet.System.Type_,dotnet.System.String>(multipleTargetConverter);
         return try WriteXmlSchema(fileName: fileName, multipleTargetConverter: del_multipleTargetConverter);
     }
@@ -6940,7 +6949,7 @@ open class DataSet
         }
     }
     // delegate closure overload
-    open func WriteXmlSchema(writer : Optional<dotnet.System.Xml.XmlWriter>, multipleTargetConverter : @escaping (Optional<dotnet.System.Type_>) throws -> dotnet.System.String) throws {
+    open func WriteXmlSchema(writer : Optional<dotnet.System.Xml.XmlWriter>, multipleTargetConverter : @escaping (dotnet.System.Type_) throws -> dotnet.System.String) throws {
         let del_multipleTargetConverter = try dotnet.System.Converter_2<dotnet.System.Type_,dotnet.System.String>(multipleTargetConverter);
         return try WriteXmlSchema(writer: writer, multipleTargetConverter: del_multipleTargetConverter);
     }
@@ -7519,6 +7528,9 @@ open class DataSysDescriptionAttribute
     open class override func get_type_handle() -> TypeHandle {
         return System_Data_DataSysDescriptionAttribute_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor(System.String)
@@ -7576,6 +7588,9 @@ open class DataTable
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Data_DataTable_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -8072,7 +8087,7 @@ open class DataTable
     /**
     Reads XML schema and data into the  using the specified .
 
-    - Parameter stream: An object that derives from 
+    - Parameter stream: An object that derives from .
     - Returns: The  used to read the data.
 
     */
@@ -9611,6 +9626,9 @@ public final class DataTableClearEventArgs
     public class override func get_type_handle() -> TypeHandle {
         return System_Data_DataTableClearEventArgs_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor(System.Data.DataTable)
@@ -9704,6 +9722,9 @@ public final class DataTableClearEventHandler
     public class override func get_type_handle() -> TypeHandle {
         return System_Data_DataTableClearEventHandler_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // void Invoke(System.Object, System.Data.DataTableClearEventArgs)
@@ -9743,15 +9764,15 @@ public final class DataTableClearEventHandler
             return;
         }
     }
-    public init(_ callback : @escaping (dotnet.System.Object, dotnet.System.Data.DataTableClearEventArgs) throws -> Void) throws
+    public convenience init(_ __closure_Invoke : @escaping (dotnet.System.Object, dotnet.System.Data.DataTableClearEventArgs) throws -> Void) throws
     {
-        let __bridge : (UnsafeMutablePointer<NullableHandle>, NonnullHandle, NonnullHandle) -> Void =
+        let __interlude_Invoke : (UnsafeMutablePointer<NullableHandle>, NonnullHandle, NonnullHandle) -> Void =
         {
             (thrown : UnsafeMutablePointer<NullableHandle>, sender : NonnullHandle, e : NonnullHandle) -> Void in
             do
             {
                 thrown.pointee = nil;
-                try callback(dotnet.System.Object(hndl: sender), dotnet.System.Data.DataTableClearEventArgs(hndl: e));
+                try __closure_Invoke(dotnet.System.Object(hndl: sender), dotnet.System.Data.DataTableClearEventArgs(hndl: e));
             }
             catch let e as dotnet.System.Exception
             {
@@ -9763,24 +9784,24 @@ public final class DataTableClearEventHandler
                 thrown.pointee = __copy_handle(e.get_handle());
             }
         };
-        let cbarg = UnsafeRawPointer(Unmanaged.passRetained(__bridge as AnyObject).toOpaque());
-        func __cb(cb : UnsafeRawPointer?, thrown : UnsafeMutablePointer<NullableHandle>, sender : NonnullHandle, e : NonnullHandle) -> Void
+        func __cb_Invoke(pdata_interlude : UnsafeRawPointer, thrown : UnsafeMutablePointer<NullableHandle>, sender : NonnullHandle, e : NonnullHandle) -> Void
         {
-            let f = Unmanaged<AnyObject>.fromOpaque(cb!).takeUnretainedValue() as! (UnsafeMutablePointer<NullableHandle>, NonnullHandle, NonnullHandle) -> Void;
-            f(thrown, sender, e);
+            let f_interlude = Unmanaged<AnyObject>.fromOpaque(pdata_interlude).takeUnretainedValue() as! (UnsafeMutablePointer<NullableHandle>, NonnullHandle, NonnullHandle) -> Void;
+            f_interlude(thrown, sender, e);
         }
+        let __pdata_Invoke = UnsafeRawPointer(Unmanaged.passRetained(__interlude_Invoke as AnyObject).toOpaque());
+
         var __thrown : NullableHandle = nil;
         let h = System_Data_DataTableClearEventHandler_create(
             &__thrown,
-            cbarg,
-            nil, // TODO deinit
-            __cb
+            __cb_Invoke,
+            __pdata_Invoke,
+            nil
             );
-            // TODO check thrown
         if let __ex = __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-            super.init(hndl: h);
+            self.init(hndl: h);
         }
     }
     // void Invoke(System.Object, System.Data.DataTableClearEventArgs)
@@ -9808,6 +9829,9 @@ public final class DataTableCollection
 {
     public class override func get_type_handle() -> TypeHandle {
         return System_Data_DataTableCollection_get_type_handle();
+    }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -10011,10 +10035,7 @@ public final class DataTableCollection
     Gets the index in the collection of the  object with the specified name.
 
     - Parameter tableName: The name of the  object to look for.
-    - Returns: The zero-based index of the  with the specified name, or -1 if the table does not exist in the collection.  
-  
-   
- Returns -1 when two or more tables have the same name but different namespaces. The call does not succeed if there is any ambiguity when matching a table name to exactly one table.
+    - Returns: The zero-based index of the  with the specified name, or -1 if the table does not exist in the collection.
 
     */
     public func IndexOf(tableName : Optional<dotnet.System.String>) throws -> Swift.Int32 {
@@ -10112,9 +10133,6 @@ public final class DataTableCollection
     }
     // [IsSpecialName] System.Data.DataTable get_Item(System.Int32)
 // docid: M:System.Data.DataTableCollection.get_Item(System.Int32)
-//BEGIN method_is_override
-//matches_1
-//matches :
     public func get_Item(index : Swift.Int32) throws -> dotnet.System.Data.DataTable {
         var __thrown : NullableHandle = nil;
         let __return = System_Data_DataTableCollection_DataTable__get_Item_0__1__i32(&__thrown, self.get_handle(), index);
@@ -10126,9 +10144,6 @@ public final class DataTableCollection
     }
     // [IsSpecialName] System.Data.DataTable get_Item(System.String)
 // docid: M:System.Data.DataTableCollection.get_Item(System.String)
-//BEGIN method_is_override
-//matches_1
-//matches :
     public func get_Item(name : Optional<dotnet.System.String>) throws -> Optional<dotnet.System.Data.DataTable> {
         var __thrown : NullableHandle = nil;
         let __return = System_Data_DataTableCollection_DataTable__get_Item_0__1__String(&__thrown, self.get_handle(), name?.get_handle() ?? nil);
@@ -10144,9 +10159,6 @@ public final class DataTableCollection
     }
     // [IsSpecialName] System.Data.DataTable get_Item(System.String, System.String)
 // docid: M:System.Data.DataTableCollection.get_Item(System.String,System.String)
-//BEGIN method_is_override
-//matches_1
-//matches :
     public func get_Item(name : Optional<dotnet.System.String>, tableNamespace : dotnet.System.String) throws -> Optional<dotnet.System.Data.DataTable> {
         var __thrown : NullableHandle = nil;
         let __return = System_Data_DataTableCollection_DataTable__get_Item_0__2__String_String(&__thrown, self.get_handle(), name?.get_handle() ?? nil, tableNamespace.get_handle());
@@ -10358,6 +10370,9 @@ public final class DataTableNewRowEventArgs
     public class override func get_type_handle() -> TypeHandle {
         return System_Data_DataTableNewRowEventArgs_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor(System.Data.DataRow)
@@ -10411,6 +10426,9 @@ public final class DataTableNewRowEventHandler
     public class override func get_type_handle() -> TypeHandle {
         return System_Data_DataTableNewRowEventHandler_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // void Invoke(System.Object, System.Data.DataTableNewRowEventArgs)
@@ -10450,15 +10468,15 @@ public final class DataTableNewRowEventHandler
             return;
         }
     }
-    public init(_ callback : @escaping (dotnet.System.Object, dotnet.System.Data.DataTableNewRowEventArgs) throws -> Void) throws
+    public convenience init(_ __closure_Invoke : @escaping (dotnet.System.Object, dotnet.System.Data.DataTableNewRowEventArgs) throws -> Void) throws
     {
-        let __bridge : (UnsafeMutablePointer<NullableHandle>, NonnullHandle, NonnullHandle) -> Void =
+        let __interlude_Invoke : (UnsafeMutablePointer<NullableHandle>, NonnullHandle, NonnullHandle) -> Void =
         {
             (thrown : UnsafeMutablePointer<NullableHandle>, sender : NonnullHandle, e : NonnullHandle) -> Void in
             do
             {
                 thrown.pointee = nil;
-                try callback(dotnet.System.Object(hndl: sender), dotnet.System.Data.DataTableNewRowEventArgs(hndl: e));
+                try __closure_Invoke(dotnet.System.Object(hndl: sender), dotnet.System.Data.DataTableNewRowEventArgs(hndl: e));
             }
             catch let e as dotnet.System.Exception
             {
@@ -10470,24 +10488,24 @@ public final class DataTableNewRowEventHandler
                 thrown.pointee = __copy_handle(e.get_handle());
             }
         };
-        let cbarg = UnsafeRawPointer(Unmanaged.passRetained(__bridge as AnyObject).toOpaque());
-        func __cb(cb : UnsafeRawPointer?, thrown : UnsafeMutablePointer<NullableHandle>, sender : NonnullHandle, e : NonnullHandle) -> Void
+        func __cb_Invoke(pdata_interlude : UnsafeRawPointer, thrown : UnsafeMutablePointer<NullableHandle>, sender : NonnullHandle, e : NonnullHandle) -> Void
         {
-            let f = Unmanaged<AnyObject>.fromOpaque(cb!).takeUnretainedValue() as! (UnsafeMutablePointer<NullableHandle>, NonnullHandle, NonnullHandle) -> Void;
-            f(thrown, sender, e);
+            let f_interlude = Unmanaged<AnyObject>.fromOpaque(pdata_interlude).takeUnretainedValue() as! (UnsafeMutablePointer<NullableHandle>, NonnullHandle, NonnullHandle) -> Void;
+            f_interlude(thrown, sender, e);
         }
+        let __pdata_Invoke = UnsafeRawPointer(Unmanaged.passRetained(__interlude_Invoke as AnyObject).toOpaque());
+
         var __thrown : NullableHandle = nil;
         let h = System_Data_DataTableNewRowEventHandler_create(
             &__thrown,
-            cbarg,
-            nil, // TODO deinit
-            __cb
+            __cb_Invoke,
+            __pdata_Invoke,
+            nil
             );
-            // TODO check thrown
         if let __ex = __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-            super.init(hndl: h);
+            self.init(hndl: h);
         }
     }
     // void Invoke(System.Object, System.Data.DataTableNewRowEventArgs)
@@ -10515,6 +10533,9 @@ public final class DataTableReader
 {
     public class override func get_type_handle() -> TypeHandle {
         return System_Data_DataTableReader_get_type_handle();
+    }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -10811,7 +10832,7 @@ public final class DataTableReader
     /**
     Gets the value of the specified column as a 16-bit signed integer.
 
-    - Parameter ordinal: The zero-based column ordinal
+    - Parameter ordinal: The zero-based column ordinal.
     - Returns: The value of the specified column.
 
     */
@@ -10829,7 +10850,7 @@ public final class DataTableReader
     /**
     Gets the value of the specified column as a 32-bit signed integer.
 
-    - Parameter ordinal: The zero-based column ordinal
+    - Parameter ordinal: The zero-based column ordinal.
     - Returns: The value of the specified column.
 
     */
@@ -10847,7 +10868,7 @@ public final class DataTableReader
     /**
     Gets the value of the specified column as a 64-bit signed integer.
 
-    - Parameter ordinal: The zero-based column ordinal
+    - Parameter ordinal: The zero-based column ordinal.
     - Returns: The value of the specified column.
 
     */
@@ -10865,7 +10886,7 @@ public final class DataTableReader
     /**
     Gets the value of the specified column as a .
 
-    - Parameter ordinal: The zero-based column ordinal
+    - Parameter ordinal: The zero-based column ordinal.
     - Returns: The name of the specified column.
 
     */
@@ -10972,7 +10993,7 @@ public final class DataTableReader
     /**
     Gets the value of the specified column as a string.
 
-    - Parameter ordinal: The zero-based column ordinal
+    - Parameter ordinal: The zero-based column ordinal.
     - Returns: The value of the specified column.
 
     */
@@ -10990,7 +11011,7 @@ public final class DataTableReader
     /**
     Gets the value of the specified column in its native format.
 
-    - Parameter ordinal: The zero-based column ordinal
+    - Parameter ordinal: The zero-based column ordinal.
     - Returns: The value of the specified column. This method returns  for null columns.
 
     */
@@ -11026,7 +11047,7 @@ public final class DataTableReader
     /**
     Gets a value that indicates whether the column contains non-existent or missing values.
 
-    - Parameter ordinal: The zero-based column ordinal
+    - Parameter ordinal: The zero-based column ordinal.
     - Returns: 
          if the specified column value is equivalent to ; otherwise, .
 
@@ -11133,12 +11154,6 @@ public final class DataTableReader
     }
     // [IsSpecialName] System.Object get_Item(System.Int32)
 // docid: M:System.Data.DataTableReader.get_Item(System.Int32)
-//BEGIN method_is_override
-//matches_1
-//    DbDataReader : [IsSpecialName] System.Object get_Item(System.Int32) -- DbDataReader -- 100665721
-//EARLY true
-//matches :
-//    DbDataReader : [IsSpecialName] System.Object get_Item(System.Int32)
     public override func get_Item(ordinal : Swift.Int32) throws -> dotnet.System.Object {
         var __thrown : NullableHandle = nil;
         let __return = System_Data_DataTableReader_Object__get_Item_0__1__i32(&__thrown, self.get_handle(), ordinal);
@@ -11150,12 +11165,6 @@ public final class DataTableReader
     }
     // [IsSpecialName] System.Object get_Item(System.String)
 // docid: M:System.Data.DataTableReader.get_Item(System.String)
-//BEGIN method_is_override
-//matches_1
-//    DbDataReader : [IsSpecialName] System.Object get_Item(System.String) -- DbDataReader -- 100665722
-//EARLY true
-//matches :
-//    DbDataReader : [IsSpecialName] System.Object get_Item(System.String)
     public override func get_Item(name : dotnet.System.String) throws -> dotnet.System.Object {
         var __thrown : NullableHandle = nil;
         let __return = System_Data_DataTableReader_Object__get_Item_0__1__String(&__thrown, self.get_handle(), name.get_handle());
@@ -11232,6 +11241,9 @@ open class DataView
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Data_DataView_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -11770,9 +11782,6 @@ open class DataView
     }
     // [IsSpecialName] System.Data.DataRowView get_Item(System.Int32)
 // docid: M:System.Data.DataView.get_Item(System.Int32)
-//BEGIN method_is_override
-//matches_1
-//matches :
     open func get_Item(recordIndex : Swift.Int32) throws -> dotnet.System.Data.DataRowView {
         var __thrown : NullableHandle = nil;
         let __return = System_Data_DataView_DataRowView__get_Item_0__1__i32(&__thrown, self.get_handle(), recordIndex);
@@ -11988,6 +11997,9 @@ open class DataViewManager
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Data_DataViewManager_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -12285,6 +12297,9 @@ open class DataViewSetting
     open class override func get_type_handle() -> TypeHandle {
         return System_Data_DataViewSetting_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // [IsSpecialName] bool get_ApplyDefaultSort()
@@ -12488,6 +12503,9 @@ open class DataViewSettingCollection
     open class override func get_type_handle() -> TypeHandle {
         return System_Data_DataViewSettingCollection_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // void CopyTo(System.Array, System.Int32)
@@ -12587,9 +12605,6 @@ open class DataViewSettingCollection
     }
     // [IsSpecialName] System.Data.DataViewSetting get_Item(System.Data.DataTable)
 // docid: M:System.Data.DataViewSettingCollection.get_Item(System.Data.DataTable)
-//BEGIN method_is_override
-//matches_1
-//matches :
     open func get_Item(table : dotnet.System.Data.DataTable) throws -> dotnet.System.Data.DataViewSetting {
         var __thrown : NullableHandle = nil;
         let __return = System_Data_DataViewSettingCollection_DataViewSetting__get_Item_0__1__DataTable(&__thrown, self.get_handle(), table.get_handle());
@@ -12612,9 +12627,6 @@ open class DataViewSettingCollection
     }
     // [IsSpecialName] System.Data.DataViewSetting get_Item(System.Int32)
 // docid: M:System.Data.DataViewSettingCollection.get_Item(System.Int32)
-//BEGIN method_is_override
-//matches_1
-//matches :
     open func get_Item(index : Swift.Int32) throws -> Optional<dotnet.System.Data.DataViewSetting> {
         var __thrown : NullableHandle = nil;
         let __return = System_Data_DataViewSettingCollection_DataViewSetting__get_Item_0__1__i32(&__thrown, self.get_handle(), index);
@@ -12641,9 +12653,6 @@ open class DataViewSettingCollection
     }
     // [IsSpecialName] System.Data.DataViewSetting get_Item(System.String)
 // docid: M:System.Data.DataViewSettingCollection.get_Item(System.String)
-//BEGIN method_is_override
-//matches_1
-//matches :
     open func get_Item(tableName : dotnet.System.String) throws -> Optional<dotnet.System.Data.DataViewSetting> {
         var __thrown : NullableHandle = nil;
         let __return = System_Data_DataViewSettingCollection_DataViewSetting__get_Item_0__1__String(&__thrown, self.get_handle(), tableName.get_handle());
@@ -12698,7 +12707,7 @@ open class DataViewSettingCollection
 
 // type: System.Data.DbType
     /**
-    Specifies the data type of a field, a property, or a  object of a .NET Framework data provider.
+    Specifies the data type of a field, a property, or a  object of a .NET data provider.
 
     */
 public struct DbType : SGBridgeGenericValue {
@@ -13023,6 +13032,9 @@ open class DeletedRowInaccessibleException
     open class override func get_type_handle() -> TypeHandle {
         return System_Data_DeletedRowInaccessibleException_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor()
@@ -13088,6 +13100,9 @@ open class DuplicateNameException
     open class override func get_type_handle() -> TypeHandle {
         return System_Data_DuplicateNameException_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor()
@@ -13143,7 +13158,7 @@ open class DuplicateNameException
 
 // type: System.Data.EnumerableRowCollection
     /**
-    Represents a collection of  objects returned from a LINQ to DataSet query. This API supports the .NET Framework infrastructure and is not intended to be used directly from your code.
+    Represents a collection of  objects returned from a LINQ to DataSet query. This API supports the .NET infrastructure and is not intended to be used directly from your code.
 
     */
 open class EnumerableRowCollection
@@ -13153,6 +13168,9 @@ open class EnumerableRowCollection
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Data_EnumerableRowCollection_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -13421,6 +13439,9 @@ open class EnumerableRowCollection_1<TRow : SGBridgeGenericValue>
     open class override func get_type_handle() -> TypeHandle {
         return System_Data_EnumerableRowCollection_1_get_type_handle(TRow.get_type_handle());
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // System.Collections.Generic.IEnumerator<TRow> GetEnumerator()
@@ -13454,6 +13475,9 @@ open class EvaluateException
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Data_EvaluateException_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -13519,6 +13543,9 @@ open class FillErrorEventArgs
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Data_FillErrorEventArgs_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -13670,6 +13697,9 @@ public final class FillErrorEventHandler
     public class override func get_type_handle() -> TypeHandle {
         return System_Data_FillErrorEventHandler_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // void Invoke(System.Object, System.Data.FillErrorEventArgs)
@@ -13709,15 +13739,15 @@ public final class FillErrorEventHandler
             return;
         }
     }
-    public init(_ callback : @escaping (dotnet.System.Object, dotnet.System.Data.FillErrorEventArgs) throws -> Void) throws
+    public convenience init(_ __closure_Invoke : @escaping (dotnet.System.Object, dotnet.System.Data.FillErrorEventArgs) throws -> Void) throws
     {
-        let __bridge : (UnsafeMutablePointer<NullableHandle>, NonnullHandle, NonnullHandle) -> Void =
+        let __interlude_Invoke : (UnsafeMutablePointer<NullableHandle>, NonnullHandle, NonnullHandle) -> Void =
         {
             (thrown : UnsafeMutablePointer<NullableHandle>, sender : NonnullHandle, e : NonnullHandle) -> Void in
             do
             {
                 thrown.pointee = nil;
-                try callback(dotnet.System.Object(hndl: sender), dotnet.System.Data.FillErrorEventArgs(hndl: e));
+                try __closure_Invoke(dotnet.System.Object(hndl: sender), dotnet.System.Data.FillErrorEventArgs(hndl: e));
             }
             catch let e as dotnet.System.Exception
             {
@@ -13729,24 +13759,24 @@ public final class FillErrorEventHandler
                 thrown.pointee = __copy_handle(e.get_handle());
             }
         };
-        let cbarg = UnsafeRawPointer(Unmanaged.passRetained(__bridge as AnyObject).toOpaque());
-        func __cb(cb : UnsafeRawPointer?, thrown : UnsafeMutablePointer<NullableHandle>, sender : NonnullHandle, e : NonnullHandle) -> Void
+        func __cb_Invoke(pdata_interlude : UnsafeRawPointer, thrown : UnsafeMutablePointer<NullableHandle>, sender : NonnullHandle, e : NonnullHandle) -> Void
         {
-            let f = Unmanaged<AnyObject>.fromOpaque(cb!).takeUnretainedValue() as! (UnsafeMutablePointer<NullableHandle>, NonnullHandle, NonnullHandle) -> Void;
-            f(thrown, sender, e);
+            let f_interlude = Unmanaged<AnyObject>.fromOpaque(pdata_interlude).takeUnretainedValue() as! (UnsafeMutablePointer<NullableHandle>, NonnullHandle, NonnullHandle) -> Void;
+            f_interlude(thrown, sender, e);
         }
+        let __pdata_Invoke = UnsafeRawPointer(Unmanaged.passRetained(__interlude_Invoke as AnyObject).toOpaque());
+
         var __thrown : NullableHandle = nil;
         let h = System_Data_FillErrorEventHandler_create(
             &__thrown,
-            cbarg,
-            nil, // TODO deinit
-            __cb
+            __cb_Invoke,
+            __pdata_Invoke,
+            nil
             );
-            // TODO check thrown
         if let __ex = __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-            super.init(hndl: h);
+            self.init(hndl: h);
         }
     }
     // void Invoke(System.Object, System.Data.FillErrorEventArgs)
@@ -13774,6 +13804,9 @@ open class ForeignKeyConstraint
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Data_ForeignKeyConstraint_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -14119,7 +14152,7 @@ open class ForeignKeyConstraint
 
 // type: System.Data.IColumnMapping
     /**
-    Associates a data source column with a  column, and is implemented by the  class, which is used in common by .NET Framework data providers.
+    Associates a data source column with a  column, and is implemented by the  class, which is used in common by .NET data providers.
 
     */
 open class IColumnMapping
@@ -14129,6 +14162,9 @@ open class IColumnMapping
 {
     open class func get_type_handle() -> TypeHandle {
         return System_Data_IColumnMapping_get_type_handle();
+    }
+    open class func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     let h : NonnullHandle;
     public func to_gval() -> GVal { return GVal(Swift.Int(bitPattern: self.h)); }
@@ -14188,7 +14224,7 @@ open class IColumnMapping
 
 // type: System.Data.IColumnMappingCollection
     /**
-    Contains a collection of DataColumnMapping objects, and is implemented by the , which is used in common by .NET Framework data providers.
+    Contains a collection of DataColumnMapping objects, and is implemented by the , which is used in common by .NET data providers.
 
     */
 open class IColumnMappingCollection
@@ -14199,6 +14235,9 @@ open class IColumnMappingCollection
 {
     open class func get_type_handle() -> TypeHandle {
         return System_Data_IColumnMappingCollection_get_type_handle();
+    }
+    open class func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     let h : NonnullHandle;
     public func to_gval() -> GVal { return GVal(Swift.Int(bitPattern: self.h)); }
@@ -14301,9 +14340,6 @@ open class IColumnMappingCollection
     }
     // [IsSpecialName] System.Object get_Item(System.String)
 // docid: M:System.Data.IColumnMappingCollection.get_Item(System.String)
-//BEGIN method_is_override
-//matches_1
-//matches :
     open func get_Item(index : dotnet.System.String) throws -> dotnet.System.Object {
         var __thrown : NullableHandle = nil;
         let __return = System_Data_IColumnMappingCollection_Object__get_Item_0__1__String(&__thrown, self.get_handle(), index.get_handle());
@@ -14341,6 +14377,9 @@ open class IDataAdapter
 {
     open class func get_type_handle() -> TypeHandle {
         return System_Data_IDataAdapter_get_type_handle();
+    }
+    open class func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     let h : NonnullHandle;
     public func to_gval() -> GVal { return GVal(Swift.Int(bitPattern: self.h)); }
@@ -14483,7 +14522,7 @@ open class IDataAdapter
 
 // type: System.Data.IDataParameter
     /**
-    Represents a parameter to a Command object, and optionally, its mapping to  columns; and is implemented by .NET Framework data providers that access data sources.
+    Represents a parameter to a Command object, and optionally, its mapping to  columns; and is implemented by .NET data providers that access data sources.
 
     */
 open class IDataParameter
@@ -14493,6 +14532,9 @@ open class IDataParameter
 {
     open class func get_type_handle() -> TypeHandle {
         return System_Data_IDataParameter_get_type_handle();
+    }
+    open class func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     let h : NonnullHandle;
     public func to_gval() -> GVal { return GVal(Swift.Int(bitPattern: self.h)); }
@@ -14655,7 +14697,7 @@ open class IDataParameter
 
 // type: System.Data.IDataParameterCollection
     /**
-    Collects all parameters relevant to a Command object and their mappings to  columns, and is implemented by .NET Framework data providers that access data sources.
+    Collects all parameters relevant to a Command object and their mappings to  columns, and is implemented by .NET data providers that access data sources.
 
     */
 open class IDataParameterCollection
@@ -14666,6 +14708,9 @@ open class IDataParameterCollection
 {
     open class func get_type_handle() -> TypeHandle {
         return System_Data_IDataParameterCollection_get_type_handle();
+    }
+    open class func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     let h : NonnullHandle;
     public func to_gval() -> GVal { return GVal(Swift.Int(bitPattern: self.h)); }
@@ -14731,9 +14776,6 @@ open class IDataParameterCollection
     }
     // [IsSpecialName] System.Object get_Item(System.String)
 // docid: M:System.Data.IDataParameterCollection.get_Item(System.String)
-//BEGIN method_is_override
-//matches_1
-//matches :
     open func get_Item(parameterName : dotnet.System.String) throws -> dotnet.System.Object {
         var __thrown : NullableHandle = nil;
         let __return = System_Data_IDataParameterCollection_Object__get_Item_0__1__String(&__thrown, self.get_handle(), parameterName.get_handle());
@@ -14759,7 +14801,7 @@ open class IDataParameterCollection
 
 // type: System.Data.IDataReader
     /**
-    Provides a means of reading one or more forward-only streams of result sets obtained by executing a command at a data source, and is implemented by .NET Framework data providers that access relational databases.
+    Provides a means of reading one or more forward-only streams of result sets obtained by executing a command at a data source, and is implemented by .NET data providers that access relational databases.
 
     */
 open class IDataReader
@@ -14771,6 +14813,9 @@ open class IDataReader
 {
     open class func get_type_handle() -> TypeHandle {
         return System_Data_IDataReader_get_type_handle();
+    }
+    open class func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     let h : NonnullHandle;
     public func to_gval() -> GVal { return GVal(Swift.Int(bitPattern: self.h)); }
@@ -14800,6 +14845,8 @@ open class IDataReader
 // docid: M:System.Data.IDataReader.GetSchemaTable
     /**
     Returns a  that describes the column metadata of the .
+
+Returns  if the executed command returned no resultset, or after  returns .
 
     - Returns: A  that describes the column metadata.
 
@@ -14891,7 +14938,7 @@ open class IDataReader
 
 // type: System.Data.IDataRecord
     /**
-    Provides access to the column values within each row for a , and is implemented by .NET Framework data providers that access relational databases.
+    Provides access to the column values within each row for a , and is implemented by .NET data providers that access relational databases.
 
     */
 open class IDataRecord
@@ -14901,6 +14948,9 @@ open class IDataRecord
 {
     open class func get_type_handle() -> TypeHandle {
         return System_Data_IDataRecord_get_type_handle();
+    }
+    open class func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     let h : NonnullHandle;
     public func to_gval() -> GVal { return GVal(Swift.Int(bitPattern: self.h)); }
@@ -15329,9 +15379,6 @@ open class IDataRecord
     }
     // [IsSpecialName] System.Object get_Item(System.Int32)
 // docid: M:System.Data.IDataRecord.get_Item(System.Int32)
-//BEGIN method_is_override
-//matches_1
-//matches :
     open func get_Item(i : Swift.Int32) throws -> dotnet.System.Object {
         var __thrown : NullableHandle = nil;
         let __return = System_Data_IDataRecord_Object__get_Item_0__1__i32(&__thrown, self.get_handle(), i);
@@ -15343,9 +15390,6 @@ open class IDataRecord
     }
     // [IsSpecialName] System.Object get_Item(System.String)
 // docid: M:System.Data.IDataRecord.get_Item(System.String)
-//BEGIN method_is_override
-//matches_1
-//matches :
     open func get_Item(name : dotnet.System.String) throws -> dotnet.System.Object {
         var __thrown : NullableHandle = nil;
         let __return = System_Data_IDataRecord_Object__get_Item_0__1__String(&__thrown, self.get_handle(), name.get_handle());
@@ -15360,7 +15404,7 @@ open class IDataRecord
 
 // type: System.Data.IDbCommand
     /**
-    Represents an SQL statement that is executed while connected to a data source, and is implemented by .NET Framework data providers that access relational databases.
+    Represents an SQL statement that is executed while connected to a data source, and is implemented by .NET data providers that access relational databases.
 
     */
 open class IDbCommand
@@ -15371,6 +15415,9 @@ open class IDbCommand
 {
     open class func get_type_handle() -> TypeHandle {
         return System_Data_IDbCommand_get_type_handle();
+    }
+    open class func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     let h : NonnullHandle;
     public func to_gval() -> GVal { return GVal(Swift.Int(bitPattern: self.h)); }
@@ -15416,7 +15463,7 @@ open class IDbCommand
     // System.Int32 ExecuteNonQuery()
 // docid: M:System.Data.IDbCommand.ExecuteNonQuery
     /**
-    Executes an SQL statement against the  object of a .NET Framework data provider, and returns the number of rows affected.
+    Executes an SQL statement against the  object of a .NET data provider, and returns the number of rows affected.
 
     - Returns: The number of rows affected.
 
@@ -15657,7 +15704,7 @@ open class IDbCommand
 
 // type: System.Data.IDbConnection
     /**
-    Represents an open connection to a data source, and is implemented by .NET Framework data providers that access relational databases.
+    Represents an open connection to a data source, and is implemented by .NET data providers that access relational databases.
 
     */
 open class IDbConnection
@@ -15668,6 +15715,9 @@ open class IDbConnection
 {
     open class func get_type_handle() -> TypeHandle {
         return System_Data_IDbConnection_get_type_handle();
+    }
+    open class func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     let h : NonnullHandle;
     public func to_gval() -> GVal { return GVal(Swift.Int(bitPattern: self.h)); }
@@ -15836,7 +15886,7 @@ open class IDbConnection
 
 // type: System.Data.IDbDataAdapter
     /**
-    Represents a set of command-related properties that are used to fill the  and update a data source, and is implemented by .NET Framework data providers that access relational databases.
+    Represents a set of command-related properties that are used to fill the  and update a data source, and is implemented by .NET data providers that access relational databases.
 
     */
 open class IDbDataAdapter
@@ -15847,6 +15897,9 @@ open class IDbDataAdapter
 {
     open class func get_type_handle() -> TypeHandle {
         return System_Data_IDbDataAdapter_get_type_handle();
+    }
+    open class func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     let h : NonnullHandle;
     public func to_gval() -> GVal { return GVal(Swift.Int(bitPattern: self.h)); }
@@ -15978,6 +16031,9 @@ open class IDbDataParameter
     open class func get_type_handle() -> TypeHandle {
         return System_Data_IDbDataParameter_get_type_handle();
     }
+    open class func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     let h : NonnullHandle;
     public func to_gval() -> GVal { return GVal(Swift.Int(bitPattern: self.h)); }
     public func dup_gval() -> GVal { return GVal(Swift.Int(bitPattern: __copy_handle(self.h))); }
@@ -16058,7 +16114,7 @@ open class IDbDataParameter
 
 // type: System.Data.IDbTransaction
     /**
-    Represents a transaction to be performed at a data source, and is implemented by .NET Framework data providers that access relational databases.
+    Represents a transaction to be performed at a data source, and is implemented by .NET data providers that access relational databases.
 
     */
 open class IDbTransaction
@@ -16069,6 +16125,9 @@ open class IDbTransaction
 {
     open class func get_type_handle() -> TypeHandle {
         return System_Data_IDbTransaction_get_type_handle();
+    }
+    open class func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     let h : NonnullHandle;
     public func to_gval() -> GVal { return GVal(Swift.Int(bitPattern: self.h)); }
@@ -16140,7 +16199,7 @@ open class IDbTransaction
 
 // type: System.Data.ITableMapping
     /**
-    Associates a source table with a table in a , and is implemented by the  class, which is used in common by .NET Framework data providers.
+    Associates a source table with a table in a , and is implemented by the  class, which is used in common by .NET data providers.
 
     */
 open class ITableMapping
@@ -16150,6 +16209,9 @@ open class ITableMapping
 {
     open class func get_type_handle() -> TypeHandle {
         return System_Data_ITableMapping_get_type_handle();
+    }
+    open class func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     let h : NonnullHandle;
     public func to_gval() -> GVal { return GVal(Swift.Int(bitPattern: self.h)); }
@@ -16220,7 +16282,7 @@ open class ITableMapping
 
 // type: System.Data.ITableMappingCollection
     /**
-    Contains a collection of TableMapping objects, and is implemented by the , which is used in common by .NET Framework data providers.
+    Contains a collection of TableMapping objects, and is implemented by the , which is used in common by .NET data providers.
 
     */
 open class ITableMappingCollection
@@ -16231,6 +16293,9 @@ open class ITableMappingCollection
 {
     open class func get_type_handle() -> TypeHandle {
         return System_Data_ITableMappingCollection_get_type_handle();
+    }
+    open class func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     let h : NonnullHandle;
     public func to_gval() -> GVal { return GVal(Swift.Int(bitPattern: self.h)); }
@@ -16333,9 +16398,6 @@ open class ITableMappingCollection
     }
     // [IsSpecialName] System.Object get_Item(System.String)
 // docid: M:System.Data.ITableMappingCollection.get_Item(System.String)
-//BEGIN method_is_override
-//matches_1
-//matches :
     open func get_Item(index : dotnet.System.String) throws -> dotnet.System.Object {
         var __thrown : NullableHandle = nil;
         let __return = System_Data_ITableMappingCollection_Object__get_Item_0__1__String(&__thrown, self.get_handle(), index.get_handle());
@@ -16370,6 +16432,9 @@ open class InRowChangingEventException
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Data_InRowChangingEventException_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -16437,6 +16502,9 @@ open class InternalDataCollectionBase
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Data_InternalDataCollectionBase_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -16584,6 +16652,9 @@ open class InvalidConstraintException
     open class override func get_type_handle() -> TypeHandle {
         return System_Data_InvalidConstraintException_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor()
@@ -16648,6 +16719,9 @@ open class InvalidExpressionException
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Data_InvalidExpressionException_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -16962,6 +17036,9 @@ open class MergeFailedEventArgs
     open class override func get_type_handle() -> TypeHandle {
         return System_Data_MergeFailedEventArgs_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor(System.Data.DataTable, System.String)
@@ -17040,6 +17117,9 @@ public final class MergeFailedEventHandler
     public class override func get_type_handle() -> TypeHandle {
         return System_Data_MergeFailedEventHandler_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // void Invoke(System.Object, System.Data.MergeFailedEventArgs)
@@ -17079,15 +17159,15 @@ public final class MergeFailedEventHandler
             return;
         }
     }
-    public init(_ callback : @escaping (dotnet.System.Object, dotnet.System.Data.MergeFailedEventArgs) throws -> Void) throws
+    public convenience init(_ __closure_Invoke : @escaping (dotnet.System.Object, dotnet.System.Data.MergeFailedEventArgs) throws -> Void) throws
     {
-        let __bridge : (UnsafeMutablePointer<NullableHandle>, NonnullHandle, NonnullHandle) -> Void =
+        let __interlude_Invoke : (UnsafeMutablePointer<NullableHandle>, NonnullHandle, NonnullHandle) -> Void =
         {
             (thrown : UnsafeMutablePointer<NullableHandle>, sender : NonnullHandle, e : NonnullHandle) -> Void in
             do
             {
                 thrown.pointee = nil;
-                try callback(dotnet.System.Object(hndl: sender), dotnet.System.Data.MergeFailedEventArgs(hndl: e));
+                try __closure_Invoke(dotnet.System.Object(hndl: sender), dotnet.System.Data.MergeFailedEventArgs(hndl: e));
             }
             catch let e as dotnet.System.Exception
             {
@@ -17099,24 +17179,24 @@ public final class MergeFailedEventHandler
                 thrown.pointee = __copy_handle(e.get_handle());
             }
         };
-        let cbarg = UnsafeRawPointer(Unmanaged.passRetained(__bridge as AnyObject).toOpaque());
-        func __cb(cb : UnsafeRawPointer?, thrown : UnsafeMutablePointer<NullableHandle>, sender : NonnullHandle, e : NonnullHandle) -> Void
+        func __cb_Invoke(pdata_interlude : UnsafeRawPointer, thrown : UnsafeMutablePointer<NullableHandle>, sender : NonnullHandle, e : NonnullHandle) -> Void
         {
-            let f = Unmanaged<AnyObject>.fromOpaque(cb!).takeUnretainedValue() as! (UnsafeMutablePointer<NullableHandle>, NonnullHandle, NonnullHandle) -> Void;
-            f(thrown, sender, e);
+            let f_interlude = Unmanaged<AnyObject>.fromOpaque(pdata_interlude).takeUnretainedValue() as! (UnsafeMutablePointer<NullableHandle>, NonnullHandle, NonnullHandle) -> Void;
+            f_interlude(thrown, sender, e);
         }
+        let __pdata_Invoke = UnsafeRawPointer(Unmanaged.passRetained(__interlude_Invoke as AnyObject).toOpaque());
+
         var __thrown : NullableHandle = nil;
         let h = System_Data_MergeFailedEventHandler_create(
             &__thrown,
-            cbarg,
-            nil, // TODO deinit
-            __cb
+            __cb_Invoke,
+            __pdata_Invoke,
+            nil
             );
-            // TODO check thrown
         if let __ex = __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-            super.init(hndl: h);
+            self.init(hndl: h);
         }
     }
     // void Invoke(System.Object, System.Data.MergeFailedEventArgs)
@@ -17195,6 +17275,9 @@ open class MissingPrimaryKeyException
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Data_MissingPrimaryKeyException_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -17323,6 +17406,9 @@ open class NoNullAllowedException
     open class override func get_type_handle() -> TypeHandle {
         return System_Data_NoNullAllowedException_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor()
@@ -17387,6 +17473,9 @@ public final class OrderedEnumerableRowCollection_1<TRow : SGBridgeGenericValue>
 {
     public class override func get_type_handle() -> TypeHandle {
         return System_Data_OrderedEnumerableRowCollection_1_get_type_handle(TRow.get_type_handle());
+    }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -17467,6 +17556,9 @@ open class PropertyCollection
     open class override func get_type_handle() -> TypeHandle {
         return System_Data_PropertyCollection_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor()
@@ -17515,6 +17607,9 @@ open class ReadOnlyException
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Data_ReadOnlyException_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -17580,6 +17675,9 @@ open class RowNotInTableException
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Data_RowNotInTableException_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -18201,7 +18299,7 @@ public struct SqlDbType : SGBridgeGenericValue {
 
 // type: System.Data.StateChangeEventArgs
     /**
-    Provides data for the state change event of a .NET Framework data provider.
+    Provides data for the state change event of a .NET data provider.
 
     */
 public final class StateChangeEventArgs
@@ -18210,6 +18308,9 @@ public final class StateChangeEventArgs
 {
     public class override func get_type_handle() -> TypeHandle {
         return System_Data_StateChangeEventArgs_get_type_handle();
+    }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -18285,6 +18386,9 @@ public final class StateChangeEventHandler
     public class override func get_type_handle() -> TypeHandle {
         return System_Data_StateChangeEventHandler_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // void Invoke(System.Object, System.Data.StateChangeEventArgs)
@@ -18324,15 +18428,15 @@ public final class StateChangeEventHandler
             return;
         }
     }
-    public init(_ callback : @escaping (dotnet.System.Object, dotnet.System.Data.StateChangeEventArgs) throws -> Void) throws
+    public convenience init(_ __closure_Invoke : @escaping (dotnet.System.Object, dotnet.System.Data.StateChangeEventArgs) throws -> Void) throws
     {
-        let __bridge : (UnsafeMutablePointer<NullableHandle>, NonnullHandle, NonnullHandle) -> Void =
+        let __interlude_Invoke : (UnsafeMutablePointer<NullableHandle>, NonnullHandle, NonnullHandle) -> Void =
         {
             (thrown : UnsafeMutablePointer<NullableHandle>, sender : NonnullHandle, e : NonnullHandle) -> Void in
             do
             {
                 thrown.pointee = nil;
-                try callback(dotnet.System.Object(hndl: sender), dotnet.System.Data.StateChangeEventArgs(hndl: e));
+                try __closure_Invoke(dotnet.System.Object(hndl: sender), dotnet.System.Data.StateChangeEventArgs(hndl: e));
             }
             catch let e as dotnet.System.Exception
             {
@@ -18344,24 +18448,24 @@ public final class StateChangeEventHandler
                 thrown.pointee = __copy_handle(e.get_handle());
             }
         };
-        let cbarg = UnsafeRawPointer(Unmanaged.passRetained(__bridge as AnyObject).toOpaque());
-        func __cb(cb : UnsafeRawPointer?, thrown : UnsafeMutablePointer<NullableHandle>, sender : NonnullHandle, e : NonnullHandle) -> Void
+        func __cb_Invoke(pdata_interlude : UnsafeRawPointer, thrown : UnsafeMutablePointer<NullableHandle>, sender : NonnullHandle, e : NonnullHandle) -> Void
         {
-            let f = Unmanaged<AnyObject>.fromOpaque(cb!).takeUnretainedValue() as! (UnsafeMutablePointer<NullableHandle>, NonnullHandle, NonnullHandle) -> Void;
-            f(thrown, sender, e);
+            let f_interlude = Unmanaged<AnyObject>.fromOpaque(pdata_interlude).takeUnretainedValue() as! (UnsafeMutablePointer<NullableHandle>, NonnullHandle, NonnullHandle) -> Void;
+            f_interlude(thrown, sender, e);
         }
+        let __pdata_Invoke = UnsafeRawPointer(Unmanaged.passRetained(__interlude_Invoke as AnyObject).toOpaque());
+
         var __thrown : NullableHandle = nil;
         let h = System_Data_StateChangeEventHandler_create(
             &__thrown,
-            cbarg,
-            nil, // TODO deinit
-            __cb
+            __cb_Invoke,
+            __pdata_Invoke,
+            nil
             );
-            // TODO check thrown
         if let __ex = __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-            super.init(hndl: h);
+            self.init(hndl: h);
         }
     }
     // void Invoke(System.Object, System.Data.StateChangeEventArgs)
@@ -18389,6 +18493,9 @@ public final class StatementCompletedEventArgs
 {
     public class override func get_type_handle() -> TypeHandle {
         return System_Data_StatementCompletedEventArgs_get_type_handle();
+    }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -18443,6 +18550,9 @@ public final class StatementCompletedEventHandler
     public class override func get_type_handle() -> TypeHandle {
         return System_Data_StatementCompletedEventHandler_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // void Invoke(System.Object, System.Data.StatementCompletedEventArgs)
@@ -18482,15 +18592,15 @@ public final class StatementCompletedEventHandler
             return;
         }
     }
-    public init(_ callback : @escaping (dotnet.System.Object, dotnet.System.Data.StatementCompletedEventArgs) throws -> Void) throws
+    public convenience init(_ __closure_Invoke : @escaping (dotnet.System.Object, dotnet.System.Data.StatementCompletedEventArgs) throws -> Void) throws
     {
-        let __bridge : (UnsafeMutablePointer<NullableHandle>, NonnullHandle, NonnullHandle) -> Void =
+        let __interlude_Invoke : (UnsafeMutablePointer<NullableHandle>, NonnullHandle, NonnullHandle) -> Void =
         {
             (thrown : UnsafeMutablePointer<NullableHandle>, sender : NonnullHandle, e : NonnullHandle) -> Void in
             do
             {
                 thrown.pointee = nil;
-                try callback(dotnet.System.Object(hndl: sender), dotnet.System.Data.StatementCompletedEventArgs(hndl: e));
+                try __closure_Invoke(dotnet.System.Object(hndl: sender), dotnet.System.Data.StatementCompletedEventArgs(hndl: e));
             }
             catch let e as dotnet.System.Exception
             {
@@ -18502,24 +18612,24 @@ public final class StatementCompletedEventHandler
                 thrown.pointee = __copy_handle(e.get_handle());
             }
         };
-        let cbarg = UnsafeRawPointer(Unmanaged.passRetained(__bridge as AnyObject).toOpaque());
-        func __cb(cb : UnsafeRawPointer?, thrown : UnsafeMutablePointer<NullableHandle>, sender : NonnullHandle, e : NonnullHandle) -> Void
+        func __cb_Invoke(pdata_interlude : UnsafeRawPointer, thrown : UnsafeMutablePointer<NullableHandle>, sender : NonnullHandle, e : NonnullHandle) -> Void
         {
-            let f = Unmanaged<AnyObject>.fromOpaque(cb!).takeUnretainedValue() as! (UnsafeMutablePointer<NullableHandle>, NonnullHandle, NonnullHandle) -> Void;
-            f(thrown, sender, e);
+            let f_interlude = Unmanaged<AnyObject>.fromOpaque(pdata_interlude).takeUnretainedValue() as! (UnsafeMutablePointer<NullableHandle>, NonnullHandle, NonnullHandle) -> Void;
+            f_interlude(thrown, sender, e);
         }
+        let __pdata_Invoke = UnsafeRawPointer(Unmanaged.passRetained(__interlude_Invoke as AnyObject).toOpaque());
+
         var __thrown : NullableHandle = nil;
         let h = System_Data_StatementCompletedEventHandler_create(
             &__thrown,
-            cbarg,
-            nil, // TODO deinit
-            __cb
+            __cb_Invoke,
+            __pdata_Invoke,
+            nil
             );
-            // TODO check thrown
         if let __ex = __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-            super.init(hndl: h);
+            self.init(hndl: h);
         }
     }
     // void Invoke(System.Object, System.Data.StatementCompletedEventArgs)
@@ -18621,6 +18731,9 @@ open class StrongTypingException
     open class override func get_type_handle() -> TypeHandle {
         return System_Data_StrongTypingException_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor()
@@ -18685,6 +18798,9 @@ open class SyntaxErrorException
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Data_SyntaxErrorException_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -18940,6 +19056,9 @@ open class TypedTableBase_1<T : SGBridgeGenericValue>
     open class override func get_type_handle() -> TypeHandle {
         return System_Data_TypedTableBase_1_get_type_handle(T.get_type_handle());
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
 // TODO COPE (write_all_methods) (unused generic param) System.Data.EnumerableRowCollection<TResult> Cast<TResult>()
@@ -18974,6 +19093,9 @@ open class UniqueConstraint
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Data_UniqueConstraint_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -19375,6 +19497,9 @@ open class VersionNotFoundException
     open class override func get_type_handle() -> TypeHandle {
         return System_Data_VersionNotFoundException_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor()
@@ -19631,6 +19756,9 @@ open class DataAdapter
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Data_Common_DataAdapter_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -20064,6 +20192,9 @@ public final class DataColumnMapping
     public class override func get_type_handle() -> TypeHandle {
         return System_Data_Common_DataColumnMapping_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor()
@@ -20251,6 +20382,9 @@ public final class DataColumnMappingCollection
 {
     public class override func get_type_handle() -> TypeHandle {
         return System_Data_Common_DataColumnMappingCollection_get_type_handle();
+    }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -20676,9 +20810,6 @@ public final class DataColumnMappingCollection
     }
     // [IsSpecialName] System.Data.Common.DataColumnMapping get_Item(System.Int32)
 // docid: M:System.Data.Common.DataColumnMappingCollection.get_Item(System.Int32)
-//BEGIN method_is_override
-//matches_1
-//matches :
     public func get_Item(index : Swift.Int32) throws -> dotnet.System.Data.Common.DataColumnMapping {
         var __thrown : NullableHandle = nil;
         let __return = System_Data_Common_DataColumnMappingCollection_DataColumnMapping__get_Item_0__1__i32(&__thrown, self.get_handle(), index);
@@ -20701,9 +20832,6 @@ public final class DataColumnMappingCollection
     }
     // [IsSpecialName] System.Data.Common.DataColumnMapping get_Item(System.String)
 // docid: M:System.Data.Common.DataColumnMappingCollection.get_Item(System.String)
-//BEGIN method_is_override
-//matches_1
-//matches :
     public func get_Item(sourceColumn : dotnet.System.String) throws -> dotnet.System.Data.Common.DataColumnMapping {
         var __thrown : NullableHandle = nil;
         let __return = System_Data_Common_DataColumnMappingCollection_DataColumnMapping__get_Item_0__1__String(&__thrown, self.get_handle(), sourceColumn.get_handle());
@@ -20749,6 +20877,9 @@ public final class DataTableMapping
 {
     public class override func get_type_handle() -> TypeHandle {
         return System_Data_Common_DataTableMapping_get_type_handle();
+    }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -20997,6 +21128,9 @@ public final class DataTableMappingCollection
 {
     public class override func get_type_handle() -> TypeHandle {
         return System_Data_Common_DataTableMappingCollection_get_type_handle();
+    }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -21396,9 +21530,6 @@ public final class DataTableMappingCollection
     }
     // [IsSpecialName] System.Data.Common.DataTableMapping get_Item(System.Int32)
 // docid: M:System.Data.Common.DataTableMappingCollection.get_Item(System.Int32)
-//BEGIN method_is_override
-//matches_1
-//matches :
     public func get_Item(index : Swift.Int32) throws -> dotnet.System.Data.Common.DataTableMapping {
         var __thrown : NullableHandle = nil;
         let __return = System_Data_Common_DataTableMappingCollection_DataTableMapping__get_Item_0__1__i32(&__thrown, self.get_handle(), index);
@@ -21421,9 +21552,6 @@ public final class DataTableMappingCollection
     }
     // [IsSpecialName] System.Data.Common.DataTableMapping get_Item(System.String)
 // docid: M:System.Data.Common.DataTableMappingCollection.get_Item(System.String)
-//BEGIN method_is_override
-//matches_1
-//matches :
     public func get_Item(sourceTable : dotnet.System.String) throws -> dotnet.System.Data.Common.DataTableMapping {
         var __thrown : NullableHandle = nil;
         let __return = System_Data_Common_DataTableMappingCollection_DataTableMapping__get_Item_0__1__String(&__thrown, self.get_handle(), sourceTable.get_handle());
@@ -21457,6 +21585,8 @@ public final class DataTableMappingCollection
 
 
 // type: System.Data.Common.DbBatch
+    /**
+    */
 open class DbBatch
     :
     dotnet.System.Object,
@@ -21466,10 +21596,16 @@ open class DbBatch
     open class override func get_type_handle() -> TypeHandle {
         return System_Data_Common_DbBatch_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // System.Data.Common.DbDataReader ExecuteReader(System.Data.CommandBehavior)
 // docid: M:System.Data.Common.DbBatch.ExecuteReader(System.Data.CommandBehavior)
+    /**
+    - Parameter behavior: 
+    */
     open func ExecuteReader(behavior : dotnet.System.Data.CommandBehavior/* TODO default enum */) throws -> dotnet.System.Data.Common.DbDataReader {
         var __thrown : NullableHandle = nil;
         let __return = System_Data_Common_DbBatch_DbDataReader__ExecuteReader_0__1__CommandBehavior(&__thrown, self.get_handle(), behavior.get_value());
@@ -21481,28 +21617,37 @@ open class DbBatch
     }
     // System.Threading.Tasks.Task<System.Data.Common.DbDataReader> ExecuteReaderAsync(System.Threading.CancellationToken)
 // docid: M:System.Data.Common.DbBatch.ExecuteReaderAsync(System.Threading.CancellationToken)
-    open func ExecuteReaderAsync(cancellationToken : dotnet.System.Threading.CancellationToken = System.Threading.CancellationToken.None) throws -> dotnet.System.Threading.Tasks.Task_1<dotnet.System.Data.Common.DbDataReader> {
+    /**
+    - Parameter cancellationToken: 
+    */
+    open func ExecuteReaderAsync(cancellationToken : dotnet.System.Threading.CancellationToken = System.Threading.CancellationToken.None) async throws -> dotnet.System.Data.Common.DbDataReader {
         var __thrown : NullableHandle = nil;
         let __return = System_Data_Common_DbBatch_System_Threading_Tasks_Task_System_Data_Common_DbDataReader___ExecuteReaderAsync_0__1__CancellationToken(&__thrown, self.get_handle(), cancellationToken.get_handle());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task_1(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task_1(hndl: __return).ToAsync();
         }
     }
     // System.Threading.Tasks.Task<System.Data.Common.DbDataReader> ExecuteReaderAsync(System.Data.CommandBehavior, System.Threading.CancellationToken)
 // docid: M:System.Data.Common.DbBatch.ExecuteReaderAsync(System.Data.CommandBehavior,System.Threading.CancellationToken)
-    open func ExecuteReaderAsync(behavior : dotnet.System.Data.CommandBehavior, cancellationToken : dotnet.System.Threading.CancellationToken = System.Threading.CancellationToken.None) throws -> dotnet.System.Threading.Tasks.Task_1<dotnet.System.Data.Common.DbDataReader> {
+    /**
+    - Parameter behavior: 
+    - Parameter cancellationToken: 
+    */
+    open func ExecuteReaderAsync(behavior : dotnet.System.Data.CommandBehavior, cancellationToken : dotnet.System.Threading.CancellationToken = System.Threading.CancellationToken.None) async throws -> dotnet.System.Data.Common.DbDataReader {
         var __thrown : NullableHandle = nil;
         let __return = System_Data_Common_DbBatch_System_Threading_Tasks_Task_System_Data_Common_DbDataReader___ExecuteReaderAsync_0__2__CommandBehavior_CancellationToken(&__thrown, self.get_handle(), behavior.get_value(), cancellationToken.get_handle());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task_1(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task_1(hndl: __return).ToAsync();
         }
     }
     // System.Int32 ExecuteNonQuery()
 // docid: M:System.Data.Common.DbBatch.ExecuteNonQuery
+    /**
+    */
     open func ExecuteNonQuery() throws -> Swift.Int32 {
         var __thrown : NullableHandle = nil;
         let __return = System_Data_Common_DbBatch_i32__ExecuteNonQuery_0__0(&__thrown, self.get_handle());
@@ -21514,17 +21659,22 @@ open class DbBatch
     }
     // System.Threading.Tasks.Task<System.Int32> ExecuteNonQueryAsync(System.Threading.CancellationToken)
 // docid: M:System.Data.Common.DbBatch.ExecuteNonQueryAsync(System.Threading.CancellationToken)
-    open func ExecuteNonQueryAsync(cancellationToken : dotnet.System.Threading.CancellationToken = System.Threading.CancellationToken.None) throws -> dotnet.System.Threading.Tasks.Task_1<Swift.Int32> {
+    /**
+    - Parameter cancellationToken: 
+    */
+    open func ExecuteNonQueryAsync(cancellationToken : dotnet.System.Threading.CancellationToken = System.Threading.CancellationToken.None) async throws -> Swift.Int32 {
         var __thrown : NullableHandle = nil;
         let __return = System_Data_Common_DbBatch_System_Threading_Tasks_Task_i32___ExecuteNonQueryAsync_0__1__CancellationToken(&__thrown, self.get_handle(), cancellationToken.get_handle());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task_1(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task_1(hndl: __return).ToAsync();
         }
     }
     // System.Object ExecuteScalar()
 // docid: M:System.Data.Common.DbBatch.ExecuteScalar
+    /**
+    */
     open func ExecuteScalar() throws -> Optional<dotnet.System.Object> {
         var __thrown : NullableHandle = nil;
         let __return = System_Data_Common_DbBatch_Object__ExecuteScalar_0__0(&__thrown, self.get_handle());
@@ -21540,17 +21690,22 @@ open class DbBatch
     }
     // System.Threading.Tasks.Task<System.Object> ExecuteScalarAsync(System.Threading.CancellationToken)
 // docid: M:System.Data.Common.DbBatch.ExecuteScalarAsync(System.Threading.CancellationToken)
-    open func ExecuteScalarAsync(cancellationToken : dotnet.System.Threading.CancellationToken = System.Threading.CancellationToken.None) throws -> dotnet.System.Threading.Tasks.Task_1<dotnet.System.Object> {
+    /**
+    - Parameter cancellationToken: 
+    */
+    open func ExecuteScalarAsync(cancellationToken : dotnet.System.Threading.CancellationToken = System.Threading.CancellationToken.None) async throws -> dotnet.System.Object {
         var __thrown : NullableHandle = nil;
         let __return = System_Data_Common_DbBatch_System_Threading_Tasks_Task_object___ExecuteScalarAsync_0__1__CancellationToken(&__thrown, self.get_handle(), cancellationToken.get_handle());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task_1(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task_1(hndl: __return).ToAsync();
         }
     }
     // void Prepare()
 // docid: M:System.Data.Common.DbBatch.Prepare
+    /**
+    */
     open func Prepare() throws {
         var __thrown : NullableHandle = nil;
         System_Data_Common_DbBatch_void__Prepare_0__0(&__thrown, self.get_handle());
@@ -21562,17 +21717,22 @@ open class DbBatch
     }
     // System.Threading.Tasks.Task PrepareAsync(System.Threading.CancellationToken)
 // docid: M:System.Data.Common.DbBatch.PrepareAsync(System.Threading.CancellationToken)
-    open func PrepareAsync(cancellationToken : dotnet.System.Threading.CancellationToken = System.Threading.CancellationToken.None) throws -> dotnet.System.Threading.Tasks.Task {
+    /**
+    - Parameter cancellationToken: 
+    */
+    open func PrepareAsync(cancellationToken : dotnet.System.Threading.CancellationToken = System.Threading.CancellationToken.None) async throws {
         var __thrown : NullableHandle = nil;
         let __return = System_Data_Common_DbBatch_Task__PrepareAsync_0__1__CancellationToken(&__thrown, self.get_handle(), cancellationToken.get_handle());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task(hndl: __return).ToAsync();
         }
     }
     // void Cancel()
 // docid: M:System.Data.Common.DbBatch.Cancel
+    /**
+    */
     open func Cancel() throws {
         var __thrown : NullableHandle = nil;
         System_Data_Common_DbBatch_void__Cancel_0__0(&__thrown, self.get_handle());
@@ -21584,6 +21744,8 @@ open class DbBatch
     }
     // System.Data.Common.DbBatchCommand CreateBatchCommand()
 // docid: M:System.Data.Common.DbBatch.CreateBatchCommand
+    /**
+    */
     open func CreateBatchCommand() throws -> dotnet.System.Data.Common.DbBatchCommand {
         var __thrown : NullableHandle = nil;
         let __return = System_Data_Common_DbBatch_DbBatchCommand__CreateBatchCommand_0__0(&__thrown, self.get_handle());
@@ -21595,6 +21757,10 @@ open class DbBatch
     }
     // void Dispose()
 // docid: M:System.Data.Common.DbBatch.Dispose
+    /**
+    Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.
+
+    */
     open func Dispose() throws {
         var __thrown : NullableHandle = nil;
         System_Data_Common_DbBatch_void__Dispose_0__0(&__thrown, self.get_handle());
@@ -21606,6 +21772,12 @@ open class DbBatch
     }
     // System.Threading.Tasks.ValueTask DisposeAsync()
 // docid: M:System.Data.Common.DbBatch.DisposeAsync
+    /**
+    Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources asynchronously.
+
+    - Returns: A task that represents the asynchronous dispose operation.
+
+    */
     open func DisposeAsync() throws -> dotnet.System.Threading.Tasks.ValueTask {
         var __thrown : NullableHandle = nil;
         let __return = System_Data_Common_DbBatch_ValueTask__DisposeAsync_0__0(&__thrown, self.get_handle());
@@ -21700,11 +21872,15 @@ open class DbBatch
             return;
         }
     }
+    /**
+    */
     open var BatchCommands : dotnet.System.Data.Common.DbBatchCommandCollection {
         get {
             return try! get_BatchCommands();
         }
     }
+    /**
+    */
     open var Connection : Optional<dotnet.System.Data.Common.DbConnection> {
         get {
             return try! get_Connection();
@@ -21713,6 +21889,8 @@ open class DbBatch
             return try! set_Connection(value: v!);
         }
     }
+    /**
+    */
     open var Timeout : Swift.Int32 {
         get {
             return try! get_Timeout();
@@ -21721,6 +21899,8 @@ open class DbBatch
             return try! set_Timeout(value: v);
         }
     }
+    /**
+    */
     open var Transaction : Optional<dotnet.System.Data.Common.DbTransaction> {
         get {
             return try! get_Transaction();
@@ -21733,12 +21913,17 @@ open class DbBatch
 
 
 // type: System.Data.Common.DbBatchCommand
+    /**
+    */
 open class DbBatchCommand
     :
     dotnet.System.Object
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Data_Common_DbBatchCommand_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -21808,6 +21993,8 @@ open class DbBatchCommand
         return dotnet.System.Data.Common.DbParameterCollection(hndl : __return);
         }
     }
+    /**
+    */
     open var CommandText : dotnet.System.String {
         get {
             return try! get_CommandText();
@@ -21816,6 +22003,8 @@ open class DbBatchCommand
             return try! set_CommandText(value: v);
         }
     }
+    /**
+    */
     open var CommandType : dotnet.System.Data.CommandType {
         get {
             return try! get_CommandType();
@@ -21824,11 +22013,15 @@ open class DbBatchCommand
             return try! set_CommandType(value: v);
         }
     }
+    /**
+    */
     open var Parameters : dotnet.System.Data.Common.DbParameterCollection {
         get {
             return try! get_Parameters();
         }
     }
+    /**
+    */
     open var RecordsAffected : Swift.Int32 {
         get {
             return try! get_RecordsAffected();
@@ -21838,6 +22031,8 @@ open class DbBatchCommand
 
 
 // type: System.Data.Common.DbBatchCommandCollection
+    /**
+    */
 open class DbBatchCommandCollection
     :
     dotnet.System.Object,
@@ -21846,10 +22041,19 @@ open class DbBatchCommandCollection
     open class override func get_type_handle() -> TypeHandle {
         return System_Data_Common_DbBatchCommandCollection_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // System.Collections.Generic.IEnumerator<System.Data.Common.DbBatchCommand> GetEnumerator()
 // docid: M:System.Data.Common.DbBatchCommandCollection.GetEnumerator
+    /**
+    Returns an enumerator that iterates through the collection.
+
+    - Returns: An enumerator that can be used to iterate through the collection.
+
+    */
     open func GetEnumerator() throws -> dotnet.System.Collections.Generic.IEnumerator_1<dotnet.System.Data.Common.DbBatchCommand> {
         var __thrown : NullableHandle = nil;
         let __return = System_Data_Common_DbBatchCommandCollection_System_Collections_Generic_IEnumerator_System_Data_Common_DbBatchCommand___GetEnumerator_0__0(&__thrown, self.get_handle());
@@ -21861,6 +22065,11 @@ open class DbBatchCommandCollection
     }
     // void Add(System.Data.Common.DbBatchCommand)
 // docid: M:System.Data.Common.DbBatchCommandCollection.Add(System.Data.Common.DbBatchCommand)
+    /**
+    Adds an item to the .
+
+    - Parameter item: The object to add to the .
+    */
     open func Add(item : dotnet.System.Data.Common.DbBatchCommand) throws {
         var __thrown : NullableHandle = nil;
         System_Data_Common_DbBatchCommandCollection_void__Add_0__1__DbBatchCommand(&__thrown, self.get_handle(), item.get_handle());
@@ -21872,6 +22081,10 @@ open class DbBatchCommandCollection
     }
     // void Clear()
 // docid: M:System.Data.Common.DbBatchCommandCollection.Clear
+    /**
+    Removes all items from the .
+
+    */
     open func Clear() throws {
         var __thrown : NullableHandle = nil;
         System_Data_Common_DbBatchCommandCollection_void__Clear_0__0(&__thrown, self.get_handle());
@@ -21883,6 +22096,14 @@ open class DbBatchCommandCollection
     }
     // bool Contains(System.Data.Common.DbBatchCommand)
 // docid: M:System.Data.Common.DbBatchCommandCollection.Contains(System.Data.Common.DbBatchCommand)
+    /**
+    Determines whether the  contains a specific value.
+
+    - Parameter item: The object to locate in the .
+    - Returns: 
+         if  is found in the ; otherwise, .
+
+    */
     open func Contains(item : dotnet.System.Data.Common.DbBatchCommand) throws -> Bool {
         var __thrown : NullableHandle = nil;
         let __return = System_Data_Common_DbBatchCommandCollection_bool__Contains_0__1__DbBatchCommand(&__thrown, self.get_handle(), item.get_handle());
@@ -21894,6 +22115,12 @@ open class DbBatchCommandCollection
     }
     // void CopyTo(System.Data.Common.DbBatchCommand[], System.Int32)
 // docid: M:System.Data.Common.DbBatchCommandCollection.CopyTo(System.Data.Common.DbBatchCommand[],System.Int32)
+    /**
+    Copies the elements of the  to an , starting at a particular  index.
+
+    - Parameter array: The one-dimensional  that is the destination of the elements copied from . The  must have zero-based indexing.
+    - Parameter arrayIndex: The zero-based index in  at which copying begins.
+    */
     open func CopyTo(array : dotnet.System_Arr<dotnet.System.Data.Common.DbBatchCommand>, arrayIndex : Swift.Int32) throws {
         var __thrown : NullableHandle = nil;
         System_Data_Common_DbBatchCommandCollection_void__CopyTo_0__2__DbBatchCommandArray_i32(&__thrown, self.get_handle(), array.get_handle(), arrayIndex);
@@ -21905,6 +22132,14 @@ open class DbBatchCommandCollection
     }
     // bool Remove(System.Data.Common.DbBatchCommand)
 // docid: M:System.Data.Common.DbBatchCommandCollection.Remove(System.Data.Common.DbBatchCommand)
+    /**
+    Removes the first occurrence of a specific object from the .
+
+    - Parameter item: The object to remove from the .
+    - Returns: 
+         if  was successfully removed from the ; otherwise, . This method also returns  if  is not found in the original .
+
+    */
     open func Remove(item : dotnet.System.Data.Common.DbBatchCommand) throws -> Bool {
         var __thrown : NullableHandle = nil;
         let __return = System_Data_Common_DbBatchCommandCollection_bool__Remove_0__1__DbBatchCommand(&__thrown, self.get_handle(), item.get_handle());
@@ -21916,6 +22151,13 @@ open class DbBatchCommandCollection
     }
     // System.Int32 IndexOf(System.Data.Common.DbBatchCommand)
 // docid: M:System.Data.Common.DbBatchCommandCollection.IndexOf(System.Data.Common.DbBatchCommand)
+    /**
+    Determines the index of a specific item in the .
+
+    - Parameter item: The object to locate in the .
+    - Returns: The index of  if found in the list; otherwise, -1.
+
+    */
     open func IndexOf(item : dotnet.System.Data.Common.DbBatchCommand) throws -> Swift.Int32 {
         var __thrown : NullableHandle = nil;
         let __return = System_Data_Common_DbBatchCommandCollection_i32__IndexOf_0__1__DbBatchCommand(&__thrown, self.get_handle(), item.get_handle());
@@ -21927,6 +22169,12 @@ open class DbBatchCommandCollection
     }
     // void Insert(System.Int32, System.Data.Common.DbBatchCommand)
 // docid: M:System.Data.Common.DbBatchCommandCollection.Insert(System.Int32,System.Data.Common.DbBatchCommand)
+    /**
+    Inserts an item into the  at the specified index.
+
+    - Parameter index: The zero-based index at which  should be inserted.
+    - Parameter item: The object to insert into the .
+    */
     open func Insert(index : Swift.Int32, item : dotnet.System.Data.Common.DbBatchCommand) throws {
         var __thrown : NullableHandle = nil;
         System_Data_Common_DbBatchCommandCollection_void__Insert_0__2__i32_DbBatchCommand(&__thrown, self.get_handle(), index, item.get_handle());
@@ -21938,6 +22186,11 @@ open class DbBatchCommandCollection
     }
     // void RemoveAt(System.Int32)
 // docid: M:System.Data.Common.DbBatchCommandCollection.RemoveAt(System.Int32)
+    /**
+    Removes the  item at the specified index.
+
+    - Parameter index: The zero-based index of the item to remove.
+    */
     open func RemoveAt(index : Swift.Int32) throws {
         var __thrown : NullableHandle = nil;
         System_Data_Common_DbBatchCommandCollection_void__RemoveAt_0__1__i32(&__thrown, self.get_handle(), index);
@@ -21971,9 +22224,6 @@ open class DbBatchCommandCollection
     }
     // [IsSpecialName] System.Data.Common.DbBatchCommand get_Item(System.Int32)
 // docid: M:System.Data.Common.DbBatchCommandCollection.get_Item(System.Int32)
-//BEGIN method_is_override
-//matches_1
-//matches :
     open /* method final */ func get_Item(index : Swift.Int32) throws -> dotnet.System.Data.Common.DbBatchCommand {
         var __thrown : NullableHandle = nil;
         let __return = System_Data_Common_DbBatchCommandCollection_DbBatchCommand__get_Item_0__1__i32(&__thrown, self.get_handle(), index);
@@ -21994,11 +22244,19 @@ open class DbBatchCommandCollection
             return;
         }
     }
+    /**
+    Gets the number of elements contained in the .
+
+    */
     open var Count : Swift.Int32 {
         get {
             return try! get_Count();
         }
     }
+    /**
+    Gets a value indicating whether the  is read-only.
+
+    */
     open var IsReadOnly : Bool {
         get {
             return try! get_IsReadOnly();
@@ -22018,6 +22276,9 @@ open class DbColumn
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Data_Common_DbColumn_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -22561,9 +22822,6 @@ open class DbColumn
     }
     // [IsSpecialName] System.Object get_Item(System.String)
 // docid: M:System.Data.Common.DbColumn.get_Item(System.String)
-//BEGIN method_is_override
-//matches_1
-//matches :
     open func get_Item(property : dotnet.System.String) throws -> Optional<dotnet.System.Object> {
         var __thrown : NullableHandle = nil;
         let __return = System_Data_Common_DbColumn_Object__get_Item_0__1__String(&__thrown, self.get_handle(), property.get_handle());
@@ -22858,7 +23116,7 @@ open class DbColumn
 
 // type: System.Data.Common.DbCommand
     /**
-    Represents an SQL statement or stored procedure to execute against a data source. Provides a base class for database-specific classes that represent commands. 
+    Represents an SQL statement or stored procedure to execute against a data source. Provides a base class for database-specific classes that represent commands. .
 
     */
 open class DbCommand
@@ -22869,6 +23127,9 @@ open class DbCommand
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Data_Common_DbCommand_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -22948,13 +23209,13 @@ open class DbCommand
     - Returns: A task representing the asynchronous operation.
 
     */
-    open func ExecuteNonQueryAsync() throws -> dotnet.System.Threading.Tasks.Task_1<Swift.Int32> {
+    open func ExecuteNonQueryAsync() async throws -> Swift.Int32 {
         var __thrown : NullableHandle = nil;
         let __return = System_Data_Common_DbCommand_System_Threading_Tasks_Task_i32___ExecuteNonQueryAsync_0__0(&__thrown, self.get_handle());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task_1(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task_1(hndl: __return).ToAsync();
         }
     }
     // System.Threading.Tasks.Task<System.Int32> ExecuteNonQueryAsync(System.Threading.CancellationToken)
@@ -22970,13 +23231,13 @@ open class DbCommand
     - Returns: A task representing the asynchronous operation.
 
     */
-    open func ExecuteNonQueryAsync(cancellationToken : dotnet.System.Threading.CancellationToken) throws -> dotnet.System.Threading.Tasks.Task_1<Swift.Int32> {
+    open func ExecuteNonQueryAsync(cancellationToken : dotnet.System.Threading.CancellationToken) async throws -> Swift.Int32 {
         var __thrown : NullableHandle = nil;
         let __return = System_Data_Common_DbCommand_System_Threading_Tasks_Task_i32___ExecuteNonQueryAsync_0__1__CancellationToken(&__thrown, self.get_handle(), cancellationToken.get_handle());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task_1(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task_1(hndl: __return).ToAsync();
         }
     }
     // System.Data.Common.DbDataReader ExecuteReader()
@@ -23024,13 +23285,13 @@ open class DbCommand
     - Returns: A task representing the asynchronous operation.
 
     */
-    open func ExecuteReaderAsync() throws -> dotnet.System.Threading.Tasks.Task_1<dotnet.System.Data.Common.DbDataReader> {
+    open func ExecuteReaderAsync() async throws -> dotnet.System.Data.Common.DbDataReader {
         var __thrown : NullableHandle = nil;
         let __return = System_Data_Common_DbCommand_System_Threading_Tasks_Task_System_Data_Common_DbDataReader___ExecuteReaderAsync_0__0(&__thrown, self.get_handle());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task_1(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task_1(hndl: __return).ToAsync();
         }
     }
     // System.Threading.Tasks.Task<System.Data.Common.DbDataReader> ExecuteReaderAsync(System.Data.CommandBehavior)
@@ -23044,13 +23305,13 @@ open class DbCommand
     - Returns: A task representing the asynchronous operation.
 
     */
-    open func ExecuteReaderAsync(behavior : dotnet.System.Data.CommandBehavior) throws -> dotnet.System.Threading.Tasks.Task_1<dotnet.System.Data.Common.DbDataReader> {
+    open func ExecuteReaderAsync(behavior : dotnet.System.Data.CommandBehavior) async throws -> dotnet.System.Data.Common.DbDataReader {
         var __thrown : NullableHandle = nil;
         let __return = System_Data_Common_DbCommand_System_Threading_Tasks_Task_System_Data_Common_DbDataReader___ExecuteReaderAsync_0__1__CommandBehavior(&__thrown, self.get_handle(), behavior.get_value());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task_1(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task_1(hndl: __return).ToAsync();
         }
     }
     // System.Threading.Tasks.Task<System.Data.Common.DbDataReader> ExecuteReaderAsync(System.Data.CommandBehavior, System.Threading.CancellationToken)
@@ -23063,13 +23324,13 @@ open class DbCommand
     - Returns: A task representing the asynchronous operation.
 
     */
-    open func ExecuteReaderAsync(behavior : dotnet.System.Data.CommandBehavior, cancellationToken : dotnet.System.Threading.CancellationToken) throws -> dotnet.System.Threading.Tasks.Task_1<dotnet.System.Data.Common.DbDataReader> {
+    open func ExecuteReaderAsync(behavior : dotnet.System.Data.CommandBehavior, cancellationToken : dotnet.System.Threading.CancellationToken) async throws -> dotnet.System.Data.Common.DbDataReader {
         var __thrown : NullableHandle = nil;
         let __return = System_Data_Common_DbCommand_System_Threading_Tasks_Task_System_Data_Common_DbDataReader___ExecuteReaderAsync_0__2__CommandBehavior_CancellationToken(&__thrown, self.get_handle(), behavior.get_value(), cancellationToken.get_handle());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task_1(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task_1(hndl: __return).ToAsync();
         }
     }
     // System.Threading.Tasks.Task<System.Data.Common.DbDataReader> ExecuteReaderAsync(System.Threading.CancellationToken)
@@ -23083,13 +23344,13 @@ open class DbCommand
     - Returns: A task representing the asynchronous operation.
 
     */
-    open func ExecuteReaderAsync(cancellationToken : dotnet.System.Threading.CancellationToken) throws -> dotnet.System.Threading.Tasks.Task_1<dotnet.System.Data.Common.DbDataReader> {
+    open func ExecuteReaderAsync(cancellationToken : dotnet.System.Threading.CancellationToken) async throws -> dotnet.System.Data.Common.DbDataReader {
         var __thrown : NullableHandle = nil;
         let __return = System_Data_Common_DbCommand_System_Threading_Tasks_Task_System_Data_Common_DbDataReader___ExecuteReaderAsync_0__1__CancellationToken(&__thrown, self.get_handle(), cancellationToken.get_handle());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task_1(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task_1(hndl: __return).ToAsync();
         }
     }
     // System.Object ExecuteScalar()
@@ -23123,13 +23384,13 @@ open class DbCommand
     - Returns: A task representing the asynchronous operation.
 
     */
-    open func ExecuteScalarAsync() throws -> dotnet.System.Threading.Tasks.Task_1<dotnet.System.Object> {
+    open func ExecuteScalarAsync() async throws -> dotnet.System.Object {
         var __thrown : NullableHandle = nil;
         let __return = System_Data_Common_DbCommand_System_Threading_Tasks_Task_object___ExecuteScalarAsync_0__0(&__thrown, self.get_handle());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task_1(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task_1(hndl: __return).ToAsync();
         }
     }
     // System.Threading.Tasks.Task<System.Object> ExecuteScalarAsync(System.Threading.CancellationToken)
@@ -23145,13 +23406,13 @@ open class DbCommand
     - Returns: A task representing the asynchronous operation.
 
     */
-    open func ExecuteScalarAsync(cancellationToken : dotnet.System.Threading.CancellationToken) throws -> dotnet.System.Threading.Tasks.Task_1<dotnet.System.Object> {
+    open func ExecuteScalarAsync(cancellationToken : dotnet.System.Threading.CancellationToken) async throws -> dotnet.System.Object {
         var __thrown : NullableHandle = nil;
         let __return = System_Data_Common_DbCommand_System_Threading_Tasks_Task_object___ExecuteScalarAsync_0__1__CancellationToken(&__thrown, self.get_handle(), cancellationToken.get_handle());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task_1(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task_1(hndl: __return).ToAsync();
         }
     }
     // void Prepare()
@@ -23178,13 +23439,13 @@ open class DbCommand
     - Returns: A  representing the asynchronous operation.
 
     */
-    open func PrepareAsync(cancellationToken : dotnet.System.Threading.CancellationToken = System.Threading.CancellationToken.None) throws -> dotnet.System.Threading.Tasks.Task {
+    open func PrepareAsync(cancellationToken : dotnet.System.Threading.CancellationToken = System.Threading.CancellationToken.None) async throws {
         var __thrown : NullableHandle = nil;
         let __return = System_Data_Common_DbCommand_Task__PrepareAsync_0__1__CancellationToken(&__thrown, self.get_handle(), cancellationToken.get_handle());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task(hndl: __return).ToAsync();
         }
     }
     // [IsSpecialName] System.String get_CommandText()
@@ -23467,6 +23728,9 @@ open class DbCommandBuilder
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Data_Common_DbCommandBuilder_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -23919,6 +24183,9 @@ open class DbConnection
     open class override func get_type_handle() -> TypeHandle {
         return System_Data_Common_DbConnection_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // System.Data.Common.DbTransaction BeginTransaction()
@@ -24019,13 +24286,13 @@ open class DbConnection
     - Returns: A task representing the asynchronous operation.
 
     */
-    open func ChangeDatabaseAsync(databaseName : dotnet.System.String, cancellationToken : dotnet.System.Threading.CancellationToken = System.Threading.CancellationToken.None) throws -> dotnet.System.Threading.Tasks.Task {
+    open func ChangeDatabaseAsync(databaseName : dotnet.System.String, cancellationToken : dotnet.System.Threading.CancellationToken = System.Threading.CancellationToken.None) async throws {
         var __thrown : NullableHandle = nil;
         let __return = System_Data_Common_DbConnection_Task__ChangeDatabaseAsync_0__2__String_CancellationToken(&__thrown, self.get_handle(), databaseName.get_handle(), cancellationToken.get_handle());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task(hndl: __return).ToAsync();
         }
     }
     // void Close()
@@ -24051,17 +24318,19 @@ open class DbConnection
     - Returns: A  representing the asynchronous operation.
 
     */
-    open func CloseAsync() throws -> dotnet.System.Threading.Tasks.Task {
+    open func CloseAsync() async throws {
         var __thrown : NullableHandle = nil;
         let __return = System_Data_Common_DbConnection_Task__CloseAsync_0__0(&__thrown, self.get_handle());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task(hndl: __return).ToAsync();
         }
     }
     // System.Data.Common.DbBatch CreateBatch()
 // docid: M:System.Data.Common.DbConnection.CreateBatch
+    /**
+    */
     open func CreateBatch() throws -> dotnet.System.Data.Common.DbBatch {
         var __thrown : NullableHandle = nil;
         let __return = System_Data_Common_DbConnection_DbBatch__CreateBatch_0__0(&__thrown, self.get_handle());
@@ -24189,13 +24458,13 @@ open class DbConnection
     - Returns: A task representing the asynchronous operation.
 
     */
-    open func GetSchemaAsync(cancellationToken : dotnet.System.Threading.CancellationToken = System.Threading.CancellationToken.None) throws -> dotnet.System.Threading.Tasks.Task_1<dotnet.System.Data.DataTable> {
+    open func GetSchemaAsync(cancellationToken : dotnet.System.Threading.CancellationToken = System.Threading.CancellationToken.None) async throws -> dotnet.System.Data.DataTable {
         var __thrown : NullableHandle = nil;
         let __return = System_Data_Common_DbConnection_System_Threading_Tasks_Task_System_Data_DataTable___GetSchemaAsync_0__1__CancellationToken(&__thrown, self.get_handle(), cancellationToken.get_handle());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task_1(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task_1(hndl: __return).ToAsync();
         }
     }
     // System.Threading.Tasks.Task<System.Data.DataTable> GetSchemaAsync(System.String, System.Threading.CancellationToken)
@@ -24213,13 +24482,13 @@ open class DbConnection
     - Returns: A task representing the asynchronous operation.
 
     */
-    open func GetSchemaAsync(collectionName : dotnet.System.String, cancellationToken : dotnet.System.Threading.CancellationToken = System.Threading.CancellationToken.None) throws -> dotnet.System.Threading.Tasks.Task_1<dotnet.System.Data.DataTable> {
+    open func GetSchemaAsync(collectionName : dotnet.System.String, cancellationToken : dotnet.System.Threading.CancellationToken = System.Threading.CancellationToken.None) async throws -> dotnet.System.Data.DataTable {
         var __thrown : NullableHandle = nil;
         let __return = System_Data_Common_DbConnection_System_Threading_Tasks_Task_System_Data_DataTable___GetSchemaAsync_0__2__String_CancellationToken(&__thrown, self.get_handle(), collectionName.get_handle(), cancellationToken.get_handle());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task_1(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task_1(hndl: __return).ToAsync();
         }
     }
     // System.Threading.Tasks.Task<System.Data.DataTable> GetSchemaAsync(System.String, System.String[], System.Threading.CancellationToken)
@@ -24238,13 +24507,13 @@ open class DbConnection
     - Returns: A task representing the asynchronous operation.
 
     */
-    open func GetSchemaAsync(collectionName : dotnet.System.String, restrictionValues : dotnet.System_Arr<dotnet.System.String>, cancellationToken : dotnet.System.Threading.CancellationToken = System.Threading.CancellationToken.None) throws -> dotnet.System.Threading.Tasks.Task_1<dotnet.System.Data.DataTable> {
+    open func GetSchemaAsync(collectionName : dotnet.System.String, restrictionValues : dotnet.System_Arr<dotnet.System.String>, cancellationToken : dotnet.System.Threading.CancellationToken = System.Threading.CancellationToken.None) async throws -> dotnet.System.Data.DataTable {
         var __thrown : NullableHandle = nil;
         let __return = System_Data_Common_DbConnection_System_Threading_Tasks_Task_System_Data_DataTable___GetSchemaAsync_0__3__String_StringArray_CancellationToken(&__thrown, self.get_handle(), collectionName.get_handle(), restrictionValues.get_handle(), cancellationToken.get_handle());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task_1(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task_1(hndl: __return).ToAsync();
         }
     }
     // void Open()
@@ -24270,13 +24539,13 @@ open class DbConnection
     - Returns: A task representing the asynchronous operation.
 
     */
-    open func OpenAsync() throws -> dotnet.System.Threading.Tasks.Task {
+    open func OpenAsync() async throws {
         var __thrown : NullableHandle = nil;
         let __return = System_Data_Common_DbConnection_Task__OpenAsync_0__0(&__thrown, self.get_handle());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task(hndl: __return).ToAsync();
         }
     }
     // System.Threading.Tasks.Task OpenAsync(System.Threading.CancellationToken)
@@ -24292,13 +24561,13 @@ open class DbConnection
     - Returns: A task representing the asynchronous operation.
 
     */
-    open func OpenAsync(cancellationToken : dotnet.System.Threading.CancellationToken) throws -> dotnet.System.Threading.Tasks.Task {
+    open func OpenAsync(cancellationToken : dotnet.System.Threading.CancellationToken) async throws {
         var __thrown : NullableHandle = nil;
         let __return = System_Data_Common_DbConnection_Task__OpenAsync_0__1__CancellationToken(&__thrown, self.get_handle(), cancellationToken.get_handle());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task(hndl: __return).ToAsync();
         }
     }
     // [IsSpecialName] System.String get_ConnectionString()
@@ -24421,6 +24690,8 @@ open class DbConnection
         let del_value = try dotnet.System.Data.StateChangeEventHandler(value);
         return try remove_StateChange(value: del_value);
     }
+    /**
+    */
     open var CanCreateBatch : Bool {
         get {
             return try! get_CanCreateBatch();
@@ -24501,6 +24772,9 @@ open class DbConnectionStringBuilder
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Data_Common_DbConnectionStringBuilder_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -24710,11 +24984,12 @@ open class DbConnectionStringBuilder
          if  was found within the connection string,  otherwise.
 
     */
-    open func TryGetValue(keyword : dotnet.System.String, value : inout dotnet.System.Object) throws -> Bool {
+    open func TryGetValue(keyword : dotnet.System.String, value : inout Optional<dotnet.System.Object>) throws -> Bool {
         var __thrown : NullableHandle = nil;
-            var _tmp_out_value = value.get_handle();
+            var _tmp_out_value = (value != nil) ? (value!.get_handle()) : nil;
         let __return = System_Data_Common_DbConnectionStringBuilder_bool__TryGetValue_0__2__String_outObject(&__thrown, self.get_handle(), keyword.get_handle(), &_tmp_out_value);
-        let _tmp2_value = dotnet.System.Object(hndl: _tmp_out_value);
+        let __h__tmp2_value = _tmp_out_value;
+        let _tmp2_value = (__h__tmp2_value != nil) ? dotnet.System.Object(hndl: __h__tmp2_value!) : nil;
             value = _tmp2_value;
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
@@ -24823,9 +25098,6 @@ open class DbConnectionStringBuilder
     }
     // [IsSpecialName] System.Object get_Item(System.String)
 // docid: M:System.Data.Common.DbConnectionStringBuilder.get_Item(System.String)
-//BEGIN method_is_override
-//matches_1
-//matches :
     open func get_Item(keyword : dotnet.System.String) throws -> dotnet.System.Object {
         var __thrown : NullableHandle = nil;
         let __return = System_Data_Common_DbConnectionStringBuilder_Object__get_Item_0__1__String(&__thrown, self.get_handle(), keyword.get_handle());
@@ -24932,6 +25204,9 @@ open class DbDataAdapter
     open class override func get_type_handle() -> TypeHandle {
         return System_Data_Common_DbDataAdapter_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // static field: System.String DefaultSourceTableName
@@ -24970,7 +25245,7 @@ open class DbDataAdapter
 
     - Parameter dataSet: A  to fill with records and, if necessary, schema.
     - Parameter startRecord: The zero-based record number to start with.
-    - Parameter maxRecords: The maximum number of records to retrieve.
+    - Parameter maxRecords: The maximum number of records to retrieve. Specify 0 to retrieve all records after the start record.
     - Parameter srcTable: The name of the source table to use for table mapping.
     - Returns: The number of rows successfully added to or refreshed in the . This does not include rows affected by statements that do not return rows.
 
@@ -25024,12 +25299,12 @@ open class DbDataAdapter
     // System.Int32 Fill(System.Int32, System.Int32, System.Data.DataTable[])
 // docid: M:System.Data.Common.DbDataAdapter.Fill(System.Int32,System.Int32,System.Data.DataTable[])
     /**
-    Adds or refreshes rows in a  to match those in the data source starting at the specified record and retrieving up to the specified maximum number of records.
+    Adds or refreshes rows in one or more  objects to match those in the data source starting at the specified record and retrieving up to the specified maximum number of records.
 
     - Parameter startRecord: The zero-based record number to start with.
-    - Parameter maxRecords: The maximum number of records to retrieve.
+    - Parameter maxRecords: The maximum number of records to retrieve. Specify 0 to retrieve all records after the start record.
     - Parameter dataTables: The  objects to fill from the data source.
-    - Returns: The number of rows successfully added to or refreshed in the . This value does not include rows affected by statements that do not return rows.
+    - Returns: The number of rows successfully added to or refreshed in the  objects. This value does not include rows affected by statements that do not return rows.
 
     */
     open func Fill(startRecord : Swift.Int32, maxRecords : Swift.Int32, dataTables : dotnet.System_Arr<dotnet.System.Data.DataTable>) throws -> Swift.Int32 {
@@ -25399,6 +25674,9 @@ open class DbDataReader
     open class override func get_type_handle() -> TypeHandle {
         return System_Data_Common_DbDataReader_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // void Close()
@@ -25424,13 +25702,13 @@ open class DbDataReader
     - Returns: A task representing the asynchronous operation.
 
     */
-    open func CloseAsync() throws -> dotnet.System.Threading.Tasks.Task {
+    open func CloseAsync() async throws {
         var __thrown : NullableHandle = nil;
         let __return = System_Data_Common_DbDataReader_Task__CloseAsync_0__0(&__thrown, self.get_handle());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task(hndl: __return).ToAsync();
         }
     }
     // void Dispose()
@@ -25875,6 +26153,7 @@ open class DbDataReader
 // docid: M:System.Data.Common.DbDataReader.GetSchemaTable
     /**
     Returns a  that describes the column metadata of the .
+Returns  if the executed command returned no resultset, or after  returns .
 
     - Returns: A  that describes the column metadata.
 
@@ -25906,13 +26185,13 @@ open class DbDataReader
     - Returns: A task representing the asynchronous operation.
 
     */
-    open func GetSchemaTableAsync(cancellationToken : dotnet.System.Threading.CancellationToken = System.Threading.CancellationToken.None) throws -> dotnet.System.Threading.Tasks.Task_1<dotnet.System.Data.DataTable> {
+    open func GetSchemaTableAsync(cancellationToken : dotnet.System.Threading.CancellationToken = System.Threading.CancellationToken.None) async throws -> dotnet.System.Data.DataTable {
         var __thrown : NullableHandle = nil;
         let __return = System_Data_Common_DbDataReader_System_Threading_Tasks_Task_System_Data_DataTable___GetSchemaTableAsync_0__1__CancellationToken(&__thrown, self.get_handle(), cancellationToken.get_handle());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task_1(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task_1(hndl: __return).ToAsync();
         }
     }
     // System.Threading.Tasks.Task<System.Collections.ObjectModel.ReadOnlyCollection<System.Data.Common.DbColumn>> GetColumnSchemaAsync(System.Threading.CancellationToken)
@@ -25929,13 +26208,13 @@ open class DbDataReader
     - Returns: A task representing the asynchronous operation.
 
     */
-    open func GetColumnSchemaAsync(cancellationToken : dotnet.System.Threading.CancellationToken = System.Threading.CancellationToken.None) throws -> dotnet.System.Threading.Tasks.Task_1<dotnet.System.Collections.ObjectModel.ReadOnlyCollection_1<dotnet.System.Data.Common.DbColumn>> {
+    open func GetColumnSchemaAsync(cancellationToken : dotnet.System.Threading.CancellationToken = System.Threading.CancellationToken.None) async throws -> dotnet.System.Collections.ObjectModel.ReadOnlyCollection_1<dotnet.System.Data.Common.DbColumn> {
         var __thrown : NullableHandle = nil;
         let __return = System_Data_Common_DbDataReader_System_Threading_Tasks_Task_System_Collections_ObjectModel_System_Collections_ObjectModel_ReadOnlyCollection_System_Data_Common_DbColumn____GetColumnSchemaAsync_0__1__CancellationToken(&__thrown, self.get_handle(), cancellationToken.get_handle());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task_1(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task_1(hndl: __return).ToAsync();
         }
     }
     // System.IO.Stream GetStream(System.Int32)
@@ -26056,13 +26335,13 @@ open class DbDataReader
     - Returns: A  whose  property is  if the specified column value is equivalent to  or  if it is not.
 
     */
-    open func IsDBNullAsync(ordinal : Swift.Int32) throws -> dotnet.System.Threading.Tasks.Task_1<Bool> {
+    open func IsDBNullAsync(ordinal : Swift.Int32) async throws -> Bool {
         var __thrown : NullableHandle = nil;
         let __return = System_Data_Common_DbDataReader_System_Threading_Tasks_Task_bool___IsDBNullAsync_0__1__i32(&__thrown, self.get_handle(), ordinal);
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task_1(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task_1(hndl: __return).ToAsync();
         }
     }
     // System.Threading.Tasks.Task<bool> IsDBNullAsync(System.Int32, System.Threading.CancellationToken)
@@ -26075,13 +26354,13 @@ open class DbDataReader
     - Returns: A  whose  property is  if the specified column value is equivalent to  or  if it is not.
 
     */
-    open func IsDBNullAsync(ordinal : Swift.Int32, cancellationToken : dotnet.System.Threading.CancellationToken) throws -> dotnet.System.Threading.Tasks.Task_1<Bool> {
+    open func IsDBNullAsync(ordinal : Swift.Int32, cancellationToken : dotnet.System.Threading.CancellationToken) async throws -> Bool {
         var __thrown : NullableHandle = nil;
         let __return = System_Data_Common_DbDataReader_System_Threading_Tasks_Task_bool___IsDBNullAsync_0__2__i32_CancellationToken(&__thrown, self.get_handle(), ordinal, cancellationToken.get_handle());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task_1(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task_1(hndl: __return).ToAsync();
         }
     }
     // bool NextResult()
@@ -26110,13 +26389,13 @@ open class DbDataReader
     - Returns: A task whose  property is  if there are more result sets or  if there aren't.
 
     */
-    open func NextResultAsync() throws -> dotnet.System.Threading.Tasks.Task_1<Bool> {
+    open func NextResultAsync() async throws -> Bool {
         var __thrown : NullableHandle = nil;
         let __return = System_Data_Common_DbDataReader_System_Threading_Tasks_Task_bool___NextResultAsync_0__0(&__thrown, self.get_handle());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task_1(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task_1(hndl: __return).ToAsync();
         }
     }
     // System.Threading.Tasks.Task<bool> NextResultAsync(System.Threading.CancellationToken)
@@ -26128,13 +26407,13 @@ open class DbDataReader
     - Returns: A  whose  property is  if there are more result sets or  if there aren't.
 
     */
-    open func NextResultAsync(cancellationToken : dotnet.System.Threading.CancellationToken) throws -> dotnet.System.Threading.Tasks.Task_1<Bool> {
+    open func NextResultAsync(cancellationToken : dotnet.System.Threading.CancellationToken) async throws -> Bool {
         var __thrown : NullableHandle = nil;
         let __return = System_Data_Common_DbDataReader_System_Threading_Tasks_Task_bool___NextResultAsync_0__1__CancellationToken(&__thrown, self.get_handle(), cancellationToken.get_handle());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task_1(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task_1(hndl: __return).ToAsync();
         }
     }
     // bool Read()
@@ -26163,13 +26442,13 @@ open class DbDataReader
     - Returns: A  whose  property is  if there are more rows or  if there aren't.
 
     */
-    open func ReadAsync() throws -> dotnet.System.Threading.Tasks.Task_1<Bool> {
+    open func ReadAsync() async throws -> Bool {
         var __thrown : NullableHandle = nil;
         let __return = System_Data_Common_DbDataReader_System_Threading_Tasks_Task_bool___ReadAsync_0__0(&__thrown, self.get_handle());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task_1(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task_1(hndl: __return).ToAsync();
         }
     }
     // System.Threading.Tasks.Task<bool> ReadAsync(System.Threading.CancellationToken)
@@ -26181,13 +26460,13 @@ open class DbDataReader
     - Returns: A  whose  property is  if there are more rows or  if there aren't.
 
     */
-    open func ReadAsync(cancellationToken : dotnet.System.Threading.CancellationToken) throws -> dotnet.System.Threading.Tasks.Task_1<Bool> {
+    open func ReadAsync(cancellationToken : dotnet.System.Threading.CancellationToken) async throws -> Bool {
         var __thrown : NullableHandle = nil;
         let __return = System_Data_Common_DbDataReader_System_Threading_Tasks_Task_bool___ReadAsync_0__1__CancellationToken(&__thrown, self.get_handle(), cancellationToken.get_handle());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task_1(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task_1(hndl: __return).ToAsync();
         }
     }
     // [IsSpecialName] System.Int32 get_Depth()
@@ -26258,9 +26537,6 @@ open class DbDataReader
     }
     // [IsSpecialName] System.Object get_Item(System.Int32)
 // docid: M:System.Data.Common.DbDataReader.get_Item(System.Int32)
-//BEGIN method_is_override
-//matches_1
-//matches :
     open func get_Item(ordinal : Swift.Int32) throws -> dotnet.System.Object {
         var __thrown : NullableHandle = nil;
         let __return = System_Data_Common_DbDataReader_Object__get_Item_0__1__i32(&__thrown, self.get_handle(), ordinal);
@@ -26272,9 +26548,6 @@ open class DbDataReader
     }
     // [IsSpecialName] System.Object get_Item(System.String)
 // docid: M:System.Data.Common.DbDataReader.get_Item(System.String)
-//BEGIN method_is_override
-//matches_1
-//matches :
     open func get_Item(name : dotnet.System.String) throws -> dotnet.System.Object {
         var __thrown : NullableHandle = nil;
         let __return = System_Data_Common_DbDataReader_Object__get_Item_0__1__String(&__thrown, self.get_handle(), name.get_handle());
@@ -26396,6 +26669,9 @@ open class DbDataRecord
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Data_Common_DbDataRecord_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -26818,9 +27094,6 @@ open class DbDataRecord
     }
     // [IsSpecialName] System.Object get_Item(System.Int32)
 // docid: M:System.Data.Common.DbDataRecord.get_Item(System.Int32)
-//BEGIN method_is_override
-//matches_1
-//matches :
     open func get_Item(i : Swift.Int32) throws -> dotnet.System.Object {
         var __thrown : NullableHandle = nil;
         let __return = System_Data_Common_DbDataRecord_Object__get_Item_0__1__i32(&__thrown, self.get_handle(), i);
@@ -26832,9 +27105,6 @@ open class DbDataRecord
     }
     // [IsSpecialName] System.Object get_Item(System.String)
 // docid: M:System.Data.Common.DbDataRecord.get_Item(System.String)
-//BEGIN method_is_override
-//matches_1
-//matches :
     open func get_Item(name : dotnet.System.String) throws -> dotnet.System.Object {
         var __thrown : NullableHandle = nil;
         let __return = System_Data_Common_DbDataRecord_Object__get_Item_0__1__String(&__thrown, self.get_handle(), name.get_handle());
@@ -26868,6 +27138,9 @@ open class DbDataSourceEnumerator
     open class override func get_type_handle() -> TypeHandle {
         return System_Data_Common_DbDataSourceEnumerator_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // System.Data.DataTable GetDataSources()
@@ -26892,7 +27165,7 @@ open class DbDataSourceEnumerator
 
 // type: System.Data.Common.DbEnumerator
     /**
-    Exposes the  method, which supports a simple iteration over a collection by a .NET Framework data provider.
+    Exposes the  method, which supports a simple iteration over a collection by a .NET data provider.
 
     */
 open class DbEnumerator
@@ -26902,6 +27175,9 @@ open class DbEnumerator
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Data_Common_DbEnumerator_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -27041,6 +27317,9 @@ open class DbException
     open class override func get_type_handle() -> TypeHandle {
         return System_Data_Common_DbException_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // [IsSpecialName] bool get_IsTransient()
@@ -27084,6 +27363,8 @@ open class DbException
         }
         }
     }
+    /**
+    */
     open var BatchCommand : Optional<dotnet.System.Data.Common.DbBatchCommand> {
         get {
             return try! get_BatchCommand();
@@ -27665,6 +27946,9 @@ open class DbParameter
     open class override func get_type_handle() -> TypeHandle {
         return System_Data_Common_DbParameter_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // void ResetDbType()
@@ -28079,6 +28363,9 @@ open class DbParameterCollection
     open class override func get_type_handle() -> TypeHandle {
         return System_Data_Common_DbParameterCollection_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // System.Int32 Add(System.Object)
@@ -28188,7 +28475,7 @@ open class DbParameterCollection
     // System.Collections.IEnumerator GetEnumerator()
 // docid: M:System.Data.Common.DbParameterCollection.GetEnumerator
     /**
-    Exposes the  method, which supports a simple iteration over a collection by a .NET Framework data provider.
+    Exposes the  method, which supports a simple iteration over a collection by a .NET data provider.
 
     - Returns: An  that can be used to iterate through the collection.
 
@@ -28360,9 +28647,6 @@ open class DbParameterCollection
     }
     // [IsSpecialName] System.Data.Common.DbParameter get_Item(System.Int32)
 // docid: M:System.Data.Common.DbParameterCollection.get_Item(System.Int32)
-//BEGIN method_is_override
-//matches_1
-//matches :
     open func get_Item(index : Swift.Int32) throws -> dotnet.System.Data.Common.DbParameter {
         var __thrown : NullableHandle = nil;
         let __return = System_Data_Common_DbParameterCollection_DbParameter__get_Item_0__1__i32(&__thrown, self.get_handle(), index);
@@ -28385,9 +28669,6 @@ open class DbParameterCollection
     }
     // [IsSpecialName] System.Data.Common.DbParameter get_Item(System.String)
 // docid: M:System.Data.Common.DbParameterCollection.get_Item(System.String)
-//BEGIN method_is_override
-//matches_1
-//matches :
     open func get_Item(parameterName : dotnet.System.String) throws -> dotnet.System.Data.Common.DbParameter {
         var __thrown : NullableHandle = nil;
         let __return = System_Data_Common_DbParameterCollection_DbParameter__get_Item_0__1__String(&__thrown, self.get_handle(), parameterName.get_handle());
@@ -28615,11 +28896,12 @@ public struct DbProviderFactories {
          if a provider is registered under the specified invariant provider name; otherwise, .
 
     */
-    public static func TryGetFactory(providerInvariantName : dotnet.System.String, factory : inout dotnet.System.Data.Common.DbProviderFactory) throws -> Bool {
+    public static func TryGetFactory(providerInvariantName : dotnet.System.String, factory : inout Optional<dotnet.System.Data.Common.DbProviderFactory>) throws -> Bool {
         var __thrown : NullableHandle = nil;
-            var _tmp_out_factory = factory.get_handle();
+            var _tmp_out_factory = (factory != nil) ? (factory!.get_handle()) : nil;
         let __return = System_Data_Common_DbProviderFactories_bool__TryGetFactory_0__2__String_outDbProviderFactory(&__thrown, providerInvariantName.get_handle(), &_tmp_out_factory);
-        let _tmp2_factory = dotnet.System.Data.Common.DbProviderFactory(hndl: _tmp_out_factory);
+        let __h__tmp2_factory = _tmp_out_factory;
+        let _tmp2_factory = (__h__tmp2_factory != nil) ? dotnet.System.Data.Common.DbProviderFactory(hndl: __h__tmp2_factory!) : nil;
             factory = _tmp2_factory;
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
@@ -28661,10 +28943,15 @@ open class DbProviderFactory
     open class override func get_type_handle() -> TypeHandle {
         return System_Data_Common_DbProviderFactory_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // System.Data.Common.DbBatch CreateBatch()
 // docid: M:System.Data.Common.DbProviderFactory.CreateBatch
+    /**
+    */
     open func CreateBatch() throws -> dotnet.System.Data.Common.DbBatch {
         var __thrown : NullableHandle = nil;
         let __return = System_Data_Common_DbProviderFactory_DbBatch__CreateBatch_0__0(&__thrown, self.get_handle());
@@ -28676,6 +28963,8 @@ open class DbProviderFactory
     }
     // System.Data.Common.DbBatchCommand CreateBatchCommand()
 // docid: M:System.Data.Common.DbProviderFactory.CreateBatchCommand
+    /**
+    */
     open func CreateBatchCommand() throws -> dotnet.System.Data.Common.DbBatchCommand {
         var __thrown : NullableHandle = nil;
         let __return = System_Data_Common_DbProviderFactory_DbBatchCommand__CreateBatchCommand_0__0(&__thrown, self.get_handle());
@@ -28876,6 +29165,8 @@ open class DbProviderFactory
         return (__return) != 0;
         }
     }
+    /**
+    */
     open var CanCreateBatch : Bool {
         get {
             return try! get_CanCreateBatch();
@@ -28922,6 +29213,9 @@ public final class DbProviderSpecificTypePropertyAttribute
 {
     public class override func get_type_handle() -> TypeHandle {
         return System_Data_Common_DbProviderSpecificTypePropertyAttribute_get_type_handle();
+    }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -28979,6 +29273,9 @@ open class DbTransaction
     open class override func get_type_handle() -> TypeHandle {
         return System_Data_Common_DbTransaction_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // void Commit()
@@ -29005,13 +29302,13 @@ open class DbTransaction
     - Returns: A  representing the asynchronous operation.
 
     */
-    open func CommitAsync(cancellationToken : dotnet.System.Threading.CancellationToken = System.Threading.CancellationToken.None) throws -> dotnet.System.Threading.Tasks.Task {
+    open func CommitAsync(cancellationToken : dotnet.System.Threading.CancellationToken = System.Threading.CancellationToken.None) async throws {
         var __thrown : NullableHandle = nil;
         let __return = System_Data_Common_DbTransaction_Task__CommitAsync_0__1__CancellationToken(&__thrown, self.get_handle(), cancellationToken.get_handle());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task(hndl: __return).ToAsync();
         }
     }
     // void Dispose()
@@ -29070,13 +29367,13 @@ open class DbTransaction
     - Returns: A task representing the asynchronous operation.
 
     */
-    open func RollbackAsync(cancellationToken : dotnet.System.Threading.CancellationToken = System.Threading.CancellationToken.None) throws -> dotnet.System.Threading.Tasks.Task {
+    open func RollbackAsync(cancellationToken : dotnet.System.Threading.CancellationToken = System.Threading.CancellationToken.None) async throws {
         var __thrown : NullableHandle = nil;
         let __return = System_Data_Common_DbTransaction_Task__RollbackAsync_0__1__CancellationToken(&__thrown, self.get_handle(), cancellationToken.get_handle());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task(hndl: __return).ToAsync();
         }
     }
     // System.Threading.Tasks.Task SaveAsync(System.String, System.Threading.CancellationToken)
@@ -29089,13 +29386,13 @@ open class DbTransaction
     - Returns: A  representing the asynchronous operation.
 
     */
-    open func SaveAsync(savepointName : dotnet.System.String, cancellationToken : dotnet.System.Threading.CancellationToken = System.Threading.CancellationToken.None) throws -> dotnet.System.Threading.Tasks.Task {
+    open func SaveAsync(savepointName : dotnet.System.String, cancellationToken : dotnet.System.Threading.CancellationToken = System.Threading.CancellationToken.None) async throws {
         var __thrown : NullableHandle = nil;
         let __return = System_Data_Common_DbTransaction_Task__SaveAsync_0__2__String_CancellationToken(&__thrown, self.get_handle(), savepointName.get_handle(), cancellationToken.get_handle());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task(hndl: __return).ToAsync();
         }
     }
     // System.Threading.Tasks.Task RollbackAsync(System.String, System.Threading.CancellationToken)
@@ -29108,13 +29405,13 @@ open class DbTransaction
     - Returns: A  representing the asynchronous operation.
 
     */
-    open func RollbackAsync(savepointName : dotnet.System.String, cancellationToken : dotnet.System.Threading.CancellationToken = System.Threading.CancellationToken.None) throws -> dotnet.System.Threading.Tasks.Task {
+    open func RollbackAsync(savepointName : dotnet.System.String, cancellationToken : dotnet.System.Threading.CancellationToken = System.Threading.CancellationToken.None) async throws {
         var __thrown : NullableHandle = nil;
         let __return = System_Data_Common_DbTransaction_Task__RollbackAsync_0__2__String_CancellationToken(&__thrown, self.get_handle(), savepointName.get_handle(), cancellationToken.get_handle());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task(hndl: __return).ToAsync();
         }
     }
     // System.Threading.Tasks.Task ReleaseAsync(System.String, System.Threading.CancellationToken)
@@ -29127,13 +29424,13 @@ open class DbTransaction
     - Returns: A  representing the asynchronous operation.
 
     */
-    open func ReleaseAsync(savepointName : dotnet.System.String, cancellationToken : dotnet.System.Threading.CancellationToken = System.Threading.CancellationToken.None) throws -> dotnet.System.Threading.Tasks.Task {
+    open func ReleaseAsync(savepointName : dotnet.System.String, cancellationToken : dotnet.System.Threading.CancellationToken = System.Threading.CancellationToken.None) async throws {
         var __thrown : NullableHandle = nil;
         let __return = System_Data_Common_DbTransaction_Task__ReleaseAsync_0__2__String_CancellationToken(&__thrown, self.get_handle(), savepointName.get_handle(), cancellationToken.get_handle());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task(hndl: __return).ToAsync();
         }
     }
     // void Save(System.String)
@@ -29338,6 +29635,9 @@ open class IDbColumnSchemaGenerator
     open class func get_type_handle() -> TypeHandle {
         return System_Data_Common_IDbColumnSchemaGenerator_get_type_handle();
     }
+    open class func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     let h : NonnullHandle;
     public func to_gval() -> GVal { return GVal(Swift.Int(bitPattern: self.h)); }
     public func dup_gval() -> GVal { return GVal(Swift.Int(bitPattern: __copy_handle(self.h))); }
@@ -29420,7 +29720,7 @@ public struct IdentifierCase : SGBridgeGenericValue {
 
 // type: System.Data.Common.RowUpdatedEventArgs
     /**
-    Provides data for the  event of a .NET Framework data provider.
+    Provides data for the  event of a .NET data provider.
 
     */
 open class RowUpdatedEventArgs
@@ -29429,6 +29729,9 @@ open class RowUpdatedEventArgs
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Data_Common_RowUpdatedEventArgs_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -29612,7 +29915,7 @@ open class RowUpdatedEventArgs
         }
     }
     /**
-    Gets any errors generated by the .NET Framework data provider when the  was executed.
+    Gets any errors generated by the .NET data provider when the  was executed.
 
     */
     open var Errors : Optional<dotnet.System.Exception> {
@@ -29685,7 +29988,7 @@ open class RowUpdatedEventArgs
 
 // type: System.Data.Common.RowUpdatingEventArgs
     /**
-    Provides the data for the RowUpdating event of a .NET Framework data provider.
+    Provides the data for the RowUpdating event of a .NET data provider.
 
     */
 open class RowUpdatingEventArgs
@@ -29694,6 +29997,9 @@ open class RowUpdatingEventArgs
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Data_Common_RowUpdatingEventArgs_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -29836,7 +30142,7 @@ open class RowUpdatingEventArgs
         }
     }
     /**
-    Gets any errors generated by the .NET Framework data provider when the  executes.
+    Gets any errors generated by the .NET data provider when the  executes.
 
     */
     open var Errors : Optional<dotnet.System.Exception> {
@@ -30330,6 +30636,9 @@ open class INullable
     open class func get_type_handle() -> TypeHandle {
         return System_Data_SqlTypes_INullable_get_type_handle();
     }
+    open class func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     let h : NonnullHandle;
     public func to_gval() -> GVal { return GVal(Swift.Int(bitPattern: self.h)); }
     public func dup_gval() -> GVal { return GVal(Swift.Int(bitPattern: __copy_handle(self.h))); }
@@ -30364,6 +30673,9 @@ public final class SqlAlreadyFilledException
 {
     public class override func get_type_handle() -> TypeHandle {
         return System_Data_SqlTypes_SqlAlreadyFilledException_get_type_handle();
+    }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -30433,6 +30745,9 @@ public final class SqlBinary
 {
     public class override func get_type_handle() -> TypeHandle {
         return System_Data_SqlTypes_SqlBinary_get_type_handle();
+    }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -30980,9 +31295,6 @@ public final class SqlBinary
     }
     // [IsSpecialName] System.Byte get_Item(System.Int32)
 // docid: M:System.Data.SqlTypes.SqlBinary.get_Item(System.Int32)
-//BEGIN method_is_override
-//matches_1
-//matches :
     public func get_Item(index : Swift.Int32) throws -> Swift.UInt8 {
         var __thrown : NullableHandle = nil;
         let __return = System_Data_SqlTypes_SqlBinary_u8__get_Item_0__1__i32(&__thrown, self.get_handle(), index);
@@ -31010,6 +31322,9 @@ public final class SqlBoolean
 {
     public class override func get_type_handle() -> TypeHandle {
         return System_Data_SqlTypes_SqlBoolean_get_type_handle();
+    }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -32073,6 +32388,9 @@ public final class SqlByte
 {
     public class override func get_type_handle() -> TypeHandle {
         return System_Data_SqlTypes_SqlByte_get_type_handle();
+    }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -33198,6 +33516,9 @@ public final class SqlBytes
     public class override func get_type_handle() -> TypeHandle {
         return System_Data_SqlTypes_SqlBytes_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor()
@@ -33496,9 +33817,6 @@ public final class SqlBytes
     }
     // [IsSpecialName] System.Byte get_Item(System.Int64)
 // docid: M:System.Data.SqlTypes.SqlBytes.get_Item(System.Int64)
-//BEGIN method_is_override
-//matches_1
-//matches :
     public func get_Item(offset : Swift.Int64) throws -> Swift.UInt8 {
         var __thrown : NullableHandle = nil;
         let __return = System_Data_SqlTypes_SqlBytes_u8__get_Item_0__1__i64(&__thrown, self.get_handle(), offset);
@@ -33612,6 +33930,9 @@ public final class SqlChars
 {
     public class override func get_type_handle() -> TypeHandle {
         return System_Data_SqlTypes_SqlChars_get_type_handle();
+    }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -33873,9 +34194,6 @@ public final class SqlChars
     }
     // [IsSpecialName] System.Char get_Item(System.Int64)
 // docid: M:System.Data.SqlTypes.SqlChars.get_Item(System.Int64)
-//BEGIN method_is_override
-//matches_1
-//matches :
     public func get_Item(offset : Swift.Int64) throws -> dotnet.System.Char {
         var __thrown : NullableHandle = nil;
         let __return = System_Data_SqlTypes_SqlChars_Char__get_Item_0__1__i64(&__thrown, self.get_handle(), offset);
@@ -34060,7 +34378,7 @@ public struct SqlCompareOptions : SGBridgeGenericValue {
 // type: System.Data.SqlTypes.SqlDateTime
 // boxed value type
     /**
-    Represents the date and time data ranging in value from January 1, 1753 to December 31, 9999 to an accuracy of 3.33 milliseconds to be stored in or retrieved from a database. The  structure has a different underlying data structure from its corresponding .NET Framework type, , which can represent any time between 12:00:00 AM 1/1/0001 and 11:59:59 PM 12/31/9999, to the accuracy of 100 nanoseconds.  actually stores the relative difference to 00:00:00 AM 1/1/1900. Therefore, a conversion from "00:00:00 AM 1/1/1900" to an integer will return 0.
+    Represents the date and time data ranging in value from January 1, 1753 to December 31, 9999 to an accuracy of 3.33 milliseconds to be stored in or retrieved from a database. The  structure has a different underlying data structure from its corresponding .NET type, , which can represent any time between 12:00:00 AM 1/1/0001 and 11:59:59 PM 12/31/9999, to the accuracy of 100 nanoseconds.  actually stores the relative difference to 00:00:00 AM 1/1/1900. Therefore, a conversion from "00:00:00 AM 1/1/1900" to an integer will return 0.
 
     */
 public final class SqlDateTime
@@ -34072,6 +34390,9 @@ public final class SqlDateTime
 {
     public class override func get_type_handle() -> TypeHandle {
         return System_Data_SqlTypes_SqlDateTime_get_type_handle();
+    }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -34297,7 +34618,25 @@ public final class SqlDateTime
         let h = System_Data_SqlTypes_SqlDateTime_implicit_ctor();
             super.init(hndl: h);
     }
-// TODO COPE (write_all_methods) (span) System.Data.SqlTypes.SqlDateTime Add(System.Data.SqlTypes.SqlDateTime, System.TimeSpan)
+    // System.Data.SqlTypes.SqlDateTime Add(System.Data.SqlTypes.SqlDateTime, System.TimeSpan)
+// docid: M:System.Data.SqlTypes.SqlDateTime.Add(System.Data.SqlTypes.SqlDateTime,System.TimeSpan)
+    /**
+    Adds a  to the specified .
+
+    - Parameter x: A  value.
+    - Parameter t: A  value.
+    - Returns: A  value.
+
+    */
+    public class func Add(x : dotnet.System.Data.SqlTypes.SqlDateTime, t : dotnet.System.TimeSpan) throws -> dotnet.System.Data.SqlTypes.SqlDateTime {
+        var __thrown : NullableHandle = nil;
+        let __return = System_Data_SqlTypes_SqlDateTime_SqlDateTime__Add_0__2__SqlDateTime_TimeSpan(&__thrown, x.get_handle(), t.get_handle());
+        if let __ex =  __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+        return dotnet.System.Data.SqlTypes.SqlDateTime(hndl : __return);
+        }
+    }
     // System.Int32 CompareTo(System.Data.SqlTypes.SqlDateTime)
 // docid: M:System.Data.SqlTypes.SqlDateTime.CompareTo(System.Data.SqlTypes.SqlDateTime)
     /**
@@ -34515,7 +34854,25 @@ public final class SqlDateTime
         return dotnet.System.Data.SqlTypes.SqlBoolean(hndl : __return);
         }
     }
-// TODO COPE (write_all_methods) (span) [IsSpecialName] System.Data.SqlTypes.SqlDateTime op_Addition(System.Data.SqlTypes.SqlDateTime, System.TimeSpan)
+    // [IsSpecialName] System.Data.SqlTypes.SqlDateTime op_Addition(System.Data.SqlTypes.SqlDateTime, System.TimeSpan)
+// docid: M:System.Data.SqlTypes.SqlDateTime.op_Addition(System.Data.SqlTypes.SqlDateTime,System.TimeSpan)
+    /**
+    Adds the period of time indicated by the supplied  parameter, , to the supplied  structure.
+
+    - Parameter x: A  structure.
+    - Parameter t: A  structure.
+    - Returns: A new . If either argument is , the new  is .
+
+    */
+    public class func op_Addition(x : dotnet.System.Data.SqlTypes.SqlDateTime, t : dotnet.System.TimeSpan) throws -> dotnet.System.Data.SqlTypes.SqlDateTime {
+        var __thrown : NullableHandle = nil;
+        let __return = System_Data_SqlTypes_SqlDateTime_SqlDateTime__op_Addition_0__2__SqlDateTime_TimeSpan(&__thrown, x.get_handle(), t.get_handle());
+        if let __ex =  __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+        return dotnet.System.Data.SqlTypes.SqlDateTime(hndl : __return);
+        }
+    }
     // [IsSpecialName] System.Data.SqlTypes.SqlBoolean op_Equality(System.Data.SqlTypes.SqlDateTime, System.Data.SqlTypes.SqlDateTime)
 // docid: M:System.Data.SqlTypes.SqlDateTime.op_Equality(System.Data.SqlTypes.SqlDateTime,System.Data.SqlTypes.SqlDateTime)
     /**
@@ -34664,7 +35021,25 @@ public final class SqlDateTime
         return dotnet.System.Data.SqlTypes.SqlBoolean(hndl : __return);
         }
     }
-// TODO COPE (write_all_methods) (span) [IsSpecialName] System.Data.SqlTypes.SqlDateTime op_Subtraction(System.Data.SqlTypes.SqlDateTime, System.TimeSpan)
+    // [IsSpecialName] System.Data.SqlTypes.SqlDateTime op_Subtraction(System.Data.SqlTypes.SqlDateTime, System.TimeSpan)
+// docid: M:System.Data.SqlTypes.SqlDateTime.op_Subtraction(System.Data.SqlTypes.SqlDateTime,System.TimeSpan)
+    /**
+    Subtracts the supplied  structure, , from the supplied  structure.
+
+    - Parameter x: A  structure.
+    - Parameter t: A  structure.
+    - Returns: A  structure representing the results of the subtraction.
+
+    */
+    public class func op_Subtraction(x : dotnet.System.Data.SqlTypes.SqlDateTime, t : dotnet.System.TimeSpan) throws -> dotnet.System.Data.SqlTypes.SqlDateTime {
+        var __thrown : NullableHandle = nil;
+        let __return = System_Data_SqlTypes_SqlDateTime_SqlDateTime__op_Subtraction_0__2__SqlDateTime_TimeSpan(&__thrown, x.get_handle(), t.get_handle());
+        if let __ex =  __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+        return dotnet.System.Data.SqlTypes.SqlDateTime(hndl : __return);
+        }
+    }
     // System.Data.SqlTypes.SqlDateTime Parse(System.String)
 // docid: M:System.Data.SqlTypes.SqlDateTime.Parse(System.String)
     /**
@@ -34683,7 +35058,25 @@ public final class SqlDateTime
         return dotnet.System.Data.SqlTypes.SqlDateTime(hndl : __return);
         }
     }
-// TODO COPE (write_all_methods) (span) System.Data.SqlTypes.SqlDateTime Subtract(System.Data.SqlTypes.SqlDateTime, System.TimeSpan)
+    // System.Data.SqlTypes.SqlDateTime Subtract(System.Data.SqlTypes.SqlDateTime, System.TimeSpan)
+// docid: M:System.Data.SqlTypes.SqlDateTime.Subtract(System.Data.SqlTypes.SqlDateTime,System.TimeSpan)
+    /**
+    Subtracts the specified  from this  instance.
+
+    - Parameter x: A  value.
+    - Parameter t: A  value.
+    - Returns: A  value.
+
+    */
+    public class func Subtract(x : dotnet.System.Data.SqlTypes.SqlDateTime, t : dotnet.System.TimeSpan) throws -> dotnet.System.Data.SqlTypes.SqlDateTime {
+        var __thrown : NullableHandle = nil;
+        let __return = System_Data_SqlTypes_SqlDateTime_SqlDateTime__Subtract_0__2__SqlDateTime_TimeSpan(&__thrown, x.get_handle(), t.get_handle());
+        if let __ex =  __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+        return dotnet.System.Data.SqlTypes.SqlDateTime(hndl : __return);
+        }
+    }
     // System.Data.SqlTypes.SqlString ToSqlString()
 // docid: M:System.Data.SqlTypes.SqlDateTime.ToSqlString
     /**
@@ -34780,6 +35173,9 @@ public final class SqlDecimal
 {
     public class override func get_type_handle() -> TypeHandle {
         return System_Data_SqlTypes_SqlDecimal_get_type_handle();
+    }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -36125,6 +36521,9 @@ public final class SqlDouble
     public class override func get_type_handle() -> TypeHandle {
         return System_Data_SqlTypes_SqlDouble_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // static field: System.Data.SqlTypes.SqlDouble MaxValue
@@ -37061,6 +37460,9 @@ public final class SqlGuid
     public class override func get_type_handle() -> TypeHandle {
         return System_Data_SqlTypes_SqlGuid_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // static field: System.Data.SqlTypes.SqlGuid Null
@@ -37113,7 +37515,7 @@ public final class SqlGuid
     /**
     Initializes a new instance of the  structure using the specified  parameter.
 
-    - Parameter g: A 
+    - Parameter g: A .
     */
     public init(g : dotnet.System.Guid) throws {
         var __thrown : NullableHandle = nil;
@@ -37675,6 +38077,9 @@ public final class SqlInt16
 {
     public class override func get_type_handle() -> TypeHandle {
         return System_Data_SqlTypes_SqlInt16_get_type_handle();
+    }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -38814,6 +39219,9 @@ public final class SqlInt32
 {
     public class override func get_type_handle() -> TypeHandle {
         return System_Data_SqlTypes_SqlInt32_get_type_handle();
+    }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -39958,6 +40366,9 @@ public final class SqlInt64
     public class override func get_type_handle() -> TypeHandle {
         return System_Data_SqlTypes_SqlInt64_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // static field: System.Data.SqlTypes.SqlInt64 MaxValue
@@ -41101,6 +41512,9 @@ public final class SqlMoney
     public class override func get_type_handle() -> TypeHandle {
         return System_Data_SqlTypes_SqlMoney_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // static field: System.Data.SqlTypes.SqlMoney MaxValue
@@ -42170,6 +42584,9 @@ public final class SqlNotFilledException
     public class override func get_type_handle() -> TypeHandle {
         return System_Data_SqlTypes_SqlNotFilledException_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor()
@@ -42234,6 +42651,9 @@ public final class SqlNullValueException
 {
     public class override func get_type_handle() -> TypeHandle {
         return System_Data_SqlTypes_SqlNullValueException_get_type_handle();
+    }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -42303,6 +42723,9 @@ public final class SqlSingle
 {
     public class override func get_type_handle() -> TypeHandle {
         return System_Data_SqlTypes_SqlSingle_get_type_handle();
+    }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -43243,7 +43666,7 @@ public final class SqlSingle
 // type: System.Data.SqlTypes.SqlString
 // boxed value type
     /**
-    Represents a variable-length stream of characters to be stored in or retrieved from the database.  has a different underlying data structure from its corresponding .NET Framework  data type.
+    Represents a variable-length stream of characters to be stored in or retrieved from the database.  has a different underlying data structure from its corresponding .NET  data type.
 
     */
 public final class SqlString
@@ -43255,6 +43678,9 @@ public final class SqlString
 {
     public class override func get_type_handle() -> TypeHandle {
         return System_Data_SqlTypes_SqlString_get_type_handle();
+    }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -44418,6 +44844,9 @@ public final class SqlTruncateException
     public class override func get_type_handle() -> TypeHandle {
         return System_Data_SqlTypes_SqlTruncateException_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor()
@@ -44482,6 +44911,9 @@ open class SqlTypeException
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Data_SqlTypes_SqlTypeException_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -44549,6 +44981,9 @@ public final class SqlXml
 {
     public class override func get_type_handle() -> TypeHandle {
         return System_Data_SqlTypes_SqlXml_get_type_handle();
+    }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -44764,6 +45199,9 @@ open class XmlDataDocument
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Xml_XmlDataDocument_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -45305,8 +45743,8 @@ extension dotnet.System.Data.Common.DbDataReader {
 
 // EXTENSION METHOD System.Threading.Tasks.Task<bool> IsDBNullAsync(System.Data.Common.DbDataReader, System.String, System.Threading.CancellationToken)
 extension dotnet.System.Data.Common.DbDataReader {
-    public func IsDBNullAsync(name : dotnet.System.String, cancellationToken : dotnet.System.Threading.CancellationToken = System.Threading.CancellationToken.None) throws -> dotnet.System.Threading.Tasks.Task_1<Bool> {
-        return try dotnet.System.Data.DataReaderExtensions.IsDBNullAsync(reader: self, name: name, cancellationToken: cancellationToken);
+    public func IsDBNullAsync(name : dotnet.System.String, cancellationToken : dotnet.System.Threading.CancellationToken = System.Threading.CancellationToken.None) async throws -> Bool {
+        return try await dotnet.System.Data.DataReaderExtensions.IsDBNullAsync(reader: self, name: name, cancellationToken: cancellationToken);
     }
 }
 

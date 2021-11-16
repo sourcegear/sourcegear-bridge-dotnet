@@ -89,7 +89,7 @@ public struct ZipFile {
     Extracts all of the files in the specified archive to a directory on the file system.
 
     - Parameter sourceArchiveFileName: The path on the file system to the archive that is to be extracted.
-    - Parameter destinationDirectoryName: The path to the destination directory on the file system. The directory specified must not exist, but the directory that it is contained in must exist.
+    - Parameter destinationDirectoryName: The path to the destination directory on the file system.
     - Parameter overwriteFiles: 
          to overwrite files;  otherwise.
     */
@@ -126,7 +126,7 @@ public struct ZipFile {
     Extracts all of the files in the specified archive to a directory on the file system.
 
     - Parameter sourceArchiveFileName: The path on the file system to the archive that is to be extracted.
-    - Parameter destinationDirectoryName: The path to the destination directory on the file system. The directory specified must not exist, but the directory that it is contained in must exist.
+    - Parameter destinationDirectoryName: The path to the destination directory on the file system.
     - Parameter entryNameEncoding: The encoding to use when reading entry names in this .
     - Parameter overwriteFiles: 
          to overwrite files;  otherwise.
@@ -268,7 +268,7 @@ public struct ZipFileExtensions {
     - Parameter source: The  to extract.
     - Parameter destinationDirectoryName: The path to the destination directory on the file system. The path can be relative or absolute. A relative path is interpreted as relative to the current working directory.
     - Parameter overwriteFiles: 
-         to indicate that existing files are to be overwritten;  otherwise.
+         to overwrite existing files;  otherwise.
     */
     public static func ExtractToDirectory(source : dotnet.System.IO.Compression.ZipArchive, destinationDirectoryName : dotnet.System.String, overwriteFiles : Bool) throws {
         var __thrown : NullableHandle = nil;

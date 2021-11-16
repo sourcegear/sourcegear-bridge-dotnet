@@ -18,6 +18,9 @@ open class AssociatedMetadataTypeTypeDescriptionProvider
     open class override func get_type_handle() -> TypeHandle {
         return System_ComponentModel_DataAnnotations_AssociatedMetadataTypeTypeDescriptionProvider_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor(System.Type)
@@ -27,9 +30,9 @@ open class AssociatedMetadataTypeTypeDescriptionProvider
 
     - Parameter type: The type for which the metadata provider is created.
     */
-    public init(type : Optional<dotnet.System.Type_>) throws {
+    public init(type : dotnet.System.Type_) throws {
         var __thrown : NullableHandle = nil;
-        let h = System_ComponentModel_DataAnnotations_AssociatedMetadataTypeTypeDescriptionProvider_ctor_0__1__Type(&__thrown, type?.get_handle() ?? nil);
+        let h = System_ComponentModel_DataAnnotations_AssociatedMetadataTypeTypeDescriptionProvider_ctor_0__1__Type(&__thrown, type.get_handle());
         if let __ex = __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
@@ -44,9 +47,9 @@ open class AssociatedMetadataTypeTypeDescriptionProvider
     - Parameter type: The type for which the metadata provider is created.
     - Parameter associatedMetadataType: The associated type that contains the metadata.
     */
-    public init(type : Optional<dotnet.System.Type_>, associatedMetadataType : Optional<dotnet.System.Type_>) throws {
+    public init(type : dotnet.System.Type_, associatedMetadataType : dotnet.System.Type_) throws {
         var __thrown : NullableHandle = nil;
-        let h = System_ComponentModel_DataAnnotations_AssociatedMetadataTypeTypeDescriptionProvider_ctor_0__2__Type_Type(&__thrown, type?.get_handle() ?? nil, associatedMetadataType?.get_handle() ?? nil);
+        let h = System_ComponentModel_DataAnnotations_AssociatedMetadataTypeTypeDescriptionProvider_ctor_0__2__Type_Type(&__thrown, type.get_handle(), associatedMetadataType.get_handle());
         if let __ex = __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
@@ -63,17 +66,13 @@ open class AssociatedMetadataTypeTypeDescriptionProvider
     - Returns: The descriptor that provides metadata for the type.
 
     */
-    open override func GetTypeDescriptor(objectType : Optional<dotnet.System.Type_>, instance : Optional<dotnet.System.Object>) throws -> Optional<dotnet.System.ComponentModel.ICustomTypeDescriptor> {
+    open override func GetTypeDescriptor(objectType : dotnet.System.Type_, instance : Optional<dotnet.System.Object>) throws -> dotnet.System.ComponentModel.ICustomTypeDescriptor {
         var __thrown : NullableHandle = nil;
-        let __return = System_ComponentModel_DataAnnotations_AssociatedMetadataTypeTypeDescriptionProvider_ICustomTypeDescriptor__GetTypeDescriptor_0__2__Type_Object(&__thrown, self.get_handle(), objectType?.get_handle() ?? nil, instance?.get_handle() ?? nil);
+        let __return = System_ComponentModel_DataAnnotations_AssociatedMetadataTypeTypeDescriptionProvider_ICustomTypeDescriptor__GetTypeDescriptor_0__2__Type_Object(&__thrown, self.get_handle(), objectType.get_handle(), instance?.get_handle() ?? nil);
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        if let __ret_unwrapped = __return {
-            return dotnet.System.ComponentModel.ICustomTypeDescriptor(hndl : __ret_unwrapped);
-        } else {
-            return nil;
-        }
+        return dotnet.System.ComponentModel.ICustomTypeDescriptor(hndl : __return);
         }
     }
 } // AssociatedMetadataTypeTypeDescriptionProvider
@@ -90,6 +89,9 @@ public final class AssociationAttribute
 {
     public class override func get_type_handle() -> TypeHandle {
         return System_ComponentModel_DataAnnotations_AssociationAttribute_get_type_handle();
+    }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -260,6 +262,9 @@ open class CompareAttribute
     open class override func get_type_handle() -> TypeHandle {
         return System_ComponentModel_DataAnnotations_CompareAttribute_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor(System.String)
@@ -375,6 +380,9 @@ public final class ConcurrencyCheckAttribute
     public class override func get_type_handle() -> TypeHandle {
         return System_ComponentModel_DataAnnotations_ConcurrencyCheckAttribute_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor()
@@ -406,6 +414,9 @@ public final class CreditCardAttribute
 {
     public class override func get_type_handle() -> TypeHandle {
         return System_ComponentModel_DataAnnotations_CreditCardAttribute_get_type_handle();
+    }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -457,6 +468,9 @@ public final class CustomValidationAttribute
 {
     public class override func get_type_handle() -> TypeHandle {
         return System_ComponentModel_DataAnnotations_CustomValidationAttribute_get_type_handle();
+    }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -755,6 +769,9 @@ open class DataTypeAttribute
     open class override func get_type_handle() -> TypeHandle {
         return System_ComponentModel_DataAnnotations_DataTypeAttribute_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor(System.ComponentModel.DataAnnotations.DataType)
@@ -921,6 +938,9 @@ public final class DisplayAttribute
 {
     public class override func get_type_handle() -> TypeHandle {
         return System_ComponentModel_DataAnnotations_DisplayAttribute_get_type_handle();
+    }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -1440,6 +1460,9 @@ open class DisplayColumnAttribute
     open class override func get_type_handle() -> TypeHandle {
         return System_ComponentModel_DataAnnotations_DisplayColumnAttribute_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor(System.String)
@@ -1572,6 +1595,9 @@ open class DisplayFormatAttribute
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_ComponentModel_DataAnnotations_DisplayFormatAttribute_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -1849,6 +1875,9 @@ public final class EditableAttribute
     public class override func get_type_handle() -> TypeHandle {
         return System_ComponentModel_DataAnnotations_EditableAttribute_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor(bool)
@@ -1937,6 +1966,9 @@ public final class EmailAddressAttribute
     public class override func get_type_handle() -> TypeHandle {
         return System_ComponentModel_DataAnnotations_EmailAddressAttribute_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor()
@@ -1978,7 +2010,7 @@ public final class EmailAddressAttribute
 
 // type: System.ComponentModel.DataAnnotations.EnumDataTypeAttribute
     /**
-    Enables a .NET Framework enumeration to be mapped to a data column.
+    Enables a .NET enumeration to be mapped to a data column.
 
     */
 public final class EnumDataTypeAttribute
@@ -1987,6 +2019,9 @@ public final class EnumDataTypeAttribute
 {
     public class override func get_type_handle() -> TypeHandle {
         return System_ComponentModel_DataAnnotations_EnumDataTypeAttribute_get_type_handle();
+    }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -2059,6 +2094,9 @@ public final class FileExtensionsAttribute
 {
     public class override func get_type_handle() -> TypeHandle {
         return System_ComponentModel_DataAnnotations_FileExtensionsAttribute_get_type_handle();
+    }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -2162,6 +2200,9 @@ public final class FilterUIHintAttribute
 {
     public class override func get_type_handle() -> TypeHandle {
         return System_ComponentModel_DataAnnotations_FilterUIHintAttribute_get_type_handle();
+    }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -2332,6 +2373,9 @@ open class IValidatableObject
     open class func get_type_handle() -> TypeHandle {
         return System_ComponentModel_DataAnnotations_IValidatableObject_get_type_handle();
     }
+    open class func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     let h : NonnullHandle;
     public func to_gval() -> GVal { return GVal(Swift.Int(bitPattern: self.h)); }
     public func dup_gval() -> GVal { return GVal(Swift.Int(bitPattern: __copy_handle(self.h))); }
@@ -2374,6 +2418,9 @@ public final class KeyAttribute
     public class override func get_type_handle() -> TypeHandle {
         return System_ComponentModel_DataAnnotations_KeyAttribute_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor()
@@ -2405,6 +2452,9 @@ open class MaxLengthAttribute
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_ComponentModel_DataAnnotations_MaxLengthAttribute_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -2511,6 +2561,9 @@ public final class MetadataTypeAttribute
     public class override func get_type_handle() -> TypeHandle {
         return System_ComponentModel_DataAnnotations_MetadataTypeAttribute_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor(System.Type)
@@ -2563,6 +2616,9 @@ open class MinLengthAttribute
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_ComponentModel_DataAnnotations_MinLengthAttribute_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -2654,6 +2710,9 @@ public final class PhoneAttribute
     public class override func get_type_handle() -> TypeHandle {
         return System_ComponentModel_DataAnnotations_PhoneAttribute_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor()
@@ -2704,6 +2763,9 @@ open class RangeAttribute
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_ComponentModel_DataAnnotations_RangeAttribute_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -2939,6 +3001,9 @@ open class RegularExpressionAttribute
     open class override func get_type_handle() -> TypeHandle {
         return System_ComponentModel_DataAnnotations_RegularExpressionAttribute_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor(System.String)
@@ -3063,6 +3128,9 @@ open class RequiredAttribute
     open class override func get_type_handle() -> TypeHandle {
         return System_ComponentModel_DataAnnotations_RequiredAttribute_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor()
@@ -3148,6 +3216,9 @@ open class ScaffoldColumnAttribute
     open class override func get_type_handle() -> TypeHandle {
         return System_ComponentModel_DataAnnotations_ScaffoldColumnAttribute_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor(bool)
@@ -3200,6 +3271,9 @@ open class StringLengthAttribute
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_ComponentModel_DataAnnotations_StringLengthAttribute_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -3325,6 +3399,9 @@ public final class TimestampAttribute
     public class override func get_type_handle() -> TypeHandle {
         return System_ComponentModel_DataAnnotations_TimestampAttribute_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor()
@@ -3356,6 +3433,9 @@ open class UIHintAttribute
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_ComponentModel_DataAnnotations_UIHintAttribute_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -3525,6 +3605,9 @@ public final class UrlAttribute
     public class override func get_type_handle() -> TypeHandle {
         return System_ComponentModel_DataAnnotations_UrlAttribute_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor()
@@ -3575,6 +3658,9 @@ open class ValidationAttribute
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_ComponentModel_DataAnnotations_ValidationAttribute_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -3822,6 +3908,9 @@ public final class ValidationContext
     public class override func get_type_handle() -> TypeHandle {
         return System_ComponentModel_DataAnnotations_ValidationContext_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor(System.Object)
@@ -3845,7 +3934,7 @@ public final class ValidationContext
     /**
     Initializes a new instance of the  class using the specified object and an optional property bag.
 
-    - Parameter instance: The object instance to validate.  It cannot be 
+    - Parameter instance: The object instance to validate.  It cannot be .
     - Parameter items: An optional set of key/value pairs to make available to consumers.
     */
     public init(instance : dotnet.System.Object, items : Optional<dotnet.System.Collections.Generic.IDictionary_2<dotnet.System.Object,dotnet.System.Object>>) throws {
@@ -3914,7 +4003,7 @@ public final class ValidationContext
         }
     }
     // delegate closure overload
-    public func InitializeServiceProvider(serviceProvider : @escaping (Optional<dotnet.System.Type_>) throws -> dotnet.System.Object) throws {
+    public func InitializeServiceProvider(serviceProvider : @escaping (dotnet.System.Type_) throws -> dotnet.System.Object) throws {
         let del_serviceProvider = try dotnet.System.Func_2<dotnet.System.Type_,dotnet.System.Object>(serviceProvider);
         return try InitializeServiceProvider(serviceProvider: del_serviceProvider);
     }
@@ -4064,6 +4153,9 @@ open class ValidationException
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_ComponentModel_DataAnnotations_ValidationException_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -4234,6 +4326,9 @@ open class ValidationResult
     open class override func get_type_handle() -> TypeHandle {
         return System_ComponentModel_DataAnnotations_ValidationResult_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // static field: System.ComponentModel.DataAnnotations.ValidationResult Success
@@ -4243,8 +4338,8 @@ open class ValidationResult
     */
     open class var Success : Optional<dotnet.System.ComponentModel.DataAnnotations.ValidationResult> {
         get {
-        let __h = System_ComponentModel_DataAnnotations_ValidationResult_get_Success();
-        let __return = (__h != nil) ? dotnet.System.ComponentModel.DataAnnotations.ValidationResult(hndl: __h!) : nil;
+        let __h___return = System_ComponentModel_DataAnnotations_ValidationResult_get_Success();
+        let __return = (__h___return != nil) ? dotnet.System.ComponentModel.DataAnnotations.ValidationResult(hndl: __h___return!) : nil;
             return __return;
         }
     }
@@ -4537,6 +4632,9 @@ open class ColumnAttribute
     open class override func get_type_handle() -> TypeHandle {
         return System_ComponentModel_DataAnnotations_Schema_ColumnAttribute_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor()
@@ -4681,6 +4779,9 @@ open class ComplexTypeAttribute
     open class override func get_type_handle() -> TypeHandle {
         return System_ComponentModel_DataAnnotations_Schema_ComplexTypeAttribute_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor()
@@ -4712,6 +4813,9 @@ open class DatabaseGeneratedAttribute
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_ComponentModel_DataAnnotations_Schema_DatabaseGeneratedAttribute_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -4817,6 +4921,9 @@ open class ForeignKeyAttribute
     open class override func get_type_handle() -> TypeHandle {
         return System_ComponentModel_DataAnnotations_Schema_ForeignKeyAttribute_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor(System.String)
@@ -4869,6 +4976,9 @@ open class InversePropertyAttribute
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_ComponentModel_DataAnnotations_Schema_InversePropertyAttribute_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -4923,6 +5033,9 @@ open class NotMappedAttribute
     open class override func get_type_handle() -> TypeHandle {
         return System_ComponentModel_DataAnnotations_Schema_NotMappedAttribute_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor()
@@ -4954,6 +5067,9 @@ open class TableAttribute
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_ComponentModel_DataAnnotations_Schema_TableAttribute_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }

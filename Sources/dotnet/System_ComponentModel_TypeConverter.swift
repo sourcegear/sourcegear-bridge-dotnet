@@ -16,6 +16,9 @@ open class UriTypeConverter
     open class override func get_type_handle() -> TypeHandle {
         return System_UriTypeConverter_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor()
@@ -156,6 +159,9 @@ open class AddingNewEventArgs
     open class override func get_type_handle() -> TypeHandle {
         return System_ComponentModel_AddingNewEventArgs_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor()
@@ -242,6 +248,9 @@ public final class AddingNewEventHandler
     public class override func get_type_handle() -> TypeHandle {
         return System_ComponentModel_AddingNewEventHandler_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // void Invoke(System.Object, System.ComponentModel.AddingNewEventArgs)
@@ -281,15 +290,15 @@ public final class AddingNewEventHandler
             return;
         }
     }
-    public init(_ callback : @escaping (Optional<dotnet.System.Object>, dotnet.System.ComponentModel.AddingNewEventArgs) throws -> Void) throws
+    public convenience init(_ __closure_Invoke : @escaping (Optional<dotnet.System.Object>, dotnet.System.ComponentModel.AddingNewEventArgs) throws -> Void) throws
     {
-        let __bridge : (UnsafeMutablePointer<NullableHandle>, NullableHandle, NonnullHandle) -> Void =
+        let __interlude_Invoke : (UnsafeMutablePointer<NullableHandle>, NullableHandle, NonnullHandle) -> Void =
         {
             (thrown : UnsafeMutablePointer<NullableHandle>, sender : NullableHandle, e : NonnullHandle) -> Void in
             do
             {
                 thrown.pointee = nil;
-                try callback((sender != nil) ? (dotnet.System.Object(hndl: sender!)) : nil, dotnet.System.ComponentModel.AddingNewEventArgs(hndl: e));
+                try __closure_Invoke((sender != nil) ? (dotnet.System.Object(hndl: sender!)) : nil, dotnet.System.ComponentModel.AddingNewEventArgs(hndl: e));
             }
             catch let e as dotnet.System.Exception
             {
@@ -301,24 +310,24 @@ public final class AddingNewEventHandler
                 thrown.pointee = __copy_handle(e.get_handle());
             }
         };
-        let cbarg = UnsafeRawPointer(Unmanaged.passRetained(__bridge as AnyObject).toOpaque());
-        func __cb(cb : UnsafeRawPointer?, thrown : UnsafeMutablePointer<NullableHandle>, sender : NullableHandle, e : NonnullHandle) -> Void
+        func __cb_Invoke(pdata_interlude : UnsafeRawPointer, thrown : UnsafeMutablePointer<NullableHandle>, sender : NullableHandle, e : NonnullHandle) -> Void
         {
-            let f = Unmanaged<AnyObject>.fromOpaque(cb!).takeUnretainedValue() as! (UnsafeMutablePointer<NullableHandle>, NullableHandle, NonnullHandle) -> Void;
-            f(thrown, sender, e);
+            let f_interlude = Unmanaged<AnyObject>.fromOpaque(pdata_interlude).takeUnretainedValue() as! (UnsafeMutablePointer<NullableHandle>, NullableHandle, NonnullHandle) -> Void;
+            f_interlude(thrown, sender, e);
         }
+        let __pdata_Invoke = UnsafeRawPointer(Unmanaged.passRetained(__interlude_Invoke as AnyObject).toOpaque());
+
         var __thrown : NullableHandle = nil;
         let h = System_ComponentModel_AddingNewEventHandler_create(
             &__thrown,
-            cbarg,
-            nil, // TODO deinit
-            __cb
+            __cb_Invoke,
+            __pdata_Invoke,
+            nil
             );
-            // TODO check thrown
         if let __ex = __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-            super.init(hndl: h);
+            self.init(hndl: h);
         }
     }
     // void Invoke(System.Object, System.ComponentModel.AddingNewEventArgs)
@@ -346,6 +355,9 @@ public final class AmbientValueAttribute
 {
     public class override func get_type_handle() -> TypeHandle {
         return System_ComponentModel_AmbientValueAttribute_get_type_handle();
+    }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -601,6 +613,9 @@ open class ArrayConverter
     open class override func get_type_handle() -> TypeHandle {
         return System_ComponentModel_ArrayConverter_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor()
@@ -702,6 +717,9 @@ open class AttributeCollection
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_ComponentModel_AttributeCollection_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -874,9 +892,6 @@ open class AttributeCollection
     }
     // [IsSpecialName] System.Attribute get_Item(System.Int32)
 // docid: M:System.ComponentModel.AttributeCollection.get_Item(System.Int32)
-//BEGIN method_is_override
-//matches_1
-//matches :
     open func get_Item(index : Swift.Int32) throws -> dotnet.System.Attribute {
         var __thrown : NullableHandle = nil;
         let __return = System_ComponentModel_AttributeCollection_Attribute__get_Item_0__1__i32(&__thrown, self.get_handle(), index);
@@ -888,9 +903,6 @@ open class AttributeCollection
     }
     // [IsSpecialName] System.Attribute get_Item(System.Type)
 // docid: M:System.ComponentModel.AttributeCollection.get_Item(System.Type)
-//BEGIN method_is_override
-//matches_1
-//matches :
     open func get_Item(attributeType : dotnet.System.Type_) throws -> Optional<dotnet.System.Attribute> {
         var __thrown : NullableHandle = nil;
         let __return = System_ComponentModel_AttributeCollection_Attribute__get_Item_0__1__Type(&__thrown, self.get_handle(), attributeType.get_handle());
@@ -927,6 +939,9 @@ open class AttributeProviderAttribute
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_ComponentModel_AttributeProviderAttribute_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -1042,6 +1057,9 @@ open class BaseNumberConverter
     open class override func get_type_handle() -> TypeHandle {
         return System_ComponentModel_BaseNumberConverter_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // bool CanConvertFrom(System.ComponentModel.ITypeDescriptorContext, System.Type)
@@ -1147,6 +1165,9 @@ public final class BindableAttribute
 {
     public class override func get_type_handle() -> TypeHandle {
         return System_ComponentModel_BindableAttribute_get_type_handle();
+    }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -1454,6 +1475,9 @@ open class BindingList_1<T : SGBridgeGenericValue>
     open class override func get_type_handle() -> TypeHandle {
         return System_ComponentModel_BindingList_1_get_type_handle(T.get_type_handle());
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor()
@@ -1509,7 +1533,7 @@ open class BindingList_1<T : SGBridgeGenericValue>
     /**
     Discards a pending new item.
 
-    - Parameter itemIndex: The index of the of the new item to be added
+    - Parameter itemIndex: The index of the of the new item to be added.
     */
     open func CancelNew(itemIndex : Swift.Int32) throws {
         var __thrown : NullableHandle = nil;
@@ -1782,6 +1806,9 @@ open class BooleanConverter
     open class override func get_type_handle() -> TypeHandle {
         return System_ComponentModel_BooleanConverter_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor()
@@ -1914,6 +1941,9 @@ open class ByteConverter
     open class override func get_type_handle() -> TypeHandle {
         return System_ComponentModel_ByteConverter_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor()
@@ -1945,6 +1975,9 @@ public final class CancelEventHandler
 {
     public class override func get_type_handle() -> TypeHandle {
         return System_ComponentModel_CancelEventHandler_get_type_handle();
+    }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -1985,15 +2018,15 @@ public final class CancelEventHandler
             return;
         }
     }
-    public init(_ callback : @escaping (Optional<dotnet.System.Object>, dotnet.System.ComponentModel.CancelEventArgs) throws -> Void) throws
+    public convenience init(_ __closure_Invoke : @escaping (Optional<dotnet.System.Object>, dotnet.System.ComponentModel.CancelEventArgs) throws -> Void) throws
     {
-        let __bridge : (UnsafeMutablePointer<NullableHandle>, NullableHandle, NonnullHandle) -> Void =
+        let __interlude_Invoke : (UnsafeMutablePointer<NullableHandle>, NullableHandle, NonnullHandle) -> Void =
         {
             (thrown : UnsafeMutablePointer<NullableHandle>, sender : NullableHandle, e : NonnullHandle) -> Void in
             do
             {
                 thrown.pointee = nil;
-                try callback((sender != nil) ? (dotnet.System.Object(hndl: sender!)) : nil, dotnet.System.ComponentModel.CancelEventArgs(hndl: e));
+                try __closure_Invoke((sender != nil) ? (dotnet.System.Object(hndl: sender!)) : nil, dotnet.System.ComponentModel.CancelEventArgs(hndl: e));
             }
             catch let e as dotnet.System.Exception
             {
@@ -2005,24 +2038,24 @@ public final class CancelEventHandler
                 thrown.pointee = __copy_handle(e.get_handle());
             }
         };
-        let cbarg = UnsafeRawPointer(Unmanaged.passRetained(__bridge as AnyObject).toOpaque());
-        func __cb(cb : UnsafeRawPointer?, thrown : UnsafeMutablePointer<NullableHandle>, sender : NullableHandle, e : NonnullHandle) -> Void
+        func __cb_Invoke(pdata_interlude : UnsafeRawPointer, thrown : UnsafeMutablePointer<NullableHandle>, sender : NullableHandle, e : NonnullHandle) -> Void
         {
-            let f = Unmanaged<AnyObject>.fromOpaque(cb!).takeUnretainedValue() as! (UnsafeMutablePointer<NullableHandle>, NullableHandle, NonnullHandle) -> Void;
-            f(thrown, sender, e);
+            let f_interlude = Unmanaged<AnyObject>.fromOpaque(pdata_interlude).takeUnretainedValue() as! (UnsafeMutablePointer<NullableHandle>, NullableHandle, NonnullHandle) -> Void;
+            f_interlude(thrown, sender, e);
         }
+        let __pdata_Invoke = UnsafeRawPointer(Unmanaged.passRetained(__interlude_Invoke as AnyObject).toOpaque());
+
         var __thrown : NullableHandle = nil;
         let h = System_ComponentModel_CancelEventHandler_create(
             &__thrown,
-            cbarg,
-            nil, // TODO deinit
-            __cb
+            __cb_Invoke,
+            __pdata_Invoke,
+            nil
             );
-            // TODO check thrown
         if let __ex = __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-            super.init(hndl: h);
+            self.init(hndl: h);
         }
     }
     // void Invoke(System.Object, System.ComponentModel.CancelEventArgs)
@@ -2050,6 +2083,9 @@ open class CharConverter
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_ComponentModel_CharConverter_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -2203,6 +2239,9 @@ open class CollectionChangeEventArgs
     open class override func get_type_handle() -> TypeHandle {
         return System_ComponentModel_CollectionChangeEventArgs_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor(System.ComponentModel.CollectionChangeAction, System.Object)
@@ -2281,6 +2320,9 @@ public final class CollectionChangeEventHandler
     public class override func get_type_handle() -> TypeHandle {
         return System_ComponentModel_CollectionChangeEventHandler_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // void Invoke(System.Object, System.ComponentModel.CollectionChangeEventArgs)
@@ -2320,15 +2362,15 @@ public final class CollectionChangeEventHandler
             return;
         }
     }
-    public init(_ callback : @escaping (Optional<dotnet.System.Object>, dotnet.System.ComponentModel.CollectionChangeEventArgs) throws -> Void) throws
+    public convenience init(_ __closure_Invoke : @escaping (Optional<dotnet.System.Object>, dotnet.System.ComponentModel.CollectionChangeEventArgs) throws -> Void) throws
     {
-        let __bridge : (UnsafeMutablePointer<NullableHandle>, NullableHandle, NonnullHandle) -> Void =
+        let __interlude_Invoke : (UnsafeMutablePointer<NullableHandle>, NullableHandle, NonnullHandle) -> Void =
         {
             (thrown : UnsafeMutablePointer<NullableHandle>, sender : NullableHandle, e : NonnullHandle) -> Void in
             do
             {
                 thrown.pointee = nil;
-                try callback((sender != nil) ? (dotnet.System.Object(hndl: sender!)) : nil, dotnet.System.ComponentModel.CollectionChangeEventArgs(hndl: e));
+                try __closure_Invoke((sender != nil) ? (dotnet.System.Object(hndl: sender!)) : nil, dotnet.System.ComponentModel.CollectionChangeEventArgs(hndl: e));
             }
             catch let e as dotnet.System.Exception
             {
@@ -2340,24 +2382,24 @@ public final class CollectionChangeEventHandler
                 thrown.pointee = __copy_handle(e.get_handle());
             }
         };
-        let cbarg = UnsafeRawPointer(Unmanaged.passRetained(__bridge as AnyObject).toOpaque());
-        func __cb(cb : UnsafeRawPointer?, thrown : UnsafeMutablePointer<NullableHandle>, sender : NullableHandle, e : NonnullHandle) -> Void
+        func __cb_Invoke(pdata_interlude : UnsafeRawPointer, thrown : UnsafeMutablePointer<NullableHandle>, sender : NullableHandle, e : NonnullHandle) -> Void
         {
-            let f = Unmanaged<AnyObject>.fromOpaque(cb!).takeUnretainedValue() as! (UnsafeMutablePointer<NullableHandle>, NullableHandle, NonnullHandle) -> Void;
-            f(thrown, sender, e);
+            let f_interlude = Unmanaged<AnyObject>.fromOpaque(pdata_interlude).takeUnretainedValue() as! (UnsafeMutablePointer<NullableHandle>, NullableHandle, NonnullHandle) -> Void;
+            f_interlude(thrown, sender, e);
         }
+        let __pdata_Invoke = UnsafeRawPointer(Unmanaged.passRetained(__interlude_Invoke as AnyObject).toOpaque());
+
         var __thrown : NullableHandle = nil;
         let h = System_ComponentModel_CollectionChangeEventHandler_create(
             &__thrown,
-            cbarg,
-            nil, // TODO deinit
-            __cb
+            __cb_Invoke,
+            __pdata_Invoke,
+            nil
             );
-            // TODO check thrown
         if let __ex = __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-            super.init(hndl: h);
+            self.init(hndl: h);
         }
     }
     // void Invoke(System.Object, System.ComponentModel.CollectionChangeEventArgs)
@@ -2385,6 +2427,9 @@ open class CollectionConverter
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_ComponentModel_CollectionConverter_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -2463,6 +2508,9 @@ public final class ComplexBindingPropertiesAttribute
     public class override func get_type_handle() -> TypeHandle {
         return System_ComponentModel_ComplexBindingPropertiesAttribute_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // static field: System.ComponentModel.ComplexBindingPropertiesAttribute Default
@@ -2529,7 +2577,7 @@ public final class ComplexBindingPropertiesAttribute
     /**
     Determines whether the specified  is equal to the current  instance.
 
-    - Parameter obj: The  to compare with the current  instance
+    - Parameter obj: The  to compare with the current  instance.
     - Returns: 
          if the object is equal to the current instance; otherwise, , indicating they are not equal.
 
@@ -2623,6 +2671,9 @@ open class ComponentConverter
     open class override func get_type_handle() -> TypeHandle {
         return System_ComponentModel_ComponentConverter_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor(System.Type)
@@ -2695,6 +2746,9 @@ open class ComponentEditor
     open class override func get_type_handle() -> TypeHandle {
         return System_ComponentModel_ComponentEditor_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // bool EditComponent(System.ComponentModel.ITypeDescriptorContext, System.Object)
@@ -2750,6 +2804,9 @@ open class ComponentResourceManager
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_ComponentModel_ComponentResourceManager_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -2835,6 +2892,9 @@ open class Container
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_ComponentModel_Container_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -2956,6 +3016,9 @@ open class ContainerFilterService
     open class override func get_type_handle() -> TypeHandle {
         return System_ComponentModel_ContainerFilterService_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // System.ComponentModel.ComponentCollection FilterComponents(System.ComponentModel.ComponentCollection)
@@ -2990,6 +3053,9 @@ open class CultureInfoConverter
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_ComponentModel_CultureInfoConverter_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -3168,6 +3234,9 @@ open class CustomTypeDescriptor
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_ComponentModel_CustomTypeDescriptor_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -3418,6 +3487,9 @@ public final class DataObjectAttribute
     public class override func get_type_handle() -> TypeHandle {
         return System_ComponentModel_DataObjectAttribute_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // static field: System.ComponentModel.DataObjectAttribute DataObject
@@ -3573,6 +3645,9 @@ public final class DataObjectFieldAttribute
 {
     public class override func get_type_handle() -> TypeHandle {
         return System_ComponentModel_DataObjectFieldAttribute_get_type_handle();
+    }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -3785,6 +3860,9 @@ public final class DataObjectMethodAttribute
 {
     public class override func get_type_handle() -> TypeHandle {
         return System_ComponentModel_DataObjectMethodAttribute_get_type_handle();
+    }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -4005,6 +4083,9 @@ open class DateTimeConverter
     open class override func get_type_handle() -> TypeHandle {
         return System_ComponentModel_DateTimeConverter_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor()
@@ -4125,6 +4206,9 @@ open class DateTimeOffsetConverter
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_ComponentModel_DateTimeOffsetConverter_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -4247,6 +4331,9 @@ open class DecimalConverter
     open class override func get_type_handle() -> TypeHandle {
         return System_ComponentModel_DecimalConverter_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor()
@@ -4324,6 +4411,9 @@ public final class DefaultBindingPropertyAttribute
     public class override func get_type_handle() -> TypeHandle {
         return System_ComponentModel_DefaultBindingPropertyAttribute_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // static field: System.ComponentModel.DefaultBindingPropertyAttribute Default
@@ -4373,7 +4463,7 @@ public final class DefaultBindingPropertyAttribute
     /**
     Determines whether the specified  is equal to the current  instance.
 
-    - Parameter obj: The  to compare with the current  instance
+    - Parameter obj: The  to compare with the current  instance.
     - Returns: 
          if the object is equal to the current instance; otherwise, , indicating they are not equal.
 
@@ -4442,6 +4532,9 @@ public final class DefaultEventAttribute
 {
     public class override func get_type_handle() -> TypeHandle {
         return System_ComponentModel_DefaultEventAttribute_get_type_handle();
+    }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -4547,6 +4640,9 @@ public final class DefaultPropertyAttribute
     public class override func get_type_handle() -> TypeHandle {
         return System_ComponentModel_DefaultPropertyAttribute_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // static field: System.ComponentModel.DefaultPropertyAttribute Default
@@ -4651,6 +4747,9 @@ public final class DesignTimeVisibleAttribute
 {
     public class override func get_type_handle() -> TypeHandle {
         return System_ComponentModel_DesignTimeVisibleAttribute_get_type_handle();
+    }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -4807,6 +4906,9 @@ open class DoubleConverter
     open class override func get_type_handle() -> TypeHandle {
         return System_ComponentModel_DoubleConverter_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor()
@@ -4838,6 +4940,9 @@ open class EnumConverter
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_ComponentModel_EnumConverter_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -5037,6 +5142,9 @@ open class EventDescriptor
     open class override func get_type_handle() -> TypeHandle {
         return System_ComponentModel_EventDescriptor_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // void AddEventHandler(System.Object, System.Delegate)
@@ -5150,6 +5258,9 @@ open class EventDescriptorCollection
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_ComponentModel_EventDescriptorCollection_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -5443,9 +5554,6 @@ open class EventDescriptorCollection
     }
     // [IsSpecialName] System.ComponentModel.EventDescriptor get_Item(System.Int32)
 // docid: M:System.ComponentModel.EventDescriptorCollection.get_Item(System.Int32)
-//BEGIN method_is_override
-//matches_1
-//matches :
     open func get_Item(index : Swift.Int32) throws -> Optional<dotnet.System.ComponentModel.EventDescriptor> {
         var __thrown : NullableHandle = nil;
         let __return = System_ComponentModel_EventDescriptorCollection_EventDescriptor__get_Item_0__1__i32(&__thrown, self.get_handle(), index);
@@ -5461,9 +5569,6 @@ open class EventDescriptorCollection
     }
     // [IsSpecialName] System.ComponentModel.EventDescriptor get_Item(System.String)
 // docid: M:System.ComponentModel.EventDescriptorCollection.get_Item(System.String)
-//BEGIN method_is_override
-//matches_1
-//matches :
     open func get_Item(name : dotnet.System.String) throws -> Optional<dotnet.System.ComponentModel.EventDescriptor> {
         var __thrown : NullableHandle = nil;
         let __return = System_ComponentModel_EventDescriptorCollection_EventDescriptor__get_Item_0__1__String(&__thrown, self.get_handle(), name.get_handle());
@@ -5500,6 +5605,9 @@ open class ExpandableObjectConverter
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_ComponentModel_ExpandableObjectConverter_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -5571,6 +5679,9 @@ public final class ExtenderProvidedPropertyAttribute
 {
     public class override func get_type_handle() -> TypeHandle {
         return System_ComponentModel_ExtenderProvidedPropertyAttribute_get_type_handle();
+    }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -5730,6 +5841,9 @@ open class GuidConverter
     open class override func get_type_handle() -> TypeHandle {
         return System_ComponentModel_GuidConverter_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor()
@@ -5851,6 +5965,9 @@ open class HandledEventArgs
     open class override func get_type_handle() -> TypeHandle {
         return System_ComponentModel_HandledEventArgs_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor()
@@ -5933,6 +6050,9 @@ public final class HandledEventHandler
     public class override func get_type_handle() -> TypeHandle {
         return System_ComponentModel_HandledEventHandler_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // void Invoke(System.Object, System.ComponentModel.HandledEventArgs)
@@ -5972,15 +6092,15 @@ public final class HandledEventHandler
             return;
         }
     }
-    public init(_ callback : @escaping (Optional<dotnet.System.Object>, dotnet.System.ComponentModel.HandledEventArgs) throws -> Void) throws
+    public convenience init(_ __closure_Invoke : @escaping (Optional<dotnet.System.Object>, dotnet.System.ComponentModel.HandledEventArgs) throws -> Void) throws
     {
-        let __bridge : (UnsafeMutablePointer<NullableHandle>, NullableHandle, NonnullHandle) -> Void =
+        let __interlude_Invoke : (UnsafeMutablePointer<NullableHandle>, NullableHandle, NonnullHandle) -> Void =
         {
             (thrown : UnsafeMutablePointer<NullableHandle>, sender : NullableHandle, e : NonnullHandle) -> Void in
             do
             {
                 thrown.pointee = nil;
-                try callback((sender != nil) ? (dotnet.System.Object(hndl: sender!)) : nil, dotnet.System.ComponentModel.HandledEventArgs(hndl: e));
+                try __closure_Invoke((sender != nil) ? (dotnet.System.Object(hndl: sender!)) : nil, dotnet.System.ComponentModel.HandledEventArgs(hndl: e));
             }
             catch let e as dotnet.System.Exception
             {
@@ -5992,24 +6112,24 @@ public final class HandledEventHandler
                 thrown.pointee = __copy_handle(e.get_handle());
             }
         };
-        let cbarg = UnsafeRawPointer(Unmanaged.passRetained(__bridge as AnyObject).toOpaque());
-        func __cb(cb : UnsafeRawPointer?, thrown : UnsafeMutablePointer<NullableHandle>, sender : NullableHandle, e : NonnullHandle) -> Void
+        func __cb_Invoke(pdata_interlude : UnsafeRawPointer, thrown : UnsafeMutablePointer<NullableHandle>, sender : NullableHandle, e : NonnullHandle) -> Void
         {
-            let f = Unmanaged<AnyObject>.fromOpaque(cb!).takeUnretainedValue() as! (UnsafeMutablePointer<NullableHandle>, NullableHandle, NonnullHandle) -> Void;
-            f(thrown, sender, e);
+            let f_interlude = Unmanaged<AnyObject>.fromOpaque(pdata_interlude).takeUnretainedValue() as! (UnsafeMutablePointer<NullableHandle>, NullableHandle, NonnullHandle) -> Void;
+            f_interlude(thrown, sender, e);
         }
+        let __pdata_Invoke = UnsafeRawPointer(Unmanaged.passRetained(__interlude_Invoke as AnyObject).toOpaque());
+
         var __thrown : NullableHandle = nil;
         let h = System_ComponentModel_HandledEventHandler_create(
             &__thrown,
-            cbarg,
-            nil, // TODO deinit
-            __cb
+            __cb_Invoke,
+            __pdata_Invoke,
+            nil
             );
-            // TODO check thrown
         if let __ex = __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-            super.init(hndl: h);
+            self.init(hndl: h);
         }
     }
     // void Invoke(System.Object, System.ComponentModel.HandledEventArgs)
@@ -6039,6 +6159,9 @@ open class IBindingList
 {
     open class func get_type_handle() -> TypeHandle {
         return System_ComponentModel_IBindingList_get_type_handle();
+    }
+    open class func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     let h : NonnullHandle;
     public func to_gval() -> GVal { return GVal(Swift.Int(bitPattern: self.h)); }
@@ -6305,6 +6428,9 @@ open class IBindingListView
     open class func get_type_handle() -> TypeHandle {
         return System_ComponentModel_IBindingListView_get_type_handle();
     }
+    open class func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     let h : NonnullHandle;
     public func to_gval() -> GVal { return GVal(Swift.Int(bitPattern: self.h)); }
     public func dup_gval() -> GVal { return GVal(Swift.Int(bitPattern: __copy_handle(self.h))); }
@@ -6420,6 +6546,9 @@ open class ICancelAddNew
     open class func get_type_handle() -> TypeHandle {
         return System_ComponentModel_ICancelAddNew_get_type_handle();
     }
+    open class func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     let h : NonnullHandle;
     public func to_gval() -> GVal { return GVal(Swift.Int(bitPattern: self.h)); }
     public func dup_gval() -> GVal { return GVal(Swift.Int(bitPattern: __copy_handle(self.h))); }
@@ -6476,6 +6605,9 @@ open class IComNativeDescriptorHandler
 {
     open class func get_type_handle() -> TypeHandle {
         return System_ComponentModel_IComNativeDescriptorHandler_get_type_handle();
+    }
+    open class func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     let h : NonnullHandle;
     public func to_gval() -> GVal { return GVal(Swift.Int(bitPattern: self.h)); }
@@ -6730,6 +6862,9 @@ open class ICustomTypeDescriptor
 {
     open class func get_type_handle() -> TypeHandle {
         return System_ComponentModel_ICustomTypeDescriptor_get_type_handle();
+    }
+    open class func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     let h : NonnullHandle;
     public func to_gval() -> GVal { return GVal(Swift.Int(bitPattern: self.h)); }
@@ -6988,6 +7123,9 @@ open class IDataErrorInfo
     open class func get_type_handle() -> TypeHandle {
         return System_ComponentModel_IDataErrorInfo_get_type_handle();
     }
+    open class func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     let h : NonnullHandle;
     public func to_gval() -> GVal { return GVal(Swift.Int(bitPattern: self.h)); }
     public func dup_gval() -> GVal { return GVal(Swift.Int(bitPattern: __copy_handle(self.h))); }
@@ -7010,9 +7148,6 @@ open class IDataErrorInfo
     }
     // [IsSpecialName] System.String get_Item(System.String)
 // docid: M:System.ComponentModel.IDataErrorInfo.get_Item(System.String)
-//BEGIN method_is_override
-//matches_1
-//matches :
     open func get_Item(columnName : dotnet.System.String) throws -> dotnet.System.String {
         var __thrown : NullableHandle = nil;
         let __return = System_ComponentModel_IDataErrorInfo_String__get_Item_0__1__String(&__thrown, self.get_handle(), columnName.get_handle());
@@ -7037,6 +7172,9 @@ open class IExtenderProvider
 {
     open class func get_type_handle() -> TypeHandle {
         return System_ComponentModel_IExtenderProvider_get_type_handle();
+    }
+    open class func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     let h : NonnullHandle;
     public func to_gval() -> GVal { return GVal(Swift.Int(bitPattern: self.h)); }
@@ -7081,6 +7219,9 @@ open class IIntellisenseBuilder
 {
     open class func get_type_handle() -> TypeHandle {
         return System_ComponentModel_IIntellisenseBuilder_get_type_handle();
+    }
+    open class func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     let h : NonnullHandle;
     public func to_gval() -> GVal { return GVal(Swift.Int(bitPattern: self.h)); }
@@ -7142,6 +7283,9 @@ open class IListSource
     open class func get_type_handle() -> TypeHandle {
         return System_ComponentModel_IListSource_get_type_handle();
     }
+    open class func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     let h : NonnullHandle;
     public func to_gval() -> GVal { return GVal(Swift.Int(bitPattern: self.h)); }
     public func dup_gval() -> GVal { return GVal(Swift.Int(bitPattern: __copy_handle(self.h))); }
@@ -7196,6 +7340,9 @@ open class INestedContainer
     open class func get_type_handle() -> TypeHandle {
         return System_ComponentModel_INestedContainer_get_type_handle();
     }
+    open class func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     let h : NonnullHandle;
     public func to_gval() -> GVal { return GVal(Swift.Int(bitPattern: self.h)); }
     public func dup_gval() -> GVal { return GVal(Swift.Int(bitPattern: __copy_handle(self.h))); }
@@ -7232,6 +7379,9 @@ open class INestedSite
 {
     open class func get_type_handle() -> TypeHandle {
         return System_ComponentModel_INestedSite_get_type_handle();
+    }
+    open class func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     let h : NonnullHandle;
     public func to_gval() -> GVal { return GVal(Swift.Int(bitPattern: self.h)); }
@@ -7273,6 +7423,9 @@ open class IRaiseItemChangedEvents
     open class func get_type_handle() -> TypeHandle {
         return System_ComponentModel_IRaiseItemChangedEvents_get_type_handle();
     }
+    open class func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     let h : NonnullHandle;
     public func to_gval() -> GVal { return GVal(Swift.Int(bitPattern: self.h)); }
     public func dup_gval() -> GVal { return GVal(Swift.Int(bitPattern: __copy_handle(self.h))); }
@@ -7309,6 +7462,9 @@ open class ISupportInitializeNotification
 {
     open class func get_type_handle() -> TypeHandle {
         return System_ComponentModel_ISupportInitializeNotification_get_type_handle();
+    }
+    open class func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     let h : NonnullHandle;
     public func to_gval() -> GVal { return GVal(Swift.Int(bitPattern: self.h)); }
@@ -7378,6 +7534,9 @@ open class ITypeDescriptorContext
 {
     open class func get_type_handle() -> TypeHandle {
         return System_ComponentModel_ITypeDescriptorContext_get_type_handle();
+    }
+    open class func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     let h : NonnullHandle;
     public func to_gval() -> GVal { return GVal(Swift.Int(bitPattern: self.h)); }
@@ -7470,6 +7629,9 @@ open class ITypedList
     open class func get_type_handle() -> TypeHandle {
         return System_ComponentModel_ITypedList_get_type_handle();
     }
+    open class func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     let h : NonnullHandle;
     public func to_gval() -> GVal { return GVal(Swift.Int(bitPattern: self.h)); }
     public func dup_gval() -> GVal { return GVal(Swift.Int(bitPattern: __copy_handle(self.h))); }
@@ -7529,6 +7691,9 @@ public final class InheritanceAttribute
 {
     public class override func get_type_handle() -> TypeHandle {
         return System_ComponentModel_InheritanceAttribute_get_type_handle();
+    }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -7764,6 +7929,9 @@ open class InstallerTypeAttribute
     open class override func get_type_handle() -> TypeHandle {
         return System_ComponentModel_InstallerTypeAttribute_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor(System.String)
@@ -7873,6 +8041,9 @@ open class InstanceCreationEditor
     open class override func get_type_handle() -> TypeHandle {
         return System_ComponentModel_InstanceCreationEditor_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // System.Object CreateInstance(System.ComponentModel.ITypeDescriptorContext, System.Type)
@@ -7933,6 +8104,9 @@ open class Int16Converter
     open class override func get_type_handle() -> TypeHandle {
         return System_ComponentModel_Int16Converter_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor()
@@ -7964,6 +8138,9 @@ open class Int32Converter
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_ComponentModel_Int32Converter_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -7997,6 +8174,9 @@ open class Int64Converter
     open class override func get_type_handle() -> TypeHandle {
         return System_ComponentModel_Int64Converter_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor()
@@ -8028,6 +8208,9 @@ open class LicFileLicenseProvider
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_ComponentModel_LicFileLicenseProvider_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -8088,6 +8271,9 @@ open class License
     open class override func get_type_handle() -> TypeHandle {
         return System_ComponentModel_License_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // void Dispose()
@@ -8140,6 +8326,9 @@ open class LicenseContext
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_ComponentModel_LicenseContext_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -8254,6 +8443,9 @@ open class LicenseException
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_ComponentModel_LicenseException_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -8383,6 +8575,9 @@ public final class LicenseManager
     public class override func get_type_handle() -> TypeHandle {
         return System_ComponentModel_LicenseManager_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // System.Object CreateWithContext(System.Type, System.ComponentModel.LicenseContext)
@@ -8482,11 +8677,12 @@ public final class LicenseManager
          if a valid  can be granted; otherwise, .
 
     */
-    public class func IsValid(type : dotnet.System.Type_, instance : Optional<dotnet.System.Object>, license : inout dotnet.System.ComponentModel.License) throws -> Bool {
+    public class func IsValid(type : dotnet.System.Type_, instance : Optional<dotnet.System.Object>, license : inout Optional<dotnet.System.ComponentModel.License>) throws -> Bool {
         var __thrown : NullableHandle = nil;
-            var _tmp_out_license = license.get_handle();
+            var _tmp_out_license = (license != nil) ? (license!.get_handle()) : nil;
         let __return = System_ComponentModel_LicenseManager_bool__IsValid_0__3__Type_Object_outLicense(&__thrown, type.get_handle(), instance?.get_handle() ?? nil, &_tmp_out_license);
-        let _tmp2_license = dotnet.System.ComponentModel.License(hndl: _tmp_out_license);
+        let __h__tmp2_license = _tmp_out_license;
+        let _tmp2_license = (__h__tmp2_license != nil) ? dotnet.System.ComponentModel.License(hndl: __h__tmp2_license!) : nil;
             license = _tmp2_license;
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
@@ -8634,6 +8830,9 @@ open class LicenseProvider
     open class override func get_type_handle() -> TypeHandle {
         return System_ComponentModel_LicenseProvider_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // System.ComponentModel.License GetLicense(System.ComponentModel.LicenseContext, System.Type, System.Object, bool)
@@ -8676,6 +8875,9 @@ public final class LicenseProviderAttribute
 {
     public class override func get_type_handle() -> TypeHandle {
         return System_ComponentModel_LicenseProviderAttribute_get_type_handle();
+    }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -8872,6 +9074,9 @@ public final class ListBindableAttribute
     public class override func get_type_handle() -> TypeHandle {
         return System_ComponentModel_ListBindableAttribute_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // static field: System.ComponentModel.ListBindableAttribute Default
@@ -9028,6 +9233,9 @@ open class ListChangedEventArgs
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_ComponentModel_ListChangedEventArgs_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -9200,6 +9408,9 @@ public final class ListChangedEventHandler
     public class override func get_type_handle() -> TypeHandle {
         return System_ComponentModel_ListChangedEventHandler_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // void Invoke(System.Object, System.ComponentModel.ListChangedEventArgs)
@@ -9239,15 +9450,15 @@ public final class ListChangedEventHandler
             return;
         }
     }
-    public init(_ callback : @escaping (Optional<dotnet.System.Object>, dotnet.System.ComponentModel.ListChangedEventArgs) throws -> Void) throws
+    public convenience init(_ __closure_Invoke : @escaping (Optional<dotnet.System.Object>, dotnet.System.ComponentModel.ListChangedEventArgs) throws -> Void) throws
     {
-        let __bridge : (UnsafeMutablePointer<NullableHandle>, NullableHandle, NonnullHandle) -> Void =
+        let __interlude_Invoke : (UnsafeMutablePointer<NullableHandle>, NullableHandle, NonnullHandle) -> Void =
         {
             (thrown : UnsafeMutablePointer<NullableHandle>, sender : NullableHandle, e : NonnullHandle) -> Void in
             do
             {
                 thrown.pointee = nil;
-                try callback((sender != nil) ? (dotnet.System.Object(hndl: sender!)) : nil, dotnet.System.ComponentModel.ListChangedEventArgs(hndl: e));
+                try __closure_Invoke((sender != nil) ? (dotnet.System.Object(hndl: sender!)) : nil, dotnet.System.ComponentModel.ListChangedEventArgs(hndl: e));
             }
             catch let e as dotnet.System.Exception
             {
@@ -9259,24 +9470,24 @@ public final class ListChangedEventHandler
                 thrown.pointee = __copy_handle(e.get_handle());
             }
         };
-        let cbarg = UnsafeRawPointer(Unmanaged.passRetained(__bridge as AnyObject).toOpaque());
-        func __cb(cb : UnsafeRawPointer?, thrown : UnsafeMutablePointer<NullableHandle>, sender : NullableHandle, e : NonnullHandle) -> Void
+        func __cb_Invoke(pdata_interlude : UnsafeRawPointer, thrown : UnsafeMutablePointer<NullableHandle>, sender : NullableHandle, e : NonnullHandle) -> Void
         {
-            let f = Unmanaged<AnyObject>.fromOpaque(cb!).takeUnretainedValue() as! (UnsafeMutablePointer<NullableHandle>, NullableHandle, NonnullHandle) -> Void;
-            f(thrown, sender, e);
+            let f_interlude = Unmanaged<AnyObject>.fromOpaque(pdata_interlude).takeUnretainedValue() as! (UnsafeMutablePointer<NullableHandle>, NullableHandle, NonnullHandle) -> Void;
+            f_interlude(thrown, sender, e);
         }
+        let __pdata_Invoke = UnsafeRawPointer(Unmanaged.passRetained(__interlude_Invoke as AnyObject).toOpaque());
+
         var __thrown : NullableHandle = nil;
         let h = System_ComponentModel_ListChangedEventHandler_create(
             &__thrown,
-            cbarg,
-            nil, // TODO deinit
-            __cb
+            __cb_Invoke,
+            __pdata_Invoke,
+            nil
             );
-            // TODO check thrown
         if let __ex = __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-            super.init(hndl: h);
+            self.init(hndl: h);
         }
     }
     // void Invoke(System.Object, System.ComponentModel.ListChangedEventArgs)
@@ -9411,6 +9622,9 @@ open class ListSortDescription
     open class override func get_type_handle() -> TypeHandle {
         return System_ComponentModel_ListSortDescription_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor(System.ComponentModel.PropertyDescriptor, System.ComponentModel.ListSortDirection)
@@ -9479,7 +9693,7 @@ open class ListSortDescription
         }
     }
     /**
-    Gets or sets the abstract description of a class property associated with this 
+    Gets or sets the abstract description of a class property associated with this .
 
     */
     open var PropertyDescriptor : Optional<dotnet.System.ComponentModel.PropertyDescriptor> {
@@ -9519,6 +9733,9 @@ open class ListSortDescriptionCollection
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_ComponentModel_ListSortDescriptionCollection_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -9620,9 +9837,6 @@ open class ListSortDescriptionCollection
     }
     // [IsSpecialName] System.ComponentModel.ListSortDescription get_Item(System.Int32)
 // docid: M:System.ComponentModel.ListSortDescriptionCollection.get_Item(System.Int32)
-//BEGIN method_is_override
-//matches_1
-//matches :
     open func get_Item(index : Swift.Int32) throws -> Optional<dotnet.System.ComponentModel.ListSortDescription> {
         var __thrown : NullableHandle = nil;
         let __return = System_ComponentModel_ListSortDescriptionCollection_ListSortDescription__get_Item_0__1__i32(&__thrown, self.get_handle(), index);
@@ -9711,6 +9925,9 @@ public final class LookupBindingPropertiesAttribute
     public class override func get_type_handle() -> TypeHandle {
         return System_ComponentModel_LookupBindingPropertiesAttribute_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // static field: System.ComponentModel.LookupBindingPropertiesAttribute Default
@@ -9763,7 +9980,7 @@ public final class LookupBindingPropertiesAttribute
     /**
     Determines whether the specified  is equal to the current  instance.
 
-    - Parameter obj: The  to compare with the current  instance
+    - Parameter obj: The  to compare with the current  instance.
     - Returns: 
          if the object is equal to the current instance; otherwise, , indicating they are not equal.
 
@@ -9907,6 +10124,9 @@ open class MarshalByValueComponent
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_ComponentModel_MarshalByValueComponent_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -10114,6 +10334,9 @@ open class MaskedTextProvider
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_ComponentModel_MaskedTextProvider_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -11652,9 +11875,6 @@ open class MaskedTextProvider
     }
     // [IsSpecialName] System.Char get_Item(System.Int32)
 // docid: M:System.ComponentModel.MaskedTextProvider.get_Item(System.Int32)
-//BEGIN method_is_override
-//matches_1
-//matches :
     open func get_Item(index : Swift.Int32) throws -> dotnet.System.Char {
         var __thrown : NullableHandle = nil;
         let __return = System_ComponentModel_MaskedTextProvider_Char__get_Item_0__1__i32(&__thrown, self.get_handle(), index);
@@ -12084,6 +12304,9 @@ open class MemberDescriptor
     open class override func get_type_handle() -> TypeHandle {
         return System_ComponentModel_MemberDescriptor_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // bool Equals(System.Object)
@@ -12277,6 +12500,9 @@ open class MultilineStringConverter
     open class override func get_type_handle() -> TypeHandle {
         return System_ComponentModel_MultilineStringConverter_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor()
@@ -12378,6 +12604,9 @@ open class NestedContainer
     open class override func get_type_handle() -> TypeHandle {
         return System_ComponentModel_NestedContainer_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor(System.ComponentModel.IComponent)
@@ -12430,6 +12659,9 @@ open class NullableConverter
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_ComponentModel_NullableConverter_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -12778,6 +13010,9 @@ public final class PasswordPropertyTextAttribute
     public class override func get_type_handle() -> TypeHandle {
         return System_ComponentModel_PasswordPropertyTextAttribute_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // static field: System.ComponentModel.PasswordPropertyTextAttribute Default
@@ -12933,6 +13168,9 @@ open class PropertyDescriptor
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_ComponentModel_PropertyDescriptor_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -13362,6 +13600,9 @@ open class PropertyDescriptorCollection
     open class override func get_type_handle() -> TypeHandle {
         return System_ComponentModel_PropertyDescriptorCollection_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // static field: System.ComponentModel.PropertyDescriptorCollection Empty
@@ -13670,9 +13911,6 @@ open class PropertyDescriptorCollection
     }
     // [IsSpecialName] System.ComponentModel.PropertyDescriptor get_Item(System.Int32)
 // docid: M:System.ComponentModel.PropertyDescriptorCollection.get_Item(System.Int32)
-//BEGIN method_is_override
-//matches_1
-//matches :
     open func get_Item(index : Swift.Int32) throws -> dotnet.System.ComponentModel.PropertyDescriptor {
         var __thrown : NullableHandle = nil;
         let __return = System_ComponentModel_PropertyDescriptorCollection_PropertyDescriptor__get_Item_0__1__i32(&__thrown, self.get_handle(), index);
@@ -13684,9 +13922,6 @@ open class PropertyDescriptorCollection
     }
     // [IsSpecialName] System.ComponentModel.PropertyDescriptor get_Item(System.String)
 // docid: M:System.ComponentModel.PropertyDescriptorCollection.get_Item(System.String)
-//BEGIN method_is_override
-//matches_1
-//matches :
     open func get_Item(name : dotnet.System.String) throws -> Optional<dotnet.System.ComponentModel.PropertyDescriptor> {
         var __thrown : NullableHandle = nil;
         let __return = System_ComponentModel_PropertyDescriptorCollection_PropertyDescriptor__get_Item_0__1__String(&__thrown, self.get_handle(), name.get_handle());
@@ -13723,6 +13958,9 @@ open class PropertyTabAttribute
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_ComponentModel_PropertyTabAttribute_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -13979,6 +14217,9 @@ public final class ProvidePropertyAttribute
     public class override func get_type_handle() -> TypeHandle {
         return System_ComponentModel_ProvidePropertyAttribute_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor(System.String, System.String)
@@ -14126,6 +14367,9 @@ open class RecommendedAsConfigurableAttribute
     open class override func get_type_handle() -> TypeHandle {
         return System_ComponentModel_RecommendedAsConfigurableAttribute_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // static field: System.ComponentModel.RecommendedAsConfigurableAttribute Default
@@ -14266,6 +14510,9 @@ open class ReferenceConverter
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_ComponentModel_ReferenceConverter_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -14425,6 +14672,9 @@ open class RefreshEventArgs
     open class override func get_type_handle() -> TypeHandle {
         return System_ComponentModel_RefreshEventArgs_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor(System.Object)
@@ -14522,6 +14772,9 @@ public final class RefreshEventHandler
     public class override func get_type_handle() -> TypeHandle {
         return System_ComponentModel_RefreshEventHandler_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // void Invoke(System.ComponentModel.RefreshEventArgs)
@@ -14561,15 +14814,15 @@ public final class RefreshEventHandler
             return;
         }
     }
-    public init(_ callback : @escaping (dotnet.System.ComponentModel.RefreshEventArgs) throws -> Void) throws
+    public convenience init(_ __closure_Invoke : @escaping (dotnet.System.ComponentModel.RefreshEventArgs) throws -> Void) throws
     {
-        let __bridge : (UnsafeMutablePointer<NullableHandle>, NonnullHandle) -> Void =
+        let __interlude_Invoke : (UnsafeMutablePointer<NullableHandle>, NonnullHandle) -> Void =
         {
             (thrown : UnsafeMutablePointer<NullableHandle>, e : NonnullHandle) -> Void in
             do
             {
                 thrown.pointee = nil;
-                try callback(dotnet.System.ComponentModel.RefreshEventArgs(hndl: e));
+                try __closure_Invoke(dotnet.System.ComponentModel.RefreshEventArgs(hndl: e));
             }
             catch let e as dotnet.System.Exception
             {
@@ -14581,24 +14834,24 @@ public final class RefreshEventHandler
                 thrown.pointee = __copy_handle(e.get_handle());
             }
         };
-        let cbarg = UnsafeRawPointer(Unmanaged.passRetained(__bridge as AnyObject).toOpaque());
-        func __cb(cb : UnsafeRawPointer?, thrown : UnsafeMutablePointer<NullableHandle>, e : NonnullHandle) -> Void
+        func __cb_Invoke(pdata_interlude : UnsafeRawPointer, thrown : UnsafeMutablePointer<NullableHandle>, e : NonnullHandle) -> Void
         {
-            let f = Unmanaged<AnyObject>.fromOpaque(cb!).takeUnretainedValue() as! (UnsafeMutablePointer<NullableHandle>, NonnullHandle) -> Void;
-            f(thrown, e);
+            let f_interlude = Unmanaged<AnyObject>.fromOpaque(pdata_interlude).takeUnretainedValue() as! (UnsafeMutablePointer<NullableHandle>, NonnullHandle) -> Void;
+            f_interlude(thrown, e);
         }
+        let __pdata_Invoke = UnsafeRawPointer(Unmanaged.passRetained(__interlude_Invoke as AnyObject).toOpaque());
+
         var __thrown : NullableHandle = nil;
         let h = System_ComponentModel_RefreshEventHandler_create(
             &__thrown,
-            cbarg,
-            nil, // TODO deinit
-            __cb
+            __cb_Invoke,
+            __pdata_Invoke,
+            nil
             );
-            // TODO check thrown
         if let __ex = __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-            super.init(hndl: h);
+            self.init(hndl: h);
         }
     }
     // void Invoke(System.ComponentModel.RefreshEventArgs)
@@ -14626,6 +14879,9 @@ open class RunInstallerAttribute
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_ComponentModel_RunInstallerAttribute_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -14768,6 +15024,9 @@ open class SByteConverter
     open class override func get_type_handle() -> TypeHandle {
         return System_ComponentModel_SByteConverter_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor()
@@ -14799,6 +15058,9 @@ public final class SettingsBindableAttribute
 {
     public class override func get_type_handle() -> TypeHandle {
         return System_ComponentModel_SettingsBindableAttribute_get_type_handle();
+    }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -14912,6 +15174,9 @@ open class SingleConverter
     open class override func get_type_handle() -> TypeHandle {
         return System_ComponentModel_SingleConverter_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor()
@@ -14943,6 +15208,9 @@ open class StringConverter
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_ComponentModel_StringConverter_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -15082,6 +15350,9 @@ open class TimeSpanConverter
     open class override func get_type_handle() -> TypeHandle {
         return System_ComponentModel_TimeSpanConverter_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor()
@@ -15202,6 +15473,9 @@ open class ToolboxItemAttribute
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_ComponentModel_ToolboxItemAttribute_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -15388,6 +15662,9 @@ public final class ToolboxItemFilterAttribute
 {
     public class override func get_type_handle() -> TypeHandle {
         return System_ComponentModel_ToolboxItemFilterAttribute_get_type_handle();
+    }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -15632,6 +15909,9 @@ open class TypeConverter
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_ComponentModel_TypeConverter_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -16411,6 +16691,9 @@ open class TypeConverter_StandardValuesCollection
     open class override func get_type_handle() -> TypeHandle {
         return System_ComponentModel_TypeConverter_StandardValuesCollection_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor(System.Collections.ICollection)
@@ -16476,9 +16759,6 @@ open class TypeConverter_StandardValuesCollection
     }
     // [IsSpecialName] System.Object get_Item(System.Int32)
 // docid: M:System.ComponentModel.TypeConverter.StandardValuesCollection.get_Item(System.Int32)
-//BEGIN method_is_override
-//matches_1
-//matches :
     open func get_Item(index : Swift.Int32) throws -> Optional<dotnet.System.Object> {
         var __thrown : NullableHandle = nil;
         let __return = System_ComponentModel_TypeConverter_StandardValuesCollection_Object__get_Item_0__1__i32(&__thrown, self.get_handle(), index);
@@ -16515,6 +16795,9 @@ open class TypeDescriptionProvider
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_ComponentModel_TypeDescriptionProvider_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -16778,6 +17061,9 @@ public final class TypeDescriptor
 {
     public class override func get_type_handle() -> TypeHandle {
         return System_ComponentModel_TypeDescriptor_get_type_handle();
+    }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -18132,6 +18418,9 @@ open class TypeListConverter
     open class override func get_type_handle() -> TypeHandle {
         return System_ComponentModel_TypeListConverter_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // bool CanConvertFrom(System.ComponentModel.ITypeDescriptorContext, System.Type)
@@ -18294,6 +18583,9 @@ open class UInt16Converter
     open class override func get_type_handle() -> TypeHandle {
         return System_ComponentModel_UInt16Converter_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor()
@@ -18325,6 +18617,9 @@ open class UInt32Converter
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_ComponentModel_UInt32Converter_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -18358,6 +18653,9 @@ open class UInt64Converter
     open class override func get_type_handle() -> TypeHandle {
         return System_ComponentModel_UInt64Converter_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor()
@@ -18389,6 +18687,9 @@ open class VersionConverter
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_ComponentModel_VersionConverter_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -18531,6 +18832,9 @@ open class WarningException
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_ComponentModel_WarningException_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -18700,6 +19004,9 @@ open class ActiveDesignerEventArgs
     open class override func get_type_handle() -> TypeHandle {
         return System_ComponentModel_Design_ActiveDesignerEventArgs_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor(System.ComponentModel.Design.IDesignerHost, System.ComponentModel.Design.IDesignerHost)
@@ -18782,6 +19089,9 @@ public final class ActiveDesignerEventHandler
     public class override func get_type_handle() -> TypeHandle {
         return System_ComponentModel_Design_ActiveDesignerEventHandler_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // void Invoke(System.Object, System.ComponentModel.Design.ActiveDesignerEventArgs)
@@ -18821,15 +19131,15 @@ public final class ActiveDesignerEventHandler
             return;
         }
     }
-    public init(_ callback : @escaping (Optional<dotnet.System.Object>, dotnet.System.ComponentModel.Design.ActiveDesignerEventArgs) throws -> Void) throws
+    public convenience init(_ __closure_Invoke : @escaping (Optional<dotnet.System.Object>, dotnet.System.ComponentModel.Design.ActiveDesignerEventArgs) throws -> Void) throws
     {
-        let __bridge : (UnsafeMutablePointer<NullableHandle>, NullableHandle, NonnullHandle) -> Void =
+        let __interlude_Invoke : (UnsafeMutablePointer<NullableHandle>, NullableHandle, NonnullHandle) -> Void =
         {
             (thrown : UnsafeMutablePointer<NullableHandle>, sender : NullableHandle, e : NonnullHandle) -> Void in
             do
             {
                 thrown.pointee = nil;
-                try callback((sender != nil) ? (dotnet.System.Object(hndl: sender!)) : nil, dotnet.System.ComponentModel.Design.ActiveDesignerEventArgs(hndl: e));
+                try __closure_Invoke((sender != nil) ? (dotnet.System.Object(hndl: sender!)) : nil, dotnet.System.ComponentModel.Design.ActiveDesignerEventArgs(hndl: e));
             }
             catch let e as dotnet.System.Exception
             {
@@ -18841,24 +19151,24 @@ public final class ActiveDesignerEventHandler
                 thrown.pointee = __copy_handle(e.get_handle());
             }
         };
-        let cbarg = UnsafeRawPointer(Unmanaged.passRetained(__bridge as AnyObject).toOpaque());
-        func __cb(cb : UnsafeRawPointer?, thrown : UnsafeMutablePointer<NullableHandle>, sender : NullableHandle, e : NonnullHandle) -> Void
+        func __cb_Invoke(pdata_interlude : UnsafeRawPointer, thrown : UnsafeMutablePointer<NullableHandle>, sender : NullableHandle, e : NonnullHandle) -> Void
         {
-            let f = Unmanaged<AnyObject>.fromOpaque(cb!).takeUnretainedValue() as! (UnsafeMutablePointer<NullableHandle>, NullableHandle, NonnullHandle) -> Void;
-            f(thrown, sender, e);
+            let f_interlude = Unmanaged<AnyObject>.fromOpaque(pdata_interlude).takeUnretainedValue() as! (UnsafeMutablePointer<NullableHandle>, NullableHandle, NonnullHandle) -> Void;
+            f_interlude(thrown, sender, e);
         }
+        let __pdata_Invoke = UnsafeRawPointer(Unmanaged.passRetained(__interlude_Invoke as AnyObject).toOpaque());
+
         var __thrown : NullableHandle = nil;
         let h = System_ComponentModel_Design_ActiveDesignerEventHandler_create(
             &__thrown,
-            cbarg,
-            nil, // TODO deinit
-            __cb
+            __cb_Invoke,
+            __pdata_Invoke,
+            nil
             );
-            // TODO check thrown
         if let __ex = __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-            super.init(hndl: h);
+            self.init(hndl: h);
         }
     }
     // void Invoke(System.Object, System.ComponentModel.Design.ActiveDesignerEventArgs)
@@ -18886,6 +19196,9 @@ open class CheckoutException
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_ComponentModel_Design_CheckoutException_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -18979,6 +19292,9 @@ open class CommandID
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_ComponentModel_Design_CommandID_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -19106,6 +19422,9 @@ public final class ComponentChangedEventArgs
 {
     public class override func get_type_handle() -> TypeHandle {
         return System_ComponentModel_Design_ComponentChangedEventArgs_get_type_handle();
+    }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -19239,6 +19558,9 @@ public final class ComponentChangedEventHandler
     public class override func get_type_handle() -> TypeHandle {
         return System_ComponentModel_Design_ComponentChangedEventHandler_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // void Invoke(System.Object, System.ComponentModel.Design.ComponentChangedEventArgs)
@@ -19278,15 +19600,15 @@ public final class ComponentChangedEventHandler
             return;
         }
     }
-    public init(_ callback : @escaping (Optional<dotnet.System.Object>, dotnet.System.ComponentModel.Design.ComponentChangedEventArgs) throws -> Void) throws
+    public convenience init(_ __closure_Invoke : @escaping (Optional<dotnet.System.Object>, dotnet.System.ComponentModel.Design.ComponentChangedEventArgs) throws -> Void) throws
     {
-        let __bridge : (UnsafeMutablePointer<NullableHandle>, NullableHandle, NonnullHandle) -> Void =
+        let __interlude_Invoke : (UnsafeMutablePointer<NullableHandle>, NullableHandle, NonnullHandle) -> Void =
         {
             (thrown : UnsafeMutablePointer<NullableHandle>, sender : NullableHandle, e : NonnullHandle) -> Void in
             do
             {
                 thrown.pointee = nil;
-                try callback((sender != nil) ? (dotnet.System.Object(hndl: sender!)) : nil, dotnet.System.ComponentModel.Design.ComponentChangedEventArgs(hndl: e));
+                try __closure_Invoke((sender != nil) ? (dotnet.System.Object(hndl: sender!)) : nil, dotnet.System.ComponentModel.Design.ComponentChangedEventArgs(hndl: e));
             }
             catch let e as dotnet.System.Exception
             {
@@ -19298,24 +19620,24 @@ public final class ComponentChangedEventHandler
                 thrown.pointee = __copy_handle(e.get_handle());
             }
         };
-        let cbarg = UnsafeRawPointer(Unmanaged.passRetained(__bridge as AnyObject).toOpaque());
-        func __cb(cb : UnsafeRawPointer?, thrown : UnsafeMutablePointer<NullableHandle>, sender : NullableHandle, e : NonnullHandle) -> Void
+        func __cb_Invoke(pdata_interlude : UnsafeRawPointer, thrown : UnsafeMutablePointer<NullableHandle>, sender : NullableHandle, e : NonnullHandle) -> Void
         {
-            let f = Unmanaged<AnyObject>.fromOpaque(cb!).takeUnretainedValue() as! (UnsafeMutablePointer<NullableHandle>, NullableHandle, NonnullHandle) -> Void;
-            f(thrown, sender, e);
+            let f_interlude = Unmanaged<AnyObject>.fromOpaque(pdata_interlude).takeUnretainedValue() as! (UnsafeMutablePointer<NullableHandle>, NullableHandle, NonnullHandle) -> Void;
+            f_interlude(thrown, sender, e);
         }
+        let __pdata_Invoke = UnsafeRawPointer(Unmanaged.passRetained(__interlude_Invoke as AnyObject).toOpaque());
+
         var __thrown : NullableHandle = nil;
         let h = System_ComponentModel_Design_ComponentChangedEventHandler_create(
             &__thrown,
-            cbarg,
-            nil, // TODO deinit
-            __cb
+            __cb_Invoke,
+            __pdata_Invoke,
+            nil
             );
-            // TODO check thrown
         if let __ex = __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-            super.init(hndl: h);
+            self.init(hndl: h);
         }
     }
     // void Invoke(System.Object, System.ComponentModel.Design.ComponentChangedEventArgs)
@@ -19343,6 +19665,9 @@ public final class ComponentChangingEventArgs
 {
     public class override func get_type_handle() -> TypeHandle {
         return System_ComponentModel_Design_ComponentChangingEventArgs_get_type_handle();
+    }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -19426,6 +19751,9 @@ public final class ComponentChangingEventHandler
     public class override func get_type_handle() -> TypeHandle {
         return System_ComponentModel_Design_ComponentChangingEventHandler_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // void Invoke(System.Object, System.ComponentModel.Design.ComponentChangingEventArgs)
@@ -19465,15 +19793,15 @@ public final class ComponentChangingEventHandler
             return;
         }
     }
-    public init(_ callback : @escaping (Optional<dotnet.System.Object>, dotnet.System.ComponentModel.Design.ComponentChangingEventArgs) throws -> Void) throws
+    public convenience init(_ __closure_Invoke : @escaping (Optional<dotnet.System.Object>, dotnet.System.ComponentModel.Design.ComponentChangingEventArgs) throws -> Void) throws
     {
-        let __bridge : (UnsafeMutablePointer<NullableHandle>, NullableHandle, NonnullHandle) -> Void =
+        let __interlude_Invoke : (UnsafeMutablePointer<NullableHandle>, NullableHandle, NonnullHandle) -> Void =
         {
             (thrown : UnsafeMutablePointer<NullableHandle>, sender : NullableHandle, e : NonnullHandle) -> Void in
             do
             {
                 thrown.pointee = nil;
-                try callback((sender != nil) ? (dotnet.System.Object(hndl: sender!)) : nil, dotnet.System.ComponentModel.Design.ComponentChangingEventArgs(hndl: e));
+                try __closure_Invoke((sender != nil) ? (dotnet.System.Object(hndl: sender!)) : nil, dotnet.System.ComponentModel.Design.ComponentChangingEventArgs(hndl: e));
             }
             catch let e as dotnet.System.Exception
             {
@@ -19485,24 +19813,24 @@ public final class ComponentChangingEventHandler
                 thrown.pointee = __copy_handle(e.get_handle());
             }
         };
-        let cbarg = UnsafeRawPointer(Unmanaged.passRetained(__bridge as AnyObject).toOpaque());
-        func __cb(cb : UnsafeRawPointer?, thrown : UnsafeMutablePointer<NullableHandle>, sender : NullableHandle, e : NonnullHandle) -> Void
+        func __cb_Invoke(pdata_interlude : UnsafeRawPointer, thrown : UnsafeMutablePointer<NullableHandle>, sender : NullableHandle, e : NonnullHandle) -> Void
         {
-            let f = Unmanaged<AnyObject>.fromOpaque(cb!).takeUnretainedValue() as! (UnsafeMutablePointer<NullableHandle>, NullableHandle, NonnullHandle) -> Void;
-            f(thrown, sender, e);
+            let f_interlude = Unmanaged<AnyObject>.fromOpaque(pdata_interlude).takeUnretainedValue() as! (UnsafeMutablePointer<NullableHandle>, NullableHandle, NonnullHandle) -> Void;
+            f_interlude(thrown, sender, e);
         }
+        let __pdata_Invoke = UnsafeRawPointer(Unmanaged.passRetained(__interlude_Invoke as AnyObject).toOpaque());
+
         var __thrown : NullableHandle = nil;
         let h = System_ComponentModel_Design_ComponentChangingEventHandler_create(
             &__thrown,
-            cbarg,
-            nil, // TODO deinit
-            __cb
+            __cb_Invoke,
+            __pdata_Invoke,
+            nil
             );
-            // TODO check thrown
         if let __ex = __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-            super.init(hndl: h);
+            self.init(hndl: h);
         }
     }
     // void Invoke(System.Object, System.ComponentModel.Design.ComponentChangingEventArgs)
@@ -19530,6 +19858,9 @@ open class ComponentEventArgs
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_ComponentModel_Design_ComponentEventArgs_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -19588,6 +19919,9 @@ public final class ComponentEventHandler
     public class override func get_type_handle() -> TypeHandle {
         return System_ComponentModel_Design_ComponentEventHandler_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // void Invoke(System.Object, System.ComponentModel.Design.ComponentEventArgs)
@@ -19627,15 +19961,15 @@ public final class ComponentEventHandler
             return;
         }
     }
-    public init(_ callback : @escaping (Optional<dotnet.System.Object>, dotnet.System.ComponentModel.Design.ComponentEventArgs) throws -> Void) throws
+    public convenience init(_ __closure_Invoke : @escaping (Optional<dotnet.System.Object>, dotnet.System.ComponentModel.Design.ComponentEventArgs) throws -> Void) throws
     {
-        let __bridge : (UnsafeMutablePointer<NullableHandle>, NullableHandle, NonnullHandle) -> Void =
+        let __interlude_Invoke : (UnsafeMutablePointer<NullableHandle>, NullableHandle, NonnullHandle) -> Void =
         {
             (thrown : UnsafeMutablePointer<NullableHandle>, sender : NullableHandle, e : NonnullHandle) -> Void in
             do
             {
                 thrown.pointee = nil;
-                try callback((sender != nil) ? (dotnet.System.Object(hndl: sender!)) : nil, dotnet.System.ComponentModel.Design.ComponentEventArgs(hndl: e));
+                try __closure_Invoke((sender != nil) ? (dotnet.System.Object(hndl: sender!)) : nil, dotnet.System.ComponentModel.Design.ComponentEventArgs(hndl: e));
             }
             catch let e as dotnet.System.Exception
             {
@@ -19647,24 +19981,24 @@ public final class ComponentEventHandler
                 thrown.pointee = __copy_handle(e.get_handle());
             }
         };
-        let cbarg = UnsafeRawPointer(Unmanaged.passRetained(__bridge as AnyObject).toOpaque());
-        func __cb(cb : UnsafeRawPointer?, thrown : UnsafeMutablePointer<NullableHandle>, sender : NullableHandle, e : NonnullHandle) -> Void
+        func __cb_Invoke(pdata_interlude : UnsafeRawPointer, thrown : UnsafeMutablePointer<NullableHandle>, sender : NullableHandle, e : NonnullHandle) -> Void
         {
-            let f = Unmanaged<AnyObject>.fromOpaque(cb!).takeUnretainedValue() as! (UnsafeMutablePointer<NullableHandle>, NullableHandle, NonnullHandle) -> Void;
-            f(thrown, sender, e);
+            let f_interlude = Unmanaged<AnyObject>.fromOpaque(pdata_interlude).takeUnretainedValue() as! (UnsafeMutablePointer<NullableHandle>, NullableHandle, NonnullHandle) -> Void;
+            f_interlude(thrown, sender, e);
         }
+        let __pdata_Invoke = UnsafeRawPointer(Unmanaged.passRetained(__interlude_Invoke as AnyObject).toOpaque());
+
         var __thrown : NullableHandle = nil;
         let h = System_ComponentModel_Design_ComponentEventHandler_create(
             &__thrown,
-            cbarg,
-            nil, // TODO deinit
-            __cb
+            __cb_Invoke,
+            __pdata_Invoke,
+            nil
             );
-            // TODO check thrown
         if let __ex = __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-            super.init(hndl: h);
+            self.init(hndl: h);
         }
     }
     // void Invoke(System.Object, System.ComponentModel.Design.ComponentEventArgs)
@@ -19692,6 +20026,9 @@ open class ComponentRenameEventArgs
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_ComponentModel_Design_ComponentRenameEventArgs_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -19800,6 +20137,9 @@ public final class ComponentRenameEventHandler
     public class override func get_type_handle() -> TypeHandle {
         return System_ComponentModel_Design_ComponentRenameEventHandler_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // void Invoke(System.Object, System.ComponentModel.Design.ComponentRenameEventArgs)
@@ -19839,15 +20179,15 @@ public final class ComponentRenameEventHandler
             return;
         }
     }
-    public init(_ callback : @escaping (Optional<dotnet.System.Object>, dotnet.System.ComponentModel.Design.ComponentRenameEventArgs) throws -> Void) throws
+    public convenience init(_ __closure_Invoke : @escaping (Optional<dotnet.System.Object>, dotnet.System.ComponentModel.Design.ComponentRenameEventArgs) throws -> Void) throws
     {
-        let __bridge : (UnsafeMutablePointer<NullableHandle>, NullableHandle, NonnullHandle) -> Void =
+        let __interlude_Invoke : (UnsafeMutablePointer<NullableHandle>, NullableHandle, NonnullHandle) -> Void =
         {
             (thrown : UnsafeMutablePointer<NullableHandle>, sender : NullableHandle, e : NonnullHandle) -> Void in
             do
             {
                 thrown.pointee = nil;
-                try callback((sender != nil) ? (dotnet.System.Object(hndl: sender!)) : nil, dotnet.System.ComponentModel.Design.ComponentRenameEventArgs(hndl: e));
+                try __closure_Invoke((sender != nil) ? (dotnet.System.Object(hndl: sender!)) : nil, dotnet.System.ComponentModel.Design.ComponentRenameEventArgs(hndl: e));
             }
             catch let e as dotnet.System.Exception
             {
@@ -19859,24 +20199,24 @@ public final class ComponentRenameEventHandler
                 thrown.pointee = __copy_handle(e.get_handle());
             }
         };
-        let cbarg = UnsafeRawPointer(Unmanaged.passRetained(__bridge as AnyObject).toOpaque());
-        func __cb(cb : UnsafeRawPointer?, thrown : UnsafeMutablePointer<NullableHandle>, sender : NullableHandle, e : NonnullHandle) -> Void
+        func __cb_Invoke(pdata_interlude : UnsafeRawPointer, thrown : UnsafeMutablePointer<NullableHandle>, sender : NullableHandle, e : NonnullHandle) -> Void
         {
-            let f = Unmanaged<AnyObject>.fromOpaque(cb!).takeUnretainedValue() as! (UnsafeMutablePointer<NullableHandle>, NullableHandle, NonnullHandle) -> Void;
-            f(thrown, sender, e);
+            let f_interlude = Unmanaged<AnyObject>.fromOpaque(pdata_interlude).takeUnretainedValue() as! (UnsafeMutablePointer<NullableHandle>, NullableHandle, NonnullHandle) -> Void;
+            f_interlude(thrown, sender, e);
         }
+        let __pdata_Invoke = UnsafeRawPointer(Unmanaged.passRetained(__interlude_Invoke as AnyObject).toOpaque());
+
         var __thrown : NullableHandle = nil;
         let h = System_ComponentModel_Design_ComponentRenameEventHandler_create(
             &__thrown,
-            cbarg,
-            nil, // TODO deinit
-            __cb
+            __cb_Invoke,
+            __pdata_Invoke,
+            nil
             );
-            // TODO check thrown
         if let __ex = __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-            super.init(hndl: h);
+            self.init(hndl: h);
         }
     }
     // void Invoke(System.Object, System.ComponentModel.Design.ComponentRenameEventArgs)
@@ -19906,6 +20246,9 @@ open class DesignerCollection
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_ComponentModel_Design_DesignerCollection_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -19971,9 +20314,6 @@ open class DesignerCollection
     }
     // [IsSpecialName] System.ComponentModel.Design.IDesignerHost get_Item(System.Int32)
 // docid: M:System.ComponentModel.Design.DesignerCollection.get_Item(System.Int32)
-//BEGIN method_is_override
-//matches_1
-//matches :
     open func get_Item(index : Swift.Int32) throws -> Optional<dotnet.System.ComponentModel.Design.IDesignerHost> {
         var __thrown : NullableHandle = nil;
         let __return = System_ComponentModel_Design_DesignerCollection_IDesignerHost__get_Item_0__1__i32(&__thrown, self.get_handle(), index);
@@ -20010,6 +20350,9 @@ open class DesignerEventArgs
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_ComponentModel_Design_DesignerEventArgs_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -20068,6 +20411,9 @@ public final class DesignerEventHandler
     public class override func get_type_handle() -> TypeHandle {
         return System_ComponentModel_Design_DesignerEventHandler_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // void Invoke(System.Object, System.ComponentModel.Design.DesignerEventArgs)
@@ -20107,15 +20453,15 @@ public final class DesignerEventHandler
             return;
         }
     }
-    public init(_ callback : @escaping (Optional<dotnet.System.Object>, dotnet.System.ComponentModel.Design.DesignerEventArgs) throws -> Void) throws
+    public convenience init(_ __closure_Invoke : @escaping (Optional<dotnet.System.Object>, dotnet.System.ComponentModel.Design.DesignerEventArgs) throws -> Void) throws
     {
-        let __bridge : (UnsafeMutablePointer<NullableHandle>, NullableHandle, NonnullHandle) -> Void =
+        let __interlude_Invoke : (UnsafeMutablePointer<NullableHandle>, NullableHandle, NonnullHandle) -> Void =
         {
             (thrown : UnsafeMutablePointer<NullableHandle>, sender : NullableHandle, e : NonnullHandle) -> Void in
             do
             {
                 thrown.pointee = nil;
-                try callback((sender != nil) ? (dotnet.System.Object(hndl: sender!)) : nil, dotnet.System.ComponentModel.Design.DesignerEventArgs(hndl: e));
+                try __closure_Invoke((sender != nil) ? (dotnet.System.Object(hndl: sender!)) : nil, dotnet.System.ComponentModel.Design.DesignerEventArgs(hndl: e));
             }
             catch let e as dotnet.System.Exception
             {
@@ -20127,24 +20473,24 @@ public final class DesignerEventHandler
                 thrown.pointee = __copy_handle(e.get_handle());
             }
         };
-        let cbarg = UnsafeRawPointer(Unmanaged.passRetained(__bridge as AnyObject).toOpaque());
-        func __cb(cb : UnsafeRawPointer?, thrown : UnsafeMutablePointer<NullableHandle>, sender : NullableHandle, e : NonnullHandle) -> Void
+        func __cb_Invoke(pdata_interlude : UnsafeRawPointer, thrown : UnsafeMutablePointer<NullableHandle>, sender : NullableHandle, e : NonnullHandle) -> Void
         {
-            let f = Unmanaged<AnyObject>.fromOpaque(cb!).takeUnretainedValue() as! (UnsafeMutablePointer<NullableHandle>, NullableHandle, NonnullHandle) -> Void;
-            f(thrown, sender, e);
+            let f_interlude = Unmanaged<AnyObject>.fromOpaque(pdata_interlude).takeUnretainedValue() as! (UnsafeMutablePointer<NullableHandle>, NullableHandle, NonnullHandle) -> Void;
+            f_interlude(thrown, sender, e);
         }
+        let __pdata_Invoke = UnsafeRawPointer(Unmanaged.passRetained(__interlude_Invoke as AnyObject).toOpaque());
+
         var __thrown : NullableHandle = nil;
         let h = System_ComponentModel_Design_DesignerEventHandler_create(
             &__thrown,
-            cbarg,
-            nil, // TODO deinit
-            __cb
+            __cb_Invoke,
+            __pdata_Invoke,
+            nil
             );
-            // TODO check thrown
         if let __ex = __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-            super.init(hndl: h);
+            self.init(hndl: h);
         }
     }
     // void Invoke(System.Object, System.ComponentModel.Design.DesignerEventArgs)
@@ -20173,6 +20519,9 @@ open class DesignerOptionService
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_ComponentModel_Design_DesignerOptionService_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -20213,6 +20562,9 @@ public final class DesignerOptionService_DesignerOptionCollection
 {
     public class override func get_type_handle() -> TypeHandle {
         return System_ComponentModel_Design_DesignerOptionService_DesignerOptionCollection_get_type_handle();
+    }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -20336,9 +20688,6 @@ public final class DesignerOptionService_DesignerOptionCollection
     }
     // [IsSpecialName] System.ComponentModel.Design.DesignerOptionService.DesignerOptionCollection get_Item(System.Int32)
 // docid: M:System.ComponentModel.Design.DesignerOptionService.DesignerOptionCollection.get_Item(System.Int32)
-//BEGIN method_is_override
-//matches_1
-//matches :
     public func get_Item(index : Swift.Int32) throws -> Optional<dotnet.System.ComponentModel.Design.DesignerOptionService_DesignerOptionCollection> {
         var __thrown : NullableHandle = nil;
         let __return = System_ComponentModel_Design_DesignerOptionService_DesignerOptionCollection_DesignerOptionService_DesignerOptionCollection__get_Item_0__1__i32(&__thrown, self.get_handle(), index);
@@ -20354,9 +20703,6 @@ public final class DesignerOptionService_DesignerOptionCollection
     }
     // [IsSpecialName] System.ComponentModel.Design.DesignerOptionService.DesignerOptionCollection get_Item(System.String)
 // docid: M:System.ComponentModel.Design.DesignerOptionService.DesignerOptionCollection.get_Item(System.String)
-//BEGIN method_is_override
-//matches_1
-//matches :
     public func get_Item(name : dotnet.System.String) throws -> Optional<dotnet.System.ComponentModel.Design.DesignerOptionService_DesignerOptionCollection> {
         var __thrown : NullableHandle = nil;
         let __return = System_ComponentModel_Design_DesignerOptionService_DesignerOptionCollection_DesignerOptionService_DesignerOptionCollection__get_Item_0__1__String(&__thrown, self.get_handle(), name.get_handle());
@@ -20421,6 +20767,9 @@ open class DesignerTransaction
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_ComponentModel_Design_DesignerTransaction_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -20529,6 +20878,9 @@ open class DesignerTransactionCloseEventArgs
     open class override func get_type_handle() -> TypeHandle {
         return System_ComponentModel_Design_DesignerTransactionCloseEventArgs_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor(bool)
@@ -20620,6 +20972,9 @@ public final class DesignerTransactionCloseEventHandler
     public class override func get_type_handle() -> TypeHandle {
         return System_ComponentModel_Design_DesignerTransactionCloseEventHandler_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // void Invoke(System.Object, System.ComponentModel.Design.DesignerTransactionCloseEventArgs)
@@ -20659,15 +21014,15 @@ public final class DesignerTransactionCloseEventHandler
             return;
         }
     }
-    public init(_ callback : @escaping (Optional<dotnet.System.Object>, dotnet.System.ComponentModel.Design.DesignerTransactionCloseEventArgs) throws -> Void) throws
+    public convenience init(_ __closure_Invoke : @escaping (Optional<dotnet.System.Object>, dotnet.System.ComponentModel.Design.DesignerTransactionCloseEventArgs) throws -> Void) throws
     {
-        let __bridge : (UnsafeMutablePointer<NullableHandle>, NullableHandle, NonnullHandle) -> Void =
+        let __interlude_Invoke : (UnsafeMutablePointer<NullableHandle>, NullableHandle, NonnullHandle) -> Void =
         {
             (thrown : UnsafeMutablePointer<NullableHandle>, sender : NullableHandle, e : NonnullHandle) -> Void in
             do
             {
                 thrown.pointee = nil;
-                try callback((sender != nil) ? (dotnet.System.Object(hndl: sender!)) : nil, dotnet.System.ComponentModel.Design.DesignerTransactionCloseEventArgs(hndl: e));
+                try __closure_Invoke((sender != nil) ? (dotnet.System.Object(hndl: sender!)) : nil, dotnet.System.ComponentModel.Design.DesignerTransactionCloseEventArgs(hndl: e));
             }
             catch let e as dotnet.System.Exception
             {
@@ -20679,24 +21034,24 @@ public final class DesignerTransactionCloseEventHandler
                 thrown.pointee = __copy_handle(e.get_handle());
             }
         };
-        let cbarg = UnsafeRawPointer(Unmanaged.passRetained(__bridge as AnyObject).toOpaque());
-        func __cb(cb : UnsafeRawPointer?, thrown : UnsafeMutablePointer<NullableHandle>, sender : NullableHandle, e : NonnullHandle) -> Void
+        func __cb_Invoke(pdata_interlude : UnsafeRawPointer, thrown : UnsafeMutablePointer<NullableHandle>, sender : NullableHandle, e : NonnullHandle) -> Void
         {
-            let f = Unmanaged<AnyObject>.fromOpaque(cb!).takeUnretainedValue() as! (UnsafeMutablePointer<NullableHandle>, NullableHandle, NonnullHandle) -> Void;
-            f(thrown, sender, e);
+            let f_interlude = Unmanaged<AnyObject>.fromOpaque(pdata_interlude).takeUnretainedValue() as! (UnsafeMutablePointer<NullableHandle>, NullableHandle, NonnullHandle) -> Void;
+            f_interlude(thrown, sender, e);
         }
+        let __pdata_Invoke = UnsafeRawPointer(Unmanaged.passRetained(__interlude_Invoke as AnyObject).toOpaque());
+
         var __thrown : NullableHandle = nil;
         let h = System_ComponentModel_Design_DesignerTransactionCloseEventHandler_create(
             &__thrown,
-            cbarg,
-            nil, // TODO deinit
-            __cb
+            __cb_Invoke,
+            __pdata_Invoke,
+            nil
             );
-            // TODO check thrown
         if let __ex = __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-            super.init(hndl: h);
+            self.init(hndl: h);
         }
     }
     // void Invoke(System.Object, System.ComponentModel.Design.DesignerTransactionCloseEventArgs)
@@ -20724,6 +21079,9 @@ open class DesignerVerb
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_ComponentModel_Design_DesignerVerb_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -20847,6 +21205,9 @@ open class DesignerVerbCollection
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_ComponentModel_Design_DesignerVerbCollection_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -21020,9 +21381,6 @@ open class DesignerVerbCollection
     }
     // [IsSpecialName] System.ComponentModel.Design.DesignerVerb get_Item(System.Int32)
 // docid: M:System.ComponentModel.Design.DesignerVerbCollection.get_Item(System.Int32)
-//BEGIN method_is_override
-//matches_1
-//matches :
     open func get_Item(index : Swift.Int32) throws -> Optional<dotnet.System.ComponentModel.Design.DesignerVerb> {
         var __thrown : NullableHandle = nil;
         let __return = System_ComponentModel_Design_DesignerVerbCollection_DesignerVerb__get_Item_0__1__i32(&__thrown, self.get_handle(), index);
@@ -21061,6 +21419,9 @@ open class DesigntimeLicenseContext
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_ComponentModel_Design_DesigntimeLicenseContext_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -21153,6 +21514,9 @@ open class DesigntimeLicenseContextSerializer
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_ComponentModel_Design_DesigntimeLicenseContextSerializer_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -21250,6 +21614,9 @@ public final class HelpKeywordAttribute
 {
     public class override func get_type_handle() -> TypeHandle {
         return System_ComponentModel_Design_HelpKeywordAttribute_get_type_handle();
+    }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -21455,6 +21822,9 @@ open class IComponentChangeService
 {
     open class func get_type_handle() -> TypeHandle {
         return System_ComponentModel_Design_IComponentChangeService_get_type_handle();
+    }
+    open class func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     let h : NonnullHandle;
     public func to_gval() -> GVal { return GVal(Swift.Int(bitPattern: self.h)); }
@@ -21741,6 +22111,9 @@ open class IComponentDiscoveryService
     open class func get_type_handle() -> TypeHandle {
         return System_ComponentModel_Design_IComponentDiscoveryService_get_type_handle();
     }
+    open class func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     let h : NonnullHandle;
     public func to_gval() -> GVal { return GVal(Swift.Int(bitPattern: self.h)); }
     public func dup_gval() -> GVal { return GVal(Swift.Int(bitPattern: __copy_handle(self.h))); }
@@ -21784,6 +22157,9 @@ open class IComponentInitializer
 {
     open class func get_type_handle() -> TypeHandle {
         return System_ComponentModel_Design_IComponentInitializer_get_type_handle();
+    }
+    open class func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     let h : NonnullHandle;
     public func to_gval() -> GVal { return GVal(Swift.Int(bitPattern: self.h)); }
@@ -21842,6 +22218,9 @@ open class IDesigner
 {
     open class func get_type_handle() -> TypeHandle {
         return System_ComponentModel_Design_IDesigner_get_type_handle();
+    }
+    open class func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     let h : NonnullHandle;
     public func to_gval() -> GVal { return GVal(Swift.Int(bitPattern: self.h)); }
@@ -21924,6 +22303,9 @@ open class IDesignerEventService
 {
     open class func get_type_handle() -> TypeHandle {
         return System_ComponentModel_Design_IDesignerEventService_get_type_handle();
+    }
+    open class func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     let h : NonnullHandle;
     public func to_gval() -> GVal { return GVal(Swift.Int(bitPattern: self.h)); }
@@ -22104,6 +22486,9 @@ open class IDesignerFilter
     open class func get_type_handle() -> TypeHandle {
         return System_ComponentModel_Design_IDesignerFilter_get_type_handle();
     }
+    open class func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     let h : NonnullHandle;
     public func to_gval() -> GVal { return GVal(Swift.Int(bitPattern: self.h)); }
     public func dup_gval() -> GVal { return GVal(Swift.Int(bitPattern: __copy_handle(self.h))); }
@@ -22225,6 +22610,9 @@ open class IDesignerHost
 {
     open class func get_type_handle() -> TypeHandle {
         return System_ComponentModel_Design_IDesignerHost_get_type_handle();
+    }
+    open class func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     let h : NonnullHandle;
     public func to_gval() -> GVal { return GVal(Swift.Int(bitPattern: self.h)); }
@@ -22688,6 +23076,9 @@ open class IDesignerHostTransactionState
     open class func get_type_handle() -> TypeHandle {
         return System_ComponentModel_Design_IDesignerHostTransactionState_get_type_handle();
     }
+    open class func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     let h : NonnullHandle;
     public func to_gval() -> GVal { return GVal(Swift.Int(bitPattern: self.h)); }
     public func dup_gval() -> GVal { return GVal(Swift.Int(bitPattern: __copy_handle(self.h))); }
@@ -22723,6 +23114,9 @@ open class IDesignerOptionService
 {
     open class func get_type_handle() -> TypeHandle {
         return System_ComponentModel_Design_IDesignerOptionService_get_type_handle();
+    }
+    open class func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     let h : NonnullHandle;
     public func to_gval() -> GVal { return GVal(Swift.Int(bitPattern: self.h)); }
@@ -22789,6 +23183,9 @@ open class IDictionaryService
 {
     open class func get_type_handle() -> TypeHandle {
         return System_ComponentModel_Design_IDictionaryService_get_type_handle();
+    }
+    open class func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     let h : NonnullHandle;
     public func to_gval() -> GVal { return GVal(Swift.Int(bitPattern: self.h)); }
@@ -22875,6 +23272,9 @@ open class IEventBindingService
 {
     open class func get_type_handle() -> TypeHandle {
         return System_ComponentModel_Design_IEventBindingService_get_type_handle();
+    }
+    open class func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     let h : NonnullHandle;
     public func to_gval() -> GVal { return GVal(Swift.Int(bitPattern: self.h)); }
@@ -23053,6 +23453,9 @@ open class IExtenderListService
     open class func get_type_handle() -> TypeHandle {
         return System_ComponentModel_Design_IExtenderListService_get_type_handle();
     }
+    open class func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     let h : NonnullHandle;
     public func to_gval() -> GVal { return GVal(Swift.Int(bitPattern: self.h)); }
     public func dup_gval() -> GVal { return GVal(Swift.Int(bitPattern: __copy_handle(self.h))); }
@@ -23094,6 +23497,9 @@ open class IExtenderProviderService
 {
     open class func get_type_handle() -> TypeHandle {
         return System_ComponentModel_Design_IExtenderProviderService_get_type_handle();
+    }
+    open class func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     let h : NonnullHandle;
     public func to_gval() -> GVal { return GVal(Swift.Int(bitPattern: self.h)); }
@@ -23151,6 +23557,9 @@ open class IHelpService
 {
     open class func get_type_handle() -> TypeHandle {
         return System_ComponentModel_Design_IHelpService_get_type_handle();
+    }
+    open class func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     let h : NonnullHandle;
     public func to_gval() -> GVal { return GVal(Swift.Int(bitPattern: self.h)); }
@@ -23293,6 +23702,9 @@ open class IInheritanceService
     open class func get_type_handle() -> TypeHandle {
         return System_ComponentModel_Design_IInheritanceService_get_type_handle();
     }
+    open class func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     let h : NonnullHandle;
     public func to_gval() -> GVal { return GVal(Swift.Int(bitPattern: self.h)); }
     public func dup_gval() -> GVal { return GVal(Swift.Int(bitPattern: __copy_handle(self.h))); }
@@ -23352,6 +23764,9 @@ open class IMenuCommandService
 {
     open class func get_type_handle() -> TypeHandle {
         return System_ComponentModel_Design_IMenuCommandService_get_type_handle();
+    }
+    open class func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     let h : NonnullHandle;
     public func to_gval() -> GVal { return GVal(Swift.Int(bitPattern: self.h)); }
@@ -23512,6 +23927,9 @@ open class IReferenceService
     open class func get_type_handle() -> TypeHandle {
         return System_ComponentModel_Design_IReferenceService_get_type_handle();
     }
+    open class func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     let h : NonnullHandle;
     public func to_gval() -> GVal { return GVal(Swift.Int(bitPattern: self.h)); }
     public func dup_gval() -> GVal { return GVal(Swift.Int(bitPattern: __copy_handle(self.h))); }
@@ -23638,6 +24056,9 @@ open class IResourceService
     open class func get_type_handle() -> TypeHandle {
         return System_ComponentModel_Design_IResourceService_get_type_handle();
     }
+    open class func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     let h : NonnullHandle;
     public func to_gval() -> GVal { return GVal(Swift.Int(bitPattern: self.h)); }
     public func dup_gval() -> GVal { return GVal(Swift.Int(bitPattern: __copy_handle(self.h))); }
@@ -23704,6 +24125,9 @@ open class IRootDesigner
     open class func get_type_handle() -> TypeHandle {
         return System_ComponentModel_Design_IRootDesigner_get_type_handle();
     }
+    open class func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     let h : NonnullHandle;
     public func to_gval() -> GVal { return GVal(Swift.Int(bitPattern: self.h)); }
     public func dup_gval() -> GVal { return GVal(Swift.Int(bitPattern: __copy_handle(self.h))); }
@@ -23757,6 +24181,9 @@ open class ISelectionService
 {
     open class func get_type_handle() -> TypeHandle {
         return System_ComponentModel_Design_ISelectionService_get_type_handle();
+    }
+    open class func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     let h : NonnullHandle;
     public func to_gval() -> GVal { return GVal(Swift.Int(bitPattern: self.h)); }
@@ -23939,6 +24366,9 @@ open class IServiceContainer
     open class func get_type_handle() -> TypeHandle {
         return System_ComponentModel_Design_IServiceContainer_get_type_handle();
     }
+    open class func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     let h : NonnullHandle;
     public func to_gval() -> GVal { return GVal(Swift.Int(bitPattern: self.h)); }
     public func dup_gval() -> GVal { return GVal(Swift.Int(bitPattern: __copy_handle(self.h))); }
@@ -24081,6 +24511,9 @@ open class ITreeDesigner
     open class func get_type_handle() -> TypeHandle {
         return System_ComponentModel_Design_ITreeDesigner_get_type_handle();
     }
+    open class func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     let h : NonnullHandle;
     public func to_gval() -> GVal { return GVal(Swift.Int(bitPattern: self.h)); }
     public func dup_gval() -> GVal { return GVal(Swift.Int(bitPattern: __copy_handle(self.h))); }
@@ -24131,6 +24564,9 @@ open class ITypeDescriptorFilterService
 {
     open class func get_type_handle() -> TypeHandle {
         return System_ComponentModel_Design_ITypeDescriptorFilterService_get_type_handle();
+    }
+    open class func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     let h : NonnullHandle;
     public func to_gval() -> GVal { return GVal(Swift.Int(bitPattern: self.h)); }
@@ -24217,6 +24653,9 @@ open class ITypeDiscoveryService
     open class func get_type_handle() -> TypeHandle {
         return System_ComponentModel_Design_ITypeDiscoveryService_get_type_handle();
     }
+    open class func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     let h : NonnullHandle;
     public func to_gval() -> GVal { return GVal(Swift.Int(bitPattern: self.h)); }
     public func dup_gval() -> GVal { return GVal(Swift.Int(bitPattern: __copy_handle(self.h))); }
@@ -24260,6 +24699,9 @@ open class ITypeResolutionService
 {
     open class func get_type_handle() -> TypeHandle {
         return System_ComponentModel_Design_ITypeResolutionService_get_type_handle();
+    }
+    open class func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     let h : NonnullHandle;
     public func to_gval() -> GVal { return GVal(Swift.Int(bitPattern: self.h)); }
@@ -24440,6 +24882,9 @@ open class MenuCommand
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_ComponentModel_Design_MenuCommand_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -24897,6 +25342,9 @@ open class ServiceContainer
     open class override func get_type_handle() -> TypeHandle {
         return System_ComponentModel_Design_ServiceContainer_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor()
@@ -25098,6 +25546,9 @@ public final class ServiceCreatorCallback
     public class override func get_type_handle() -> TypeHandle {
         return System_ComponentModel_Design_ServiceCreatorCallback_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // System.Object Invoke(System.ComponentModel.Design.IServiceContainer, System.Type)
@@ -25145,15 +25596,15 @@ public final class ServiceCreatorCallback
         }
         }
     }
-    public init(_ callback : @escaping (dotnet.System.ComponentModel.Design.IServiceContainer, dotnet.System.Type_) throws -> dotnet.System.Object) throws
+    public convenience init(_ __closure_Invoke : @escaping (dotnet.System.ComponentModel.Design.IServiceContainer, dotnet.System.Type_) throws -> dotnet.System.Object) throws
     {
-        let __bridge : (UnsafeMutablePointer<NullableHandle>, NonnullHandle, NonnullHandle) -> NullableHandle =
+        let __interlude_Invoke : (UnsafeMutablePointer<NullableHandle>, NonnullHandle, NonnullHandle) -> NullableHandle =
         {
             (thrown : UnsafeMutablePointer<NullableHandle>, container : NonnullHandle, serviceType : NonnullHandle) -> NullableHandle in
             do
             {
                 thrown.pointee = nil;
-                let ret = try callback(dotnet.System.ComponentModel.Design.IServiceContainer(hndl: container), dotnet.System.Type_(hndl: serviceType));
+                let ret = try __closure_Invoke(dotnet.System.ComponentModel.Design.IServiceContainer(hndl: container), dotnet.System.Type_(hndl: serviceType));
                 return __copy_handle(ret.get_handle());
             }
             catch let e as dotnet.System.Exception
@@ -25168,24 +25619,24 @@ public final class ServiceCreatorCallback
                 return NonnullHandle(bitPattern: 8675309)!;
             }
         };
-        let cbarg = UnsafeRawPointer(Unmanaged.passRetained(__bridge as AnyObject).toOpaque());
-        func __cb(cb : UnsafeRawPointer?, thrown : UnsafeMutablePointer<NullableHandle>, container : NonnullHandle, serviceType : NonnullHandle) -> NullableHandle
+        func __cb_Invoke(pdata_interlude : UnsafeRawPointer, thrown : UnsafeMutablePointer<NullableHandle>, container : NonnullHandle, serviceType : NonnullHandle) -> NullableHandle
         {
-            let f = Unmanaged<AnyObject>.fromOpaque(cb!).takeUnretainedValue() as! (UnsafeMutablePointer<NullableHandle>, NonnullHandle, NonnullHandle) -> NullableHandle;
-            return f(thrown, container, serviceType);
+            let f_interlude = Unmanaged<AnyObject>.fromOpaque(pdata_interlude).takeUnretainedValue() as! (UnsafeMutablePointer<NullableHandle>, NonnullHandle, NonnullHandle) -> NullableHandle;
+            return f_interlude(thrown, container, serviceType);
         }
+        let __pdata_Invoke = UnsafeRawPointer(Unmanaged.passRetained(__interlude_Invoke as AnyObject).toOpaque());
+
         var __thrown : NullableHandle = nil;
         let h = System_ComponentModel_Design_ServiceCreatorCallback_create(
             &__thrown,
-            cbarg,
-            nil, // TODO deinit
-            __cb
+            __cb_Invoke,
+            __pdata_Invoke,
+            nil
             );
-            // TODO check thrown
         if let __ex = __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-            super.init(hndl: h);
+            self.init(hndl: h);
         }
     }
     // System.Object Invoke(System.ComponentModel.Design.IServiceContainer, System.Type)
@@ -25217,6 +25668,9 @@ open class StandardCommands
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_ComponentModel_Design_StandardCommands_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -25855,6 +26309,9 @@ open class StandardToolWindows
     open class override func get_type_handle() -> TypeHandle {
         return System_ComponentModel_Design_StandardToolWindows_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // static field: System.Guid ObjectBrowser
@@ -25975,6 +26432,9 @@ open class TypeDescriptionProviderService
     open class override func get_type_handle() -> TypeHandle {
         return System_ComponentModel_Design_TypeDescriptionProviderService_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // System.ComponentModel.TypeDescriptionProvider GetProvider(System.Object)
@@ -26085,6 +26545,9 @@ open class ComponentSerializationService
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_ComponentModel_Design_Serialization_ComponentSerializationService_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -26302,6 +26765,9 @@ public final class ContextStack
     public class override func get_type_handle() -> TypeHandle {
         return System_ComponentModel_Design_Serialization_ContextStack_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor()
@@ -26389,9 +26855,6 @@ public final class ContextStack
     }
     // [IsSpecialName] System.Object get_Item(System.Int32)
 // docid: M:System.ComponentModel.Design.Serialization.ContextStack.get_Item(System.Int32)
-//BEGIN method_is_override
-//matches_1
-//matches :
     public func get_Item(level : Swift.Int32) throws -> Optional<dotnet.System.Object> {
         var __thrown : NullableHandle = nil;
         let __return = System_ComponentModel_Design_Serialization_ContextStack_Object__get_Item_0__1__i32(&__thrown, self.get_handle(), level);
@@ -26407,9 +26870,6 @@ public final class ContextStack
     }
     // [IsSpecialName] System.Object get_Item(System.Type)
 // docid: M:System.ComponentModel.Design.Serialization.ContextStack.get_Item(System.Type)
-//BEGIN method_is_override
-//matches_1
-//matches :
     public func get_Item(type : dotnet.System.Type_) throws -> Optional<dotnet.System.Object> {
         var __thrown : NullableHandle = nil;
         let __return = System_ComponentModel_Design_Serialization_ContextStack_Object__get_Item_0__1__Type(&__thrown, self.get_handle(), type.get_handle());
@@ -26446,6 +26906,9 @@ public final class DefaultSerializationProviderAttribute
 {
     public class override func get_type_handle() -> TypeHandle {
         return System_ComponentModel_Design_Serialization_DefaultSerializationProviderAttribute_get_type_handle();
+    }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -26515,6 +26978,9 @@ open class DesignerLoader
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_ComponentModel_Design_Serialization_DesignerLoader_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -26601,6 +27067,9 @@ open class IDesignerLoaderHost
     open class func get_type_handle() -> TypeHandle {
         return System_ComponentModel_Design_Serialization_IDesignerLoaderHost_get_type_handle();
     }
+    open class func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     let h : NonnullHandle;
     public func to_gval() -> GVal { return GVal(Swift.Int(bitPattern: self.h)); }
     public func dup_gval() -> GVal { return GVal(Swift.Int(bitPattern: __copy_handle(self.h))); }
@@ -26660,6 +27129,9 @@ open class IDesignerLoaderHost2
 {
     open class func get_type_handle() -> TypeHandle {
         return System_ComponentModel_Design_Serialization_IDesignerLoaderHost2_get_type_handle();
+    }
+    open class func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     let h : NonnullHandle;
     public func to_gval() -> GVal { return GVal(Swift.Int(bitPattern: self.h)); }
@@ -26729,6 +27201,9 @@ open class IDesignerLoaderService
 {
     open class func get_type_handle() -> TypeHandle {
         return System_ComponentModel_Design_Serialization_IDesignerLoaderService_get_type_handle();
+    }
+    open class func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     let h : NonnullHandle;
     public func to_gval() -> GVal { return GVal(Swift.Int(bitPattern: self.h)); }
@@ -26806,6 +27281,9 @@ open class IDesignerSerializationManager
 {
     open class func get_type_handle() -> TypeHandle {
         return System_ComponentModel_Design_Serialization_IDesignerSerializationManager_get_type_handle();
+    }
+    open class func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     let h : NonnullHandle;
     public func to_gval() -> GVal { return GVal(Swift.Int(bitPattern: self.h)); }
@@ -27077,6 +27555,9 @@ open class IDesignerSerializationProvider
     open class func get_type_handle() -> TypeHandle {
         return System_ComponentModel_Design_Serialization_IDesignerSerializationProvider_get_type_handle();
     }
+    open class func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     let h : NonnullHandle;
     public func to_gval() -> GVal { return GVal(Swift.Int(bitPattern: self.h)); }
     public func dup_gval() -> GVal { return GVal(Swift.Int(bitPattern: __copy_handle(self.h))); }
@@ -27126,6 +27607,9 @@ open class IDesignerSerializationService
 {
     open class func get_type_handle() -> TypeHandle {
         return System_ComponentModel_Design_Serialization_IDesignerSerializationService_get_type_handle();
+    }
+    open class func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     let h : NonnullHandle;
     public func to_gval() -> GVal { return GVal(Swift.Int(bitPattern: self.h)); }
@@ -27187,6 +27671,9 @@ open class INameCreationService
 {
     open class func get_type_handle() -> TypeHandle {
         return System_ComponentModel_Design_Serialization_INameCreationService_get_type_handle();
+    }
+    open class func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     let h : NonnullHandle;
     public func to_gval() -> GVal { return GVal(Swift.Int(bitPattern: self.h)); }
@@ -27265,6 +27752,9 @@ public final class InstanceDescriptor
 {
     public class override func get_type_handle() -> TypeHandle {
         return System_ComponentModel_Design_Serialization_InstanceDescriptor_get_type_handle();
+    }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -27404,6 +27894,9 @@ public final class MemberRelationship
 {
     public class override func get_type_handle() -> TypeHandle {
         return System_ComponentModel_Design_Serialization_MemberRelationship_get_type_handle();
+    }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -27592,6 +28085,9 @@ open class MemberRelationshipService
     open class override func get_type_handle() -> TypeHandle {
         return System_ComponentModel_Design_Serialization_MemberRelationshipService_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // bool SupportsRelationship(System.ComponentModel.Design.Serialization.MemberRelationship, System.ComponentModel.Design.Serialization.MemberRelationship)
@@ -27616,9 +28112,6 @@ open class MemberRelationshipService
     }
     // [IsSpecialName] System.ComponentModel.Design.Serialization.MemberRelationship get_Item(System.ComponentModel.Design.Serialization.MemberRelationship)
 // docid: M:System.ComponentModel.Design.Serialization.MemberRelationshipService.get_Item(System.ComponentModel.Design.Serialization.MemberRelationship)
-//BEGIN method_is_override
-//matches_1
-//matches :
     open func get_Item(source : dotnet.System.ComponentModel.Design.Serialization.MemberRelationship) throws -> dotnet.System.ComponentModel.Design.Serialization.MemberRelationship {
         var __thrown : NullableHandle = nil;
         let __return = System_ComponentModel_Design_Serialization_MemberRelationshipService_MemberRelationship__get_Item_0__1__MemberRelationship(&__thrown, self.get_handle(), source.get_handle());
@@ -27641,9 +28134,6 @@ open class MemberRelationshipService
     }
     // [IsSpecialName] System.ComponentModel.Design.Serialization.MemberRelationship get_Item(System.Object, System.ComponentModel.MemberDescriptor)
 // docid: M:System.ComponentModel.Design.Serialization.MemberRelationshipService.get_Item(System.Object,System.ComponentModel.MemberDescriptor)
-//BEGIN method_is_override
-//matches_1
-//matches :
     open func get_Item(sourceOwner : dotnet.System.Object, sourceMember : dotnet.System.ComponentModel.MemberDescriptor) throws -> dotnet.System.ComponentModel.Design.Serialization.MemberRelationship {
         var __thrown : NullableHandle = nil;
         let __return = System_ComponentModel_Design_Serialization_MemberRelationshipService_MemberRelationship__get_Item_0__2__Object_MemberDescriptor(&__thrown, self.get_handle(), sourceOwner.get_handle(), sourceMember.get_handle());
@@ -27678,6 +28168,9 @@ open class ResolveNameEventArgs
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_ComponentModel_Design_Serialization_ResolveNameEventArgs_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -27774,6 +28267,9 @@ public final class ResolveNameEventHandler
     public class override func get_type_handle() -> TypeHandle {
         return System_ComponentModel_Design_Serialization_ResolveNameEventHandler_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // void Invoke(System.Object, System.ComponentModel.Design.Serialization.ResolveNameEventArgs)
@@ -27813,15 +28309,15 @@ public final class ResolveNameEventHandler
             return;
         }
     }
-    public init(_ callback : @escaping (Optional<dotnet.System.Object>, dotnet.System.ComponentModel.Design.Serialization.ResolveNameEventArgs) throws -> Void) throws
+    public convenience init(_ __closure_Invoke : @escaping (Optional<dotnet.System.Object>, dotnet.System.ComponentModel.Design.Serialization.ResolveNameEventArgs) throws -> Void) throws
     {
-        let __bridge : (UnsafeMutablePointer<NullableHandle>, NullableHandle, NonnullHandle) -> Void =
+        let __interlude_Invoke : (UnsafeMutablePointer<NullableHandle>, NullableHandle, NonnullHandle) -> Void =
         {
             (thrown : UnsafeMutablePointer<NullableHandle>, sender : NullableHandle, e : NonnullHandle) -> Void in
             do
             {
                 thrown.pointee = nil;
-                try callback((sender != nil) ? (dotnet.System.Object(hndl: sender!)) : nil, dotnet.System.ComponentModel.Design.Serialization.ResolveNameEventArgs(hndl: e));
+                try __closure_Invoke((sender != nil) ? (dotnet.System.Object(hndl: sender!)) : nil, dotnet.System.ComponentModel.Design.Serialization.ResolveNameEventArgs(hndl: e));
             }
             catch let e as dotnet.System.Exception
             {
@@ -27833,24 +28329,24 @@ public final class ResolveNameEventHandler
                 thrown.pointee = __copy_handle(e.get_handle());
             }
         };
-        let cbarg = UnsafeRawPointer(Unmanaged.passRetained(__bridge as AnyObject).toOpaque());
-        func __cb(cb : UnsafeRawPointer?, thrown : UnsafeMutablePointer<NullableHandle>, sender : NullableHandle, e : NonnullHandle) -> Void
+        func __cb_Invoke(pdata_interlude : UnsafeRawPointer, thrown : UnsafeMutablePointer<NullableHandle>, sender : NullableHandle, e : NonnullHandle) -> Void
         {
-            let f = Unmanaged<AnyObject>.fromOpaque(cb!).takeUnretainedValue() as! (UnsafeMutablePointer<NullableHandle>, NullableHandle, NonnullHandle) -> Void;
-            f(thrown, sender, e);
+            let f_interlude = Unmanaged<AnyObject>.fromOpaque(pdata_interlude).takeUnretainedValue() as! (UnsafeMutablePointer<NullableHandle>, NullableHandle, NonnullHandle) -> Void;
+            f_interlude(thrown, sender, e);
         }
+        let __pdata_Invoke = UnsafeRawPointer(Unmanaged.passRetained(__interlude_Invoke as AnyObject).toOpaque());
+
         var __thrown : NullableHandle = nil;
         let h = System_ComponentModel_Design_Serialization_ResolveNameEventHandler_create(
             &__thrown,
-            cbarg,
-            nil, // TODO deinit
-            __cb
+            __cb_Invoke,
+            __pdata_Invoke,
+            nil
             );
-            // TODO check thrown
         if let __ex = __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-            super.init(hndl: h);
+            self.init(hndl: h);
         }
     }
     // void Invoke(System.Object, System.ComponentModel.Design.Serialization.ResolveNameEventArgs)
@@ -27878,6 +28374,9 @@ public final class RootDesignerSerializerAttribute
 {
     public class override func get_type_handle() -> TypeHandle {
         return System_ComponentModel_Design_Serialization_RootDesignerSerializerAttribute_get_type_handle();
+    }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -28042,6 +28541,9 @@ open class SerializationStore
     open class override func get_type_handle() -> TypeHandle {
         return System_ComponentModel_Design_Serialization_SerializationStore_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // void Close()
@@ -28115,6 +28617,9 @@ open class ColorConverter
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Drawing_ColorConverter_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -28273,6 +28778,9 @@ open class PointConverter
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Drawing_PointConverter_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -28472,6 +28980,9 @@ open class RectangleConverter
     open class override func get_type_handle() -> TypeHandle {
         return System_Drawing_RectangleConverter_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor()
@@ -28665,6 +29176,9 @@ open class SizeConverter
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Drawing_SizeConverter_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -28861,6 +29375,9 @@ open class SizeFConverter
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Drawing_SizeFConverter_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -29064,6 +29581,9 @@ open class ExtendedProtectionPolicyTypeConverter
     open class override func get_type_handle() -> TypeHandle {
         return System_Security_Authentication_ExtendedProtection_ExtendedProtectionPolicyTypeConverter_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor()
@@ -29147,6 +29667,9 @@ open class ElapsedEventArgs
     open class override func get_type_handle() -> TypeHandle {
         return System_Timers_ElapsedEventArgs_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // [IsSpecialName] System.DateTime get_SignalTime()
@@ -29183,6 +29706,9 @@ public final class ElapsedEventHandler
 {
     public class override func get_type_handle() -> TypeHandle {
         return System_Timers_ElapsedEventHandler_get_type_handle();
+    }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -29223,15 +29749,15 @@ public final class ElapsedEventHandler
             return;
         }
     }
-    public init(_ callback : @escaping (Optional<dotnet.System.Object>, dotnet.System.Timers.ElapsedEventArgs) throws -> Void) throws
+    public convenience init(_ __closure_Invoke : @escaping (Optional<dotnet.System.Object>, dotnet.System.Timers.ElapsedEventArgs) throws -> Void) throws
     {
-        let __bridge : (UnsafeMutablePointer<NullableHandle>, NullableHandle, NonnullHandle) -> Void =
+        let __interlude_Invoke : (UnsafeMutablePointer<NullableHandle>, NullableHandle, NonnullHandle) -> Void =
         {
             (thrown : UnsafeMutablePointer<NullableHandle>, sender : NullableHandle, e : NonnullHandle) -> Void in
             do
             {
                 thrown.pointee = nil;
-                try callback((sender != nil) ? (dotnet.System.Object(hndl: sender!)) : nil, dotnet.System.Timers.ElapsedEventArgs(hndl: e));
+                try __closure_Invoke((sender != nil) ? (dotnet.System.Object(hndl: sender!)) : nil, dotnet.System.Timers.ElapsedEventArgs(hndl: e));
             }
             catch let e as dotnet.System.Exception
             {
@@ -29243,24 +29769,24 @@ public final class ElapsedEventHandler
                 thrown.pointee = __copy_handle(e.get_handle());
             }
         };
-        let cbarg = UnsafeRawPointer(Unmanaged.passRetained(__bridge as AnyObject).toOpaque());
-        func __cb(cb : UnsafeRawPointer?, thrown : UnsafeMutablePointer<NullableHandle>, sender : NullableHandle, e : NonnullHandle) -> Void
+        func __cb_Invoke(pdata_interlude : UnsafeRawPointer, thrown : UnsafeMutablePointer<NullableHandle>, sender : NullableHandle, e : NonnullHandle) -> Void
         {
-            let f = Unmanaged<AnyObject>.fromOpaque(cb!).takeUnretainedValue() as! (UnsafeMutablePointer<NullableHandle>, NullableHandle, NonnullHandle) -> Void;
-            f(thrown, sender, e);
+            let f_interlude = Unmanaged<AnyObject>.fromOpaque(pdata_interlude).takeUnretainedValue() as! (UnsafeMutablePointer<NullableHandle>, NullableHandle, NonnullHandle) -> Void;
+            f_interlude(thrown, sender, e);
         }
+        let __pdata_Invoke = UnsafeRawPointer(Unmanaged.passRetained(__interlude_Invoke as AnyObject).toOpaque());
+
         var __thrown : NullableHandle = nil;
         let h = System_Timers_ElapsedEventHandler_create(
             &__thrown,
-            cbarg,
-            nil, // TODO deinit
-            __cb
+            __cb_Invoke,
+            __pdata_Invoke,
+            nil
             );
-            // TODO check thrown
         if let __ex = __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-            super.init(hndl: h);
+            self.init(hndl: h);
         }
     }
     // void Invoke(System.Object, System.Timers.ElapsedEventArgs)
@@ -29289,6 +29815,9 @@ open class Timer
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Timers_Timer_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -29622,6 +30151,9 @@ open class TimersDescriptionAttribute
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Timers_TimersDescriptionAttribute_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }

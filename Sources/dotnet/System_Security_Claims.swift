@@ -18,6 +18,9 @@ open class Claim
     open class override func get_type_handle() -> TypeHandle {
         return System_Security_Claims_Claim_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor(System.IO.BinaryReader)
@@ -1285,6 +1288,9 @@ open class ClaimsIdentity
     open class override func get_type_handle() -> TypeHandle {
         return System_Security_Claims_ClaimsIdentity_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // static field: System.String DefaultIssuer
@@ -1558,7 +1564,7 @@ open class ClaimsIdentity
         }
     }
     // delegate closure overload
-    open func FindAll(match : @escaping (Optional<dotnet.System.Security.Claims.Claim>) throws -> Bool) throws -> dotnet.System.Collections.Generic.IEnumerable_1<dotnet.System.Security.Claims.Claim> {
+    open func FindAll(match : @escaping (dotnet.System.Security.Claims.Claim) throws -> Bool) throws -> dotnet.System.Collections.Generic.IEnumerable_1<dotnet.System.Security.Claims.Claim> {
         let del_match = try dotnet.System.Predicate_1<dotnet.System.Security.Claims.Claim>(match);
         return try FindAll(match: del_match);
     }
@@ -1603,7 +1609,7 @@ open class ClaimsIdentity
         }
     }
     // delegate closure overload
-    open func FindFirst(match : @escaping (Optional<dotnet.System.Security.Claims.Claim>) throws -> Bool) throws -> Optional<dotnet.System.Security.Claims.Claim> {
+    open func FindFirst(match : @escaping (dotnet.System.Security.Claims.Claim) throws -> Bool) throws -> Optional<dotnet.System.Security.Claims.Claim> {
         let del_match = try dotnet.System.Predicate_1<dotnet.System.Security.Claims.Claim>(match);
         return try FindFirst(match: del_match);
     }
@@ -1649,7 +1655,7 @@ open class ClaimsIdentity
         }
     }
     // delegate closure overload
-    open func HasClaim(match : @escaping (Optional<dotnet.System.Security.Claims.Claim>) throws -> Bool) throws -> Bool {
+    open func HasClaim(match : @escaping (dotnet.System.Security.Claims.Claim) throws -> Bool) throws -> Bool {
         let del_match = try dotnet.System.Predicate_1<dotnet.System.Security.Claims.Claim>(match);
         return try HasClaim(match: del_match);
     }
@@ -1958,7 +1964,7 @@ open class ClaimsIdentity
         }
     }
     /**
-    Gets the claim type that will be interpreted as a .NET Framework role among the claims in this claims identity.
+    Gets the claim type that will be interpreted as a .NET role among the claims in this claims identity.
 
     */
     open var RoleClaimType : dotnet.System.String {
@@ -1981,6 +1987,9 @@ open class ClaimsPrincipal
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Security_Claims_ClaimsPrincipal_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -2131,7 +2140,7 @@ open class ClaimsPrincipal
         }
     }
     // delegate closure overload
-    open func FindAll(match : @escaping (Optional<dotnet.System.Security.Claims.Claim>) throws -> Bool) throws -> dotnet.System.Collections.Generic.IEnumerable_1<dotnet.System.Security.Claims.Claim> {
+    open func FindAll(match : @escaping (dotnet.System.Security.Claims.Claim) throws -> Bool) throws -> dotnet.System.Collections.Generic.IEnumerable_1<dotnet.System.Security.Claims.Claim> {
         let del_match = try dotnet.System.Predicate_1<dotnet.System.Security.Claims.Claim>(match);
         return try FindAll(match: del_match);
     }
@@ -2176,7 +2185,7 @@ open class ClaimsPrincipal
         }
     }
     // delegate closure overload
-    open func FindFirst(match : @escaping (Optional<dotnet.System.Security.Claims.Claim>) throws -> Bool) throws -> Optional<dotnet.System.Security.Claims.Claim> {
+    open func FindFirst(match : @escaping (dotnet.System.Security.Claims.Claim) throws -> Bool) throws -> Optional<dotnet.System.Security.Claims.Claim> {
         let del_match = try dotnet.System.Predicate_1<dotnet.System.Security.Claims.Claim>(match);
         return try FindFirst(match: del_match);
     }
@@ -2222,7 +2231,7 @@ open class ClaimsPrincipal
         }
     }
     // delegate closure overload
-    open func HasClaim(match : @escaping (Optional<dotnet.System.Security.Claims.Claim>) throws -> Bool) throws -> Bool {
+    open func HasClaim(match : @escaping (dotnet.System.Security.Claims.Claim) throws -> Bool) throws -> Bool {
         let del_match = try dotnet.System.Predicate_1<dotnet.System.Security.Claims.Claim>(match);
         return try HasClaim(match: del_match);
     }
@@ -2383,7 +2392,7 @@ open class ClaimsPrincipal
         }
     }
     // delegate closure overload
-    open class func set_PrimaryIdentitySelector(value : @escaping (Optional<dotnet.System.Collections.Generic.IEnumerable_1<dotnet.System.Security.Claims.ClaimsIdentity>>) throws -> dotnet.System.Security.Claims.ClaimsIdentity) throws {
+    open class func set_PrimaryIdentitySelector(value : @escaping (dotnet.System.Collections.Generic.IEnumerable_1<dotnet.System.Security.Claims.ClaimsIdentity>) throws -> dotnet.System.Security.Claims.ClaimsIdentity) throws {
         let del_value = try dotnet.System.Func_2<dotnet.System.Collections.Generic.IEnumerable_1<dotnet.System.Security.Claims.ClaimsIdentity>,dotnet.System.Security.Claims.ClaimsIdentity>(value);
         return try set_PrimaryIdentitySelector(value: del_value);
     }
@@ -2465,6 +2474,9 @@ open class GenericIdentity
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Security_Principal_GenericIdentity_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -2612,6 +2624,9 @@ open class GenericPrincipal
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Security_Principal_GenericPrincipal_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }

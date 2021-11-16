@@ -55,6 +55,10 @@ public struct CompressionLevel : SGBridgeGenericValue {
         }
     }
     // static field: System.IO.Compression.CompressionLevel SmallestSize
+    /**
+    The compression operation should create output as small as possible, even if the operation takes a longer time to complete.
+
+    */
     public static var SmallestSize : dotnet.System.IO.Compression.CompressionLevel {
         get {
         let __return = dotnet.System.IO.Compression.CompressionLevel(val: System_IO_Compression_CompressionLevel_get_SmallestSize());
@@ -115,6 +119,9 @@ open class DeflateStream
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_IO_Compression_DeflateStream_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -222,7 +229,7 @@ open class DeflateStream
     /**
     Begins an asynchronous write operation. (Consider using the  method instead.)
 
-    - Parameter array: The buffer to write data from.
+    - Parameter buffer: The buffer to write data from.
     - Parameter offset: The byte offset in  to begin writing from.
     - Parameter count: The maximum number of bytes to write.
     - Parameter asyncCallback: An optional asynchronous callback, to be called when the write operation is complete.
@@ -272,13 +279,13 @@ open class DeflateStream
     - Returns: A task that represents the asynchronous copy operation.
 
     */
-    open override func CopyToAsync(destination : dotnet.System.IO.Stream, bufferSize : Swift.Int32, cancellationToken : dotnet.System.Threading.CancellationToken) throws -> dotnet.System.Threading.Tasks.Task {
+    open override func CopyToAsync(destination : dotnet.System.IO.Stream, bufferSize : Swift.Int32, cancellationToken : dotnet.System.Threading.CancellationToken) async throws {
         var __thrown : NullableHandle = nil;
         let __return = System_IO_Compression_DeflateStream_Task__CopyToAsync_0__3__Stream_i32_CancellationToken(&__thrown, self.get_handle(), destination.get_handle(), bufferSize, cancellationToken.get_handle());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task(hndl: __return).ToAsync();
         }
     }
     // System.Threading.Tasks.ValueTask DisposeAsync()
@@ -356,13 +363,13 @@ open class DeflateStream
     - Returns: A task that represents the asynchronous flush operation.
 
     */
-    open override func FlushAsync(cancellationToken : dotnet.System.Threading.CancellationToken) throws -> dotnet.System.Threading.Tasks.Task {
+    open override func FlushAsync(cancellationToken : dotnet.System.Threading.CancellationToken) async throws {
         var __thrown : NullableHandle = nil;
         let __return = System_IO_Compression_DeflateStream_Task__FlushAsync_0__1__CancellationToken(&__thrown, self.get_handle(), cancellationToken.get_handle());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task(hndl: __return).ToAsync();
         }
     }
     // System.Int32 Read(System.Byte[], System.Int32, System.Int32)
@@ -370,7 +377,7 @@ open class DeflateStream
     /**
     Reads a number of decompressed bytes into the specified byte array.
 
-    - Parameter array: The array to store decompressed bytes.
+    - Parameter buffer: 
     - Parameter offset: The byte offset in  at which the read bytes will be placed.
     - Parameter count: The maximum number of decompressed bytes to read.
     - Returns: The number of bytes that were read into the byte array.
@@ -391,20 +398,20 @@ open class DeflateStream
     /**
     Asynchronously reads a sequence of bytes from the current Deflate stream, writes them to a byte array, advances the position within the Deflate stream by the number of bytes read, and monitors cancellation requests.
 
-    - Parameter array: The buffer to write the data into.
     - Parameter offset: The byte offset in  at which to begin writing data from the Deflate stream.
     - Parameter count: The maximum number of bytes to read.
     - Parameter cancellationToken: The token to monitor for cancellation requests. The default value is .
+    - Parameter buffer: 
     - Returns: A task that represents the asynchronous read operation, which wraps the total number of bytes read into the . The result value can be less than the number of bytes requested if the number of bytes currently available is less than the requested number, or it can be 0 (zero) if the end of the Deflate stream has been reached.
 
     */
-    open override func ReadAsync(buffer : dotnet.System_Arr<Swift.UInt8>, offset : Swift.Int32, count : Swift.Int32, cancellationToken : dotnet.System.Threading.CancellationToken) throws -> dotnet.System.Threading.Tasks.Task_1<Swift.Int32> {
+    open override func ReadAsync(buffer : dotnet.System_Arr<Swift.UInt8>, offset : Swift.Int32, count : Swift.Int32, cancellationToken : dotnet.System.Threading.CancellationToken) async throws -> Swift.Int32 {
         var __thrown : NullableHandle = nil;
         let __return = System_IO_Compression_DeflateStream_System_Threading_Tasks_Task_i32___ReadAsync_0__4__u8Array_i32_i32_CancellationToken(&__thrown, self.get_handle(), buffer.get_handle(), offset, count, cancellationToken.get_handle());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task_1(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task_1(hndl: __return).ToAsync();
         }
     }
     // System.Threading.Tasks.ValueTask<System.Int32> ReadAsync(System.Memory<System.Byte>, System.Threading.CancellationToken)
@@ -483,7 +490,7 @@ open class DeflateStream
     /**
     Writes compressed bytes to the underlying stream from the specified byte array.
 
-    - Parameter array: The buffer that contains the data to compress.
+    - Parameter buffer: 
     - Parameter offset: The byte offset in  from which the bytes will be read.
     - Parameter count: The maximum number of bytes to write.
     */
@@ -502,20 +509,20 @@ open class DeflateStream
     /**
     Asynchronously writes compressed bytes to the underlying Deflate stream from the specified byte array.
 
-    - Parameter array: The buffer that contains the data to compress.
     - Parameter offset: The zero-based byte offset in  from which to begin copying bytes to the Deflate stream.
     - Parameter count: The maximum number of bytes to write.
     - Parameter cancellationToken: The token to monitor for cancellation requests. The default value is .
+    - Parameter buffer: 
     - Returns: A task that represents the asynchronous write operation.
 
     */
-    open override func WriteAsync(buffer : dotnet.System_Arr<Swift.UInt8>, offset : Swift.Int32, count : Swift.Int32, cancellationToken : dotnet.System.Threading.CancellationToken) throws -> dotnet.System.Threading.Tasks.Task {
+    open override func WriteAsync(buffer : dotnet.System_Arr<Swift.UInt8>, offset : Swift.Int32, count : Swift.Int32, cancellationToken : dotnet.System.Threading.CancellationToken) async throws {
         var __thrown : NullableHandle = nil;
         let __return = System_IO_Compression_DeflateStream_Task__WriteAsync_0__4__u8Array_i32_i32_CancellationToken(&__thrown, self.get_handle(), buffer.get_handle(), offset, count, cancellationToken.get_handle());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task(hndl: __return).ToAsync();
         }
     }
     // System.Threading.Tasks.ValueTask WriteAsync(System.ReadOnlyMemory<System.Byte>, System.Threading.CancellationToken)
@@ -686,6 +693,9 @@ open class GZipStream
     open class override func get_type_handle() -> TypeHandle {
         return System_IO_Compression_GZipStream_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor(System.IO.Stream, System.IO.Compression.CompressionLevel)
@@ -765,7 +775,7 @@ open class GZipStream
     /**
     Begins an asynchronous read operation. (Consider using the  method instead.)
 
-    - Parameter array: The byte array to read the data into.
+    - Parameter buffer: The byte array to read the data into.
     - Parameter offset: The byte offset in  at which to begin reading data from the stream.
     - Parameter count: The maximum number of bytes to read.
     - Parameter asyncCallback: An optional asynchronous callback, to be called when the read operation is complete.
@@ -792,7 +802,7 @@ open class GZipStream
     /**
     Begins an asynchronous write operation. (Consider using the  method instead.)
 
-    - Parameter array: The buffer containing data to write to the current stream.
+    - Parameter buffer: The buffer containing data to write to the current stream.
     - Parameter offset: The byte offset in  at which to begin writing.
     - Parameter count: The maximum number of bytes to write.
     - Parameter asyncCallback: An optional asynchronous callback to be called when the write operation is complete.
@@ -842,13 +852,13 @@ open class GZipStream
     - Returns: A task that represents the asynchronous copy operation.
 
     */
-    open override func CopyToAsync(destination : dotnet.System.IO.Stream, bufferSize : Swift.Int32, cancellationToken : dotnet.System.Threading.CancellationToken) throws -> dotnet.System.Threading.Tasks.Task {
+    open override func CopyToAsync(destination : dotnet.System.IO.Stream, bufferSize : Swift.Int32, cancellationToken : dotnet.System.Threading.CancellationToken) async throws {
         var __thrown : NullableHandle = nil;
         let __return = System_IO_Compression_GZipStream_Task__CopyToAsync_0__3__Stream_i32_CancellationToken(&__thrown, self.get_handle(), destination.get_handle(), bufferSize, cancellationToken.get_handle());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task(hndl: __return).ToAsync();
         }
     }
     // System.Threading.Tasks.ValueTask DisposeAsync()
@@ -926,13 +936,13 @@ open class GZipStream
     - Returns: A task that represents the asynchronous flush operation.
 
     */
-    open override func FlushAsync(cancellationToken : dotnet.System.Threading.CancellationToken) throws -> dotnet.System.Threading.Tasks.Task {
+    open override func FlushAsync(cancellationToken : dotnet.System.Threading.CancellationToken) async throws {
         var __thrown : NullableHandle = nil;
         let __return = System_IO_Compression_GZipStream_Task__FlushAsync_0__1__CancellationToken(&__thrown, self.get_handle(), cancellationToken.get_handle());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task(hndl: __return).ToAsync();
         }
     }
     // System.Int32 Read(System.Byte[], System.Int32, System.Int32)
@@ -940,7 +950,7 @@ open class GZipStream
     /**
     Reads a number of decompressed bytes into the specified byte array.
 
-    - Parameter array: The array used to store decompressed bytes.
+    - Parameter buffer: 
     - Parameter offset: The byte offset in  at which the read bytes will be placed.
     - Parameter count: The maximum number of decompressed bytes to read.
     - Returns: The number of bytes that were decompressed into the byte array. If the end of the stream has been reached, zero or the number of bytes read is returned.
@@ -961,20 +971,20 @@ open class GZipStream
     /**
     Asynchronously reads a sequence of bytes from the current GZip stream into a byte array, advances the position within the GZip stream by the number of bytes read, and monitors cancellation requests.
 
-    - Parameter array: The buffer to write the data into.
     - Parameter offset: The byte offset in  at which to begin writing data from the GZip stream.
     - Parameter count: The maximum number of bytes to read.
     - Parameter cancellationToken: The token to monitor for cancellation requests. The default value is .
+    - Parameter buffer: 
     - Returns: A task that represents the asynchronous read operation, which wraps the total number of bytes read into the . The result value can be less than the number of bytes requested if the number of bytes currently available is less than the requested number, or it can be 0 (zero) if the end of the GZip stream has been reached.
 
     */
-    open override func ReadAsync(buffer : dotnet.System_Arr<Swift.UInt8>, offset : Swift.Int32, count : Swift.Int32, cancellationToken : dotnet.System.Threading.CancellationToken) throws -> dotnet.System.Threading.Tasks.Task_1<Swift.Int32> {
+    open override func ReadAsync(buffer : dotnet.System_Arr<Swift.UInt8>, offset : Swift.Int32, count : Swift.Int32, cancellationToken : dotnet.System.Threading.CancellationToken) async throws -> Swift.Int32 {
         var __thrown : NullableHandle = nil;
         let __return = System_IO_Compression_GZipStream_System_Threading_Tasks_Task_i32___ReadAsync_0__4__u8Array_i32_i32_CancellationToken(&__thrown, self.get_handle(), buffer.get_handle(), offset, count, cancellationToken.get_handle());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task_1(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task_1(hndl: __return).ToAsync();
         }
     }
     // System.Threading.Tasks.ValueTask<System.Int32> ReadAsync(System.Memory<System.Byte>, System.Threading.CancellationToken)
@@ -1053,7 +1063,7 @@ open class GZipStream
     /**
     Writes compressed bytes to the underlying GZip stream from the specified byte array.
 
-    - Parameter array: The buffer that contains the data to compress.
+    - Parameter buffer: 
     - Parameter offset: The byte offset in  from which the bytes will be read.
     - Parameter count: The maximum number of bytes to write.
     */
@@ -1072,20 +1082,20 @@ open class GZipStream
     /**
     Asynchronously writes compressed bytes to the underlying GZip stream from the specified byte array.
 
-    - Parameter array: The buffer that contains the data to compress.
     - Parameter offset: The zero-based byte offset in  from which to begin copying bytes to the GZip stream.
     - Parameter count: The maximum number of bytes to write.
     - Parameter cancellationToken: The token to monitor for cancellation requests. The default value is .
+    - Parameter buffer: 
     - Returns: A task that represents the asynchronous write operation.
 
     */
-    open override func WriteAsync(buffer : dotnet.System_Arr<Swift.UInt8>, offset : Swift.Int32, count : Swift.Int32, cancellationToken : dotnet.System.Threading.CancellationToken) throws -> dotnet.System.Threading.Tasks.Task {
+    open override func WriteAsync(buffer : dotnet.System_Arr<Swift.UInt8>, offset : Swift.Int32, count : Swift.Int32, cancellationToken : dotnet.System.Threading.CancellationToken) async throws {
         var __thrown : NullableHandle = nil;
         let __return = System_IO_Compression_GZipStream_Task__WriteAsync_0__4__u8Array_i32_i32_CancellationToken(&__thrown, self.get_handle(), buffer.get_handle(), offset, count, cancellationToken.get_handle());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task(hndl: __return).ToAsync();
         }
     }
     // System.Threading.Tasks.ValueTask WriteAsync(System.ReadOnlyMemory<System.Byte>, System.Threading.CancellationToken)
@@ -1245,6 +1255,10 @@ open class GZipStream
 
 
 // type: System.IO.Compression.ZLibStream
+    /**
+    Provides methods and properties used to compress and decompress streams by using the zlib data format specification.
+
+    */
 public final class ZLibStream
     :
     dotnet.System.IO.Stream
@@ -1252,10 +1266,19 @@ public final class ZLibStream
     public class override func get_type_handle() -> TypeHandle {
         return System_IO_Compression_ZLibStream_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor(System.IO.Stream, System.IO.Compression.CompressionLevel)
 // docid: M:System.IO.Compression.ZLibStream.#ctor(System.IO.Stream,System.IO.Compression.CompressionLevel)
+    /**
+    Initializes a new instance of the  class by using the specified stream and compression level.
+
+    - Parameter stream: The stream to which compressed data is written.
+    - Parameter compressionLevel: One of the enumeration values that indicates whether to emphasize speed or compression efficiency when compressing the stream.
+    */
     public init(stream : dotnet.System.IO.Stream, compressionLevel : dotnet.System.IO.Compression.CompressionLevel) throws {
         var __thrown : NullableHandle = nil;
         let h = System_IO_Compression_ZLibStream_ctor_0__2__Stream_CompressionLevel(&__thrown, stream.get_handle(), compressionLevel.get_value());
@@ -1267,6 +1290,14 @@ public final class ZLibStream
     }
     // .ctor(System.IO.Stream, System.IO.Compression.CompressionLevel, bool)
 // docid: M:System.IO.Compression.ZLibStream.#ctor(System.IO.Stream,System.IO.Compression.CompressionLevel,System.Boolean)
+    /**
+    Initializes a new instance of the  class by using the specified stream, compression level, and whether to leave the  open.
+
+    - Parameter stream: The stream to which compressed data is written.
+    - Parameter compressionLevel: One of the enumeration values that indicates whether to emphasize speed or compression efficiency when compressing the stream.
+    - Parameter leaveOpen: 
+         to leave the stream object open after disposing the  object; otherwise, .
+    */
     public init(stream : dotnet.System.IO.Stream, compressionLevel : dotnet.System.IO.Compression.CompressionLevel, leaveOpen : Bool) throws {
         var __thrown : NullableHandle = nil;
         let h = System_IO_Compression_ZLibStream_ctor_0__3__Stream_CompressionLevel_bool(&__thrown, stream.get_handle(), compressionLevel.get_value(), Swift.Int32(leaveOpen ? 1 : 0));
@@ -1278,6 +1309,12 @@ public final class ZLibStream
     }
     // .ctor(System.IO.Stream, System.IO.Compression.CompressionMode)
 // docid: M:System.IO.Compression.ZLibStream.#ctor(System.IO.Stream,System.IO.Compression.CompressionMode)
+    /**
+    Initializes a new instance of the  class by using the specified stream and compression mode.
+
+    - Parameter stream: The stream to which compressed data is written or from which decompressed data is read.
+    - Parameter mode: One of the enumeration values that indicates whether to compress or decompress the stream.
+    */
     public init(stream : dotnet.System.IO.Stream, mode : dotnet.System.IO.Compression.CompressionMode) throws {
         var __thrown : NullableHandle = nil;
         let h = System_IO_Compression_ZLibStream_ctor_0__2__Stream_CompressionMode(&__thrown, stream.get_handle(), mode.get_value());
@@ -1289,6 +1326,14 @@ public final class ZLibStream
     }
     // .ctor(System.IO.Stream, System.IO.Compression.CompressionMode, bool)
 // docid: M:System.IO.Compression.ZLibStream.#ctor(System.IO.Stream,System.IO.Compression.CompressionMode,System.Boolean)
+    /**
+    Initializes a new instance of the  class by using the specified stream, compression mode, and whether to leave the  open.
+
+    - Parameter stream: The stream to which compressed data is written or from which decompressed data is read.
+    - Parameter mode: One of the enumeration values that indicates whether to compress or decompress the stream.
+    - Parameter leaveOpen: 
+         to leave the stream object open after disposing the  object; otherwise, .
+    */
     public init(stream : dotnet.System.IO.Stream, mode : dotnet.System.IO.Compression.CompressionMode, leaveOpen : Bool) throws {
         var __thrown : NullableHandle = nil;
         let h = System_IO_Compression_ZLibStream_ctor_0__3__Stream_CompressionMode_bool(&__thrown, stream.get_handle(), mode.get_value(), Swift.Int32(leaveOpen ? 1 : 0));
@@ -1300,6 +1345,17 @@ public final class ZLibStream
     }
     // System.IAsyncResult BeginRead(System.Byte[], System.Int32, System.Int32, System.AsyncCallback, System.Object)
 // docid: M:System.IO.Compression.ZLibStream.BeginRead(System.Byte[],System.Int32,System.Int32,System.AsyncCallback,System.Object)
+    /**
+    Begins an asynchronous read operation.
+
+    - Parameter buffer: The byte array to read the data into.
+    - Parameter offset: The byte offset in  at which to begin reading data from the stream.
+    - Parameter count: The maximum number of bytes to read.
+    - Parameter asyncCallback: An optional asynchronous callback, to be called when the read operation is complete.
+    - Parameter asyncState: A user-provided object that distinguishes this particular asynchronous read request from other requests.
+    - Returns: An object that represents the asynchronous read operation, which could still be pending.
+
+    */
     public func BeginRead(buffer : dotnet.System_Arr<Swift.UInt8>, offset : Swift.Int32, count : Swift.Int32, asyncCallback : Optional<dotnet.System.AsyncCallback>, asyncState : Optional<dotnet.System.Object>) throws -> dotnet.System.IAsyncResult {
         var __thrown : NullableHandle = nil;
         let __return = System_IO_Compression_ZLibStream_IAsyncResult__BeginRead_0__5__u8Array_i32_i32_AsyncCallback_Object(&__thrown, self.get_handle(), buffer.get_handle(), offset, count, asyncCallback?.get_handle() ?? nil, asyncState?.get_handle() ?? nil);
@@ -1316,6 +1372,17 @@ public final class ZLibStream
     }
     // System.IAsyncResult BeginWrite(System.Byte[], System.Int32, System.Int32, System.AsyncCallback, System.Object)
 // docid: M:System.IO.Compression.ZLibStream.BeginWrite(System.Byte[],System.Int32,System.Int32,System.AsyncCallback,System.Object)
+    /**
+    Begins an asynchronous write operation.
+
+    - Parameter buffer: The buffer to write data from.
+    - Parameter offset: The byte offset in  to begin writing from.
+    - Parameter count: The maximum number of bytes to write.
+    - Parameter asyncCallback: An optional asynchronous callback, to be called when the write operation is complete.
+    - Parameter asyncState: A user-provided object that distinguishes this particular asynchronous write request from other requests.
+    - Returns: An object that represents the asynchronous write operation, which could still be pending.
+
+    */
     public func BeginWrite(buffer : dotnet.System_Arr<Swift.UInt8>, offset : Swift.Int32, count : Swift.Int32, asyncCallback : Optional<dotnet.System.AsyncCallback>, asyncState : Optional<dotnet.System.Object>) throws -> dotnet.System.IAsyncResult {
         var __thrown : NullableHandle = nil;
         let __return = System_IO_Compression_ZLibStream_IAsyncResult__BeginWrite_0__5__u8Array_i32_i32_AsyncCallback_Object(&__thrown, self.get_handle(), buffer.get_handle(), offset, count, asyncCallback?.get_handle() ?? nil, asyncState?.get_handle() ?? nil);
@@ -1332,6 +1399,12 @@ public final class ZLibStream
     }
     // void CopyTo(System.IO.Stream, System.Int32)
 // docid: M:System.IO.Compression.ZLibStream.CopyTo(System.IO.Stream,System.Int32)
+    /**
+    Reads the bytes from the current stream and writes them to another stream, using the specified buffer size.
+
+    - Parameter destination: The stream to which the contents of the current stream will be copied.
+    - Parameter bufferSize: The size of the buffer. This value must be greater than zero.
+    */
     public override func CopyTo(destination : dotnet.System.IO.Stream, bufferSize : Swift.Int32) throws {
         var __thrown : NullableHandle = nil;
         System_IO_Compression_ZLibStream_void__CopyTo_0__2__Stream_i32(&__thrown, self.get_handle(), destination.get_handle(), bufferSize);
@@ -1343,17 +1416,32 @@ public final class ZLibStream
     }
     // System.Threading.Tasks.Task CopyToAsync(System.IO.Stream, System.Int32, System.Threading.CancellationToken)
 // docid: M:System.IO.Compression.ZLibStream.CopyToAsync(System.IO.Stream,System.Int32,System.Threading.CancellationToken)
-    public override func CopyToAsync(destination : dotnet.System.IO.Stream, bufferSize : Swift.Int32, cancellationToken : dotnet.System.Threading.CancellationToken) throws -> dotnet.System.Threading.Tasks.Task {
+    /**
+    Asynchronously reads the bytes from the current stream and writes them to another stream, using a specified buffer size and cancellation token.
+
+    - Parameter destination: The stream to which the contents of the current stream will be copied.
+    - Parameter bufferSize: The size, in bytes, of the buffer. This value must be greater than zero.
+    - Parameter cancellationToken: The token to monitor for cancellation requests.
+    - Returns: A task that represents the asynchronous copy operation.
+
+    */
+    public override func CopyToAsync(destination : dotnet.System.IO.Stream, bufferSize : Swift.Int32, cancellationToken : dotnet.System.Threading.CancellationToken) async throws {
         var __thrown : NullableHandle = nil;
         let __return = System_IO_Compression_ZLibStream_Task__CopyToAsync_0__3__Stream_i32_CancellationToken(&__thrown, self.get_handle(), destination.get_handle(), bufferSize, cancellationToken.get_handle());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task(hndl: __return).ToAsync();
         }
     }
     // System.Threading.Tasks.ValueTask DisposeAsync()
 // docid: M:System.IO.Compression.ZLibStream.DisposeAsync
+    /**
+    Asynchronously releases all resources used by the stream.
+
+    - Returns: A task that represents the completion of the disposal operation.
+
+    */
     public override func DisposeAsync() throws -> dotnet.System.Threading.Tasks.ValueTask {
         var __thrown : NullableHandle = nil;
         let __return = System_IO_Compression_ZLibStream_ValueTask__DisposeAsync_0__0(&__thrown, self.get_handle());
@@ -1365,6 +1453,13 @@ public final class ZLibStream
     }
     // System.Int32 EndRead(System.IAsyncResult)
 // docid: M:System.IO.Compression.ZLibStream.EndRead(System.IAsyncResult)
+    /**
+    Waits for the pending asynchronous read to complete.
+
+    - Parameter asyncResult: The reference to the pending asynchronous request to finish.
+    - Returns: The number of bytes that were read into the byte array.
+
+    */
     public override func EndRead(asyncResult : dotnet.System.IAsyncResult) throws -> Swift.Int32 {
         var __thrown : NullableHandle = nil;
         let __return = System_IO_Compression_ZLibStream_i32__EndRead_0__1__IAsyncResult(&__thrown, self.get_handle(), asyncResult.get_handle());
@@ -1376,6 +1471,11 @@ public final class ZLibStream
     }
     // void EndWrite(System.IAsyncResult)
 // docid: M:System.IO.Compression.ZLibStream.EndWrite(System.IAsyncResult)
+    /**
+    Ends an asynchronous write operation.
+
+    - Parameter asyncResult: The reference to the pending asynchronous request to finish.
+    */
     public override func EndWrite(asyncResult : dotnet.System.IAsyncResult) throws {
         var __thrown : NullableHandle = nil;
         System_IO_Compression_ZLibStream_void__EndWrite_0__1__IAsyncResult(&__thrown, self.get_handle(), asyncResult.get_handle());
@@ -1387,6 +1487,10 @@ public final class ZLibStream
     }
     // void Flush()
 // docid: M:System.IO.Compression.ZLibStream.Flush
+    /**
+    Flushes the internal buffers.
+
+    */
     public override func Flush() throws {
         var __thrown : NullableHandle = nil;
         System_IO_Compression_ZLibStream_void__Flush_0__0(&__thrown, self.get_handle());
@@ -1398,17 +1502,33 @@ public final class ZLibStream
     }
     // System.Threading.Tasks.Task FlushAsync(System.Threading.CancellationToken)
 // docid: M:System.IO.Compression.ZLibStream.FlushAsync(System.Threading.CancellationToken)
-    public override func FlushAsync(cancellationToken : dotnet.System.Threading.CancellationToken) throws -> dotnet.System.Threading.Tasks.Task {
+    /**
+    Asynchronously clears all buffers for this stream, causes any buffered data to be written to the underlying device, and monitors cancellation requests.
+
+    - Parameter cancellationToken: The token to monitor for cancellation requests.
+    - Returns: A task that represents the asynchronous flush operation.
+
+    */
+    public override func FlushAsync(cancellationToken : dotnet.System.Threading.CancellationToken) async throws {
         var __thrown : NullableHandle = nil;
         let __return = System_IO_Compression_ZLibStream_Task__FlushAsync_0__1__CancellationToken(&__thrown, self.get_handle(), cancellationToken.get_handle());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task(hndl: __return).ToAsync();
         }
     }
     // System.Int32 Read(System.Byte[], System.Int32, System.Int32)
 // docid: M:System.IO.Compression.ZLibStream.Read(System.Byte[],System.Int32,System.Int32)
+    /**
+    Reads a number of decompressed bytes into the specified byte array.
+
+    - Parameter buffer: The byte array to read the data into.
+    - Parameter offset: The byte offset in array at which to begin reading data from the stream.
+    - Parameter count: The maximum number of bytes to read.
+    - Returns: The number of bytes that were read into the byte array.
+
+    */
     public override func Read(buffer : dotnet.System_Arr<Swift.UInt8>, offset : Swift.Int32, count : Swift.Int32) throws -> Swift.Int32 {
         var __thrown : NullableHandle = nil;
         let __return = System_IO_Compression_ZLibStream_i32__Read_0__3__u8Array_i32_i32(&__thrown, self.get_handle(), buffer.get_handle(), offset, count);
@@ -1421,17 +1541,35 @@ public final class ZLibStream
 // TODO COPE (write_all_methods) (span) System.Int32 Read(System.Span<System.Byte>)
     // System.Threading.Tasks.Task<System.Int32> ReadAsync(System.Byte[], System.Int32, System.Int32, System.Threading.CancellationToken)
 // docid: M:System.IO.Compression.ZLibStream.ReadAsync(System.Byte[],System.Int32,System.Int32,System.Threading.CancellationToken)
-    public override func ReadAsync(buffer : dotnet.System_Arr<Swift.UInt8>, offset : Swift.Int32, count : Swift.Int32, cancellationToken : dotnet.System.Threading.CancellationToken) throws -> dotnet.System.Threading.Tasks.Task_1<Swift.Int32> {
+    /**
+    Asynchronously reads a sequence of bytes from the current stream, advances the position within the stream by the number of bytes read, and monitors cancellation requests.
+
+    - Parameter buffer: The byte array to read the data into.
+    - Parameter offset: The byte offset in array at which to begin reading data from the stream.
+    - Parameter count: The maximum number of bytes to read.
+    - Parameter cancellationToken: The token to monitor for cancellation requests.
+    - Returns: A task that represents the asynchronous completion of the operation.
+
+    */
+    public override func ReadAsync(buffer : dotnet.System_Arr<Swift.UInt8>, offset : Swift.Int32, count : Swift.Int32, cancellationToken : dotnet.System.Threading.CancellationToken) async throws -> Swift.Int32 {
         var __thrown : NullableHandle = nil;
         let __return = System_IO_Compression_ZLibStream_System_Threading_Tasks_Task_i32___ReadAsync_0__4__u8Array_i32_i32_CancellationToken(&__thrown, self.get_handle(), buffer.get_handle(), offset, count, cancellationToken.get_handle());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task_1(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task_1(hndl: __return).ToAsync();
         }
     }
     // System.Threading.Tasks.ValueTask<System.Int32> ReadAsync(System.Memory<System.Byte>, System.Threading.CancellationToken)
 // docid: M:System.IO.Compression.ZLibStream.ReadAsync(System.Memory{System.Byte},System.Threading.CancellationToken)
+    /**
+    Asynchronously reads a sequence of bytes from the current stream, advances the position within the stream by the number of bytes read, and monitors cancellation requests.
+
+    - Parameter buffer: The byte span to read the data into.
+    - Parameter cancellationToken: The token to monitor for cancellation requests.
+    - Returns: A task that represents the asynchronous completion of the operation.
+
+    */
     public override func ReadAsync(buffer : dotnet.System.Memory_1<Swift.UInt8>, cancellationToken : dotnet.System.Threading.CancellationToken = System.Threading.CancellationToken.None) throws -> dotnet.System.Threading.Tasks.ValueTask_1<Swift.Int32> {
         var __thrown : NullableHandle = nil;
         let __return = System_IO_Compression_ZLibStream_System_Threading_Tasks_ValueTask_i32___ReadAsync_0__2__System_Memory_u8__CancellationToken(&__thrown, self.get_handle(), buffer.get_handle(), cancellationToken.get_handle());
@@ -1443,6 +1581,12 @@ public final class ZLibStream
     }
     // System.Int32 ReadByte()
 // docid: M:System.IO.Compression.ZLibStream.ReadByte
+    /**
+    Reads a byte from the stream and advances the position within the stream by one byte, or returns -1 if at the end of the stream.
+
+    - Returns: The unsigned byte cast to an , or -1 if at the end of the stream.
+
+    */
     public override func ReadByte() throws -> Swift.Int32 {
         var __thrown : NullableHandle = nil;
         let __return = System_IO_Compression_ZLibStream_i32__ReadByte_0__0(&__thrown, self.get_handle());
@@ -1454,6 +1598,14 @@ public final class ZLibStream
     }
     // System.Int64 Seek(System.Int64, System.IO.SeekOrigin)
 // docid: M:System.IO.Compression.ZLibStream.Seek(System.Int64,System.IO.SeekOrigin)
+    /**
+    This method is not supported and always throws a .
+
+    - Parameter offset: Not supported.
+    - Parameter origin: Not supported.
+    - Returns: This method is not supported and always throws a .
+
+    */
     public override func Seek(offset : Swift.Int64, origin : dotnet.System.IO.SeekOrigin) throws -> Swift.Int64 {
         var __thrown : NullableHandle = nil;
         let __return = System_IO_Compression_ZLibStream_i64__Seek_0__2__i64_SeekOrigin(&__thrown, self.get_handle(), offset, origin.get_value());
@@ -1465,6 +1617,11 @@ public final class ZLibStream
     }
     // void SetLength(System.Int64)
 // docid: M:System.IO.Compression.ZLibStream.SetLength(System.Int64)
+    /**
+    This method is not supported and always throws a .
+
+    - Parameter value: Not supported.
+    */
     public override func SetLength(value : Swift.Int64) throws {
         var __thrown : NullableHandle = nil;
         System_IO_Compression_ZLibStream_void__SetLength_0__1__i64(&__thrown, self.get_handle(), value);
@@ -1476,6 +1633,13 @@ public final class ZLibStream
     }
     // void Write(System.Byte[], System.Int32, System.Int32)
 // docid: M:System.IO.Compression.ZLibStream.Write(System.Byte[],System.Int32,System.Int32)
+    /**
+    Writes compressed bytes to the underlying stream from the specified byte array.
+
+    - Parameter buffer: The buffer to write data from.
+    - Parameter offset: The byte offset in buffer to begin writing from.
+    - Parameter count: The maximum number of bytes to write.
+    */
     public override func Write(buffer : dotnet.System_Arr<Swift.UInt8>, offset : Swift.Int32, count : Swift.Int32) throws {
         var __thrown : NullableHandle = nil;
         System_IO_Compression_ZLibStream_void__Write_0__3__u8Array_i32_i32(&__thrown, self.get_handle(), buffer.get_handle(), offset, count);
@@ -1488,6 +1652,11 @@ public final class ZLibStream
 // TODO COPE (write_all_methods) (span) void Write(System.ReadOnlySpan<System.Byte>)
     // void WriteByte(System.Byte)
 // docid: M:System.IO.Compression.ZLibStream.WriteByte(System.Byte)
+    /**
+    Writes a byte to the current position in the stream and advances the position within the stream by one byte.
+
+    - Parameter value: The byte to write to the stream.
+    */
     public override func WriteByte(value : Swift.UInt8) throws {
         var __thrown : NullableHandle = nil;
         System_IO_Compression_ZLibStream_void__WriteByte_0__1__u8(&__thrown, self.get_handle(), value);
@@ -1499,17 +1668,35 @@ public final class ZLibStream
     }
     // System.Threading.Tasks.Task WriteAsync(System.Byte[], System.Int32, System.Int32, System.Threading.CancellationToken)
 // docid: M:System.IO.Compression.ZLibStream.WriteAsync(System.Byte[],System.Int32,System.Int32,System.Threading.CancellationToken)
-    public override func WriteAsync(buffer : dotnet.System_Arr<Swift.UInt8>, offset : Swift.Int32, count : Swift.Int32, cancellationToken : dotnet.System.Threading.CancellationToken) throws -> dotnet.System.Threading.Tasks.Task {
+    /**
+    Asynchronously writes a sequence of bytes to the current stream, advances the current position within this stream by the number of bytes written, and monitors cancellation requests.
+
+    - Parameter buffer: The buffer to write data from.
+    - Parameter offset: The byte offset in buffer to begin writing from.
+    - Parameter count: The maximum number of bytes to write.
+    - Parameter cancellationToken: The token to monitor for cancellation requests.
+    - Returns: A task that represents the asynchronous completion of the operation.
+
+    */
+    public override func WriteAsync(buffer : dotnet.System_Arr<Swift.UInt8>, offset : Swift.Int32, count : Swift.Int32, cancellationToken : dotnet.System.Threading.CancellationToken) async throws {
         var __thrown : NullableHandle = nil;
         let __return = System_IO_Compression_ZLibStream_Task__WriteAsync_0__4__u8Array_i32_i32_CancellationToken(&__thrown, self.get_handle(), buffer.get_handle(), offset, count, cancellationToken.get_handle());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task(hndl: __return).ToAsync();
         }
     }
     // System.Threading.Tasks.ValueTask WriteAsync(System.ReadOnlyMemory<System.Byte>, System.Threading.CancellationToken)
 // docid: M:System.IO.Compression.ZLibStream.WriteAsync(System.ReadOnlyMemory{System.Byte},System.Threading.CancellationToken)
+    /**
+    Asynchronously writes a sequence of bytes to the current stream, advances the current position within this stream by the number of bytes written, and monitors cancellation requests.
+
+    - Parameter buffer: The buffer to write data from.
+    - Parameter cancellationToken: The token to monitor for cancellation requests.
+    - Returns: A task that represents the asynchronous completion of the operation.
+
+    */
     public override func WriteAsync(buffer : dotnet.System.ReadOnlyMemory_1<Swift.UInt8>, cancellationToken : dotnet.System.Threading.CancellationToken = System.Threading.CancellationToken.None) throws -> dotnet.System.Threading.Tasks.ValueTask {
         var __thrown : NullableHandle = nil;
         let __return = System_IO_Compression_ZLibStream_ValueTask__WriteAsync_0__2__System_ReadOnlyMemory_u8__CancellationToken(&__thrown, self.get_handle(), buffer.get_handle(), cancellationToken.get_handle());
@@ -1596,31 +1783,55 @@ public final class ZLibStream
             return;
         }
     }
+    /**
+    Gets a reference to the underlying stream.
+
+    */
     public var BaseStream : dotnet.System.IO.Stream {
         get {
             return try! get_BaseStream();
         }
     }
+    /**
+    Gets a value indicating whether the stream supports reading.
+
+    */
     public override var CanRead : Bool {
         get {
             return try! get_CanRead();
         }
     }
+    /**
+    Gets a value indicating whether the stream supports seeking.
+
+    */
     public override var CanSeek : Bool {
         get {
             return try! get_CanSeek();
         }
     }
+    /**
+    Gets a value indicating whether the stream supports writing.
+
+    */
     public override var CanWrite : Bool {
         get {
             return try! get_CanWrite();
         }
     }
+    /**
+    This property is not supported and always throws a .
+
+    */
     public override var Length : Swift.Int64 {
         get {
             return try! get_Length();
         }
     }
+    /**
+    This property is not supported and always throws a .
+
+    */
     public override var Position : Swift.Int64 {
         get {
             return try! get_Position();
@@ -1644,6 +1855,9 @@ open class ZipArchive
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_IO_Compression_ZipArchive_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -1847,6 +2061,9 @@ open class ZipArchiveEntry
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_IO_Compression_ZipArchiveEntry_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }

@@ -29,7 +29,7 @@ public struct Parallel {
         }
     }
     // delegate closure overload
-    public static func For(fromInclusive : Swift.Int32, toExclusive : Swift.Int32, body : @escaping (Swift.Int32, Optional<dotnet.System.Threading.Tasks.ParallelLoopState>) throws -> Void) throws -> dotnet.System.Threading.Tasks.ParallelLoopResult {
+    public static func For(fromInclusive : Swift.Int32, toExclusive : Swift.Int32, body : @escaping (Swift.Int32, dotnet.System.Threading.Tasks.ParallelLoopState) throws -> Void) throws -> dotnet.System.Threading.Tasks.ParallelLoopResult {
         let del_body = try dotnet.System.Action_2<Swift.Int32,dotnet.System.Threading.Tasks.ParallelLoopState>(body);
         return try For(fromInclusive: fromInclusive, toExclusive: toExclusive, body: del_body);
     }
@@ -80,7 +80,7 @@ public struct Parallel {
         }
     }
     // delegate closure overload
-    public static func For(fromInclusive : Swift.Int32, toExclusive : Swift.Int32, parallelOptions : dotnet.System.Threading.Tasks.ParallelOptions, body : @escaping (Swift.Int32, Optional<dotnet.System.Threading.Tasks.ParallelLoopState>) throws -> Void) throws -> dotnet.System.Threading.Tasks.ParallelLoopResult {
+    public static func For(fromInclusive : Swift.Int32, toExclusive : Swift.Int32, parallelOptions : dotnet.System.Threading.Tasks.ParallelOptions, body : @escaping (Swift.Int32, dotnet.System.Threading.Tasks.ParallelLoopState) throws -> Void) throws -> dotnet.System.Threading.Tasks.ParallelLoopResult {
         let del_body = try dotnet.System.Action_2<Swift.Int32,dotnet.System.Threading.Tasks.ParallelLoopState>(body);
         return try For(fromInclusive: fromInclusive, toExclusive: toExclusive, parallelOptions: parallelOptions, body: del_body);
     }
@@ -131,7 +131,7 @@ public struct Parallel {
         }
     }
     // delegate closure overload
-    public static func For(fromInclusive : Swift.Int64, toExclusive : Swift.Int64, body : @escaping (Swift.Int64, Optional<dotnet.System.Threading.Tasks.ParallelLoopState>) throws -> Void) throws -> dotnet.System.Threading.Tasks.ParallelLoopResult {
+    public static func For(fromInclusive : Swift.Int64, toExclusive : Swift.Int64, body : @escaping (Swift.Int64, dotnet.System.Threading.Tasks.ParallelLoopState) throws -> Void) throws -> dotnet.System.Threading.Tasks.ParallelLoopResult {
         let del_body = try dotnet.System.Action_2<Swift.Int64,dotnet.System.Threading.Tasks.ParallelLoopState>(body);
         return try For(fromInclusive: fromInclusive, toExclusive: toExclusive, body: del_body);
     }
@@ -182,7 +182,7 @@ public struct Parallel {
         }
     }
     // delegate closure overload
-    public static func For(fromInclusive : Swift.Int64, toExclusive : Swift.Int64, parallelOptions : dotnet.System.Threading.Tasks.ParallelOptions, body : @escaping (Swift.Int64, Optional<dotnet.System.Threading.Tasks.ParallelLoopState>) throws -> Void) throws -> dotnet.System.Threading.Tasks.ParallelLoopResult {
+    public static func For(fromInclusive : Swift.Int64, toExclusive : Swift.Int64, parallelOptions : dotnet.System.Threading.Tasks.ParallelOptions, body : @escaping (Swift.Int64, dotnet.System.Threading.Tasks.ParallelLoopState) throws -> Void) throws -> dotnet.System.Threading.Tasks.ParallelLoopResult {
         let del_body = try dotnet.System.Action_2<Swift.Int64,dotnet.System.Threading.Tasks.ParallelLoopState>(body);
         return try For(fromInclusive: fromInclusive, toExclusive: toExclusive, parallelOptions: parallelOptions, body: del_body);
     }
@@ -232,7 +232,7 @@ public struct Parallel {
         }
     }
     // delegate closure overload
-    public static func ForEach<UTSource : SGBridgeGenericValue>(source : dotnet.System.Collections.Concurrent.OrderablePartitioner_1<UTSource>, body : @escaping (UTSource, Optional<dotnet.System.Threading.Tasks.ParallelLoopState>, Swift.Int64) throws -> Void) throws -> dotnet.System.Threading.Tasks.ParallelLoopResult {
+    public static func ForEach<UTSource : SGBridgeGenericValue>(source : dotnet.System.Collections.Concurrent.OrderablePartitioner_1<UTSource>, body : @escaping (UTSource, dotnet.System.Threading.Tasks.ParallelLoopState, Swift.Int64) throws -> Void) throws -> dotnet.System.Threading.Tasks.ParallelLoopResult {
         let del_body = try dotnet.System.Action_3<UTSource,dotnet.System.Threading.Tasks.ParallelLoopState,Swift.Int64>(body);
         return try ForEach(source: source, body: del_body);
     }
@@ -257,7 +257,7 @@ public struct Parallel {
         }
     }
     // delegate closure overload
-    public static func ForEach<UTSource : SGBridgeGenericValue>(source : dotnet.System.Collections.Concurrent.OrderablePartitioner_1<UTSource>, parallelOptions : dotnet.System.Threading.Tasks.ParallelOptions, body : @escaping (UTSource, Optional<dotnet.System.Threading.Tasks.ParallelLoopState>, Swift.Int64) throws -> Void) throws -> dotnet.System.Threading.Tasks.ParallelLoopResult {
+    public static func ForEach<UTSource : SGBridgeGenericValue>(source : dotnet.System.Collections.Concurrent.OrderablePartitioner_1<UTSource>, parallelOptions : dotnet.System.Threading.Tasks.ParallelOptions, body : @escaping (UTSource, dotnet.System.Threading.Tasks.ParallelLoopState, Swift.Int64) throws -> Void) throws -> dotnet.System.Threading.Tasks.ParallelLoopResult {
         let del_body = try dotnet.System.Action_3<UTSource,dotnet.System.Threading.Tasks.ParallelLoopState,Swift.Int64>(body);
         return try ForEach(source: source, parallelOptions: parallelOptions, body: del_body);
     }
@@ -281,7 +281,7 @@ public struct Parallel {
         }
     }
     // delegate closure overload
-    public static func ForEach<UTSource : SGBridgeGenericValue>(source : dotnet.System.Collections.Concurrent.Partitioner_1<UTSource>, body : @escaping (UTSource, Optional<dotnet.System.Threading.Tasks.ParallelLoopState>) throws -> Void) throws -> dotnet.System.Threading.Tasks.ParallelLoopResult {
+    public static func ForEach<UTSource : SGBridgeGenericValue>(source : dotnet.System.Collections.Concurrent.Partitioner_1<UTSource>, body : @escaping (UTSource, dotnet.System.Threading.Tasks.ParallelLoopState) throws -> Void) throws -> dotnet.System.Threading.Tasks.ParallelLoopResult {
         let del_body = try dotnet.System.Action_2<UTSource,dotnet.System.Threading.Tasks.ParallelLoopState>(body);
         return try ForEach(source: source, body: del_body);
     }
@@ -330,7 +330,7 @@ public struct Parallel {
         }
     }
     // delegate closure overload
-    public static func ForEach<UTSource : SGBridgeGenericValue>(source : dotnet.System.Collections.Concurrent.Partitioner_1<UTSource>, parallelOptions : dotnet.System.Threading.Tasks.ParallelOptions, body : @escaping (UTSource, Optional<dotnet.System.Threading.Tasks.ParallelLoopState>) throws -> Void) throws -> dotnet.System.Threading.Tasks.ParallelLoopResult {
+    public static func ForEach<UTSource : SGBridgeGenericValue>(source : dotnet.System.Collections.Concurrent.Partitioner_1<UTSource>, parallelOptions : dotnet.System.Threading.Tasks.ParallelOptions, body : @escaping (UTSource, dotnet.System.Threading.Tasks.ParallelLoopState) throws -> Void) throws -> dotnet.System.Threading.Tasks.ParallelLoopResult {
         let del_body = try dotnet.System.Action_2<UTSource,dotnet.System.Threading.Tasks.ParallelLoopState>(body);
         return try ForEach(source: source, parallelOptions: parallelOptions, body: del_body);
     }
@@ -379,7 +379,7 @@ public struct Parallel {
         }
     }
     // delegate closure overload
-    public static func ForEach<UTSource : SGBridgeGenericValue>(source : dotnet.System.Collections.Generic.IEnumerable_1<UTSource>, body : @escaping (UTSource, Optional<dotnet.System.Threading.Tasks.ParallelLoopState>, Swift.Int64) throws -> Void) throws -> dotnet.System.Threading.Tasks.ParallelLoopResult {
+    public static func ForEach<UTSource : SGBridgeGenericValue>(source : dotnet.System.Collections.Generic.IEnumerable_1<UTSource>, body : @escaping (UTSource, dotnet.System.Threading.Tasks.ParallelLoopState, Swift.Int64) throws -> Void) throws -> dotnet.System.Threading.Tasks.ParallelLoopResult {
         let del_body = try dotnet.System.Action_3<UTSource,dotnet.System.Threading.Tasks.ParallelLoopState,Swift.Int64>(body);
         return try ForEach(source: source, body: del_body);
     }
@@ -403,7 +403,7 @@ public struct Parallel {
         }
     }
     // delegate closure overload
-    public static func ForEach<UTSource : SGBridgeGenericValue>(source : dotnet.System.Collections.Generic.IEnumerable_1<UTSource>, body : @escaping (UTSource, Optional<dotnet.System.Threading.Tasks.ParallelLoopState>) throws -> Void) throws -> dotnet.System.Threading.Tasks.ParallelLoopResult {
+    public static func ForEach<UTSource : SGBridgeGenericValue>(source : dotnet.System.Collections.Generic.IEnumerable_1<UTSource>, body : @escaping (UTSource, dotnet.System.Threading.Tasks.ParallelLoopState) throws -> Void) throws -> dotnet.System.Threading.Tasks.ParallelLoopResult {
         let del_body = try dotnet.System.Action_2<UTSource,dotnet.System.Threading.Tasks.ParallelLoopState>(body);
         return try ForEach(source: source, body: del_body);
     }
@@ -452,7 +452,7 @@ public struct Parallel {
         }
     }
     // delegate closure overload
-    public static func ForEach<UTSource : SGBridgeGenericValue>(source : dotnet.System.Collections.Generic.IEnumerable_1<UTSource>, parallelOptions : dotnet.System.Threading.Tasks.ParallelOptions, body : @escaping (UTSource, Optional<dotnet.System.Threading.Tasks.ParallelLoopState>, Swift.Int64) throws -> Void) throws -> dotnet.System.Threading.Tasks.ParallelLoopResult {
+    public static func ForEach<UTSource : SGBridgeGenericValue>(source : dotnet.System.Collections.Generic.IEnumerable_1<UTSource>, parallelOptions : dotnet.System.Threading.Tasks.ParallelOptions, body : @escaping (UTSource, dotnet.System.Threading.Tasks.ParallelLoopState, Swift.Int64) throws -> Void) throws -> dotnet.System.Threading.Tasks.ParallelLoopResult {
         let del_body = try dotnet.System.Action_3<UTSource,dotnet.System.Threading.Tasks.ParallelLoopState,Swift.Int64>(body);
         return try ForEach(source: source, parallelOptions: parallelOptions, body: del_body);
     }
@@ -477,7 +477,7 @@ public struct Parallel {
         }
     }
     // delegate closure overload
-    public static func ForEach<UTSource : SGBridgeGenericValue>(source : dotnet.System.Collections.Generic.IEnumerable_1<UTSource>, parallelOptions : dotnet.System.Threading.Tasks.ParallelOptions, body : @escaping (UTSource, Optional<dotnet.System.Threading.Tasks.ParallelLoopState>) throws -> Void) throws -> dotnet.System.Threading.Tasks.ParallelLoopResult {
+    public static func ForEach<UTSource : SGBridgeGenericValue>(source : dotnet.System.Collections.Generic.IEnumerable_1<UTSource>, parallelOptions : dotnet.System.Threading.Tasks.ParallelOptions, body : @escaping (UTSource, dotnet.System.Threading.Tasks.ParallelLoopState) throws -> Void) throws -> dotnet.System.Threading.Tasks.ParallelLoopResult {
         let del_body = try dotnet.System.Action_2<UTSource,dotnet.System.Threading.Tasks.ParallelLoopState>(body);
         return try ForEach(source: source, parallelOptions: parallelOptions, body: del_body);
     }
@@ -528,7 +528,7 @@ public struct Parallel {
         }
     }
     // delegate closure overload
-    public static func ForEach<UTSource : SGBridgeGenericValue,UTLocal : SGBridgeGenericValue>(source : dotnet.System.Collections.Concurrent.OrderablePartitioner_1<UTSource>, localInit : @escaping () throws -> UTLocal, body : @escaping (UTSource, Optional<dotnet.System.Threading.Tasks.ParallelLoopState>, Swift.Int64, UTLocal) throws -> UTLocal, localFinally : @escaping (UTLocal) throws -> Void) throws -> dotnet.System.Threading.Tasks.ParallelLoopResult {
+    public static func ForEach<UTSource : SGBridgeGenericValue,UTLocal : SGBridgeGenericValue>(source : dotnet.System.Collections.Concurrent.OrderablePartitioner_1<UTSource>, localInit : @escaping () throws -> UTLocal, body : @escaping (UTSource, dotnet.System.Threading.Tasks.ParallelLoopState, Swift.Int64, UTLocal) throws -> UTLocal, localFinally : @escaping (UTLocal) throws -> Void) throws -> dotnet.System.Threading.Tasks.ParallelLoopResult {
         let del_localInit = try dotnet.System.Func_1<UTLocal>(localInit);
         let del_body = try dotnet.System.Func_5<UTSource,dotnet.System.Threading.Tasks.ParallelLoopState,Swift.Int64,UTLocal,UTLocal>(body);
         let del_localFinally = try dotnet.System.Action_1<UTLocal>(localFinally);
@@ -557,7 +557,7 @@ public struct Parallel {
         }
     }
     // delegate closure overload
-    public static func ForEach<UTSource : SGBridgeGenericValue,UTLocal : SGBridgeGenericValue>(source : dotnet.System.Collections.Concurrent.OrderablePartitioner_1<UTSource>, parallelOptions : dotnet.System.Threading.Tasks.ParallelOptions, localInit : @escaping () throws -> UTLocal, body : @escaping (UTSource, Optional<dotnet.System.Threading.Tasks.ParallelLoopState>, Swift.Int64, UTLocal) throws -> UTLocal, localFinally : @escaping (UTLocal) throws -> Void) throws -> dotnet.System.Threading.Tasks.ParallelLoopResult {
+    public static func ForEach<UTSource : SGBridgeGenericValue,UTLocal : SGBridgeGenericValue>(source : dotnet.System.Collections.Concurrent.OrderablePartitioner_1<UTSource>, parallelOptions : dotnet.System.Threading.Tasks.ParallelOptions, localInit : @escaping () throws -> UTLocal, body : @escaping (UTSource, dotnet.System.Threading.Tasks.ParallelLoopState, Swift.Int64, UTLocal) throws -> UTLocal, localFinally : @escaping (UTLocal) throws -> Void) throws -> dotnet.System.Threading.Tasks.ParallelLoopResult {
         let del_localInit = try dotnet.System.Func_1<UTLocal>(localInit);
         let del_body = try dotnet.System.Func_5<UTSource,dotnet.System.Threading.Tasks.ParallelLoopState,Swift.Int64,UTLocal,UTLocal>(body);
         let del_localFinally = try dotnet.System.Action_1<UTLocal>(localFinally);
@@ -585,7 +585,7 @@ public struct Parallel {
         }
     }
     // delegate closure overload
-    public static func ForEach<UTSource : SGBridgeGenericValue,UTLocal : SGBridgeGenericValue>(source : dotnet.System.Collections.Concurrent.Partitioner_1<UTSource>, localInit : @escaping () throws -> UTLocal, body : @escaping (UTSource, Optional<dotnet.System.Threading.Tasks.ParallelLoopState>, UTLocal) throws -> UTLocal, localFinally : @escaping (UTLocal) throws -> Void) throws -> dotnet.System.Threading.Tasks.ParallelLoopResult {
+    public static func ForEach<UTSource : SGBridgeGenericValue,UTLocal : SGBridgeGenericValue>(source : dotnet.System.Collections.Concurrent.Partitioner_1<UTSource>, localInit : @escaping () throws -> UTLocal, body : @escaping (UTSource, dotnet.System.Threading.Tasks.ParallelLoopState, UTLocal) throws -> UTLocal, localFinally : @escaping (UTLocal) throws -> Void) throws -> dotnet.System.Threading.Tasks.ParallelLoopResult {
         let del_localInit = try dotnet.System.Func_1<UTLocal>(localInit);
         let del_body = try dotnet.System.Func_4<UTSource,dotnet.System.Threading.Tasks.ParallelLoopState,UTLocal,UTLocal>(body);
         let del_localFinally = try dotnet.System.Action_1<UTLocal>(localFinally);
@@ -614,7 +614,7 @@ public struct Parallel {
         }
     }
     // delegate closure overload
-    public static func ForEach<UTSource : SGBridgeGenericValue,UTLocal : SGBridgeGenericValue>(source : dotnet.System.Collections.Concurrent.Partitioner_1<UTSource>, parallelOptions : dotnet.System.Threading.Tasks.ParallelOptions, localInit : @escaping () throws -> UTLocal, body : @escaping (UTSource, Optional<dotnet.System.Threading.Tasks.ParallelLoopState>, UTLocal) throws -> UTLocal, localFinally : @escaping (UTLocal) throws -> Void) throws -> dotnet.System.Threading.Tasks.ParallelLoopResult {
+    public static func ForEach<UTSource : SGBridgeGenericValue,UTLocal : SGBridgeGenericValue>(source : dotnet.System.Collections.Concurrent.Partitioner_1<UTSource>, parallelOptions : dotnet.System.Threading.Tasks.ParallelOptions, localInit : @escaping () throws -> UTLocal, body : @escaping (UTSource, dotnet.System.Threading.Tasks.ParallelLoopState, UTLocal) throws -> UTLocal, localFinally : @escaping (UTLocal) throws -> Void) throws -> dotnet.System.Threading.Tasks.ParallelLoopResult {
         let del_localInit = try dotnet.System.Func_1<UTLocal>(localInit);
         let del_body = try dotnet.System.Func_4<UTSource,dotnet.System.Threading.Tasks.ParallelLoopState,UTLocal,UTLocal>(body);
         let del_localFinally = try dotnet.System.Action_1<UTLocal>(localFinally);
@@ -642,7 +642,7 @@ public struct Parallel {
         }
     }
     // delegate closure overload
-    public static func ForEach<UTSource : SGBridgeGenericValue,UTLocal : SGBridgeGenericValue>(source : dotnet.System.Collections.Generic.IEnumerable_1<UTSource>, localInit : @escaping () throws -> UTLocal, body : @escaping (UTSource, Optional<dotnet.System.Threading.Tasks.ParallelLoopState>, Swift.Int64, UTLocal) throws -> UTLocal, localFinally : @escaping (UTLocal) throws -> Void) throws -> dotnet.System.Threading.Tasks.ParallelLoopResult {
+    public static func ForEach<UTSource : SGBridgeGenericValue,UTLocal : SGBridgeGenericValue>(source : dotnet.System.Collections.Generic.IEnumerable_1<UTSource>, localInit : @escaping () throws -> UTLocal, body : @escaping (UTSource, dotnet.System.Threading.Tasks.ParallelLoopState, Swift.Int64, UTLocal) throws -> UTLocal, localFinally : @escaping (UTLocal) throws -> Void) throws -> dotnet.System.Threading.Tasks.ParallelLoopResult {
         let del_localInit = try dotnet.System.Func_1<UTLocal>(localInit);
         let del_body = try dotnet.System.Func_5<UTSource,dotnet.System.Threading.Tasks.ParallelLoopState,Swift.Int64,UTLocal,UTLocal>(body);
         let del_localFinally = try dotnet.System.Action_1<UTLocal>(localFinally);
@@ -670,7 +670,7 @@ public struct Parallel {
         }
     }
     // delegate closure overload
-    public static func ForEach<UTSource : SGBridgeGenericValue,UTLocal : SGBridgeGenericValue>(source : dotnet.System.Collections.Generic.IEnumerable_1<UTSource>, localInit : @escaping () throws -> UTLocal, body : @escaping (UTSource, Optional<dotnet.System.Threading.Tasks.ParallelLoopState>, UTLocal) throws -> UTLocal, localFinally : @escaping (UTLocal) throws -> Void) throws -> dotnet.System.Threading.Tasks.ParallelLoopResult {
+    public static func ForEach<UTSource : SGBridgeGenericValue,UTLocal : SGBridgeGenericValue>(source : dotnet.System.Collections.Generic.IEnumerable_1<UTSource>, localInit : @escaping () throws -> UTLocal, body : @escaping (UTSource, dotnet.System.Threading.Tasks.ParallelLoopState, UTLocal) throws -> UTLocal, localFinally : @escaping (UTLocal) throws -> Void) throws -> dotnet.System.Threading.Tasks.ParallelLoopResult {
         let del_localInit = try dotnet.System.Func_1<UTLocal>(localInit);
         let del_body = try dotnet.System.Func_4<UTSource,dotnet.System.Threading.Tasks.ParallelLoopState,UTLocal,UTLocal>(body);
         let del_localFinally = try dotnet.System.Action_1<UTLocal>(localFinally);
@@ -699,7 +699,7 @@ public struct Parallel {
         }
     }
     // delegate closure overload
-    public static func ForEach<UTSource : SGBridgeGenericValue,UTLocal : SGBridgeGenericValue>(source : dotnet.System.Collections.Generic.IEnumerable_1<UTSource>, parallelOptions : dotnet.System.Threading.Tasks.ParallelOptions, localInit : @escaping () throws -> UTLocal, body : @escaping (UTSource, Optional<dotnet.System.Threading.Tasks.ParallelLoopState>, Swift.Int64, UTLocal) throws -> UTLocal, localFinally : @escaping (UTLocal) throws -> Void) throws -> dotnet.System.Threading.Tasks.ParallelLoopResult {
+    public static func ForEach<UTSource : SGBridgeGenericValue,UTLocal : SGBridgeGenericValue>(source : dotnet.System.Collections.Generic.IEnumerable_1<UTSource>, parallelOptions : dotnet.System.Threading.Tasks.ParallelOptions, localInit : @escaping () throws -> UTLocal, body : @escaping (UTSource, dotnet.System.Threading.Tasks.ParallelLoopState, Swift.Int64, UTLocal) throws -> UTLocal, localFinally : @escaping (UTLocal) throws -> Void) throws -> dotnet.System.Threading.Tasks.ParallelLoopResult {
         let del_localInit = try dotnet.System.Func_1<UTLocal>(localInit);
         let del_body = try dotnet.System.Func_5<UTSource,dotnet.System.Threading.Tasks.ParallelLoopState,Swift.Int64,UTLocal,UTLocal>(body);
         let del_localFinally = try dotnet.System.Action_1<UTLocal>(localFinally);
@@ -728,7 +728,7 @@ public struct Parallel {
         }
     }
     // delegate closure overload
-    public static func ForEach<UTSource : SGBridgeGenericValue,UTLocal : SGBridgeGenericValue>(source : dotnet.System.Collections.Generic.IEnumerable_1<UTSource>, parallelOptions : dotnet.System.Threading.Tasks.ParallelOptions, localInit : @escaping () throws -> UTLocal, body : @escaping (UTSource, Optional<dotnet.System.Threading.Tasks.ParallelLoopState>, UTLocal) throws -> UTLocal, localFinally : @escaping (UTLocal) throws -> Void) throws -> dotnet.System.Threading.Tasks.ParallelLoopResult {
+    public static func ForEach<UTSource : SGBridgeGenericValue,UTLocal : SGBridgeGenericValue>(source : dotnet.System.Collections.Generic.IEnumerable_1<UTSource>, parallelOptions : dotnet.System.Threading.Tasks.ParallelOptions, localInit : @escaping () throws -> UTLocal, body : @escaping (UTSource, dotnet.System.Threading.Tasks.ParallelLoopState, UTLocal) throws -> UTLocal, localFinally : @escaping (UTLocal) throws -> Void) throws -> dotnet.System.Threading.Tasks.ParallelLoopResult {
         let del_localInit = try dotnet.System.Func_1<UTLocal>(localInit);
         let del_body = try dotnet.System.Func_4<UTSource,dotnet.System.Threading.Tasks.ParallelLoopState,UTLocal,UTLocal>(body);
         let del_localFinally = try dotnet.System.Action_1<UTLocal>(localFinally);
@@ -736,99 +736,151 @@ public struct Parallel {
     }
     // System.Threading.Tasks.Task ForEachAsync<TSource>(System.Collections.Generic.IEnumerable<TSource>, System.Func<TSource,System.Threading.CancellationToken,System.Threading.Tasks.ValueTask>)
 // docid: M:System.Threading.Tasks.Parallel.ForEachAsync``1(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.Threading.CancellationToken,System.Threading.Tasks.ValueTask})
-    public static func ForEachAsync<UTSource : SGBridgeGenericValue>(source : dotnet.System.Collections.Generic.IEnumerable_1<UTSource>, body : dotnet.System.Func_3<UTSource,dotnet.System.Threading.CancellationToken,dotnet.System.Threading.Tasks.ValueTask>) throws -> dotnet.System.Threading.Tasks.Task {
+    /**
+    Executes a for-each operation on an  in which iterations may run in parallel.
+
+    - Parameter source: An enumerable data source.
+    - Parameter body: An asynchronous delegate that is invoked once per element in the data source.
+    - Returns: A task that represents the entire for-each operation.
+
+    */
+    public static func ForEachAsync<UTSource : SGBridgeGenericValue>(source : dotnet.System.Collections.Generic.IEnumerable_1<UTSource>, body : dotnet.System.Func_3<UTSource,dotnet.System.Threading.CancellationToken,dotnet.System.Threading.Tasks.ValueTask>) async throws {
         var __thrown : NullableHandle = nil;
         let __return = System_Threading_Tasks_Parallel_Task__ForEachAsync_1__2__System_Collections_Generic_IEnumerable_UTSource__System_Func_UTSource_System_Threading_CancellationToken_System_Threading_Tasks_ValueTask_(UTSource.get_type_handle(), &__thrown, source.get_handle(), body.get_handle());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task(hndl: __return).ToAsync();
         }
     }
     // delegate closure overload
-    public static func ForEachAsync<UTSource : SGBridgeGenericValue>(source : dotnet.System.Collections.Generic.IEnumerable_1<UTSource>, body : @escaping (UTSource, Optional<dotnet.System.Threading.CancellationToken>) throws -> dotnet.System.Threading.Tasks.ValueTask) throws -> dotnet.System.Threading.Tasks.Task {
+    public static func ForEachAsync<UTSource : SGBridgeGenericValue>(source : dotnet.System.Collections.Generic.IEnumerable_1<UTSource>, body : @escaping (UTSource, dotnet.System.Threading.CancellationToken) throws -> dotnet.System.Threading.Tasks.ValueTask) async throws {
         let del_body = try dotnet.System.Func_3<UTSource,dotnet.System.Threading.CancellationToken,dotnet.System.Threading.Tasks.ValueTask>(body);
-        return try ForEachAsync(source: source, body: del_body);
+        return try await ForEachAsync(source: source, body: del_body);
     }
     // System.Threading.Tasks.Task ForEachAsync<TSource>(System.Collections.Generic.IEnumerable<TSource>, System.Threading.CancellationToken, System.Func<TSource,System.Threading.CancellationToken,System.Threading.Tasks.ValueTask>)
 // docid: M:System.Threading.Tasks.Parallel.ForEachAsync``1(System.Collections.Generic.IEnumerable{``0},System.Threading.CancellationToken,System.Func{``0,System.Threading.CancellationToken,System.Threading.Tasks.ValueTask})
-    public static func ForEachAsync<UTSource : SGBridgeGenericValue>(source : dotnet.System.Collections.Generic.IEnumerable_1<UTSource>, cancellationToken : dotnet.System.Threading.CancellationToken, body : dotnet.System.Func_3<UTSource,dotnet.System.Threading.CancellationToken,dotnet.System.Threading.Tasks.ValueTask>) throws -> dotnet.System.Threading.Tasks.Task {
+    /**
+    Executes a for-each operation on an  in which iterations may run in parallel.
+
+    - Parameter source: An enumerable data source.
+    - Parameter cancellationToken: A cancellation token that may be used to cancel the for-each operation.
+    - Parameter body: An asynchronous delegate that is invoked once per element in the data source.
+    - Returns: A task that represents the entire for-each operation.
+
+    */
+    public static func ForEachAsync<UTSource : SGBridgeGenericValue>(source : dotnet.System.Collections.Generic.IEnumerable_1<UTSource>, cancellationToken : dotnet.System.Threading.CancellationToken, body : dotnet.System.Func_3<UTSource,dotnet.System.Threading.CancellationToken,dotnet.System.Threading.Tasks.ValueTask>) async throws {
         var __thrown : NullableHandle = nil;
         let __return = System_Threading_Tasks_Parallel_Task__ForEachAsync_1__3__System_Collections_Generic_IEnumerable_UTSource__CancellationToken_System_Func_UTSource_System_Threading_CancellationToken_System_Threading_Tasks_ValueTask_(UTSource.get_type_handle(), &__thrown, source.get_handle(), cancellationToken.get_handle(), body.get_handle());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task(hndl: __return).ToAsync();
         }
     }
     // delegate closure overload
-    public static func ForEachAsync<UTSource : SGBridgeGenericValue>(source : dotnet.System.Collections.Generic.IEnumerable_1<UTSource>, cancellationToken : dotnet.System.Threading.CancellationToken, body : @escaping (UTSource, Optional<dotnet.System.Threading.CancellationToken>) throws -> dotnet.System.Threading.Tasks.ValueTask) throws -> dotnet.System.Threading.Tasks.Task {
+    public static func ForEachAsync<UTSource : SGBridgeGenericValue>(source : dotnet.System.Collections.Generic.IEnumerable_1<UTSource>, cancellationToken : dotnet.System.Threading.CancellationToken, body : @escaping (UTSource, dotnet.System.Threading.CancellationToken) throws -> dotnet.System.Threading.Tasks.ValueTask) async throws {
         let del_body = try dotnet.System.Func_3<UTSource,dotnet.System.Threading.CancellationToken,dotnet.System.Threading.Tasks.ValueTask>(body);
-        return try ForEachAsync(source: source, cancellationToken: cancellationToken, body: del_body);
+        return try await ForEachAsync(source: source, cancellationToken: cancellationToken, body: del_body);
     }
     // System.Threading.Tasks.Task ForEachAsync<TSource>(System.Collections.Generic.IEnumerable<TSource>, System.Threading.Tasks.ParallelOptions, System.Func<TSource,System.Threading.CancellationToken,System.Threading.Tasks.ValueTask>)
 // docid: M:System.Threading.Tasks.Parallel.ForEachAsync``1(System.Collections.Generic.IEnumerable{``0},System.Threading.Tasks.ParallelOptions,System.Func{``0,System.Threading.CancellationToken,System.Threading.Tasks.ValueTask})
-    public static func ForEachAsync<UTSource : SGBridgeGenericValue>(source : dotnet.System.Collections.Generic.IEnumerable_1<UTSource>, parallelOptions : dotnet.System.Threading.Tasks.ParallelOptions, body : dotnet.System.Func_3<UTSource,dotnet.System.Threading.CancellationToken,dotnet.System.Threading.Tasks.ValueTask>) throws -> dotnet.System.Threading.Tasks.Task {
+    /**
+    Executes a for-each operation on an  in which iterations may run in parallel.
+
+    - Parameter source: An enumerable data source.
+    - Parameter parallelOptions: An object that configures the behavior of this operation.
+    - Parameter body: An asynchronous delegate that is invoked once per element in the data source.
+    - Returns: A task that represents the entire for-each operation.
+
+    */
+    public static func ForEachAsync<UTSource : SGBridgeGenericValue>(source : dotnet.System.Collections.Generic.IEnumerable_1<UTSource>, parallelOptions : dotnet.System.Threading.Tasks.ParallelOptions, body : dotnet.System.Func_3<UTSource,dotnet.System.Threading.CancellationToken,dotnet.System.Threading.Tasks.ValueTask>) async throws {
         var __thrown : NullableHandle = nil;
         let __return = System_Threading_Tasks_Parallel_Task__ForEachAsync_1__3__System_Collections_Generic_IEnumerable_UTSource__ParallelOptions_System_Func_UTSource_System_Threading_CancellationToken_System_Threading_Tasks_ValueTask_(UTSource.get_type_handle(), &__thrown, source.get_handle(), parallelOptions.get_handle(), body.get_handle());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task(hndl: __return).ToAsync();
         }
     }
     // delegate closure overload
-    public static func ForEachAsync<UTSource : SGBridgeGenericValue>(source : dotnet.System.Collections.Generic.IEnumerable_1<UTSource>, parallelOptions : dotnet.System.Threading.Tasks.ParallelOptions, body : @escaping (UTSource, Optional<dotnet.System.Threading.CancellationToken>) throws -> dotnet.System.Threading.Tasks.ValueTask) throws -> dotnet.System.Threading.Tasks.Task {
+    public static func ForEachAsync<UTSource : SGBridgeGenericValue>(source : dotnet.System.Collections.Generic.IEnumerable_1<UTSource>, parallelOptions : dotnet.System.Threading.Tasks.ParallelOptions, body : @escaping (UTSource, dotnet.System.Threading.CancellationToken) throws -> dotnet.System.Threading.Tasks.ValueTask) async throws {
         let del_body = try dotnet.System.Func_3<UTSource,dotnet.System.Threading.CancellationToken,dotnet.System.Threading.Tasks.ValueTask>(body);
-        return try ForEachAsync(source: source, parallelOptions: parallelOptions, body: del_body);
+        return try await ForEachAsync(source: source, parallelOptions: parallelOptions, body: del_body);
     }
     // System.Threading.Tasks.Task ForEachAsync<TSource>(System.Collections.Generic.IAsyncEnumerable<TSource>, System.Func<TSource,System.Threading.CancellationToken,System.Threading.Tasks.ValueTask>)
 // docid: M:System.Threading.Tasks.Parallel.ForEachAsync``1(System.Collections.Generic.IAsyncEnumerable{``0},System.Func{``0,System.Threading.CancellationToken,System.Threading.Tasks.ValueTask})
-    public static func ForEachAsync<UTSource : SGBridgeGenericValue>(source : dotnet.System.Collections.Generic.IAsyncEnumerable_1<UTSource>, body : dotnet.System.Func_3<UTSource,dotnet.System.Threading.CancellationToken,dotnet.System.Threading.Tasks.ValueTask>) throws -> dotnet.System.Threading.Tasks.Task {
+    /**
+    Executes a for-each operation on an  in which iterations may run in parallel.
+
+    - Parameter source: An enumerable data source.
+    - Parameter body: An asynchronous delegate that is invoked once per element in the data source.
+    - Returns: A task that represents the entire for-each operation.
+
+    */
+    public static func ForEachAsync<UTSource : SGBridgeGenericValue>(source : dotnet.System.Collections.Generic.IAsyncEnumerable_1<UTSource>, body : dotnet.System.Func_3<UTSource,dotnet.System.Threading.CancellationToken,dotnet.System.Threading.Tasks.ValueTask>) async throws {
         var __thrown : NullableHandle = nil;
         let __return = System_Threading_Tasks_Parallel_Task__ForEachAsync_1__2__System_Collections_Generic_IAsyncEnumerable_UTSource__System_Func_UTSource_System_Threading_CancellationToken_System_Threading_Tasks_ValueTask_(UTSource.get_type_handle(), &__thrown, source.get_handle(), body.get_handle());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task(hndl: __return).ToAsync();
         }
     }
     // delegate closure overload
-    public static func ForEachAsync<UTSource : SGBridgeGenericValue>(source : dotnet.System.Collections.Generic.IAsyncEnumerable_1<UTSource>, body : @escaping (UTSource, Optional<dotnet.System.Threading.CancellationToken>) throws -> dotnet.System.Threading.Tasks.ValueTask) throws -> dotnet.System.Threading.Tasks.Task {
+    public static func ForEachAsync<UTSource : SGBridgeGenericValue>(source : dotnet.System.Collections.Generic.IAsyncEnumerable_1<UTSource>, body : @escaping (UTSource, dotnet.System.Threading.CancellationToken) throws -> dotnet.System.Threading.Tasks.ValueTask) async throws {
         let del_body = try dotnet.System.Func_3<UTSource,dotnet.System.Threading.CancellationToken,dotnet.System.Threading.Tasks.ValueTask>(body);
-        return try ForEachAsync(source: source, body: del_body);
+        return try await ForEachAsync(source: source, body: del_body);
     }
     // System.Threading.Tasks.Task ForEachAsync<TSource>(System.Collections.Generic.IAsyncEnumerable<TSource>, System.Threading.CancellationToken, System.Func<TSource,System.Threading.CancellationToken,System.Threading.Tasks.ValueTask>)
 // docid: M:System.Threading.Tasks.Parallel.ForEachAsync``1(System.Collections.Generic.IAsyncEnumerable{``0},System.Threading.CancellationToken,System.Func{``0,System.Threading.CancellationToken,System.Threading.Tasks.ValueTask})
-    public static func ForEachAsync<UTSource : SGBridgeGenericValue>(source : dotnet.System.Collections.Generic.IAsyncEnumerable_1<UTSource>, cancellationToken : dotnet.System.Threading.CancellationToken, body : dotnet.System.Func_3<UTSource,dotnet.System.Threading.CancellationToken,dotnet.System.Threading.Tasks.ValueTask>) throws -> dotnet.System.Threading.Tasks.Task {
+    /**
+    Executes a for-each operation on an  in which iterations may run in parallel.
+
+    - Parameter source: An enumerable data source.
+    - Parameter cancellationToken: A cancellation token that may be used to cancel the for-each operation.
+    - Parameter body: An asynchronous delegate that is invoked once per element in the data source.
+    - Returns: A task that represents the entire for-each operation.
+
+    */
+    public static func ForEachAsync<UTSource : SGBridgeGenericValue>(source : dotnet.System.Collections.Generic.IAsyncEnumerable_1<UTSource>, cancellationToken : dotnet.System.Threading.CancellationToken, body : dotnet.System.Func_3<UTSource,dotnet.System.Threading.CancellationToken,dotnet.System.Threading.Tasks.ValueTask>) async throws {
         var __thrown : NullableHandle = nil;
         let __return = System_Threading_Tasks_Parallel_Task__ForEachAsync_1__3__System_Collections_Generic_IAsyncEnumerable_UTSource__CancellationToken_System_Func_UTSource_System_Threading_CancellationToken_System_Threading_Tasks_ValueTask_(UTSource.get_type_handle(), &__thrown, source.get_handle(), cancellationToken.get_handle(), body.get_handle());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task(hndl: __return).ToAsync();
         }
     }
     // delegate closure overload
-    public static func ForEachAsync<UTSource : SGBridgeGenericValue>(source : dotnet.System.Collections.Generic.IAsyncEnumerable_1<UTSource>, cancellationToken : dotnet.System.Threading.CancellationToken, body : @escaping (UTSource, Optional<dotnet.System.Threading.CancellationToken>) throws -> dotnet.System.Threading.Tasks.ValueTask) throws -> dotnet.System.Threading.Tasks.Task {
+    public static func ForEachAsync<UTSource : SGBridgeGenericValue>(source : dotnet.System.Collections.Generic.IAsyncEnumerable_1<UTSource>, cancellationToken : dotnet.System.Threading.CancellationToken, body : @escaping (UTSource, dotnet.System.Threading.CancellationToken) throws -> dotnet.System.Threading.Tasks.ValueTask) async throws {
         let del_body = try dotnet.System.Func_3<UTSource,dotnet.System.Threading.CancellationToken,dotnet.System.Threading.Tasks.ValueTask>(body);
-        return try ForEachAsync(source: source, cancellationToken: cancellationToken, body: del_body);
+        return try await ForEachAsync(source: source, cancellationToken: cancellationToken, body: del_body);
     }
     // System.Threading.Tasks.Task ForEachAsync<TSource>(System.Collections.Generic.IAsyncEnumerable<TSource>, System.Threading.Tasks.ParallelOptions, System.Func<TSource,System.Threading.CancellationToken,System.Threading.Tasks.ValueTask>)
 // docid: M:System.Threading.Tasks.Parallel.ForEachAsync``1(System.Collections.Generic.IAsyncEnumerable{``0},System.Threading.Tasks.ParallelOptions,System.Func{``0,System.Threading.CancellationToken,System.Threading.Tasks.ValueTask})
-    public static func ForEachAsync<UTSource : SGBridgeGenericValue>(source : dotnet.System.Collections.Generic.IAsyncEnumerable_1<UTSource>, parallelOptions : dotnet.System.Threading.Tasks.ParallelOptions, body : dotnet.System.Func_3<UTSource,dotnet.System.Threading.CancellationToken,dotnet.System.Threading.Tasks.ValueTask>) throws -> dotnet.System.Threading.Tasks.Task {
+    /**
+    Executes a for-each operation on an  in which iterations may run in parallel.
+
+    - Parameter source: An enumerable data source.
+    - Parameter parallelOptions: An object that configures the behavior of this operation.
+    - Parameter body: An asynchronous delegate that is invoked once per element in the data source.
+    - Returns: A task that represents the entire for-each operation.
+
+    */
+    public static func ForEachAsync<UTSource : SGBridgeGenericValue>(source : dotnet.System.Collections.Generic.IAsyncEnumerable_1<UTSource>, parallelOptions : dotnet.System.Threading.Tasks.ParallelOptions, body : dotnet.System.Func_3<UTSource,dotnet.System.Threading.CancellationToken,dotnet.System.Threading.Tasks.ValueTask>) async throws {
         var __thrown : NullableHandle = nil;
         let __return = System_Threading_Tasks_Parallel_Task__ForEachAsync_1__3__System_Collections_Generic_IAsyncEnumerable_UTSource__ParallelOptions_System_Func_UTSource_System_Threading_CancellationToken_System_Threading_Tasks_ValueTask_(UTSource.get_type_handle(), &__thrown, source.get_handle(), parallelOptions.get_handle(), body.get_handle());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task(hndl: __return).ToAsync();
         }
     }
     // delegate closure overload
-    public static func ForEachAsync<UTSource : SGBridgeGenericValue>(source : dotnet.System.Collections.Generic.IAsyncEnumerable_1<UTSource>, parallelOptions : dotnet.System.Threading.Tasks.ParallelOptions, body : @escaping (UTSource, Optional<dotnet.System.Threading.CancellationToken>) throws -> dotnet.System.Threading.Tasks.ValueTask) throws -> dotnet.System.Threading.Tasks.Task {
+    public static func ForEachAsync<UTSource : SGBridgeGenericValue>(source : dotnet.System.Collections.Generic.IAsyncEnumerable_1<UTSource>, parallelOptions : dotnet.System.Threading.Tasks.ParallelOptions, body : @escaping (UTSource, dotnet.System.Threading.CancellationToken) throws -> dotnet.System.Threading.Tasks.ValueTask) async throws {
         let del_body = try dotnet.System.Func_3<UTSource,dotnet.System.Threading.CancellationToken,dotnet.System.Threading.Tasks.ValueTask>(body);
-        return try ForEachAsync(source: source, parallelOptions: parallelOptions, body: del_body);
+        return try await ForEachAsync(source: source, parallelOptions: parallelOptions, body: del_body);
     }
     // System.Threading.Tasks.ParallelLoopResult For<TLocal>(System.Int32, System.Int32, System.Func<TLocal>, System.Func<System.Int32,System.Threading.Tasks.ParallelLoopState,TLocal,TLocal>, System.Action<TLocal>)
 // docid: M:System.Threading.Tasks.Parallel.For``1(System.Int32,System.Int32,System.Func{``0},System.Func{System.Int32,System.Threading.Tasks.ParallelLoopState,``0,``0},System.Action{``0})
@@ -853,7 +905,7 @@ public struct Parallel {
         }
     }
     // delegate closure overload
-    public static func For<UTLocal : SGBridgeGenericValue>(fromInclusive : Swift.Int32, toExclusive : Swift.Int32, localInit : @escaping () throws -> UTLocal, body : @escaping (Swift.Int32, Optional<dotnet.System.Threading.Tasks.ParallelLoopState>, UTLocal) throws -> UTLocal, localFinally : @escaping (UTLocal) throws -> Void) throws -> dotnet.System.Threading.Tasks.ParallelLoopResult {
+    public static func For<UTLocal : SGBridgeGenericValue>(fromInclusive : Swift.Int32, toExclusive : Swift.Int32, localInit : @escaping () throws -> UTLocal, body : @escaping (Swift.Int32, dotnet.System.Threading.Tasks.ParallelLoopState, UTLocal) throws -> UTLocal, localFinally : @escaping (UTLocal) throws -> Void) throws -> dotnet.System.Threading.Tasks.ParallelLoopResult {
         let del_localInit = try dotnet.System.Func_1<UTLocal>(localInit);
         let del_body = try dotnet.System.Func_4<Swift.Int32,dotnet.System.Threading.Tasks.ParallelLoopState,UTLocal,UTLocal>(body);
         let del_localFinally = try dotnet.System.Action_1<UTLocal>(localFinally);
@@ -883,7 +935,7 @@ public struct Parallel {
         }
     }
     // delegate closure overload
-    public static func For<UTLocal : SGBridgeGenericValue>(fromInclusive : Swift.Int32, toExclusive : Swift.Int32, parallelOptions : dotnet.System.Threading.Tasks.ParallelOptions, localInit : @escaping () throws -> UTLocal, body : @escaping (Swift.Int32, Optional<dotnet.System.Threading.Tasks.ParallelLoopState>, UTLocal) throws -> UTLocal, localFinally : @escaping (UTLocal) throws -> Void) throws -> dotnet.System.Threading.Tasks.ParallelLoopResult {
+    public static func For<UTLocal : SGBridgeGenericValue>(fromInclusive : Swift.Int32, toExclusive : Swift.Int32, parallelOptions : dotnet.System.Threading.Tasks.ParallelOptions, localInit : @escaping () throws -> UTLocal, body : @escaping (Swift.Int32, dotnet.System.Threading.Tasks.ParallelLoopState, UTLocal) throws -> UTLocal, localFinally : @escaping (UTLocal) throws -> Void) throws -> dotnet.System.Threading.Tasks.ParallelLoopResult {
         let del_localInit = try dotnet.System.Func_1<UTLocal>(localInit);
         let del_body = try dotnet.System.Func_4<Swift.Int32,dotnet.System.Threading.Tasks.ParallelLoopState,UTLocal,UTLocal>(body);
         let del_localFinally = try dotnet.System.Action_1<UTLocal>(localFinally);
@@ -912,7 +964,7 @@ public struct Parallel {
         }
     }
     // delegate closure overload
-    public static func For<UTLocal : SGBridgeGenericValue>(fromInclusive : Swift.Int64, toExclusive : Swift.Int64, localInit : @escaping () throws -> UTLocal, body : @escaping (Swift.Int64, Optional<dotnet.System.Threading.Tasks.ParallelLoopState>, UTLocal) throws -> UTLocal, localFinally : @escaping (UTLocal) throws -> Void) throws -> dotnet.System.Threading.Tasks.ParallelLoopResult {
+    public static func For<UTLocal : SGBridgeGenericValue>(fromInclusive : Swift.Int64, toExclusive : Swift.Int64, localInit : @escaping () throws -> UTLocal, body : @escaping (Swift.Int64, dotnet.System.Threading.Tasks.ParallelLoopState, UTLocal) throws -> UTLocal, localFinally : @escaping (UTLocal) throws -> Void) throws -> dotnet.System.Threading.Tasks.ParallelLoopResult {
         let del_localInit = try dotnet.System.Func_1<UTLocal>(localInit);
         let del_body = try dotnet.System.Func_4<Swift.Int64,dotnet.System.Threading.Tasks.ParallelLoopState,UTLocal,UTLocal>(body);
         let del_localFinally = try dotnet.System.Action_1<UTLocal>(localFinally);
@@ -942,7 +994,7 @@ public struct Parallel {
         }
     }
     // delegate closure overload
-    public static func For<UTLocal : SGBridgeGenericValue>(fromInclusive : Swift.Int64, toExclusive : Swift.Int64, parallelOptions : dotnet.System.Threading.Tasks.ParallelOptions, localInit : @escaping () throws -> UTLocal, body : @escaping (Swift.Int64, Optional<dotnet.System.Threading.Tasks.ParallelLoopState>, UTLocal) throws -> UTLocal, localFinally : @escaping (UTLocal) throws -> Void) throws -> dotnet.System.Threading.Tasks.ParallelLoopResult {
+    public static func For<UTLocal : SGBridgeGenericValue>(fromInclusive : Swift.Int64, toExclusive : Swift.Int64, parallelOptions : dotnet.System.Threading.Tasks.ParallelOptions, localInit : @escaping () throws -> UTLocal, body : @escaping (Swift.Int64, dotnet.System.Threading.Tasks.ParallelLoopState, UTLocal) throws -> UTLocal, localFinally : @escaping (UTLocal) throws -> Void) throws -> dotnet.System.Threading.Tasks.ParallelLoopResult {
         let del_localInit = try dotnet.System.Func_1<UTLocal>(localInit);
         let del_body = try dotnet.System.Func_4<Swift.Int64,dotnet.System.Threading.Tasks.ParallelLoopState,UTLocal,UTLocal>(body);
         let del_localFinally = try dotnet.System.Action_1<UTLocal>(localFinally);
@@ -996,6 +1048,9 @@ public final class ParallelLoopResult
 {
     public class override func get_type_handle() -> TypeHandle {
         return System_Threading_Tasks_ParallelLoopResult_get_type_handle();
+    }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -1057,6 +1112,9 @@ open class ParallelLoopState
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Threading_Tasks_ParallelLoopState_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -1184,6 +1242,9 @@ open class ParallelOptions
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Threading_Tasks_ParallelOptions_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }

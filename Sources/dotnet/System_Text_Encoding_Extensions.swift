@@ -17,6 +17,9 @@ open class ASCIIEncoding
     open class override func get_type_handle() -> TypeHandle {
         return System_Text_ASCIIEncoding_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor()
@@ -367,6 +370,9 @@ public final class UTF32Encoding
     public class override func get_type_handle() -> TypeHandle {
         return System_Text_UTF32Encoding_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor()
@@ -424,6 +430,7 @@ public final class UTF32Encoding
             super.init(hndl: h);
         }
     }
+// TODO COPE (returns byreflike): [IsSpecialName] System.ReadOnlySpan<System.Byte> get_Preamble()
     // bool Equals(System.Object)
 // docid: M:System.Text.UTF32Encoding.Equals(System.Object)
     /**
@@ -785,6 +792,9 @@ open class UTF7Encoding
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Text_UTF7Encoding_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -1165,6 +1175,9 @@ open class UTF8Encoding
     open class override func get_type_handle() -> TypeHandle {
         return System_Text_UTF8Encoding_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor()
@@ -1218,6 +1231,7 @@ open class UTF8Encoding
             super.init(hndl: h);
         }
     }
+// TODO COPE (returns byreflike): [IsSpecialName] System.ReadOnlySpan<System.Byte> get_Preamble()
     // bool Equals(System.Object)
 // docid: M:System.Text.UTF8Encoding.Equals(System.Object)
     /**
@@ -1584,6 +1598,9 @@ open class UnicodeEncoding
     open class override func get_type_handle() -> TypeHandle {
         return System_Text_UnicodeEncoding_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // static field: System.Int32 CharSize
@@ -1652,6 +1669,7 @@ open class UnicodeEncoding
             super.init(hndl: h);
         }
     }
+// TODO COPE (returns byreflike): [IsSpecialName] System.ReadOnlySpan<System.Byte> get_Preamble()
     // bool Equals(System.Object)
 // docid: M:System.Text.UnicodeEncoding.Equals(System.Object)
     /**

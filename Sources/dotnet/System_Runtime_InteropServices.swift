@@ -16,6 +16,9 @@ public final class DataMisalignedException
     public class override func get_type_handle() -> TypeHandle {
         return System_DataMisalignedException_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor()
@@ -80,6 +83,9 @@ open class DllNotFoundException
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_DllNotFoundException_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -149,6 +155,9 @@ open class UnmanagedMemoryAccessor
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_IO_UnmanagedMemoryAccessor_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -744,6 +753,9 @@ public final class IDispatchConstantAttribute
     public class override func get_type_handle() -> TypeHandle {
         return System_Runtime_CompilerServices_IDispatchConstantAttribute_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor()
@@ -795,6 +807,9 @@ public final class IUnknownConstantAttribute
 {
     public class override func get_type_handle() -> TypeHandle {
         return System_Runtime_CompilerServices_IUnknownConstantAttribute_get_type_handle();
+    }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -852,6 +867,9 @@ public final class AllowReversePInvokeCallsAttribute
     public class override func get_type_handle() -> TypeHandle {
         return System_Runtime_InteropServices_AllowReversePInvokeCallsAttribute_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor()
@@ -884,6 +902,9 @@ public final class ArrayWithOffset
 {
     public class override func get_type_handle() -> TypeHandle {
         return System_Runtime_InteropServices_ArrayWithOffset_get_type_handle();
+    }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -1056,6 +1077,9 @@ public final class AutomationProxyAttribute
     public class override func get_type_handle() -> TypeHandle {
         return System_Runtime_InteropServices_AutomationProxyAttribute_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor(bool)
@@ -1109,6 +1133,9 @@ public final class BStrWrapper
 {
     public class override func get_type_handle() -> TypeHandle {
         return System_Runtime_InteropServices_BStrWrapper_get_type_handle();
+    }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -1183,6 +1210,9 @@ public final class BestFitMappingAttribute
     public class override func get_type_handle() -> TypeHandle {
         return System_Runtime_InteropServices_BestFitMappingAttribute_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // instance field: System.Boolean ThrowOnUnmappableChar
@@ -1241,6 +1271,14 @@ public final class BestFitMappingAttribute
 
 // type: System.Runtime.InteropServices.CLong
 // boxed value type
+    /**
+    
+         is an immutable value type that represents the long type in C and C++.
+      It is meant to be used as an exchange type at the managed/unmanaged boundary to accurately represent in managed code unmanaged APIs that use the long type.
+      This type has 32-bits of storage on all Windows platforms and 32-bit Unix-based platforms.
+      It has 64-bits of storage on 64-bit Unix platforms.
+
+    */
 public final class CLong
     :
     dotnet.System.Object
@@ -1248,8 +1286,15 @@ public final class CLong
     public class override func get_type_handle() -> TypeHandle {
         return System_Runtime_InteropServices_CLong_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    /**
+    The underlying integer value of this instance.
+
+    */
     public var Value : dotnet.System.IntPtr {
         get {
             return try! get_Value();
@@ -1257,6 +1302,11 @@ public final class CLong
     }
     // .ctor(System.Int32)
 // docid: M:System.Runtime.InteropServices.CLong.#ctor(System.Int32)
+    /**
+    Constructs an instance from a 32-bit integer.
+
+    - Parameter value: The integer value.
+    */
     public init(value : Swift.Int32) throws {
         var __thrown : NullableHandle = nil;
         let h = System_Runtime_InteropServices_CLong_ctor_0__1__i32(&__thrown, value);
@@ -1268,6 +1318,11 @@ public final class CLong
     }
     // .ctor(System.IntPtr)
 // docid: M:System.Runtime.InteropServices.CLong.#ctor(System.IntPtr)
+    /**
+    Constructs an instance from a native sized integer.
+
+    - Parameter value: The integer value.
+    */
     public init(value : dotnet.System.IntPtr) throws {
         var __thrown : NullableHandle = nil;
         let h = System_Runtime_InteropServices_CLong_ctor_0__1__IntPtr(&__thrown, value.get_value());
@@ -1283,6 +1338,14 @@ public final class CLong
     }
     // bool Equals(System.Object)
 // docid: M:System.Runtime.InteropServices.CLong.Equals(System.Object)
+    /**
+    Returns a value indicating whether this instance is equal to a specified object.
+
+    - Parameter o: An object to compare with this instance.
+    - Returns: 
+         if  is an instance of  and equals the value of this instance; otherwise, .
+
+    */
     public func Equals(o : Optional<dotnet.System.Object>) throws -> Bool {
         var __thrown : NullableHandle = nil;
         let __return = System_Runtime_InteropServices_CLong_bool__Equals_0__1__Object(&__thrown, self.get_handle(), o?.get_handle() ?? nil);
@@ -1294,6 +1357,14 @@ public final class CLong
     }
     // bool Equals(System.Runtime.InteropServices.CLong)
 // docid: M:System.Runtime.InteropServices.CLong.Equals(System.Runtime.InteropServices.CLong)
+    /**
+    Returns a value indicating whether this instance is equal to a specified  value.
+
+    - Parameter other: A  value to compare to this instance.
+    - Returns: 
+         if  has the same value as this instance; otherwise, .
+
+    */
     public func Equals(other : dotnet.System.Runtime.InteropServices.CLong) throws -> Bool {
         var __thrown : NullableHandle = nil;
         let __return = System_Runtime_InteropServices_CLong_bool__Equals_0__1__CLong(&__thrown, self.get_handle(), other.get_handle());
@@ -1305,6 +1376,12 @@ public final class CLong
     }
     // System.Int32 GetHashCode()
 // docid: M:System.Runtime.InteropServices.CLong.GetHashCode
+    /**
+    Returns the hash code for this instance.
+
+    - Returns: A 32-bit signed integer hash code.
+
+    */
     public override func GetHashCode() throws -> Swift.Int32 {
         var __thrown : NullableHandle = nil;
         let __return = System_Runtime_InteropServices_CLong_i32__GetHashCode_0__0(&__thrown, self.get_handle());
@@ -1316,6 +1393,12 @@ public final class CLong
     }
     // System.String ToString()
 // docid: M:System.Runtime.InteropServices.CLong.ToString
+    /**
+    Converts the numeric value of this instance to its equivalent string representation.
+
+    - Returns: The string representation of the value of this instance, consisting of a negative sign if the value is negative, and a sequence of digits ranging from 0 to 9 with no leading zeroes.
+
+    */
     public override func ToString() throws -> dotnet.System.String {
         var __thrown : NullableHandle = nil;
         let __return = System_Runtime_InteropServices_CLong_String__ToString_0__0(&__thrown, self.get_handle());
@@ -1350,6 +1433,9 @@ open class COMException
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Runtime_InteropServices_COMException_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -1440,6 +1526,14 @@ open class COMException
 
 // type: System.Runtime.InteropServices.CULong
 // boxed value type
+    /**
+    
+         is an immutable value type that represents the unsigned long type in C and C++.
+      It is meant to be used as an exchange type at the managed/unmanaged boundary to accurately represent in managed code unmanaged APIs that use the unsigned long type.
+      This type has 32-bits of storage on all Windows platforms and 32-bit Unix-based platforms.
+      It has 64-bits of storage on 64-bit Unix platforms.
+
+    */
 public final class CULong
     :
     dotnet.System.Object
@@ -1447,8 +1541,15 @@ public final class CULong
     public class override func get_type_handle() -> TypeHandle {
         return System_Runtime_InteropServices_CULong_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    /**
+    The underlying integer value of this instance.
+
+    */
     public var Value : dotnet.System.UIntPtr {
         get {
             return try! get_Value();
@@ -1456,6 +1557,11 @@ public final class CULong
     }
     // .ctor(System.UInt32)
 // docid: M:System.Runtime.InteropServices.CULong.#ctor(System.UInt32)
+    /**
+    Constructs an instance from a 32-bit unsigned integer.
+
+    - Parameter value: The integer value.
+    */
     public init(value : Swift.UInt32) throws {
         var __thrown : NullableHandle = nil;
         let h = System_Runtime_InteropServices_CULong_ctor_0__1__u32(&__thrown, value);
@@ -1467,6 +1573,11 @@ public final class CULong
     }
     // .ctor(System.UIntPtr)
 // docid: M:System.Runtime.InteropServices.CULong.#ctor(System.UIntPtr)
+    /**
+    Constructs an instance from a native sized unsigned integer.
+
+    - Parameter value: The integer value.
+    */
     public init(value : dotnet.System.UIntPtr) throws {
         var __thrown : NullableHandle = nil;
         let h = System_Runtime_InteropServices_CULong_ctor_0__1__UIntPtr(&__thrown, value.get_handle());
@@ -1482,6 +1593,14 @@ public final class CULong
     }
     // bool Equals(System.Object)
 // docid: M:System.Runtime.InteropServices.CULong.Equals(System.Object)
+    /**
+    Returns a value indicating whether this instance is equal to a specified object.
+
+    - Parameter o: An object to compare with this instance.
+    - Returns: 
+         if  is an instance of  and equals the value of this instance; otherwise, .
+
+    */
     public func Equals(o : Optional<dotnet.System.Object>) throws -> Bool {
         var __thrown : NullableHandle = nil;
         let __return = System_Runtime_InteropServices_CULong_bool__Equals_0__1__Object(&__thrown, self.get_handle(), o?.get_handle() ?? nil);
@@ -1493,6 +1612,14 @@ public final class CULong
     }
     // bool Equals(System.Runtime.InteropServices.CULong)
 // docid: M:System.Runtime.InteropServices.CULong.Equals(System.Runtime.InteropServices.CULong)
+    /**
+    Returns a value indicating whether this instance is equal to a specified  value.
+
+    - Parameter other: A  value to compare to this instance.
+    - Returns: 
+         if  has the same value as this instance; otherwise, .
+
+    */
     public func Equals(other : dotnet.System.Runtime.InteropServices.CULong) throws -> Bool {
         var __thrown : NullableHandle = nil;
         let __return = System_Runtime_InteropServices_CULong_bool__Equals_0__1__CULong(&__thrown, self.get_handle(), other.get_handle());
@@ -1504,6 +1631,12 @@ public final class CULong
     }
     // System.Int32 GetHashCode()
 // docid: M:System.Runtime.InteropServices.CULong.GetHashCode
+    /**
+    Returns the hash code for this instance.
+
+    - Returns: A 32-bit signed integer hash code.
+
+    */
     public override func GetHashCode() throws -> Swift.Int32 {
         var __thrown : NullableHandle = nil;
         let __return = System_Runtime_InteropServices_CULong_i32__GetHashCode_0__0(&__thrown, self.get_handle());
@@ -1515,6 +1648,12 @@ public final class CULong
     }
     // System.String ToString()
 // docid: M:System.Runtime.InteropServices.CULong.ToString
+    /**
+    Converts the numeric value of this instance to its equivalent string representation.
+
+    - Returns: The string representation of the value of this instance, consisting of a sequence of digits ranging from 0 to 9 with no leading zeroes.
+
+    */
     public override func ToString() throws -> dotnet.System.String {
         var __thrown : NullableHandle = nil;
         let __return = System_Runtime_InteropServices_CULong_String__ToString_0__0(&__thrown, self.get_handle());
@@ -1623,6 +1762,9 @@ public final class ClassInterfaceAttribute
     public class override func get_type_handle() -> TypeHandle {
         return System_Runtime_InteropServices_ClassInterfaceAttribute_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor(System.Int16)
@@ -1697,7 +1839,10 @@ public struct ClassInterfaceType : SGBridgeGenericValue {
     public init(gval: GVal) { self.v = Swift.Int32(gval); }
     // static field: System.Runtime.InteropServices.ClassInterfaceType None
     /**
-    Indicates that no class interface is generated for the class. If no interfaces are implemented explicitly, the class can only provide late-bound access through the  interface. This is the recommended setting for . Using  is the only way to expose functionality through interfaces implemented explicitly by the class.
+    
+        Indicates that no class interface is generated for the class. If no interfaces are implemented explicitly, the class can only provide late-bound access through the  interface. This is the recommended setting for . Using  is the only way to expose functionality through interfaces implemented explicitly by the class.
+        Tlbexp.exe (Type Library Exporter) exposes the first public, COM-visible interface implemented by the class as the default interface of the coclass. In .NET Framework 2.0 and later versions, you can specify the default interface exposed to COM by using the  attribute. If the class implements no interfaces, the first public, COM-visible interface implemented by a base class becomes the default interface (starting with the most recently derived base class and working backward). Tlbexp.exe exposes  as the default interface if neither the class nor its base classes implement interfaces.
+      
 
     */
     public static var None : dotnet.System.Runtime.InteropServices.ClassInterfaceType {
@@ -1746,6 +1891,9 @@ public final class CoClassAttribute
     public class override func get_type_handle() -> TypeHandle {
         return System_Runtime_InteropServices_CoClassAttribute_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor(System.Type)
@@ -1789,6 +1937,9 @@ public final class CoClassAttribute
 
 // type: System.Runtime.InteropServices.CollectionsMarshal
 public struct CollectionsMarshal {
+// TODO COPE (returns byreflike): System.Span<T> AsSpan<T>(System.Collections.Generic.List<T>)
+// TODO COPE (returns_byref): ref TValue GetValueRefOrNullRef<TKey, TValue>(System.Collections.Generic.Dictionary<TKey,TValue>, TKey)
+// TODO COPE (returns_byref): ref TValue GetValueRefOrAddDefault<TKey, TValue>(System.Collections.Generic.Dictionary<TKey,TValue>, TKey, ref bool)
 } // CollectionsMarshal
 
 
@@ -1803,6 +1954,9 @@ public final class ComAliasNameAttribute
 {
     public class override func get_type_handle() -> TypeHandle {
         return System_Runtime_InteropServices_ComAliasNameAttribute_get_type_handle();
+    }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -1856,6 +2010,9 @@ open class ComAwareEventInfo
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Runtime_InteropServices_ComAwareEventInfo_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -2218,6 +2375,9 @@ public final class ComCompatibleVersionAttribute
     public class override func get_type_handle() -> TypeHandle {
         return System_Runtime_InteropServices_ComCompatibleVersionAttribute_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor(System.Int32, System.Int32, System.Int32, System.Int32)
@@ -2334,6 +2494,9 @@ public final class ComConversionLossAttribute
     public class override func get_type_handle() -> TypeHandle {
         return System_Runtime_InteropServices_ComConversionLossAttribute_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor()
@@ -2365,6 +2528,9 @@ public final class ComDefaultInterfaceAttribute
 {
     public class override func get_type_handle() -> TypeHandle {
         return System_Runtime_InteropServices_ComDefaultInterfaceAttribute_get_type_handle();
+    }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -2418,6 +2584,9 @@ public final class ComEventInterfaceAttribute
 {
     public class override func get_type_handle() -> TypeHandle {
         return System_Runtime_InteropServices_ComEventInterfaceAttribute_get_type_handle();
+    }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -2541,6 +2710,9 @@ public final class ComImportAttribute
 {
     public class override func get_type_handle() -> TypeHandle {
         return System_Runtime_InteropServices_ComImportAttribute_get_type_handle();
+    }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -2687,6 +2859,9 @@ public final class ComRegisterFunctionAttribute
     public class override func get_type_handle() -> TypeHandle {
         return System_Runtime_InteropServices_ComRegisterFunctionAttribute_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor()
@@ -2718,6 +2893,9 @@ public final class ComSourceInterfacesAttribute
 {
     public class override func get_type_handle() -> TypeHandle {
         return System_Runtime_InteropServices_ComSourceInterfacesAttribute_get_type_handle();
+    }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -2842,6 +3020,9 @@ public final class ComUnregisterFunctionAttribute
     public class override func get_type_handle() -> TypeHandle {
         return System_Runtime_InteropServices_ComUnregisterFunctionAttribute_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor()
@@ -2874,8 +3055,17 @@ open class ComWrappers
     open class override func get_type_handle() -> TypeHandle {
         return System_Runtime_InteropServices_ComWrappers_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+// TODO COPE (blocked): System.IntPtr GetOrCreateComInterfaceForObject(System.Object, System.Runtime.InteropServices.CreateComInterfaceFlags)
+// TODO COPE (blocked): System.Object GetOrCreateObjectForComInstance(System.IntPtr, System.Runtime.InteropServices.CreateObjectFlags)
+// TODO COPE (blocked): System.Object GetOrRegisterObjectForComInstance(System.IntPtr, System.Runtime.InteropServices.CreateObjectFlags, System.Object)
+// TODO COPE (blocked): System.Object GetOrRegisterObjectForComInstance(System.IntPtr, System.Runtime.InteropServices.CreateObjectFlags, System.Object, System.IntPtr)
+// TODO COPE (blocked): void RegisterForTrackerSupport(System.Runtime.InteropServices.ComWrappers)
+// TODO COPE (blocked): void RegisterForMarshalling(System.Runtime.InteropServices.ComWrappers)
 } // ComWrappers
 
 
@@ -2892,12 +3082,16 @@ public final class ComWrappers_ComInterfaceDispatch
     public class override func get_type_handle() -> TypeHandle {
         return System_Runtime_InteropServices_ComWrappers_ComInterfaceDispatch_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     public override init() {
         let h = System_Runtime_InteropServices_ComWrappers_ComInterfaceDispatch_implicit_ctor();
             super.init(hndl: h);
     }
+// TODO COPE (parm pointer other): T GetInstance<T>(System.Runtime.InteropServices.ComWrappers.ComInterfaceDispatch*)
 } // ComWrappers_ComInterfaceDispatch
 
 
@@ -2913,6 +3107,9 @@ public final class ComWrappers_ComInterfaceEntry
 {
     public class override func get_type_handle() -> TypeHandle {
         return System_Runtime_InteropServices_ComWrappers_ComInterfaceEntry_get_type_handle();
+    }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -2951,7 +3148,10 @@ public struct CreateComInterfaceFlags : SGBridgeGenericValue {
     }
     // static field: System.Runtime.InteropServices.CreateComInterfaceFlags CallerDefinedIUnknown
     /**
-    The caller will provide an IUnknown Vtable.
+    
+        The caller will provide an IUnknown Vtable.
+        This flag is useful in scenarios when the caller has no need to rely on an IUnknown instance that's used when it's not possible to run managed code (that is, during a garbage collection). This is common in traditional COM scenarios, but scenarios where Reference Tracker hosting calls the IUnknown API during a garbage collection are possible.
+      
 
     */
     public static var CallerDefinedIUnknown : dotnet.System.Runtime.InteropServices.CreateComInterfaceFlags {
@@ -2962,7 +3162,10 @@ public struct CreateComInterfaceFlags : SGBridgeGenericValue {
     }
     // static field: System.Runtime.InteropServices.CreateComInterfaceFlags TrackerSupport
     /**
-    Flag used to indicate the COM interface should implement IReferenceTrackerTarget.
+    
+        Flag used to indicate the COM interface should implement IReferenceTrackerTarget.
+        When this flag is passed, the resulting COM interface will have an internal implementation of IUnknown, therefore, none should be supplied by the caller.
+      
 
     */
     public static var TrackerSupport : dotnet.System.Runtime.InteropServices.CreateComInterfaceFlags {
@@ -3023,6 +3226,10 @@ public struct CreateObjectFlags : SGBridgeGenericValue {
         }
     }
     // static field: System.Runtime.InteropServices.CreateObjectFlags Aggregation
+    /**
+    Defined when COM aggregation is involved (that is an inner instance supplied).
+
+    */
     public static var Aggregation : dotnet.System.Runtime.InteropServices.CreateObjectFlags {
         get {
         let __return = dotnet.System.Runtime.InteropServices.CreateObjectFlags(val: System_Runtime_InteropServices_CreateObjectFlags_get_Aggregation());
@@ -3030,6 +3237,13 @@ public struct CreateObjectFlags : SGBridgeGenericValue {
         }
     }
     // static field: System.Runtime.InteropServices.CreateObjectFlags Unwrap
+    /**
+    
+        Check if the supplied instance is actually a wrapper and if so return the underlying managed object rather than creating a new wrapper.
+        This matches the built-in RCW semantics for COM interop.
+      
+
+    */
     public static var Unwrap : dotnet.System.Runtime.InteropServices.CreateObjectFlags {
         get {
         let __return = dotnet.System.Runtime.InteropServices.CreateObjectFlags(val: System_Runtime_InteropServices_CreateObjectFlags_get_Unwrap());
@@ -3050,6 +3264,9 @@ public final class CurrencyWrapper
 {
     public class override func get_type_handle() -> TypeHandle {
         return System_Runtime_InteropServices_CurrencyWrapper_get_type_handle();
+    }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -3211,6 +3428,9 @@ public final class DefaultCharSetAttribute
     public class override func get_type_handle() -> TypeHandle {
         return System_Runtime_InteropServices_DefaultCharSetAttribute_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor(System.Runtime.InteropServices.CharSet)
@@ -3264,6 +3484,9 @@ public final class DefaultDllImportSearchPathsAttribute
     public class override func get_type_handle() -> TypeHandle {
         return System_Runtime_InteropServices_DefaultDllImportSearchPathsAttribute_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor(System.Runtime.InteropServices.DllImportSearchPath)
@@ -3316,6 +3539,9 @@ public final class DefaultParameterValueAttribute
 {
     public class override func get_type_handle() -> TypeHandle {
         return System_Runtime_InteropServices_DefaultParameterValueAttribute_get_type_handle();
+    }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -3374,6 +3600,9 @@ public final class DispIdAttribute
     public class override func get_type_handle() -> TypeHandle {
         return System_Runtime_InteropServices_DispIdAttribute_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor(System.Int32)
@@ -3426,6 +3655,9 @@ public final class DispatchWrapper
 {
     public class override func get_type_handle() -> TypeHandle {
         return System_Runtime_InteropServices_DispatchWrapper_get_type_handle();
+    }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -3484,6 +3716,9 @@ public final class DllImportAttribute
     public class override func get_type_handle() -> TypeHandle {
         return System_Runtime_InteropServices_DllImportAttribute_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // instance field: System.Boolean BestFitMapping
@@ -3535,8 +3770,8 @@ public final class DllImportAttribute
     */
     public var EntryPoint : Optional<dotnet.System.String> {
         get {
-        let __h = System_Runtime_InteropServices_DllImportAttribute_get_EntryPoint(self.get_handle());
-        let __return = (__h != nil) ? dotnet.System.String(hndl: __h!) : nil;
+        let __h___return = System_Runtime_InteropServices_DllImportAttribute_get_EntryPoint(self.get_handle());
+        let __return = (__h___return != nil) ? dotnet.System.String(hndl: __h___return!) : nil;
             return __return;
         }
         set(v) {
@@ -3559,7 +3794,7 @@ public final class DllImportAttribute
     }
     // instance field: System.Boolean PreserveSig
     /**
-    Indicates whether unmanaged methods that have  or  return values are directly translated or whether  or  return values are automatically converted to exceptions.
+    Indicates whether unmanaged methods that have  return values are directly translated or whether  return values are automatically converted to exceptions.
 
     */
     public var PreserveSig : Bool {
@@ -3650,6 +3885,9 @@ public final class DllImportResolver
     public class override func get_type_handle() -> TypeHandle {
         return System_Runtime_InteropServices_DllImportResolver_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // System.IntPtr Invoke(System.String, System.Reflection.Assembly, System.Nullable<System.Runtime.InteropServices.DllImportSearchPath>)
@@ -3689,15 +3927,15 @@ public final class DllImportResolver
         return dotnet.System.IntPtr(val: __return);
         }
     }
-    public init(_ callback : @escaping (dotnet.System.String, dotnet.System.Reflection.Assembly, Optional<dotnet.System.Runtime.InteropServices.DllImportSearchPath>) throws -> dotnet.System.IntPtr) throws
+    public convenience init(_ __closure_Invoke : @escaping (dotnet.System.String, dotnet.System.Reflection.Assembly, Optional<dotnet.System.Runtime.InteropServices.DllImportSearchPath>) throws -> dotnet.System.IntPtr) throws
     {
-        let __bridge : (UnsafeMutablePointer<NullableHandle>, NonnullHandle, NonnullHandle, NullableHandle) -> Swift.Int =
+        let __interlude_Invoke : (UnsafeMutablePointer<NullableHandle>, NonnullHandle, NonnullHandle, NullableHandle) -> Swift.Int =
         {
             (thrown : UnsafeMutablePointer<NullableHandle>, libraryName : NonnullHandle, assembly : NonnullHandle, searchPath : NullableHandle) -> Swift.Int in
             do
             {
                 thrown.pointee = nil;
-                let ret = try callback(dotnet.System.String(hndl: libraryName), dotnet.System.Reflection.Assembly(hndl: assembly), (searchPath != nil) ? dotnet.System.Runtime.InteropServices.DllImportSearchPath(val: System_Int32_unbox(searchPath!)) : nil);
+                let ret = try __closure_Invoke(dotnet.System.String(hndl: libraryName), dotnet.System.Reflection.Assembly(hndl: assembly), (searchPath != nil) ? dotnet.System.Runtime.InteropServices.DllImportSearchPath(val: System_Int32_unbox(searchPath!)) : nil);
                 return ret.get_value();
             }
             catch let e as dotnet.System.Exception
@@ -3712,24 +3950,24 @@ public final class DllImportResolver
                 return 0;
             }
         };
-        let cbarg = UnsafeRawPointer(Unmanaged.passRetained(__bridge as AnyObject).toOpaque());
-        func __cb(cb : UnsafeRawPointer?, thrown : UnsafeMutablePointer<NullableHandle>, libraryName : NonnullHandle, assembly : NonnullHandle, searchPath : NullableHandle) -> Swift.Int
+        func __cb_Invoke(pdata_interlude : UnsafeRawPointer, thrown : UnsafeMutablePointer<NullableHandle>, libraryName : NonnullHandle, assembly : NonnullHandle, searchPath : NullableHandle) -> Swift.Int
         {
-            let f = Unmanaged<AnyObject>.fromOpaque(cb!).takeUnretainedValue() as! (UnsafeMutablePointer<NullableHandle>, NonnullHandle, NonnullHandle, NullableHandle) -> Swift.Int;
-            return f(thrown, libraryName, assembly, searchPath);
+            let f_interlude = Unmanaged<AnyObject>.fromOpaque(pdata_interlude).takeUnretainedValue() as! (UnsafeMutablePointer<NullableHandle>, NonnullHandle, NonnullHandle, NullableHandle) -> Swift.Int;
+            return f_interlude(thrown, libraryName, assembly, searchPath);
         }
+        let __pdata_Invoke = UnsafeRawPointer(Unmanaged.passRetained(__interlude_Invoke as AnyObject).toOpaque());
+
         var __thrown : NullableHandle = nil;
         let h = System_Runtime_InteropServices_DllImportResolver_create(
             &__thrown,
-            cbarg,
-            nil, // TODO deinit
-            __cb
+            __cb_Invoke,
+            __pdata_Invoke,
+            nil
             );
-            // TODO check thrown
         if let __ex = __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-            super.init(hndl: h);
+            self.init(hndl: h);
         }
     }
     // System.IntPtr Invoke(System.String, System.Reflection.Assembly, System.Nullable<System.Runtime.InteropServices.DllImportSearchPath>)
@@ -3853,6 +4091,9 @@ public final class DynamicInterfaceCastableImplementationAttribute
     public class override func get_type_handle() -> TypeHandle {
         return System_Runtime_InteropServices_DynamicInterfaceCastableImplementationAttribute_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor()
@@ -3884,6 +4125,9 @@ public final class ErrorWrapper
 {
     public class override func get_type_handle() -> TypeHandle {
         return System_Runtime_InteropServices_ErrorWrapper_get_type_handle();
+    }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -3970,6 +4214,9 @@ public final class GuidAttribute
     public class override func get_type_handle() -> TypeHandle {
         return System_Runtime_InteropServices_GuidAttribute_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor(System.String)
@@ -4022,6 +4269,9 @@ public final class HandleCollector
 {
     public class override func get_type_handle() -> TypeHandle {
         return System_Runtime_InteropServices_HandleCollector_get_type_handle();
+    }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -4186,6 +4436,9 @@ public final class HandleRef
     public class override func get_type_handle() -> TypeHandle {
         return System_Runtime_InteropServices_HandleRef_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     /**
@@ -4298,6 +4551,9 @@ open class ICustomAdapter
     open class func get_type_handle() -> TypeHandle {
         return System_Runtime_InteropServices_ICustomAdapter_get_type_handle();
     }
+    open class func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     let h : NonnullHandle;
     public func to_gval() -> GVal { return GVal(Swift.Int(bitPattern: self.h)); }
     public func dup_gval() -> GVal { return GVal(Swift.Int(bitPattern: __copy_handle(self.h))); }
@@ -4339,6 +4595,9 @@ open class ICustomFactory
 {
     open class func get_type_handle() -> TypeHandle {
         return System_Runtime_InteropServices_ICustomFactory_get_type_handle();
+    }
+    open class func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     let h : NonnullHandle;
     public func to_gval() -> GVal { return GVal(Swift.Int(bitPattern: self.h)); }
@@ -4382,6 +4641,9 @@ open class ICustomMarshaler
 {
     open class func get_type_handle() -> TypeHandle {
         return System_Runtime_InteropServices_ICustomMarshaler_get_type_handle();
+    }
+    open class func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     let h : NonnullHandle;
     public func to_gval() -> GVal { return GVal(Swift.Int(bitPattern: self.h)); }
@@ -4493,6 +4755,9 @@ open class ICustomQueryInterface
     open class func get_type_handle() -> TypeHandle {
         return System_Runtime_InteropServices_ICustomQueryInterface_get_type_handle();
     }
+    open class func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     let h : NonnullHandle;
     public func to_gval() -> GVal { return GVal(Swift.Int(bitPattern: self.h)); }
     public func dup_gval() -> GVal { return GVal(Swift.Int(bitPattern: __copy_handle(self.h))); }
@@ -4512,12 +4777,13 @@ open class ICustomQueryInterface
     - Returns: One of the enumeration values that indicates whether a custom implementation of IUnknown::QueryInterface was used.
 
     */
-    open func GetInterface(iid : inout dotnet.System.Guid, ppv : inout dotnet.System.IntPtr) throws -> dotnet.System.Runtime.InteropServices.CustomQueryInterfaceResult {
+    open func GetInterface(iid : inout Optional<dotnet.System.Guid>, ppv : inout dotnet.System.IntPtr) throws -> dotnet.System.Runtime.InteropServices.CustomQueryInterfaceResult {
         var __thrown : NullableHandle = nil;
-            var _tmp_ref_iid = iid.get_handle();
+            var _tmp_ref_iid = (iid != nil) ? (iid!.get_handle()) : nil;
             var _tmp_out_ppv = ppv.get_value();
         let __return = System_Runtime_InteropServices_ICustomQueryInterface_CustomQueryInterfaceResult__GetInterface_0__2__refGuid_outIntPtr(&__thrown, self.get_handle(), &_tmp_ref_iid, &_tmp_out_ppv);
-        let _tmp2_iid = dotnet.System.Guid(hndl: _tmp_ref_iid);
+        let __h__tmp2_iid = _tmp_ref_iid;
+        let _tmp2_iid = (__h__tmp2_iid != nil) ? dotnet.System.Guid(hndl: __h__tmp2_iid!) : nil;
             iid = _tmp2_iid;
         let _tmp2_ppv = dotnet.System.IntPtr(val: _tmp_out_ppv);
             ppv = _tmp2_ppv;
@@ -4542,6 +4808,9 @@ open class IDynamicInterfaceCastable
 {
     open class func get_type_handle() -> TypeHandle {
         return System_Runtime_InteropServices_IDynamicInterfaceCastable_get_type_handle();
+    }
+    open class func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     let h : NonnullHandle;
     public func to_gval() -> GVal { return GVal(Swift.Int(bitPattern: self.h)); }
@@ -4605,6 +4874,9 @@ public final class ImportedFromTypeLibAttribute
     public class override func get_type_handle() -> TypeHandle {
         return System_Runtime_InteropServices_ImportedFromTypeLibAttribute_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor(System.String)
@@ -4657,6 +4929,9 @@ public final class InterfaceTypeAttribute
 {
     public class override func get_type_handle() -> TypeHandle {
         return System_Runtime_InteropServices_InterfaceTypeAttribute_get_type_handle();
+    }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -4727,6 +5002,9 @@ open class InvalidComObjectException
     open class override func get_type_handle() -> TypeHandle {
         return System_Runtime_InteropServices_InvalidComObjectException_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor()
@@ -4791,6 +5069,9 @@ open class InvalidOleVariantTypeException
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Runtime_InteropServices_InvalidOleVariantTypeException_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -4857,6 +5138,9 @@ public final class LCIDConversionAttribute
     public class override func get_type_handle() -> TypeHandle {
         return System_Runtime_InteropServices_LCIDConversionAttribute_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor(System.Int32)
@@ -4909,6 +5193,9 @@ public final class ManagedToNativeComInteropStubAttribute
 {
     public class override func get_type_handle() -> TypeHandle {
         return System_Runtime_InteropServices_ManagedToNativeComInteropStubAttribute_get_type_handle();
+    }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -5938,6 +6225,12 @@ public struct Marshal {
     }
     // System.Int32 GetLastPInvokeError()
 // docid: M:System.Runtime.InteropServices.Marshal.GetLastPInvokeError
+    /**
+    Get the last platform invoke error on the current thread
+
+    - Returns: The last platform invoke error
+
+    */
     public static func GetLastPInvokeError() throws -> Swift.Int32 {
         var __thrown : NullableHandle = nil;
         let __return = System_Runtime_InteropServices_Marshal_i32__GetLastPInvokeError_0__0(&__thrown);
@@ -5949,6 +6242,12 @@ public struct Marshal {
     }
     // System.Int32 GetLastSystemError()
 // docid: M:System.Runtime.InteropServices.Marshal.GetLastSystemError
+    /**
+    Get the last system error on the current thread
+
+    - Returns: The last system error
+
+    */
     public static func GetLastSystemError() throws -> Swift.Int32 {
         var __thrown : NullableHandle = nil;
         let __return = System_Runtime_InteropServices_Marshal_i32__GetLastSystemError_0__0(&__thrown);
@@ -6170,6 +6469,13 @@ public struct Marshal {
     }
     // void InitHandle(System.Runtime.InteropServices.SafeHandle, System.IntPtr)
 // docid: M:System.Runtime.InteropServices.Marshal.InitHandle(System.Runtime.InteropServices.SafeHandle,System.IntPtr)
+    /**
+    Initializes the underlying handle of a newly created  to the provided value.
+
+    - Parameter safeHandle: 
+         instance to update
+    - Parameter handle: Pre-existing handle
+    */
     public static func InitHandle(safeHandle : dotnet.System.Runtime.InteropServices.SafeHandle, handle : dotnet.System.IntPtr) throws {
         var __thrown : NullableHandle = nil;
         System_Runtime_InteropServices_Marshal_void__InitHandle_0__2__SafeHandle_IntPtr(&__thrown, safeHandle.get_handle(), handle.get_value());
@@ -7016,6 +7322,11 @@ public struct Marshal {
     }
     // void SetLastPInvokeError(System.Int32)
 // docid: M:System.Runtime.InteropServices.Marshal.SetLastPInvokeError(System.Int32)
+    /**
+    Set the last platform invoke error on the current thread
+
+    - Parameter error: Error to set
+    */
     public static func SetLastPInvokeError(error : Swift.Int32) throws {
         var __thrown : NullableHandle = nil;
         System_Runtime_InteropServices_Marshal_void__SetLastPInvokeError_0__1__i32(&__thrown, error);
@@ -7027,6 +7338,11 @@ public struct Marshal {
     }
     // void SetLastSystemError(System.Int32)
 // docid: M:System.Runtime.InteropServices.Marshal.SetLastSystemError(System.Int32)
+    /**
+    Set the last system error on the current thread
+
+    - Parameter error: Error to set
+    */
     public static func SetLastSystemError(error : Swift.Int32) throws {
         var __thrown : NullableHandle = nil;
         System_Runtime_InteropServices_Marshal_void__SetLastSystemError_0__1__i32(&__thrown, error);
@@ -7759,6 +8075,9 @@ public final class MarshalAsAttribute
     public class override func get_type_handle() -> TypeHandle {
         return System_Runtime_InteropServices_MarshalAsAttribute_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // instance field: System.Runtime.InteropServices.UnmanagedType ArraySubType
@@ -7796,8 +8115,8 @@ public final class MarshalAsAttribute
     */
     public var MarshalCookie : Optional<dotnet.System.String> {
         get {
-        let __h = System_Runtime_InteropServices_MarshalAsAttribute_get_MarshalCookie(self.get_handle());
-        let __return = (__h != nil) ? dotnet.System.String(hndl: __h!) : nil;
+        let __h___return = System_Runtime_InteropServices_MarshalAsAttribute_get_MarshalCookie(self.get_handle());
+        let __return = (__h___return != nil) ? dotnet.System.String(hndl: __h___return!) : nil;
             return __return;
         }
         set(v) {
@@ -7811,8 +8130,8 @@ public final class MarshalAsAttribute
     */
     public var MarshalType : Optional<dotnet.System.String> {
         get {
-        let __h = System_Runtime_InteropServices_MarshalAsAttribute_get_MarshalType(self.get_handle());
-        let __return = (__h != nil) ? dotnet.System.String(hndl: __h!) : nil;
+        let __h___return = System_Runtime_InteropServices_MarshalAsAttribute_get_MarshalType(self.get_handle());
+        let __return = (__h___return != nil) ? dotnet.System.String(hndl: __h___return!) : nil;
             return __return;
         }
         set(v) {
@@ -7826,8 +8145,8 @@ public final class MarshalAsAttribute
     */
     public var MarshalTypeRef : Optional<dotnet.System.Type_> {
         get {
-        let __h = System_Runtime_InteropServices_MarshalAsAttribute_get_MarshalTypeRef(self.get_handle());
-        let __return = (__h != nil) ? dotnet.System.Type_(hndl: __h!) : nil;
+        let __h___return = System_Runtime_InteropServices_MarshalAsAttribute_get_MarshalTypeRef(self.get_handle());
+        let __return = (__h___return != nil) ? dotnet.System.Type_(hndl: __h___return!) : nil;
             return __return;
         }
         set(v) {
@@ -7855,8 +8174,8 @@ public final class MarshalAsAttribute
     */
     public var SafeArrayUserDefinedSubType : Optional<dotnet.System.Type_> {
         get {
-        let __h = System_Runtime_InteropServices_MarshalAsAttribute_get_SafeArrayUserDefinedSubType(self.get_handle());
-        let __return = (__h != nil) ? dotnet.System.Type_(hndl: __h!) : nil;
+        let __h___return = System_Runtime_InteropServices_MarshalAsAttribute_get_SafeArrayUserDefinedSubType(self.get_handle());
+        let __return = (__h___return != nil) ? dotnet.System.Type_(hndl: __h___return!) : nil;
             return __return;
         }
         set(v) {
@@ -7958,6 +8277,9 @@ open class MarshalDirectiveException
     open class override func get_type_handle() -> TypeHandle {
         return System_Runtime_InteropServices_MarshalDirectiveException_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor()
@@ -8013,6 +8335,12 @@ open class MarshalDirectiveException
 
 // type: System.Runtime.InteropServices.NFloat
 // boxed value type
+    /**
+    
+         is an immutable value type that represents a floating type that has the same size as the native integer size.
+      It is meant to be used as an exchange type at the managed/unmanaged boundary to accurately represent in managed code unmanaged APIs that use a type alias for C or C++'s float on 32-bit platforms or double on 64-bit platforms, such as the CGFloat type in libraries provided by Apple.
+
+    */
 public final class NFloat
     :
     dotnet.System.Object
@@ -8020,8 +8348,15 @@ public final class NFloat
     public class override func get_type_handle() -> TypeHandle {
         return System_Runtime_InteropServices_NFloat_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    /**
+    The underlying floating-point value of this instance.
+
+    */
     public var Value : Swift.Double {
         get {
             return try! get_Value();
@@ -8029,6 +8364,11 @@ public final class NFloat
     }
     // .ctor(System.Single)
 // docid: M:System.Runtime.InteropServices.NFloat.#ctor(System.Single)
+    /**
+    Constructs an instance from a 32-bit floating point value.
+
+    - Parameter value: The floating-point value.
+    */
     public init(value : Swift.Float) throws {
         var __thrown : NullableHandle = nil;
         let h = System_Runtime_InteropServices_NFloat_ctor_0__1__f32(&__thrown, value);
@@ -8040,6 +8380,11 @@ public final class NFloat
     }
     // .ctor(System.Double)
 // docid: M:System.Runtime.InteropServices.NFloat.#ctor(System.Double)
+    /**
+    Constructs an instance from a 64-bit floating point value.
+
+    - Parameter value: The floating-point value.
+    */
     public init(value : Swift.Double) throws {
         var __thrown : NullableHandle = nil;
         let h = System_Runtime_InteropServices_NFloat_ctor_0__1__f64(&__thrown, value);
@@ -8055,6 +8400,14 @@ public final class NFloat
     }
     // bool Equals(System.Object)
 // docid: M:System.Runtime.InteropServices.NFloat.Equals(System.Object)
+    /**
+    Returns a value indicating whether this instance is equal to a specified object.
+
+    - Parameter o: An object to compare with this instance.
+    - Returns: 
+         if  is an instance of  and equals the value of this instance; otherwise, .
+
+    */
     public func Equals(o : Optional<dotnet.System.Object>) throws -> Bool {
         var __thrown : NullableHandle = nil;
         let __return = System_Runtime_InteropServices_NFloat_bool__Equals_0__1__Object(&__thrown, self.get_handle(), o?.get_handle() ?? nil);
@@ -8066,6 +8419,14 @@ public final class NFloat
     }
     // bool Equals(System.Runtime.InteropServices.NFloat)
 // docid: M:System.Runtime.InteropServices.NFloat.Equals(System.Runtime.InteropServices.NFloat)
+    /**
+    Returns a value indicating whether this instance is equal to a specified  value.
+
+    - Parameter other: An  value to compare to this instance.
+    - Returns: 
+         if  has the same value as this instance; otherwise, .
+
+    */
     public func Equals(other : dotnet.System.Runtime.InteropServices.NFloat) throws -> Bool {
         var __thrown : NullableHandle = nil;
         let __return = System_Runtime_InteropServices_NFloat_bool__Equals_0__1__NFloat(&__thrown, self.get_handle(), other.get_handle());
@@ -8077,6 +8438,12 @@ public final class NFloat
     }
     // System.Int32 GetHashCode()
 // docid: M:System.Runtime.InteropServices.NFloat.GetHashCode
+    /**
+    Returns the hash code for this instance.
+
+    - Returns: A 32-bit signed integer hash code.
+
+    */
     public override func GetHashCode() throws -> Swift.Int32 {
         var __thrown : NullableHandle = nil;
         let __return = System_Runtime_InteropServices_NFloat_i32__GetHashCode_0__0(&__thrown, self.get_handle());
@@ -8088,6 +8455,12 @@ public final class NFloat
     }
     // System.String ToString()
 // docid: M:System.Runtime.InteropServices.NFloat.ToString
+    /**
+    Converts the numeric value of this instance to its equivalent string representation.
+
+    - Returns: The string representation of the value of this instance.
+
+    */
     public override func ToString() throws -> dotnet.System.String {
         var __thrown : NullableHandle = nil;
         let __return = System_Runtime_InteropServices_NFloat_String__ToString_0__0(&__thrown, self.get_handle());
@@ -8287,6 +8660,14 @@ public struct NativeLibrary {
 public struct NativeMemory {
     // void* AlignedAlloc(System.UIntPtr, System.UIntPtr)
 // docid: M:System.Runtime.InteropServices.NativeMemory.AlignedAlloc(System.UIntPtr,System.UIntPtr)
+    /**
+    Allocates an aligned block of memory of the specified size and alignment, in bytes.
+
+    - Parameter byteCount: The size, in bytes, of the block to allocate.
+    - Parameter alignment: The alignment, in bytes, of the block to allocate. This must be a power of 2.
+    - Returns: A pointer to the allocated aligned block of memory.
+
+    */
     public static func AlignedAlloc(byteCount : dotnet.System.UIntPtr, alignment : dotnet.System.UIntPtr) throws -> UnsafeMutableRawPointer? {
         var __thrown : NullableHandle = nil;
         let __return = System_Runtime_InteropServices_NativeMemory_pvoid__AlignedAlloc_0__2__UIntPtr_UIntPtr(&__thrown, byteCount.get_handle(), alignment.get_handle());
@@ -8298,6 +8679,11 @@ public struct NativeMemory {
     }
     // void AlignedFree(void*)
 // docid: M:System.Runtime.InteropServices.NativeMemory.AlignedFree(System.Void*)
+    /**
+    Frees an aligned block of memory.
+
+    - Parameter ptr: A pointer to the aligned block of memory that should be freed.
+    */
     public static func AlignedFree(ptr : UnsafeMutableRawPointer?) throws {
         var __thrown : NullableHandle = nil;
         System_Runtime_InteropServices_NativeMemory_void__AlignedFree_0__1__pvoid(&__thrown, ptr);
@@ -8309,6 +8695,15 @@ public struct NativeMemory {
     }
     // void* AlignedRealloc(void*, System.UIntPtr, System.UIntPtr)
 // docid: M:System.Runtime.InteropServices.NativeMemory.AlignedRealloc(System.Void*,System.UIntPtr,System.UIntPtr)
+    /**
+    Reallocates an aligned block of memory of the specified size and alignment, in bytes.
+
+    - Parameter ptr: The previously allocated block of memory.
+    - Parameter byteCount: The size, in bytes, of the block to allocate.
+    - Parameter alignment: The alignment, in bytes, of the block to allocate. This must be a power of 2.
+    - Returns: A pointer to the reallocated aligned block of memory.
+
+    */
     public static func AlignedRealloc(ptr : UnsafeMutableRawPointer?, byteCount : dotnet.System.UIntPtr, alignment : dotnet.System.UIntPtr) throws -> UnsafeMutableRawPointer? {
         var __thrown : NullableHandle = nil;
         let __return = System_Runtime_InteropServices_NativeMemory_pvoid__AlignedRealloc_0__3__pvoid_UIntPtr_UIntPtr(&__thrown, ptr, byteCount.get_handle(), alignment.get_handle());
@@ -8320,6 +8715,13 @@ public struct NativeMemory {
     }
     // void* Alloc(System.UIntPtr)
 // docid: M:System.Runtime.InteropServices.NativeMemory.Alloc(System.UIntPtr)
+    /**
+    Allocates a block of memory of the specified size, in bytes.
+
+    - Parameter byteCount: The size, in bytes, of the block to allocate.
+    - Returns: A pointer to the allocated block of memory.
+
+    */
     public static func Alloc(byteCount : dotnet.System.UIntPtr) throws -> UnsafeMutableRawPointer? {
         var __thrown : NullableHandle = nil;
         let __return = System_Runtime_InteropServices_NativeMemory_pvoid__Alloc_0__1__UIntPtr(&__thrown, byteCount.get_handle());
@@ -8331,6 +8733,14 @@ public struct NativeMemory {
     }
     // void* Alloc(System.UIntPtr, System.UIntPtr)
 // docid: M:System.Runtime.InteropServices.NativeMemory.Alloc(System.UIntPtr,System.UIntPtr)
+    /**
+    Allocates a block of memory of the specified size, in elements.
+
+    - Parameter elementCount: The count, in elements, of the block to allocate.
+    - Parameter elementSize: The size, in bytes, of each element in the allocation.
+    - Returns: A pointer to the allocated block of memory.
+
+    */
     public static func Alloc(elementCount : dotnet.System.UIntPtr, elementSize : dotnet.System.UIntPtr) throws -> UnsafeMutableRawPointer? {
         var __thrown : NullableHandle = nil;
         let __return = System_Runtime_InteropServices_NativeMemory_pvoid__Alloc_0__2__UIntPtr_UIntPtr(&__thrown, elementCount.get_handle(), elementSize.get_handle());
@@ -8342,6 +8752,13 @@ public struct NativeMemory {
     }
     // void* AllocZeroed(System.UIntPtr)
 // docid: M:System.Runtime.InteropServices.NativeMemory.AllocZeroed(System.UIntPtr)
+    /**
+    Allocates and zeroes a block of memory of the specified size, in bytes.
+
+    - Parameter byteCount: The size, in bytes, of the block to allocate.
+    - Returns: A pointer to the allocated and zeroed block of memory.
+
+    */
     public static func AllocZeroed(byteCount : dotnet.System.UIntPtr) throws -> UnsafeMutableRawPointer? {
         var __thrown : NullableHandle = nil;
         let __return = System_Runtime_InteropServices_NativeMemory_pvoid__AllocZeroed_0__1__UIntPtr(&__thrown, byteCount.get_handle());
@@ -8353,6 +8770,14 @@ public struct NativeMemory {
     }
     // void* AllocZeroed(System.UIntPtr, System.UIntPtr)
 // docid: M:System.Runtime.InteropServices.NativeMemory.AllocZeroed(System.UIntPtr,System.UIntPtr)
+    /**
+    Allocates and zeroes a block of memory of the specified size, in elements.
+
+    - Parameter elementCount: The count, in elements, of the block to allocate.
+    - Parameter elementSize: The size, in bytes, of each element in the allocation.
+    - Returns: A pointer to the allocated and zeroed block of memory.
+
+    */
     public static func AllocZeroed(elementCount : dotnet.System.UIntPtr, elementSize : dotnet.System.UIntPtr) throws -> UnsafeMutableRawPointer? {
         var __thrown : NullableHandle = nil;
         let __return = System_Runtime_InteropServices_NativeMemory_pvoid__AllocZeroed_0__2__UIntPtr_UIntPtr(&__thrown, elementCount.get_handle(), elementSize.get_handle());
@@ -8364,6 +8789,11 @@ public struct NativeMemory {
     }
     // void Free(void*)
 // docid: M:System.Runtime.InteropServices.NativeMemory.Free(System.Void*)
+    /**
+    Frees a block of memory.
+
+    - Parameter ptr: A pointer to the block of memory that should be freed.
+    */
     public static func Free(ptr : UnsafeMutableRawPointer?) throws {
         var __thrown : NullableHandle = nil;
         System_Runtime_InteropServices_NativeMemory_void__Free_0__1__pvoid(&__thrown, ptr);
@@ -8375,6 +8805,14 @@ public struct NativeMemory {
     }
     // void* Realloc(void*, System.UIntPtr)
 // docid: M:System.Runtime.InteropServices.NativeMemory.Realloc(System.Void*,System.UIntPtr)
+    /**
+    Reallocates a block of memory to be the specified size, in bytes.
+
+    - Parameter ptr: The previously allocated block of memory.
+    - Parameter byteCount: The size, in bytes, of the reallocated block.
+    - Returns: A pointer to the reallocated block of memory.
+
+    */
     public static func Realloc(ptr : UnsafeMutableRawPointer?, byteCount : dotnet.System.UIntPtr) throws -> UnsafeMutableRawPointer? {
         var __thrown : NullableHandle = nil;
         let __return = System_Runtime_InteropServices_NativeMemory_pvoid__Realloc_0__2__pvoid_UIntPtr(&__thrown, ptr, byteCount.get_handle());
@@ -8399,6 +8837,9 @@ public final class OptionalAttribute
     public class override func get_type_handle() -> TypeHandle {
         return System_Runtime_InteropServices_OptionalAttribute_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor()
@@ -8420,6 +8861,10 @@ public final class OptionalAttribute
 
 
 // type: System.Runtime.InteropServices.PosixSignal
+    /**
+    Specifies a POSIX signal number.
+
+    */
 public struct PosixSignal : SGBridgeGenericValue {
     let v : Swift.Int32;
     public init(val: Swift.Int32) { self.v = val; }
@@ -8431,6 +8876,10 @@ public struct PosixSignal : SGBridgeGenericValue {
     public func dup_gval() -> GVal { return to_gval(); }
     public init(gval: GVal) { self.v = Swift.Int32(gval); }
     // static field: System.Runtime.InteropServices.PosixSignal SIGTSTP
+    /**
+    Stop typed at terminal
+
+    */
     public static var SIGTSTP : dotnet.System.Runtime.InteropServices.PosixSignal {
         get {
         let __return = dotnet.System.Runtime.InteropServices.PosixSignal(val: System_Runtime_InteropServices_PosixSignal_get_SIGTSTP());
@@ -8438,6 +8887,10 @@ public struct PosixSignal : SGBridgeGenericValue {
         }
     }
     // static field: System.Runtime.InteropServices.PosixSignal SIGTTOU
+    /**
+    Terminal output for background process
+
+    */
     public static var SIGTTOU : dotnet.System.Runtime.InteropServices.PosixSignal {
         get {
         let __return = dotnet.System.Runtime.InteropServices.PosixSignal(val: System_Runtime_InteropServices_PosixSignal_get_SIGTTOU());
@@ -8445,6 +8898,10 @@ public struct PosixSignal : SGBridgeGenericValue {
         }
     }
     // static field: System.Runtime.InteropServices.PosixSignal SIGTTIN
+    /**
+    Terminal input for background process
+
+    */
     public static var SIGTTIN : dotnet.System.Runtime.InteropServices.PosixSignal {
         get {
         let __return = dotnet.System.Runtime.InteropServices.PosixSignal(val: System_Runtime_InteropServices_PosixSignal_get_SIGTTIN());
@@ -8452,6 +8909,10 @@ public struct PosixSignal : SGBridgeGenericValue {
         }
     }
     // static field: System.Runtime.InteropServices.PosixSignal SIGWINCH
+    /**
+    Window resized
+
+    */
     public static var SIGWINCH : dotnet.System.Runtime.InteropServices.PosixSignal {
         get {
         let __return = dotnet.System.Runtime.InteropServices.PosixSignal(val: System_Runtime_InteropServices_PosixSignal_get_SIGWINCH());
@@ -8459,6 +8920,10 @@ public struct PosixSignal : SGBridgeGenericValue {
         }
     }
     // static field: System.Runtime.InteropServices.PosixSignal SIGCONT
+    /**
+    Continue if stopped
+
+    */
     public static var SIGCONT : dotnet.System.Runtime.InteropServices.PosixSignal {
         get {
         let __return = dotnet.System.Runtime.InteropServices.PosixSignal(val: System_Runtime_InteropServices_PosixSignal_get_SIGCONT());
@@ -8466,6 +8931,10 @@ public struct PosixSignal : SGBridgeGenericValue {
         }
     }
     // static field: System.Runtime.InteropServices.PosixSignal SIGCHLD
+    /**
+    Child stopped
+
+    */
     public static var SIGCHLD : dotnet.System.Runtime.InteropServices.PosixSignal {
         get {
         let __return = dotnet.System.Runtime.InteropServices.PosixSignal(val: System_Runtime_InteropServices_PosixSignal_get_SIGCHLD());
@@ -8473,6 +8942,10 @@ public struct PosixSignal : SGBridgeGenericValue {
         }
     }
     // static field: System.Runtime.InteropServices.PosixSignal SIGTERM
+    /**
+    Termination
+
+    */
     public static var SIGTERM : dotnet.System.Runtime.InteropServices.PosixSignal {
         get {
         let __return = dotnet.System.Runtime.InteropServices.PosixSignal(val: System_Runtime_InteropServices_PosixSignal_get_SIGTERM());
@@ -8480,6 +8953,10 @@ public struct PosixSignal : SGBridgeGenericValue {
         }
     }
     // static field: System.Runtime.InteropServices.PosixSignal SIGQUIT
+    /**
+    Quit
+
+    */
     public static var SIGQUIT : dotnet.System.Runtime.InteropServices.PosixSignal {
         get {
         let __return = dotnet.System.Runtime.InteropServices.PosixSignal(val: System_Runtime_InteropServices_PosixSignal_get_SIGQUIT());
@@ -8487,6 +8964,10 @@ public struct PosixSignal : SGBridgeGenericValue {
         }
     }
     // static field: System.Runtime.InteropServices.PosixSignal SIGINT
+    /**
+    Interrupt
+
+    */
     public static var SIGINT : dotnet.System.Runtime.InteropServices.PosixSignal {
         get {
         let __return = dotnet.System.Runtime.InteropServices.PosixSignal(val: System_Runtime_InteropServices_PosixSignal_get_SIGINT());
@@ -8494,6 +8975,10 @@ public struct PosixSignal : SGBridgeGenericValue {
         }
     }
     // static field: System.Runtime.InteropServices.PosixSignal SIGHUP
+    /**
+    Hangup
+
+    */
     public static var SIGHUP : dotnet.System.Runtime.InteropServices.PosixSignal {
         get {
         let __return = dotnet.System.Runtime.InteropServices.PosixSignal(val: System_Runtime_InteropServices_PosixSignal_get_SIGHUP());
@@ -8504,6 +8989,10 @@ public struct PosixSignal : SGBridgeGenericValue {
 
 
 // type: System.Runtime.InteropServices.PosixSignalContext
+    /**
+    Provides data for a  event.
+
+    */
 public final class PosixSignalContext
     :
     dotnet.System.Object
@@ -8511,10 +9000,18 @@ public final class PosixSignalContext
     public class override func get_type_handle() -> TypeHandle {
         return System_Runtime_InteropServices_PosixSignalContext_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor(System.Runtime.InteropServices.PosixSignal)
 // docid: M:System.Runtime.InteropServices.PosixSignalContext.#ctor(System.Runtime.InteropServices.PosixSignal)
+    /**
+    Initializes a new instance of the  class.
+
+    - Parameter signal: The signal that occurred.
+    */
     public init(signal : dotnet.System.Runtime.InteropServices.PosixSignal) throws {
         var __thrown : NullableHandle = nil;
         let h = System_Runtime_InteropServices_PosixSignalContext_ctor_0__1__PosixSignal(&__thrown, signal.get_value());
@@ -8557,6 +9054,10 @@ public final class PosixSignalContext
         return dotnet.System.Runtime.InteropServices.PosixSignal(val: __return);
         }
     }
+    /**
+    Gets or sets a value that indicates whether to cancel the default handling of the signal. The default is .
+
+    */
     public var Cancel : Bool {
         get {
             return try! get_Cancel();
@@ -8565,6 +9066,10 @@ public final class PosixSignalContext
             return try! set_Cancel(value: v);
         }
     }
+    /**
+    Gets the signal that occurred.
+
+    */
     public var Signal : dotnet.System.Runtime.InteropServices.PosixSignal {
         get {
             return try! get_Signal();
@@ -8574,6 +9079,10 @@ public final class PosixSignalContext
 
 
 // type: System.Runtime.InteropServices.PosixSignalRegistration
+    /**
+    Handles a .
+
+    */
 public final class PosixSignalRegistration
     :
     dotnet.System.Object,
@@ -8582,10 +9091,21 @@ public final class PosixSignalRegistration
     public class override func get_type_handle() -> TypeHandle {
         return System_Runtime_InteropServices_PosixSignalRegistration_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // System.Runtime.InteropServices.PosixSignalRegistration Create(System.Runtime.InteropServices.PosixSignal, System.Action<System.Runtime.InteropServices.PosixSignalContext>)
 // docid: M:System.Runtime.InteropServices.PosixSignalRegistration.Create(System.Runtime.InteropServices.PosixSignal,System.Action{System.Runtime.InteropServices.PosixSignalContext})
+    /**
+    Registers a  that is invoked when the  occurs.
+
+    - Parameter signal: The signal to register for.
+    - Parameter handler: The handler that gets invoked.
+    - Returns: A  instance that can be disposed to unregister the handler.
+
+    */
     public class func Create(signal : dotnet.System.Runtime.InteropServices.PosixSignal, handler : dotnet.System.Action_1<dotnet.System.Runtime.InteropServices.PosixSignalContext>) throws -> dotnet.System.Runtime.InteropServices.PosixSignalRegistration {
         var __thrown : NullableHandle = nil;
         let __return = System_Runtime_InteropServices_PosixSignalRegistration_PosixSignalRegistration__Create_0__2__PosixSignal_System_Action_System_Runtime_InteropServices_PosixSignalContext_(&__thrown, signal.get_value(), handler.get_handle());
@@ -8596,12 +9116,16 @@ public final class PosixSignalRegistration
         }
     }
     // delegate closure overload
-    public class func Create(signal : dotnet.System.Runtime.InteropServices.PosixSignal, handler : @escaping (Optional<dotnet.System.Runtime.InteropServices.PosixSignalContext>) throws -> Void) throws -> dotnet.System.Runtime.InteropServices.PosixSignalRegistration {
+    public class func Create(signal : dotnet.System.Runtime.InteropServices.PosixSignal, handler : @escaping (dotnet.System.Runtime.InteropServices.PosixSignalContext) throws -> Void) throws -> dotnet.System.Runtime.InteropServices.PosixSignalRegistration {
         let del_handler = try dotnet.System.Action_1<dotnet.System.Runtime.InteropServices.PosixSignalContext>(handler);
         return try Create(signal: signal, handler: del_handler);
     }
     // void Dispose()
 // docid: M:System.Runtime.InteropServices.PosixSignalRegistration.Dispose
+    /**
+    Unregisters the handler.
+
+    */
     public func Dispose() throws {
         var __thrown : NullableHandle = nil;
         System_Runtime_InteropServices_PosixSignalRegistration_void__Dispose_0__0(&__thrown, self.get_handle());
@@ -8616,7 +9140,7 @@ public final class PosixSignalRegistration
 
 // type: System.Runtime.InteropServices.PreserveSigAttribute
     /**
-    Indicates that the HRESULT or  signature transformation that takes place during COM interop calls should be suppressed.
+    Indicates that the HRESULT signature transformation that takes place during COM interop calls should be suppressed.
 
     */
 public final class PreserveSigAttribute
@@ -8625,6 +9149,9 @@ public final class PreserveSigAttribute
 {
     public class override func get_type_handle() -> TypeHandle {
         return System_Runtime_InteropServices_PreserveSigAttribute_get_type_handle();
+    }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -8657,6 +9184,9 @@ public final class PrimaryInteropAssemblyAttribute
 {
     public class override func get_type_handle() -> TypeHandle {
         return System_Runtime_InteropServices_PrimaryInteropAssemblyAttribute_get_type_handle();
+    }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -8731,6 +9261,9 @@ public final class ProgIdAttribute
 {
     public class override func get_type_handle() -> TypeHandle {
         return System_Runtime_InteropServices_ProgIdAttribute_get_type_handle();
+    }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -8901,6 +9434,9 @@ open class SEHException
     open class override func get_type_handle() -> TypeHandle {
         return System_Runtime_InteropServices_SEHException_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor()
@@ -8983,6 +9519,9 @@ open class SafeArrayRankMismatchException
     open class override func get_type_handle() -> TypeHandle {
         return System_Runtime_InteropServices_SafeArrayRankMismatchException_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor()
@@ -9047,6 +9586,9 @@ open class SafeArrayTypeMismatchException
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Runtime_InteropServices_SafeArrayTypeMismatchException_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -9113,6 +9655,9 @@ open class StandardOleMarshalObject
     open class override func get_type_handle() -> TypeHandle {
         return System_Runtime_InteropServices_StandardOleMarshalObject_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
 } // StandardOleMarshalObject
@@ -9129,6 +9674,9 @@ public final class TypeIdentifierAttribute
 {
     public class override func get_type_handle() -> TypeHandle {
         return System_Runtime_InteropServices_TypeIdentifierAttribute_get_type_handle();
+    }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -9226,6 +9774,9 @@ public final class TypeLibFuncAttribute
 {
     public class override func get_type_handle() -> TypeHandle {
         return System_Runtime_InteropServices_TypeLibFuncAttribute_get_type_handle();
+    }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -9457,6 +10008,9 @@ public final class TypeLibImportClassAttribute
     public class override func get_type_handle() -> TypeHandle {
         return System_Runtime_InteropServices_TypeLibImportClassAttribute_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor(System.Type)
@@ -9509,6 +10063,9 @@ public final class TypeLibTypeAttribute
 {
     public class override func get_type_handle() -> TypeHandle {
         return System_Runtime_InteropServices_TypeLibTypeAttribute_get_type_handle();
+    }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -9751,6 +10308,9 @@ public final class TypeLibVarAttribute
     public class override func get_type_handle() -> TypeHandle {
         return System_Runtime_InteropServices_TypeLibVarAttribute_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor(System.Int16)
@@ -9981,6 +10541,9 @@ public final class TypeLibVersionAttribute
     public class override func get_type_handle() -> TypeHandle {
         return System_Runtime_InteropServices_TypeLibVersionAttribute_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor(System.Int32, System.Int32)
@@ -10055,6 +10618,9 @@ public final class UnknownWrapper
     public class override func get_type_handle() -> TypeHandle {
         return System_Runtime_InteropServices_UnknownWrapper_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor(System.Object)
@@ -10101,6 +10667,10 @@ public final class UnknownWrapper
 
 
 // type: System.Runtime.InteropServices.UnmanagedCallConvAttribute
+    /**
+    Provides an equivalent to  for native functions declared in .NET.
+
+    */
 public final class UnmanagedCallConvAttribute
     :
     dotnet.System.Attribute
@@ -10108,10 +10678,32 @@ public final class UnmanagedCallConvAttribute
     public class override func get_type_handle() -> TypeHandle {
         return System_Runtime_InteropServices_UnmanagedCallConvAttribute_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    // instance field: System.Type[] CallConvs
+    /**
+    Types indicating calling conventions for the unmanaged target.
+
+    */
+    public var CallConvs : Optional<dotnet.System_Arr<dotnet.System.Type_>> {
+        get {
+        let __h___return = System_Runtime_InteropServices_UnmanagedCallConvAttribute_get_CallConvs(self.get_handle());
+        let __return = (__h___return != nil) ? dotnet.System_Arr<dotnet.System.Type_>(hndl: __h___return!) : nil;
+            return __return;
+        }
+        set(v) {
+            System_Runtime_InteropServices_UnmanagedCallConvAttribute_set_CallConvs(self.get_handle(), v?.get_handle());
+        }
+    }
     // .ctor()
 // docid: M:System.Runtime.InteropServices.UnmanagedCallConvAttribute.#ctor
+    /**
+    Initializes a new  instance.
+
+    */
     public init() throws {
         var __thrown : NullableHandle = nil;
         let h = System_Runtime_InteropServices_UnmanagedCallConvAttribute_ctor_0__0(&__thrown);
@@ -10136,8 +10728,26 @@ public final class UnmanagedCallersOnlyAttribute
     public class override func get_type_handle() -> TypeHandle {
         return System_Runtime_InteropServices_UnmanagedCallersOnlyAttribute_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    // instance field: System.Type[] CallConvs
+    /**
+    Optional. If omitted, the runtime will use the default platform calling convention.
+
+    */
+    public var CallConvs : Optional<dotnet.System_Arr<dotnet.System.Type_>> {
+        get {
+        let __h___return = System_Runtime_InteropServices_UnmanagedCallersOnlyAttribute_get_CallConvs(self.get_handle());
+        let __return = (__h___return != nil) ? dotnet.System_Arr<dotnet.System.Type_>(hndl: __h___return!) : nil;
+            return __return;
+        }
+        set(v) {
+            System_Runtime_InteropServices_UnmanagedCallersOnlyAttribute_set_CallConvs(self.get_handle(), v?.get_handle());
+        }
+    }
     // instance field: System.String EntryPoint
     /**
     Optional. If omitted, no named export is emitted during compilation.
@@ -10145,8 +10755,8 @@ public final class UnmanagedCallersOnlyAttribute
     */
     public var EntryPoint : Optional<dotnet.System.String> {
         get {
-        let __h = System_Runtime_InteropServices_UnmanagedCallersOnlyAttribute_get_EntryPoint(self.get_handle());
-        let __return = (__h != nil) ? dotnet.System.String(hndl: __h!) : nil;
+        let __h___return = System_Runtime_InteropServices_UnmanagedCallersOnlyAttribute_get_EntryPoint(self.get_handle());
+        let __return = (__h___return != nil) ? dotnet.System.String(hndl: __h___return!) : nil;
             return __return;
         }
         set(v) {
@@ -10182,6 +10792,9 @@ public final class UnmanagedFunctionPointerAttribute
 {
     public class override func get_type_handle() -> TypeHandle {
         return System_Runtime_InteropServices_UnmanagedFunctionPointerAttribute_get_type_handle();
+    }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -10462,7 +11075,7 @@ public struct UnmanagedType : SGBridgeGenericValue {
     }
     // static field: System.Runtime.InteropServices.UnmanagedType LPTStr
     /**
-    A platform-dependent character string: ANSI on Windows 98, and Unicode on Windows NT and Windows XP. This value is supported only for platform invoke and not for COM interop, because exporting a string of type  is not supported.
+    A Unicode character string. This value is supported only for platform invoke and not for COM interop, because exporting a string of type  is not supported.
 
     */
     public static var LPTStr : dotnet.System.Runtime.InteropServices.UnmanagedType {
@@ -10594,7 +11207,7 @@ public struct UnmanagedType : SGBridgeGenericValue {
     }
     // static field: System.Runtime.InteropServices.UnmanagedType TBStr
     /**
-    A length-prefixed, platform-dependent  string: ANSI on Windows 98, Unicode on Windows NT. You rarely use this BSTR-like member.
+    A length-prefixed, Unicode  string. You rarely use this BSTR-like member.
 
     */
     public static var TBStr : dotnet.System.Runtime.InteropServices.UnmanagedType {
@@ -11230,6 +11843,9 @@ public final class VariantWrapper
     public class override func get_type_handle() -> TypeHandle {
         return System_Runtime_InteropServices_VariantWrapper_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor(System.Object)
@@ -11386,6 +12002,9 @@ public final class BINDPTR
     public class override func get_type_handle() -> TypeHandle {
         return System_Runtime_InteropServices_ComTypes_BINDPTR_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     public override init() {
@@ -11407,6 +12026,9 @@ public final class BIND_OPTS
 {
     public class override func get_type_handle() -> TypeHandle {
         return System_Runtime_InteropServices_ComTypes_BIND_OPTS_get_type_handle();
+    }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -11558,6 +12180,9 @@ public final class CONNECTDATA
     public class override func get_type_handle() -> TypeHandle {
         return System_Runtime_InteropServices_ComTypes_CONNECTDATA_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     public override init() {
@@ -11704,6 +12329,9 @@ public final class DISPPARAMS
     public class override func get_type_handle() -> TypeHandle {
         return System_Runtime_InteropServices_ComTypes_DISPPARAMS_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     public override init() {
@@ -11788,6 +12416,9 @@ public final class ELEMDESC
     public class override func get_type_handle() -> TypeHandle {
         return System_Runtime_InteropServices_ComTypes_ELEMDESC_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     public override init() {
@@ -11809,6 +12440,9 @@ public final class ELEMDESC_DESCUNION
 {
     public class override func get_type_handle() -> TypeHandle {
         return System_Runtime_InteropServices_ComTypes_ELEMDESC_DESCUNION_get_type_handle();
+    }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -11832,6 +12466,9 @@ public final class EXCEPINFO
     public class override func get_type_handle() -> TypeHandle {
         return System_Runtime_InteropServices_ComTypes_EXCEPINFO_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     public override init() {
@@ -11853,6 +12490,9 @@ public final class FILETIME
 {
     public class override func get_type_handle() -> TypeHandle {
         return System_Runtime_InteropServices_ComTypes_FILETIME_get_type_handle();
+    }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -11876,6 +12516,9 @@ public final class FORMATETC
     public class override func get_type_handle() -> TypeHandle {
         return System_Runtime_InteropServices_ComTypes_FORMATETC_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     public override init() {
@@ -11897,6 +12540,9 @@ public final class FUNCDESC
 {
     public class override func get_type_handle() -> TypeHandle {
         return System_Runtime_InteropServices_ComTypes_FUNCDESC_get_type_handle();
+    }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -12154,6 +12800,9 @@ open class IAdviseSink
     open class func get_type_handle() -> TypeHandle {
         return System_Runtime_InteropServices_ComTypes_IAdviseSink_get_type_handle();
     }
+    open class func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     let h : NonnullHandle;
     public func to_gval() -> GVal { return GVal(Swift.Int(bitPattern: self.h)); }
     public func dup_gval() -> GVal { return GVal(Swift.Int(bitPattern: __copy_handle(self.h))); }
@@ -12265,6 +12914,9 @@ open class IBindCtx
     open class func get_type_handle() -> TypeHandle {
         return System_Runtime_InteropServices_ComTypes_IBindCtx_get_type_handle();
     }
+    open class func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     let h : NonnullHandle;
     public func to_gval() -> GVal { return GVal(Swift.Int(bitPattern: self.h)); }
     public func dup_gval() -> GVal { return GVal(Swift.Int(bitPattern: __copy_handle(self.h))); }
@@ -12281,11 +12933,12 @@ open class IBindCtx
 
     - Parameter ppenum: When this method returns, contains a reference to the object parameter enumerator. This parameter is passed uninitialized.
     */
-    open func EnumObjectParam(ppenum : inout dotnet.System.Runtime.InteropServices.ComTypes.IEnumString) throws {
+    open func EnumObjectParam(ppenum : inout Optional<dotnet.System.Runtime.InteropServices.ComTypes.IEnumString>) throws {
         var __thrown : NullableHandle = nil;
-            var _tmp_out_ppenum = ppenum.get_handle();
+            var _tmp_out_ppenum = (ppenum != nil) ? (ppenum!.get_handle()) : nil;
         System_Runtime_InteropServices_ComTypes_IBindCtx_void__EnumObjectParam_0__1__outIEnumString(&__thrown, self.get_handle(), &_tmp_out_ppenum);
-        let _tmp2_ppenum = dotnet.System.Runtime.InteropServices.ComTypes.IEnumString(hndl: _tmp_out_ppenum);
+        let __h__tmp2_ppenum = _tmp_out_ppenum;
+        let _tmp2_ppenum = (__h__tmp2_ppenum != nil) ? dotnet.System.Runtime.InteropServices.ComTypes.IEnumString(hndl: __h__tmp2_ppenum!) : nil;
             ppenum = _tmp2_ppenum;
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
@@ -12320,11 +12973,12 @@ open class IBindCtx
     - Parameter pszKey: The name of the object to search for.
     - Parameter ppunk: When this method returns, contains the object interface pointer. This parameter is passed uninitialized.
     */
-    open func GetObjectParam(pszKey : dotnet.System.String, ppunk : inout dotnet.System.Object) throws {
+    open func GetObjectParam(pszKey : dotnet.System.String, ppunk : inout Optional<dotnet.System.Object>) throws {
         var __thrown : NullableHandle = nil;
-            var _tmp_out_ppunk = ppunk.get_handle();
+            var _tmp_out_ppunk = (ppunk != nil) ? (ppunk!.get_handle()) : nil;
         System_Runtime_InteropServices_ComTypes_IBindCtx_void__GetObjectParam_0__2__String_outObject(&__thrown, self.get_handle(), pszKey.get_handle(), &_tmp_out_ppunk);
-        let _tmp2_ppunk = dotnet.System.Object(hndl: _tmp_out_ppunk);
+        let __h__tmp2_ppunk = _tmp_out_ppunk;
+        let _tmp2_ppunk = (__h__tmp2_ppunk != nil) ? dotnet.System.Object(hndl: __h__tmp2_ppunk!) : nil;
             ppunk = _tmp2_ppunk;
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
@@ -12339,11 +12993,12 @@ open class IBindCtx
 
     - Parameter pprot: When this method returns, contains a reference to the Running Object Table (ROT). This parameter is passed uninitialized.
     */
-    open func GetRunningObjectTable(pprot : inout dotnet.System.Runtime.InteropServices.ComTypes.IRunningObjectTable) throws {
+    open func GetRunningObjectTable(pprot : inout Optional<dotnet.System.Runtime.InteropServices.ComTypes.IRunningObjectTable>) throws {
         var __thrown : NullableHandle = nil;
-            var _tmp_out_pprot = pprot.get_handle();
+            var _tmp_out_pprot = (pprot != nil) ? (pprot!.get_handle()) : nil;
         System_Runtime_InteropServices_ComTypes_IBindCtx_void__GetRunningObjectTable_0__1__outIRunningObjectTable(&__thrown, self.get_handle(), &_tmp_out_pprot);
-        let _tmp2_pprot = dotnet.System.Runtime.InteropServices.ComTypes.IRunningObjectTable(hndl: _tmp_out_pprot);
+        let __h__tmp2_pprot = _tmp_out_pprot;
+        let _tmp2_pprot = (__h__tmp2_pprot != nil) ? dotnet.System.Runtime.InteropServices.ComTypes.IRunningObjectTable(hndl: __h__tmp2_pprot!) : nil;
             pprot = _tmp2_pprot;
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
@@ -12468,6 +13123,9 @@ open class IConnectionPoint
     open class func get_type_handle() -> TypeHandle {
         return System_Runtime_InteropServices_ComTypes_IConnectionPoint_get_type_handle();
     }
+    open class func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     let h : NonnullHandle;
     public func to_gval() -> GVal { return GVal(Swift.Int(bitPattern: self.h)); }
     public func dup_gval() -> GVal { return GVal(Swift.Int(bitPattern: __copy_handle(self.h))); }
@@ -12586,6 +13244,9 @@ open class IConnectionPointContainer
     open class func get_type_handle() -> TypeHandle {
         return System_Runtime_InteropServices_ComTypes_IConnectionPointContainer_get_type_handle();
     }
+    open class func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     let h : NonnullHandle;
     public func to_gval() -> GVal { return GVal(Swift.Int(bitPattern: self.h)); }
     public func dup_gval() -> GVal { return GVal(Swift.Int(bitPattern: __copy_handle(self.h))); }
@@ -12622,14 +13283,16 @@ open class IConnectionPointContainer
     - Parameter riid: A reference to the outgoing interface IID whose connection point is being requested.
     - Parameter ppCP: When this method returns, contains the connection point that manages the outgoing interface . This parameter is passed uninitialized.
     */
-    open func FindConnectionPoint(riid : inout dotnet.System.Guid, ppCP : inout dotnet.System.Runtime.InteropServices.ComTypes.IConnectionPoint) throws {
+    open func FindConnectionPoint(riid : inout Optional<dotnet.System.Guid>, ppCP : inout Optional<dotnet.System.Runtime.InteropServices.ComTypes.IConnectionPoint>) throws {
         var __thrown : NullableHandle = nil;
-            var _tmp_ref_riid = riid.get_handle();
-            var _tmp_out_ppCP = ppCP.get_handle();
+            var _tmp_ref_riid = (riid != nil) ? (riid!.get_handle()) : nil;
+            var _tmp_out_ppCP = (ppCP != nil) ? (ppCP!.get_handle()) : nil;
         System_Runtime_InteropServices_ComTypes_IConnectionPointContainer_void__FindConnectionPoint_0__2__refGuid_outIConnectionPoint(&__thrown, self.get_handle(), &_tmp_ref_riid, &_tmp_out_ppCP);
-        let _tmp2_riid = dotnet.System.Guid(hndl: _tmp_ref_riid);
+        let __h__tmp2_riid = _tmp_ref_riid;
+        let _tmp2_riid = (__h__tmp2_riid != nil) ? dotnet.System.Guid(hndl: __h__tmp2_riid!) : nil;
             riid = _tmp2_riid;
-        let _tmp2_ppCP = dotnet.System.Runtime.InteropServices.ComTypes.IConnectionPoint(hndl: _tmp_out_ppCP);
+        let __h__tmp2_ppCP = _tmp_out_ppCP;
+        let _tmp2_ppCP = (__h__tmp2_ppCP != nil) ? dotnet.System.Runtime.InteropServices.ComTypes.IConnectionPoint(hndl: __h__tmp2_ppCP!) : nil;
             ppCP = _tmp2_ppCP;
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
@@ -12652,6 +13315,9 @@ public final class IDLDESC
 {
     public class override func get_type_handle() -> TypeHandle {
         return System_Runtime_InteropServices_ComTypes_IDLDESC_get_type_handle();
+    }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -12748,6 +13414,9 @@ open class IDataObject
     open class func get_type_handle() -> TypeHandle {
         return System_Runtime_InteropServices_ComTypes_IDataObject_get_type_handle();
     }
+    open class func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     let h : NonnullHandle;
     public func to_gval() -> GVal { return GVal(Swift.Int(bitPattern: self.h)); }
     public func dup_gval() -> GVal { return GVal(Swift.Int(bitPattern: __copy_handle(self.h))); }
@@ -12813,11 +13482,12 @@ open class IDataObject
   Value Description S_OK The enumerator object is successfully instantiated or there are no connections. OLE_E_ADVISENOTSUPPORTED This object does not support advisory notifications.
 
     */
-    open func EnumDAdvise(enumAdvise : inout dotnet.System.Runtime.InteropServices.ComTypes.IEnumSTATDATA) throws -> Swift.Int32 {
+    open func EnumDAdvise(enumAdvise : inout Optional<dotnet.System.Runtime.InteropServices.ComTypes.IEnumSTATDATA>) throws -> Swift.Int32 {
         var __thrown : NullableHandle = nil;
-            var _tmp_out_enumAdvise = enumAdvise.get_handle();
+            var _tmp_out_enumAdvise = (enumAdvise != nil) ? (enumAdvise!.get_handle()) : nil;
         let __return = System_Runtime_InteropServices_ComTypes_IDataObject_i32__EnumDAdvise_0__1__outIEnumSTATDATA(&__thrown, self.get_handle(), &_tmp_out_enumAdvise);
-        let _tmp2_enumAdvise = dotnet.System.Runtime.InteropServices.ComTypes.IEnumSTATDATA(hndl: _tmp_out_enumAdvise);
+        let __h__tmp2_enumAdvise = _tmp_out_enumAdvise;
+        let _tmp2_enumAdvise = (__h__tmp2_enumAdvise != nil) ? dotnet.System.Runtime.InteropServices.ComTypes.IEnumSTATDATA(hndl: __h__tmp2_enumAdvise!) : nil;
             enumAdvise = _tmp2_enumAdvise;
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
@@ -12982,6 +13652,9 @@ open class IEnumConnectionPoints
     open class func get_type_handle() -> TypeHandle {
         return System_Runtime_InteropServices_ComTypes_IEnumConnectionPoints_get_type_handle();
     }
+    open class func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     let h : NonnullHandle;
     public func to_gval() -> GVal { return GVal(Swift.Int(bitPattern: self.h)); }
     public func dup_gval() -> GVal { return GVal(Swift.Int(bitPattern: __copy_handle(self.h))); }
@@ -13081,6 +13754,9 @@ open class IEnumConnections
     open class func get_type_handle() -> TypeHandle {
         return System_Runtime_InteropServices_ComTypes_IEnumConnections_get_type_handle();
     }
+    open class func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     let h : NonnullHandle;
     public func to_gval() -> GVal { return GVal(Swift.Int(bitPattern: self.h)); }
     public func dup_gval() -> GVal { return GVal(Swift.Int(bitPattern: __copy_handle(self.h))); }
@@ -13179,6 +13855,9 @@ open class IEnumFORMATETC
 {
     open class func get_type_handle() -> TypeHandle {
         return System_Runtime_InteropServices_ComTypes_IEnumFORMATETC_get_type_handle();
+    }
+    open class func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     let h : NonnullHandle;
     public func to_gval() -> GVal { return GVal(Swift.Int(bitPattern: self.h)); }
@@ -13281,6 +13960,9 @@ open class IEnumMoniker
     open class func get_type_handle() -> TypeHandle {
         return System_Runtime_InteropServices_ComTypes_IEnumMoniker_get_type_handle();
     }
+    open class func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     let h : NonnullHandle;
     public func to_gval() -> GVal { return GVal(Swift.Int(bitPattern: self.h)); }
     public func dup_gval() -> GVal { return GVal(Swift.Int(bitPattern: __copy_handle(self.h))); }
@@ -13379,6 +14061,9 @@ open class IEnumSTATDATA
 {
     open class func get_type_handle() -> TypeHandle {
         return System_Runtime_InteropServices_ComTypes_IEnumSTATDATA_get_type_handle();
+    }
+    open class func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     let h : NonnullHandle;
     public func to_gval() -> GVal { return GVal(Swift.Int(bitPattern: self.h)); }
@@ -13481,6 +14166,9 @@ open class IEnumString
     open class func get_type_handle() -> TypeHandle {
         return System_Runtime_InteropServices_ComTypes_IEnumString_get_type_handle();
     }
+    open class func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     let h : NonnullHandle;
     public func to_gval() -> GVal { return GVal(Swift.Int(bitPattern: self.h)); }
     public func dup_gval() -> GVal { return GVal(Swift.Int(bitPattern: __copy_handle(self.h))); }
@@ -13579,6 +14267,9 @@ open class IEnumVARIANT
 {
     open class func get_type_handle() -> TypeHandle {
         return System_Runtime_InteropServices_ComTypes_IEnumVARIANT_get_type_handle();
+    }
+    open class func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     let h : NonnullHandle;
     public func to_gval() -> GVal { return GVal(Swift.Int(bitPattern: self.h)); }
@@ -13741,6 +14432,9 @@ open class IMoniker
     open class func get_type_handle() -> TypeHandle {
         return System_Runtime_InteropServices_ComTypes_IMoniker_get_type_handle();
     }
+    open class func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     let h : NonnullHandle;
     public func to_gval() -> GVal { return GVal(Swift.Int(bitPattern: self.h)); }
     public func dup_gval() -> GVal { return GVal(Swift.Int(bitPattern: __copy_handle(self.h))); }
@@ -13808,11 +14502,12 @@ open class IMoniker
     - Parameter pmkOther: A reference to the  interface on another moniker to compare with the current moniker for a common prefix.
     - Parameter ppmkPrefix: When this method returns, contains the moniker that is the common prefix of the current moniker and . This parameter is passed uninitialized.
     */
-    open func CommonPrefixWith(pmkOther : dotnet.System.Runtime.InteropServices.ComTypes.IMoniker, ppmkPrefix : inout dotnet.System.Runtime.InteropServices.ComTypes.IMoniker) throws {
+    open func CommonPrefixWith(pmkOther : dotnet.System.Runtime.InteropServices.ComTypes.IMoniker, ppmkPrefix : inout Optional<dotnet.System.Runtime.InteropServices.ComTypes.IMoniker>) throws {
         var __thrown : NullableHandle = nil;
-            var _tmp_out_ppmkPrefix = ppmkPrefix.get_handle();
+            var _tmp_out_ppmkPrefix = (ppmkPrefix != nil) ? (ppmkPrefix!.get_handle()) : nil;
         System_Runtime_InteropServices_ComTypes_IMoniker_void__CommonPrefixWith_0__2__IMoniker_outIMoniker(&__thrown, self.get_handle(), pmkOther.get_handle(), &_tmp_out_ppmkPrefix);
-        let _tmp2_ppmkPrefix = dotnet.System.Runtime.InteropServices.ComTypes.IMoniker(hndl: _tmp_out_ppmkPrefix);
+        let __h__tmp2_ppmkPrefix = _tmp_out_ppmkPrefix;
+        let _tmp2_ppmkPrefix = (__h__tmp2_ppmkPrefix != nil) ? dotnet.System.Runtime.InteropServices.ComTypes.IMoniker(hndl: __h__tmp2_ppmkPrefix!) : nil;
             ppmkPrefix = _tmp2_ppmkPrefix;
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
@@ -13830,11 +14525,12 @@ open class IMoniker
          to indicate that the caller requires a nongeneric composition. The operation proceeds only if  is a moniker class that the current moniker can combine with in some way other than forming a generic composite.  to indicate that the method can create a generic composite if necessary.
     - Parameter ppmkComposite: When this method returns, contains a reference to the resulting composite moniker. This parameter is passed uninitialized.
     */
-    open func ComposeWith(pmkRight : dotnet.System.Runtime.InteropServices.ComTypes.IMoniker, fOnlyIfNotGeneric : Bool, ppmkComposite : inout dotnet.System.Runtime.InteropServices.ComTypes.IMoniker) throws {
+    open func ComposeWith(pmkRight : dotnet.System.Runtime.InteropServices.ComTypes.IMoniker, fOnlyIfNotGeneric : Bool, ppmkComposite : inout Optional<dotnet.System.Runtime.InteropServices.ComTypes.IMoniker>) throws {
         var __thrown : NullableHandle = nil;
-            var _tmp_out_ppmkComposite = ppmkComposite.get_handle();
+            var _tmp_out_ppmkComposite = (ppmkComposite != nil) ? (ppmkComposite!.get_handle()) : nil;
         System_Runtime_InteropServices_ComTypes_IMoniker_void__ComposeWith_0__3__IMoniker_bool_outIMoniker(&__thrown, self.get_handle(), pmkRight.get_handle(), Swift.Int32(fOnlyIfNotGeneric ? 1 : 0), &_tmp_out_ppmkComposite);
-        let _tmp2_ppmkComposite = dotnet.System.Runtime.InteropServices.ComTypes.IMoniker(hndl: _tmp_out_ppmkComposite);
+        let __h__tmp2_ppmkComposite = _tmp_out_ppmkComposite;
+        let _tmp2_ppmkComposite = (__h__tmp2_ppmkComposite != nil) ? dotnet.System.Runtime.InteropServices.ComTypes.IMoniker(hndl: __h__tmp2_ppmkComposite!) : nil;
             ppmkComposite = _tmp2_ppmkComposite;
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
@@ -13851,11 +14547,12 @@ open class IMoniker
          to enumerate the monikers from left to right.  to enumerate from right to left.
     - Parameter ppenumMoniker: When this method returns, contains a reference to the enumerator object for the moniker. This parameter is passed uninitialized.
     */
-    open func Enum(fForward : Bool, ppenumMoniker : inout dotnet.System.Runtime.InteropServices.ComTypes.IEnumMoniker) throws {
+    open func Enum(fForward : Bool, ppenumMoniker : inout Optional<dotnet.System.Runtime.InteropServices.ComTypes.IEnumMoniker>) throws {
         var __thrown : NullableHandle = nil;
-            var _tmp_out_ppenumMoniker = ppenumMoniker.get_handle();
+            var _tmp_out_ppenumMoniker = (ppenumMoniker != nil) ? (ppenumMoniker!.get_handle()) : nil;
         System_Runtime_InteropServices_ComTypes_IMoniker_void__Enum_0__2__bool_outIEnumMoniker(&__thrown, self.get_handle(), Swift.Int32(fForward ? 1 : 0), &_tmp_out_ppenumMoniker);
-        let _tmp2_ppenumMoniker = dotnet.System.Runtime.InteropServices.ComTypes.IEnumMoniker(hndl: _tmp_out_ppenumMoniker);
+        let __h__tmp2_ppenumMoniker = _tmp_out_ppenumMoniker;
+        let _tmp2_ppenumMoniker = (__h__tmp2_ppenumMoniker != nil) ? dotnet.System.Runtime.InteropServices.ComTypes.IEnumMoniker(hndl: __h__tmp2_ppenumMoniker!) : nil;
             ppenumMoniker = _tmp2_ppenumMoniker;
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
@@ -14109,14 +14806,16 @@ open class IMoniker
     - Parameter ppmkToLeft: A reference to the moniker to the left of the current moniker.
     - Parameter ppmkReduced: When this method returns, contains a reference to the reduced form of the current moniker, which can be  if an error occurs or if the current moniker is reduced to nothing. This parameter is passed uninitialized.
     */
-    open func Reduce(pbc : dotnet.System.Runtime.InteropServices.ComTypes.IBindCtx, dwReduceHowFar : Swift.Int32, ppmkToLeft : inout dotnet.System.Runtime.InteropServices.ComTypes.IMoniker, ppmkReduced : inout dotnet.System.Runtime.InteropServices.ComTypes.IMoniker) throws {
+    open func Reduce(pbc : dotnet.System.Runtime.InteropServices.ComTypes.IBindCtx, dwReduceHowFar : Swift.Int32, ppmkToLeft : inout Optional<dotnet.System.Runtime.InteropServices.ComTypes.IMoniker>, ppmkReduced : inout Optional<dotnet.System.Runtime.InteropServices.ComTypes.IMoniker>) throws {
         var __thrown : NullableHandle = nil;
-            var _tmp_ref_ppmkToLeft = ppmkToLeft.get_handle();
-            var _tmp_out_ppmkReduced = ppmkReduced.get_handle();
+            var _tmp_ref_ppmkToLeft = (ppmkToLeft != nil) ? (ppmkToLeft!.get_handle()) : nil;
+            var _tmp_out_ppmkReduced = (ppmkReduced != nil) ? (ppmkReduced!.get_handle()) : nil;
         System_Runtime_InteropServices_ComTypes_IMoniker_void__Reduce_0__4__IBindCtx_i32_refIMoniker_outIMoniker(&__thrown, self.get_handle(), pbc.get_handle(), dwReduceHowFar, &_tmp_ref_ppmkToLeft, &_tmp_out_ppmkReduced);
-        let _tmp2_ppmkToLeft = dotnet.System.Runtime.InteropServices.ComTypes.IMoniker(hndl: _tmp_ref_ppmkToLeft);
+        let __h__tmp2_ppmkToLeft = _tmp_ref_ppmkToLeft;
+        let _tmp2_ppmkToLeft = (__h__tmp2_ppmkToLeft != nil) ? dotnet.System.Runtime.InteropServices.ComTypes.IMoniker(hndl: __h__tmp2_ppmkToLeft!) : nil;
             ppmkToLeft = _tmp2_ppmkToLeft;
-        let _tmp2_ppmkReduced = dotnet.System.Runtime.InteropServices.ComTypes.IMoniker(hndl: _tmp_out_ppmkReduced);
+        let __h__tmp2_ppmkReduced = _tmp_out_ppmkReduced;
+        let _tmp2_ppmkReduced = (__h__tmp2_ppmkReduced != nil) ? dotnet.System.Runtime.InteropServices.ComTypes.IMoniker(hndl: __h__tmp2_ppmkReduced!) : nil;
             ppmkReduced = _tmp2_ppmkReduced;
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
@@ -14132,11 +14831,12 @@ open class IMoniker
     - Parameter pmkOther: A reference to the moniker to which a relative path should be taken.
     - Parameter ppmkRelPath: When this method returns, contains a reference to the relative moniker. This parameter is passed uninitialized.
     */
-    open func RelativePathTo(pmkOther : dotnet.System.Runtime.InteropServices.ComTypes.IMoniker, ppmkRelPath : inout dotnet.System.Runtime.InteropServices.ComTypes.IMoniker) throws {
+    open func RelativePathTo(pmkOther : dotnet.System.Runtime.InteropServices.ComTypes.IMoniker, ppmkRelPath : inout Optional<dotnet.System.Runtime.InteropServices.ComTypes.IMoniker>) throws {
         var __thrown : NullableHandle = nil;
-            var _tmp_out_ppmkRelPath = ppmkRelPath.get_handle();
+            var _tmp_out_ppmkRelPath = (ppmkRelPath != nil) ? (ppmkRelPath!.get_handle()) : nil;
         System_Runtime_InteropServices_ComTypes_IMoniker_void__RelativePathTo_0__2__IMoniker_outIMoniker(&__thrown, self.get_handle(), pmkOther.get_handle(), &_tmp_out_ppmkRelPath);
-        let _tmp2_ppmkRelPath = dotnet.System.Runtime.InteropServices.ComTypes.IMoniker(hndl: _tmp_out_ppmkRelPath);
+        let __h__tmp2_ppmkRelPath = _tmp_out_ppmkRelPath;
+        let _tmp2_ppmkRelPath = (__h__tmp2_ppmkRelPath != nil) ? dotnet.System.Runtime.InteropServices.ComTypes.IMoniker(hndl: __h__tmp2_ppmkRelPath!) : nil;
             ppmkRelPath = _tmp2_ppmkRelPath;
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
@@ -14151,7 +14851,7 @@ open class IMoniker
 
     - Parameter pStm: The stream to which the object is saved.
     - Parameter fClearDirty: 
-         to clear the modified flag after the save is complete; otherwise 
+         to clear the modified flag after the save is complete; otherwise .
     */
     open func Save(pStm : dotnet.System.Runtime.InteropServices.ComTypes.IStream, fClearDirty : Bool) throws {
         var __thrown : NullableHandle = nil;
@@ -14239,6 +14939,9 @@ open class IPersistFile
 {
     open class func get_type_handle() -> TypeHandle {
         return System_Runtime_InteropServices_ComTypes_IPersistFile_get_type_handle();
+    }
+    open class func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     let h : NonnullHandle;
     public func to_gval() -> GVal { return GVal(Swift.Int(bitPattern: self.h)); }
@@ -14371,6 +15074,9 @@ open class IRunningObjectTable
 {
     open class func get_type_handle() -> TypeHandle {
         return System_Runtime_InteropServices_ComTypes_IRunningObjectTable_get_type_handle();
+    }
+    open class func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     let h : NonnullHandle;
     public func to_gval() -> GVal { return GVal(Swift.Int(bitPattern: self.h)); }
@@ -14533,6 +15239,9 @@ open class IStream
 {
     open class func get_type_handle() -> TypeHandle {
         return System_Runtime_InteropServices_ComTypes_IStream_get_type_handle();
+    }
+    open class func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     let h : NonnullHandle;
     public func to_gval() -> GVal { return GVal(Swift.Int(bitPattern: self.h)); }
@@ -14754,6 +15463,9 @@ open class ITypeComp
     open class func get_type_handle() -> TypeHandle {
         return System_Runtime_InteropServices_ComTypes_ITypeComp_get_type_handle();
     }
+    open class func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     let h : NonnullHandle;
     public func to_gval() -> GVal { return GVal(Swift.Int(bitPattern: self.h)); }
     public func dup_gval() -> GVal { return GVal(Swift.Int(bitPattern: __copy_handle(self.h))); }
@@ -14833,6 +15545,9 @@ open class ITypeInfo
 {
     open class func get_type_handle() -> TypeHandle {
         return System_Runtime_InteropServices_ComTypes_ITypeInfo_get_type_handle();
+    }
+    open class func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     let h : NonnullHandle;
     public func to_gval() -> GVal { return GVal(Swift.Int(bitPattern: self.h)); }
@@ -15029,11 +15744,12 @@ open class ITypeInfo
     - Parameter memid: The member ID that indicates which marshaling information is needed.
     - Parameter pBstrMops: When this method returns, contains a reference to the  string used in marshaling the fields of the structure described by the referenced type description, or returns  if there is no information to return. This parameter is passed uninitialized.
     */
-    open func GetMops(memid : Swift.Int32, pBstrMops : inout dotnet.System.String) throws {
+    open func GetMops(memid : Swift.Int32, pBstrMops : inout Optional<dotnet.System.String>) throws {
         var __thrown : NullableHandle = nil;
-            var _tmp_out_pBstrMops = pBstrMops.get_handle();
+            var _tmp_out_pBstrMops = (pBstrMops != nil) ? (pBstrMops!.get_handle()) : nil;
         System_Runtime_InteropServices_ComTypes_ITypeInfo_void__GetMops_0__2__i32_outString(&__thrown, self.get_handle(), memid, &_tmp_out_pBstrMops);
-        let _tmp2_pBstrMops = dotnet.System.String(hndl: _tmp_out_pBstrMops);
+        let __h__tmp2_pBstrMops = _tmp_out_pBstrMops;
+        let _tmp2_pBstrMops = (__h__tmp2_pBstrMops != nil) ? dotnet.System.String(hndl: __h__tmp2_pBstrMops!) : nil;
             pBstrMops = _tmp2_pBstrMops;
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
@@ -15253,6 +15969,9 @@ open class ITypeInfo2
 {
     open class func get_type_handle() -> TypeHandle {
         return System_Runtime_InteropServices_ComTypes_ITypeInfo2_get_type_handle();
+    }
+    open class func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     let h : NonnullHandle;
     public func to_gval() -> GVal { return GVal(Swift.Int(bitPattern: self.h)); }
@@ -15654,11 +16373,12 @@ open class ITypeInfo2
     - Parameter memid: The member ID that indicates which marshaling information is needed.
     - Parameter pBstrMops: When this method returns, contains a reference to the  string used in marshaling the fields of the structure described by the referenced type description, or returns  if there is no information to return. This parameter is passed uninitialized.
     */
-    open func GetMops(memid : Swift.Int32, pBstrMops : inout dotnet.System.String) throws {
+    open func GetMops(memid : Swift.Int32, pBstrMops : inout Optional<dotnet.System.String>) throws {
         var __thrown : NullableHandle = nil;
-            var _tmp_out_pBstrMops = pBstrMops.get_handle();
+            var _tmp_out_pBstrMops = (pBstrMops != nil) ? (pBstrMops!.get_handle()) : nil;
         System_Runtime_InteropServices_ComTypes_ITypeInfo2_void__GetMops_0__2__i32_outString(&__thrown, self.get_handle(), memid, &_tmp_out_pBstrMops);
-        let _tmp2_pBstrMops = dotnet.System.String(hndl: _tmp_out_pBstrMops);
+        let __h__tmp2_pBstrMops = _tmp_out_pBstrMops;
+        let _tmp2_pBstrMops = (__h__tmp2_pBstrMops != nil) ? dotnet.System.String(hndl: __h__tmp2_pBstrMops!) : nil;
             pBstrMops = _tmp2_pBstrMops;
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
@@ -15985,6 +16705,9 @@ open class ITypeLib
     open class func get_type_handle() -> TypeHandle {
         return System_Runtime_InteropServices_ComTypes_ITypeLib_get_type_handle();
     }
+    open class func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     let h : NonnullHandle;
     public func to_gval() -> GVal { return GVal(Swift.Int(bitPattern: self.h)); }
     public func dup_gval() -> GVal { return GVal(Swift.Int(bitPattern: __copy_handle(self.h))); }
@@ -16221,6 +16944,9 @@ open class ITypeLib2
 {
     open class func get_type_handle() -> TypeHandle {
         return System_Runtime_InteropServices_ComTypes_ITypeLib2_get_type_handle();
+    }
+    open class func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     let h : NonnullHandle;
     public func to_gval() -> GVal { return GVal(Swift.Int(bitPattern: self.h)); }
@@ -16607,6 +17333,9 @@ public final class PARAMDESC
     public class override func get_type_handle() -> TypeHandle {
         return System_Runtime_InteropServices_ComTypes_PARAMDESC_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     public override init() {
@@ -16735,6 +17464,9 @@ public final class STATDATA
     public class override func get_type_handle() -> TypeHandle {
         return System_Runtime_InteropServices_ComTypes_STATDATA_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     public override init() {
@@ -16757,6 +17489,9 @@ public final class STATSTG
     public class override func get_type_handle() -> TypeHandle {
         return System_Runtime_InteropServices_ComTypes_STATSTG_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     public override init() {
@@ -16778,6 +17513,9 @@ public final class STGMEDIUM
 {
     public class override func get_type_handle() -> TypeHandle {
         return System_Runtime_InteropServices_ComTypes_STGMEDIUM_get_type_handle();
+    }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -16969,6 +17707,9 @@ public final class TYPEATTR
     public class override func get_type_handle() -> TypeHandle {
         return System_Runtime_InteropServices_ComTypes_TYPEATTR_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // static field: System.Int32 MEMBER_ID_NIL
@@ -17001,6 +17742,9 @@ public final class TYPEDESC
 {
     public class override func get_type_handle() -> TypeHandle {
         return System_Runtime_InteropServices_ComTypes_TYPEDESC_get_type_handle();
+    }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -17324,6 +18068,9 @@ public final class TYPELIBATTR
     public class override func get_type_handle() -> TypeHandle {
         return System_Runtime_InteropServices_ComTypes_TYPELIBATTR_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     public override init() {
@@ -17346,6 +18093,9 @@ public final class VARDESC
     public class override func get_type_handle() -> TypeHandle {
         return System_Runtime_InteropServices_ComTypes_VARDESC_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     public override init() {
@@ -17367,6 +18117,9 @@ public final class VARDESC_DESCUNION
 {
     public class override func get_type_handle() -> TypeHandle {
         return System_Runtime_InteropServices_ComTypes_VARDESC_DESCUNION_get_type_handle();
+    }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -17606,8 +18359,15 @@ public struct VARKIND : SGBridgeGenericValue {
 extension System.Runtime.InteropServices.ObjectiveC {
 // type: System.Runtime.InteropServices.ObjectiveC.ObjectiveCMarshal
 public struct ObjectiveCMarshal {
+// TODO COPE (parm byref span): System.Runtime.InteropServices.GCHandle CreateReferenceTrackingHandle(System.Object, ref System.Span<System.IntPtr>)
     // void SetMessageSendCallback(System.Runtime.InteropServices.ObjectiveC.ObjectiveCMarshal.MessageSendFunction, System.IntPtr)
 // docid: M:System.Runtime.InteropServices.ObjectiveC.ObjectiveCMarshal.SetMessageSendCallback(System.Runtime.InteropServices.ObjectiveC.ObjectiveCMarshal.MessageSendFunction,System.IntPtr)
+    /**
+    Set a function pointer override for an Objective-C runtime message passing export.
+
+    - Parameter msgSendFunction: The export to override.
+    - Parameter func: The function override.
+    */
     public static func SetMessageSendCallback(msgSendFunction : dotnet.System.Runtime.InteropServices.ObjectiveC.ObjectiveCMarshal_MessageSendFunction, func_ : dotnet.System.IntPtr) throws {
         var __thrown : NullableHandle = nil;
         System_Runtime_InteropServices_ObjectiveC_ObjectiveCMarshal_void__SetMessageSendCallback_0__2__MessageSendFunction_IntPtr(&__thrown, msgSendFunction.get_value(), func_.get_value());
@@ -17619,6 +18379,11 @@ public struct ObjectiveCMarshal {
     }
     // void SetMessageSendPendingException(System.Exception)
 // docid: M:System.Runtime.InteropServices.ObjectiveC.ObjectiveCMarshal.SetMessageSendPendingException(System.Exception)
+    /**
+    Sets a pending exception to be thrown the next time the runtime is entered from an Objective-C msgSend P/Invoke.
+
+    - Parameter exception: The exception.
+    */
     public static func SetMessageSendPendingException(exception : Optional<dotnet.System.Exception>) throws {
         var __thrown : NullableHandle = nil;
         System_Runtime_InteropServices_ObjectiveC_ObjectiveCMarshal_void__SetMessageSendPendingException_0__1__Exception(&__thrown, exception?.get_handle() ?? nil);
@@ -17632,6 +18397,10 @@ public struct ObjectiveCMarshal {
 
 
 // type: System.Runtime.InteropServices.ObjectiveC.ObjectiveCMarshal+MessageSendFunction
+    /**
+    Objective-C msgSend function override options.
+
+    */
 public struct ObjectiveCMarshal_MessageSendFunction : SGBridgeGenericValue {
     let v : Swift.Int32;
     public init(val: Swift.Int32) { self.v = val; }
@@ -17643,6 +18412,10 @@ public struct ObjectiveCMarshal_MessageSendFunction : SGBridgeGenericValue {
     public func dup_gval() -> GVal { return to_gval(); }
     public init(gval: GVal) { self.v = Swift.Int32(gval); }
     // static field: System.Runtime.InteropServices.ObjectiveC.ObjectiveCMarshal+MessageSendFunction MsgSend
+    /**
+    Overrides the Objective-C runtime's msgSend().
+
+    */
     public static var MsgSend : dotnet.System.Runtime.InteropServices.ObjectiveC.ObjectiveCMarshal_MessageSendFunction {
         get {
         let __return = dotnet.System.Runtime.InteropServices.ObjectiveC.ObjectiveCMarshal_MessageSendFunction(val: System_Runtime_InteropServices_ObjectiveC_ObjectiveCMarshal_MessageSendFunction_get_MsgSend());
@@ -17650,6 +18423,10 @@ public struct ObjectiveCMarshal_MessageSendFunction : SGBridgeGenericValue {
         }
     }
     // static field: System.Runtime.InteropServices.ObjectiveC.ObjectiveCMarshal+MessageSendFunction MsgSendFpret
+    /**
+    Overrides the Objective-C runtime's objc_msgSend_fpret().
+
+    */
     public static var MsgSendFpret : dotnet.System.Runtime.InteropServices.ObjectiveC.ObjectiveCMarshal_MessageSendFunction {
         get {
         let __return = dotnet.System.Runtime.InteropServices.ObjectiveC.ObjectiveCMarshal_MessageSendFunction(val: System_Runtime_InteropServices_ObjectiveC_ObjectiveCMarshal_MessageSendFunction_get_MsgSendFpret());
@@ -17657,6 +18434,10 @@ public struct ObjectiveCMarshal_MessageSendFunction : SGBridgeGenericValue {
         }
     }
     // static field: System.Runtime.InteropServices.ObjectiveC.ObjectiveCMarshal+MessageSendFunction MsgSendStret
+    /**
+    Overrides the Objective-C runtime's objc_msgSend_stret().
+
+    */
     public static var MsgSendStret : dotnet.System.Runtime.InteropServices.ObjectiveC.ObjectiveCMarshal_MessageSendFunction {
         get {
         let __return = dotnet.System.Runtime.InteropServices.ObjectiveC.ObjectiveCMarshal_MessageSendFunction(val: System_Runtime_InteropServices_ObjectiveC_ObjectiveCMarshal_MessageSendFunction_get_MsgSendStret());
@@ -17664,6 +18445,10 @@ public struct ObjectiveCMarshal_MessageSendFunction : SGBridgeGenericValue {
         }
     }
     // static field: System.Runtime.InteropServices.ObjectiveC.ObjectiveCMarshal+MessageSendFunction MsgSendSuper
+    /**
+    Overrides the Objective-C runtime's objc_msgSendSuper().
+
+    */
     public static var MsgSendSuper : dotnet.System.Runtime.InteropServices.ObjectiveC.ObjectiveCMarshal_MessageSendFunction {
         get {
         let __return = dotnet.System.Runtime.InteropServices.ObjectiveC.ObjectiveCMarshal_MessageSendFunction(val: System_Runtime_InteropServices_ObjectiveC_ObjectiveCMarshal_MessageSendFunction_get_MsgSendSuper());
@@ -17671,6 +18456,10 @@ public struct ObjectiveCMarshal_MessageSendFunction : SGBridgeGenericValue {
         }
     }
     // static field: System.Runtime.InteropServices.ObjectiveC.ObjectiveCMarshal+MessageSendFunction MsgSendSuperStret
+    /**
+    Overrides the Objective-C runtime's objc_msgSendSuper_stret().
+
+    */
     public static var MsgSendSuperStret : dotnet.System.Runtime.InteropServices.ObjectiveC.ObjectiveCMarshal_MessageSendFunction {
         get {
         let __return = dotnet.System.Runtime.InteropServices.ObjectiveC.ObjectiveCMarshal_MessageSendFunction(val: System_Runtime_InteropServices_ObjectiveC_ObjectiveCMarshal_MessageSendFunction_get_MsgSendSuperStret());
@@ -17681,6 +18470,10 @@ public struct ObjectiveCMarshal_MessageSendFunction : SGBridgeGenericValue {
 
 
 // type: System.Runtime.InteropServices.ObjectiveC.ObjectiveCMarshal+UnhandledExceptionPropagationHandler
+    /**
+    Handler for unhandled Exceptions crossing the managed -> native boundary (that is, Reverse P/Invoke).
+
+    */
 public final class ObjectiveCMarshal_UnhandledExceptionPropagationHandler
     :
     dotnet.System.Delegate
@@ -17688,12 +18481,37 @@ public final class ObjectiveCMarshal_UnhandledExceptionPropagationHandler
     public class override func get_type_handle() -> TypeHandle {
         return System_Runtime_InteropServices_ObjectiveC_ObjectiveCMarshal_UnhandledExceptionPropagationHandler_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    // System.IAsyncResult BeginInvoke(System.Exception, System.RuntimeMethodHandle, ref System.IntPtr, System.AsyncCallback, System.Object)
+// docid: M:System.Runtime.InteropServices.ObjectiveC.ObjectiveCMarshal.UnhandledExceptionPropagationHandler.BeginInvoke(System.Exception,System.RuntimeMethodHandle,System.IntPtr@,System.AsyncCallback,System.Object)
+    public func BeginInvoke(exception : dotnet.System.Exception, lastMethod : dotnet.System.RuntimeMethodHandle, context : inout dotnet.System.IntPtr, callback : Optional<dotnet.System.AsyncCallback>, object : Optional<dotnet.System.Object>) throws -> Optional<dotnet.System.IAsyncResult> {
+        var __thrown : NullableHandle = nil;
+            var _tmp_out_context = context.get_value();
+        let __return = System_Runtime_InteropServices_ObjectiveC_ObjectiveCMarshal_UnhandledExceptionPropagationHandler_IAsyncResult__BeginInvoke_0__5__Exception_RuntimeMethodHandle_outIntPtr_AsyncCallback_Object(&__thrown, self.get_handle(), exception.get_handle(), lastMethod.get_handle(), &_tmp_out_context, callback?.get_handle() ?? nil, object?.get_handle() ?? nil);
+        let _tmp2_context = dotnet.System.IntPtr(val: _tmp_out_context);
+            context = _tmp2_context;
+        if let __ex =  __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+        if let __ret_unwrapped = __return {
+            return dotnet.System.IAsyncResult(hndl : __ret_unwrapped);
+        } else {
+            return nil;
+        }
+        }
+    }
 } // ObjectiveCMarshal_UnhandledExceptionPropagationHandler
 
 
 // type: System.Runtime.InteropServices.ObjectiveC.ObjectiveCTrackedTypeAttribute
+    /**
+    Attribute used to indicate a class represents a tracked Objective-C type.
+
+    */
 public final class ObjectiveCTrackedTypeAttribute
     :
     dotnet.System.Attribute
@@ -17701,10 +18519,17 @@ public final class ObjectiveCTrackedTypeAttribute
     public class override func get_type_handle() -> TypeHandle {
         return System_Runtime_InteropServices_ObjectiveC_ObjectiveCTrackedTypeAttribute_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor()
 // docid: M:System.Runtime.InteropServices.ObjectiveC.ObjectiveCTrackedTypeAttribute.#ctor
+    /**
+    Instantiate a  instance.
+
+    */
     public init() throws {
         var __thrown : NullableHandle = nil;
         let h = System_Runtime_InteropServices_ObjectiveC_ObjectiveCTrackedTypeAttribute_ctor_0__0(&__thrown);
@@ -17735,6 +18560,9 @@ public final class SecureString
 {
     public class override func get_type_handle() -> TypeHandle {
         return System_Security_SecureString_get_type_handle();
+    }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -17906,7 +18734,7 @@ public final class SecureString
     /**
     Replaces the existing character at the specified index position with another character.
 
-    - Parameter index: The index position of an existing character in this secure string
+    - Parameter index: The index position of an existing character in this secure string.
     - Parameter c: A character that replaces the existing character.
     */
     public func SetAt(index : Swift.Int32, c : dotnet.System.Char) throws {

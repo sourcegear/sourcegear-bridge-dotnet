@@ -17,8 +17,13 @@ public final class IOCompletionCallback
     public class override func get_type_handle() -> TypeHandle {
         return System_Threading_IOCompletionCallback_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+// TODO COPE (parm pointer other): void Invoke(System.UInt32, System.UInt32, System.Threading.NativeOverlapped*)
+// TODO COPE (parm pointer other): System.IAsyncResult BeginInvoke(System.UInt32, System.UInt32, System.Threading.NativeOverlapped*, System.AsyncCallback, System.Object)
     // void EndInvoke(System.IAsyncResult)
 // docid: M:System.Threading.IOCompletionCallback.EndInvoke(System.IAsyncResult)
     public func EndInvoke(result : Optional<dotnet.System.IAsyncResult>) throws {
@@ -30,6 +35,7 @@ public final class IOCompletionCallback
             return;
         }
     }
+// TODO COPE (parm pointer other): void Invoke(System.UInt32, System.UInt32, System.Threading.NativeOverlapped*)
 } // IOCompletionCallback
 
 
@@ -45,6 +51,9 @@ public final class NativeOverlapped
 {
     public class override func get_type_handle() -> TypeHandle {
         return System_Threading_NativeOverlapped_get_type_handle();
+    }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -66,6 +75,9 @@ open class Overlapped
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Threading_Overlapped_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -122,6 +134,12 @@ open class Overlapped
             super.init(hndl: h);
         }
     }
+// TODO COPE (parm pointer other): void Free(System.Threading.NativeOverlapped*)
+// TODO COPE (returns pointer other): System.Threading.NativeOverlapped* Pack(System.Threading.IOCompletionCallback)
+// TODO COPE (returns pointer other): System.Threading.NativeOverlapped* Pack(System.Threading.IOCompletionCallback, System.Object)
+// TODO COPE (parm pointer other): System.Threading.Overlapped Unpack(System.Threading.NativeOverlapped*)
+// TODO COPE (returns pointer other): System.Threading.NativeOverlapped* UnsafePack(System.Threading.IOCompletionCallback)
+// TODO COPE (returns pointer other): System.Threading.NativeOverlapped* UnsafePack(System.Threading.IOCompletionCallback, System.Object)
     // [IsSpecialName] System.IAsyncResult get_AsyncResult()
 // docid: M:System.Threading.Overlapped.get_AsyncResult
     open func get_AsyncResult() throws -> Optional<dotnet.System.IAsyncResult> {
@@ -312,6 +330,9 @@ public final class PreAllocatedOverlapped
     public class override func get_type_handle() -> TypeHandle {
         return System_Threading_PreAllocatedOverlapped_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor(System.Threading.IOCompletionCallback, System.Object, System.Object)
@@ -349,6 +370,15 @@ public final class PreAllocatedOverlapped
     }
     // System.Threading.PreAllocatedOverlapped UnsafeCreate(System.Threading.IOCompletionCallback, System.Object, System.Object)
 // docid: M:System.Threading.PreAllocatedOverlapped.UnsafeCreate(System.Threading.IOCompletionCallback,System.Object,System.Object)
+    /**
+    Initializes a new instance of the  class, specifying a delegate that is invoked when each asynchronous I/O operation is complete, a user-provided object providing context, and managed objects that serve as buffers.
+
+    - Parameter callback: An  delegate that represents the callback method invoked when each asynchronous I/O operation completes.
+    - Parameter state: A user-provided object that distinguishes  instance produced from this object from other  instances. Can be .
+    - Parameter pinData: An object or array of objects representing the input or output buffer for the operations. Each object represents a buffer, for example an array of bytes.  Can be .
+    - Returns: The new  instance.
+
+    */
     public class func UnsafeCreate(callback : dotnet.System.Threading.IOCompletionCallback, state : Optional<dotnet.System.Object>, pinData : Optional<dotnet.System.Object>) throws -> dotnet.System.Threading.PreAllocatedOverlapped {
         var __thrown : NullableHandle = nil;
         let __return = System_Threading_PreAllocatedOverlapped_PreAllocatedOverlapped__UnsafeCreate_0__3__IOCompletionCallback_Object_Object(&__thrown, callback.get_handle(), state?.get_handle() ?? nil, pinData?.get_handle() ?? nil);
@@ -374,8 +404,13 @@ public final class ThreadPoolBoundHandle
     public class override func get_type_handle() -> TypeHandle {
         return System_Threading_ThreadPoolBoundHandle_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+// TODO COPE (returns pointer other): System.Threading.NativeOverlapped* AllocateNativeOverlapped(System.Threading.IOCompletionCallback, System.Object, System.Object)
+// TODO COPE (returns pointer other): System.Threading.NativeOverlapped* AllocateNativeOverlapped(System.Threading.PreAllocatedOverlapped)
     // System.Threading.ThreadPoolBoundHandle BindHandle(System.Runtime.InteropServices.SafeHandle)
 // docid: M:System.Threading.ThreadPoolBoundHandle.BindHandle(System.Runtime.InteropServices.SafeHandle)
     /**
@@ -409,6 +444,9 @@ public final class ThreadPoolBoundHandle
             return;
         }
     }
+// TODO COPE (parm pointer other): void FreeNativeOverlapped(System.Threading.NativeOverlapped*)
+// TODO COPE (parm pointer other): System.Object GetNativeOverlappedState(System.Threading.NativeOverlapped*)
+// TODO COPE (returns pointer other): System.Threading.NativeOverlapped* UnsafeAllocateNativeOverlapped(System.Threading.IOCompletionCallback, System.Object, System.Object)
     // [IsSpecialName] System.Runtime.InteropServices.SafeHandle get_Handle()
 // docid: M:System.Threading.ThreadPoolBoundHandle.get_Handle
     public func get_Handle() throws -> dotnet.System.Runtime.InteropServices.SafeHandle {

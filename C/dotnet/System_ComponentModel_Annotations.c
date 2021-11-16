@@ -8,9 +8,9 @@ extern void (*_sg_resolve_jumptable)(const char*, int, void*);
 
 struct {
     TYP (* _Nonnull  _fp_System_ComponentModel_DataAnnotations_AssociatedMetadataTypeTypeDescriptionProvider_get_type_handle)(void);
-    SG_HNDL_NONNULL (* _Nonnull  _fp_System_ComponentModel_DataAnnotations_AssociatedMetadataTypeTypeDescriptionProvider_ctor_0__1__Type)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE type);
-    SG_HNDL_NONNULL (* _Nonnull  _fp_System_ComponentModel_DataAnnotations_AssociatedMetadataTypeTypeDescriptionProvider_ctor_0__2__Type_Type)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE type, SG_HNDL_NULLABLE associatedMetadataType);
-    SG_HNDL_NULLABLE (* _Nonnull  _fp_System_ComponentModel_DataAnnotations_AssociatedMetadataTypeTypeDescriptionProvider_ICustomTypeDescriptor__GetTypeDescriptor_0__2__Type_Object)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE objectType, SG_HNDL_NULLABLE instance);
+    SG_HNDL_NONNULL (* _Nonnull  _fp_System_ComponentModel_DataAnnotations_AssociatedMetadataTypeTypeDescriptionProvider_ctor_0__1__Type)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL type);
+    SG_HNDL_NONNULL (* _Nonnull  _fp_System_ComponentModel_DataAnnotations_AssociatedMetadataTypeTypeDescriptionProvider_ctor_0__2__Type_Type)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL type, SG_HNDL_NONNULL associatedMetadataType);
+    SG_HNDL_NONNULL (* _Nonnull  _fp_System_ComponentModel_DataAnnotations_AssociatedMetadataTypeTypeDescriptionProvider_ICustomTypeDescriptor__GetTypeDescriptor_0__2__Type_Object)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NONNULL objectType, SG_HNDL_NULLABLE instance);
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_ComponentModel_DataAnnotations_AssociatedMetadataTypeTypeDescriptionProvider_cast)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __h);
     TYP (* _Nonnull  _fp_System_ComponentModel_DataAnnotations_AssociationAttribute_get_type_handle)(void);
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_ComponentModel_DataAnnotations_AssociationAttribute_ctor_0__3__String_String_String)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL name, SG_HNDL_NONNULL thisKey, SG_HNDL_NONNULL otherKey);
@@ -158,6 +158,7 @@ struct {
     TYP (* _Nonnull  _fp_System_ComponentModel_DataAnnotations_IValidatableObject_get_type_handle)(void);
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_ComponentModel_DataAnnotations_IValidatableObject_System_Collections_Generic_IEnumerable_System_ComponentModel_DataAnnotations_ValidationResult___Validate_0__1__ValidationContext)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NONNULL validationContext);
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_ComponentModel_DataAnnotations_IValidatableObject_cast)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __h);
+    SG_HNDL_NONNULL (* _Nonnull  _fp_System_ComponentModel_DataAnnotations_IValidatableObject_create)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL (* _Nonnull  __cb_System_ComponentModel_DataAnnotations_IValidatableObject_System_Collections_Generic_IEnumerable_System_ComponentModel_DataAnnotations_ValidationResult___Validate_0__1__ValidationContext)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL validationContext), const void* _Nonnull __pdata_System_ComponentModel_DataAnnotations_IValidatableObject_System_Collections_Generic_IEnumerable_System_ComponentModel_DataAnnotations_ValidationResult___Validate_0__1__ValidationContext, void (* _Nullable __deinit)(const void* _Nonnull __pdata));
     TYP (* _Nonnull  _fp_System_ComponentModel_DataAnnotations_KeyAttribute_get_type_handle)(void);
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_ComponentModel_DataAnnotations_KeyAttribute_ctor_0__0)(SG_HNDL_NULLABLE * _Nonnull __thrown);
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_ComponentModel_DataAnnotations_KeyAttribute_cast)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __h);
@@ -346,7 +347,7 @@ TYP System_ComponentModel_DataAnnotations_AssociatedMetadataTypeTypeDescriptionP
     return ret;
 }
 
-SG_HNDL_NONNULL System_ComponentModel_DataAnnotations_AssociatedMetadataTypeTypeDescriptionProvider_ctor_0__1__Type(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE type) {
+SG_HNDL_NONNULL System_ComponentModel_DataAnnotations_AssociatedMetadataTypeTypeDescriptionProvider_ctor_0__1__Type(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL type) {
     if (!_g_System_ComponentModel_Annotations._fp_System_ComponentModel_DataAnnotations_AssociatedMetadataTypeTypeDescriptionProvider_ctor_0__1__Type) {
         my_init();
     }
@@ -354,7 +355,7 @@ SG_HNDL_NONNULL System_ComponentModel_DataAnnotations_AssociatedMetadataTypeType
     return ret;
 }
 
-SG_HNDL_NONNULL System_ComponentModel_DataAnnotations_AssociatedMetadataTypeTypeDescriptionProvider_ctor_0__2__Type_Type(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE type, SG_HNDL_NULLABLE associatedMetadataType) {
+SG_HNDL_NONNULL System_ComponentModel_DataAnnotations_AssociatedMetadataTypeTypeDescriptionProvider_ctor_0__2__Type_Type(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL type, SG_HNDL_NONNULL associatedMetadataType) {
     if (!_g_System_ComponentModel_Annotations._fp_System_ComponentModel_DataAnnotations_AssociatedMetadataTypeTypeDescriptionProvider_ctor_0__2__Type_Type) {
         my_init();
     }
@@ -362,11 +363,11 @@ SG_HNDL_NONNULL System_ComponentModel_DataAnnotations_AssociatedMetadataTypeType
     return ret;
 }
 
-SG_HNDL_NULLABLE System_ComponentModel_DataAnnotations_AssociatedMetadataTypeTypeDescriptionProvider_ICustomTypeDescriptor__GetTypeDescriptor_0__2__Type_Object(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE objectType, SG_HNDL_NULLABLE instance) {
+SG_HNDL_NONNULL System_ComponentModel_DataAnnotations_AssociatedMetadataTypeTypeDescriptionProvider_ICustomTypeDescriptor__GetTypeDescriptor_0__2__Type_Object(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NONNULL objectType, SG_HNDL_NULLABLE instance) {
     if (!_g_System_ComponentModel_Annotations._fp_System_ComponentModel_DataAnnotations_AssociatedMetadataTypeTypeDescriptionProvider_ICustomTypeDescriptor__GetTypeDescriptor_0__2__Type_Object) {
         my_init();
     }
-    SG_HNDL_NULLABLE ret = _g_System_ComponentModel_Annotations._fp_System_ComponentModel_DataAnnotations_AssociatedMetadataTypeTypeDescriptionProvider_ICustomTypeDescriptor__GetTypeDescriptor_0__2__Type_Object(__thrown, __self_h, objectType, instance);
+    SG_HNDL_NONNULL ret = _g_System_ComponentModel_Annotations._fp_System_ComponentModel_DataAnnotations_AssociatedMetadataTypeTypeDescriptionProvider_ICustomTypeDescriptor__GetTypeDescriptor_0__2__Type_Object(__thrown, __self_h, objectType, instance);
     return ret;
 }
 
@@ -1524,6 +1525,14 @@ SG_HNDL_NONNULL System_ComponentModel_DataAnnotations_IValidatableObject_cast(SG
         my_init();
     }
     SG_HNDL_NONNULL ret = _g_System_ComponentModel_Annotations._fp_System_ComponentModel_DataAnnotations_IValidatableObject_cast(__thrown, __h);
+    return ret;
+}
+
+SG_HNDL_NONNULL System_ComponentModel_DataAnnotations_IValidatableObject_create(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL (* _Nonnull  __cb_System_ComponentModel_DataAnnotations_IValidatableObject_System_Collections_Generic_IEnumerable_System_ComponentModel_DataAnnotations_ValidationResult___Validate_0__1__ValidationContext)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL validationContext), const void* _Nonnull __pdata_System_ComponentModel_DataAnnotations_IValidatableObject_System_Collections_Generic_IEnumerable_System_ComponentModel_DataAnnotations_ValidationResult___Validate_0__1__ValidationContext, void (* _Nullable __deinit)(const void* _Nonnull __pdata)) {
+    if (!_g_System_ComponentModel_Annotations._fp_System_ComponentModel_DataAnnotations_IValidatableObject_create) {
+        my_init();
+    }
+    SG_HNDL_NONNULL ret = _g_System_ComponentModel_Annotations._fp_System_ComponentModel_DataAnnotations_IValidatableObject_create(__thrown, __cb_System_ComponentModel_DataAnnotations_IValidatableObject_System_Collections_Generic_IEnumerable_System_ComponentModel_DataAnnotations_ValidationResult___Validate_0__1__ValidationContext, __pdata_System_ComponentModel_DataAnnotations_IValidatableObject_System_Collections_Generic_IEnumerable_System_ComponentModel_DataAnnotations_ValidationResult___Validate_0__1__ValidationContext, __deinit);
     return ret;
 }
 

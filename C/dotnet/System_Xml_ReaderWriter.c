@@ -21,22 +21,22 @@ struct {
     TYP (* _Nonnull  _fp_System_Xml_Formatting_get_type_handle)(void);
     int32_t (* _Nonnull  _fp_System_Xml_Formatting_get_None)(void);
     int32_t (* _Nonnull  _fp_System_Xml_Formatting_get_Indented)(void);
-    TYP (* _Nonnull  _fp_System_Xml_IApplicationResourceStreamResolver_get_type_handle)(void);
-    SG_HNDL_NONNULL (* _Nonnull  _fp_System_Xml_IApplicationResourceStreamResolver_Stream__GetApplicationResourceStream_0__1__Uri)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NONNULL relativeUri);
-    SG_HNDL_NONNULL (* _Nonnull  _fp_System_Xml_IApplicationResourceStreamResolver_cast)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __h);
     TYP (* _Nonnull  _fp_System_Xml_IHasXmlNode_get_type_handle)(void);
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_Xml_IHasXmlNode_XmlNode__GetNode_0__0)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h);
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_Xml_IHasXmlNode_cast)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __h);
+    SG_HNDL_NONNULL (* _Nonnull  _fp_System_Xml_IHasXmlNode_create)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL (* _Nonnull  __cb_System_Xml_IHasXmlNode_XmlNode__GetNode_0__0)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown), const void* _Nonnull __pdata_System_Xml_IHasXmlNode_XmlNode__GetNode_0__0, void (* _Nullable __deinit)(const void* _Nonnull __pdata));
     TYP (* _Nonnull  _fp_System_Xml_IXmlLineInfo_get_type_handle)(void);
     int32_t (* _Nonnull  _fp_System_Xml_IXmlLineInfo_bool__HasLineInfo_0__0)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h);
     int32_t (* _Nonnull  _fp_System_Xml_IXmlLineInfo_i32__get_LineNumber_0__0)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h);
     int32_t (* _Nonnull  _fp_System_Xml_IXmlLineInfo_i32__get_LinePosition_0__0)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h);
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_Xml_IXmlLineInfo_cast)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __h);
+    SG_HNDL_NONNULL (* _Nonnull  _fp_System_Xml_IXmlLineInfo_create)(SG_HNDL_NULLABLE * _Nonnull __thrown, int32_t (* _Nonnull  __cb_System_Xml_IXmlLineInfo_bool__HasLineInfo_0__0)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown), const void* _Nonnull __pdata_System_Xml_IXmlLineInfo_bool__HasLineInfo_0__0, void (* _Nullable __deinit)(const void* _Nonnull __pdata));
     TYP (* _Nonnull  _fp_System_Xml_IXmlNamespaceResolver_get_type_handle)(void);
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_Xml_IXmlNamespaceResolver_System_Collections_Generic_IDictionary_string_string___GetNamespacesInScope_0__1__XmlNamespaceScope)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, int32_t scope);
     SG_HNDL_NULLABLE (* _Nonnull  _fp_System_Xml_IXmlNamespaceResolver_String__LookupNamespace_0__1__String)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NONNULL prefix);
     SG_HNDL_NULLABLE (* _Nonnull  _fp_System_Xml_IXmlNamespaceResolver_String__LookupPrefix_0__1__String)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NONNULL namespaceName);
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_Xml_IXmlNamespaceResolver_cast)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __h);
+    SG_HNDL_NONNULL (* _Nonnull  _fp_System_Xml_IXmlNamespaceResolver_create)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL (* _Nonnull  __cb_System_Xml_IXmlNamespaceResolver_System_Collections_Generic_IDictionary_string_string___GetNamespacesInScope_0__1__XmlNamespaceScope)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, int32_t scope), const void* _Nonnull __pdata_System_Xml_IXmlNamespaceResolver_System_Collections_Generic_IDictionary_string_string___GetNamespacesInScope_0__1__XmlNamespaceScope, SG_HNDL_NULLABLE (* _Nonnull  __cb_System_Xml_IXmlNamespaceResolver_String__LookupNamespace_0__1__String)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL prefix), const void* _Nonnull __pdata_System_Xml_IXmlNamespaceResolver_String__LookupNamespace_0__1__String, SG_HNDL_NULLABLE (* _Nonnull  __cb_System_Xml_IXmlNamespaceResolver_String__LookupPrefix_0__1__String)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL namespaceName), const void* _Nonnull __pdata_System_Xml_IXmlNamespaceResolver_String__LookupPrefix_0__1__String, void (* _Nullable __deinit)(const void* _Nonnull __pdata));
     TYP (* _Nonnull  _fp_System_Xml_NameTable_get_type_handle)(void);
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_Xml_NameTable_ctor_0__0)(SG_HNDL_NULLABLE * _Nonnull __thrown);
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_Xml_NameTable_String__Add_0__3__CharArray_i32_i32)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NONNULL key, int32_t start, int32_t len);
@@ -528,7 +528,7 @@ struct {
     void (* _Nonnull  _fp_System_Xml_XmlNodeChangedEventHandler_void__Invoke_0__2__Object_XmlNodeChangedEventArgs)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NONNULL sender, SG_HNDL_NONNULL e);
     SG_HNDL_NULLABLE (* _Nonnull  _fp_System_Xml_XmlNodeChangedEventHandler_IAsyncResult__BeginInvoke_0__4__Object_XmlNodeChangedEventArgs_AsyncCallback_Object)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NONNULL sender, SG_HNDL_NONNULL e, SG_HNDL_NULLABLE callback, SG_HNDL_NULLABLE object_);
     void (* _Nonnull  _fp_System_Xml_XmlNodeChangedEventHandler_void__EndInvoke_0__1__IAsyncResult)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE result);
-    SG_HNDL_NONNULL (* _Nonnull  _fp_System_Xml_XmlNodeChangedEventHandler_create)(SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nullable __pdata, void (* _Nullable __deinit)(const void* _Nullable __pdata), void (* _Nonnull  __cb)(const void* _Nullable __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL sender, SG_HNDL_NONNULL e));
+    SG_HNDL_NONNULL (* _Nonnull  _fp_System_Xml_XmlNodeChangedEventHandler_create)(SG_HNDL_NULLABLE * _Nonnull __thrown, void (* _Nonnull  __cb)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL sender, SG_HNDL_NONNULL e), const void* _Nonnull __pdata, void (* _Nullable __deinit)(const void* _Nonnull __pdata));
     TYP (* _Nonnull  _fp_System_Xml_XmlNodeList_get_type_handle)(void);
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_Xml_XmlNodeList_IEnumerator__GetEnumerator_0__0)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h);
     SG_HNDL_NULLABLE (* _Nonnull  _fp_System_Xml_XmlNodeList_XmlNode__Item_0__1__i32)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, int32_t index);
@@ -1283,6 +1283,7 @@ struct {
     SG_HNDL_NULLABLE (* _Nonnull  _fp_System_Xml_Schema_IXmlSchemaInfo_XmlSchemaType__get_SchemaType_0__0)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h);
     int32_t (* _Nonnull  _fp_System_Xml_Schema_IXmlSchemaInfo_XmlSchemaValidity__get_Validity_0__0)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h);
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_Xml_Schema_IXmlSchemaInfo_cast)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __h);
+    SG_HNDL_NONNULL (* _Nonnull  _fp_System_Xml_Schema_IXmlSchemaInfo_create)(SG_HNDL_NULLABLE * _Nonnull __thrown, void (* _Nullable __deinit)(const void* _Nonnull __pdata));
     TYP (* _Nonnull  _fp_System_Xml_Schema_ValidationEventArgs_get_type_handle)(void);
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_Xml_Schema_ValidationEventArgs_XmlSchemaException__get_Exception_0__0)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h);
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_Xml_Schema_ValidationEventArgs_String__get_Message_0__0)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h);
@@ -1292,7 +1293,7 @@ struct {
     void (* _Nonnull  _fp_System_Xml_Schema_ValidationEventHandler_void__Invoke_0__2__Object_ValidationEventArgs)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE sender, SG_HNDL_NONNULL e);
     SG_HNDL_NULLABLE (* _Nonnull  _fp_System_Xml_Schema_ValidationEventHandler_IAsyncResult__BeginInvoke_0__4__Object_ValidationEventArgs_AsyncCallback_Object)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE sender, SG_HNDL_NONNULL e, SG_HNDL_NULLABLE callback, SG_HNDL_NULLABLE object_);
     void (* _Nonnull  _fp_System_Xml_Schema_ValidationEventHandler_void__EndInvoke_0__1__IAsyncResult)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE result);
-    SG_HNDL_NONNULL (* _Nonnull  _fp_System_Xml_Schema_ValidationEventHandler_create)(SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nullable __pdata, void (* _Nullable __deinit)(const void* _Nullable __pdata), void (* _Nonnull  __cb)(const void* _Nullable __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE sender, SG_HNDL_NONNULL e));
+    SG_HNDL_NONNULL (* _Nonnull  _fp_System_Xml_Schema_ValidationEventHandler_create)(SG_HNDL_NULLABLE * _Nonnull __thrown, void (* _Nonnull  __cb)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE sender, SG_HNDL_NONNULL e), const void* _Nonnull __pdata, void (* _Nullable __deinit)(const void* _Nonnull __pdata));
     TYP (* _Nonnull  _fp_System_Xml_Schema_XmlAtomicValue_get_type_handle)(void);
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_Xml_Schema_XmlAtomicValue_XmlAtomicValue__Clone_0__0)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h);
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_Xml_Schema_XmlAtomicValue_String__ToString_0__0)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h);
@@ -2041,12 +2042,13 @@ struct {
     SG_HNDL_NULLABLE (* _Nonnull  _fp_System_Xml_Schema_XmlValueGetter_Object__Invoke_0__0)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h);
     SG_HNDL_NULLABLE (* _Nonnull  _fp_System_Xml_Schema_XmlValueGetter_IAsyncResult__BeginInvoke_0__2__AsyncCallback_Object)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE callback, SG_HNDL_NULLABLE object_);
     SG_HNDL_NULLABLE (* _Nonnull  _fp_System_Xml_Schema_XmlValueGetter_Object__EndInvoke_0__1__IAsyncResult)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE result);
-    SG_HNDL_NONNULL (* _Nonnull  _fp_System_Xml_Schema_XmlValueGetter_create)(SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nullable __pdata, void (* _Nullable __deinit)(const void* _Nullable __pdata), SG_HNDL_NULLABLE (* _Nonnull  __cb)(const void* _Nullable __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown));
+    SG_HNDL_NONNULL (* _Nonnull  _fp_System_Xml_Schema_XmlValueGetter_create)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE (* _Nonnull  __cb)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown), const void* _Nonnull __pdata, void (* _Nullable __deinit)(const void* _Nonnull __pdata));
     TYP (* _Nonnull  _fp_System_Xml_Serialization_IXmlSerializable_get_type_handle)(void);
     SG_HNDL_NULLABLE (* _Nonnull  _fp_System_Xml_Serialization_IXmlSerializable_XmlSchema__GetSchema_0__0)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h);
     void (* _Nonnull  _fp_System_Xml_Serialization_IXmlSerializable_void__ReadXml_0__1__XmlReader)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NONNULL reader);
     void (* _Nonnull  _fp_System_Xml_Serialization_IXmlSerializable_void__WriteXml_0__1__XmlWriter)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NONNULL writer);
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_Xml_Serialization_IXmlSerializable_cast)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __h);
+    SG_HNDL_NONNULL (* _Nonnull  _fp_System_Xml_Serialization_IXmlSerializable_create)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE (* _Nonnull  __cb_System_Xml_Serialization_IXmlSerializable_XmlSchema__GetSchema_0__0)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown), const void* _Nonnull __pdata_System_Xml_Serialization_IXmlSerializable_XmlSchema__GetSchema_0__0, void (* _Nonnull  __cb_System_Xml_Serialization_IXmlSerializable_void__ReadXml_0__1__XmlReader)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL reader), const void* _Nonnull __pdata_System_Xml_Serialization_IXmlSerializable_void__ReadXml_0__1__XmlReader, void (* _Nonnull  __cb_System_Xml_Serialization_IXmlSerializable_void__WriteXml_0__1__XmlWriter)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL writer), const void* _Nonnull __pdata_System_Xml_Serialization_IXmlSerializable_void__WriteXml_0__1__XmlWriter, void (* _Nullable __deinit)(const void* _Nonnull __pdata));
     TYP (* _Nonnull  _fp_System_Xml_Serialization_XmlAnyAttributeAttribute_get_type_handle)(void);
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_Xml_Serialization_XmlAnyAttributeAttribute_ctor_0__0)(SG_HNDL_NULLABLE * _Nonnull __thrown);
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_Xml_Serialization_XmlAnyAttributeAttribute_cast)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __h);
@@ -2146,6 +2148,7 @@ struct {
     TYP (* _Nonnull  _fp_System_Xml_XPath_IXPathNavigable_get_type_handle)(void);
     SG_HNDL_NULLABLE (* _Nonnull  _fp_System_Xml_XPath_IXPathNavigable_XPathNavigator__CreateNavigator_0__0)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h);
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_Xml_XPath_IXPathNavigable_cast)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __h);
+    SG_HNDL_NONNULL (* _Nonnull  _fp_System_Xml_XPath_IXPathNavigable_create)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE (* _Nonnull  __cb_System_Xml_XPath_IXPathNavigable_XPathNavigator__CreateNavigator_0__0)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown), const void* _Nonnull __pdata_System_Xml_XPath_IXPathNavigable_XPathNavigator__CreateNavigator_0__0, void (* _Nullable __deinit)(const void* _Nonnull __pdata));
     TYP (* _Nonnull  _fp_System_Xml_XPath_XPathExpression_get_type_handle)(void);
     void (* _Nonnull  _fp_System_Xml_XPath_XPathExpression_void__AddSort_0__2__Object_IComparer)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NONNULL expr, SG_HNDL_NONNULL comparer);
     void (* _Nonnull  _fp_System_Xml_XPath_XPathExpression_void__AddSort_0__5__Object_XmlSortOrder_XmlCaseOrder_String_XmlDataType)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NONNULL expr, int32_t order, int32_t caseOrder, SG_HNDL_NONNULL lang, int32_t dataType);
@@ -2337,12 +2340,14 @@ struct {
     int32_t (* _Nonnull  _fp_System_Xml_Xsl_IXsltContextFunction_i32__get_Minargs_0__0)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h);
     int32_t (* _Nonnull  _fp_System_Xml_Xsl_IXsltContextFunction_XPathResultType__get_ReturnType_0__0)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h);
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_Xml_Xsl_IXsltContextFunction_cast)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __h);
+    SG_HNDL_NONNULL (* _Nonnull  _fp_System_Xml_Xsl_IXsltContextFunction_create)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL (* _Nonnull  __cb_System_Xml_Xsl_IXsltContextFunction_Object__Invoke_0__3__XsltContext_ObjectArray_XPathNavigator)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL xsltContext, SG_HNDL_NONNULL args, SG_HNDL_NONNULL docContext), const void* _Nonnull __pdata_System_Xml_Xsl_IXsltContextFunction_Object__Invoke_0__3__XsltContext_ObjectArray_XPathNavigator, void (* _Nullable __deinit)(const void* _Nonnull __pdata));
     TYP (* _Nonnull  _fp_System_Xml_Xsl_IXsltContextVariable_get_type_handle)(void);
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_Xml_Xsl_IXsltContextVariable_Object__Evaluate_0__1__XsltContext)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NONNULL xsltContext);
     int32_t (* _Nonnull  _fp_System_Xml_Xsl_IXsltContextVariable_bool__get_IsLocal_0__0)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h);
     int32_t (* _Nonnull  _fp_System_Xml_Xsl_IXsltContextVariable_bool__get_IsParam_0__0)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h);
     int32_t (* _Nonnull  _fp_System_Xml_Xsl_IXsltContextVariable_XPathResultType__get_VariableType_0__0)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h);
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_Xml_Xsl_IXsltContextVariable_cast)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __h);
+    SG_HNDL_NONNULL (* _Nonnull  _fp_System_Xml_Xsl_IXsltContextVariable_create)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL (* _Nonnull  __cb_System_Xml_Xsl_IXsltContextVariable_Object__Evaluate_0__1__XsltContext)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL xsltContext), const void* _Nonnull __pdata_System_Xml_Xsl_IXsltContextVariable_Object__Evaluate_0__1__XsltContext, void (* _Nullable __deinit)(const void* _Nonnull __pdata));
     TYP (* _Nonnull  _fp_System_Xml_Xsl_XslCompiledTransform_get_type_handle)(void);
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_Xml_Xsl_XslCompiledTransform_ctor_0__0)(SG_HNDL_NULLABLE * _Nonnull __thrown);
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_Xml_Xsl_XslCompiledTransform_ctor_0__1__bool)(SG_HNDL_NULLABLE * _Nonnull __thrown, int32_t enableDebug);
@@ -2444,7 +2449,7 @@ struct {
     void (* _Nonnull  _fp_System_Xml_Xsl_XsltMessageEncounteredEventHandler_void__Invoke_0__2__Object_XsltMessageEncounteredEventArgs)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NONNULL sender, SG_HNDL_NONNULL e);
     SG_HNDL_NULLABLE (* _Nonnull  _fp_System_Xml_Xsl_XsltMessageEncounteredEventHandler_IAsyncResult__BeginInvoke_0__4__Object_XsltMessageEncounteredEventArgs_AsyncCallback_Object)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NONNULL sender, SG_HNDL_NONNULL e, SG_HNDL_NULLABLE callback, SG_HNDL_NULLABLE object_);
     void (* _Nonnull  _fp_System_Xml_Xsl_XsltMessageEncounteredEventHandler_void__EndInvoke_0__1__IAsyncResult)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE result);
-    SG_HNDL_NONNULL (* _Nonnull  _fp_System_Xml_Xsl_XsltMessageEncounteredEventHandler_create)(SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nullable __pdata, void (* _Nullable __deinit)(const void* _Nullable __pdata), void (* _Nonnull  __cb)(const void* _Nullable __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL sender, SG_HNDL_NONNULL e));
+    SG_HNDL_NONNULL (* _Nonnull  _fp_System_Xml_Xsl_XsltMessageEncounteredEventHandler_create)(SG_HNDL_NULLABLE * _Nonnull __thrown, void (* _Nonnull  __cb)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL sender, SG_HNDL_NONNULL e), const void* _Nonnull __pdata, void (* _Nullable __deinit)(const void* _Nonnull __pdata));
     TYP (* _Nonnull  _fp_System_Xml_Xsl_XsltSettings_get_type_handle)(void);
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_Xml_Xsl_XsltSettings_ctor_0__0)(SG_HNDL_NULLABLE * _Nonnull __thrown);
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_Xml_Xsl_XsltSettings_ctor_0__2__bool_bool)(SG_HNDL_NULLABLE * _Nonnull __thrown, int32_t enableDocumentFunction, int32_t enableScript);
@@ -2573,30 +2578,6 @@ int32_t System_Xml_Formatting_get_Indented(void) {
     return ret;
 }
 
-TYP System_Xml_IApplicationResourceStreamResolver_get_type_handle(void) {
-    if (!_g_System_Xml_ReaderWriter._fp_System_Xml_IApplicationResourceStreamResolver_get_type_handle) {
-        my_init();
-    }
-    TYP ret = _g_System_Xml_ReaderWriter._fp_System_Xml_IApplicationResourceStreamResolver_get_type_handle();
-    return ret;
-}
-
-SG_HNDL_NONNULL System_Xml_IApplicationResourceStreamResolver_Stream__GetApplicationResourceStream_0__1__Uri(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NONNULL relativeUri) {
-    if (!_g_System_Xml_ReaderWriter._fp_System_Xml_IApplicationResourceStreamResolver_Stream__GetApplicationResourceStream_0__1__Uri) {
-        my_init();
-    }
-    SG_HNDL_NONNULL ret = _g_System_Xml_ReaderWriter._fp_System_Xml_IApplicationResourceStreamResolver_Stream__GetApplicationResourceStream_0__1__Uri(__thrown, __self_h, relativeUri);
-    return ret;
-}
-
-SG_HNDL_NONNULL System_Xml_IApplicationResourceStreamResolver_cast(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __h) {
-    if (!_g_System_Xml_ReaderWriter._fp_System_Xml_IApplicationResourceStreamResolver_cast) {
-        my_init();
-    }
-    SG_HNDL_NONNULL ret = _g_System_Xml_ReaderWriter._fp_System_Xml_IApplicationResourceStreamResolver_cast(__thrown, __h);
-    return ret;
-}
-
 TYP System_Xml_IHasXmlNode_get_type_handle(void) {
     if (!_g_System_Xml_ReaderWriter._fp_System_Xml_IHasXmlNode_get_type_handle) {
         my_init();
@@ -2618,6 +2599,14 @@ SG_HNDL_NONNULL System_Xml_IHasXmlNode_cast(SG_HNDL_NULLABLE * _Nonnull __thrown
         my_init();
     }
     SG_HNDL_NONNULL ret = _g_System_Xml_ReaderWriter._fp_System_Xml_IHasXmlNode_cast(__thrown, __h);
+    return ret;
+}
+
+SG_HNDL_NONNULL System_Xml_IHasXmlNode_create(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL (* _Nonnull  __cb_System_Xml_IHasXmlNode_XmlNode__GetNode_0__0)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown), const void* _Nonnull __pdata_System_Xml_IHasXmlNode_XmlNode__GetNode_0__0, void (* _Nullable __deinit)(const void* _Nonnull __pdata)) {
+    if (!_g_System_Xml_ReaderWriter._fp_System_Xml_IHasXmlNode_create) {
+        my_init();
+    }
+    SG_HNDL_NONNULL ret = _g_System_Xml_ReaderWriter._fp_System_Xml_IHasXmlNode_create(__thrown, __cb_System_Xml_IHasXmlNode_XmlNode__GetNode_0__0, __pdata_System_Xml_IHasXmlNode_XmlNode__GetNode_0__0, __deinit);
     return ret;
 }
 
@@ -2661,6 +2650,14 @@ SG_HNDL_NONNULL System_Xml_IXmlLineInfo_cast(SG_HNDL_NULLABLE * _Nonnull __throw
     return ret;
 }
 
+SG_HNDL_NONNULL System_Xml_IXmlLineInfo_create(SG_HNDL_NULLABLE * _Nonnull __thrown, int32_t (* _Nonnull  __cb_System_Xml_IXmlLineInfo_bool__HasLineInfo_0__0)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown), const void* _Nonnull __pdata_System_Xml_IXmlLineInfo_bool__HasLineInfo_0__0, void (* _Nullable __deinit)(const void* _Nonnull __pdata)) {
+    if (!_g_System_Xml_ReaderWriter._fp_System_Xml_IXmlLineInfo_create) {
+        my_init();
+    }
+    SG_HNDL_NONNULL ret = _g_System_Xml_ReaderWriter._fp_System_Xml_IXmlLineInfo_create(__thrown, __cb_System_Xml_IXmlLineInfo_bool__HasLineInfo_0__0, __pdata_System_Xml_IXmlLineInfo_bool__HasLineInfo_0__0, __deinit);
+    return ret;
+}
+
 TYP System_Xml_IXmlNamespaceResolver_get_type_handle(void) {
     if (!_g_System_Xml_ReaderWriter._fp_System_Xml_IXmlNamespaceResolver_get_type_handle) {
         my_init();
@@ -2698,6 +2695,14 @@ SG_HNDL_NONNULL System_Xml_IXmlNamespaceResolver_cast(SG_HNDL_NULLABLE * _Nonnul
         my_init();
     }
     SG_HNDL_NONNULL ret = _g_System_Xml_ReaderWriter._fp_System_Xml_IXmlNamespaceResolver_cast(__thrown, __h);
+    return ret;
+}
+
+SG_HNDL_NONNULL System_Xml_IXmlNamespaceResolver_create(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL (* _Nonnull  __cb_System_Xml_IXmlNamespaceResolver_System_Collections_Generic_IDictionary_string_string___GetNamespacesInScope_0__1__XmlNamespaceScope)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, int32_t scope), const void* _Nonnull __pdata_System_Xml_IXmlNamespaceResolver_System_Collections_Generic_IDictionary_string_string___GetNamespacesInScope_0__1__XmlNamespaceScope, SG_HNDL_NULLABLE (* _Nonnull  __cb_System_Xml_IXmlNamespaceResolver_String__LookupNamespace_0__1__String)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL prefix), const void* _Nonnull __pdata_System_Xml_IXmlNamespaceResolver_String__LookupNamespace_0__1__String, SG_HNDL_NULLABLE (* _Nonnull  __cb_System_Xml_IXmlNamespaceResolver_String__LookupPrefix_0__1__String)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL namespaceName), const void* _Nonnull __pdata_System_Xml_IXmlNamespaceResolver_String__LookupPrefix_0__1__String, void (* _Nullable __deinit)(const void* _Nonnull __pdata)) {
+    if (!_g_System_Xml_ReaderWriter._fp_System_Xml_IXmlNamespaceResolver_create) {
+        my_init();
+    }
+    SG_HNDL_NONNULL ret = _g_System_Xml_ReaderWriter._fp_System_Xml_IXmlNamespaceResolver_create(__thrown, __cb_System_Xml_IXmlNamespaceResolver_System_Collections_Generic_IDictionary_string_string___GetNamespacesInScope_0__1__XmlNamespaceScope, __pdata_System_Xml_IXmlNamespaceResolver_System_Collections_Generic_IDictionary_string_string___GetNamespacesInScope_0__1__XmlNamespaceScope, __cb_System_Xml_IXmlNamespaceResolver_String__LookupNamespace_0__1__String, __pdata_System_Xml_IXmlNamespaceResolver_String__LookupNamespace_0__1__String, __cb_System_Xml_IXmlNamespaceResolver_String__LookupPrefix_0__1__String, __pdata_System_Xml_IXmlNamespaceResolver_String__LookupPrefix_0__1__String, __deinit);
     return ret;
 }
 
@@ -6537,11 +6542,11 @@ void System_Xml_XmlNodeChangedEventHandler_void__EndInvoke_0__1__IAsyncResult(SG
     _g_System_Xml_ReaderWriter._fp_System_Xml_XmlNodeChangedEventHandler_void__EndInvoke_0__1__IAsyncResult(__thrown, __self_h, result);
 }
 
-SG_HNDL_NONNULL System_Xml_XmlNodeChangedEventHandler_create(SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nullable __pdata, void (* _Nullable __deinit)(const void* _Nullable __pdata), void (* _Nonnull  __cb)(const void* _Nullable __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL sender, SG_HNDL_NONNULL e)) {
+SG_HNDL_NONNULL System_Xml_XmlNodeChangedEventHandler_create(SG_HNDL_NULLABLE * _Nonnull __thrown, void (* _Nonnull  __cb)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL sender, SG_HNDL_NONNULL e), const void* _Nonnull __pdata, void (* _Nullable __deinit)(const void* _Nonnull __pdata)) {
     if (!_g_System_Xml_ReaderWriter._fp_System_Xml_XmlNodeChangedEventHandler_create) {
         my_init();
     }
-    SG_HNDL_NONNULL ret = _g_System_Xml_ReaderWriter._fp_System_Xml_XmlNodeChangedEventHandler_create(__thrown, __pdata, __deinit, __cb);
+    SG_HNDL_NONNULL ret = _g_System_Xml_ReaderWriter._fp_System_Xml_XmlNodeChangedEventHandler_create(__thrown, __cb, __pdata, __deinit);
     return ret;
 }
 
@@ -12385,6 +12390,14 @@ SG_HNDL_NONNULL System_Xml_Schema_IXmlSchemaInfo_cast(SG_HNDL_NULLABLE * _Nonnul
     return ret;
 }
 
+SG_HNDL_NONNULL System_Xml_Schema_IXmlSchemaInfo_create(SG_HNDL_NULLABLE * _Nonnull __thrown, void (* _Nullable __deinit)(const void* _Nonnull __pdata)) {
+    if (!_g_System_Xml_ReaderWriter._fp_System_Xml_Schema_IXmlSchemaInfo_create) {
+        my_init();
+    }
+    SG_HNDL_NONNULL ret = _g_System_Xml_ReaderWriter._fp_System_Xml_Schema_IXmlSchemaInfo_create(__thrown, __deinit);
+    return ret;
+}
+
 TYP System_Xml_Schema_ValidationEventArgs_get_type_handle(void) {
     if (!_g_System_Xml_ReaderWriter._fp_System_Xml_Schema_ValidationEventArgs_get_type_handle) {
         my_init();
@@ -12455,11 +12468,11 @@ void System_Xml_Schema_ValidationEventHandler_void__EndInvoke_0__1__IAsyncResult
     _g_System_Xml_ReaderWriter._fp_System_Xml_Schema_ValidationEventHandler_void__EndInvoke_0__1__IAsyncResult(__thrown, __self_h, result);
 }
 
-SG_HNDL_NONNULL System_Xml_Schema_ValidationEventHandler_create(SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nullable __pdata, void (* _Nullable __deinit)(const void* _Nullable __pdata), void (* _Nonnull  __cb)(const void* _Nullable __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE sender, SG_HNDL_NONNULL e)) {
+SG_HNDL_NONNULL System_Xml_Schema_ValidationEventHandler_create(SG_HNDL_NULLABLE * _Nonnull __thrown, void (* _Nonnull  __cb)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE sender, SG_HNDL_NONNULL e), const void* _Nonnull __pdata, void (* _Nullable __deinit)(const void* _Nonnull __pdata)) {
     if (!_g_System_Xml_ReaderWriter._fp_System_Xml_Schema_ValidationEventHandler_create) {
         my_init();
     }
-    SG_HNDL_NONNULL ret = _g_System_Xml_ReaderWriter._fp_System_Xml_Schema_ValidationEventHandler_create(__thrown, __pdata, __deinit, __cb);
+    SG_HNDL_NONNULL ret = _g_System_Xml_ReaderWriter._fp_System_Xml_Schema_ValidationEventHandler_create(__thrown, __cb, __pdata, __deinit);
     return ret;
 }
 
@@ -18286,11 +18299,11 @@ SG_HNDL_NULLABLE System_Xml_Schema_XmlValueGetter_Object__EndInvoke_0__1__IAsync
     return ret;
 }
 
-SG_HNDL_NONNULL System_Xml_Schema_XmlValueGetter_create(SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nullable __pdata, void (* _Nullable __deinit)(const void* _Nullable __pdata), SG_HNDL_NULLABLE (* _Nonnull  __cb)(const void* _Nullable __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown)) {
+SG_HNDL_NONNULL System_Xml_Schema_XmlValueGetter_create(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE (* _Nonnull  __cb)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown), const void* _Nonnull __pdata, void (* _Nullable __deinit)(const void* _Nonnull __pdata)) {
     if (!_g_System_Xml_ReaderWriter._fp_System_Xml_Schema_XmlValueGetter_create) {
         my_init();
     }
-    SG_HNDL_NONNULL ret = _g_System_Xml_ReaderWriter._fp_System_Xml_Schema_XmlValueGetter_create(__thrown, __pdata, __deinit, __cb);
+    SG_HNDL_NONNULL ret = _g_System_Xml_ReaderWriter._fp_System_Xml_Schema_XmlValueGetter_create(__thrown, __cb, __pdata, __deinit);
     return ret;
 }
 
@@ -18329,6 +18342,14 @@ SG_HNDL_NONNULL System_Xml_Serialization_IXmlSerializable_cast(SG_HNDL_NULLABLE 
         my_init();
     }
     SG_HNDL_NONNULL ret = _g_System_Xml_ReaderWriter._fp_System_Xml_Serialization_IXmlSerializable_cast(__thrown, __h);
+    return ret;
+}
+
+SG_HNDL_NONNULL System_Xml_Serialization_IXmlSerializable_create(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE (* _Nonnull  __cb_System_Xml_Serialization_IXmlSerializable_XmlSchema__GetSchema_0__0)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown), const void* _Nonnull __pdata_System_Xml_Serialization_IXmlSerializable_XmlSchema__GetSchema_0__0, void (* _Nonnull  __cb_System_Xml_Serialization_IXmlSerializable_void__ReadXml_0__1__XmlReader)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL reader), const void* _Nonnull __pdata_System_Xml_Serialization_IXmlSerializable_void__ReadXml_0__1__XmlReader, void (* _Nonnull  __cb_System_Xml_Serialization_IXmlSerializable_void__WriteXml_0__1__XmlWriter)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL writer), const void* _Nonnull __pdata_System_Xml_Serialization_IXmlSerializable_void__WriteXml_0__1__XmlWriter, void (* _Nullable __deinit)(const void* _Nonnull __pdata)) {
+    if (!_g_System_Xml_ReaderWriter._fp_System_Xml_Serialization_IXmlSerializable_create) {
+        my_init();
+    }
+    SG_HNDL_NONNULL ret = _g_System_Xml_ReaderWriter._fp_System_Xml_Serialization_IXmlSerializable_create(__thrown, __cb_System_Xml_Serialization_IXmlSerializable_XmlSchema__GetSchema_0__0, __pdata_System_Xml_Serialization_IXmlSerializable_XmlSchema__GetSchema_0__0, __cb_System_Xml_Serialization_IXmlSerializable_void__ReadXml_0__1__XmlReader, __pdata_System_Xml_Serialization_IXmlSerializable_void__ReadXml_0__1__XmlReader, __cb_System_Xml_Serialization_IXmlSerializable_void__WriteXml_0__1__XmlWriter, __pdata_System_Xml_Serialization_IXmlSerializable_void__WriteXml_0__1__XmlWriter, __deinit);
     return ret;
 }
 
@@ -19097,6 +19118,14 @@ SG_HNDL_NONNULL System_Xml_XPath_IXPathNavigable_cast(SG_HNDL_NULLABLE * _Nonnul
         my_init();
     }
     SG_HNDL_NONNULL ret = _g_System_Xml_ReaderWriter._fp_System_Xml_XPath_IXPathNavigable_cast(__thrown, __h);
+    return ret;
+}
+
+SG_HNDL_NONNULL System_Xml_XPath_IXPathNavigable_create(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE (* _Nonnull  __cb_System_Xml_XPath_IXPathNavigable_XPathNavigator__CreateNavigator_0__0)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown), const void* _Nonnull __pdata_System_Xml_XPath_IXPathNavigable_XPathNavigator__CreateNavigator_0__0, void (* _Nullable __deinit)(const void* _Nonnull __pdata)) {
+    if (!_g_System_Xml_ReaderWriter._fp_System_Xml_XPath_IXPathNavigable_create) {
+        my_init();
+    }
+    SG_HNDL_NONNULL ret = _g_System_Xml_ReaderWriter._fp_System_Xml_XPath_IXPathNavigable_create(__thrown, __cb_System_Xml_XPath_IXPathNavigable_XPathNavigator__CreateNavigator_0__0, __pdata_System_Xml_XPath_IXPathNavigable_XPathNavigator__CreateNavigator_0__0, __deinit);
     return ret;
 }
 
@@ -20596,6 +20625,14 @@ SG_HNDL_NONNULL System_Xml_Xsl_IXsltContextFunction_cast(SG_HNDL_NULLABLE * _Non
     return ret;
 }
 
+SG_HNDL_NONNULL System_Xml_Xsl_IXsltContextFunction_create(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL (* _Nonnull  __cb_System_Xml_Xsl_IXsltContextFunction_Object__Invoke_0__3__XsltContext_ObjectArray_XPathNavigator)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL xsltContext, SG_HNDL_NONNULL args, SG_HNDL_NONNULL docContext), const void* _Nonnull __pdata_System_Xml_Xsl_IXsltContextFunction_Object__Invoke_0__3__XsltContext_ObjectArray_XPathNavigator, void (* _Nullable __deinit)(const void* _Nonnull __pdata)) {
+    if (!_g_System_Xml_ReaderWriter._fp_System_Xml_Xsl_IXsltContextFunction_create) {
+        my_init();
+    }
+    SG_HNDL_NONNULL ret = _g_System_Xml_ReaderWriter._fp_System_Xml_Xsl_IXsltContextFunction_create(__thrown, __cb_System_Xml_Xsl_IXsltContextFunction_Object__Invoke_0__3__XsltContext_ObjectArray_XPathNavigator, __pdata_System_Xml_Xsl_IXsltContextFunction_Object__Invoke_0__3__XsltContext_ObjectArray_XPathNavigator, __deinit);
+    return ret;
+}
+
 TYP System_Xml_Xsl_IXsltContextVariable_get_type_handle(void) {
     if (!_g_System_Xml_ReaderWriter._fp_System_Xml_Xsl_IXsltContextVariable_get_type_handle) {
         my_init();
@@ -20641,6 +20678,14 @@ SG_HNDL_NONNULL System_Xml_Xsl_IXsltContextVariable_cast(SG_HNDL_NULLABLE * _Non
         my_init();
     }
     SG_HNDL_NONNULL ret = _g_System_Xml_ReaderWriter._fp_System_Xml_Xsl_IXsltContextVariable_cast(__thrown, __h);
+    return ret;
+}
+
+SG_HNDL_NONNULL System_Xml_Xsl_IXsltContextVariable_create(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL (* _Nonnull  __cb_System_Xml_Xsl_IXsltContextVariable_Object__Evaluate_0__1__XsltContext)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL xsltContext), const void* _Nonnull __pdata_System_Xml_Xsl_IXsltContextVariable_Object__Evaluate_0__1__XsltContext, void (* _Nullable __deinit)(const void* _Nonnull __pdata)) {
+    if (!_g_System_Xml_ReaderWriter._fp_System_Xml_Xsl_IXsltContextVariable_create) {
+        my_init();
+    }
+    SG_HNDL_NONNULL ret = _g_System_Xml_ReaderWriter._fp_System_Xml_Xsl_IXsltContextVariable_create(__thrown, __cb_System_Xml_Xsl_IXsltContextVariable_Object__Evaluate_0__1__XsltContext, __pdata_System_Xml_Xsl_IXsltContextVariable_Object__Evaluate_0__1__XsltContext, __deinit);
     return ret;
 }
 
@@ -21397,11 +21442,11 @@ void System_Xml_Xsl_XsltMessageEncounteredEventHandler_void__EndInvoke_0__1__IAs
     _g_System_Xml_ReaderWriter._fp_System_Xml_Xsl_XsltMessageEncounteredEventHandler_void__EndInvoke_0__1__IAsyncResult(__thrown, __self_h, result);
 }
 
-SG_HNDL_NONNULL System_Xml_Xsl_XsltMessageEncounteredEventHandler_create(SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nullable __pdata, void (* _Nullable __deinit)(const void* _Nullable __pdata), void (* _Nonnull  __cb)(const void* _Nullable __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL sender, SG_HNDL_NONNULL e)) {
+SG_HNDL_NONNULL System_Xml_Xsl_XsltMessageEncounteredEventHandler_create(SG_HNDL_NULLABLE * _Nonnull __thrown, void (* _Nonnull  __cb)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL sender, SG_HNDL_NONNULL e), const void* _Nonnull __pdata, void (* _Nullable __deinit)(const void* _Nonnull __pdata)) {
     if (!_g_System_Xml_ReaderWriter._fp_System_Xml_Xsl_XsltMessageEncounteredEventHandler_create) {
         my_init();
     }
-    SG_HNDL_NONNULL ret = _g_System_Xml_ReaderWriter._fp_System_Xml_Xsl_XsltMessageEncounteredEventHandler_create(__thrown, __pdata, __deinit, __cb);
+    SG_HNDL_NONNULL ret = _g_System_Xml_ReaderWriter._fp_System_Xml_Xsl_XsltMessageEncounteredEventHandler_create(__thrown, __cb, __pdata, __deinit);
     return ret;
 }
 

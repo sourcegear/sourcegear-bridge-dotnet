@@ -18,6 +18,9 @@ open class IThreadPoolWorkItem
     open class func get_type_handle() -> TypeHandle {
         return System_Threading_IThreadPoolWorkItem_get_type_handle();
     }
+    open class func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     let h : NonnullHandle;
     public func to_gval() -> GVal { return GVal(Swift.Int(bitPattern: self.h)); }
     public func dup_gval() -> GVal { return GVal(Swift.Int(bitPattern: __copy_handle(self.h))); }
@@ -56,6 +59,9 @@ public final class RegisteredWaitHandle
 {
     public class override func get_type_handle() -> TypeHandle {
         return System_Threading_RegisteredWaitHandle_get_type_handle();
+    }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -322,7 +328,34 @@ public struct ThreadPool {
         let del_callBack = try dotnet.System.Threading.WaitOrTimerCallback(callBack);
         return try RegisterWaitForSingleObject(waitObject: waitObject, callBack: del_callBack, state: state, millisecondsTimeOutInterval: millisecondsTimeOutInterval, executeOnlyOnce: executeOnlyOnce);
     }
-// TODO COPE (write_all_methods) (span) System.Threading.RegisteredWaitHandle RegisterWaitForSingleObject(System.Threading.WaitHandle, System.Threading.WaitOrTimerCallback, System.Object, System.TimeSpan, bool)
+    // System.Threading.RegisteredWaitHandle RegisterWaitForSingleObject(System.Threading.WaitHandle, System.Threading.WaitOrTimerCallback, System.Object, System.TimeSpan, bool)
+// docid: M:System.Threading.ThreadPool.RegisterWaitForSingleObject(System.Threading.WaitHandle,System.Threading.WaitOrTimerCallback,System.Object,System.TimeSpan,System.Boolean)
+    /**
+    Registers a delegate to wait for a , specifying a  value for the time-out.
+
+    - Parameter waitObject: The  to register. Use a  other than .
+    - Parameter callBack: The  delegate to call when the  parameter is signaled.
+    - Parameter state: The object passed to the delegate.
+    - Parameter timeout: The time-out represented by a . If  is 0 (zero), the function tests the object's state and returns immediately. If  is -1, the function's time-out interval never elapses.
+    - Parameter executeOnlyOnce: 
+         to indicate that the thread will no longer wait on the  parameter after the delegate has been called;  to indicate that the timer is reset every time the wait operation completes until the wait is unregistered.
+    - Returns: The  that encapsulates the native handle.
+
+    */
+    public static func RegisterWaitForSingleObject(waitObject : dotnet.System.Threading.WaitHandle, callBack : dotnet.System.Threading.WaitOrTimerCallback, state : Optional<dotnet.System.Object>, timeout : dotnet.System.TimeSpan, executeOnlyOnce : Bool) throws -> dotnet.System.Threading.RegisteredWaitHandle {
+        var __thrown : NullableHandle = nil;
+        let __return = System_Threading_ThreadPool_RegisteredWaitHandle__RegisterWaitForSingleObject_0__5__WaitHandle_WaitOrTimerCallback_Object_TimeSpan_bool(&__thrown, waitObject.get_handle(), callBack.get_handle(), state?.get_handle() ?? nil, timeout.get_handle(), Swift.Int32(executeOnlyOnce ? 1 : 0));
+        if let __ex =  __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+        return dotnet.System.Threading.RegisteredWaitHandle(hndl : __return);
+        }
+    }
+    // delegate closure overload
+    public static func RegisterWaitForSingleObject(waitObject : dotnet.System.Threading.WaitHandle, callBack : @escaping (Optional<dotnet.System.Object>, Bool) throws -> Void, state : Optional<dotnet.System.Object>, timeout : dotnet.System.TimeSpan, executeOnlyOnce : Bool) throws -> dotnet.System.Threading.RegisteredWaitHandle {
+        let del_callBack = try dotnet.System.Threading.WaitOrTimerCallback(callBack);
+        return try RegisterWaitForSingleObject(waitObject: waitObject, callBack: del_callBack, state: state, timeout: timeout, executeOnlyOnce: executeOnlyOnce);
+    }
     // System.Threading.RegisteredWaitHandle RegisterWaitForSingleObject(System.Threading.WaitHandle, System.Threading.WaitOrTimerCallback, System.Object, System.UInt32, bool)
 // docid: M:System.Threading.ThreadPool.RegisterWaitForSingleObject(System.Threading.WaitHandle,System.Threading.WaitOrTimerCallback,System.Object,System.UInt32,System.Boolean)
     /**
@@ -391,6 +424,7 @@ public struct ThreadPool {
         return (__return) != 0;
         }
     }
+// TODO COPE (parm pointer other): bool UnsafeQueueNativeOverlapped(System.Threading.NativeOverlapped*)
     // bool UnsafeQueueUserWorkItem(System.Threading.IThreadPoolWorkItem, bool)
 // docid: M:System.Threading.ThreadPool.UnsafeQueueUserWorkItem(System.Threading.IThreadPoolWorkItem,System.Boolean)
     /**
@@ -520,7 +554,34 @@ public struct ThreadPool {
         let del_callBack = try dotnet.System.Threading.WaitOrTimerCallback(callBack);
         return try UnsafeRegisterWaitForSingleObject(waitObject: waitObject, callBack: del_callBack, state: state, millisecondsTimeOutInterval: millisecondsTimeOutInterval, executeOnlyOnce: executeOnlyOnce);
     }
-// TODO COPE (write_all_methods) (span) System.Threading.RegisteredWaitHandle UnsafeRegisterWaitForSingleObject(System.Threading.WaitHandle, System.Threading.WaitOrTimerCallback, System.Object, System.TimeSpan, bool)
+    // System.Threading.RegisteredWaitHandle UnsafeRegisterWaitForSingleObject(System.Threading.WaitHandle, System.Threading.WaitOrTimerCallback, System.Object, System.TimeSpan, bool)
+// docid: M:System.Threading.ThreadPool.UnsafeRegisterWaitForSingleObject(System.Threading.WaitHandle,System.Threading.WaitOrTimerCallback,System.Object,System.TimeSpan,System.Boolean)
+    /**
+    Registers a delegate to wait for a , specifying a  value for the time-out. This method does not propagate the calling stack to the worker thread.
+
+    - Parameter waitObject: The  to register. Use a  other than .
+    - Parameter callBack: The delegate to call when the  parameter is signaled.
+    - Parameter state: The object that is passed to the delegate.
+    - Parameter timeout: The time-out represented by a . If  is 0 (zero), the function tests the object's state and returns immediately. If  is -1, the function's time-out interval never elapses.
+    - Parameter executeOnlyOnce: 
+         to indicate that the thread will no longer wait on the  parameter after the delegate has been called;  to indicate that the timer is reset every time the wait operation completes until the wait is unregistered.
+    - Returns: The  object that can be used to cancel the registered wait operation.
+
+    */
+    public static func UnsafeRegisterWaitForSingleObject(waitObject : dotnet.System.Threading.WaitHandle, callBack : dotnet.System.Threading.WaitOrTimerCallback, state : Optional<dotnet.System.Object>, timeout : dotnet.System.TimeSpan, executeOnlyOnce : Bool) throws -> dotnet.System.Threading.RegisteredWaitHandle {
+        var __thrown : NullableHandle = nil;
+        let __return = System_Threading_ThreadPool_RegisteredWaitHandle__UnsafeRegisterWaitForSingleObject_0__5__WaitHandle_WaitOrTimerCallback_Object_TimeSpan_bool(&__thrown, waitObject.get_handle(), callBack.get_handle(), state?.get_handle() ?? nil, timeout.get_handle(), Swift.Int32(executeOnlyOnce ? 1 : 0));
+        if let __ex =  __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+        return dotnet.System.Threading.RegisteredWaitHandle(hndl : __return);
+        }
+    }
+    // delegate closure overload
+    public static func UnsafeRegisterWaitForSingleObject(waitObject : dotnet.System.Threading.WaitHandle, callBack : @escaping (Optional<dotnet.System.Object>, Bool) throws -> Void, state : Optional<dotnet.System.Object>, timeout : dotnet.System.TimeSpan, executeOnlyOnce : Bool) throws -> dotnet.System.Threading.RegisteredWaitHandle {
+        let del_callBack = try dotnet.System.Threading.WaitOrTimerCallback(callBack);
+        return try UnsafeRegisterWaitForSingleObject(waitObject: waitObject, callBack: del_callBack, state: state, timeout: timeout, executeOnlyOnce: executeOnlyOnce);
+    }
     // System.Threading.RegisteredWaitHandle UnsafeRegisterWaitForSingleObject(System.Threading.WaitHandle, System.Threading.WaitOrTimerCallback, System.Object, System.UInt32, bool)
 // docid: M:System.Threading.ThreadPool.UnsafeRegisterWaitForSingleObject(System.Threading.WaitHandle,System.Threading.WaitOrTimerCallback,System.Object,System.UInt32,System.Boolean)
     /**
@@ -624,6 +685,9 @@ public final class WaitCallback
     public class override func get_type_handle() -> TypeHandle {
         return System_Threading_WaitCallback_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // void Invoke(System.Object)
@@ -663,15 +727,15 @@ public final class WaitCallback
             return;
         }
     }
-    public init(_ callback : @escaping (Optional<dotnet.System.Object>) throws -> Void) throws
+    public convenience init(_ __closure_Invoke : @escaping (Optional<dotnet.System.Object>) throws -> Void) throws
     {
-        let __bridge : (UnsafeMutablePointer<NullableHandle>, NullableHandle) -> Void =
+        let __interlude_Invoke : (UnsafeMutablePointer<NullableHandle>, NullableHandle) -> Void =
         {
             (thrown : UnsafeMutablePointer<NullableHandle>, state : NullableHandle) -> Void in
             do
             {
                 thrown.pointee = nil;
-                try callback((state != nil) ? (dotnet.System.Object(hndl: state!)) : nil);
+                try __closure_Invoke((state != nil) ? (dotnet.System.Object(hndl: state!)) : nil);
             }
             catch let e as dotnet.System.Exception
             {
@@ -683,24 +747,24 @@ public final class WaitCallback
                 thrown.pointee = __copy_handle(e.get_handle());
             }
         };
-        let cbarg = UnsafeRawPointer(Unmanaged.passRetained(__bridge as AnyObject).toOpaque());
-        func __cb(cb : UnsafeRawPointer?, thrown : UnsafeMutablePointer<NullableHandle>, state : NullableHandle) -> Void
+        func __cb_Invoke(pdata_interlude : UnsafeRawPointer, thrown : UnsafeMutablePointer<NullableHandle>, state : NullableHandle) -> Void
         {
-            let f = Unmanaged<AnyObject>.fromOpaque(cb!).takeUnretainedValue() as! (UnsafeMutablePointer<NullableHandle>, NullableHandle) -> Void;
-            f(thrown, state);
+            let f_interlude = Unmanaged<AnyObject>.fromOpaque(pdata_interlude).takeUnretainedValue() as! (UnsafeMutablePointer<NullableHandle>, NullableHandle) -> Void;
+            f_interlude(thrown, state);
         }
+        let __pdata_Invoke = UnsafeRawPointer(Unmanaged.passRetained(__interlude_Invoke as AnyObject).toOpaque());
+
         var __thrown : NullableHandle = nil;
         let h = System_Threading_WaitCallback_create(
             &__thrown,
-            cbarg,
-            nil, // TODO deinit
-            __cb
+            __cb_Invoke,
+            __pdata_Invoke,
+            nil
             );
-            // TODO check thrown
         if let __ex = __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-            super.init(hndl: h);
+            self.init(hndl: h);
         }
     }
     // void Invoke(System.Object)
@@ -728,6 +792,9 @@ public final class WaitOrTimerCallback
 {
     public class override func get_type_handle() -> TypeHandle {
         return System_Threading_WaitOrTimerCallback_get_type_handle();
+    }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -768,15 +835,15 @@ public final class WaitOrTimerCallback
             return;
         }
     }
-    public init(_ callback : @escaping (Optional<dotnet.System.Object>, Bool) throws -> Void) throws
+    public convenience init(_ __closure_Invoke : @escaping (Optional<dotnet.System.Object>, Bool) throws -> Void) throws
     {
-        let __bridge : (UnsafeMutablePointer<NullableHandle>, NullableHandle, Swift.Int32) -> Void =
+        let __interlude_Invoke : (UnsafeMutablePointer<NullableHandle>, NullableHandle, Swift.Int32) -> Void =
         {
             (thrown : UnsafeMutablePointer<NullableHandle>, state : NullableHandle, timedOut : Swift.Int32) -> Void in
             do
             {
                 thrown.pointee = nil;
-                try callback((state != nil) ? (dotnet.System.Object(hndl: state!)) : nil, timedOut != 0);
+                try __closure_Invoke((state != nil) ? (dotnet.System.Object(hndl: state!)) : nil, timedOut != 0);
             }
             catch let e as dotnet.System.Exception
             {
@@ -788,24 +855,24 @@ public final class WaitOrTimerCallback
                 thrown.pointee = __copy_handle(e.get_handle());
             }
         };
-        let cbarg = UnsafeRawPointer(Unmanaged.passRetained(__bridge as AnyObject).toOpaque());
-        func __cb(cb : UnsafeRawPointer?, thrown : UnsafeMutablePointer<NullableHandle>, state : NullableHandle, timedOut : Swift.Int32) -> Void
+        func __cb_Invoke(pdata_interlude : UnsafeRawPointer, thrown : UnsafeMutablePointer<NullableHandle>, state : NullableHandle, timedOut : Swift.Int32) -> Void
         {
-            let f = Unmanaged<AnyObject>.fromOpaque(cb!).takeUnretainedValue() as! (UnsafeMutablePointer<NullableHandle>, NullableHandle, Swift.Int32) -> Void;
-            f(thrown, state, timedOut);
+            let f_interlude = Unmanaged<AnyObject>.fromOpaque(pdata_interlude).takeUnretainedValue() as! (UnsafeMutablePointer<NullableHandle>, NullableHandle, Swift.Int32) -> Void;
+            f_interlude(thrown, state, timedOut);
         }
+        let __pdata_Invoke = UnsafeRawPointer(Unmanaged.passRetained(__interlude_Invoke as AnyObject).toOpaque());
+
         var __thrown : NullableHandle = nil;
         let h = System_Threading_WaitOrTimerCallback_create(
             &__thrown,
-            cbarg,
-            nil, // TODO deinit
-            __cb
+            __cb_Invoke,
+            __pdata_Invoke,
+            nil
             );
-            // TODO check thrown
         if let __ex = __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-            super.init(hndl: h);
+            self.init(hndl: h);
         }
     }
     // void Invoke(System.Object, bool)

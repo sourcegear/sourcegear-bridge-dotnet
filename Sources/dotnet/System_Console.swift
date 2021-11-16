@@ -137,7 +137,7 @@ public struct Console {
     /**
     Acquires the standard error stream, which is set to a specified buffer size.
 
-    - Parameter bufferSize: The internal stream buffer size.
+    - Parameter bufferSize: This parameter has no effect, but its value must be greater than or equal to zero.
     - Returns: The standard error stream.
 
     */
@@ -172,7 +172,7 @@ public struct Console {
     /**
     Acquires the standard input stream, which is set to a specified buffer size.
 
-    - Parameter bufferSize: The internal stream buffer size.
+    - Parameter bufferSize: This parameter has no effect, but its value must be greater than or equal to zero.
     - Returns: The standard input stream.
 
     */
@@ -207,7 +207,7 @@ public struct Console {
     /**
     Acquires the standard output stream, which is set to a specified buffer size.
 
-    - Parameter bufferSize: The internal stream buffer size.
+    - Parameter bufferSize: This parameter has no effect, but its value must be greater than or equal to zero.
     - Returns: The standard output stream.
 
     */
@@ -1812,6 +1812,9 @@ public final class ConsoleCancelEventArgs
     public class override func get_type_handle() -> TypeHandle {
         return System_ConsoleCancelEventArgs_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // [IsSpecialName] bool get_Cancel()
@@ -1883,6 +1886,9 @@ public final class ConsoleCancelEventHandler
     public class override func get_type_handle() -> TypeHandle {
         return System_ConsoleCancelEventHandler_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // void Invoke(System.Object, System.ConsoleCancelEventArgs)
@@ -1922,15 +1928,15 @@ public final class ConsoleCancelEventHandler
             return;
         }
     }
-    public init(_ callback : @escaping (Optional<dotnet.System.Object>, dotnet.System.ConsoleCancelEventArgs) throws -> Void) throws
+    public convenience init(_ __closure_Invoke : @escaping (Optional<dotnet.System.Object>, dotnet.System.ConsoleCancelEventArgs) throws -> Void) throws
     {
-        let __bridge : (UnsafeMutablePointer<NullableHandle>, NullableHandle, NonnullHandle) -> Void =
+        let __interlude_Invoke : (UnsafeMutablePointer<NullableHandle>, NullableHandle, NonnullHandle) -> Void =
         {
             (thrown : UnsafeMutablePointer<NullableHandle>, sender : NullableHandle, e : NonnullHandle) -> Void in
             do
             {
                 thrown.pointee = nil;
-                try callback((sender != nil) ? (dotnet.System.Object(hndl: sender!)) : nil, dotnet.System.ConsoleCancelEventArgs(hndl: e));
+                try __closure_Invoke((sender != nil) ? (dotnet.System.Object(hndl: sender!)) : nil, dotnet.System.ConsoleCancelEventArgs(hndl: e));
             }
             catch let e as dotnet.System.Exception
             {
@@ -1942,24 +1948,24 @@ public final class ConsoleCancelEventHandler
                 thrown.pointee = __copy_handle(e.get_handle());
             }
         };
-        let cbarg = UnsafeRawPointer(Unmanaged.passRetained(__bridge as AnyObject).toOpaque());
-        func __cb(cb : UnsafeRawPointer?, thrown : UnsafeMutablePointer<NullableHandle>, sender : NullableHandle, e : NonnullHandle) -> Void
+        func __cb_Invoke(pdata_interlude : UnsafeRawPointer, thrown : UnsafeMutablePointer<NullableHandle>, sender : NullableHandle, e : NonnullHandle) -> Void
         {
-            let f = Unmanaged<AnyObject>.fromOpaque(cb!).takeUnretainedValue() as! (UnsafeMutablePointer<NullableHandle>, NullableHandle, NonnullHandle) -> Void;
-            f(thrown, sender, e);
+            let f_interlude = Unmanaged<AnyObject>.fromOpaque(pdata_interlude).takeUnretainedValue() as! (UnsafeMutablePointer<NullableHandle>, NullableHandle, NonnullHandle) -> Void;
+            f_interlude(thrown, sender, e);
         }
+        let __pdata_Invoke = UnsafeRawPointer(Unmanaged.passRetained(__interlude_Invoke as AnyObject).toOpaque());
+
         var __thrown : NullableHandle = nil;
         let h = System_ConsoleCancelEventHandler_create(
             &__thrown,
-            cbarg,
-            nil, // TODO deinit
-            __cb
+            __cb_Invoke,
+            __pdata_Invoke,
+            nil
             );
-            // TODO check thrown
         if let __ex = __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-            super.init(hndl: h);
+            self.init(hndl: h);
         }
     }
     // void Invoke(System.Object, System.ConsoleCancelEventArgs)
@@ -3784,6 +3790,9 @@ public final class ConsoleKeyInfo
 {
     public class override func get_type_handle() -> TypeHandle {
         return System_ConsoleKeyInfo_get_type_handle();
+    }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }

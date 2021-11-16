@@ -18,6 +18,9 @@ open class DataContractResolver
     open class override func get_type_handle() -> TypeHandle {
         return System_Runtime_Serialization_DataContractResolver_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // System.Type ResolveName(System.String, System.String, System.Type, System.Runtime.Serialization.DataContractResolver)
@@ -59,14 +62,16 @@ open class DataContractResolver
          if mapping succeeded; otherwise, .
 
     */
-    open func TryResolveType(type : dotnet.System.Type_, declaredType : Optional<dotnet.System.Type_>, knownTypeResolver : dotnet.System.Runtime.Serialization.DataContractResolver, typeName : inout dotnet.System.Xml.XmlDictionaryString, typeNamespace : inout dotnet.System.Xml.XmlDictionaryString) throws -> Bool {
+    open func TryResolveType(type : dotnet.System.Type_, declaredType : Optional<dotnet.System.Type_>, knownTypeResolver : dotnet.System.Runtime.Serialization.DataContractResolver, typeName : inout Optional<dotnet.System.Xml.XmlDictionaryString>, typeNamespace : inout Optional<dotnet.System.Xml.XmlDictionaryString>) throws -> Bool {
         var __thrown : NullableHandle = nil;
-            var _tmp_out_typeName = typeName.get_handle();
-            var _tmp_out_typeNamespace = typeNamespace.get_handle();
+            var _tmp_out_typeName = (typeName != nil) ? (typeName!.get_handle()) : nil;
+            var _tmp_out_typeNamespace = (typeNamespace != nil) ? (typeNamespace!.get_handle()) : nil;
         let __return = System_Runtime_Serialization_DataContractResolver_bool__TryResolveType_0__5__Type_Type_DataContractResolver_outXmlDictionaryString_outXmlDictionaryString(&__thrown, self.get_handle(), type.get_handle(), declaredType?.get_handle() ?? nil, knownTypeResolver.get_handle(), &_tmp_out_typeName, &_tmp_out_typeNamespace);
-        let _tmp2_typeName = dotnet.System.Xml.XmlDictionaryString(hndl: _tmp_out_typeName);
+        let __h__tmp2_typeName = _tmp_out_typeName;
+        let _tmp2_typeName = (__h__tmp2_typeName != nil) ? dotnet.System.Xml.XmlDictionaryString(hndl: __h__tmp2_typeName!) : nil;
             typeName = _tmp2_typeName;
-        let _tmp2_typeNamespace = dotnet.System.Xml.XmlDictionaryString(hndl: _tmp_out_typeNamespace);
+        let __h__tmp2_typeNamespace = _tmp_out_typeNamespace;
+        let _tmp2_typeNamespace = (__h__tmp2_typeNamespace != nil) ? dotnet.System.Xml.XmlDictionaryString(hndl: __h__tmp2_typeNamespace!) : nil;
             typeNamespace = _tmp2_typeNamespace;
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
@@ -88,6 +93,9 @@ public final class DataContractSerializer
 {
     public class override func get_type_handle() -> TypeHandle {
         return System_Runtime_Serialization_DataContractSerializer_get_type_handle();
+    }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -666,6 +674,9 @@ open class DataContractSerializerSettings
     open class override func get_type_handle() -> TypeHandle {
         return System_Runtime_Serialization_DataContractSerializerSettings_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor()
@@ -986,6 +997,9 @@ open class ExportOptions
     open class override func get_type_handle() -> TypeHandle {
         return System_Runtime_Serialization_ExportOptions_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor()
@@ -1038,6 +1052,9 @@ public final class ExtensionDataObject
     public class override func get_type_handle() -> TypeHandle {
         return System_Runtime_Serialization_ExtensionDataObject_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
 } // ExtensionDataObject
@@ -1055,6 +1072,9 @@ open class IExtensibleDataObject
 {
     open class func get_type_handle() -> TypeHandle {
         return System_Runtime_Serialization_IExtensibleDataObject_get_type_handle();
+    }
+    open class func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     let h : NonnullHandle;
     public func to_gval() -> GVal { return GVal(Swift.Int(bitPattern: self.h)); }
@@ -1163,6 +1183,9 @@ open class XmlObjectSerializer
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Runtime_Serialization_XmlObjectSerializer_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -1531,7 +1554,7 @@ public struct XmlSerializableServices {
 
 // type: System.Runtime.Serialization.XsdDataContractExporter
     /**
-    Allows the transformation of a set of .NET Framework types that are used in data contracts into an XML schema file (.xsd).
+    Allows the transformation of a set of .NET types that are used in data contracts into an XML schema file (.xsd).
 
     */
 open class XsdDataContractExporter
@@ -1540,6 +1563,9 @@ open class XsdDataContractExporter
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Runtime_Serialization_XsdDataContractExporter_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -1820,6 +1846,9 @@ open class IFragmentCapableXmlDictionaryWriter
     open class func get_type_handle() -> TypeHandle {
         return System_Xml_IFragmentCapableXmlDictionaryWriter_get_type_handle();
     }
+    open class func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     let h : NonnullHandle;
     public func to_gval() -> GVal { return GVal(Swift.Int(bitPattern: self.h)); }
     public func dup_gval() -> GVal { return GVal(Swift.Int(bitPattern: __copy_handle(self.h))); }
@@ -1906,6 +1935,9 @@ open class IStreamProvider
     open class func get_type_handle() -> TypeHandle {
         return System_Xml_IStreamProvider_get_type_handle();
     }
+    open class func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     let h : NonnullHandle;
     public func to_gval() -> GVal { return GVal(Swift.Int(bitPattern: self.h)); }
     public func dup_gval() -> GVal { return GVal(Swift.Int(bitPattern: __copy_handle(self.h))); }
@@ -1963,6 +1995,9 @@ open class IXmlBinaryReaderInitializer
 {
     open class func get_type_handle() -> TypeHandle {
         return System_Xml_IXmlBinaryReaderInitializer_get_type_handle();
+    }
+    open class func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     let h : NonnullHandle;
     public func to_gval() -> GVal { return GVal(Swift.Int(bitPattern: self.h)); }
@@ -2047,6 +2082,9 @@ open class IXmlBinaryWriterInitializer
     open class func get_type_handle() -> TypeHandle {
         return System_Xml_IXmlBinaryWriterInitializer_get_type_handle();
     }
+    open class func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     let h : NonnullHandle;
     public func to_gval() -> GVal { return GVal(Swift.Int(bitPattern: self.h)); }
     public func dup_gval() -> GVal { return GVal(Swift.Int(bitPattern: __copy_handle(self.h))); }
@@ -2092,6 +2130,9 @@ open class IXmlDictionary
     open class func get_type_handle() -> TypeHandle {
         return System_Xml_IXmlDictionary_get_type_handle();
     }
+    open class func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     let h : NonnullHandle;
     public func to_gval() -> GVal { return GVal(Swift.Int(bitPattern: self.h)); }
     public func dup_gval() -> GVal { return GVal(Swift.Int(bitPattern: __copy_handle(self.h))); }
@@ -2112,11 +2153,12 @@ open class IXmlDictionary
          if key is in the dictionary; otherwise, .
 
     */
-    open func TryLookup(key : Swift.Int32, result : inout dotnet.System.Xml.XmlDictionaryString) throws -> Bool {
+    open func TryLookup(key : Swift.Int32, result : inout Optional<dotnet.System.Xml.XmlDictionaryString>) throws -> Bool {
         var __thrown : NullableHandle = nil;
-            var _tmp_out_result = result.get_handle();
+            var _tmp_out_result = (result != nil) ? (result!.get_handle()) : nil;
         let __return = System_Xml_IXmlDictionary_bool__TryLookup_0__2__i32_outXmlDictionaryString(&__thrown, self.get_handle(), key, &_tmp_out_result);
-        let _tmp2_result = dotnet.System.Xml.XmlDictionaryString(hndl: _tmp_out_result);
+        let __h__tmp2_result = _tmp_out_result;
+        let _tmp2_result = (__h__tmp2_result != nil) ? dotnet.System.Xml.XmlDictionaryString(hndl: __h__tmp2_result!) : nil;
             result = _tmp2_result;
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
@@ -2135,11 +2177,12 @@ open class IXmlDictionary
          if value is in the dictionary; otherwise, .
 
     */
-    open func TryLookup(value : dotnet.System.String, result : inout dotnet.System.Xml.XmlDictionaryString) throws -> Bool {
+    open func TryLookup(value : dotnet.System.String, result : inout Optional<dotnet.System.Xml.XmlDictionaryString>) throws -> Bool {
         var __thrown : NullableHandle = nil;
-            var _tmp_out_result = result.get_handle();
+            var _tmp_out_result = (result != nil) ? (result!.get_handle()) : nil;
         let __return = System_Xml_IXmlDictionary_bool__TryLookup_0__2__String_outXmlDictionaryString(&__thrown, self.get_handle(), value.get_handle(), &_tmp_out_result);
-        let _tmp2_result = dotnet.System.Xml.XmlDictionaryString(hndl: _tmp_out_result);
+        let __h__tmp2_result = _tmp_out_result;
+        let _tmp2_result = (__h__tmp2_result != nil) ? dotnet.System.Xml.XmlDictionaryString(hndl: __h__tmp2_result!) : nil;
             result = _tmp2_result;
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
@@ -2158,11 +2201,12 @@ open class IXmlDictionary
          if  is in the dictionary; otherwise, .
 
     */
-    open func TryLookup(value : dotnet.System.Xml.XmlDictionaryString, result : inout dotnet.System.Xml.XmlDictionaryString) throws -> Bool {
+    open func TryLookup(value : dotnet.System.Xml.XmlDictionaryString, result : inout Optional<dotnet.System.Xml.XmlDictionaryString>) throws -> Bool {
         var __thrown : NullableHandle = nil;
-            var _tmp_out_result = result.get_handle();
+            var _tmp_out_result = (result != nil) ? (result!.get_handle()) : nil;
         let __return = System_Xml_IXmlDictionary_bool__TryLookup_0__2__XmlDictionaryString_outXmlDictionaryString(&__thrown, self.get_handle(), value.get_handle(), &_tmp_out_result);
-        let _tmp2_result = dotnet.System.Xml.XmlDictionaryString(hndl: _tmp_out_result);
+        let __h__tmp2_result = _tmp_out_result;
+        let _tmp2_result = (__h__tmp2_result != nil) ? dotnet.System.Xml.XmlDictionaryString(hndl: __h__tmp2_result!) : nil;
             result = _tmp2_result;
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
@@ -2185,6 +2229,9 @@ open class IXmlTextReaderInitializer
 {
     open class func get_type_handle() -> TypeHandle {
         return System_Xml_IXmlTextReaderInitializer_get_type_handle();
+    }
+    open class func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     let h : NonnullHandle;
     public func to_gval() -> GVal { return GVal(Swift.Int(bitPattern: self.h)); }
@@ -2261,6 +2308,9 @@ open class IXmlTextWriterInitializer
     open class func get_type_handle() -> TypeHandle {
         return System_Xml_IXmlTextWriterInitializer_get_type_handle();
     }
+    open class func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     let h : NonnullHandle;
     public func to_gval() -> GVal { return GVal(Swift.Int(bitPattern: self.h)); }
     public func dup_gval() -> GVal { return GVal(Swift.Int(bitPattern: __copy_handle(self.h))); }
@@ -2305,6 +2355,9 @@ public final class OnXmlDictionaryReaderClose
     public class override func get_type_handle() -> TypeHandle {
         return System_Xml_OnXmlDictionaryReaderClose_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // void Invoke(System.Xml.XmlDictionaryReader)
@@ -2344,15 +2397,15 @@ public final class OnXmlDictionaryReaderClose
             return;
         }
     }
-    public init(_ callback : @escaping (dotnet.System.Xml.XmlDictionaryReader) throws -> Void) throws
+    public convenience init(_ __closure_Invoke : @escaping (dotnet.System.Xml.XmlDictionaryReader) throws -> Void) throws
     {
-        let __bridge : (UnsafeMutablePointer<NullableHandle>, NonnullHandle) -> Void =
+        let __interlude_Invoke : (UnsafeMutablePointer<NullableHandle>, NonnullHandle) -> Void =
         {
             (thrown : UnsafeMutablePointer<NullableHandle>, reader : NonnullHandle) -> Void in
             do
             {
                 thrown.pointee = nil;
-                try callback(dotnet.System.Xml.XmlDictionaryReader(hndl: reader));
+                try __closure_Invoke(dotnet.System.Xml.XmlDictionaryReader(hndl: reader));
             }
             catch let e as dotnet.System.Exception
             {
@@ -2364,24 +2417,24 @@ public final class OnXmlDictionaryReaderClose
                 thrown.pointee = __copy_handle(e.get_handle());
             }
         };
-        let cbarg = UnsafeRawPointer(Unmanaged.passRetained(__bridge as AnyObject).toOpaque());
-        func __cb(cb : UnsafeRawPointer?, thrown : UnsafeMutablePointer<NullableHandle>, reader : NonnullHandle) -> Void
+        func __cb_Invoke(pdata_interlude : UnsafeRawPointer, thrown : UnsafeMutablePointer<NullableHandle>, reader : NonnullHandle) -> Void
         {
-            let f = Unmanaged<AnyObject>.fromOpaque(cb!).takeUnretainedValue() as! (UnsafeMutablePointer<NullableHandle>, NonnullHandle) -> Void;
-            f(thrown, reader);
+            let f_interlude = Unmanaged<AnyObject>.fromOpaque(pdata_interlude).takeUnretainedValue() as! (UnsafeMutablePointer<NullableHandle>, NonnullHandle) -> Void;
+            f_interlude(thrown, reader);
         }
+        let __pdata_Invoke = UnsafeRawPointer(Unmanaged.passRetained(__interlude_Invoke as AnyObject).toOpaque());
+
         var __thrown : NullableHandle = nil;
         let h = System_Xml_OnXmlDictionaryReaderClose_create(
             &__thrown,
-            cbarg,
-            nil, // TODO deinit
-            __cb
+            __cb_Invoke,
+            __pdata_Invoke,
+            nil
             );
-            // TODO check thrown
         if let __ex = __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-            super.init(hndl: h);
+            self.init(hndl: h);
         }
     }
     // void Invoke(System.Xml.XmlDictionaryReader)
@@ -2409,6 +2462,9 @@ open class UniqueId
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Xml_UniqueId_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -2721,6 +2777,9 @@ open class XmlBinaryReaderSession
     open class override func get_type_handle() -> TypeHandle {
         return System_Xml_XmlBinaryReaderSession_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor()
@@ -2783,11 +2842,12 @@ open class XmlBinaryReaderSession
          if an entry matching the  was found; otherwise, .
 
     */
-    open /* method final */ func TryLookup(key : Swift.Int32, result : inout dotnet.System.Xml.XmlDictionaryString) throws -> Bool {
+    open /* method final */ func TryLookup(key : Swift.Int32, result : inout Optional<dotnet.System.Xml.XmlDictionaryString>) throws -> Bool {
         var __thrown : NullableHandle = nil;
-            var _tmp_out_result = result.get_handle();
+            var _tmp_out_result = (result != nil) ? (result!.get_handle()) : nil;
         let __return = System_Xml_XmlBinaryReaderSession_bool__TryLookup_0__2__i32_outXmlDictionaryString(&__thrown, self.get_handle(), key, &_tmp_out_result);
-        let _tmp2_result = dotnet.System.Xml.XmlDictionaryString(hndl: _tmp_out_result);
+        let __h__tmp2_result = _tmp_out_result;
+        let _tmp2_result = (__h__tmp2_result != nil) ? dotnet.System.Xml.XmlDictionaryString(hndl: __h__tmp2_result!) : nil;
             result = _tmp2_result;
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
@@ -2806,11 +2866,12 @@ open class XmlBinaryReaderSession
          if an entry matching the  was found; otherwise, .
 
     */
-    open /* method final */ func TryLookup(value : dotnet.System.String, result : inout dotnet.System.Xml.XmlDictionaryString) throws -> Bool {
+    open /* method final */ func TryLookup(value : dotnet.System.String, result : inout Optional<dotnet.System.Xml.XmlDictionaryString>) throws -> Bool {
         var __thrown : NullableHandle = nil;
-            var _tmp_out_result = result.get_handle();
+            var _tmp_out_result = (result != nil) ? (result!.get_handle()) : nil;
         let __return = System_Xml_XmlBinaryReaderSession_bool__TryLookup_0__2__String_outXmlDictionaryString(&__thrown, self.get_handle(), value.get_handle(), &_tmp_out_result);
-        let _tmp2_result = dotnet.System.Xml.XmlDictionaryString(hndl: _tmp_out_result);
+        let __h__tmp2_result = _tmp_out_result;
+        let _tmp2_result = (__h__tmp2_result != nil) ? dotnet.System.Xml.XmlDictionaryString(hndl: __h__tmp2_result!) : nil;
             result = _tmp2_result;
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
@@ -2829,11 +2890,12 @@ open class XmlBinaryReaderSession
          if an entry matching the  was found; otherwise, .
 
     */
-    open /* method final */ func TryLookup(value : dotnet.System.Xml.XmlDictionaryString, result : inout dotnet.System.Xml.XmlDictionaryString) throws -> Bool {
+    open /* method final */ func TryLookup(value : dotnet.System.Xml.XmlDictionaryString, result : inout Optional<dotnet.System.Xml.XmlDictionaryString>) throws -> Bool {
         var __thrown : NullableHandle = nil;
-            var _tmp_out_result = result.get_handle();
+            var _tmp_out_result = (result != nil) ? (result!.get_handle()) : nil;
         let __return = System_Xml_XmlBinaryReaderSession_bool__TryLookup_0__2__XmlDictionaryString_outXmlDictionaryString(&__thrown, self.get_handle(), value.get_handle(), &_tmp_out_result);
-        let _tmp2_result = dotnet.System.Xml.XmlDictionaryString(hndl: _tmp_out_result);
+        let __h__tmp2_result = _tmp_out_result;
+        let _tmp2_result = (__h__tmp2_result != nil) ? dotnet.System.Xml.XmlDictionaryString(hndl: __h__tmp2_result!) : nil;
             result = _tmp2_result;
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
@@ -2855,6 +2917,9 @@ open class XmlBinaryWriterSession
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Xml_XmlBinaryWriterSession_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -2927,6 +2992,9 @@ open class XmlDictionary
     open class override func get_type_handle() -> TypeHandle {
         return System_Xml_XmlDictionary_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor()
@@ -2989,11 +3057,12 @@ open class XmlDictionary
          if key is in the dictionary; otherwise, .
 
     */
-    open func TryLookup(key : Swift.Int32, result : inout dotnet.System.Xml.XmlDictionaryString) throws -> Bool {
+    open func TryLookup(key : Swift.Int32, result : inout Optional<dotnet.System.Xml.XmlDictionaryString>) throws -> Bool {
         var __thrown : NullableHandle = nil;
-            var _tmp_out_result = result.get_handle();
+            var _tmp_out_result = (result != nil) ? (result!.get_handle()) : nil;
         let __return = System_Xml_XmlDictionary_bool__TryLookup_0__2__i32_outXmlDictionaryString(&__thrown, self.get_handle(), key, &_tmp_out_result);
-        let _tmp2_result = dotnet.System.Xml.XmlDictionaryString(hndl: _tmp_out_result);
+        let __h__tmp2_result = _tmp_out_result;
+        let _tmp2_result = (__h__tmp2_result != nil) ? dotnet.System.Xml.XmlDictionaryString(hndl: __h__tmp2_result!) : nil;
             result = _tmp2_result;
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
@@ -3012,11 +3081,12 @@ open class XmlDictionary
          if value is in the dictionary; otherwise, .
 
     */
-    open func TryLookup(value : dotnet.System.String, result : inout dotnet.System.Xml.XmlDictionaryString) throws -> Bool {
+    open func TryLookup(value : dotnet.System.String, result : inout Optional<dotnet.System.Xml.XmlDictionaryString>) throws -> Bool {
         var __thrown : NullableHandle = nil;
-            var _tmp_out_result = result.get_handle();
+            var _tmp_out_result = (result != nil) ? (result!.get_handle()) : nil;
         let __return = System_Xml_XmlDictionary_bool__TryLookup_0__2__String_outXmlDictionaryString(&__thrown, self.get_handle(), value.get_handle(), &_tmp_out_result);
-        let _tmp2_result = dotnet.System.Xml.XmlDictionaryString(hndl: _tmp_out_result);
+        let __h__tmp2_result = _tmp_out_result;
+        let _tmp2_result = (__h__tmp2_result != nil) ? dotnet.System.Xml.XmlDictionaryString(hndl: __h__tmp2_result!) : nil;
             result = _tmp2_result;
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
@@ -3035,11 +3105,12 @@ open class XmlDictionary
          if  is in the dictionary; otherwise, .
 
     */
-    open func TryLookup(value : dotnet.System.Xml.XmlDictionaryString, result : inout dotnet.System.Xml.XmlDictionaryString) throws -> Bool {
+    open func TryLookup(value : dotnet.System.Xml.XmlDictionaryString, result : inout Optional<dotnet.System.Xml.XmlDictionaryString>) throws -> Bool {
         var __thrown : NullableHandle = nil;
-            var _tmp_out_result = result.get_handle();
+            var _tmp_out_result = (result != nil) ? (result!.get_handle()) : nil;
         let __return = System_Xml_XmlDictionary_bool__TryLookup_0__2__XmlDictionaryString_outXmlDictionaryString(&__thrown, self.get_handle(), value.get_handle(), &_tmp_out_result);
-        let _tmp2_result = dotnet.System.Xml.XmlDictionaryString(hndl: _tmp_out_result);
+        let __h__tmp2_result = _tmp_out_result;
+        let _tmp2_result = (__h__tmp2_result != nil) ? dotnet.System.Xml.XmlDictionaryString(hndl: __h__tmp2_result!) : nil;
             result = _tmp2_result;
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
@@ -3081,6 +3152,9 @@ open class XmlDictionaryReader
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Xml_XmlDictionaryReader_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -3794,11 +3868,12 @@ open class XmlDictionaryReader
          if the reader is positioned at the start of an array node; otherwise .
 
     */
-    open func IsStartArray(type : inout dotnet.System.Type_) throws -> Bool {
+    open func IsStartArray(type : inout Optional<dotnet.System.Type_>) throws -> Bool {
         var __thrown : NullableHandle = nil;
-            var _tmp_out_type = type.get_handle();
+            var _tmp_out_type = (type != nil) ? (type!.get_handle()) : nil;
         let __return = System_Xml_XmlDictionaryReader_bool__IsStartArray_0__1__outType(&__thrown, self.get_handle(), &_tmp_out_type);
-        let _tmp2_type = dotnet.System.Type_(hndl: _tmp_out_type);
+        let __h__tmp2_type = _tmp_out_type;
+        let _tmp2_type = (__h__tmp2_type != nil) ? dotnet.System.Type_(hndl: __h__tmp2_type!) : nil;
             type = _tmp2_type;
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
@@ -4089,7 +4164,28 @@ open class XmlDictionaryReader
         return __return;
         }
     }
-// TODO COPE (write_all_methods) (span) System.Int32 ReadArray(System.String, System.String, System.TimeSpan[], System.Int32, System.Int32)
+    // System.Int32 ReadArray(System.String, System.String, System.TimeSpan[], System.Int32, System.Int32)
+// docid: M:System.Xml.XmlDictionaryReader.ReadArray(System.String,System.String,System.TimeSpan[],System.Int32,System.Int32)
+    /**
+    Reads repeated occurrences of  nodes into a typed array.
+
+    - Parameter localName: The local name of the element.
+    - Parameter namespaceUri: The namespace URI of the element.
+    - Parameter array: The array into which the nodes are put.
+    - Parameter offset: The starting index in the array.
+    - Parameter count: The number of nodes to put in the array.
+    - Returns: The number of nodes put in the array.
+
+    */
+    open func ReadArray(localName : dotnet.System.String, namespaceUri : dotnet.System.String, array : dotnet.System_Arr<dotnet.System.TimeSpan>, offset : Swift.Int32, count : Swift.Int32) throws -> Swift.Int32 {
+        var __thrown : NullableHandle = nil;
+        let __return = System_Xml_XmlDictionaryReader_i32__ReadArray_0__5__String_String_TimeSpanArray_i32_i32(&__thrown, self.get_handle(), localName.get_handle(), namespaceUri.get_handle(), array.get_handle(), offset, count);
+        if let __ex =  __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+        return __return;
+        }
+    }
     // System.Int32 ReadArray(System.Xml.XmlDictionaryString, System.Xml.XmlDictionaryString, bool[], System.Int32, System.Int32)
 // docid: M:System.Xml.XmlDictionaryReader.ReadArray(System.Xml.XmlDictionaryString,System.Xml.XmlDictionaryString,System.Boolean[],System.Int32,System.Int32)
     /**
@@ -4288,7 +4384,28 @@ open class XmlDictionaryReader
         return __return;
         }
     }
-// TODO COPE (write_all_methods) (span) System.Int32 ReadArray(System.Xml.XmlDictionaryString, System.Xml.XmlDictionaryString, System.TimeSpan[], System.Int32, System.Int32)
+    // System.Int32 ReadArray(System.Xml.XmlDictionaryString, System.Xml.XmlDictionaryString, System.TimeSpan[], System.Int32, System.Int32)
+// docid: M:System.Xml.XmlDictionaryReader.ReadArray(System.Xml.XmlDictionaryString,System.Xml.XmlDictionaryString,System.TimeSpan[],System.Int32,System.Int32)
+    /**
+    Reads repeated occurrences of  nodes into a typed array.
+
+    - Parameter localName: The local name of the element.
+    - Parameter namespaceUri: The namespace URI of the element.
+    - Parameter array: The array into which the nodes are put.
+    - Parameter offset: The starting index in the array.
+    - Parameter count: The number of nodes to put in the array.
+    - Returns: The number of nodes put in the array.
+
+    */
+    open func ReadArray(localName : dotnet.System.Xml.XmlDictionaryString, namespaceUri : dotnet.System.Xml.XmlDictionaryString, array : dotnet.System_Arr<dotnet.System.TimeSpan>, offset : Swift.Int32, count : Swift.Int32) throws -> Swift.Int32 {
+        var __thrown : NullableHandle = nil;
+        let __return = System_Xml_XmlDictionaryReader_i32__ReadArray_0__5__XmlDictionaryString_XmlDictionaryString_TimeSpanArray_i32_i32(&__thrown, self.get_handle(), localName.get_handle(), namespaceUri.get_handle(), array.get_handle(), offset, count);
+        if let __ex =  __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+        return __return;
+        }
+    }
     // bool[] ReadBooleanArray(System.String, System.String)
 // docid: M:System.Xml.XmlDictionaryReader.ReadBooleanArray(System.String,System.String)
     /**
@@ -5324,11 +5441,12 @@ open class XmlDictionaryReader
         , unless overridden in a derived class.
 
     */
-    open func TryGetLocalNameAsDictionaryString(localName : inout dotnet.System.Xml.XmlDictionaryString) throws -> Bool {
+    open func TryGetLocalNameAsDictionaryString(localName : inout Optional<dotnet.System.Xml.XmlDictionaryString>) throws -> Bool {
         var __thrown : NullableHandle = nil;
-            var _tmp_out_localName = localName.get_handle();
+            var _tmp_out_localName = (localName != nil) ? (localName!.get_handle()) : nil;
         let __return = System_Xml_XmlDictionaryReader_bool__TryGetLocalNameAsDictionaryString_0__1__outXmlDictionaryString(&__thrown, self.get_handle(), &_tmp_out_localName);
-        let _tmp2_localName = dotnet.System.Xml.XmlDictionaryString(hndl: _tmp_out_localName);
+        let __h__tmp2_localName = _tmp_out_localName;
+        let _tmp2_localName = (__h__tmp2_localName != nil) ? dotnet.System.Xml.XmlDictionaryString(hndl: __h__tmp2_localName!) : nil;
             localName = _tmp2_localName;
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
@@ -5346,11 +5464,12 @@ open class XmlDictionaryReader
         , unless overridden in a derived class.
 
     */
-    open func TryGetNamespaceUriAsDictionaryString(namespaceUri : inout dotnet.System.Xml.XmlDictionaryString) throws -> Bool {
+    open func TryGetNamespaceUriAsDictionaryString(namespaceUri : inout Optional<dotnet.System.Xml.XmlDictionaryString>) throws -> Bool {
         var __thrown : NullableHandle = nil;
-            var _tmp_out_namespaceUri = namespaceUri.get_handle();
+            var _tmp_out_namespaceUri = (namespaceUri != nil) ? (namespaceUri!.get_handle()) : nil;
         let __return = System_Xml_XmlDictionaryReader_bool__TryGetNamespaceUriAsDictionaryString_0__1__outXmlDictionaryString(&__thrown, self.get_handle(), &_tmp_out_namespaceUri);
-        let _tmp2_namespaceUri = dotnet.System.Xml.XmlDictionaryString(hndl: _tmp_out_namespaceUri);
+        let __h__tmp2_namespaceUri = _tmp_out_namespaceUri;
+        let _tmp2_namespaceUri = (__h__tmp2_namespaceUri != nil) ? dotnet.System.Xml.XmlDictionaryString(hndl: __h__tmp2_namespaceUri!) : nil;
             namespaceUri = _tmp2_namespaceUri;
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
@@ -5368,11 +5487,12 @@ open class XmlDictionaryReader
         , unless overridden in a derived class.
 
     */
-    open func TryGetValueAsDictionaryString(value : inout dotnet.System.Xml.XmlDictionaryString) throws -> Bool {
+    open func TryGetValueAsDictionaryString(value : inout Optional<dotnet.System.Xml.XmlDictionaryString>) throws -> Bool {
         var __thrown : NullableHandle = nil;
-            var _tmp_out_value = value.get_handle();
+            var _tmp_out_value = (value != nil) ? (value!.get_handle()) : nil;
         let __return = System_Xml_XmlDictionaryReader_bool__TryGetValueAsDictionaryString_0__1__outXmlDictionaryString(&__thrown, self.get_handle(), &_tmp_out_value);
-        let _tmp2_value = dotnet.System.Xml.XmlDictionaryString(hndl: _tmp_out_value);
+        let __h__tmp2_value = _tmp_out_value;
+        let _tmp2_value = (__h__tmp2_value != nil) ? dotnet.System.Xml.XmlDictionaryString(hndl: __h__tmp2_value!) : nil;
             value = _tmp2_value;
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
@@ -5507,6 +5627,9 @@ public final class XmlDictionaryReaderQuotas
 {
     public class override func get_type_handle() -> TypeHandle {
         return System_Xml_XmlDictionaryReaderQuotas_get_type_handle();
+    }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -5766,6 +5889,9 @@ open class XmlDictionaryString
     open class override func get_type_handle() -> TypeHandle {
         return System_Xml_XmlDictionaryString_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor(System.Xml.IXmlDictionary, System.String, System.Int32)
@@ -5897,6 +6023,9 @@ open class XmlDictionaryWriter
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Xml_XmlDictionaryWriter_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -6326,7 +6455,27 @@ open class XmlDictionaryWriter
             return;
         }
     }
-// TODO COPE (write_all_methods) (span) void WriteArray(System.String, System.String, System.String, System.TimeSpan[], System.Int32, System.Int32)
+    // void WriteArray(System.String, System.String, System.String, System.TimeSpan[], System.Int32, System.Int32)
+// docid: M:System.Xml.XmlDictionaryWriter.WriteArray(System.String,System.String,System.String,System.TimeSpan[],System.Int32,System.Int32)
+    /**
+    Writes nodes from a  array.
+
+    - Parameter prefix: The namespace prefix.
+    - Parameter localName: The local name of the element.
+    - Parameter namespaceUri: The namespace URI of the element.
+    - Parameter array: The array that contains the nodes.
+    - Parameter offset: The starting index in the array.
+    - Parameter count: The number of nodes to get from the array.
+    */
+    open func WriteArray(prefix : Optional<dotnet.System.String>, localName : dotnet.System.String, namespaceUri : Optional<dotnet.System.String>, array : dotnet.System_Arr<dotnet.System.TimeSpan>, offset : Swift.Int32, count : Swift.Int32) throws {
+        var __thrown : NullableHandle = nil;
+        System_Xml_XmlDictionaryWriter_void__WriteArray_0__6__String_String_String_TimeSpanArray_i32_i32(&__thrown, self.get_handle(), prefix?.get_handle() ?? nil, localName.get_handle(), namespaceUri?.get_handle() ?? nil, array.get_handle(), offset, count);
+        if let __ex =  __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            return;
+        }
+    }
     // void WriteArray(System.String, System.Xml.XmlDictionaryString, System.Xml.XmlDictionaryString, bool[], System.Int32, System.Int32)
 // docid: M:System.Xml.XmlDictionaryWriter.WriteArray(System.String,System.Xml.XmlDictionaryString,System.Xml.XmlDictionaryString,System.Boolean[],System.Int32,System.Int32)
     /**
@@ -6516,7 +6665,27 @@ open class XmlDictionaryWriter
             return;
         }
     }
-// TODO COPE (write_all_methods) (span) void WriteArray(System.String, System.Xml.XmlDictionaryString, System.Xml.XmlDictionaryString, System.TimeSpan[], System.Int32, System.Int32)
+    // void WriteArray(System.String, System.Xml.XmlDictionaryString, System.Xml.XmlDictionaryString, System.TimeSpan[], System.Int32, System.Int32)
+// docid: M:System.Xml.XmlDictionaryWriter.WriteArray(System.String,System.Xml.XmlDictionaryString,System.Xml.XmlDictionaryString,System.TimeSpan[],System.Int32,System.Int32)
+    /**
+    Writes nodes from a  array.
+
+    - Parameter prefix: The namespace prefix.
+    - Parameter localName: The local name of the element.
+    - Parameter namespaceUri: The namespace URI of the element.
+    - Parameter array: The array that contains the nodes.
+    - Parameter offset: The starting index in the array.
+    - Parameter count: The number of nodes to get from the array.
+    */
+    open func WriteArray(prefix : Optional<dotnet.System.String>, localName : dotnet.System.Xml.XmlDictionaryString, namespaceUri : Optional<dotnet.System.Xml.XmlDictionaryString>, array : dotnet.System_Arr<dotnet.System.TimeSpan>, offset : Swift.Int32, count : Swift.Int32) throws {
+        var __thrown : NullableHandle = nil;
+        System_Xml_XmlDictionaryWriter_void__WriteArray_0__6__String_XmlDictionaryString_XmlDictionaryString_TimeSpanArray_i32_i32(&__thrown, self.get_handle(), prefix?.get_handle() ?? nil, localName.get_handle(), namespaceUri?.get_handle() ?? nil, array.get_handle(), offset, count);
+        if let __ex =  __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            return;
+        }
+    }
     // void WriteAttributeString(System.String, System.Xml.XmlDictionaryString, System.Xml.XmlDictionaryString, System.String)
 // docid: M:System.Xml.XmlDictionaryWriter.WriteAttributeString(System.String,System.Xml.XmlDictionaryString,System.Xml.XmlDictionaryString,System.String)
     /**
@@ -6565,13 +6734,13 @@ open class XmlDictionaryWriter
     - Returns: The task that represents the asynchronous  operation.
 
     */
-    open override func WriteBase64Async(buffer : dotnet.System_Arr<Swift.UInt8>, index : Swift.Int32, count : Swift.Int32) throws -> dotnet.System.Threading.Tasks.Task {
+    open override func WriteBase64Async(buffer : dotnet.System_Arr<Swift.UInt8>, index : Swift.Int32, count : Swift.Int32) async throws {
         var __thrown : NullableHandle = nil;
         let __return = System_Xml_XmlDictionaryWriter_Task__WriteBase64Async_0__3__u8Array_i32_i32(&__thrown, self.get_handle(), buffer.get_handle(), index, count);
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task(hndl: __return).ToAsync();
         }
     }
     // void WriteElementString(System.String, System.Xml.XmlDictionaryString, System.Xml.XmlDictionaryString, System.String)
@@ -6766,7 +6935,22 @@ open class XmlDictionaryWriter
             return;
         }
     }
-// TODO COPE (write_all_methods) (span) void WriteValue(System.TimeSpan)
+    // void WriteValue(System.TimeSpan)
+// docid: M:System.Xml.XmlDictionaryWriter.WriteValue(System.TimeSpan)
+    /**
+    Writes a  value.
+
+    - Parameter value: The  value to write.
+    */
+    open func WriteValue(value : dotnet.System.TimeSpan) throws {
+        var __thrown : NullableHandle = nil;
+        System_Xml_XmlDictionaryWriter_void__WriteValue_0__1__TimeSpan(&__thrown, self.get_handle(), value.get_handle());
+        if let __ex =  __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            return;
+        }
+    }
     // void WriteValue(System.Xml.IStreamProvider)
 // docid: M:System.Xml.XmlDictionaryWriter.WriteValue(System.Xml.IStreamProvider)
     /**
@@ -6824,13 +7008,13 @@ open class XmlDictionaryWriter
     - Returns: The task that represents the asynchronous  operation.
 
     */
-    open func WriteValueAsync(value : dotnet.System.Xml.IStreamProvider) throws -> dotnet.System.Threading.Tasks.Task {
+    open func WriteValueAsync(value : dotnet.System.Xml.IStreamProvider) async throws {
         var __thrown : NullableHandle = nil;
         let __return = System_Xml_XmlDictionaryWriter_Task__WriteValueAsync_0__1__IStreamProvider(&__thrown, self.get_handle(), value.get_handle());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task(hndl: __return).ToAsync();
         }
     }
     // void WriteXmlAttribute(System.String, System.String)

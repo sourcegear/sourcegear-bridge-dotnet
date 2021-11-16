@@ -16,6 +16,9 @@ public final class LocalDataStoreSlot
     public class override func get_type_handle() -> TypeHandle {
         return System_LocalDataStoreSlot_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
 } // LocalDataStoreSlot
@@ -87,6 +90,9 @@ public final class CompressedStack
 {
     public class override func get_type_handle() -> TypeHandle {
         return System_Threading_CompressedStack_get_type_handle();
+    }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -196,6 +202,9 @@ public final class ParameterizedThreadStart
     public class override func get_type_handle() -> TypeHandle {
         return System_Threading_ParameterizedThreadStart_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // void Invoke(System.Object)
@@ -235,15 +244,15 @@ public final class ParameterizedThreadStart
             return;
         }
     }
-    public init(_ callback : @escaping (Optional<dotnet.System.Object>) throws -> Void) throws
+    public convenience init(_ __closure_Invoke : @escaping (Optional<dotnet.System.Object>) throws -> Void) throws
     {
-        let __bridge : (UnsafeMutablePointer<NullableHandle>, NullableHandle) -> Void =
+        let __interlude_Invoke : (UnsafeMutablePointer<NullableHandle>, NullableHandle) -> Void =
         {
             (thrown : UnsafeMutablePointer<NullableHandle>, obj : NullableHandle) -> Void in
             do
             {
                 thrown.pointee = nil;
-                try callback((obj != nil) ? (dotnet.System.Object(hndl: obj!)) : nil);
+                try __closure_Invoke((obj != nil) ? (dotnet.System.Object(hndl: obj!)) : nil);
             }
             catch let e as dotnet.System.Exception
             {
@@ -255,24 +264,24 @@ public final class ParameterizedThreadStart
                 thrown.pointee = __copy_handle(e.get_handle());
             }
         };
-        let cbarg = UnsafeRawPointer(Unmanaged.passRetained(__bridge as AnyObject).toOpaque());
-        func __cb(cb : UnsafeRawPointer?, thrown : UnsafeMutablePointer<NullableHandle>, obj : NullableHandle) -> Void
+        func __cb_Invoke(pdata_interlude : UnsafeRawPointer, thrown : UnsafeMutablePointer<NullableHandle>, obj : NullableHandle) -> Void
         {
-            let f = Unmanaged<AnyObject>.fromOpaque(cb!).takeUnretainedValue() as! (UnsafeMutablePointer<NullableHandle>, NullableHandle) -> Void;
-            f(thrown, obj);
+            let f_interlude = Unmanaged<AnyObject>.fromOpaque(pdata_interlude).takeUnretainedValue() as! (UnsafeMutablePointer<NullableHandle>, NullableHandle) -> Void;
+            f_interlude(thrown, obj);
         }
+        let __pdata_Invoke = UnsafeRawPointer(Unmanaged.passRetained(__interlude_Invoke as AnyObject).toOpaque());
+
         var __thrown : NullableHandle = nil;
         let h = System_Threading_ParameterizedThreadStart_create(
             &__thrown,
-            cbarg,
-            nil, // TODO deinit
-            __cb
+            __cb_Invoke,
+            __pdata_Invoke,
+            nil
             );
-            // TODO check thrown
         if let __ex = __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-            super.init(hndl: h);
+            self.init(hndl: h);
         }
     }
     // void Invoke(System.Object)
@@ -300,6 +309,9 @@ public final class Thread
 {
     public class override func get_type_handle() -> TypeHandle {
         return System_Threading_Thread_get_type_handle();
+    }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -552,8 +564,6 @@ public final class Thread
     /**
     Returns a  object that can be used to capture the stack for the current thread.
 
-    - Returns: None.
-
     */
     public func GetCompressedStack() throws -> dotnet.System.Threading.CompressedStack {
         var __thrown : NullableHandle = nil;
@@ -721,7 +731,25 @@ public final class Thread
         return (__return) != 0;
         }
     }
-// TODO COPE (write_all_methods) (span) bool Join(System.TimeSpan)
+    // bool Join(System.TimeSpan)
+// docid: M:System.Threading.Thread.Join(System.TimeSpan)
+    /**
+    Blocks the calling thread until the thread represented by this instance terminates or the specified time elapses, while continuing to perform standard COM and SendMessage pumping.
+
+    - Parameter timeout: A  set to the amount of time to wait for the thread to terminate.
+    - Returns: 
+         if the thread terminated;  if the thread has not terminated after the amount of time specified by the  parameter has elapsed.
+
+    */
+    public func Join(timeout : dotnet.System.TimeSpan) throws -> Bool {
+        var __thrown : NullableHandle = nil;
+        let __return = System_Threading_Thread_bool__Join_0__1__TimeSpan(&__thrown, self.get_handle(), timeout.get_handle());
+        if let __ex =  __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+        return (__return) != 0;
+        }
+    }
     // void MemoryBarrier()
 // docid: M:System.Threading.Thread.MemoryBarrier
     /**
@@ -832,7 +860,22 @@ public final class Thread
             return;
         }
     }
-// TODO COPE (write_all_methods) (span) void Sleep(System.TimeSpan)
+    // void Sleep(System.TimeSpan)
+// docid: M:System.Threading.Thread.Sleep(System.TimeSpan)
+    /**
+    Suspends the current thread for the specified amount of time.
+
+    - Parameter timeout: The amount of time for which the thread is suspended. If the value of the  argument is , the thread relinquishes the remainder of its time slice to any thread of equal priority that is ready to run. If there are no other threads of equal priority that are ready to run, execution of the current thread is not suspended.
+    */
+    public class func Sleep(timeout : dotnet.System.TimeSpan) throws {
+        var __thrown : NullableHandle = nil;
+        System_Threading_Thread_void__Sleep_0__1__TimeSpan(&__thrown, timeout.get_handle());
+        if let __ex =  __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            return;
+        }
+    }
     // void SpinWait(System.Int32)
 // docid: M:System.Threading.Thread.SpinWait(System.Int32)
     /**
@@ -916,6 +959,10 @@ public final class Thread
     }
     // void UnsafeStart()
 // docid: M:System.Threading.Thread.UnsafeStart
+    /**
+    Causes the operating system to change the state of the current instance to .
+
+    */
     public func UnsafeStart() throws {
         var __thrown : NullableHandle = nil;
         System_Threading_Thread_void__UnsafeStart_0__0(&__thrown, self.get_handle());
@@ -927,6 +974,11 @@ public final class Thread
     }
     // void UnsafeStart(System.Object)
 // docid: M:System.Threading.Thread.UnsafeStart(System.Object)
+    /**
+    Causes the operating system to change the state of the current instance to , and optionally supplies an object containing data to be used by the method the thread executes.
+
+    - Parameter parameter: An object that contains data to be used by the method the thread executes.
+    */
     public func UnsafeStart(parameter : Optional<dotnet.System.Object>) throws {
         var __thrown : NullableHandle = nil;
         System_Threading_Thread_void__UnsafeStart_0__1__Object(&__thrown, self.get_handle(), parameter?.get_handle() ?? nil);
@@ -939,10 +991,10 @@ public final class Thread
     // System.Byte VolatileRead(ref System.Byte)
 // docid: M:System.Threading.Thread.VolatileRead(System.Byte@)
     /**
-    Reads the value of a field. The value is the latest written by any processor in a computer, regardless of the number of processors or the state of processor cache.
+    Reads the value of a field. On systems that require it, inserts a memory barrier that prevents the processor from reordering memory operations as follows: If a read or write appears after this method in the code, the processor cannot move it before this method.
 
     - Parameter address: The field to be read.
-    - Returns: The latest value written to the field by any processor.
+    - Returns: The value that was read.
 
     */
     public class func VolatileRead(address : inout Swift.UInt8) throws -> Swift.UInt8 {
@@ -960,10 +1012,10 @@ public final class Thread
     // System.Double VolatileRead(ref System.Double)
 // docid: M:System.Threading.Thread.VolatileRead(System.Double@)
     /**
-    Reads the value of a field. The value is the latest written by any processor in a computer, regardless of the number of processors or the state of processor cache.
+    Reads the value of a field. On systems that require it, inserts a memory barrier that prevents the processor from reordering memory operations as follows: If a read or write appears after this method in the code, the processor cannot move it before this method.
 
     - Parameter address: The field to be read.
-    - Returns: The latest value written to the field by any processor.
+    - Returns: The value that was read.
 
     */
     public class func VolatileRead(address : inout Swift.Double) throws -> Swift.Double {
@@ -981,10 +1033,10 @@ public final class Thread
     // System.Int16 VolatileRead(ref System.Int16)
 // docid: M:System.Threading.Thread.VolatileRead(System.Int16@)
     /**
-    Reads the value of a field. The value is the latest written by any processor in a computer, regardless of the number of processors or the state of processor cache.
+    Reads the value of a field. On systems that require it, inserts a memory barrier that prevents the processor from reordering memory operations as follows: If a read or write appears after this method in the code, the processor cannot move it before this method.
 
     - Parameter address: The field to be read.
-    - Returns: The latest value written to the field by any processor.
+    - Returns: The value that was read.
 
     */
     public class func VolatileRead(address : inout Swift.Int16) throws -> Swift.Int16 {
@@ -1002,10 +1054,10 @@ public final class Thread
     // System.Int32 VolatileRead(ref System.Int32)
 // docid: M:System.Threading.Thread.VolatileRead(System.Int32@)
     /**
-    Reads the value of a field. The value is the latest written by any processor in a computer, regardless of the number of processors or the state of processor cache.
+    Reads the value of a field. On systems that require it, inserts a memory barrier that prevents the processor from reordering memory operations as follows: If a read or write appears after this method in the code, the processor cannot move it before this method.
 
     - Parameter address: The field to be read.
-    - Returns: The latest value written to the field by any processor.
+    - Returns: The value that was read.
 
     */
     public class func VolatileRead(address : inout Swift.Int32) throws -> Swift.Int32 {
@@ -1023,10 +1075,10 @@ public final class Thread
     // System.Int64 VolatileRead(ref System.Int64)
 // docid: M:System.Threading.Thread.VolatileRead(System.Int64@)
     /**
-    Reads the value of a field. The value is the latest written by any processor in a computer, regardless of the number of processors or the state of processor cache.
+    Reads the value of a field. On systems that require it, inserts a memory barrier that prevents the processor from reordering memory operations as follows: If a read or write appears after this method in the code, the processor cannot move it before this method.
 
     - Parameter address: The field to be read.
-    - Returns: The latest value written to the field by any processor.
+    - Returns: The value that was read.
 
     */
     public class func VolatileRead(address : inout Swift.Int64) throws -> Swift.Int64 {
@@ -1044,10 +1096,10 @@ public final class Thread
     // System.IntPtr VolatileRead(ref System.IntPtr)
 // docid: M:System.Threading.Thread.VolatileRead(System.IntPtr@)
     /**
-    Reads the value of a field. The value is the latest written by any processor in a computer, regardless of the number of processors or the state of processor cache.
+    Reads the value of a field. On systems that require it, inserts a memory barrier that prevents the processor from reordering memory operations as follows: If a read or write appears after this method in the code, the processor cannot move it before this method.
 
     - Parameter address: The field to be read.
-    - Returns: The latest value written to the field by any processor.
+    - Returns: The value that was read.
 
     */
     public class func VolatileRead(address : inout dotnet.System.IntPtr) throws -> dotnet.System.IntPtr {
@@ -1065,17 +1117,18 @@ public final class Thread
     // System.Object VolatileRead(ref System.Object)
 // docid: M:System.Threading.Thread.VolatileRead(System.Object@)
     /**
-    Reads the value of a field. The value is the latest written by any processor in a computer, regardless of the number of processors or the state of processor cache.
+    Reads the value of a field. On systems that require it, inserts a memory barrier that prevents the processor from reordering memory operations as follows: If a read or write appears after this method in the code, the processor cannot move it before this method.
 
     - Parameter address: The field to be read.
-    - Returns: The latest value written to the field by any processor.
+    - Returns: The value that was read.
 
     */
-    public class func VolatileRead(address : inout dotnet.System.Object) throws -> Optional<dotnet.System.Object> {
+    public class func VolatileRead(address : inout Optional<dotnet.System.Object>) throws -> Optional<dotnet.System.Object> {
         var __thrown : NullableHandle = nil;
-            var _tmp_ref_address = address.get_handle();
+            var _tmp_ref_address = (address != nil) ? (address!.get_handle()) : nil;
         let __return = System_Threading_Thread_Object__VolatileRead_0__1__refObject(&__thrown, &_tmp_ref_address);
-        let _tmp2_address = dotnet.System.Object(hndl: _tmp_ref_address);
+        let __h__tmp2_address = _tmp_ref_address;
+        let _tmp2_address = (__h__tmp2_address != nil) ? dotnet.System.Object(hndl: __h__tmp2_address!) : nil;
             address = _tmp2_address;
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
@@ -1090,10 +1143,10 @@ public final class Thread
     // System.SByte VolatileRead(ref System.SByte)
 // docid: M:System.Threading.Thread.VolatileRead(System.SByte@)
     /**
-    Reads the value of a field. The value is the latest written by any processor in a computer, regardless of the number of processors or the state of processor cache.
+    Reads the value of a field. On systems that require it, inserts a memory barrier that prevents the processor from reordering memory operations as follows: If a read or write appears after this method in the code, the processor cannot move it before this method.
 
     - Parameter address: The field to be read.
-    - Returns: The latest value written to the field by any processor.
+    - Returns: The value that was read.
 
     */
     public class func VolatileRead(address : inout Swift.Int8) throws -> Swift.Int8 {
@@ -1111,10 +1164,10 @@ public final class Thread
     // System.Single VolatileRead(ref System.Single)
 // docid: M:System.Threading.Thread.VolatileRead(System.Single@)
     /**
-    Reads the value of a field. The value is the latest written by any processor in a computer, regardless of the number of processors or the state of processor cache.
+    Reads the value of a field. On systems that require it, inserts a memory barrier that prevents the processor from reordering memory operations as follows: If a read or write appears after this method in the code, the processor cannot move it before this method.
 
     - Parameter address: The field to be read.
-    - Returns: The latest value written to the field by any processor.
+    - Returns: The value that was read.
 
     */
     public class func VolatileRead(address : inout Swift.Float) throws -> Swift.Float {
@@ -1132,10 +1185,10 @@ public final class Thread
     // System.UInt16 VolatileRead(ref System.UInt16)
 // docid: M:System.Threading.Thread.VolatileRead(System.UInt16@)
     /**
-    Reads the value of a field. The value is the latest written by any processor in a computer, regardless of the number of processors or the state of processor cache.
+    Reads the value of a field. On systems that require it, inserts a memory barrier that prevents the processor from reordering memory operations as follows: If a read or write appears after this method in the code, the processor cannot move it before this method.
 
     - Parameter address: The field to be read.
-    - Returns: The latest value written to the field by any processor.
+    - Returns: The value that was read.
 
     */
     public class func VolatileRead(address : inout Swift.UInt16) throws -> Swift.UInt16 {
@@ -1153,10 +1206,10 @@ public final class Thread
     // System.UInt32 VolatileRead(ref System.UInt32)
 // docid: M:System.Threading.Thread.VolatileRead(System.UInt32@)
     /**
-    Reads the value of a field. The value is the latest written by any processor in a computer, regardless of the number of processors or the state of processor cache.
+    Reads the value of a field. On systems that require it, inserts a memory barrier that prevents the processor from reordering memory operations as follows: If a read or write appears after this method in the code, the processor cannot move it before this method.
 
     - Parameter address: The field to be read.
-    - Returns: The latest value written to the field by any processor.
+    - Returns: The value that was read.
 
     */
     public class func VolatileRead(address : inout Swift.UInt32) throws -> Swift.UInt32 {
@@ -1174,10 +1227,10 @@ public final class Thread
     // System.UInt64 VolatileRead(ref System.UInt64)
 // docid: M:System.Threading.Thread.VolatileRead(System.UInt64@)
     /**
-    Reads the value of a field. The value is the latest written by any processor in a computer, regardless of the number of processors or the state of processor cache.
+    Reads the value of a field. On systems that require it, inserts a memory barrier that prevents the processor from reordering memory operations as follows: If a read or write appears after this method in the code, the processor cannot move it before this method.
 
     - Parameter address: The field to be read.
-    - Returns: The latest value written to the field by any processor.
+    - Returns: The value that was read.
 
     */
     public class func VolatileRead(address : inout Swift.UInt64) throws -> Swift.UInt64 {
@@ -1195,10 +1248,10 @@ public final class Thread
     // System.UIntPtr VolatileRead(ref System.UIntPtr)
 // docid: M:System.Threading.Thread.VolatileRead(System.UIntPtr@)
     /**
-    Reads the value of a field. The value is the latest written by any processor in a computer, regardless of the number of processors or the state of processor cache.
+    Reads the value of a field. On systems that require it, inserts a memory barrier that prevents the processor from reordering memory operations as follows: If a read or write appears after this method in the code, the processor cannot move it before this method.
 
     - Parameter address: The field to be read.
-    - Returns: The latest value written to the field by any processor.
+    - Returns: The value that was read.
 
     */
     public class func VolatileRead(address : inout dotnet.System.UIntPtr) throws -> dotnet.System.UIntPtr {
@@ -1216,7 +1269,7 @@ public final class Thread
     // void VolatileWrite(ref System.Byte, System.Byte)
 // docid: M:System.Threading.Thread.VolatileWrite(System.Byte@,System.Byte)
     /**
-    Writes a value to a field immediately, so that the value is visible to all processors in the computer.
+    Writes a value to a field. On systems that require it, inserts a memory barrier that prevents the processor from reordering memory operations as follows: If a read or write appears before this method in the code, the processor cannot move it after this method.
 
     - Parameter address: The field to which the value is to be written.
     - Parameter value: The value to be written.
@@ -1236,7 +1289,7 @@ public final class Thread
     // void VolatileWrite(ref System.Double, System.Double)
 // docid: M:System.Threading.Thread.VolatileWrite(System.Double@,System.Double)
     /**
-    Writes a value to a field immediately, so that the value is visible to all processors in the computer.
+    Writes a value to a field. On systems that require it, inserts a memory barrier that prevents the processor from reordering memory operations as follows: If a read or write appears before this method in the code, the processor cannot move it after this method.
 
     - Parameter address: The field to which the value is to be written.
     - Parameter value: The value to be written.
@@ -1256,7 +1309,7 @@ public final class Thread
     // void VolatileWrite(ref System.Int16, System.Int16)
 // docid: M:System.Threading.Thread.VolatileWrite(System.Int16@,System.Int16)
     /**
-    Writes a value to a field immediately, so that the value is visible to all processors in the computer.
+    Writes a value to a field. On systems that require it, inserts a memory barrier that prevents the processor from reordering memory operations as follows: If a read or write appears before this method in the code, the processor cannot move it after this method.
 
     - Parameter address: The field to which the value is to be written.
     - Parameter value: The value to be written.
@@ -1276,7 +1329,7 @@ public final class Thread
     // void VolatileWrite(ref System.Int32, System.Int32)
 // docid: M:System.Threading.Thread.VolatileWrite(System.Int32@,System.Int32)
     /**
-    Writes a value to a field immediately, so that the value is visible to all processors in the computer.
+    Writes a value to a field. On systems that require it, inserts a memory barrier that prevents the processor from reordering memory operations as follows: If a read or write appears before this method in the code, the processor cannot move it after this method.
 
     - Parameter address: The field to which the value is to be written.
     - Parameter value: The value to be written.
@@ -1296,7 +1349,7 @@ public final class Thread
     // void VolatileWrite(ref System.Int64, System.Int64)
 // docid: M:System.Threading.Thread.VolatileWrite(System.Int64@,System.Int64)
     /**
-    Writes a value to a field immediately, so that the value is visible to all processors in the computer.
+    Writes a value to a field. On systems that require it, inserts a memory barrier that prevents the processor from reordering memory operations as follows: If a read or write appears before this method in the code, the processor cannot move it after this method.
 
     - Parameter address: The field to which the value is to be written.
     - Parameter value: The value to be written.
@@ -1316,7 +1369,7 @@ public final class Thread
     // void VolatileWrite(ref System.IntPtr, System.IntPtr)
 // docid: M:System.Threading.Thread.VolatileWrite(System.IntPtr@,System.IntPtr)
     /**
-    Writes a value to a field immediately, so that the value is visible to all processors in the computer.
+    Writes a value to a field. On systems that require it, inserts a memory barrier that prevents the processor from reordering memory operations as follows: If a read or write appears before this method in the code, the processor cannot move it after this method.
 
     - Parameter address: The field to which the value is to be written.
     - Parameter value: The value to be written.
@@ -1336,16 +1389,17 @@ public final class Thread
     // void VolatileWrite(ref System.Object, System.Object)
 // docid: M:System.Threading.Thread.VolatileWrite(System.Object@,System.Object)
     /**
-    Writes a value to a field immediately, so that the value is visible to all processors in the computer.
+    Writes a value to a field. On systems that require it, inserts a memory barrier that prevents the processor from reordering memory operations as follows: If a read or write appears before this method in the code, the processor cannot move it after this method.
 
     - Parameter address: The field to which the value is to be written.
     - Parameter value: The value to be written.
     */
-    public class func VolatileWrite(address : inout dotnet.System.Object, value : Optional<dotnet.System.Object>) throws {
+    public class func VolatileWrite(address : inout Optional<dotnet.System.Object>, value : Optional<dotnet.System.Object>) throws {
         var __thrown : NullableHandle = nil;
-            var _tmp_ref_address = address.get_handle();
+            var _tmp_ref_address = (address != nil) ? (address!.get_handle()) : nil;
         System_Threading_Thread_void__VolatileWrite_0__2__refObject_Object(&__thrown, &_tmp_ref_address, value?.get_handle() ?? nil);
-        let _tmp2_address = dotnet.System.Object(hndl: _tmp_ref_address);
+        let __h__tmp2_address = _tmp_ref_address;
+        let _tmp2_address = (__h__tmp2_address != nil) ? dotnet.System.Object(hndl: __h__tmp2_address!) : nil;
             address = _tmp2_address;
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
@@ -1356,7 +1410,7 @@ public final class Thread
     // void VolatileWrite(ref System.SByte, System.SByte)
 // docid: M:System.Threading.Thread.VolatileWrite(System.SByte@,System.SByte)
     /**
-    Writes a value to a field immediately, so that the value is visible to all processors in the computer.
+    Writes a value to a field. On systems that require it, inserts a memory barrier that prevents the processor from reordering memory operations as follows: If a read or write appears before this method in the code, the processor cannot move it after this method.
 
     - Parameter address: The field to which the value is to be written.
     - Parameter value: The value to be written.
@@ -1376,7 +1430,7 @@ public final class Thread
     // void VolatileWrite(ref System.Single, System.Single)
 // docid: M:System.Threading.Thread.VolatileWrite(System.Single@,System.Single)
     /**
-    Writes a value to a field immediately, so that the value is visible to all processors in the computer.
+    Writes a value to a field. On systems that require it, inserts a memory barrier that prevents the processor from reordering memory operations as follows: If a read or write appears before this method in the code, the processor cannot move it after this method.
 
     - Parameter address: The field to which the value is to be written.
     - Parameter value: The value to be written.
@@ -1396,7 +1450,7 @@ public final class Thread
     // void VolatileWrite(ref System.UInt16, System.UInt16)
 // docid: M:System.Threading.Thread.VolatileWrite(System.UInt16@,System.UInt16)
     /**
-    Writes a value to a field immediately, so that the value is visible to all processors in the computer.
+    Writes a value to a field. On systems that require it, inserts a memory barrier that prevents the processor from reordering memory operations as follows: If a read or write appears before this method in the code, the processor cannot move it after this method.
 
     - Parameter address: The field to which the value is to be written.
     - Parameter value: The value to be written.
@@ -1416,7 +1470,7 @@ public final class Thread
     // void VolatileWrite(ref System.UInt32, System.UInt32)
 // docid: M:System.Threading.Thread.VolatileWrite(System.UInt32@,System.UInt32)
     /**
-    Writes a value to a field immediately, so that the value is visible to all processors in the computer.
+    Writes a value to a field. On systems that require it, inserts a memory barrier that prevents the processor from reordering memory operations as follows: If a read or write appears before this method in the code, the processor cannot move it after this method.
 
     - Parameter address: The field to which the value is to be written.
     - Parameter value: The value to be written.
@@ -1436,7 +1490,7 @@ public final class Thread
     // void VolatileWrite(ref System.UInt64, System.UInt64)
 // docid: M:System.Threading.Thread.VolatileWrite(System.UInt64@,System.UInt64)
     /**
-    Writes a value to a field immediately, so that the value is visible to all processors in the computer.
+    Writes a value to a field. On systems that require it, inserts a memory barrier that prevents the processor from reordering memory operations as follows: If a read or write appears before this method in the code, the processor cannot move it after this method.
 
     - Parameter address: The field to which the value is to be written.
     - Parameter value: The value to be written.
@@ -1456,7 +1510,7 @@ public final class Thread
     // void VolatileWrite(ref System.UIntPtr, System.UIntPtr)
 // docid: M:System.Threading.Thread.VolatileWrite(System.UIntPtr@,System.UIntPtr)
     /**
-    Writes a value to a field immediately, so that the value is visible to all processors in the computer.
+    Writes a value to a field. On systems that require it, inserts a memory barrier that prevents the processor from reordering memory operations as follows: If a read or write appears before this method in the code, the processor cannot move it after this method.
 
     - Parameter address: The field to which the value is to be written.
     - Parameter value: The value to be written.
@@ -1876,6 +1930,9 @@ public final class ThreadAbortException
     public class override func get_type_handle() -> TypeHandle {
         return System_Threading_ThreadAbortException_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // [IsSpecialName] System.Object get_ExceptionState()
@@ -1916,6 +1973,9 @@ open class ThreadExceptionEventArgs
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Threading_ThreadExceptionEventArgs_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -1970,6 +2030,9 @@ public final class ThreadExceptionEventHandler
     public class override func get_type_handle() -> TypeHandle {
         return System_Threading_ThreadExceptionEventHandler_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // void Invoke(System.Object, System.Threading.ThreadExceptionEventArgs)
@@ -2009,15 +2072,15 @@ public final class ThreadExceptionEventHandler
             return;
         }
     }
-    public init(_ callback : @escaping (dotnet.System.Object, dotnet.System.Threading.ThreadExceptionEventArgs) throws -> Void) throws
+    public convenience init(_ __closure_Invoke : @escaping (dotnet.System.Object, dotnet.System.Threading.ThreadExceptionEventArgs) throws -> Void) throws
     {
-        let __bridge : (UnsafeMutablePointer<NullableHandle>, NonnullHandle, NonnullHandle) -> Void =
+        let __interlude_Invoke : (UnsafeMutablePointer<NullableHandle>, NonnullHandle, NonnullHandle) -> Void =
         {
             (thrown : UnsafeMutablePointer<NullableHandle>, sender : NonnullHandle, e : NonnullHandle) -> Void in
             do
             {
                 thrown.pointee = nil;
-                try callback(dotnet.System.Object(hndl: sender), dotnet.System.Threading.ThreadExceptionEventArgs(hndl: e));
+                try __closure_Invoke(dotnet.System.Object(hndl: sender), dotnet.System.Threading.ThreadExceptionEventArgs(hndl: e));
             }
             catch let e as dotnet.System.Exception
             {
@@ -2029,24 +2092,24 @@ public final class ThreadExceptionEventHandler
                 thrown.pointee = __copy_handle(e.get_handle());
             }
         };
-        let cbarg = UnsafeRawPointer(Unmanaged.passRetained(__bridge as AnyObject).toOpaque());
-        func __cb(cb : UnsafeRawPointer?, thrown : UnsafeMutablePointer<NullableHandle>, sender : NonnullHandle, e : NonnullHandle) -> Void
+        func __cb_Invoke(pdata_interlude : UnsafeRawPointer, thrown : UnsafeMutablePointer<NullableHandle>, sender : NonnullHandle, e : NonnullHandle) -> Void
         {
-            let f = Unmanaged<AnyObject>.fromOpaque(cb!).takeUnretainedValue() as! (UnsafeMutablePointer<NullableHandle>, NonnullHandle, NonnullHandle) -> Void;
-            f(thrown, sender, e);
+            let f_interlude = Unmanaged<AnyObject>.fromOpaque(pdata_interlude).takeUnretainedValue() as! (UnsafeMutablePointer<NullableHandle>, NonnullHandle, NonnullHandle) -> Void;
+            f_interlude(thrown, sender, e);
         }
+        let __pdata_Invoke = UnsafeRawPointer(Unmanaged.passRetained(__interlude_Invoke as AnyObject).toOpaque());
+
         var __thrown : NullableHandle = nil;
         let h = System_Threading_ThreadExceptionEventHandler_create(
             &__thrown,
-            cbarg,
-            nil, // TODO deinit
-            __cb
+            __cb_Invoke,
+            __pdata_Invoke,
+            nil
             );
-            // TODO check thrown
         if let __ex = __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-            super.init(hndl: h);
+            self.init(hndl: h);
         }
     }
     // void Invoke(System.Object, System.Threading.ThreadExceptionEventArgs)
@@ -2074,6 +2137,9 @@ open class ThreadInterruptedException
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Threading_ThreadInterruptedException_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -2213,6 +2279,9 @@ public final class ThreadStart
     public class override func get_type_handle() -> TypeHandle {
         return System_Threading_ThreadStart_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // void Invoke()
@@ -2252,15 +2321,15 @@ public final class ThreadStart
             return;
         }
     }
-    public init(_ callback : @escaping () throws -> Void) throws
+    public convenience init(_ __closure_Invoke : @escaping () throws -> Void) throws
     {
-        let __bridge : (UnsafeMutablePointer<NullableHandle>) -> Void =
+        let __interlude_Invoke : (UnsafeMutablePointer<NullableHandle>) -> Void =
         {
             (thrown : UnsafeMutablePointer<NullableHandle>) -> Void in
             do
             {
                 thrown.pointee = nil;
-                try callback();
+                try __closure_Invoke();
             }
             catch let e as dotnet.System.Exception
             {
@@ -2272,24 +2341,24 @@ public final class ThreadStart
                 thrown.pointee = __copy_handle(e.get_handle());
             }
         };
-        let cbarg = UnsafeRawPointer(Unmanaged.passRetained(__bridge as AnyObject).toOpaque());
-        func __cb(cb : UnsafeRawPointer?, thrown : UnsafeMutablePointer<NullableHandle>) -> Void
+        func __cb_Invoke(pdata_interlude : UnsafeRawPointer, thrown : UnsafeMutablePointer<NullableHandle>) -> Void
         {
-            let f = Unmanaged<AnyObject>.fromOpaque(cb!).takeUnretainedValue() as! (UnsafeMutablePointer<NullableHandle>) -> Void;
-            f(thrown);
+            let f_interlude = Unmanaged<AnyObject>.fromOpaque(pdata_interlude).takeUnretainedValue() as! (UnsafeMutablePointer<NullableHandle>) -> Void;
+            f_interlude(thrown);
         }
+        let __pdata_Invoke = UnsafeRawPointer(Unmanaged.passRetained(__interlude_Invoke as AnyObject).toOpaque());
+
         var __thrown : NullableHandle = nil;
         let h = System_Threading_ThreadStart_create(
             &__thrown,
-            cbarg,
-            nil, // TODO deinit
-            __cb
+            __cb_Invoke,
+            __pdata_Invoke,
+            nil
             );
-            // TODO check thrown
         if let __ex = __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-            super.init(hndl: h);
+            self.init(hndl: h);
         }
     }
     // void Invoke()
@@ -2317,6 +2386,9 @@ public final class ThreadStartException
 {
     public class override func get_type_handle() -> TypeHandle {
         return System_Threading_ThreadStartException_get_type_handle();
+    }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -2462,6 +2534,9 @@ open class ThreadStateException
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Threading_ThreadStateException_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }

@@ -18,6 +18,9 @@ public final class AssemblyBuilder
     public class override func get_type_handle() -> TypeHandle {
         return System_Reflection_Emit_AssemblyBuilder_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // System.Reflection.Emit.AssemblyBuilder DefineDynamicAssembly(System.Reflection.AssemblyName, System.Reflection.Emit.AssemblyBuilderAccess)
@@ -687,6 +690,10 @@ public final class AssemblyBuilder
             return try! get_HostContext();
         }
     }
+    /**
+    Gets a value that indicates whether this dynamic assembly is held in a collectible .
+
+    */
     public override var IsCollectible : Bool {
         get {
             return try! get_IsCollectible();
@@ -782,6 +789,9 @@ public final class ConstructorBuilder
 {
     public class override func get_type_handle() -> TypeHandle {
         return System_Reflection_Emit_ConstructorBuilder_get_type_handle();
+    }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -1197,6 +1207,10 @@ public final class ConstructorBuilder
             return try! set_InitLocals(value: v);
         }
     }
+    /**
+    Gets a token that identifies the current dynamic module in metadata.
+
+    */
     public override var MetadataToken : Swift.Int32 {
         get {
             return try! get_MetadataToken();
@@ -1253,10 +1267,19 @@ public final class EnumBuilder
     public class override func get_type_handle() -> TypeHandle {
         return System_Reflection_Emit_EnumBuilder_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // System.Type CreateType()
 // docid: M:System.Reflection.Emit.EnumBuilder.CreateType
+    /**
+    Creates a  object for this enum.
+
+    - Returns: A  object for this enum.
+
+    */
     public func CreateType() throws -> Optional<dotnet.System.Type_> {
         var __thrown : NullableHandle = nil;
         let __return = System_Reflection_Emit_EnumBuilder_Type__CreateType_0__0(&__thrown, self.get_handle());
@@ -1583,7 +1606,7 @@ public final class EnumBuilder
     // System.Reflection.MemberInfo[] GetMembers(System.Reflection.BindingFlags)
 // docid: M:System.Reflection.Emit.EnumBuilder.GetMembers(System.Reflection.BindingFlags)
     /**
-    Returns the specified members declared or inherited by this type,.
+    Returns the specified members declared or inherited by this type.
 
     - Parameter bindingAttr: This must be a bit flag from  : , , and so on.
     - Returns: Returns an array of  objects representing the public and non-public members declared or inherited by this type. An empty array is returned if there are no matching members.
@@ -1712,6 +1735,14 @@ public final class EnumBuilder
     }
     // bool IsAssignableFrom(System.Reflection.TypeInfo)
 // docid: M:System.Reflection.Emit.EnumBuilder.IsAssignableFrom(System.Reflection.TypeInfo)
+    /**
+    Gets a value that indicates whether a specified  object can be assigned to this object.
+
+    - Parameter typeInfo: The object to test.
+    - Returns: 
+         if  can be assigned to this object; otherwise, .
+
+    */
     public override func IsAssignableFrom(typeInfo : Optional<dotnet.System.Reflection.TypeInfo>) throws -> Bool {
         var __thrown : NullableHandle = nil;
         let __return = System_Reflection_Emit_EnumBuilder_bool__IsAssignableFrom_0__1__TypeInfo(&__thrown, self.get_handle(), typeInfo?.get_handle() ?? nil);
@@ -2216,6 +2247,9 @@ public final class EventBuilder
     public class override func get_type_handle() -> TypeHandle {
         return System_Reflection_Emit_EventBuilder_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // void AddOtherMethod(System.Reflection.Emit.MethodBuilder)
@@ -2329,6 +2363,9 @@ public final class FieldBuilder
 {
     public class override func get_type_handle() -> TypeHandle {
         return System_Reflection_Emit_FieldBuilder_get_type_handle();
+    }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -2628,6 +2665,10 @@ public final class FieldBuilder
             return try! get_FieldType();
         }
     }
+    /**
+    Gets a token that identifies the current dynamic module in metadata.
+
+    */
     public override var MetadataToken : Swift.Int32 {
         get {
             return try! get_MetadataToken();
@@ -2674,6 +2715,9 @@ public final class GenericTypeParameterBuilder
 {
     public class override func get_type_handle() -> TypeHandle {
         return System_Reflection_Emit_GenericTypeParameterBuilder_get_type_handle();
+    }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -3103,6 +3147,13 @@ public final class GenericTypeParameterBuilder
     }
     // bool IsAssignableFrom(System.Reflection.TypeInfo)
 // docid: M:System.Reflection.Emit.GenericTypeParameterBuilder.IsAssignableFrom(System.Reflection.TypeInfo)
+    /**
+    Throws a  exception in all cases.
+
+    - Parameter typeInfo: The object to test.
+    - Returns: Throws a  exception in all cases.
+
+    */
     public override func IsAssignableFrom(typeInfo : Optional<dotnet.System.Reflection.TypeInfo>) throws -> Bool {
         var __thrown : NullableHandle = nil;
         let __return = System_Reflection_Emit_GenericTypeParameterBuilder_bool__IsAssignableFrom_0__1__TypeInfo(&__thrown, self.get_handle(), typeInfo?.get_handle() ?? nil);
@@ -3791,6 +3842,10 @@ public final class GenericTypeParameterBuilder
             return try! get_IsTypeDefinition();
         }
     }
+    /**
+    Gets a token that identifies the current dynamic module in metadata.
+
+    */
     public override var MetadataToken : Swift.Int32 {
         get {
             return try! get_MetadataToken();
@@ -3864,6 +3919,9 @@ public final class MethodBuilder
 {
     public class override func get_type_handle() -> TypeHandle {
         return System_Reflection_Emit_MethodBuilder_get_type_handle();
+    }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -4587,6 +4645,10 @@ public final class MethodBuilder
             return try! get_IsSecurityTransparent();
         }
     }
+    /**
+    Gets a token that identifies the current dynamic module in metadata.
+
+    */
     public override var MetadataToken : Swift.Int32 {
         get {
             return try! get_MetadataToken();
@@ -4669,6 +4731,9 @@ open class ModuleBuilder
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Reflection_Emit_ModuleBuilder_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -5644,6 +5709,9 @@ public final class PropertyBuilder
     public class override func get_type_handle() -> TypeHandle {
         return System_Reflection_Emit_PropertyBuilder_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // void AddOtherMethod(System.Reflection.Emit.MethodBuilder)
@@ -5685,7 +5753,7 @@ public final class PropertyBuilder
     /**
     Returns an array of all the custom attributes for this property.
 
-    - Parameter inherit: If , walks up this property's inheritance chain to find the custom attributes
+    - Parameter inherit: If , walks up this property's inheritance chain to find the custom attributes.
     - Returns: An array of all the custom attributes.
 
     */
@@ -6148,6 +6216,9 @@ public final class TypeBuilder
     public class override func get_type_handle() -> TypeHandle {
         return System_Reflection_Emit_TypeBuilder_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // static field: System.Int32 UnspecifiedTypeSize
@@ -6305,7 +6376,7 @@ public final class TypeBuilder
     Adds a new field to the type, with the given name, attributes, and field type.
 
     - Parameter fieldName: The name of the field.  cannot contain embedded nulls.
-    - Parameter type: The type of the field
+    - Parameter type: The type of the field.
     - Parameter attributes: The attributes of the field.
     - Returns: The defined field.
 
@@ -6325,7 +6396,7 @@ public final class TypeBuilder
     Adds a new field to the type, with the given name, attributes, field type, and custom modifiers.
 
     - Parameter fieldName: The name of the field.  cannot contain embedded nulls.
-    - Parameter type: The type of the field
+    - Parameter type: The type of the field.
     - Parameter requiredCustomModifiers: An array of types representing the required custom modifiers for the field, such as .
     - Parameter optionalCustomModifiers: An array of types representing the optional custom modifiers for the field, such as .
     - Parameter attributes: The attributes of the field.
@@ -7330,6 +7401,14 @@ public final class TypeBuilder
     }
     // bool IsAssignableFrom(System.Reflection.TypeInfo)
 // docid: M:System.Reflection.Emit.TypeBuilder.IsAssignableFrom(System.Reflection.TypeInfo)
+    /**
+    Gets a value that indicates whether a specified  object can be assigned to this object.
+
+    - Parameter typeInfo: The object to test.
+    - Returns: 
+         if  can be assigned to this object; otherwise, .
+
+    */
     public override func IsAssignableFrom(typeInfo : Optional<dotnet.System.Reflection.TypeInfo>) throws -> Bool {
         var __thrown : NullableHandle = nil;
         let __return = System_Reflection_Emit_TypeBuilder_bool__IsAssignableFrom_0__1__TypeInfo(&__thrown, self.get_handle(), typeInfo?.get_handle() ?? nil);
@@ -8068,6 +8147,10 @@ public final class TypeBuilder
             return try! get_IsTypeDefinition();
         }
     }
+    /**
+    Gets a token that identifies the current dynamic module in metadata.
+
+    */
     public override var MetadataToken : Swift.Int32 {
         get {
             return try! get_MetadataToken();

@@ -18,7 +18,7 @@ TYP System_Runtime_Serialization_DataContractResolver_get_type_handle(void);
 
 SG_HNDL_NULLABLE System_Runtime_Serialization_DataContractResolver_Type__ResolveName_0__4__String_String_Type_DataContractResolver(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NONNULL typeName, SG_HNDL_NULLABLE typeNamespace, SG_HNDL_NULLABLE declaredType, SG_HNDL_NONNULL knownTypeResolver);
 
-int32_t System_Runtime_Serialization_DataContractResolver_bool__TryResolveType_0__5__Type_Type_DataContractResolver_outXmlDictionaryString_outXmlDictionaryString(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NONNULL type, SG_HNDL_NULLABLE declaredType, SG_HNDL_NONNULL knownTypeResolver, SG_HNDL_NONNULL* _Nonnull __typeName_out_ptr, SG_HNDL_NONNULL* _Nonnull __typeNamespace_out_ptr);
+int32_t System_Runtime_Serialization_DataContractResolver_bool__TryResolveType_0__5__Type_Type_DataContractResolver_outXmlDictionaryString_outXmlDictionaryString(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NONNULL type, SG_HNDL_NULLABLE declaredType, SG_HNDL_NONNULL knownTypeResolver, SG_HNDL_NULLABLE* _Nonnull __typeName_out_ptr, SG_HNDL_NULLABLE* _Nonnull __typeNamespace_out_ptr);
 
 SG_HNDL_NONNULL System_Runtime_Serialization_DataContractResolver_cast(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __h);
 
@@ -142,6 +142,8 @@ void System_Runtime_Serialization_IExtensibleDataObject_void__set_ExtensionData_
 
 SG_HNDL_NONNULL System_Runtime_Serialization_IExtensibleDataObject_cast(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __h);
 
+SG_HNDL_NONNULL System_Runtime_Serialization_IExtensibleDataObject_create(SG_HNDL_NULLABLE * _Nonnull __thrown, void (* _Nullable __deinit)(const void* _Nonnull __pdata));
+
 SG_HNDL_NONNULL System_Runtime_Serialization_XPathQueryGenerator_String__CreateFromDataContractSerializer_0__4__Type_MemberInfoArray_StringBuilder_outXmlNamespaceManager(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL type, SG_HNDL_NONNULL pathToMember, SG_HNDL_NULLABLE rootElementXpath, SG_HNDL_NONNULL* _Nonnull __namespaces_out_ptr);
 
 SG_HNDL_NONNULL System_Runtime_Serialization_XPathQueryGenerator_String__CreateFromDataContractSerializer_0__3__Type_MemberInfoArray_outXmlNamespaceManager(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL type, SG_HNDL_NONNULL pathToMember, SG_HNDL_NONNULL* _Nonnull __namespaces_out_ptr);
@@ -232,6 +234,8 @@ int32_t System_Xml_IFragmentCapableXmlDictionaryWriter_bool__get_CanFragment_0__
 
 SG_HNDL_NONNULL System_Xml_IFragmentCapableXmlDictionaryWriter_cast(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __h);
 
+SG_HNDL_NONNULL System_Xml_IFragmentCapableXmlDictionaryWriter_create(SG_HNDL_NULLABLE * _Nonnull __thrown, void (* _Nonnull  __cb_System_Xml_IFragmentCapableXmlDictionaryWriter_void__EndFragment_0__0)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown), const void* _Nonnull __pdata_System_Xml_IFragmentCapableXmlDictionaryWriter_void__EndFragment_0__0, void (* _Nonnull  __cb_System_Xml_IFragmentCapableXmlDictionaryWriter_void__StartFragment_0__2__Stream_bool)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL stream, int32_t generateSelfContainedTextFragment), const void* _Nonnull __pdata_System_Xml_IFragmentCapableXmlDictionaryWriter_void__StartFragment_0__2__Stream_bool, void (* _Nonnull  __cb_System_Xml_IFragmentCapableXmlDictionaryWriter_void__WriteFragment_0__3__u8Array_i32_i32)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL buffer, int32_t offset, int32_t count), const void* _Nonnull __pdata_System_Xml_IFragmentCapableXmlDictionaryWriter_void__WriteFragment_0__3__u8Array_i32_i32, void (* _Nullable __deinit)(const void* _Nonnull __pdata));
+
 TYP System_Xml_IStreamProvider_get_type_handle(void);
 
 SG_HNDL_NONNULL System_Xml_IStreamProvider_Stream__GetStream_0__0(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h);
@@ -239,6 +243,8 @@ SG_HNDL_NONNULL System_Xml_IStreamProvider_Stream__GetStream_0__0(SG_HNDL_NULLAB
 void System_Xml_IStreamProvider_void__ReleaseStream_0__1__Stream(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NONNULL stream);
 
 SG_HNDL_NONNULL System_Xml_IStreamProvider_cast(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __h);
+
+SG_HNDL_NONNULL System_Xml_IStreamProvider_create(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL (* _Nonnull  __cb_System_Xml_IStreamProvider_Stream__GetStream_0__0)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown), const void* _Nonnull __pdata_System_Xml_IStreamProvider_Stream__GetStream_0__0, void (* _Nonnull  __cb_System_Xml_IStreamProvider_void__ReleaseStream_0__1__Stream)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL stream), const void* _Nonnull __pdata_System_Xml_IStreamProvider_void__ReleaseStream_0__1__Stream, void (* _Nullable __deinit)(const void* _Nonnull __pdata));
 
 TYP System_Xml_IXmlBinaryReaderInitializer_get_type_handle(void);
 
@@ -248,21 +254,27 @@ void System_Xml_IXmlBinaryReaderInitializer_void__SetInput_0__5__Stream_IXmlDict
 
 SG_HNDL_NONNULL System_Xml_IXmlBinaryReaderInitializer_cast(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __h);
 
+SG_HNDL_NONNULL System_Xml_IXmlBinaryReaderInitializer_create(SG_HNDL_NULLABLE * _Nonnull __thrown, void (* _Nonnull  __cb_System_Xml_IXmlBinaryReaderInitializer_void__SetInput_0__7__u8Array_i32_i32_IXmlDictionary_XmlDictionaryReaderQuotas_XmlBinaryReaderSession_OnXmlDictionaryReaderClose)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL buffer, int32_t offset, int32_t count, SG_HNDL_NULLABLE dictionary, SG_HNDL_NONNULL quotas, SG_HNDL_NULLABLE session, SG_HNDL_NULLABLE onClose), const void* _Nonnull __pdata_System_Xml_IXmlBinaryReaderInitializer_void__SetInput_0__7__u8Array_i32_i32_IXmlDictionary_XmlDictionaryReaderQuotas_XmlBinaryReaderSession_OnXmlDictionaryReaderClose, void (* _Nonnull  __cb_System_Xml_IXmlBinaryReaderInitializer_void__SetInput_0__5__Stream_IXmlDictionary_XmlDictionaryReaderQuotas_XmlBinaryReaderSession_OnXmlDictionaryReaderClose)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL stream, SG_HNDL_NULLABLE dictionary, SG_HNDL_NONNULL quotas, SG_HNDL_NULLABLE session, SG_HNDL_NULLABLE onClose), const void* _Nonnull __pdata_System_Xml_IXmlBinaryReaderInitializer_void__SetInput_0__5__Stream_IXmlDictionary_XmlDictionaryReaderQuotas_XmlBinaryReaderSession_OnXmlDictionaryReaderClose, void (* _Nullable __deinit)(const void* _Nonnull __pdata));
+
 TYP System_Xml_IXmlBinaryWriterInitializer_get_type_handle(void);
 
 void System_Xml_IXmlBinaryWriterInitializer_void__SetOutput_0__4__Stream_IXmlDictionary_XmlBinaryWriterSession_bool(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NONNULL stream, SG_HNDL_NULLABLE dictionary, SG_HNDL_NULLABLE session, int32_t ownsStream);
 
 SG_HNDL_NONNULL System_Xml_IXmlBinaryWriterInitializer_cast(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __h);
 
+SG_HNDL_NONNULL System_Xml_IXmlBinaryWriterInitializer_create(SG_HNDL_NULLABLE * _Nonnull __thrown, void (* _Nonnull  __cb_System_Xml_IXmlBinaryWriterInitializer_void__SetOutput_0__4__Stream_IXmlDictionary_XmlBinaryWriterSession_bool)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL stream, SG_HNDL_NULLABLE dictionary, SG_HNDL_NULLABLE session, int32_t ownsStream), const void* _Nonnull __pdata_System_Xml_IXmlBinaryWriterInitializer_void__SetOutput_0__4__Stream_IXmlDictionary_XmlBinaryWriterSession_bool, void (* _Nullable __deinit)(const void* _Nonnull __pdata));
+
 TYP System_Xml_IXmlDictionary_get_type_handle(void);
 
-int32_t System_Xml_IXmlDictionary_bool__TryLookup_0__2__i32_outXmlDictionaryString(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, int32_t key, SG_HNDL_NONNULL* _Nonnull __result_out_ptr);
+int32_t System_Xml_IXmlDictionary_bool__TryLookup_0__2__i32_outXmlDictionaryString(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, int32_t key, SG_HNDL_NULLABLE* _Nonnull __result_out_ptr);
 
-int32_t System_Xml_IXmlDictionary_bool__TryLookup_0__2__String_outXmlDictionaryString(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NONNULL value, SG_HNDL_NONNULL* _Nonnull __result_out_ptr);
+int32_t System_Xml_IXmlDictionary_bool__TryLookup_0__2__String_outXmlDictionaryString(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NONNULL value, SG_HNDL_NULLABLE* _Nonnull __result_out_ptr);
 
-int32_t System_Xml_IXmlDictionary_bool__TryLookup_0__2__XmlDictionaryString_outXmlDictionaryString(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NONNULL value, SG_HNDL_NONNULL* _Nonnull __result_out_ptr);
+int32_t System_Xml_IXmlDictionary_bool__TryLookup_0__2__XmlDictionaryString_outXmlDictionaryString(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NONNULL value, SG_HNDL_NULLABLE* _Nonnull __result_out_ptr);
 
 SG_HNDL_NONNULL System_Xml_IXmlDictionary_cast(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __h);
+
+SG_HNDL_NONNULL System_Xml_IXmlDictionary_create(SG_HNDL_NULLABLE * _Nonnull __thrown, int32_t (* _Nonnull  __cb_System_Xml_IXmlDictionary_bool__TryLookup_0__2__i32_outXmlDictionaryString)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, int32_t key, SG_HNDL_NULLABLE* _Nonnull __result_out_ptr), const void* _Nonnull __pdata_System_Xml_IXmlDictionary_bool__TryLookup_0__2__i32_outXmlDictionaryString, int32_t (* _Nonnull  __cb_System_Xml_IXmlDictionary_bool__TryLookup_0__2__String_outXmlDictionaryString)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL value, SG_HNDL_NULLABLE* _Nonnull __result_out_ptr), const void* _Nonnull __pdata_System_Xml_IXmlDictionary_bool__TryLookup_0__2__String_outXmlDictionaryString, int32_t (* _Nonnull  __cb_System_Xml_IXmlDictionary_bool__TryLookup_0__2__XmlDictionaryString_outXmlDictionaryString)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL value, SG_HNDL_NULLABLE* _Nonnull __result_out_ptr), const void* _Nonnull __pdata_System_Xml_IXmlDictionary_bool__TryLookup_0__2__XmlDictionaryString_outXmlDictionaryString, void (* _Nullable __deinit)(const void* _Nonnull __pdata));
 
 TYP System_Xml_IXmlTextReaderInitializer_get_type_handle(void);
 
@@ -272,11 +284,15 @@ void System_Xml_IXmlTextReaderInitializer_void__SetInput_0__4__Stream_Encoding_X
 
 SG_HNDL_NONNULL System_Xml_IXmlTextReaderInitializer_cast(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __h);
 
+SG_HNDL_NONNULL System_Xml_IXmlTextReaderInitializer_create(SG_HNDL_NULLABLE * _Nonnull __thrown, void (* _Nonnull  __cb_System_Xml_IXmlTextReaderInitializer_void__SetInput_0__6__u8Array_i32_i32_Encoding_XmlDictionaryReaderQuotas_OnXmlDictionaryReaderClose)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL buffer, int32_t offset, int32_t count, SG_HNDL_NULLABLE encoding, SG_HNDL_NONNULL quotas, SG_HNDL_NULLABLE onClose), const void* _Nonnull __pdata_System_Xml_IXmlTextReaderInitializer_void__SetInput_0__6__u8Array_i32_i32_Encoding_XmlDictionaryReaderQuotas_OnXmlDictionaryReaderClose, void (* _Nonnull  __cb_System_Xml_IXmlTextReaderInitializer_void__SetInput_0__4__Stream_Encoding_XmlDictionaryReaderQuotas_OnXmlDictionaryReaderClose)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL stream, SG_HNDL_NULLABLE encoding, SG_HNDL_NONNULL quotas, SG_HNDL_NULLABLE onClose), const void* _Nonnull __pdata_System_Xml_IXmlTextReaderInitializer_void__SetInput_0__4__Stream_Encoding_XmlDictionaryReaderQuotas_OnXmlDictionaryReaderClose, void (* _Nullable __deinit)(const void* _Nonnull __pdata));
+
 TYP System_Xml_IXmlTextWriterInitializer_get_type_handle(void);
 
 void System_Xml_IXmlTextWriterInitializer_void__SetOutput_0__3__Stream_Encoding_bool(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NONNULL stream, SG_HNDL_NONNULL encoding, int32_t ownsStream);
 
 SG_HNDL_NONNULL System_Xml_IXmlTextWriterInitializer_cast(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __h);
+
+SG_HNDL_NONNULL System_Xml_IXmlTextWriterInitializer_create(SG_HNDL_NULLABLE * _Nonnull __thrown, void (* _Nonnull  __cb_System_Xml_IXmlTextWriterInitializer_void__SetOutput_0__3__Stream_Encoding_bool)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL stream, SG_HNDL_NONNULL encoding, int32_t ownsStream), const void* _Nonnull __pdata_System_Xml_IXmlTextWriterInitializer_void__SetOutput_0__3__Stream_Encoding_bool, void (* _Nullable __deinit)(const void* _Nonnull __pdata));
 
 TYP System_Xml_OnXmlDictionaryReaderClose_get_type_handle(void);
 
@@ -286,7 +302,7 @@ SG_HNDL_NULLABLE System_Xml_OnXmlDictionaryReaderClose_IAsyncResult__BeginInvoke
 
 void System_Xml_OnXmlDictionaryReaderClose_void__EndInvoke_0__1__IAsyncResult(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE result);
 
-SG_HNDL_NONNULL System_Xml_OnXmlDictionaryReaderClose_create(SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nullable __pdata, void (* _Nullable __deinit)(const void* _Nullable __pdata), void (* _Nonnull  __cb)(const void* _Nullable __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL reader));
+SG_HNDL_NONNULL System_Xml_OnXmlDictionaryReaderClose_create(SG_HNDL_NULLABLE * _Nonnull __thrown, void (* _Nonnull  __cb)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL reader), const void* _Nonnull __pdata, void (* _Nullable __deinit)(const void* _Nonnull __pdata));
 
 TYP System_Xml_UniqueId_get_type_handle(void);
 
@@ -332,11 +348,11 @@ SG_HNDL_NONNULL System_Xml_XmlBinaryReaderSession_XmlDictionaryString__Add_0__2_
 
 void System_Xml_XmlBinaryReaderSession_void__Clear_0__0(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h);
 
-int32_t System_Xml_XmlBinaryReaderSession_bool__TryLookup_0__2__i32_outXmlDictionaryString(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, int32_t key, SG_HNDL_NONNULL* _Nonnull __result_out_ptr);
+int32_t System_Xml_XmlBinaryReaderSession_bool__TryLookup_0__2__i32_outXmlDictionaryString(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, int32_t key, SG_HNDL_NULLABLE* _Nonnull __result_out_ptr);
 
-int32_t System_Xml_XmlBinaryReaderSession_bool__TryLookup_0__2__String_outXmlDictionaryString(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NONNULL value, SG_HNDL_NONNULL* _Nonnull __result_out_ptr);
+int32_t System_Xml_XmlBinaryReaderSession_bool__TryLookup_0__2__String_outXmlDictionaryString(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NONNULL value, SG_HNDL_NULLABLE* _Nonnull __result_out_ptr);
 
-int32_t System_Xml_XmlBinaryReaderSession_bool__TryLookup_0__2__XmlDictionaryString_outXmlDictionaryString(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NONNULL value, SG_HNDL_NONNULL* _Nonnull __result_out_ptr);
+int32_t System_Xml_XmlBinaryReaderSession_bool__TryLookup_0__2__XmlDictionaryString_outXmlDictionaryString(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NONNULL value, SG_HNDL_NULLABLE* _Nonnull __result_out_ptr);
 
 SG_HNDL_NONNULL System_Xml_XmlBinaryReaderSession_cast(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __h);
 
@@ -358,11 +374,11 @@ SG_HNDL_NONNULL System_Xml_XmlDictionary_ctor_0__1__i32(SG_HNDL_NULLABLE * _Nonn
 
 SG_HNDL_NONNULL System_Xml_XmlDictionary_XmlDictionaryString__Add_0__1__String(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NONNULL value);
 
-int32_t System_Xml_XmlDictionary_bool__TryLookup_0__2__i32_outXmlDictionaryString(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, int32_t key, SG_HNDL_NONNULL* _Nonnull __result_out_ptr);
+int32_t System_Xml_XmlDictionary_bool__TryLookup_0__2__i32_outXmlDictionaryString(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, int32_t key, SG_HNDL_NULLABLE* _Nonnull __result_out_ptr);
 
-int32_t System_Xml_XmlDictionary_bool__TryLookup_0__2__String_outXmlDictionaryString(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NONNULL value, SG_HNDL_NONNULL* _Nonnull __result_out_ptr);
+int32_t System_Xml_XmlDictionary_bool__TryLookup_0__2__String_outXmlDictionaryString(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NONNULL value, SG_HNDL_NULLABLE* _Nonnull __result_out_ptr);
 
-int32_t System_Xml_XmlDictionary_bool__TryLookup_0__2__XmlDictionaryString_outXmlDictionaryString(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NONNULL value, SG_HNDL_NONNULL* _Nonnull __result_out_ptr);
+int32_t System_Xml_XmlDictionary_bool__TryLookup_0__2__XmlDictionaryString_outXmlDictionaryString(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NONNULL value, SG_HNDL_NULLABLE* _Nonnull __result_out_ptr);
 
 SG_HNDL_NONNULL System_Xml_XmlDictionary_IXmlDictionary__get_Empty_0__0(SG_HNDL_NULLABLE * _Nonnull __thrown);
 
@@ -434,7 +450,7 @@ int32_t System_Xml_XmlDictionaryReader_bool__IsNamespaceUri_0__1__String(SG_HNDL
 
 int32_t System_Xml_XmlDictionaryReader_bool__IsNamespaceUri_0__1__XmlDictionaryString(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NONNULL namespaceUri);
 
-int32_t System_Xml_XmlDictionaryReader_bool__IsStartArray_0__1__outType(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NONNULL* _Nonnull __type_out_ptr);
+int32_t System_Xml_XmlDictionaryReader_bool__IsStartArray_0__1__outType(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE* _Nonnull __type_out_ptr);
 
 int32_t System_Xml_XmlDictionaryReader_bool__IsStartElement_0__2__XmlDictionaryString_XmlDictionaryString(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NONNULL localName, SG_HNDL_NONNULL namespaceUri);
 
@@ -598,11 +614,11 @@ int32_t System_Xml_XmlDictionaryReader_bool__TryGetArrayLength_0__1__outi32(SG_H
 
 int32_t System_Xml_XmlDictionaryReader_bool__TryGetBase64ContentLength_0__1__outi32(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, int32_t* _Nonnull __length_out_ptr);
 
-int32_t System_Xml_XmlDictionaryReader_bool__TryGetLocalNameAsDictionaryString_0__1__outXmlDictionaryString(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NONNULL* _Nonnull __localName_out_ptr);
+int32_t System_Xml_XmlDictionaryReader_bool__TryGetLocalNameAsDictionaryString_0__1__outXmlDictionaryString(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE* _Nonnull __localName_out_ptr);
 
-int32_t System_Xml_XmlDictionaryReader_bool__TryGetNamespaceUriAsDictionaryString_0__1__outXmlDictionaryString(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NONNULL* _Nonnull __namespaceUri_out_ptr);
+int32_t System_Xml_XmlDictionaryReader_bool__TryGetNamespaceUriAsDictionaryString_0__1__outXmlDictionaryString(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE* _Nonnull __namespaceUri_out_ptr);
 
-int32_t System_Xml_XmlDictionaryReader_bool__TryGetValueAsDictionaryString_0__1__outXmlDictionaryString(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NONNULL* _Nonnull __value_out_ptr);
+int32_t System_Xml_XmlDictionaryReader_bool__TryGetValueAsDictionaryString_0__1__outXmlDictionaryString(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE* _Nonnull __value_out_ptr);
 
 int32_t System_Xml_XmlDictionaryReader_bool__get_CanCanonicalize_0__0(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h);
 

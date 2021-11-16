@@ -18,6 +18,9 @@ open class DateTimeFormat
     open class override func get_type_handle() -> TypeHandle {
         return System_Runtime_Serialization_DateTimeFormat_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor(System.String)
@@ -195,6 +198,9 @@ public final class DataContractJsonSerializer
 {
     public class override func get_type_handle() -> TypeHandle {
         return System_Runtime_Serialization_Json_DataContractJsonSerializer_get_type_handle();
+    }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -780,6 +786,9 @@ open class DataContractJsonSerializerSettings
     open class override func get_type_handle() -> TypeHandle {
         return System_Runtime_Serialization_Json_DataContractJsonSerializerSettings_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor()
@@ -1097,6 +1106,9 @@ open class IXmlJsonReaderInitializer
     open class func get_type_handle() -> TypeHandle {
         return System_Runtime_Serialization_Json_IXmlJsonReaderInitializer_get_type_handle();
     }
+    open class func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     let h : NonnullHandle;
     public func to_gval() -> GVal { return GVal(Swift.Int(bitPattern: self.h)); }
     public func dup_gval() -> GVal { return GVal(Swift.Int(bitPattern: __copy_handle(self.h))); }
@@ -1172,6 +1184,9 @@ open class IXmlJsonWriterInitializer
 {
     open class func get_type_handle() -> TypeHandle {
         return System_Runtime_Serialization_Json_IXmlJsonWriterInitializer_get_type_handle();
+    }
+    open class func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     let h : NonnullHandle;
     public func to_gval() -> GVal { return GVal(Swift.Int(bitPattern: self.h)); }

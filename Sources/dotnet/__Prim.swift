@@ -3,6 +3,16 @@
 
 import jumptable_dotnet;
 
+extension Swift.Optional : SGBridgeGenericValue 
+    // TODO limit this to value types
+    where Wrapped : SGBridgeGenericValue
+{
+    public static func get_type_handle() -> TypeHandle { return System_Nullable_1_get_type_handle(Wrapped.get_type_handle()); }
+    public func to_gval() -> GVal { return (self==nil) ? (GVal(0)) : (self!.to_gval()); }
+    public func dup_gval() -> GVal { return to_gval(); }
+    public init(gval: GVal) { if (gval==0) { self = nil; } else { self = Wrapped(gval: gval); } }
+}
+
 extension Swift.UInt64 : SGBridgeGenericValue {
     public static func get_type_handle() -> TypeHandle { return System_UInt64_get_type_handle(); }
     public func to_gval() -> GVal { return self; }

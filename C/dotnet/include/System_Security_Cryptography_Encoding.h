@@ -192,7 +192,7 @@ SG_HNDL_NONNULL System_Security_Cryptography_PemEncoding_PemFields__Find_0__1__r
 
 int32_t System_Security_Cryptography_PemEncoding_i32__GetEncodedSize_0__2__i32_i32(SG_HNDL_NULLABLE * _Nonnull __thrown, int32_t labelLength, int32_t dataLength);
 
-int32_t System_Security_Cryptography_PemEncoding_bool__TryFind_0__2__rospanChar_outPemFields(SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nonnull __pemData_spanptr, SG_HNDL_NONNULL* _Nonnull __fields_out_ptr);
+int32_t System_Security_Cryptography_PemEncoding_bool__TryFind_0__2__rospanChar_outPemFields(SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nonnull __pemData_spanptr, SG_HNDL_NULLABLE* _Nonnull __fields_out_ptr);
 
 int32_t System_Security_Cryptography_PemEncoding_bool__TryWrite_0__4__rospanChar_rospanu8_spanChar_outi32(SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nonnull __label_spanptr, const void* _Nonnull __data_spanptr, const void* _Nonnull __destination_spanptr, int32_t* _Nonnull __charsWritten_out_ptr);
 

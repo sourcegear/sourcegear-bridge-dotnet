@@ -50,7 +50,7 @@ int32_t System_Numerics_BigInteger_i32__CompareTo_0__1__u64(SG_HNDL_NULLABLE * _
 
 SG_HNDL_NONNULL System_Numerics_BigInteger_BigInteger__Divide_0__2__BigInteger_BigInteger(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL dividend, SG_HNDL_NONNULL divisor);
 
-SG_HNDL_NONNULL System_Numerics_BigInteger_BigInteger__DivRem_0__3__BigInteger_BigInteger_outBigInteger(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL dividend, SG_HNDL_NONNULL divisor, SG_HNDL_NONNULL* _Nonnull __remainder_out_ptr);
+SG_HNDL_NONNULL System_Numerics_BigInteger_BigInteger__DivRem_0__3__BigInteger_BigInteger_outBigInteger(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL dividend, SG_HNDL_NONNULL divisor, SG_HNDL_NULLABLE* _Nonnull __remainder_out_ptr);
 
 int32_t System_Numerics_BigInteger_bool__Equals_0__1__i64(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, int64_t other);
 
@@ -248,13 +248,13 @@ SG_HNDL_NONNULL System_Numerics_BigInteger_String__ToString_0__2__String_IFormat
 
 int32_t System_Numerics_BigInteger_bool__TryFormat_0__4__spanChar_outi32_rospanChar_IFormatProvider(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, const void* _Nonnull __destination_spanptr, int32_t* _Nonnull __charsWritten_out_ptr, const void* _Nonnull __format_spanptr, SG_HNDL_NULLABLE provider);
 
-int32_t System_Numerics_BigInteger_bool__TryParse_0__4__rospanChar_NumberStyles_IFormatProvider_outBigInteger(SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nonnull __value_spanptr, int32_t style, SG_HNDL_NULLABLE provider, SG_HNDL_NONNULL* _Nonnull __result_out_ptr);
+int32_t System_Numerics_BigInteger_bool__TryParse_0__4__rospanChar_NumberStyles_IFormatProvider_outBigInteger(SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nonnull __value_spanptr, int32_t style, SG_HNDL_NULLABLE provider, SG_HNDL_NULLABLE* _Nonnull __result_out_ptr);
 
-int32_t System_Numerics_BigInteger_bool__TryParse_0__2__rospanChar_outBigInteger(SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nonnull __value_spanptr, SG_HNDL_NONNULL* _Nonnull __result_out_ptr);
+int32_t System_Numerics_BigInteger_bool__TryParse_0__2__rospanChar_outBigInteger(SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nonnull __value_spanptr, SG_HNDL_NULLABLE* _Nonnull __result_out_ptr);
 
-int32_t System_Numerics_BigInteger_bool__TryParse_0__4__String_NumberStyles_IFormatProvider_outBigInteger(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE value, int32_t style, SG_HNDL_NULLABLE provider, SG_HNDL_NONNULL* _Nonnull __result_out_ptr);
+int32_t System_Numerics_BigInteger_bool__TryParse_0__4__String_NumberStyles_IFormatProvider_outBigInteger(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE value, int32_t style, SG_HNDL_NULLABLE provider, SG_HNDL_NULLABLE* _Nonnull __result_out_ptr);
 
-int32_t System_Numerics_BigInteger_bool__TryParse_0__2__String_outBigInteger(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE value, SG_HNDL_NONNULL* _Nonnull __result_out_ptr);
+int32_t System_Numerics_BigInteger_bool__TryParse_0__2__String_outBigInteger(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE value, SG_HNDL_NULLABLE* _Nonnull __result_out_ptr);
 
 int32_t System_Numerics_BigInteger_bool__TryWriteBytes_0__4__spanu8_outi32_bool_bool(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, const void* _Nonnull __destination_spanptr, int32_t* _Nonnull __bytesWritten_out_ptr, int32_t isUnsigned, int32_t isBigEndian);
 

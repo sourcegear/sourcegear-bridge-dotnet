@@ -69,7 +69,7 @@ struct {
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_Diagnostics_Activity_cast)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __h);
     TYP (* _Nonnull  _fp_System_Diagnostics_ActivityContext_get_type_handle)(void);
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_Diagnostics_ActivityContext_ctor_0__5__ActivityTraceId_ActivitySpanId_ActivityTraceFlags_String_bool)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL traceId, SG_HNDL_NONNULL spanId, int32_t traceFlags, SG_HNDL_NULLABLE traceState, int32_t isRemote);
-    int32_t (* _Nonnull  _fp_System_Diagnostics_ActivityContext_bool__TryParse_0__3__String_String_outActivityContext)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE traceParent, SG_HNDL_NULLABLE traceState, SG_HNDL_NONNULL* _Nonnull __context_out_ptr);
+    int32_t (* _Nonnull  _fp_System_Diagnostics_ActivityContext_bool__TryParse_0__3__String_String_outActivityContext)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE traceParent, SG_HNDL_NULLABLE traceState, SG_HNDL_NULLABLE* _Nonnull __context_out_ptr);
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_Diagnostics_ActivityContext_ActivityContext__Parse_0__2__String_String)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL traceParent, SG_HNDL_NULLABLE traceState);
     int32_t (* _Nonnull  _fp_System_Diagnostics_ActivityContext_bool__op_Equality_0__2__ActivityContext_ActivityContext)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL left, SG_HNDL_NONNULL right);
     int32_t (* _Nonnull  _fp_System_Diagnostics_ActivityContext_bool__op_Inequality_0__2__ActivityContext_ActivityContext)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL left, SG_HNDL_NONNULL right);
@@ -198,7 +198,7 @@ struct {
     void (* _Nonnull  _fp_System_Diagnostics_ActivityTagsCollection_void__CopyTo_0__2__System_Collections_Generic_KeyValuePair_string_object_Array_i32)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NONNULL array, int32_t arrayIndex);
     int32_t (* _Nonnull  _fp_System_Diagnostics_ActivityTagsCollection_bool__Remove_0__1__String)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NONNULL key);
     int32_t (* _Nonnull  _fp_System_Diagnostics_ActivityTagsCollection_bool__Remove_0__1__System_Collections_Generic_KeyValuePair_string_object_)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NONNULL item);
-    int32_t (* _Nonnull  _fp_System_Diagnostics_ActivityTagsCollection_bool__TryGetValue_0__2__String_outObject)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NONNULL key, SG_HNDL_NONNULL* _Nonnull __value_out_ptr);
+    int32_t (* _Nonnull  _fp_System_Diagnostics_ActivityTagsCollection_bool__TryGetValue_0__2__String_outObject)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NONNULL key, SG_HNDL_NULLABLE* _Nonnull __value_out_ptr);
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_Diagnostics_ActivityTagsCollection_ActivityTagsCollection_Enumerator__GetEnumerator_0__0)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h);
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_Diagnostics_ActivityTagsCollection_System_Collections_Generic_ICollection_string___get_Keys_0__0)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h);
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_Diagnostics_ActivityTagsCollection_System_Collections_Generic_ICollection_object___get_Values_0__0)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h);
@@ -257,7 +257,7 @@ struct {
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_Diagnostics_DiagnosticSource_cast)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __h);
     TYP (* _Nonnull  _fp_System_Diagnostics_DistributedContextPropagator_get_type_handle)(void);
     void (* _Nonnull  _fp_System_Diagnostics_DistributedContextPropagator_void__Inject_0__3__Activity_Object_DistributedContextPropagator_PropagatorSetterCallback)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE activity, SG_HNDL_NULLABLE carrier, SG_HNDL_NULLABLE setter);
-    void (* _Nonnull  _fp_System_Diagnostics_DistributedContextPropagator_void__ExtractTraceIdAndState_0__4__Object_DistributedContextPropagator_PropagatorGetterCallback_outString_outString)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE carrier, SG_HNDL_NULLABLE getter, SG_HNDL_NONNULL* _Nonnull __traceId_out_ptr, SG_HNDL_NONNULL* _Nonnull __traceState_out_ptr);
+    void (* _Nonnull  _fp_System_Diagnostics_DistributedContextPropagator_void__ExtractTraceIdAndState_0__4__Object_DistributedContextPropagator_PropagatorGetterCallback_outString_outString)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE carrier, SG_HNDL_NULLABLE getter, SG_HNDL_NULLABLE* _Nonnull __traceId_out_ptr, SG_HNDL_NULLABLE* _Nonnull __traceState_out_ptr);
     SG_HNDL_NULLABLE (* _Nonnull  _fp_System_Diagnostics_DistributedContextPropagator_System_Collections_Generic_IEnumerable_System_Collections_Generic_System_Collections_Generic_KeyValuePair_string_string____ExtractBaggage_0__2__Object_DistributedContextPropagator_PropagatorGetterCallback)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE carrier, SG_HNDL_NULLABLE getter);
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_Diagnostics_DistributedContextPropagator_DistributedContextPropagator__CreateDefaultPropagator_0__0)(SG_HNDL_NULLABLE * _Nonnull __thrown);
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_Diagnostics_DistributedContextPropagator_DistributedContextPropagator__CreatePassThroughPropagator_0__0)(SG_HNDL_NULLABLE * _Nonnull __thrown);
@@ -267,12 +267,26 @@ struct {
     void (* _Nonnull  _fp_System_Diagnostics_DistributedContextPropagator_void__set_Current_0__1__DistributedContextPropagator)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL value);
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_Diagnostics_DistributedContextPropagator_cast)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __h);
     TYP (* _Nonnull  _fp_System_Diagnostics_DistributedContextPropagator_PropagatorGetterCallback_get_type_handle)(void);
+    void (* _Nonnull  _fp_System_Diagnostics_DistributedContextPropagator_PropagatorGetterCallback_void__Invoke_0__4__Object_String_outString_outSystem_Collections_Generic_IEnumerable_string_)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE carrier, SG_HNDL_NONNULL fieldName, SG_HNDL_NULLABLE* _Nonnull __fieldValue_out_ptr, SG_HNDL_NULLABLE* _Nonnull __fieldValues_out_ptr);
+    SG_HNDL_NULLABLE (* _Nonnull  _fp_System_Diagnostics_DistributedContextPropagator_PropagatorGetterCallback_IAsyncResult__BeginInvoke_0__6__Object_String_outString_outSystem_Collections_Generic_IEnumerable_string__AsyncCallback_Object)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE carrier, SG_HNDL_NONNULL fieldName, SG_HNDL_NULLABLE* _Nonnull __fieldValue_out_ptr, SG_HNDL_NULLABLE* _Nonnull __fieldValues_out_ptr, SG_HNDL_NULLABLE callback, SG_HNDL_NULLABLE object_);
+    void (* _Nonnull  _fp_System_Diagnostics_DistributedContextPropagator_PropagatorGetterCallback_void__EndInvoke_0__3__outString_outSystem_Collections_Generic_IEnumerable_string__IAsyncResult)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE* _Nonnull __fieldValue_out_ptr, SG_HNDL_NULLABLE* _Nonnull __fieldValues_out_ptr, SG_HNDL_NULLABLE result);
+    SG_HNDL_NONNULL (* _Nonnull  _fp_System_Diagnostics_DistributedContextPropagator_PropagatorGetterCallback_create)(SG_HNDL_NULLABLE * _Nonnull __thrown, void (* _Nonnull  __cb)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE carrier, SG_HNDL_NONNULL fieldName, SG_HNDL_NULLABLE* _Nonnull __fieldValue_out_ptr, SG_HNDL_NULLABLE* _Nonnull __fieldValues_out_ptr), const void* _Nonnull __pdata, void (* _Nullable __deinit)(const void* _Nonnull __pdata));
     TYP (* _Nonnull  _fp_System_Diagnostics_DistributedContextPropagator_PropagatorSetterCallback_get_type_handle)(void);
     void (* _Nonnull  _fp_System_Diagnostics_DistributedContextPropagator_PropagatorSetterCallback_void__Invoke_0__3__Object_String_String)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE carrier, SG_HNDL_NONNULL fieldName, SG_HNDL_NONNULL fieldValue);
     SG_HNDL_NULLABLE (* _Nonnull  _fp_System_Diagnostics_DistributedContextPropagator_PropagatorSetterCallback_IAsyncResult__BeginInvoke_0__5__Object_String_String_AsyncCallback_Object)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE carrier, SG_HNDL_NONNULL fieldName, SG_HNDL_NONNULL fieldValue, SG_HNDL_NULLABLE callback, SG_HNDL_NULLABLE object_);
     void (* _Nonnull  _fp_System_Diagnostics_DistributedContextPropagator_PropagatorSetterCallback_void__EndInvoke_0__1__IAsyncResult)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE result);
-    SG_HNDL_NONNULL (* _Nonnull  _fp_System_Diagnostics_DistributedContextPropagator_PropagatorSetterCallback_create)(SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nullable __pdata, void (* _Nullable __deinit)(const void* _Nullable __pdata), void (* _Nonnull  __cb)(const void* _Nullable __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE carrier, SG_HNDL_NONNULL fieldName, SG_HNDL_NONNULL fieldValue));
+    SG_HNDL_NONNULL (* _Nonnull  _fp_System_Diagnostics_DistributedContextPropagator_PropagatorSetterCallback_create)(SG_HNDL_NULLABLE * _Nonnull __thrown, void (* _Nonnull  __cb)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE carrier, SG_HNDL_NONNULL fieldName, SG_HNDL_NONNULL fieldValue), const void* _Nonnull __pdata, void (* _Nullable __deinit)(const void* _Nonnull __pdata));
     TYP (* _Nonnull  _fp_System_Diagnostics_SampleActivity_1_get_type_handle)(TYP T);
+    int32_t (* _Nonnull  _fp_System_Diagnostics_SampleActivity_1_ActivitySamplingResult__Invoke_0__1__refSystem_Diagnostics_ActivityCreationOptions_T_)(TYP T, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE* _Nonnull __options_ref_ptr);
+    SG_HNDL_NONNULL (* _Nonnull  _fp_specialize_System_Diagnostics_SampleActivity_1_ActivitySamplingResult__Invoke_0__1__refSystem_Diagnostics_ActivityCreationOptions_T_)(TYP T, SG_HNDL_NULLABLE * _Nonnull __thrown);
+    int32_t (* _Nonnull  _fp_invoke_System_Diagnostics_SampleActivity_1_ActivitySamplingResult__Invoke_0__1__refSystem_Diagnostics_ActivityCreationOptions_T_)(SG_HNDL_NONNULL ____hdel, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE* _Nonnull __options_ref_ptr);
+    SG_HNDL_NULLABLE (* _Nonnull  _fp_System_Diagnostics_SampleActivity_1_IAsyncResult__BeginInvoke_0__3__refSystem_Diagnostics_ActivityCreationOptions_T__AsyncCallback_Object)(TYP T, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE* _Nonnull __options_ref_ptr, SG_HNDL_NULLABLE callback, SG_HNDL_NULLABLE object_);
+    SG_HNDL_NONNULL (* _Nonnull  _fp_specialize_System_Diagnostics_SampleActivity_1_IAsyncResult__BeginInvoke_0__3__refSystem_Diagnostics_ActivityCreationOptions_T__AsyncCallback_Object)(TYP T, SG_HNDL_NULLABLE * _Nonnull __thrown);
+    SG_HNDL_NULLABLE (* _Nonnull  _fp_invoke_System_Diagnostics_SampleActivity_1_IAsyncResult__BeginInvoke_0__3__refSystem_Diagnostics_ActivityCreationOptions_T__AsyncCallback_Object)(SG_HNDL_NONNULL ____hdel, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE* _Nonnull __options_ref_ptr, SG_HNDL_NULLABLE callback, SG_HNDL_NULLABLE object_);
+    int32_t (* _Nonnull  _fp_System_Diagnostics_SampleActivity_1_ActivitySamplingResult__EndInvoke_0__2__refSystem_Diagnostics_ActivityCreationOptions_T__IAsyncResult)(TYP T, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE* _Nonnull __options_ref_ptr, SG_HNDL_NULLABLE result);
+    SG_HNDL_NONNULL (* _Nonnull  _fp_specialize_System_Diagnostics_SampleActivity_1_ActivitySamplingResult__EndInvoke_0__2__refSystem_Diagnostics_ActivityCreationOptions_T__IAsyncResult)(TYP T, SG_HNDL_NULLABLE * _Nonnull __thrown);
+    int32_t (* _Nonnull  _fp_invoke_System_Diagnostics_SampleActivity_1_ActivitySamplingResult__EndInvoke_0__2__refSystem_Diagnostics_ActivityCreationOptions_T__IAsyncResult)(SG_HNDL_NONNULL ____hdel, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE* _Nonnull __options_ref_ptr, SG_HNDL_NULLABLE result);
+    SG_HNDL_NONNULL (* _Nonnull  _fp_System_Diagnostics_SampleActivity_1_create)(TYP T, SG_HNDL_NULLABLE * _Nonnull __thrown, int32_t (* _Nonnull  __cb)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE* _Nonnull __options_ref_ptr), const void* _Nonnull __pdata, void (* _Nullable __deinit)(const void* _Nonnull __pdata));
     TYP (* _Nonnull  _fp_System_Diagnostics_TagList_get_type_handle)(void);
     void (* _Nonnull  _fp_System_Diagnostics_TagList_void__Add_0__2__String_Object)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NONNULL key, SG_HNDL_NULLABLE value);
     void (* _Nonnull  _fp_System_Diagnostics_TagList_void__Add_0__1__System_Collections_Generic_KeyValuePair_string_object_)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NONNULL tag);
@@ -311,9 +325,9 @@ struct {
     void (* _Nonnull  _fp_System_Diagnostics_Metrics_Counter_1_void__Add_0__2__T_System_Collections_Generic_KeyValuePair_string_object_Array)(TYP T, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, GVAL delta, SG_HNDL_NONNULL tags);
     SG_HNDL_NONNULL (* _Nonnull  _fp_specialize_System_Diagnostics_Metrics_Counter_1_void__Add_0__2__T_System_Collections_Generic_KeyValuePair_string_object_Array)(TYP T, SG_HNDL_NULLABLE * _Nonnull __thrown);
     void (* _Nonnull  _fp_invoke_System_Diagnostics_Metrics_Counter_1_void__Add_0__2__T_System_Collections_Generic_KeyValuePair_string_object_Array)(SG_HNDL_NONNULL ____hdel, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, GVAL delta, SG_HNDL_NONNULL tags);
-    void (* _Nonnull  _fp_System_Diagnostics_Metrics_Counter_1_void__Add_0__2__T_inTagList)(TYP T, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, GVAL delta, SG_HNDL_NONNULL* _Nonnull __tagList_in_ptr);
+    void (* _Nonnull  _fp_System_Diagnostics_Metrics_Counter_1_void__Add_0__2__T_inTagList)(TYP T, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, GVAL delta, SG_HNDL_NULLABLE* _Nonnull __tagList_in_ptr);
     SG_HNDL_NONNULL (* _Nonnull  _fp_specialize_System_Diagnostics_Metrics_Counter_1_void__Add_0__2__T_inTagList)(TYP T, SG_HNDL_NULLABLE * _Nonnull __thrown);
-    void (* _Nonnull  _fp_invoke_System_Diagnostics_Metrics_Counter_1_void__Add_0__2__T_inTagList)(SG_HNDL_NONNULL ____hdel, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, GVAL delta, SG_HNDL_NONNULL* _Nonnull __tagList_in_ptr);
+    void (* _Nonnull  _fp_invoke_System_Diagnostics_Metrics_Counter_1_void__Add_0__2__T_inTagList)(SG_HNDL_NONNULL ____hdel, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, GVAL delta, SG_HNDL_NULLABLE* _Nonnull __tagList_in_ptr);
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_Diagnostics_Metrics_Counter_1_cast)(TYP T, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __h);
     TYP (* _Nonnull  _fp_System_Diagnostics_Metrics_Histogram_1_get_type_handle)(TYP T);
     void (* _Nonnull  _fp_System_Diagnostics_Metrics_Histogram_1_void__Record_0__1__T)(TYP T, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, GVAL value);
@@ -328,9 +342,9 @@ struct {
     void (* _Nonnull  _fp_System_Diagnostics_Metrics_Histogram_1_void__Record_0__4__T_System_Collections_Generic_KeyValuePair_string_object__System_Collections_Generic_KeyValuePair_string_object__System_Collections_Generic_KeyValuePair_string_object_)(TYP T, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, GVAL value, SG_HNDL_NONNULL tag1, SG_HNDL_NONNULL tag2, SG_HNDL_NONNULL tag3);
     SG_HNDL_NONNULL (* _Nonnull  _fp_specialize_System_Diagnostics_Metrics_Histogram_1_void__Record_0__4__T_System_Collections_Generic_KeyValuePair_string_object__System_Collections_Generic_KeyValuePair_string_object__System_Collections_Generic_KeyValuePair_string_object_)(TYP T, SG_HNDL_NULLABLE * _Nonnull __thrown);
     void (* _Nonnull  _fp_invoke_System_Diagnostics_Metrics_Histogram_1_void__Record_0__4__T_System_Collections_Generic_KeyValuePair_string_object__System_Collections_Generic_KeyValuePair_string_object__System_Collections_Generic_KeyValuePair_string_object_)(SG_HNDL_NONNULL ____hdel, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, GVAL value, SG_HNDL_NONNULL tag1, SG_HNDL_NONNULL tag2, SG_HNDL_NONNULL tag3);
-    void (* _Nonnull  _fp_System_Diagnostics_Metrics_Histogram_1_void__Record_0__2__T_inTagList)(TYP T, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, GVAL value, SG_HNDL_NONNULL* _Nonnull __tagList_in_ptr);
+    void (* _Nonnull  _fp_System_Diagnostics_Metrics_Histogram_1_void__Record_0__2__T_inTagList)(TYP T, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, GVAL value, SG_HNDL_NULLABLE* _Nonnull __tagList_in_ptr);
     SG_HNDL_NONNULL (* _Nonnull  _fp_specialize_System_Diagnostics_Metrics_Histogram_1_void__Record_0__2__T_inTagList)(TYP T, SG_HNDL_NULLABLE * _Nonnull __thrown);
-    void (* _Nonnull  _fp_invoke_System_Diagnostics_Metrics_Histogram_1_void__Record_0__2__T_inTagList)(SG_HNDL_NONNULL ____hdel, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, GVAL value, SG_HNDL_NONNULL* _Nonnull __tagList_in_ptr);
+    void (* _Nonnull  _fp_invoke_System_Diagnostics_Metrics_Histogram_1_void__Record_0__2__T_inTagList)(SG_HNDL_NONNULL ____hdel, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, GVAL value, SG_HNDL_NULLABLE* _Nonnull __tagList_in_ptr);
     void (* _Nonnull  _fp_System_Diagnostics_Metrics_Histogram_1_void__Record_0__2__T_System_Collections_Generic_KeyValuePair_string_object_Array)(TYP T, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, GVAL value, SG_HNDL_NONNULL tags);
     SG_HNDL_NONNULL (* _Nonnull  _fp_specialize_System_Diagnostics_Metrics_Histogram_1_void__Record_0__2__T_System_Collections_Generic_KeyValuePair_string_object_Array)(TYP T, SG_HNDL_NULLABLE * _Nonnull __thrown);
     void (* _Nonnull  _fp_invoke_System_Diagnostics_Metrics_Histogram_1_void__Record_0__2__T_System_Collections_Generic_KeyValuePair_string_object_Array)(SG_HNDL_NONNULL ____hdel, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, GVAL value, SG_HNDL_NONNULL tags);
@@ -903,7 +917,7 @@ SG_HNDL_NONNULL System_Diagnostics_ActivityContext_ctor_0__5__ActivityTraceId_Ac
     return ret;
 }
 
-int32_t System_Diagnostics_ActivityContext_bool__TryParse_0__3__String_String_outActivityContext(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE traceParent, SG_HNDL_NULLABLE traceState, SG_HNDL_NONNULL* _Nonnull __context_out_ptr) {
+int32_t System_Diagnostics_ActivityContext_bool__TryParse_0__3__String_String_outActivityContext(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE traceParent, SG_HNDL_NULLABLE traceState, SG_HNDL_NULLABLE* _Nonnull __context_out_ptr) {
     if (!_g_System_Diagnostics_DiagnosticSource._fp_System_Diagnostics_ActivityContext_bool__TryParse_0__3__String_String_outActivityContext) {
         my_init();
     }
@@ -1922,7 +1936,7 @@ int32_t System_Diagnostics_ActivityTagsCollection_bool__Remove_0__1__System_Coll
     return ret;
 }
 
-int32_t System_Diagnostics_ActivityTagsCollection_bool__TryGetValue_0__2__String_outObject(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NONNULL key, SG_HNDL_NONNULL* _Nonnull __value_out_ptr) {
+int32_t System_Diagnostics_ActivityTagsCollection_bool__TryGetValue_0__2__String_outObject(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NONNULL key, SG_HNDL_NULLABLE* _Nonnull __value_out_ptr) {
     if (!_g_System_Diagnostics_DiagnosticSource._fp_System_Diagnostics_ActivityTagsCollection_bool__TryGetValue_0__2__String_outObject) {
         my_init();
     }
@@ -2382,7 +2396,7 @@ void System_Diagnostics_DistributedContextPropagator_void__Inject_0__3__Activity
     _g_System_Diagnostics_DiagnosticSource._fp_System_Diagnostics_DistributedContextPropagator_void__Inject_0__3__Activity_Object_DistributedContextPropagator_PropagatorSetterCallback(__thrown, __self_h, activity, carrier, setter);
 }
 
-void System_Diagnostics_DistributedContextPropagator_void__ExtractTraceIdAndState_0__4__Object_DistributedContextPropagator_PropagatorGetterCallback_outString_outString(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE carrier, SG_HNDL_NULLABLE getter, SG_HNDL_NONNULL* _Nonnull __traceId_out_ptr, SG_HNDL_NONNULL* _Nonnull __traceState_out_ptr) {
+void System_Diagnostics_DistributedContextPropagator_void__ExtractTraceIdAndState_0__4__Object_DistributedContextPropagator_PropagatorGetterCallback_outString_outString(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE carrier, SG_HNDL_NULLABLE getter, SG_HNDL_NULLABLE* _Nonnull __traceId_out_ptr, SG_HNDL_NULLABLE* _Nonnull __traceState_out_ptr) {
     if (!_g_System_Diagnostics_DiagnosticSource._fp_System_Diagnostics_DistributedContextPropagator_void__ExtractTraceIdAndState_0__4__Object_DistributedContextPropagator_PropagatorGetterCallback_outString_outString) {
         my_init();
     }
@@ -2460,6 +2474,36 @@ TYP System_Diagnostics_DistributedContextPropagator_PropagatorGetterCallback_get
     return ret;
 }
 
+void System_Diagnostics_DistributedContextPropagator_PropagatorGetterCallback_void__Invoke_0__4__Object_String_outString_outSystem_Collections_Generic_IEnumerable_string_(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE carrier, SG_HNDL_NONNULL fieldName, SG_HNDL_NULLABLE* _Nonnull __fieldValue_out_ptr, SG_HNDL_NULLABLE* _Nonnull __fieldValues_out_ptr) {
+    if (!_g_System_Diagnostics_DiagnosticSource._fp_System_Diagnostics_DistributedContextPropagator_PropagatorGetterCallback_void__Invoke_0__4__Object_String_outString_outSystem_Collections_Generic_IEnumerable_string_) {
+        my_init();
+    }
+    _g_System_Diagnostics_DiagnosticSource._fp_System_Diagnostics_DistributedContextPropagator_PropagatorGetterCallback_void__Invoke_0__4__Object_String_outString_outSystem_Collections_Generic_IEnumerable_string_(__thrown, __self_h, carrier, fieldName, __fieldValue_out_ptr, __fieldValues_out_ptr);
+}
+
+SG_HNDL_NULLABLE System_Diagnostics_DistributedContextPropagator_PropagatorGetterCallback_IAsyncResult__BeginInvoke_0__6__Object_String_outString_outSystem_Collections_Generic_IEnumerable_string__AsyncCallback_Object(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE carrier, SG_HNDL_NONNULL fieldName, SG_HNDL_NULLABLE* _Nonnull __fieldValue_out_ptr, SG_HNDL_NULLABLE* _Nonnull __fieldValues_out_ptr, SG_HNDL_NULLABLE callback, SG_HNDL_NULLABLE object_) {
+    if (!_g_System_Diagnostics_DiagnosticSource._fp_System_Diagnostics_DistributedContextPropagator_PropagatorGetterCallback_IAsyncResult__BeginInvoke_0__6__Object_String_outString_outSystem_Collections_Generic_IEnumerable_string__AsyncCallback_Object) {
+        my_init();
+    }
+    SG_HNDL_NULLABLE ret = _g_System_Diagnostics_DiagnosticSource._fp_System_Diagnostics_DistributedContextPropagator_PropagatorGetterCallback_IAsyncResult__BeginInvoke_0__6__Object_String_outString_outSystem_Collections_Generic_IEnumerable_string__AsyncCallback_Object(__thrown, __self_h, carrier, fieldName, __fieldValue_out_ptr, __fieldValues_out_ptr, callback, object_);
+    return ret;
+}
+
+void System_Diagnostics_DistributedContextPropagator_PropagatorGetterCallback_void__EndInvoke_0__3__outString_outSystem_Collections_Generic_IEnumerable_string__IAsyncResult(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE* _Nonnull __fieldValue_out_ptr, SG_HNDL_NULLABLE* _Nonnull __fieldValues_out_ptr, SG_HNDL_NULLABLE result) {
+    if (!_g_System_Diagnostics_DiagnosticSource._fp_System_Diagnostics_DistributedContextPropagator_PropagatorGetterCallback_void__EndInvoke_0__3__outString_outSystem_Collections_Generic_IEnumerable_string__IAsyncResult) {
+        my_init();
+    }
+    _g_System_Diagnostics_DiagnosticSource._fp_System_Diagnostics_DistributedContextPropagator_PropagatorGetterCallback_void__EndInvoke_0__3__outString_outSystem_Collections_Generic_IEnumerable_string__IAsyncResult(__thrown, __self_h, __fieldValue_out_ptr, __fieldValues_out_ptr, result);
+}
+
+SG_HNDL_NONNULL System_Diagnostics_DistributedContextPropagator_PropagatorGetterCallback_create(SG_HNDL_NULLABLE * _Nonnull __thrown, void (* _Nonnull  __cb)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE carrier, SG_HNDL_NONNULL fieldName, SG_HNDL_NULLABLE* _Nonnull __fieldValue_out_ptr, SG_HNDL_NULLABLE* _Nonnull __fieldValues_out_ptr), const void* _Nonnull __pdata, void (* _Nullable __deinit)(const void* _Nonnull __pdata)) {
+    if (!_g_System_Diagnostics_DiagnosticSource._fp_System_Diagnostics_DistributedContextPropagator_PropagatorGetterCallback_create) {
+        my_init();
+    }
+    SG_HNDL_NONNULL ret = _g_System_Diagnostics_DiagnosticSource._fp_System_Diagnostics_DistributedContextPropagator_PropagatorGetterCallback_create(__thrown, __cb, __pdata, __deinit);
+    return ret;
+}
+
 TYP System_Diagnostics_DistributedContextPropagator_PropagatorSetterCallback_get_type_handle(void) {
     if (!_g_System_Diagnostics_DiagnosticSource._fp_System_Diagnostics_DistributedContextPropagator_PropagatorSetterCallback_get_type_handle) {
         my_init();
@@ -2490,11 +2534,11 @@ void System_Diagnostics_DistributedContextPropagator_PropagatorSetterCallback_vo
     _g_System_Diagnostics_DiagnosticSource._fp_System_Diagnostics_DistributedContextPropagator_PropagatorSetterCallback_void__EndInvoke_0__1__IAsyncResult(__thrown, __self_h, result);
 }
 
-SG_HNDL_NONNULL System_Diagnostics_DistributedContextPropagator_PropagatorSetterCallback_create(SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nullable __pdata, void (* _Nullable __deinit)(const void* _Nullable __pdata), void (* _Nonnull  __cb)(const void* _Nullable __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE carrier, SG_HNDL_NONNULL fieldName, SG_HNDL_NONNULL fieldValue)) {
+SG_HNDL_NONNULL System_Diagnostics_DistributedContextPropagator_PropagatorSetterCallback_create(SG_HNDL_NULLABLE * _Nonnull __thrown, void (* _Nonnull  __cb)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE carrier, SG_HNDL_NONNULL fieldName, SG_HNDL_NONNULL fieldValue), const void* _Nonnull __pdata, void (* _Nullable __deinit)(const void* _Nonnull __pdata)) {
     if (!_g_System_Diagnostics_DiagnosticSource._fp_System_Diagnostics_DistributedContextPropagator_PropagatorSetterCallback_create) {
         my_init();
     }
-    SG_HNDL_NONNULL ret = _g_System_Diagnostics_DiagnosticSource._fp_System_Diagnostics_DistributedContextPropagator_PropagatorSetterCallback_create(__thrown, __pdata, __deinit, __cb);
+    SG_HNDL_NONNULL ret = _g_System_Diagnostics_DiagnosticSource._fp_System_Diagnostics_DistributedContextPropagator_PropagatorSetterCallback_create(__thrown, __cb, __pdata, __deinit);
     return ret;
 }
 
@@ -2503,6 +2547,86 @@ TYP System_Diagnostics_SampleActivity_1_get_type_handle(TYP T) {
         my_init();
     }
     TYP ret = _g_System_Diagnostics_DiagnosticSource._fp_System_Diagnostics_SampleActivity_1_get_type_handle(T);
+    return ret;
+}
+
+int32_t System_Diagnostics_SampleActivity_1_ActivitySamplingResult__Invoke_0__1__refSystem_Diagnostics_ActivityCreationOptions_T_(TYP T, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE* _Nonnull __options_ref_ptr) {
+    if (!_g_System_Diagnostics_DiagnosticSource._fp_System_Diagnostics_SampleActivity_1_ActivitySamplingResult__Invoke_0__1__refSystem_Diagnostics_ActivityCreationOptions_T_) {
+        my_init();
+    }
+    int32_t ret = _g_System_Diagnostics_DiagnosticSource._fp_System_Diagnostics_SampleActivity_1_ActivitySamplingResult__Invoke_0__1__refSystem_Diagnostics_ActivityCreationOptions_T_(T, __thrown, __self_h, __options_ref_ptr);
+    return ret;
+}
+
+SG_HNDL_NONNULL specialize_System_Diagnostics_SampleActivity_1_ActivitySamplingResult__Invoke_0__1__refSystem_Diagnostics_ActivityCreationOptions_T_(TYP T, SG_HNDL_NULLABLE * _Nonnull __thrown) {
+    if (!_g_System_Diagnostics_DiagnosticSource._fp_specialize_System_Diagnostics_SampleActivity_1_ActivitySamplingResult__Invoke_0__1__refSystem_Diagnostics_ActivityCreationOptions_T_) {
+        my_init();
+    }
+    SG_HNDL_NONNULL ret = _g_System_Diagnostics_DiagnosticSource._fp_specialize_System_Diagnostics_SampleActivity_1_ActivitySamplingResult__Invoke_0__1__refSystem_Diagnostics_ActivityCreationOptions_T_(T, __thrown);
+    return ret;
+}
+
+int32_t invoke_System_Diagnostics_SampleActivity_1_ActivitySamplingResult__Invoke_0__1__refSystem_Diagnostics_ActivityCreationOptions_T_(SG_HNDL_NONNULL ____hdel, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE* _Nonnull __options_ref_ptr) {
+    if (!_g_System_Diagnostics_DiagnosticSource._fp_invoke_System_Diagnostics_SampleActivity_1_ActivitySamplingResult__Invoke_0__1__refSystem_Diagnostics_ActivityCreationOptions_T_) {
+        my_init();
+    }
+    int32_t ret = _g_System_Diagnostics_DiagnosticSource._fp_invoke_System_Diagnostics_SampleActivity_1_ActivitySamplingResult__Invoke_0__1__refSystem_Diagnostics_ActivityCreationOptions_T_(____hdel, __thrown, __self_h, __options_ref_ptr);
+    return ret;
+}
+
+SG_HNDL_NULLABLE System_Diagnostics_SampleActivity_1_IAsyncResult__BeginInvoke_0__3__refSystem_Diagnostics_ActivityCreationOptions_T__AsyncCallback_Object(TYP T, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE* _Nonnull __options_ref_ptr, SG_HNDL_NULLABLE callback, SG_HNDL_NULLABLE object_) {
+    if (!_g_System_Diagnostics_DiagnosticSource._fp_System_Diagnostics_SampleActivity_1_IAsyncResult__BeginInvoke_0__3__refSystem_Diagnostics_ActivityCreationOptions_T__AsyncCallback_Object) {
+        my_init();
+    }
+    SG_HNDL_NULLABLE ret = _g_System_Diagnostics_DiagnosticSource._fp_System_Diagnostics_SampleActivity_1_IAsyncResult__BeginInvoke_0__3__refSystem_Diagnostics_ActivityCreationOptions_T__AsyncCallback_Object(T, __thrown, __self_h, __options_ref_ptr, callback, object_);
+    return ret;
+}
+
+SG_HNDL_NONNULL specialize_System_Diagnostics_SampleActivity_1_IAsyncResult__BeginInvoke_0__3__refSystem_Diagnostics_ActivityCreationOptions_T__AsyncCallback_Object(TYP T, SG_HNDL_NULLABLE * _Nonnull __thrown) {
+    if (!_g_System_Diagnostics_DiagnosticSource._fp_specialize_System_Diagnostics_SampleActivity_1_IAsyncResult__BeginInvoke_0__3__refSystem_Diagnostics_ActivityCreationOptions_T__AsyncCallback_Object) {
+        my_init();
+    }
+    SG_HNDL_NONNULL ret = _g_System_Diagnostics_DiagnosticSource._fp_specialize_System_Diagnostics_SampleActivity_1_IAsyncResult__BeginInvoke_0__3__refSystem_Diagnostics_ActivityCreationOptions_T__AsyncCallback_Object(T, __thrown);
+    return ret;
+}
+
+SG_HNDL_NULLABLE invoke_System_Diagnostics_SampleActivity_1_IAsyncResult__BeginInvoke_0__3__refSystem_Diagnostics_ActivityCreationOptions_T__AsyncCallback_Object(SG_HNDL_NONNULL ____hdel, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE* _Nonnull __options_ref_ptr, SG_HNDL_NULLABLE callback, SG_HNDL_NULLABLE object_) {
+    if (!_g_System_Diagnostics_DiagnosticSource._fp_invoke_System_Diagnostics_SampleActivity_1_IAsyncResult__BeginInvoke_0__3__refSystem_Diagnostics_ActivityCreationOptions_T__AsyncCallback_Object) {
+        my_init();
+    }
+    SG_HNDL_NULLABLE ret = _g_System_Diagnostics_DiagnosticSource._fp_invoke_System_Diagnostics_SampleActivity_1_IAsyncResult__BeginInvoke_0__3__refSystem_Diagnostics_ActivityCreationOptions_T__AsyncCallback_Object(____hdel, __thrown, __self_h, __options_ref_ptr, callback, object_);
+    return ret;
+}
+
+int32_t System_Diagnostics_SampleActivity_1_ActivitySamplingResult__EndInvoke_0__2__refSystem_Diagnostics_ActivityCreationOptions_T__IAsyncResult(TYP T, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE* _Nonnull __options_ref_ptr, SG_HNDL_NULLABLE result) {
+    if (!_g_System_Diagnostics_DiagnosticSource._fp_System_Diagnostics_SampleActivity_1_ActivitySamplingResult__EndInvoke_0__2__refSystem_Diagnostics_ActivityCreationOptions_T__IAsyncResult) {
+        my_init();
+    }
+    int32_t ret = _g_System_Diagnostics_DiagnosticSource._fp_System_Diagnostics_SampleActivity_1_ActivitySamplingResult__EndInvoke_0__2__refSystem_Diagnostics_ActivityCreationOptions_T__IAsyncResult(T, __thrown, __self_h, __options_ref_ptr, result);
+    return ret;
+}
+
+SG_HNDL_NONNULL specialize_System_Diagnostics_SampleActivity_1_ActivitySamplingResult__EndInvoke_0__2__refSystem_Diagnostics_ActivityCreationOptions_T__IAsyncResult(TYP T, SG_HNDL_NULLABLE * _Nonnull __thrown) {
+    if (!_g_System_Diagnostics_DiagnosticSource._fp_specialize_System_Diagnostics_SampleActivity_1_ActivitySamplingResult__EndInvoke_0__2__refSystem_Diagnostics_ActivityCreationOptions_T__IAsyncResult) {
+        my_init();
+    }
+    SG_HNDL_NONNULL ret = _g_System_Diagnostics_DiagnosticSource._fp_specialize_System_Diagnostics_SampleActivity_1_ActivitySamplingResult__EndInvoke_0__2__refSystem_Diagnostics_ActivityCreationOptions_T__IAsyncResult(T, __thrown);
+    return ret;
+}
+
+int32_t invoke_System_Diagnostics_SampleActivity_1_ActivitySamplingResult__EndInvoke_0__2__refSystem_Diagnostics_ActivityCreationOptions_T__IAsyncResult(SG_HNDL_NONNULL ____hdel, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE* _Nonnull __options_ref_ptr, SG_HNDL_NULLABLE result) {
+    if (!_g_System_Diagnostics_DiagnosticSource._fp_invoke_System_Diagnostics_SampleActivity_1_ActivitySamplingResult__EndInvoke_0__2__refSystem_Diagnostics_ActivityCreationOptions_T__IAsyncResult) {
+        my_init();
+    }
+    int32_t ret = _g_System_Diagnostics_DiagnosticSource._fp_invoke_System_Diagnostics_SampleActivity_1_ActivitySamplingResult__EndInvoke_0__2__refSystem_Diagnostics_ActivityCreationOptions_T__IAsyncResult(____hdel, __thrown, __self_h, __options_ref_ptr, result);
+    return ret;
+}
+
+SG_HNDL_NONNULL System_Diagnostics_SampleActivity_1_create(TYP T, SG_HNDL_NULLABLE * _Nonnull __thrown, int32_t (* _Nonnull  __cb)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE* _Nonnull __options_ref_ptr), const void* _Nonnull __pdata, void (* _Nullable __deinit)(const void* _Nonnull __pdata)) {
+    if (!_g_System_Diagnostics_DiagnosticSource._fp_System_Diagnostics_SampleActivity_1_create) {
+        my_init();
+    }
+    SG_HNDL_NONNULL ret = _g_System_Diagnostics_DiagnosticSource._fp_System_Diagnostics_SampleActivity_1_create(T, __thrown, __cb, __pdata, __deinit);
     return ret;
 }
 
@@ -2791,7 +2915,7 @@ void invoke_System_Diagnostics_Metrics_Counter_1_void__Add_0__2__T_System_Collec
     _g_System_Diagnostics_DiagnosticSource._fp_invoke_System_Diagnostics_Metrics_Counter_1_void__Add_0__2__T_System_Collections_Generic_KeyValuePair_string_object_Array(____hdel, __thrown, __self_h, delta, tags);
 }
 
-void System_Diagnostics_Metrics_Counter_1_void__Add_0__2__T_inTagList(TYP T, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, GVAL delta, SG_HNDL_NONNULL* _Nonnull __tagList_in_ptr) {
+void System_Diagnostics_Metrics_Counter_1_void__Add_0__2__T_inTagList(TYP T, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, GVAL delta, SG_HNDL_NULLABLE* _Nonnull __tagList_in_ptr) {
     if (!_g_System_Diagnostics_DiagnosticSource._fp_System_Diagnostics_Metrics_Counter_1_void__Add_0__2__T_inTagList) {
         my_init();
     }
@@ -2806,7 +2930,7 @@ SG_HNDL_NONNULL specialize_System_Diagnostics_Metrics_Counter_1_void__Add_0__2__
     return ret;
 }
 
-void invoke_System_Diagnostics_Metrics_Counter_1_void__Add_0__2__T_inTagList(SG_HNDL_NONNULL ____hdel, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, GVAL delta, SG_HNDL_NONNULL* _Nonnull __tagList_in_ptr) {
+void invoke_System_Diagnostics_Metrics_Counter_1_void__Add_0__2__T_inTagList(SG_HNDL_NONNULL ____hdel, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, GVAL delta, SG_HNDL_NULLABLE* _Nonnull __tagList_in_ptr) {
     if (!_g_System_Diagnostics_DiagnosticSource._fp_invoke_System_Diagnostics_Metrics_Counter_1_void__Add_0__2__T_inTagList) {
         my_init();
     }
@@ -2917,7 +3041,7 @@ void invoke_System_Diagnostics_Metrics_Histogram_1_void__Record_0__4__T_System_C
     _g_System_Diagnostics_DiagnosticSource._fp_invoke_System_Diagnostics_Metrics_Histogram_1_void__Record_0__4__T_System_Collections_Generic_KeyValuePair_string_object__System_Collections_Generic_KeyValuePair_string_object__System_Collections_Generic_KeyValuePair_string_object_(____hdel, __thrown, __self_h, value, tag1, tag2, tag3);
 }
 
-void System_Diagnostics_Metrics_Histogram_1_void__Record_0__2__T_inTagList(TYP T, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, GVAL value, SG_HNDL_NONNULL* _Nonnull __tagList_in_ptr) {
+void System_Diagnostics_Metrics_Histogram_1_void__Record_0__2__T_inTagList(TYP T, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, GVAL value, SG_HNDL_NULLABLE* _Nonnull __tagList_in_ptr) {
     if (!_g_System_Diagnostics_DiagnosticSource._fp_System_Diagnostics_Metrics_Histogram_1_void__Record_0__2__T_inTagList) {
         my_init();
     }
@@ -2932,7 +3056,7 @@ SG_HNDL_NONNULL specialize_System_Diagnostics_Metrics_Histogram_1_void__Record_0
     return ret;
 }
 
-void invoke_System_Diagnostics_Metrics_Histogram_1_void__Record_0__2__T_inTagList(SG_HNDL_NONNULL ____hdel, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, GVAL value, SG_HNDL_NONNULL* _Nonnull __tagList_in_ptr) {
+void invoke_System_Diagnostics_Metrics_Histogram_1_void__Record_0__2__T_inTagList(SG_HNDL_NONNULL ____hdel, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, GVAL value, SG_HNDL_NULLABLE* _Nonnull __tagList_in_ptr) {
     if (!_g_System_Diagnostics_DiagnosticSource._fp_invoke_System_Diagnostics_Metrics_Histogram_1_void__Record_0__2__T_inTagList) {
         my_init();
     }

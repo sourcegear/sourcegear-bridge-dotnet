@@ -161,6 +161,20 @@ struct {
     TYP (* _Nonnull  _fp_System_Security_Cryptography_DSAParameters_get_type_handle)(void);
     int32_t (* _Nonnull  _fp_System_Security_Cryptography_DSAParameters_get_Counter)(SG_HNDL_NONNULL __self_h);
     void (* _Nonnull  _fp_System_Security_Cryptography_DSAParameters_set_Counter)(SG_HNDL_NONNULL __self_h, int32_t __v);
+    SG_HNDL_NULLABLE (* _Nonnull  _fp_System_Security_Cryptography_DSAParameters_get_G)(SG_HNDL_NONNULL __self_h);
+    void (* _Nonnull  _fp_System_Security_Cryptography_DSAParameters_set_G)(SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE __v);
+    SG_HNDL_NULLABLE (* _Nonnull  _fp_System_Security_Cryptography_DSAParameters_get_J)(SG_HNDL_NONNULL __self_h);
+    void (* _Nonnull  _fp_System_Security_Cryptography_DSAParameters_set_J)(SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE __v);
+    SG_HNDL_NULLABLE (* _Nonnull  _fp_System_Security_Cryptography_DSAParameters_get_P)(SG_HNDL_NONNULL __self_h);
+    void (* _Nonnull  _fp_System_Security_Cryptography_DSAParameters_set_P)(SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE __v);
+    SG_HNDL_NULLABLE (* _Nonnull  _fp_System_Security_Cryptography_DSAParameters_get_Q)(SG_HNDL_NONNULL __self_h);
+    void (* _Nonnull  _fp_System_Security_Cryptography_DSAParameters_set_Q)(SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE __v);
+    SG_HNDL_NULLABLE (* _Nonnull  _fp_System_Security_Cryptography_DSAParameters_get_Seed)(SG_HNDL_NONNULL __self_h);
+    void (* _Nonnull  _fp_System_Security_Cryptography_DSAParameters_set_Seed)(SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE __v);
+    SG_HNDL_NULLABLE (* _Nonnull  _fp_System_Security_Cryptography_DSAParameters_get_X)(SG_HNDL_NONNULL __self_h);
+    void (* _Nonnull  _fp_System_Security_Cryptography_DSAParameters_set_X)(SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE __v);
+    SG_HNDL_NULLABLE (* _Nonnull  _fp_System_Security_Cryptography_DSAParameters_get_Y)(SG_HNDL_NONNULL __self_h);
+    void (* _Nonnull  _fp_System_Security_Cryptography_DSAParameters_set_Y)(SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE __v);
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_Security_Cryptography_DSAParameters_implicit_ctor)(void);
     TYP (* _Nonnull  _fp_System_Security_Cryptography_DSASignatureDeformatter_get_type_handle)(void);
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_Security_Cryptography_DSASignatureDeformatter_ctor_0__0)(SG_HNDL_NULLABLE * _Nonnull __thrown);
@@ -185,10 +199,26 @@ struct {
     void (* _Nonnull  _fp_System_Security_Cryptography_DeriveBytes_void__Reset_0__0)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h);
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_Security_Cryptography_DeriveBytes_cast)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __h);
     TYP (* _Nonnull  _fp_System_Security_Cryptography_ECCurve_get_type_handle)(void);
+    SG_HNDL_NULLABLE (* _Nonnull  _fp_System_Security_Cryptography_ECCurve_get_A)(SG_HNDL_NONNULL __self_h);
+    void (* _Nonnull  _fp_System_Security_Cryptography_ECCurve_set_A)(SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE __v);
+    SG_HNDL_NULLABLE (* _Nonnull  _fp_System_Security_Cryptography_ECCurve_get_B)(SG_HNDL_NONNULL __self_h);
+    void (* _Nonnull  _fp_System_Security_Cryptography_ECCurve_set_B)(SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE __v);
+    SG_HNDL_NULLABLE (* _Nonnull  _fp_System_Security_Cryptography_ECCurve_get_Cofactor)(SG_HNDL_NONNULL __self_h);
+    void (* _Nonnull  _fp_System_Security_Cryptography_ECCurve_set_Cofactor)(SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE __v);
     int32_t (* _Nonnull  _fp_System_Security_Cryptography_ECCurve_get_CurveType)(SG_HNDL_NONNULL __self_h);
     void (* _Nonnull  _fp_System_Security_Cryptography_ECCurve_set_CurveType)(SG_HNDL_NONNULL __self_h, int32_t __v);
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_Security_Cryptography_ECCurve_get_G)(SG_HNDL_NONNULL __self_h);
     void (* _Nonnull  _fp_System_Security_Cryptography_ECCurve_set_G)(SG_HNDL_NONNULL __self_h, SG_HNDL_NONNULL __v);
+    SG_HNDL_NULLABLE (* _Nonnull  _fp_System_Security_Cryptography_ECCurve_get_Hash)(SG_HNDL_NONNULL __self_h);
+    void (* _Nonnull  _fp_System_Security_Cryptography_ECCurve_set_Hash)(SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE __v);
+    SG_HNDL_NULLABLE (* _Nonnull  _fp_System_Security_Cryptography_ECCurve_get_Order)(SG_HNDL_NONNULL __self_h);
+    void (* _Nonnull  _fp_System_Security_Cryptography_ECCurve_set_Order)(SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE __v);
+    SG_HNDL_NULLABLE (* _Nonnull  _fp_System_Security_Cryptography_ECCurve_get_Polynomial)(SG_HNDL_NONNULL __self_h);
+    void (* _Nonnull  _fp_System_Security_Cryptography_ECCurve_set_Polynomial)(SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE __v);
+    SG_HNDL_NULLABLE (* _Nonnull  _fp_System_Security_Cryptography_ECCurve_get_Prime)(SG_HNDL_NONNULL __self_h);
+    void (* _Nonnull  _fp_System_Security_Cryptography_ECCurve_set_Prime)(SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE __v);
+    SG_HNDL_NULLABLE (* _Nonnull  _fp_System_Security_Cryptography_ECCurve_get_Seed)(SG_HNDL_NONNULL __self_h);
+    void (* _Nonnull  _fp_System_Security_Cryptography_ECCurve_set_Seed)(SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE __v);
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_Security_Cryptography_ECCurve_ECCurve__CreateFromFriendlyName_0__1__String)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL oidFriendlyName);
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_Security_Cryptography_ECCurve_ECCurve__CreateFromOid_0__1__Oid)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL curveOid);
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_Security_Cryptography_ECCurve_ECCurve__CreateFromValue_0__1__String)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL oidValue);
@@ -323,11 +353,17 @@ struct {
     TYP (* _Nonnull  _fp_System_Security_Cryptography_ECParameters_get_type_handle)(void);
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_Security_Cryptography_ECParameters_get_Curve)(SG_HNDL_NONNULL __self_h);
     void (* _Nonnull  _fp_System_Security_Cryptography_ECParameters_set_Curve)(SG_HNDL_NONNULL __self_h, SG_HNDL_NONNULL __v);
+    SG_HNDL_NULLABLE (* _Nonnull  _fp_System_Security_Cryptography_ECParameters_get_D)(SG_HNDL_NONNULL __self_h);
+    void (* _Nonnull  _fp_System_Security_Cryptography_ECParameters_set_D)(SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE __v);
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_Security_Cryptography_ECParameters_get_Q)(SG_HNDL_NONNULL __self_h);
     void (* _Nonnull  _fp_System_Security_Cryptography_ECParameters_set_Q)(SG_HNDL_NONNULL __self_h, SG_HNDL_NONNULL __v);
     void (* _Nonnull  _fp_System_Security_Cryptography_ECParameters_void__Validate_0__0)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h);
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_Security_Cryptography_ECParameters_implicit_ctor)(void);
     TYP (* _Nonnull  _fp_System_Security_Cryptography_ECPoint_get_type_handle)(void);
+    SG_HNDL_NULLABLE (* _Nonnull  _fp_System_Security_Cryptography_ECPoint_get_X)(SG_HNDL_NONNULL __self_h);
+    void (* _Nonnull  _fp_System_Security_Cryptography_ECPoint_set_X)(SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE __v);
+    SG_HNDL_NULLABLE (* _Nonnull  _fp_System_Security_Cryptography_ECPoint_get_Y)(SG_HNDL_NONNULL __self_h);
+    void (* _Nonnull  _fp_System_Security_Cryptography_ECPoint_set_Y)(SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE __v);
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_Security_Cryptography_ECPoint_implicit_ctor)(void);
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_Security_Cryptography_HKDF_u8Array__DeriveKey_0__5__HashAlgorithmName_u8Array_i32_u8Array_u8Array)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL hashAlgorithmName, SG_HNDL_NONNULL ikm, int32_t outputLength, SG_HNDL_NULLABLE salt, SG_HNDL_NULLABLE info);
     void (* _Nonnull  _fp_System_Security_Cryptography_HKDF_void__DeriveKey_0__5__HashAlgorithmName_rospanu8_spanu8_rospanu8_rospanu8)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL hashAlgorithmName, const void* _Nonnull __ikm_spanptr, const void* _Nonnull __output_spanptr, const void* _Nonnull __salt_spanptr, const void* _Nonnull __info_spanptr);
@@ -558,6 +594,22 @@ struct {
     void (* _Nonnull  _fp_System_Security_Cryptography_RSAPKCS1SignatureFormatter_void__SetKey_0__1__AsymmetricAlgorithm)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NONNULL key);
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_Security_Cryptography_RSAPKCS1SignatureFormatter_cast)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __h);
     TYP (* _Nonnull  _fp_System_Security_Cryptography_RSAParameters_get_type_handle)(void);
+    SG_HNDL_NULLABLE (* _Nonnull  _fp_System_Security_Cryptography_RSAParameters_get_D)(SG_HNDL_NONNULL __self_h);
+    void (* _Nonnull  _fp_System_Security_Cryptography_RSAParameters_set_D)(SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE __v);
+    SG_HNDL_NULLABLE (* _Nonnull  _fp_System_Security_Cryptography_RSAParameters_get_DP)(SG_HNDL_NONNULL __self_h);
+    void (* _Nonnull  _fp_System_Security_Cryptography_RSAParameters_set_DP)(SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE __v);
+    SG_HNDL_NULLABLE (* _Nonnull  _fp_System_Security_Cryptography_RSAParameters_get_DQ)(SG_HNDL_NONNULL __self_h);
+    void (* _Nonnull  _fp_System_Security_Cryptography_RSAParameters_set_DQ)(SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE __v);
+    SG_HNDL_NULLABLE (* _Nonnull  _fp_System_Security_Cryptography_RSAParameters_get_Exponent)(SG_HNDL_NONNULL __self_h);
+    void (* _Nonnull  _fp_System_Security_Cryptography_RSAParameters_set_Exponent)(SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE __v);
+    SG_HNDL_NULLABLE (* _Nonnull  _fp_System_Security_Cryptography_RSAParameters_get_InverseQ)(SG_HNDL_NONNULL __self_h);
+    void (* _Nonnull  _fp_System_Security_Cryptography_RSAParameters_set_InverseQ)(SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE __v);
+    SG_HNDL_NULLABLE (* _Nonnull  _fp_System_Security_Cryptography_RSAParameters_get_Modulus)(SG_HNDL_NONNULL __self_h);
+    void (* _Nonnull  _fp_System_Security_Cryptography_RSAParameters_set_Modulus)(SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE __v);
+    SG_HNDL_NULLABLE (* _Nonnull  _fp_System_Security_Cryptography_RSAParameters_get_P)(SG_HNDL_NONNULL __self_h);
+    void (* _Nonnull  _fp_System_Security_Cryptography_RSAParameters_set_P)(SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE __v);
+    SG_HNDL_NULLABLE (* _Nonnull  _fp_System_Security_Cryptography_RSAParameters_get_Q)(SG_HNDL_NONNULL __self_h);
+    void (* _Nonnull  _fp_System_Security_Cryptography_RSAParameters_set_Q)(SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE __v);
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_Security_Cryptography_RSAParameters_implicit_ctor)(void);
     TYP (* _Nonnull  _fp_System_Security_Cryptography_RSASignaturePadding_get_type_handle)(void);
     int32_t (* _Nonnull  _fp_System_Security_Cryptography_RSASignaturePadding_bool__Equals_0__1__Object)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE obj);
@@ -1903,6 +1955,111 @@ void System_Security_Cryptography_DSAParameters_set_Counter(SG_HNDL_NONNULL __se
     _g_System_Security_Cryptography_Algorithms._fp_System_Security_Cryptography_DSAParameters_set_Counter(__self_h, __v);
 }
 
+SG_HNDL_NULLABLE System_Security_Cryptography_DSAParameters_get_G(SG_HNDL_NONNULL __self_h) {
+    if (!_g_System_Security_Cryptography_Algorithms._fp_System_Security_Cryptography_DSAParameters_get_G) {
+        my_init();
+    }
+    SG_HNDL_NULLABLE ret = _g_System_Security_Cryptography_Algorithms._fp_System_Security_Cryptography_DSAParameters_get_G(__self_h);
+    return ret;
+}
+
+void System_Security_Cryptography_DSAParameters_set_G(SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE __v) {
+    if (!_g_System_Security_Cryptography_Algorithms._fp_System_Security_Cryptography_DSAParameters_set_G) {
+        my_init();
+    }
+    _g_System_Security_Cryptography_Algorithms._fp_System_Security_Cryptography_DSAParameters_set_G(__self_h, __v);
+}
+
+SG_HNDL_NULLABLE System_Security_Cryptography_DSAParameters_get_J(SG_HNDL_NONNULL __self_h) {
+    if (!_g_System_Security_Cryptography_Algorithms._fp_System_Security_Cryptography_DSAParameters_get_J) {
+        my_init();
+    }
+    SG_HNDL_NULLABLE ret = _g_System_Security_Cryptography_Algorithms._fp_System_Security_Cryptography_DSAParameters_get_J(__self_h);
+    return ret;
+}
+
+void System_Security_Cryptography_DSAParameters_set_J(SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE __v) {
+    if (!_g_System_Security_Cryptography_Algorithms._fp_System_Security_Cryptography_DSAParameters_set_J) {
+        my_init();
+    }
+    _g_System_Security_Cryptography_Algorithms._fp_System_Security_Cryptography_DSAParameters_set_J(__self_h, __v);
+}
+
+SG_HNDL_NULLABLE System_Security_Cryptography_DSAParameters_get_P(SG_HNDL_NONNULL __self_h) {
+    if (!_g_System_Security_Cryptography_Algorithms._fp_System_Security_Cryptography_DSAParameters_get_P) {
+        my_init();
+    }
+    SG_HNDL_NULLABLE ret = _g_System_Security_Cryptography_Algorithms._fp_System_Security_Cryptography_DSAParameters_get_P(__self_h);
+    return ret;
+}
+
+void System_Security_Cryptography_DSAParameters_set_P(SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE __v) {
+    if (!_g_System_Security_Cryptography_Algorithms._fp_System_Security_Cryptography_DSAParameters_set_P) {
+        my_init();
+    }
+    _g_System_Security_Cryptography_Algorithms._fp_System_Security_Cryptography_DSAParameters_set_P(__self_h, __v);
+}
+
+SG_HNDL_NULLABLE System_Security_Cryptography_DSAParameters_get_Q(SG_HNDL_NONNULL __self_h) {
+    if (!_g_System_Security_Cryptography_Algorithms._fp_System_Security_Cryptography_DSAParameters_get_Q) {
+        my_init();
+    }
+    SG_HNDL_NULLABLE ret = _g_System_Security_Cryptography_Algorithms._fp_System_Security_Cryptography_DSAParameters_get_Q(__self_h);
+    return ret;
+}
+
+void System_Security_Cryptography_DSAParameters_set_Q(SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE __v) {
+    if (!_g_System_Security_Cryptography_Algorithms._fp_System_Security_Cryptography_DSAParameters_set_Q) {
+        my_init();
+    }
+    _g_System_Security_Cryptography_Algorithms._fp_System_Security_Cryptography_DSAParameters_set_Q(__self_h, __v);
+}
+
+SG_HNDL_NULLABLE System_Security_Cryptography_DSAParameters_get_Seed(SG_HNDL_NONNULL __self_h) {
+    if (!_g_System_Security_Cryptography_Algorithms._fp_System_Security_Cryptography_DSAParameters_get_Seed) {
+        my_init();
+    }
+    SG_HNDL_NULLABLE ret = _g_System_Security_Cryptography_Algorithms._fp_System_Security_Cryptography_DSAParameters_get_Seed(__self_h);
+    return ret;
+}
+
+void System_Security_Cryptography_DSAParameters_set_Seed(SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE __v) {
+    if (!_g_System_Security_Cryptography_Algorithms._fp_System_Security_Cryptography_DSAParameters_set_Seed) {
+        my_init();
+    }
+    _g_System_Security_Cryptography_Algorithms._fp_System_Security_Cryptography_DSAParameters_set_Seed(__self_h, __v);
+}
+
+SG_HNDL_NULLABLE System_Security_Cryptography_DSAParameters_get_X(SG_HNDL_NONNULL __self_h) {
+    if (!_g_System_Security_Cryptography_Algorithms._fp_System_Security_Cryptography_DSAParameters_get_X) {
+        my_init();
+    }
+    SG_HNDL_NULLABLE ret = _g_System_Security_Cryptography_Algorithms._fp_System_Security_Cryptography_DSAParameters_get_X(__self_h);
+    return ret;
+}
+
+void System_Security_Cryptography_DSAParameters_set_X(SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE __v) {
+    if (!_g_System_Security_Cryptography_Algorithms._fp_System_Security_Cryptography_DSAParameters_set_X) {
+        my_init();
+    }
+    _g_System_Security_Cryptography_Algorithms._fp_System_Security_Cryptography_DSAParameters_set_X(__self_h, __v);
+}
+
+SG_HNDL_NULLABLE System_Security_Cryptography_DSAParameters_get_Y(SG_HNDL_NONNULL __self_h) {
+    if (!_g_System_Security_Cryptography_Algorithms._fp_System_Security_Cryptography_DSAParameters_get_Y) {
+        my_init();
+    }
+    SG_HNDL_NULLABLE ret = _g_System_Security_Cryptography_Algorithms._fp_System_Security_Cryptography_DSAParameters_get_Y(__self_h);
+    return ret;
+}
+
+void System_Security_Cryptography_DSAParameters_set_Y(SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE __v) {
+    if (!_g_System_Security_Cryptography_Algorithms._fp_System_Security_Cryptography_DSAParameters_set_Y) {
+        my_init();
+    }
+    _g_System_Security_Cryptography_Algorithms._fp_System_Security_Cryptography_DSAParameters_set_Y(__self_h, __v);
+}
+
 SG_HNDL_NONNULL System_Security_Cryptography_DSAParameters_implicit_ctor(void) {
     if (!_g_System_Security_Cryptography_Algorithms._fp_System_Security_Cryptography_DSAParameters_implicit_ctor) {
         my_init();
@@ -2089,6 +2246,51 @@ TYP System_Security_Cryptography_ECCurve_get_type_handle(void) {
     return ret;
 }
 
+SG_HNDL_NULLABLE System_Security_Cryptography_ECCurve_get_A(SG_HNDL_NONNULL __self_h) {
+    if (!_g_System_Security_Cryptography_Algorithms._fp_System_Security_Cryptography_ECCurve_get_A) {
+        my_init();
+    }
+    SG_HNDL_NULLABLE ret = _g_System_Security_Cryptography_Algorithms._fp_System_Security_Cryptography_ECCurve_get_A(__self_h);
+    return ret;
+}
+
+void System_Security_Cryptography_ECCurve_set_A(SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE __v) {
+    if (!_g_System_Security_Cryptography_Algorithms._fp_System_Security_Cryptography_ECCurve_set_A) {
+        my_init();
+    }
+    _g_System_Security_Cryptography_Algorithms._fp_System_Security_Cryptography_ECCurve_set_A(__self_h, __v);
+}
+
+SG_HNDL_NULLABLE System_Security_Cryptography_ECCurve_get_B(SG_HNDL_NONNULL __self_h) {
+    if (!_g_System_Security_Cryptography_Algorithms._fp_System_Security_Cryptography_ECCurve_get_B) {
+        my_init();
+    }
+    SG_HNDL_NULLABLE ret = _g_System_Security_Cryptography_Algorithms._fp_System_Security_Cryptography_ECCurve_get_B(__self_h);
+    return ret;
+}
+
+void System_Security_Cryptography_ECCurve_set_B(SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE __v) {
+    if (!_g_System_Security_Cryptography_Algorithms._fp_System_Security_Cryptography_ECCurve_set_B) {
+        my_init();
+    }
+    _g_System_Security_Cryptography_Algorithms._fp_System_Security_Cryptography_ECCurve_set_B(__self_h, __v);
+}
+
+SG_HNDL_NULLABLE System_Security_Cryptography_ECCurve_get_Cofactor(SG_HNDL_NONNULL __self_h) {
+    if (!_g_System_Security_Cryptography_Algorithms._fp_System_Security_Cryptography_ECCurve_get_Cofactor) {
+        my_init();
+    }
+    SG_HNDL_NULLABLE ret = _g_System_Security_Cryptography_Algorithms._fp_System_Security_Cryptography_ECCurve_get_Cofactor(__self_h);
+    return ret;
+}
+
+void System_Security_Cryptography_ECCurve_set_Cofactor(SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE __v) {
+    if (!_g_System_Security_Cryptography_Algorithms._fp_System_Security_Cryptography_ECCurve_set_Cofactor) {
+        my_init();
+    }
+    _g_System_Security_Cryptography_Algorithms._fp_System_Security_Cryptography_ECCurve_set_Cofactor(__self_h, __v);
+}
+
 int32_t System_Security_Cryptography_ECCurve_get_CurveType(SG_HNDL_NONNULL __self_h) {
     if (!_g_System_Security_Cryptography_Algorithms._fp_System_Security_Cryptography_ECCurve_get_CurveType) {
         my_init();
@@ -2117,6 +2319,81 @@ void System_Security_Cryptography_ECCurve_set_G(SG_HNDL_NONNULL __self_h, SG_HND
         my_init();
     }
     _g_System_Security_Cryptography_Algorithms._fp_System_Security_Cryptography_ECCurve_set_G(__self_h, __v);
+}
+
+SG_HNDL_NULLABLE System_Security_Cryptography_ECCurve_get_Hash(SG_HNDL_NONNULL __self_h) {
+    if (!_g_System_Security_Cryptography_Algorithms._fp_System_Security_Cryptography_ECCurve_get_Hash) {
+        my_init();
+    }
+    SG_HNDL_NULLABLE ret = _g_System_Security_Cryptography_Algorithms._fp_System_Security_Cryptography_ECCurve_get_Hash(__self_h);
+    return ret;
+}
+
+void System_Security_Cryptography_ECCurve_set_Hash(SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE __v) {
+    if (!_g_System_Security_Cryptography_Algorithms._fp_System_Security_Cryptography_ECCurve_set_Hash) {
+        my_init();
+    }
+    _g_System_Security_Cryptography_Algorithms._fp_System_Security_Cryptography_ECCurve_set_Hash(__self_h, __v);
+}
+
+SG_HNDL_NULLABLE System_Security_Cryptography_ECCurve_get_Order(SG_HNDL_NONNULL __self_h) {
+    if (!_g_System_Security_Cryptography_Algorithms._fp_System_Security_Cryptography_ECCurve_get_Order) {
+        my_init();
+    }
+    SG_HNDL_NULLABLE ret = _g_System_Security_Cryptography_Algorithms._fp_System_Security_Cryptography_ECCurve_get_Order(__self_h);
+    return ret;
+}
+
+void System_Security_Cryptography_ECCurve_set_Order(SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE __v) {
+    if (!_g_System_Security_Cryptography_Algorithms._fp_System_Security_Cryptography_ECCurve_set_Order) {
+        my_init();
+    }
+    _g_System_Security_Cryptography_Algorithms._fp_System_Security_Cryptography_ECCurve_set_Order(__self_h, __v);
+}
+
+SG_HNDL_NULLABLE System_Security_Cryptography_ECCurve_get_Polynomial(SG_HNDL_NONNULL __self_h) {
+    if (!_g_System_Security_Cryptography_Algorithms._fp_System_Security_Cryptography_ECCurve_get_Polynomial) {
+        my_init();
+    }
+    SG_HNDL_NULLABLE ret = _g_System_Security_Cryptography_Algorithms._fp_System_Security_Cryptography_ECCurve_get_Polynomial(__self_h);
+    return ret;
+}
+
+void System_Security_Cryptography_ECCurve_set_Polynomial(SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE __v) {
+    if (!_g_System_Security_Cryptography_Algorithms._fp_System_Security_Cryptography_ECCurve_set_Polynomial) {
+        my_init();
+    }
+    _g_System_Security_Cryptography_Algorithms._fp_System_Security_Cryptography_ECCurve_set_Polynomial(__self_h, __v);
+}
+
+SG_HNDL_NULLABLE System_Security_Cryptography_ECCurve_get_Prime(SG_HNDL_NONNULL __self_h) {
+    if (!_g_System_Security_Cryptography_Algorithms._fp_System_Security_Cryptography_ECCurve_get_Prime) {
+        my_init();
+    }
+    SG_HNDL_NULLABLE ret = _g_System_Security_Cryptography_Algorithms._fp_System_Security_Cryptography_ECCurve_get_Prime(__self_h);
+    return ret;
+}
+
+void System_Security_Cryptography_ECCurve_set_Prime(SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE __v) {
+    if (!_g_System_Security_Cryptography_Algorithms._fp_System_Security_Cryptography_ECCurve_set_Prime) {
+        my_init();
+    }
+    _g_System_Security_Cryptography_Algorithms._fp_System_Security_Cryptography_ECCurve_set_Prime(__self_h, __v);
+}
+
+SG_HNDL_NULLABLE System_Security_Cryptography_ECCurve_get_Seed(SG_HNDL_NONNULL __self_h) {
+    if (!_g_System_Security_Cryptography_Algorithms._fp_System_Security_Cryptography_ECCurve_get_Seed) {
+        my_init();
+    }
+    SG_HNDL_NULLABLE ret = _g_System_Security_Cryptography_Algorithms._fp_System_Security_Cryptography_ECCurve_get_Seed(__self_h);
+    return ret;
+}
+
+void System_Security_Cryptography_ECCurve_set_Seed(SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE __v) {
+    if (!_g_System_Security_Cryptography_Algorithms._fp_System_Security_Cryptography_ECCurve_set_Seed) {
+        my_init();
+    }
+    _g_System_Security_Cryptography_Algorithms._fp_System_Security_Cryptography_ECCurve_set_Seed(__self_h, __v);
 }
 
 SG_HNDL_NONNULL System_Security_Cryptography_ECCurve_ECCurve__CreateFromFriendlyName_0__1__String(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL oidFriendlyName) {
@@ -3166,6 +3443,21 @@ void System_Security_Cryptography_ECParameters_set_Curve(SG_HNDL_NONNULL __self_
     _g_System_Security_Cryptography_Algorithms._fp_System_Security_Cryptography_ECParameters_set_Curve(__self_h, __v);
 }
 
+SG_HNDL_NULLABLE System_Security_Cryptography_ECParameters_get_D(SG_HNDL_NONNULL __self_h) {
+    if (!_g_System_Security_Cryptography_Algorithms._fp_System_Security_Cryptography_ECParameters_get_D) {
+        my_init();
+    }
+    SG_HNDL_NULLABLE ret = _g_System_Security_Cryptography_Algorithms._fp_System_Security_Cryptography_ECParameters_get_D(__self_h);
+    return ret;
+}
+
+void System_Security_Cryptography_ECParameters_set_D(SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE __v) {
+    if (!_g_System_Security_Cryptography_Algorithms._fp_System_Security_Cryptography_ECParameters_set_D) {
+        my_init();
+    }
+    _g_System_Security_Cryptography_Algorithms._fp_System_Security_Cryptography_ECParameters_set_D(__self_h, __v);
+}
+
 SG_HNDL_NONNULL System_Security_Cryptography_ECParameters_get_Q(SG_HNDL_NONNULL __self_h) {
     if (!_g_System_Security_Cryptography_Algorithms._fp_System_Security_Cryptography_ECParameters_get_Q) {
         my_init();
@@ -3202,6 +3494,36 @@ TYP System_Security_Cryptography_ECPoint_get_type_handle(void) {
     }
     TYP ret = _g_System_Security_Cryptography_Algorithms._fp_System_Security_Cryptography_ECPoint_get_type_handle();
     return ret;
+}
+
+SG_HNDL_NULLABLE System_Security_Cryptography_ECPoint_get_X(SG_HNDL_NONNULL __self_h) {
+    if (!_g_System_Security_Cryptography_Algorithms._fp_System_Security_Cryptography_ECPoint_get_X) {
+        my_init();
+    }
+    SG_HNDL_NULLABLE ret = _g_System_Security_Cryptography_Algorithms._fp_System_Security_Cryptography_ECPoint_get_X(__self_h);
+    return ret;
+}
+
+void System_Security_Cryptography_ECPoint_set_X(SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE __v) {
+    if (!_g_System_Security_Cryptography_Algorithms._fp_System_Security_Cryptography_ECPoint_set_X) {
+        my_init();
+    }
+    _g_System_Security_Cryptography_Algorithms._fp_System_Security_Cryptography_ECPoint_set_X(__self_h, __v);
+}
+
+SG_HNDL_NULLABLE System_Security_Cryptography_ECPoint_get_Y(SG_HNDL_NONNULL __self_h) {
+    if (!_g_System_Security_Cryptography_Algorithms._fp_System_Security_Cryptography_ECPoint_get_Y) {
+        my_init();
+    }
+    SG_HNDL_NULLABLE ret = _g_System_Security_Cryptography_Algorithms._fp_System_Security_Cryptography_ECPoint_get_Y(__self_h);
+    return ret;
+}
+
+void System_Security_Cryptography_ECPoint_set_Y(SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE __v) {
+    if (!_g_System_Security_Cryptography_Algorithms._fp_System_Security_Cryptography_ECPoint_set_Y) {
+        my_init();
+    }
+    _g_System_Security_Cryptography_Algorithms._fp_System_Security_Cryptography_ECPoint_set_Y(__self_h, __v);
 }
 
 SG_HNDL_NONNULL System_Security_Cryptography_ECPoint_implicit_ctor(void) {
@@ -4996,6 +5318,126 @@ TYP System_Security_Cryptography_RSAParameters_get_type_handle(void) {
     }
     TYP ret = _g_System_Security_Cryptography_Algorithms._fp_System_Security_Cryptography_RSAParameters_get_type_handle();
     return ret;
+}
+
+SG_HNDL_NULLABLE System_Security_Cryptography_RSAParameters_get_D(SG_HNDL_NONNULL __self_h) {
+    if (!_g_System_Security_Cryptography_Algorithms._fp_System_Security_Cryptography_RSAParameters_get_D) {
+        my_init();
+    }
+    SG_HNDL_NULLABLE ret = _g_System_Security_Cryptography_Algorithms._fp_System_Security_Cryptography_RSAParameters_get_D(__self_h);
+    return ret;
+}
+
+void System_Security_Cryptography_RSAParameters_set_D(SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE __v) {
+    if (!_g_System_Security_Cryptography_Algorithms._fp_System_Security_Cryptography_RSAParameters_set_D) {
+        my_init();
+    }
+    _g_System_Security_Cryptography_Algorithms._fp_System_Security_Cryptography_RSAParameters_set_D(__self_h, __v);
+}
+
+SG_HNDL_NULLABLE System_Security_Cryptography_RSAParameters_get_DP(SG_HNDL_NONNULL __self_h) {
+    if (!_g_System_Security_Cryptography_Algorithms._fp_System_Security_Cryptography_RSAParameters_get_DP) {
+        my_init();
+    }
+    SG_HNDL_NULLABLE ret = _g_System_Security_Cryptography_Algorithms._fp_System_Security_Cryptography_RSAParameters_get_DP(__self_h);
+    return ret;
+}
+
+void System_Security_Cryptography_RSAParameters_set_DP(SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE __v) {
+    if (!_g_System_Security_Cryptography_Algorithms._fp_System_Security_Cryptography_RSAParameters_set_DP) {
+        my_init();
+    }
+    _g_System_Security_Cryptography_Algorithms._fp_System_Security_Cryptography_RSAParameters_set_DP(__self_h, __v);
+}
+
+SG_HNDL_NULLABLE System_Security_Cryptography_RSAParameters_get_DQ(SG_HNDL_NONNULL __self_h) {
+    if (!_g_System_Security_Cryptography_Algorithms._fp_System_Security_Cryptography_RSAParameters_get_DQ) {
+        my_init();
+    }
+    SG_HNDL_NULLABLE ret = _g_System_Security_Cryptography_Algorithms._fp_System_Security_Cryptography_RSAParameters_get_DQ(__self_h);
+    return ret;
+}
+
+void System_Security_Cryptography_RSAParameters_set_DQ(SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE __v) {
+    if (!_g_System_Security_Cryptography_Algorithms._fp_System_Security_Cryptography_RSAParameters_set_DQ) {
+        my_init();
+    }
+    _g_System_Security_Cryptography_Algorithms._fp_System_Security_Cryptography_RSAParameters_set_DQ(__self_h, __v);
+}
+
+SG_HNDL_NULLABLE System_Security_Cryptography_RSAParameters_get_Exponent(SG_HNDL_NONNULL __self_h) {
+    if (!_g_System_Security_Cryptography_Algorithms._fp_System_Security_Cryptography_RSAParameters_get_Exponent) {
+        my_init();
+    }
+    SG_HNDL_NULLABLE ret = _g_System_Security_Cryptography_Algorithms._fp_System_Security_Cryptography_RSAParameters_get_Exponent(__self_h);
+    return ret;
+}
+
+void System_Security_Cryptography_RSAParameters_set_Exponent(SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE __v) {
+    if (!_g_System_Security_Cryptography_Algorithms._fp_System_Security_Cryptography_RSAParameters_set_Exponent) {
+        my_init();
+    }
+    _g_System_Security_Cryptography_Algorithms._fp_System_Security_Cryptography_RSAParameters_set_Exponent(__self_h, __v);
+}
+
+SG_HNDL_NULLABLE System_Security_Cryptography_RSAParameters_get_InverseQ(SG_HNDL_NONNULL __self_h) {
+    if (!_g_System_Security_Cryptography_Algorithms._fp_System_Security_Cryptography_RSAParameters_get_InverseQ) {
+        my_init();
+    }
+    SG_HNDL_NULLABLE ret = _g_System_Security_Cryptography_Algorithms._fp_System_Security_Cryptography_RSAParameters_get_InverseQ(__self_h);
+    return ret;
+}
+
+void System_Security_Cryptography_RSAParameters_set_InverseQ(SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE __v) {
+    if (!_g_System_Security_Cryptography_Algorithms._fp_System_Security_Cryptography_RSAParameters_set_InverseQ) {
+        my_init();
+    }
+    _g_System_Security_Cryptography_Algorithms._fp_System_Security_Cryptography_RSAParameters_set_InverseQ(__self_h, __v);
+}
+
+SG_HNDL_NULLABLE System_Security_Cryptography_RSAParameters_get_Modulus(SG_HNDL_NONNULL __self_h) {
+    if (!_g_System_Security_Cryptography_Algorithms._fp_System_Security_Cryptography_RSAParameters_get_Modulus) {
+        my_init();
+    }
+    SG_HNDL_NULLABLE ret = _g_System_Security_Cryptography_Algorithms._fp_System_Security_Cryptography_RSAParameters_get_Modulus(__self_h);
+    return ret;
+}
+
+void System_Security_Cryptography_RSAParameters_set_Modulus(SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE __v) {
+    if (!_g_System_Security_Cryptography_Algorithms._fp_System_Security_Cryptography_RSAParameters_set_Modulus) {
+        my_init();
+    }
+    _g_System_Security_Cryptography_Algorithms._fp_System_Security_Cryptography_RSAParameters_set_Modulus(__self_h, __v);
+}
+
+SG_HNDL_NULLABLE System_Security_Cryptography_RSAParameters_get_P(SG_HNDL_NONNULL __self_h) {
+    if (!_g_System_Security_Cryptography_Algorithms._fp_System_Security_Cryptography_RSAParameters_get_P) {
+        my_init();
+    }
+    SG_HNDL_NULLABLE ret = _g_System_Security_Cryptography_Algorithms._fp_System_Security_Cryptography_RSAParameters_get_P(__self_h);
+    return ret;
+}
+
+void System_Security_Cryptography_RSAParameters_set_P(SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE __v) {
+    if (!_g_System_Security_Cryptography_Algorithms._fp_System_Security_Cryptography_RSAParameters_set_P) {
+        my_init();
+    }
+    _g_System_Security_Cryptography_Algorithms._fp_System_Security_Cryptography_RSAParameters_set_P(__self_h, __v);
+}
+
+SG_HNDL_NULLABLE System_Security_Cryptography_RSAParameters_get_Q(SG_HNDL_NONNULL __self_h) {
+    if (!_g_System_Security_Cryptography_Algorithms._fp_System_Security_Cryptography_RSAParameters_get_Q) {
+        my_init();
+    }
+    SG_HNDL_NULLABLE ret = _g_System_Security_Cryptography_Algorithms._fp_System_Security_Cryptography_RSAParameters_get_Q(__self_h);
+    return ret;
+}
+
+void System_Security_Cryptography_RSAParameters_set_Q(SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE __v) {
+    if (!_g_System_Security_Cryptography_Algorithms._fp_System_Security_Cryptography_RSAParameters_set_Q) {
+        my_init();
+    }
+    _g_System_Security_Cryptography_Algorithms._fp_System_Security_Cryptography_RSAParameters_set_Q(__self_h, __v);
 }
 
 SG_HNDL_NONNULL System_Security_Cryptography_RSAParameters_implicit_ctor(void) {

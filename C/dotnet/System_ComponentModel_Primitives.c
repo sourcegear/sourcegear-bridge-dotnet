@@ -165,12 +165,14 @@ struct {
     void (* _Nonnull  _fp_System_ComponentModel_IComponent_void__add_Disposed_0__1__EventHandler)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE value);
     void (* _Nonnull  _fp_System_ComponentModel_IComponent_void__remove_Disposed_0__1__EventHandler)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE value);
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_ComponentModel_IComponent_cast)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __h);
+    SG_HNDL_NONNULL (* _Nonnull  _fp_System_ComponentModel_IComponent_create)(SG_HNDL_NULLABLE * _Nonnull __thrown, void (* _Nonnull  __cb_System_IDisposable_void__Dispose_0__0)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown), const void* _Nonnull __pdata_System_IDisposable_void__Dispose_0__0, void (* _Nullable __deinit)(const void* _Nonnull __pdata));
     TYP (* _Nonnull  _fp_System_ComponentModel_IContainer_get_type_handle)(void);
     void (* _Nonnull  _fp_System_ComponentModel_IContainer_void__Add_0__1__IComponent)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE component);
     void (* _Nonnull  _fp_System_ComponentModel_IContainer_void__Add_0__2__IComponent_String)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE component, SG_HNDL_NULLABLE name);
     void (* _Nonnull  _fp_System_ComponentModel_IContainer_void__Remove_0__1__IComponent)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE component);
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_ComponentModel_IContainer_ComponentCollection__get_Components_0__0)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h);
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_ComponentModel_IContainer_cast)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __h);
+    SG_HNDL_NONNULL (* _Nonnull  _fp_System_ComponentModel_IContainer_create)(SG_HNDL_NULLABLE * _Nonnull __thrown, void (* _Nonnull  __cb_System_ComponentModel_IContainer_void__Add_0__1__IComponent)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE component), const void* _Nonnull __pdata_System_ComponentModel_IContainer_void__Add_0__1__IComponent, void (* _Nonnull  __cb_System_ComponentModel_IContainer_void__Add_0__2__IComponent_String)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE component, SG_HNDL_NULLABLE name), const void* _Nonnull __pdata_System_ComponentModel_IContainer_void__Add_0__2__IComponent_String, void (* _Nonnull  __cb_System_ComponentModel_IContainer_void__Remove_0__1__IComponent)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE component), const void* _Nonnull __pdata_System_ComponentModel_IContainer_void__Remove_0__1__IComponent, void (* _Nonnull  __cb_System_IDisposable_void__Dispose_0__0)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown), const void* _Nonnull __pdata_System_IDisposable_void__Dispose_0__0, void (* _Nullable __deinit)(const void* _Nonnull __pdata));
     TYP (* _Nonnull  _fp_System_ComponentModel_ISite_get_type_handle)(void);
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_ComponentModel_ISite_IComponent__get_Component_0__0)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h);
     SG_HNDL_NULLABLE (* _Nonnull  _fp_System_ComponentModel_ISite_IContainer__get_Container_0__0)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h);
@@ -178,16 +180,19 @@ struct {
     SG_HNDL_NULLABLE (* _Nonnull  _fp_System_ComponentModel_ISite_String__get_Name_0__0)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h);
     void (* _Nonnull  _fp_System_ComponentModel_ISite_void__set_Name_0__1__String)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE value);
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_ComponentModel_ISite_cast)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __h);
+    SG_HNDL_NONNULL (* _Nonnull  _fp_System_ComponentModel_ISite_create)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE (* _Nonnull  __cb_System_IServiceProvider_Object__GetService_0__1__Type)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL serviceType), const void* _Nonnull __pdata_System_IServiceProvider_Object__GetService_0__1__Type, void (* _Nullable __deinit)(const void* _Nonnull __pdata));
     TYP (* _Nonnull  _fp_System_ComponentModel_ISupportInitialize_get_type_handle)(void);
     void (* _Nonnull  _fp_System_ComponentModel_ISupportInitialize_void__BeginInit_0__0)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h);
     void (* _Nonnull  _fp_System_ComponentModel_ISupportInitialize_void__EndInit_0__0)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h);
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_ComponentModel_ISupportInitialize_cast)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __h);
+    SG_HNDL_NONNULL (* _Nonnull  _fp_System_ComponentModel_ISupportInitialize_create)(SG_HNDL_NULLABLE * _Nonnull __thrown, void (* _Nonnull  __cb_System_ComponentModel_ISupportInitialize_void__BeginInit_0__0)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown), const void* _Nonnull __pdata_System_ComponentModel_ISupportInitialize_void__BeginInit_0__0, void (* _Nonnull  __cb_System_ComponentModel_ISupportInitialize_void__EndInit_0__0)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown), const void* _Nonnull __pdata_System_ComponentModel_ISupportInitialize_void__EndInit_0__0, void (* _Nullable __deinit)(const void* _Nonnull __pdata));
     TYP (* _Nonnull  _fp_System_ComponentModel_ISynchronizeInvoke_get_type_handle)(void);
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_ComponentModel_ISynchronizeInvoke_IAsyncResult__BeginInvoke_0__2__Delegate_ObjectArray)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NONNULL method, SG_HNDL_NULLABLE args);
     SG_HNDL_NULLABLE (* _Nonnull  _fp_System_ComponentModel_ISynchronizeInvoke_Object__EndInvoke_0__1__IAsyncResult)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NONNULL result);
     SG_HNDL_NULLABLE (* _Nonnull  _fp_System_ComponentModel_ISynchronizeInvoke_Object__Invoke_0__2__Delegate_ObjectArray)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NONNULL method, SG_HNDL_NULLABLE args);
     int32_t (* _Nonnull  _fp_System_ComponentModel_ISynchronizeInvoke_bool__get_InvokeRequired_0__0)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h);
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_ComponentModel_ISynchronizeInvoke_cast)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __h);
+    SG_HNDL_NONNULL (* _Nonnull  _fp_System_ComponentModel_ISynchronizeInvoke_create)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL (* _Nonnull  __cb_System_ComponentModel_ISynchronizeInvoke_IAsyncResult__BeginInvoke_0__2__Delegate_ObjectArray)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL method, SG_HNDL_NULLABLE args), const void* _Nonnull __pdata_System_ComponentModel_ISynchronizeInvoke_IAsyncResult__BeginInvoke_0__2__Delegate_ObjectArray, SG_HNDL_NULLABLE (* _Nonnull  __cb_System_ComponentModel_ISynchronizeInvoke_Object__EndInvoke_0__1__IAsyncResult)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL result), const void* _Nonnull __pdata_System_ComponentModel_ISynchronizeInvoke_Object__EndInvoke_0__1__IAsyncResult, SG_HNDL_NULLABLE (* _Nonnull  __cb_System_ComponentModel_ISynchronizeInvoke_Object__Invoke_0__2__Delegate_ObjectArray)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL method, SG_HNDL_NULLABLE args), const void* _Nonnull __pdata_System_ComponentModel_ISynchronizeInvoke_Object__Invoke_0__2__Delegate_ObjectArray, void (* _Nullable __deinit)(const void* _Nonnull __pdata));
     TYP (* _Nonnull  _fp_System_ComponentModel_ImmutableObjectAttribute_get_type_handle)(void);
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_ComponentModel_ImmutableObjectAttribute_get_Default)(void);
     void (* _Nonnull  _fp_System_ComponentModel_ImmutableObjectAttribute_set_Default)(SG_HNDL_NONNULL __v);
@@ -1544,6 +1549,14 @@ SG_HNDL_NONNULL System_ComponentModel_IComponent_cast(SG_HNDL_NULLABLE * _Nonnul
     return ret;
 }
 
+SG_HNDL_NONNULL System_ComponentModel_IComponent_create(SG_HNDL_NULLABLE * _Nonnull __thrown, void (* _Nonnull  __cb_System_IDisposable_void__Dispose_0__0)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown), const void* _Nonnull __pdata_System_IDisposable_void__Dispose_0__0, void (* _Nullable __deinit)(const void* _Nonnull __pdata)) {
+    if (!_g_System_ComponentModel_Primitives._fp_System_ComponentModel_IComponent_create) {
+        my_init();
+    }
+    SG_HNDL_NONNULL ret = _g_System_ComponentModel_Primitives._fp_System_ComponentModel_IComponent_create(__thrown, __cb_System_IDisposable_void__Dispose_0__0, __pdata_System_IDisposable_void__Dispose_0__0, __deinit);
+    return ret;
+}
+
 TYP System_ComponentModel_IContainer_get_type_handle(void) {
     if (!_g_System_ComponentModel_Primitives._fp_System_ComponentModel_IContainer_get_type_handle) {
         my_init();
@@ -1586,6 +1599,14 @@ SG_HNDL_NONNULL System_ComponentModel_IContainer_cast(SG_HNDL_NULLABLE * _Nonnul
         my_init();
     }
     SG_HNDL_NONNULL ret = _g_System_ComponentModel_Primitives._fp_System_ComponentModel_IContainer_cast(__thrown, __h);
+    return ret;
+}
+
+SG_HNDL_NONNULL System_ComponentModel_IContainer_create(SG_HNDL_NULLABLE * _Nonnull __thrown, void (* _Nonnull  __cb_System_ComponentModel_IContainer_void__Add_0__1__IComponent)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE component), const void* _Nonnull __pdata_System_ComponentModel_IContainer_void__Add_0__1__IComponent, void (* _Nonnull  __cb_System_ComponentModel_IContainer_void__Add_0__2__IComponent_String)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE component, SG_HNDL_NULLABLE name), const void* _Nonnull __pdata_System_ComponentModel_IContainer_void__Add_0__2__IComponent_String, void (* _Nonnull  __cb_System_ComponentModel_IContainer_void__Remove_0__1__IComponent)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE component), const void* _Nonnull __pdata_System_ComponentModel_IContainer_void__Remove_0__1__IComponent, void (* _Nonnull  __cb_System_IDisposable_void__Dispose_0__0)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown), const void* _Nonnull __pdata_System_IDisposable_void__Dispose_0__0, void (* _Nullable __deinit)(const void* _Nonnull __pdata)) {
+    if (!_g_System_ComponentModel_Primitives._fp_System_ComponentModel_IContainer_create) {
+        my_init();
+    }
+    SG_HNDL_NONNULL ret = _g_System_ComponentModel_Primitives._fp_System_ComponentModel_IContainer_create(__thrown, __cb_System_ComponentModel_IContainer_void__Add_0__1__IComponent, __pdata_System_ComponentModel_IContainer_void__Add_0__1__IComponent, __cb_System_ComponentModel_IContainer_void__Add_0__2__IComponent_String, __pdata_System_ComponentModel_IContainer_void__Add_0__2__IComponent_String, __cb_System_ComponentModel_IContainer_void__Remove_0__1__IComponent, __pdata_System_ComponentModel_IContainer_void__Remove_0__1__IComponent, __cb_System_IDisposable_void__Dispose_0__0, __pdata_System_IDisposable_void__Dispose_0__0, __deinit);
     return ret;
 }
 
@@ -1644,6 +1665,14 @@ SG_HNDL_NONNULL System_ComponentModel_ISite_cast(SG_HNDL_NULLABLE * _Nonnull __t
     return ret;
 }
 
+SG_HNDL_NONNULL System_ComponentModel_ISite_create(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE (* _Nonnull  __cb_System_IServiceProvider_Object__GetService_0__1__Type)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL serviceType), const void* _Nonnull __pdata_System_IServiceProvider_Object__GetService_0__1__Type, void (* _Nullable __deinit)(const void* _Nonnull __pdata)) {
+    if (!_g_System_ComponentModel_Primitives._fp_System_ComponentModel_ISite_create) {
+        my_init();
+    }
+    SG_HNDL_NONNULL ret = _g_System_ComponentModel_Primitives._fp_System_ComponentModel_ISite_create(__thrown, __cb_System_IServiceProvider_Object__GetService_0__1__Type, __pdata_System_IServiceProvider_Object__GetService_0__1__Type, __deinit);
+    return ret;
+}
+
 TYP System_ComponentModel_ISupportInitialize_get_type_handle(void) {
     if (!_g_System_ComponentModel_Primitives._fp_System_ComponentModel_ISupportInitialize_get_type_handle) {
         my_init();
@@ -1671,6 +1700,14 @@ SG_HNDL_NONNULL System_ComponentModel_ISupportInitialize_cast(SG_HNDL_NULLABLE *
         my_init();
     }
     SG_HNDL_NONNULL ret = _g_System_ComponentModel_Primitives._fp_System_ComponentModel_ISupportInitialize_cast(__thrown, __h);
+    return ret;
+}
+
+SG_HNDL_NONNULL System_ComponentModel_ISupportInitialize_create(SG_HNDL_NULLABLE * _Nonnull __thrown, void (* _Nonnull  __cb_System_ComponentModel_ISupportInitialize_void__BeginInit_0__0)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown), const void* _Nonnull __pdata_System_ComponentModel_ISupportInitialize_void__BeginInit_0__0, void (* _Nonnull  __cb_System_ComponentModel_ISupportInitialize_void__EndInit_0__0)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown), const void* _Nonnull __pdata_System_ComponentModel_ISupportInitialize_void__EndInit_0__0, void (* _Nullable __deinit)(const void* _Nonnull __pdata)) {
+    if (!_g_System_ComponentModel_Primitives._fp_System_ComponentModel_ISupportInitialize_create) {
+        my_init();
+    }
+    SG_HNDL_NONNULL ret = _g_System_ComponentModel_Primitives._fp_System_ComponentModel_ISupportInitialize_create(__thrown, __cb_System_ComponentModel_ISupportInitialize_void__BeginInit_0__0, __pdata_System_ComponentModel_ISupportInitialize_void__BeginInit_0__0, __cb_System_ComponentModel_ISupportInitialize_void__EndInit_0__0, __pdata_System_ComponentModel_ISupportInitialize_void__EndInit_0__0, __deinit);
     return ret;
 }
 
@@ -1719,6 +1756,14 @@ SG_HNDL_NONNULL System_ComponentModel_ISynchronizeInvoke_cast(SG_HNDL_NULLABLE *
         my_init();
     }
     SG_HNDL_NONNULL ret = _g_System_ComponentModel_Primitives._fp_System_ComponentModel_ISynchronizeInvoke_cast(__thrown, __h);
+    return ret;
+}
+
+SG_HNDL_NONNULL System_ComponentModel_ISynchronizeInvoke_create(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL (* _Nonnull  __cb_System_ComponentModel_ISynchronizeInvoke_IAsyncResult__BeginInvoke_0__2__Delegate_ObjectArray)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL method, SG_HNDL_NULLABLE args), const void* _Nonnull __pdata_System_ComponentModel_ISynchronizeInvoke_IAsyncResult__BeginInvoke_0__2__Delegate_ObjectArray, SG_HNDL_NULLABLE (* _Nonnull  __cb_System_ComponentModel_ISynchronizeInvoke_Object__EndInvoke_0__1__IAsyncResult)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL result), const void* _Nonnull __pdata_System_ComponentModel_ISynchronizeInvoke_Object__EndInvoke_0__1__IAsyncResult, SG_HNDL_NULLABLE (* _Nonnull  __cb_System_ComponentModel_ISynchronizeInvoke_Object__Invoke_0__2__Delegate_ObjectArray)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL method, SG_HNDL_NULLABLE args), const void* _Nonnull __pdata_System_ComponentModel_ISynchronizeInvoke_Object__Invoke_0__2__Delegate_ObjectArray, void (* _Nullable __deinit)(const void* _Nonnull __pdata)) {
+    if (!_g_System_ComponentModel_Primitives._fp_System_ComponentModel_ISynchronizeInvoke_create) {
+        my_init();
+    }
+    SG_HNDL_NONNULL ret = _g_System_ComponentModel_Primitives._fp_System_ComponentModel_ISynchronizeInvoke_create(__thrown, __cb_System_ComponentModel_ISynchronizeInvoke_IAsyncResult__BeginInvoke_0__2__Delegate_ObjectArray, __pdata_System_ComponentModel_ISynchronizeInvoke_IAsyncResult__BeginInvoke_0__2__Delegate_ObjectArray, __cb_System_ComponentModel_ISynchronizeInvoke_Object__EndInvoke_0__1__IAsyncResult, __pdata_System_ComponentModel_ISynchronizeInvoke_Object__EndInvoke_0__1__IAsyncResult, __cb_System_ComponentModel_ISynchronizeInvoke_Object__Invoke_0__2__Delegate_ObjectArray, __pdata_System_ComponentModel_ISynchronizeInvoke_Object__Invoke_0__2__Delegate_ObjectArray, __deinit);
     return ret;
 }
 

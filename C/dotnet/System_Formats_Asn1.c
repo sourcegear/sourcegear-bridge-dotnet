@@ -48,7 +48,7 @@ struct {
     int32_t (* _Nonnull  _fp_System_Formats_Asn1_Asn1Tag_bool__op_Equality_0__2__Asn1Tag_Asn1Tag)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL left, SG_HNDL_NONNULL right);
     int32_t (* _Nonnull  _fp_System_Formats_Asn1_Asn1Tag_bool__op_Inequality_0__2__Asn1Tag_Asn1Tag)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL left, SG_HNDL_NONNULL right);
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_Formats_Asn1_Asn1Tag_String__ToString_0__0)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h);
-    int32_t (* _Nonnull  _fp_System_Formats_Asn1_Asn1Tag_bool__TryDecode_0__3__rospanu8_outAsn1Tag_outi32)(SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nonnull __source_spanptr, SG_HNDL_NONNULL* _Nonnull __tag_out_ptr, int32_t* _Nonnull __bytesConsumed_out_ptr);
+    int32_t (* _Nonnull  _fp_System_Formats_Asn1_Asn1Tag_bool__TryDecode_0__3__rospanu8_outAsn1Tag_outi32)(SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nonnull __source_spanptr, SG_HNDL_NULLABLE* _Nonnull __tag_out_ptr, int32_t* _Nonnull __bytesConsumed_out_ptr);
     int32_t (* _Nonnull  _fp_System_Formats_Asn1_Asn1Tag_bool__TryEncode_0__2__spanu8_outi32)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, const void* _Nonnull __destination_spanptr, int32_t* _Nonnull __bytesWritten_out_ptr);
     int32_t (* _Nonnull  _fp_System_Formats_Asn1_Asn1Tag_bool__get_IsConstructed_0__0)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h);
     int32_t (* _Nonnull  _fp_System_Formats_Asn1_Asn1Tag_TagClass__get_TagClass_0__0)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h);
@@ -77,7 +77,7 @@ struct {
     int32_t (* _Nonnull  _fp_System_Formats_Asn1_AsnDecoder_bool__TryReadBitString_0__7__rospanu8_spanu8_AsnEncodingRules_outi32_outi32_outi32_System_Nullable_System_Formats_Asn1_Asn1Tag_)(SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nonnull __source_spanptr, const void* _Nonnull __destination_spanptr, int32_t ruleSet, int32_t* _Nonnull __unusedBitCount_out_ptr, int32_t* _Nonnull __bytesConsumed_out_ptr, int32_t* _Nonnull __bytesWritten_out_ptr, SG_HNDL_NULLABLE expectedTag);
     int32_t (* _Nonnull  _fp_System_Formats_Asn1_AsnDecoder_bool__TryReadCharacterString_0__7__rospanu8_spanChar_AsnEncodingRules_UniversalTagNumber_outi32_outi32_System_Nullable_System_Formats_Asn1_Asn1Tag_)(SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nonnull __source_spanptr, const void* _Nonnull __destination_spanptr, int32_t ruleSet, int32_t encodingType, int32_t* _Nonnull __bytesConsumed_out_ptr, int32_t* _Nonnull __charsWritten_out_ptr, SG_HNDL_NULLABLE expectedTag);
     int32_t (* _Nonnull  _fp_System_Formats_Asn1_AsnDecoder_bool__TryReadCharacterStringBytes_0__6__rospanu8_spanu8_AsnEncodingRules_Asn1Tag_outi32_outi32)(SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nonnull __source_spanptr, const void* _Nonnull __destination_spanptr, int32_t ruleSet, SG_HNDL_NONNULL expectedTag, int32_t* _Nonnull __bytesConsumed_out_ptr, int32_t* _Nonnull __bytesWritten_out_ptr);
-    int32_t (* _Nonnull  _fp_System_Formats_Asn1_AsnDecoder_bool__TryReadEncodedValue_0__6__rospanu8_AsnEncodingRules_outAsn1Tag_outi32_outi32_outi32)(SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nonnull __source_spanptr, int32_t ruleSet, SG_HNDL_NONNULL* _Nonnull __tag_out_ptr, int32_t* _Nonnull __contentOffset_out_ptr, int32_t* _Nonnull __contentLength_out_ptr, int32_t* _Nonnull __bytesConsumed_out_ptr);
+    int32_t (* _Nonnull  _fp_System_Formats_Asn1_AsnDecoder_bool__TryReadEncodedValue_0__6__rospanu8_AsnEncodingRules_outAsn1Tag_outi32_outi32_outi32)(SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nonnull __source_spanptr, int32_t ruleSet, SG_HNDL_NULLABLE* _Nonnull __tag_out_ptr, int32_t* _Nonnull __contentOffset_out_ptr, int32_t* _Nonnull __contentLength_out_ptr, int32_t* _Nonnull __bytesConsumed_out_ptr);
     int32_t (* _Nonnull  _fp_System_Formats_Asn1_AsnDecoder_bool__TryReadInt32_0__5__rospanu8_AsnEncodingRules_outi32_outi32_System_Nullable_System_Formats_Asn1_Asn1Tag_)(SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nonnull __source_spanptr, int32_t ruleSet, int32_t* _Nonnull __value_out_ptr, int32_t* _Nonnull __bytesConsumed_out_ptr, SG_HNDL_NULLABLE expectedTag);
     int32_t (* _Nonnull  _fp_System_Formats_Asn1_AsnDecoder_bool__TryReadInt64_0__5__rospanu8_AsnEncodingRules_outi64_outi32_System_Nullable_System_Formats_Asn1_Asn1Tag_)(SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nonnull __source_spanptr, int32_t ruleSet, int64_t* _Nonnull __value_out_ptr, int32_t* _Nonnull __bytesConsumed_out_ptr, SG_HNDL_NULLABLE expectedTag);
     int32_t (* _Nonnull  _fp_System_Formats_Asn1_AsnDecoder_bool__TryReadOctetString_0__6__rospanu8_spanu8_AsnEncodingRules_outi32_outi32_System_Nullable_System_Formats_Asn1_Asn1Tag_)(SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nonnull __source_spanptr, const void* _Nonnull __destination_spanptr, int32_t ruleSet, int32_t* _Nonnull __bytesConsumed_out_ptr, int32_t* _Nonnull __bytesWritten_out_ptr, SG_HNDL_NULLABLE expectedTag);
@@ -124,9 +124,9 @@ struct {
     int32_t (* _Nonnull  _fp_System_Formats_Asn1_AsnReader_bool__TryReadInt32_0__2__outi32_System_Nullable_System_Formats_Asn1_Asn1Tag_)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, int32_t* _Nonnull __value_out_ptr, SG_HNDL_NULLABLE expectedTag);
     int32_t (* _Nonnull  _fp_System_Formats_Asn1_AsnReader_bool__TryReadInt64_0__2__outi64_System_Nullable_System_Formats_Asn1_Asn1Tag_)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, int64_t* _Nonnull __value_out_ptr, SG_HNDL_NULLABLE expectedTag);
     int32_t (* _Nonnull  _fp_System_Formats_Asn1_AsnReader_bool__TryReadOctetString_0__3__spanu8_outi32_System_Nullable_System_Formats_Asn1_Asn1Tag_)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, const void* _Nonnull __destination_spanptr, int32_t* _Nonnull __bytesWritten_out_ptr, SG_HNDL_NULLABLE expectedTag);
-    int32_t (* _Nonnull  _fp_System_Formats_Asn1_AsnReader_bool__TryReadPrimitiveBitString_0__3__outi32_outSystem_ReadOnlyMemory_u8__System_Nullable_System_Formats_Asn1_Asn1Tag_)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, int32_t* _Nonnull __unusedBitCount_out_ptr, SG_HNDL_NONNULL* _Nonnull __value_out_ptr, SG_HNDL_NULLABLE expectedTag);
-    int32_t (* _Nonnull  _fp_System_Formats_Asn1_AsnReader_bool__TryReadPrimitiveCharacterStringBytes_0__2__Asn1Tag_outSystem_ReadOnlyMemory_u8_)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NONNULL expectedTag, SG_HNDL_NONNULL* _Nonnull __contents_out_ptr);
-    int32_t (* _Nonnull  _fp_System_Formats_Asn1_AsnReader_bool__TryReadPrimitiveOctetString_0__2__outSystem_ReadOnlyMemory_u8__System_Nullable_System_Formats_Asn1_Asn1Tag_)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NONNULL* _Nonnull __contents_out_ptr, SG_HNDL_NULLABLE expectedTag);
+    int32_t (* _Nonnull  _fp_System_Formats_Asn1_AsnReader_bool__TryReadPrimitiveBitString_0__3__outi32_outSystem_ReadOnlyMemory_u8__System_Nullable_System_Formats_Asn1_Asn1Tag_)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, int32_t* _Nonnull __unusedBitCount_out_ptr, SG_HNDL_NULLABLE* _Nonnull __value_out_ptr, SG_HNDL_NULLABLE expectedTag);
+    int32_t (* _Nonnull  _fp_System_Formats_Asn1_AsnReader_bool__TryReadPrimitiveCharacterStringBytes_0__2__Asn1Tag_outSystem_ReadOnlyMemory_u8_)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NONNULL expectedTag, SG_HNDL_NULLABLE* _Nonnull __contents_out_ptr);
+    int32_t (* _Nonnull  _fp_System_Formats_Asn1_AsnReader_bool__TryReadPrimitiveOctetString_0__2__outSystem_ReadOnlyMemory_u8__System_Nullable_System_Formats_Asn1_Asn1Tag_)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE* _Nonnull __contents_out_ptr, SG_HNDL_NULLABLE expectedTag);
     int32_t (* _Nonnull  _fp_System_Formats_Asn1_AsnReader_bool__TryReadUInt32_0__2__outu32_System_Nullable_System_Formats_Asn1_Asn1Tag_)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, uint32_t* _Nonnull __value_out_ptr, SG_HNDL_NULLABLE expectedTag);
     int32_t (* _Nonnull  _fp_System_Formats_Asn1_AsnReader_bool__TryReadUInt64_0__2__outu64_System_Nullable_System_Formats_Asn1_Asn1Tag_)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, uint64_t* _Nonnull __value_out_ptr, SG_HNDL_NULLABLE expectedTag);
     int32_t (* _Nonnull  _fp_System_Formats_Asn1_AsnReader_bool__get_HasData_0__0)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h);
@@ -553,7 +553,7 @@ SG_HNDL_NONNULL System_Formats_Asn1_Asn1Tag_String__ToString_0__0(SG_HNDL_NULLAB
     return ret;
 }
 
-int32_t System_Formats_Asn1_Asn1Tag_bool__TryDecode_0__3__rospanu8_outAsn1Tag_outi32(SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nonnull __source_spanptr, SG_HNDL_NONNULL* _Nonnull __tag_out_ptr, int32_t* _Nonnull __bytesConsumed_out_ptr) {
+int32_t System_Formats_Asn1_Asn1Tag_bool__TryDecode_0__3__rospanu8_outAsn1Tag_outi32(SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nonnull __source_spanptr, SG_HNDL_NULLABLE* _Nonnull __tag_out_ptr, int32_t* _Nonnull __bytesConsumed_out_ptr) {
     if (!_g_System_Formats_Asn1._fp_System_Formats_Asn1_Asn1Tag_bool__TryDecode_0__3__rospanu8_outAsn1Tag_outi32) {
         my_init();
     }
@@ -782,7 +782,7 @@ int32_t System_Formats_Asn1_AsnDecoder_bool__TryReadCharacterStringBytes_0__6__r
     return ret;
 }
 
-int32_t System_Formats_Asn1_AsnDecoder_bool__TryReadEncodedValue_0__6__rospanu8_AsnEncodingRules_outAsn1Tag_outi32_outi32_outi32(SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nonnull __source_spanptr, int32_t ruleSet, SG_HNDL_NONNULL* _Nonnull __tag_out_ptr, int32_t* _Nonnull __contentOffset_out_ptr, int32_t* _Nonnull __contentLength_out_ptr, int32_t* _Nonnull __bytesConsumed_out_ptr) {
+int32_t System_Formats_Asn1_AsnDecoder_bool__TryReadEncodedValue_0__6__rospanu8_AsnEncodingRules_outAsn1Tag_outi32_outi32_outi32(SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nonnull __source_spanptr, int32_t ruleSet, SG_HNDL_NULLABLE* _Nonnull __tag_out_ptr, int32_t* _Nonnull __contentOffset_out_ptr, int32_t* _Nonnull __contentLength_out_ptr, int32_t* _Nonnull __bytesConsumed_out_ptr) {
     if (!_g_System_Formats_Asn1._fp_System_Formats_Asn1_AsnDecoder_bool__TryReadEncodedValue_0__6__rospanu8_AsnEncodingRules_outAsn1Tag_outi32_outi32_outi32) {
         my_init();
     }
@@ -1156,7 +1156,7 @@ int32_t System_Formats_Asn1_AsnReader_bool__TryReadOctetString_0__3__spanu8_outi
     return ret;
 }
 
-int32_t System_Formats_Asn1_AsnReader_bool__TryReadPrimitiveBitString_0__3__outi32_outSystem_ReadOnlyMemory_u8__System_Nullable_System_Formats_Asn1_Asn1Tag_(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, int32_t* _Nonnull __unusedBitCount_out_ptr, SG_HNDL_NONNULL* _Nonnull __value_out_ptr, SG_HNDL_NULLABLE expectedTag) {
+int32_t System_Formats_Asn1_AsnReader_bool__TryReadPrimitiveBitString_0__3__outi32_outSystem_ReadOnlyMemory_u8__System_Nullable_System_Formats_Asn1_Asn1Tag_(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, int32_t* _Nonnull __unusedBitCount_out_ptr, SG_HNDL_NULLABLE* _Nonnull __value_out_ptr, SG_HNDL_NULLABLE expectedTag) {
     if (!_g_System_Formats_Asn1._fp_System_Formats_Asn1_AsnReader_bool__TryReadPrimitiveBitString_0__3__outi32_outSystem_ReadOnlyMemory_u8__System_Nullable_System_Formats_Asn1_Asn1Tag_) {
         my_init();
     }
@@ -1164,7 +1164,7 @@ int32_t System_Formats_Asn1_AsnReader_bool__TryReadPrimitiveBitString_0__3__outi
     return ret;
 }
 
-int32_t System_Formats_Asn1_AsnReader_bool__TryReadPrimitiveCharacterStringBytes_0__2__Asn1Tag_outSystem_ReadOnlyMemory_u8_(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NONNULL expectedTag, SG_HNDL_NONNULL* _Nonnull __contents_out_ptr) {
+int32_t System_Formats_Asn1_AsnReader_bool__TryReadPrimitiveCharacterStringBytes_0__2__Asn1Tag_outSystem_ReadOnlyMemory_u8_(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NONNULL expectedTag, SG_HNDL_NULLABLE* _Nonnull __contents_out_ptr) {
     if (!_g_System_Formats_Asn1._fp_System_Formats_Asn1_AsnReader_bool__TryReadPrimitiveCharacterStringBytes_0__2__Asn1Tag_outSystem_ReadOnlyMemory_u8_) {
         my_init();
     }
@@ -1172,7 +1172,7 @@ int32_t System_Formats_Asn1_AsnReader_bool__TryReadPrimitiveCharacterStringBytes
     return ret;
 }
 
-int32_t System_Formats_Asn1_AsnReader_bool__TryReadPrimitiveOctetString_0__2__outSystem_ReadOnlyMemory_u8__System_Nullable_System_Formats_Asn1_Asn1Tag_(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NONNULL* _Nonnull __contents_out_ptr, SG_HNDL_NULLABLE expectedTag) {
+int32_t System_Formats_Asn1_AsnReader_bool__TryReadPrimitiveOctetString_0__2__outSystem_ReadOnlyMemory_u8__System_Nullable_System_Formats_Asn1_Asn1Tag_(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE* _Nonnull __contents_out_ptr, SG_HNDL_NULLABLE expectedTag) {
     if (!_g_System_Formats_Asn1._fp_System_Formats_Asn1_AsnReader_bool__TryReadPrimitiveOctetString_0__2__outSystem_ReadOnlyMemory_u8__System_Nullable_System_Formats_Asn1_Asn1Tag_) {
         my_init();
     }

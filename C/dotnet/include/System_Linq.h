@@ -948,6 +948,8 @@ GVAL invoke_System_Linq_IGrouping_2_TKey__get_Key_0__0(SG_HNDL_NONNULL ____hdel,
 
 SG_HNDL_NONNULL System_Linq_IGrouping_2_cast(TYP TKey, TYP TElement, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __h);
 
+SG_HNDL_NONNULL System_Linq_IGrouping_2_create(TYP TKey, TYP TElement, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL (* _Nonnull  __cb_System_Collections_Generic_IEnumerable_1_System_Collections_Generic_IEnumerator_TElement___GetEnumerator_0__0)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown), const void* _Nonnull __pdata_System_Collections_Generic_IEnumerable_1_System_Collections_Generic_IEnumerator_TElement___GetEnumerator_0__0, SG_HNDL_NONNULL (* _Nonnull  __cb_System_Collections_IEnumerable_IEnumerator__GetEnumerator_0__0)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown), const void* _Nonnull __pdata_System_Collections_IEnumerable_IEnumerator__GetEnumerator_0__0, void (* _Nullable __deinit)(const void* _Nonnull __pdata));
+
 TYP System_Linq_ILookup_2_get_type_handle(TYP TKey, TYP TElement);
 
 int32_t System_Linq_ILookup_2_bool__Contains_0__1__TKey(TYP TKey, TYP TElement, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, GVAL key);
@@ -970,6 +972,8 @@ SG_HNDL_NONNULL invoke_System_Linq_ILookup_2_System_Collections_Generic_IEnumera
 
 SG_HNDL_NONNULL System_Linq_ILookup_2_cast(TYP TKey, TYP TElement, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __h);
 
+SG_HNDL_NONNULL System_Linq_ILookup_2_create(TYP TKey, TYP TElement, SG_HNDL_NULLABLE * _Nonnull __thrown, int32_t (* _Nonnull  __cb_System_Linq_ILookup_2_bool__Contains_0__1__TKey)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, GVAL key), const void* _Nonnull __pdata_System_Linq_ILookup_2_bool__Contains_0__1__TKey, SG_HNDL_NONNULL (* _Nonnull  __cb_System_Collections_Generic_IEnumerable_1_System_Collections_Generic_IEnumerator_System_Linq_System_Linq_IGrouping_TKey_TElement____GetEnumerator_0__0)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown), const void* _Nonnull __pdata_System_Collections_Generic_IEnumerable_1_System_Collections_Generic_IEnumerator_System_Linq_System_Linq_IGrouping_TKey_TElement____GetEnumerator_0__0, SG_HNDL_NONNULL (* _Nonnull  __cb_System_Collections_IEnumerable_IEnumerator__GetEnumerator_0__0)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown), const void* _Nonnull __pdata_System_Collections_IEnumerable_IEnumerator__GetEnumerator_0__0, void (* _Nullable __deinit)(const void* _Nonnull __pdata));
+
 TYP System_Linq_IOrderedEnumerable_1_get_type_handle(TYP TElement);
 
 SG_HNDL_NONNULL System_Linq_IOrderedEnumerable_1_System_Linq_IOrderedEnumerable_TElement___CreateOrderedEnumerable_1__3__System_Func_TElement_UTKey__System_Collections_Generic_IComparer_UTKey__bool(TYP TElement, TYP TKey, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NONNULL keySelector, SG_HNDL_NULLABLE comparer, int32_t descending);
@@ -979,6 +983,8 @@ SG_HNDL_NONNULL specialize_System_Linq_IOrderedEnumerable_1_System_Linq_IOrdered
 SG_HNDL_NONNULL invoke_System_Linq_IOrderedEnumerable_1_System_Linq_IOrderedEnumerable_TElement___CreateOrderedEnumerable_1__3__System_Func_TElement_UTKey__System_Collections_Generic_IComparer_UTKey__bool(SG_HNDL_NONNULL ____hdel, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NONNULL keySelector, SG_HNDL_NULLABLE comparer, int32_t descending);
 
 SG_HNDL_NONNULL System_Linq_IOrderedEnumerable_1_cast(TYP TElement, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __h);
+
+SG_HNDL_NONNULL System_Linq_IOrderedEnumerable_1_create(TYP TElement, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL (* _Nonnull  __cb_System_Linq_IOrderedEnumerable_1_System_Linq_IOrderedEnumerable_TElement___CreateOrderedEnumerable_1__3__System_Func_TElement_UTKey__System_Collections_Generic_IComparer_UTKey__bool)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL keySelector, SG_HNDL_NULLABLE comparer, int32_t descending), const void* _Nonnull __pdata_System_Linq_IOrderedEnumerable_1_System_Linq_IOrderedEnumerable_TElement___CreateOrderedEnumerable_1__3__System_Func_TElement_UTKey__System_Collections_Generic_IComparer_UTKey__bool, SG_HNDL_NONNULL (* _Nonnull  __cb_System_Collections_Generic_IEnumerable_1_System_Collections_Generic_IEnumerator_TElement___GetEnumerator_0__0)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown), const void* _Nonnull __pdata_System_Collections_Generic_IEnumerable_1_System_Collections_Generic_IEnumerator_TElement___GetEnumerator_0__0, SG_HNDL_NONNULL (* _Nonnull  __cb_System_Collections_IEnumerable_IEnumerator__GetEnumerator_0__0)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown), const void* _Nonnull __pdata_System_Collections_IEnumerable_IEnumerator__GetEnumerator_0__0, void (* _Nullable __deinit)(const void* _Nonnull __pdata));
 
 TYP System_Linq_Lookup_2_get_type_handle(TYP TKey, TYP TElement);
 

@@ -8,10 +8,15 @@ import jumptable_dotnet;
 extension System.Reflection.Metadata {
 // type: System.Reflection.Metadata.AssemblyExtensions
 public struct AssemblyExtensions {
+// TODO COPE (parm byref pointer): bool TryGetRawMetadata(System.Reflection.Assembly, ref System.Byte*, ref System.Int32)
 } // AssemblyExtensions
 
 
 // type: System.Reflection.Metadata.MetadataUpdateHandlerAttribute
+    /**
+    Indicates that a type that should receive notifications of metadata updates.
+
+    */
 public final class MetadataUpdateHandlerAttribute
     :
     dotnet.System.Attribute
@@ -19,10 +24,18 @@ public final class MetadataUpdateHandlerAttribute
     public class override func get_type_handle() -> TypeHandle {
         return System_Reflection_Metadata_MetadataUpdateHandlerAttribute_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor(System.Type)
 // docid: M:System.Reflection.Metadata.MetadataUpdateHandlerAttribute.#ctor(System.Type)
+    /**
+    Initializes the attribute.
+
+    - Parameter handlerType: A type that handles metadata updates and that should be notified when any occur.
+    */
     public init(handlerType : dotnet.System.Type_) throws {
         var __thrown : NullableHandle = nil;
         let h = System_Reflection_Metadata_MetadataUpdateHandlerAttribute_ctor_0__1__Type(&__thrown, handlerType.get_handle());
@@ -43,6 +56,10 @@ public final class MetadataUpdateHandlerAttribute
         return dotnet.System.Type_(hndl : __return);
         }
     }
+    /**
+    Gets the type that handles metadata updates and that should be notified when any occur.
+
+    */
     public var HandlerType : dotnet.System.Type_ {
         get {
             return try! get_HandlerType();
@@ -65,6 +82,10 @@ public struct MetadataUpdater {
         return (__return) != 0;
         }
     }
+    /**
+    Gets a value that indicates whether the assembly update is enabled and available.
+
+    */
     public static var IsSupported : Bool {
         get {
             return try! get_IsSupported();
@@ -80,6 +101,10 @@ public struct MetadataUpdater {
 // System.Runtime.CompilerServices
 extension System.Runtime.CompilerServices {
 // type: System.Runtime.CompilerServices.CreateNewOnMetadataUpdateAttribute
+    /**
+    Indicates a type should be replaced rather than updated when applying metadata updates.
+
+    */
 public final class CreateNewOnMetadataUpdateAttribute
     :
     dotnet.System.Attribute
@@ -87,10 +112,17 @@ public final class CreateNewOnMetadataUpdateAttribute
     public class override func get_type_handle() -> TypeHandle {
         return System_Runtime_CompilerServices_CreateNewOnMetadataUpdateAttribute_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor()
 // docid: M:System.Runtime.CompilerServices.CreateNewOnMetadataUpdateAttribute.#ctor
+    /**
+    Creates a new  instance.
+
+    */
     public init() throws {
         var __thrown : NullableHandle = nil;
         let h = System_Runtime_CompilerServices_CreateNewOnMetadataUpdateAttribute_ctor_0__0(&__thrown);
@@ -118,6 +150,9 @@ public final class AssemblyDependencyResolver
 {
     public class override func get_type_handle() -> TypeHandle {
         return System_Runtime_Loader_AssemblyDependencyResolver_get_type_handle();
+    }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -195,6 +230,9 @@ open class AssemblyLoadContext
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Runtime_Loader_AssemblyLoadContext_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -533,7 +571,7 @@ open class AssemblyLoadContext
         }
     }
     // delegate closure overload
-    open func add_Resolving(value : @escaping (Optional<dotnet.System.Runtime.Loader.AssemblyLoadContext>, Optional<dotnet.System.Reflection.AssemblyName>) throws -> dotnet.System.Reflection.Assembly) throws {
+    open func add_Resolving(value : @escaping (dotnet.System.Runtime.Loader.AssemblyLoadContext, dotnet.System.Reflection.AssemblyName) throws -> dotnet.System.Reflection.Assembly) throws {
         let del_value = try dotnet.System.Func_3<dotnet.System.Runtime.Loader.AssemblyLoadContext,dotnet.System.Reflection.AssemblyName,dotnet.System.Reflection.Assembly>(value);
         return try add_Resolving(value: del_value);
     }
@@ -549,7 +587,7 @@ open class AssemblyLoadContext
         }
     }
     // delegate closure overload
-    open func remove_Resolving(value : @escaping (Optional<dotnet.System.Runtime.Loader.AssemblyLoadContext>, Optional<dotnet.System.Reflection.AssemblyName>) throws -> dotnet.System.Reflection.Assembly) throws {
+    open func remove_Resolving(value : @escaping (dotnet.System.Runtime.Loader.AssemblyLoadContext, dotnet.System.Reflection.AssemblyName) throws -> dotnet.System.Reflection.Assembly) throws {
         let del_value = try dotnet.System.Func_3<dotnet.System.Runtime.Loader.AssemblyLoadContext,dotnet.System.Reflection.AssemblyName,dotnet.System.Reflection.Assembly>(value);
         return try remove_Resolving(value: del_value);
     }
@@ -565,7 +603,7 @@ open class AssemblyLoadContext
         }
     }
     // delegate closure overload
-    open func add_ResolvingUnmanagedDll(value : @escaping (Optional<dotnet.System.Reflection.Assembly>, Optional<dotnet.System.String>) throws -> dotnet.System.IntPtr) throws {
+    open func add_ResolvingUnmanagedDll(value : @escaping (dotnet.System.Reflection.Assembly, dotnet.System.String) throws -> dotnet.System.IntPtr) throws {
         let del_value = try dotnet.System.Func_3<dotnet.System.Reflection.Assembly,dotnet.System.String,dotnet.System.IntPtr>(value);
         return try add_ResolvingUnmanagedDll(value: del_value);
     }
@@ -581,7 +619,7 @@ open class AssemblyLoadContext
         }
     }
     // delegate closure overload
-    open func remove_ResolvingUnmanagedDll(value : @escaping (Optional<dotnet.System.Reflection.Assembly>, Optional<dotnet.System.String>) throws -> dotnet.System.IntPtr) throws {
+    open func remove_ResolvingUnmanagedDll(value : @escaping (dotnet.System.Reflection.Assembly, dotnet.System.String) throws -> dotnet.System.IntPtr) throws {
         let del_value = try dotnet.System.Func_3<dotnet.System.Reflection.Assembly,dotnet.System.String,dotnet.System.IntPtr>(value);
         return try remove_ResolvingUnmanagedDll(value: del_value);
     }
@@ -597,7 +635,7 @@ open class AssemblyLoadContext
         }
     }
     // delegate closure overload
-    open func add_Unloading(value : @escaping (Optional<dotnet.System.Runtime.Loader.AssemblyLoadContext>) throws -> Void) throws {
+    open func add_Unloading(value : @escaping (dotnet.System.Runtime.Loader.AssemblyLoadContext) throws -> Void) throws {
         let del_value = try dotnet.System.Action_1<dotnet.System.Runtime.Loader.AssemblyLoadContext>(value);
         return try add_Unloading(value: del_value);
     }
@@ -613,7 +651,7 @@ open class AssemblyLoadContext
         }
     }
     // delegate closure overload
-    open func remove_Unloading(value : @escaping (Optional<dotnet.System.Runtime.Loader.AssemblyLoadContext>) throws -> Void) throws {
+    open func remove_Unloading(value : @escaping (dotnet.System.Runtime.Loader.AssemblyLoadContext) throws -> Void) throws {
         let del_value = try dotnet.System.Action_1<dotnet.System.Runtime.Loader.AssemblyLoadContext>(value);
         return try remove_Unloading(value: del_value);
     }
@@ -688,6 +726,9 @@ public final class AssemblyLoadContext_ContextualReflectionScope
     public class override func get_type_handle() -> TypeHandle {
         return System_Runtime_Loader_AssemblyLoadContext_ContextualReflectionScope_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     public override init() {
@@ -716,3 +757,4 @@ public final class AssemblyLoadContext_ContextualReflectionScope
 
 
 
+// TODO COPE (parm byref pointer): bool TryGetRawMetadata(System.Reflection.Assembly, ref System.Byte*, ref System.Int32)

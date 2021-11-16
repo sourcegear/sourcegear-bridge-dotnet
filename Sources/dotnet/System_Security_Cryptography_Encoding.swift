@@ -18,6 +18,9 @@ open class AsnEncodedData
     open class override func get_type_handle() -> TypeHandle {
         return System_Security_Cryptography_AsnEncodedData_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor(System.Byte[])
@@ -213,6 +216,9 @@ public final class AsnEncodedDataCollection
     public class override func get_type_handle() -> TypeHandle {
         return System_Security_Cryptography_AsnEncodedDataCollection_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor()
@@ -349,9 +355,6 @@ public final class AsnEncodedDataCollection
     }
     // [IsSpecialName] System.Security.Cryptography.AsnEncodedData get_Item(System.Int32)
 // docid: M:System.Security.Cryptography.AsnEncodedDataCollection.get_Item(System.Int32)
-//BEGIN method_is_override
-//matches_1
-//matches :
     public func get_Item(index : Swift.Int32) throws -> dotnet.System.Security.Cryptography.AsnEncodedData {
         var __thrown : NullableHandle = nil;
         let __return = System_Security_Cryptography_AsnEncodedDataCollection_AsnEncodedData__get_Item_0__1__i32(&__thrown, self.get_handle(), index);
@@ -403,6 +406,9 @@ public final class AsnEncodedDataEnumerator
 {
     public class override func get_type_handle() -> TypeHandle {
         return System_Security_Cryptography_AsnEncodedDataEnumerator_get_type_handle();
+    }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -475,6 +481,9 @@ open class FromBase64Transform
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Security_Cryptography_FromBase64Transform_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -716,6 +725,9 @@ public final class Oid
     public class override func get_type_handle() -> TypeHandle {
         return System_Security_Cryptography_Oid_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor()
@@ -913,6 +925,9 @@ public final class OidCollection
     public class override func get_type_handle() -> TypeHandle {
         return System_Security_Cryptography_OidCollection_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor()
@@ -1017,9 +1032,6 @@ public final class OidCollection
     }
     // [IsSpecialName] System.Security.Cryptography.Oid get_Item(System.Int32)
 // docid: M:System.Security.Cryptography.OidCollection.get_Item(System.Int32)
-//BEGIN method_is_override
-//matches_1
-//matches :
     public func get_Item(index : Swift.Int32) throws -> dotnet.System.Security.Cryptography.Oid {
         var __thrown : NullableHandle = nil;
         let __return = System_Security_Cryptography_OidCollection_Oid__get_Item_0__1__i32(&__thrown, self.get_handle(), index);
@@ -1031,9 +1043,6 @@ public final class OidCollection
     }
     // [IsSpecialName] System.Security.Cryptography.Oid get_Item(System.String)
 // docid: M:System.Security.Cryptography.OidCollection.get_Item(System.String)
-//BEGIN method_is_override
-//matches_1
-//matches :
     public func get_Item(oid : dotnet.System.String) throws -> Optional<dotnet.System.Security.Cryptography.Oid> {
         var __thrown : NullableHandle = nil;
         let __return = System_Security_Cryptography_OidCollection_Oid__get_Item_0__1__String(&__thrown, self.get_handle(), oid.get_handle());
@@ -1089,6 +1098,9 @@ public final class OidEnumerator
 {
     public class override func get_type_handle() -> TypeHandle {
         return System_Security_Cryptography_OidEnumerator_get_type_handle();
+    }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -1328,6 +1340,9 @@ public final class PemFields
     public class override func get_type_handle() -> TypeHandle {
         return System_Security_Cryptography_PemFields_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     /**
@@ -1430,6 +1445,9 @@ open class ToBase64Transform
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Security_Cryptography_ToBase64Transform_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }

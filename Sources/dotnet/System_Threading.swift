@@ -17,6 +17,9 @@ open class AbandonedMutexException
     open class override func get_type_handle() -> TypeHandle {
         return System_Threading_AbandonedMutexException_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor()
@@ -182,6 +185,9 @@ public final class AsyncFlowControl
     public class override func get_type_handle() -> TypeHandle {
         return System_Threading_AsyncFlowControl_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     public override init() {
@@ -329,6 +335,9 @@ public final class AsyncLocalValueChangedArgs_1<T : SGBridgeGenericValue>
     public class override func get_type_handle() -> TypeHandle {
         return System_Threading_AsyncLocalValueChangedArgs_1_get_type_handle(T.get_type_handle());
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     /**
@@ -409,6 +418,9 @@ public final class AsyncLocal_1<T : SGBridgeGenericValue>
 {
     public class override func get_type_handle() -> TypeHandle {
         return System_Threading_AsyncLocal_1_get_type_handle(T.get_type_handle());
+    }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -492,6 +504,9 @@ public final class AutoResetEvent
     public class override func get_type_handle() -> TypeHandle {
         return System_Threading_AutoResetEvent_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor(bool)
@@ -526,6 +541,9 @@ open class Barrier
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Threading_Barrier_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -684,7 +702,8 @@ open class Barrier
 
     - Parameter millisecondsTimeout: The number of milliseconds to wait, or (-1) to wait indefinitely.
     - Parameter cancellationToken: The  to observe.
-    - Returns: if all participants reached the barrier within the specified time; otherwise false
+    - Returns: 
+         if all participants reached the barrier within the specified time; otherwise, .
 
     */
     open func SignalAndWait(millisecondsTimeout : Swift.Int32, cancellationToken : dotnet.System.Threading.CancellationToken) throws -> Bool {
@@ -712,8 +731,45 @@ open class Barrier
             return;
         }
     }
-// TODO COPE (write_all_methods) (span) bool SignalAndWait(System.TimeSpan)
-// TODO COPE (write_all_methods) (span) bool SignalAndWait(System.TimeSpan, System.Threading.CancellationToken)
+    // bool SignalAndWait(System.TimeSpan)
+// docid: M:System.Threading.Barrier.SignalAndWait(System.TimeSpan)
+    /**
+    Signals that a participant has reached the barrier and waits for all other participants to reach the barrier as well, using a  object to measure the time interval.
+
+    - Parameter timeout: A  that represents the number of milliseconds to wait, or a  that represents -1 milliseconds to wait indefinitely.
+    - Returns: 
+         if all other participants reached the barrier; otherwise, .
+
+    */
+    open func SignalAndWait(timeout : dotnet.System.TimeSpan) throws -> Bool {
+        var __thrown : NullableHandle = nil;
+        let __return = System_Threading_Barrier_bool__SignalAndWait_0__1__TimeSpan(&__thrown, self.get_handle(), timeout.get_handle());
+        if let __ex =  __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+        return (__return) != 0;
+        }
+    }
+    // bool SignalAndWait(System.TimeSpan, System.Threading.CancellationToken)
+// docid: M:System.Threading.Barrier.SignalAndWait(System.TimeSpan,System.Threading.CancellationToken)
+    /**
+    Signals that a participant has reached the barrier and waits for all other participants to reach the barrier as well, using a  object to measure the time interval, while observing a cancellation token.
+
+    - Parameter timeout: A  that represents the number of milliseconds to wait, or a  that represents -1 milliseconds to wait indefinitely.
+    - Parameter cancellationToken: The  to observe.
+    - Returns: 
+         if all other participants reached the barrier; otherwise, .
+
+    */
+    open func SignalAndWait(timeout : dotnet.System.TimeSpan, cancellationToken : dotnet.System.Threading.CancellationToken) throws -> Bool {
+        var __thrown : NullableHandle = nil;
+        let __return = System_Threading_Barrier_bool__SignalAndWait_0__2__TimeSpan_CancellationToken(&__thrown, self.get_handle(), timeout.get_handle(), cancellationToken.get_handle());
+        if let __ex =  __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+        return (__return) != 0;
+        }
+    }
     // [IsSpecialName] System.Int64 get_CurrentPhaseNumber()
 // docid: M:System.Threading.Barrier.get_CurrentPhaseNumber
     open func get_CurrentPhaseNumber() throws -> Swift.Int64 {
@@ -788,6 +844,9 @@ open class BarrierPostPhaseException
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Threading_BarrierPostPhaseException_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -870,6 +929,9 @@ public final class ContextCallback
     public class override func get_type_handle() -> TypeHandle {
         return System_Threading_ContextCallback_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // void Invoke(System.Object)
@@ -909,15 +971,15 @@ public final class ContextCallback
             return;
         }
     }
-    public init(_ callback : @escaping (Optional<dotnet.System.Object>) throws -> Void) throws
+    public convenience init(_ __closure_Invoke : @escaping (Optional<dotnet.System.Object>) throws -> Void) throws
     {
-        let __bridge : (UnsafeMutablePointer<NullableHandle>, NullableHandle) -> Void =
+        let __interlude_Invoke : (UnsafeMutablePointer<NullableHandle>, NullableHandle) -> Void =
         {
             (thrown : UnsafeMutablePointer<NullableHandle>, state : NullableHandle) -> Void in
             do
             {
                 thrown.pointee = nil;
-                try callback((state != nil) ? (dotnet.System.Object(hndl: state!)) : nil);
+                try __closure_Invoke((state != nil) ? (dotnet.System.Object(hndl: state!)) : nil);
             }
             catch let e as dotnet.System.Exception
             {
@@ -929,24 +991,24 @@ public final class ContextCallback
                 thrown.pointee = __copy_handle(e.get_handle());
             }
         };
-        let cbarg = UnsafeRawPointer(Unmanaged.passRetained(__bridge as AnyObject).toOpaque());
-        func __cb(cb : UnsafeRawPointer?, thrown : UnsafeMutablePointer<NullableHandle>, state : NullableHandle) -> Void
+        func __cb_Invoke(pdata_interlude : UnsafeRawPointer, thrown : UnsafeMutablePointer<NullableHandle>, state : NullableHandle) -> Void
         {
-            let f = Unmanaged<AnyObject>.fromOpaque(cb!).takeUnretainedValue() as! (UnsafeMutablePointer<NullableHandle>, NullableHandle) -> Void;
-            f(thrown, state);
+            let f_interlude = Unmanaged<AnyObject>.fromOpaque(pdata_interlude).takeUnretainedValue() as! (UnsafeMutablePointer<NullableHandle>, NullableHandle) -> Void;
+            f_interlude(thrown, state);
         }
+        let __pdata_Invoke = UnsafeRawPointer(Unmanaged.passRetained(__interlude_Invoke as AnyObject).toOpaque());
+
         var __thrown : NullableHandle = nil;
         let h = System_Threading_ContextCallback_create(
             &__thrown,
-            cbarg,
-            nil, // TODO deinit
-            __cb
+            __cb_Invoke,
+            __pdata_Invoke,
+            nil
             );
-            // TODO check thrown
         if let __ex = __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-            super.init(hndl: h);
+            self.init(hndl: h);
         }
     }
     // void Invoke(System.Object)
@@ -975,6 +1037,9 @@ open class CountdownEvent
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Threading_CountdownEvent_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -1215,8 +1280,45 @@ open class CountdownEvent
             return;
         }
     }
-// TODO COPE (write_all_methods) (span) bool Wait(System.TimeSpan)
-// TODO COPE (write_all_methods) (span) bool Wait(System.TimeSpan, System.Threading.CancellationToken)
+    // bool Wait(System.TimeSpan)
+// docid: M:System.Threading.CountdownEvent.Wait(System.TimeSpan)
+    /**
+    Blocks the current thread until the  is set, using a  to measure the timeout.
+
+    - Parameter timeout: A  that represents the number of milliseconds to wait, or a  that represents -1 milliseconds to wait indefinitely.
+    - Returns: 
+         if the  was set; otherwise, .
+
+    */
+    open func Wait(timeout : dotnet.System.TimeSpan) throws -> Bool {
+        var __thrown : NullableHandle = nil;
+        let __return = System_Threading_CountdownEvent_bool__Wait_0__1__TimeSpan(&__thrown, self.get_handle(), timeout.get_handle());
+        if let __ex =  __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+        return (__return) != 0;
+        }
+    }
+    // bool Wait(System.TimeSpan, System.Threading.CancellationToken)
+// docid: M:System.Threading.CountdownEvent.Wait(System.TimeSpan,System.Threading.CancellationToken)
+    /**
+    Blocks the current thread until the  is set, using a  to measure the timeout, while observing a .
+
+    - Parameter timeout: A  that represents the number of milliseconds to wait, or a  that represents -1 milliseconds to wait indefinitely.
+    - Parameter cancellationToken: The  to observe.
+    - Returns: 
+         if the  was set; otherwise, .
+
+    */
+    open func Wait(timeout : dotnet.System.TimeSpan, cancellationToken : dotnet.System.Threading.CancellationToken) throws -> Bool {
+        var __thrown : NullableHandle = nil;
+        let __return = System_Threading_CountdownEvent_bool__Wait_0__2__TimeSpan_CancellationToken(&__thrown, self.get_handle(), timeout.get_handle(), cancellationToken.get_handle());
+        if let __ex =  __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+        return (__return) != 0;
+        }
+    }
     // [IsSpecialName] System.Int32 get_CurrentCount()
 // docid: M:System.Threading.CountdownEvent.get_CurrentCount
     open func get_CurrentCount() throws -> Swift.Int32 {
@@ -1352,6 +1454,9 @@ open class EventWaitHandle
     open class override func get_type_handle() -> TypeHandle {
         return System_Threading_EventWaitHandle_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor(bool, System.Threading.EventResetMode)
@@ -1380,7 +1485,7 @@ open class EventWaitHandle
     - Parameter initialState: 
          to set the initial state to signaled if the named event is created as a result of this call;  to set it to nonsignaled.
     - Parameter mode: One of the  values that determines whether the event resets automatically or manually.
-    - Parameter name: The name of a system-wide synchronization event.
+    - Parameter name: The name, if the synchronization object is to be shared with other processes; otherwise,  or an empty string. The name is case-sensitive.
     */
     public init(initialState : Bool, mode : dotnet.System.Threading.EventResetMode, name : Optional<dotnet.System.String>) throws {
         var __thrown : NullableHandle = nil;
@@ -1399,7 +1504,7 @@ open class EventWaitHandle
     - Parameter initialState: 
          to set the initial state to signaled if the named event is created as a result of this call;  to set it to nonsignaled.
     - Parameter mode: One of the  values that determines whether the event resets automatically or manually.
-    - Parameter name: The name of a system-wide synchronization event.
+    - Parameter name: The name, if the synchronization object is to be shared with other processes; otherwise,  or an empty string. The name is case-sensitive.
     - Parameter createdNew: When this method returns, contains  if a local event was created (that is, if  is  or an empty string) or if the specified named system event was created;  if the specified named system event already existed. This parameter is passed uninitialized.
     */
     public init(initialState : Bool, mode : dotnet.System.Threading.EventResetMode, name : Optional<dotnet.System.String>, createdNew : inout Bool) throws {
@@ -1419,7 +1524,7 @@ open class EventWaitHandle
     /**
     Opens the specified named synchronization event, if it already exists.
 
-    - Parameter name: The name of the system synchronization event to open.
+    - Parameter name: The name of the synchronization object to be opened and shared with other processes. The name is case-sensitive.
     - Returns: An  object that represents the named system event.
 
     */
@@ -1473,17 +1578,18 @@ open class EventWaitHandle
     /**
     Opens the specified named synchronization event, if it already exists, and returns a value that indicates whether the operation succeeded.
 
-    - Parameter name: The name of the system synchronization event to open.
+    - Parameter name: The name of the synchronization object to be opened and shared with other processes. The name is case-sensitive.
     - Parameter result: When this method returns, contains a  object that represents the named synchronization event if the call succeeded, or  if the call failed. This parameter is treated as uninitialized.
     - Returns: 
-         if the named synchronization event was opened successfully; otherwise, .
+         if the named synchronization event was opened successfully; otherwise, . In some cases,  may be returned for invalid names.
 
     */
-    open class func TryOpenExisting(name : dotnet.System.String, result : inout dotnet.System.Threading.EventWaitHandle) throws -> Bool {
+    open class func TryOpenExisting(name : dotnet.System.String, result : inout Optional<dotnet.System.Threading.EventWaitHandle>) throws -> Bool {
         var __thrown : NullableHandle = nil;
-            var _tmp_out_result = result.get_handle();
+            var _tmp_out_result = (result != nil) ? (result!.get_handle()) : nil;
         let __return = System_Threading_EventWaitHandle_bool__TryOpenExisting_0__2__String_outEventWaitHandle(&__thrown, name.get_handle(), &_tmp_out_result);
-        let _tmp2_result = dotnet.System.Threading.EventWaitHandle(hndl: _tmp_out_result);
+        let __h__tmp2_result = _tmp_out_result;
+        let _tmp2_result = (__h__tmp2_result != nil) ? dotnet.System.Threading.EventWaitHandle(hndl: __h__tmp2_result!) : nil;
             result = _tmp2_result;
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
@@ -1507,6 +1613,9 @@ public final class ExecutionContext
 {
     public class override func get_type_handle() -> TypeHandle {
         return System_Threading_ExecutionContext_get_type_handle();
+    }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -1685,6 +1794,9 @@ open class HostExecutionContext
     open class override func get_type_handle() -> TypeHandle {
         return System_Threading_HostExecutionContext_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor()
@@ -1782,6 +1894,9 @@ open class HostExecutionContextManager
     open class override func get_type_handle() -> TypeHandle {
         return System_Threading_HostExecutionContextManager_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor()
@@ -1866,7 +1981,7 @@ public struct Interlocked {
 
     - Parameter location1: A variable containing the first value to be added. The sum of the two values is stored in .
     - Parameter value: The value to be added to the integer at .
-    - Returns: The new value stored at .
+    - Returns: The new value that was stored at  by this operation.
 
     */
     public static func Add(location1 : inout Swift.Int32, value : Swift.Int32) throws -> Swift.Int32 {
@@ -1888,7 +2003,7 @@ public struct Interlocked {
 
     - Parameter location1: A variable containing the first value to be added. The sum of the two values is stored in .
     - Parameter value: The value to be added to the integer at .
-    - Returns: The new value stored at .
+    - Returns: The new value that was stored at  by this operation.
 
     */
     public static func Add(location1 : inout Swift.Int64, value : Swift.Int64) throws -> Swift.Int64 {
@@ -1910,7 +2025,7 @@ public struct Interlocked {
 
     - Parameter location1: A variable containing the first value to be added. The sum of the two values is stored in .
     - Parameter value: The value to be added to the integer at .
-    - Returns: The new value stored at .
+    - Returns: The new value that was stored at  by this operation.
 
     */
     public static func Add(location1 : inout Swift.UInt32, value : Swift.UInt32) throws -> Swift.UInt32 {
@@ -1932,7 +2047,7 @@ public struct Interlocked {
 
     - Parameter location1: A variable containing the first value to be added. The sum of the two values is stored in .
     - Parameter value: The value to be added to the integer at .
-    - Returns: The new value stored at .
+    - Returns: The new value that was stored at  by this operation.
 
     */
     public static func Add(location1 : inout Swift.UInt64, value : Swift.UInt64) throws -> Swift.UInt64 {
@@ -2138,11 +2253,12 @@ public struct Interlocked {
     - Returns: The original value in .
 
     */
-    public static func CompareExchange(location1 : inout dotnet.System.Object, value : Optional<dotnet.System.Object>, comparand : Optional<dotnet.System.Object>) throws -> Optional<dotnet.System.Object> {
+    public static func CompareExchange(location1 : inout Optional<dotnet.System.Object>, value : Optional<dotnet.System.Object>, comparand : Optional<dotnet.System.Object>) throws -> Optional<dotnet.System.Object> {
         var __thrown : NullableHandle = nil;
-            var _tmp_ref_location1 = location1.get_handle();
+            var _tmp_ref_location1 = (location1 != nil) ? (location1!.get_handle()) : nil;
         let __return = System_Threading_Interlocked_Object__CompareExchange_0__3__refObject_Object_Object(&__thrown, &_tmp_ref_location1, value?.get_handle() ?? nil, comparand?.get_handle() ?? nil);
-        let _tmp2_location1 = dotnet.System.Object(hndl: _tmp_ref_location1);
+        let __h__tmp2_location1 = _tmp_ref_location1;
+        let _tmp2_location1 = (__h__tmp2_location1 != nil) ? dotnet.System.Object(hndl: __h__tmp2_location1!) : nil;
             location1 = _tmp2_location1;
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
@@ -2428,11 +2544,12 @@ public struct Interlocked {
     - Returns: The original value of .
 
     */
-    public static func Exchange(location1 : inout dotnet.System.Object, value : Optional<dotnet.System.Object>) throws -> Optional<dotnet.System.Object> {
+    public static func Exchange(location1 : inout Optional<dotnet.System.Object>, value : Optional<dotnet.System.Object>) throws -> Optional<dotnet.System.Object> {
         var __thrown : NullableHandle = nil;
-            var _tmp_ref_location1 = location1.get_handle();
+            var _tmp_ref_location1 = (location1 != nil) ? (location1!.get_handle()) : nil;
         let __return = System_Threading_Interlocked_Object__Exchange_0__2__refObject_Object(&__thrown, &_tmp_ref_location1, value?.get_handle() ?? nil);
-        let _tmp2_location1 = dotnet.System.Object(hndl: _tmp_ref_location1);
+        let __h__tmp2_location1 = _tmp_ref_location1;
+        let _tmp2_location1 = (__h__tmp2_location1 != nil) ? dotnet.System.Object(hndl: __h__tmp2_location1!) : nil;
             location1 = _tmp2_location1;
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
@@ -2795,17 +2912,18 @@ public struct LazyInitializer {
     - Returns: The initialized object.
 
     */
-    public static func EnsureInitialized<UT : SGBridgeGenericValue>(target : inout UT, initialized : inout Bool, syncLock : inout dotnet.System.Object, valueFactory : dotnet.System.Func_1<UT>) throws -> UT {
+    public static func EnsureInitialized<UT : SGBridgeGenericValue>(target : inout UT, initialized : inout Bool, syncLock : inout Optional<dotnet.System.Object>, valueFactory : dotnet.System.Func_1<UT>) throws -> UT {
         var __thrown : NullableHandle = nil;
             var _tmp_ref_target = target.to_gval();
             var _tmp_ref_initialized = Swift.Int32(initialized ? 1 : 0);
-            var _tmp_ref_syncLock = syncLock.get_handle();
+            var _tmp_ref_syncLock = (syncLock != nil) ? (syncLock!.get_handle()) : nil;
         let __return = System_Threading_LazyInitializer_UT__EnsureInitialized_1__4__refUT_refbool_refObject_System_Func_UT_(UT.get_type_handle(), &__thrown, &_tmp_ref_target, &_tmp_ref_initialized, &_tmp_ref_syncLock, valueFactory.get_handle());
             let _tmp2_target = UT(gval: _tmp_ref_target);
             target = _tmp2_target;
         let _tmp2_initialized = (_tmp_ref_initialized) != 0;
             initialized = _tmp2_initialized;
-        let _tmp2_syncLock = dotnet.System.Object(hndl: _tmp_ref_syncLock);
+        let __h__tmp2_syncLock = _tmp_ref_syncLock;
+        let _tmp2_syncLock = (__h__tmp2_syncLock != nil) ? dotnet.System.Object(hndl: __h__tmp2_syncLock!) : nil;
             syncLock = _tmp2_syncLock;
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
@@ -2814,7 +2932,7 @@ public struct LazyInitializer {
         }
     }
     // delegate closure overload
-    public static func EnsureInitialized<UT : SGBridgeGenericValue>(target : inout UT, initialized : inout Bool, syncLock : inout dotnet.System.Object, valueFactory : @escaping () throws -> UT) throws -> UT {
+    public static func EnsureInitialized<UT : SGBridgeGenericValue>(target : inout UT, initialized : inout Bool, syncLock : inout Optional<dotnet.System.Object>, valueFactory : @escaping () throws -> UT) throws -> UT {
         let del_valueFactory = try dotnet.System.Func_1<UT>(valueFactory);
         return try EnsureInitialized(target: &target, initialized: &initialized, syncLock: &syncLock, valueFactory: del_valueFactory);
     }
@@ -2857,14 +2975,15 @@ public struct LazyInitializer {
     - Returns: The initialized object.
 
     */
-    public static func EnsureInitialized<UT : SGBridgeGenericValue>(target : inout UT, syncLock : inout dotnet.System.Object, valueFactory : dotnet.System.Func_1<UT>) throws -> UT {
+    public static func EnsureInitialized<UT : SGBridgeGenericValue>(target : inout UT, syncLock : inout Optional<dotnet.System.Object>, valueFactory : dotnet.System.Func_1<UT>) throws -> UT {
         var __thrown : NullableHandle = nil;
             var _tmp_ref_target = target.to_gval();
-            var _tmp_ref_syncLock = syncLock.get_handle();
+            var _tmp_ref_syncLock = (syncLock != nil) ? (syncLock!.get_handle()) : nil;
         let __return = System_Threading_LazyInitializer_UT__EnsureInitialized_1__3__refUT_refObject_System_Func_UT_(UT.get_type_handle(), &__thrown, &_tmp_ref_target, &_tmp_ref_syncLock, valueFactory.get_handle());
             let _tmp2_target = UT(gval: _tmp_ref_target);
             target = _tmp2_target;
-        let _tmp2_syncLock = dotnet.System.Object(hndl: _tmp_ref_syncLock);
+        let __h__tmp2_syncLock = _tmp_ref_syncLock;
+        let _tmp2_syncLock = (__h__tmp2_syncLock != nil) ? dotnet.System.Object(hndl: __h__tmp2_syncLock!) : nil;
             syncLock = _tmp2_syncLock;
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
@@ -2873,7 +2992,7 @@ public struct LazyInitializer {
         }
     }
     // delegate closure overload
-    public static func EnsureInitialized<UT : SGBridgeGenericValue>(target : inout UT, syncLock : inout dotnet.System.Object, valueFactory : @escaping () throws -> UT) throws -> UT {
+    public static func EnsureInitialized<UT : SGBridgeGenericValue>(target : inout UT, syncLock : inout Optional<dotnet.System.Object>, valueFactory : @escaping () throws -> UT) throws -> UT {
         let del_valueFactory = try dotnet.System.Func_1<UT>(valueFactory);
         return try EnsureInitialized(target: &target, syncLock: &syncLock, valueFactory: del_valueFactory);
     }
@@ -2892,6 +3011,9 @@ public final class LockCookie
 {
     public class override func get_type_handle() -> TypeHandle {
         return System_Threading_LockCookie_get_type_handle();
+    }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -3009,6 +3131,9 @@ open class LockRecursionException
     open class override func get_type_handle() -> TypeHandle {
         return System_Threading_LockRecursionException_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor()
@@ -3114,6 +3239,9 @@ public final class ManualResetEvent
     public class override func get_type_handle() -> TypeHandle {
         return System_Threading_ManualResetEvent_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor(bool)
@@ -3148,6 +3276,9 @@ open class ManualResetEventSlim
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Threading_ManualResetEventSlim_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -3314,8 +3445,45 @@ open class ManualResetEventSlim
             return;
         }
     }
-// TODO COPE (write_all_methods) (span) bool Wait(System.TimeSpan)
-// TODO COPE (write_all_methods) (span) bool Wait(System.TimeSpan, System.Threading.CancellationToken)
+    // bool Wait(System.TimeSpan)
+// docid: M:System.Threading.ManualResetEventSlim.Wait(System.TimeSpan)
+    /**
+    Blocks the current thread until the current  is set, using a  to measure the time interval.
+
+    - Parameter timeout: A  that represents the number of milliseconds to wait, or a  that represents -1 milliseconds to wait indefinitely.
+    - Returns: 
+         if the  was set; otherwise, .
+
+    */
+    open func Wait(timeout : dotnet.System.TimeSpan) throws -> Bool {
+        var __thrown : NullableHandle = nil;
+        let __return = System_Threading_ManualResetEventSlim_bool__Wait_0__1__TimeSpan(&__thrown, self.get_handle(), timeout.get_handle());
+        if let __ex =  __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+        return (__return) != 0;
+        }
+    }
+    // bool Wait(System.TimeSpan, System.Threading.CancellationToken)
+// docid: M:System.Threading.ManualResetEventSlim.Wait(System.TimeSpan,System.Threading.CancellationToken)
+    /**
+    Blocks the current thread until the current  is set, using a  to measure the time interval, while observing a .
+
+    - Parameter timeout: A  that represents the number of milliseconds to wait, or a  that represents -1 milliseconds to wait indefinitely.
+    - Parameter cancellationToken: The  to observe.
+    - Returns: 
+         if the  was set; otherwise, .
+
+    */
+    open func Wait(timeout : dotnet.System.TimeSpan, cancellationToken : dotnet.System.Threading.CancellationToken) throws -> Bool {
+        var __thrown : NullableHandle = nil;
+        let __return = System_Threading_ManualResetEventSlim_bool__Wait_0__2__TimeSpan_CancellationToken(&__thrown, self.get_handle(), timeout.get_handle(), cancellationToken.get_handle());
+        if let __ex =  __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+        return (__return) != 0;
+        }
+    }
     // [IsSpecialName] bool get_IsSet()
 // docid: M:System.Threading.ManualResetEventSlim.get_IsSet
     open func get_IsSet() throws -> Bool {
@@ -3566,8 +3734,47 @@ public struct Monitor {
             return;
         }
     }
-// TODO COPE (write_all_methods) (span) bool TryEnter(System.Object, System.TimeSpan)
-// TODO COPE (write_all_methods) (span) void TryEnter(System.Object, System.TimeSpan, ref bool)
+    // bool TryEnter(System.Object, System.TimeSpan)
+// docid: M:System.Threading.Monitor.TryEnter(System.Object,System.TimeSpan)
+    /**
+    Attempts, for the specified amount of time, to acquire an exclusive lock on the specified object.
+
+    - Parameter obj: The object on which to acquire the lock.
+    - Parameter timeout: A  representing the amount of time to wait for the lock. A value of -1 millisecond specifies an infinite wait.
+    - Returns: 
+         if the current thread acquires the lock; otherwise, .
+
+    */
+    public static func TryEnter(obj : dotnet.System.Object, timeout : dotnet.System.TimeSpan) throws -> Bool {
+        var __thrown : NullableHandle = nil;
+        let __return = System_Threading_Monitor_bool__TryEnter_0__2__Object_TimeSpan(&__thrown, obj.get_handle(), timeout.get_handle());
+        if let __ex =  __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+        return (__return) != 0;
+        }
+    }
+    // void TryEnter(System.Object, System.TimeSpan, ref bool)
+// docid: M:System.Threading.Monitor.TryEnter(System.Object,System.TimeSpan,System.Boolean@)
+    /**
+    Attempts, for the specified amount of time, to acquire an exclusive lock on the specified object, and atomically sets a value that indicates whether the lock was taken.
+
+    - Parameter obj: The object on which to acquire the lock.
+    - Parameter timeout: The amount of time to wait for the lock. A value of -1 millisecond specifies an infinite wait.
+    - Parameter lockTaken: The result of the attempt to acquire the lock, passed by reference. The input must be . The output is  if the lock is acquired; otherwise, the output is . The output is set even if an exception occurs during the attempt to acquire the lock.
+    */
+    public static func TryEnter(obj : dotnet.System.Object, timeout : dotnet.System.TimeSpan, lockTaken : inout Bool) throws {
+        var __thrown : NullableHandle = nil;
+            var _tmp_ref_lockTaken = Swift.Int32(lockTaken ? 1 : 0);
+        System_Threading_Monitor_void__TryEnter_0__3__Object_TimeSpan_refbool(&__thrown, obj.get_handle(), timeout.get_handle(), &_tmp_ref_lockTaken);
+        let _tmp2_lockTaken = (_tmp_ref_lockTaken) != 0;
+            lockTaken = _tmp2_lockTaken;
+        if let __ex =  __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            return;
+        }
+    }
     // bool Wait(System.Object)
 // docid: M:System.Threading.Monitor.Wait(System.Object)
     /**
@@ -3629,8 +3836,48 @@ public struct Monitor {
         return (__return) != 0;
         }
     }
-// TODO COPE (write_all_methods) (span) bool Wait(System.Object, System.TimeSpan)
-// TODO COPE (write_all_methods) (span) bool Wait(System.Object, System.TimeSpan, bool)
+    // bool Wait(System.Object, System.TimeSpan)
+// docid: M:System.Threading.Monitor.Wait(System.Object,System.TimeSpan)
+    /**
+    Releases the lock on an object and blocks the current thread until it reacquires the lock. If the specified time-out interval elapses, the thread enters the ready queue.
+
+    - Parameter obj: The object on which to wait.
+    - Parameter timeout: A  representing the amount of time to wait before the thread enters the ready queue.
+    - Returns: 
+         if the lock was reacquired before the specified time elapsed;  if the lock was reacquired after the specified time elapsed. The method does not return until the lock is reacquired.
+
+    */
+    public static func Wait(obj : dotnet.System.Object, timeout : dotnet.System.TimeSpan) throws -> Bool {
+        var __thrown : NullableHandle = nil;
+        let __return = System_Threading_Monitor_bool__Wait_0__2__Object_TimeSpan(&__thrown, obj.get_handle(), timeout.get_handle());
+        if let __ex =  __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+        return (__return) != 0;
+        }
+    }
+    // bool Wait(System.Object, System.TimeSpan, bool)
+// docid: M:System.Threading.Monitor.Wait(System.Object,System.TimeSpan,System.Boolean)
+    /**
+    Releases the lock on an object and blocks the current thread until it reacquires the lock. If the specified time-out interval elapses, the thread enters the ready queue. Optionally exits the synchronization domain for the synchronized context before the wait and reacquires the domain afterward.
+
+    - Parameter obj: The object on which to wait.
+    - Parameter timeout: A  representing the amount of time to wait before the thread enters the ready queue.
+    - Parameter exitContext: 
+         to exit and reacquire the synchronization domain for the context (if in a synchronized context) before the wait; otherwise, .
+    - Returns: 
+         if the lock was reacquired before the specified time elapsed;  if the lock was reacquired after the specified time elapsed. The method does not return until the lock is reacquired.
+
+    */
+    public static func Wait(obj : dotnet.System.Object, timeout : dotnet.System.TimeSpan, exitContext : Bool) throws -> Bool {
+        var __thrown : NullableHandle = nil;
+        let __return = System_Threading_Monitor_bool__Wait_0__3__Object_TimeSpan_bool(&__thrown, obj.get_handle(), timeout.get_handle(), Swift.Int32(exitContext ? 1 : 0));
+        if let __ex =  __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+        return (__return) != 0;
+        }
+    }
     // [IsSpecialName] System.Int64 get_LockContentionCount()
 // docid: M:System.Threading.Monitor.get_LockContentionCount
     public static func get_LockContentionCount() throws -> Swift.Int64 {
@@ -3665,6 +3912,9 @@ public final class Mutex
 {
     public class override func get_type_handle() -> TypeHandle {
         return System_Threading_Mutex_get_type_handle();
+    }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -3707,7 +3957,7 @@ public final class Mutex
 
     - Parameter initiallyOwned: 
          to give the calling thread initial ownership of the named system mutex if the named system mutex is created as a result of this call; otherwise, .
-    - Parameter name: The name of the . If the value is , the  is unnamed.
+    - Parameter name: The name, if the synchronization object is to be shared with other processes; otherwise,  or an empty string. The name is case-sensitive.
     */
     public init(initiallyOwned : Bool, name : Optional<dotnet.System.String>) throws {
         var __thrown : NullableHandle = nil;
@@ -3725,7 +3975,7 @@ public final class Mutex
 
     - Parameter initiallyOwned: 
          to give the calling thread initial ownership of the named system mutex if the named system mutex is created as a result of this call; otherwise, .
-    - Parameter name: The name of the . If the value is , the  is unnamed.
+    - Parameter name: The name, if the synchronization object is to be shared with other processes; otherwise,  or an empty string. The name is case-sensitive.
     - Parameter createdNew: When this method returns, contains a Boolean that is  if a local mutex was created (that is, if  is  or an empty string) or if the specified named system mutex was created;  if the specified named system mutex already existed. This parameter is passed uninitialized.
     */
     public init(initiallyOwned : Bool, name : Optional<dotnet.System.String>, createdNew : inout Bool) throws {
@@ -3745,7 +3995,7 @@ public final class Mutex
     /**
     Opens the specified named mutex, if it already exists.
 
-    - Parameter name: The name of the system mutex to open.
+    - Parameter name: The name of the synchronization object to be shared with other processes. The name is case-sensitive.
     - Returns: An object that represents the named system mutex.
 
     */
@@ -3778,17 +4028,18 @@ public final class Mutex
     /**
     Opens the specified named mutex, if it already exists, and returns a value that indicates whether the operation succeeded.
 
-    - Parameter name: The name of the system mutex to open.
+    - Parameter name: The name of the synchronization object to be shared with other processes. The name is case-sensitive.
     - Parameter result: When this method returns, contains a  object that represents the named mutex if the call succeeded, or  if the call failed. This parameter is treated as uninitialized.
     - Returns: 
-         if the named mutex was opened successfully; otherwise, .
+         if the named mutex was opened successfully; otherwise, . In some cases,  may be returned for invalid names.
 
     */
-    public class func TryOpenExisting(name : dotnet.System.String, result : inout dotnet.System.Threading.Mutex) throws -> Bool {
+    public class func TryOpenExisting(name : dotnet.System.String, result : inout Optional<dotnet.System.Threading.Mutex>) throws -> Bool {
         var __thrown : NullableHandle = nil;
-            var _tmp_out_result = result.get_handle();
+            var _tmp_out_result = (result != nil) ? (result!.get_handle()) : nil;
         let __return = System_Threading_Mutex_bool__TryOpenExisting_0__2__String_outMutex(&__thrown, name.get_handle(), &_tmp_out_result);
-        let _tmp2_result = dotnet.System.Threading.Mutex(hndl: _tmp_out_result);
+        let __h__tmp2_result = _tmp_out_result;
+        let _tmp2_result = (__h__tmp2_result != nil) ? dotnet.System.Threading.Mutex(hndl: __h__tmp2_result!) : nil;
             result = _tmp2_result;
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
@@ -3810,6 +4061,9 @@ public final class ReaderWriterLock
 {
     public class override func get_type_handle() -> TypeHandle {
         return System_Threading_ReaderWriterLock_get_type_handle();
+    }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -3844,7 +4098,22 @@ public final class ReaderWriterLock
             return;
         }
     }
-// TODO COPE (write_all_methods) (span) void AcquireReaderLock(System.TimeSpan)
+    // void AcquireReaderLock(System.TimeSpan)
+// docid: M:System.Threading.ReaderWriterLock.AcquireReaderLock(System.TimeSpan)
+    /**
+    Acquires a reader lock, using a  value for the time-out.
+
+    - Parameter timeout: A  specifying the time-out period.
+    */
+    public func AcquireReaderLock(timeout : dotnet.System.TimeSpan) throws {
+        var __thrown : NullableHandle = nil;
+        System_Threading_ReaderWriterLock_void__AcquireReaderLock_0__1__TimeSpan(&__thrown, self.get_handle(), timeout.get_handle());
+        if let __ex =  __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            return;
+        }
+    }
     // void AcquireWriterLock(System.Int32)
 // docid: M:System.Threading.ReaderWriterLock.AcquireWriterLock(System.Int32)
     /**
@@ -3861,7 +4130,22 @@ public final class ReaderWriterLock
             return;
         }
     }
-// TODO COPE (write_all_methods) (span) void AcquireWriterLock(System.TimeSpan)
+    // void AcquireWriterLock(System.TimeSpan)
+// docid: M:System.Threading.ReaderWriterLock.AcquireWriterLock(System.TimeSpan)
+    /**
+    Acquires the writer lock, using a  value for the time-out.
+
+    - Parameter timeout: The  specifying the time-out period.
+    */
+    public func AcquireWriterLock(timeout : dotnet.System.TimeSpan) throws {
+        var __thrown : NullableHandle = nil;
+        System_Threading_ReaderWriterLock_void__AcquireWriterLock_0__1__TimeSpan(&__thrown, self.get_handle(), timeout.get_handle());
+        if let __ex =  __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            return;
+        }
+    }
     // bool AnyWritersSince(System.Int32)
 // docid: M:System.Threading.ReaderWriterLock.AnyWritersSince(System.Int32)
     /**
@@ -3888,11 +4172,12 @@ public final class ReaderWriterLock
 
     - Parameter lockCookie: A  returned by .
     */
-    public func DowngradeFromWriterLock(lockCookie : inout dotnet.System.Threading.LockCookie) throws {
+    public func DowngradeFromWriterLock(lockCookie : inout Optional<dotnet.System.Threading.LockCookie>) throws {
         var __thrown : NullableHandle = nil;
-            var _tmp_ref_lockCookie = lockCookie.get_handle();
+            var _tmp_ref_lockCookie = (lockCookie != nil) ? (lockCookie!.get_handle()) : nil;
         System_Threading_ReaderWriterLock_void__DowngradeFromWriterLock_0__1__refLockCookie(&__thrown, self.get_handle(), &_tmp_ref_lockCookie);
-        let _tmp2_lockCookie = dotnet.System.Threading.LockCookie(hndl: _tmp_ref_lockCookie);
+        let __h__tmp2_lockCookie = _tmp_ref_lockCookie;
+        let _tmp2_lockCookie = (__h__tmp2_lockCookie != nil) ? dotnet.System.Threading.LockCookie(hndl: __h__tmp2_lockCookie!) : nil;
             lockCookie = _tmp2_lockCookie;
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
@@ -3954,11 +4239,12 @@ public final class ReaderWriterLock
 
     - Parameter lockCookie: A  returned by .
     */
-    public func RestoreLock(lockCookie : inout dotnet.System.Threading.LockCookie) throws {
+    public func RestoreLock(lockCookie : inout Optional<dotnet.System.Threading.LockCookie>) throws {
         var __thrown : NullableHandle = nil;
-            var _tmp_ref_lockCookie = lockCookie.get_handle();
+            var _tmp_ref_lockCookie = (lockCookie != nil) ? (lockCookie!.get_handle()) : nil;
         System_Threading_ReaderWriterLock_void__RestoreLock_0__1__refLockCookie(&__thrown, self.get_handle(), &_tmp_ref_lockCookie);
-        let _tmp2_lockCookie = dotnet.System.Threading.LockCookie(hndl: _tmp_ref_lockCookie);
+        let __h__tmp2_lockCookie = _tmp_ref_lockCookie;
+        let _tmp2_lockCookie = (__h__tmp2_lockCookie != nil) ? dotnet.System.Threading.LockCookie(hndl: __h__tmp2_lockCookie!) : nil;
             lockCookie = _tmp2_lockCookie;
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
@@ -3984,7 +4270,24 @@ public final class ReaderWriterLock
         return dotnet.System.Threading.LockCookie(hndl : __return);
         }
     }
-// TODO COPE (write_all_methods) (span) System.Threading.LockCookie UpgradeToWriterLock(System.TimeSpan)
+    // System.Threading.LockCookie UpgradeToWriterLock(System.TimeSpan)
+// docid: M:System.Threading.ReaderWriterLock.UpgradeToWriterLock(System.TimeSpan)
+    /**
+    Upgrades a reader lock to the writer lock, using a  value for the time-out.
+
+    - Parameter timeout: The  specifying the time-out period.
+    - Returns: A  value.
+
+    */
+    public func UpgradeToWriterLock(timeout : dotnet.System.TimeSpan) throws -> dotnet.System.Threading.LockCookie {
+        var __thrown : NullableHandle = nil;
+        let __return = System_Threading_ReaderWriterLock_LockCookie__UpgradeToWriterLock_0__1__TimeSpan(&__thrown, self.get_handle(), timeout.get_handle());
+        if let __ex =  __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+        return dotnet.System.Threading.LockCookie(hndl : __return);
+        }
+    }
     // [IsSpecialName] bool get_IsReaderLockHeld()
 // docid: M:System.Threading.ReaderWriterLock.get_IsReaderLockHeld
     public func get_IsReaderLockHeld() throws -> Bool {
@@ -4060,6 +4363,9 @@ open class ReaderWriterLockSlim
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Threading_ReaderWriterLockSlim_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -4218,7 +4524,25 @@ open class ReaderWriterLockSlim
         return (__return) != 0;
         }
     }
-// TODO COPE (write_all_methods) (span) bool TryEnterReadLock(System.TimeSpan)
+    // bool TryEnterReadLock(System.TimeSpan)
+// docid: M:System.Threading.ReaderWriterLockSlim.TryEnterReadLock(System.TimeSpan)
+    /**
+    Tries to enter the lock in read mode, with an optional time-out.
+
+    - Parameter timeout: The interval to wait, or -1 milliseconds to wait indefinitely.
+    - Returns: 
+         if the calling thread entered read mode, otherwise, .
+
+    */
+    open func TryEnterReadLock(timeout : dotnet.System.TimeSpan) throws -> Bool {
+        var __thrown : NullableHandle = nil;
+        let __return = System_Threading_ReaderWriterLockSlim_bool__TryEnterReadLock_0__1__TimeSpan(&__thrown, self.get_handle(), timeout.get_handle());
+        if let __ex =  __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+        return (__return) != 0;
+        }
+    }
     // bool TryEnterUpgradeableReadLock(System.Int32)
 // docid: M:System.Threading.ReaderWriterLockSlim.TryEnterUpgradeableReadLock(System.Int32)
     /**
@@ -4238,7 +4562,25 @@ open class ReaderWriterLockSlim
         return (__return) != 0;
         }
     }
-// TODO COPE (write_all_methods) (span) bool TryEnterUpgradeableReadLock(System.TimeSpan)
+    // bool TryEnterUpgradeableReadLock(System.TimeSpan)
+// docid: M:System.Threading.ReaderWriterLockSlim.TryEnterUpgradeableReadLock(System.TimeSpan)
+    /**
+    Tries to enter the lock in upgradeable mode, with an optional time-out.
+
+    - Parameter timeout: The interval to wait, or -1 milliseconds to wait indefinitely.
+    - Returns: 
+         if the calling thread entered upgradeable mode, otherwise, .
+
+    */
+    open func TryEnterUpgradeableReadLock(timeout : dotnet.System.TimeSpan) throws -> Bool {
+        var __thrown : NullableHandle = nil;
+        let __return = System_Threading_ReaderWriterLockSlim_bool__TryEnterUpgradeableReadLock_0__1__TimeSpan(&__thrown, self.get_handle(), timeout.get_handle());
+        if let __ex =  __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+        return (__return) != 0;
+        }
+    }
     // bool TryEnterWriteLock(System.Int32)
 // docid: M:System.Threading.ReaderWriterLockSlim.TryEnterWriteLock(System.Int32)
     /**
@@ -4258,7 +4600,25 @@ open class ReaderWriterLockSlim
         return (__return) != 0;
         }
     }
-// TODO COPE (write_all_methods) (span) bool TryEnterWriteLock(System.TimeSpan)
+    // bool TryEnterWriteLock(System.TimeSpan)
+// docid: M:System.Threading.ReaderWriterLockSlim.TryEnterWriteLock(System.TimeSpan)
+    /**
+    Tries to enter the lock in write mode, with an optional time-out.
+
+    - Parameter timeout: The interval to wait, or -1 milliseconds to wait indefinitely.
+    - Returns: 
+         if the calling thread entered write mode, otherwise, .
+
+    */
+    open func TryEnterWriteLock(timeout : dotnet.System.TimeSpan) throws -> Bool {
+        var __thrown : NullableHandle = nil;
+        let __return = System_Threading_ReaderWriterLockSlim_bool__TryEnterWriteLock_0__1__TimeSpan(&__thrown, self.get_handle(), timeout.get_handle());
+        if let __ex =  __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+        return (__return) != 0;
+        }
+    }
     // [IsSpecialName] System.Int32 get_CurrentReadCount()
 // docid: M:System.Threading.ReaderWriterLockSlim.get_CurrentReadCount
     open func get_CurrentReadCount() throws -> Swift.Int32 {
@@ -4494,6 +4854,9 @@ public final class Semaphore
     public class override func get_type_handle() -> TypeHandle {
         return System_Threading_Semaphore_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor(System.Int32, System.Int32)
@@ -4520,7 +4883,7 @@ public final class Semaphore
 
     - Parameter initialCount: The initial number of requests for the semaphore that can be granted concurrently.
     - Parameter maximumCount: The maximum number of requests for the semaphore that can be granted concurrently.
-    - Parameter name: The name of the semaphore. If it is  or empty, a process-local semaphore is created. If the name is prefixed by "Global", a machine-wide semaphore is created (or the existing one returned). If it is prefixed by "Local", a session-wide semaphore is created (or the existing one returned). If the name is not prefixed at all, a session-wide semaphore is created (same as prefix "Local"). Both prefix and name are case-sensitive.
+    - Parameter name: The name, if the synchronization object is to be shared with other processes; otherwise,  or an empty string. The name is case-sensitive.
     */
     public init(initialCount : Swift.Int32, maximumCount : Swift.Int32, name : Optional<dotnet.System.String>) throws {
         var __thrown : NullableHandle = nil;
@@ -4538,7 +4901,7 @@ public final class Semaphore
 
     - Parameter initialCount: The initial number of requests for the semaphore that can be satisfied concurrently.
     - Parameter maximumCount: The maximum number of requests for the semaphore that can be satisfied concurrently.
-    - Parameter name: The name of the semaphore. If it is  or empty, a process-local semaphore is created. If the name is prefixed by "Global", a machine-wide semaphore is created (or the existing one returned). If it is prefixed by "Local", a session-wide semaphore is created (or the existing one returned). If the name is not prefixed at all, a session-wide semaphore is created (same as prefix "Local"). Both prefix and name are case-sensitive.
+    - Parameter name: The name, if the synchronization object is to be shared with other processes; otherwise,  or an empty string. The name is case-sensitive.
     - Parameter createdNew: When this method returns, contains  if a local semaphore was created (that is, if  is  or an empty string) or if the specified named system semaphore was created;  if the specified named system semaphore already existed. This parameter is passed uninitialized.
     */
     public init(initialCount : Swift.Int32, maximumCount : Swift.Int32, name : Optional<dotnet.System.String>, createdNew : inout Bool) throws {
@@ -4558,7 +4921,7 @@ public final class Semaphore
     /**
     Opens the specified named semaphore, if it already exists.
 
-    - Parameter name: The name of the semaphore. If it's prefixed by "Global", it refers to a machine-wide semaphore. If it's prefixed by "Local" or doesn't have a prefix, it refers to a session-wide semaphore. Both prefix and name are case-sensitive.
+    - Parameter name: The name of the synchronization object to be shared with other processes. The name is case-sensitive.
     - Returns: An object that represents the named system semaphore.
 
     */
@@ -4611,17 +4974,18 @@ public final class Semaphore
     /**
     Opens the specified named semaphore, if it already exists, and returns a value that indicates whether the operation succeeded.
 
-    - Parameter name: The name of the semaphore. If it's prefixed by "Global", it refers to a machine-wide semaphore. If it's prefixed by "Local" or doesn't have a prefix, it refers to a session-wide semaphore. Both prefix and name are case-sensitive.
+    - Parameter name: The name of the synchronization object to be shared with other processes. The name is case-sensitive.
     - Parameter result: When this method returns, contains a  object that represents the named semaphore if the call succeeded, or  if the call failed. This parameter is treated as uninitialized.
     - Returns: 
-         if the named semaphore was opened successfully; otherwise, .
+         if the named semaphore was opened successfully; otherwise, . In some cases,  may be returned for invalid names.
 
     */
-    public class func TryOpenExisting(name : dotnet.System.String, result : inout dotnet.System.Threading.Semaphore) throws -> Bool {
+    public class func TryOpenExisting(name : dotnet.System.String, result : inout Optional<dotnet.System.Threading.Semaphore>) throws -> Bool {
         var __thrown : NullableHandle = nil;
-            var _tmp_out_result = result.get_handle();
+            var _tmp_out_result = (result != nil) ? (result!.get_handle()) : nil;
         let __return = System_Threading_Semaphore_bool__TryOpenExisting_0__2__String_outSemaphore(&__thrown, name.get_handle(), &_tmp_out_result);
-        let _tmp2_result = dotnet.System.Threading.Semaphore(hndl: _tmp_out_result);
+        let __h__tmp2_result = _tmp_out_result;
+        let _tmp2_result = (__h__tmp2_result != nil) ? dotnet.System.Threading.Semaphore(hndl: __h__tmp2_result!) : nil;
             result = _tmp2_result;
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
@@ -4643,6 +5007,9 @@ open class SemaphoreFullException
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Threading_SemaphoreFullException_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -4709,6 +5076,9 @@ open class SemaphoreSlim
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Threading_SemaphoreSlim_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -4865,8 +5235,45 @@ open class SemaphoreSlim
             return;
         }
     }
-// TODO COPE (write_all_methods) (span) bool Wait(System.TimeSpan)
-// TODO COPE (write_all_methods) (span) bool Wait(System.TimeSpan, System.Threading.CancellationToken)
+    // bool Wait(System.TimeSpan)
+// docid: M:System.Threading.SemaphoreSlim.Wait(System.TimeSpan)
+    /**
+    Blocks the current thread until it can enter the , using a  to specify the timeout.
+
+    - Parameter timeout: A  that represents the number of milliseconds to wait, a  that represents -1 milliseconds to wait indefinitely, or a  that represents 0 milliseconds to test the wait handle and return immediately.
+    - Returns: 
+         if the current thread successfully entered the ; otherwise, .
+
+    */
+    open func Wait(timeout : dotnet.System.TimeSpan) throws -> Bool {
+        var __thrown : NullableHandle = nil;
+        let __return = System_Threading_SemaphoreSlim_bool__Wait_0__1__TimeSpan(&__thrown, self.get_handle(), timeout.get_handle());
+        if let __ex =  __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+        return (__return) != 0;
+        }
+    }
+    // bool Wait(System.TimeSpan, System.Threading.CancellationToken)
+// docid: M:System.Threading.SemaphoreSlim.Wait(System.TimeSpan,System.Threading.CancellationToken)
+    /**
+    Blocks the current thread until it can enter the , using a  that specifies the timeout, while observing a .
+
+    - Parameter timeout: A  that represents the number of milliseconds to wait, a  that represents -1 milliseconds to wait indefinitely, or a  that represents 0 milliseconds to test the wait handle and return immediately.
+    - Parameter cancellationToken: The  to observe.
+    - Returns: 
+         if the current thread successfully entered the ; otherwise, .
+
+    */
+    open func Wait(timeout : dotnet.System.TimeSpan, cancellationToken : dotnet.System.Threading.CancellationToken) throws -> Bool {
+        var __thrown : NullableHandle = nil;
+        let __return = System_Threading_SemaphoreSlim_bool__Wait_0__2__TimeSpan_CancellationToken(&__thrown, self.get_handle(), timeout.get_handle(), cancellationToken.get_handle());
+        if let __ex =  __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+        return (__return) != 0;
+        }
+    }
     // System.Threading.Tasks.Task WaitAsync()
 // docid: M:System.Threading.SemaphoreSlim.WaitAsync
     /**
@@ -4875,13 +5282,13 @@ open class SemaphoreSlim
     - Returns: A task that will complete when the semaphore has been entered.
 
     */
-    open func WaitAsync() throws -> dotnet.System.Threading.Tasks.Task {
+    open func WaitAsync() async throws {
         var __thrown : NullableHandle = nil;
         let __return = System_Threading_SemaphoreSlim_Task__WaitAsync_0__0(&__thrown, self.get_handle());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task(hndl: __return).ToAsync();
         }
     }
     // System.Threading.Tasks.Task<bool> WaitAsync(System.Int32)
@@ -4893,13 +5300,13 @@ open class SemaphoreSlim
     - Returns: A task that will complete with a result of  if the current thread successfully entered the , otherwise with a result of .
 
     */
-    open func WaitAsync(millisecondsTimeout : Swift.Int32) throws -> dotnet.System.Threading.Tasks.Task_1<Bool> {
+    open func WaitAsync(millisecondsTimeout : Swift.Int32) async throws -> Bool {
         var __thrown : NullableHandle = nil;
         let __return = System_Threading_SemaphoreSlim_System_Threading_Tasks_Task_bool___WaitAsync_0__1__i32(&__thrown, self.get_handle(), millisecondsTimeout);
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task_1(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task_1(hndl: __return).ToAsync();
         }
     }
     // System.Threading.Tasks.Task<bool> WaitAsync(System.Int32, System.Threading.CancellationToken)
@@ -4912,13 +5319,13 @@ open class SemaphoreSlim
     - Returns: A task that will complete with a result of  if the current thread successfully entered the , otherwise with a result of .
 
     */
-    open func WaitAsync(millisecondsTimeout : Swift.Int32, cancellationToken : dotnet.System.Threading.CancellationToken) throws -> dotnet.System.Threading.Tasks.Task_1<Bool> {
+    open func WaitAsync(millisecondsTimeout : Swift.Int32, cancellationToken : dotnet.System.Threading.CancellationToken) async throws -> Bool {
         var __thrown : NullableHandle = nil;
         let __return = System_Threading_SemaphoreSlim_System_Threading_Tasks_Task_bool___WaitAsync_0__2__i32_CancellationToken(&__thrown, self.get_handle(), millisecondsTimeout, cancellationToken.get_handle());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task_1(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task_1(hndl: __return).ToAsync();
         }
     }
     // System.Threading.Tasks.Task WaitAsync(System.Threading.CancellationToken)
@@ -4930,17 +5337,52 @@ open class SemaphoreSlim
     - Returns: A task that will complete when the semaphore has been entered.
 
     */
-    open func WaitAsync(cancellationToken : dotnet.System.Threading.CancellationToken) throws -> dotnet.System.Threading.Tasks.Task {
+    open func WaitAsync(cancellationToken : dotnet.System.Threading.CancellationToken) async throws {
         var __thrown : NullableHandle = nil;
         let __return = System_Threading_SemaphoreSlim_Task__WaitAsync_0__1__CancellationToken(&__thrown, self.get_handle(), cancellationToken.get_handle());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task(hndl: __return).ToAsync();
         }
     }
-// TODO COPE (write_all_methods) (span) System.Threading.Tasks.Task<bool> WaitAsync(System.TimeSpan)
-// TODO COPE (write_all_methods) (span) System.Threading.Tasks.Task<bool> WaitAsync(System.TimeSpan, System.Threading.CancellationToken)
+    // System.Threading.Tasks.Task<bool> WaitAsync(System.TimeSpan)
+// docid: M:System.Threading.SemaphoreSlim.WaitAsync(System.TimeSpan)
+    /**
+    Asynchronously waits to enter the , using a  to measure the time interval.
+
+    - Parameter timeout: A  that represents the number of milliseconds to wait, a  that represents -1 milliseconds to wait indefinitely, or a  that represents 0 milliseconds to test the wait handle and return immediately.
+    - Returns: A task that will complete with a result of  if the current thread successfully entered the , otherwise with a result of .
+
+    */
+    open func WaitAsync(timeout : dotnet.System.TimeSpan) async throws -> Bool {
+        var __thrown : NullableHandle = nil;
+        let __return = System_Threading_SemaphoreSlim_System_Threading_Tasks_Task_bool___WaitAsync_0__1__TimeSpan(&__thrown, self.get_handle(), timeout.get_handle());
+        if let __ex =  __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+        return try await dotnet.System.Threading.Tasks.Task_1(hndl: __return).ToAsync();
+        }
+    }
+    // System.Threading.Tasks.Task<bool> WaitAsync(System.TimeSpan, System.Threading.CancellationToken)
+// docid: M:System.Threading.SemaphoreSlim.WaitAsync(System.TimeSpan,System.Threading.CancellationToken)
+    /**
+    Asynchronously waits to enter the , using a  to measure the time interval, while observing a .
+
+    - Parameter timeout: A  that represents the number of milliseconds to wait, a  that represents -1 milliseconds to wait indefinitely, or a  that represents 0 milliseconds to test the wait handle and return immediately.
+    - Parameter cancellationToken: The  token to observe.
+    - Returns: A task that will complete with a result of  if the current thread successfully entered the , otherwise with a result of .
+
+    */
+    open func WaitAsync(timeout : dotnet.System.TimeSpan, cancellationToken : dotnet.System.Threading.CancellationToken) async throws -> Bool {
+        var __thrown : NullableHandle = nil;
+        let __return = System_Threading_SemaphoreSlim_System_Threading_Tasks_Task_bool___WaitAsync_0__2__TimeSpan_CancellationToken(&__thrown, self.get_handle(), timeout.get_handle(), cancellationToken.get_handle());
+        if let __ex =  __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+        return try await dotnet.System.Threading.Tasks.Task_1(hndl: __return).ToAsync();
+        }
+    }
     // [IsSpecialName] System.Threading.WaitHandle get_AvailableWaitHandle()
 // docid: M:System.Threading.SemaphoreSlim.get_AvailableWaitHandle
     open func get_AvailableWaitHandle() throws -> dotnet.System.Threading.WaitHandle {
@@ -4996,6 +5438,9 @@ public final class SendOrPostCallback
     public class override func get_type_handle() -> TypeHandle {
         return System_Threading_SendOrPostCallback_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // void Invoke(System.Object)
@@ -5035,15 +5480,15 @@ public final class SendOrPostCallback
             return;
         }
     }
-    public init(_ callback : @escaping (Optional<dotnet.System.Object>) throws -> Void) throws
+    public convenience init(_ __closure_Invoke : @escaping (Optional<dotnet.System.Object>) throws -> Void) throws
     {
-        let __bridge : (UnsafeMutablePointer<NullableHandle>, NullableHandle) -> Void =
+        let __interlude_Invoke : (UnsafeMutablePointer<NullableHandle>, NullableHandle) -> Void =
         {
             (thrown : UnsafeMutablePointer<NullableHandle>, state : NullableHandle) -> Void in
             do
             {
                 thrown.pointee = nil;
-                try callback((state != nil) ? (dotnet.System.Object(hndl: state!)) : nil);
+                try __closure_Invoke((state != nil) ? (dotnet.System.Object(hndl: state!)) : nil);
             }
             catch let e as dotnet.System.Exception
             {
@@ -5055,24 +5500,24 @@ public final class SendOrPostCallback
                 thrown.pointee = __copy_handle(e.get_handle());
             }
         };
-        let cbarg = UnsafeRawPointer(Unmanaged.passRetained(__bridge as AnyObject).toOpaque());
-        func __cb(cb : UnsafeRawPointer?, thrown : UnsafeMutablePointer<NullableHandle>, state : NullableHandle) -> Void
+        func __cb_Invoke(pdata_interlude : UnsafeRawPointer, thrown : UnsafeMutablePointer<NullableHandle>, state : NullableHandle) -> Void
         {
-            let f = Unmanaged<AnyObject>.fromOpaque(cb!).takeUnretainedValue() as! (UnsafeMutablePointer<NullableHandle>, NullableHandle) -> Void;
-            f(thrown, state);
+            let f_interlude = Unmanaged<AnyObject>.fromOpaque(pdata_interlude).takeUnretainedValue() as! (UnsafeMutablePointer<NullableHandle>, NullableHandle) -> Void;
+            f_interlude(thrown, state);
         }
+        let __pdata_Invoke = UnsafeRawPointer(Unmanaged.passRetained(__interlude_Invoke as AnyObject).toOpaque());
+
         var __thrown : NullableHandle = nil;
         let h = System_Threading_SendOrPostCallback_create(
             &__thrown,
-            cbarg,
-            nil, // TODO deinit
-            __cb
+            __cb_Invoke,
+            __pdata_Invoke,
+            nil
             );
-            // TODO check thrown
         if let __ex = __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-            super.init(hndl: h);
+            self.init(hndl: h);
         }
     }
     // void Invoke(System.Object)
@@ -5101,6 +5546,9 @@ public final class SpinLock
 {
     public class override func get_type_handle() -> TypeHandle {
         return System_Threading_SpinLock_get_type_handle();
+    }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -5240,7 +5688,26 @@ public final class SpinLock
             return;
         }
     }
-// TODO COPE (write_all_methods) (span) void TryEnter(System.TimeSpan, ref bool)
+    // void TryEnter(System.TimeSpan, ref bool)
+// docid: M:System.Threading.SpinLock.TryEnter(System.TimeSpan,System.Boolean@)
+    /**
+    Attempts to acquire the lock in a reliable manner, such that even if an exception occurs within the method call,  can be examined reliably to determine whether the lock was acquired.
+
+    - Parameter timeout: A  that represents the number of milliseconds to wait, or a  that represents -1 milliseconds to wait indefinitely.
+    - Parameter lockTaken: True if the lock is acquired; otherwise, false.  must be initialized to false prior to calling this method.
+    */
+    public func TryEnter(timeout : dotnet.System.TimeSpan, lockTaken : inout Bool) throws {
+        var __thrown : NullableHandle = nil;
+            var _tmp_ref_lockTaken = Swift.Int32(lockTaken ? 1 : 0);
+        System_Threading_SpinLock_void__TryEnter_0__2__TimeSpan_refbool(&__thrown, self.get_handle(), timeout.get_handle(), &_tmp_ref_lockTaken);
+        let _tmp2_lockTaken = (_tmp_ref_lockTaken) != 0;
+            lockTaken = _tmp2_lockTaken;
+        if let __ex =  __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            return;
+        }
+    }
     // [IsSpecialName] bool get_IsHeld()
 // docid: M:System.Threading.SpinLock.get_IsHeld
     public func get_IsHeld() throws -> Bool {
@@ -5289,6 +5756,9 @@ public final class SpinWait
 {
     public class override func get_type_handle() -> TypeHandle {
         return System_Threading_SpinWait_get_type_handle();
+    }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -5389,7 +5859,7 @@ public final class SpinWait
     - Parameter condition: A delegate to be executed over and over until it returns true.
     - Parameter millisecondsTimeout: The number of milliseconds to wait, or  (-1) to wait indefinitely.
     - Returns: 
-         if the condition is satisfied within the timeout; otherwise, false
+         if the condition is satisfied within the timeout; otherwise, false.
 
     */
     public class func SpinUntil(condition : dotnet.System.Func_1<Bool>, millisecondsTimeout : Swift.Int32) throws -> Bool {
@@ -5406,7 +5876,31 @@ public final class SpinWait
         let del_condition = try dotnet.System.Func_1<Swift.Bool>(condition);
         return try SpinUntil(condition: del_condition, millisecondsTimeout: millisecondsTimeout);
     }
-// TODO COPE (write_all_methods) (span) bool SpinUntil(System.Func<bool>, System.TimeSpan)
+    // bool SpinUntil(System.Func<bool>, System.TimeSpan)
+// docid: M:System.Threading.SpinWait.SpinUntil(System.Func{System.Boolean},System.TimeSpan)
+    /**
+    Spins until the specified condition is satisfied or until the specified timeout is expired.
+
+    - Parameter condition: A delegate to be executed over and over until it returns true.
+    - Parameter timeout: A  that represents the number of milliseconds to wait, or a TimeSpan that represents -1 milliseconds to wait indefinitely.
+    - Returns: 
+         if the condition is satisfied within the timeout; otherwise, false.
+
+    */
+    public class func SpinUntil(condition : dotnet.System.Func_1<Bool>, timeout : dotnet.System.TimeSpan) throws -> Bool {
+        var __thrown : NullableHandle = nil;
+        let __return = System_Threading_SpinWait_bool__SpinUntil_0__2__System_Func_bool__TimeSpan(&__thrown, condition.get_handle(), timeout.get_handle());
+        if let __ex =  __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+        return (__return) != 0;
+        }
+    }
+    // delegate closure overload
+    public class func SpinUntil(condition : @escaping () throws -> Bool, timeout : dotnet.System.TimeSpan) throws -> Bool {
+        let del_condition = try dotnet.System.Func_1<Swift.Bool>(condition);
+        return try SpinUntil(condition: del_condition, timeout: timeout);
+    }
     // [IsSpecialName] System.Int32 get_Count()
 // docid: M:System.Threading.SpinWait.get_Count
     public func get_Count() throws -> Swift.Int32 {
@@ -5443,6 +5937,9 @@ open class SynchronizationContext
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Threading_SynchronizationContext_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -5646,6 +6143,9 @@ open class SynchronizationLockException
     open class override func get_type_handle() -> TypeHandle {
         return System_Threading_SynchronizationLockException_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor()
@@ -5712,6 +6212,9 @@ open class ThreadLocal_1<T : SGBridgeGenericValue>
     open class override func get_type_handle() -> TypeHandle {
         return System_Threading_ThreadLocal_1_get_type_handle(T.get_type_handle());
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor()
@@ -5735,7 +6238,7 @@ open class ThreadLocal_1<T : SGBridgeGenericValue>
     Initializes the  instance and specifies whether all values are accessible from any thread.
 
     - Parameter trackAllValues: 
-         to track all values set on the instance and expose them through the  property;  otherwise.
+         to track all values set on the instance and expose them through the  property;  otherwise. When set to , a value stored from a given thread will be available through  even after that thread has exited.
     */
     public init(trackAllValues : Bool) throws {
         var __thrown : NullableHandle = nil;
@@ -5769,7 +6272,7 @@ open class ThreadLocal_1<T : SGBridgeGenericValue>
 
     - Parameter valueFactory: The  invoked to produce a lazily-initialized value when an attempt is made to retrieve  without it having been previously initialized.
     - Parameter trackAllValues: 
-         to track all values set on the instance and expose them through the  property;  otherwise.
+         to track all values set on the instance and expose them through the  property;  otherwise. When set to , a value stored from a given thread will be available through  even after that thread has exited.
     */
     public init(valueFactory : dotnet.System.Func_1<T>, trackAllValues : Bool) throws {
         var __thrown : NullableHandle = nil;
@@ -5882,7 +6385,7 @@ open class ThreadLocal_1<T : SGBridgeGenericValue>
         }
     }
     /**
-    Gets a list for all of the values currently stored by all of the threads that have accessed this instance.
+    Gets a list containing the values stored by all threads that have accessed this instance.
 
     */
     open var Values : dotnet.System.Collections.Generic.IList_1<T> {
@@ -5901,7 +6404,7 @@ public struct Volatile {
     Reads the value of the specified field. On systems that require it, inserts a memory barrier that prevents the processor from reordering memory operations as follows: If a read or write appears after this method in the code, the processor cannot move it before this method.
 
     - Parameter location: The field to read.
-    - Returns: The value that was read. This value is the latest written by any processor in the computer, regardless of the number of processors or the state of processor cache.
+    - Returns: The value that was read.
 
     */
     public static func Read(location : inout Bool) throws -> Bool {
@@ -5922,7 +6425,7 @@ public struct Volatile {
     Reads the value of the specified field. On systems that require it, inserts a memory barrier that prevents the processor from reordering memory operations as follows: If a read or write appears after this method in the code, the processor cannot move it before this method.
 
     - Parameter location: The field to read.
-    - Returns: The value that was read. This value is the latest written by any processor in the computer, regardless of the number of processors or the state of processor cache.
+    - Returns: The value that was read.
 
     */
     public static func Read(location : inout Swift.UInt8) throws -> Swift.UInt8 {
@@ -5943,7 +6446,7 @@ public struct Volatile {
     Reads the value of the specified field. On systems that require it, inserts a memory barrier that prevents the processor from reordering memory operations as follows: If a read or write appears after this method in the code, the processor cannot move it before this method.
 
     - Parameter location: The field to read.
-    - Returns: The value that was read. This value is the latest written by any processor in the computer, regardless of the number of processors or the state of processor cache.
+    - Returns: The value that was read.
 
     */
     public static func Read(location : inout Swift.Double) throws -> Swift.Double {
@@ -5964,7 +6467,7 @@ public struct Volatile {
     Reads the value of the specified field. On systems that require it, inserts a memory barrier that prevents the processor from reordering memory operations as follows: If a read or write appears after this method in the code, the processor cannot move it before this method.
 
     - Parameter location: The field to read.
-    - Returns: The value that was read. This value is the latest written by any processor in the computer, regardless of the number of processors or the state of processor cache.
+    - Returns: The value that was read.
 
     */
     public static func Read(location : inout Swift.Int16) throws -> Swift.Int16 {
@@ -5985,7 +6488,7 @@ public struct Volatile {
     Reads the value of the specified field. On systems that require it, inserts a memory barrier that prevents the processor from reordering memory operations as follows: If a read or write appears after this method in the code, the processor cannot move it before this method.
 
     - Parameter location: The field to read.
-    - Returns: The value that was read. This value is the latest written by any processor in the computer, regardless of the number of processors or the state of processor cache.
+    - Returns: The value that was read.
 
     */
     public static func Read(location : inout Swift.Int32) throws -> Swift.Int32 {
@@ -6006,7 +6509,7 @@ public struct Volatile {
     Reads the value of the specified field. On systems that require it, inserts a memory barrier that prevents the processor from reordering memory operations as follows: If a read or write appears after this method in the code, the processor cannot move it before this method.
 
     - Parameter location: The field to read.
-    - Returns: The value that was read. This value is the latest written by any processor in the computer, regardless of the number of processors or the state of processor cache.
+    - Returns: The value that was read.
 
     */
     public static func Read(location : inout Swift.Int64) throws -> Swift.Int64 {
@@ -6027,7 +6530,7 @@ public struct Volatile {
     Reads the value of the specified field. On systems that require it, inserts a memory barrier that prevents the processor from reordering memory operations as follows: If a read or write appears after this method in the code, the processor cannot move it before this method.
 
     - Parameter location: The field to read.
-    - Returns: The value that was read. This value is the latest written by any processor in the computer, regardless of the number of processors or the state of processor cache.
+    - Returns: The value that was read.
 
     */
     public static func Read(location : inout dotnet.System.IntPtr) throws -> dotnet.System.IntPtr {
@@ -6048,7 +6551,7 @@ public struct Volatile {
     Reads the value of the specified field. On systems that require it, inserts a memory barrier that prevents the processor from reordering memory operations as follows: If a read or write appears after this method in the code, the processor cannot move it before this method.
 
     - Parameter location: The field to read.
-    - Returns: The value that was read. This value is the latest written by any processor in the computer, regardless of the number of processors or the state of processor cache.
+    - Returns: The value that was read.
 
     */
     public static func Read(location : inout Swift.Int8) throws -> Swift.Int8 {
@@ -6069,7 +6572,7 @@ public struct Volatile {
     Reads the value of the specified field. On systems that require it, inserts a memory barrier that prevents the processor from reordering memory operations as follows: If a read or write appears after this method in the code, the processor cannot move it before this method.
 
     - Parameter location: The field to read.
-    - Returns: The value that was read. This value is the latest written by any processor in the computer, regardless of the number of processors or the state of processor cache.
+    - Returns: The value that was read.
 
     */
     public static func Read(location : inout Swift.Float) throws -> Swift.Float {
@@ -6090,7 +6593,7 @@ public struct Volatile {
     Reads the value of the specified field. On systems that require it, inserts a memory barrier that prevents the processor from reordering memory operations as follows: If a read or write appears after this method in the code, the processor cannot move it before this method.
 
     - Parameter location: The field to read.
-    - Returns: The value that was read. This value is the latest written by any processor in the computer, regardless of the number of processors or the state of processor cache.
+    - Returns: The value that was read.
 
     */
     public static func Read(location : inout Swift.UInt16) throws -> Swift.UInt16 {
@@ -6111,7 +6614,7 @@ public struct Volatile {
     Reads the value of the specified field. On systems that require it, inserts a memory barrier that prevents the processor from reordering memory operations as follows: If a read or write appears after this method in the code, the processor cannot move it before this method.
 
     - Parameter location: The field to read.
-    - Returns: The value that was read. This value is the latest written by any processor in the computer, regardless of the number of processors or the state of processor cache.
+    - Returns: The value that was read.
 
     */
     public static func Read(location : inout Swift.UInt32) throws -> Swift.UInt32 {
@@ -6132,7 +6635,7 @@ public struct Volatile {
     Reads the value of the specified field. On systems that require it, inserts a memory barrier that prevents the processor from reordering memory operations as follows: If a read or write appears after this method in the code, the processor cannot move it before this method.
 
     - Parameter location: The field to read.
-    - Returns: The value that was read. This value is the latest written by any processor in the computer, regardless of the number of processors or the state of processor cache.
+    - Returns: The value that was read.
 
     */
     public static func Read(location : inout Swift.UInt64) throws -> Swift.UInt64 {
@@ -6153,7 +6656,7 @@ public struct Volatile {
     Reads the value of the specified field. On systems that require it, inserts a memory barrier that prevents the processor from reordering memory operations as follows: If a read or write appears after this method in the code, the processor cannot move it before this method.
 
     - Parameter location: The field to read.
-    - Returns: The value that was read. This value is the latest written by any processor in the computer, regardless of the number of processors or the state of processor cache.
+    - Returns: The value that was read.
 
     */
     public static func Read(location : inout dotnet.System.UIntPtr) throws -> dotnet.System.UIntPtr {
@@ -6175,7 +6678,7 @@ public struct Volatile {
     Writes the specified value to the specified field. On systems that require it, inserts a memory barrier that prevents the processor from reordering memory operations as follows: If a read or write appears before this method in the code, the processor cannot move it after this method.
 
     - Parameter location: The field where the value is written.
-    - Parameter value: The value to write. The value is written immediately so that it is visible to all processors in the computer.
+    - Parameter value: The value to write.
     */
     public static func Write(location : inout Bool, value : Bool) throws {
         var __thrown : NullableHandle = nil;
@@ -6195,7 +6698,7 @@ public struct Volatile {
     Writes the specified value to the specified field. On systems that require it, inserts a memory barrier that prevents the processor from reordering memory operations as follows: If a read or write appears before this method in the code, the processor cannot move it after this method.
 
     - Parameter location: The field where the value is written.
-    - Parameter value: The value to write. The value is written immediately so that it is visible to all processors in the computer.
+    - Parameter value: The value to write.
     */
     public static func Write(location : inout Swift.UInt8, value : Swift.UInt8) throws {
         var __thrown : NullableHandle = nil;
@@ -6215,7 +6718,7 @@ public struct Volatile {
     Writes the specified value to the specified field. On systems that require it, inserts a memory barrier that prevents the processor from reordering memory operations as follows: If a read or write appears before this method in the code, the processor cannot move it after this method.
 
     - Parameter location: The field where the value is written.
-    - Parameter value: The value to write. The value is written immediately so that it is visible to all processors in the computer.
+    - Parameter value: The value to write.
     */
     public static func Write(location : inout Swift.Double, value : Swift.Double) throws {
         var __thrown : NullableHandle = nil;
@@ -6235,7 +6738,7 @@ public struct Volatile {
     Writes the specified value to the specified field. On systems that require it, inserts a memory barrier that prevents the processor from reordering memory operations as follows: If a read or write appears before this method in the code, the processor cannot move it after this method.
 
     - Parameter location: The field where the value is written.
-    - Parameter value: The value to write. The value is written immediately so that it is visible to all processors in the computer.
+    - Parameter value: The value to write.
     */
     public static func Write(location : inout Swift.Int16, value : Swift.Int16) throws {
         var __thrown : NullableHandle = nil;
@@ -6255,7 +6758,7 @@ public struct Volatile {
     Writes the specified value to the specified field. On systems that require it, inserts a memory barrier that prevents the processor from reordering memory operations as follows: If a read or write appears before this method in the code, the processor cannot move it after this method.
 
     - Parameter location: The field where the value is written.
-    - Parameter value: The value to write. The value is written immediately so that it is visible to all processors in the computer.
+    - Parameter value: The value to write.
     */
     public static func Write(location : inout Swift.Int32, value : Swift.Int32) throws {
         var __thrown : NullableHandle = nil;
@@ -6275,7 +6778,7 @@ public struct Volatile {
     Writes the specified value to the specified field. On systems that require it, inserts a memory barrier that prevents the processor from reordering memory operations as follows: If a read or write appears before this method in the code, the processor cannot move it after this method.
 
     - Parameter location: The field where the value is written.
-    - Parameter value: The value to write. The value is written immediately so that it is visible to all processors in the computer.
+    - Parameter value: The value to write.
     */
     public static func Write(location : inout Swift.Int64, value : Swift.Int64) throws {
         var __thrown : NullableHandle = nil;
@@ -6295,7 +6798,7 @@ public struct Volatile {
     Writes the specified value to the specified field. On systems that require it, inserts a memory barrier that prevents the processor from reordering memory operations as follows: If a read or write appears before this method in the code, the processor cannot move it after this method.
 
     - Parameter location: The field where the value is written.
-    - Parameter value: The value to write. The value is written immediately so that it is visible to all processors in the computer.
+    - Parameter value: The value to write.
     */
     public static func Write(location : inout dotnet.System.IntPtr, value : dotnet.System.IntPtr) throws {
         var __thrown : NullableHandle = nil;
@@ -6315,7 +6818,7 @@ public struct Volatile {
     Writes the specified value to the specified field. On systems that require it, inserts a memory barrier that prevents the processor from reordering memory operations as follows: If a read or write appears before this method in the code, the processor cannot move it after this method.
 
     - Parameter location: The field where the value is written.
-    - Parameter value: The value to write. The value is written immediately so that it is visible to all processors in the computer.
+    - Parameter value: The value to write.
     */
     public static func Write(location : inout Swift.Int8, value : Swift.Int8) throws {
         var __thrown : NullableHandle = nil;
@@ -6335,7 +6838,7 @@ public struct Volatile {
     Writes the specified value to the specified field. On systems that require it, inserts a memory barrier that prevents the processor from reordering memory operations as follows: If a read or write appears before this method in the code, the processor cannot move it after this method.
 
     - Parameter location: The field where the value is written.
-    - Parameter value: The value to write. The value is written immediately so that it is visible to all processors in the computer.
+    - Parameter value: The value to write.
     */
     public static func Write(location : inout Swift.Float, value : Swift.Float) throws {
         var __thrown : NullableHandle = nil;
@@ -6355,7 +6858,7 @@ public struct Volatile {
     Writes the specified value to the specified field. On systems that require it, inserts a memory barrier that prevents the processor from reordering memory operations as follows: If a read or write appears before this method in the code, the processor cannot move it after this method.
 
     - Parameter location: The field where the value is written.
-    - Parameter value: The value to write. The value is written immediately so that it is visible to all processors in the computer.
+    - Parameter value: The value to write.
     */
     public static func Write(location : inout Swift.UInt16, value : Swift.UInt16) throws {
         var __thrown : NullableHandle = nil;
@@ -6375,7 +6878,7 @@ public struct Volatile {
     Writes the specified value to the specified field. On systems that require it, inserts a memory barrier that prevents the processor from reordering memory operations as follows: If a read or write appears before this method in the code, the processor cannot move it after this method.
 
     - Parameter location: The field where the value is written.
-    - Parameter value: The value to write. The value is written immediately so that it is visible to all processors in the computer.
+    - Parameter value: The value to write.
     */
     public static func Write(location : inout Swift.UInt32, value : Swift.UInt32) throws {
         var __thrown : NullableHandle = nil;
@@ -6395,7 +6898,7 @@ public struct Volatile {
     Writes the specified value to the specified field. On systems that require it, inserts a memory barrier that prevents the processor from reordering memory operations as follows: If a read or write appears before this method in the code, the processor cannot move it after this method.
 
     - Parameter location: The field where the value is written.
-    - Parameter value: The value to write. The value is written immediately so that it is visible to all processors in the computer.
+    - Parameter value: The value to write.
     */
     public static func Write(location : inout Swift.UInt64, value : Swift.UInt64) throws {
         var __thrown : NullableHandle = nil;
@@ -6415,7 +6918,7 @@ public struct Volatile {
     Writes the specified value to the specified field. On systems that require it, inserts a memory barrier that prevents the processor from reordering memory operations as follows: If a read or write appears before this method in the code, the processor cannot move it after this method.
 
     - Parameter location: The field where the value is written.
-    - Parameter value: The value to write. The value is written immediately so that it is visible to all processors in the computer.
+    - Parameter value: The value to write.
     */
     public static func Write(location : inout dotnet.System.UIntPtr, value : dotnet.System.UIntPtr) throws {
         var __thrown : NullableHandle = nil;
@@ -6435,7 +6938,7 @@ public struct Volatile {
     Writes the specified object reference to the specified field. On systems that require it, inserts a memory barrier that prevents the processor from reordering memory operations as follows: If a read or write appears before this method in the code, the processor cannot move it after this method.
 
     - Parameter location: The field where the object reference is written.
-    - Parameter value: The object reference to write. The reference is written immediately so that it is visible to all processors in the computer.
+    - Parameter value: The object reference to write.
     */
     public static func Write<UT : SGBridgeGenericValue>(location : inout UT, value : UT) throws {
         var __thrown : NullableHandle = nil;
@@ -6463,6 +6966,9 @@ open class WaitHandleCannotBeOpenedException
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Threading_WaitHandleCannotBeOpenedException_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }

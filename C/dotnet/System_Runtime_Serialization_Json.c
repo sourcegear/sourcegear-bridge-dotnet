@@ -74,9 +74,11 @@ struct {
     void (* _Nonnull  _fp_System_Runtime_Serialization_Json_IXmlJsonReaderInitializer_void__SetInput_0__6__u8Array_i32_i32_Encoding_XmlDictionaryReaderQuotas_OnXmlDictionaryReaderClose)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NONNULL buffer, int32_t offset, int32_t count, SG_HNDL_NULLABLE encoding, SG_HNDL_NONNULL quotas, SG_HNDL_NULLABLE onClose);
     void (* _Nonnull  _fp_System_Runtime_Serialization_Json_IXmlJsonReaderInitializer_void__SetInput_0__4__Stream_Encoding_XmlDictionaryReaderQuotas_OnXmlDictionaryReaderClose)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NONNULL stream, SG_HNDL_NULLABLE encoding, SG_HNDL_NONNULL quotas, SG_HNDL_NULLABLE onClose);
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_Runtime_Serialization_Json_IXmlJsonReaderInitializer_cast)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __h);
+    SG_HNDL_NONNULL (* _Nonnull  _fp_System_Runtime_Serialization_Json_IXmlJsonReaderInitializer_create)(SG_HNDL_NULLABLE * _Nonnull __thrown, void (* _Nonnull  __cb_System_Runtime_Serialization_Json_IXmlJsonReaderInitializer_void__SetInput_0__6__u8Array_i32_i32_Encoding_XmlDictionaryReaderQuotas_OnXmlDictionaryReaderClose)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL buffer, int32_t offset, int32_t count, SG_HNDL_NULLABLE encoding, SG_HNDL_NONNULL quotas, SG_HNDL_NULLABLE onClose), const void* _Nonnull __pdata_System_Runtime_Serialization_Json_IXmlJsonReaderInitializer_void__SetInput_0__6__u8Array_i32_i32_Encoding_XmlDictionaryReaderQuotas_OnXmlDictionaryReaderClose, void (* _Nonnull  __cb_System_Runtime_Serialization_Json_IXmlJsonReaderInitializer_void__SetInput_0__4__Stream_Encoding_XmlDictionaryReaderQuotas_OnXmlDictionaryReaderClose)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL stream, SG_HNDL_NULLABLE encoding, SG_HNDL_NONNULL quotas, SG_HNDL_NULLABLE onClose), const void* _Nonnull __pdata_System_Runtime_Serialization_Json_IXmlJsonReaderInitializer_void__SetInput_0__4__Stream_Encoding_XmlDictionaryReaderQuotas_OnXmlDictionaryReaderClose, void (* _Nullable __deinit)(const void* _Nonnull __pdata));
     TYP (* _Nonnull  _fp_System_Runtime_Serialization_Json_IXmlJsonWriterInitializer_get_type_handle)(void);
     void (* _Nonnull  _fp_System_Runtime_Serialization_Json_IXmlJsonWriterInitializer_void__SetOutput_0__3__Stream_Encoding_bool)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NONNULL stream, SG_HNDL_NONNULL encoding, int32_t ownsStream);
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_Runtime_Serialization_Json_IXmlJsonWriterInitializer_cast)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __h);
+    SG_HNDL_NONNULL (* _Nonnull  _fp_System_Runtime_Serialization_Json_IXmlJsonWriterInitializer_create)(SG_HNDL_NULLABLE * _Nonnull __thrown, void (* _Nonnull  __cb_System_Runtime_Serialization_Json_IXmlJsonWriterInitializer_void__SetOutput_0__3__Stream_Encoding_bool)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL stream, SG_HNDL_NONNULL encoding, int32_t ownsStream), const void* _Nonnull __pdata_System_Runtime_Serialization_Json_IXmlJsonWriterInitializer_void__SetOutput_0__3__Stream_Encoding_bool, void (* _Nullable __deinit)(const void* _Nonnull __pdata));
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_Runtime_Serialization_Json_JsonReaderWriterFactory_XmlDictionaryReader__CreateJsonReader_0__6__u8Array_i32_i32_Encoding_XmlDictionaryReaderQuotas_OnXmlDictionaryReaderClose)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL buffer, int32_t offset, int32_t count, SG_HNDL_NULLABLE encoding, SG_HNDL_NONNULL quotas, SG_HNDL_NULLABLE onClose);
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_Runtime_Serialization_Json_JsonReaderWriterFactory_XmlDictionaryReader__CreateJsonReader_0__4__u8Array_i32_i32_XmlDictionaryReaderQuotas)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL buffer, int32_t offset, int32_t count, SG_HNDL_NONNULL quotas);
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_Runtime_Serialization_Json_JsonReaderWriterFactory_XmlDictionaryReader__CreateJsonReader_0__2__u8Array_XmlDictionaryReaderQuotas)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL buffer, SG_HNDL_NONNULL quotas);
@@ -609,6 +611,14 @@ SG_HNDL_NONNULL System_Runtime_Serialization_Json_IXmlJsonReaderInitializer_cast
     return ret;
 }
 
+SG_HNDL_NONNULL System_Runtime_Serialization_Json_IXmlJsonReaderInitializer_create(SG_HNDL_NULLABLE * _Nonnull __thrown, void (* _Nonnull  __cb_System_Runtime_Serialization_Json_IXmlJsonReaderInitializer_void__SetInput_0__6__u8Array_i32_i32_Encoding_XmlDictionaryReaderQuotas_OnXmlDictionaryReaderClose)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL buffer, int32_t offset, int32_t count, SG_HNDL_NULLABLE encoding, SG_HNDL_NONNULL quotas, SG_HNDL_NULLABLE onClose), const void* _Nonnull __pdata_System_Runtime_Serialization_Json_IXmlJsonReaderInitializer_void__SetInput_0__6__u8Array_i32_i32_Encoding_XmlDictionaryReaderQuotas_OnXmlDictionaryReaderClose, void (* _Nonnull  __cb_System_Runtime_Serialization_Json_IXmlJsonReaderInitializer_void__SetInput_0__4__Stream_Encoding_XmlDictionaryReaderQuotas_OnXmlDictionaryReaderClose)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL stream, SG_HNDL_NULLABLE encoding, SG_HNDL_NONNULL quotas, SG_HNDL_NULLABLE onClose), const void* _Nonnull __pdata_System_Runtime_Serialization_Json_IXmlJsonReaderInitializer_void__SetInput_0__4__Stream_Encoding_XmlDictionaryReaderQuotas_OnXmlDictionaryReaderClose, void (* _Nullable __deinit)(const void* _Nonnull __pdata)) {
+    if (!_g_System_Runtime_Serialization_Json._fp_System_Runtime_Serialization_Json_IXmlJsonReaderInitializer_create) {
+        my_init();
+    }
+    SG_HNDL_NONNULL ret = _g_System_Runtime_Serialization_Json._fp_System_Runtime_Serialization_Json_IXmlJsonReaderInitializer_create(__thrown, __cb_System_Runtime_Serialization_Json_IXmlJsonReaderInitializer_void__SetInput_0__6__u8Array_i32_i32_Encoding_XmlDictionaryReaderQuotas_OnXmlDictionaryReaderClose, __pdata_System_Runtime_Serialization_Json_IXmlJsonReaderInitializer_void__SetInput_0__6__u8Array_i32_i32_Encoding_XmlDictionaryReaderQuotas_OnXmlDictionaryReaderClose, __cb_System_Runtime_Serialization_Json_IXmlJsonReaderInitializer_void__SetInput_0__4__Stream_Encoding_XmlDictionaryReaderQuotas_OnXmlDictionaryReaderClose, __pdata_System_Runtime_Serialization_Json_IXmlJsonReaderInitializer_void__SetInput_0__4__Stream_Encoding_XmlDictionaryReaderQuotas_OnXmlDictionaryReaderClose, __deinit);
+    return ret;
+}
+
 TYP System_Runtime_Serialization_Json_IXmlJsonWriterInitializer_get_type_handle(void) {
     if (!_g_System_Runtime_Serialization_Json._fp_System_Runtime_Serialization_Json_IXmlJsonWriterInitializer_get_type_handle) {
         my_init();
@@ -629,6 +639,14 @@ SG_HNDL_NONNULL System_Runtime_Serialization_Json_IXmlJsonWriterInitializer_cast
         my_init();
     }
     SG_HNDL_NONNULL ret = _g_System_Runtime_Serialization_Json._fp_System_Runtime_Serialization_Json_IXmlJsonWriterInitializer_cast(__thrown, __h);
+    return ret;
+}
+
+SG_HNDL_NONNULL System_Runtime_Serialization_Json_IXmlJsonWriterInitializer_create(SG_HNDL_NULLABLE * _Nonnull __thrown, void (* _Nonnull  __cb_System_Runtime_Serialization_Json_IXmlJsonWriterInitializer_void__SetOutput_0__3__Stream_Encoding_bool)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL stream, SG_HNDL_NONNULL encoding, int32_t ownsStream), const void* _Nonnull __pdata_System_Runtime_Serialization_Json_IXmlJsonWriterInitializer_void__SetOutput_0__3__Stream_Encoding_bool, void (* _Nullable __deinit)(const void* _Nonnull __pdata)) {
+    if (!_g_System_Runtime_Serialization_Json._fp_System_Runtime_Serialization_Json_IXmlJsonWriterInitializer_create) {
+        my_init();
+    }
+    SG_HNDL_NONNULL ret = _g_System_Runtime_Serialization_Json._fp_System_Runtime_Serialization_Json_IXmlJsonWriterInitializer_create(__thrown, __cb_System_Runtime_Serialization_Json_IXmlJsonWriterInitializer_void__SetOutput_0__3__Stream_Encoding_bool, __pdata_System_Runtime_Serialization_Json_IXmlJsonWriterInitializer_void__SetOutput_0__3__Stream_Encoding_bool, __deinit);
     return ret;
 }
 

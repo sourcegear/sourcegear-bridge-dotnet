@@ -18,10 +18,17 @@ public final class SafeMemoryMappedFileHandle
     public class override func get_type_handle() -> TypeHandle {
         return Microsoft_Win32_SafeHandles_SafeMemoryMappedFileHandle_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor()
 // docid: M:Microsoft.Win32.SafeHandles.SafeMemoryMappedFileHandle.#ctor
+    /**
+    Creates a .
+
+    */
     public init() throws {
         var __thrown : NullableHandle = nil;
         let h = Microsoft_Win32_SafeHandles_SafeMemoryMappedFileHandle_ctor_0__0(&__thrown);
@@ -66,10 +73,17 @@ public final class SafeMemoryMappedViewHandle
     public class override func get_type_handle() -> TypeHandle {
         return Microsoft_Win32_SafeHandles_SafeMemoryMappedViewHandle_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor()
 // docid: M:Microsoft.Win32.SafeHandles.SafeMemoryMappedViewHandle.#ctor
+    /**
+    Initializes a  instance.
+
+    */
     public init() throws {
         var __thrown : NullableHandle = nil;
         let h = Microsoft_Win32_SafeHandles_SafeMemoryMappedViewHandle_ctor_0__0(&__thrown);
@@ -102,6 +116,9 @@ open class MemoryMappedFile
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_IO_MemoryMappedFiles_MemoryMappedFile_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -856,6 +873,9 @@ public final class MemoryMappedViewAccessor
     public class override func get_type_handle() -> TypeHandle {
         return System_IO_MemoryMappedFiles_MemoryMappedViewAccessor_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // void Flush()
@@ -927,6 +947,9 @@ public final class MemoryMappedViewStream
 {
     public class override func get_type_handle() -> TypeHandle {
         return System_IO_MemoryMappedFiles_MemoryMappedViewStream_get_type_handle();
+    }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }

@@ -17,6 +17,9 @@ public final class FileVersionInfo
     public class override func get_type_handle() -> TypeHandle {
         return System_Diagnostics_FileVersionInfo_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // System.Diagnostics.FileVersionInfo GetVersionInfo(System.String)

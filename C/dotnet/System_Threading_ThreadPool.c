@@ -10,6 +10,7 @@ struct {
     TYP (* _Nonnull  _fp_System_Threading_IThreadPoolWorkItem_get_type_handle)(void);
     void (* _Nonnull  _fp_System_Threading_IThreadPoolWorkItem_void__Execute_0__0)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h);
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_Threading_IThreadPoolWorkItem_cast)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __h);
+    SG_HNDL_NONNULL (* _Nonnull  _fp_System_Threading_IThreadPoolWorkItem_create)(SG_HNDL_NULLABLE * _Nonnull __thrown, void (* _Nonnull  __cb_System_Threading_IThreadPoolWorkItem_void__Execute_0__0)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown), const void* _Nonnull __pdata_System_Threading_IThreadPoolWorkItem_void__Execute_0__0, void (* _Nullable __deinit)(const void* _Nonnull __pdata));
     TYP (* _Nonnull  _fp_System_Threading_RegisteredWaitHandle_get_type_handle)(void);
     int32_t (* _Nonnull  _fp_System_Threading_RegisteredWaitHandle_bool__Unregister_0__1__WaitHandle)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE waitObject);
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_Threading_RegisteredWaitHandle_cast)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __h);
@@ -45,12 +46,12 @@ struct {
     void (* _Nonnull  _fp_System_Threading_WaitCallback_void__Invoke_0__1__Object)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE state);
     SG_HNDL_NULLABLE (* _Nonnull  _fp_System_Threading_WaitCallback_IAsyncResult__BeginInvoke_0__3__Object_AsyncCallback_Object)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE state, SG_HNDL_NULLABLE callback, SG_HNDL_NULLABLE object_);
     void (* _Nonnull  _fp_System_Threading_WaitCallback_void__EndInvoke_0__1__IAsyncResult)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE result);
-    SG_HNDL_NONNULL (* _Nonnull  _fp_System_Threading_WaitCallback_create)(SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nullable __pdata, void (* _Nullable __deinit)(const void* _Nullable __pdata), void (* _Nonnull  __cb)(const void* _Nullable __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE state));
+    SG_HNDL_NONNULL (* _Nonnull  _fp_System_Threading_WaitCallback_create)(SG_HNDL_NULLABLE * _Nonnull __thrown, void (* _Nonnull  __cb)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE state), const void* _Nonnull __pdata, void (* _Nullable __deinit)(const void* _Nonnull __pdata));
     TYP (* _Nonnull  _fp_System_Threading_WaitOrTimerCallback_get_type_handle)(void);
     void (* _Nonnull  _fp_System_Threading_WaitOrTimerCallback_void__Invoke_0__2__Object_bool)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE state, int32_t timedOut);
     SG_HNDL_NULLABLE (* _Nonnull  _fp_System_Threading_WaitOrTimerCallback_IAsyncResult__BeginInvoke_0__4__Object_bool_AsyncCallback_Object)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE state, int32_t timedOut, SG_HNDL_NULLABLE callback, SG_HNDL_NULLABLE object_);
     void (* _Nonnull  _fp_System_Threading_WaitOrTimerCallback_void__EndInvoke_0__1__IAsyncResult)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NULLABLE result);
-    SG_HNDL_NONNULL (* _Nonnull  _fp_System_Threading_WaitOrTimerCallback_create)(SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nullable __pdata, void (* _Nullable __deinit)(const void* _Nullable __pdata), void (* _Nonnull  __cb)(const void* _Nullable __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE state, int32_t timedOut));
+    SG_HNDL_NONNULL (* _Nonnull  _fp_System_Threading_WaitOrTimerCallback_create)(SG_HNDL_NULLABLE * _Nonnull __thrown, void (* _Nonnull  __cb)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE state, int32_t timedOut), const void* _Nonnull __pdata, void (* _Nullable __deinit)(const void* _Nonnull __pdata));
 } _g_System_Threading_ThreadPool;
 
 static void my_init() {
@@ -77,6 +78,14 @@ SG_HNDL_NONNULL System_Threading_IThreadPoolWorkItem_cast(SG_HNDL_NULLABLE * _No
         my_init();
     }
     SG_HNDL_NONNULL ret = _g_System_Threading_ThreadPool._fp_System_Threading_IThreadPoolWorkItem_cast(__thrown, __h);
+    return ret;
+}
+
+SG_HNDL_NONNULL System_Threading_IThreadPoolWorkItem_create(SG_HNDL_NULLABLE * _Nonnull __thrown, void (* _Nonnull  __cb_System_Threading_IThreadPoolWorkItem_void__Execute_0__0)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown), const void* _Nonnull __pdata_System_Threading_IThreadPoolWorkItem_void__Execute_0__0, void (* _Nullable __deinit)(const void* _Nonnull __pdata)) {
+    if (!_g_System_Threading_ThreadPool._fp_System_Threading_IThreadPoolWorkItem_create) {
+        my_init();
+    }
+    SG_HNDL_NONNULL ret = _g_System_Threading_ThreadPool._fp_System_Threading_IThreadPoolWorkItem_create(__thrown, __cb_System_Threading_IThreadPoolWorkItem_void__Execute_0__0, __pdata_System_Threading_IThreadPoolWorkItem_void__Execute_0__0, __deinit);
     return ret;
 }
 
@@ -355,11 +364,11 @@ void System_Threading_WaitCallback_void__EndInvoke_0__1__IAsyncResult(SG_HNDL_NU
     _g_System_Threading_ThreadPool._fp_System_Threading_WaitCallback_void__EndInvoke_0__1__IAsyncResult(__thrown, __self_h, result);
 }
 
-SG_HNDL_NONNULL System_Threading_WaitCallback_create(SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nullable __pdata, void (* _Nullable __deinit)(const void* _Nullable __pdata), void (* _Nonnull  __cb)(const void* _Nullable __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE state)) {
+SG_HNDL_NONNULL System_Threading_WaitCallback_create(SG_HNDL_NULLABLE * _Nonnull __thrown, void (* _Nonnull  __cb)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE state), const void* _Nonnull __pdata, void (* _Nullable __deinit)(const void* _Nonnull __pdata)) {
     if (!_g_System_Threading_ThreadPool._fp_System_Threading_WaitCallback_create) {
         my_init();
     }
-    SG_HNDL_NONNULL ret = _g_System_Threading_ThreadPool._fp_System_Threading_WaitCallback_create(__thrown, __pdata, __deinit, __cb);
+    SG_HNDL_NONNULL ret = _g_System_Threading_ThreadPool._fp_System_Threading_WaitCallback_create(__thrown, __cb, __pdata, __deinit);
     return ret;
 }
 
@@ -393,11 +402,11 @@ void System_Threading_WaitOrTimerCallback_void__EndInvoke_0__1__IAsyncResult(SG_
     _g_System_Threading_ThreadPool._fp_System_Threading_WaitOrTimerCallback_void__EndInvoke_0__1__IAsyncResult(__thrown, __self_h, result);
 }
 
-SG_HNDL_NONNULL System_Threading_WaitOrTimerCallback_create(SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nullable __pdata, void (* _Nullable __deinit)(const void* _Nullable __pdata), void (* _Nonnull  __cb)(const void* _Nullable __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE state, int32_t timedOut)) {
+SG_HNDL_NONNULL System_Threading_WaitOrTimerCallback_create(SG_HNDL_NULLABLE * _Nonnull __thrown, void (* _Nonnull  __cb)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE state, int32_t timedOut), const void* _Nonnull __pdata, void (* _Nullable __deinit)(const void* _Nonnull __pdata)) {
     if (!_g_System_Threading_ThreadPool._fp_System_Threading_WaitOrTimerCallback_create) {
         my_init();
     }
-    SG_HNDL_NONNULL ret = _g_System_Threading_ThreadPool._fp_System_Threading_WaitOrTimerCallback_create(__thrown, __pdata, __deinit, __cb);
+    SG_HNDL_NONNULL ret = _g_System_Threading_ThreadPool._fp_System_Threading_WaitOrTimerCallback_create(__thrown, __cb, __pdata, __deinit);
     return ret;
 }
 

@@ -70,6 +70,9 @@ public final class JsonDocument
     public class override func get_type_handle() -> TypeHandle {
         return System_Text_Json_JsonDocument_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // void Dispose()
@@ -147,7 +150,7 @@ public final class JsonDocument
     // System.Text.Json.JsonDocument Parse(System.ReadOnlyMemory<System.Char>, System.Text.Json.JsonDocumentOptions)
 // docid: M:System.Text.Json.JsonDocument.Parse(System.ReadOnlyMemory{System.Char},System.Text.Json.JsonDocumentOptions)
     /**
-    Parses text representing a single JSON character value into a JsonDocument.
+    Parses text representing a single JSON value into a JsonDocument.
 
     - Parameter json: The JSON text to parse.
     - Parameter options: Options to control the reader behavior during parsing.
@@ -193,15 +196,17 @@ public final class JsonDocument
     - Returns: A task to produce a JsonDocument representation of the JSON value.
 
     */
-    public class func ParseAsync(utf8Json : dotnet.System.IO.Stream, options : dotnet.System.Text.Json.JsonDocumentOptions/* TODO default valuetype */, cancellationToken : dotnet.System.Threading.CancellationToken = System.Threading.CancellationToken.None) throws -> dotnet.System.Threading.Tasks.Task_1<dotnet.System.Text.Json.JsonDocument> {
+    public class func ParseAsync(utf8Json : dotnet.System.IO.Stream, options : dotnet.System.Text.Json.JsonDocumentOptions/* TODO default valuetype */, cancellationToken : dotnet.System.Threading.CancellationToken = System.Threading.CancellationToken.None) async throws -> dotnet.System.Text.Json.JsonDocument {
         var __thrown : NullableHandle = nil;
         let __return = System_Text_Json_JsonDocument_System_Threading_Tasks_Task_System_Text_Json_JsonDocument___ParseAsync_0__3__Stream_JsonDocumentOptions_CancellationToken(&__thrown, utf8Json.get_handle(), options.get_handle(), cancellationToken.get_handle());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task_1(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task_1(hndl: __return).ToAsync();
         }
     }
+// TODO COPE (parm byref span): System.Text.Json.JsonDocument ParseValue(ref System.Text.Json.Utf8JsonReader)
+// TODO COPE (parm byref span): bool TryParseValue(ref System.Text.Json.Utf8JsonReader, ref System.Text.Json.JsonDocument)
     // void WriteTo(System.Text.Json.Utf8JsonWriter)
 // docid: M:System.Text.Json.JsonDocument.WriteTo(System.Text.Json.Utf8JsonWriter)
     /**
@@ -253,6 +258,9 @@ public final class JsonDocumentOptions
 {
     public class override func get_type_handle() -> TypeHandle {
         return System_Text_Json_JsonDocumentOptions_get_type_handle();
+    }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -377,6 +385,9 @@ public final class JsonElement
 {
     public class override func get_type_handle() -> TypeHandle {
         return System_Text_Json_JsonElement_get_type_handle();
+    }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -791,6 +802,7 @@ public final class JsonElement
         return __return;
         }
     }
+// TODO COPE (parm byref span): System.Text.Json.JsonElement ParseValue(ref System.Text.Json.Utf8JsonReader)
     // System.String ToString()
 // docid: M:System.Text.Json.JsonElement.ToString
     /**
@@ -840,11 +852,12 @@ public final class JsonElement
          if the entire token value is encoded as valid Base64 text and can be successfully decoded to bytes; otherwise, .
 
     */
-    public func TryGetBytesFromBase64(value : inout dotnet.System_Arr<Swift.UInt8>) throws -> Bool {
+    public func TryGetBytesFromBase64(value : inout Optional<dotnet.System_Arr<Swift.UInt8>>) throws -> Bool {
         var __thrown : NullableHandle = nil;
-            var _tmp_out_value = value.get_handle();
+            var _tmp_out_value = (value != nil) ? (value!.get_handle()) : nil;
         let __return = System_Text_Json_JsonElement_bool__TryGetBytesFromBase64_0__1__outu8Array(&__thrown, self.get_handle(), &_tmp_out_value);
-        let _tmp2_value = dotnet.System_Arr<Swift.UInt8>(hndl: _tmp_out_value);
+        let __h__tmp2_value = _tmp_out_value;
+        let _tmp2_value = (__h__tmp2_value != nil) ? dotnet.System_Arr<Swift.UInt8>(hndl: __h__tmp2_value!) : nil;
             value = _tmp2_value;
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
@@ -862,11 +875,12 @@ public final class JsonElement
          if the string can be represented as a ; otherwise, .
 
     */
-    public func TryGetDateTime(value : inout dotnet.System.DateTime) throws -> Bool {
+    public func TryGetDateTime(value : inout Optional<dotnet.System.DateTime>) throws -> Bool {
         var __thrown : NullableHandle = nil;
-            var _tmp_out_value = value.get_handle();
+            var _tmp_out_value = (value != nil) ? (value!.get_handle()) : nil;
         let __return = System_Text_Json_JsonElement_bool__TryGetDateTime_0__1__outDateTime(&__thrown, self.get_handle(), &_tmp_out_value);
-        let _tmp2_value = dotnet.System.DateTime(hndl: _tmp_out_value);
+        let __h__tmp2_value = _tmp_out_value;
+        let _tmp2_value = (__h__tmp2_value != nil) ? dotnet.System.DateTime(hndl: __h__tmp2_value!) : nil;
             value = _tmp2_value;
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
@@ -884,11 +898,12 @@ public final class JsonElement
          if the string can be represented as a ; otherwise, .
 
     */
-    public func TryGetDateTimeOffset(value : inout dotnet.System.DateTimeOffset) throws -> Bool {
+    public func TryGetDateTimeOffset(value : inout Optional<dotnet.System.DateTimeOffset>) throws -> Bool {
         var __thrown : NullableHandle = nil;
-            var _tmp_out_value = value.get_handle();
+            var _tmp_out_value = (value != nil) ? (value!.get_handle()) : nil;
         let __return = System_Text_Json_JsonElement_bool__TryGetDateTimeOffset_0__1__outDateTimeOffset(&__thrown, self.get_handle(), &_tmp_out_value);
-        let _tmp2_value = dotnet.System.DateTimeOffset(hndl: _tmp_out_value);
+        let __h__tmp2_value = _tmp_out_value;
+        let _tmp2_value = (__h__tmp2_value != nil) ? dotnet.System.DateTimeOffset(hndl: __h__tmp2_value!) : nil;
             value = _tmp2_value;
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
@@ -906,11 +921,12 @@ public final class JsonElement
          if the number can be represented as a ; otherwise, .
 
     */
-    public func TryGetDecimal(value : inout dotnet.System.Decimal) throws -> Bool {
+    public func TryGetDecimal(value : inout Optional<dotnet.System.Decimal>) throws -> Bool {
         var __thrown : NullableHandle = nil;
-            var _tmp_out_value = value.get_handle();
+            var _tmp_out_value = (value != nil) ? (value!.get_handle()) : nil;
         let __return = System_Text_Json_JsonElement_bool__TryGetDecimal_0__1__outDecimal(&__thrown, self.get_handle(), &_tmp_out_value);
-        let _tmp2_value = dotnet.System.Decimal(hndl: _tmp_out_value);
+        let __h__tmp2_value = _tmp_out_value;
+        let _tmp2_value = (__h__tmp2_value != nil) ? dotnet.System.Decimal(hndl: __h__tmp2_value!) : nil;
             value = _tmp2_value;
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
@@ -950,11 +966,12 @@ public final class JsonElement
          if the string can be represented as a ; otherwise, .
 
     */
-    public func TryGetGuid(value : inout dotnet.System.Guid) throws -> Bool {
+    public func TryGetGuid(value : inout Optional<dotnet.System.Guid>) throws -> Bool {
         var __thrown : NullableHandle = nil;
-            var _tmp_out_value = value.get_handle();
+            var _tmp_out_value = (value != nil) ? (value!.get_handle()) : nil;
         let __return = System_Text_Json_JsonElement_bool__TryGetGuid_0__1__outGuid(&__thrown, self.get_handle(), &_tmp_out_value);
-        let _tmp2_value = dotnet.System.Guid(hndl: _tmp_out_value);
+        let __h__tmp2_value = _tmp_out_value;
+        let _tmp2_value = (__h__tmp2_value != nil) ? dotnet.System.Guid(hndl: __h__tmp2_value!) : nil;
             value = _tmp2_value;
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
@@ -989,7 +1006,7 @@ public final class JsonElement
     /**
     Attempts to represent the current JSON number as an .
 
-    - Parameter value: When this method returns, contains the 32-biut integer value equivalent to the current JSON number.
+    - Parameter value: When this method returns, contains the 32-bit integer value equivalent to the current JSON number.
     - Returns: 
          if the number can be represented as an ; otherwise, .
 
@@ -1163,6 +1180,7 @@ public final class JsonElement
         return (__return) != 0;
         }
     }
+// TODO COPE (parm byref span): bool TryParseValue(ref System.Text.Json.Utf8JsonReader, ref System.Nullable<System.Text.Json.JsonElement>)
 // TODO COPE (write_all_methods) (span) bool ValueEquals(System.ReadOnlySpan<System.Byte>)
 // TODO COPE (write_all_methods) (span) bool ValueEquals(System.ReadOnlySpan<System.Char>)
     // bool ValueEquals(System.String)
@@ -1213,9 +1231,6 @@ public final class JsonElement
     }
     // [IsSpecialName] System.Text.Json.JsonElement get_Item(System.Int32)
 // docid: M:System.Text.Json.JsonElement.get_Item(System.Int32)
-//BEGIN method_is_override
-//matches_1
-//matches :
     public func get_Item(index : Swift.Int32) throws -> dotnet.System.Text.Json.JsonElement {
         var __thrown : NullableHandle = nil;
         let __return = System_Text_Json_JsonElement_JsonElement__get_Item_0__1__i32(&__thrown, self.get_handle(), index);
@@ -1243,6 +1258,9 @@ public final class JsonElement_ArrayEnumerator
 {
     public class override func get_type_handle() -> TypeHandle {
         return System_Text_Json_JsonElement_ArrayEnumerator_get_type_handle();
+    }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -1354,6 +1372,9 @@ public final class JsonElement_ObjectEnumerator
     public class override func get_type_handle() -> TypeHandle {
         return System_Text_Json_JsonElement_ObjectEnumerator_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     /**
@@ -1461,12 +1482,16 @@ public final class JsonEncodedText
     public class override func get_type_handle() -> TypeHandle {
         return System_Text_Json_JsonEncodedText_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     public override init() {
         let h = System_Text_Json_JsonEncodedText_implicit_ctor();
             super.init(hndl: h);
     }
+// TODO COPE (returns byreflike): [IsSpecialName] System.ReadOnlySpan<System.Byte> get_EncodedUtf8Bytes()
 // TODO COPE (write_all_methods) (span) System.Text.Json.JsonEncodedText Encode(System.ReadOnlySpan<System.Byte>, System.Text.Encodings.Web.JavaScriptEncoder)
 // TODO COPE (write_all_methods) (span) System.Text.Json.JsonEncodedText Encode(System.ReadOnlySpan<System.Char>, System.Text.Encodings.Web.JavaScriptEncoder)
     // System.Text.Json.JsonEncodedText Encode(System.String, System.Text.Encodings.Web.JavaScriptEncoder)
@@ -1574,6 +1599,9 @@ open class JsonException
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Text_Json_JsonException_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -1780,6 +1808,9 @@ open class JsonNamingPolicy
     open class override func get_type_handle() -> TypeHandle {
         return System_Text_Json_JsonNamingPolicy_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // System.String ConvertName(System.String)
@@ -1835,6 +1866,9 @@ public final class JsonProperty
 {
     public class override func get_type_handle() -> TypeHandle {
         return System_Text_Json_JsonProperty_get_type_handle();
+    }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -1951,6 +1985,9 @@ public final class JsonReaderOptions
 {
     public class override func get_type_handle() -> TypeHandle {
         return System_Text_Json_JsonReaderOptions_get_type_handle();
+    }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -2076,6 +2113,9 @@ public final class JsonReaderState
     public class override func get_type_handle() -> TypeHandle {
         return System_Text_Json_JsonReaderState_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     /**
@@ -2125,6 +2165,16 @@ public final class JsonReaderState
 public struct JsonSerializer {
     // System.Object Deserialize(System.IO.Stream, System.Type, System.Text.Json.JsonSerializerOptions)
 // docid: M:System.Text.Json.JsonSerializer.Deserialize(System.IO.Stream,System.Type,System.Text.Json.JsonSerializerOptions)
+    /**
+    Reads the UTF-8 encoded text representing a single JSON value into a .
+            The Stream will be read to completion.
+
+    - Parameter utf8Json: JSON data to parse.
+    - Parameter returnType: The type of the object to convert to and return.
+    - Parameter options: Options to control the behavior during reading.
+    - Returns: A  representation of the JSON value.
+
+    */
     public static func Deserialize(utf8Json : dotnet.System.IO.Stream, returnType : dotnet.System.Type_, options : Optional<dotnet.System.Text.Json.JsonSerializerOptions> = nil) throws -> Optional<dotnet.System.Object> {
         var __thrown : NullableHandle = nil;
         let __return = System_Text_Json_JsonSerializer_Object__Deserialize_0__3__Stream_Type_JsonSerializerOptions(&__thrown, utf8Json.get_handle(), returnType.get_handle(), options?.get_handle() ?? nil);
@@ -2140,6 +2190,16 @@ public struct JsonSerializer {
     }
     // System.Object Deserialize(System.IO.Stream, System.Type, System.Text.Json.Serialization.JsonSerializerContext)
 // docid: M:System.Text.Json.JsonSerializer.Deserialize(System.IO.Stream,System.Type,System.Text.Json.Serialization.JsonSerializerContext)
+    /**
+    Reads the UTF-8 encoded text representing a single JSON value into a .
+            The Stream will be read to completion.
+
+    - Parameter utf8Json: JSON data to parse.
+    - Parameter returnType: The type of the object to convert to and return.
+    - Parameter context: A metadata provider for serializable types.
+    - Returns: A  representation of the JSON value.
+
+    */
     public static func Deserialize(utf8Json : dotnet.System.IO.Stream, returnType : dotnet.System.Type_, context : dotnet.System.Text.Json.Serialization.JsonSerializerContext) throws -> Optional<dotnet.System.Object> {
         var __thrown : NullableHandle = nil;
         let __return = System_Text_Json_JsonSerializer_Object__Deserialize_0__3__Stream_Type_JsonSerializerContext(&__thrown, utf8Json.get_handle(), returnType.get_handle(), context.get_handle());
@@ -2183,6 +2243,15 @@ public struct JsonSerializer {
     }
     // System.Object Deserialize(System.String, System.Type, System.Text.Json.Serialization.JsonSerializerContext)
 // docid: M:System.Text.Json.JsonSerializer.Deserialize(System.String,System.Type,System.Text.Json.Serialization.JsonSerializerContext)
+    /**
+    Parses the text representing a single JSON value into a .
+
+    - Parameter json: JSON text to parse.
+    - Parameter returnType: The type of the object to convert to and return.
+    - Parameter context: A metadata provider for serializable types.
+    - Returns: A  representation of the JSON value.
+
+    */
     public static func Deserialize(json : dotnet.System.String, returnType : dotnet.System.Type_, context : dotnet.System.Text.Json.Serialization.JsonSerializerContext) throws -> Optional<dotnet.System.Object> {
         var __thrown : NullableHandle = nil;
         let __return = System_Text_Json_JsonSerializer_Object__Deserialize_0__3__String_Type_JsonSerializerContext(&__thrown, json.get_handle(), returnType.get_handle(), context.get_handle());
@@ -2198,6 +2267,15 @@ public struct JsonSerializer {
     }
     // System.Object Deserialize(System.Text.Json.JsonDocument, System.Type, System.Text.Json.JsonSerializerOptions)
 // docid: M:System.Text.Json.JsonSerializer.Deserialize(System.Text.Json.JsonDocument,System.Type,System.Text.Json.JsonSerializerOptions)
+    /**
+    Converts the  representing a single JSON value into a .
+
+    - Parameter document: The  to convert.
+    - Parameter returnType: The type of the object to convert to and return.
+    - Parameter options: Options to control the behavior during parsing.
+    - Returns: A  representation of the JSON value.
+
+    */
     public static func Deserialize(document : dotnet.System.Text.Json.JsonDocument, returnType : dotnet.System.Type_, options : Optional<dotnet.System.Text.Json.JsonSerializerOptions> = nil) throws -> Optional<dotnet.System.Object> {
         var __thrown : NullableHandle = nil;
         let __return = System_Text_Json_JsonSerializer_Object__Deserialize_0__3__JsonDocument_Type_JsonSerializerOptions(&__thrown, document.get_handle(), returnType.get_handle(), options?.get_handle() ?? nil);
@@ -2213,6 +2291,15 @@ public struct JsonSerializer {
     }
     // System.Object Deserialize(System.Text.Json.JsonDocument, System.Type, System.Text.Json.Serialization.JsonSerializerContext)
 // docid: M:System.Text.Json.JsonSerializer.Deserialize(System.Text.Json.JsonDocument,System.Type,System.Text.Json.Serialization.JsonSerializerContext)
+    /**
+    Converts the  representing a single JSON value into a .
+
+    - Parameter document: The  to convert.
+    - Parameter returnType: The type of the object to convert to and return.
+    - Parameter context: A metadata provider for serializable types.
+    - Returns: A  representation of the JSON value.
+
+    */
     public static func Deserialize(document : dotnet.System.Text.Json.JsonDocument, returnType : dotnet.System.Type_, context : dotnet.System.Text.Json.Serialization.JsonSerializerContext) throws -> Optional<dotnet.System.Object> {
         var __thrown : NullableHandle = nil;
         let __return = System_Text_Json_JsonSerializer_Object__Deserialize_0__3__JsonDocument_Type_JsonSerializerContext(&__thrown, document.get_handle(), returnType.get_handle(), context.get_handle());
@@ -2228,6 +2315,15 @@ public struct JsonSerializer {
     }
     // System.Object Deserialize(System.Text.Json.JsonElement, System.Type, System.Text.Json.JsonSerializerOptions)
 // docid: M:System.Text.Json.JsonSerializer.Deserialize(System.Text.Json.JsonElement,System.Type,System.Text.Json.JsonSerializerOptions)
+    /**
+    Converts the  representing a single JSON value into a .
+
+    - Parameter element: The  to convert.
+    - Parameter returnType: The type of the object to convert to and return.
+    - Parameter options: Options to control the behavior during parsing.
+    - Returns: A  representation of the JSON value.
+
+    */
     public static func Deserialize(element : dotnet.System.Text.Json.JsonElement, returnType : dotnet.System.Type_, options : Optional<dotnet.System.Text.Json.JsonSerializerOptions> = nil) throws -> Optional<dotnet.System.Object> {
         var __thrown : NullableHandle = nil;
         let __return = System_Text_Json_JsonSerializer_Object__Deserialize_0__3__JsonElement_Type_JsonSerializerOptions(&__thrown, element.get_handle(), returnType.get_handle(), options?.get_handle() ?? nil);
@@ -2243,6 +2339,15 @@ public struct JsonSerializer {
     }
     // System.Object Deserialize(System.Text.Json.JsonElement, System.Type, System.Text.Json.Serialization.JsonSerializerContext)
 // docid: M:System.Text.Json.JsonSerializer.Deserialize(System.Text.Json.JsonElement,System.Type,System.Text.Json.Serialization.JsonSerializerContext)
+    /**
+    Converts the  representing a single JSON value into a .
+
+    - Parameter element: The  to convert.
+    - Parameter returnType: The type of the object to convert to and return.
+    - Parameter context: A metadata provider for serializable types.
+    - Returns: A  representation of the JSON value.
+
+    */
     public static func Deserialize(element : dotnet.System.Text.Json.JsonElement, returnType : dotnet.System.Type_, context : dotnet.System.Text.Json.Serialization.JsonSerializerContext) throws -> Optional<dotnet.System.Object> {
         var __thrown : NullableHandle = nil;
         let __return = System_Text_Json_JsonSerializer_Object__Deserialize_0__3__JsonElement_Type_JsonSerializerContext(&__thrown, element.get_handle(), returnType.get_handle(), context.get_handle());
@@ -2258,6 +2363,15 @@ public struct JsonSerializer {
     }
     // System.Object Deserialize(System.Text.Json.Nodes.JsonNode, System.Type, System.Text.Json.JsonSerializerOptions)
 // docid: M:System.Text.Json.JsonSerializer.Deserialize(System.Text.Json.Nodes.JsonNode,System.Type,System.Text.Json.JsonSerializerOptions)
+    /**
+    Converts the  representing a single JSON value into a .
+
+    - Parameter node: The  to convert.
+    - Parameter returnType: The type of the object to convert to and return.
+    - Parameter options: Options to control the behavior during parsing.
+    - Returns: A  representation of the JSON value.
+
+    */
     public static func Deserialize(node : Optional<dotnet.System.Text.Json.Nodes.JsonNode>, returnType : dotnet.System.Type_, options : Optional<dotnet.System.Text.Json.JsonSerializerOptions> = nil) throws -> Optional<dotnet.System.Object> {
         var __thrown : NullableHandle = nil;
         let __return = System_Text_Json_JsonSerializer_Object__Deserialize_0__3__JsonNode_Type_JsonSerializerOptions(&__thrown, node?.get_handle() ?? nil, returnType.get_handle(), options?.get_handle() ?? nil);
@@ -2273,6 +2387,15 @@ public struct JsonSerializer {
     }
     // System.Object Deserialize(System.Text.Json.Nodes.JsonNode, System.Type, System.Text.Json.Serialization.JsonSerializerContext)
 // docid: M:System.Text.Json.JsonSerializer.Deserialize(System.Text.Json.Nodes.JsonNode,System.Type,System.Text.Json.Serialization.JsonSerializerContext)
+    /**
+    Converts the  representing a single JSON value into a .
+
+    - Parameter node: The  to convert.
+    - Parameter returnType: The type of the object to convert to and return.
+    - Parameter context: A metadata provider for serializable types.
+    - Returns: A  representation of the JSON value.
+
+    */
     public static func Deserialize(node : Optional<dotnet.System.Text.Json.Nodes.JsonNode>, returnType : dotnet.System.Type_, context : dotnet.System.Text.Json.Serialization.JsonSerializerContext) throws -> Optional<dotnet.System.Object> {
         var __thrown : NullableHandle = nil;
         let __return = System_Text_Json_JsonSerializer_Object__Deserialize_0__3__JsonNode_Type_JsonSerializerContext(&__thrown, node?.get_handle() ?? nil, returnType.get_handle(), context.get_handle());
@@ -2286,6 +2409,8 @@ public struct JsonSerializer {
         }
         }
     }
+// TODO COPE (parm byref span): System.Object Deserialize(ref System.Text.Json.Utf8JsonReader, System.Type, System.Text.Json.JsonSerializerOptions)
+// TODO COPE (parm byref span): System.Object Deserialize(ref System.Text.Json.Utf8JsonReader, System.Type, System.Text.Json.Serialization.JsonSerializerContext)
     // System.Threading.Tasks.ValueTask<System.Object> DeserializeAsync(System.IO.Stream, System.Type, System.Text.Json.JsonSerializerOptions, System.Threading.CancellationToken)
 // docid: M:System.Text.Json.JsonSerializer.DeserializeAsync(System.IO.Stream,System.Type,System.Text.Json.JsonSerializerOptions,System.Threading.CancellationToken)
     /**
@@ -2309,6 +2434,17 @@ public struct JsonSerializer {
     }
     // System.Threading.Tasks.ValueTask<System.Object> DeserializeAsync(System.IO.Stream, System.Type, System.Text.Json.Serialization.JsonSerializerContext, System.Threading.CancellationToken)
 // docid: M:System.Text.Json.JsonSerializer.DeserializeAsync(System.IO.Stream,System.Type,System.Text.Json.Serialization.JsonSerializerContext,System.Threading.CancellationToken)
+    /**
+    Reads the UTF-8 encoded text representing a single JSON value into a .
+            The Stream will be read to completion.
+
+    - Parameter utf8Json: JSON data to parse.
+    - Parameter returnType: The type of the object to convert to and return.
+    - Parameter context: A metadata provider for serializable types.
+    - Parameter cancellationToken: The  that can be used to cancel the read operation.
+    - Returns: A  representation of the JSON value.
+
+    */
     public static func DeserializeAsync(utf8Json : dotnet.System.IO.Stream, returnType : dotnet.System.Type_, context : dotnet.System.Text.Json.Serialization.JsonSerializerContext, cancellationToken : dotnet.System.Threading.CancellationToken = System.Threading.CancellationToken.None) throws -> dotnet.System.Threading.Tasks.ValueTask_1<dotnet.System.Object> {
         var __thrown : NullableHandle = nil;
         let __return = System_Text_Json_JsonSerializer_System_Threading_Tasks_ValueTask_object___DeserializeAsync_0__4__Stream_Type_JsonSerializerContext_CancellationToken(&__thrown, utf8Json.get_handle(), returnType.get_handle(), context.get_handle(), cancellationToken.get_handle());
@@ -2322,6 +2458,16 @@ public struct JsonSerializer {
 // TODO COPE (write_all_methods) (unused generic param) System.Threading.Tasks.ValueTask<TValue> DeserializeAsync<TValue>(System.IO.Stream, System.Text.Json.JsonSerializerOptions, System.Threading.CancellationToken)
     // System.Threading.Tasks.ValueTask<TValue> DeserializeAsync<TValue>(System.IO.Stream, System.Text.Json.Serialization.Metadata.JsonTypeInfo<TValue>, System.Threading.CancellationToken)
 // docid: M:System.Text.Json.JsonSerializer.DeserializeAsync``1(System.IO.Stream,System.Text.Json.Serialization.Metadata.JsonTypeInfo{``0},System.Threading.CancellationToken)
+    /**
+    Reads the UTF-8 encoded text representing a single JSON value into a .
+            The Stream will be read to completion.
+
+    - Parameter utf8Json: JSON data to parse.
+    - Parameter jsonTypeInfo: Metadata about the type to convert.
+    - Parameter cancellationToken: The  which may be used to cancel the read operation.
+    - Returns: A  representation of the JSON value.
+
+    */
     public static func DeserializeAsync<UTValue : SGBridgeGenericValue>(utf8Json : dotnet.System.IO.Stream, jsonTypeInfo : dotnet.System.Text.Json.Serialization.Metadata.JsonTypeInfo_1<UTValue>, cancellationToken : dotnet.System.Threading.CancellationToken = System.Threading.CancellationToken.None) throws -> dotnet.System.Threading.Tasks.ValueTask_1<UTValue> {
         var __thrown : NullableHandle = nil;
         let __return = System_Text_Json_JsonSerializer_System_Threading_Tasks_ValueTask_UTValue___DeserializeAsync_1__3__Stream_System_Text_Json_Serialization_Metadata_JsonTypeInfo_UTValue__CancellationToken(UTValue.get_type_handle(), &__thrown, utf8Json.get_handle(), jsonTypeInfo.get_handle(), cancellationToken.get_handle());
@@ -2334,6 +2480,15 @@ public struct JsonSerializer {
 // TODO COPE (write_all_methods) (unused generic param) TValue Deserialize<TValue>(System.IO.Stream, System.Text.Json.JsonSerializerOptions)
     // TValue Deserialize<TValue>(System.IO.Stream, System.Text.Json.Serialization.Metadata.JsonTypeInfo<TValue>)
 // docid: M:System.Text.Json.JsonSerializer.Deserialize``1(System.IO.Stream,System.Text.Json.Serialization.Metadata.JsonTypeInfo{``0})
+    /**
+    Reads the UTF-8 encoded text representing a single JSON value into a .
+            The Stream will be read to completion.
+
+    - Parameter utf8Json: JSON data to parse.
+    - Parameter jsonTypeInfo: Metadata about the type to convert.
+    - Returns: A  representation of the JSON value.
+
+    */
     public static func Deserialize<UTValue : SGBridgeGenericValue>(utf8Json : dotnet.System.IO.Stream, jsonTypeInfo : dotnet.System.Text.Json.Serialization.Metadata.JsonTypeInfo_1<UTValue>) throws -> UTValue {
         var __thrown : NullableHandle = nil;
         let __return = System_Text_Json_JsonSerializer_UTValue__Deserialize_1__2__Stream_System_Text_Json_Serialization_Metadata_JsonTypeInfo_UTValue_(UTValue.get_type_handle(), &__thrown, utf8Json.get_handle(), jsonTypeInfo.get_handle());
@@ -2343,9 +2498,21 @@ public struct JsonSerializer {
             return UTValue(gval: __return);
         }
     }
+// TODO COPE (generic method and parm span): TValue Deserialize<TValue>(System.ReadOnlySpan<System.Byte>, System.Text.Json.JsonSerializerOptions)
+// TODO COPE (generic method and parm span): TValue Deserialize<TValue>(System.ReadOnlySpan<System.Byte>, System.Text.Json.Serialization.Metadata.JsonTypeInfo<TValue>)
+// TODO COPE (generic method and parm span): TValue Deserialize<TValue>(System.ReadOnlySpan<System.Char>, System.Text.Json.JsonSerializerOptions)
+// TODO COPE (generic method and parm span): TValue Deserialize<TValue>(System.ReadOnlySpan<System.Char>, System.Text.Json.Serialization.Metadata.JsonTypeInfo<TValue>)
 // TODO COPE (write_all_methods) (unused generic param) TValue Deserialize<TValue>(System.String, System.Text.Json.JsonSerializerOptions)
     // TValue Deserialize<TValue>(System.String, System.Text.Json.Serialization.Metadata.JsonTypeInfo<TValue>)
 // docid: M:System.Text.Json.JsonSerializer.Deserialize``1(System.String,System.Text.Json.Serialization.Metadata.JsonTypeInfo{``0})
+    /**
+    Parses the text representing a single JSON value into a .
+
+    - Parameter json: JSON text to parse.
+    - Parameter jsonTypeInfo: Metadata about the type to convert.
+    - Returns: A  representation of the JSON value.
+
+    */
     public static func Deserialize<UTValue : SGBridgeGenericValue>(json : dotnet.System.String, jsonTypeInfo : dotnet.System.Text.Json.Serialization.Metadata.JsonTypeInfo_1<UTValue>) throws -> UTValue {
         var __thrown : NullableHandle = nil;
         let __return = System_Text_Json_JsonSerializer_UTValue__Deserialize_1__2__String_System_Text_Json_Serialization_Metadata_JsonTypeInfo_UTValue_(UTValue.get_type_handle(), &__thrown, json.get_handle(), jsonTypeInfo.get_handle());
@@ -2358,6 +2525,14 @@ public struct JsonSerializer {
 // TODO COPE (write_all_methods) (unused generic param) TValue Deserialize<TValue>(System.Text.Json.JsonDocument, System.Text.Json.JsonSerializerOptions)
     // TValue Deserialize<TValue>(System.Text.Json.JsonDocument, System.Text.Json.Serialization.Metadata.JsonTypeInfo<TValue>)
 // docid: M:System.Text.Json.JsonSerializer.Deserialize``1(System.Text.Json.JsonDocument,System.Text.Json.Serialization.Metadata.JsonTypeInfo{``0})
+    /**
+    Converts the  representing a single JSON value into a .
+
+    - Parameter document: The  to convert.
+    - Parameter jsonTypeInfo: Metadata about the type to convert.
+    - Returns: A  representation of the JSON value.
+
+    */
     public static func Deserialize<UTValue : SGBridgeGenericValue>(document : dotnet.System.Text.Json.JsonDocument, jsonTypeInfo : dotnet.System.Text.Json.Serialization.Metadata.JsonTypeInfo_1<UTValue>) throws -> UTValue {
         var __thrown : NullableHandle = nil;
         let __return = System_Text_Json_JsonSerializer_UTValue__Deserialize_1__2__JsonDocument_System_Text_Json_Serialization_Metadata_JsonTypeInfo_UTValue_(UTValue.get_type_handle(), &__thrown, document.get_handle(), jsonTypeInfo.get_handle());
@@ -2370,6 +2545,14 @@ public struct JsonSerializer {
 // TODO COPE (write_all_methods) (unused generic param) TValue Deserialize<TValue>(System.Text.Json.JsonElement, System.Text.Json.JsonSerializerOptions)
     // TValue Deserialize<TValue>(System.Text.Json.JsonElement, System.Text.Json.Serialization.Metadata.JsonTypeInfo<TValue>)
 // docid: M:System.Text.Json.JsonSerializer.Deserialize``1(System.Text.Json.JsonElement,System.Text.Json.Serialization.Metadata.JsonTypeInfo{``0})
+    /**
+    Converts the  representing a single JSON value into a .
+
+    - Parameter element: The  to convert.
+    - Parameter jsonTypeInfo: Metadata about the type to convert.
+    - Returns: A  representation of the JSON value.
+
+    */
     public static func Deserialize<UTValue : SGBridgeGenericValue>(element : dotnet.System.Text.Json.JsonElement, jsonTypeInfo : dotnet.System.Text.Json.Serialization.Metadata.JsonTypeInfo_1<UTValue>) throws -> UTValue {
         var __thrown : NullableHandle = nil;
         let __return = System_Text_Json_JsonSerializer_UTValue__Deserialize_1__2__JsonElement_System_Text_Json_Serialization_Metadata_JsonTypeInfo_UTValue_(UTValue.get_type_handle(), &__thrown, element.get_handle(), jsonTypeInfo.get_handle());
@@ -2382,6 +2565,14 @@ public struct JsonSerializer {
 // TODO COPE (write_all_methods) (unused generic param) TValue Deserialize<TValue>(System.Text.Json.Nodes.JsonNode, System.Text.Json.JsonSerializerOptions)
     // TValue Deserialize<TValue>(System.Text.Json.Nodes.JsonNode, System.Text.Json.Serialization.Metadata.JsonTypeInfo<TValue>)
 // docid: M:System.Text.Json.JsonSerializer.Deserialize``1(System.Text.Json.Nodes.JsonNode,System.Text.Json.Serialization.Metadata.JsonTypeInfo{``0})
+    /**
+    Converts the  representing a single JSON value into a .
+
+    - Parameter node: The  to convert.
+    - Parameter jsonTypeInfo: Metadata about the type to convert.
+    - Returns: A  representation of the JSON value.
+
+    */
     public static func Deserialize<UTValue : SGBridgeGenericValue>(node : Optional<dotnet.System.Text.Json.Nodes.JsonNode>, jsonTypeInfo : dotnet.System.Text.Json.Serialization.Metadata.JsonTypeInfo_1<UTValue>) throws -> UTValue {
         var __thrown : NullableHandle = nil;
         let __return = System_Text_Json_JsonSerializer_UTValue__Deserialize_1__2__JsonNode_System_Text_Json_Serialization_Metadata_JsonTypeInfo_UTValue_(UTValue.get_type_handle(), &__thrown, node?.get_handle() ?? nil, jsonTypeInfo.get_handle());
@@ -2391,8 +2582,18 @@ public struct JsonSerializer {
             return UTValue(gval: __return);
         }
     }
+// TODO COPE (parm byref span): TValue Deserialize<TValue>(ref System.Text.Json.Utf8JsonReader, System.Text.Json.JsonSerializerOptions)
+// TODO COPE (parm byref span): TValue Deserialize<TValue>(ref System.Text.Json.Utf8JsonReader, System.Text.Json.Serialization.Metadata.JsonTypeInfo<TValue>)
     // void Serialize(System.IO.Stream, System.Object, System.Type, System.Text.Json.JsonSerializerOptions)
 // docid: M:System.Text.Json.JsonSerializer.Serialize(System.IO.Stream,System.Object,System.Type,System.Text.Json.JsonSerializerOptions)
+    /**
+    Converts the provided value to UTF-8 encoded JSON text and write it to the .
+
+    - Parameter utf8Json: The UTF-8  to write to.
+    - Parameter value: The value to convert.
+    - Parameter inputType: The type of the  to convert.
+    - Parameter options: Options to control the conversion behavior.
+    */
     public static func Serialize(utf8Json : dotnet.System.IO.Stream, value : Optional<dotnet.System.Object>, inputType : dotnet.System.Type_, options : Optional<dotnet.System.Text.Json.JsonSerializerOptions> = nil) throws {
         var __thrown : NullableHandle = nil;
         System_Text_Json_JsonSerializer_void__Serialize_0__4__Stream_Object_Type_JsonSerializerOptions(&__thrown, utf8Json.get_handle(), value?.get_handle() ?? nil, inputType.get_handle(), options?.get_handle() ?? nil);
@@ -2404,6 +2605,14 @@ public struct JsonSerializer {
     }
     // void Serialize(System.IO.Stream, System.Object, System.Type, System.Text.Json.Serialization.JsonSerializerContext)
 // docid: M:System.Text.Json.JsonSerializer.Serialize(System.IO.Stream,System.Object,System.Type,System.Text.Json.Serialization.JsonSerializerContext)
+    /**
+    Converts the provided value to UTF-8 encoded JSON text and write it to the .
+
+    - Parameter utf8Json: The UTF-8  to write to.
+    - Parameter value: The value to convert.
+    - Parameter inputType: The type of the  to convert.
+    - Parameter context: A metadata provider for serializable types.
+    */
     public static func Serialize(utf8Json : dotnet.System.IO.Stream, value : Optional<dotnet.System.Object>, inputType : dotnet.System.Type_, context : dotnet.System.Text.Json.Serialization.JsonSerializerContext) throws {
         var __thrown : NullableHandle = nil;
         System_Text_Json_JsonSerializer_void__Serialize_0__4__Stream_Object_Type_JsonSerializerContext(&__thrown, utf8Json.get_handle(), value?.get_handle() ?? nil, inputType.get_handle(), context.get_handle());
@@ -2435,6 +2644,15 @@ public struct JsonSerializer {
     }
     // System.String Serialize(System.Object, System.Type, System.Text.Json.Serialization.JsonSerializerContext)
 // docid: M:System.Text.Json.JsonSerializer.Serialize(System.Object,System.Type,System.Text.Json.Serialization.JsonSerializerContext)
+    /**
+    Converts the provided value into a .
+
+    - Parameter value: The value to convert.
+    - Parameter inputType: The type of the  to convert.
+    - Parameter context: A metadata provider for serializable types.
+    - Returns: A  representation of the value.
+
+    */
     public static func Serialize(value : Optional<dotnet.System.Object>, inputType : dotnet.System.Type_, context : dotnet.System.Text.Json.Serialization.JsonSerializerContext) throws -> dotnet.System.String {
         var __thrown : NullableHandle = nil;
         let __return = System_Text_Json_JsonSerializer_String__Serialize_0__3__Object_Type_JsonSerializerContext(&__thrown, value?.get_handle() ?? nil, inputType.get_handle(), context.get_handle());
@@ -2465,6 +2683,14 @@ public struct JsonSerializer {
     }
     // void Serialize(System.Text.Json.Utf8JsonWriter, System.Object, System.Type, System.Text.Json.Serialization.JsonSerializerContext)
 // docid: M:System.Text.Json.JsonSerializer.Serialize(System.Text.Json.Utf8JsonWriter,System.Object,System.Type,System.Text.Json.Serialization.JsonSerializerContext)
+    /**
+    Writes one JSON value (including objects or arrays) to the provided writer.
+
+    - Parameter writer: A JSON writer to write to.
+    - Parameter value: The value to convert and write.
+    - Parameter inputType: The type of the  to convert.
+    - Parameter context: A metadata provider for serializable types.
+    */
     public static func Serialize(writer : dotnet.System.Text.Json.Utf8JsonWriter, value : Optional<dotnet.System.Object>, inputType : dotnet.System.Type_, context : dotnet.System.Text.Json.Serialization.JsonSerializerContext) throws {
         var __thrown : NullableHandle = nil;
         System_Text_Json_JsonSerializer_void__Serialize_0__4__Utf8JsonWriter_Object_Type_JsonSerializerContext(&__thrown, writer.get_handle(), value?.get_handle() ?? nil, inputType.get_handle(), context.get_handle());
@@ -2487,24 +2713,35 @@ public struct JsonSerializer {
     - Returns: A task that represents the asynchronous write operation.
 
     */
-    public static func SerializeAsync(utf8Json : dotnet.System.IO.Stream, value : Optional<dotnet.System.Object>, inputType : dotnet.System.Type_, options : Optional<dotnet.System.Text.Json.JsonSerializerOptions> = nil, cancellationToken : dotnet.System.Threading.CancellationToken = System.Threading.CancellationToken.None) throws -> dotnet.System.Threading.Tasks.Task {
+    public static func SerializeAsync(utf8Json : dotnet.System.IO.Stream, value : Optional<dotnet.System.Object>, inputType : dotnet.System.Type_, options : Optional<dotnet.System.Text.Json.JsonSerializerOptions> = nil, cancellationToken : dotnet.System.Threading.CancellationToken = System.Threading.CancellationToken.None) async throws {
         var __thrown : NullableHandle = nil;
         let __return = System_Text_Json_JsonSerializer_Task__SerializeAsync_0__5__Stream_Object_Type_JsonSerializerOptions_CancellationToken(&__thrown, utf8Json.get_handle(), value?.get_handle() ?? nil, inputType.get_handle(), options?.get_handle() ?? nil, cancellationToken.get_handle());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task(hndl: __return).ToAsync();
         }
     }
     // System.Threading.Tasks.Task SerializeAsync(System.IO.Stream, System.Object, System.Type, System.Text.Json.Serialization.JsonSerializerContext, System.Threading.CancellationToken)
 // docid: M:System.Text.Json.JsonSerializer.SerializeAsync(System.IO.Stream,System.Object,System.Type,System.Text.Json.Serialization.JsonSerializerContext,System.Threading.CancellationToken)
-    public static func SerializeAsync(utf8Json : dotnet.System.IO.Stream, value : Optional<dotnet.System.Object>, inputType : dotnet.System.Type_, context : dotnet.System.Text.Json.Serialization.JsonSerializerContext, cancellationToken : dotnet.System.Threading.CancellationToken = System.Threading.CancellationToken.None) throws -> dotnet.System.Threading.Tasks.Task {
+    /**
+    Converts the provided value to UTF-8 encoded JSON text and write it to the .
+
+    - Parameter utf8Json: The UTF-8  to write to.
+    - Parameter value: The value to convert.
+    - Parameter inputType: The type of the  to convert.
+    - Parameter context: A metadata provider for serializable types.
+    - Parameter cancellationToken: The  that can be used to cancel the write operation.
+    - Returns: A task that represents the asynchronous write operation.
+
+    */
+    public static func SerializeAsync(utf8Json : dotnet.System.IO.Stream, value : Optional<dotnet.System.Object>, inputType : dotnet.System.Type_, context : dotnet.System.Text.Json.Serialization.JsonSerializerContext, cancellationToken : dotnet.System.Threading.CancellationToken = System.Threading.CancellationToken.None) async throws {
         var __thrown : NullableHandle = nil;
         let __return = System_Text_Json_JsonSerializer_Task__SerializeAsync_0__5__Stream_Object_Type_JsonSerializerContext_CancellationToken(&__thrown, utf8Json.get_handle(), value?.get_handle() ?? nil, inputType.get_handle(), context.get_handle(), cancellationToken.get_handle());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task(hndl: __return).ToAsync();
         }
     }
     // System.Threading.Tasks.Task SerializeAsync<TValue>(System.IO.Stream, TValue, System.Text.Json.JsonSerializerOptions, System.Threading.CancellationToken)
@@ -2519,28 +2756,47 @@ public struct JsonSerializer {
     - Returns: A task that represents the asynchronous write operation.
 
     */
-    public static func SerializeAsync<UTValue : SGBridgeGenericValue>(utf8Json : dotnet.System.IO.Stream, value : UTValue, options : Optional<dotnet.System.Text.Json.JsonSerializerOptions> = nil, cancellationToken : dotnet.System.Threading.CancellationToken = System.Threading.CancellationToken.None) throws -> dotnet.System.Threading.Tasks.Task {
+    public static func SerializeAsync<UTValue : SGBridgeGenericValue>(utf8Json : dotnet.System.IO.Stream, value : UTValue, options : Optional<dotnet.System.Text.Json.JsonSerializerOptions> = nil, cancellationToken : dotnet.System.Threading.CancellationToken = System.Threading.CancellationToken.None) async throws {
         var __thrown : NullableHandle = nil;
         let __return = System_Text_Json_JsonSerializer_Task__SerializeAsync_1__4__Stream_UTValue_JsonSerializerOptions_CancellationToken(UTValue.get_type_handle(), &__thrown, utf8Json.get_handle(), value.to_gval(), options?.get_handle() ?? nil, cancellationToken.get_handle());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task(hndl: __return).ToAsync();
         }
     }
     // System.Threading.Tasks.Task SerializeAsync<TValue>(System.IO.Stream, TValue, System.Text.Json.Serialization.Metadata.JsonTypeInfo<TValue>, System.Threading.CancellationToken)
 // docid: M:System.Text.Json.JsonSerializer.SerializeAsync``1(System.IO.Stream,``0,System.Text.Json.Serialization.Metadata.JsonTypeInfo{``0},System.Threading.CancellationToken)
-    public static func SerializeAsync<UTValue : SGBridgeGenericValue>(utf8Json : dotnet.System.IO.Stream, value : UTValue, jsonTypeInfo : dotnet.System.Text.Json.Serialization.Metadata.JsonTypeInfo_1<UTValue>, cancellationToken : dotnet.System.Threading.CancellationToken = System.Threading.CancellationToken.None) throws -> dotnet.System.Threading.Tasks.Task {
+    /**
+    Converts the provided value to UTF-8 encoded JSON text and write it to the .
+
+    - Parameter utf8Json: The UTF-8  to write to.
+    - Parameter value: The value to convert.
+    - Parameter jsonTypeInfo: Metadata about the type to convert.
+    - Parameter cancellationToken: The  that can be used to cancel the write operation.
+    - Returns: A task that represents the asynchronous write operation.
+
+    */
+    public static func SerializeAsync<UTValue : SGBridgeGenericValue>(utf8Json : dotnet.System.IO.Stream, value : UTValue, jsonTypeInfo : dotnet.System.Text.Json.Serialization.Metadata.JsonTypeInfo_1<UTValue>, cancellationToken : dotnet.System.Threading.CancellationToken = System.Threading.CancellationToken.None) async throws {
         var __thrown : NullableHandle = nil;
         let __return = System_Text_Json_JsonSerializer_Task__SerializeAsync_1__4__Stream_UTValue_System_Text_Json_Serialization_Metadata_JsonTypeInfo_UTValue__CancellationToken(UTValue.get_type_handle(), &__thrown, utf8Json.get_handle(), value.to_gval(), jsonTypeInfo.get_handle(), cancellationToken.get_handle());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task(hndl: __return).ToAsync();
         }
     }
     // System.Text.Json.JsonDocument SerializeToDocument(System.Object, System.Type, System.Text.Json.JsonSerializerOptions)
 // docid: M:System.Text.Json.JsonSerializer.SerializeToDocument(System.Object,System.Type,System.Text.Json.JsonSerializerOptions)
+    /**
+    Converts the provided value into a .
+
+    - Parameter value: The value to convert.
+    - Parameter inputType: The type of the  to convert.
+    - Parameter options: Options to control the conversion behavior.
+    - Returns: A  representation of the value.
+
+    */
     public static func SerializeToDocument(value : Optional<dotnet.System.Object>, inputType : dotnet.System.Type_, options : Optional<dotnet.System.Text.Json.JsonSerializerOptions> = nil) throws -> dotnet.System.Text.Json.JsonDocument {
         var __thrown : NullableHandle = nil;
         let __return = System_Text_Json_JsonSerializer_JsonDocument__SerializeToDocument_0__3__Object_Type_JsonSerializerOptions(&__thrown, value?.get_handle() ?? nil, inputType.get_handle(), options?.get_handle() ?? nil);
@@ -2552,6 +2808,15 @@ public struct JsonSerializer {
     }
     // System.Text.Json.JsonDocument SerializeToDocument(System.Object, System.Type, System.Text.Json.Serialization.JsonSerializerContext)
 // docid: M:System.Text.Json.JsonSerializer.SerializeToDocument(System.Object,System.Type,System.Text.Json.Serialization.JsonSerializerContext)
+    /**
+    Converts the provided value into a .
+
+    - Parameter value: The value to convert.
+    - Parameter inputType: The type of the  to convert.
+    - Parameter context: A metadata provider for serializable types.
+    - Returns: A  representation of the value.
+
+    */
     public static func SerializeToDocument(value : Optional<dotnet.System.Object>, inputType : dotnet.System.Type_, context : dotnet.System.Text.Json.Serialization.JsonSerializerContext) throws -> dotnet.System.Text.Json.JsonDocument {
         var __thrown : NullableHandle = nil;
         let __return = System_Text_Json_JsonSerializer_JsonDocument__SerializeToDocument_0__3__Object_Type_JsonSerializerContext(&__thrown, value?.get_handle() ?? nil, inputType.get_handle(), context.get_handle());
@@ -2563,6 +2828,14 @@ public struct JsonSerializer {
     }
     // System.Text.Json.JsonDocument SerializeToDocument<TValue>(TValue, System.Text.Json.JsonSerializerOptions)
 // docid: M:System.Text.Json.JsonSerializer.SerializeToDocument``1(``0,System.Text.Json.JsonSerializerOptions)
+    /**
+    Converts the provided value into a .
+
+    - Parameter value: The value to convert.
+    - Parameter options: Options to control the conversion behavior.
+    - Returns: A  representation of the JSON value.
+
+    */
     public static func SerializeToDocument<UTValue : SGBridgeGenericValue>(value : UTValue, options : Optional<dotnet.System.Text.Json.JsonSerializerOptions> = nil) throws -> dotnet.System.Text.Json.JsonDocument {
         var __thrown : NullableHandle = nil;
         let __return = System_Text_Json_JsonSerializer_JsonDocument__SerializeToDocument_1__2__UTValue_JsonSerializerOptions(UTValue.get_type_handle(), &__thrown, value.to_gval(), options?.get_handle() ?? nil);
@@ -2574,6 +2847,14 @@ public struct JsonSerializer {
     }
     // System.Text.Json.JsonDocument SerializeToDocument<TValue>(TValue, System.Text.Json.Serialization.Metadata.JsonTypeInfo<TValue>)
 // docid: M:System.Text.Json.JsonSerializer.SerializeToDocument``1(``0,System.Text.Json.Serialization.Metadata.JsonTypeInfo{``0})
+    /**
+    Converts the provided value into a .
+
+    - Parameter value: The value to convert.
+    - Parameter jsonTypeInfo: Metadata about the type to convert.
+    - Returns: A  representation of the value.
+
+    */
     public static func SerializeToDocument<UTValue : SGBridgeGenericValue>(value : UTValue, jsonTypeInfo : dotnet.System.Text.Json.Serialization.Metadata.JsonTypeInfo_1<UTValue>) throws -> dotnet.System.Text.Json.JsonDocument {
         var __thrown : NullableHandle = nil;
         let __return = System_Text_Json_JsonSerializer_JsonDocument__SerializeToDocument_1__2__UTValue_System_Text_Json_Serialization_Metadata_JsonTypeInfo_UTValue_(UTValue.get_type_handle(), &__thrown, value.to_gval(), jsonTypeInfo.get_handle());
@@ -2585,6 +2866,15 @@ public struct JsonSerializer {
     }
     // System.Text.Json.JsonElement SerializeToElement(System.Object, System.Type, System.Text.Json.JsonSerializerOptions)
 // docid: M:System.Text.Json.JsonSerializer.SerializeToElement(System.Object,System.Type,System.Text.Json.JsonSerializerOptions)
+    /**
+    Converts the provided value into a .
+
+    - Parameter value: The value to convert.
+    - Parameter inputType: The type of the  to convert.
+    - Parameter options: Options to control the conversion behavior.
+    - Returns: A  representation of the value.
+
+    */
     public static func SerializeToElement(value : Optional<dotnet.System.Object>, inputType : dotnet.System.Type_, options : Optional<dotnet.System.Text.Json.JsonSerializerOptions> = nil) throws -> dotnet.System.Text.Json.JsonElement {
         var __thrown : NullableHandle = nil;
         let __return = System_Text_Json_JsonSerializer_JsonElement__SerializeToElement_0__3__Object_Type_JsonSerializerOptions(&__thrown, value?.get_handle() ?? nil, inputType.get_handle(), options?.get_handle() ?? nil);
@@ -2596,6 +2886,15 @@ public struct JsonSerializer {
     }
     // System.Text.Json.JsonElement SerializeToElement(System.Object, System.Type, System.Text.Json.Serialization.JsonSerializerContext)
 // docid: M:System.Text.Json.JsonSerializer.SerializeToElement(System.Object,System.Type,System.Text.Json.Serialization.JsonSerializerContext)
+    /**
+    Converts the provided value into a .
+
+    - Parameter value: The value to convert.
+    - Parameter inputType: The type of the  to convert.
+    - Parameter context: A metadata provider for serializable types.
+    - Returns: A  representation of the value.
+
+    */
     public static func SerializeToElement(value : Optional<dotnet.System.Object>, inputType : dotnet.System.Type_, context : dotnet.System.Text.Json.Serialization.JsonSerializerContext) throws -> dotnet.System.Text.Json.JsonElement {
         var __thrown : NullableHandle = nil;
         let __return = System_Text_Json_JsonSerializer_JsonElement__SerializeToElement_0__3__Object_Type_JsonSerializerContext(&__thrown, value?.get_handle() ?? nil, inputType.get_handle(), context.get_handle());
@@ -2607,6 +2906,14 @@ public struct JsonSerializer {
     }
     // System.Text.Json.JsonElement SerializeToElement<TValue>(TValue, System.Text.Json.JsonSerializerOptions)
 // docid: M:System.Text.Json.JsonSerializer.SerializeToElement``1(``0,System.Text.Json.JsonSerializerOptions)
+    /**
+    Converts the provided value into a .
+
+    - Parameter value: The value to convert.
+    - Parameter options: Options to control the conversion behavior.
+    - Returns: A  representation of the JSON value.
+
+    */
     public static func SerializeToElement<UTValue : SGBridgeGenericValue>(value : UTValue, options : Optional<dotnet.System.Text.Json.JsonSerializerOptions> = nil) throws -> dotnet.System.Text.Json.JsonElement {
         var __thrown : NullableHandle = nil;
         let __return = System_Text_Json_JsonSerializer_JsonElement__SerializeToElement_1__2__UTValue_JsonSerializerOptions(UTValue.get_type_handle(), &__thrown, value.to_gval(), options?.get_handle() ?? nil);
@@ -2618,6 +2925,14 @@ public struct JsonSerializer {
     }
     // System.Text.Json.JsonElement SerializeToElement<TValue>(TValue, System.Text.Json.Serialization.Metadata.JsonTypeInfo<TValue>)
 // docid: M:System.Text.Json.JsonSerializer.SerializeToElement``1(``0,System.Text.Json.Serialization.Metadata.JsonTypeInfo{``0})
+    /**
+    Converts the provided value into a .
+
+    - Parameter value: The value to convert.
+    - Parameter jsonTypeInfo: Metadata about the type to convert.
+    - Returns: A  representation of the value.
+
+    */
     public static func SerializeToElement<UTValue : SGBridgeGenericValue>(value : UTValue, jsonTypeInfo : dotnet.System.Text.Json.Serialization.Metadata.JsonTypeInfo_1<UTValue>) throws -> dotnet.System.Text.Json.JsonElement {
         var __thrown : NullableHandle = nil;
         let __return = System_Text_Json_JsonSerializer_JsonElement__SerializeToElement_1__2__UTValue_System_Text_Json_Serialization_Metadata_JsonTypeInfo_UTValue_(UTValue.get_type_handle(), &__thrown, value.to_gval(), jsonTypeInfo.get_handle());
@@ -2629,6 +2944,15 @@ public struct JsonSerializer {
     }
     // System.Text.Json.Nodes.JsonNode SerializeToNode(System.Object, System.Type, System.Text.Json.JsonSerializerOptions)
 // docid: M:System.Text.Json.JsonSerializer.SerializeToNode(System.Object,System.Type,System.Text.Json.JsonSerializerOptions)
+    /**
+    Converts the provided value into a .
+
+    - Parameter value: The value to convert.
+    - Parameter inputType: The type of the  to convert.
+    - Parameter options: Options to control the conversion behavior.
+    - Returns: A  representation of the value.
+
+    */
     public static func SerializeToNode(value : Optional<dotnet.System.Object>, inputType : dotnet.System.Type_, options : Optional<dotnet.System.Text.Json.JsonSerializerOptions> = nil) throws -> Optional<dotnet.System.Text.Json.Nodes.JsonNode> {
         var __thrown : NullableHandle = nil;
         let __return = System_Text_Json_JsonSerializer_JsonNode__SerializeToNode_0__3__Object_Type_JsonSerializerOptions(&__thrown, value?.get_handle() ?? nil, inputType.get_handle(), options?.get_handle() ?? nil);
@@ -2644,6 +2968,15 @@ public struct JsonSerializer {
     }
     // System.Text.Json.Nodes.JsonNode SerializeToNode(System.Object, System.Type, System.Text.Json.Serialization.JsonSerializerContext)
 // docid: M:System.Text.Json.JsonSerializer.SerializeToNode(System.Object,System.Type,System.Text.Json.Serialization.JsonSerializerContext)
+    /**
+    Converts the provided value into a .
+
+    - Parameter value: The value to convert.
+    - Parameter inputType: The type of the  to convert.
+    - Parameter context: A metadata provider for serializable types.
+    - Returns: A  representation of the value.
+
+    */
     public static func SerializeToNode(value : Optional<dotnet.System.Object>, inputType : dotnet.System.Type_, context : dotnet.System.Text.Json.Serialization.JsonSerializerContext) throws -> Optional<dotnet.System.Text.Json.Nodes.JsonNode> {
         var __thrown : NullableHandle = nil;
         let __return = System_Text_Json_JsonSerializer_JsonNode__SerializeToNode_0__3__Object_Type_JsonSerializerContext(&__thrown, value?.get_handle() ?? nil, inputType.get_handle(), context.get_handle());
@@ -2659,6 +2992,14 @@ public struct JsonSerializer {
     }
     // System.Text.Json.Nodes.JsonNode SerializeToNode<TValue>(TValue, System.Text.Json.JsonSerializerOptions)
 // docid: M:System.Text.Json.JsonSerializer.SerializeToNode``1(``0,System.Text.Json.JsonSerializerOptions)
+    /**
+    Converts the provided value into a .
+
+    - Parameter value: The value to convert.
+    - Parameter options: Options to control the conversion behavior.
+    - Returns: A  representation of the JSON value.
+
+    */
     public static func SerializeToNode<UTValue : SGBridgeGenericValue>(value : UTValue, options : Optional<dotnet.System.Text.Json.JsonSerializerOptions> = nil) throws -> Optional<dotnet.System.Text.Json.Nodes.JsonNode> {
         var __thrown : NullableHandle = nil;
         let __return = System_Text_Json_JsonSerializer_JsonNode__SerializeToNode_1__2__UTValue_JsonSerializerOptions(UTValue.get_type_handle(), &__thrown, value.to_gval(), options?.get_handle() ?? nil);
@@ -2674,6 +3015,14 @@ public struct JsonSerializer {
     }
     // System.Text.Json.Nodes.JsonNode SerializeToNode<TValue>(TValue, System.Text.Json.Serialization.Metadata.JsonTypeInfo<TValue>)
 // docid: M:System.Text.Json.JsonSerializer.SerializeToNode``1(``0,System.Text.Json.Serialization.Metadata.JsonTypeInfo{``0})
+    /**
+    Converts the provided value into a .
+
+    - Parameter value: The value to convert.
+    - Parameter jsonTypeInfo: Metadata about the type to convert.
+    - Returns: A  representation of the value.
+
+    */
     public static func SerializeToNode<UTValue : SGBridgeGenericValue>(value : UTValue, jsonTypeInfo : dotnet.System.Text.Json.Serialization.Metadata.JsonTypeInfo_1<UTValue>) throws -> Optional<dotnet.System.Text.Json.Nodes.JsonNode> {
         var __thrown : NullableHandle = nil;
         let __return = System_Text_Json_JsonSerializer_JsonNode__SerializeToNode_1__2__UTValue_System_Text_Json_Serialization_Metadata_JsonTypeInfo_UTValue_(UTValue.get_type_handle(), &__thrown, value.to_gval(), jsonTypeInfo.get_handle());
@@ -2709,6 +3058,15 @@ public struct JsonSerializer {
     }
     // System.Byte[] SerializeToUtf8Bytes(System.Object, System.Type, System.Text.Json.Serialization.JsonSerializerContext)
 // docid: M:System.Text.Json.JsonSerializer.SerializeToUtf8Bytes(System.Object,System.Type,System.Text.Json.Serialization.JsonSerializerContext)
+    /**
+    Converts the provided value into a  array.
+
+    - Parameter value: The value to convert.
+    - Parameter inputType: The type of the  to convert.
+    - Parameter context: A metadata provider for serializable types.
+    - Returns: A UTF-8 representation of the value.
+
+    */
     public static func SerializeToUtf8Bytes(value : Optional<dotnet.System.Object>, inputType : dotnet.System.Type_, context : dotnet.System.Text.Json.Serialization.JsonSerializerContext) throws -> dotnet.System_Arr<Swift.UInt8> {
         var __thrown : NullableHandle = nil;
         let __return = System_Text_Json_JsonSerializer_u8Array__SerializeToUtf8Bytes_0__3__Object_Type_JsonSerializerContext(&__thrown, value?.get_handle() ?? nil, inputType.get_handle(), context.get_handle());
@@ -2739,6 +3097,14 @@ public struct JsonSerializer {
     }
     // System.Byte[] SerializeToUtf8Bytes<TValue>(TValue, System.Text.Json.Serialization.Metadata.JsonTypeInfo<TValue>)
 // docid: M:System.Text.Json.JsonSerializer.SerializeToUtf8Bytes``1(``0,System.Text.Json.Serialization.Metadata.JsonTypeInfo{``0})
+    /**
+    Converts the provided value into a  array.
+
+    - Parameter value: The value to convert.
+    - Parameter jsonTypeInfo: Metadata about the type to convert.
+    - Returns: A UTF-8 representation of the value.
+
+    */
     public static func SerializeToUtf8Bytes<UTValue : SGBridgeGenericValue>(value : UTValue, jsonTypeInfo : dotnet.System.Text.Json.Serialization.Metadata.JsonTypeInfo_1<UTValue>) throws -> dotnet.System_Arr<Swift.UInt8> {
         var __thrown : NullableHandle = nil;
         let __return = System_Text_Json_JsonSerializer_u8Array__SerializeToUtf8Bytes_1__2__UTValue_System_Text_Json_Serialization_Metadata_JsonTypeInfo_UTValue_(UTValue.get_type_handle(), &__thrown, value.to_gval(), jsonTypeInfo.get_handle());
@@ -2750,6 +3116,13 @@ public struct JsonSerializer {
     }
     // void Serialize<TValue>(System.IO.Stream, TValue, System.Text.Json.JsonSerializerOptions)
 // docid: M:System.Text.Json.JsonSerializer.Serialize``1(System.IO.Stream,``0,System.Text.Json.JsonSerializerOptions)
+    /**
+    Converts the provided value to UTF-8 encoded JSON text and write it to the .
+
+    - Parameter utf8Json: The UTF-8  to write to.
+    - Parameter value: The value to convert.
+    - Parameter options: Options to control the conversion behavior.
+    */
     public static func Serialize<UTValue : SGBridgeGenericValue>(utf8Json : dotnet.System.IO.Stream, value : UTValue, options : Optional<dotnet.System.Text.Json.JsonSerializerOptions> = nil) throws {
         var __thrown : NullableHandle = nil;
         System_Text_Json_JsonSerializer_void__Serialize_1__3__Stream_UTValue_JsonSerializerOptions(UTValue.get_type_handle(), &__thrown, utf8Json.get_handle(), value.to_gval(), options?.get_handle() ?? nil);
@@ -2761,6 +3134,13 @@ public struct JsonSerializer {
     }
     // void Serialize<TValue>(System.IO.Stream, TValue, System.Text.Json.Serialization.Metadata.JsonTypeInfo<TValue>)
 // docid: M:System.Text.Json.JsonSerializer.Serialize``1(System.IO.Stream,``0,System.Text.Json.Serialization.Metadata.JsonTypeInfo{``0})
+    /**
+    Converts the provided value to UTF-8 encoded JSON text and write it to the .
+
+    - Parameter utf8Json: The UTF-8  to write to.
+    - Parameter value: The value to convert.
+    - Parameter jsonTypeInfo: Metadata about the type to convert.
+    */
     public static func Serialize<UTValue : SGBridgeGenericValue>(utf8Json : dotnet.System.IO.Stream, value : UTValue, jsonTypeInfo : dotnet.System.Text.Json.Serialization.Metadata.JsonTypeInfo_1<UTValue>) throws {
         var __thrown : NullableHandle = nil;
         System_Text_Json_JsonSerializer_void__Serialize_1__3__Stream_UTValue_System_Text_Json_Serialization_Metadata_JsonTypeInfo_UTValue_(UTValue.get_type_handle(), &__thrown, utf8Json.get_handle(), value.to_gval(), jsonTypeInfo.get_handle());
@@ -2790,6 +3170,13 @@ public struct JsonSerializer {
     }
     // void Serialize<TValue>(System.Text.Json.Utf8JsonWriter, TValue, System.Text.Json.Serialization.Metadata.JsonTypeInfo<TValue>)
 // docid: M:System.Text.Json.JsonSerializer.Serialize``1(System.Text.Json.Utf8JsonWriter,``0,System.Text.Json.Serialization.Metadata.JsonTypeInfo{``0})
+    /**
+    Writes one JSON value (including objects or arrays) to the provided writer.
+
+    - Parameter writer: The writer to write.
+    - Parameter value: The value to convert and write.
+    - Parameter jsonTypeInfo: Metadata about the type to convert.
+    */
     public static func Serialize<UTValue : SGBridgeGenericValue>(writer : dotnet.System.Text.Json.Utf8JsonWriter, value : UTValue, jsonTypeInfo : dotnet.System.Text.Json.Serialization.Metadata.JsonTypeInfo_1<UTValue>) throws {
         var __thrown : NullableHandle = nil;
         System_Text_Json_JsonSerializer_void__Serialize_1__3__Utf8JsonWriter_UTValue_System_Text_Json_Serialization_Metadata_JsonTypeInfo_UTValue_(UTValue.get_type_handle(), &__thrown, writer.get_handle(), value.to_gval(), jsonTypeInfo.get_handle());
@@ -2820,6 +3207,14 @@ public struct JsonSerializer {
     }
     // System.String Serialize<TValue>(TValue, System.Text.Json.Serialization.Metadata.JsonTypeInfo<TValue>)
 // docid: M:System.Text.Json.JsonSerializer.Serialize``1(``0,System.Text.Json.Serialization.Metadata.JsonTypeInfo{``0})
+    /**
+    Converts the provided value into a .
+
+    - Parameter value: The value to convert.
+    - Parameter jsonTypeInfo: Metadata about the type to convert.
+    - Returns: A  representation of the value.
+
+    */
     public static func Serialize<UTValue : SGBridgeGenericValue>(value : UTValue, jsonTypeInfo : dotnet.System.Text.Json.Serialization.Metadata.JsonTypeInfo_1<UTValue>) throws -> dotnet.System.String {
         var __thrown : NullableHandle = nil;
         let __return = System_Text_Json_JsonSerializer_String__Serialize_1__2__UTValue_System_Text_Json_Serialization_Metadata_JsonTypeInfo_UTValue_(UTValue.get_type_handle(), &__thrown, value.to_gval(), jsonTypeInfo.get_handle());
@@ -2834,7 +3229,7 @@ public struct JsonSerializer {
 
 // type: System.Text.Json.JsonSerializerDefaults
     /**
-    Specifies what default options are used by .
+    Specifies scenario-based default serialization options that can be used to construct a  instance.
 
     */
 public struct JsonSerializerDefaults : SGBridgeGenericValue {
@@ -2849,7 +3244,10 @@ public struct JsonSerializerDefaults : SGBridgeGenericValue {
     public init(gval: GVal) { self.v = Swift.Int32(gval); }
     // static field: System.Text.Json.JsonSerializerDefaults General
     /**
-    Specifies that general-purpose values should be used. These are the same settings applied if a  isn't specified.
+    
+        General-purpose option values. These are the same settings that are applied if a  member isn't specified.
+        For information about the default property values that are applied, see JsonSerializerOptions properties.
+      
 
     */
     public static var General : dotnet.System.Text.Json.JsonSerializerDefaults {
@@ -2860,7 +3258,13 @@ public struct JsonSerializerDefaults : SGBridgeGenericValue {
     }
     // static field: System.Text.Json.JsonSerializerDefaults Web
     /**
-    Specifies that values should be used more appropriate to web-based scenarios.
+    
+        Option values appropriate to Web-based scenarios.
+        This member implies that:
+        - Property names are treated as case-insensitive.
+        - "camelCase" name formatting should be employed.
+        - Quoted numbers (JSON strings for number properties) are allowed.
+      
 
     */
     public static var Web : dotnet.System.Text.Json.JsonSerializerDefaults {
@@ -2883,6 +3287,9 @@ public final class JsonSerializerOptions
 {
     public class override func get_type_handle() -> TypeHandle {
         return System_Text_Json_JsonSerializerOptions_get_type_handle();
+    }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -3436,7 +3843,7 @@ public final class JsonSerializerOptions
         }
     }
     /**
-    Determines whether read-only fields are ignored during serialization. A property is read-only if it isn't marked with the  keyword. The default value is .
+    Determines whether read-only fields are ignored during serialization. A field is read-only if it is marked with the  keyword. The default value is .
 
     */
     public var IgnoreReadOnlyFields : Bool {
@@ -3460,7 +3867,7 @@ public final class JsonSerializerOptions
         }
     }
     /**
-    Determines whether fields are handled serialization and deserialization.
+    Determines whether fields are handled during serialization and deserialization.
             The default value is .
 
     */
@@ -3544,6 +3951,10 @@ public final class JsonSerializerOptions
             return try! set_ReferenceHandler(value: v!);
         }
     }
+    /**
+    Defines how deserializing a type declared as an  is handled during deserialization.
+
+    */
     public var UnknownTypeHandling : dotnet.System.Text.Json.Serialization.JsonUnknownTypeHandling {
         get {
             return try! get_UnknownTypeHandling();
@@ -3584,7 +3995,7 @@ public struct JsonTokenType : SGBridgeGenericValue {
     public init(gval: GVal) { self.v = Swift.UInt8(gval); }
     // static field: System.Text.Json.JsonTokenType None
     /**
-    There is no value (as distinct from ).
+    There is no value (as distinct from ). This is the default token type if no data has been read by the .
 
     */
     public static var None : dotnet.System.Text.Json.JsonTokenType {
@@ -3836,6 +4247,9 @@ public final class JsonWriterOptions
     public class override func get_type_handle() -> TypeHandle {
         return System_Text_Json_JsonWriterOptions_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     /**
@@ -3965,6 +4379,9 @@ public final class Utf8JsonWriter
     public class override func get_type_handle() -> TypeHandle {
         return System_Text_Json_Utf8JsonWriter_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor(System.Buffers.IBufferWriter<System.Byte>, System.Text.Json.JsonWriterOptions)
@@ -4057,13 +4474,13 @@ public final class Utf8JsonWriter
     - Returns: A task representing the asynchronous flush operation.
 
     */
-    public func FlushAsync(cancellationToken : dotnet.System.Threading.CancellationToken = System.Threading.CancellationToken.None) throws -> dotnet.System.Threading.Tasks.Task {
+    public func FlushAsync(cancellationToken : dotnet.System.Threading.CancellationToken = System.Threading.CancellationToken.None) async throws {
         var __thrown : NullableHandle = nil;
         let __return = System_Text_Json_Utf8JsonWriter_Task__FlushAsync_0__1__CancellationToken(&__thrown, self.get_handle(), cancellationToken.get_handle());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task(hndl: __return).ToAsync();
         }
     }
     // void Reset()
@@ -4667,6 +5084,13 @@ public final class Utf8JsonWriter
     }
     // void WriteRawValue(System.String, bool)
 // docid: M:System.Text.Json.Utf8JsonWriter.WriteRawValue(System.String,System.Boolean)
+    /**
+    Writes the input as JSON content. It is expected that the input content is a single complete JSON value.
+
+    - Parameter json: The raw JSON content to write.
+    - Parameter skipInputValidation: 
+         to validate if the input is an RFC 8259-compliant JSON payload;  otherwise.
+    */
     public func WriteRawValue(json : dotnet.System.String, skipInputValidation : Bool = false) throws {
         var __thrown : NullableHandle = nil;
         System_Text_Json_Utf8JsonWriter_void__WriteRawValue_0__2__String_bool(&__thrown, self.get_handle(), json.get_handle(), Swift.Int32(skipInputValidation ? 1 : 0));
@@ -5133,6 +5557,10 @@ public final class Utf8JsonWriter
 // System.Text.Json.Nodes
 extension System.Text.Json.Nodes {
 // type: System.Text.Json.Nodes.JsonArray
+    /**
+    Represents a mutable JSON array.
+
+    */
 public final class JsonArray
     :
     dotnet.System.Text.Json.Nodes.JsonNode,
@@ -5141,10 +5569,18 @@ public final class JsonArray
     public class override func get_type_handle() -> TypeHandle {
         return System_Text_Json_Nodes_JsonArray_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor(System.Nullable<System.Text.Json.Nodes.JsonNodeOptions>)
 // docid: M:System.Text.Json.Nodes.JsonArray.#ctor(System.Nullable{System.Text.Json.Nodes.JsonNodeOptions})
+    /**
+    Initializes a new instance of the  class that is empty.
+
+    - Parameter options: Options to control the behavior.
+    */
     public init(options : Optional<dotnet.System.Text.Json.Nodes.JsonNodeOptions>) throws {
         var __thrown : NullableHandle = nil;
         let h = System_Text_Json_Nodes_JsonArray_ctor_0__1__System_Nullable_System_Text_Json_Nodes_JsonNodeOptions_(&__thrown, (options != nil) ? options!.get_handle() : nil);
@@ -5156,6 +5592,12 @@ public final class JsonArray
     }
     // .ctor(System.Text.Json.Nodes.JsonNodeOptions, System.Text.Json.Nodes.JsonNode[])
 // docid: M:System.Text.Json.Nodes.JsonArray.#ctor(System.Text.Json.Nodes.JsonNodeOptions,System.Text.Json.Nodes.JsonNode[])
+    /**
+    Initializes a new instance of the  class that contains items from the specified params array.
+
+    - Parameter options: Options to control the behavior.
+    - Parameter items: The items to add to the new .
+    */
     public init(options : dotnet.System.Text.Json.Nodes.JsonNodeOptions, items : dotnet.System_Arr<dotnet.System.Text.Json.Nodes.JsonNode>) throws {
         var __thrown : NullableHandle = nil;
         let h = System_Text_Json_Nodes_JsonArray_ctor_0__2__JsonNodeOptions_JsonNodeArray(&__thrown, options.get_handle(), items.get_handle());
@@ -5167,6 +5609,11 @@ public final class JsonArray
     }
     // .ctor(System.Text.Json.Nodes.JsonNode[])
 // docid: M:System.Text.Json.Nodes.JsonArray.#ctor(System.Text.Json.Nodes.JsonNode[])
+    /**
+    Initializes a new instance of the  class that contains items from the specified array.
+
+    - Parameter items: The items to add to the new .
+    */
     public init(items : dotnet.System_Arr<dotnet.System.Text.Json.Nodes.JsonNode>) throws {
         var __thrown : NullableHandle = nil;
         let h = System_Text_Json_Nodes_JsonArray_ctor_0__1__JsonNodeArray(&__thrown, items.get_handle());
@@ -5178,6 +5625,11 @@ public final class JsonArray
     }
     // void Add(System.Text.Json.Nodes.JsonNode)
 // docid: M:System.Text.Json.Nodes.JsonArray.Add(System.Text.Json.Nodes.JsonNode)
+    /**
+    Adds a  to the end of the .
+
+    - Parameter item: The  to be added to the end of the .
+    */
     public func Add(item : Optional<dotnet.System.Text.Json.Nodes.JsonNode>) throws {
         var __thrown : NullableHandle = nil;
         System_Text_Json_Nodes_JsonArray_void__Add_0__1__JsonNode(&__thrown, self.get_handle(), item?.get_handle() ?? nil);
@@ -5189,6 +5641,11 @@ public final class JsonArray
     }
     // void Add<T>(T)
 // docid: M:System.Text.Json.Nodes.JsonArray.Add``1(``0)
+    /**
+    Adds an object to the end of the .
+
+    - Parameter value: The object to be added to the end of the .
+    */
     public func Add<UT : SGBridgeGenericValue>(value : UT) throws {
         var __thrown : NullableHandle = nil;
         System_Text_Json_Nodes_JsonArray_void__Add_1__1__UT(UT.get_type_handle(), &__thrown, self.get_handle(), value.to_gval());
@@ -5200,6 +5657,10 @@ public final class JsonArray
     }
     // void Clear()
 // docid: M:System.Text.Json.Nodes.JsonArray.Clear
+    /**
+    Removes all elements from the .
+
+    */
     public func Clear() throws {
         var __thrown : NullableHandle = nil;
         System_Text_Json_Nodes_JsonArray_void__Clear_0__0(&__thrown, self.get_handle());
@@ -5211,6 +5672,14 @@ public final class JsonArray
     }
     // bool Contains(System.Text.Json.Nodes.JsonNode)
 // docid: M:System.Text.Json.Nodes.JsonArray.Contains(System.Text.Json.Nodes.JsonNode)
+    /**
+    Determines whether an element is in the .
+
+    - Parameter item: The object to locate in the .
+    - Returns: 
+         if  is found in the ; otherwise, .
+
+    */
     public func Contains(item : Optional<dotnet.System.Text.Json.Nodes.JsonNode>) throws -> Bool {
         var __thrown : NullableHandle = nil;
         let __return = System_Text_Json_Nodes_JsonArray_bool__Contains_0__1__JsonNode(&__thrown, self.get_handle(), item?.get_handle() ?? nil);
@@ -5222,6 +5691,14 @@ public final class JsonArray
     }
     // System.Text.Json.Nodes.JsonArray Create(System.Text.Json.JsonElement, System.Nullable<System.Text.Json.Nodes.JsonNodeOptions>)
 // docid: M:System.Text.Json.Nodes.JsonArray.Create(System.Text.Json.JsonElement,System.Nullable{System.Text.Json.Nodes.JsonNodeOptions})
+    /**
+    Initializes a new instance of the  class that contains items from the specified .
+
+    - Parameter element: The .
+    - Parameter options: Options to control the behavior.
+    - Returns: The new instance of the  class that contains items from the specified .
+
+    */
     public class func Create(element : dotnet.System.Text.Json.JsonElement, options : Optional<dotnet.System.Text.Json.Nodes.JsonNodeOptions> = nil) throws -> Optional<dotnet.System.Text.Json.Nodes.JsonArray> {
         var __thrown : NullableHandle = nil;
         let __return = System_Text_Json_Nodes_JsonArray_JsonArray__Create_0__2__JsonElement_System_Nullable_System_Text_Json_Nodes_JsonNodeOptions_(&__thrown, element.get_handle(), (options != nil) ? options!.get_handle() : nil);
@@ -5237,6 +5714,12 @@ public final class JsonArray
     }
     // System.Collections.Generic.IEnumerator<System.Text.Json.Nodes.JsonNode> GetEnumerator()
 // docid: M:System.Text.Json.Nodes.JsonArray.GetEnumerator
+    /**
+    Returns an enumerator that iterates through the .
+
+    - Returns: A  for the .
+
+    */
     public func GetEnumerator() throws -> dotnet.System.Collections.Generic.IEnumerator_1<dotnet.System.Text.Json.Nodes.JsonNode> {
         var __thrown : NullableHandle = nil;
         let __return = System_Text_Json_Nodes_JsonArray_System_Collections_Generic_IEnumerator_System_Text_Json_Nodes_JsonNode___GetEnumerator_0__0(&__thrown, self.get_handle());
@@ -5248,6 +5731,13 @@ public final class JsonArray
     }
     // System.Int32 IndexOf(System.Text.Json.Nodes.JsonNode)
 // docid: M:System.Text.Json.Nodes.JsonArray.IndexOf(System.Text.Json.Nodes.JsonNode)
+    /**
+    The object to locate in the .
+
+    - Parameter item: The  to locate in the .
+    - Returns: The index of item if found in the list; otherwise, -1.
+
+    */
     public func IndexOf(item : Optional<dotnet.System.Text.Json.Nodes.JsonNode>) throws -> Swift.Int32 {
         var __thrown : NullableHandle = nil;
         let __return = System_Text_Json_Nodes_JsonArray_i32__IndexOf_0__1__JsonNode(&__thrown, self.get_handle(), item?.get_handle() ?? nil);
@@ -5259,6 +5749,12 @@ public final class JsonArray
     }
     // void Insert(System.Int32, System.Text.Json.Nodes.JsonNode)
 // docid: M:System.Text.Json.Nodes.JsonArray.Insert(System.Int32,System.Text.Json.Nodes.JsonNode)
+    /**
+    Inserts an element into the  at the specified index.
+
+    - Parameter index: The zero-based index at which  should be inserted.
+    - Parameter item: The  to insert.
+    */
     public func Insert(index : Swift.Int32, item : Optional<dotnet.System.Text.Json.Nodes.JsonNode>) throws {
         var __thrown : NullableHandle = nil;
         System_Text_Json_Nodes_JsonArray_void__Insert_0__2__i32_JsonNode(&__thrown, self.get_handle(), index, item?.get_handle() ?? nil);
@@ -5270,6 +5766,14 @@ public final class JsonArray
     }
     // bool Remove(System.Text.Json.Nodes.JsonNode)
 // docid: M:System.Text.Json.Nodes.JsonArray.Remove(System.Text.Json.Nodes.JsonNode)
+    /**
+    Removes the first occurrence of a specific  from the .
+
+    - Parameter item: The  to remove from the .
+    - Returns: 
+         if  is successfully removed; otherwise, .
+
+    */
     public func Remove(item : Optional<dotnet.System.Text.Json.Nodes.JsonNode>) throws -> Bool {
         var __thrown : NullableHandle = nil;
         let __return = System_Text_Json_Nodes_JsonArray_bool__Remove_0__1__JsonNode(&__thrown, self.get_handle(), item?.get_handle() ?? nil);
@@ -5281,6 +5785,11 @@ public final class JsonArray
     }
     // void RemoveAt(System.Int32)
 // docid: M:System.Text.Json.Nodes.JsonArray.RemoveAt(System.Int32)
+    /**
+    Removes the element at the specified index of the .
+
+    - Parameter index: The zero-based index of the element to remove.
+    */
     public func RemoveAt(index : Swift.Int32) throws {
         var __thrown : NullableHandle = nil;
         System_Text_Json_Nodes_JsonArray_void__RemoveAt_0__1__i32(&__thrown, self.get_handle(), index);
@@ -5292,6 +5801,12 @@ public final class JsonArray
     }
     // void WriteTo(System.Text.Json.Utf8JsonWriter, System.Text.Json.JsonSerializerOptions)
 // docid: M:System.Text.Json.Nodes.JsonArray.WriteTo(System.Text.Json.Utf8JsonWriter,System.Text.Json.JsonSerializerOptions)
+    /**
+    Writes the  into the provided  as JSON.
+
+    - Parameter writer: The .
+    - Parameter options: Options to control the serialization behavior.
+    */
     public override func WriteTo(writer : dotnet.System.Text.Json.Utf8JsonWriter, options : Optional<dotnet.System.Text.Json.JsonSerializerOptions> = nil) throws {
         var __thrown : NullableHandle = nil;
         System_Text_Json_Nodes_JsonArray_void__WriteTo_0__2__Utf8JsonWriter_JsonSerializerOptions(&__thrown, self.get_handle(), writer.get_handle(), options?.get_handle() ?? nil);
@@ -5312,6 +5827,10 @@ public final class JsonArray
         return __return;
         }
     }
+    /**
+    Gets the number of elements contained in the .
+
+    */
     public var Count : Swift.Int32 {
         get {
             return try! get_Count();
@@ -5321,6 +5840,10 @@ public final class JsonArray
 
 
 // type: System.Text.Json.Nodes.JsonNode
+    /**
+    The base class that represents a single node within a mutable JSON document.
+
+    */
 open class JsonNode
     :
     dotnet.System.Object
@@ -5328,10 +5851,19 @@ open class JsonNode
     open class override func get_type_handle() -> TypeHandle {
         return System_Text_Json_Nodes_JsonNode_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // System.Text.Json.Nodes.JsonArray AsArray()
 // docid: M:System.Text.Json.Nodes.JsonNode.AsArray
+    /**
+    Casts to the derived  type.
+
+    - Returns: A .
+
+    */
     open func AsArray() throws -> dotnet.System.Text.Json.Nodes.JsonArray {
         var __thrown : NullableHandle = nil;
         let __return = System_Text_Json_Nodes_JsonNode_JsonArray__AsArray_0__0(&__thrown, self.get_handle());
@@ -5343,6 +5875,12 @@ open class JsonNode
     }
     // System.Text.Json.Nodes.JsonObject AsObject()
 // docid: M:System.Text.Json.Nodes.JsonNode.AsObject
+    /**
+    Casts to the derived  type.
+
+    - Returns: A .
+
+    */
     open func AsObject() throws -> dotnet.System.Text.Json.Nodes.JsonObject {
         var __thrown : NullableHandle = nil;
         let __return = System_Text_Json_Nodes_JsonNode_JsonObject__AsObject_0__0(&__thrown, self.get_handle());
@@ -5354,6 +5892,12 @@ open class JsonNode
     }
     // System.Text.Json.Nodes.JsonValue AsValue()
 // docid: M:System.Text.Json.Nodes.JsonNode.AsValue
+    /**
+    Casts to the derived  type.
+
+    - Returns: A .
+
+    */
     open func AsValue() throws -> dotnet.System.Text.Json.Nodes.JsonValue {
         var __thrown : NullableHandle = nil;
         let __return = System_Text_Json_Nodes_JsonNode_JsonValue__AsValue_0__0(&__thrown, self.get_handle());
@@ -5365,6 +5909,12 @@ open class JsonNode
     }
     // System.String GetPath()
 // docid: M:System.Text.Json.Nodes.JsonNode.GetPath
+    /**
+    Gets the JSON path.
+
+    - Returns: The JSON Path value.
+
+    */
     open func GetPath() throws -> dotnet.System.String {
         var __thrown : NullableHandle = nil;
         let __return = System_Text_Json_Nodes_JsonNode_String__GetPath_0__0(&__thrown, self.get_handle());
@@ -6175,6 +6725,15 @@ open class JsonNode
     }
     // System.Text.Json.Nodes.JsonNode Parse(System.IO.Stream, System.Nullable<System.Text.Json.Nodes.JsonNodeOptions>, System.Text.Json.JsonDocumentOptions)
 // docid: M:System.Text.Json.Nodes.JsonNode.Parse(System.IO.Stream,System.Nullable{System.Text.Json.Nodes.JsonNodeOptions},System.Text.Json.JsonDocumentOptions)
+    /**
+    Parse a  as UTF-8-encoded data representing a single JSON value into a .  The Stream will be read to completion.
+
+    - Parameter utf8Json: JSON text to parse.
+    - Parameter nodeOptions: Options to control the node behavior after parsing.
+    - Parameter documentOptions: Options to control the document behavior during parsing.
+    - Returns: A  representation of the JSON value.
+
+    */
     open class func Parse(utf8Json : dotnet.System.IO.Stream, nodeOptions : Optional<dotnet.System.Text.Json.Nodes.JsonNodeOptions> = nil, documentOptions : dotnet.System.Text.Json.JsonDocumentOptions/* TODO default valuetype */) throws -> Optional<dotnet.System.Text.Json.Nodes.JsonNode> {
         var __thrown : NullableHandle = nil;
         let __return = System_Text_Json_Nodes_JsonNode_JsonNode__Parse_0__3__Stream_System_Nullable_System_Text_Json_Nodes_JsonNodeOptions__JsonDocumentOptions(&__thrown, utf8Json.get_handle(), (nodeOptions != nil) ? nodeOptions!.get_handle() : nil, documentOptions.get_handle());
@@ -6191,6 +6750,15 @@ open class JsonNode
 // TODO COPE (write_all_methods) (span) System.Text.Json.Nodes.JsonNode Parse(System.ReadOnlySpan<System.Byte>, System.Nullable<System.Text.Json.Nodes.JsonNodeOptions>, System.Text.Json.JsonDocumentOptions)
     // System.Text.Json.Nodes.JsonNode Parse(System.String, System.Nullable<System.Text.Json.Nodes.JsonNodeOptions>, System.Text.Json.JsonDocumentOptions)
 // docid: M:System.Text.Json.Nodes.JsonNode.Parse(System.String,System.Nullable{System.Text.Json.Nodes.JsonNodeOptions},System.Text.Json.JsonDocumentOptions)
+    /**
+    Parses text representing a single JSON value.
+
+    - Parameter json: JSON text to parse.
+    - Parameter nodeOptions: Options to control the node behavior after parsing.
+    - Parameter documentOptions: Options to control the document behavior during parsing.
+    - Returns: A  representation of the JSON value.
+
+    */
     open class func Parse(json : dotnet.System.String, nodeOptions : Optional<dotnet.System.Text.Json.Nodes.JsonNodeOptions> = nil, documentOptions : dotnet.System.Text.Json.JsonDocumentOptions/* TODO default valuetype */) throws -> Optional<dotnet.System.Text.Json.Nodes.JsonNode> {
         var __thrown : NullableHandle = nil;
         let __return = System_Text_Json_Nodes_JsonNode_JsonNode__Parse_0__3__String_System_Nullable_System_Text_Json_Nodes_JsonNodeOptions__JsonDocumentOptions(&__thrown, json.get_handle(), (nodeOptions != nil) ? nodeOptions!.get_handle() : nil, documentOptions.get_handle());
@@ -6204,8 +6772,16 @@ open class JsonNode
         }
         }
     }
+// TODO COPE (parm byref span): System.Text.Json.Nodes.JsonNode Parse(ref System.Text.Json.Utf8JsonReader, System.Nullable<System.Text.Json.Nodes.JsonNodeOptions>)
     // System.String ToJsonString(System.Text.Json.JsonSerializerOptions)
 // docid: M:System.Text.Json.Nodes.JsonNode.ToJsonString(System.Text.Json.JsonSerializerOptions)
+    /**
+    Converts the current instance to string in JSON format.
+
+    - Parameter options: Options to control the serialization behavior.
+    - Returns: JSON representation of current instance.
+
+    */
     open func ToJsonString(options : Optional<dotnet.System.Text.Json.JsonSerializerOptions> = nil) throws -> dotnet.System.String {
         var __thrown : NullableHandle = nil;
         let __return = System_Text_Json_Nodes_JsonNode_String__ToJsonString_0__1__JsonSerializerOptions(&__thrown, self.get_handle(), options?.get_handle() ?? nil);
@@ -6217,6 +6793,12 @@ open class JsonNode
     }
     // System.String ToString()
 // docid: M:System.Text.Json.Nodes.JsonNode.ToString
+    /**
+    Gets a string representation for the current value appropriate to the node type.
+
+    - Returns: A string representation for the current value appropriate to the node type.
+
+    */
     open override func ToString() throws -> dotnet.System.String {
         var __thrown : NullableHandle = nil;
         let __return = System_Text_Json_Nodes_JsonNode_String__ToString_0__0(&__thrown, self.get_handle());
@@ -6228,6 +6810,12 @@ open class JsonNode
     }
     // void WriteTo(System.Text.Json.Utf8JsonWriter, System.Text.Json.JsonSerializerOptions)
 // docid: M:System.Text.Json.Nodes.JsonNode.WriteTo(System.Text.Json.Utf8JsonWriter,System.Text.Json.JsonSerializerOptions)
+    /**
+    Write the  into the provided  as JSON.
+
+    - Parameter writer: The .
+    - Parameter options: Options to control the serialization behavior.
+    */
     open func WriteTo(writer : dotnet.System.Text.Json.Utf8JsonWriter, options : Optional<dotnet.System.Text.Json.JsonSerializerOptions> = nil) throws {
         var __thrown : NullableHandle = nil;
         System_Text_Json_Nodes_JsonNode_void__WriteTo_0__2__Utf8JsonWriter_JsonSerializerOptions(&__thrown, self.get_handle(), writer.get_handle(), options?.get_handle() ?? nil);
@@ -6276,9 +6864,6 @@ open class JsonNode
     }
     // [IsSpecialName] System.Text.Json.Nodes.JsonNode get_Item(System.Int32)
 // docid: M:System.Text.Json.Nodes.JsonNode.get_Item(System.Int32)
-//BEGIN method_is_override
-//matches_1
-//matches :
     open /* method final */ func get_Item(index : Swift.Int32) throws -> Optional<dotnet.System.Text.Json.Nodes.JsonNode> {
         var __thrown : NullableHandle = nil;
         let __return = System_Text_Json_Nodes_JsonNode_JsonNode__get_Item_0__1__i32(&__thrown, self.get_handle(), index);
@@ -6305,9 +6890,6 @@ open class JsonNode
     }
     // [IsSpecialName] System.Text.Json.Nodes.JsonNode get_Item(System.String)
 // docid: M:System.Text.Json.Nodes.JsonNode.get_Item(System.String)
-//BEGIN method_is_override
-//matches_1
-//matches :
     open /* method final */ func get_Item(propertyName : dotnet.System.String) throws -> Optional<dotnet.System.Text.Json.Nodes.JsonNode> {
         var __thrown : NullableHandle = nil;
         let __return = System_Text_Json_Nodes_JsonNode_JsonNode__get_Item_0__1__String(&__thrown, self.get_handle(), propertyName.get_handle());
@@ -6332,16 +6914,31 @@ open class JsonNode
             return;
         }
     }
+    /**
+    Options to control the behavior.
+
+    */
     open var Options : Optional<dotnet.System.Text.Json.Nodes.JsonNodeOptions> {
         get {
             return try! get_Options();
         }
     }
+    /**
+    Gets the parent .
+              If there is no parent,  is returned.
+              A parent can either be a  or a .
+
+    */
     open var Parent : Optional<dotnet.System.Text.Json.Nodes.JsonNode> {
         get {
             return try! get_Parent();
         }
     }
+    /**
+    Gets the root .
+              If the current  is a root,  is returned.
+
+    */
     open var Root : dotnet.System.Text.Json.Nodes.JsonNode {
         get {
             return try! get_Root();
@@ -6352,6 +6949,10 @@ open class JsonNode
 
 // type: System.Text.Json.Nodes.JsonNodeOptions
 // boxed value type
+    /**
+    Options to control  behavior.
+
+    */
 public final class JsonNodeOptions
     :
     dotnet.System.Object
@@ -6359,8 +6960,15 @@ public final class JsonNodeOptions
     public class override func get_type_handle() -> TypeHandle {
         return System_Text_Json_Nodes_JsonNodeOptions_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    /**
+    Specifies whether property names on  are case insensitive.
+
+    */
     public var PropertyNameCaseInsensitive : Bool {
         get {
             return try! get_PropertyNameCaseInsensitive();
@@ -6399,6 +7007,10 @@ public final class JsonNodeOptions
 
 
 // type: System.Text.Json.Nodes.JsonObject
+    /**
+    Represents a mutable JSON object.
+
+    */
 public final class JsonObject
     :
     dotnet.System.Text.Json.Nodes.JsonNode,
@@ -6407,10 +7019,19 @@ public final class JsonObject
     public class override func get_type_handle() -> TypeHandle {
         return System_Text_Json_Nodes_JsonObject_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor(System.Collections.Generic.IEnumerable<System.Collections.Generic.KeyValuePair<System.String,System.Text.Json.Nodes.JsonNode>>, System.Nullable<System.Text.Json.Nodes.JsonNodeOptions>)
 // docid: M:System.Text.Json.Nodes.JsonObject.#ctor(System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{System.String,System.Text.Json.Nodes.JsonNode}},System.Nullable{System.Text.Json.Nodes.JsonNodeOptions})
+    /**
+    Initializes a new instance of the  class that contains the specified .
+
+    - Parameter properties: The properties to be added.
+    - Parameter options: Options to control the behavior.
+    */
     public init(properties : dotnet.System.Collections.Generic.IEnumerable_1<dotnet.System.Collections.Generic.KeyValuePair_2<dotnet.System.String,dotnet.System.Text.Json.Nodes.JsonNode>>, options : Optional<dotnet.System.Text.Json.Nodes.JsonNodeOptions>) throws {
         var __thrown : NullableHandle = nil;
         let h = System_Text_Json_Nodes_JsonObject_ctor_0__2__System_Collections_Generic_IEnumerable_System_Collections_Generic_System_Collections_Generic_KeyValuePair_string_System_Text_Json_Nodes_JsonNode___System_Nullable_System_Text_Json_Nodes_JsonNodeOptions_(&__thrown, properties.get_handle(), (options != nil) ? options!.get_handle() : nil);
@@ -6422,6 +7043,11 @@ public final class JsonObject
     }
     // .ctor(System.Nullable<System.Text.Json.Nodes.JsonNodeOptions>)
 // docid: M:System.Text.Json.Nodes.JsonObject.#ctor(System.Nullable{System.Text.Json.Nodes.JsonNodeOptions})
+    /**
+    Initializes a new instance of the  class that is empty.
+
+    - Parameter options: Options to control the behavior.
+    */
     public init(options : Optional<dotnet.System.Text.Json.Nodes.JsonNodeOptions>) throws {
         var __thrown : NullableHandle = nil;
         let h = System_Text_Json_Nodes_JsonObject_ctor_0__1__System_Nullable_System_Text_Json_Nodes_JsonNodeOptions_(&__thrown, (options != nil) ? options!.get_handle() : nil);
@@ -6433,6 +7059,11 @@ public final class JsonObject
     }
     // void Add(System.Collections.Generic.KeyValuePair<System.String,System.Text.Json.Nodes.JsonNode>)
 // docid: M:System.Text.Json.Nodes.JsonObject.Add(System.Collections.Generic.KeyValuePair{System.String,System.Text.Json.Nodes.JsonNode})
+    /**
+    Adds the specified property to the .
+
+    - Parameter property: The KeyValuePair structure representing the property name and value to add to the .
+    */
     public func Add(property : dotnet.System.Collections.Generic.KeyValuePair_2<dotnet.System.String,dotnet.System.Text.Json.Nodes.JsonNode>) throws {
         var __thrown : NullableHandle = nil;
         System_Text_Json_Nodes_JsonObject_void__Add_0__1__System_Collections_Generic_KeyValuePair_string_System_Text_Json_Nodes_JsonNode_(&__thrown, self.get_handle(), property.get_handle());
@@ -6444,6 +7075,12 @@ public final class JsonObject
     }
     // void Add(System.String, System.Text.Json.Nodes.JsonNode)
 // docid: M:System.Text.Json.Nodes.JsonObject.Add(System.String,System.Text.Json.Nodes.JsonNode)
+    /**
+    Adds an element with the provided property name and value to the .
+
+    - Parameter propertyName: The property name of the element to add.
+    - Parameter value: The value of the element to add.
+    */
     public func Add(propertyName : dotnet.System.String, value : Optional<dotnet.System.Text.Json.Nodes.JsonNode>) throws {
         var __thrown : NullableHandle = nil;
         System_Text_Json_Nodes_JsonObject_void__Add_0__2__String_JsonNode(&__thrown, self.get_handle(), propertyName.get_handle(), value?.get_handle() ?? nil);
@@ -6455,6 +7092,10 @@ public final class JsonObject
     }
     // void Clear()
 // docid: M:System.Text.Json.Nodes.JsonObject.Clear
+    /**
+    Removes all elements from the .
+
+    */
     public func Clear() throws {
         var __thrown : NullableHandle = nil;
         System_Text_Json_Nodes_JsonObject_void__Clear_0__0(&__thrown, self.get_handle());
@@ -6466,6 +7107,14 @@ public final class JsonObject
     }
     // bool ContainsKey(System.String)
 // docid: M:System.Text.Json.Nodes.JsonObject.ContainsKey(System.String)
+    /**
+    Determines whether the  contains an element with the specified property name.
+
+    - Parameter propertyName: The property name to locate in the .
+    - Returns: 
+         if the  contains an element with the specified property name; otherwise, .
+
+    */
     public func ContainsKey(propertyName : dotnet.System.String) throws -> Bool {
         var __thrown : NullableHandle = nil;
         let __return = System_Text_Json_Nodes_JsonObject_bool__ContainsKey_0__1__String(&__thrown, self.get_handle(), propertyName.get_handle());
@@ -6477,6 +7126,14 @@ public final class JsonObject
     }
     // System.Text.Json.Nodes.JsonObject Create(System.Text.Json.JsonElement, System.Nullable<System.Text.Json.Nodes.JsonNodeOptions>)
 // docid: M:System.Text.Json.Nodes.JsonObject.Create(System.Text.Json.JsonElement,System.Nullable{System.Text.Json.Nodes.JsonNodeOptions})
+    /**
+    Initializes a new instance of the  class that contains properties from the specified .
+
+    - Parameter element: The .
+    - Parameter options: Options to control the behavior.
+    - Returns: The new instance of the  class that contains properties from the specified .
+
+    */
     public class func Create(element : dotnet.System.Text.Json.JsonElement, options : Optional<dotnet.System.Text.Json.Nodes.JsonNodeOptions> = nil) throws -> Optional<dotnet.System.Text.Json.Nodes.JsonObject> {
         var __thrown : NullableHandle = nil;
         let __return = System_Text_Json_Nodes_JsonObject_JsonObject__Create_0__2__JsonElement_System_Nullable_System_Text_Json_Nodes_JsonNodeOptions_(&__thrown, element.get_handle(), (options != nil) ? options!.get_handle() : nil);
@@ -6492,6 +7149,12 @@ public final class JsonObject
     }
     // System.Collections.Generic.IEnumerator<System.Collections.Generic.KeyValuePair<System.String,System.Text.Json.Nodes.JsonNode>> GetEnumerator()
 // docid: M:System.Text.Json.Nodes.JsonObject.GetEnumerator
+    /**
+    Returns an enumerator that iterates through the .
+
+    - Returns: An enumerator that iterates through the .
+
+    */
     public func GetEnumerator() throws -> dotnet.System.Collections.Generic.IEnumerator_1<dotnet.System.Collections.Generic.KeyValuePair_2<dotnet.System.String,dotnet.System.Text.Json.Nodes.JsonNode>> {
         var __thrown : NullableHandle = nil;
         let __return = System_Text_Json_Nodes_JsonObject_System_Collections_Generic_IEnumerator_System_Collections_Generic_System_Collections_Generic_KeyValuePair_string_System_Text_Json_Nodes_JsonNode____GetEnumerator_0__0(&__thrown, self.get_handle());
@@ -6503,6 +7166,14 @@ public final class JsonObject
     }
     // bool Remove(System.String)
 // docid: M:System.Text.Json.Nodes.JsonObject.Remove(System.String)
+    /**
+    Removes the element with the specified property name from the .
+
+    - Parameter propertyName: The property name of the element to remove.
+    - Returns: 
+         if the element is successfully removed; otherwise, .
+
+    */
     public func Remove(propertyName : dotnet.System.String) throws -> Bool {
         var __thrown : NullableHandle = nil;
         let __return = System_Text_Json_Nodes_JsonObject_bool__Remove_0__1__String(&__thrown, self.get_handle(), propertyName.get_handle());
@@ -6514,11 +7185,21 @@ public final class JsonObject
     }
     // bool TryGetPropertyValue(System.String, ref System.Text.Json.Nodes.JsonNode)
 // docid: M:System.Text.Json.Nodes.JsonObject.TryGetPropertyValue(System.String,System.Text.Json.Nodes.JsonNode@)
-    public func TryGetPropertyValue(propertyName : dotnet.System.String, jsonNode : inout dotnet.System.Text.Json.Nodes.JsonNode) throws -> Bool {
+    /**
+    Returns the value of a property with the specified name.
+
+    - Parameter propertyName: The name of the property to return.
+    - Parameter jsonNode: The JSON value of the property with the specified name.
+    - Returns: 
+         if a property with the specified name was found; otherwise, .
+
+    */
+    public func TryGetPropertyValue(propertyName : dotnet.System.String, jsonNode : inout Optional<dotnet.System.Text.Json.Nodes.JsonNode>) throws -> Bool {
         var __thrown : NullableHandle = nil;
-            var _tmp_out_jsonNode = jsonNode.get_handle();
+            var _tmp_out_jsonNode = (jsonNode != nil) ? (jsonNode!.get_handle()) : nil;
         let __return = System_Text_Json_Nodes_JsonObject_bool__TryGetPropertyValue_0__2__String_outJsonNode(&__thrown, self.get_handle(), propertyName.get_handle(), &_tmp_out_jsonNode);
-        let _tmp2_jsonNode = dotnet.System.Text.Json.Nodes.JsonNode(hndl: _tmp_out_jsonNode);
+        let __h__tmp2_jsonNode = _tmp_out_jsonNode;
+        let _tmp2_jsonNode = (__h__tmp2_jsonNode != nil) ? dotnet.System.Text.Json.Nodes.JsonNode(hndl: __h__tmp2_jsonNode!) : nil;
             jsonNode = _tmp2_jsonNode;
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
@@ -6528,6 +7209,12 @@ public final class JsonObject
     }
     // void WriteTo(System.Text.Json.Utf8JsonWriter, System.Text.Json.JsonSerializerOptions)
 // docid: M:System.Text.Json.Nodes.JsonObject.WriteTo(System.Text.Json.Utf8JsonWriter,System.Text.Json.JsonSerializerOptions)
+    /**
+    Write the  into the provided  as JSON.
+
+    - Parameter writer: The .
+    - Parameter options: Options to control the serialization behavior.
+    */
     public override func WriteTo(writer : dotnet.System.Text.Json.Utf8JsonWriter, options : Optional<dotnet.System.Text.Json.JsonSerializerOptions> = nil) throws {
         var __thrown : NullableHandle = nil;
         System_Text_Json_Nodes_JsonObject_void__WriteTo_0__2__Utf8JsonWriter_JsonSerializerOptions(&__thrown, self.get_handle(), writer.get_handle(), options?.get_handle() ?? nil);
@@ -6548,6 +7235,10 @@ public final class JsonObject
         return __return;
         }
     }
+    /**
+    Gets the number of elements contained in .
+
+    */
     public var Count : Swift.Int32 {
         get {
             return try! get_Count();
@@ -6557,6 +7248,10 @@ public final class JsonObject
 
 
 // type: System.Text.Json.Nodes.JsonValue
+    /**
+    Represents a mutable JSON value.
+
+    */
 open class JsonValue
     :
     dotnet.System.Text.Json.Nodes.JsonNode
@@ -6564,10 +7259,21 @@ open class JsonValue
     open class override func get_type_handle() -> TypeHandle {
         return System_Text_Json_Nodes_JsonValue_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // System.Text.Json.Nodes.JsonValue Create(bool, System.Nullable<System.Text.Json.Nodes.JsonNodeOptions>)
 // docid: M:System.Text.Json.Nodes.JsonValue.Create(System.Boolean,System.Nullable{System.Text.Json.Nodes.JsonNodeOptions})
+    /**
+    Initializes a new instance of the  class that contains the specified value.
+
+    - Parameter value: The underlying value of the new  instance.
+    - Parameter options: Options to control the behavior.
+    - Returns: The new instance of the  class that contains the specified value.
+
+    */
     open class func Create(value : Bool, options : Optional<dotnet.System.Text.Json.Nodes.JsonNodeOptions> = nil) throws -> dotnet.System.Text.Json.Nodes.JsonValue {
         var __thrown : NullableHandle = nil;
         let __return = System_Text_Json_Nodes_JsonValue_JsonValue__Create_0__2__bool_System_Nullable_System_Text_Json_Nodes_JsonNodeOptions_(&__thrown, Swift.Int32(value ? 1 : 0), (options != nil) ? options!.get_handle() : nil);
@@ -6579,6 +7285,14 @@ open class JsonValue
     }
     // System.Text.Json.Nodes.JsonValue Create(System.Byte, System.Nullable<System.Text.Json.Nodes.JsonNodeOptions>)
 // docid: M:System.Text.Json.Nodes.JsonValue.Create(System.Byte,System.Nullable{System.Text.Json.Nodes.JsonNodeOptions})
+    /**
+    Initializes a new instance of the  class that contains the specified value.
+
+    - Parameter value: The underlying value of the new  instance.
+    - Parameter options: Options to control the behavior.
+    - Returns: The new instance of the  class that contains the specified value.
+
+    */
     open class func Create(value : Swift.UInt8, options : Optional<dotnet.System.Text.Json.Nodes.JsonNodeOptions> = nil) throws -> dotnet.System.Text.Json.Nodes.JsonValue {
         var __thrown : NullableHandle = nil;
         let __return = System_Text_Json_Nodes_JsonValue_JsonValue__Create_0__2__u8_System_Nullable_System_Text_Json_Nodes_JsonNodeOptions_(&__thrown, value, (options != nil) ? options!.get_handle() : nil);
@@ -6590,6 +7304,14 @@ open class JsonValue
     }
     // System.Text.Json.Nodes.JsonValue Create(System.Char, System.Nullable<System.Text.Json.Nodes.JsonNodeOptions>)
 // docid: M:System.Text.Json.Nodes.JsonValue.Create(System.Char,System.Nullable{System.Text.Json.Nodes.JsonNodeOptions})
+    /**
+    Initializes a new instance of the  class that contains the specified value.
+
+    - Parameter value: The underlying value of the new  instance.
+    - Parameter options: Options to control the behavior.
+    - Returns: The new instance of the  class that contains the specified value.
+
+    */
     open class func Create(value : dotnet.System.Char, options : Optional<dotnet.System.Text.Json.Nodes.JsonNodeOptions> = nil) throws -> dotnet.System.Text.Json.Nodes.JsonValue {
         var __thrown : NullableHandle = nil;
         let __return = System_Text_Json_Nodes_JsonValue_JsonValue__Create_0__2__Char_System_Nullable_System_Text_Json_Nodes_JsonNodeOptions_(&__thrown, value.get_value(), (options != nil) ? options!.get_handle() : nil);
@@ -6601,6 +7323,14 @@ open class JsonValue
     }
     // System.Text.Json.Nodes.JsonValue Create(System.DateTime, System.Nullable<System.Text.Json.Nodes.JsonNodeOptions>)
 // docid: M:System.Text.Json.Nodes.JsonValue.Create(System.DateTime,System.Nullable{System.Text.Json.Nodes.JsonNodeOptions})
+    /**
+    Initializes a new instance of the  class that contains the specified value.
+
+    - Parameter value: The underlying value of the new  instance.
+    - Parameter options: Options to control the behavior.
+    - Returns: The new instance of the  class that contains the specified value.
+
+    */
     open class func Create(value : dotnet.System.DateTime, options : Optional<dotnet.System.Text.Json.Nodes.JsonNodeOptions> = nil) throws -> dotnet.System.Text.Json.Nodes.JsonValue {
         var __thrown : NullableHandle = nil;
         let __return = System_Text_Json_Nodes_JsonValue_JsonValue__Create_0__2__DateTime_System_Nullable_System_Text_Json_Nodes_JsonNodeOptions_(&__thrown, value.get_handle(), (options != nil) ? options!.get_handle() : nil);
@@ -6612,6 +7342,14 @@ open class JsonValue
     }
     // System.Text.Json.Nodes.JsonValue Create(System.DateTimeOffset, System.Nullable<System.Text.Json.Nodes.JsonNodeOptions>)
 // docid: M:System.Text.Json.Nodes.JsonValue.Create(System.DateTimeOffset,System.Nullable{System.Text.Json.Nodes.JsonNodeOptions})
+    /**
+    Initializes a new instance of the  class that contains the specified value.
+
+    - Parameter value: The underlying value of the new  instance.
+    - Parameter options: Options to control the behavior.
+    - Returns: The new instance of the  class that contains the specified value.
+
+    */
     open class func Create(value : dotnet.System.DateTimeOffset, options : Optional<dotnet.System.Text.Json.Nodes.JsonNodeOptions> = nil) throws -> dotnet.System.Text.Json.Nodes.JsonValue {
         var __thrown : NullableHandle = nil;
         let __return = System_Text_Json_Nodes_JsonValue_JsonValue__Create_0__2__DateTimeOffset_System_Nullable_System_Text_Json_Nodes_JsonNodeOptions_(&__thrown, value.get_handle(), (options != nil) ? options!.get_handle() : nil);
@@ -6623,6 +7361,14 @@ open class JsonValue
     }
     // System.Text.Json.Nodes.JsonValue Create(System.Decimal, System.Nullable<System.Text.Json.Nodes.JsonNodeOptions>)
 // docid: M:System.Text.Json.Nodes.JsonValue.Create(System.Decimal,System.Nullable{System.Text.Json.Nodes.JsonNodeOptions})
+    /**
+    Initializes a new instance of the  class that contains the specified value.
+
+    - Parameter value: The underlying value of the new  instance.
+    - Parameter options: Options to control the behavior.
+    - Returns: The new instance of the  class that contains the specified value.
+
+    */
     open class func Create(value : dotnet.System.Decimal, options : Optional<dotnet.System.Text.Json.Nodes.JsonNodeOptions> = nil) throws -> dotnet.System.Text.Json.Nodes.JsonValue {
         var __thrown : NullableHandle = nil;
         let __return = System_Text_Json_Nodes_JsonValue_JsonValue__Create_0__2__Decimal_System_Nullable_System_Text_Json_Nodes_JsonNodeOptions_(&__thrown, value.get_handle(), (options != nil) ? options!.get_handle() : nil);
@@ -6634,6 +7380,14 @@ open class JsonValue
     }
     // System.Text.Json.Nodes.JsonValue Create(System.Double, System.Nullable<System.Text.Json.Nodes.JsonNodeOptions>)
 // docid: M:System.Text.Json.Nodes.JsonValue.Create(System.Double,System.Nullable{System.Text.Json.Nodes.JsonNodeOptions})
+    /**
+    Initializes a new instance of the  class that contains the specified value.
+
+    - Parameter value: The underlying value of the new  instance.
+    - Parameter options: Options to control the behavior.
+    - Returns: The new instance of the  class that contains the specified value.
+
+    */
     open class func Create(value : Swift.Double, options : Optional<dotnet.System.Text.Json.Nodes.JsonNodeOptions> = nil) throws -> dotnet.System.Text.Json.Nodes.JsonValue {
         var __thrown : NullableHandle = nil;
         let __return = System_Text_Json_Nodes_JsonValue_JsonValue__Create_0__2__f64_System_Nullable_System_Text_Json_Nodes_JsonNodeOptions_(&__thrown, value, (options != nil) ? options!.get_handle() : nil);
@@ -6645,6 +7399,14 @@ open class JsonValue
     }
     // System.Text.Json.Nodes.JsonValue Create(System.Guid, System.Nullable<System.Text.Json.Nodes.JsonNodeOptions>)
 // docid: M:System.Text.Json.Nodes.JsonValue.Create(System.Guid,System.Nullable{System.Text.Json.Nodes.JsonNodeOptions})
+    /**
+    Initializes a new instance of the  class that contains the specified value.
+
+    - Parameter value: The underlying value of the new  instance.
+    - Parameter options: Options to control the behavior.
+    - Returns: The new instance of the  class that contains the specified value.
+
+    */
     open class func Create(value : dotnet.System.Guid, options : Optional<dotnet.System.Text.Json.Nodes.JsonNodeOptions> = nil) throws -> dotnet.System.Text.Json.Nodes.JsonValue {
         var __thrown : NullableHandle = nil;
         let __return = System_Text_Json_Nodes_JsonValue_JsonValue__Create_0__2__Guid_System_Nullable_System_Text_Json_Nodes_JsonNodeOptions_(&__thrown, value.get_handle(), (options != nil) ? options!.get_handle() : nil);
@@ -6656,6 +7418,14 @@ open class JsonValue
     }
     // System.Text.Json.Nodes.JsonValue Create(System.Int16, System.Nullable<System.Text.Json.Nodes.JsonNodeOptions>)
 // docid: M:System.Text.Json.Nodes.JsonValue.Create(System.Int16,System.Nullable{System.Text.Json.Nodes.JsonNodeOptions})
+    /**
+    Initializes a new instance of the  class that contains the specified value.
+
+    - Parameter value: The underlying value of the new  instance.
+    - Parameter options: Options to control the behavior.
+    - Returns: The new instance of the  class that contains the specified value.
+
+    */
     open class func Create(value : Swift.Int16, options : Optional<dotnet.System.Text.Json.Nodes.JsonNodeOptions> = nil) throws -> dotnet.System.Text.Json.Nodes.JsonValue {
         var __thrown : NullableHandle = nil;
         let __return = System_Text_Json_Nodes_JsonValue_JsonValue__Create_0__2__i16_System_Nullable_System_Text_Json_Nodes_JsonNodeOptions_(&__thrown, value, (options != nil) ? options!.get_handle() : nil);
@@ -6667,6 +7437,14 @@ open class JsonValue
     }
     // System.Text.Json.Nodes.JsonValue Create(System.Int32, System.Nullable<System.Text.Json.Nodes.JsonNodeOptions>)
 // docid: M:System.Text.Json.Nodes.JsonValue.Create(System.Int32,System.Nullable{System.Text.Json.Nodes.JsonNodeOptions})
+    /**
+    Initializes a new instance of the  class that contains the specified value.
+
+    - Parameter value: The underlying value of the new  instance.
+    - Parameter options: Options to control the behavior.
+    - Returns: The new instance of the  class that contains the specified value.
+
+    */
     open class func Create(value : Swift.Int32, options : Optional<dotnet.System.Text.Json.Nodes.JsonNodeOptions> = nil) throws -> dotnet.System.Text.Json.Nodes.JsonValue {
         var __thrown : NullableHandle = nil;
         let __return = System_Text_Json_Nodes_JsonValue_JsonValue__Create_0__2__i32_System_Nullable_System_Text_Json_Nodes_JsonNodeOptions_(&__thrown, value, (options != nil) ? options!.get_handle() : nil);
@@ -6678,6 +7456,14 @@ open class JsonValue
     }
     // System.Text.Json.Nodes.JsonValue Create(System.Int64, System.Nullable<System.Text.Json.Nodes.JsonNodeOptions>)
 // docid: M:System.Text.Json.Nodes.JsonValue.Create(System.Int64,System.Nullable{System.Text.Json.Nodes.JsonNodeOptions})
+    /**
+    Initializes a new instance of the  class that contains the specified value.
+
+    - Parameter value: The underlying value of the new  instance.
+    - Parameter options: Options to control the behavior.
+    - Returns: The new instance of the  class that contains the specified value.
+
+    */
     open class func Create(value : Swift.Int64, options : Optional<dotnet.System.Text.Json.Nodes.JsonNodeOptions> = nil) throws -> dotnet.System.Text.Json.Nodes.JsonValue {
         var __thrown : NullableHandle = nil;
         let __return = System_Text_Json_Nodes_JsonValue_JsonValue__Create_0__2__i64_System_Nullable_System_Text_Json_Nodes_JsonNodeOptions_(&__thrown, value, (options != nil) ? options!.get_handle() : nil);
@@ -6689,6 +7475,14 @@ open class JsonValue
     }
     // System.Text.Json.Nodes.JsonValue Create(System.Nullable<bool>, System.Nullable<System.Text.Json.Nodes.JsonNodeOptions>)
 // docid: M:System.Text.Json.Nodes.JsonValue.Create(System.Nullable{System.Boolean},System.Nullable{System.Text.Json.Nodes.JsonNodeOptions})
+    /**
+    Initializes a new instance of the  class that contains the specified value.
+
+    - Parameter value: The underlying value of the new  instance.
+    - Parameter options: Options to control the behavior.
+    - Returns: The new instance of the  class that contains the specified value.
+
+    */
     open class func Create(value : Optional<Bool>, options : Optional<dotnet.System.Text.Json.Nodes.JsonNodeOptions> = nil) throws -> Optional<dotnet.System.Text.Json.Nodes.JsonValue> {
         var __thrown : NullableHandle = nil;
         let __return = System_Text_Json_Nodes_JsonValue_JsonValue__Create_0__2__System_Nullable_bool__System_Nullable_System_Text_Json_Nodes_JsonNodeOptions_(&__thrown, (value != nil) ? System_Int32_box(Swift.Int32(value! ? 1 : 0)) : nil, (options != nil) ? options!.get_handle() : nil);
@@ -6704,6 +7498,14 @@ open class JsonValue
     }
     // System.Text.Json.Nodes.JsonValue Create(System.Nullable<System.Byte>, System.Nullable<System.Text.Json.Nodes.JsonNodeOptions>)
 // docid: M:System.Text.Json.Nodes.JsonValue.Create(System.Nullable{System.Byte},System.Nullable{System.Text.Json.Nodes.JsonNodeOptions})
+    /**
+    Initializes a new instance of the  class that contains the specified value.
+
+    - Parameter value: The underlying value of the new  instance.
+    - Parameter options: Options to control the behavior.
+    - Returns: The new instance of the  class that contains the specified value.
+
+    */
     open class func Create(value : Optional<Swift.UInt8>, options : Optional<dotnet.System.Text.Json.Nodes.JsonNodeOptions> = nil) throws -> Optional<dotnet.System.Text.Json.Nodes.JsonValue> {
         var __thrown : NullableHandle = nil;
         let __return = System_Text_Json_Nodes_JsonValue_JsonValue__Create_0__2__System_Nullable_u8__System_Nullable_System_Text_Json_Nodes_JsonNodeOptions_(&__thrown, (value != nil) ? System_Byte_box(value!) : nil, (options != nil) ? options!.get_handle() : nil);
@@ -6719,6 +7521,14 @@ open class JsonValue
     }
     // System.Text.Json.Nodes.JsonValue Create(System.Nullable<System.Char>, System.Nullable<System.Text.Json.Nodes.JsonNodeOptions>)
 // docid: M:System.Text.Json.Nodes.JsonValue.Create(System.Nullable{System.Char},System.Nullable{System.Text.Json.Nodes.JsonNodeOptions})
+    /**
+    Initializes a new instance of the  class that contains the specified value.
+
+    - Parameter value: The underlying value of the new  instance.
+    - Parameter options: Options to control the behavior.
+    - Returns: The new instance of the  class that contains the specified value.
+
+    */
     open class func Create(value : Optional<dotnet.System.Char>, options : Optional<dotnet.System.Text.Json.Nodes.JsonNodeOptions> = nil) throws -> Optional<dotnet.System.Text.Json.Nodes.JsonValue> {
         var __thrown : NullableHandle = nil;
         let __return = System_Text_Json_Nodes_JsonValue_JsonValue__Create_0__2__System_Nullable_System_Char__System_Nullable_System_Text_Json_Nodes_JsonNodeOptions_(&__thrown, (value != nil) ? System_Int16_box(value!.get_value()) : nil, (options != nil) ? options!.get_handle() : nil);
@@ -6734,6 +7544,14 @@ open class JsonValue
     }
     // System.Text.Json.Nodes.JsonValue Create(System.Nullable<System.DateTimeOffset>, System.Nullable<System.Text.Json.Nodes.JsonNodeOptions>)
 // docid: M:System.Text.Json.Nodes.JsonValue.Create(System.Nullable{System.DateTimeOffset},System.Nullable{System.Text.Json.Nodes.JsonNodeOptions})
+    /**
+    Initializes a new instance of the  class that contains the specified value.
+
+    - Parameter value: The underlying value of the new  instance.
+    - Parameter options: Options to control the behavior.
+    - Returns: The new instance of the  class that contains the specified value.
+
+    */
     open class func Create(value : Optional<dotnet.System.DateTimeOffset>, options : Optional<dotnet.System.Text.Json.Nodes.JsonNodeOptions> = nil) throws -> Optional<dotnet.System.Text.Json.Nodes.JsonValue> {
         var __thrown : NullableHandle = nil;
         let __return = System_Text_Json_Nodes_JsonValue_JsonValue__Create_0__2__System_Nullable_System_DateTimeOffset__System_Nullable_System_Text_Json_Nodes_JsonNodeOptions_(&__thrown, (value != nil) ? value!.get_handle() : nil, (options != nil) ? options!.get_handle() : nil);
@@ -6749,6 +7567,14 @@ open class JsonValue
     }
     // System.Text.Json.Nodes.JsonValue Create(System.Nullable<System.DateTime>, System.Nullable<System.Text.Json.Nodes.JsonNodeOptions>)
 // docid: M:System.Text.Json.Nodes.JsonValue.Create(System.Nullable{System.DateTime},System.Nullable{System.Text.Json.Nodes.JsonNodeOptions})
+    /**
+    Initializes a new instance of the  class that contains the specified value.
+
+    - Parameter value: The underlying value of the new  instance.
+    - Parameter options: Options to control the behavior.
+    - Returns: The new instance of the  class that contains the specified value.
+
+    */
     open class func Create(value : Optional<dotnet.System.DateTime>, options : Optional<dotnet.System.Text.Json.Nodes.JsonNodeOptions> = nil) throws -> Optional<dotnet.System.Text.Json.Nodes.JsonValue> {
         var __thrown : NullableHandle = nil;
         let __return = System_Text_Json_Nodes_JsonValue_JsonValue__Create_0__2__System_Nullable_System_DateTime__System_Nullable_System_Text_Json_Nodes_JsonNodeOptions_(&__thrown, (value != nil) ? value!.get_handle() : nil, (options != nil) ? options!.get_handle() : nil);
@@ -6764,6 +7590,14 @@ open class JsonValue
     }
     // System.Text.Json.Nodes.JsonValue Create(System.Nullable<System.Decimal>, System.Nullable<System.Text.Json.Nodes.JsonNodeOptions>)
 // docid: M:System.Text.Json.Nodes.JsonValue.Create(System.Nullable{System.Decimal},System.Nullable{System.Text.Json.Nodes.JsonNodeOptions})
+    /**
+    Initializes a new instance of the  class that contains the specified value.
+
+    - Parameter value: The underlying value of the new  instance.
+    - Parameter options: Options to control the behavior.
+    - Returns: The new instance of the  class that contains the specified value.
+
+    */
     open class func Create(value : Optional<dotnet.System.Decimal>, options : Optional<dotnet.System.Text.Json.Nodes.JsonNodeOptions> = nil) throws -> Optional<dotnet.System.Text.Json.Nodes.JsonValue> {
         var __thrown : NullableHandle = nil;
         let __return = System_Text_Json_Nodes_JsonValue_JsonValue__Create_0__2__System_Nullable_System_Decimal__System_Nullable_System_Text_Json_Nodes_JsonNodeOptions_(&__thrown, (value != nil) ? value!.get_handle() : nil, (options != nil) ? options!.get_handle() : nil);
@@ -6779,6 +7613,14 @@ open class JsonValue
     }
     // System.Text.Json.Nodes.JsonValue Create(System.Nullable<System.Double>, System.Nullable<System.Text.Json.Nodes.JsonNodeOptions>)
 // docid: M:System.Text.Json.Nodes.JsonValue.Create(System.Nullable{System.Double},System.Nullable{System.Text.Json.Nodes.JsonNodeOptions})
+    /**
+    Initializes a new instance of the  class that contains the specified value.
+
+    - Parameter value: The underlying value of the new  instance.
+    - Parameter options: Options to control the behavior.
+    - Returns: The new instance of the  class that contains the specified value.
+
+    */
     open class func Create(value : Optional<Swift.Double>, options : Optional<dotnet.System.Text.Json.Nodes.JsonNodeOptions> = nil) throws -> Optional<dotnet.System.Text.Json.Nodes.JsonValue> {
         var __thrown : NullableHandle = nil;
         let __return = System_Text_Json_Nodes_JsonValue_JsonValue__Create_0__2__System_Nullable_f64__System_Nullable_System_Text_Json_Nodes_JsonNodeOptions_(&__thrown, (value != nil) ? System_Double_box(value!) : nil, (options != nil) ? options!.get_handle() : nil);
@@ -6794,6 +7636,14 @@ open class JsonValue
     }
     // System.Text.Json.Nodes.JsonValue Create(System.Nullable<System.Guid>, System.Nullable<System.Text.Json.Nodes.JsonNodeOptions>)
 // docid: M:System.Text.Json.Nodes.JsonValue.Create(System.Nullable{System.Guid},System.Nullable{System.Text.Json.Nodes.JsonNodeOptions})
+    /**
+    Initializes a new instance of the  class that contains the specified value.
+
+    - Parameter value: The underlying value of the new  instance.
+    - Parameter options: Options to control the behavior.
+    - Returns: The new instance of the  class that contains the specified value.
+
+    */
     open class func Create(value : Optional<dotnet.System.Guid>, options : Optional<dotnet.System.Text.Json.Nodes.JsonNodeOptions> = nil) throws -> Optional<dotnet.System.Text.Json.Nodes.JsonValue> {
         var __thrown : NullableHandle = nil;
         let __return = System_Text_Json_Nodes_JsonValue_JsonValue__Create_0__2__System_Nullable_System_Guid__System_Nullable_System_Text_Json_Nodes_JsonNodeOptions_(&__thrown, (value != nil) ? value!.get_handle() : nil, (options != nil) ? options!.get_handle() : nil);
@@ -6809,6 +7659,14 @@ open class JsonValue
     }
     // System.Text.Json.Nodes.JsonValue Create(System.Nullable<System.Int16>, System.Nullable<System.Text.Json.Nodes.JsonNodeOptions>)
 // docid: M:System.Text.Json.Nodes.JsonValue.Create(System.Nullable{System.Int16},System.Nullable{System.Text.Json.Nodes.JsonNodeOptions})
+    /**
+    Initializes a new instance of the  class that contains the specified value.
+
+    - Parameter value: The underlying value of the new  instance.
+    - Parameter options: Options to control the behavior.
+    - Returns: The new instance of the  class that contains the specified value.
+
+    */
     open class func Create(value : Optional<Swift.Int16>, options : Optional<dotnet.System.Text.Json.Nodes.JsonNodeOptions> = nil) throws -> Optional<dotnet.System.Text.Json.Nodes.JsonValue> {
         var __thrown : NullableHandle = nil;
         let __return = System_Text_Json_Nodes_JsonValue_JsonValue__Create_0__2__System_Nullable_i16__System_Nullable_System_Text_Json_Nodes_JsonNodeOptions_(&__thrown, (value != nil) ? System_Int16_box(value!) : nil, (options != nil) ? options!.get_handle() : nil);
@@ -6824,6 +7682,14 @@ open class JsonValue
     }
     // System.Text.Json.Nodes.JsonValue Create(System.Nullable<System.Int32>, System.Nullable<System.Text.Json.Nodes.JsonNodeOptions>)
 // docid: M:System.Text.Json.Nodes.JsonValue.Create(System.Nullable{System.Int32},System.Nullable{System.Text.Json.Nodes.JsonNodeOptions})
+    /**
+    Initializes a new instance of the  class that contains the specified value.
+
+    - Parameter value: The underlying value of the new  instance.
+    - Parameter options: Options to control the behavior.
+    - Returns: The new instance of the  class that contains the specified value.
+
+    */
     open class func Create(value : Optional<Swift.Int32>, options : Optional<dotnet.System.Text.Json.Nodes.JsonNodeOptions> = nil) throws -> Optional<dotnet.System.Text.Json.Nodes.JsonValue> {
         var __thrown : NullableHandle = nil;
         let __return = System_Text_Json_Nodes_JsonValue_JsonValue__Create_0__2__System_Nullable_i32__System_Nullable_System_Text_Json_Nodes_JsonNodeOptions_(&__thrown, (value != nil) ? System_Int32_box(value!) : nil, (options != nil) ? options!.get_handle() : nil);
@@ -6839,6 +7705,14 @@ open class JsonValue
     }
     // System.Text.Json.Nodes.JsonValue Create(System.Nullable<System.Int64>, System.Nullable<System.Text.Json.Nodes.JsonNodeOptions>)
 // docid: M:System.Text.Json.Nodes.JsonValue.Create(System.Nullable{System.Int64},System.Nullable{System.Text.Json.Nodes.JsonNodeOptions})
+    /**
+    Initializes a new instance of the  class that contains the specified value.
+
+    - Parameter value: The underlying value of the new  instance.
+    - Parameter options: Options to control the behavior.
+    - Returns: The new instance of the  class that contains the specified value.
+
+    */
     open class func Create(value : Optional<Swift.Int64>, options : Optional<dotnet.System.Text.Json.Nodes.JsonNodeOptions> = nil) throws -> Optional<dotnet.System.Text.Json.Nodes.JsonValue> {
         var __thrown : NullableHandle = nil;
         let __return = System_Text_Json_Nodes_JsonValue_JsonValue__Create_0__2__System_Nullable_i64__System_Nullable_System_Text_Json_Nodes_JsonNodeOptions_(&__thrown, (value != nil) ? System_Int64_box(value!) : nil, (options != nil) ? options!.get_handle() : nil);
@@ -6854,6 +7728,14 @@ open class JsonValue
     }
     // System.Text.Json.Nodes.JsonValue Create(System.Nullable<System.SByte>, System.Nullable<System.Text.Json.Nodes.JsonNodeOptions>)
 // docid: M:System.Text.Json.Nodes.JsonValue.Create(System.Nullable{System.SByte},System.Nullable{System.Text.Json.Nodes.JsonNodeOptions})
+    /**
+    Initializes a new instance of the  class that contains the specified value.
+
+    - Parameter value: The underlying value of the new  instance.
+    - Parameter options: Options to control the behavior.
+    - Returns: The new instance of the  class that contains the specified value.
+
+    */
     open class func Create(value : Optional<Swift.Int8>, options : Optional<dotnet.System.Text.Json.Nodes.JsonNodeOptions> = nil) throws -> Optional<dotnet.System.Text.Json.Nodes.JsonValue> {
         var __thrown : NullableHandle = nil;
         let __return = System_Text_Json_Nodes_JsonValue_JsonValue__Create_0__2__System_Nullable_i8__System_Nullable_System_Text_Json_Nodes_JsonNodeOptions_(&__thrown, (value != nil) ? System_SByte_box(value!) : nil, (options != nil) ? options!.get_handle() : nil);
@@ -6869,6 +7751,14 @@ open class JsonValue
     }
     // System.Text.Json.Nodes.JsonValue Create(System.Nullable<System.Single>, System.Nullable<System.Text.Json.Nodes.JsonNodeOptions>)
 // docid: M:System.Text.Json.Nodes.JsonValue.Create(System.Nullable{System.Single},System.Nullable{System.Text.Json.Nodes.JsonNodeOptions})
+    /**
+    Initializes a new instance of the  class that contains the specified value.
+
+    - Parameter value: The underlying value of the new  instance.
+    - Parameter options: Options to control the behavior.
+    - Returns: The new instance of the  class that contains the specified value.
+
+    */
     open class func Create(value : Optional<Swift.Float>, options : Optional<dotnet.System.Text.Json.Nodes.JsonNodeOptions> = nil) throws -> Optional<dotnet.System.Text.Json.Nodes.JsonValue> {
         var __thrown : NullableHandle = nil;
         let __return = System_Text_Json_Nodes_JsonValue_JsonValue__Create_0__2__System_Nullable_f32__System_Nullable_System_Text_Json_Nodes_JsonNodeOptions_(&__thrown, (value != nil) ? System_Single_box(value!) : nil, (options != nil) ? options!.get_handle() : nil);
@@ -6884,6 +7774,14 @@ open class JsonValue
     }
     // System.Text.Json.Nodes.JsonValue Create(System.Nullable<System.Text.Json.JsonElement>, System.Nullable<System.Text.Json.Nodes.JsonNodeOptions>)
 // docid: M:System.Text.Json.Nodes.JsonValue.Create(System.Nullable{System.Text.Json.JsonElement},System.Nullable{System.Text.Json.Nodes.JsonNodeOptions})
+    /**
+    Initializes a new instance of the  class that contains the specified value.
+
+    - Parameter value: The underlying value of the new  instance.
+    - Parameter options: Options to control the behavior.
+    - Returns: The new instance of the  class that contains the specified value.
+
+    */
     open class func Create(value : Optional<dotnet.System.Text.Json.JsonElement>, options : Optional<dotnet.System.Text.Json.Nodes.JsonNodeOptions> = nil) throws -> Optional<dotnet.System.Text.Json.Nodes.JsonValue> {
         var __thrown : NullableHandle = nil;
         let __return = System_Text_Json_Nodes_JsonValue_JsonValue__Create_0__2__System_Nullable_System_Text_Json_JsonElement__System_Nullable_System_Text_Json_Nodes_JsonNodeOptions_(&__thrown, (value != nil) ? value!.get_handle() : nil, (options != nil) ? options!.get_handle() : nil);
@@ -6899,6 +7797,14 @@ open class JsonValue
     }
     // System.Text.Json.Nodes.JsonValue Create(System.Nullable<System.UInt16>, System.Nullable<System.Text.Json.Nodes.JsonNodeOptions>)
 // docid: M:System.Text.Json.Nodes.JsonValue.Create(System.Nullable{System.UInt16},System.Nullable{System.Text.Json.Nodes.JsonNodeOptions})
+    /**
+    Initializes a new instance of the  class that contains the specified value.
+
+    - Parameter value: The underlying value of the new  instance.
+    - Parameter options: Options to control the behavior.
+    - Returns: The new instance of the  class that contains the specified value.
+
+    */
     open class func Create(value : Optional<Swift.UInt16>, options : Optional<dotnet.System.Text.Json.Nodes.JsonNodeOptions> = nil) throws -> Optional<dotnet.System.Text.Json.Nodes.JsonValue> {
         var __thrown : NullableHandle = nil;
         let __return = System_Text_Json_Nodes_JsonValue_JsonValue__Create_0__2__System_Nullable_u16__System_Nullable_System_Text_Json_Nodes_JsonNodeOptions_(&__thrown, (value != nil) ? System_UInt16_box(value!) : nil, (options != nil) ? options!.get_handle() : nil);
@@ -6914,6 +7820,14 @@ open class JsonValue
     }
     // System.Text.Json.Nodes.JsonValue Create(System.Nullable<System.UInt32>, System.Nullable<System.Text.Json.Nodes.JsonNodeOptions>)
 // docid: M:System.Text.Json.Nodes.JsonValue.Create(System.Nullable{System.UInt32},System.Nullable{System.Text.Json.Nodes.JsonNodeOptions})
+    /**
+    Initializes a new instance of the  class that contains the specified value.
+
+    - Parameter value: The underlying value of the new  instance.
+    - Parameter options: Options to control the behavior.
+    - Returns: The new instance of the  class that contains the specified value.
+
+    */
     open class func Create(value : Optional<Swift.UInt32>, options : Optional<dotnet.System.Text.Json.Nodes.JsonNodeOptions> = nil) throws -> Optional<dotnet.System.Text.Json.Nodes.JsonValue> {
         var __thrown : NullableHandle = nil;
         let __return = System_Text_Json_Nodes_JsonValue_JsonValue__Create_0__2__System_Nullable_u32__System_Nullable_System_Text_Json_Nodes_JsonNodeOptions_(&__thrown, (value != nil) ? System_UInt32_box(value!) : nil, (options != nil) ? options!.get_handle() : nil);
@@ -6929,6 +7843,14 @@ open class JsonValue
     }
     // System.Text.Json.Nodes.JsonValue Create(System.Nullable<System.UInt64>, System.Nullable<System.Text.Json.Nodes.JsonNodeOptions>)
 // docid: M:System.Text.Json.Nodes.JsonValue.Create(System.Nullable{System.UInt64},System.Nullable{System.Text.Json.Nodes.JsonNodeOptions})
+    /**
+    Initializes a new instance of the  class that contains the specified value.
+
+    - Parameter value: The underlying value of the new  instance.
+    - Parameter options: Options to control the behavior.
+    - Returns: The new instance of the  class that contains the specified value.
+
+    */
     open class func Create(value : Optional<Swift.UInt64>, options : Optional<dotnet.System.Text.Json.Nodes.JsonNodeOptions> = nil) throws -> Optional<dotnet.System.Text.Json.Nodes.JsonValue> {
         var __thrown : NullableHandle = nil;
         let __return = System_Text_Json_Nodes_JsonValue_JsonValue__Create_0__2__System_Nullable_u64__System_Nullable_System_Text_Json_Nodes_JsonNodeOptions_(&__thrown, (value != nil) ? System_UInt64_box(value!) : nil, (options != nil) ? options!.get_handle() : nil);
@@ -6944,6 +7866,14 @@ open class JsonValue
     }
     // System.Text.Json.Nodes.JsonValue Create(System.SByte, System.Nullable<System.Text.Json.Nodes.JsonNodeOptions>)
 // docid: M:System.Text.Json.Nodes.JsonValue.Create(System.SByte,System.Nullable{System.Text.Json.Nodes.JsonNodeOptions})
+    /**
+    Initializes a new instance of the  class that contains the specified value.
+
+    - Parameter value: The underlying value of the new  instance.
+    - Parameter options: Options to control the behavior.
+    - Returns: The new instance of the  class that contains the specified value.
+
+    */
     open class func Create(value : Swift.Int8, options : Optional<dotnet.System.Text.Json.Nodes.JsonNodeOptions> = nil) throws -> dotnet.System.Text.Json.Nodes.JsonValue {
         var __thrown : NullableHandle = nil;
         let __return = System_Text_Json_Nodes_JsonValue_JsonValue__Create_0__2__i8_System_Nullable_System_Text_Json_Nodes_JsonNodeOptions_(&__thrown, value, (options != nil) ? options!.get_handle() : nil);
@@ -6955,6 +7885,14 @@ open class JsonValue
     }
     // System.Text.Json.Nodes.JsonValue Create(System.Single, System.Nullable<System.Text.Json.Nodes.JsonNodeOptions>)
 // docid: M:System.Text.Json.Nodes.JsonValue.Create(System.Single,System.Nullable{System.Text.Json.Nodes.JsonNodeOptions})
+    /**
+    Initializes a new instance of the  class that contains the specified value.
+
+    - Parameter value: The underlying value of the new  instance.
+    - Parameter options: Options to control the behavior.
+    - Returns: The new instance of the  class that contains the specified value.
+
+    */
     open class func Create(value : Swift.Float, options : Optional<dotnet.System.Text.Json.Nodes.JsonNodeOptions> = nil) throws -> dotnet.System.Text.Json.Nodes.JsonValue {
         var __thrown : NullableHandle = nil;
         let __return = System_Text_Json_Nodes_JsonValue_JsonValue__Create_0__2__f32_System_Nullable_System_Text_Json_Nodes_JsonNodeOptions_(&__thrown, value, (options != nil) ? options!.get_handle() : nil);
@@ -6966,6 +7904,14 @@ open class JsonValue
     }
     // System.Text.Json.Nodes.JsonValue Create(System.String, System.Nullable<System.Text.Json.Nodes.JsonNodeOptions>)
 // docid: M:System.Text.Json.Nodes.JsonValue.Create(System.String,System.Nullable{System.Text.Json.Nodes.JsonNodeOptions})
+    /**
+    Initializes a new instance of the  class that contains the specified value.
+
+    - Parameter value: The underlying value of the new  instance.
+    - Parameter options: Options to control the behavior.
+    - Returns: The new instance of the  class that contains the specified value.
+
+    */
     open class func Create(value : Optional<dotnet.System.String>, options : Optional<dotnet.System.Text.Json.Nodes.JsonNodeOptions> = nil) throws -> Optional<dotnet.System.Text.Json.Nodes.JsonValue> {
         var __thrown : NullableHandle = nil;
         let __return = System_Text_Json_Nodes_JsonValue_JsonValue__Create_0__2__String_System_Nullable_System_Text_Json_Nodes_JsonNodeOptions_(&__thrown, value?.get_handle() ?? nil, (options != nil) ? options!.get_handle() : nil);
@@ -6981,6 +7927,14 @@ open class JsonValue
     }
     // System.Text.Json.Nodes.JsonValue Create(System.Text.Json.JsonElement, System.Nullable<System.Text.Json.Nodes.JsonNodeOptions>)
 // docid: M:System.Text.Json.Nodes.JsonValue.Create(System.Text.Json.JsonElement,System.Nullable{System.Text.Json.Nodes.JsonNodeOptions})
+    /**
+    Initializes a new instance of the  class that contains the specified value.
+
+    - Parameter value: The underlying value of the new  instance.
+    - Parameter options: Options to control the behavior.
+    - Returns: The new instance of the  class that contains the specified value.
+
+    */
     open class func Create(value : dotnet.System.Text.Json.JsonElement, options : Optional<dotnet.System.Text.Json.Nodes.JsonNodeOptions> = nil) throws -> Optional<dotnet.System.Text.Json.Nodes.JsonValue> {
         var __thrown : NullableHandle = nil;
         let __return = System_Text_Json_Nodes_JsonValue_JsonValue__Create_0__2__JsonElement_System_Nullable_System_Text_Json_Nodes_JsonNodeOptions_(&__thrown, value.get_handle(), (options != nil) ? options!.get_handle() : nil);
@@ -6996,6 +7950,14 @@ open class JsonValue
     }
     // System.Text.Json.Nodes.JsonValue Create(System.UInt16, System.Nullable<System.Text.Json.Nodes.JsonNodeOptions>)
 // docid: M:System.Text.Json.Nodes.JsonValue.Create(System.UInt16,System.Nullable{System.Text.Json.Nodes.JsonNodeOptions})
+    /**
+    Initializes a new instance of the  class that contains the specified value.
+
+    - Parameter value: The underlying value of the new  instance.
+    - Parameter options: Options to control the behavior.
+    - Returns: The new instance of the  class that contains the specified value.
+
+    */
     open class func Create(value : Swift.UInt16, options : Optional<dotnet.System.Text.Json.Nodes.JsonNodeOptions> = nil) throws -> dotnet.System.Text.Json.Nodes.JsonValue {
         var __thrown : NullableHandle = nil;
         let __return = System_Text_Json_Nodes_JsonValue_JsonValue__Create_0__2__u16_System_Nullable_System_Text_Json_Nodes_JsonNodeOptions_(&__thrown, value, (options != nil) ? options!.get_handle() : nil);
@@ -7007,6 +7969,14 @@ open class JsonValue
     }
     // System.Text.Json.Nodes.JsonValue Create(System.UInt32, System.Nullable<System.Text.Json.Nodes.JsonNodeOptions>)
 // docid: M:System.Text.Json.Nodes.JsonValue.Create(System.UInt32,System.Nullable{System.Text.Json.Nodes.JsonNodeOptions})
+    /**
+    Initializes a new instance of the  class that contains the specified value.
+
+    - Parameter value: The underlying value of the new  instance.
+    - Parameter options: Options to control the behavior.
+    - Returns: The new instance of the  class that contains the specified value.
+
+    */
     open class func Create(value : Swift.UInt32, options : Optional<dotnet.System.Text.Json.Nodes.JsonNodeOptions> = nil) throws -> dotnet.System.Text.Json.Nodes.JsonValue {
         var __thrown : NullableHandle = nil;
         let __return = System_Text_Json_Nodes_JsonValue_JsonValue__Create_0__2__u32_System_Nullable_System_Text_Json_Nodes_JsonNodeOptions_(&__thrown, value, (options != nil) ? options!.get_handle() : nil);
@@ -7018,6 +7988,14 @@ open class JsonValue
     }
     // System.Text.Json.Nodes.JsonValue Create(System.UInt64, System.Nullable<System.Text.Json.Nodes.JsonNodeOptions>)
 // docid: M:System.Text.Json.Nodes.JsonValue.Create(System.UInt64,System.Nullable{System.Text.Json.Nodes.JsonNodeOptions})
+    /**
+    Initializes a new instance of the  class that contains the specified value.
+
+    - Parameter value: The underlying value of the new  instance.
+    - Parameter options: Options to control the behavior.
+    - Returns: The new instance of the  class that contains the specified value.
+
+    */
     open class func Create(value : Swift.UInt64, options : Optional<dotnet.System.Text.Json.Nodes.JsonNodeOptions> = nil) throws -> dotnet.System.Text.Json.Nodes.JsonValue {
         var __thrown : NullableHandle = nil;
         let __return = System_Text_Json_Nodes_JsonValue_JsonValue__Create_0__2__u64_System_Nullable_System_Text_Json_Nodes_JsonNodeOptions_(&__thrown, value, (options != nil) ? options!.get_handle() : nil);
@@ -7029,6 +8007,15 @@ open class JsonValue
     }
     // System.Text.Json.Nodes.JsonValue Create<T>(T, System.Text.Json.Serialization.Metadata.JsonTypeInfo<T>, System.Nullable<System.Text.Json.Nodes.JsonNodeOptions>)
 // docid: M:System.Text.Json.Nodes.JsonValue.Create``1(``0,System.Text.Json.Serialization.Metadata.JsonTypeInfo{``0},System.Nullable{System.Text.Json.Nodes.JsonNodeOptions})
+    /**
+    Initializes a new instance of the  class that contains the specified value.
+
+    - Parameter value: The value to create.
+    - Parameter jsonTypeInfo: The  that will be used to serialize the value.
+    - Parameter options: Options to control the behavior.
+    - Returns: The new instance of the  class that contains the specified value.
+
+    */
     open class func Create<UT : SGBridgeGenericValue>(value : UT, jsonTypeInfo : dotnet.System.Text.Json.Serialization.Metadata.JsonTypeInfo_1<UT>, options : Optional<dotnet.System.Text.Json.Nodes.JsonNodeOptions> = nil) throws -> Optional<dotnet.System.Text.Json.Nodes.JsonValue> {
         var __thrown : NullableHandle = nil;
         let __return = System_Text_Json_Nodes_JsonValue_JsonValue__Create_1__3__UT_System_Text_Json_Serialization_Metadata_JsonTypeInfo_UT__System_Nullable_System_Text_Json_Nodes_JsonNodeOptions_(UT.get_type_handle(), &__thrown, value.to_gval(), jsonTypeInfo.get_handle(), (options != nil) ? options!.get_handle() : nil);
@@ -7044,6 +8031,14 @@ open class JsonValue
     }
     // System.Text.Json.Nodes.JsonValue Create<T>(T, System.Nullable<System.Text.Json.Nodes.JsonNodeOptions>)
 // docid: M:System.Text.Json.Nodes.JsonValue.Create``1(``0,System.Nullable{System.Text.Json.Nodes.JsonNodeOptions})
+    /**
+    Initializes a new instance of the  class that contains the specified value.
+
+    - Parameter value: The value to create.
+    - Parameter options: Options to control the behavior.
+    - Returns: The new instance of the  class that contains the specified value.
+
+    */
     open class func Create<UT : SGBridgeGenericValue>(value : UT, options : Optional<dotnet.System.Text.Json.Nodes.JsonNodeOptions> = nil) throws -> Optional<dotnet.System.Text.Json.Nodes.JsonValue> {
         var __thrown : NullableHandle = nil;
         let __return = System_Text_Json_Nodes_JsonValue_JsonValue__Create_1__2__UT_System_Nullable_System_Text_Json_Nodes_JsonNodeOptions_(UT.get_type_handle(), &__thrown, value.to_gval(), (options != nil) ? options!.get_handle() : nil);
@@ -7066,6 +8061,10 @@ open class JsonValue
 // System.Text.Json.Serialization
 extension System.Text.Json.Serialization {
 // type: System.Text.Json.Serialization.IJsonOnDeserialized
+    /**
+    Specifies that the JSON type should have its  method called after deserialization occurs.
+
+    */
 open class IJsonOnDeserialized
     :
     SGBridgeGenericValue,
@@ -7073,6 +8072,9 @@ open class IJsonOnDeserialized
 {
     open class func get_type_handle() -> TypeHandle {
         return System_Text_Json_Serialization_IJsonOnDeserialized_get_type_handle();
+    }
+    open class func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     let h : NonnullHandle;
     public func to_gval() -> GVal { return GVal(Swift.Int(bitPattern: self.h)); }
@@ -7085,6 +8087,10 @@ open class IJsonOnDeserialized
 
     // void OnDeserialized()
 // docid: M:System.Text.Json.Serialization.IJsonOnDeserialized.OnDeserialized
+    /**
+    The method that is called after deserialization.
+
+    */
     open func OnDeserialized() throws {
         var __thrown : NullableHandle = nil;
         System_Text_Json_Serialization_IJsonOnDeserialized_void__OnDeserialized_0__0(&__thrown, self.get_handle());
@@ -7098,6 +8104,10 @@ open class IJsonOnDeserialized
 
 
 // type: System.Text.Json.Serialization.IJsonOnDeserializing
+    /**
+    Specifies that the type should have its  method called before deserialization occurs.
+
+    */
 open class IJsonOnDeserializing
     :
     SGBridgeGenericValue,
@@ -7105,6 +8115,9 @@ open class IJsonOnDeserializing
 {
     open class func get_type_handle() -> TypeHandle {
         return System_Text_Json_Serialization_IJsonOnDeserializing_get_type_handle();
+    }
+    open class func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     let h : NonnullHandle;
     public func to_gval() -> GVal { return GVal(Swift.Int(bitPattern: self.h)); }
@@ -7117,6 +8130,10 @@ open class IJsonOnDeserializing
 
     // void OnDeserializing()
 // docid: M:System.Text.Json.Serialization.IJsonOnDeserializing.OnDeserializing
+    /**
+    The method that is called before deserialization.
+
+    */
     open func OnDeserializing() throws {
         var __thrown : NullableHandle = nil;
         System_Text_Json_Serialization_IJsonOnDeserializing_void__OnDeserializing_0__0(&__thrown, self.get_handle());
@@ -7130,6 +8147,10 @@ open class IJsonOnDeserializing
 
 
 // type: System.Text.Json.Serialization.IJsonOnSerialized
+    /**
+    Specifies that the type should have its  method called after serialization occurs.
+
+    */
 open class IJsonOnSerialized
     :
     SGBridgeGenericValue,
@@ -7137,6 +8158,9 @@ open class IJsonOnSerialized
 {
     open class func get_type_handle() -> TypeHandle {
         return System_Text_Json_Serialization_IJsonOnSerialized_get_type_handle();
+    }
+    open class func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     let h : NonnullHandle;
     public func to_gval() -> GVal { return GVal(Swift.Int(bitPattern: self.h)); }
@@ -7149,6 +8173,10 @@ open class IJsonOnSerialized
 
     // void OnSerialized()
 // docid: M:System.Text.Json.Serialization.IJsonOnSerialized.OnSerialized
+    /**
+    The method that is called after serialization.
+
+    */
     open func OnSerialized() throws {
         var __thrown : NullableHandle = nil;
         System_Text_Json_Serialization_IJsonOnSerialized_void__OnSerialized_0__0(&__thrown, self.get_handle());
@@ -7162,6 +8190,10 @@ open class IJsonOnSerialized
 
 
 // type: System.Text.Json.Serialization.IJsonOnSerializing
+    /**
+    Specifies that the type should have its  method called before serialization occurs.
+
+    */
 open class IJsonOnSerializing
     :
     SGBridgeGenericValue,
@@ -7169,6 +8201,9 @@ open class IJsonOnSerializing
 {
     open class func get_type_handle() -> TypeHandle {
         return System_Text_Json_Serialization_IJsonOnSerializing_get_type_handle();
+    }
+    open class func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     let h : NonnullHandle;
     public func to_gval() -> GVal { return GVal(Swift.Int(bitPattern: self.h)); }
@@ -7181,6 +8216,10 @@ open class IJsonOnSerializing
 
     // void OnSerializing()
 // docid: M:System.Text.Json.Serialization.IJsonOnSerializing.OnSerializing
+    /**
+    The method that is called before serialization.
+
+    */
     open func OnSerializing() throws {
         var __thrown : NullableHandle = nil;
         System_Text_Json_Serialization_IJsonOnSerializing_void__OnSerializing_0__0(&__thrown, self.get_handle());
@@ -7205,6 +8244,9 @@ open class JsonAttribute
     open class override func get_type_handle() -> TypeHandle {
         return System_Text_Json_Serialization_JsonAttribute_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
 } // JsonAttribute
@@ -7221,6 +8263,9 @@ public final class JsonConstructorAttribute
 {
     public class override func get_type_handle() -> TypeHandle {
         return System_Text_Json_Serialization_JsonConstructorAttribute_get_type_handle();
+    }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -7253,6 +8298,9 @@ open class JsonConverter
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Text_Json_Serialization_JsonConverter_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -7289,6 +8337,9 @@ open class JsonConverterAttribute
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Text_Json_Serialization_JsonConverterAttribute_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -7369,6 +8420,9 @@ open class JsonConverterFactory
     open class override func get_type_handle() -> TypeHandle {
         return System_Text_Json_Serialization_JsonConverterFactory_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // System.Text.Json.Serialization.JsonConverter CreateConverter(System.Type, System.Text.Json.JsonSerializerOptions)
@@ -7409,6 +8463,9 @@ open class JsonConverter_1<T : SGBridgeGenericValue>
     open class override func get_type_handle() -> TypeHandle {
         return System_Text_Json_Serialization_JsonConverter_1_get_type_handle(T.get_type_handle());
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // bool CanConvert(System.Type)
@@ -7430,6 +8487,8 @@ open class JsonConverter_1<T : SGBridgeGenericValue>
         return (__return) != 0;
         }
     }
+// TODO COPE (parm byref span): T Read(ref System.Text.Json.Utf8JsonReader, System.Type, System.Text.Json.JsonSerializerOptions)
+// TODO COPE (parm byref span): T ReadAsPropertyName(ref System.Text.Json.Utf8JsonReader, System.Type, System.Text.Json.JsonSerializerOptions)
     // void Write(System.Text.Json.Utf8JsonWriter, T, System.Text.Json.JsonSerializerOptions)
 // docid: M:System.Text.Json.Serialization.JsonConverter`1.Write(System.Text.Json.Utf8JsonWriter,`0,System.Text.Json.JsonSerializerOptions)
     /**
@@ -7450,6 +8509,13 @@ open class JsonConverter_1<T : SGBridgeGenericValue>
     }
     // void WriteAsPropertyName(System.Text.Json.Utf8JsonWriter, T, System.Text.Json.JsonSerializerOptions)
 // docid: M:System.Text.Json.Serialization.JsonConverter`1.WriteAsPropertyName(System.Text.Json.Utf8JsonWriter,`0,System.Text.Json.JsonSerializerOptions)
+    /**
+    Writes a dictionary key as a JSON property name.
+
+    - Parameter writer: The  to write to.
+    - Parameter value: The value to convert. The value of  determines if the converter handles  values.
+    - Parameter options: The options to use when writing the value.
+    */
     open func WriteAsPropertyName(writer : dotnet.System.Text.Json.Utf8JsonWriter, value : T, options : dotnet.System.Text.Json.JsonSerializerOptions) throws {
         var __thrown : NullableHandle = nil;
         System_Text_Json_Serialization_JsonConverter_1_void__WriteAsPropertyName_0__3__Utf8JsonWriter_T_JsonSerializerOptions(T.get_type_handle(), &__thrown, self.get_handle(), writer.get_handle(), value.to_gval(), options.get_handle());
@@ -7494,6 +8560,9 @@ public final class JsonExtensionDataAttribute
     public class override func get_type_handle() -> TypeHandle {
         return System_Text_Json_Serialization_JsonExtensionDataAttribute_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor()
@@ -7525,6 +8594,9 @@ public final class JsonIgnoreAttribute
 {
     public class override func get_type_handle() -> TypeHandle {
         return System_Text_Json_Serialization_JsonIgnoreAttribute_get_type_handle();
+    }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -7654,6 +8726,9 @@ public final class JsonIncludeAttribute
     public class override func get_type_handle() -> TypeHandle {
         return System_Text_Json_Serialization_JsonIncludeAttribute_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor()
@@ -7675,6 +8750,10 @@ public final class JsonIncludeAttribute
 
 
 // type: System.Text.Json.Serialization.JsonKnownNamingPolicy
+    /**
+    The  to be used at run time.
+
+    */
 public struct JsonKnownNamingPolicy : SGBridgeGenericValue {
     let v : Swift.Int32;
     public init(val: Swift.Int32) { self.v = val; }
@@ -7686,6 +8765,10 @@ public struct JsonKnownNamingPolicy : SGBridgeGenericValue {
     public func dup_gval() -> GVal { return to_gval(); }
     public init(gval: GVal) { self.v = Swift.Int32(gval); }
     // static field: System.Text.Json.Serialization.JsonKnownNamingPolicy Unspecified
+    /**
+    Specifies that JSON property names should not be converted.
+
+    */
     public static var Unspecified : dotnet.System.Text.Json.Serialization.JsonKnownNamingPolicy {
         get {
         let __return = dotnet.System.Text.Json.Serialization.JsonKnownNamingPolicy(val: System_Text_Json_Serialization_JsonKnownNamingPolicy_get_Unspecified());
@@ -7693,6 +8776,10 @@ public struct JsonKnownNamingPolicy : SGBridgeGenericValue {
         }
     }
     // static field: System.Text.Json.Serialization.JsonKnownNamingPolicy CamelCase
+    /**
+    Specifies that the built-in  be used to convert JSON property names.
+
+    */
     public static var CamelCase : dotnet.System.Text.Json.Serialization.JsonKnownNamingPolicy {
         get {
         let __return = dotnet.System.Text.Json.Serialization.JsonKnownNamingPolicy(val: System_Text_Json_Serialization_JsonKnownNamingPolicy_get_CamelCase());
@@ -7776,6 +8863,9 @@ public final class JsonNumberHandlingAttribute
     public class override func get_type_handle() -> TypeHandle {
         return System_Text_Json_Serialization_JsonNumberHandlingAttribute_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor(System.Text.Json.Serialization.JsonNumberHandling)
@@ -7829,6 +8919,9 @@ public final class JsonPropertyNameAttribute
     public class override func get_type_handle() -> TypeHandle {
         return System_Text_Json_Serialization_JsonPropertyNameAttribute_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor(System.String)
@@ -7871,6 +8964,11 @@ public final class JsonPropertyNameAttribute
 
 
 // type: System.Text.Json.Serialization.JsonPropertyOrderAttribute
+    /**
+    Specifies the property order that is present in the JSON when serializing. Lower values are serialized first.
+            If the attribute is not specified, the default value is 0.
+
+    */
 public final class JsonPropertyOrderAttribute
     :
     dotnet.System.Text.Json.Serialization.JsonAttribute
@@ -7878,10 +8976,18 @@ public final class JsonPropertyOrderAttribute
     public class override func get_type_handle() -> TypeHandle {
         return System_Text_Json_Serialization_JsonPropertyOrderAttribute_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor(System.Int32)
 // docid: M:System.Text.Json.Serialization.JsonPropertyOrderAttribute.#ctor(System.Int32)
+    /**
+    Initializes a new instance of  with the specified order.
+
+    - Parameter order: The order of the property.
+    */
     public init(order : Swift.Int32) throws {
         var __thrown : NullableHandle = nil;
         let h = System_Text_Json_Serialization_JsonPropertyOrderAttribute_ctor_0__1__i32(&__thrown, order);
@@ -7902,6 +9008,10 @@ public final class JsonPropertyOrderAttribute
         return __return;
         }
     }
+    /**
+    Gets the serialization order of the property.
+
+    */
     public var Order : Swift.Int32 {
         get {
             return try! get_Order();
@@ -7911,6 +9021,10 @@ public final class JsonPropertyOrderAttribute
 
 
 // type: System.Text.Json.Serialization.JsonSerializableAttribute
+    /**
+    Instructs the System.Text.Json source generator to generate source code to help optimize performance when serializing and deserializing instances of the specified type and types in its object graph.
+
+    */
 public final class JsonSerializableAttribute
     :
     dotnet.System.Text.Json.Serialization.JsonAttribute
@@ -7918,10 +9032,18 @@ public final class JsonSerializableAttribute
     public class override func get_type_handle() -> TypeHandle {
         return System_Text_Json_Serialization_JsonSerializableAttribute_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor(System.Type)
 // docid: M:System.Text.Json.Serialization.JsonSerializableAttribute.#ctor(System.Type)
+    /**
+    Initializes a new instance of  with the specified type.
+
+    - Parameter type: The type to generate source code for.
+    */
     public init(type : dotnet.System.Type_) throws {
         var __thrown : NullableHandle = nil;
         let h = System_Text_Json_Serialization_JsonSerializableAttribute_ctor_0__1__Type(&__thrown, type.get_handle());
@@ -7979,6 +9101,10 @@ public final class JsonSerializableAttribute
             return;
         }
     }
+    /**
+    Determines what the source generator should generate for the type. If the value is , then the setting specified on  will be used.
+
+    */
     public var GenerationMode : dotnet.System.Text.Json.Serialization.JsonSourceGenerationMode {
         get {
             return try! get_GenerationMode();
@@ -7987,6 +9113,10 @@ public final class JsonSerializableAttribute
             return try! set_GenerationMode(value: v);
         }
     }
+    /**
+    The name of the property for the generated  for the type on the generated, derived  type.
+
+    */
     public var TypeInfoPropertyName : Optional<dotnet.System.String> {
         get {
             return try! get_TypeInfoPropertyName();
@@ -7999,6 +9129,10 @@ public final class JsonSerializableAttribute
 
 
 // type: System.Text.Json.Serialization.JsonSerializerContext
+    /**
+    Provides metadata about a set of types that is relevant to JSON serialization.
+
+    */
 open class JsonSerializerContext
     :
     dotnet.System.Object
@@ -8006,10 +9140,20 @@ open class JsonSerializerContext
     open class override func get_type_handle() -> TypeHandle {
         return System_Text_Json_Serialization_JsonSerializerContext_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // System.Text.Json.Serialization.Metadata.JsonTypeInfo GetTypeInfo(System.Type)
 // docid: M:System.Text.Json.Serialization.JsonSerializerContext.GetTypeInfo(System.Type)
+    /**
+    Returns a  instance representing the given type.
+
+    - Parameter type: The type to fetch metadata about.
+    - Returns: The metadata for the specified type, or  if the context has no metadata for the type.
+
+    */
     open func GetTypeInfo(type : dotnet.System.Type_) throws -> Optional<dotnet.System.Text.Json.Serialization.Metadata.JsonTypeInfo> {
         var __thrown : NullableHandle = nil;
         let __return = System_Text_Json_Serialization_JsonSerializerContext_JsonTypeInfo__GetTypeInfo_0__1__Type(&__thrown, self.get_handle(), type.get_handle());
@@ -8034,6 +9178,10 @@ open class JsonSerializerContext
         return dotnet.System.Text.Json.JsonSerializerOptions(hndl : __return);
         }
     }
+    /**
+    Gets the run-time specified options of the context. If no options were passed when instanciating the context, then a new instance is bound and returned.
+
+    */
     open var Options : dotnet.System.Text.Json.JsonSerializerOptions {
         get {
             return try! get_Options();
@@ -8043,6 +9191,10 @@ open class JsonSerializerContext
 
 
 // type: System.Text.Json.Serialization.JsonSourceGenerationMode
+    /**
+    The generation mode for the System.Text.Json source generator.
+
+    */
 public struct JsonSourceGenerationMode : SGBridgeGenericValue {
     let v : Swift.Int32;
     public init(val: Swift.Int32) { self.v = val; }
@@ -8054,6 +9206,10 @@ public struct JsonSourceGenerationMode : SGBridgeGenericValue {
     public func dup_gval() -> GVal { return to_gval(); }
     public init(gval: GVal) { self.v = Swift.Int32(gval); }
     // static field: System.Text.Json.Serialization.JsonSourceGenerationMode Default
+    /**
+    When specified on , indicates that both type-metadata initialization logic and optimized serialization logic should be generated for all types. When specified on , indicates that the setting on  should be used.
+
+    */
     public static var Default : dotnet.System.Text.Json.Serialization.JsonSourceGenerationMode {
         get {
         let __return = dotnet.System.Text.Json.Serialization.JsonSourceGenerationMode(val: System_Text_Json_Serialization_JsonSourceGenerationMode_get_Default());
@@ -8061,6 +9217,10 @@ public struct JsonSourceGenerationMode : SGBridgeGenericValue {
         }
     }
     // static field: System.Text.Json.Serialization.JsonSourceGenerationMode Metadata
+    /**
+    Instructs the JSON source generator to generate type-metadata initialization logic.
+
+    */
     public static var Metadata : dotnet.System.Text.Json.Serialization.JsonSourceGenerationMode {
         get {
         let __return = dotnet.System.Text.Json.Serialization.JsonSourceGenerationMode(val: System_Text_Json_Serialization_JsonSourceGenerationMode_get_Metadata());
@@ -8068,6 +9228,10 @@ public struct JsonSourceGenerationMode : SGBridgeGenericValue {
         }
     }
     // static field: System.Text.Json.Serialization.JsonSourceGenerationMode Serialization
+    /**
+    Instructs the JSON source generator to generate optimized serialization logic.
+
+    */
     public static var Serialization : dotnet.System.Text.Json.Serialization.JsonSourceGenerationMode {
         get {
         let __return = dotnet.System.Text.Json.Serialization.JsonSourceGenerationMode(val: System_Text_Json_Serialization_JsonSourceGenerationMode_get_Serialization());
@@ -8078,6 +9242,10 @@ public struct JsonSourceGenerationMode : SGBridgeGenericValue {
 
 
 // type: System.Text.Json.Serialization.JsonSourceGenerationOptionsAttribute
+    /**
+    Instructs the System.Text.Json source generator to assume the specified options will be used at run time via .
+
+    */
 public final class JsonSourceGenerationOptionsAttribute
     :
     dotnet.System.Text.Json.Serialization.JsonAttribute
@@ -8085,10 +9253,17 @@ public final class JsonSourceGenerationOptionsAttribute
     public class override func get_type_handle() -> TypeHandle {
         return System_Text_Json_Serialization_JsonSourceGenerationOptionsAttribute_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor()
 // docid: M:System.Text.Json.Serialization.JsonSourceGenerationOptionsAttribute.#ctor
+    /**
+    Instructs the System.Text.Json source generator to assume the specified options will be used at run time via .
+
+    */
     public init() throws {
         var __thrown : NullableHandle = nil;
         let h = System_Text_Json_Serialization_JsonSourceGenerationOptionsAttribute_ctor_0__0(&__thrown);
@@ -8158,28 +9333,6 @@ public final class JsonSourceGenerationOptionsAttribute
     public func set_IgnoreReadOnlyProperties(value : Bool) throws {
         var __thrown : NullableHandle = nil;
         System_Text_Json_Serialization_JsonSourceGenerationOptionsAttribute_void__set_IgnoreReadOnlyProperties_0__1__bool(&__thrown, self.get_handle(), Swift.Int32(value ? 1 : 0));
-        if let __ex =  __thrown {
-            throw dotnet.System.Exception(hndl: __ex);
-        } else {
-            return;
-        }
-    }
-    // [IsSpecialName] bool get_IgnoreRuntimeCustomConverters()
-// docid: M:System.Text.Json.Serialization.JsonSourceGenerationOptionsAttribute.get_IgnoreRuntimeCustomConverters
-    public func get_IgnoreRuntimeCustomConverters() throws -> Bool {
-        var __thrown : NullableHandle = nil;
-        let __return = System_Text_Json_Serialization_JsonSourceGenerationOptionsAttribute_bool__get_IgnoreRuntimeCustomConverters_0__0(&__thrown, self.get_handle());
-        if let __ex =  __thrown {
-            throw dotnet.System.Exception(hndl: __ex);
-        } else {
-        return (__return) != 0;
-        }
-    }
-    // [IsSpecialName] void set_IgnoreRuntimeCustomConverters(bool)
-// docid: M:System.Text.Json.Serialization.JsonSourceGenerationOptionsAttribute.set_IgnoreRuntimeCustomConverters(System.Boolean)
-    public func set_IgnoreRuntimeCustomConverters(value : Bool) throws {
-        var __thrown : NullableHandle = nil;
-        System_Text_Json_Serialization_JsonSourceGenerationOptionsAttribute_void__set_IgnoreRuntimeCustomConverters_0__1__bool(&__thrown, self.get_handle(), Swift.Int32(value ? 1 : 0));
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
@@ -8274,6 +9427,10 @@ public final class JsonSourceGenerationOptionsAttribute
             return;
         }
     }
+    /**
+    Gets or sets the default ignore condition.
+
+    */
     public var DefaultIgnoreCondition : dotnet.System.Text.Json.Serialization.JsonIgnoreCondition {
         get {
             return try! get_DefaultIgnoreCondition();
@@ -8282,6 +9439,10 @@ public final class JsonSourceGenerationOptionsAttribute
             return try! set_DefaultIgnoreCondition(value: v);
         }
     }
+    /**
+    Gets or sets the source generation mode for types that don't explicitly set the mode with .
+
+    */
     public var GenerationMode : dotnet.System.Text.Json.Serialization.JsonSourceGenerationMode {
         get {
             return try! get_GenerationMode();
@@ -8290,6 +9451,10 @@ public final class JsonSourceGenerationOptionsAttribute
             return try! set_GenerationMode(value: v);
         }
     }
+    /**
+    Gets or sets a value that indicates whether to ignore read-only fields.
+
+    */
     public var IgnoreReadOnlyFields : Bool {
         get {
             return try! get_IgnoreReadOnlyFields();
@@ -8298,6 +9463,10 @@ public final class JsonSourceGenerationOptionsAttribute
             return try! set_IgnoreReadOnlyFields(value: v);
         }
     }
+    /**
+    Gets or sets a value that indicates whether to ignore read-only properties.
+
+    */
     public var IgnoreReadOnlyProperties : Bool {
         get {
             return try! get_IgnoreReadOnlyProperties();
@@ -8306,14 +9475,10 @@ public final class JsonSourceGenerationOptionsAttribute
             return try! set_IgnoreReadOnlyProperties(value: v);
         }
     }
-    public var IgnoreRuntimeCustomConverters : Bool {
-        get {
-            return try! get_IgnoreRuntimeCustomConverters();
-        }
-        set(v) {
-            return try! set_IgnoreRuntimeCustomConverters(value: v);
-        }
-    }
+    /**
+    Gets or sets a value that indicates whether to include fields for serialization and deserialization.
+
+    */
     public var IncludeFields : Bool {
         get {
             return try! get_IncludeFields();
@@ -8322,6 +9487,10 @@ public final class JsonSourceGenerationOptionsAttribute
             return try! set_IncludeFields(value: v);
         }
     }
+    /**
+    Gets or sets a built-in naming policy to convert JSON property names with.
+
+    */
     public var PropertyNamingPolicy : dotnet.System.Text.Json.Serialization.JsonKnownNamingPolicy {
         get {
             return try! get_PropertyNamingPolicy();
@@ -8330,6 +9499,10 @@ public final class JsonSourceGenerationOptionsAttribute
             return try! set_PropertyNamingPolicy(value: v);
         }
     }
+    /**
+    Gets or sets a value that indicates whether JSON output should be pretty-printed.
+
+    */
     public var WriteIndented : Bool {
         get {
             return try! get_WriteIndented();
@@ -8352,6 +9525,9 @@ open class JsonStringEnumConverter
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Text_Json_Serialization_JsonStringEnumConverter_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -8430,6 +9606,10 @@ open class JsonStringEnumConverter
 
 
 // type: System.Text.Json.Serialization.JsonUnknownTypeHandling
+    /**
+    Defines how deserializing a type declared as an  is handled during deserialization.
+
+    */
 public struct JsonUnknownTypeHandling : SGBridgeGenericValue {
     let v : Swift.Int32;
     public init(val: Swift.Int32) { self.v = val; }
@@ -8441,6 +9621,10 @@ public struct JsonUnknownTypeHandling : SGBridgeGenericValue {
     public func dup_gval() -> GVal { return to_gval(); }
     public init(gval: GVal) { self.v = Swift.Int32(gval); }
     // static field: System.Text.Json.Serialization.JsonUnknownTypeHandling JsonElement
+    /**
+    A type declared as  is deserialized as a .
+
+    */
     public static var JsonElement : dotnet.System.Text.Json.Serialization.JsonUnknownTypeHandling {
         get {
         let __return = dotnet.System.Text.Json.Serialization.JsonUnknownTypeHandling(val: System_Text_Json_Serialization_JsonUnknownTypeHandling_get_JsonElement());
@@ -8448,6 +9632,10 @@ public struct JsonUnknownTypeHandling : SGBridgeGenericValue {
         }
     }
     // static field: System.Text.Json.Serialization.JsonUnknownTypeHandling JsonNode
+    /**
+    A type declared as  is deserialized as a .
+
+    */
     public static var JsonNode : dotnet.System.Text.Json.Serialization.JsonUnknownTypeHandling {
         get {
         let __return = dotnet.System.Text.Json.Serialization.JsonUnknownTypeHandling(val: System_Text_Json_Serialization_JsonUnknownTypeHandling_get_JsonNode());
@@ -8468,6 +9656,9 @@ open class ReferenceHandler
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Text_Json_Serialization_ReferenceHandler_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -8510,6 +9701,10 @@ open class ReferenceHandler
         return dotnet.System.Text.Json.Serialization.ReferenceHandler(hndl : __return);
         }
     }
+    /**
+    Ignores an object when a reference cycle is detected during serialization.
+
+    */
     public static var IgnoreCycles : dotnet.System.Text.Json.Serialization.ReferenceHandler {
         get {
             return try! get_IgnoreCycles();
@@ -8539,12 +9734,15 @@ public final class ReferenceHandler_1<T : SGBridgeGenericValue>
     public class override func get_type_handle() -> TypeHandle {
         return System_Text_Json_Serialization_ReferenceHandler_1_get_type_handle(T.get_type_handle());
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor()
 // docid: M:System.Text.Json.Serialization.ReferenceHandler`1.#ctor
     /**
-    Initializes a new instance of the  generic class that can create a  instance of the specified .
+    Initializes a new instance of the  generic class that can create a  instance of the specified type.
 
     */
     public init() throws {
@@ -8588,6 +9786,9 @@ open class ReferenceResolver
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Text_Json_Serialization_ReferenceResolver_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -8657,18 +9858,253 @@ open class ReferenceResolver
 }
 // System.Text.Json.Serialization.Metadata
 extension System.Text.Json.Serialization.Metadata {
+// type: System.Text.Json.Serialization.Metadata.JsonCollectionInfoValues`1
+public final class JsonCollectionInfoValues_1<TCollection : SGBridgeGenericValue>
+    :
+    dotnet.System.Object
+{
+    public class override func get_type_handle() -> TypeHandle {
+        return System_Text_Json_Serialization_Metadata_JsonCollectionInfoValues_1_get_type_handle(TCollection.get_type_handle());
+    }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
+    public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
+    public required init(gval: GVal) { super.init(gval: gval); }
+    // .ctor()
+// docid: M:System.Text.Json.Serialization.Metadata.JsonCollectionInfoValues`1.#ctor
+    public override init() throws {
+        var __thrown : NullableHandle = nil;
+        let h = System_Text_Json_Serialization_Metadata_JsonCollectionInfoValues_1_ctor_0__0(TCollection.get_type_handle(), &__thrown);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            super.init(hndl: h);
+        }
+    }
+    // [IsSpecialName] System.Func<TCollection> get_ObjectCreator()
+// docid: M:System.Text.Json.Serialization.Metadata.JsonCollectionInfoValues`1.get_ObjectCreator
+    public func get_ObjectCreator() throws -> Optional<dotnet.System.Func_1<TCollection>> {
+        var __thrown : NullableHandle = nil;
+        let __return = System_Text_Json_Serialization_Metadata_JsonCollectionInfoValues_1_System_Func_TCollection___get_ObjectCreator_0__0(TCollection.get_type_handle(), &__thrown, self.get_handle());
+        if let __ex =  __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+        if let __ret_unwrapped = __return {
+            return dotnet.System.Func_1(hndl : __ret_unwrapped);
+        } else {
+            return nil;
+        }
+        }
+    }
+    // [IsSpecialName] void set_ObjectCreator(System.Func<TCollection>)
+// docid: M:System.Text.Json.Serialization.Metadata.JsonCollectionInfoValues`1.set_ObjectCreator(System.Func{`0})
+    public func set_ObjectCreator(value : Optional<dotnet.System.Func_1<TCollection>>) throws {
+        var __thrown : NullableHandle = nil;
+        System_Text_Json_Serialization_Metadata_JsonCollectionInfoValues_1_void__set_ObjectCreator_0__1__System_Func_TCollection_(TCollection.get_type_handle(), &__thrown, self.get_handle(), (value?.get_handle()));
+        if let __ex =  __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            return;
+        }
+    }
+    // delegate closure overload
+    public func set_ObjectCreator(value : @escaping () throws -> TCollection) throws {
+        let del_value = try dotnet.System.Func_1<TCollection>(value);
+        return try set_ObjectCreator(value: del_value);
+    }
+    // [IsSpecialName] System.Text.Json.Serialization.Metadata.JsonTypeInfo get_ElementInfo()
+// docid: M:System.Text.Json.Serialization.Metadata.JsonCollectionInfoValues`1.get_ElementInfo
+    public func get_ElementInfo() throws -> dotnet.System.Text.Json.Serialization.Metadata.JsonTypeInfo {
+        var __thrown : NullableHandle = nil;
+        let __return = System_Text_Json_Serialization_Metadata_JsonCollectionInfoValues_1_JsonTypeInfo__get_ElementInfo_0__0(TCollection.get_type_handle(), &__thrown, self.get_handle());
+        if let __ex =  __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+        return dotnet.System.Text.Json.Serialization.Metadata.JsonTypeInfo(hndl : __return);
+        }
+    }
+    // [IsSpecialName] void set_ElementInfo(System.Text.Json.Serialization.Metadata.JsonTypeInfo)
+// docid: M:System.Text.Json.Serialization.Metadata.JsonCollectionInfoValues`1.set_ElementInfo(System.Text.Json.Serialization.Metadata.JsonTypeInfo)
+    public func set_ElementInfo(value : dotnet.System.Text.Json.Serialization.Metadata.JsonTypeInfo) throws {
+        var __thrown : NullableHandle = nil;
+        System_Text_Json_Serialization_Metadata_JsonCollectionInfoValues_1_void__set_ElementInfo_0__1__JsonTypeInfo(TCollection.get_type_handle(), &__thrown, self.get_handle(), value.get_handle());
+        if let __ex =  __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            return;
+        }
+    }
+    // [IsSpecialName] System.Text.Json.Serialization.Metadata.JsonTypeInfo get_KeyInfo()
+// docid: M:System.Text.Json.Serialization.Metadata.JsonCollectionInfoValues`1.get_KeyInfo
+    public func get_KeyInfo() throws -> Optional<dotnet.System.Text.Json.Serialization.Metadata.JsonTypeInfo> {
+        var __thrown : NullableHandle = nil;
+        let __return = System_Text_Json_Serialization_Metadata_JsonCollectionInfoValues_1_JsonTypeInfo__get_KeyInfo_0__0(TCollection.get_type_handle(), &__thrown, self.get_handle());
+        if let __ex =  __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+        if let __ret_unwrapped = __return {
+            return dotnet.System.Text.Json.Serialization.Metadata.JsonTypeInfo(hndl : __ret_unwrapped);
+        } else {
+            return nil;
+        }
+        }
+    }
+    // [IsSpecialName] void set_KeyInfo(System.Text.Json.Serialization.Metadata.JsonTypeInfo)
+// docid: M:System.Text.Json.Serialization.Metadata.JsonCollectionInfoValues`1.set_KeyInfo(System.Text.Json.Serialization.Metadata.JsonTypeInfo)
+    public func set_KeyInfo(value : Optional<dotnet.System.Text.Json.Serialization.Metadata.JsonTypeInfo>) throws {
+        var __thrown : NullableHandle = nil;
+        System_Text_Json_Serialization_Metadata_JsonCollectionInfoValues_1_void__set_KeyInfo_0__1__JsonTypeInfo(TCollection.get_type_handle(), &__thrown, self.get_handle(), value?.get_handle() ?? nil);
+        if let __ex =  __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            return;
+        }
+    }
+    // [IsSpecialName] System.Text.Json.Serialization.JsonNumberHandling get_NumberHandling()
+// docid: M:System.Text.Json.Serialization.Metadata.JsonCollectionInfoValues`1.get_NumberHandling
+    public func get_NumberHandling() throws -> dotnet.System.Text.Json.Serialization.JsonNumberHandling {
+        var __thrown : NullableHandle = nil;
+        let __return = System_Text_Json_Serialization_Metadata_JsonCollectionInfoValues_1_JsonNumberHandling__get_NumberHandling_0__0(TCollection.get_type_handle(), &__thrown, self.get_handle());
+        if let __ex =  __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+        return dotnet.System.Text.Json.Serialization.JsonNumberHandling(val: __return);
+        }
+    }
+    // [IsSpecialName] void set_NumberHandling(System.Text.Json.Serialization.JsonNumberHandling)
+// docid: M:System.Text.Json.Serialization.Metadata.JsonCollectionInfoValues`1.set_NumberHandling(System.Text.Json.Serialization.JsonNumberHandling)
+    public func set_NumberHandling(value : dotnet.System.Text.Json.Serialization.JsonNumberHandling) throws {
+        var __thrown : NullableHandle = nil;
+        System_Text_Json_Serialization_Metadata_JsonCollectionInfoValues_1_void__set_NumberHandling_0__1__JsonNumberHandling(TCollection.get_type_handle(), &__thrown, self.get_handle(), value.get_value());
+        if let __ex =  __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            return;
+        }
+    }
+    // [IsSpecialName] System.Action<System.Text.Json.Utf8JsonWriter,TCollection> get_SerializeHandler()
+// docid: M:System.Text.Json.Serialization.Metadata.JsonCollectionInfoValues`1.get_SerializeHandler
+    public func get_SerializeHandler() throws -> Optional<dotnet.System.Action_2<dotnet.System.Text.Json.Utf8JsonWriter,TCollection>> {
+        var __thrown : NullableHandle = nil;
+        let __return = System_Text_Json_Serialization_Metadata_JsonCollectionInfoValues_1_System_Action_System_Text_Json_Utf8JsonWriter_TCollection___get_SerializeHandler_0__0(TCollection.get_type_handle(), &__thrown, self.get_handle());
+        if let __ex =  __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+        if let __ret_unwrapped = __return {
+            return dotnet.System.Action_2(hndl : __ret_unwrapped);
+        } else {
+            return nil;
+        }
+        }
+    }
+    // [IsSpecialName] void set_SerializeHandler(System.Action<System.Text.Json.Utf8JsonWriter,TCollection>)
+// docid: M:System.Text.Json.Serialization.Metadata.JsonCollectionInfoValues`1.set_SerializeHandler(System.Action{System.Text.Json.Utf8JsonWriter,`0})
+    public func set_SerializeHandler(value : Optional<dotnet.System.Action_2<dotnet.System.Text.Json.Utf8JsonWriter,TCollection>>) throws {
+        var __thrown : NullableHandle = nil;
+        System_Text_Json_Serialization_Metadata_JsonCollectionInfoValues_1_void__set_SerializeHandler_0__1__System_Action_System_Text_Json_Utf8JsonWriter_TCollection_(TCollection.get_type_handle(), &__thrown, self.get_handle(), (value?.get_handle()));
+        if let __ex =  __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            return;
+        }
+    }
+    // delegate closure overload
+    public func set_SerializeHandler(value : @escaping (dotnet.System.Text.Json.Utf8JsonWriter, TCollection) throws -> Void) throws {
+        let del_value = try dotnet.System.Action_2<dotnet.System.Text.Json.Utf8JsonWriter,TCollection>(value);
+        return try set_SerializeHandler(value: del_value);
+    }
+    public var ElementInfo : dotnet.System.Text.Json.Serialization.Metadata.JsonTypeInfo {
+        get {
+            return try! get_ElementInfo();
+        }
+        set(v) {
+            return try! set_ElementInfo(value: v);
+        }
+    }
+    public var KeyInfo : Optional<dotnet.System.Text.Json.Serialization.Metadata.JsonTypeInfo> {
+        get {
+            return try! get_KeyInfo();
+        }
+        set(v) {
+            return try! set_KeyInfo(value: v!);
+        }
+    }
+    public var NumberHandling : dotnet.System.Text.Json.Serialization.JsonNumberHandling {
+        get {
+            return try! get_NumberHandling();
+        }
+        set(v) {
+            return try! set_NumberHandling(value: v);
+        }
+    }
+    public var ObjectCreator : Optional<dotnet.System.Func_1<TCollection>> {
+        get {
+            return try! get_ObjectCreator();
+        }
+        set(v) {
+            return try! set_ObjectCreator(value: v!);
+        }
+    }
+    public var SerializeHandler : Optional<dotnet.System.Action_2<dotnet.System.Text.Json.Utf8JsonWriter,TCollection>> {
+        get {
+            return try! get_SerializeHandler();
+        }
+        set(v) {
+            return try! set_SerializeHandler(value: v!);
+        }
+    }
+} // JsonCollectionInfoValues_1
+
+
 // type: System.Text.Json.Serialization.Metadata.JsonMetadataServices
 public struct JsonMetadataServices {
-// TODO COPE (write_all_methods) (unused generic param) System.Text.Json.Serialization.Metadata.JsonTypeInfo<TElement[]> CreateArrayInfo<TElement>(System.Text.Json.JsonSerializerOptions, System.Text.Json.Serialization.Metadata.JsonTypeInfo, System.Text.Json.Serialization.JsonNumberHandling, System.Action<System.Text.Json.Utf8JsonWriter,TElement[]>)
-// TODO COPE (write_all_methods) (unused generic param) System.Text.Json.Serialization.Metadata.JsonTypeInfo<TCollection> CreateConcurrentQueueInfo<TCollection, TElement>(System.Text.Json.JsonSerializerOptions, System.Func<TCollection>, System.Text.Json.Serialization.Metadata.JsonTypeInfo, System.Text.Json.Serialization.JsonNumberHandling, System.Action<System.Text.Json.Utf8JsonWriter,TCollection>)
-// TODO COPE (write_all_methods) (unused generic param) System.Text.Json.Serialization.Metadata.JsonTypeInfo<TCollection> CreateConcurrentStackInfo<TCollection, TElement>(System.Text.Json.JsonSerializerOptions, System.Func<TCollection>, System.Text.Json.Serialization.Metadata.JsonTypeInfo, System.Text.Json.Serialization.JsonNumberHandling, System.Action<System.Text.Json.Utf8JsonWriter,TCollection>)
-// TODO COPE (write_all_methods) (unused generic param) System.Text.Json.Serialization.Metadata.JsonTypeInfo<TCollection> CreateDictionaryInfo<TCollection, TKey, TValue>(System.Text.Json.JsonSerializerOptions, System.Func<TCollection>, System.Text.Json.Serialization.Metadata.JsonTypeInfo, System.Text.Json.Serialization.Metadata.JsonTypeInfo, System.Text.Json.Serialization.JsonNumberHandling, System.Action<System.Text.Json.Utf8JsonWriter,TCollection>)
-// TODO COPE (write_all_methods) (unused generic param) System.Text.Json.Serialization.Metadata.JsonTypeInfo<TCollection> CreateICollectionInfo<TCollection, TElement>(System.Text.Json.JsonSerializerOptions, System.Func<TCollection>, System.Text.Json.Serialization.Metadata.JsonTypeInfo, System.Text.Json.Serialization.JsonNumberHandling, System.Action<System.Text.Json.Utf8JsonWriter,TCollection>)
-    // System.Text.Json.Serialization.Metadata.JsonTypeInfo<TCollection> CreateIDictionaryInfo<TCollection>(System.Text.Json.JsonSerializerOptions, System.Func<TCollection>, System.Text.Json.Serialization.Metadata.JsonTypeInfo, System.Text.Json.Serialization.Metadata.JsonTypeInfo, System.Text.Json.Serialization.JsonNumberHandling, System.Action<System.Text.Json.Utf8JsonWriter,TCollection>)
-// docid: M:System.Text.Json.Serialization.Metadata.JsonMetadataServices.CreateIDictionaryInfo``1(System.Text.Json.JsonSerializerOptions,System.Func{``0},System.Text.Json.Serialization.Metadata.JsonTypeInfo,System.Text.Json.Serialization.Metadata.JsonTypeInfo,System.Text.Json.Serialization.JsonNumberHandling,System.Action{System.Text.Json.Utf8JsonWriter,``0})
-    public static func CreateIDictionaryInfo<UTCollection : SGBridgeGenericValue>(options : dotnet.System.Text.Json.JsonSerializerOptions, createObjectFunc : dotnet.System.Func_1<UTCollection>, stringInfo : dotnet.System.Text.Json.Serialization.Metadata.JsonTypeInfo, objectInfo : dotnet.System.Text.Json.Serialization.Metadata.JsonTypeInfo, numberHandling : dotnet.System.Text.Json.Serialization.JsonNumberHandling, serializeFunc : dotnet.System.Action_2<dotnet.System.Text.Json.Utf8JsonWriter,UTCollection>) throws -> dotnet.System.Text.Json.Serialization.Metadata.JsonTypeInfo_1<UTCollection> {
+// TODO COPE (write_all_methods) (unused generic param) System.Text.Json.Serialization.Metadata.JsonTypeInfo<TElement[]> CreateArrayInfo<TElement>(System.Text.Json.JsonSerializerOptions, System.Text.Json.Serialization.Metadata.JsonCollectionInfoValues<TElement[]>)
+// TODO COPE (write_all_methods) (unused generic param) System.Text.Json.Serialization.Metadata.JsonTypeInfo<TCollection> CreateConcurrentQueueInfo<TCollection, TElement>(System.Text.Json.JsonSerializerOptions, System.Text.Json.Serialization.Metadata.JsonCollectionInfoValues<TCollection>)
+// TODO COPE (write_all_methods) (unused generic param) System.Text.Json.Serialization.Metadata.JsonTypeInfo<TCollection> CreateConcurrentStackInfo<TCollection, TElement>(System.Text.Json.JsonSerializerOptions, System.Text.Json.Serialization.Metadata.JsonCollectionInfoValues<TCollection>)
+// TODO COPE (write_all_methods) (unused generic param) System.Text.Json.Serialization.Metadata.JsonTypeInfo<TCollection> CreateDictionaryInfo<TCollection, TKey, TValue>(System.Text.Json.JsonSerializerOptions, System.Text.Json.Serialization.Metadata.JsonCollectionInfoValues<TCollection>)
+// TODO COPE (write_all_methods) (unused generic param) System.Text.Json.Serialization.Metadata.JsonTypeInfo<TCollection> CreateICollectionInfo<TCollection, TElement>(System.Text.Json.JsonSerializerOptions, System.Text.Json.Serialization.Metadata.JsonCollectionInfoValues<TCollection>)
+    // System.Text.Json.Serialization.Metadata.JsonTypeInfo<TCollection> CreateIDictionaryInfo<TCollection>(System.Text.Json.JsonSerializerOptions, System.Text.Json.Serialization.Metadata.JsonCollectionInfoValues<TCollection>)
+// docid: M:System.Text.Json.Serialization.Metadata.JsonMetadataServices.CreateIDictionaryInfo``1(System.Text.Json.JsonSerializerOptions,System.Text.Json.Serialization.Metadata.JsonCollectionInfoValues{``0})
+    public static func CreateIDictionaryInfo<UTCollection : SGBridgeGenericValue>(options : dotnet.System.Text.Json.JsonSerializerOptions, collectionInfo : dotnet.System.Text.Json.Serialization.Metadata.JsonCollectionInfoValues_1<UTCollection>) throws -> dotnet.System.Text.Json.Serialization.Metadata.JsonTypeInfo_1<UTCollection> {
         var __thrown : NullableHandle = nil;
-        let __return = System_Text_Json_Serialization_Metadata_JsonMetadataServices_System_Text_Json_Serialization_Metadata_JsonTypeInfo_UTCollection___CreateIDictionaryInfo_1__6__JsonSerializerOptions_System_Func_UTCollection__JsonTypeInfo_JsonTypeInfo_JsonNumberHandling_System_Action_System_Text_Json_Utf8JsonWriter_UTCollection_(UTCollection.get_type_handle(), &__thrown, options.get_handle(), nil, stringInfo.get_handle(), objectInfo.get_handle(), numberHandling.get_value(), nil);
+        let __return = System_Text_Json_Serialization_Metadata_JsonMetadataServices_System_Text_Json_Serialization_Metadata_JsonTypeInfo_UTCollection___CreateIDictionaryInfo_1__2__JsonSerializerOptions_System_Text_Json_Serialization_Metadata_JsonCollectionInfoValues_UTCollection_(UTCollection.get_type_handle(), &__thrown, options.get_handle(), collectionInfo.get_handle());
+        if let __ex =  __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+        return dotnet.System.Text.Json.Serialization.Metadata.JsonTypeInfo_1(hndl : __return);
+        }
+    }
+// TODO COPE (write_all_methods) (unused generic param) System.Text.Json.Serialization.Metadata.JsonTypeInfo<TCollection> CreateIDictionaryInfo<TCollection, TKey, TValue>(System.Text.Json.JsonSerializerOptions, System.Text.Json.Serialization.Metadata.JsonCollectionInfoValues<TCollection>)
+    // System.Text.Json.Serialization.Metadata.JsonTypeInfo<TCollection> CreateIEnumerableInfo<TCollection>(System.Text.Json.JsonSerializerOptions, System.Text.Json.Serialization.Metadata.JsonCollectionInfoValues<TCollection>)
+// docid: M:System.Text.Json.Serialization.Metadata.JsonMetadataServices.CreateIEnumerableInfo``1(System.Text.Json.JsonSerializerOptions,System.Text.Json.Serialization.Metadata.JsonCollectionInfoValues{``0})
+    public static func CreateIEnumerableInfo<UTCollection : SGBridgeGenericValue>(options : dotnet.System.Text.Json.JsonSerializerOptions, collectionInfo : dotnet.System.Text.Json.Serialization.Metadata.JsonCollectionInfoValues_1<UTCollection>) throws -> dotnet.System.Text.Json.Serialization.Metadata.JsonTypeInfo_1<UTCollection> {
+        var __thrown : NullableHandle = nil;
+        let __return = System_Text_Json_Serialization_Metadata_JsonMetadataServices_System_Text_Json_Serialization_Metadata_JsonTypeInfo_UTCollection___CreateIEnumerableInfo_1__2__JsonSerializerOptions_System_Text_Json_Serialization_Metadata_JsonCollectionInfoValues_UTCollection_(UTCollection.get_type_handle(), &__thrown, options.get_handle(), collectionInfo.get_handle());
+        if let __ex =  __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+        return dotnet.System.Text.Json.Serialization.Metadata.JsonTypeInfo_1(hndl : __return);
+        }
+    }
+// TODO COPE (write_all_methods) (unused generic param) System.Text.Json.Serialization.Metadata.JsonTypeInfo<TCollection> CreateIEnumerableInfo<TCollection, TElement>(System.Text.Json.JsonSerializerOptions, System.Text.Json.Serialization.Metadata.JsonCollectionInfoValues<TCollection>)
+    // System.Text.Json.Serialization.Metadata.JsonTypeInfo<TCollection> CreateIListInfo<TCollection>(System.Text.Json.JsonSerializerOptions, System.Text.Json.Serialization.Metadata.JsonCollectionInfoValues<TCollection>)
+// docid: M:System.Text.Json.Serialization.Metadata.JsonMetadataServices.CreateIListInfo``1(System.Text.Json.JsonSerializerOptions,System.Text.Json.Serialization.Metadata.JsonCollectionInfoValues{``0})
+    public static func CreateIListInfo<UTCollection : SGBridgeGenericValue>(options : dotnet.System.Text.Json.JsonSerializerOptions, collectionInfo : dotnet.System.Text.Json.Serialization.Metadata.JsonCollectionInfoValues_1<UTCollection>) throws -> dotnet.System.Text.Json.Serialization.Metadata.JsonTypeInfo_1<UTCollection> {
+        var __thrown : NullableHandle = nil;
+        let __return = System_Text_Json_Serialization_Metadata_JsonMetadataServices_System_Text_Json_Serialization_Metadata_JsonTypeInfo_UTCollection___CreateIListInfo_1__2__JsonSerializerOptions_System_Text_Json_Serialization_Metadata_JsonCollectionInfoValues_UTCollection_(UTCollection.get_type_handle(), &__thrown, options.get_handle(), collectionInfo.get_handle());
+        if let __ex =  __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+        return dotnet.System.Text.Json.Serialization.Metadata.JsonTypeInfo_1(hndl : __return);
+        }
+    }
+// TODO COPE (write_all_methods) (unused generic param) System.Text.Json.Serialization.Metadata.JsonTypeInfo<TCollection> CreateIListInfo<TCollection, TElement>(System.Text.Json.JsonSerializerOptions, System.Text.Json.Serialization.Metadata.JsonCollectionInfoValues<TCollection>)
+    // System.Text.Json.Serialization.Metadata.JsonTypeInfo<TCollection> CreateImmutableDictionaryInfo<TCollection, TKey, TValue>(System.Text.Json.JsonSerializerOptions, System.Text.Json.Serialization.Metadata.JsonCollectionInfoValues<TCollection>, System.Func<System.Collections.Generic.IEnumerable<System.Collections.Generic.KeyValuePair<TKey,TValue>>,TCollection>)
+// docid: M:System.Text.Json.Serialization.Metadata.JsonMetadataServices.CreateImmutableDictionaryInfo``3(System.Text.Json.JsonSerializerOptions,System.Text.Json.Serialization.Metadata.JsonCollectionInfoValues{``0},System.Func{System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{``1,``2}},``0})
+    public static func CreateImmutableDictionaryInfo<UTCollection : SGBridgeGenericValue,UTKey : SGBridgeGenericValue,UTValue : SGBridgeGenericValue>(options : dotnet.System.Text.Json.JsonSerializerOptions, collectionInfo : dotnet.System.Text.Json.Serialization.Metadata.JsonCollectionInfoValues_1<UTCollection>, createRangeFunc : dotnet.System.Func_2<dotnet.System.Collections.Generic.IEnumerable_1<dotnet.System.Collections.Generic.KeyValuePair_2<UTKey,UTValue>>,UTCollection>) throws -> dotnet.System.Text.Json.Serialization.Metadata.JsonTypeInfo_1<UTCollection> {
+        var __thrown : NullableHandle = nil;
+        let __return = System_Text_Json_Serialization_Metadata_JsonMetadataServices_System_Text_Json_Serialization_Metadata_JsonTypeInfo_UTCollection___CreateImmutableDictionaryInfo_3__3__JsonSerializerOptions_System_Text_Json_Serialization_Metadata_JsonCollectionInfoValues_UTCollection__System_Func_System_Collections_Generic_System_Collections_Generic_IEnumerable_System_Collections_Generic_System_Collections_Generic_KeyValuePair_UTKey_UTValue___UTCollection_(UTCollection.get_type_handle(), UTKey.get_type_handle(), UTValue.get_type_handle(), &__thrown, options.get_handle(), collectionInfo.get_handle(), createRangeFunc.get_handle());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
@@ -8676,71 +10112,15 @@ public struct JsonMetadataServices {
         }
     }
     // delegate closure overload
-    public static func CreateIDictionaryInfo<UTCollection : SGBridgeGenericValue>(options : dotnet.System.Text.Json.JsonSerializerOptions, createObjectFunc : @escaping () throws -> UTCollection, stringInfo : dotnet.System.Text.Json.Serialization.Metadata.JsonTypeInfo, objectInfo : dotnet.System.Text.Json.Serialization.Metadata.JsonTypeInfo, numberHandling : dotnet.System.Text.Json.Serialization.JsonNumberHandling, serializeFunc : @escaping (Optional<dotnet.System.Text.Json.Utf8JsonWriter>, UTCollection) throws -> Void) throws -> dotnet.System.Text.Json.Serialization.Metadata.JsonTypeInfo_1<UTCollection> {
-        let del_createObjectFunc = try dotnet.System.Func_1<UTCollection>(createObjectFunc);
-        let del_serializeFunc = try dotnet.System.Action_2<dotnet.System.Text.Json.Utf8JsonWriter,UTCollection>(serializeFunc);
-        return try CreateIDictionaryInfo(options: options, createObjectFunc: del_createObjectFunc, stringInfo: stringInfo, objectInfo: objectInfo, numberHandling: numberHandling, serializeFunc: del_serializeFunc);
-    }
-// TODO COPE (write_all_methods) (unused generic param) System.Text.Json.Serialization.Metadata.JsonTypeInfo<TCollection> CreateIDictionaryInfo<TCollection, TKey, TValue>(System.Text.Json.JsonSerializerOptions, System.Func<TCollection>, System.Text.Json.Serialization.Metadata.JsonTypeInfo, System.Text.Json.Serialization.Metadata.JsonTypeInfo, System.Text.Json.Serialization.JsonNumberHandling, System.Action<System.Text.Json.Utf8JsonWriter,TCollection>)
-    // System.Text.Json.Serialization.Metadata.JsonTypeInfo<TCollection> CreateIEnumerableInfo<TCollection>(System.Text.Json.JsonSerializerOptions, System.Func<TCollection>, System.Text.Json.Serialization.Metadata.JsonTypeInfo, System.Text.Json.Serialization.JsonNumberHandling, System.Action<System.Text.Json.Utf8JsonWriter,TCollection>)
-// docid: M:System.Text.Json.Serialization.Metadata.JsonMetadataServices.CreateIEnumerableInfo``1(System.Text.Json.JsonSerializerOptions,System.Func{``0},System.Text.Json.Serialization.Metadata.JsonTypeInfo,System.Text.Json.Serialization.JsonNumberHandling,System.Action{System.Text.Json.Utf8JsonWriter,``0})
-    public static func CreateIEnumerableInfo<UTCollection : SGBridgeGenericValue>(options : dotnet.System.Text.Json.JsonSerializerOptions, createObjectFunc : dotnet.System.Func_1<UTCollection>, elementInfo : dotnet.System.Text.Json.Serialization.Metadata.JsonTypeInfo, numberHandling : dotnet.System.Text.Json.Serialization.JsonNumberHandling, serializeFunc : dotnet.System.Action_2<dotnet.System.Text.Json.Utf8JsonWriter,UTCollection>) throws -> dotnet.System.Text.Json.Serialization.Metadata.JsonTypeInfo_1<UTCollection> {
-        var __thrown : NullableHandle = nil;
-        let __return = System_Text_Json_Serialization_Metadata_JsonMetadataServices_System_Text_Json_Serialization_Metadata_JsonTypeInfo_UTCollection___CreateIEnumerableInfo_1__5__JsonSerializerOptions_System_Func_UTCollection__JsonTypeInfo_JsonNumberHandling_System_Action_System_Text_Json_Utf8JsonWriter_UTCollection_(UTCollection.get_type_handle(), &__thrown, options.get_handle(), nil, elementInfo.get_handle(), numberHandling.get_value(), nil);
-        if let __ex =  __thrown {
-            throw dotnet.System.Exception(hndl: __ex);
-        } else {
-        return dotnet.System.Text.Json.Serialization.Metadata.JsonTypeInfo_1(hndl : __return);
-        }
-    }
-    // delegate closure overload
-    public static func CreateIEnumerableInfo<UTCollection : SGBridgeGenericValue>(options : dotnet.System.Text.Json.JsonSerializerOptions, createObjectFunc : @escaping () throws -> UTCollection, elementInfo : dotnet.System.Text.Json.Serialization.Metadata.JsonTypeInfo, numberHandling : dotnet.System.Text.Json.Serialization.JsonNumberHandling, serializeFunc : @escaping (Optional<dotnet.System.Text.Json.Utf8JsonWriter>, UTCollection) throws -> Void) throws -> dotnet.System.Text.Json.Serialization.Metadata.JsonTypeInfo_1<UTCollection> {
-        let del_createObjectFunc = try dotnet.System.Func_1<UTCollection>(createObjectFunc);
-        let del_serializeFunc = try dotnet.System.Action_2<dotnet.System.Text.Json.Utf8JsonWriter,UTCollection>(serializeFunc);
-        return try CreateIEnumerableInfo(options: options, createObjectFunc: del_createObjectFunc, elementInfo: elementInfo, numberHandling: numberHandling, serializeFunc: del_serializeFunc);
-    }
-// TODO COPE (write_all_methods) (unused generic param) System.Text.Json.Serialization.Metadata.JsonTypeInfo<TCollection> CreateIEnumerableInfo<TCollection, TElement>(System.Text.Json.JsonSerializerOptions, System.Func<TCollection>, System.Text.Json.Serialization.Metadata.JsonTypeInfo, System.Text.Json.Serialization.JsonNumberHandling, System.Action<System.Text.Json.Utf8JsonWriter,TCollection>)
-    // System.Text.Json.Serialization.Metadata.JsonTypeInfo<TCollection> CreateIListInfo<TCollection>(System.Text.Json.JsonSerializerOptions, System.Func<TCollection>, System.Text.Json.Serialization.Metadata.JsonTypeInfo, System.Text.Json.Serialization.JsonNumberHandling, System.Action<System.Text.Json.Utf8JsonWriter,TCollection>)
-// docid: M:System.Text.Json.Serialization.Metadata.JsonMetadataServices.CreateIListInfo``1(System.Text.Json.JsonSerializerOptions,System.Func{``0},System.Text.Json.Serialization.Metadata.JsonTypeInfo,System.Text.Json.Serialization.JsonNumberHandling,System.Action{System.Text.Json.Utf8JsonWriter,``0})
-    public static func CreateIListInfo<UTCollection : SGBridgeGenericValue>(options : dotnet.System.Text.Json.JsonSerializerOptions, createObjectFunc : dotnet.System.Func_1<UTCollection>, objectInfo : dotnet.System.Text.Json.Serialization.Metadata.JsonTypeInfo, numberHandling : dotnet.System.Text.Json.Serialization.JsonNumberHandling, serializeFunc : dotnet.System.Action_2<dotnet.System.Text.Json.Utf8JsonWriter,UTCollection>) throws -> dotnet.System.Text.Json.Serialization.Metadata.JsonTypeInfo_1<UTCollection> {
-        var __thrown : NullableHandle = nil;
-        let __return = System_Text_Json_Serialization_Metadata_JsonMetadataServices_System_Text_Json_Serialization_Metadata_JsonTypeInfo_UTCollection___CreateIListInfo_1__5__JsonSerializerOptions_System_Func_UTCollection__JsonTypeInfo_JsonNumberHandling_System_Action_System_Text_Json_Utf8JsonWriter_UTCollection_(UTCollection.get_type_handle(), &__thrown, options.get_handle(), nil, objectInfo.get_handle(), numberHandling.get_value(), nil);
-        if let __ex =  __thrown {
-            throw dotnet.System.Exception(hndl: __ex);
-        } else {
-        return dotnet.System.Text.Json.Serialization.Metadata.JsonTypeInfo_1(hndl : __return);
-        }
-    }
-    // delegate closure overload
-    public static func CreateIListInfo<UTCollection : SGBridgeGenericValue>(options : dotnet.System.Text.Json.JsonSerializerOptions, createObjectFunc : @escaping () throws -> UTCollection, objectInfo : dotnet.System.Text.Json.Serialization.Metadata.JsonTypeInfo, numberHandling : dotnet.System.Text.Json.Serialization.JsonNumberHandling, serializeFunc : @escaping (Optional<dotnet.System.Text.Json.Utf8JsonWriter>, UTCollection) throws -> Void) throws -> dotnet.System.Text.Json.Serialization.Metadata.JsonTypeInfo_1<UTCollection> {
-        let del_createObjectFunc = try dotnet.System.Func_1<UTCollection>(createObjectFunc);
-        let del_serializeFunc = try dotnet.System.Action_2<dotnet.System.Text.Json.Utf8JsonWriter,UTCollection>(serializeFunc);
-        return try CreateIListInfo(options: options, createObjectFunc: del_createObjectFunc, objectInfo: objectInfo, numberHandling: numberHandling, serializeFunc: del_serializeFunc);
-    }
-// TODO COPE (write_all_methods) (unused generic param) System.Text.Json.Serialization.Metadata.JsonTypeInfo<TCollection> CreateIListInfo<TCollection, TElement>(System.Text.Json.JsonSerializerOptions, System.Func<TCollection>, System.Text.Json.Serialization.Metadata.JsonTypeInfo, System.Text.Json.Serialization.JsonNumberHandling, System.Action<System.Text.Json.Utf8JsonWriter,TCollection>)
-    // System.Text.Json.Serialization.Metadata.JsonTypeInfo<TCollection> CreateImmutableDictionaryInfo<TCollection, TKey, TValue>(System.Text.Json.JsonSerializerOptions, System.Func<TCollection>, System.Text.Json.Serialization.Metadata.JsonTypeInfo, System.Text.Json.Serialization.Metadata.JsonTypeInfo, System.Text.Json.Serialization.JsonNumberHandling, System.Action<System.Text.Json.Utf8JsonWriter,TCollection>, System.Func<System.Collections.Generic.IEnumerable<System.Collections.Generic.KeyValuePair<TKey,TValue>>,TCollection>)
-// docid: M:System.Text.Json.Serialization.Metadata.JsonMetadataServices.CreateImmutableDictionaryInfo``3(System.Text.Json.JsonSerializerOptions,System.Func{``0},System.Text.Json.Serialization.Metadata.JsonTypeInfo,System.Text.Json.Serialization.Metadata.JsonTypeInfo,System.Text.Json.Serialization.JsonNumberHandling,System.Action{System.Text.Json.Utf8JsonWriter,``0},System.Func{System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{``1,``2}},``0})
-    public static func CreateImmutableDictionaryInfo<UTCollection : SGBridgeGenericValue,UTKey : SGBridgeGenericValue,UTValue : SGBridgeGenericValue>(options : dotnet.System.Text.Json.JsonSerializerOptions, createObjectFunc : dotnet.System.Func_1<UTCollection>, keyInfo : dotnet.System.Text.Json.Serialization.Metadata.JsonTypeInfo, valueInfo : dotnet.System.Text.Json.Serialization.Metadata.JsonTypeInfo, numberHandling : dotnet.System.Text.Json.Serialization.JsonNumberHandling, serializeFunc : dotnet.System.Action_2<dotnet.System.Text.Json.Utf8JsonWriter,UTCollection>, createRangeFunc : dotnet.System.Func_2<dotnet.System.Collections.Generic.IEnumerable_1<dotnet.System.Collections.Generic.KeyValuePair_2<UTKey,UTValue>>,UTCollection>) throws -> dotnet.System.Text.Json.Serialization.Metadata.JsonTypeInfo_1<UTCollection> {
-        var __thrown : NullableHandle = nil;
-        let __return = System_Text_Json_Serialization_Metadata_JsonMetadataServices_System_Text_Json_Serialization_Metadata_JsonTypeInfo_UTCollection___CreateImmutableDictionaryInfo_3__7__JsonSerializerOptions_System_Func_UTCollection__JsonTypeInfo_JsonTypeInfo_JsonNumberHandling_System_Action_System_Text_Json_Utf8JsonWriter_UTCollection__System_Func_System_Collections_Generic_System_Collections_Generic_IEnumerable_System_Collections_Generic_System_Collections_Generic_KeyValuePair_UTKey_UTValue___UTCollection_(UTCollection.get_type_handle(), UTKey.get_type_handle(), UTValue.get_type_handle(), &__thrown, options.get_handle(), nil, keyInfo.get_handle(), valueInfo.get_handle(), numberHandling.get_value(), nil, createRangeFunc.get_handle());
-        if let __ex =  __thrown {
-            throw dotnet.System.Exception(hndl: __ex);
-        } else {
-        return dotnet.System.Text.Json.Serialization.Metadata.JsonTypeInfo_1(hndl : __return);
-        }
-    }
-    // delegate closure overload
-    public static func CreateImmutableDictionaryInfo<UTCollection : SGBridgeGenericValue,UTKey : SGBridgeGenericValue,UTValue : SGBridgeGenericValue>(options : dotnet.System.Text.Json.JsonSerializerOptions, createObjectFunc : @escaping () throws -> UTCollection, keyInfo : dotnet.System.Text.Json.Serialization.Metadata.JsonTypeInfo, valueInfo : dotnet.System.Text.Json.Serialization.Metadata.JsonTypeInfo, numberHandling : dotnet.System.Text.Json.Serialization.JsonNumberHandling, serializeFunc : @escaping (Optional<dotnet.System.Text.Json.Utf8JsonWriter>, UTCollection) throws -> Void, createRangeFunc : @escaping (Optional<dotnet.System.Collections.Generic.IEnumerable_1<dotnet.System.Collections.Generic.KeyValuePair_2<UTKey,UTValue>>>) throws -> UTCollection) throws -> dotnet.System.Text.Json.Serialization.Metadata.JsonTypeInfo_1<UTCollection> {
-        let del_createObjectFunc = try dotnet.System.Func_1<UTCollection>(createObjectFunc);
-        let del_serializeFunc = try dotnet.System.Action_2<dotnet.System.Text.Json.Utf8JsonWriter,UTCollection>(serializeFunc);
+    public static func CreateImmutableDictionaryInfo<UTCollection : SGBridgeGenericValue,UTKey : SGBridgeGenericValue,UTValue : SGBridgeGenericValue>(options : dotnet.System.Text.Json.JsonSerializerOptions, collectionInfo : dotnet.System.Text.Json.Serialization.Metadata.JsonCollectionInfoValues_1<UTCollection>, createRangeFunc : @escaping (dotnet.System.Collections.Generic.IEnumerable_1<dotnet.System.Collections.Generic.KeyValuePair_2<UTKey,UTValue>>) throws -> UTCollection) throws -> dotnet.System.Text.Json.Serialization.Metadata.JsonTypeInfo_1<UTCollection> {
         let del_createRangeFunc = try dotnet.System.Func_2<dotnet.System.Collections.Generic.IEnumerable_1<dotnet.System.Collections.Generic.KeyValuePair_2<UTKey,UTValue>>,UTCollection>(createRangeFunc);
-        return try CreateImmutableDictionaryInfo(options: options, createObjectFunc: del_createObjectFunc, keyInfo: keyInfo, valueInfo: valueInfo, numberHandling: numberHandling, serializeFunc: del_serializeFunc, createRangeFunc: del_createRangeFunc);
+        return try CreateImmutableDictionaryInfo(options: options, collectionInfo: collectionInfo, createRangeFunc: del_createRangeFunc);
     }
-    // System.Text.Json.Serialization.Metadata.JsonTypeInfo<TCollection> CreateImmutableEnumerableInfo<TCollection, TElement>(System.Text.Json.JsonSerializerOptions, System.Func<TCollection>, System.Text.Json.Serialization.Metadata.JsonTypeInfo, System.Text.Json.Serialization.JsonNumberHandling, System.Action<System.Text.Json.Utf8JsonWriter,TCollection>, System.Func<System.Collections.Generic.IEnumerable<TElement>,TCollection>)
-// docid: M:System.Text.Json.Serialization.Metadata.JsonMetadataServices.CreateImmutableEnumerableInfo``2(System.Text.Json.JsonSerializerOptions,System.Func{``0},System.Text.Json.Serialization.Metadata.JsonTypeInfo,System.Text.Json.Serialization.JsonNumberHandling,System.Action{System.Text.Json.Utf8JsonWriter,``0},System.Func{System.Collections.Generic.IEnumerable{``1},``0})
-    public static func CreateImmutableEnumerableInfo<UTCollection : SGBridgeGenericValue,UTElement : SGBridgeGenericValue>(options : dotnet.System.Text.Json.JsonSerializerOptions, createObjectFunc : dotnet.System.Func_1<UTCollection>, elementInfo : dotnet.System.Text.Json.Serialization.Metadata.JsonTypeInfo, numberHandling : dotnet.System.Text.Json.Serialization.JsonNumberHandling, serializeFunc : dotnet.System.Action_2<dotnet.System.Text.Json.Utf8JsonWriter,UTCollection>, createRangeFunc : dotnet.System.Func_2<dotnet.System.Collections.Generic.IEnumerable_1<UTElement>,UTCollection>) throws -> dotnet.System.Text.Json.Serialization.Metadata.JsonTypeInfo_1<UTCollection> {
+    // System.Text.Json.Serialization.Metadata.JsonTypeInfo<TCollection> CreateImmutableEnumerableInfo<TCollection, TElement>(System.Text.Json.JsonSerializerOptions, System.Text.Json.Serialization.Metadata.JsonCollectionInfoValues<TCollection>, System.Func<System.Collections.Generic.IEnumerable<TElement>,TCollection>)
+// docid: M:System.Text.Json.Serialization.Metadata.JsonMetadataServices.CreateImmutableEnumerableInfo``2(System.Text.Json.JsonSerializerOptions,System.Text.Json.Serialization.Metadata.JsonCollectionInfoValues{``0},System.Func{System.Collections.Generic.IEnumerable{``1},``0})
+    public static func CreateImmutableEnumerableInfo<UTCollection : SGBridgeGenericValue,UTElement : SGBridgeGenericValue>(options : dotnet.System.Text.Json.JsonSerializerOptions, collectionInfo : dotnet.System.Text.Json.Serialization.Metadata.JsonCollectionInfoValues_1<UTCollection>, createRangeFunc : dotnet.System.Func_2<dotnet.System.Collections.Generic.IEnumerable_1<UTElement>,UTCollection>) throws -> dotnet.System.Text.Json.Serialization.Metadata.JsonTypeInfo_1<UTCollection> {
         var __thrown : NullableHandle = nil;
-        let __return = System_Text_Json_Serialization_Metadata_JsonMetadataServices_System_Text_Json_Serialization_Metadata_JsonTypeInfo_UTCollection___CreateImmutableEnumerableInfo_2__6__JsonSerializerOptions_System_Func_UTCollection__JsonTypeInfo_JsonNumberHandling_System_Action_System_Text_Json_Utf8JsonWriter_UTCollection__System_Func_System_Collections_Generic_System_Collections_Generic_IEnumerable_UTElement__UTCollection_(UTCollection.get_type_handle(), UTElement.get_type_handle(), &__thrown, options.get_handle(), nil, elementInfo.get_handle(), numberHandling.get_value(), nil, createRangeFunc.get_handle());
+        let __return = System_Text_Json_Serialization_Metadata_JsonMetadataServices_System_Text_Json_Serialization_Metadata_JsonTypeInfo_UTCollection___CreateImmutableEnumerableInfo_2__3__JsonSerializerOptions_System_Text_Json_Serialization_Metadata_JsonCollectionInfoValues_UTCollection__System_Func_System_Collections_Generic_System_Collections_Generic_IEnumerable_UTElement__UTCollection_(UTCollection.get_type_handle(), UTElement.get_type_handle(), &__thrown, options.get_handle(), collectionInfo.get_handle(), createRangeFunc.get_handle());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
@@ -8748,17 +10128,23 @@ public struct JsonMetadataServices {
         }
     }
     // delegate closure overload
-    public static func CreateImmutableEnumerableInfo<UTCollection : SGBridgeGenericValue,UTElement : SGBridgeGenericValue>(options : dotnet.System.Text.Json.JsonSerializerOptions, createObjectFunc : @escaping () throws -> UTCollection, elementInfo : dotnet.System.Text.Json.Serialization.Metadata.JsonTypeInfo, numberHandling : dotnet.System.Text.Json.Serialization.JsonNumberHandling, serializeFunc : @escaping (Optional<dotnet.System.Text.Json.Utf8JsonWriter>, UTCollection) throws -> Void, createRangeFunc : @escaping (dotnet.System.Collections.Generic.IEnumerable_1<UTElement>) throws -> UTCollection) throws -> dotnet.System.Text.Json.Serialization.Metadata.JsonTypeInfo_1<UTCollection> {
-        let del_createObjectFunc = try dotnet.System.Func_1<UTCollection>(createObjectFunc);
-        let del_serializeFunc = try dotnet.System.Action_2<dotnet.System.Text.Json.Utf8JsonWriter,UTCollection>(serializeFunc);
+    public static func CreateImmutableEnumerableInfo<UTCollection : SGBridgeGenericValue,UTElement : SGBridgeGenericValue>(options : dotnet.System.Text.Json.JsonSerializerOptions, collectionInfo : dotnet.System.Text.Json.Serialization.Metadata.JsonCollectionInfoValues_1<UTCollection>, createRangeFunc : @escaping (dotnet.System.Collections.Generic.IEnumerable_1<UTElement>) throws -> UTCollection) throws -> dotnet.System.Text.Json.Serialization.Metadata.JsonTypeInfo_1<UTCollection> {
         let del_createRangeFunc = try dotnet.System.Func_2<dotnet.System.Collections.Generic.IEnumerable_1<UTElement>,UTCollection>(createRangeFunc);
-        return try CreateImmutableEnumerableInfo(options: options, createObjectFunc: del_createObjectFunc, elementInfo: elementInfo, numberHandling: numberHandling, serializeFunc: del_serializeFunc, createRangeFunc: del_createRangeFunc);
+        return try CreateImmutableEnumerableInfo(options: options, collectionInfo: collectionInfo, createRangeFunc: del_createRangeFunc);
     }
-// TODO COPE (write_all_methods) (unused generic param) System.Text.Json.Serialization.Metadata.JsonTypeInfo<TCollection> CreateIReadOnlyDictionaryInfo<TCollection, TKey, TValue>(System.Text.Json.JsonSerializerOptions, System.Func<TCollection>, System.Text.Json.Serialization.Metadata.JsonTypeInfo, System.Text.Json.Serialization.Metadata.JsonTypeInfo, System.Text.Json.Serialization.JsonNumberHandling, System.Action<System.Text.Json.Utf8JsonWriter,TCollection>)
-// TODO COPE (write_all_methods) (unused generic param) System.Text.Json.Serialization.Metadata.JsonTypeInfo<TCollection> CreateISetInfo<TCollection, TElement>(System.Text.Json.JsonSerializerOptions, System.Func<TCollection>, System.Text.Json.Serialization.Metadata.JsonTypeInfo, System.Text.Json.Serialization.JsonNumberHandling, System.Action<System.Text.Json.Utf8JsonWriter,TCollection>)
-// TODO COPE (write_all_methods) (unused generic param) System.Text.Json.Serialization.Metadata.JsonTypeInfo<TCollection> CreateListInfo<TCollection, TElement>(System.Text.Json.JsonSerializerOptions, System.Func<TCollection>, System.Text.Json.Serialization.Metadata.JsonTypeInfo, System.Text.Json.Serialization.JsonNumberHandling, System.Action<System.Text.Json.Utf8JsonWriter,TCollection>)
+// TODO COPE (write_all_methods) (unused generic param) System.Text.Json.Serialization.Metadata.JsonTypeInfo<TCollection> CreateIReadOnlyDictionaryInfo<TCollection, TKey, TValue>(System.Text.Json.JsonSerializerOptions, System.Text.Json.Serialization.Metadata.JsonCollectionInfoValues<TCollection>)
+// TODO COPE (write_all_methods) (unused generic param) System.Text.Json.Serialization.Metadata.JsonTypeInfo<TCollection> CreateISetInfo<TCollection, TElement>(System.Text.Json.JsonSerializerOptions, System.Text.Json.Serialization.Metadata.JsonCollectionInfoValues<TCollection>)
+// TODO COPE (write_all_methods) (unused generic param) System.Text.Json.Serialization.Metadata.JsonTypeInfo<TCollection> CreateListInfo<TCollection, TElement>(System.Text.Json.JsonSerializerOptions, System.Text.Json.Serialization.Metadata.JsonCollectionInfoValues<TCollection>)
     // System.Text.Json.Serialization.Metadata.JsonTypeInfo<T> CreateObjectInfo<T>(System.Text.Json.JsonSerializerOptions, System.Text.Json.Serialization.Metadata.JsonObjectInfoValues<T>)
 // docid: M:System.Text.Json.Serialization.Metadata.JsonMetadataServices.CreateObjectInfo``1(System.Text.Json.JsonSerializerOptions,System.Text.Json.Serialization.Metadata.JsonObjectInfoValues{``0})
+    /**
+    Creates metadata for a complex class or struct.
+
+    - Parameter options: The  to initialize the metadata with.
+    - Parameter objectInfo: Provides serialization metadata about an object type with constructors, properties, and fields.
+    - Returns: A  instance representing the class or struct.
+
+    */
     public static func CreateObjectInfo<UT : SGBridgeGenericValue>(options : dotnet.System.Text.Json.JsonSerializerOptions, objectInfo : dotnet.System.Text.Json.Serialization.Metadata.JsonObjectInfoValues_1<UT>) throws -> dotnet.System.Text.Json.Serialization.Metadata.JsonTypeInfo_1<UT> {
         var __thrown : NullableHandle = nil;
         let __return = System_Text_Json_Serialization_Metadata_JsonMetadataServices_System_Text_Json_Serialization_Metadata_JsonTypeInfo_UT___CreateObjectInfo_1__2__JsonSerializerOptions_System_Text_Json_Serialization_Metadata_JsonObjectInfoValues_UT_(UT.get_type_handle(), &__thrown, options.get_handle(), objectInfo.get_handle());
@@ -8768,30 +10154,22 @@ public struct JsonMetadataServices {
         return dotnet.System.Text.Json.Serialization.Metadata.JsonTypeInfo_1(hndl : __return);
         }
     }
-    // System.Text.Json.Serialization.Metadata.JsonPropertyInfo CreatePropertyInfo<T>(System.Text.Json.JsonSerializerOptions, bool, bool, bool, System.Type, System.Text.Json.Serialization.Metadata.JsonTypeInfo, System.Text.Json.Serialization.JsonConverter<T>, System.Func<System.Object,T>, System.Action<System.Object,T>, System.Nullable<System.Text.Json.Serialization.JsonIgnoreCondition>, bool, System.Nullable<System.Text.Json.Serialization.JsonNumberHandling>, System.String, System.String)
-// docid: M:System.Text.Json.Serialization.Metadata.JsonMetadataServices.CreatePropertyInfo``1(System.Text.Json.JsonSerializerOptions,System.Boolean,System.Boolean,System.Boolean,System.Type,System.Text.Json.Serialization.Metadata.JsonTypeInfo,System.Text.Json.Serialization.JsonConverter{``0},System.Func{System.Object,``0},System.Action{System.Object,``0},System.Nullable{System.Text.Json.Serialization.JsonIgnoreCondition},System.Boolean,System.Nullable{System.Text.Json.Serialization.JsonNumberHandling},System.String,System.String)
-    public static func CreatePropertyInfo<UT : SGBridgeGenericValue>(options : dotnet.System.Text.Json.JsonSerializerOptions, isProperty : Bool, isPublic : Bool, isVirtual : Bool, declaringType : dotnet.System.Type_, propertyTypeInfo : dotnet.System.Text.Json.Serialization.Metadata.JsonTypeInfo, converter : dotnet.System.Text.Json.Serialization.JsonConverter_1<UT>, getter : dotnet.System.Func_2<dotnet.System.Object,UT>, setter : dotnet.System.Action_2<dotnet.System.Object,UT>, ignoreCondition : Optional<dotnet.System.Text.Json.Serialization.JsonIgnoreCondition>, hasJsonInclude : Bool, numberHandling : Optional<dotnet.System.Text.Json.Serialization.JsonNumberHandling>, propertyName : dotnet.System.String, jsonPropertyName : Optional<dotnet.System.String>) throws -> dotnet.System.Text.Json.Serialization.Metadata.JsonPropertyInfo {
+    // System.Text.Json.Serialization.Metadata.JsonPropertyInfo CreatePropertyInfo<T>(System.Text.Json.JsonSerializerOptions, System.Text.Json.Serialization.Metadata.JsonPropertyInfoValues<T>)
+// docid: M:System.Text.Json.Serialization.Metadata.JsonMetadataServices.CreatePropertyInfo``1(System.Text.Json.JsonSerializerOptions,System.Text.Json.Serialization.Metadata.JsonPropertyInfoValues{``0})
+    public static func CreatePropertyInfo<UT : SGBridgeGenericValue>(options : dotnet.System.Text.Json.JsonSerializerOptions, propertyInfo : dotnet.System.Text.Json.Serialization.Metadata.JsonPropertyInfoValues_1<UT>) throws -> dotnet.System.Text.Json.Serialization.Metadata.JsonPropertyInfo {
         var __thrown : NullableHandle = nil;
-        let __return = System_Text_Json_Serialization_Metadata_JsonMetadataServices_JsonPropertyInfo__CreatePropertyInfo_1__14__JsonSerializerOptions_bool_bool_bool_Type_JsonTypeInfo_System_Text_Json_Serialization_JsonConverter_UT__System_Func_object_UT__System_Action_object_UT__System_Nullable_System_Text_Json_Serialization_JsonIgnoreCondition__bool_System_Nullable_System_Text_Json_Serialization_JsonNumberHandling__String_String(UT.get_type_handle(), &__thrown, options.get_handle(), Swift.Int32(isProperty ? 1 : 0), Swift.Int32(isPublic ? 1 : 0), Swift.Int32(isVirtual ? 1 : 0), declaringType.get_handle(), propertyTypeInfo.get_handle(), nil, nil, nil, (ignoreCondition != nil) ? System_Int32_box(ignoreCondition!.get_value()) : nil, Swift.Int32(hasJsonInclude ? 1 : 0), (numberHandling != nil) ? System_Int32_box(numberHandling!.get_value()) : nil, propertyName.get_handle(), jsonPropertyName?.get_handle() ?? nil);
+        let __return = System_Text_Json_Serialization_Metadata_JsonMetadataServices_JsonPropertyInfo__CreatePropertyInfo_1__2__JsonSerializerOptions_System_Text_Json_Serialization_Metadata_JsonPropertyInfoValues_UT_(UT.get_type_handle(), &__thrown, options.get_handle(), propertyInfo.get_handle());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
         return dotnet.System.Text.Json.Serialization.Metadata.JsonPropertyInfo(hndl : __return);
         }
     }
-    // delegate closure overload
-    public static func CreatePropertyInfo<UT : SGBridgeGenericValue>(options : dotnet.System.Text.Json.JsonSerializerOptions, isProperty : Bool, isPublic : Bool, isVirtual : Bool, declaringType : dotnet.System.Type_, propertyTypeInfo : dotnet.System.Text.Json.Serialization.Metadata.JsonTypeInfo, converter : dotnet.System.Text.Json.Serialization.JsonConverter_1<UT>, getter : @escaping (Optional<dotnet.System.Object>) throws -> UT, setter : @escaping (Optional<dotnet.System.Object>, UT) throws -> Void, ignoreCondition : Optional<dotnet.System.Text.Json.Serialization.JsonIgnoreCondition>, hasJsonInclude : Bool, numberHandling : Optional<dotnet.System.Text.Json.Serialization.JsonNumberHandling>, propertyName : dotnet.System.String, jsonPropertyName : Optional<dotnet.System.String>) throws -> dotnet.System.Text.Json.Serialization.Metadata.JsonPropertyInfo {
-        let del_getter = try dotnet.System.Func_2<dotnet.System.Object,UT>(getter);
-        let del_setter = try dotnet.System.Action_2<dotnet.System.Object,UT>(setter);
-        return try CreatePropertyInfo(options: options, isProperty: isProperty, isPublic: isPublic, isVirtual: isVirtual, declaringType: declaringType, propertyTypeInfo: propertyTypeInfo, converter: converter, getter: del_getter, setter: del_setter, ignoreCondition: ignoreCondition, hasJsonInclude: hasJsonInclude, numberHandling: numberHandling, propertyName: propertyName, jsonPropertyName: jsonPropertyName);
-    }
-// TODO COPE (write_all_methods) (unused generic param) System.Text.Json.Serialization.Metadata.JsonTypeInfo<TCollection> CreateQueueInfo<TCollection, TElement>(System.Text.Json.JsonSerializerOptions, System.Func<TCollection>, System.Text.Json.Serialization.Metadata.JsonTypeInfo, System.Text.Json.Serialization.JsonNumberHandling, System.Action<System.Text.Json.Utf8JsonWriter,TCollection>)
-// TODO COPE (write_all_methods) (unused generic param) System.Text.Json.Serialization.Metadata.JsonTypeInfo<TCollection> CreateStackInfo<TCollection, TElement>(System.Text.Json.JsonSerializerOptions, System.Func<TCollection>, System.Text.Json.Serialization.Metadata.JsonTypeInfo, System.Text.Json.Serialization.JsonNumberHandling, System.Action<System.Text.Json.Utf8JsonWriter,TCollection>)
-    // System.Text.Json.Serialization.Metadata.JsonTypeInfo<TCollection> CreateStackOrQueueInfo<TCollection>(System.Text.Json.JsonSerializerOptions, System.Func<TCollection>, System.Text.Json.Serialization.Metadata.JsonTypeInfo, System.Text.Json.Serialization.JsonNumberHandling, System.Action<System.Text.Json.Utf8JsonWriter,TCollection>, System.Action<TCollection,System.Object>)
-// docid: M:System.Text.Json.Serialization.Metadata.JsonMetadataServices.CreateStackOrQueueInfo``1(System.Text.Json.JsonSerializerOptions,System.Func{``0},System.Text.Json.Serialization.Metadata.JsonTypeInfo,System.Text.Json.Serialization.JsonNumberHandling,System.Action{System.Text.Json.Utf8JsonWriter,``0},System.Action{``0,System.Object})
-    public static func CreateStackOrQueueInfo<UTCollection : SGBridgeGenericValue>(options : dotnet.System.Text.Json.JsonSerializerOptions, createObjectFunc : dotnet.System.Func_1<UTCollection>, elementInfo : dotnet.System.Text.Json.Serialization.Metadata.JsonTypeInfo, numberHandling : dotnet.System.Text.Json.Serialization.JsonNumberHandling, serializeFunc : dotnet.System.Action_2<dotnet.System.Text.Json.Utf8JsonWriter,UTCollection>, addFunc : dotnet.System.Action_2<UTCollection,dotnet.System.Object>) throws -> dotnet.System.Text.Json.Serialization.Metadata.JsonTypeInfo_1<UTCollection> {
+    // System.Text.Json.Serialization.Metadata.JsonTypeInfo<TCollection> CreateQueueInfo<TCollection>(System.Text.Json.JsonSerializerOptions, System.Text.Json.Serialization.Metadata.JsonCollectionInfoValues<TCollection>, System.Action<TCollection,System.Object>)
+// docid: M:System.Text.Json.Serialization.Metadata.JsonMetadataServices.CreateQueueInfo``1(System.Text.Json.JsonSerializerOptions,System.Text.Json.Serialization.Metadata.JsonCollectionInfoValues{``0},System.Action{``0,System.Object})
+    public static func CreateQueueInfo<UTCollection : SGBridgeGenericValue>(options : dotnet.System.Text.Json.JsonSerializerOptions, collectionInfo : dotnet.System.Text.Json.Serialization.Metadata.JsonCollectionInfoValues_1<UTCollection>, addFunc : dotnet.System.Action_2<UTCollection,dotnet.System.Object>) throws -> dotnet.System.Text.Json.Serialization.Metadata.JsonTypeInfo_1<UTCollection> {
         var __thrown : NullableHandle = nil;
-        let __return = System_Text_Json_Serialization_Metadata_JsonMetadataServices_System_Text_Json_Serialization_Metadata_JsonTypeInfo_UTCollection___CreateStackOrQueueInfo_1__6__JsonSerializerOptions_System_Func_UTCollection__JsonTypeInfo_JsonNumberHandling_System_Action_System_Text_Json_Utf8JsonWriter_UTCollection__System_Action_UTCollection_object_(UTCollection.get_type_handle(), &__thrown, options.get_handle(), nil, elementInfo.get_handle(), numberHandling.get_value(), nil, addFunc.get_handle());
+        let __return = System_Text_Json_Serialization_Metadata_JsonMetadataServices_System_Text_Json_Serialization_Metadata_JsonTypeInfo_UTCollection___CreateQueueInfo_1__3__JsonSerializerOptions_System_Text_Json_Serialization_Metadata_JsonCollectionInfoValues_UTCollection__System_Action_UTCollection_object_(UTCollection.get_type_handle(), &__thrown, options.get_handle(), collectionInfo.get_handle(), addFunc.get_handle());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
@@ -8799,14 +10177,32 @@ public struct JsonMetadataServices {
         }
     }
     // delegate closure overload
-    public static func CreateStackOrQueueInfo<UTCollection : SGBridgeGenericValue>(options : dotnet.System.Text.Json.JsonSerializerOptions, createObjectFunc : @escaping () throws -> UTCollection, elementInfo : dotnet.System.Text.Json.Serialization.Metadata.JsonTypeInfo, numberHandling : dotnet.System.Text.Json.Serialization.JsonNumberHandling, serializeFunc : @escaping (Optional<dotnet.System.Text.Json.Utf8JsonWriter>, UTCollection) throws -> Void, addFunc : @escaping (UTCollection, Optional<dotnet.System.Object>) throws -> Void) throws -> dotnet.System.Text.Json.Serialization.Metadata.JsonTypeInfo_1<UTCollection> {
-        let del_createObjectFunc = try dotnet.System.Func_1<UTCollection>(createObjectFunc);
-        let del_serializeFunc = try dotnet.System.Action_2<dotnet.System.Text.Json.Utf8JsonWriter,UTCollection>(serializeFunc);
+    public static func CreateQueueInfo<UTCollection : SGBridgeGenericValue>(options : dotnet.System.Text.Json.JsonSerializerOptions, collectionInfo : dotnet.System.Text.Json.Serialization.Metadata.JsonCollectionInfoValues_1<UTCollection>, addFunc : @escaping (UTCollection, Optional<dotnet.System.Object>) throws -> Void) throws -> dotnet.System.Text.Json.Serialization.Metadata.JsonTypeInfo_1<UTCollection> {
         let del_addFunc = try dotnet.System.Action_2<UTCollection,dotnet.System.Object>(addFunc);
-        return try CreateStackOrQueueInfo(options: options, createObjectFunc: del_createObjectFunc, elementInfo: elementInfo, numberHandling: numberHandling, serializeFunc: del_serializeFunc, addFunc: del_addFunc);
+        return try CreateQueueInfo(options: options, collectionInfo: collectionInfo, addFunc: del_addFunc);
     }
+// TODO COPE (write_all_methods) (unused generic param) System.Text.Json.Serialization.Metadata.JsonTypeInfo<TCollection> CreateQueueInfo<TCollection, TElement>(System.Text.Json.JsonSerializerOptions, System.Text.Json.Serialization.Metadata.JsonCollectionInfoValues<TCollection>)
+    // System.Text.Json.Serialization.Metadata.JsonTypeInfo<TCollection> CreateStackInfo<TCollection>(System.Text.Json.JsonSerializerOptions, System.Text.Json.Serialization.Metadata.JsonCollectionInfoValues<TCollection>, System.Action<TCollection,System.Object>)
+// docid: M:System.Text.Json.Serialization.Metadata.JsonMetadataServices.CreateStackInfo``1(System.Text.Json.JsonSerializerOptions,System.Text.Json.Serialization.Metadata.JsonCollectionInfoValues{``0},System.Action{``0,System.Object})
+    public static func CreateStackInfo<UTCollection : SGBridgeGenericValue>(options : dotnet.System.Text.Json.JsonSerializerOptions, collectionInfo : dotnet.System.Text.Json.Serialization.Metadata.JsonCollectionInfoValues_1<UTCollection>, addFunc : dotnet.System.Action_2<UTCollection,dotnet.System.Object>) throws -> dotnet.System.Text.Json.Serialization.Metadata.JsonTypeInfo_1<UTCollection> {
+        var __thrown : NullableHandle = nil;
+        let __return = System_Text_Json_Serialization_Metadata_JsonMetadataServices_System_Text_Json_Serialization_Metadata_JsonTypeInfo_UTCollection___CreateStackInfo_1__3__JsonSerializerOptions_System_Text_Json_Serialization_Metadata_JsonCollectionInfoValues_UTCollection__System_Action_UTCollection_object_(UTCollection.get_type_handle(), &__thrown, options.get_handle(), collectionInfo.get_handle(), addFunc.get_handle());
+        if let __ex =  __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+        return dotnet.System.Text.Json.Serialization.Metadata.JsonTypeInfo_1(hndl : __return);
+        }
+    }
+    // delegate closure overload
+    public static func CreateStackInfo<UTCollection : SGBridgeGenericValue>(options : dotnet.System.Text.Json.JsonSerializerOptions, collectionInfo : dotnet.System.Text.Json.Serialization.Metadata.JsonCollectionInfoValues_1<UTCollection>, addFunc : @escaping (UTCollection, Optional<dotnet.System.Object>) throws -> Void) throws -> dotnet.System.Text.Json.Serialization.Metadata.JsonTypeInfo_1<UTCollection> {
+        let del_addFunc = try dotnet.System.Action_2<UTCollection,dotnet.System.Object>(addFunc);
+        return try CreateStackInfo(options: options, collectionInfo: collectionInfo, addFunc: del_addFunc);
+    }
+// TODO COPE (write_all_methods) (unused generic param) System.Text.Json.Serialization.Metadata.JsonTypeInfo<TCollection> CreateStackInfo<TCollection, TElement>(System.Text.Json.JsonSerializerOptions, System.Text.Json.Serialization.Metadata.JsonCollectionInfoValues<TCollection>)
 // TODO COPE (write_all_methods) (unused generic param) System.Text.Json.Serialization.Metadata.JsonTypeInfo<T> CreateValueInfo<T>(System.Text.Json.JsonSerializerOptions, System.Text.Json.Serialization.JsonConverter)
+// TODO COPE (write_all_methods) (unused generic param) System.Text.Json.Serialization.JsonConverter<T> GetUnsupportedTypeConverter<T>()
 // TODO COPE (write_all_methods) (unused generic param) System.Text.Json.Serialization.JsonConverter<T> GetEnumConverter<T>(System.Text.Json.JsonSerializerOptions)
+// TODO COPE (returns closedgeneric of nullable): System.Text.Json.Serialization.JsonConverter<System.Nullable<T>> GetNullableConverter<T>(System.Text.Json.Serialization.Metadata.JsonTypeInfo<T>)
     // [IsSpecialName] System.Text.Json.Serialization.JsonConverter<bool> get_BooleanConverter()
 // docid: M:System.Text.Json.Serialization.Metadata.JsonMetadataServices.get_BooleanConverter
     public static func get_BooleanConverter() throws -> dotnet.System.Text.Json.Serialization.JsonConverter_1<Bool> {
@@ -8939,11 +10335,55 @@ public struct JsonMetadataServices {
         return dotnet.System.Text.Json.Serialization.JsonConverter_1(hndl : __return);
         }
     }
+    // [IsSpecialName] System.Text.Json.Serialization.JsonConverter<System.Text.Json.Nodes.JsonArray> get_JsonArrayConverter()
+// docid: M:System.Text.Json.Serialization.Metadata.JsonMetadataServices.get_JsonArrayConverter
+    public static func get_JsonArrayConverter() throws -> dotnet.System.Text.Json.Serialization.JsonConverter_1<dotnet.System.Text.Json.Nodes.JsonArray> {
+        var __thrown : NullableHandle = nil;
+        let __return = System_Text_Json_Serialization_Metadata_JsonMetadataServices_System_Text_Json_Serialization_JsonConverter_System_Text_Json_Nodes_JsonArray___get_JsonArrayConverter_0__0(&__thrown);
+        if let __ex =  __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+        return dotnet.System.Text.Json.Serialization.JsonConverter_1(hndl : __return);
+        }
+    }
     // [IsSpecialName] System.Text.Json.Serialization.JsonConverter<System.Text.Json.JsonElement> get_JsonElementConverter()
 // docid: M:System.Text.Json.Serialization.Metadata.JsonMetadataServices.get_JsonElementConverter
     public static func get_JsonElementConverter() throws -> dotnet.System.Text.Json.Serialization.JsonConverter_1<dotnet.System.Text.Json.JsonElement> {
         var __thrown : NullableHandle = nil;
         let __return = System_Text_Json_Serialization_Metadata_JsonMetadataServices_System_Text_Json_Serialization_JsonConverter_System_Text_Json_JsonElement___get_JsonElementConverter_0__0(&__thrown);
+        if let __ex =  __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+        return dotnet.System.Text.Json.Serialization.JsonConverter_1(hndl : __return);
+        }
+    }
+    // [IsSpecialName] System.Text.Json.Serialization.JsonConverter<System.Text.Json.Nodes.JsonNode> get_JsonNodeConverter()
+// docid: M:System.Text.Json.Serialization.Metadata.JsonMetadataServices.get_JsonNodeConverter
+    public static func get_JsonNodeConverter() throws -> dotnet.System.Text.Json.Serialization.JsonConverter_1<dotnet.System.Text.Json.Nodes.JsonNode> {
+        var __thrown : NullableHandle = nil;
+        let __return = System_Text_Json_Serialization_Metadata_JsonMetadataServices_System_Text_Json_Serialization_JsonConverter_System_Text_Json_Nodes_JsonNode___get_JsonNodeConverter_0__0(&__thrown);
+        if let __ex =  __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+        return dotnet.System.Text.Json.Serialization.JsonConverter_1(hndl : __return);
+        }
+    }
+    // [IsSpecialName] System.Text.Json.Serialization.JsonConverter<System.Text.Json.Nodes.JsonObject> get_JsonObjectConverter()
+// docid: M:System.Text.Json.Serialization.Metadata.JsonMetadataServices.get_JsonObjectConverter
+    public static func get_JsonObjectConverter() throws -> dotnet.System.Text.Json.Serialization.JsonConverter_1<dotnet.System.Text.Json.Nodes.JsonObject> {
+        var __thrown : NullableHandle = nil;
+        let __return = System_Text_Json_Serialization_Metadata_JsonMetadataServices_System_Text_Json_Serialization_JsonConverter_System_Text_Json_Nodes_JsonObject___get_JsonObjectConverter_0__0(&__thrown);
+        if let __ex =  __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+        return dotnet.System.Text.Json.Serialization.JsonConverter_1(hndl : __return);
+        }
+    }
+    // [IsSpecialName] System.Text.Json.Serialization.JsonConverter<System.Text.Json.Nodes.JsonValue> get_JsonValueConverter()
+// docid: M:System.Text.Json.Serialization.Metadata.JsonMetadataServices.get_JsonValueConverter
+    public static func get_JsonValueConverter() throws -> dotnet.System.Text.Json.Serialization.JsonConverter_1<dotnet.System.Text.Json.Nodes.JsonValue> {
+        var __thrown : NullableHandle = nil;
+        let __return = System_Text_Json_Serialization_Metadata_JsonMetadataServices_System_Text_Json_Serialization_JsonConverter_System_Text_Json_Nodes_JsonValue___get_JsonValueConverter_0__0(&__thrown);
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
@@ -9060,116 +10500,228 @@ public struct JsonMetadataServices {
         return dotnet.System.Text.Json.Serialization.JsonConverter_1(hndl : __return);
         }
     }
+    /**
+    Returns a  instance that converts  values.
+
+    */
     public static var BooleanConverter : dotnet.System.Text.Json.Serialization.JsonConverter_1<Bool> {
         get {
             return try! get_BooleanConverter();
         }
     }
+    /**
+    Returns a  instance that converts byte array values.
+
+    */
     public static var ByteArrayConverter : dotnet.System.Text.Json.Serialization.JsonConverter_1<dotnet.System_Arr<Swift.UInt8>> {
         get {
             return try! get_ByteArrayConverter();
         }
     }
+    /**
+    Returns a  instance that converts  values.
+
+    */
     public static var ByteConverter : dotnet.System.Text.Json.Serialization.JsonConverter_1<Swift.UInt8> {
         get {
             return try! get_ByteConverter();
         }
     }
+    /**
+    Returns a  instance that converts  values.
+
+    */
     public static var CharConverter : dotnet.System.Text.Json.Serialization.JsonConverter_1<dotnet.System.Char> {
         get {
             return try! get_CharConverter();
         }
     }
+    /**
+    Returns a  instance that converts  values.
+
+    */
     public static var DateTimeConverter : dotnet.System.Text.Json.Serialization.JsonConverter_1<dotnet.System.DateTime> {
         get {
             return try! get_DateTimeConverter();
         }
     }
+    /**
+    Returns a  instance that converts  values.
+
+    */
     public static var DateTimeOffsetConverter : dotnet.System.Text.Json.Serialization.JsonConverter_1<dotnet.System.DateTimeOffset> {
         get {
             return try! get_DateTimeOffsetConverter();
         }
     }
+    /**
+    Returns a  instance that converts  values.
+
+    */
     public static var DecimalConverter : dotnet.System.Text.Json.Serialization.JsonConverter_1<dotnet.System.Decimal> {
         get {
             return try! get_DecimalConverter();
         }
     }
+    /**
+    Returns a  instance that converts  values.
+
+    */
     public static var DoubleConverter : dotnet.System.Text.Json.Serialization.JsonConverter_1<Swift.Double> {
         get {
             return try! get_DoubleConverter();
         }
     }
+    /**
+    Returns a  instance that converts  values.
+
+    */
     public static var GuidConverter : dotnet.System.Text.Json.Serialization.JsonConverter_1<dotnet.System.Guid> {
         get {
             return try! get_GuidConverter();
         }
     }
+    /**
+    Returns a  instance that converts  values.
+
+    */
     public static var Int16Converter : dotnet.System.Text.Json.Serialization.JsonConverter_1<Swift.Int16> {
         get {
             return try! get_Int16Converter();
         }
     }
+    /**
+    Returns a  instance that converts  values.
+
+    */
     public static var Int32Converter : dotnet.System.Text.Json.Serialization.JsonConverter_1<Swift.Int32> {
         get {
             return try! get_Int32Converter();
         }
     }
+    /**
+    Returns a  instance that converts  values.
+
+    */
     public static var Int64Converter : dotnet.System.Text.Json.Serialization.JsonConverter_1<Swift.Int64> {
         get {
             return try! get_Int64Converter();
         }
     }
+    public static var JsonArrayConverter : dotnet.System.Text.Json.Serialization.JsonConverter_1<dotnet.System.Text.Json.Nodes.JsonArray> {
+        get {
+            return try! get_JsonArrayConverter();
+        }
+    }
+    /**
+    Gets a JSON converter that converts  values.
+
+    */
     public static var JsonElementConverter : dotnet.System.Text.Json.Serialization.JsonConverter_1<dotnet.System.Text.Json.JsonElement> {
         get {
             return try! get_JsonElementConverter();
         }
     }
+    public static var JsonNodeConverter : dotnet.System.Text.Json.Serialization.JsonConverter_1<dotnet.System.Text.Json.Nodes.JsonNode> {
+        get {
+            return try! get_JsonNodeConverter();
+        }
+    }
+    public static var JsonObjectConverter : dotnet.System.Text.Json.Serialization.JsonConverter_1<dotnet.System.Text.Json.Nodes.JsonObject> {
+        get {
+            return try! get_JsonObjectConverter();
+        }
+    }
+    public static var JsonValueConverter : dotnet.System.Text.Json.Serialization.JsonConverter_1<dotnet.System.Text.Json.Nodes.JsonValue> {
+        get {
+            return try! get_JsonValueConverter();
+        }
+    }
+    /**
+    Returns a  instance that converts  values.
+
+    */
     public static var ObjectConverter : dotnet.System.Text.Json.Serialization.JsonConverter_1<dotnet.System.Object> {
         get {
             return try! get_ObjectConverter();
         }
     }
+    /**
+    Returns a  instance that converts  values.
+
+    */
     public static var SByteConverter : dotnet.System.Text.Json.Serialization.JsonConverter_1<Swift.Int8> {
         get {
             return try! get_SByteConverter();
         }
     }
+    /**
+    Returns a  instance that converts  values.
+
+    */
     public static var SingleConverter : dotnet.System.Text.Json.Serialization.JsonConverter_1<Swift.Float> {
         get {
             return try! get_SingleConverter();
         }
     }
+    /**
+    Returns a  instance that converts  values.
+
+    */
     public static var StringConverter : dotnet.System.Text.Json.Serialization.JsonConverter_1<dotnet.System.String> {
         get {
             return try! get_StringConverter();
         }
     }
+    /**
+    Gets a JSON converter that converts  values.
+
+    */
     public static var TimeSpanConverter : dotnet.System.Text.Json.Serialization.JsonConverter_1<dotnet.System.TimeSpan> {
         get {
             return try! get_TimeSpanConverter();
         }
     }
+    /**
+    Returns a  instance that converts  values.
+
+    */
     public static var UInt16Converter : dotnet.System.Text.Json.Serialization.JsonConverter_1<Swift.UInt16> {
         get {
             return try! get_UInt16Converter();
         }
     }
+    /**
+    Returns a  instance that converts  values.
+
+    */
     public static var UInt32Converter : dotnet.System.Text.Json.Serialization.JsonConverter_1<Swift.UInt32> {
         get {
             return try! get_UInt32Converter();
         }
     }
+    /**
+    Returns a  instance that converts  values.
+
+    */
     public static var UInt64Converter : dotnet.System.Text.Json.Serialization.JsonConverter_1<Swift.UInt64> {
         get {
             return try! get_UInt64Converter();
         }
     }
+    /**
+    Returns a  instance that converts  values.
+
+    */
     public static var UriConverter : dotnet.System.Text.Json.Serialization.JsonConverter_1<dotnet.System.Uri> {
         get {
             return try! get_UriConverter();
         }
     }
+    /**
+    Returns a  instance that converts  values.
+
+    */
     public static var VersionConverter : dotnet.System.Text.Json.Serialization.JsonConverter_1<dotnet.System.Version> {
         get {
             return try! get_VersionConverter();
@@ -9179,6 +10731,10 @@ public struct JsonMetadataServices {
 
 
 // type: System.Text.Json.Serialization.Metadata.JsonObjectInfoValues`1
+    /**
+    Provides serialization metadata about an object type with constructors, properties, and fields.
+
+    */
 public final class JsonObjectInfoValues_1<T : SGBridgeGenericValue>
     :
     dotnet.System.Object
@@ -9186,10 +10742,15 @@ public final class JsonObjectInfoValues_1<T : SGBridgeGenericValue>
     public class override func get_type_handle() -> TypeHandle {
         return System_Text_Json_Serialization_Metadata_JsonObjectInfoValues_1_get_type_handle(T.get_type_handle());
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor()
 // docid: M:System.Text.Json.Serialization.Metadata.JsonObjectInfoValues`1.#ctor
+    /**
+    */
     public override init() throws {
         var __thrown : NullableHandle = nil;
         let h = System_Text_Json_Serialization_Metadata_JsonObjectInfoValues_1_ctor_0__0(T.get_type_handle(), &__thrown);
@@ -9269,9 +10830,9 @@ public final class JsonObjectInfoValues_1<T : SGBridgeGenericValue>
     }
     // [IsSpecialName] void set_ObjectCreator(System.Func<T>)
 // docid: M:System.Text.Json.Serialization.Metadata.JsonObjectInfoValues`1.set_ObjectCreator(System.Func{`0})
-    public func set_ObjectCreator(value : dotnet.System.Func_1<T>) throws {
+    public func set_ObjectCreator(value : Optional<dotnet.System.Func_1<T>>) throws {
         var __thrown : NullableHandle = nil;
-        System_Text_Json_Serialization_Metadata_JsonObjectInfoValues_1_void__set_ObjectCreator_0__1__System_Func_T_(T.get_type_handle(), &__thrown, self.get_handle(), nil);
+        System_Text_Json_Serialization_Metadata_JsonObjectInfoValues_1_void__set_ObjectCreator_0__1__System_Func_T_(T.get_type_handle(), &__thrown, self.get_handle(), (value?.get_handle()));
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
@@ -9300,9 +10861,9 @@ public final class JsonObjectInfoValues_1<T : SGBridgeGenericValue>
     }
     // [IsSpecialName] void set_ObjectWithParameterizedConstructorCreator(System.Func<System.Object[],T>)
 // docid: M:System.Text.Json.Serialization.Metadata.JsonObjectInfoValues`1.set_ObjectWithParameterizedConstructorCreator(System.Func{System.Object[],`0})
-    public func set_ObjectWithParameterizedConstructorCreator(value : dotnet.System.Func_2<dotnet.System_Arr<dotnet.System.Object>,T>) throws {
+    public func set_ObjectWithParameterizedConstructorCreator(value : Optional<dotnet.System.Func_2<dotnet.System_Arr<dotnet.System.Object>,T>>) throws {
         var __thrown : NullableHandle = nil;
-        System_Text_Json_Serialization_Metadata_JsonObjectInfoValues_1_void__set_ObjectWithParameterizedConstructorCreator_0__1__System_Func_objectArray_T_(T.get_type_handle(), &__thrown, self.get_handle(), nil);
+        System_Text_Json_Serialization_Metadata_JsonObjectInfoValues_1_void__set_ObjectWithParameterizedConstructorCreator_0__1__System_Func_objectArray_T_(T.get_type_handle(), &__thrown, self.get_handle(), (value?.get_handle()));
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
@@ -9310,7 +10871,7 @@ public final class JsonObjectInfoValues_1<T : SGBridgeGenericValue>
         }
     }
     // delegate closure overload
-    public func set_ObjectWithParameterizedConstructorCreator(value : @escaping (Optional<dotnet.System_Arr<dotnet.System.Object>>) throws -> T) throws {
+    public func set_ObjectWithParameterizedConstructorCreator(value : @escaping (dotnet.System_Arr<dotnet.System.Object>) throws -> T) throws {
         let del_value = try dotnet.System.Func_2<dotnet.System_Arr<dotnet.System.Object>,T>(value);
         return try set_ObjectWithParameterizedConstructorCreator(value: del_value);
     }
@@ -9341,7 +10902,7 @@ public final class JsonObjectInfoValues_1<T : SGBridgeGenericValue>
         }
     }
     // delegate closure overload
-    public func set_PropertyMetadataInitializer(value : @escaping (Optional<dotnet.System.Text.Json.Serialization.JsonSerializerContext>) throws -> dotnet.System_Arr<dotnet.System.Text.Json.Serialization.Metadata.JsonPropertyInfo>) throws {
+    public func set_PropertyMetadataInitializer(value : @escaping (dotnet.System.Text.Json.Serialization.JsonSerializerContext) throws -> dotnet.System_Arr<dotnet.System.Text.Json.Serialization.Metadata.JsonPropertyInfo>) throws {
         let del_value = try dotnet.System.Func_2<dotnet.System.Text.Json.Serialization.JsonSerializerContext,dotnet.System_Arr<dotnet.System.Text.Json.Serialization.Metadata.JsonPropertyInfo>>(value);
         return try set_PropertyMetadataInitializer(value: del_value);
     }
@@ -9362,9 +10923,9 @@ public final class JsonObjectInfoValues_1<T : SGBridgeGenericValue>
     }
     // [IsSpecialName] void set_SerializeHandler(System.Action<System.Text.Json.Utf8JsonWriter,T>)
 // docid: M:System.Text.Json.Serialization.Metadata.JsonObjectInfoValues`1.set_SerializeHandler(System.Action{System.Text.Json.Utf8JsonWriter,`0})
-    public func set_SerializeHandler(value : dotnet.System.Action_2<dotnet.System.Text.Json.Utf8JsonWriter,T>) throws {
+    public func set_SerializeHandler(value : Optional<dotnet.System.Action_2<dotnet.System.Text.Json.Utf8JsonWriter,T>>) throws {
         var __thrown : NullableHandle = nil;
-        System_Text_Json_Serialization_Metadata_JsonObjectInfoValues_1_void__set_SerializeHandler_0__1__System_Action_System_Text_Json_Utf8JsonWriter_T_(T.get_type_handle(), &__thrown, self.get_handle(), nil);
+        System_Text_Json_Serialization_Metadata_JsonObjectInfoValues_1_void__set_SerializeHandler_0__1__System_Action_System_Text_Json_Utf8JsonWriter_T_(T.get_type_handle(), &__thrown, self.get_handle(), (value?.get_handle()));
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
@@ -9372,10 +10933,14 @@ public final class JsonObjectInfoValues_1<T : SGBridgeGenericValue>
         }
     }
     // delegate closure overload
-    public func set_SerializeHandler(value : @escaping (Optional<dotnet.System.Text.Json.Utf8JsonWriter>, T) throws -> Void) throws {
+    public func set_SerializeHandler(value : @escaping (dotnet.System.Text.Json.Utf8JsonWriter, T) throws -> Void) throws {
         let del_value = try dotnet.System.Action_2<dotnet.System.Text.Json.Utf8JsonWriter,T>(value);
         return try set_SerializeHandler(value: del_value);
     }
+    /**
+    Provides a mechanism to initialize metadata for a parameterized constructor of the class or struct to be used when deserializing.
+
+    */
     public var ConstructorParameterMetadataInitializer : Optional<dotnet.System.Func_1<dotnet.System_Arr<dotnet.System.Text.Json.Serialization.Metadata.JsonParameterInfoValues>>> {
         get {
             return try! get_ConstructorParameterMetadataInitializer();
@@ -9384,6 +10949,10 @@ public final class JsonObjectInfoValues_1<T : SGBridgeGenericValue>
             return try! set_ConstructorParameterMetadataInitializer(value: v!);
         }
     }
+    /**
+    Gets or sets an object that specifies how number properties and fields should be processed when serializing and deserializing.
+
+    */
     public var NumberHandling : dotnet.System.Text.Json.Serialization.JsonNumberHandling {
         get {
             return try! get_NumberHandling();
@@ -9392,6 +10961,10 @@ public final class JsonObjectInfoValues_1<T : SGBridgeGenericValue>
             return try! set_NumberHandling(value: v);
         }
     }
+    /**
+    Gets or sets a mechanism to create an instance of the class or struct using a parameterless constructor during deserialization.
+
+    */
     public var ObjectCreator : Optional<dotnet.System.Func_1<T>> {
         get {
             return try! get_ObjectCreator();
@@ -9400,6 +10973,10 @@ public final class JsonObjectInfoValues_1<T : SGBridgeGenericValue>
             return try! set_ObjectCreator(value: v!);
         }
     }
+    /**
+    Gets or sets a mechanism to create an instance of the class or struct using a parameterized constructor during deserialization.
+
+    */
     public var ObjectWithParameterizedConstructorCreator : Optional<dotnet.System.Func_2<dotnet.System_Arr<dotnet.System.Object>,T>> {
         get {
             return try! get_ObjectWithParameterizedConstructorCreator();
@@ -9408,6 +10985,10 @@ public final class JsonObjectInfoValues_1<T : SGBridgeGenericValue>
             return try! set_ObjectWithParameterizedConstructorCreator(value: v!);
         }
     }
+    /**
+    Gets or sets a mechanism to initialize metadata for properties and fields of the class or struct.
+
+    */
     public var PropertyMetadataInitializer : Optional<dotnet.System.Func_2<dotnet.System.Text.Json.Serialization.JsonSerializerContext,dotnet.System_Arr<dotnet.System.Text.Json.Serialization.Metadata.JsonPropertyInfo>>> {
         get {
             return try! get_PropertyMetadataInitializer();
@@ -9416,6 +10997,10 @@ public final class JsonObjectInfoValues_1<T : SGBridgeGenericValue>
             return try! set_PropertyMetadataInitializer(value: v!);
         }
     }
+    /**
+    Gets or sets a serialization implementation for instances of the class or struct that assumes options specified by .
+
+    */
     public var SerializeHandler : Optional<dotnet.System.Action_2<dotnet.System.Text.Json.Utf8JsonWriter,T>> {
         get {
             return try! get_SerializeHandler();
@@ -9428,6 +11013,10 @@ public final class JsonObjectInfoValues_1<T : SGBridgeGenericValue>
 
 
 // type: System.Text.Json.Serialization.Metadata.JsonParameterInfoValues
+    /**
+    Provides information about a constructor parameter required for JSON deserialization.
+
+    */
 public final class JsonParameterInfoValues
     :
     dotnet.System.Object
@@ -9435,10 +11024,15 @@ public final class JsonParameterInfoValues
     public class override func get_type_handle() -> TypeHandle {
         return System_Text_Json_Serialization_Metadata_JsonParameterInfoValues_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor()
 // docid: M:System.Text.Json.Serialization.Metadata.JsonParameterInfoValues.#ctor
+    /**
+    */
     public override init() throws {
         var __thrown : NullableHandle = nil;
         let h = System_Text_Json_Serialization_Metadata_JsonParameterInfoValues_ctor_0__0(&__thrown);
@@ -9562,6 +11156,10 @@ public final class JsonParameterInfoValues
             return;
         }
     }
+    /**
+    Gets or sets the default value of the parameter.
+
+    */
     public var DefaultValue : Optional<dotnet.System.Object> {
         get {
             return try! get_DefaultValue();
@@ -9570,6 +11168,10 @@ public final class JsonParameterInfoValues
             return try! set_DefaultValue(value: v!);
         }
     }
+    /**
+    Gets or sets a value that specifies whether a default value was specified for the parameter.
+
+    */
     public var HasDefaultValue : Bool {
         get {
             return try! get_HasDefaultValue();
@@ -9578,6 +11180,10 @@ public final class JsonParameterInfoValues
             return try! set_HasDefaultValue(value: v);
         }
     }
+    /**
+    Gets or sets the name of the parameter.
+
+    */
     public var Name : dotnet.System.String {
         get {
             return try! get_Name();
@@ -9586,6 +11192,10 @@ public final class JsonParameterInfoValues
             return try! set_Name(value: v);
         }
     }
+    /**
+    Gets or sets the type of the parameter.
+
+    */
     public var ParameterType : dotnet.System.Type_ {
         get {
             return try! get_ParameterType();
@@ -9594,6 +11204,10 @@ public final class JsonParameterInfoValues
             return try! set_ParameterType(value: v);
         }
     }
+    /**
+    Gets or sets the zero-based position of the parameter in the formal parameter list.
+
+    */
     public var Position : Swift.Int32 {
         get {
             return try! get_Position();
@@ -9606,6 +11220,10 @@ public final class JsonParameterInfoValues
 
 
 // type: System.Text.Json.Serialization.Metadata.JsonPropertyInfo
+    /**
+    Provides JSON serialization-related metadata about a property or field.
+
+    */
 open class JsonPropertyInfo
     :
     dotnet.System.Object
@@ -9613,39 +11231,346 @@ open class JsonPropertyInfo
     open class override func get_type_handle() -> TypeHandle {
         return System_Text_Json_Serialization_Metadata_JsonPropertyInfo_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
 } // JsonPropertyInfo
 
 
-// type: System.Text.Json.Serialization.Metadata.JsonTypeInfo
-open class JsonTypeInfo
+// type: System.Text.Json.Serialization.Metadata.JsonPropertyInfoValues`1
+public final class JsonPropertyInfoValues_1<T : SGBridgeGenericValue>
     :
     dotnet.System.Object
 {
-    open class override func get_type_handle() -> TypeHandle {
-        return System_Text_Json_Serialization_Metadata_JsonTypeInfo_get_type_handle();
+    public class override func get_type_handle() -> TypeHandle {
+        return System_Text_Json_Serialization_Metadata_JsonPropertyInfoValues_1_get_type_handle(T.get_type_handle());
+    }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
-} // JsonTypeInfo
-
-
-// type: System.Text.Json.Serialization.Metadata.JsonTypeInfo`1
-open class JsonTypeInfo_1<T : SGBridgeGenericValue>
-    :
-    dotnet.System.Text.Json.Serialization.Metadata.JsonTypeInfo
-{
-    open class override func get_type_handle() -> TypeHandle {
-        return System_Text_Json_Serialization_Metadata_JsonTypeInfo_1_get_type_handle(T.get_type_handle());
-    }
-    public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
-    public required init(gval: GVal) { super.init(gval: gval); }
-    // [IsSpecialName] System.Action<System.Text.Json.Utf8JsonWriter,T> get_Serialize()
-// docid: M:System.Text.Json.Serialization.Metadata.JsonTypeInfo`1.get_Serialize
-    open func get_Serialize() throws -> Optional<dotnet.System.Action_2<dotnet.System.Text.Json.Utf8JsonWriter,T>> {
+    // .ctor()
+// docid: M:System.Text.Json.Serialization.Metadata.JsonPropertyInfoValues`1.#ctor
+    public override init() throws {
         var __thrown : NullableHandle = nil;
-        let __return = System_Text_Json_Serialization_Metadata_JsonTypeInfo_1_System_Action_System_Text_Json_Utf8JsonWriter_T___get_Serialize_0__0(T.get_type_handle(), &__thrown, self.get_handle());
+        let h = System_Text_Json_Serialization_Metadata_JsonPropertyInfoValues_1_ctor_0__0(T.get_type_handle(), &__thrown);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            super.init(hndl: h);
+        }
+    }
+    // [IsSpecialName] System.Text.Json.Serialization.JsonConverter<T> get_Converter()
+// docid: M:System.Text.Json.Serialization.Metadata.JsonPropertyInfoValues`1.get_Converter
+    public func get_Converter() throws -> Optional<dotnet.System.Text.Json.Serialization.JsonConverter_1<T>> {
+        var __thrown : NullableHandle = nil;
+        let __return = System_Text_Json_Serialization_Metadata_JsonPropertyInfoValues_1_System_Text_Json_Serialization_JsonConverter_T___get_Converter_0__0(T.get_type_handle(), &__thrown, self.get_handle());
+        if let __ex =  __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+        if let __ret_unwrapped = __return {
+            return dotnet.System.Text.Json.Serialization.JsonConverter_1(hndl : __ret_unwrapped);
+        } else {
+            return nil;
+        }
+        }
+    }
+    // [IsSpecialName] void set_Converter(System.Text.Json.Serialization.JsonConverter<T>)
+// docid: M:System.Text.Json.Serialization.Metadata.JsonPropertyInfoValues`1.set_Converter(System.Text.Json.Serialization.JsonConverter{`0})
+    public func set_Converter(value : Optional<dotnet.System.Text.Json.Serialization.JsonConverter_1<T>>) throws {
+        var __thrown : NullableHandle = nil;
+        System_Text_Json_Serialization_Metadata_JsonPropertyInfoValues_1_void__set_Converter_0__1__System_Text_Json_Serialization_JsonConverter_T_(T.get_type_handle(), &__thrown, self.get_handle(), (value?.get_handle()));
+        if let __ex =  __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            return;
+        }
+    }
+    // [IsSpecialName] System.Type get_DeclaringType()
+// docid: M:System.Text.Json.Serialization.Metadata.JsonPropertyInfoValues`1.get_DeclaringType
+    public func get_DeclaringType() throws -> dotnet.System.Type_ {
+        var __thrown : NullableHandle = nil;
+        let __return = System_Text_Json_Serialization_Metadata_JsonPropertyInfoValues_1_Type__get_DeclaringType_0__0(T.get_type_handle(), &__thrown, self.get_handle());
+        if let __ex =  __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+        return dotnet.System.Type_(hndl : __return);
+        }
+    }
+    // [IsSpecialName] void set_DeclaringType(System.Type)
+// docid: M:System.Text.Json.Serialization.Metadata.JsonPropertyInfoValues`1.set_DeclaringType(System.Type)
+    public func set_DeclaringType(value : dotnet.System.Type_) throws {
+        var __thrown : NullableHandle = nil;
+        System_Text_Json_Serialization_Metadata_JsonPropertyInfoValues_1_void__set_DeclaringType_0__1__Type(T.get_type_handle(), &__thrown, self.get_handle(), value.get_handle());
+        if let __ex =  __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            return;
+        }
+    }
+    // [IsSpecialName] System.Func<System.Object,T> get_Getter()
+// docid: M:System.Text.Json.Serialization.Metadata.JsonPropertyInfoValues`1.get_Getter
+    public func get_Getter() throws -> Optional<dotnet.System.Func_2<dotnet.System.Object,T>> {
+        var __thrown : NullableHandle = nil;
+        let __return = System_Text_Json_Serialization_Metadata_JsonPropertyInfoValues_1_System_Func_object_T___get_Getter_0__0(T.get_type_handle(), &__thrown, self.get_handle());
+        if let __ex =  __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+        if let __ret_unwrapped = __return {
+            return dotnet.System.Func_2(hndl : __ret_unwrapped);
+        } else {
+            return nil;
+        }
+        }
+    }
+    // [IsSpecialName] void set_Getter(System.Func<System.Object,T>)
+// docid: M:System.Text.Json.Serialization.Metadata.JsonPropertyInfoValues`1.set_Getter(System.Func{System.Object,`0})
+    public func set_Getter(value : Optional<dotnet.System.Func_2<dotnet.System.Object,T>>) throws {
+        var __thrown : NullableHandle = nil;
+        System_Text_Json_Serialization_Metadata_JsonPropertyInfoValues_1_void__set_Getter_0__1__System_Func_object_T_(T.get_type_handle(), &__thrown, self.get_handle(), (value?.get_handle()));
+        if let __ex =  __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            return;
+        }
+    }
+    // delegate closure overload
+    public func set_Getter(value : @escaping (dotnet.System.Object) throws -> T) throws {
+        let del_value = try dotnet.System.Func_2<dotnet.System.Object,T>(value);
+        return try set_Getter(value: del_value);
+    }
+    // [IsSpecialName] System.Nullable<System.Text.Json.Serialization.JsonIgnoreCondition> get_IgnoreCondition()
+// docid: M:System.Text.Json.Serialization.Metadata.JsonPropertyInfoValues`1.get_IgnoreCondition
+    public func get_IgnoreCondition() throws -> Optional<dotnet.System.Text.Json.Serialization.JsonIgnoreCondition> {
+        var __thrown : NullableHandle = nil;
+        let __return = System_Text_Json_Serialization_Metadata_JsonPropertyInfoValues_1_System_Nullable_System_Text_Json_Serialization_JsonIgnoreCondition___get_IgnoreCondition_0__0(T.get_type_handle(), &__thrown, self.get_handle());
+        if let __ex =  __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            return (__return != nil) ? dotnet.System.Text.Json.Serialization.JsonIgnoreCondition(val: System_Int32_unbox(__return!)) : nil;
+        }
+    }
+    // [IsSpecialName] void set_IgnoreCondition(System.Nullable<System.Text.Json.Serialization.JsonIgnoreCondition>)
+// docid: M:System.Text.Json.Serialization.Metadata.JsonPropertyInfoValues`1.set_IgnoreCondition(System.Nullable{System.Text.Json.Serialization.JsonIgnoreCondition})
+    public func set_IgnoreCondition(value : Optional<dotnet.System.Text.Json.Serialization.JsonIgnoreCondition>) throws {
+        var __thrown : NullableHandle = nil;
+        System_Text_Json_Serialization_Metadata_JsonPropertyInfoValues_1_void__set_IgnoreCondition_0__1__System_Nullable_System_Text_Json_Serialization_JsonIgnoreCondition_(T.get_type_handle(), &__thrown, self.get_handle(), (value != nil) ? System_Int32_box(value!.get_value()) : nil);
+        if let __ex =  __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            return;
+        }
+    }
+    // [IsSpecialName] bool get_HasJsonInclude()
+// docid: M:System.Text.Json.Serialization.Metadata.JsonPropertyInfoValues`1.get_HasJsonInclude
+    public func get_HasJsonInclude() throws -> Bool {
+        var __thrown : NullableHandle = nil;
+        let __return = System_Text_Json_Serialization_Metadata_JsonPropertyInfoValues_1_bool__get_HasJsonInclude_0__0(T.get_type_handle(), &__thrown, self.get_handle());
+        if let __ex =  __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+        return (__return) != 0;
+        }
+    }
+    // [IsSpecialName] void set_HasJsonInclude(bool)
+// docid: M:System.Text.Json.Serialization.Metadata.JsonPropertyInfoValues`1.set_HasJsonInclude(System.Boolean)
+    public func set_HasJsonInclude(value : Bool) throws {
+        var __thrown : NullableHandle = nil;
+        System_Text_Json_Serialization_Metadata_JsonPropertyInfoValues_1_void__set_HasJsonInclude_0__1__bool(T.get_type_handle(), &__thrown, self.get_handle(), Swift.Int32(value ? 1 : 0));
+        if let __ex =  __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            return;
+        }
+    }
+    // [IsSpecialName] bool get_IsExtensionData()
+// docid: M:System.Text.Json.Serialization.Metadata.JsonPropertyInfoValues`1.get_IsExtensionData
+    public func get_IsExtensionData() throws -> Bool {
+        var __thrown : NullableHandle = nil;
+        let __return = System_Text_Json_Serialization_Metadata_JsonPropertyInfoValues_1_bool__get_IsExtensionData_0__0(T.get_type_handle(), &__thrown, self.get_handle());
+        if let __ex =  __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+        return (__return) != 0;
+        }
+    }
+    // [IsSpecialName] void set_IsExtensionData(bool)
+// docid: M:System.Text.Json.Serialization.Metadata.JsonPropertyInfoValues`1.set_IsExtensionData(System.Boolean)
+    public func set_IsExtensionData(value : Bool) throws {
+        var __thrown : NullableHandle = nil;
+        System_Text_Json_Serialization_Metadata_JsonPropertyInfoValues_1_void__set_IsExtensionData_0__1__bool(T.get_type_handle(), &__thrown, self.get_handle(), Swift.Int32(value ? 1 : 0));
+        if let __ex =  __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            return;
+        }
+    }
+    // [IsSpecialName] bool get_IsProperty()
+// docid: M:System.Text.Json.Serialization.Metadata.JsonPropertyInfoValues`1.get_IsProperty
+    public func get_IsProperty() throws -> Bool {
+        var __thrown : NullableHandle = nil;
+        let __return = System_Text_Json_Serialization_Metadata_JsonPropertyInfoValues_1_bool__get_IsProperty_0__0(T.get_type_handle(), &__thrown, self.get_handle());
+        if let __ex =  __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+        return (__return) != 0;
+        }
+    }
+    // [IsSpecialName] void set_IsProperty(bool)
+// docid: M:System.Text.Json.Serialization.Metadata.JsonPropertyInfoValues`1.set_IsProperty(System.Boolean)
+    public func set_IsProperty(value : Bool) throws {
+        var __thrown : NullableHandle = nil;
+        System_Text_Json_Serialization_Metadata_JsonPropertyInfoValues_1_void__set_IsProperty_0__1__bool(T.get_type_handle(), &__thrown, self.get_handle(), Swift.Int32(value ? 1 : 0));
+        if let __ex =  __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            return;
+        }
+    }
+    // [IsSpecialName] bool get_IsPublic()
+// docid: M:System.Text.Json.Serialization.Metadata.JsonPropertyInfoValues`1.get_IsPublic
+    public func get_IsPublic() throws -> Bool {
+        var __thrown : NullableHandle = nil;
+        let __return = System_Text_Json_Serialization_Metadata_JsonPropertyInfoValues_1_bool__get_IsPublic_0__0(T.get_type_handle(), &__thrown, self.get_handle());
+        if let __ex =  __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+        return (__return) != 0;
+        }
+    }
+    // [IsSpecialName] void set_IsPublic(bool)
+// docid: M:System.Text.Json.Serialization.Metadata.JsonPropertyInfoValues`1.set_IsPublic(System.Boolean)
+    public func set_IsPublic(value : Bool) throws {
+        var __thrown : NullableHandle = nil;
+        System_Text_Json_Serialization_Metadata_JsonPropertyInfoValues_1_void__set_IsPublic_0__1__bool(T.get_type_handle(), &__thrown, self.get_handle(), Swift.Int32(value ? 1 : 0));
+        if let __ex =  __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            return;
+        }
+    }
+    // [IsSpecialName] bool get_IsVirtual()
+// docid: M:System.Text.Json.Serialization.Metadata.JsonPropertyInfoValues`1.get_IsVirtual
+    public func get_IsVirtual() throws -> Bool {
+        var __thrown : NullableHandle = nil;
+        let __return = System_Text_Json_Serialization_Metadata_JsonPropertyInfoValues_1_bool__get_IsVirtual_0__0(T.get_type_handle(), &__thrown, self.get_handle());
+        if let __ex =  __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+        return (__return) != 0;
+        }
+    }
+    // [IsSpecialName] void set_IsVirtual(bool)
+// docid: M:System.Text.Json.Serialization.Metadata.JsonPropertyInfoValues`1.set_IsVirtual(System.Boolean)
+    public func set_IsVirtual(value : Bool) throws {
+        var __thrown : NullableHandle = nil;
+        System_Text_Json_Serialization_Metadata_JsonPropertyInfoValues_1_void__set_IsVirtual_0__1__bool(T.get_type_handle(), &__thrown, self.get_handle(), Swift.Int32(value ? 1 : 0));
+        if let __ex =  __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            return;
+        }
+    }
+    // [IsSpecialName] System.String get_JsonPropertyName()
+// docid: M:System.Text.Json.Serialization.Metadata.JsonPropertyInfoValues`1.get_JsonPropertyName
+    public func get_JsonPropertyName() throws -> Optional<dotnet.System.String> {
+        var __thrown : NullableHandle = nil;
+        let __return = System_Text_Json_Serialization_Metadata_JsonPropertyInfoValues_1_String__get_JsonPropertyName_0__0(T.get_type_handle(), &__thrown, self.get_handle());
+        if let __ex =  __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+        if let __ret_unwrapped = __return {
+            return dotnet.System.String(hndl : __ret_unwrapped);
+        } else {
+            return nil;
+        }
+        }
+    }
+    // [IsSpecialName] void set_JsonPropertyName(System.String)
+// docid: M:System.Text.Json.Serialization.Metadata.JsonPropertyInfoValues`1.set_JsonPropertyName(System.String)
+    public func set_JsonPropertyName(value : Optional<dotnet.System.String>) throws {
+        var __thrown : NullableHandle = nil;
+        System_Text_Json_Serialization_Metadata_JsonPropertyInfoValues_1_void__set_JsonPropertyName_0__1__String(T.get_type_handle(), &__thrown, self.get_handle(), value?.get_handle() ?? nil);
+        if let __ex =  __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            return;
+        }
+    }
+    // [IsSpecialName] System.Nullable<System.Text.Json.Serialization.JsonNumberHandling> get_NumberHandling()
+// docid: M:System.Text.Json.Serialization.Metadata.JsonPropertyInfoValues`1.get_NumberHandling
+    public func get_NumberHandling() throws -> Optional<dotnet.System.Text.Json.Serialization.JsonNumberHandling> {
+        var __thrown : NullableHandle = nil;
+        let __return = System_Text_Json_Serialization_Metadata_JsonPropertyInfoValues_1_System_Nullable_System_Text_Json_Serialization_JsonNumberHandling___get_NumberHandling_0__0(T.get_type_handle(), &__thrown, self.get_handle());
+        if let __ex =  __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            return (__return != nil) ? dotnet.System.Text.Json.Serialization.JsonNumberHandling(val: System_Int32_unbox(__return!)) : nil;
+        }
+    }
+    // [IsSpecialName] void set_NumberHandling(System.Nullable<System.Text.Json.Serialization.JsonNumberHandling>)
+// docid: M:System.Text.Json.Serialization.Metadata.JsonPropertyInfoValues`1.set_NumberHandling(System.Nullable{System.Text.Json.Serialization.JsonNumberHandling})
+    public func set_NumberHandling(value : Optional<dotnet.System.Text.Json.Serialization.JsonNumberHandling>) throws {
+        var __thrown : NullableHandle = nil;
+        System_Text_Json_Serialization_Metadata_JsonPropertyInfoValues_1_void__set_NumberHandling_0__1__System_Nullable_System_Text_Json_Serialization_JsonNumberHandling_(T.get_type_handle(), &__thrown, self.get_handle(), (value != nil) ? System_Int32_box(value!.get_value()) : nil);
+        if let __ex =  __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            return;
+        }
+    }
+    // [IsSpecialName] System.String get_PropertyName()
+// docid: M:System.Text.Json.Serialization.Metadata.JsonPropertyInfoValues`1.get_PropertyName
+    public func get_PropertyName() throws -> dotnet.System.String {
+        var __thrown : NullableHandle = nil;
+        let __return = System_Text_Json_Serialization_Metadata_JsonPropertyInfoValues_1_String__get_PropertyName_0__0(T.get_type_handle(), &__thrown, self.get_handle());
+        if let __ex =  __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+        return dotnet.System.String(hndl : __return);
+        }
+    }
+    // [IsSpecialName] void set_PropertyName(System.String)
+// docid: M:System.Text.Json.Serialization.Metadata.JsonPropertyInfoValues`1.set_PropertyName(System.String)
+    public func set_PropertyName(value : dotnet.System.String) throws {
+        var __thrown : NullableHandle = nil;
+        System_Text_Json_Serialization_Metadata_JsonPropertyInfoValues_1_void__set_PropertyName_0__1__String(T.get_type_handle(), &__thrown, self.get_handle(), value.get_handle());
+        if let __ex =  __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            return;
+        }
+    }
+    // [IsSpecialName] System.Text.Json.Serialization.Metadata.JsonTypeInfo get_PropertyTypeInfo()
+// docid: M:System.Text.Json.Serialization.Metadata.JsonPropertyInfoValues`1.get_PropertyTypeInfo
+    public func get_PropertyTypeInfo() throws -> dotnet.System.Text.Json.Serialization.Metadata.JsonTypeInfo {
+        var __thrown : NullableHandle = nil;
+        let __return = System_Text_Json_Serialization_Metadata_JsonPropertyInfoValues_1_JsonTypeInfo__get_PropertyTypeInfo_0__0(T.get_type_handle(), &__thrown, self.get_handle());
+        if let __ex =  __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+        return dotnet.System.Text.Json.Serialization.Metadata.JsonTypeInfo(hndl : __return);
+        }
+    }
+    // [IsSpecialName] void set_PropertyTypeInfo(System.Text.Json.Serialization.Metadata.JsonTypeInfo)
+// docid: M:System.Text.Json.Serialization.Metadata.JsonPropertyInfoValues`1.set_PropertyTypeInfo(System.Text.Json.Serialization.Metadata.JsonTypeInfo)
+    public func set_PropertyTypeInfo(value : dotnet.System.Text.Json.Serialization.Metadata.JsonTypeInfo) throws {
+        var __thrown : NullableHandle = nil;
+        System_Text_Json_Serialization_Metadata_JsonPropertyInfoValues_1_void__set_PropertyTypeInfo_0__1__JsonTypeInfo(T.get_type_handle(), &__thrown, self.get_handle(), value.get_handle());
+        if let __ex =  __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            return;
+        }
+    }
+    // [IsSpecialName] System.Action<System.Object,T> get_Setter()
+// docid: M:System.Text.Json.Serialization.Metadata.JsonPropertyInfoValues`1.get_Setter
+    public func get_Setter() throws -> Optional<dotnet.System.Action_2<dotnet.System.Object,T>> {
+        var __thrown : NullableHandle = nil;
+        let __return = System_Text_Json_Serialization_Metadata_JsonPropertyInfoValues_1_System_Action_object_T___get_Setter_0__0(T.get_type_handle(), &__thrown, self.get_handle());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
@@ -9656,9 +11581,192 @@ open class JsonTypeInfo_1<T : SGBridgeGenericValue>
         }
         }
     }
-    open var Serialize : Optional<dotnet.System.Action_2<dotnet.System.Text.Json.Utf8JsonWriter,T>> {
+    // [IsSpecialName] void set_Setter(System.Action<System.Object,T>)
+// docid: M:System.Text.Json.Serialization.Metadata.JsonPropertyInfoValues`1.set_Setter(System.Action{System.Object,`0})
+    public func set_Setter(value : Optional<dotnet.System.Action_2<dotnet.System.Object,T>>) throws {
+        var __thrown : NullableHandle = nil;
+        System_Text_Json_Serialization_Metadata_JsonPropertyInfoValues_1_void__set_Setter_0__1__System_Action_object_T_(T.get_type_handle(), &__thrown, self.get_handle(), (value?.get_handle()));
+        if let __ex =  __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            return;
+        }
+    }
+    // delegate closure overload
+    public func set_Setter(value : @escaping (dotnet.System.Object, T) throws -> Void) throws {
+        let del_value = try dotnet.System.Action_2<dotnet.System.Object,T>(value);
+        return try set_Setter(value: del_value);
+    }
+    public var Converter : Optional<dotnet.System.Text.Json.Serialization.JsonConverter_1<T>> {
         get {
-            return try! get_Serialize();
+            return try! get_Converter();
+        }
+        set(v) {
+            return try! set_Converter(value: v!);
+        }
+    }
+    public var DeclaringType : dotnet.System.Type_ {
+        get {
+            return try! get_DeclaringType();
+        }
+        set(v) {
+            return try! set_DeclaringType(value: v);
+        }
+    }
+    public var Getter : Optional<dotnet.System.Func_2<dotnet.System.Object,T>> {
+        get {
+            return try! get_Getter();
+        }
+        set(v) {
+            return try! set_Getter(value: v!);
+        }
+    }
+    public var HasJsonInclude : Bool {
+        get {
+            return try! get_HasJsonInclude();
+        }
+        set(v) {
+            return try! set_HasJsonInclude(value: v);
+        }
+    }
+    public var IgnoreCondition : Optional<dotnet.System.Text.Json.Serialization.JsonIgnoreCondition> {
+        get {
+            return try! get_IgnoreCondition();
+        }
+        set(v) {
+            return try! set_IgnoreCondition(value: v!);
+        }
+    }
+    public var IsExtensionData : Bool {
+        get {
+            return try! get_IsExtensionData();
+        }
+        set(v) {
+            return try! set_IsExtensionData(value: v);
+        }
+    }
+    public var IsProperty : Bool {
+        get {
+            return try! get_IsProperty();
+        }
+        set(v) {
+            return try! set_IsProperty(value: v);
+        }
+    }
+    public var IsPublic : Bool {
+        get {
+            return try! get_IsPublic();
+        }
+        set(v) {
+            return try! set_IsPublic(value: v);
+        }
+    }
+    public var IsVirtual : Bool {
+        get {
+            return try! get_IsVirtual();
+        }
+        set(v) {
+            return try! set_IsVirtual(value: v);
+        }
+    }
+    public var JsonPropertyName : Optional<dotnet.System.String> {
+        get {
+            return try! get_JsonPropertyName();
+        }
+        set(v) {
+            return try! set_JsonPropertyName(value: v!);
+        }
+    }
+    public var NumberHandling : Optional<dotnet.System.Text.Json.Serialization.JsonNumberHandling> {
+        get {
+            return try! get_NumberHandling();
+        }
+        set(v) {
+            return try! set_NumberHandling(value: v!);
+        }
+    }
+    public var PropertyName : dotnet.System.String {
+        get {
+            return try! get_PropertyName();
+        }
+        set(v) {
+            return try! set_PropertyName(value: v);
+        }
+    }
+    public var PropertyTypeInfo : dotnet.System.Text.Json.Serialization.Metadata.JsonTypeInfo {
+        get {
+            return try! get_PropertyTypeInfo();
+        }
+        set(v) {
+            return try! set_PropertyTypeInfo(value: v);
+        }
+    }
+    public var Setter : Optional<dotnet.System.Action_2<dotnet.System.Object,T>> {
+        get {
+            return try! get_Setter();
+        }
+        set(v) {
+            return try! set_Setter(value: v!);
+        }
+    }
+} // JsonPropertyInfoValues_1
+
+
+// type: System.Text.Json.Serialization.Metadata.JsonTypeInfo
+    /**
+    Provides JSON serialization-related metadata about a type.
+
+    */
+open class JsonTypeInfo
+    :
+    dotnet.System.Object
+{
+    open class override func get_type_handle() -> TypeHandle {
+        return System_Text_Json_Serialization_Metadata_JsonTypeInfo_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
+    public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
+    public required init(gval: GVal) { super.init(gval: gval); }
+} // JsonTypeInfo
+
+
+// type: System.Text.Json.Serialization.Metadata.JsonTypeInfo`1
+    /**
+    Provides JSON serialization-related metadata about a type.
+
+    */
+open class JsonTypeInfo_1<T : SGBridgeGenericValue>
+    :
+    dotnet.System.Text.Json.Serialization.Metadata.JsonTypeInfo
+{
+    open class override func get_type_handle() -> TypeHandle {
+        return System_Text_Json_Serialization_Metadata_JsonTypeInfo_1_get_type_handle(T.get_type_handle());
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
+    public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
+    public required init(gval: GVal) { super.init(gval: gval); }
+    // [IsSpecialName] System.Action<System.Text.Json.Utf8JsonWriter,T> get_SerializeHandler()
+// docid: M:System.Text.Json.Serialization.Metadata.JsonTypeInfo`1.get_SerializeHandler
+    open func get_SerializeHandler() throws -> Optional<dotnet.System.Action_2<dotnet.System.Text.Json.Utf8JsonWriter,T>> {
+        var __thrown : NullableHandle = nil;
+        let __return = System_Text_Json_Serialization_Metadata_JsonTypeInfo_1_System_Action_System_Text_Json_Utf8JsonWriter_T___get_SerializeHandler_0__0(T.get_type_handle(), &__thrown, self.get_handle());
+        if let __ex =  __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+        if let __ret_unwrapped = __return {
+            return dotnet.System.Action_2(hndl : __ret_unwrapped);
+        } else {
+            return nil;
+        }
+        }
+    }
+    open var SerializeHandler : Optional<dotnet.System.Action_2<dotnet.System.Text.Json.Utf8JsonWriter,T>> {
+        get {
+            return try! get_SerializeHandler();
         }
     }
 } // JsonTypeInfo_1
@@ -9736,6 +11844,12 @@ extension dotnet.System.Text.Json.Nodes.JsonNode {
     }
 }
 
+// TODO COPE (parm byref span): System.Object Deserialize(ref System.Text.Json.Utf8JsonReader, System.Type, System.Text.Json.JsonSerializerOptions)
+// TODO COPE (parm byref span): System.Object Deserialize(ref System.Text.Json.Utf8JsonReader, System.Type, System.Text.Json.Serialization.JsonSerializerContext)
+// TODO COPE (generic method and parm span): TValue Deserialize<TValue>(System.ReadOnlySpan<System.Byte>, System.Text.Json.JsonSerializerOptions)
+// TODO COPE (generic method and parm span): TValue Deserialize<TValue>(System.ReadOnlySpan<System.Byte>, System.Text.Json.Serialization.Metadata.JsonTypeInfo<TValue>)
+// TODO COPE (generic method and parm span): TValue Deserialize<TValue>(System.ReadOnlySpan<System.Char>, System.Text.Json.JsonSerializerOptions)
+// TODO COPE (generic method and parm span): TValue Deserialize<TValue>(System.ReadOnlySpan<System.Char>, System.Text.Json.Serialization.Metadata.JsonTypeInfo<TValue>)
 // EXTENSION METHOD TValue Deserialize<TValue>(System.Text.Json.JsonDocument, System.Text.Json.JsonSerializerOptions)
 // TODO COPE extension method (unused generic param) TValue Deserialize<TValue>(System.Text.Json.JsonDocument, System.Text.Json.JsonSerializerOptions)
 
@@ -9766,3 +11880,5 @@ extension dotnet.System.Text.Json.Nodes.JsonNode {
     }
 }
 
+// TODO COPE (parm byref span): TValue Deserialize<TValue>(ref System.Text.Json.Utf8JsonReader, System.Text.Json.JsonSerializerOptions)
+// TODO COPE (parm byref span): TValue Deserialize<TValue>(ref System.Text.Json.Utf8JsonReader, System.Text.Json.Serialization.Metadata.JsonTypeInfo<TValue>)

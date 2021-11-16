@@ -17,6 +17,9 @@ open class AuthenticationManager
     open class override func get_type_handle() -> TypeHandle {
         return System_Net_AuthenticationManager_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // System.Net.Authorization Authenticate(System.String, System.Net.WebRequest, System.Net.ICredentials)
@@ -25,8 +28,8 @@ open class AuthenticationManager
     Calls each registered authentication module to find the first module that can respond to the authentication request.
 
     - Parameter challenge: The challenge returned by the Internet resource.
-    - Parameter request: The  that initiated the authentication challenge.
-    - Parameter credentials: The  associated with this request.
+    - Parameter request: The request that initiated the authentication challenge.
+    - Parameter credentials: The credentials associated with this request.
     - Returns: An instance of the  class containing the result of the authorization attempt. If there is no authentication module to respond to the challenge, this method returns .
 
     */
@@ -48,8 +51,8 @@ open class AuthenticationManager
     /**
     Preauthenticates a request.
 
-    - Parameter request: A  to an Internet resource.
-    - Parameter credentials: The  associated with the request.
+    - Parameter request: A request to an internet resource.
+    - Parameter credentials: The credentials associated with the request.
     - Returns: An instance of the  class if the request can be preauthenticated; otherwise, . If  is , this method returns .
 
     */
@@ -206,6 +209,9 @@ open class Authorization
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Net_Authorization_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -415,6 +421,9 @@ open class FileWebRequest
     open class override func get_type_handle() -> TypeHandle {
         return System_Net_FileWebRequest_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // void Abort()
@@ -541,13 +550,13 @@ open class FileWebRequest
     - Returns: The task object representing the asynchronous operation.
 
     */
-    open override func GetRequestStreamAsync() throws -> dotnet.System.Threading.Tasks.Task_1<dotnet.System.IO.Stream> {
+    open override func GetRequestStreamAsync() async throws -> dotnet.System.IO.Stream {
         var __thrown : NullableHandle = nil;
         let __return = System_Net_FileWebRequest_System_Threading_Tasks_Task_System_IO_Stream___GetRequestStreamAsync_0__0(&__thrown, self.get_handle());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task_1(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task_1(hndl: __return).ToAsync();
         }
     }
     // System.Net.WebResponse GetResponse()
@@ -575,13 +584,13 @@ open class FileWebRequest
     - Returns: The task object representing the asynchronous operation.
 
     */
-    open override func GetResponseAsync() throws -> dotnet.System.Threading.Tasks.Task_1<dotnet.System.Net.WebResponse> {
+    open override func GetResponseAsync() async throws -> dotnet.System.Net.WebResponse {
         var __thrown : NullableHandle = nil;
         let __return = System_Net_FileWebRequest_System_Threading_Tasks_Task_System_Net_WebResponse___GetResponseAsync_0__0(&__thrown, self.get_handle());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task_1(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task_1(hndl: __return).ToAsync();
         }
     }
     // [IsSpecialName] System.String get_ConnectionGroupName()
@@ -952,6 +961,9 @@ open class FileWebResponse
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Net_FileWebResponse_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -1510,6 +1522,9 @@ public final class FtpWebRequest
 {
     public class override func get_type_handle() -> TypeHandle {
         return System_Net_FtpWebRequest_get_type_handle();
+    }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -2360,6 +2375,9 @@ open class FtpWebResponse
     open class override func get_type_handle() -> TypeHandle {
         return System_Net_FtpWebResponse_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // void Close()
@@ -2617,6 +2635,9 @@ open class GlobalProxySelection
     open class override func get_type_handle() -> TypeHandle {
         return System_Net_GlobalProxySelection_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor()
@@ -2700,6 +2721,9 @@ public final class HttpContinueDelegate
     public class override func get_type_handle() -> TypeHandle {
         return System_Net_HttpContinueDelegate_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // void Invoke(System.Int32, System.Net.WebHeaderCollection)
@@ -2739,15 +2763,15 @@ public final class HttpContinueDelegate
             return;
         }
     }
-    public init(_ callback : @escaping (Swift.Int32, dotnet.System.Net.WebHeaderCollection) throws -> Void) throws
+    public convenience init(_ __closure_Invoke : @escaping (Swift.Int32, dotnet.System.Net.WebHeaderCollection) throws -> Void) throws
     {
-        let __bridge : (UnsafeMutablePointer<NullableHandle>, Swift.Int32, NonnullHandle) -> Void =
+        let __interlude_Invoke : (UnsafeMutablePointer<NullableHandle>, Swift.Int32, NonnullHandle) -> Void =
         {
             (thrown : UnsafeMutablePointer<NullableHandle>, StatusCode : Swift.Int32, httpHeaders : NonnullHandle) -> Void in
             do
             {
                 thrown.pointee = nil;
-                try callback(StatusCode, dotnet.System.Net.WebHeaderCollection(hndl: httpHeaders));
+                try __closure_Invoke(StatusCode, dotnet.System.Net.WebHeaderCollection(hndl: httpHeaders));
             }
             catch let e as dotnet.System.Exception
             {
@@ -2759,24 +2783,24 @@ public final class HttpContinueDelegate
                 thrown.pointee = __copy_handle(e.get_handle());
             }
         };
-        let cbarg = UnsafeRawPointer(Unmanaged.passRetained(__bridge as AnyObject).toOpaque());
-        func __cb(cb : UnsafeRawPointer?, thrown : UnsafeMutablePointer<NullableHandle>, StatusCode : Swift.Int32, httpHeaders : NonnullHandle) -> Void
+        func __cb_Invoke(pdata_interlude : UnsafeRawPointer, thrown : UnsafeMutablePointer<NullableHandle>, StatusCode : Swift.Int32, httpHeaders : NonnullHandle) -> Void
         {
-            let f = Unmanaged<AnyObject>.fromOpaque(cb!).takeUnretainedValue() as! (UnsafeMutablePointer<NullableHandle>, Swift.Int32, NonnullHandle) -> Void;
-            f(thrown, StatusCode, httpHeaders);
+            let f_interlude = Unmanaged<AnyObject>.fromOpaque(pdata_interlude).takeUnretainedValue() as! (UnsafeMutablePointer<NullableHandle>, Swift.Int32, NonnullHandle) -> Void;
+            f_interlude(thrown, StatusCode, httpHeaders);
         }
+        let __pdata_Invoke = UnsafeRawPointer(Unmanaged.passRetained(__interlude_Invoke as AnyObject).toOpaque());
+
         var __thrown : NullableHandle = nil;
         let h = System_Net_HttpContinueDelegate_create(
             &__thrown,
-            cbarg,
-            nil, // TODO deinit
-            __cb
+            __cb_Invoke,
+            __pdata_Invoke,
+            nil
             );
-            // TODO check thrown
         if let __ex = __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-            super.init(hndl: h);
+            self.init(hndl: h);
         }
     }
     // void Invoke(System.Int32, System.Net.WebHeaderCollection)
@@ -2804,6 +2828,9 @@ open class HttpWebRequest
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Net_HttpWebRequest_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -2987,7 +3014,7 @@ open class HttpWebRequest
     /**
     Begins an asynchronous request to an Internet resource.
 
-    - Parameter callback: The  delegate
+    - Parameter callback: The  delegate.
     - Parameter state: The state object for this request.
     - Returns: An  that references the asynchronous request for a response.
 
@@ -3034,11 +3061,12 @@ open class HttpWebRequest
     - Returns: A  to use to write request data.
 
     */
-    open func EndGetRequestStream(asyncResult : dotnet.System.IAsyncResult, context : inout dotnet.System.Net.TransportContext) throws -> dotnet.System.IO.Stream {
+    open func EndGetRequestStream(asyncResult : dotnet.System.IAsyncResult, context : inout Optional<dotnet.System.Net.TransportContext>) throws -> dotnet.System.IO.Stream {
         var __thrown : NullableHandle = nil;
-            var _tmp_out_context = context.get_handle();
+            var _tmp_out_context = (context != nil) ? (context!.get_handle()) : nil;
         let __return = System_Net_HttpWebRequest_Stream__EndGetRequestStream_0__2__IAsyncResult_outTransportContext(&__thrown, self.get_handle(), asyncResult.get_handle(), &_tmp_out_context);
-        let _tmp2_context = dotnet.System.Net.TransportContext(hndl: _tmp_out_context);
+        let __h__tmp2_context = _tmp_out_context;
+        let _tmp2_context = (__h__tmp2_context != nil) ? dotnet.System.Net.TransportContext(hndl: __h__tmp2_context!) : nil;
             context = _tmp2_context;
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
@@ -3090,11 +3118,12 @@ open class HttpWebRequest
     - Returns: A  to use to write request data.
 
     */
-    open func GetRequestStream(context : inout dotnet.System.Net.TransportContext) throws -> dotnet.System.IO.Stream {
+    open func GetRequestStream(context : inout Optional<dotnet.System.Net.TransportContext>) throws -> dotnet.System.IO.Stream {
         var __thrown : NullableHandle = nil;
-            var _tmp_out_context = context.get_handle();
+            var _tmp_out_context = (context != nil) ? (context!.get_handle()) : nil;
         let __return = System_Net_HttpWebRequest_Stream__GetRequestStream_0__1__outTransportContext(&__thrown, self.get_handle(), &_tmp_out_context);
-        let _tmp2_context = dotnet.System.Net.TransportContext(hndl: _tmp_out_context);
+        let __h__tmp2_context = _tmp_out_context;
+        let _tmp2_context = (__h__tmp2_context != nil) ? dotnet.System.Net.TransportContext(hndl: __h__tmp2_context!) : nil;
             context = _tmp2_context;
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
@@ -4653,6 +4682,9 @@ open class HttpWebResponse
     open class override func get_type_handle() -> TypeHandle {
         return System_Net_HttpWebResponse_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor()
@@ -5038,6 +5070,9 @@ open class IAuthenticationModule
     open class func get_type_handle() -> TypeHandle {
         return System_Net_IAuthenticationModule_get_type_handle();
     }
+    open class func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     let h : NonnullHandle;
     public func to_gval() -> GVal { return GVal(Swift.Int(bitPattern: self.h)); }
     public func dup_gval() -> GVal { return GVal(Swift.Int(bitPattern: __copy_handle(self.h))); }
@@ -5132,6 +5167,9 @@ open class ICredentialPolicy
     open class func get_type_handle() -> TypeHandle {
         return System_Net_ICredentialPolicy_get_type_handle();
     }
+    open class func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     let h : NonnullHandle;
     public func to_gval() -> GVal { return GVal(Swift.Int(bitPattern: self.h)); }
     public func dup_gval() -> GVal { return GVal(Swift.Int(bitPattern: __copy_handle(self.h))); }
@@ -5179,6 +5217,9 @@ open class IWebRequestCreate
     open class func get_type_handle() -> TypeHandle {
         return System_Net_IWebRequestCreate_get_type_handle();
     }
+    open class func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     let h : NonnullHandle;
     public func to_gval() -> GVal { return GVal(Swift.Int(bitPattern: self.h)); }
     public func dup_gval() -> GVal { return GVal(Swift.Int(bitPattern: __copy_handle(self.h))); }
@@ -5220,6 +5261,9 @@ open class ProtocolViolationException
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Net_ProtocolViolationException_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -5285,6 +5329,9 @@ open class WebException
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Net_WebException_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -5698,6 +5745,9 @@ open class WebRequest
     open class override func get_type_handle() -> TypeHandle {
         return System_Net_WebRequest_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // void Abort()
@@ -5914,13 +5964,13 @@ open class WebRequest
     - Returns: The task object representing the asynchronous operation.
 
     */
-    open func GetRequestStreamAsync() throws -> dotnet.System.Threading.Tasks.Task_1<dotnet.System.IO.Stream> {
+    open func GetRequestStreamAsync() async throws -> dotnet.System.IO.Stream {
         var __thrown : NullableHandle = nil;
         let __return = System_Net_WebRequest_System_Threading_Tasks_Task_System_IO_Stream___GetRequestStreamAsync_0__0(&__thrown, self.get_handle());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task_1(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task_1(hndl: __return).ToAsync();
         }
     }
     // System.Net.WebResponse GetResponse()
@@ -5948,13 +5998,13 @@ open class WebRequest
     - Returns: The task object representing the asynchronous operation.
 
     */
-    open func GetResponseAsync() throws -> dotnet.System.Threading.Tasks.Task_1<dotnet.System.Net.WebResponse> {
+    open func GetResponseAsync() async throws -> dotnet.System.Net.WebResponse {
         var __thrown : NullableHandle = nil;
         let __return = System_Net_WebRequest_System_Threading_Tasks_Task_System_Net_WebResponse___GetResponseAsync_0__0(&__thrown, self.get_handle());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task_1(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task_1(hndl: __return).ToAsync();
         }
     }
     // System.Net.IWebProxy GetSystemWebProxy()
@@ -6820,6 +6870,9 @@ open class WebResponse
     open class override func get_type_handle() -> TypeHandle {
         return System_Net_WebResponse_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // void Close()
@@ -7258,6 +7311,9 @@ open class HttpRequestCachePolicy
     open class override func get_type_handle() -> TypeHandle {
         return System_Net_Cache_HttpRequestCachePolicy_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor()
@@ -7291,9 +7347,60 @@ open class HttpRequestCachePolicy
             super.init(hndl: h);
         }
     }
-// TODO COPE ctor (span) .ctor(System.Net.Cache.HttpCacheAgeControl, System.TimeSpan)
-// TODO COPE ctor (span) .ctor(System.Net.Cache.HttpCacheAgeControl, System.TimeSpan, System.TimeSpan)
-// TODO COPE ctor (span) .ctor(System.Net.Cache.HttpCacheAgeControl, System.TimeSpan, System.TimeSpan, System.DateTime)
+    // .ctor(System.Net.Cache.HttpCacheAgeControl, System.TimeSpan)
+// docid: M:System.Net.Cache.HttpRequestCachePolicy.#ctor(System.Net.Cache.HttpCacheAgeControl,System.TimeSpan)
+    /**
+    Initializes a new instance of the  class using the specified age control and time values.
+
+    - Parameter cacheAgeControl: One of the following  enumeration values: , , or .
+    - Parameter ageOrFreshOrStale: A  value that specifies an amount of time.
+    */
+    public init(cacheAgeControl : dotnet.System.Net.Cache.HttpCacheAgeControl, ageOrFreshOrStale : dotnet.System.TimeSpan) throws {
+        var __thrown : NullableHandle = nil;
+        let h = System_Net_Cache_HttpRequestCachePolicy_ctor_0__2__HttpCacheAgeControl_TimeSpan(&__thrown, cacheAgeControl.get_value(), ageOrFreshOrStale.get_handle());
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            super.init(hndl: h);
+        }
+    }
+    // .ctor(System.Net.Cache.HttpCacheAgeControl, System.TimeSpan, System.TimeSpan)
+// docid: M:System.Net.Cache.HttpRequestCachePolicy.#ctor(System.Net.Cache.HttpCacheAgeControl,System.TimeSpan,System.TimeSpan)
+    /**
+    Initializes a new instance of the  class using the specified maximum age, age control value, and time value.
+
+    - Parameter cacheAgeControl: An  value.
+    - Parameter maxAge: A  value that specifies the maximum age for resources.
+    - Parameter freshOrStale: A  value that specifies an amount of time.
+    */
+    public init(cacheAgeControl : dotnet.System.Net.Cache.HttpCacheAgeControl, maxAge : dotnet.System.TimeSpan, freshOrStale : dotnet.System.TimeSpan) throws {
+        var __thrown : NullableHandle = nil;
+        let h = System_Net_Cache_HttpRequestCachePolicy_ctor_0__3__HttpCacheAgeControl_TimeSpan_TimeSpan(&__thrown, cacheAgeControl.get_value(), maxAge.get_handle(), freshOrStale.get_handle());
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            super.init(hndl: h);
+        }
+    }
+    // .ctor(System.Net.Cache.HttpCacheAgeControl, System.TimeSpan, System.TimeSpan, System.DateTime)
+// docid: M:System.Net.Cache.HttpRequestCachePolicy.#ctor(System.Net.Cache.HttpCacheAgeControl,System.TimeSpan,System.TimeSpan,System.DateTime)
+    /**
+    Initializes a new instance of the  class using the specified maximum age, age control value, time value, and cache synchronization date.
+
+    - Parameter cacheAgeControl: An  value.
+    - Parameter maxAge: A  value that specifies the maximum age for resources.
+    - Parameter freshOrStale: A  value that specifies an amount of time.
+    - Parameter cacheSyncDate: A  object that specifies the time when resources stored in the cache must be revalidated.
+    */
+    public init(cacheAgeControl : dotnet.System.Net.Cache.HttpCacheAgeControl, maxAge : dotnet.System.TimeSpan, freshOrStale : dotnet.System.TimeSpan, cacheSyncDate : dotnet.System.DateTime) throws {
+        var __thrown : NullableHandle = nil;
+        let h = System_Net_Cache_HttpRequestCachePolicy_ctor_0__4__HttpCacheAgeControl_TimeSpan_TimeSpan_DateTime(&__thrown, cacheAgeControl.get_value(), maxAge.get_handle(), freshOrStale.get_handle(), cacheSyncDate.get_handle());
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            super.init(hndl: h);
+        }
+    }
     // .ctor(System.Net.Cache.HttpRequestCacheLevel)
 // docid: M:System.Net.Cache.HttpRequestCachePolicy.#ctor(System.Net.Cache.HttpRequestCacheLevel)
     /**

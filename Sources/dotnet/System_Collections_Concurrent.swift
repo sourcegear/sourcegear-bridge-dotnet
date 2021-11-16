@@ -21,6 +21,9 @@ open class BlockingCollection_1<T : SGBridgeGenericValue>
     open class override func get_type_handle() -> TypeHandle {
         return System_Collections_Concurrent_BlockingCollection_1_get_type_handle(T.get_type_handle());
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor()
@@ -221,9 +224,9 @@ open class BlockingCollection_1<T : SGBridgeGenericValue>
     // T Take()
 // docid: M:System.Collections.Concurrent.BlockingCollection`1.Take
     /**
-    Removes  an item from the .
+    Removes an item from the .
 
-    - Returns: The item removed from the collection.
+    - Returns: The item that was removed from the collection.
 
     */
     open func Take() throws -> T {
@@ -240,8 +243,8 @@ open class BlockingCollection_1<T : SGBridgeGenericValue>
     /**
     Removes an item from the .
 
-    - Parameter cancellationToken: Object that can be used to cancel the take operation.
-    - Returns: The item removed from the collection.
+    - Parameter cancellationToken: A token that can be used to cancel the "take" operation.
+    - Returns: The item that was removed from the collection.
 
     */
     open func Take(cancellationToken : dotnet.System.Threading.CancellationToken) throws -> T {
@@ -323,7 +326,7 @@ open class BlockingCollection_1<T : SGBridgeGenericValue>
     Tries to add the specified item to the  within the specified time period.
 
     - Parameter item: The item to be added to the collection.
-    - Parameter millisecondsTimeout: The number of milliseconds to wait, or  (-1) to wait indefinitely.
+    - Parameter millisecondsTimeout: The number of milliseconds to wait for the collection to accept the item, or  (-1) to wait indefinitely.
     - Returns: 
          if the  could be added to the collection within the specified time; otherwise, false. If the item is a duplicate, and the underlying collection does not accept duplicate items, then an  is thrown.
 
@@ -343,7 +346,7 @@ open class BlockingCollection_1<T : SGBridgeGenericValue>
     Tries to add the specified item to the  within the specified time period, while observing a cancellation token.
 
     - Parameter item: The item to be added to the collection.
-    - Parameter millisecondsTimeout: The number of milliseconds to wait, or  (-1) to wait indefinitely.
+    - Parameter millisecondsTimeout: The number of milliseconds to wait for the collection to accept the item, or  (-1) to wait indefinitely.
     - Parameter cancellationToken: A cancellation token to observe.
     - Returns: 
          if the  could be added to the collection within the specified time; otherwise, false. If the item is a duplicate, and the underlying collection does not accept duplicate items, then an  is thrown.
@@ -358,7 +361,26 @@ open class BlockingCollection_1<T : SGBridgeGenericValue>
         return (__return) != 0;
         }
     }
-// TODO COPE (write_all_methods) (span) bool TryAdd(T, System.TimeSpan)
+    // bool TryAdd(T, System.TimeSpan)
+// docid: M:System.Collections.Concurrent.BlockingCollection`1.TryAdd(`0,System.TimeSpan)
+    /**
+    Tries to add the specified item to the .
+
+    - Parameter item: The item to be added to the collection.
+    - Parameter timeout: A  that represents the number of milliseconds to wait, or a  that represents -1 milliseconds to wait indefinitely.
+    - Returns: 
+         if the  could be added to the collection within the specified time span; otherwise, .
+
+    */
+    open func TryAdd(item : T, timeout : dotnet.System.TimeSpan) throws -> Bool {
+        var __thrown : NullableHandle = nil;
+        let __return = System_Collections_Concurrent_BlockingCollection_1_bool__TryAdd_0__2__T_TimeSpan(T.get_type_handle(), &__thrown, self.get_handle(), item.to_gval(), timeout.get_handle());
+        if let __ex =  __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+        return (__return) != 0;
+        }
+    }
     // System.Int32 TryAddToAny(System.Collections.Concurrent.BlockingCollection<T>[], T)
 // docid: M:System.Collections.Concurrent.BlockingCollection`1.TryAddToAny(System.Collections.Concurrent.BlockingCollection`1[],`0)
     open class func TryAddToAny(collections : dotnet.System_Arr<dotnet.System.Collections.Concurrent.BlockingCollection_1<T>>, item : T) throws -> Swift.Int32 {
@@ -392,7 +414,17 @@ open class BlockingCollection_1<T : SGBridgeGenericValue>
         return __return;
         }
     }
-// TODO COPE (write_all_methods) (span) System.Int32 TryAddToAny(System.Collections.Concurrent.BlockingCollection<T>[], T, System.TimeSpan)
+    // System.Int32 TryAddToAny(System.Collections.Concurrent.BlockingCollection<T>[], T, System.TimeSpan)
+// docid: M:System.Collections.Concurrent.BlockingCollection`1.TryAddToAny(System.Collections.Concurrent.BlockingCollection`1[],`0,System.TimeSpan)
+    open class func TryAddToAny(collections : dotnet.System_Arr<dotnet.System.Collections.Concurrent.BlockingCollection_1<T>>, item : T, timeout : dotnet.System.TimeSpan) throws -> Swift.Int32 {
+        var __thrown : NullableHandle = nil;
+        let __return = System_Collections_Concurrent_BlockingCollection_1_i32__TryAddToAny_0__3__System_Collections_Concurrent_BlockingCollection_T_Array_T_TimeSpan(T.get_type_handle(), &__thrown, collections.get_handle(), item.to_gval(), timeout.get_handle());
+        if let __ex =  __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+        return __return;
+        }
+    }
     // bool TryTake(ref T)
 // docid: M:System.Collections.Concurrent.BlockingCollection`1.TryTake(`0@)
     /**
@@ -421,7 +453,7 @@ open class BlockingCollection_1<T : SGBridgeGenericValue>
     Tries to remove an item from the  in the specified time period.
 
     - Parameter item: The item to be removed from the collection.
-    - Parameter millisecondsTimeout: The number of milliseconds to wait, or  (-1) to wait indefinitely.
+    - Parameter millisecondsTimeout: The number of milliseconds to wait for the item to be removed, or  (-1) to wait indefinitely.
     - Returns: 
          if an item could be removed from the collection within the specified  time; otherwise, .
 
@@ -444,7 +476,7 @@ open class BlockingCollection_1<T : SGBridgeGenericValue>
     Tries to remove an item from the  in the specified time period while observing a cancellation token.
 
     - Parameter item: The item to be removed from the collection.
-    - Parameter millisecondsTimeout: The number of milliseconds to wait, or  (-1) to wait indefinitely.
+    - Parameter millisecondsTimeout: The number of milliseconds to wait for the item to be removed, or  (-1) to wait indefinitely.
     - Parameter cancellationToken: A cancellation token to observe.
     - Returns: 
          if an item could be removed from the collection within the specified  time; otherwise, .
@@ -462,7 +494,29 @@ open class BlockingCollection_1<T : SGBridgeGenericValue>
         return (__return) != 0;
         }
     }
-// TODO COPE (write_all_methods) (span) bool TryTake(ref T, System.TimeSpan)
+    // bool TryTake(ref T, System.TimeSpan)
+// docid: M:System.Collections.Concurrent.BlockingCollection`1.TryTake(`0@,System.TimeSpan)
+    /**
+    Tries to remove an item from the  in the specified time period.
+
+    - Parameter item: The item to be removed from the collection.
+    - Parameter timeout: A  that represents the number of milliseconds to wait for the item to be removed, or a  that represents -1 milliseconds to wait indefinitely.
+    - Returns: 
+         if an item could be removed from the collection within the specified time; otherwise, .
+
+    */
+    open func TryTake(item : inout T, timeout : dotnet.System.TimeSpan) throws -> Bool {
+        var __thrown : NullableHandle = nil;
+            var _tmp_out_item = item.to_gval();
+        let __return = System_Collections_Concurrent_BlockingCollection_1_bool__TryTake_0__2__outT_TimeSpan(T.get_type_handle(), &__thrown, self.get_handle(), &_tmp_out_item, timeout.get_handle());
+            let _tmp2_item = T(gval: _tmp_out_item);
+            item = _tmp2_item;
+        if let __ex =  __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+        return (__return) != 0;
+        }
+    }
     // System.Int32 TryTakeFromAny(System.Collections.Concurrent.BlockingCollection<T>[], ref T)
 // docid: M:System.Collections.Concurrent.BlockingCollection`1.TryTakeFromAny(System.Collections.Concurrent.BlockingCollection`1[],`0@)
     open class func TryTakeFromAny(collections : dotnet.System_Arr<dotnet.System.Collections.Concurrent.BlockingCollection_1<T>>, item : inout T) throws -> Swift.Int32 {
@@ -505,7 +559,20 @@ open class BlockingCollection_1<T : SGBridgeGenericValue>
         return __return;
         }
     }
-// TODO COPE (write_all_methods) (span) System.Int32 TryTakeFromAny(System.Collections.Concurrent.BlockingCollection<T>[], ref T, System.TimeSpan)
+    // System.Int32 TryTakeFromAny(System.Collections.Concurrent.BlockingCollection<T>[], ref T, System.TimeSpan)
+// docid: M:System.Collections.Concurrent.BlockingCollection`1.TryTakeFromAny(System.Collections.Concurrent.BlockingCollection`1[],`0@,System.TimeSpan)
+    open class func TryTakeFromAny(collections : dotnet.System_Arr<dotnet.System.Collections.Concurrent.BlockingCollection_1<T>>, item : inout T, timeout : dotnet.System.TimeSpan) throws -> Swift.Int32 {
+        var __thrown : NullableHandle = nil;
+            var _tmp_out_item = item.to_gval();
+        let __return = System_Collections_Concurrent_BlockingCollection_1_i32__TryTakeFromAny_0__3__System_Collections_Concurrent_BlockingCollection_T_Array_outT_TimeSpan(T.get_type_handle(), &__thrown, collections.get_handle(), &_tmp_out_item, timeout.get_handle());
+            let _tmp2_item = T(gval: _tmp_out_item);
+            item = _tmp2_item;
+        if let __ex =  __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+        return __return;
+        }
+    }
     // [IsSpecialName] System.Int32 get_BoundedCapacity()
 // docid: M:System.Collections.Concurrent.BlockingCollection`1.get_BoundedCapacity
     open func get_BoundedCapacity() throws -> Swift.Int32 {
@@ -602,6 +669,9 @@ open class ConcurrentBag_1<T : SGBridgeGenericValue>
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Collections_Concurrent_ConcurrentBag_1_get_type_handle(T.get_type_handle());
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -814,6 +884,9 @@ open class ConcurrentDictionary_2<TKey : SGBridgeGenericValue,TValue : SGBridgeG
     open class override func get_type_handle() -> TypeHandle {
         return System_Collections_Concurrent_ConcurrentDictionary_2_get_type_handle(TKey.get_type_handle(),TValue.get_type_handle());
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor()
@@ -855,9 +928,9 @@ open class ConcurrentDictionary_2<TKey : SGBridgeGenericValue,TValue : SGBridgeG
     - Parameter collection: The  whose elements are copied to the new .
     - Parameter comparer: The  implementation to use when comparing keys.
     */
-    public init(collection : dotnet.System.Collections.Generic.IEnumerable_1<dotnet.System.Collections.Generic.KeyValuePair_2<TKey,TValue>>, comparer : dotnet.System.Collections.Generic.IEqualityComparer_1<TKey>) throws {
+    public init(collection : dotnet.System.Collections.Generic.IEnumerable_1<dotnet.System.Collections.Generic.KeyValuePair_2<TKey,TValue>>, comparer : Optional<dotnet.System.Collections.Generic.IEqualityComparer_1<TKey>>) throws {
         var __thrown : NullableHandle = nil;
-        let h = System_Collections_Concurrent_ConcurrentDictionary_2_ctor_0__2__System_Collections_Generic_IEnumerable_System_Collections_Generic_System_Collections_Generic_KeyValuePair_TKey_TValue___System_Collections_Generic_IEqualityComparer_TKey_(TKey.get_type_handle(), TValue.get_type_handle(), &__thrown, collection.get_handle(), nil);
+        let h = System_Collections_Concurrent_ConcurrentDictionary_2_ctor_0__2__System_Collections_Generic_IEnumerable_System_Collections_Generic_System_Collections_Generic_KeyValuePair_TKey_TValue___System_Collections_Generic_IEqualityComparer_TKey_(TKey.get_type_handle(), TValue.get_type_handle(), &__thrown, collection.get_handle(), (comparer?.get_handle()));
         if let __ex = __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
@@ -871,9 +944,9 @@ open class ConcurrentDictionary_2<TKey : SGBridgeGenericValue,TValue : SGBridgeG
 
     - Parameter comparer: The equality comparison implementation to use when comparing keys.
     */
-    public init(comparer : dotnet.System.Collections.Generic.IEqualityComparer_1<TKey>) throws {
+    public init(comparer : Optional<dotnet.System.Collections.Generic.IEqualityComparer_1<TKey>>) throws {
         var __thrown : NullableHandle = nil;
-        let h = System_Collections_Concurrent_ConcurrentDictionary_2_ctor_0__1__System_Collections_Generic_IEqualityComparer_TKey_(TKey.get_type_handle(), TValue.get_type_handle(), &__thrown, nil);
+        let h = System_Collections_Concurrent_ConcurrentDictionary_2_ctor_0__1__System_Collections_Generic_IEqualityComparer_TKey_(TKey.get_type_handle(), TValue.get_type_handle(), &__thrown, (comparer?.get_handle()));
         if let __ex = __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
@@ -889,9 +962,9 @@ open class ConcurrentDictionary_2<TKey : SGBridgeGenericValue,TValue : SGBridgeG
     - Parameter collection: The  whose elements are copied to the new .
     - Parameter comparer: The  implementation to use when comparing keys.
     */
-    public init(concurrencyLevel : Swift.Int32, collection : dotnet.System.Collections.Generic.IEnumerable_1<dotnet.System.Collections.Generic.KeyValuePair_2<TKey,TValue>>, comparer : dotnet.System.Collections.Generic.IEqualityComparer_1<TKey>) throws {
+    public init(concurrencyLevel : Swift.Int32, collection : dotnet.System.Collections.Generic.IEnumerable_1<dotnet.System.Collections.Generic.KeyValuePair_2<TKey,TValue>>, comparer : Optional<dotnet.System.Collections.Generic.IEqualityComparer_1<TKey>>) throws {
         var __thrown : NullableHandle = nil;
-        let h = System_Collections_Concurrent_ConcurrentDictionary_2_ctor_0__3__i32_System_Collections_Generic_IEnumerable_System_Collections_Generic_System_Collections_Generic_KeyValuePair_TKey_TValue___System_Collections_Generic_IEqualityComparer_TKey_(TKey.get_type_handle(), TValue.get_type_handle(), &__thrown, concurrencyLevel, collection.get_handle(), nil);
+        let h = System_Collections_Concurrent_ConcurrentDictionary_2_ctor_0__3__i32_System_Collections_Generic_IEnumerable_System_Collections_Generic_System_Collections_Generic_KeyValuePair_TKey_TValue___System_Collections_Generic_IEqualityComparer_TKey_(TKey.get_type_handle(), TValue.get_type_handle(), &__thrown, concurrencyLevel, collection.get_handle(), (comparer?.get_handle()));
         if let __ex = __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
@@ -924,9 +997,9 @@ open class ConcurrentDictionary_2<TKey : SGBridgeGenericValue,TValue : SGBridgeG
     - Parameter capacity: The initial number of elements that the  can contain.
     - Parameter comparer: The  implementation to use when comparing keys.
     */
-    public init(concurrencyLevel : Swift.Int32, capacity : Swift.Int32, comparer : dotnet.System.Collections.Generic.IEqualityComparer_1<TKey>) throws {
+    public init(concurrencyLevel : Swift.Int32, capacity : Swift.Int32, comparer : Optional<dotnet.System.Collections.Generic.IEqualityComparer_1<TKey>>) throws {
         var __thrown : NullableHandle = nil;
-        let h = System_Collections_Concurrent_ConcurrentDictionary_2_ctor_0__3__i32_i32_System_Collections_Generic_IEqualityComparer_TKey_(TKey.get_type_handle(), TValue.get_type_handle(), &__thrown, concurrencyLevel, capacity, nil);
+        let h = System_Collections_Concurrent_ConcurrentDictionary_2_ctor_0__3__i32_i32_System_Collections_Generic_IEqualityComparer_TKey_(TKey.get_type_handle(), TValue.get_type_handle(), &__thrown, concurrencyLevel, capacity, (comparer?.get_handle()));
         if let __ex = __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
@@ -938,9 +1011,9 @@ open class ConcurrentDictionary_2<TKey : SGBridgeGenericValue,TValue : SGBridgeG
     /**
     Uses the specified functions to add a key/value pair to the  if the key does not already exist, or to update a key/value pair in the  if the key already exists.
 
-    - Parameter key: The key to be added or whose value should be updated
-    - Parameter addValueFactory: The function used to generate a value for an absent key
-    - Parameter updateValueFactory: The function used to generate a new value for an existing key based on the key's existing value
+    - Parameter key: The key to be added or whose value should be updated.
+    - Parameter addValueFactory: The function used to generate a value for an absent key.
+    - Parameter updateValueFactory: The function used to generate a new value for an existing key based on the key's existing value.
     - Returns: The new value for the key. This will be either be the result of  (if the key was absent) or the result of  (if the key was present).
 
     */
@@ -964,9 +1037,9 @@ open class ConcurrentDictionary_2<TKey : SGBridgeGenericValue,TValue : SGBridgeG
     /**
     Adds a key/value pair to the  if the key does not already exist, or updates a key/value pair in the  by using the specified function if the key already exists.
 
-    - Parameter key: The key to be added or whose value should be updated
-    - Parameter addValue: The value to be added for an absent key
-    - Parameter updateValueFactory: The function used to generate a new value for an existing key based on the key's existing value
+    - Parameter key: The key to be added or whose value should be updated.
+    - Parameter addValue: The value to be added for an absent key.
+    - Parameter updateValueFactory: The function used to generate a new value for an existing key based on the key's existing value.
     - Returns: The new value for the key. This will be either be  (if the key was absent) or the result of  (if the key was present).
 
     */
@@ -1310,9 +1383,6 @@ open class ConcurrentDictionary_2<TKey : SGBridgeGenericValue,TValue : SGBridgeG
     }
     // [IsSpecialName] TValue get_Item(TKey)
 // docid: M:System.Collections.Concurrent.ConcurrentDictionary`2.get_Item(`0)
-//BEGIN method_is_override
-//matches_1
-//matches :
     open /* method final */ func get_Item(key : TKey) throws -> TValue {
         var __thrown : NullableHandle = nil;
         let __return = System_Collections_Concurrent_ConcurrentDictionary_2_TValue__get_Item_0__1__TKey(TKey.get_type_handle(), TValue.get_type_handle(), &__thrown, self.get_handle(), key.to_gval());
@@ -1333,6 +1403,10 @@ open class ConcurrentDictionary_2<TKey : SGBridgeGenericValue,TValue : SGBridgeG
             return;
         }
     }
+    /**
+    Gets the  that is used to determine equality of keys for the dictionary.
+
+    */
     open var Comparer : dotnet.System.Collections.Generic.IEqualityComparer_1<TKey> {
         get {
             return try! get_Comparer();
@@ -1390,6 +1464,9 @@ open class ConcurrentQueue_1<T : SGBridgeGenericValue>
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Collections_Concurrent_ConcurrentQueue_1_get_type_handle(T.get_type_handle());
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -1600,6 +1677,9 @@ open class ConcurrentStack_1<T : SGBridgeGenericValue>
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Collections_Concurrent_ConcurrentStack_1_get_type_handle(T.get_type_handle());
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -1897,6 +1977,9 @@ open class IProducerConsumerCollection_1<T : SGBridgeGenericValue>
     open class func get_type_handle() -> TypeHandle {
         return System_Collections_Concurrent_IProducerConsumerCollection_1_get_type_handle(T.get_type_handle());
     }
+    open class func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     let h : NonnullHandle;
     public func to_gval() -> GVal { return GVal(Swift.Int(bitPattern: self.h)); }
     public func dup_gval() -> GVal { return GVal(Swift.Int(bitPattern: __copy_handle(self.h))); }
@@ -1989,6 +2072,9 @@ open class OrderablePartitioner_1<TSource : SGBridgeGenericValue>
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Collections_Concurrent_OrderablePartitioner_1_get_type_handle(TSource.get_type_handle());
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -2276,6 +2362,9 @@ open class Partitioner_1<TSource : SGBridgeGenericValue>
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Collections_Concurrent_Partitioner_1_get_type_handle(TSource.get_type_handle());
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }

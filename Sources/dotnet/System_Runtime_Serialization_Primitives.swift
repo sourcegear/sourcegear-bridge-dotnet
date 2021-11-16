@@ -18,6 +18,9 @@ public final class CollectionDataContractAttribute
     public class override func get_type_handle() -> TypeHandle {
         return System_Runtime_Serialization_CollectionDataContractAttribute_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor()
@@ -394,6 +397,9 @@ public final class ContractNamespaceAttribute
     public class override func get_type_handle() -> TypeHandle {
         return System_Runtime_Serialization_ContractNamespaceAttribute_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor(System.String)
@@ -484,6 +490,9 @@ public final class DataContractAttribute
 {
     public class override func get_type_handle() -> TypeHandle {
         return System_Runtime_Serialization_DataContractAttribute_get_type_handle();
+    }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -687,6 +696,9 @@ public final class DataMemberAttribute
     public class override func get_type_handle() -> TypeHandle {
         return System_Runtime_Serialization_DataMemberAttribute_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor()
@@ -879,6 +891,9 @@ public final class EnumMemberAttribute
     public class override func get_type_handle() -> TypeHandle {
         return System_Runtime_Serialization_EnumMemberAttribute_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor()
@@ -970,6 +985,9 @@ open class ISerializationSurrogateProvider
     open class func get_type_handle() -> TypeHandle {
         return System_Runtime_Serialization_ISerializationSurrogateProvider_get_type_handle();
     }
+    open class func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     let h : NonnullHandle;
     public func to_gval() -> GVal { return GVal(Swift.Int(bitPattern: self.h)); }
     public func dup_gval() -> GVal { return GVal(Swift.Int(bitPattern: __copy_handle(self.h))); }
@@ -1050,6 +1068,9 @@ public final class IgnoreDataMemberAttribute
     public class override func get_type_handle() -> TypeHandle {
         return System_Runtime_Serialization_IgnoreDataMemberAttribute_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor()
@@ -1081,6 +1102,9 @@ open class InvalidDataContractException
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Runtime_Serialization_InvalidDataContractException_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -1146,6 +1170,9 @@ public final class KnownTypeAttribute
 {
     public class override func get_type_handle() -> TypeHandle {
         return System_Runtime_Serialization_KnownTypeAttribute_get_type_handle();
+    }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }

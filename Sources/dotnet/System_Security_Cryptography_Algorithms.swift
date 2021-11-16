@@ -18,6 +18,9 @@ open class Aes
     open class override func get_type_handle() -> TypeHandle {
         return System_Security_Cryptography_Aes_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // System.Security.Cryptography.Aes Create()
@@ -74,6 +77,9 @@ public final class AesCcm
 {
     public class override func get_type_handle() -> TypeHandle {
         return System_Security_Cryptography_AesCcm_get_type_handle();
+    }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -184,6 +190,10 @@ public final class AesCcm
         return dotnet.System.Security.Cryptography.KeySizes(hndl : __return);
         }
     }
+    /**
+    Gets a value that indicates whether the algorithm is supported on the current platform.
+
+    */
     public static var IsSupported : Bool {
         get {
             return try! get_IsSupported();
@@ -222,6 +232,9 @@ public final class AesGcm
 {
     public class override func get_type_handle() -> TypeHandle {
         return System_Security_Cryptography_AesGcm_get_type_handle();
+    }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -332,6 +345,10 @@ public final class AesGcm
         return dotnet.System.Security.Cryptography.KeySizes(hndl : __return);
         }
     }
+    /**
+    Gets a value that indicates whether the algorithm is supported on the current platform.
+
+    */
     public static var IsSupported : Bool {
         get {
             return try! get_IsSupported();
@@ -369,6 +386,9 @@ public final class AesManaged
 {
     public class override func get_type_handle() -> TypeHandle {
         return System_Security_Cryptography_AesManaged_get_type_handle();
+    }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -782,6 +802,9 @@ open class AsymmetricKeyExchangeDeformatter
     open class override func get_type_handle() -> TypeHandle {
         return System_Security_Cryptography_AsymmetricKeyExchangeDeformatter_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // System.Byte[] DecryptKeyExchange(System.Byte[])
@@ -870,6 +893,9 @@ open class AsymmetricKeyExchangeFormatter
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Security_Cryptography_AsymmetricKeyExchangeFormatter_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -965,6 +991,9 @@ open class AsymmetricSignatureDeformatter
     open class override func get_type_handle() -> TypeHandle {
         return System_Security_Cryptography_AsymmetricSignatureDeformatter_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // void SetHashAlgorithm(System.String)
@@ -1054,6 +1083,9 @@ open class AsymmetricSignatureFormatter
     open class override func get_type_handle() -> TypeHandle {
         return System_Security_Cryptography_AsymmetricSignatureFormatter_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // System.Byte[] CreateSignature(System.Byte[])
@@ -1128,6 +1160,10 @@ open class AsymmetricSignatureFormatter
 
 
 // type: System.Security.Cryptography.ChaCha20Poly1305
+    /**
+    Represents a symmetric key to be used with the ChaCha20 stream cipher in the combined mode with the Poly1305 authenticator.
+
+    */
 public final class ChaCha20Poly1305
     :
     dotnet.System.Object,
@@ -1136,10 +1172,18 @@ public final class ChaCha20Poly1305
     public class override func get_type_handle() -> TypeHandle {
         return System_Security_Cryptography_ChaCha20Poly1305_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor(System.Byte[])
 // docid: M:System.Security.Cryptography.ChaCha20Poly1305.#ctor(System.Byte[])
+    /**
+    Initializes a new instance of the  class with a provided key.
+
+    - Parameter key: The secret key to use for this instance.
+    */
     public init(key : dotnet.System_Arr<Swift.UInt8>) throws {
         var __thrown : NullableHandle = nil;
         let h = System_Security_Cryptography_ChaCha20Poly1305_ctor_0__1__u8Array(&__thrown, key.get_handle());
@@ -1152,6 +1196,15 @@ public final class ChaCha20Poly1305
 // TODO COPE ctor (span) .ctor(System.ReadOnlySpan<System.Byte>)
     // void Decrypt(System.Byte[], System.Byte[], System.Byte[], System.Byte[], System.Byte[])
 // docid: M:System.Security.Cryptography.ChaCha20Poly1305.Decrypt(System.Byte[],System.Byte[],System.Byte[],System.Byte[],System.Byte[])
+    /**
+    Decrypts the ciphertext into the provided destination buffer if the authentication tag can be validated.
+
+    - Parameter nonce: The nonce associated with this message, which must match the value provided during encryption.
+    - Parameter ciphertext: The encrypted content to decrypt.
+    - Parameter tag: The authentication tag produced for this message during encryption.
+    - Parameter plaintext: The byte array to receive the decrypted contents.
+    - Parameter associatedData: Extra data associated with this message, which must match the value provided during encryption.
+    */
     public func Decrypt(nonce : dotnet.System_Arr<Swift.UInt8>, ciphertext : dotnet.System_Arr<Swift.UInt8>, tag : dotnet.System_Arr<Swift.UInt8>, plaintext : dotnet.System_Arr<Swift.UInt8>, associatedData : Optional<dotnet.System_Arr<Swift.UInt8>> = nil) throws {
         var __thrown : NullableHandle = nil;
         System_Security_Cryptography_ChaCha20Poly1305_void__Decrypt_0__5__u8Array_u8Array_u8Array_u8Array_u8Array(&__thrown, self.get_handle(), nonce.get_handle(), ciphertext.get_handle(), tag.get_handle(), plaintext.get_handle(), (associatedData?.get_handle()));
@@ -1164,6 +1217,10 @@ public final class ChaCha20Poly1305
 // TODO COPE (write_all_methods) (span) void Decrypt(System.ReadOnlySpan<System.Byte>, System.ReadOnlySpan<System.Byte>, System.ReadOnlySpan<System.Byte>, System.Span<System.Byte>, System.ReadOnlySpan<System.Byte>)
     // void Dispose()
 // docid: M:System.Security.Cryptography.ChaCha20Poly1305.Dispose
+    /**
+    Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.
+
+    */
     public func Dispose() throws {
         var __thrown : NullableHandle = nil;
         System_Security_Cryptography_ChaCha20Poly1305_void__Dispose_0__0(&__thrown, self.get_handle());
@@ -1175,6 +1232,15 @@ public final class ChaCha20Poly1305
     }
     // void Encrypt(System.Byte[], System.Byte[], System.Byte[], System.Byte[], System.Byte[])
 // docid: M:System.Security.Cryptography.ChaCha20Poly1305.Encrypt(System.Byte[],System.Byte[],System.Byte[],System.Byte[],System.Byte[])
+    /**
+    Encrypts the plaintext into the ciphertext destination buffer and generates the authentication tag into a separate buffer.
+
+    - Parameter nonce: The nonce associated with this message, which should be a unique value for every operation with the same key.
+    - Parameter plaintext: The content to encrypt.
+    - Parameter ciphertext: The byte array to receive the encrypted contents.
+    - Parameter tag: The byte array to receive the generated authentication tag.
+    - Parameter associatedData: Extra data associated with this message, which must also be provided during decryption.
+    */
     public func Encrypt(nonce : dotnet.System_Arr<Swift.UInt8>, plaintext : dotnet.System_Arr<Swift.UInt8>, ciphertext : dotnet.System_Arr<Swift.UInt8>, tag : dotnet.System_Arr<Swift.UInt8>, associatedData : Optional<dotnet.System_Arr<Swift.UInt8>> = nil) throws {
         var __thrown : NullableHandle = nil;
         System_Security_Cryptography_ChaCha20Poly1305_void__Encrypt_0__5__u8Array_u8Array_u8Array_u8Array_u8Array(&__thrown, self.get_handle(), nonce.get_handle(), plaintext.get_handle(), ciphertext.get_handle(), tag.get_handle(), (associatedData?.get_handle()));
@@ -1196,6 +1262,10 @@ public final class ChaCha20Poly1305
         return (__return) != 0;
         }
     }
+    /**
+    Gets a value that indicates whether the algorithm is supported on the current platform.
+
+    */
     public static var IsSupported : Bool {
         get {
             return try! get_IsSupported();
@@ -1215,6 +1285,9 @@ open class CryptoConfig
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Security_Cryptography_CryptoConfig_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -1387,6 +1460,9 @@ open class DES
     open class override func get_type_handle() -> TypeHandle {
         return System_Security_Cryptography_DES_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // System.Security.Cryptography.DES Create()
@@ -1514,6 +1590,9 @@ open class DSA
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Security_Cryptography_DSA_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -2047,6 +2126,9 @@ public final class DSAParameters
     public class override func get_type_handle() -> TypeHandle {
         return System_Security_Cryptography_DSAParameters_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     public override init() {
@@ -2067,6 +2149,9 @@ open class DSASignatureDeformatter
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Security_Cryptography_DSASignatureDeformatter_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -2173,7 +2258,7 @@ public struct DSASignatureFormat : SGBridgeGenericValue {
     public init(gval: GVal) { self.v = Swift.Int32(gval); }
     // static field: System.Security.Cryptography.DSASignatureFormat IeeeP1363FixedFieldConcatenation
     /**
-    The signature format from IEEE P1363, which produces a fixed size signature for a given key.
+    The signature format from IEEE P1363, which produces a fixed-size signature for a given key.
 
     */
     public static var IeeeP1363FixedFieldConcatenation : dotnet.System.Security.Cryptography.DSASignatureFormat {
@@ -2207,6 +2292,9 @@ open class DSASignatureFormatter
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Security_Cryptography_DSASignatureFormatter_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -2307,6 +2395,9 @@ open class DeriveBytes
     open class override func get_type_handle() -> TypeHandle {
         return System_Security_Cryptography_DeriveBytes_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // void Dispose()
@@ -2372,6 +2463,9 @@ public final class ECCurve
 {
     public class override func get_type_handle() -> TypeHandle {
         return System_Security_Cryptography_ECCurve_get_type_handle();
+    }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -2992,6 +3086,9 @@ open class ECDiffieHellman
     open class override func get_type_handle() -> TypeHandle {
         return System_Security_Cryptography_ECDiffieHellman_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // System.Security.Cryptography.ECDiffieHellman Create()
@@ -3404,6 +3501,9 @@ open class ECDiffieHellmanPublicKey
     open class override func get_type_handle() -> TypeHandle {
         return System_Security_Cryptography_ECDiffieHellmanPublicKey_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // void Dispose()
@@ -3457,6 +3557,12 @@ open class ECDiffieHellmanPublicKey
     }
     // System.Byte[] ExportSubjectPublicKeyInfo()
 // docid: M:System.Security.Cryptography.ECDiffieHellmanPublicKey.ExportSubjectPublicKeyInfo
+    /**
+    Exports the current key in the X.509 SubjectPublicKeyInfo format.
+
+    - Returns: A byte array containing the X.509 SubjectPublicKeyInfo representation of this key.
+
+    */
     open func ExportSubjectPublicKeyInfo() throws -> dotnet.System_Arr<Swift.UInt8> {
         var __thrown : NullableHandle = nil;
         let __return = System_Security_Cryptography_ECDiffieHellmanPublicKey_u8Array__ExportSubjectPublicKeyInfo_0__0(&__thrown, self.get_handle());
@@ -3515,6 +3621,9 @@ open class ECDsa
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Security_Cryptography_ECDsa_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -4154,6 +4263,9 @@ public final class ECParameters
     public class override func get_type_handle() -> TypeHandle {
         return System_Security_Cryptography_ECParameters_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     public override init() {
@@ -4190,6 +4302,9 @@ public final class ECPoint
 {
     public class override func get_type_handle() -> TypeHandle {
         return System_Security_Cryptography_ECPoint_get_type_handle();
+    }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -4231,7 +4346,7 @@ public struct HKDF {
     Performs the HKDF-Expand function See section 2.3 of RFC5869.
 
     - Parameter hashAlgorithmName: The hash algorithm used for HMAC operations.
-    - Parameter prk: The pseudorandom key that is at least as long as the output byte array of the specified hash algorithm (usually the output from Expand step).
+    - Parameter prk: The pseudorandom key that is at least as long as the output byte array of the specified hash algorithm (usually the output from the Extract step).
     - Parameter outputLength: The length of the output keying material.
     - Parameter info: The optional context and application specific information.
     - Returns: The output keying material.
@@ -4284,6 +4399,9 @@ open class HMACMD5
     open class override func get_type_handle() -> TypeHandle {
         return System_Security_Cryptography_HMACMD5_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor()
@@ -4319,6 +4437,14 @@ open class HMACMD5
     }
     // System.Byte[] HashData(System.Byte[], System.Byte[])
 // docid: M:System.Security.Cryptography.HMACMD5.HashData(System.Byte[],System.Byte[])
+    /**
+    Computes the HMAC of data using the MD5 algorithm.
+
+    - Parameter key: The HMAC key.
+    - Parameter source: The data to HMAC.
+    - Returns: The HMAC of the data.
+
+    */
     open class func HashData(key : dotnet.System_Arr<Swift.UInt8>, source : dotnet.System_Arr<Swift.UInt8>) throws -> dotnet.System_Arr<Swift.UInt8> {
         var __thrown : NullableHandle = nil;
         let __return = System_Security_Cryptography_HMACMD5_u8Array__HashData_0__2__u8Array_u8Array(&__thrown, key.get_handle(), source.get_handle());
@@ -4395,6 +4521,9 @@ open class HMACSHA1
     open class override func get_type_handle() -> TypeHandle {
         return System_Security_Cryptography_HMACSHA1_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor()
@@ -4448,6 +4577,14 @@ open class HMACSHA1
     }
     // System.Byte[] HashData(System.Byte[], System.Byte[])
 // docid: M:System.Security.Cryptography.HMACSHA1.HashData(System.Byte[],System.Byte[])
+    /**
+    Computes the HMAC of data using the SHA1 algorithm.
+
+    - Parameter key: The HMAC key.
+    - Parameter source: The data to HMAC.
+    - Returns: The HMAC of the data.
+
+    */
     open class func HashData(key : dotnet.System_Arr<Swift.UInt8>, source : dotnet.System_Arr<Swift.UInt8>) throws -> dotnet.System_Arr<Swift.UInt8> {
         var __thrown : NullableHandle = nil;
         let __return = System_Security_Cryptography_HMACSHA1_u8Array__HashData_0__2__u8Array_u8Array(&__thrown, key.get_handle(), source.get_handle());
@@ -4524,6 +4661,9 @@ open class HMACSHA256
     open class override func get_type_handle() -> TypeHandle {
         return System_Security_Cryptography_HMACSHA256_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor()
@@ -4559,6 +4699,14 @@ open class HMACSHA256
     }
     // System.Byte[] HashData(System.Byte[], System.Byte[])
 // docid: M:System.Security.Cryptography.HMACSHA256.HashData(System.Byte[],System.Byte[])
+    /**
+    Computes the HMAC of data using the SHA256 algorithm.
+
+    - Parameter key: The HMAC key.
+    - Parameter source: The data to HMAC.
+    - Returns: The HMAC of the data.
+
+    */
     open class func HashData(key : dotnet.System_Arr<Swift.UInt8>, source : dotnet.System_Arr<Swift.UInt8>) throws -> dotnet.System_Arr<Swift.UInt8> {
         var __thrown : NullableHandle = nil;
         let __return = System_Security_Cryptography_HMACSHA256_u8Array__HashData_0__2__u8Array_u8Array(&__thrown, key.get_handle(), source.get_handle());
@@ -4635,6 +4783,9 @@ open class HMACSHA384
     open class override func get_type_handle() -> TypeHandle {
         return System_Security_Cryptography_HMACSHA384_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor()
@@ -4670,6 +4821,14 @@ open class HMACSHA384
     }
     // System.Byte[] HashData(System.Byte[], System.Byte[])
 // docid: M:System.Security.Cryptography.HMACSHA384.HashData(System.Byte[],System.Byte[])
+    /**
+    Computes the HMAC of data using the SHA384 algorithm.
+
+    - Parameter key: The HMAC key.
+    - Parameter source: The data to HMAC.
+    - Returns: The HMAC of the data.
+
+    */
     open class func HashData(key : dotnet.System_Arr<Swift.UInt8>, source : dotnet.System_Arr<Swift.UInt8>) throws -> dotnet.System_Arr<Swift.UInt8> {
         var __thrown : NullableHandle = nil;
         let __return = System_Security_Cryptography_HMACSHA384_u8Array__HashData_0__2__u8Array_u8Array(&__thrown, key.get_handle(), source.get_handle());
@@ -4780,6 +4939,9 @@ open class HMACSHA512
     open class override func get_type_handle() -> TypeHandle {
         return System_Security_Cryptography_HMACSHA512_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor()
@@ -4815,6 +4977,14 @@ open class HMACSHA512
     }
     // System.Byte[] HashData(System.Byte[], System.Byte[])
 // docid: M:System.Security.Cryptography.HMACSHA512.HashData(System.Byte[],System.Byte[])
+    /**
+    Computes the HMAC of data using the SHA512 algorithm.
+
+    - Parameter key: The HMAC key.
+    - Parameter source: The data to HMAC.
+    - Returns: The HMAC of the data.
+
+    */
     open class func HashData(key : dotnet.System_Arr<Swift.UInt8>, source : dotnet.System_Arr<Swift.UInt8>) throws -> dotnet.System_Arr<Swift.UInt8> {
         var __thrown : NullableHandle = nil;
         let __return = System_Security_Cryptography_HMACSHA512_u8Array__HashData_0__2__u8Array_u8Array(&__thrown, key.get_handle(), source.get_handle());
@@ -4925,6 +5095,9 @@ public final class IncrementalHash
 {
     public class override func get_type_handle() -> TypeHandle {
         return System_Security_Cryptography_IncrementalHash_get_type_handle();
+    }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -5109,6 +5282,9 @@ open class MD5
     open class override func get_type_handle() -> TypeHandle {
         return System_Security_Cryptography_MD5_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // System.Security.Cryptography.MD5 Create()
@@ -5186,6 +5362,9 @@ open class MaskGenerationMethod
     open class override func get_type_handle() -> TypeHandle {
         return System_Security_Cryptography_MaskGenerationMethod_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // System.Byte[] GenerateMask(System.Byte[], System.Int32)
@@ -5221,6 +5400,9 @@ open class PKCS1MaskGenerationMethod
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Security_Cryptography_PKCS1MaskGenerationMethod_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -5306,6 +5488,9 @@ open class RC2
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Security_Cryptography_RC2_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -5430,6 +5615,9 @@ open class RSA
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Security_Cryptography_RSA_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -5938,6 +6126,9 @@ public final class RSAEncryptionPadding
     public class override func get_type_handle() -> TypeHandle {
         return System_Security_Cryptography_RSAEncryptionPadding_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // System.Security.Cryptography.RSAEncryptionPadding CreateOaep(System.Security.Cryptography.HashAlgorithmName)
@@ -6265,6 +6456,9 @@ open class RSAOAEPKeyExchangeDeformatter
     open class override func get_type_handle() -> TypeHandle {
         return System_Security_Cryptography_RSAOAEPKeyExchangeDeformatter_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor()
@@ -6384,6 +6578,9 @@ open class RSAOAEPKeyExchangeFormatter
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Security_Cryptography_RSAOAEPKeyExchangeFormatter_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -6586,6 +6783,9 @@ open class RSAPKCS1KeyExchangeDeformatter
     open class override func get_type_handle() -> TypeHandle {
         return System_Security_Cryptography_RSAPKCS1KeyExchangeDeformatter_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor()
@@ -6743,6 +6943,9 @@ open class RSAPKCS1KeyExchangeFormatter
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Security_Cryptography_RSAPKCS1KeyExchangeFormatter_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -6903,6 +7106,9 @@ open class RSAPKCS1SignatureDeformatter
     open class override func get_type_handle() -> TypeHandle {
         return System_Security_Cryptography_RSAPKCS1SignatureDeformatter_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor()
@@ -7003,6 +7209,9 @@ open class RSAPKCS1SignatureFormatter
     open class override func get_type_handle() -> TypeHandle {
         return System_Security_Cryptography_RSAPKCS1SignatureFormatter_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor()
@@ -7102,6 +7311,9 @@ public final class RSAParameters
     public class override func get_type_handle() -> TypeHandle {
         return System_Security_Cryptography_RSAParameters_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     public override init() {
@@ -7122,6 +7334,9 @@ public final class RSASignaturePadding
 {
     public class override func get_type_handle() -> TypeHandle {
         return System_Security_Cryptography_RSASignaturePadding_get_type_handle();
+    }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -7353,6 +7568,9 @@ open class RandomNumberGenerator
     open class override func get_type_handle() -> TypeHandle {
         return System_Security_Cryptography_RandomNumberGenerator_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // System.Security.Cryptography.RandomNumberGenerator Create()
@@ -7446,6 +7664,13 @@ open class RandomNumberGenerator
     }
     // System.Byte[] GetBytes(System.Int32)
 // docid: M:System.Security.Cryptography.RandomNumberGenerator.GetBytes(System.Int32)
+    /**
+    Creates an array of bytes with a cryptographically strong random sequence of values.
+
+    - Parameter count: The number of bytes of random values to create.
+    - Returns: An array populated with cryptographically strong random values.
+
+    */
     open class func GetBytes(count : Swift.Int32) throws -> dotnet.System_Arr<Swift.UInt8> {
         var __thrown : NullableHandle = nil;
         let __return = System_Security_Cryptography_RandomNumberGenerator_u8Array__GetBytes_0__1__i32(&__thrown, count);
@@ -7524,6 +7749,9 @@ open class Rfc2898DeriveBytes
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Security_Cryptography_Rfc2898DeriveBytes_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -7713,6 +7941,17 @@ open class Rfc2898DeriveBytes
     }
     // System.Byte[] Pbkdf2(System.Byte[], System.Byte[], System.Int32, System.Security.Cryptography.HashAlgorithmName, System.Int32)
 // docid: M:System.Security.Cryptography.Rfc2898DeriveBytes.Pbkdf2(System.Byte[],System.Byte[],System.Int32,System.Security.Cryptography.HashAlgorithmName,System.Int32)
+    /**
+    Creates a PBKDF2 derived key from password bytes.
+
+    - Parameter password: The password used to derive the key.
+    - Parameter salt: The key salt used to derive the key.
+    - Parameter iterations: The number of iterations for the operation.
+    - Parameter hashAlgorithm: The hash algorithm to use to derive the key.
+    - Parameter outputLength: The size of key to derive.
+    - Returns: A byte array containing the created PBKDF2 derived key.
+
+    */
     open class func Pbkdf2(password : dotnet.System_Arr<Swift.UInt8>, salt : dotnet.System_Arr<Swift.UInt8>, iterations : Swift.Int32, hashAlgorithm : dotnet.System.Security.Cryptography.HashAlgorithmName, outputLength : Swift.Int32) throws -> dotnet.System_Arr<Swift.UInt8> {
         var __thrown : NullableHandle = nil;
         let __return = System_Security_Cryptography_Rfc2898DeriveBytes_u8Array__Pbkdf2_0__5__u8Array_u8Array_i32_HashAlgorithmName_i32(&__thrown, password.get_handle(), salt.get_handle(), iterations, hashAlgorithm.get_handle(), outputLength);
@@ -7728,6 +7967,17 @@ open class Rfc2898DeriveBytes
 // TODO COPE (write_all_methods) (span) void Pbkdf2(System.ReadOnlySpan<System.Char>, System.ReadOnlySpan<System.Byte>, System.Span<System.Byte>, System.Int32, System.Security.Cryptography.HashAlgorithmName)
     // System.Byte[] Pbkdf2(System.String, System.Byte[], System.Int32, System.Security.Cryptography.HashAlgorithmName, System.Int32)
 // docid: M:System.Security.Cryptography.Rfc2898DeriveBytes.Pbkdf2(System.String,System.Byte[],System.Int32,System.Security.Cryptography.HashAlgorithmName,System.Int32)
+    /**
+    Creates a PBKDF2 derived key from a password.
+
+    - Parameter password: The password used to derive the key.
+    - Parameter salt: The key salt used to derive the key.
+    - Parameter iterations: The number of iterations for the operation.
+    - Parameter hashAlgorithm: The hash algorithm to use to derive the key.
+    - Parameter outputLength: The size of key to derive.
+    - Returns: A byte array of length  that is filled with pseudo-random key bytes.
+
+    */
     open class func Pbkdf2(password : dotnet.System.String, salt : dotnet.System_Arr<Swift.UInt8>, iterations : Swift.Int32, hashAlgorithm : dotnet.System.Security.Cryptography.HashAlgorithmName, outputLength : Swift.Int32) throws -> dotnet.System_Arr<Swift.UInt8> {
         var __thrown : NullableHandle = nil;
         let __return = System_Security_Cryptography_Rfc2898DeriveBytes_u8Array__Pbkdf2_0__5__String_u8Array_i32_HashAlgorithmName_i32(&__thrown, password.get_handle(), salt.get_handle(), iterations, hashAlgorithm.get_handle(), outputLength);
@@ -7808,6 +8058,8 @@ open class Rfc2898DeriveBytes
         }
     }
     /**
+    Gets the hash algorithm used for byte derivation.
+
     */
     open var HashAlgorithm : dotnet.System.Security.Cryptography.HashAlgorithmName {
         get {
@@ -7852,6 +8104,9 @@ open class Rijndael
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Security_Cryptography_Rijndael_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -7908,6 +8163,9 @@ public final class RijndaelManaged
 {
     public class override func get_type_handle() -> TypeHandle {
         return System_Security_Cryptography_RijndaelManaged_get_type_handle();
+    }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -8205,6 +8463,10 @@ public final class RijndaelManaged
             return try! set_BlockSize(value: v);
         }
     }
+    /**
+    Gets or sets the feedback size, in bits, of the cryptographic operation for the Cipher Feedback (CFB) and Output Feedback (OFB) cipher modes.
+
+    */
     public override var FeedbackSize : Swift.Int32 {
         get {
             return try! get_FeedbackSize();
@@ -8297,6 +8559,9 @@ open class SHA1
     open class override func get_type_handle() -> TypeHandle {
         return System_Security_Cryptography_SHA1_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // System.Security.Cryptography.SHA1 Create()
@@ -8374,6 +8639,9 @@ public final class SHA1Managed
     public class override func get_type_handle() -> TypeHandle {
         return System_Security_Cryptography_SHA1Managed_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor()
@@ -8420,6 +8688,9 @@ open class SHA256
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Security_Cryptography_SHA256_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -8498,6 +8769,9 @@ public final class SHA256Managed
     public class override func get_type_handle() -> TypeHandle {
         return System_Security_Cryptography_SHA256Managed_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor()
@@ -8544,6 +8818,9 @@ open class SHA384
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Security_Cryptography_SHA384_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -8622,6 +8899,9 @@ public final class SHA384Managed
     public class override func get_type_handle() -> TypeHandle {
         return System_Security_Cryptography_SHA384Managed_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor()
@@ -8668,6 +8948,9 @@ open class SHA512
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Security_Cryptography_SHA512_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -8746,6 +9029,9 @@ public final class SHA512Managed
     public class override func get_type_handle() -> TypeHandle {
         return System_Security_Cryptography_SHA512Managed_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor()
@@ -8792,6 +9078,9 @@ open class SignatureDescription
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Security_Cryptography_SignatureDescription_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -9049,6 +9338,9 @@ open class TripleDES
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Security_Cryptography_TripleDES_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }

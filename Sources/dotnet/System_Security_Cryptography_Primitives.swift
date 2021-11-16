@@ -19,6 +19,9 @@ open class AsymmetricAlgorithm
     open class override func get_type_handle() -> TypeHandle {
         return System_Security_Cryptography_AsymmetricAlgorithm_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // void Clear()
@@ -58,8 +61,8 @@ open class AsymmetricAlgorithm
     /**
     Creates an instance of the specified implementation of an asymmetric algorithm.
 
-    - Parameter algName: The asymmetric algorithm implementation to use. The following table shows the valid values for the  parameter and the algorithms they map to.  
-  
+    - Parameter algName: The asymmetric algorithm implementation to use. The following table shows the valid values for the  parameter and the algorithms they map to.
+
   Parameter value Implements System.Security.Cryptography.AsymmetricAlgorithm RSA System.Security.Cryptography.RSA DSA System.Security.Cryptography.DSA ECDsa ECDsaCng System.Security.Cryptography.ECDsaCng ECDH ECDiffieHellman ECDiffieHellmanCng System.Security.Cryptography.ECDiffieHellmanCng
     - Returns: A new instance of the specified asymmetric algorithm implementation.
 
@@ -364,6 +367,9 @@ open class CryptoStream
     open class override func get_type_handle() -> TypeHandle {
         return System_Security_Cryptography_CryptoStream_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor(System.IO.Stream, System.Security.Cryptography.ICryptoTransform, System.Security.Cryptography.CryptoStreamMode)
@@ -475,6 +481,12 @@ open class CryptoStream
     }
     // void CopyTo(System.IO.Stream, System.Int32)
 // docid: M:System.Security.Cryptography.CryptoStream.CopyTo(System.IO.Stream,System.Int32)
+    /**
+    Reads the bytes from the underlying stream, applies the relevant cryptographic transforms, and writes the result to the destination stream.
+
+    - Parameter destination: The stream to which the contents of the current stream will be copied.
+    - Parameter bufferSize: The size, in bytes, of the buffer to use for reading from the underlying stream. This value must be greater than zero. The default size is 81920 bytes.
+    */
     open override func CopyTo(destination : dotnet.System.IO.Stream, bufferSize : Swift.Int32) throws {
         var __thrown : NullableHandle = nil;
         System_Security_Cryptography_CryptoStream_void__CopyTo_0__2__Stream_i32(&__thrown, self.get_handle(), destination.get_handle(), bufferSize);
@@ -486,13 +498,22 @@ open class CryptoStream
     }
     // System.Threading.Tasks.Task CopyToAsync(System.IO.Stream, System.Int32, System.Threading.CancellationToken)
 // docid: M:System.Security.Cryptography.CryptoStream.CopyToAsync(System.IO.Stream,System.Int32,System.Threading.CancellationToken)
-    open override func CopyToAsync(destination : dotnet.System.IO.Stream, bufferSize : Swift.Int32, cancellationToken : dotnet.System.Threading.CancellationToken) throws -> dotnet.System.Threading.Tasks.Task {
+    /**
+    Asynchronously reads the bytes from the underlying stream, applies the relevant cryptographic transforms, and writes the result to the destination stream.
+
+    - Parameter destination: The stream to which the contents of the current stream will be copied.
+    - Parameter bufferSize: The size, in bytes, of the buffer. This value must be greater than zero. The default size is 81920.
+    - Parameter cancellationToken: The token to monitor for cancellation requests. The default value is .
+    - Returns: A task that represents the asynchronous copy operation.
+
+    */
+    open override func CopyToAsync(destination : dotnet.System.IO.Stream, bufferSize : Swift.Int32, cancellationToken : dotnet.System.Threading.CancellationToken) async throws {
         var __thrown : NullableHandle = nil;
         let __return = System_Security_Cryptography_CryptoStream_Task__CopyToAsync_0__3__Stream_i32_CancellationToken(&__thrown, self.get_handle(), destination.get_handle(), bufferSize, cancellationToken.get_handle());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task(hndl: __return).ToAsync();
         }
     }
     // System.Threading.Tasks.ValueTask DisposeAsync()
@@ -570,13 +591,13 @@ open class CryptoStream
     - Returns: A task that represents the asynchronous flush operation.
 
     */
-    open override func FlushAsync(cancellationToken : dotnet.System.Threading.CancellationToken) throws -> dotnet.System.Threading.Tasks.Task {
+    open override func FlushAsync(cancellationToken : dotnet.System.Threading.CancellationToken) async throws {
         var __thrown : NullableHandle = nil;
         let __return = System_Security_Cryptography_CryptoStream_Task__FlushAsync_0__1__CancellationToken(&__thrown, self.get_handle(), cancellationToken.get_handle());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task(hndl: __return).ToAsync();
         }
     }
     // void FlushFinalBlock()
@@ -644,17 +665,25 @@ open class CryptoStream
     - Returns: A task that represents the asynchronous read operation. The value of the task object's  parameter contains the total number of bytes read into the buffer. The result can be less than the number of bytes requested if the number of bytes currently available is less than the requested number, or it can be 0 (zero) if the end of the stream has been reached.
 
     */
-    open override func ReadAsync(buffer : dotnet.System_Arr<Swift.UInt8>, offset : Swift.Int32, count : Swift.Int32, cancellationToken : dotnet.System.Threading.CancellationToken) throws -> dotnet.System.Threading.Tasks.Task_1<Swift.Int32> {
+    open override func ReadAsync(buffer : dotnet.System_Arr<Swift.UInt8>, offset : Swift.Int32, count : Swift.Int32, cancellationToken : dotnet.System.Threading.CancellationToken) async throws -> Swift.Int32 {
         var __thrown : NullableHandle = nil;
         let __return = System_Security_Cryptography_CryptoStream_System_Threading_Tasks_Task_i32___ReadAsync_0__4__u8Array_i32_i32_CancellationToken(&__thrown, self.get_handle(), buffer.get_handle(), offset, count, cancellationToken.get_handle());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task_1(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task_1(hndl: __return).ToAsync();
         }
     }
     // System.Threading.Tasks.ValueTask<System.Int32> ReadAsync(System.Memory<System.Byte>, System.Threading.CancellationToken)
 // docid: M:System.Security.Cryptography.CryptoStream.ReadAsync(System.Memory{System.Byte},System.Threading.CancellationToken)
+    /**
+    Asynchronously reads a sequence of bytes from the current stream, advances the position within the stream by the number of bytes read, and monitors cancellation requests.
+
+    - Parameter buffer: The region of memory to write the data into.
+    - Parameter cancellationToken: The token to monitor for cancellation requests. The default value is .
+    - Returns: A task that represents the asynchronous read operation. The value of its  property contains the total number of bytes read into the buffer. The result value can be less than the number of bytes allocated in the buffer if that many bytes are not currently available, or it can be 0 (zero) if the end of the stream has been reached.
+
+    */
     open override func ReadAsync(buffer : dotnet.System.Memory_1<Swift.UInt8>, cancellationToken : dotnet.System.Threading.CancellationToken = System.Threading.CancellationToken.None) throws -> dotnet.System.Threading.Tasks.ValueTask_1<Swift.Int32> {
         var __thrown : NullableHandle = nil;
         let __return = System_Security_Cryptography_CryptoStream_System_Threading_Tasks_ValueTask_i32___ReadAsync_0__2__System_Memory_u8__CancellationToken(&__thrown, self.get_handle(), buffer.get_handle(), cancellationToken.get_handle());
@@ -746,17 +775,25 @@ open class CryptoStream
     - Returns: A task that represents the asynchronous write operation.
 
     */
-    open override func WriteAsync(buffer : dotnet.System_Arr<Swift.UInt8>, offset : Swift.Int32, count : Swift.Int32, cancellationToken : dotnet.System.Threading.CancellationToken) throws -> dotnet.System.Threading.Tasks.Task {
+    open override func WriteAsync(buffer : dotnet.System_Arr<Swift.UInt8>, offset : Swift.Int32, count : Swift.Int32, cancellationToken : dotnet.System.Threading.CancellationToken) async throws {
         var __thrown : NullableHandle = nil;
         let __return = System_Security_Cryptography_CryptoStream_Task__WriteAsync_0__4__u8Array_i32_i32_CancellationToken(&__thrown, self.get_handle(), buffer.get_handle(), offset, count, cancellationToken.get_handle());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task(hndl: __return).ToAsync();
         }
     }
     // System.Threading.Tasks.ValueTask WriteAsync(System.ReadOnlyMemory<System.Byte>, System.Threading.CancellationToken)
 // docid: M:System.Security.Cryptography.CryptoStream.WriteAsync(System.ReadOnlyMemory{System.Byte},System.Threading.CancellationToken)
+    /**
+    Asynchronously writes a sequence of bytes to the current stream, advances the current position within this stream by the number of bytes written, and monitors cancellation requests.
+
+    - Parameter buffer: The region of memory to write data from.
+    - Parameter cancellationToken: The token to monitor for cancellation requests. The default value is .
+    - Returns: A task that represents the asynchronous write operation.
+
+    */
     open override func WriteAsync(buffer : dotnet.System.ReadOnlyMemory_1<Swift.UInt8>, cancellationToken : dotnet.System.Threading.CancellationToken = System.Threading.CancellationToken.None) throws -> dotnet.System.Threading.Tasks.ValueTask {
         var __thrown : NullableHandle = nil;
         let __return = System_Security_Cryptography_CryptoStream_ValueTask__WriteAsync_0__2__System_ReadOnlyMemory_u8__CancellationToken(&__thrown, self.get_handle(), buffer.get_handle(), cancellationToken.get_handle());
@@ -978,6 +1015,9 @@ open class CryptographicUnexpectedOperationException
     open class override func get_type_handle() -> TypeHandle {
         return System_Security_Cryptography_CryptographicUnexpectedOperationException_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor()
@@ -1060,6 +1100,9 @@ open class HMAC
     open class override func get_type_handle() -> TypeHandle {
         return System_Security_Cryptography_HMAC_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // System.Security.Cryptography.HMAC Create()
@@ -1084,8 +1127,8 @@ open class HMAC
     /**
     Creates an instance of the specified implementation of a Hash-based Message Authentication Code (HMAC).
 
-    - Parameter algorithmName: The HMAC implementation to use. The following table shows the valid values for the  parameter and the algorithms they map to.  
-  
+    - Parameter algorithmName: The HMAC implementation to use. The following table shows the valid values for the  parameter and the algorithms they map to.
+
   Parameter value Implements System.Security.Cryptography.HMAC System.Security.Cryptography.KeyedHashAlgorithm HMACMD5 System.Security.Cryptography.HMACMD5 HMACRIPEMD160 System.Security.Cryptography.HMACRIPEMD160 HMACSHA1 System.Security.Cryptography.HMACSHA1 HMACSHA256 System.Security.Cryptography.HMACSHA256 HMACSHA384 System.Security.Cryptography.HMACSHA384 HMACSHA512 System.Security.Cryptography.HMACSHA512 MACTripleDES System.Security.Cryptography.MACTripleDES
     - Returns: A new instance of the specified HMAC implementation.
 
@@ -1203,6 +1246,9 @@ open class HashAlgorithm
     open class override func get_type_handle() -> TypeHandle {
         return System_Security_Cryptography_HashAlgorithm_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // void Clear()
@@ -1286,13 +1332,13 @@ open class HashAlgorithm
     - Returns: A task that represents the asynchronous compute hash operation and wraps the computed hash code.
 
     */
-    open func ComputeHashAsync(inputStream : dotnet.System.IO.Stream, cancellationToken : dotnet.System.Threading.CancellationToken = System.Threading.CancellationToken.None) throws -> dotnet.System.Threading.Tasks.Task_1<dotnet.System_Arr<Swift.UInt8>> {
+    open func ComputeHashAsync(inputStream : dotnet.System.IO.Stream, cancellationToken : dotnet.System.Threading.CancellationToken = System.Threading.CancellationToken.None) async throws -> dotnet.System_Arr<Swift.UInt8> {
         var __thrown : NullableHandle = nil;
         let __return = System_Security_Cryptography_HashAlgorithm_System_Threading_Tasks_Task_u8Array___ComputeHashAsync_0__2__Stream_CancellationToken(&__thrown, self.get_handle(), inputStream.get_handle(), cancellationToken.get_handle());
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return dotnet.System.Threading.Tasks.Task_1(hndl : __return);
+        return try await dotnet.System.Threading.Tasks.Task_1(hndl: __return).ToAsync();
         }
     }
     // System.Security.Cryptography.HashAlgorithm Create()
@@ -1317,8 +1363,8 @@ open class HashAlgorithm
     /**
     Creates an instance of the specified implementation of a hash algorithm.
 
-    - Parameter hashName: The hash algorithm implementation to use. The following table shows the valid values for the  parameter and the algorithms they map to.  
-  
+    - Parameter hashName: The hash algorithm implementation to use. The following table shows the valid values for the  parameter and the algorithms they map to.
+
   Parameter value Implements SHA SHA1 System.Security.Cryptography.SHA1 System.Security.Cryptography.HashAlgorithm MD5 System.Security.Cryptography.MD5 SHA256 SHA-256 System.Security.Cryptography.SHA256 SHA384 SHA-384 System.Security.Cryptography.SHA384 SHA512 SHA-512 System.Security.Cryptography.SHA512
     - Returns: A new instance of the specified hash algorithm, or  if  is not a valid hash algorithm.
 
@@ -1548,6 +1594,9 @@ public final class HashAlgorithmName
 {
     public class override func get_type_handle() -> TypeHandle {
         return System_Security_Cryptography_HashAlgorithmName_get_type_handle();
+    }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -1865,6 +1914,9 @@ open class ICryptoTransform
     open class func get_type_handle() -> TypeHandle {
         return System_Security_Cryptography_ICryptoTransform_get_type_handle();
     }
+    open class func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     let h : NonnullHandle;
     public func to_gval() -> GVal { return GVal(Swift.Int(bitPattern: self.h)); }
     public func dup_gval() -> GVal { return GVal(Swift.Int(bitPattern: __copy_handle(self.h))); }
@@ -1975,6 +2027,9 @@ public final class KeySizes
     public class override func get_type_handle() -> TypeHandle {
         return System_Security_Cryptography_KeySizes_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor(System.Int32, System.Int32, System.Int32)
@@ -2070,6 +2125,9 @@ open class KeyedHashAlgorithm
     open class override func get_type_handle() -> TypeHandle {
         return System_Security_Cryptography_KeyedHashAlgorithm_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // System.Security.Cryptography.KeyedHashAlgorithm Create()
@@ -2094,8 +2152,8 @@ open class KeyedHashAlgorithm
     /**
     Creates an instance of the specified implementation of a keyed hash algorithm.
 
-    - Parameter algName: The keyed hash algorithm implementation to use. The following table shows the valid values for the  parameter and the algorithms they map to.  
-  
+    - Parameter algName: The keyed hash algorithm implementation to use. The following table shows the valid values for the  parameter and the algorithms they map to.
+
   Parameter value Implements System.Security.Cryptography.HMAC System.Security.Cryptography.KeyedHashAlgorithm HMACMD5 System.Security.Cryptography.HMACMD5 HMACRIPEMD160 System.Security.Cryptography.HMACRIPEMD160 HMACSHA1 System.Security.Cryptography.HMACSHA1 HMACSHA256 System.Security.Cryptography.HMACSHA256 HMACSHA384 System.Security.Cryptography.HMACSHA384 HMACSHA512 System.Security.Cryptography.HMACSHA512 MACTripleDES System.Security.Cryptography.MACTripleDES
     - Returns: A new instance of the specified keyed hash algorithm.
 
@@ -2308,6 +2366,9 @@ public final class PbeParameters
     public class override func get_type_handle() -> TypeHandle {
         return System_Security_Cryptography_PbeParameters_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor(System.Security.Cryptography.PbeEncryptionAlgorithm, System.Security.Cryptography.HashAlgorithmName, System.Int32)
@@ -2403,6 +2464,9 @@ open class SymmetricAlgorithm
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Security_Cryptography_SymmetricAlgorithm_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -2534,6 +2598,15 @@ open class SymmetricAlgorithm
     }
     // System.Byte[] DecryptCbc(System.Byte[], System.Byte[], System.Security.Cryptography.PaddingMode)
 // docid: M:System.Security.Cryptography.SymmetricAlgorithm.DecryptCbc(System.Byte[],System.Byte[],System.Security.Cryptography.PaddingMode)
+    /**
+    Decrypts data using CBC mode with the specified padding mode.
+
+    - Parameter ciphertext: The data to decrypt.
+    - Parameter iv: The initialization vector.
+    - Parameter paddingMode: The padding mode used to produce the ciphertext and remove during decryption.
+    - Returns: The decrypted plaintext data.
+
+    */
     open func DecryptCbc(ciphertext : dotnet.System_Arr<Swift.UInt8>, iv : dotnet.System_Arr<Swift.UInt8>, paddingMode : dotnet.System.Security.Cryptography.PaddingMode/* TODO default enum */) throws -> dotnet.System_Arr<Swift.UInt8> {
         var __thrown : NullableHandle = nil;
         let __return = System_Security_Cryptography_SymmetricAlgorithm_u8Array__DecryptCbc_0__3__u8Array_u8Array_PaddingMode(&__thrown, self.get_handle(), ciphertext.get_handle(), iv.get_handle(), paddingMode.get_value());
@@ -2547,6 +2620,16 @@ open class SymmetricAlgorithm
 // TODO COPE (write_all_methods) (span) System.Int32 DecryptCbc(System.ReadOnlySpan<System.Byte>, System.ReadOnlySpan<System.Byte>, System.Span<System.Byte>, System.Security.Cryptography.PaddingMode)
     // System.Byte[] DecryptCfb(System.Byte[], System.Byte[], System.Security.Cryptography.PaddingMode, System.Int32)
 // docid: M:System.Security.Cryptography.SymmetricAlgorithm.DecryptCfb(System.Byte[],System.Byte[],System.Security.Cryptography.PaddingMode,System.Int32)
+    /**
+    Decrypts data using CFB mode with the specified padding mode and feedback size.
+
+    - Parameter ciphertext: The data to decrypt.
+    - Parameter iv: The initialization vector.
+    - Parameter paddingMode: The padding mode used to produce the ciphertext and remove during decryption.
+    - Parameter feedbackSizeInBits: The feedback size, specified in bits.
+    - Returns: The decrypted plaintext data.
+
+    */
     open func DecryptCfb(ciphertext : dotnet.System_Arr<Swift.UInt8>, iv : dotnet.System_Arr<Swift.UInt8>, paddingMode : dotnet.System.Security.Cryptography.PaddingMode/* TODO default enum */, feedbackSizeInBits : Swift.Int32 = 8) throws -> dotnet.System_Arr<Swift.UInt8> {
         var __thrown : NullableHandle = nil;
         let __return = System_Security_Cryptography_SymmetricAlgorithm_u8Array__DecryptCfb_0__4__u8Array_u8Array_PaddingMode_i32(&__thrown, self.get_handle(), ciphertext.get_handle(), iv.get_handle(), paddingMode.get_value(), feedbackSizeInBits);
@@ -2560,6 +2643,14 @@ open class SymmetricAlgorithm
 // TODO COPE (write_all_methods) (span) System.Int32 DecryptCfb(System.ReadOnlySpan<System.Byte>, System.ReadOnlySpan<System.Byte>, System.Span<System.Byte>, System.Security.Cryptography.PaddingMode, System.Int32)
     // System.Byte[] DecryptEcb(System.Byte[], System.Security.Cryptography.PaddingMode)
 // docid: M:System.Security.Cryptography.SymmetricAlgorithm.DecryptEcb(System.Byte[],System.Security.Cryptography.PaddingMode)
+    /**
+    Decrypts data using ECB mode with the specified padding mode.
+
+    - Parameter ciphertext: The data to decrypt.
+    - Parameter paddingMode: The padding mode used to produce the ciphertext and remove during decryption.
+    - Returns: The decrypted plaintext data.
+
+    */
     open func DecryptEcb(ciphertext : dotnet.System_Arr<Swift.UInt8>, paddingMode : dotnet.System.Security.Cryptography.PaddingMode) throws -> dotnet.System_Arr<Swift.UInt8> {
         var __thrown : NullableHandle = nil;
         let __return = System_Security_Cryptography_SymmetricAlgorithm_u8Array__DecryptEcb_0__2__u8Array_PaddingMode(&__thrown, self.get_handle(), ciphertext.get_handle(), paddingMode.get_value());
@@ -2588,6 +2679,15 @@ open class SymmetricAlgorithm
     }
     // System.Byte[] EncryptCbc(System.Byte[], System.Byte[], System.Security.Cryptography.PaddingMode)
 // docid: M:System.Security.Cryptography.SymmetricAlgorithm.EncryptCbc(System.Byte[],System.Byte[],System.Security.Cryptography.PaddingMode)
+    /**
+    Encrypts data using CBC mode with the specified padding mode.
+
+    - Parameter plaintext: The data to encrypt.
+    - Parameter iv: The initialization vector.
+    - Parameter paddingMode: The padding mode used to produce the ciphertext and remove during decryption.
+    - Returns: The encrypted ciphertext data.
+
+    */
     open func EncryptCbc(plaintext : dotnet.System_Arr<Swift.UInt8>, iv : dotnet.System_Arr<Swift.UInt8>, paddingMode : dotnet.System.Security.Cryptography.PaddingMode/* TODO default enum */) throws -> dotnet.System_Arr<Swift.UInt8> {
         var __thrown : NullableHandle = nil;
         let __return = System_Security_Cryptography_SymmetricAlgorithm_u8Array__EncryptCbc_0__3__u8Array_u8Array_PaddingMode(&__thrown, self.get_handle(), plaintext.get_handle(), iv.get_handle(), paddingMode.get_value());
@@ -2601,6 +2701,16 @@ open class SymmetricAlgorithm
 // TODO COPE (write_all_methods) (span) System.Int32 EncryptCbc(System.ReadOnlySpan<System.Byte>, System.ReadOnlySpan<System.Byte>, System.Span<System.Byte>, System.Security.Cryptography.PaddingMode)
     // System.Byte[] EncryptCfb(System.Byte[], System.Byte[], System.Security.Cryptography.PaddingMode, System.Int32)
 // docid: M:System.Security.Cryptography.SymmetricAlgorithm.EncryptCfb(System.Byte[],System.Byte[],System.Security.Cryptography.PaddingMode,System.Int32)
+    /**
+    Encrypts data using CFB mode with the specified padding mode and feedback size.
+
+    - Parameter plaintext: The data to encrypt.
+    - Parameter iv: The initialization vector.
+    - Parameter paddingMode: The padding mode used to produce the ciphertext and remove during decryption.
+    - Parameter feedbackSizeInBits: The feedback size, specified in bits.
+    - Returns: The encrypted ciphertext data.
+
+    */
     open func EncryptCfb(plaintext : dotnet.System_Arr<Swift.UInt8>, iv : dotnet.System_Arr<Swift.UInt8>, paddingMode : dotnet.System.Security.Cryptography.PaddingMode/* TODO default enum */, feedbackSizeInBits : Swift.Int32 = 8) throws -> dotnet.System_Arr<Swift.UInt8> {
         var __thrown : NullableHandle = nil;
         let __return = System_Security_Cryptography_SymmetricAlgorithm_u8Array__EncryptCfb_0__4__u8Array_u8Array_PaddingMode_i32(&__thrown, self.get_handle(), plaintext.get_handle(), iv.get_handle(), paddingMode.get_value(), feedbackSizeInBits);
@@ -2614,6 +2724,14 @@ open class SymmetricAlgorithm
 // TODO COPE (write_all_methods) (span) System.Int32 EncryptCfb(System.ReadOnlySpan<System.Byte>, System.ReadOnlySpan<System.Byte>, System.Span<System.Byte>, System.Security.Cryptography.PaddingMode, System.Int32)
     // System.Byte[] EncryptEcb(System.Byte[], System.Security.Cryptography.PaddingMode)
 // docid: M:System.Security.Cryptography.SymmetricAlgorithm.EncryptEcb(System.Byte[],System.Security.Cryptography.PaddingMode)
+    /**
+    Encrypts data using ECB mode with the specified padding mode.
+
+    - Parameter plaintext: The data to encrypt.
+    - Parameter paddingMode: The padding mode used to produce the ciphertext and remove during decryption.
+    - Returns: The encrypted ciphertext data.
+
+    */
     open func EncryptEcb(plaintext : dotnet.System_Arr<Swift.UInt8>, paddingMode : dotnet.System.Security.Cryptography.PaddingMode) throws -> dotnet.System_Arr<Swift.UInt8> {
         var __thrown : NullableHandle = nil;
         let __return = System_Security_Cryptography_SymmetricAlgorithm_u8Array__EncryptEcb_0__2__u8Array_PaddingMode(&__thrown, self.get_handle(), plaintext.get_handle(), paddingMode.get_value());
@@ -2657,6 +2775,14 @@ open class SymmetricAlgorithm
     }
     // System.Int32 GetCiphertextLengthCbc(System.Int32, System.Security.Cryptography.PaddingMode)
 // docid: M:System.Security.Cryptography.SymmetricAlgorithm.GetCiphertextLengthCbc(System.Int32,System.Security.Cryptography.PaddingMode)
+    /**
+    Gets the length of a ciphertext with a given padding mode and plaintext length in CBC mode.
+
+    - Parameter plaintextLength: The plaintext length, in bytes.
+    - Parameter paddingMode: The padding mode used to pad the plaintext to the algorithm's block size.
+    - Returns: The length, in bytes, of the ciphertext with padding.
+
+    */
     open func GetCiphertextLengthCbc(plaintextLength : Swift.Int32, paddingMode : dotnet.System.Security.Cryptography.PaddingMode/* TODO default enum */) throws -> Swift.Int32 {
         var __thrown : NullableHandle = nil;
         let __return = System_Security_Cryptography_SymmetricAlgorithm_i32__GetCiphertextLengthCbc_0__2__i32_PaddingMode(&__thrown, self.get_handle(), plaintextLength, paddingMode.get_value());
@@ -2668,6 +2794,15 @@ open class SymmetricAlgorithm
     }
     // System.Int32 GetCiphertextLengthCfb(System.Int32, System.Security.Cryptography.PaddingMode, System.Int32)
 // docid: M:System.Security.Cryptography.SymmetricAlgorithm.GetCiphertextLengthCfb(System.Int32,System.Security.Cryptography.PaddingMode,System.Int32)
+    /**
+    Gets the length of a ciphertext with a given padding mode and plaintext length in CFB mode.
+
+    - Parameter plaintextLength: The plaintext length, in bytes.
+    - Parameter paddingMode: The padding mode used to pad the plaintext to the feedback size.
+    - Parameter feedbackSizeInBits: The feedback size, in bits.
+    - Returns: The length, in bytes, of the ciphertext with padding.
+
+    */
     open func GetCiphertextLengthCfb(plaintextLength : Swift.Int32, paddingMode : dotnet.System.Security.Cryptography.PaddingMode/* TODO default enum */, feedbackSizeInBits : Swift.Int32 = 8) throws -> Swift.Int32 {
         var __thrown : NullableHandle = nil;
         let __return = System_Security_Cryptography_SymmetricAlgorithm_i32__GetCiphertextLengthCfb_0__3__i32_PaddingMode_i32(&__thrown, self.get_handle(), plaintextLength, paddingMode.get_value(), feedbackSizeInBits);
@@ -2679,6 +2814,14 @@ open class SymmetricAlgorithm
     }
     // System.Int32 GetCiphertextLengthEcb(System.Int32, System.Security.Cryptography.PaddingMode)
 // docid: M:System.Security.Cryptography.SymmetricAlgorithm.GetCiphertextLengthEcb(System.Int32,System.Security.Cryptography.PaddingMode)
+    /**
+    Gets the length of a ciphertext with a given padding mode and plaintext length in ECB mode.
+
+    - Parameter plaintextLength: The plaintext length, in bytes.
+    - Parameter paddingMode: The padding mode used to pad the plaintext to the algorithm's block size.
+    - Returns: The length, in bytes, of the ciphertext with padding.
+
+    */
     open func GetCiphertextLengthEcb(plaintextLength : Swift.Int32, paddingMode : dotnet.System.Security.Cryptography.PaddingMode) throws -> Swift.Int32 {
         var __thrown : NullableHandle = nil;
         let __return = System_Security_Cryptography_SymmetricAlgorithm_i32__GetCiphertextLengthEcb_0__2__i32_PaddingMode(&__thrown, self.get_handle(), plaintextLength, paddingMode.get_value());

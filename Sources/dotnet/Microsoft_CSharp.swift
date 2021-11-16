@@ -249,6 +249,9 @@ public final class CSharpArgumentInfo
     public class override func get_type_handle() -> TypeHandle {
         return Microsoft_CSharp_RuntimeBinder_CSharpArgumentInfo_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // Microsoft.CSharp.RuntimeBinder.CSharpArgumentInfo Create(Microsoft.CSharp.RuntimeBinder.CSharpArgumentInfoFlags, System.String)
@@ -508,6 +511,9 @@ open class RuntimeBinderException
     open class override func get_type_handle() -> TypeHandle {
         return Microsoft_CSharp_RuntimeBinder_RuntimeBinderException_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor()
@@ -572,6 +578,9 @@ open class RuntimeBinderInternalCompilerException
 {
     open class override func get_type_handle() -> TypeHandle {
         return Microsoft_CSharp_RuntimeBinder_RuntimeBinderInternalCompilerException_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }

@@ -326,7 +326,7 @@ public struct Contract {
         }
     }
     // delegate closure overload
-    public static func add_ContractFailed(value : @escaping (Optional<dotnet.System.Object>, Optional<dotnet.System.Diagnostics.Contracts.ContractFailedEventArgs>) throws -> Void) throws {
+    public static func add_ContractFailed(value : @escaping (Optional<dotnet.System.Object>, dotnet.System.Diagnostics.Contracts.ContractFailedEventArgs) throws -> Void) throws {
         let del_value = try dotnet.System.EventHandler_1<dotnet.System.Diagnostics.Contracts.ContractFailedEventArgs>(value);
         return try add_ContractFailed(value: del_value);
     }
@@ -342,7 +342,7 @@ public struct Contract {
         }
     }
     // delegate closure overload
-    public static func remove_ContractFailed(value : @escaping (Optional<dotnet.System.Object>, Optional<dotnet.System.Diagnostics.Contracts.ContractFailedEventArgs>) throws -> Void) throws {
+    public static func remove_ContractFailed(value : @escaping (Optional<dotnet.System.Object>, dotnet.System.Diagnostics.Contracts.ContractFailedEventArgs) throws -> Void) throws {
         let del_value = try dotnet.System.EventHandler_1<dotnet.System.Diagnostics.Contracts.ContractFailedEventArgs>(value);
         return try remove_ContractFailed(value: del_value);
     }
@@ -360,6 +360,9 @@ public final class ContractAbbreviatorAttribute
 {
     public class override func get_type_handle() -> TypeHandle {
         return System_Diagnostics_Contracts_ContractAbbreviatorAttribute_get_type_handle();
+    }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -393,6 +396,9 @@ public final class ContractArgumentValidatorAttribute
     public class override func get_type_handle() -> TypeHandle {
         return System_Diagnostics_Contracts_ContractArgumentValidatorAttribute_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor()
@@ -424,6 +430,9 @@ public final class ContractClassAttribute
 {
     public class override func get_type_handle() -> TypeHandle {
         return System_Diagnostics_Contracts_ContractClassAttribute_get_type_handle();
+    }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -478,6 +487,9 @@ public final class ContractClassForAttribute
     public class override func get_type_handle() -> TypeHandle {
         return System_Diagnostics_Contracts_ContractClassForAttribute_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor(System.Type)
@@ -530,6 +542,9 @@ public final class ContractFailedEventArgs
 {
     public class override func get_type_handle() -> TypeHandle {
         return System_Diagnostics_Contracts_ContractFailedEventArgs_get_type_handle();
+    }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -813,6 +828,9 @@ public final class ContractInvariantMethodAttribute
     public class override func get_type_handle() -> TypeHandle {
         return System_Diagnostics_Contracts_ContractInvariantMethodAttribute_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor()
@@ -844,6 +862,9 @@ public final class ContractOptionAttribute
 {
     public class override func get_type_handle() -> TypeHandle {
         return System_Diagnostics_Contracts_ContractOptionAttribute_get_type_handle();
+    }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -983,6 +1004,9 @@ public final class ContractPublicPropertyNameAttribute
     public class override func get_type_handle() -> TypeHandle {
         return System_Diagnostics_Contracts_ContractPublicPropertyNameAttribute_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor(System.String)
@@ -1036,6 +1060,9 @@ public final class ContractReferenceAssemblyAttribute
     public class override func get_type_handle() -> TypeHandle {
         return System_Diagnostics_Contracts_ContractReferenceAssemblyAttribute_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor()
@@ -1068,6 +1095,9 @@ public final class ContractRuntimeIgnoredAttribute
     public class override func get_type_handle() -> TypeHandle {
         return System_Diagnostics_Contracts_ContractRuntimeIgnoredAttribute_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor()
@@ -1099,6 +1129,9 @@ public final class ContractVerificationAttribute
 {
     public class override func get_type_handle() -> TypeHandle {
         return System_Diagnostics_Contracts_ContractVerificationAttribute_get_type_handle();
+    }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -1153,6 +1186,9 @@ public final class PureAttribute
 {
     public class override func get_type_handle() -> TypeHandle {
         return System_Diagnostics_Contracts_PureAttribute_get_type_handle();
+    }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }

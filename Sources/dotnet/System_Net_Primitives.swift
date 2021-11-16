@@ -112,6 +112,9 @@ public final class Cookie
     public class override func get_type_handle() -> TypeHandle {
         return System_Net_Cookie_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor()
@@ -718,6 +721,9 @@ open class CookieCollection
     open class override func get_type_handle() -> TypeHandle {
         return System_Net_CookieCollection_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor()
@@ -917,9 +923,6 @@ open class CookieCollection
     }
     // [IsSpecialName] System.Net.Cookie get_Item(System.Int32)
 // docid: M:System.Net.CookieCollection.get_Item(System.Int32)
-//BEGIN method_is_override
-//matches_1
-//matches :
     open func get_Item(index : Swift.Int32) throws -> dotnet.System.Net.Cookie {
         var __thrown : NullableHandle = nil;
         let __return = System_Net_CookieCollection_Cookie__get_Item_0__1__i32(&__thrown, self.get_handle(), index);
@@ -931,9 +934,6 @@ open class CookieCollection
     }
     // [IsSpecialName] System.Net.Cookie get_Item(System.String)
 // docid: M:System.Net.CookieCollection.get_Item(System.String)
-//BEGIN method_is_override
-//matches_1
-//matches :
     open func get_Item(name : dotnet.System.String) throws -> Optional<dotnet.System.Net.Cookie> {
         var __thrown : NullableHandle = nil;
         let __return = System_Net_CookieCollection_Cookie__get_Item_0__1__String(&__thrown, self.get_handle(), name.get_handle());
@@ -997,6 +997,9 @@ open class CookieContainer
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Net_CookieContainer_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -1186,6 +1189,12 @@ open class CookieContainer
     }
     // System.Net.CookieCollection GetAllCookies()
 // docid: M:System.Net.CookieContainer.GetAllCookies
+    /**
+    Gets a  that contains all of the  instances in the container.
+
+    - Returns: A  that contains all of the  instances in the container.
+
+    */
     open func GetAllCookies() throws -> dotnet.System.Net.CookieCollection {
         var __thrown : NullableHandle = nil;
         let __return = System_Net_CookieContainer_CookieCollection__GetAllCookies_0__0(&__thrown, self.get_handle());
@@ -1349,6 +1358,9 @@ open class CookieException
     open class override func get_type_handle() -> TypeHandle {
         return System_Net_CookieException_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor()
@@ -1400,6 +1412,9 @@ open class CredentialCache
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Net_CredentialCache_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -1682,6 +1697,9 @@ open class DnsEndPoint
     open class override func get_type_handle() -> TypeHandle {
         return System_Net_DnsEndPoint_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor(System.String, System.Int32)
@@ -1847,6 +1865,9 @@ open class EndPoint
     open class override func get_type_handle() -> TypeHandle {
         return System_Net_EndPoint_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // System.Net.EndPoint Create(System.Net.SocketAddress)
@@ -2001,7 +2022,7 @@ public struct HttpStatusCode : SGBridgeGenericValue {
     }
     // static field: System.Net.HttpStatusCode NonAuthoritativeInformation
     /**
-    Equivalent to HTTP status 203.  indicates that the returned metainformation is from a cached copy instead of the origin server and therefore may be incorrect.
+    Equivalent to HTTP status 203.  indicates that the returned meta information is from a cached copy instead of the origin server and therefore may be incorrect.
 
     */
     public static var NonAuthoritativeInformation : dotnet.System.Net.HttpStatusCode {
@@ -2155,7 +2176,7 @@ public struct HttpStatusCode : SGBridgeGenericValue {
     }
     // static field: System.Net.HttpStatusCode SeeOther
     /**
-    Equivalent to HTTP status 303.  automatically redirects the client to the URI specified in the Location header as the result of a POST. The request to the resource specified by the Location header will be made with a GET. SeeOther is a synonym for RedirectMethod
+    Equivalent to HTTP status 303.  automatically redirects the client to the URI specified in the Location header as the result of a POST. The request to the resource specified by the Location header will be made with a GET. SeeOther is a synonym for RedirectMethod.
 
     */
     public static var SeeOther : dotnet.System.Net.HttpStatusCode {
@@ -2698,6 +2719,10 @@ public struct HttpVersion {
         }
     }
     // static field: System.Version Version30
+    /**
+    Defines a  instance for HTTP 3.0.
+
+    */
     public static var Version30 : dotnet.System.Version {
         get {
         let __return = dotnet.System.Version(hndl: System_Net_HttpVersion_get_Version30());
@@ -2719,6 +2744,9 @@ open class ICredentials
 {
     open class func get_type_handle() -> TypeHandle {
         return System_Net_ICredentials_get_type_handle();
+    }
+    open class func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     let h : NonnullHandle;
     public func to_gval() -> GVal { return GVal(Swift.Int(bitPattern: self.h)); }
@@ -2768,6 +2796,9 @@ open class ICredentialsByHost
     open class func get_type_handle() -> TypeHandle {
         return System_Net_ICredentialsByHost_get_type_handle();
     }
+    open class func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     let h : NonnullHandle;
     public func to_gval() -> GVal { return GVal(Swift.Int(bitPattern: self.h)); }
     public func dup_gval() -> GVal { return GVal(Swift.Int(bitPattern: __copy_handle(self.h))); }
@@ -2815,6 +2846,9 @@ open class IPAddress
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Net_IPAddress_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -3213,11 +3247,12 @@ open class IPAddress
          if  was able to be parsed as an IP address; otherwise, .
 
     */
-    open class func TryParse(ipString : Optional<dotnet.System.String>, address : inout dotnet.System.Net.IPAddress) throws -> Bool {
+    open class func TryParse(ipString : Optional<dotnet.System.String>, address : inout Optional<dotnet.System.Net.IPAddress>) throws -> Bool {
         var __thrown : NullableHandle = nil;
-            var _tmp_out_address = address.get_handle();
+            var _tmp_out_address = (address != nil) ? (address!.get_handle()) : nil;
         let __return = System_Net_IPAddress_bool__TryParse_0__2__String_outIPAddress(&__thrown, ipString?.get_handle() ?? nil, &_tmp_out_address);
-        let _tmp2_address = dotnet.System.Net.IPAddress(hndl: _tmp_out_address);
+        let __h__tmp2_address = _tmp_out_address;
+        let _tmp2_address = (__h__tmp2_address != nil) ? dotnet.System.Net.IPAddress(hndl: __h__tmp2_address!) : nil;
             address = _tmp2_address;
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
@@ -3413,6 +3448,10 @@ open class IPAddress
             return try! get_IsIPv6Teredo();
         }
     }
+    /**
+    Gets whether the address is an IPv6 Unique Local address.
+
+    */
     open var IsIPv6UniqueLocal : Bool {
         get {
             return try! get_IsIPv6UniqueLocal();
@@ -3444,6 +3483,9 @@ open class IPEndPoint
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Net_IPEndPoint_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -3622,11 +3664,12 @@ open class IPEndPoint
          if  can be parsed as an IP endpoint; otherwise, .
 
     */
-    open class func TryParse(s : dotnet.System.String, result : inout dotnet.System.Net.IPEndPoint) throws -> Bool {
+    open class func TryParse(s : dotnet.System.String, result : inout Optional<dotnet.System.Net.IPEndPoint>) throws -> Bool {
         var __thrown : NullableHandle = nil;
-            var _tmp_out_result = result.get_handle();
+            var _tmp_out_result = (result != nil) ? (result!.get_handle()) : nil;
         let __return = System_Net_IPEndPoint_bool__TryParse_0__2__String_outIPEndPoint(&__thrown, s.get_handle(), &_tmp_out_result);
-        let _tmp2_result = dotnet.System.Net.IPEndPoint(hndl: _tmp_out_result);
+        let __h__tmp2_result = _tmp_out_result;
+        let _tmp2_result = (__h__tmp2_result != nil) ? dotnet.System.Net.IPEndPoint(hndl: __h__tmp2_result!) : nil;
             result = _tmp2_result;
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
@@ -3738,6 +3781,9 @@ open class IWebProxy
     open class func get_type_handle() -> TypeHandle {
         return System_Net_IWebProxy_get_type_handle();
     }
+    open class func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     let h : NonnullHandle;
     public func to_gval() -> GVal { return GVal(Swift.Int(bitPattern: self.h)); }
     public func dup_gval() -> GVal { return GVal(Swift.Int(bitPattern: __copy_handle(self.h))); }
@@ -3830,6 +3876,9 @@ open class NetworkCredential
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Net_NetworkCredential_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -4108,6 +4157,9 @@ open class SocketAddress
     open class override func get_type_handle() -> TypeHandle {
         return System_Net_SocketAddress_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor(System.Net.Sockets.AddressFamily)
@@ -4220,9 +4272,6 @@ open class SocketAddress
     }
     // [IsSpecialName] System.Byte get_Item(System.Int32)
 // docid: M:System.Net.SocketAddress.get_Item(System.Int32)
-//BEGIN method_is_override
-//matches_1
-//matches :
     open func get_Item(offset : Swift.Int32) throws -> Swift.UInt8 {
         var __thrown : NullableHandle = nil;
         let __return = System_Net_SocketAddress_u8__get_Item_0__1__i32(&__thrown, self.get_handle(), offset);
@@ -4275,6 +4324,9 @@ open class TransportContext
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Net_TransportContext_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -4413,6 +4465,9 @@ open class RequestCachePolicy
     open class override func get_type_handle() -> TypeHandle {
         return System_Net_Cache_RequestCachePolicy_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor()
@@ -4494,6 +4549,9 @@ open class IPAddressCollection
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Net_NetworkInformation_IPAddressCollection_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -4623,9 +4681,6 @@ open class IPAddressCollection
     }
     // [IsSpecialName] System.Net.IPAddress get_Item(System.Int32)
 // docid: M:System.Net.NetworkInformation.IPAddressCollection.get_Item(System.Int32)
-//BEGIN method_is_override
-//matches_1
-//matches :
     open func get_Item(index : Swift.Int32) throws -> dotnet.System.Net.IPAddress {
         var __thrown : NullableHandle = nil;
         let __return = System_Net_NetworkInformation_IPAddressCollection_IPAddress__get_Item_0__1__i32(&__thrown, self.get_handle(), index);
@@ -5473,7 +5528,7 @@ public struct SocketError : SGBridgeGenericValue {
     }
     // static field: System.Net.Sockets.SocketError ConnectionAborted
     /**
-    The connection was aborted by the .NET Framework or the underlying socket provider.
+    The connection was aborted by .NET or the underlying socket provider.
 
     */
     public static var ConnectionAborted : dotnet.System.Net.Sockets.SocketError {
@@ -5705,6 +5760,9 @@ open class SocketException
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Net_Sockets_SocketException_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -6026,7 +6084,10 @@ public struct HashAlgorithmType : SGBridgeGenericValue {
     }
     // static field: System.Security.Authentication.HashAlgorithmType Md5
     /**
-    The Message Digest 5 (MD5) hashing algorithm.
+    
+        The Message Digest 5 (MD5) hashing algorithm.
+        Due to collision problems with MD5, Microsoft recommends SHA256.
+      
 
     */
     public static var Md5 : dotnet.System.Security.Authentication.HashAlgorithmType {
@@ -6037,7 +6098,10 @@ public struct HashAlgorithmType : SGBridgeGenericValue {
     }
     // static field: System.Security.Authentication.HashAlgorithmType Sha1
     /**
-    The Secure Hashing Algorithm (SHA1).
+    
+        The Secure Hashing Algorithm (SHA1).
+        Due to collision problems with MD5, Microsoft recommends SHA256.
+      
 
     */
     public static var Sha1 : dotnet.System.Security.Authentication.HashAlgorithmType {
@@ -6202,6 +6266,9 @@ open class ChannelBinding
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Security_Authentication_ExtendedProtection_ChannelBinding_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }

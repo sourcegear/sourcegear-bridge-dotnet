@@ -80,6 +80,9 @@ public final class BoundedChannelOptions
     public class override func get_type_handle() -> TypeHandle {
         return System_Threading_Channels_BoundedChannelOptions_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor(System.Int32)
@@ -175,9 +178,17 @@ public struct Channel {
 // TODO COPE (write_all_methods) (unused generic param) System.Threading.Channels.Channel<T> CreateBounded<T>(System.Threading.Channels.BoundedChannelOptions)
     // System.Threading.Channels.Channel<T> CreateBounded<T>(System.Threading.Channels.BoundedChannelOptions, System.Action<T>)
 // docid: M:System.Threading.Channels.Channel.CreateBounded``1(System.Threading.Channels.BoundedChannelOptions,System.Action{``0})
-    public static func CreateBounded<UT : SGBridgeGenericValue>(options : dotnet.System.Threading.Channels.BoundedChannelOptions, itemDropped : dotnet.System.Action_1<UT>) throws -> dotnet.System.Threading.Channels.Channel_1<UT> {
+    /**
+    Creates a channel subject to the provided options.
+
+    - Parameter options: Options that guide the behavior of the channel.
+    - Parameter itemDropped: Delegate that will be called when item is being dropped from channel. See .
+    - Returns: The created channel.
+
+    */
+    public static func CreateBounded<UT : SGBridgeGenericValue>(options : dotnet.System.Threading.Channels.BoundedChannelOptions, itemDropped : Optional<dotnet.System.Action_1<UT>>) throws -> dotnet.System.Threading.Channels.Channel_1<UT> {
         var __thrown : NullableHandle = nil;
-        let __return = System_Threading_Channels_Channel_System_Threading_Channels_Channel_UT___CreateBounded_1__2__BoundedChannelOptions_System_Action_UT_(UT.get_type_handle(), &__thrown, options.get_handle(), nil);
+        let __return = System_Threading_Channels_Channel_System_Threading_Channels_Channel_UT___CreateBounded_1__2__BoundedChannelOptions_System_Action_UT_(UT.get_type_handle(), &__thrown, options.get_handle(), (itemDropped?.get_handle()));
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
@@ -205,6 +216,9 @@ open class ChannelClosedException
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Threading_Channels_ChannelClosedException_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -286,6 +300,9 @@ open class ChannelOptions
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Threading_Channels_ChannelOptions_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -412,6 +429,9 @@ open class ChannelReader_1<T : SGBridgeGenericValue>
     open class override func get_type_handle() -> TypeHandle {
         return System_Threading_Channels_ChannelReader_1_get_type_handle(T.get_type_handle());
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // System.Threading.Tasks.ValueTask<T> ReadAsync(System.Threading.CancellationToken)
@@ -434,6 +454,14 @@ open class ChannelReader_1<T : SGBridgeGenericValue>
     }
     // bool TryPeek(ref T)
 // docid: M:System.Threading.Channels.ChannelReader`1.TryPeek(`0@)
+    /**
+    Attempts to peek at an item from the channel.
+
+    - Parameter item: The peeked item, or a default value if no item could be peeked.
+    - Returns: 
+         if an item was read; otherwise, .
+
+    */
     open func TryPeek(item : inout T) throws -> Bool {
         var __thrown : NullableHandle = nil;
             var _tmp_out_item = item.to_gval();
@@ -495,7 +523,7 @@ open class ChannelReader_1<T : SGBridgeGenericValue>
     /**
     Creates an  that enables reading all of the data from the channel.
 
-    - Parameter cancellationToken: The cancellation token to use to cancel the enumeration.
+    - Parameter cancellationToken: The cancellation token to use to cancel the enumeration. If data is immediately ready for reading, then that data may be yielded even after cancellation has been requested.
     - Returns: The created async enumerable.
 
     */
@@ -561,6 +589,10 @@ open class ChannelReader_1<T : SGBridgeGenericValue>
             return try! get_CanCount();
         }
     }
+    /**
+    Gets a value that indicates whether  is available for use on this  instance.
+
+    */
     open var CanPeek : Bool {
         get {
             return try! get_CanPeek();
@@ -599,6 +631,9 @@ open class ChannelWriter_1<T : SGBridgeGenericValue>
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Threading_Channels_ChannelWriter_1_get_type_handle(T.get_type_handle());
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -711,6 +746,9 @@ open class Channel_1<T : SGBridgeGenericValue>
     open class override func get_type_handle() -> TypeHandle {
         return System_Threading_Channels_Channel_1_get_type_handle(T.get_type_handle());
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
 } // Channel_1
@@ -727,6 +765,9 @@ open class Channel_2<TWrite : SGBridgeGenericValue,TRead : SGBridgeGenericValue>
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Threading_Channels_Channel_2_get_type_handle(TWrite.get_type_handle(),TRead.get_type_handle());
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -834,6 +875,9 @@ public final class UnboundedChannelOptions
 {
     public class override func get_type_handle() -> TypeHandle {
         return System_Threading_Channels_UnboundedChannelOptions_get_type_handle();
+    }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }

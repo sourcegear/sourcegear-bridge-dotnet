@@ -108,12 +108,12 @@ struct {
     SG_HNDL_NONNULL (* _Nonnull  _fp_specialize_System_Buffers_ArrayBufferWriter_1_System_ReadOnlyMemory_T___get_WrittenMemory_0__0)(TYP T, SG_HNDL_NULLABLE * _Nonnull __thrown);
     SG_HNDL_NONNULL (* _Nonnull  _fp_invoke_System_Buffers_ArrayBufferWriter_1_System_ReadOnlyMemory_T___get_WrittenMemory_0__0)(SG_HNDL_NONNULL ____hdel, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h);
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_Buffers_ArrayBufferWriter_1_cast)(TYP T, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __h);
-    SG_HNDL_NULLABLE (* _Nonnull  _fp_System_Buffers_BuffersExtensions_System_Nullable_System_SequencePosition___PositionOf_1__2__inSystem_Buffers_ReadOnlySequence_UT__UT)(TYP T, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL* _Nonnull __source_in_ptr, GVAL value);
+    SG_HNDL_NULLABLE (* _Nonnull  _fp_System_Buffers_BuffersExtensions_System_Nullable_System_SequencePosition___PositionOf_1__2__inSystem_Buffers_ReadOnlySequence_UT__UT)(TYP T, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE* _Nonnull __source_in_ptr, GVAL value);
     SG_HNDL_NONNULL (* _Nonnull  _fp_specialize_System_Buffers_BuffersExtensions_System_Nullable_System_SequencePosition___PositionOf_1__2__inSystem_Buffers_ReadOnlySequence_UT__UT)(TYP T, SG_HNDL_NULLABLE * _Nonnull __thrown);
-    SG_HNDL_NULLABLE (* _Nonnull  _fp_invoke_System_Buffers_BuffersExtensions_System_Nullable_System_SequencePosition___PositionOf_1__2__inSystem_Buffers_ReadOnlySequence_UT__UT)(SG_HNDL_NONNULL ____hdel, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL* _Nonnull __source_in_ptr, GVAL value);
-    SG_HNDL_NONNULL (* _Nonnull  _fp_System_Buffers_BuffersExtensions_UTArray__ToArray_1__1__inSystem_Buffers_ReadOnlySequence_UT_)(TYP T, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL* _Nonnull __sequence_in_ptr);
+    SG_HNDL_NULLABLE (* _Nonnull  _fp_invoke_System_Buffers_BuffersExtensions_System_Nullable_System_SequencePosition___PositionOf_1__2__inSystem_Buffers_ReadOnlySequence_UT__UT)(SG_HNDL_NONNULL ____hdel, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE* _Nonnull __source_in_ptr, GVAL value);
+    SG_HNDL_NONNULL (* _Nonnull  _fp_System_Buffers_BuffersExtensions_UTArray__ToArray_1__1__inSystem_Buffers_ReadOnlySequence_UT_)(TYP T, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE* _Nonnull __sequence_in_ptr);
     SG_HNDL_NONNULL (* _Nonnull  _fp_specialize_System_Buffers_BuffersExtensions_UTArray__ToArray_1__1__inSystem_Buffers_ReadOnlySequence_UT_)(TYP T, SG_HNDL_NULLABLE * _Nonnull __thrown);
-    SG_HNDL_NONNULL (* _Nonnull  _fp_invoke_System_Buffers_BuffersExtensions_UTArray__ToArray_1__1__inSystem_Buffers_ReadOnlySequence_UT_)(SG_HNDL_NONNULL ____hdel, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL* _Nonnull __sequence_in_ptr);
+    SG_HNDL_NONNULL (* _Nonnull  _fp_invoke_System_Buffers_BuffersExtensions_UTArray__ToArray_1__1__inSystem_Buffers_ReadOnlySequence_UT_)(SG_HNDL_NONNULL ____hdel, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE* _Nonnull __sequence_in_ptr);
     TYP (* _Nonnull  _fp_System_Buffers_IBufferWriter_1_get_type_handle)(TYP T);
     void (* _Nonnull  _fp_System_Buffers_IBufferWriter_1_void__Advance_0__1__i32)(TYP T, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, int32_t count);
     SG_HNDL_NONNULL (* _Nonnull  _fp_specialize_System_Buffers_IBufferWriter_1_void__Advance_0__1__i32)(TYP T, SG_HNDL_NULLABLE * _Nonnull __thrown);
@@ -122,6 +122,7 @@ struct {
     SG_HNDL_NONNULL (* _Nonnull  _fp_specialize_System_Buffers_IBufferWriter_1_System_Memory_T___GetMemory_0__1__i32)(TYP T, SG_HNDL_NULLABLE * _Nonnull __thrown);
     SG_HNDL_NONNULL (* _Nonnull  _fp_invoke_System_Buffers_IBufferWriter_1_System_Memory_T___GetMemory_0__1__i32)(SG_HNDL_NONNULL ____hdel, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, int32_t sizeHint);
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_Buffers_IBufferWriter_1_cast)(TYP T, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __h);
+    SG_HNDL_NONNULL (* _Nonnull  _fp_System_Buffers_IBufferWriter_1_create)(TYP T, SG_HNDL_NULLABLE * _Nonnull __thrown, void (* _Nonnull  __cb_System_Buffers_IBufferWriter_1_void__Advance_0__1__i32)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, int32_t count), const void* _Nonnull __pdata_System_Buffers_IBufferWriter_1_void__Advance_0__1__i32, SG_HNDL_NONNULL (* _Nonnull  __cb_System_Buffers_IBufferWriter_1_System_Memory_T___GetMemory_0__1__i32)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, int32_t sizeHint), const void* _Nonnull __pdata_System_Buffers_IBufferWriter_1_System_Memory_T___GetMemory_0__1__i32, void (* _Nullable __deinit)(const void* _Nonnull __pdata));
     TYP (* _Nonnull  _fp_System_Buffers_MemoryPool_1_get_type_handle)(TYP T);
     void (* _Nonnull  _fp_System_Buffers_MemoryPool_1_void__Dispose_0__0)(TYP T, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h);
     SG_HNDL_NONNULL (* _Nonnull  _fp_specialize_System_Buffers_MemoryPool_1_void__Dispose_0__0)(TYP T, SG_HNDL_NULLABLE * _Nonnull __thrown);
@@ -157,6 +158,8 @@ struct {
     void (* _Nonnull  _fp_invoke_System_Buffers_ReadOnlySequenceSegment_1_void__set_RunningIndex_0__1__i64)(SG_HNDL_NONNULL ____hdel, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, int64_t value);
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_Buffers_ReadOnlySequenceSegment_1_cast)(TYP T, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __h);
     TYP (* _Nonnull  _fp_System_Buffers_ReadOnlySequence_1_get_type_handle)(TYP T);
+    SG_HNDL_NONNULL (* _Nonnull  _fp_System_Buffers_ReadOnlySequence_1_get_Empty)(void);
+    void (* _Nonnull  _fp_System_Buffers_ReadOnlySequence_1_set_Empty)(SG_HNDL_NONNULL __v);
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_Buffers_ReadOnlySequence_1_ctor_0__4__System_Buffers_ReadOnlySequenceSegment_T__i32_System_Buffers_ReadOnlySequenceSegment_T__i32)(TYP T, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL startSegment, int32_t startIndex, SG_HNDL_NONNULL endSegment, int32_t endIndex);
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_Buffers_ReadOnlySequence_1_ctor_0__1__System_ReadOnlyMemory_T_)(TYP T, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL memory);
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_Buffers_ReadOnlySequence_1_ctor_0__1__TArray)(TYP T, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL array);
@@ -203,9 +206,9 @@ struct {
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_Buffers_ReadOnlySequence_1_String__ToString_0__0)(TYP T, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h);
     SG_HNDL_NONNULL (* _Nonnull  _fp_specialize_System_Buffers_ReadOnlySequence_1_String__ToString_0__0)(TYP T, SG_HNDL_NULLABLE * _Nonnull __thrown);
     SG_HNDL_NONNULL (* _Nonnull  _fp_invoke_System_Buffers_ReadOnlySequence_1_String__ToString_0__0)(SG_HNDL_NONNULL ____hdel, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h);
-    int32_t (* _Nonnull  _fp_System_Buffers_ReadOnlySequence_1_bool__TryGet_0__3__refSequencePosition_outSystem_ReadOnlyMemory_T__bool)(TYP T, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NONNULL* _Nonnull __position_ref_ptr, SG_HNDL_NONNULL* _Nonnull __memory_out_ptr, int32_t advance);
+    int32_t (* _Nonnull  _fp_System_Buffers_ReadOnlySequence_1_bool__TryGet_0__3__refSequencePosition_outSystem_ReadOnlyMemory_T__bool)(TYP T, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NONNULL* _Nonnull __position_ref_ptr, SG_HNDL_NULLABLE* _Nonnull __memory_out_ptr, int32_t advance);
     SG_HNDL_NONNULL (* _Nonnull  _fp_specialize_System_Buffers_ReadOnlySequence_1_bool__TryGet_0__3__refSequencePosition_outSystem_ReadOnlyMemory_T__bool)(TYP T, SG_HNDL_NULLABLE * _Nonnull __thrown);
-    int32_t (* _Nonnull  _fp_invoke_System_Buffers_ReadOnlySequence_1_bool__TryGet_0__3__refSequencePosition_outSystem_ReadOnlyMemory_T__bool)(SG_HNDL_NONNULL ____hdel, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NONNULL* _Nonnull __position_ref_ptr, SG_HNDL_NONNULL* _Nonnull __memory_out_ptr, int32_t advance);
+    int32_t (* _Nonnull  _fp_invoke_System_Buffers_ReadOnlySequence_1_bool__TryGet_0__3__refSequencePosition_outSystem_ReadOnlyMemory_T__bool)(SG_HNDL_NONNULL ____hdel, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NONNULL* _Nonnull __position_ref_ptr, SG_HNDL_NULLABLE* _Nonnull __memory_out_ptr, int32_t advance);
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_Buffers_ReadOnlySequence_1_SequencePosition__get_End_0__0)(TYP T, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h);
     SG_HNDL_NONNULL (* _Nonnull  _fp_specialize_System_Buffers_ReadOnlySequence_1_SequencePosition__get_End_0__0)(TYP T, SG_HNDL_NULLABLE * _Nonnull __thrown);
     SG_HNDL_NONNULL (* _Nonnull  _fp_invoke_System_Buffers_ReadOnlySequence_1_SequencePosition__get_End_0__0)(SG_HNDL_NONNULL ____hdel, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h);
@@ -226,7 +229,7 @@ struct {
     SG_HNDL_NONNULL (* _Nonnull  _fp_invoke_System_Buffers_ReadOnlySequence_1_SequencePosition__get_Start_0__0)(SG_HNDL_NONNULL ____hdel, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h);
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_Buffers_ReadOnlySequence_1_implicit_ctor)(TYP T);
     TYP (* _Nonnull  _fp_System_Buffers_ReadOnlySequence_1_Enumerator_get_type_handle)(TYP T);
-    SG_HNDL_NONNULL (* _Nonnull  _fp_System_Buffers_ReadOnlySequence_1_Enumerator_ctor_0__1__inSystem_Buffers_ReadOnlySequence_T_)(TYP T, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL* _Nonnull __sequence_in_ptr);
+    SG_HNDL_NONNULL (* _Nonnull  _fp_System_Buffers_ReadOnlySequence_1_Enumerator_ctor_0__1__inSystem_Buffers_ReadOnlySequence_T_)(TYP T, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE* _Nonnull __sequence_in_ptr);
     int32_t (* _Nonnull  _fp_System_Buffers_ReadOnlySequence_1_Enumerator_bool__MoveNext_0__0)(TYP T, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h);
     SG_HNDL_NONNULL (* _Nonnull  _fp_specialize_System_Buffers_ReadOnlySequence_1_Enumerator_bool__MoveNext_0__0)(TYP T, SG_HNDL_NULLABLE * _Nonnull __thrown);
     int32_t (* _Nonnull  _fp_invoke_System_Buffers_ReadOnlySequence_1_Enumerator_bool__MoveNext_0__0)(SG_HNDL_NONNULL ____hdel, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h);
@@ -247,7 +250,7 @@ struct {
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_Buffers_StandardFormat_StandardFormat__Parse_0__1__rospanChar)(SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nonnull __format_spanptr);
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_Buffers_StandardFormat_StandardFormat__Parse_0__1__String)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE format);
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_Buffers_StandardFormat_String__ToString_0__0)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h);
-    int32_t (* _Nonnull  _fp_System_Buffers_StandardFormat_bool__TryParse_0__2__rospanChar_outStandardFormat)(SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nonnull __format_spanptr, SG_HNDL_NONNULL* _Nonnull __result_out_ptr);
+    int32_t (* _Nonnull  _fp_System_Buffers_StandardFormat_bool__TryParse_0__2__rospanChar_outStandardFormat)(SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nonnull __format_spanptr, SG_HNDL_NULLABLE* _Nonnull __result_out_ptr);
     int32_t (* _Nonnull  _fp_System_Buffers_StandardFormat_bool__get_HasPrecision_0__0)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h);
     int32_t (* _Nonnull  _fp_System_Buffers_StandardFormat_bool__get_IsDefault_0__0)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h);
     uint8_t (* _Nonnull  _fp_System_Buffers_StandardFormat_u8__get_Precision_0__0)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h);
@@ -281,8 +284,8 @@ struct {
     uint64_t (* _Nonnull  _fp_System_Buffers_Binary_BinaryPrimitives_u64__ReverseEndianness_0__1__u64)(SG_HNDL_NULLABLE * _Nonnull __thrown, uint64_t value);
     int32_t (* _Nonnull  _fp_System_Buffers_Binary_BinaryPrimitives_bool__TryReadDoubleBigEndian_0__2__rospanu8_outf64)(SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nonnull __source_spanptr, double* _Nonnull __value_out_ptr);
     int32_t (* _Nonnull  _fp_System_Buffers_Binary_BinaryPrimitives_bool__TryReadDoubleLittleEndian_0__2__rospanu8_outf64)(SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nonnull __source_spanptr, double* _Nonnull __value_out_ptr);
-    int32_t (* _Nonnull  _fp_System_Buffers_Binary_BinaryPrimitives_bool__TryReadHalfBigEndian_0__2__rospanu8_outHalf)(SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nonnull __source_spanptr, SG_HNDL_NONNULL* _Nonnull __value_out_ptr);
-    int32_t (* _Nonnull  _fp_System_Buffers_Binary_BinaryPrimitives_bool__TryReadHalfLittleEndian_0__2__rospanu8_outHalf)(SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nonnull __source_spanptr, SG_HNDL_NONNULL* _Nonnull __value_out_ptr);
+    int32_t (* _Nonnull  _fp_System_Buffers_Binary_BinaryPrimitives_bool__TryReadHalfBigEndian_0__2__rospanu8_outHalf)(SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nonnull __source_spanptr, SG_HNDL_NULLABLE* _Nonnull __value_out_ptr);
+    int32_t (* _Nonnull  _fp_System_Buffers_Binary_BinaryPrimitives_bool__TryReadHalfLittleEndian_0__2__rospanu8_outHalf)(SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nonnull __source_spanptr, SG_HNDL_NULLABLE* _Nonnull __value_out_ptr);
     int32_t (* _Nonnull  _fp_System_Buffers_Binary_BinaryPrimitives_bool__TryReadInt16BigEndian_0__2__rospanu8_outi16)(SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nonnull __source_spanptr, int16_t* _Nonnull __value_out_ptr);
     int32_t (* _Nonnull  _fp_System_Buffers_Binary_BinaryPrimitives_bool__TryReadInt16LittleEndian_0__2__rospanu8_outi16)(SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nonnull __source_spanptr, int16_t* _Nonnull __value_out_ptr);
     int32_t (* _Nonnull  _fp_System_Buffers_Binary_BinaryPrimitives_bool__TryReadInt32BigEndian_0__2__rospanu8_outi32)(SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nonnull __source_spanptr, int32_t* _Nonnull __value_out_ptr);
@@ -357,17 +360,17 @@ struct {
     int32_t (* _Nonnull  _fp_System_Buffers_Text_Utf8Formatter_bool__TryFormat_0__4__u64_spanu8_outi32_StandardFormat)(SG_HNDL_NULLABLE * _Nonnull __thrown, uint64_t value, const void* _Nonnull __destination_spanptr, int32_t* _Nonnull __bytesWritten_out_ptr, SG_HNDL_NONNULL format);
     int32_t (* _Nonnull  _fp_System_Buffers_Text_Utf8Parser_bool__TryParse_0__4__rospanu8_outbool_outi32_Char)(SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nonnull __source_spanptr, int32_t* _Nonnull __value_out_ptr, int32_t* _Nonnull __bytesConsumed_out_ptr, int16_t standardFormat);
     int32_t (* _Nonnull  _fp_System_Buffers_Text_Utf8Parser_bool__TryParse_0__4__rospanu8_outu8_outi32_Char)(SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nonnull __source_spanptr, uint8_t* _Nonnull __value_out_ptr, int32_t* _Nonnull __bytesConsumed_out_ptr, int16_t standardFormat);
-    int32_t (* _Nonnull  _fp_System_Buffers_Text_Utf8Parser_bool__TryParse_0__4__rospanu8_outDateTime_outi32_Char)(SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nonnull __source_spanptr, SG_HNDL_NONNULL* _Nonnull __value_out_ptr, int32_t* _Nonnull __bytesConsumed_out_ptr, int16_t standardFormat);
-    int32_t (* _Nonnull  _fp_System_Buffers_Text_Utf8Parser_bool__TryParse_0__4__rospanu8_outDateTimeOffset_outi32_Char)(SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nonnull __source_spanptr, SG_HNDL_NONNULL* _Nonnull __value_out_ptr, int32_t* _Nonnull __bytesConsumed_out_ptr, int16_t standardFormat);
-    int32_t (* _Nonnull  _fp_System_Buffers_Text_Utf8Parser_bool__TryParse_0__4__rospanu8_outDecimal_outi32_Char)(SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nonnull __source_spanptr, SG_HNDL_NONNULL* _Nonnull __value_out_ptr, int32_t* _Nonnull __bytesConsumed_out_ptr, int16_t standardFormat);
+    int32_t (* _Nonnull  _fp_System_Buffers_Text_Utf8Parser_bool__TryParse_0__4__rospanu8_outDateTime_outi32_Char)(SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nonnull __source_spanptr, SG_HNDL_NULLABLE* _Nonnull __value_out_ptr, int32_t* _Nonnull __bytesConsumed_out_ptr, int16_t standardFormat);
+    int32_t (* _Nonnull  _fp_System_Buffers_Text_Utf8Parser_bool__TryParse_0__4__rospanu8_outDateTimeOffset_outi32_Char)(SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nonnull __source_spanptr, SG_HNDL_NULLABLE* _Nonnull __value_out_ptr, int32_t* _Nonnull __bytesConsumed_out_ptr, int16_t standardFormat);
+    int32_t (* _Nonnull  _fp_System_Buffers_Text_Utf8Parser_bool__TryParse_0__4__rospanu8_outDecimal_outi32_Char)(SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nonnull __source_spanptr, SG_HNDL_NULLABLE* _Nonnull __value_out_ptr, int32_t* _Nonnull __bytesConsumed_out_ptr, int16_t standardFormat);
     int32_t (* _Nonnull  _fp_System_Buffers_Text_Utf8Parser_bool__TryParse_0__4__rospanu8_outf64_outi32_Char)(SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nonnull __source_spanptr, double* _Nonnull __value_out_ptr, int32_t* _Nonnull __bytesConsumed_out_ptr, int16_t standardFormat);
-    int32_t (* _Nonnull  _fp_System_Buffers_Text_Utf8Parser_bool__TryParse_0__4__rospanu8_outGuid_outi32_Char)(SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nonnull __source_spanptr, SG_HNDL_NONNULL* _Nonnull __value_out_ptr, int32_t* _Nonnull __bytesConsumed_out_ptr, int16_t standardFormat);
+    int32_t (* _Nonnull  _fp_System_Buffers_Text_Utf8Parser_bool__TryParse_0__4__rospanu8_outGuid_outi32_Char)(SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nonnull __source_spanptr, SG_HNDL_NULLABLE* _Nonnull __value_out_ptr, int32_t* _Nonnull __bytesConsumed_out_ptr, int16_t standardFormat);
     int32_t (* _Nonnull  _fp_System_Buffers_Text_Utf8Parser_bool__TryParse_0__4__rospanu8_outi16_outi32_Char)(SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nonnull __source_spanptr, int16_t* _Nonnull __value_out_ptr, int32_t* _Nonnull __bytesConsumed_out_ptr, int16_t standardFormat);
     int32_t (* _Nonnull  _fp_System_Buffers_Text_Utf8Parser_bool__TryParse_0__4__rospanu8_outi32_outi32_Char)(SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nonnull __source_spanptr, int32_t* _Nonnull __value_out_ptr, int32_t* _Nonnull __bytesConsumed_out_ptr, int16_t standardFormat);
     int32_t (* _Nonnull  _fp_System_Buffers_Text_Utf8Parser_bool__TryParse_0__4__rospanu8_outi64_outi32_Char)(SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nonnull __source_spanptr, int64_t* _Nonnull __value_out_ptr, int32_t* _Nonnull __bytesConsumed_out_ptr, int16_t standardFormat);
     int32_t (* _Nonnull  _fp_System_Buffers_Text_Utf8Parser_bool__TryParse_0__4__rospanu8_outi8_outi32_Char)(SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nonnull __source_spanptr, int8_t* _Nonnull __value_out_ptr, int32_t* _Nonnull __bytesConsumed_out_ptr, int16_t standardFormat);
     int32_t (* _Nonnull  _fp_System_Buffers_Text_Utf8Parser_bool__TryParse_0__4__rospanu8_outf32_outi32_Char)(SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nonnull __source_spanptr, float* _Nonnull __value_out_ptr, int32_t* _Nonnull __bytesConsumed_out_ptr, int16_t standardFormat);
-    int32_t (* _Nonnull  _fp_System_Buffers_Text_Utf8Parser_bool__TryParse_0__4__rospanu8_outTimeSpan_outi32_Char)(SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nonnull __source_spanptr, SG_HNDL_NONNULL* _Nonnull __value_out_ptr, int32_t* _Nonnull __bytesConsumed_out_ptr, int16_t standardFormat);
+    int32_t (* _Nonnull  _fp_System_Buffers_Text_Utf8Parser_bool__TryParse_0__4__rospanu8_outTimeSpan_outi32_Char)(SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nonnull __source_spanptr, SG_HNDL_NULLABLE* _Nonnull __value_out_ptr, int32_t* _Nonnull __bytesConsumed_out_ptr, int16_t standardFormat);
     int32_t (* _Nonnull  _fp_System_Buffers_Text_Utf8Parser_bool__TryParse_0__4__rospanu8_outu16_outi32_Char)(SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nonnull __source_spanptr, uint16_t* _Nonnull __value_out_ptr, int32_t* _Nonnull __bytesConsumed_out_ptr, int16_t standardFormat);
     int32_t (* _Nonnull  _fp_System_Buffers_Text_Utf8Parser_bool__TryParse_0__4__rospanu8_outu32_outi32_Char)(SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nonnull __source_spanptr, uint32_t* _Nonnull __value_out_ptr, int32_t* _Nonnull __bytesConsumed_out_ptr, int16_t standardFormat);
     int32_t (* _Nonnull  _fp_System_Buffers_Text_Utf8Parser_bool__TryParse_0__4__rospanu8_outu64_outi32_Char)(SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nonnull __source_spanptr, uint64_t* _Nonnull __value_out_ptr, int32_t* _Nonnull __bytesConsumed_out_ptr, int16_t standardFormat);
@@ -380,37 +383,37 @@ struct {
     SG_HNDL_NONNULL (* _Nonnull  _fp_System_Runtime_InteropServices_MemoryMarshal_System_Collections_Generic_IEnumerable_UT___ToEnumerable_1__1__System_ReadOnlyMemory_UT_)(TYP T, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL memory);
     SG_HNDL_NONNULL (* _Nonnull  _fp_specialize_System_Runtime_InteropServices_MemoryMarshal_System_Collections_Generic_IEnumerable_UT___ToEnumerable_1__1__System_ReadOnlyMemory_UT_)(TYP T, SG_HNDL_NULLABLE * _Nonnull __thrown);
     SG_HNDL_NONNULL (* _Nonnull  _fp_invoke_System_Runtime_InteropServices_MemoryMarshal_System_Collections_Generic_IEnumerable_UT___ToEnumerable_1__1__System_ReadOnlyMemory_UT_)(SG_HNDL_NONNULL ____hdel, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL memory);
-    int32_t (* _Nonnull  _fp_System_Runtime_InteropServices_MemoryMarshal_bool__TryGetArray_1__2__System_ReadOnlyMemory_UT__outSystem_ArraySegment_UT_)(TYP T, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL memory, SG_HNDL_NONNULL* _Nonnull __segment_out_ptr);
+    int32_t (* _Nonnull  _fp_System_Runtime_InteropServices_MemoryMarshal_bool__TryGetArray_1__2__System_ReadOnlyMemory_UT__outSystem_ArraySegment_UT_)(TYP T, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL memory, SG_HNDL_NULLABLE* _Nonnull __segment_out_ptr);
     SG_HNDL_NONNULL (* _Nonnull  _fp_specialize_System_Runtime_InteropServices_MemoryMarshal_bool__TryGetArray_1__2__System_ReadOnlyMemory_UT__outSystem_ArraySegment_UT_)(TYP T, SG_HNDL_NULLABLE * _Nonnull __thrown);
-    int32_t (* _Nonnull  _fp_invoke_System_Runtime_InteropServices_MemoryMarshal_bool__TryGetArray_1__2__System_ReadOnlyMemory_UT__outSystem_ArraySegment_UT_)(SG_HNDL_NONNULL ____hdel, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL memory, SG_HNDL_NONNULL* _Nonnull __segment_out_ptr);
+    int32_t (* _Nonnull  _fp_invoke_System_Runtime_InteropServices_MemoryMarshal_bool__TryGetArray_1__2__System_ReadOnlyMemory_UT__outSystem_ArraySegment_UT_)(SG_HNDL_NONNULL ____hdel, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL memory, SG_HNDL_NULLABLE* _Nonnull __segment_out_ptr);
     int32_t (* _Nonnull  _fp_System_Runtime_InteropServices_MemoryMarshal_bool__TryGetMemoryManager_2__2__System_ReadOnlyMemory_UT__outUTManager)(TYP T, TYP TManager, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL memory, GVAL* _Nonnull __manager_out_ptr);
     SG_HNDL_NONNULL (* _Nonnull  _fp_specialize_System_Runtime_InteropServices_MemoryMarshal_bool__TryGetMemoryManager_2__2__System_ReadOnlyMemory_UT__outUTManager)(TYP T, TYP TManager, SG_HNDL_NULLABLE * _Nonnull __thrown);
     int32_t (* _Nonnull  _fp_invoke_System_Runtime_InteropServices_MemoryMarshal_bool__TryGetMemoryManager_2__2__System_ReadOnlyMemory_UT__outUTManager)(SG_HNDL_NONNULL ____hdel, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL memory, GVAL* _Nonnull __manager_out_ptr);
     int32_t (* _Nonnull  _fp_System_Runtime_InteropServices_MemoryMarshal_bool__TryGetMemoryManager_2__4__System_ReadOnlyMemory_UT__outUTManager_outi32_outi32)(TYP T, TYP TManager, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL memory, GVAL* _Nonnull __manager_out_ptr, int32_t* _Nonnull __start_out_ptr, int32_t* _Nonnull __length_out_ptr);
     SG_HNDL_NONNULL (* _Nonnull  _fp_specialize_System_Runtime_InteropServices_MemoryMarshal_bool__TryGetMemoryManager_2__4__System_ReadOnlyMemory_UT__outUTManager_outi32_outi32)(TYP T, TYP TManager, SG_HNDL_NULLABLE * _Nonnull __thrown);
     int32_t (* _Nonnull  _fp_invoke_System_Runtime_InteropServices_MemoryMarshal_bool__TryGetMemoryManager_2__4__System_ReadOnlyMemory_UT__outUTManager_outi32_outi32)(SG_HNDL_NONNULL ____hdel, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL memory, GVAL* _Nonnull __manager_out_ptr, int32_t* _Nonnull __start_out_ptr, int32_t* _Nonnull __length_out_ptr);
-    int32_t (* _Nonnull  _fp_System_Runtime_InteropServices_MemoryMarshal_bool__TryGetString_0__4__System_ReadOnlyMemory_System_Char__outString_outi32_outi32)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL memory, SG_HNDL_NONNULL* _Nonnull __text_out_ptr, int32_t* _Nonnull __start_out_ptr, int32_t* _Nonnull __length_out_ptr);
-    int32_t (* _Nonnull  _fp_System_Runtime_InteropServices_SequenceMarshal_bool__TryGetArray_1__2__System_Buffers_ReadOnlySequence_UT__outSystem_ArraySegment_UT_)(TYP T, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL sequence, SG_HNDL_NONNULL* _Nonnull __segment_out_ptr);
+    int32_t (* _Nonnull  _fp_System_Runtime_InteropServices_MemoryMarshal_bool__TryGetString_0__4__System_ReadOnlyMemory_System_Char__outString_outi32_outi32)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL memory, SG_HNDL_NULLABLE* _Nonnull __text_out_ptr, int32_t* _Nonnull __start_out_ptr, int32_t* _Nonnull __length_out_ptr);
+    int32_t (* _Nonnull  _fp_System_Runtime_InteropServices_SequenceMarshal_bool__TryGetArray_1__2__System_Buffers_ReadOnlySequence_UT__outSystem_ArraySegment_UT_)(TYP T, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL sequence, SG_HNDL_NULLABLE* _Nonnull __segment_out_ptr);
     SG_HNDL_NONNULL (* _Nonnull  _fp_specialize_System_Runtime_InteropServices_SequenceMarshal_bool__TryGetArray_1__2__System_Buffers_ReadOnlySequence_UT__outSystem_ArraySegment_UT_)(TYP T, SG_HNDL_NULLABLE * _Nonnull __thrown);
-    int32_t (* _Nonnull  _fp_invoke_System_Runtime_InteropServices_SequenceMarshal_bool__TryGetArray_1__2__System_Buffers_ReadOnlySequence_UT__outSystem_ArraySegment_UT_)(SG_HNDL_NONNULL ____hdel, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL sequence, SG_HNDL_NONNULL* _Nonnull __segment_out_ptr);
-    int32_t (* _Nonnull  _fp_System_Runtime_InteropServices_SequenceMarshal_bool__TryGetReadOnlyMemory_1__2__System_Buffers_ReadOnlySequence_UT__outSystem_ReadOnlyMemory_UT_)(TYP T, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL sequence, SG_HNDL_NONNULL* _Nonnull __memory_out_ptr);
+    int32_t (* _Nonnull  _fp_invoke_System_Runtime_InteropServices_SequenceMarshal_bool__TryGetArray_1__2__System_Buffers_ReadOnlySequence_UT__outSystem_ArraySegment_UT_)(SG_HNDL_NONNULL ____hdel, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL sequence, SG_HNDL_NULLABLE* _Nonnull __segment_out_ptr);
+    int32_t (* _Nonnull  _fp_System_Runtime_InteropServices_SequenceMarshal_bool__TryGetReadOnlyMemory_1__2__System_Buffers_ReadOnlySequence_UT__outSystem_ReadOnlyMemory_UT_)(TYP T, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL sequence, SG_HNDL_NULLABLE* _Nonnull __memory_out_ptr);
     SG_HNDL_NONNULL (* _Nonnull  _fp_specialize_System_Runtime_InteropServices_SequenceMarshal_bool__TryGetReadOnlyMemory_1__2__System_Buffers_ReadOnlySequence_UT__outSystem_ReadOnlyMemory_UT_)(TYP T, SG_HNDL_NULLABLE * _Nonnull __thrown);
-    int32_t (* _Nonnull  _fp_invoke_System_Runtime_InteropServices_SequenceMarshal_bool__TryGetReadOnlyMemory_1__2__System_Buffers_ReadOnlySequence_UT__outSystem_ReadOnlyMemory_UT_)(SG_HNDL_NONNULL ____hdel, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL sequence, SG_HNDL_NONNULL* _Nonnull __memory_out_ptr);
-    int32_t (* _Nonnull  _fp_System_Runtime_InteropServices_SequenceMarshal_bool__TryGetReadOnlySequenceSegment_1__5__System_Buffers_ReadOnlySequence_UT__outSystem_Buffers_ReadOnlySequenceSegment_UT__outi32_outSystem_Buffers_ReadOnlySequenceSegment_UT__outi32)(TYP T, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL sequence, SG_HNDL_NONNULL* _Nonnull __startSegment_out_ptr, int32_t* _Nonnull __startIndex_out_ptr, SG_HNDL_NONNULL* _Nonnull __endSegment_out_ptr, int32_t* _Nonnull __endIndex_out_ptr);
+    int32_t (* _Nonnull  _fp_invoke_System_Runtime_InteropServices_SequenceMarshal_bool__TryGetReadOnlyMemory_1__2__System_Buffers_ReadOnlySequence_UT__outSystem_ReadOnlyMemory_UT_)(SG_HNDL_NONNULL ____hdel, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL sequence, SG_HNDL_NULLABLE* _Nonnull __memory_out_ptr);
+    int32_t (* _Nonnull  _fp_System_Runtime_InteropServices_SequenceMarshal_bool__TryGetReadOnlySequenceSegment_1__5__System_Buffers_ReadOnlySequence_UT__outSystem_Buffers_ReadOnlySequenceSegment_UT__outi32_outSystem_Buffers_ReadOnlySequenceSegment_UT__outi32)(TYP T, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL sequence, SG_HNDL_NULLABLE* _Nonnull __startSegment_out_ptr, int32_t* _Nonnull __startIndex_out_ptr, SG_HNDL_NULLABLE* _Nonnull __endSegment_out_ptr, int32_t* _Nonnull __endIndex_out_ptr);
     SG_HNDL_NONNULL (* _Nonnull  _fp_specialize_System_Runtime_InteropServices_SequenceMarshal_bool__TryGetReadOnlySequenceSegment_1__5__System_Buffers_ReadOnlySequence_UT__outSystem_Buffers_ReadOnlySequenceSegment_UT__outi32_outSystem_Buffers_ReadOnlySequenceSegment_UT__outi32)(TYP T, SG_HNDL_NULLABLE * _Nonnull __thrown);
-    int32_t (* _Nonnull  _fp_invoke_System_Runtime_InteropServices_SequenceMarshal_bool__TryGetReadOnlySequenceSegment_1__5__System_Buffers_ReadOnlySequence_UT__outSystem_Buffers_ReadOnlySequenceSegment_UT__outi32_outSystem_Buffers_ReadOnlySequenceSegment_UT__outi32)(SG_HNDL_NONNULL ____hdel, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL sequence, SG_HNDL_NONNULL* _Nonnull __startSegment_out_ptr, int32_t* _Nonnull __startIndex_out_ptr, SG_HNDL_NONNULL* _Nonnull __endSegment_out_ptr, int32_t* _Nonnull __endIndex_out_ptr);
-    void (* _Nonnull  _fp_System_Text_EncodingExtensions_void__Convert_0__6__Decoder_inSystem_Buffers_ReadOnlySequence_u8__System_Buffers_IBufferWriter_System_Char__bool_outi64_outbool)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL decoder, SG_HNDL_NONNULL* _Nonnull __bytes_in_ptr, SG_HNDL_NONNULL writer, int32_t flush, int64_t* _Nonnull __charsUsed_out_ptr, int32_t* _Nonnull __completed_out_ptr);
+    int32_t (* _Nonnull  _fp_invoke_System_Runtime_InteropServices_SequenceMarshal_bool__TryGetReadOnlySequenceSegment_1__5__System_Buffers_ReadOnlySequence_UT__outSystem_Buffers_ReadOnlySequenceSegment_UT__outi32_outSystem_Buffers_ReadOnlySequenceSegment_UT__outi32)(SG_HNDL_NONNULL ____hdel, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL sequence, SG_HNDL_NULLABLE* _Nonnull __startSegment_out_ptr, int32_t* _Nonnull __startIndex_out_ptr, SG_HNDL_NULLABLE* _Nonnull __endSegment_out_ptr, int32_t* _Nonnull __endIndex_out_ptr);
+    void (* _Nonnull  _fp_System_Text_EncodingExtensions_void__Convert_0__6__Decoder_inSystem_Buffers_ReadOnlySequence_u8__System_Buffers_IBufferWriter_System_Char__bool_outi64_outbool)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL decoder, SG_HNDL_NULLABLE* _Nonnull __bytes_in_ptr, SG_HNDL_NONNULL writer, int32_t flush, int64_t* _Nonnull __charsUsed_out_ptr, int32_t* _Nonnull __completed_out_ptr);
     void (* _Nonnull  _fp_System_Text_EncodingExtensions_void__Convert_0__6__Decoder_rospanu8_System_Buffers_IBufferWriter_System_Char__bool_outi64_outbool)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL decoder, const void* _Nonnull __bytes_spanptr, SG_HNDL_NONNULL writer, int32_t flush, int64_t* _Nonnull __charsUsed_out_ptr, int32_t* _Nonnull __completed_out_ptr);
-    void (* _Nonnull  _fp_System_Text_EncodingExtensions_void__Convert_0__6__Encoder_inSystem_Buffers_ReadOnlySequence_System_Char__System_Buffers_IBufferWriter_u8__bool_outi64_outbool)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL encoder, SG_HNDL_NONNULL* _Nonnull __chars_in_ptr, SG_HNDL_NONNULL writer, int32_t flush, int64_t* _Nonnull __bytesUsed_out_ptr, int32_t* _Nonnull __completed_out_ptr);
+    void (* _Nonnull  _fp_System_Text_EncodingExtensions_void__Convert_0__6__Encoder_inSystem_Buffers_ReadOnlySequence_System_Char__System_Buffers_IBufferWriter_u8__bool_outi64_outbool)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL encoder, SG_HNDL_NULLABLE* _Nonnull __chars_in_ptr, SG_HNDL_NONNULL writer, int32_t flush, int64_t* _Nonnull __bytesUsed_out_ptr, int32_t* _Nonnull __completed_out_ptr);
     void (* _Nonnull  _fp_System_Text_EncodingExtensions_void__Convert_0__6__Encoder_rospanChar_System_Buffers_IBufferWriter_u8__bool_outi64_outbool)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL encoder, const void* _Nonnull __chars_spanptr, SG_HNDL_NONNULL writer, int32_t flush, int64_t* _Nonnull __bytesUsed_out_ptr, int32_t* _Nonnull __completed_out_ptr);
-    SG_HNDL_NONNULL (* _Nonnull  _fp_System_Text_EncodingExtensions_u8Array__GetBytes_0__2__Encoding_inSystem_Buffers_ReadOnlySequence_System_Char_)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL encoding, SG_HNDL_NONNULL* _Nonnull __chars_in_ptr);
-    int64_t (* _Nonnull  _fp_System_Text_EncodingExtensions_i64__GetBytes_0__3__Encoding_inSystem_Buffers_ReadOnlySequence_System_Char__System_Buffers_IBufferWriter_u8_)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL encoding, SG_HNDL_NONNULL* _Nonnull __chars_in_ptr, SG_HNDL_NONNULL writer);
-    int32_t (* _Nonnull  _fp_System_Text_EncodingExtensions_i32__GetBytes_0__3__Encoding_inSystem_Buffers_ReadOnlySequence_System_Char__spanu8)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL encoding, SG_HNDL_NONNULL* _Nonnull __chars_in_ptr, const void* _Nonnull __bytes_spanptr);
+    SG_HNDL_NONNULL (* _Nonnull  _fp_System_Text_EncodingExtensions_u8Array__GetBytes_0__2__Encoding_inSystem_Buffers_ReadOnlySequence_System_Char_)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL encoding, SG_HNDL_NULLABLE* _Nonnull __chars_in_ptr);
+    int64_t (* _Nonnull  _fp_System_Text_EncodingExtensions_i64__GetBytes_0__3__Encoding_inSystem_Buffers_ReadOnlySequence_System_Char__System_Buffers_IBufferWriter_u8_)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL encoding, SG_HNDL_NULLABLE* _Nonnull __chars_in_ptr, SG_HNDL_NONNULL writer);
+    int32_t (* _Nonnull  _fp_System_Text_EncodingExtensions_i32__GetBytes_0__3__Encoding_inSystem_Buffers_ReadOnlySequence_System_Char__spanu8)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL encoding, SG_HNDL_NULLABLE* _Nonnull __chars_in_ptr, const void* _Nonnull __bytes_spanptr);
     int64_t (* _Nonnull  _fp_System_Text_EncodingExtensions_i64__GetBytes_0__3__Encoding_rospanChar_System_Buffers_IBufferWriter_u8_)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL encoding, const void* _Nonnull __chars_spanptr, SG_HNDL_NONNULL writer);
-    int64_t (* _Nonnull  _fp_System_Text_EncodingExtensions_i64__GetChars_0__3__Encoding_inSystem_Buffers_ReadOnlySequence_u8__System_Buffers_IBufferWriter_System_Char_)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL encoding, SG_HNDL_NONNULL* _Nonnull __bytes_in_ptr, SG_HNDL_NONNULL writer);
-    int32_t (* _Nonnull  _fp_System_Text_EncodingExtensions_i32__GetChars_0__3__Encoding_inSystem_Buffers_ReadOnlySequence_u8__spanChar)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL encoding, SG_HNDL_NONNULL* _Nonnull __bytes_in_ptr, const void* _Nonnull __chars_spanptr);
+    int64_t (* _Nonnull  _fp_System_Text_EncodingExtensions_i64__GetChars_0__3__Encoding_inSystem_Buffers_ReadOnlySequence_u8__System_Buffers_IBufferWriter_System_Char_)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL encoding, SG_HNDL_NULLABLE* _Nonnull __bytes_in_ptr, SG_HNDL_NONNULL writer);
+    int32_t (* _Nonnull  _fp_System_Text_EncodingExtensions_i32__GetChars_0__3__Encoding_inSystem_Buffers_ReadOnlySequence_u8__spanChar)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL encoding, SG_HNDL_NULLABLE* _Nonnull __bytes_in_ptr, const void* _Nonnull __chars_spanptr);
     int64_t (* _Nonnull  _fp_System_Text_EncodingExtensions_i64__GetChars_0__3__Encoding_rospanu8_System_Buffers_IBufferWriter_System_Char_)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL encoding, const void* _Nonnull __bytes_spanptr, SG_HNDL_NONNULL writer);
-    SG_HNDL_NONNULL (* _Nonnull  _fp_System_Text_EncodingExtensions_String__GetString_0__2__Encoding_inSystem_Buffers_ReadOnlySequence_u8_)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL encoding, SG_HNDL_NONNULL* _Nonnull __bytes_in_ptr);
+    SG_HNDL_NONNULL (* _Nonnull  _fp_System_Text_EncodingExtensions_String__GetString_0__2__Encoding_inSystem_Buffers_ReadOnlySequence_u8_)(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL encoding, SG_HNDL_NULLABLE* _Nonnull __bytes_in_ptr);
 } _g_System_Memory;
 
 static void my_init() {
@@ -1219,7 +1222,7 @@ SG_HNDL_NONNULL System_Buffers_ArrayBufferWriter_1_cast(TYP T, SG_HNDL_NULLABLE 
     return ret;
 }
 
-SG_HNDL_NULLABLE System_Buffers_BuffersExtensions_System_Nullable_System_SequencePosition___PositionOf_1__2__inSystem_Buffers_ReadOnlySequence_UT__UT(TYP T, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL* _Nonnull __source_in_ptr, GVAL value) {
+SG_HNDL_NULLABLE System_Buffers_BuffersExtensions_System_Nullable_System_SequencePosition___PositionOf_1__2__inSystem_Buffers_ReadOnlySequence_UT__UT(TYP T, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE* _Nonnull __source_in_ptr, GVAL value) {
     if (!_g_System_Memory._fp_System_Buffers_BuffersExtensions_System_Nullable_System_SequencePosition___PositionOf_1__2__inSystem_Buffers_ReadOnlySequence_UT__UT) {
         my_init();
     }
@@ -1235,7 +1238,7 @@ SG_HNDL_NONNULL specialize_System_Buffers_BuffersExtensions_System_Nullable_Syst
     return ret;
 }
 
-SG_HNDL_NULLABLE invoke_System_Buffers_BuffersExtensions_System_Nullable_System_SequencePosition___PositionOf_1__2__inSystem_Buffers_ReadOnlySequence_UT__UT(SG_HNDL_NONNULL ____hdel, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL* _Nonnull __source_in_ptr, GVAL value) {
+SG_HNDL_NULLABLE invoke_System_Buffers_BuffersExtensions_System_Nullable_System_SequencePosition___PositionOf_1__2__inSystem_Buffers_ReadOnlySequence_UT__UT(SG_HNDL_NONNULL ____hdel, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE* _Nonnull __source_in_ptr, GVAL value) {
     if (!_g_System_Memory._fp_invoke_System_Buffers_BuffersExtensions_System_Nullable_System_SequencePosition___PositionOf_1__2__inSystem_Buffers_ReadOnlySequence_UT__UT) {
         my_init();
     }
@@ -1243,7 +1246,7 @@ SG_HNDL_NULLABLE invoke_System_Buffers_BuffersExtensions_System_Nullable_System_
     return ret;
 }
 
-SG_HNDL_NONNULL System_Buffers_BuffersExtensions_UTArray__ToArray_1__1__inSystem_Buffers_ReadOnlySequence_UT_(TYP T, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL* _Nonnull __sequence_in_ptr) {
+SG_HNDL_NONNULL System_Buffers_BuffersExtensions_UTArray__ToArray_1__1__inSystem_Buffers_ReadOnlySequence_UT_(TYP T, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE* _Nonnull __sequence_in_ptr) {
     if (!_g_System_Memory._fp_System_Buffers_BuffersExtensions_UTArray__ToArray_1__1__inSystem_Buffers_ReadOnlySequence_UT_) {
         my_init();
     }
@@ -1259,7 +1262,7 @@ SG_HNDL_NONNULL specialize_System_Buffers_BuffersExtensions_UTArray__ToArray_1__
     return ret;
 }
 
-SG_HNDL_NONNULL invoke_System_Buffers_BuffersExtensions_UTArray__ToArray_1__1__inSystem_Buffers_ReadOnlySequence_UT_(SG_HNDL_NONNULL ____hdel, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL* _Nonnull __sequence_in_ptr) {
+SG_HNDL_NONNULL invoke_System_Buffers_BuffersExtensions_UTArray__ToArray_1__1__inSystem_Buffers_ReadOnlySequence_UT_(SG_HNDL_NONNULL ____hdel, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE* _Nonnull __sequence_in_ptr) {
     if (!_g_System_Memory._fp_invoke_System_Buffers_BuffersExtensions_UTArray__ToArray_1__1__inSystem_Buffers_ReadOnlySequence_UT_) {
         my_init();
     }
@@ -1326,6 +1329,14 @@ SG_HNDL_NONNULL System_Buffers_IBufferWriter_1_cast(TYP T, SG_HNDL_NULLABLE * _N
         my_init();
     }
     SG_HNDL_NONNULL ret = _g_System_Memory._fp_System_Buffers_IBufferWriter_1_cast(T, __thrown, __h);
+    return ret;
+}
+
+SG_HNDL_NONNULL System_Buffers_IBufferWriter_1_create(TYP T, SG_HNDL_NULLABLE * _Nonnull __thrown, void (* _Nonnull  __cb_System_Buffers_IBufferWriter_1_void__Advance_0__1__i32)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, int32_t count), const void* _Nonnull __pdata_System_Buffers_IBufferWriter_1_void__Advance_0__1__i32, SG_HNDL_NONNULL (* _Nonnull  __cb_System_Buffers_IBufferWriter_1_System_Memory_T___GetMemory_0__1__i32)(const void* _Nonnull __pdata, SG_HNDL_NULLABLE * _Nonnull __thrown, int32_t sizeHint), const void* _Nonnull __pdata_System_Buffers_IBufferWriter_1_System_Memory_T___GetMemory_0__1__i32, void (* _Nullable __deinit)(const void* _Nonnull __pdata)) {
+    if (!_g_System_Memory._fp_System_Buffers_IBufferWriter_1_create) {
+        my_init();
+    }
+    SG_HNDL_NONNULL ret = _g_System_Memory._fp_System_Buffers_IBufferWriter_1_create(T, __thrown, __cb_System_Buffers_IBufferWriter_1_void__Advance_0__1__i32, __pdata_System_Buffers_IBufferWriter_1_void__Advance_0__1__i32, __cb_System_Buffers_IBufferWriter_1_System_Memory_T___GetMemory_0__1__i32, __pdata_System_Buffers_IBufferWriter_1_System_Memory_T___GetMemory_0__1__i32, __deinit);
     return ret;
 }
 
@@ -1599,6 +1610,21 @@ TYP System_Buffers_ReadOnlySequence_1_get_type_handle(TYP T) {
     }
     TYP ret = _g_System_Memory._fp_System_Buffers_ReadOnlySequence_1_get_type_handle(T);
     return ret;
+}
+
+SG_HNDL_NONNULL System_Buffers_ReadOnlySequence_1_get_Empty(void) {
+    if (!_g_System_Memory._fp_System_Buffers_ReadOnlySequence_1_get_Empty) {
+        my_init();
+    }
+    SG_HNDL_NONNULL ret = _g_System_Memory._fp_System_Buffers_ReadOnlySequence_1_get_Empty();
+    return ret;
+}
+
+void System_Buffers_ReadOnlySequence_1_set_Empty(SG_HNDL_NONNULL __v) {
+    if (!_g_System_Memory._fp_System_Buffers_ReadOnlySequence_1_set_Empty) {
+        my_init();
+    }
+    _g_System_Memory._fp_System_Buffers_ReadOnlySequence_1_set_Empty(__v);
 }
 
 SG_HNDL_NONNULL System_Buffers_ReadOnlySequence_1_ctor_0__4__System_Buffers_ReadOnlySequenceSegment_T__i32_System_Buffers_ReadOnlySequenceSegment_T__i32(TYP T, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL startSegment, int32_t startIndex, SG_HNDL_NONNULL endSegment, int32_t endIndex) {
@@ -1969,7 +1995,7 @@ SG_HNDL_NONNULL invoke_System_Buffers_ReadOnlySequence_1_String__ToString_0__0(S
     return ret;
 }
 
-int32_t System_Buffers_ReadOnlySequence_1_bool__TryGet_0__3__refSequencePosition_outSystem_ReadOnlyMemory_T__bool(TYP T, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NONNULL* _Nonnull __position_ref_ptr, SG_HNDL_NONNULL* _Nonnull __memory_out_ptr, int32_t advance) {
+int32_t System_Buffers_ReadOnlySequence_1_bool__TryGet_0__3__refSequencePosition_outSystem_ReadOnlyMemory_T__bool(TYP T, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NONNULL* _Nonnull __position_ref_ptr, SG_HNDL_NULLABLE* _Nonnull __memory_out_ptr, int32_t advance) {
     if (!_g_System_Memory._fp_System_Buffers_ReadOnlySequence_1_bool__TryGet_0__3__refSequencePosition_outSystem_ReadOnlyMemory_T__bool) {
         my_init();
     }
@@ -1985,7 +2011,7 @@ SG_HNDL_NONNULL specialize_System_Buffers_ReadOnlySequence_1_bool__TryGet_0__3__
     return ret;
 }
 
-int32_t invoke_System_Buffers_ReadOnlySequence_1_bool__TryGet_0__3__refSequencePosition_outSystem_ReadOnlyMemory_T__bool(SG_HNDL_NONNULL ____hdel, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NONNULL* _Nonnull __position_ref_ptr, SG_HNDL_NONNULL* _Nonnull __memory_out_ptr, int32_t advance) {
+int32_t invoke_System_Buffers_ReadOnlySequence_1_bool__TryGet_0__3__refSequencePosition_outSystem_ReadOnlyMemory_T__bool(SG_HNDL_NONNULL ____hdel, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL __self_h, SG_HNDL_NONNULL* _Nonnull __position_ref_ptr, SG_HNDL_NULLABLE* _Nonnull __memory_out_ptr, int32_t advance) {
     if (!_g_System_Memory._fp_invoke_System_Buffers_ReadOnlySequence_1_bool__TryGet_0__3__refSequencePosition_outSystem_ReadOnlyMemory_T__bool) {
         my_init();
     }
@@ -2153,7 +2179,7 @@ TYP System_Buffers_ReadOnlySequence_1_Enumerator_get_type_handle(TYP T) {
     return ret;
 }
 
-SG_HNDL_NONNULL System_Buffers_ReadOnlySequence_1_Enumerator_ctor_0__1__inSystem_Buffers_ReadOnlySequence_T_(TYP T, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL* _Nonnull __sequence_in_ptr) {
+SG_HNDL_NONNULL System_Buffers_ReadOnlySequence_1_Enumerator_ctor_0__1__inSystem_Buffers_ReadOnlySequence_T_(TYP T, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NULLABLE* _Nonnull __sequence_in_ptr) {
     if (!_g_System_Memory._fp_System_Buffers_ReadOnlySequence_1_Enumerator_ctor_0__1__inSystem_Buffers_ReadOnlySequence_T_) {
         my_init();
     }
@@ -2321,7 +2347,7 @@ SG_HNDL_NONNULL System_Buffers_StandardFormat_String__ToString_0__0(SG_HNDL_NULL
     return ret;
 }
 
-int32_t System_Buffers_StandardFormat_bool__TryParse_0__2__rospanChar_outStandardFormat(SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nonnull __format_spanptr, SG_HNDL_NONNULL* _Nonnull __result_out_ptr) {
+int32_t System_Buffers_StandardFormat_bool__TryParse_0__2__rospanChar_outStandardFormat(SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nonnull __format_spanptr, SG_HNDL_NULLABLE* _Nonnull __result_out_ptr) {
     if (!_g_System_Memory._fp_System_Buffers_StandardFormat_bool__TryParse_0__2__rospanChar_outStandardFormat) {
         my_init();
     }
@@ -2593,7 +2619,7 @@ int32_t System_Buffers_Binary_BinaryPrimitives_bool__TryReadDoubleLittleEndian_0
     return ret;
 }
 
-int32_t System_Buffers_Binary_BinaryPrimitives_bool__TryReadHalfBigEndian_0__2__rospanu8_outHalf(SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nonnull __source_spanptr, SG_HNDL_NONNULL* _Nonnull __value_out_ptr) {
+int32_t System_Buffers_Binary_BinaryPrimitives_bool__TryReadHalfBigEndian_0__2__rospanu8_outHalf(SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nonnull __source_spanptr, SG_HNDL_NULLABLE* _Nonnull __value_out_ptr) {
     if (!_g_System_Memory._fp_System_Buffers_Binary_BinaryPrimitives_bool__TryReadHalfBigEndian_0__2__rospanu8_outHalf) {
         my_init();
     }
@@ -2601,7 +2627,7 @@ int32_t System_Buffers_Binary_BinaryPrimitives_bool__TryReadHalfBigEndian_0__2__
     return ret;
 }
 
-int32_t System_Buffers_Binary_BinaryPrimitives_bool__TryReadHalfLittleEndian_0__2__rospanu8_outHalf(SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nonnull __source_spanptr, SG_HNDL_NONNULL* _Nonnull __value_out_ptr) {
+int32_t System_Buffers_Binary_BinaryPrimitives_bool__TryReadHalfLittleEndian_0__2__rospanu8_outHalf(SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nonnull __source_spanptr, SG_HNDL_NULLABLE* _Nonnull __value_out_ptr) {
     if (!_g_System_Memory._fp_System_Buffers_Binary_BinaryPrimitives_bool__TryReadHalfLittleEndian_0__2__rospanu8_outHalf) {
         my_init();
     }
@@ -3183,7 +3209,7 @@ int32_t System_Buffers_Text_Utf8Parser_bool__TryParse_0__4__rospanu8_outu8_outi3
     return ret;
 }
 
-int32_t System_Buffers_Text_Utf8Parser_bool__TryParse_0__4__rospanu8_outDateTime_outi32_Char(SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nonnull __source_spanptr, SG_HNDL_NONNULL* _Nonnull __value_out_ptr, int32_t* _Nonnull __bytesConsumed_out_ptr, int16_t standardFormat) {
+int32_t System_Buffers_Text_Utf8Parser_bool__TryParse_0__4__rospanu8_outDateTime_outi32_Char(SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nonnull __source_spanptr, SG_HNDL_NULLABLE* _Nonnull __value_out_ptr, int32_t* _Nonnull __bytesConsumed_out_ptr, int16_t standardFormat) {
     if (!_g_System_Memory._fp_System_Buffers_Text_Utf8Parser_bool__TryParse_0__4__rospanu8_outDateTime_outi32_Char) {
         my_init();
     }
@@ -3191,7 +3217,7 @@ int32_t System_Buffers_Text_Utf8Parser_bool__TryParse_0__4__rospanu8_outDateTime
     return ret;
 }
 
-int32_t System_Buffers_Text_Utf8Parser_bool__TryParse_0__4__rospanu8_outDateTimeOffset_outi32_Char(SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nonnull __source_spanptr, SG_HNDL_NONNULL* _Nonnull __value_out_ptr, int32_t* _Nonnull __bytesConsumed_out_ptr, int16_t standardFormat) {
+int32_t System_Buffers_Text_Utf8Parser_bool__TryParse_0__4__rospanu8_outDateTimeOffset_outi32_Char(SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nonnull __source_spanptr, SG_HNDL_NULLABLE* _Nonnull __value_out_ptr, int32_t* _Nonnull __bytesConsumed_out_ptr, int16_t standardFormat) {
     if (!_g_System_Memory._fp_System_Buffers_Text_Utf8Parser_bool__TryParse_0__4__rospanu8_outDateTimeOffset_outi32_Char) {
         my_init();
     }
@@ -3199,7 +3225,7 @@ int32_t System_Buffers_Text_Utf8Parser_bool__TryParse_0__4__rospanu8_outDateTime
     return ret;
 }
 
-int32_t System_Buffers_Text_Utf8Parser_bool__TryParse_0__4__rospanu8_outDecimal_outi32_Char(SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nonnull __source_spanptr, SG_HNDL_NONNULL* _Nonnull __value_out_ptr, int32_t* _Nonnull __bytesConsumed_out_ptr, int16_t standardFormat) {
+int32_t System_Buffers_Text_Utf8Parser_bool__TryParse_0__4__rospanu8_outDecimal_outi32_Char(SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nonnull __source_spanptr, SG_HNDL_NULLABLE* _Nonnull __value_out_ptr, int32_t* _Nonnull __bytesConsumed_out_ptr, int16_t standardFormat) {
     if (!_g_System_Memory._fp_System_Buffers_Text_Utf8Parser_bool__TryParse_0__4__rospanu8_outDecimal_outi32_Char) {
         my_init();
     }
@@ -3215,7 +3241,7 @@ int32_t System_Buffers_Text_Utf8Parser_bool__TryParse_0__4__rospanu8_outf64_outi
     return ret;
 }
 
-int32_t System_Buffers_Text_Utf8Parser_bool__TryParse_0__4__rospanu8_outGuid_outi32_Char(SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nonnull __source_spanptr, SG_HNDL_NONNULL* _Nonnull __value_out_ptr, int32_t* _Nonnull __bytesConsumed_out_ptr, int16_t standardFormat) {
+int32_t System_Buffers_Text_Utf8Parser_bool__TryParse_0__4__rospanu8_outGuid_outi32_Char(SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nonnull __source_spanptr, SG_HNDL_NULLABLE* _Nonnull __value_out_ptr, int32_t* _Nonnull __bytesConsumed_out_ptr, int16_t standardFormat) {
     if (!_g_System_Memory._fp_System_Buffers_Text_Utf8Parser_bool__TryParse_0__4__rospanu8_outGuid_outi32_Char) {
         my_init();
     }
@@ -3263,7 +3289,7 @@ int32_t System_Buffers_Text_Utf8Parser_bool__TryParse_0__4__rospanu8_outf32_outi
     return ret;
 }
 
-int32_t System_Buffers_Text_Utf8Parser_bool__TryParse_0__4__rospanu8_outTimeSpan_outi32_Char(SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nonnull __source_spanptr, SG_HNDL_NONNULL* _Nonnull __value_out_ptr, int32_t* _Nonnull __bytesConsumed_out_ptr, int16_t standardFormat) {
+int32_t System_Buffers_Text_Utf8Parser_bool__TryParse_0__4__rospanu8_outTimeSpan_outi32_Char(SG_HNDL_NULLABLE * _Nonnull __thrown, const void* _Nonnull __source_spanptr, SG_HNDL_NULLABLE* _Nonnull __value_out_ptr, int32_t* _Nonnull __bytesConsumed_out_ptr, int16_t standardFormat) {
     if (!_g_System_Memory._fp_System_Buffers_Text_Utf8Parser_bool__TryParse_0__4__rospanu8_outTimeSpan_outi32_Char) {
         my_init();
     }
@@ -3367,7 +3393,7 @@ SG_HNDL_NONNULL invoke_System_Runtime_InteropServices_MemoryMarshal_System_Colle
     return ret;
 }
 
-int32_t System_Runtime_InteropServices_MemoryMarshal_bool__TryGetArray_1__2__System_ReadOnlyMemory_UT__outSystem_ArraySegment_UT_(TYP T, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL memory, SG_HNDL_NONNULL* _Nonnull __segment_out_ptr) {
+int32_t System_Runtime_InteropServices_MemoryMarshal_bool__TryGetArray_1__2__System_ReadOnlyMemory_UT__outSystem_ArraySegment_UT_(TYP T, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL memory, SG_HNDL_NULLABLE* _Nonnull __segment_out_ptr) {
     if (!_g_System_Memory._fp_System_Runtime_InteropServices_MemoryMarshal_bool__TryGetArray_1__2__System_ReadOnlyMemory_UT__outSystem_ArraySegment_UT_) {
         my_init();
     }
@@ -3383,7 +3409,7 @@ SG_HNDL_NONNULL specialize_System_Runtime_InteropServices_MemoryMarshal_bool__Tr
     return ret;
 }
 
-int32_t invoke_System_Runtime_InteropServices_MemoryMarshal_bool__TryGetArray_1__2__System_ReadOnlyMemory_UT__outSystem_ArraySegment_UT_(SG_HNDL_NONNULL ____hdel, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL memory, SG_HNDL_NONNULL* _Nonnull __segment_out_ptr) {
+int32_t invoke_System_Runtime_InteropServices_MemoryMarshal_bool__TryGetArray_1__2__System_ReadOnlyMemory_UT__outSystem_ArraySegment_UT_(SG_HNDL_NONNULL ____hdel, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL memory, SG_HNDL_NULLABLE* _Nonnull __segment_out_ptr) {
     if (!_g_System_Memory._fp_invoke_System_Runtime_InteropServices_MemoryMarshal_bool__TryGetArray_1__2__System_ReadOnlyMemory_UT__outSystem_ArraySegment_UT_) {
         my_init();
     }
@@ -3439,7 +3465,7 @@ int32_t invoke_System_Runtime_InteropServices_MemoryMarshal_bool__TryGetMemoryMa
     return ret;
 }
 
-int32_t System_Runtime_InteropServices_MemoryMarshal_bool__TryGetString_0__4__System_ReadOnlyMemory_System_Char__outString_outi32_outi32(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL memory, SG_HNDL_NONNULL* _Nonnull __text_out_ptr, int32_t* _Nonnull __start_out_ptr, int32_t* _Nonnull __length_out_ptr) {
+int32_t System_Runtime_InteropServices_MemoryMarshal_bool__TryGetString_0__4__System_ReadOnlyMemory_System_Char__outString_outi32_outi32(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL memory, SG_HNDL_NULLABLE* _Nonnull __text_out_ptr, int32_t* _Nonnull __start_out_ptr, int32_t* _Nonnull __length_out_ptr) {
     if (!_g_System_Memory._fp_System_Runtime_InteropServices_MemoryMarshal_bool__TryGetString_0__4__System_ReadOnlyMemory_System_Char__outString_outi32_outi32) {
         my_init();
     }
@@ -3447,7 +3473,7 @@ int32_t System_Runtime_InteropServices_MemoryMarshal_bool__TryGetString_0__4__Sy
     return ret;
 }
 
-int32_t System_Runtime_InteropServices_SequenceMarshal_bool__TryGetArray_1__2__System_Buffers_ReadOnlySequence_UT__outSystem_ArraySegment_UT_(TYP T, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL sequence, SG_HNDL_NONNULL* _Nonnull __segment_out_ptr) {
+int32_t System_Runtime_InteropServices_SequenceMarshal_bool__TryGetArray_1__2__System_Buffers_ReadOnlySequence_UT__outSystem_ArraySegment_UT_(TYP T, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL sequence, SG_HNDL_NULLABLE* _Nonnull __segment_out_ptr) {
     if (!_g_System_Memory._fp_System_Runtime_InteropServices_SequenceMarshal_bool__TryGetArray_1__2__System_Buffers_ReadOnlySequence_UT__outSystem_ArraySegment_UT_) {
         my_init();
     }
@@ -3463,7 +3489,7 @@ SG_HNDL_NONNULL specialize_System_Runtime_InteropServices_SequenceMarshal_bool__
     return ret;
 }
 
-int32_t invoke_System_Runtime_InteropServices_SequenceMarshal_bool__TryGetArray_1__2__System_Buffers_ReadOnlySequence_UT__outSystem_ArraySegment_UT_(SG_HNDL_NONNULL ____hdel, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL sequence, SG_HNDL_NONNULL* _Nonnull __segment_out_ptr) {
+int32_t invoke_System_Runtime_InteropServices_SequenceMarshal_bool__TryGetArray_1__2__System_Buffers_ReadOnlySequence_UT__outSystem_ArraySegment_UT_(SG_HNDL_NONNULL ____hdel, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL sequence, SG_HNDL_NULLABLE* _Nonnull __segment_out_ptr) {
     if (!_g_System_Memory._fp_invoke_System_Runtime_InteropServices_SequenceMarshal_bool__TryGetArray_1__2__System_Buffers_ReadOnlySequence_UT__outSystem_ArraySegment_UT_) {
         my_init();
     }
@@ -3471,7 +3497,7 @@ int32_t invoke_System_Runtime_InteropServices_SequenceMarshal_bool__TryGetArray_
     return ret;
 }
 
-int32_t System_Runtime_InteropServices_SequenceMarshal_bool__TryGetReadOnlyMemory_1__2__System_Buffers_ReadOnlySequence_UT__outSystem_ReadOnlyMemory_UT_(TYP T, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL sequence, SG_HNDL_NONNULL* _Nonnull __memory_out_ptr) {
+int32_t System_Runtime_InteropServices_SequenceMarshal_bool__TryGetReadOnlyMemory_1__2__System_Buffers_ReadOnlySequence_UT__outSystem_ReadOnlyMemory_UT_(TYP T, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL sequence, SG_HNDL_NULLABLE* _Nonnull __memory_out_ptr) {
     if (!_g_System_Memory._fp_System_Runtime_InteropServices_SequenceMarshal_bool__TryGetReadOnlyMemory_1__2__System_Buffers_ReadOnlySequence_UT__outSystem_ReadOnlyMemory_UT_) {
         my_init();
     }
@@ -3487,7 +3513,7 @@ SG_HNDL_NONNULL specialize_System_Runtime_InteropServices_SequenceMarshal_bool__
     return ret;
 }
 
-int32_t invoke_System_Runtime_InteropServices_SequenceMarshal_bool__TryGetReadOnlyMemory_1__2__System_Buffers_ReadOnlySequence_UT__outSystem_ReadOnlyMemory_UT_(SG_HNDL_NONNULL ____hdel, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL sequence, SG_HNDL_NONNULL* _Nonnull __memory_out_ptr) {
+int32_t invoke_System_Runtime_InteropServices_SequenceMarshal_bool__TryGetReadOnlyMemory_1__2__System_Buffers_ReadOnlySequence_UT__outSystem_ReadOnlyMemory_UT_(SG_HNDL_NONNULL ____hdel, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL sequence, SG_HNDL_NULLABLE* _Nonnull __memory_out_ptr) {
     if (!_g_System_Memory._fp_invoke_System_Runtime_InteropServices_SequenceMarshal_bool__TryGetReadOnlyMemory_1__2__System_Buffers_ReadOnlySequence_UT__outSystem_ReadOnlyMemory_UT_) {
         my_init();
     }
@@ -3495,7 +3521,7 @@ int32_t invoke_System_Runtime_InteropServices_SequenceMarshal_bool__TryGetReadOn
     return ret;
 }
 
-int32_t System_Runtime_InteropServices_SequenceMarshal_bool__TryGetReadOnlySequenceSegment_1__5__System_Buffers_ReadOnlySequence_UT__outSystem_Buffers_ReadOnlySequenceSegment_UT__outi32_outSystem_Buffers_ReadOnlySequenceSegment_UT__outi32(TYP T, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL sequence, SG_HNDL_NONNULL* _Nonnull __startSegment_out_ptr, int32_t* _Nonnull __startIndex_out_ptr, SG_HNDL_NONNULL* _Nonnull __endSegment_out_ptr, int32_t* _Nonnull __endIndex_out_ptr) {
+int32_t System_Runtime_InteropServices_SequenceMarshal_bool__TryGetReadOnlySequenceSegment_1__5__System_Buffers_ReadOnlySequence_UT__outSystem_Buffers_ReadOnlySequenceSegment_UT__outi32_outSystem_Buffers_ReadOnlySequenceSegment_UT__outi32(TYP T, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL sequence, SG_HNDL_NULLABLE* _Nonnull __startSegment_out_ptr, int32_t* _Nonnull __startIndex_out_ptr, SG_HNDL_NULLABLE* _Nonnull __endSegment_out_ptr, int32_t* _Nonnull __endIndex_out_ptr) {
     if (!_g_System_Memory._fp_System_Runtime_InteropServices_SequenceMarshal_bool__TryGetReadOnlySequenceSegment_1__5__System_Buffers_ReadOnlySequence_UT__outSystem_Buffers_ReadOnlySequenceSegment_UT__outi32_outSystem_Buffers_ReadOnlySequenceSegment_UT__outi32) {
         my_init();
     }
@@ -3511,7 +3537,7 @@ SG_HNDL_NONNULL specialize_System_Runtime_InteropServices_SequenceMarshal_bool__
     return ret;
 }
 
-int32_t invoke_System_Runtime_InteropServices_SequenceMarshal_bool__TryGetReadOnlySequenceSegment_1__5__System_Buffers_ReadOnlySequence_UT__outSystem_Buffers_ReadOnlySequenceSegment_UT__outi32_outSystem_Buffers_ReadOnlySequenceSegment_UT__outi32(SG_HNDL_NONNULL ____hdel, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL sequence, SG_HNDL_NONNULL* _Nonnull __startSegment_out_ptr, int32_t* _Nonnull __startIndex_out_ptr, SG_HNDL_NONNULL* _Nonnull __endSegment_out_ptr, int32_t* _Nonnull __endIndex_out_ptr) {
+int32_t invoke_System_Runtime_InteropServices_SequenceMarshal_bool__TryGetReadOnlySequenceSegment_1__5__System_Buffers_ReadOnlySequence_UT__outSystem_Buffers_ReadOnlySequenceSegment_UT__outi32_outSystem_Buffers_ReadOnlySequenceSegment_UT__outi32(SG_HNDL_NONNULL ____hdel, SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL sequence, SG_HNDL_NULLABLE* _Nonnull __startSegment_out_ptr, int32_t* _Nonnull __startIndex_out_ptr, SG_HNDL_NULLABLE* _Nonnull __endSegment_out_ptr, int32_t* _Nonnull __endIndex_out_ptr) {
     if (!_g_System_Memory._fp_invoke_System_Runtime_InteropServices_SequenceMarshal_bool__TryGetReadOnlySequenceSegment_1__5__System_Buffers_ReadOnlySequence_UT__outSystem_Buffers_ReadOnlySequenceSegment_UT__outi32_outSystem_Buffers_ReadOnlySequenceSegment_UT__outi32) {
         my_init();
     }
@@ -3519,7 +3545,7 @@ int32_t invoke_System_Runtime_InteropServices_SequenceMarshal_bool__TryGetReadOn
     return ret;
 }
 
-void System_Text_EncodingExtensions_void__Convert_0__6__Decoder_inSystem_Buffers_ReadOnlySequence_u8__System_Buffers_IBufferWriter_System_Char__bool_outi64_outbool(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL decoder, SG_HNDL_NONNULL* _Nonnull __bytes_in_ptr, SG_HNDL_NONNULL writer, int32_t flush, int64_t* _Nonnull __charsUsed_out_ptr, int32_t* _Nonnull __completed_out_ptr) {
+void System_Text_EncodingExtensions_void__Convert_0__6__Decoder_inSystem_Buffers_ReadOnlySequence_u8__System_Buffers_IBufferWriter_System_Char__bool_outi64_outbool(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL decoder, SG_HNDL_NULLABLE* _Nonnull __bytes_in_ptr, SG_HNDL_NONNULL writer, int32_t flush, int64_t* _Nonnull __charsUsed_out_ptr, int32_t* _Nonnull __completed_out_ptr) {
     if (!_g_System_Memory._fp_System_Text_EncodingExtensions_void__Convert_0__6__Decoder_inSystem_Buffers_ReadOnlySequence_u8__System_Buffers_IBufferWriter_System_Char__bool_outi64_outbool) {
         my_init();
     }
@@ -3533,7 +3559,7 @@ void System_Text_EncodingExtensions_void__Convert_0__6__Decoder_rospanu8_System_
     _g_System_Memory._fp_System_Text_EncodingExtensions_void__Convert_0__6__Decoder_rospanu8_System_Buffers_IBufferWriter_System_Char__bool_outi64_outbool(__thrown, decoder, __bytes_spanptr, writer, flush, __charsUsed_out_ptr, __completed_out_ptr);
 }
 
-void System_Text_EncodingExtensions_void__Convert_0__6__Encoder_inSystem_Buffers_ReadOnlySequence_System_Char__System_Buffers_IBufferWriter_u8__bool_outi64_outbool(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL encoder, SG_HNDL_NONNULL* _Nonnull __chars_in_ptr, SG_HNDL_NONNULL writer, int32_t flush, int64_t* _Nonnull __bytesUsed_out_ptr, int32_t* _Nonnull __completed_out_ptr) {
+void System_Text_EncodingExtensions_void__Convert_0__6__Encoder_inSystem_Buffers_ReadOnlySequence_System_Char__System_Buffers_IBufferWriter_u8__bool_outi64_outbool(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL encoder, SG_HNDL_NULLABLE* _Nonnull __chars_in_ptr, SG_HNDL_NONNULL writer, int32_t flush, int64_t* _Nonnull __bytesUsed_out_ptr, int32_t* _Nonnull __completed_out_ptr) {
     if (!_g_System_Memory._fp_System_Text_EncodingExtensions_void__Convert_0__6__Encoder_inSystem_Buffers_ReadOnlySequence_System_Char__System_Buffers_IBufferWriter_u8__bool_outi64_outbool) {
         my_init();
     }
@@ -3547,7 +3573,7 @@ void System_Text_EncodingExtensions_void__Convert_0__6__Encoder_rospanChar_Syste
     _g_System_Memory._fp_System_Text_EncodingExtensions_void__Convert_0__6__Encoder_rospanChar_System_Buffers_IBufferWriter_u8__bool_outi64_outbool(__thrown, encoder, __chars_spanptr, writer, flush, __bytesUsed_out_ptr, __completed_out_ptr);
 }
 
-SG_HNDL_NONNULL System_Text_EncodingExtensions_u8Array__GetBytes_0__2__Encoding_inSystem_Buffers_ReadOnlySequence_System_Char_(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL encoding, SG_HNDL_NONNULL* _Nonnull __chars_in_ptr) {
+SG_HNDL_NONNULL System_Text_EncodingExtensions_u8Array__GetBytes_0__2__Encoding_inSystem_Buffers_ReadOnlySequence_System_Char_(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL encoding, SG_HNDL_NULLABLE* _Nonnull __chars_in_ptr) {
     if (!_g_System_Memory._fp_System_Text_EncodingExtensions_u8Array__GetBytes_0__2__Encoding_inSystem_Buffers_ReadOnlySequence_System_Char_) {
         my_init();
     }
@@ -3555,7 +3581,7 @@ SG_HNDL_NONNULL System_Text_EncodingExtensions_u8Array__GetBytes_0__2__Encoding_
     return ret;
 }
 
-int64_t System_Text_EncodingExtensions_i64__GetBytes_0__3__Encoding_inSystem_Buffers_ReadOnlySequence_System_Char__System_Buffers_IBufferWriter_u8_(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL encoding, SG_HNDL_NONNULL* _Nonnull __chars_in_ptr, SG_HNDL_NONNULL writer) {
+int64_t System_Text_EncodingExtensions_i64__GetBytes_0__3__Encoding_inSystem_Buffers_ReadOnlySequence_System_Char__System_Buffers_IBufferWriter_u8_(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL encoding, SG_HNDL_NULLABLE* _Nonnull __chars_in_ptr, SG_HNDL_NONNULL writer) {
     if (!_g_System_Memory._fp_System_Text_EncodingExtensions_i64__GetBytes_0__3__Encoding_inSystem_Buffers_ReadOnlySequence_System_Char__System_Buffers_IBufferWriter_u8_) {
         my_init();
     }
@@ -3563,7 +3589,7 @@ int64_t System_Text_EncodingExtensions_i64__GetBytes_0__3__Encoding_inSystem_Buf
     return ret;
 }
 
-int32_t System_Text_EncodingExtensions_i32__GetBytes_0__3__Encoding_inSystem_Buffers_ReadOnlySequence_System_Char__spanu8(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL encoding, SG_HNDL_NONNULL* _Nonnull __chars_in_ptr, const void* _Nonnull __bytes_spanptr) {
+int32_t System_Text_EncodingExtensions_i32__GetBytes_0__3__Encoding_inSystem_Buffers_ReadOnlySequence_System_Char__spanu8(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL encoding, SG_HNDL_NULLABLE* _Nonnull __chars_in_ptr, const void* _Nonnull __bytes_spanptr) {
     if (!_g_System_Memory._fp_System_Text_EncodingExtensions_i32__GetBytes_0__3__Encoding_inSystem_Buffers_ReadOnlySequence_System_Char__spanu8) {
         my_init();
     }
@@ -3579,7 +3605,7 @@ int64_t System_Text_EncodingExtensions_i64__GetBytes_0__3__Encoding_rospanChar_S
     return ret;
 }
 
-int64_t System_Text_EncodingExtensions_i64__GetChars_0__3__Encoding_inSystem_Buffers_ReadOnlySequence_u8__System_Buffers_IBufferWriter_System_Char_(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL encoding, SG_HNDL_NONNULL* _Nonnull __bytes_in_ptr, SG_HNDL_NONNULL writer) {
+int64_t System_Text_EncodingExtensions_i64__GetChars_0__3__Encoding_inSystem_Buffers_ReadOnlySequence_u8__System_Buffers_IBufferWriter_System_Char_(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL encoding, SG_HNDL_NULLABLE* _Nonnull __bytes_in_ptr, SG_HNDL_NONNULL writer) {
     if (!_g_System_Memory._fp_System_Text_EncodingExtensions_i64__GetChars_0__3__Encoding_inSystem_Buffers_ReadOnlySequence_u8__System_Buffers_IBufferWriter_System_Char_) {
         my_init();
     }
@@ -3587,7 +3613,7 @@ int64_t System_Text_EncodingExtensions_i64__GetChars_0__3__Encoding_inSystem_Buf
     return ret;
 }
 
-int32_t System_Text_EncodingExtensions_i32__GetChars_0__3__Encoding_inSystem_Buffers_ReadOnlySequence_u8__spanChar(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL encoding, SG_HNDL_NONNULL* _Nonnull __bytes_in_ptr, const void* _Nonnull __chars_spanptr) {
+int32_t System_Text_EncodingExtensions_i32__GetChars_0__3__Encoding_inSystem_Buffers_ReadOnlySequence_u8__spanChar(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL encoding, SG_HNDL_NULLABLE* _Nonnull __bytes_in_ptr, const void* _Nonnull __chars_spanptr) {
     if (!_g_System_Memory._fp_System_Text_EncodingExtensions_i32__GetChars_0__3__Encoding_inSystem_Buffers_ReadOnlySequence_u8__spanChar) {
         my_init();
     }
@@ -3603,7 +3629,7 @@ int64_t System_Text_EncodingExtensions_i64__GetChars_0__3__Encoding_rospanu8_Sys
     return ret;
 }
 
-SG_HNDL_NONNULL System_Text_EncodingExtensions_String__GetString_0__2__Encoding_inSystem_Buffers_ReadOnlySequence_u8_(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL encoding, SG_HNDL_NONNULL* _Nonnull __bytes_in_ptr) {
+SG_HNDL_NONNULL System_Text_EncodingExtensions_String__GetString_0__2__Encoding_inSystem_Buffers_ReadOnlySequence_u8_(SG_HNDL_NULLABLE * _Nonnull __thrown, SG_HNDL_NONNULL encoding, SG_HNDL_NULLABLE* _Nonnull __bytes_in_ptr) {
     if (!_g_System_Memory._fp_System_Text_EncodingExtensions_String__GetString_0__2__Encoding_inSystem_Buffers_ReadOnlySequence_u8_) {
         my_init();
     }

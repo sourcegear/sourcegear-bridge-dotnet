@@ -59,7 +59,7 @@ public struct AccessControlActions : SGBridgeGenericValue {
 
 // type: System.Security.AccessControl.AccessControlModification
     /**
-    Specifies the type of access control modification to perform. This enumeration is used by methods of the  class and its descendents.
+    Specifies the type of access control modification to perform. This enumeration is used by methods of the  class and its descendants.
 
     */
 public struct AccessControlModification : SGBridgeGenericValue {
@@ -277,6 +277,9 @@ open class AccessRule
     open class override func get_type_handle() -> TypeHandle {
         return System_Security_AccessControl_AccessRule_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // [IsSpecialName] System.Security.AccessControl.AccessControlType get_AccessControlType()
@@ -313,6 +316,9 @@ open class AccessRule_1<T : SGBridgeGenericValue>
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Security_AccessControl_AccessRule_1_get_type_handle(T.get_type_handle());
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -427,6 +433,9 @@ public final class AceEnumerator
 {
     public class override func get_type_handle() -> TypeHandle {
         return System_Security_AccessControl_AceEnumerator_get_type_handle();
+    }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -955,6 +964,9 @@ open class AuditRule
     open class override func get_type_handle() -> TypeHandle {
         return System_Security_AccessControl_AuditRule_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // [IsSpecialName] System.Security.AccessControl.AuditFlags get_AuditFlags()
@@ -991,6 +1003,9 @@ open class AuditRule_1<T : SGBridgeGenericValue>
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Security_AccessControl_AuditRule_1_get_type_handle(T.get_type_handle());
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -1105,6 +1120,9 @@ open class AuthorizationRule
     open class override func get_type_handle() -> TypeHandle {
         return System_Security_AccessControl_AuthorizationRule_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // [IsSpecialName] System.Security.Principal.IdentityReference get_IdentityReference()
@@ -1202,6 +1220,9 @@ public final class AuthorizationRuleCollection
     public class override func get_type_handle() -> TypeHandle {
         return System_Security_AccessControl_AuthorizationRuleCollection_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor()
@@ -1254,9 +1275,6 @@ public final class AuthorizationRuleCollection
     }
     // [IsSpecialName] System.Security.AccessControl.AuthorizationRule get_Item(System.Int32)
 // docid: M:System.Security.AccessControl.AuthorizationRuleCollection.get_Item(System.Int32)
-//BEGIN method_is_override
-//matches_1
-//matches :
     public func get_Item(index : Swift.Int32) throws -> Optional<dotnet.System.Security.AccessControl.AuthorizationRule> {
         var __thrown : NullableHandle = nil;
         let __return = System_Security_AccessControl_AuthorizationRuleCollection_AuthorizationRule__get_Item_0__1__i32(&__thrown, self.get_handle(), index);
@@ -1284,6 +1302,9 @@ public final class CommonAce
 {
     public class override func get_type_handle() -> TypeHandle {
         return System_Security_AccessControl_CommonAce_get_type_handle();
+    }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -1379,6 +1400,9 @@ open class CommonAcl
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Security_AccessControl_CommonAcl_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -1498,12 +1522,6 @@ open class CommonAcl
     }
     // [IsSpecialName] System.Security.AccessControl.GenericAce get_Item(System.Int32)
 // docid: M:System.Security.AccessControl.CommonAcl.get_Item(System.Int32)
-//BEGIN method_is_override
-//matches_1
-//    GenericAcl : [IsSpecialName] System.Security.AccessControl.GenericAce get_Item(System.Int32) -- GenericAcl -- 100663458
-//EARLY true
-//matches :
-//    GenericAcl : [IsSpecialName] System.Security.AccessControl.GenericAce get_Item(System.Int32)
     open /* method final */ override func get_Item(index : Swift.Int32) throws -> dotnet.System.Security.AccessControl.GenericAce {
         var __thrown : NullableHandle = nil;
         let __return = System_Security_AccessControl_CommonAcl_GenericAce__get_Item_0__1__i32(&__thrown, self.get_handle(), index);
@@ -1593,6 +1611,9 @@ open class CommonObjectSecurity
     open class override func get_type_handle() -> TypeHandle {
         return System_Security_AccessControl_CommonObjectSecurity_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // System.Security.AccessControl.AuthorizationRuleCollection GetAccessRules(bool, bool, System.Type)
@@ -1653,6 +1674,9 @@ public final class CommonSecurityDescriptor
 {
     public class override func get_type_handle() -> TypeHandle {
         return System_Security_AccessControl_CommonSecurityDescriptor_get_type_handle();
+    }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -2112,6 +2136,9 @@ public final class CompoundAce
     public class override func get_type_handle() -> TypeHandle {
         return System_Security_AccessControl_CompoundAce_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor(System.Security.AccessControl.AceFlags, System.Int32, System.Security.AccessControl.CompoundAceType, System.Security.Principal.SecurityIdentifier)
@@ -2453,6 +2480,9 @@ public final class CustomAce
     public class override func get_type_handle() -> TypeHandle {
         return System_Security_AccessControl_CustomAce_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // static field: System.Int32 MaxOpaqueLength
@@ -2592,6 +2622,9 @@ public final class DiscretionaryAcl
 {
     public class override func get_type_handle() -> TypeHandle {
         return System_Security_AccessControl_DiscretionaryAcl_get_type_handle();
+    }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -2923,6 +2956,9 @@ open class GenericAce
     open class override func get_type_handle() -> TypeHandle {
         return System_Security_AccessControl_GenericAce_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // System.Security.AccessControl.GenericAce Copy()
@@ -3225,6 +3261,9 @@ open class GenericAcl
     open class override func get_type_handle() -> TypeHandle {
         return System_Security_AccessControl_GenericAcl_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // static field: System.Byte AclRevision
@@ -3368,9 +3407,6 @@ open class GenericAcl
     }
     // [IsSpecialName] System.Security.AccessControl.GenericAce get_Item(System.Int32)
 // docid: M:System.Security.AccessControl.GenericAcl.get_Item(System.Int32)
-//BEGIN method_is_override
-//matches_1
-//matches :
     open func get_Item(index : Swift.Int32) throws -> dotnet.System.Security.AccessControl.GenericAce {
         var __thrown : NullableHandle = nil;
         let __return = System_Security_AccessControl_GenericAcl_GenericAce__get_Item_0__1__i32(&__thrown, self.get_handle(), index);
@@ -3450,6 +3486,9 @@ open class GenericSecurityDescriptor
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Security_AccessControl_GenericSecurityDescriptor_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -3708,6 +3747,9 @@ open class KnownAce
     open class override func get_type_handle() -> TypeHandle {
         return System_Security_AccessControl_KnownAce_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // [IsSpecialName] System.Int32 get_AccessMask()
@@ -3793,6 +3835,9 @@ open class NativeObjectSecurity
     open class override func get_type_handle() -> TypeHandle {
         return System_Security_AccessControl_NativeObjectSecurity_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
 } // NativeObjectSecurity
@@ -3809,6 +3854,9 @@ open class ObjectAccessRule
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Security_AccessControl_ObjectAccessRule_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -3886,6 +3934,9 @@ public final class ObjectAce
 {
     public class override func get_type_handle() -> TypeHandle {
         return System_Security_AccessControl_ObjectAce_get_type_handle();
+    }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -4137,6 +4188,9 @@ open class ObjectAuditRule
     open class override func get_type_handle() -> TypeHandle {
         return System_Security_AccessControl_ObjectAuditRule_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // [IsSpecialName] System.Guid get_InheritedObjectType()
@@ -4214,6 +4268,9 @@ open class ObjectSecurity
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Security_AccessControl_ObjectSecurity_get_type_handle();
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -4734,6 +4791,9 @@ open class ObjectSecurity_1<T : SGBridgeGenericValue>
     open class override func get_type_handle() -> TypeHandle {
         return System_Security_AccessControl_ObjectSecurity_1_get_type_handle(T.get_type_handle());
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // System.Security.AccessControl.AccessRule AccessRuleFactory(System.Security.Principal.IdentityReference, System.Int32, bool, System.Security.AccessControl.InheritanceFlags, System.Security.AccessControl.PropagationFlags, System.Security.AccessControl.AccessControlType)
@@ -4872,7 +4932,7 @@ open class ObjectSecurity_1<T : SGBridgeGenericValue>
     /**
     Removes audit rules that contain the same security identifier and access mask as the specified audit rule from the System Access Control List (SACL) associated with this ObjectSecurity`1 object.
 
-    - Parameter rule: The audit rule to remove
+    - Parameter rule: The audit rule to remove.
     - Returns: 
          if the object was removed; otherwise, .
 
@@ -5041,6 +5101,9 @@ public final class PrivilegeNotHeldException
     public class override func get_type_handle() -> TypeHandle {
         return System_Security_AccessControl_PrivilegeNotHeldException_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor()
@@ -5198,6 +5261,9 @@ open class QualifiedAce
     open class override func get_type_handle() -> TypeHandle {
         return System_Security_AccessControl_QualifiedAce_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // System.Byte[] GetOpaque()
@@ -5311,6 +5377,9 @@ public final class RawAcl
 {
     public class override func get_type_handle() -> TypeHandle {
         return System_Security_AccessControl_RawAcl_get_type_handle();
+    }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -5433,12 +5502,6 @@ public final class RawAcl
     }
     // [IsSpecialName] System.Security.AccessControl.GenericAce get_Item(System.Int32)
 // docid: M:System.Security.AccessControl.RawAcl.get_Item(System.Int32)
-//BEGIN method_is_override
-//matches_1
-//    GenericAcl : [IsSpecialName] System.Security.AccessControl.GenericAce get_Item(System.Int32) -- GenericAcl -- 100663458
-//EARLY true
-//matches :
-//    GenericAcl : [IsSpecialName] System.Security.AccessControl.GenericAce get_Item(System.Int32)
     public override func get_Item(index : Swift.Int32) throws -> dotnet.System.Security.AccessControl.GenericAce {
         var __thrown : NullableHandle = nil;
         let __return = System_Security_AccessControl_RawAcl_GenericAce__get_Item_0__1__i32(&__thrown, self.get_handle(), index);
@@ -5500,6 +5563,9 @@ public final class RawSecurityDescriptor
 {
     public class override func get_type_handle() -> TypeHandle {
         return System_Security_AccessControl_RawSecurityDescriptor_get_type_handle();
+    }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -6016,6 +6082,9 @@ public final class SystemAcl
     public class override func get_type_handle() -> TypeHandle {
         return System_Security_AccessControl_SystemAcl_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor(bool, bool, System.Byte, System.Int32)
@@ -6336,6 +6405,10 @@ public final class SystemAcl
 // System.Security.Policy
 extension System.Security.Policy {
 // type: System.Security.Policy.Evidence
+    /**
+    Defines the set of information that constitutes input to security policy decisions. This class cannot be inherited.
+
+    */
 public final class Evidence
     :
     dotnet.System.Object,
@@ -6345,10 +6418,17 @@ public final class Evidence
     public class override func get_type_handle() -> TypeHandle {
         return System_Security_Policy_Evidence_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor()
 // docid: M:System.Security.Policy.Evidence.#ctor
+    /**
+    Initializes a new empty instance of the  class.
+
+    */
     public override init() throws {
         var __thrown : NullableHandle = nil;
         let h = System_Security_Policy_Evidence_ctor_0__0(&__thrown);
@@ -6360,6 +6440,12 @@ public final class Evidence
     }
     // .ctor(System.Object[], System.Object[])
 // docid: M:System.Security.Policy.Evidence.#ctor(System.Object[],System.Object[])
+    /**
+    Initializes a new instance of the  class from multiple sets of host and assembly evidence.
+
+    - Parameter hostEvidence: The host evidence from which to create the new instance.
+    - Parameter assemblyEvidence: The assembly evidence from which to create the new instance.
+    */
     public init(hostEvidence : dotnet.System_Arr<dotnet.System.Object>, assemblyEvidence : dotnet.System_Arr<dotnet.System.Object>) throws {
         var __thrown : NullableHandle = nil;
         let h = System_Security_Policy_Evidence_ctor_0__2__ObjectArray_ObjectArray(&__thrown, hostEvidence.get_handle(), assemblyEvidence.get_handle());
@@ -6371,6 +6457,11 @@ public final class Evidence
     }
     // .ctor(System.Security.Policy.Evidence)
 // docid: M:System.Security.Policy.Evidence.#ctor(System.Security.Policy.Evidence)
+    /**
+    Initializes a new instance of the  class from a shallow copy of an existing one.
+
+    - Parameter evidence: The  instance from which to create the new instance. This instance is not deep-copied.
+    */
     public init(evidence : dotnet.System.Security.Policy.Evidence) throws {
         var __thrown : NullableHandle = nil;
         let h = System_Security_Policy_Evidence_ctor_0__1__Evidence(&__thrown, evidence.get_handle());
@@ -6382,6 +6473,12 @@ public final class Evidence
     }
     // .ctor(System.Security.Policy.EvidenceBase[], System.Security.Policy.EvidenceBase[])
 // docid: M:System.Security.Policy.Evidence.#ctor(System.Security.Policy.EvidenceBase[],System.Security.Policy.EvidenceBase[])
+    /**
+    Initializes a new instance of the  class from multiple sets of host and assembly evidence.
+
+    - Parameter hostEvidence: The host evidence from which to create the new instance.
+    - Parameter assemblyEvidence: The assembly evidence from which to create the new instance.
+    */
     public init(hostEvidence : dotnet.System_Arr<dotnet.System.Security.Policy.EvidenceBase>, assemblyEvidence : dotnet.System_Arr<dotnet.System.Security.Policy.EvidenceBase>) throws {
         var __thrown : NullableHandle = nil;
         let h = System_Security_Policy_Evidence_ctor_0__2__EvidenceBaseArray_EvidenceBaseArray(&__thrown, hostEvidence.get_handle(), assemblyEvidence.get_handle());
@@ -6393,6 +6490,11 @@ public final class Evidence
     }
     // void AddAssembly(System.Object)
 // docid: M:System.Security.Policy.Evidence.AddAssembly(System.Object)
+    /**
+    Adds the specified assembly evidence to the evidence set.
+
+    - Parameter id: Any evidence object.
+    */
     public func AddAssembly(id : dotnet.System.Object) throws {
         var __thrown : NullableHandle = nil;
         System_Security_Policy_Evidence_void__AddAssembly_0__1__Object(&__thrown, self.get_handle(), id.get_handle());
@@ -6404,6 +6506,11 @@ public final class Evidence
     }
     // void AddAssemblyEvidence<T>(T)
 // docid: M:System.Security.Policy.Evidence.AddAssemblyEvidence``1(``0)
+    /**
+    Adds an evidence object of the specified type to the assembly-supplied evidence list.
+
+    - Parameter evidence: The assembly evidence to add.
+    */
     public func AddAssemblyEvidence<UT : SGBridgeGenericValue>(evidence : UT) throws {
         var __thrown : NullableHandle = nil;
         System_Security_Policy_Evidence_void__AddAssemblyEvidence_1__1__UT(UT.get_type_handle(), &__thrown, self.get_handle(), evidence.to_gval());
@@ -6415,6 +6522,11 @@ public final class Evidence
     }
     // void AddHost(System.Object)
 // docid: M:System.Security.Policy.Evidence.AddHost(System.Object)
+    /**
+    Adds the specified evidence supplied by the host to the evidence set.
+
+    - Parameter id: Any evidence object.
+    */
     public func AddHost(id : dotnet.System.Object) throws {
         var __thrown : NullableHandle = nil;
         System_Security_Policy_Evidence_void__AddHost_0__1__Object(&__thrown, self.get_handle(), id.get_handle());
@@ -6426,6 +6538,11 @@ public final class Evidence
     }
     // void AddHostEvidence<T>(T)
 // docid: M:System.Security.Policy.Evidence.AddHostEvidence``1(``0)
+    /**
+    Adds host evidence of the specified type to the host evidence collection.
+
+    - Parameter evidence: The host evidence to add.
+    */
     public func AddHostEvidence<UT : SGBridgeGenericValue>(evidence : UT) throws {
         var __thrown : NullableHandle = nil;
         System_Security_Policy_Evidence_void__AddHostEvidence_1__1__UT(UT.get_type_handle(), &__thrown, self.get_handle(), evidence.to_gval());
@@ -6437,6 +6554,10 @@ public final class Evidence
     }
     // void Clear()
 // docid: M:System.Security.Policy.Evidence.Clear
+    /**
+    Removes the host and assembly evidence from the evidence set.
+
+    */
     public func Clear() throws {
         var __thrown : NullableHandle = nil;
         System_Security_Policy_Evidence_void__Clear_0__0(&__thrown, self.get_handle());
@@ -6448,6 +6569,12 @@ public final class Evidence
     }
     // System.Security.Policy.Evidence Clone()
 // docid: M:System.Security.Policy.Evidence.Clone
+    /**
+    Returns a duplicate copy of this evidence object.
+
+    - Returns: A duplicate copy of this evidence object.
+
+    */
     public func Clone() throws -> Optional<dotnet.System.Security.Policy.Evidence> {
         var __thrown : NullableHandle = nil;
         let __return = System_Security_Policy_Evidence_Evidence__Clone_0__0(&__thrown, self.get_handle());
@@ -6463,6 +6590,12 @@ public final class Evidence
     }
     // void CopyTo(System.Array, System.Int32)
 // docid: M:System.Security.Policy.Evidence.CopyTo(System.Array,System.Int32)
+    /**
+    Copies evidence objects to an .
+
+    - Parameter array: The target array to which to copy evidence objects.
+    - Parameter index: The zero-based position in the array to which to begin copying evidence objects.
+    */
     public func CopyTo(array : dotnet.System.Array, index : Swift.Int32) throws {
         var __thrown : NullableHandle = nil;
         System_Security_Policy_Evidence_void__CopyTo_0__2__Array_i32(&__thrown, self.get_handle(), array.get_handle(), index);
@@ -6474,6 +6607,12 @@ public final class Evidence
     }
     // System.Collections.IEnumerator GetAssemblyEnumerator()
 // docid: M:System.Security.Policy.Evidence.GetAssemblyEnumerator
+    /**
+    Enumerates evidence provided by the assembly.
+
+    - Returns: An enumerator for evidence added by the  method.
+
+    */
     public func GetAssemblyEnumerator() throws -> dotnet.System.Collections.IEnumerator {
         var __thrown : NullableHandle = nil;
         let __return = System_Security_Policy_Evidence_IEnumerator__GetAssemblyEnumerator_0__0(&__thrown, self.get_handle());
@@ -6486,6 +6625,12 @@ public final class Evidence
 // TODO COPE (write_all_methods) (unused generic param) T GetAssemblyEvidence<T>()
     // System.Collections.IEnumerator GetEnumerator()
 // docid: M:System.Security.Policy.Evidence.GetEnumerator
+    /**
+    Enumerates all evidence in the set, both that provided by the host and that provided by the assembly.
+
+    - Returns: An enumerator for evidence added by both the  method and the  method.
+
+    */
     public func GetEnumerator() throws -> dotnet.System.Collections.IEnumerator {
         var __thrown : NullableHandle = nil;
         let __return = System_Security_Policy_Evidence_IEnumerator__GetEnumerator_0__0(&__thrown, self.get_handle());
@@ -6497,6 +6642,12 @@ public final class Evidence
     }
     // System.Collections.IEnumerator GetHostEnumerator()
 // docid: M:System.Security.Policy.Evidence.GetHostEnumerator
+    /**
+    Enumerates evidence supplied by the host.
+
+    - Returns: An enumerator for evidence added by the  method.
+
+    */
     public func GetHostEnumerator() throws -> dotnet.System.Collections.IEnumerator {
         var __thrown : NullableHandle = nil;
         let __return = System_Security_Policy_Evidence_IEnumerator__GetHostEnumerator_0__0(&__thrown, self.get_handle());
@@ -6509,6 +6660,11 @@ public final class Evidence
 // TODO COPE (write_all_methods) (unused generic param) T GetHostEvidence<T>()
     // void Merge(System.Security.Policy.Evidence)
 // docid: M:System.Security.Policy.Evidence.Merge(System.Security.Policy.Evidence)
+    /**
+    Merges the specified evidence set into the current evidence set.
+
+    - Parameter evidence: The evidence set to be merged into the current evidence set.
+    */
     public func Merge(evidence : dotnet.System.Security.Policy.Evidence) throws {
         var __thrown : NullableHandle = nil;
         System_Security_Policy_Evidence_void__Merge_0__1__Evidence(&__thrown, self.get_handle(), evidence.get_handle());
@@ -6520,6 +6676,11 @@ public final class Evidence
     }
     // void RemoveType(System.Type)
 // docid: M:System.Security.Policy.Evidence.RemoveType(System.Type)
+    /**
+    Removes the evidence for a given type from the host and assembly enumerations.
+
+    - Parameter t: The type of the evidence to be removed.
+    */
     public func RemoveType(t : dotnet.System.Type_) throws {
         var __thrown : NullableHandle = nil;
         System_Security_Policy_Evidence_void__RemoveType_0__1__Type(&__thrown, self.get_handle(), t.get_handle());
@@ -6595,21 +6756,37 @@ public final class Evidence
         return dotnet.System.Object(hndl : __return);
         }
     }
+    /**
+    Gets the number of evidence objects in the evidence set.
+
+    */
     public var Count : Swift.Int32 {
         get {
             return try! get_Count();
         }
     }
+    /**
+    Gets a value indicating whether the evidence set is read-only.
+
+    */
     public var IsReadOnly : Bool {
         get {
             return try! get_IsReadOnly();
         }
     }
+    /**
+    Gets a value indicating whether the evidence set is thread-safe.
+
+    */
     public var IsSynchronized : Bool {
         get {
             return try! get_IsSynchronized();
         }
     }
+    /**
+    Gets or sets a value indicating whether the evidence is locked.
+
+    */
     public var Locked : Bool {
         get {
             return try! get_Locked();
@@ -6618,6 +6795,10 @@ public final class Evidence
             return try! set_Locked(value: v);
         }
     }
+    /**
+    Gets the synchronization root.
+
+    */
     public var SyncRoot : dotnet.System.Object {
         get {
             return try! get_SyncRoot();
@@ -6627,6 +6808,10 @@ public final class Evidence
 
 
 // type: System.Security.Policy.EvidenceBase
+    /**
+    Provides a base class from which all objects to be used as evidence must derive.
+
+    */
 open class EvidenceBase
     :
     dotnet.System.Object
@@ -6634,10 +6819,19 @@ open class EvidenceBase
     open class override func get_type_handle() -> TypeHandle {
         return System_Security_Policy_EvidenceBase_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // System.Security.Policy.EvidenceBase Clone()
 // docid: M:System.Security.Policy.EvidenceBase.Clone
+    /**
+    Creates a new object that is a complete copy of the current instance.
+
+    - Returns: A duplicate copy of this evidence object.
+
+    */
     open func Clone() throws -> Optional<dotnet.System.Security.Policy.EvidenceBase> {
         var __thrown : NullableHandle = nil;
         let __return = System_Security_Policy_EvidenceBase_EvidenceBase__Clone_0__0(&__thrown, self.get_handle());

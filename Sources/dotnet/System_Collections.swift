@@ -20,6 +20,9 @@ public final class BitArray
     public class override func get_type_handle() -> TypeHandle {
         return System_Collections_BitArray_get_type_handle();
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor(bool[])
@@ -396,9 +399,6 @@ public final class BitArray
     }
     // [IsSpecialName] bool get_Item(System.Int32)
 // docid: M:System.Collections.BitArray.get_Item(System.Int32)
-//BEGIN method_is_override
-//matches_1
-//matches :
     public func get_Item(index : Swift.Int32) throws -> Bool {
         var __thrown : NullableHandle = nil;
         let __return = System_Collections_BitArray_bool__get_Item_0__1__i32(&__thrown, self.get_handle(), index);
@@ -620,6 +620,9 @@ open class Comparer_1<T : SGBridgeGenericValue>
     open class override func get_type_handle() -> TypeHandle {
         return System_Collections_Generic_Comparer_1_get_type_handle(T.get_type_handle());
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // System.Int32 Compare(T, T)
@@ -706,6 +709,9 @@ open class Dictionary_2<TKey : SGBridgeGenericValue,TValue : SGBridgeGenericValu
     open class override func get_type_handle() -> TypeHandle {
         return System_Collections_Generic_Dictionary_2_get_type_handle(TKey.get_type_handle(),TValue.get_type_handle());
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor()
@@ -747,9 +753,9 @@ open class Dictionary_2<TKey : SGBridgeGenericValue,TValue : SGBridgeGenericValu
     - Parameter dictionary: The  whose elements are copied to the new .
     - Parameter comparer: The  implementation to use when comparing keys, or  to use the default  for the type of the key.
     */
-    public init(dictionary : dotnet.System.Collections.Generic.IDictionary_2<TKey,TValue>, comparer : dotnet.System.Collections.Generic.IEqualityComparer_1<TKey>) throws {
+    public init(dictionary : dotnet.System.Collections.Generic.IDictionary_2<TKey,TValue>, comparer : Optional<dotnet.System.Collections.Generic.IEqualityComparer_1<TKey>>) throws {
         var __thrown : NullableHandle = nil;
-        let h = System_Collections_Generic_Dictionary_2_ctor_0__2__System_Collections_Generic_IDictionary_TKey_TValue__System_Collections_Generic_IEqualityComparer_TKey_(TKey.get_type_handle(), TValue.get_type_handle(), &__thrown, dictionary.get_handle(), nil);
+        let h = System_Collections_Generic_Dictionary_2_ctor_0__2__System_Collections_Generic_IDictionary_TKey_TValue__System_Collections_Generic_IEqualityComparer_TKey_(TKey.get_type_handle(), TValue.get_type_handle(), &__thrown, dictionary.get_handle(), (comparer?.get_handle()));
         if let __ex = __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
@@ -780,9 +786,9 @@ open class Dictionary_2<TKey : SGBridgeGenericValue,TValue : SGBridgeGenericValu
     - Parameter collection: The  whose elements are copied to the new .
     - Parameter comparer: The  implementation to use when comparing keys, or  to use the default  for the type of the key.
     */
-    public init(collection : dotnet.System.Collections.Generic.IEnumerable_1<dotnet.System.Collections.Generic.KeyValuePair_2<TKey,TValue>>, comparer : dotnet.System.Collections.Generic.IEqualityComparer_1<TKey>) throws {
+    public init(collection : dotnet.System.Collections.Generic.IEnumerable_1<dotnet.System.Collections.Generic.KeyValuePair_2<TKey,TValue>>, comparer : Optional<dotnet.System.Collections.Generic.IEqualityComparer_1<TKey>>) throws {
         var __thrown : NullableHandle = nil;
-        let h = System_Collections_Generic_Dictionary_2_ctor_0__2__System_Collections_Generic_IEnumerable_System_Collections_Generic_System_Collections_Generic_KeyValuePair_TKey_TValue___System_Collections_Generic_IEqualityComparer_TKey_(TKey.get_type_handle(), TValue.get_type_handle(), &__thrown, collection.get_handle(), nil);
+        let h = System_Collections_Generic_Dictionary_2_ctor_0__2__System_Collections_Generic_IEnumerable_System_Collections_Generic_System_Collections_Generic_KeyValuePair_TKey_TValue___System_Collections_Generic_IEqualityComparer_TKey_(TKey.get_type_handle(), TValue.get_type_handle(), &__thrown, collection.get_handle(), (comparer?.get_handle()));
         if let __ex = __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
@@ -796,9 +802,9 @@ open class Dictionary_2<TKey : SGBridgeGenericValue,TValue : SGBridgeGenericValu
 
     - Parameter comparer: The  implementation to use when comparing keys, or  to use the default  for the type of the key.
     */
-    public init(comparer : dotnet.System.Collections.Generic.IEqualityComparer_1<TKey>) throws {
+    public init(comparer : Optional<dotnet.System.Collections.Generic.IEqualityComparer_1<TKey>>) throws {
         var __thrown : NullableHandle = nil;
-        let h = System_Collections_Generic_Dictionary_2_ctor_0__1__System_Collections_Generic_IEqualityComparer_TKey_(TKey.get_type_handle(), TValue.get_type_handle(), &__thrown, nil);
+        let h = System_Collections_Generic_Dictionary_2_ctor_0__1__System_Collections_Generic_IEqualityComparer_TKey_(TKey.get_type_handle(), TValue.get_type_handle(), &__thrown, (comparer?.get_handle()));
         if let __ex = __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
@@ -829,9 +835,9 @@ open class Dictionary_2<TKey : SGBridgeGenericValue,TValue : SGBridgeGenericValu
     - Parameter capacity: The initial number of elements that the  can contain.
     - Parameter comparer: The  implementation to use when comparing keys, or  to use the default  for the type of the key.
     */
-    public init(capacity : Swift.Int32, comparer : dotnet.System.Collections.Generic.IEqualityComparer_1<TKey>) throws {
+    public init(capacity : Swift.Int32, comparer : Optional<dotnet.System.Collections.Generic.IEqualityComparer_1<TKey>>) throws {
         var __thrown : NullableHandle = nil;
-        let h = System_Collections_Generic_Dictionary_2_ctor_0__2__i32_System_Collections_Generic_IEqualityComparer_TKey_(TKey.get_type_handle(), TValue.get_type_handle(), &__thrown, capacity, nil);
+        let h = System_Collections_Generic_Dictionary_2_ctor_0__2__i32_System_Collections_Generic_IEqualityComparer_TKey_(TKey.get_type_handle(), TValue.get_type_handle(), &__thrown, capacity, (comparer?.get_handle()));
         if let __ex = __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
@@ -1138,9 +1144,6 @@ open class Dictionary_2<TKey : SGBridgeGenericValue,TValue : SGBridgeGenericValu
     }
     // [IsSpecialName] TValue get_Item(TKey)
 // docid: M:System.Collections.Generic.Dictionary`2.get_Item(`0)
-//BEGIN method_is_override
-//matches_1
-//matches :
     open /* method final */ func get_Item(key : TKey) throws -> TValue {
         var __thrown : NullableHandle = nil;
         let __return = System_Collections_Generic_Dictionary_2_TValue__get_Item_0__1__TKey(TKey.get_type_handle(), TValue.get_type_handle(), &__thrown, self.get_handle(), key.to_gval());
@@ -1215,6 +1218,9 @@ public final class Dictionary_Enumerator_2<TKey : SGBridgeGenericValue,TValue : 
 {
     public class override func get_type_handle() -> TypeHandle {
         return System_Collections_Generic_Dictionary_2_Enumerator_get_type_handle(TKey.get_type_handle(),TValue.get_type_handle());
+    }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -1291,6 +1297,9 @@ public final class Dictionary_KeyCollection_2<TKey : SGBridgeGenericValue,TValue
 {
     public class override func get_type_handle() -> TypeHandle {
         return System_Collections_Generic_Dictionary_2_KeyCollection_get_type_handle(TKey.get_type_handle(),TValue.get_type_handle());
+    }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -1376,6 +1385,9 @@ public final class Dictionary_KeyCollection_Enumerator_2<TKey : SGBridgeGenericV
     public class override func get_type_handle() -> TypeHandle {
         return System_Collections_Generic_Dictionary_2_KeyCollection_Enumerator_get_type_handle(TKey.get_type_handle(),TValue.get_type_handle());
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     /**
@@ -1451,6 +1463,9 @@ public final class Dictionary_ValueCollection_2<TKey : SGBridgeGenericValue,TVal
 {
     public class override func get_type_handle() -> TypeHandle {
         return System_Collections_Generic_Dictionary_2_ValueCollection_get_type_handle(TKey.get_type_handle(),TValue.get_type_handle());
+    }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -1536,6 +1551,9 @@ public final class Dictionary_ValueCollection_Enumerator_2<TKey : SGBridgeGeneri
     public class override func get_type_handle() -> TypeHandle {
         return System_Collections_Generic_Dictionary_2_ValueCollection_Enumerator_get_type_handle(TKey.get_type_handle(),TValue.get_type_handle());
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     /**
@@ -1610,6 +1628,9 @@ open class EqualityComparer_1<T : SGBridgeGenericValue>
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Collections_Generic_EqualityComparer_1_get_type_handle(T.get_type_handle());
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -1689,6 +1710,9 @@ open class HashSet_1<T : SGBridgeGenericValue>
     open class override func get_type_handle() -> TypeHandle {
         return System_Collections_Generic_HashSet_1_get_type_handle(T.get_type_handle());
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor()
@@ -1730,9 +1754,9 @@ open class HashSet_1<T : SGBridgeGenericValue>
     - Parameter collection: The collection whose elements are copied to the new set.
     - Parameter comparer: The  implementation to use when comparing values in the set, or  to use the default  implementation for the set type.
     */
-    public init(collection : dotnet.System.Collections.Generic.IEnumerable_1<T>, comparer : dotnet.System.Collections.Generic.IEqualityComparer_1<T>) throws {
+    public init(collection : dotnet.System.Collections.Generic.IEnumerable_1<T>, comparer : Optional<dotnet.System.Collections.Generic.IEqualityComparer_1<T>>) throws {
         var __thrown : NullableHandle = nil;
-        let h = System_Collections_Generic_HashSet_1_ctor_0__2__System_Collections_Generic_IEnumerable_T__System_Collections_Generic_IEqualityComparer_T_(T.get_type_handle(), &__thrown, collection.get_handle(), nil);
+        let h = System_Collections_Generic_HashSet_1_ctor_0__2__System_Collections_Generic_IEnumerable_T__System_Collections_Generic_IEqualityComparer_T_(T.get_type_handle(), &__thrown, collection.get_handle(), (comparer?.get_handle()));
         if let __ex = __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
@@ -1746,9 +1770,9 @@ open class HashSet_1<T : SGBridgeGenericValue>
 
     - Parameter comparer: The  implementation to use when comparing values in the set, or  to use the default  implementation for the set type.
     */
-    public init(comparer : dotnet.System.Collections.Generic.IEqualityComparer_1<T>) throws {
+    public init(comparer : Optional<dotnet.System.Collections.Generic.IEqualityComparer_1<T>>) throws {
         var __thrown : NullableHandle = nil;
-        let h = System_Collections_Generic_HashSet_1_ctor_0__1__System_Collections_Generic_IEqualityComparer_T_(T.get_type_handle(), &__thrown, nil);
+        let h = System_Collections_Generic_HashSet_1_ctor_0__1__System_Collections_Generic_IEqualityComparer_T_(T.get_type_handle(), &__thrown, (comparer?.get_handle()));
         if let __ex = __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
@@ -1760,7 +1784,7 @@ open class HashSet_1<T : SGBridgeGenericValue>
     /**
     Initializes a new instance of the  class that is empty, but has reserved space for  items and uses the default equality comparer for the set type.
 
-    - Parameter capacity: The initial size of the 
+    - Parameter capacity: The initial size of the .
     */
     public init(capacity : Swift.Int32) throws {
         var __thrown : NullableHandle = nil;
@@ -1776,12 +1800,12 @@ open class HashSet_1<T : SGBridgeGenericValue>
     /**
     Initializes a new instance of the  class that uses the specified equality comparer for the set type, and has sufficient capacity to accommodate  elements.
 
-    - Parameter capacity: The initial size of the 
+    - Parameter capacity: The initial size of the .
     - Parameter comparer: The  implementation to use when comparing values in the set, or null (Nothing in Visual Basic) to use the default  implementation for the set type.
     */
-    public init(capacity : Swift.Int32, comparer : dotnet.System.Collections.Generic.IEqualityComparer_1<T>) throws {
+    public init(capacity : Swift.Int32, comparer : Optional<dotnet.System.Collections.Generic.IEqualityComparer_1<T>>) throws {
         var __thrown : NullableHandle = nil;
-        let h = System_Collections_Generic_HashSet_1_ctor_0__2__i32_System_Collections_Generic_IEqualityComparer_T_(T.get_type_handle(), &__thrown, capacity, nil);
+        let h = System_Collections_Generic_HashSet_1_ctor_0__2__i32_System_Collections_Generic_IEqualityComparer_T_(T.get_type_handle(), &__thrown, capacity, (comparer?.get_handle()));
         if let __ex = __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
@@ -2274,6 +2298,9 @@ public final class HashSet_Enumerator_1<T : SGBridgeGenericValue>
     public class override func get_type_handle() -> TypeHandle {
         return System_Collections_Generic_HashSet_1_Enumerator_get_type_handle(T.get_type_handle());
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     /**
@@ -2348,6 +2375,9 @@ public final class LinkedListNode_1<T : SGBridgeGenericValue>
     public class override func get_type_handle() -> TypeHandle {
         return System_Collections_Generic_LinkedListNode_1_get_type_handle(T.get_type_handle());
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor(T)
@@ -2366,6 +2396,7 @@ public final class LinkedListNode_1<T : SGBridgeGenericValue>
             super.init(hndl: h);
         }
     }
+// TODO COPE (returns_byref): [IsSpecialName] ref T get_ValueRef()
     // [IsSpecialName] System.Collections.Generic.LinkedList<T> get_List()
 // docid: M:System.Collections.Generic.LinkedListNode`1.get_List
     public func get_List() throws -> Optional<dotnet.System.Collections.Generic.LinkedList_1<T>> {
@@ -2490,6 +2521,9 @@ open class LinkedList_1<T : SGBridgeGenericValue>
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Collections_Generic_LinkedList_1_get_type_handle(T.get_type_handle());
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -2956,6 +2990,9 @@ public final class LinkedList_Enumerator_1<T : SGBridgeGenericValue>
     public class override func get_type_handle() -> TypeHandle {
         return System_Collections_Generic_LinkedList_1_Enumerator_get_type_handle(T.get_type_handle());
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     /**
@@ -3032,6 +3069,9 @@ open class List_1<T : SGBridgeGenericValue>
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Collections_Generic_List_1_get_type_handle(T.get_type_handle());
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -3143,9 +3183,9 @@ open class List_1<T : SGBridgeGenericValue>
     - Returns: The zero-based index of  in the sorted , if  is found; otherwise, a negative number that is the bitwise complement of the index of the next element that is larger than  or, if there is no larger element, the bitwise complement of .
 
     */
-    open func BinarySearch(index : Swift.Int32, count : Swift.Int32, item : T, comparer : dotnet.System.Collections.Generic.IComparer_1<T>) throws -> Swift.Int32 {
+    open func BinarySearch(index : Swift.Int32, count : Swift.Int32, item : T, comparer : Optional<dotnet.System.Collections.Generic.IComparer_1<T>>) throws -> Swift.Int32 {
         var __thrown : NullableHandle = nil;
-        let __return = System_Collections_Generic_List_1_i32__BinarySearch_0__4__i32_i32_T_System_Collections_Generic_IComparer_T_(T.get_type_handle(), &__thrown, self.get_handle(), index, count, item.to_gval(), nil);
+        let __return = System_Collections_Generic_List_1_i32__BinarySearch_0__4__i32_i32_T_System_Collections_Generic_IComparer_T_(T.get_type_handle(), &__thrown, self.get_handle(), index, count, item.to_gval(), (comparer?.get_handle()));
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
@@ -3184,9 +3224,9 @@ open class List_1<T : SGBridgeGenericValue>
     - Returns: The zero-based index of  in the sorted , if  is found; otherwise, a negative number that is the bitwise complement of the index of the next element that is larger than  or, if there is no larger element, the bitwise complement of .
 
     */
-    open func BinarySearch(item : T, comparer : dotnet.System.Collections.Generic.IComparer_1<T>) throws -> Swift.Int32 {
+    open func BinarySearch(item : T, comparer : Optional<dotnet.System.Collections.Generic.IComparer_1<T>>) throws -> Swift.Int32 {
         var __thrown : NullableHandle = nil;
-        let __return = System_Collections_Generic_List_1_i32__BinarySearch_0__2__T_System_Collections_Generic_IComparer_T_(T.get_type_handle(), &__thrown, self.get_handle(), item.to_gval(), nil);
+        let __return = System_Collections_Generic_List_1_i32__BinarySearch_0__2__T_System_Collections_Generic_IComparer_T_(T.get_type_handle(), &__thrown, self.get_handle(), item.to_gval(), (comparer?.get_handle()));
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
@@ -3285,6 +3325,13 @@ open class List_1<T : SGBridgeGenericValue>
     }
     // System.Int32 EnsureCapacity(System.Int32)
 // docid: M:System.Collections.Generic.List`1.EnsureCapacity(System.Int32)
+    /**
+    Ensures that the capacity of this list is at least the specified . If the current capacity is less than , it is successively increased to twice the current capacity until it is at least the specified .
+
+    - Parameter capacity: The minimum capacity to ensure.
+    - Returns: The new capacity of this list.
+
+    */
     open func EnsureCapacity(capacity : Swift.Int32) throws -> Swift.Int32 {
         var __thrown : NullableHandle = nil;
         let __return = System_Collections_Generic_List_1_i32__EnsureCapacity_0__1__i32(T.get_type_handle(), &__thrown, self.get_handle(), capacity);
@@ -3865,9 +3912,9 @@ open class List_1<T : SGBridgeGenericValue>
 
     - Parameter comparer: The  implementation to use when comparing elements, or  to use the default comparer .
     */
-    open func Sort(comparer : dotnet.System.Collections.Generic.IComparer_1<T>) throws {
+    open func Sort(comparer : Optional<dotnet.System.Collections.Generic.IComparer_1<T>>) throws {
         var __thrown : NullableHandle = nil;
-        System_Collections_Generic_List_1_void__Sort_0__1__System_Collections_Generic_IComparer_T_(T.get_type_handle(), &__thrown, self.get_handle(), nil);
+        System_Collections_Generic_List_1_void__Sort_0__1__System_Collections_Generic_IComparer_T_(T.get_type_handle(), &__thrown, self.get_handle(), (comparer?.get_handle()));
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
@@ -3904,9 +3951,9 @@ open class List_1<T : SGBridgeGenericValue>
     - Parameter count: The length of the range to sort.
     - Parameter comparer: The  implementation to use when comparing elements, or  to use the default comparer .
     */
-    open func Sort(index : Swift.Int32, count : Swift.Int32, comparer : dotnet.System.Collections.Generic.IComparer_1<T>) throws {
+    open func Sort(index : Swift.Int32, count : Swift.Int32, comparer : Optional<dotnet.System.Collections.Generic.IComparer_1<T>>) throws {
         var __thrown : NullableHandle = nil;
-        System_Collections_Generic_List_1_void__Sort_0__3__i32_i32_System_Collections_Generic_IComparer_T_(T.get_type_handle(), &__thrown, self.get_handle(), index, count, nil);
+        System_Collections_Generic_List_1_void__Sort_0__3__i32_i32_System_Collections_Generic_IComparer_T_(T.get_type_handle(), &__thrown, self.get_handle(), index, count, (comparer?.get_handle()));
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
@@ -4004,9 +4051,6 @@ open class List_1<T : SGBridgeGenericValue>
     }
     // [IsSpecialName] T get_Item(System.Int32)
 // docid: M:System.Collections.Generic.List`1.get_Item(System.Int32)
-//BEGIN method_is_override
-//matches_1
-//matches :
     open /* method final */ func get_Item(index : Swift.Int32) throws -> T {
         var __thrown : NullableHandle = nil;
         let __return = System_Collections_Generic_List_1_T__get_Item_0__1__i32(T.get_type_handle(), &__thrown, self.get_handle(), index);
@@ -4065,6 +4109,9 @@ public final class List_Enumerator_1<T : SGBridgeGenericValue>
 {
     public class override func get_type_handle() -> TypeHandle {
         return System_Collections_Generic_List_1_Enumerator_get_type_handle(T.get_type_handle());
+    }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -4129,6 +4176,10 @@ public final class List_Enumerator_1<T : SGBridgeGenericValue>
 
 
 // type: System.Collections.Generic.PriorityQueue`2
+    /**
+    Represents a min priority queue.
+
+    */
 open class PriorityQueue_2<TElement : SGBridgeGenericValue,TPriority : SGBridgeGenericValue>
     :
     dotnet.System.Object
@@ -4136,10 +4187,17 @@ open class PriorityQueue_2<TElement : SGBridgeGenericValue,TPriority : SGBridgeG
     open class override func get_type_handle() -> TypeHandle {
         return System_Collections_Generic_PriorityQueue_2_get_type_handle(TElement.get_type_handle(),TPriority.get_type_handle());
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor()
 // docid: M:System.Collections.Generic.PriorityQueue`2.#ctor
+    /**
+    Initializes a new instance of the  class.
+
+    */
     public override init() throws {
         var __thrown : NullableHandle = nil;
         let h = System_Collections_Generic_PriorityQueue_2_ctor_0__0(TElement.get_type_handle(), TPriority.get_type_handle(), &__thrown);
@@ -4151,9 +4209,15 @@ open class PriorityQueue_2<TElement : SGBridgeGenericValue,TPriority : SGBridgeG
     }
     // .ctor(System.Collections.Generic.IComparer<TPriority>)
 // docid: M:System.Collections.Generic.PriorityQueue`2.#ctor(System.Collections.Generic.IComparer{`1})
-    public init(comparer : dotnet.System.Collections.Generic.IComparer_1<TPriority>) throws {
+    /**
+    Initializes a new instance of the  class with the specified custom priority comparer.
+
+    - Parameter comparer: Custom comparer dictating the ordering of elements.
+             Uses  if the argument is .
+    */
+    public init(comparer : Optional<dotnet.System.Collections.Generic.IComparer_1<TPriority>>) throws {
         var __thrown : NullableHandle = nil;
-        let h = System_Collections_Generic_PriorityQueue_2_ctor_0__1__System_Collections_Generic_IComparer_TPriority_(TElement.get_type_handle(), TPriority.get_type_handle(), &__thrown, nil);
+        let h = System_Collections_Generic_PriorityQueue_2_ctor_0__1__System_Collections_Generic_IComparer_TPriority_(TElement.get_type_handle(), TPriority.get_type_handle(), &__thrown, (comparer?.get_handle()));
         if let __ex = __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
@@ -4162,6 +4226,11 @@ open class PriorityQueue_2<TElement : SGBridgeGenericValue,TPriority : SGBridgeG
     }
     // .ctor(System.Collections.Generic.IEnumerable<System.ValueTuple<TElement,TPriority>>)
 // docid: M:System.Collections.Generic.PriorityQueue`2.#ctor(System.Collections.Generic.IEnumerable{System.ValueTuple{`0,`1}})
+    /**
+    Initializes a new instance of the  class that is populated with the specified elements and priorities.
+
+    - Parameter items: The pairs of elements and priorities with which to populate the queue.
+    */
     public init(items : dotnet.System.Collections.Generic.IEnumerable_1<dotnet.System.ValueTuple_2<TElement,TPriority>>) throws {
         var __thrown : NullableHandle = nil;
         let h = System_Collections_Generic_PriorityQueue_2_ctor_0__1__System_Collections_Generic_IEnumerable_System_System_ValueTuple_TElement_TPriority__(TElement.get_type_handle(), TPriority.get_type_handle(), &__thrown, items.get_handle());
@@ -4173,9 +4242,16 @@ open class PriorityQueue_2<TElement : SGBridgeGenericValue,TPriority : SGBridgeG
     }
     // .ctor(System.Collections.Generic.IEnumerable<System.ValueTuple<TElement,TPriority>>, System.Collections.Generic.IComparer<TPriority>)
 // docid: M:System.Collections.Generic.PriorityQueue`2.#ctor(System.Collections.Generic.IEnumerable{System.ValueTuple{`0,`1}},System.Collections.Generic.IComparer{`1})
-    public init(items : dotnet.System.Collections.Generic.IEnumerable_1<dotnet.System.ValueTuple_2<TElement,TPriority>>, comparer : dotnet.System.Collections.Generic.IComparer_1<TPriority>) throws {
+    /**
+    Initializes a new instance of the  class that is populated with the specified elements and priorities, and with the specified custom priority comparer.
+
+    - Parameter items: The pairs of elements and priorities with which to populate the queue.
+    - Parameter comparer: Custom comparer dictating the ordering of elements.
+             Uses  if the argument is .
+    */
+    public init(items : dotnet.System.Collections.Generic.IEnumerable_1<dotnet.System.ValueTuple_2<TElement,TPriority>>, comparer : Optional<dotnet.System.Collections.Generic.IComparer_1<TPriority>>) throws {
         var __thrown : NullableHandle = nil;
-        let h = System_Collections_Generic_PriorityQueue_2_ctor_0__2__System_Collections_Generic_IEnumerable_System_System_ValueTuple_TElement_TPriority___System_Collections_Generic_IComparer_TPriority_(TElement.get_type_handle(), TPriority.get_type_handle(), &__thrown, items.get_handle(), nil);
+        let h = System_Collections_Generic_PriorityQueue_2_ctor_0__2__System_Collections_Generic_IEnumerable_System_System_ValueTuple_TElement_TPriority___System_Collections_Generic_IComparer_TPriority_(TElement.get_type_handle(), TPriority.get_type_handle(), &__thrown, items.get_handle(), (comparer?.get_handle()));
         if let __ex = __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
@@ -4184,6 +4260,11 @@ open class PriorityQueue_2<TElement : SGBridgeGenericValue,TPriority : SGBridgeG
     }
     // .ctor(System.Int32)
 // docid: M:System.Collections.Generic.PriorityQueue`2.#ctor(System.Int32)
+    /**
+    Initializes a new instance of the  class with the specified initial capacity.
+
+    - Parameter initialCapacity: Initial capacity to allocate in the underlying heap array.
+    */
     public init(initialCapacity : Swift.Int32) throws {
         var __thrown : NullableHandle = nil;
         let h = System_Collections_Generic_PriorityQueue_2_ctor_0__1__i32(TElement.get_type_handle(), TPriority.get_type_handle(), &__thrown, initialCapacity);
@@ -4195,9 +4276,16 @@ open class PriorityQueue_2<TElement : SGBridgeGenericValue,TPriority : SGBridgeG
     }
     // .ctor(System.Int32, System.Collections.Generic.IComparer<TPriority>)
 // docid: M:System.Collections.Generic.PriorityQueue`2.#ctor(System.Int32,System.Collections.Generic.IComparer{`1})
-    public init(initialCapacity : Swift.Int32, comparer : dotnet.System.Collections.Generic.IComparer_1<TPriority>) throws {
+    /**
+    Initializes a new instance of the  class with the specified initial capacity and custom priority comparer.
+
+    - Parameter initialCapacity: Initial capacity to allocate in the underlying heap array.
+    - Parameter comparer: Custom comparer dictating the ordering of elements.
+             Uses  if the argument is .
+    */
+    public init(initialCapacity : Swift.Int32, comparer : Optional<dotnet.System.Collections.Generic.IComparer_1<TPriority>>) throws {
         var __thrown : NullableHandle = nil;
-        let h = System_Collections_Generic_PriorityQueue_2_ctor_0__2__i32_System_Collections_Generic_IComparer_TPriority_(TElement.get_type_handle(), TPriority.get_type_handle(), &__thrown, initialCapacity, nil);
+        let h = System_Collections_Generic_PriorityQueue_2_ctor_0__2__i32_System_Collections_Generic_IComparer_TPriority_(TElement.get_type_handle(), TPriority.get_type_handle(), &__thrown, initialCapacity, (comparer?.get_handle()));
         if let __ex = __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
@@ -4206,6 +4294,10 @@ open class PriorityQueue_2<TElement : SGBridgeGenericValue,TPriority : SGBridgeG
     }
     // void Clear()
 // docid: M:System.Collections.Generic.PriorityQueue`2.Clear
+    /**
+    Removes all items from the .
+
+    */
     open func Clear() throws {
         var __thrown : NullableHandle = nil;
         System_Collections_Generic_PriorityQueue_2_void__Clear_0__0(TElement.get_type_handle(), TPriority.get_type_handle(), &__thrown, self.get_handle());
@@ -4217,6 +4309,12 @@ open class PriorityQueue_2<TElement : SGBridgeGenericValue,TPriority : SGBridgeG
     }
     // TElement Dequeue()
 // docid: M:System.Collections.Generic.PriorityQueue`2.Dequeue
+    /**
+    Removes and returns the minimal element from the .
+
+    - Returns: The minimal element of the .
+
+    */
     open func Dequeue() throws -> TElement {
         var __thrown : NullableHandle = nil;
         let __return = System_Collections_Generic_PriorityQueue_2_TElement__Dequeue_0__0(TElement.get_type_handle(), TPriority.get_type_handle(), &__thrown, self.get_handle());
@@ -4228,6 +4326,12 @@ open class PriorityQueue_2<TElement : SGBridgeGenericValue,TPriority : SGBridgeG
     }
     // void Enqueue(TElement, TPriority)
 // docid: M:System.Collections.Generic.PriorityQueue`2.Enqueue(`0,`1)
+    /**
+    Adds the specified element with associated priority to the .
+
+    - Parameter element: The element to add to the .
+    - Parameter priority: The priority with which to associate the new element.
+    */
     open func Enqueue(element : TElement, priority : TPriority) throws {
         var __thrown : NullableHandle = nil;
         System_Collections_Generic_PriorityQueue_2_void__Enqueue_0__2__TElement_TPriority(TElement.get_type_handle(), TPriority.get_type_handle(), &__thrown, self.get_handle(), element.to_gval(), priority.to_gval());
@@ -4239,6 +4343,14 @@ open class PriorityQueue_2<TElement : SGBridgeGenericValue,TPriority : SGBridgeG
     }
     // TElement EnqueueDequeue(TElement, TPriority)
 // docid: M:System.Collections.Generic.PriorityQueue`2.EnqueueDequeue(`0,`1)
+    /**
+    Adds the specified element with associated priority to the , and immediately removes the minimal element, returning the result.
+
+    - Parameter element: The element to add to the .
+    - Parameter priority: The priority with which to associate the new element.
+    - Returns: The minimal element removed after the enqueue operation.
+
+    */
     open func EnqueueDequeue(element : TElement, priority : TPriority) throws -> TElement {
         var __thrown : NullableHandle = nil;
         let __return = System_Collections_Generic_PriorityQueue_2_TElement__EnqueueDequeue_0__2__TElement_TPriority(TElement.get_type_handle(), TPriority.get_type_handle(), &__thrown, self.get_handle(), element.to_gval(), priority.to_gval());
@@ -4250,6 +4362,11 @@ open class PriorityQueue_2<TElement : SGBridgeGenericValue,TPriority : SGBridgeG
     }
     // void EnqueueRange(System.Collections.Generic.IEnumerable<System.ValueTuple<TElement,TPriority>>)
 // docid: M:System.Collections.Generic.PriorityQueue`2.EnqueueRange(System.Collections.Generic.IEnumerable{System.ValueTuple{`0,`1}})
+    /**
+    Enqueues a sequence of element/priority pairs to the .
+
+    - Parameter items: The pairs of elements and priorities to add to the queue.
+    */
     open func EnqueueRange(items : dotnet.System.Collections.Generic.IEnumerable_1<dotnet.System.ValueTuple_2<TElement,TPriority>>) throws {
         var __thrown : NullableHandle = nil;
         System_Collections_Generic_PriorityQueue_2_void__EnqueueRange_0__1__System_Collections_Generic_IEnumerable_System_System_ValueTuple_TElement_TPriority__(TElement.get_type_handle(), TPriority.get_type_handle(), &__thrown, self.get_handle(), items.get_handle());
@@ -4261,6 +4378,12 @@ open class PriorityQueue_2<TElement : SGBridgeGenericValue,TPriority : SGBridgeG
     }
     // void EnqueueRange(System.Collections.Generic.IEnumerable<TElement>, TPriority)
 // docid: M:System.Collections.Generic.PriorityQueue`2.EnqueueRange(System.Collections.Generic.IEnumerable{`0},`1)
+    /**
+    Enqueues a sequence of elements pairs to the , all associated with the specified priority.
+
+    - Parameter elements: The elements to add to the queue.
+    - Parameter priority: The priority to associate with the new elements.
+    */
     open func EnqueueRange(elements : dotnet.System.Collections.Generic.IEnumerable_1<TElement>, priority : TPriority) throws {
         var __thrown : NullableHandle = nil;
         System_Collections_Generic_PriorityQueue_2_void__EnqueueRange_0__2__System_Collections_Generic_IEnumerable_TElement__TPriority(TElement.get_type_handle(), TPriority.get_type_handle(), &__thrown, self.get_handle(), elements.get_handle(), priority.to_gval());
@@ -4272,6 +4395,13 @@ open class PriorityQueue_2<TElement : SGBridgeGenericValue,TPriority : SGBridgeG
     }
     // System.Int32 EnsureCapacity(System.Int32)
 // docid: M:System.Collections.Generic.PriorityQueue`2.EnsureCapacity(System.Int32)
+    /**
+    Ensures that the  can hold up to  items without further expansion of its backing storage.
+
+    - Parameter capacity: The minimum capacity to be used.
+    - Returns: The current capacity of the .
+
+    */
     open func EnsureCapacity(capacity : Swift.Int32) throws -> Swift.Int32 {
         var __thrown : NullableHandle = nil;
         let __return = System_Collections_Generic_PriorityQueue_2_i32__EnsureCapacity_0__1__i32(TElement.get_type_handle(), TPriority.get_type_handle(), &__thrown, self.get_handle(), capacity);
@@ -4283,6 +4413,12 @@ open class PriorityQueue_2<TElement : SGBridgeGenericValue,TPriority : SGBridgeG
     }
     // TElement Peek()
 // docid: M:System.Collections.Generic.PriorityQueue`2.Peek
+    /**
+    Returns the minimal element from the  without removing it.
+
+    - Returns: The minimal element of the .
+
+    */
     open func Peek() throws -> TElement {
         var __thrown : NullableHandle = nil;
         let __return = System_Collections_Generic_PriorityQueue_2_TElement__Peek_0__0(TElement.get_type_handle(), TPriority.get_type_handle(), &__thrown, self.get_handle());
@@ -4294,6 +4430,10 @@ open class PriorityQueue_2<TElement : SGBridgeGenericValue,TPriority : SGBridgeG
     }
     // void TrimExcess()
 // docid: M:System.Collections.Generic.PriorityQueue`2.TrimExcess
+    /**
+    Sets the capacity to the actual number of items in the , if that is less than 90 percent of current capacity.
+
+    */
     open func TrimExcess() throws {
         var __thrown : NullableHandle = nil;
         System_Collections_Generic_PriorityQueue_2_void__TrimExcess_0__0(TElement.get_type_handle(), TPriority.get_type_handle(), &__thrown, self.get_handle());
@@ -4305,6 +4445,15 @@ open class PriorityQueue_2<TElement : SGBridgeGenericValue,TPriority : SGBridgeG
     }
     // bool TryDequeue(ref TElement, ref TPriority)
 // docid: M:System.Collections.Generic.PriorityQueue`2.TryDequeue(`0@,`1@)
+    /**
+    Removes the minimal element from the , and copies it to the  parameter, and its associated priority to the  parameter.
+
+    - Parameter element: The removed element.
+    - Parameter priority: The priority associated with the removed element.
+    - Returns: 
+         if the element is successfully removed;  if the  is empty.
+
+    */
     open func TryDequeue(element : inout TElement, priority : inout TPriority) throws -> Bool {
         var __thrown : NullableHandle = nil;
             var _tmp_out_element = element.to_gval();
@@ -4322,6 +4471,16 @@ open class PriorityQueue_2<TElement : SGBridgeGenericValue,TPriority : SGBridgeG
     }
     // bool TryPeek(ref TElement, ref TPriority)
 // docid: M:System.Collections.Generic.PriorityQueue`2.TryPeek(`0@,`1@)
+    /**
+    Returns a value that indicates whether there is a minimal element in the , and if one is present, copies it to the  parameter, and its associated priority to the  parameter.
+             The element is not removed from the .
+
+    - Parameter element: The minimal element in the queue.
+    - Parameter priority: The priority associated with the minimal element.
+    - Returns: 
+         if there is a minimal element;  if the  is empty.
+
+    */
     open func TryPeek(element : inout TElement, priority : inout TPriority) throws -> Bool {
         var __thrown : NullableHandle = nil;
             var _tmp_out_element = element.to_gval();
@@ -4370,16 +4529,28 @@ open class PriorityQueue_2<TElement : SGBridgeGenericValue,TPriority : SGBridgeG
         return dotnet.System.Collections.Generic.PriorityQueue_UnorderedItemsCollection_2(hndl : __return);
         }
     }
+    /**
+    Gets the priority comparer used by the .
+
+    */
     open var Comparer : dotnet.System.Collections.Generic.IComparer_1<TPriority> {
         get {
             return try! get_Comparer();
         }
     }
+    /**
+    Gets the number of elements contained in the .
+
+    */
     open var Count : Swift.Int32 {
         get {
             return try! get_Count();
         }
     }
+    /**
+    Gets a collection that enumerates the elements of the queue in an unordered manner.
+
+    */
     open var UnorderedItems : dotnet.System.Collections.Generic.PriorityQueue_UnorderedItemsCollection_2<TElement,TPriority> {
         get {
             return try! get_UnorderedItems();
@@ -4389,6 +4560,10 @@ open class PriorityQueue_2<TElement : SGBridgeGenericValue,TPriority : SGBridgeG
 
 
 // type: System.Collections.Generic.PriorityQueue`2+UnorderedItemsCollection
+    /**
+    Enumerates the contents of a , without any ordering guarantees.
+
+    */
 public final class PriorityQueue_UnorderedItemsCollection_2<TElement : SGBridgeGenericValue,TPriority : SGBridgeGenericValue>
     :
     dotnet.System.Object,
@@ -4398,10 +4573,19 @@ public final class PriorityQueue_UnorderedItemsCollection_2<TElement : SGBridgeG
     public class override func get_type_handle() -> TypeHandle {
         return System_Collections_Generic_PriorityQueue_2_UnorderedItemsCollection_get_type_handle(TElement.get_type_handle(),TPriority.get_type_handle());
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // System.Collections.Generic.PriorityQueue<TElement,TPriority>.UnorderedItemsCollection.Enumerator GetEnumerator()
 // docid: M:System.Collections.Generic.PriorityQueue`2.UnorderedItemsCollection.GetEnumerator
+    /**
+    Returns an enumerator that iterates through the .
+
+    - Returns: An  for the .
+
+    */
     public func GetEnumerator() throws -> dotnet.System.Collections.Generic.PriorityQueue_UnorderedItemsCollection_Enumerator_2<TElement,TPriority> {
         var __thrown : NullableHandle = nil;
         let __return = System_Collections_Generic_PriorityQueue_2_UnorderedItemsCollection_System_Collections_Generic_PriorityQueue_TElement_TPriority__System_Collections_Generic_UnorderedItemsCollection_TElement_TPriority__System_Collections_Generic_Enumerator_TElement_TPriority___GetEnumerator_0__0(TElement.get_type_handle(), TPriority.get_type_handle(), &__thrown, self.get_handle());
@@ -4422,6 +4606,10 @@ public final class PriorityQueue_UnorderedItemsCollection_2<TElement : SGBridgeG
         return __return;
         }
     }
+    /**
+    Gets the number of elements in the collection.
+
+    */
     public var Count : Swift.Int32 {
         get {
             return try! get_Count();
@@ -4432,6 +4620,10 @@ public final class PriorityQueue_UnorderedItemsCollection_2<TElement : SGBridgeG
 
 // type: System.Collections.Generic.PriorityQueue`2+UnorderedItemsCollection+Enumerator
 // boxed value type
+    /**
+    Enumerates the element and priority pairs of a , without any ordering guarantees.
+
+    */
 public final class PriorityQueue_UnorderedItemsCollection_Enumerator_2<TElement : SGBridgeGenericValue,TPriority : SGBridgeGenericValue>
     :
     dotnet.System.Object,
@@ -4441,8 +4633,15 @@ public final class PriorityQueue_UnorderedItemsCollection_Enumerator_2<TElement 
     public class override func get_type_handle() -> TypeHandle {
         return System_Collections_Generic_PriorityQueue_2_UnorderedItemsCollection_Enumerator_get_type_handle(TElement.get_type_handle(),TPriority.get_type_handle());
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    /**
+    Gets the element at the current position of the enumerator.
+
+    */
     public var Current : dotnet.System.ValueTuple_2<TElement,TPriority> {
         get {
             return try! get_Current();
@@ -4454,6 +4653,10 @@ public final class PriorityQueue_UnorderedItemsCollection_Enumerator_2<TElement 
     }
     // void Dispose()
 // docid: M:System.Collections.Generic.PriorityQueue`2.UnorderedItemsCollection.Enumerator.Dispose
+    /**
+    Releases all resources used by the .
+
+    */
     public func Dispose() throws {
         var __thrown : NullableHandle = nil;
         System_Collections_Generic_PriorityQueue_2_UnorderedItemsCollection_Enumerator_void__Dispose_0__0(TElement.get_type_handle(), TPriority.get_type_handle(), &__thrown, self.get_handle());
@@ -4465,6 +4668,13 @@ public final class PriorityQueue_UnorderedItemsCollection_Enumerator_2<TElement 
     }
     // bool MoveNext()
 // docid: M:System.Collections.Generic.PriorityQueue`2.UnorderedItemsCollection.Enumerator.MoveNext
+    /**
+    Advances the enumerator to the next element of the .
+
+    - Returns: 
+         if the enumerator was successfully advanced to the next element;  if the enumerator has passed the end of the collection.
+
+    */
     public func MoveNext() throws -> Bool {
         var __thrown : NullableHandle = nil;
         let __return = System_Collections_Generic_PriorityQueue_2_UnorderedItemsCollection_Enumerator_bool__MoveNext_0__0(TElement.get_type_handle(), TPriority.get_type_handle(), &__thrown, self.get_handle());
@@ -4501,6 +4711,9 @@ open class Queue_1<T : SGBridgeGenericValue>
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Collections_Generic_Queue_1_get_type_handle(T.get_type_handle());
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -4697,6 +4910,13 @@ open class Queue_1<T : SGBridgeGenericValue>
     }
     // System.Int32 EnsureCapacity(System.Int32)
 // docid: M:System.Collections.Generic.Queue`1.EnsureCapacity(System.Int32)
+    /**
+    Ensures that the capacity of this queue is at least the specified . If the current capacity is less than , it is successively increased to twice the current capacity until it is at least the specified .
+
+    - Parameter capacity: The minimum capacity to ensure.
+    - Returns: The new capacity of this queue.
+
+    */
     open func EnsureCapacity(capacity : Swift.Int32) throws -> Swift.Int32 {
         var __thrown : NullableHandle = nil;
         let __return = System_Collections_Generic_Queue_1_i32__EnsureCapacity_0__1__i32(T.get_type_handle(), &__thrown, self.get_handle(), capacity);
@@ -4788,6 +5008,9 @@ public final class Queue_Enumerator_1<T : SGBridgeGenericValue>
     public class override func get_type_handle() -> TypeHandle {
         return System_Collections_Generic_Queue_1_Enumerator_get_type_handle(T.get_type_handle());
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     /**
@@ -4862,6 +5085,9 @@ public final class ReferenceEqualityComparer
 {
     public class override func get_type_handle() -> TypeHandle {
         return System_Collections_Generic_ReferenceEqualityComparer_get_type_handle();
+    }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -4941,6 +5167,9 @@ open class SortedDictionary_2<TKey : SGBridgeGenericValue,TValue : SGBridgeGener
     open class override func get_type_handle() -> TypeHandle {
         return System_Collections_Generic_SortedDictionary_2_get_type_handle(TKey.get_type_handle(),TValue.get_type_handle());
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor()
@@ -4965,9 +5194,9 @@ open class SortedDictionary_2<TKey : SGBridgeGenericValue,TValue : SGBridgeGener
 
     - Parameter comparer: The  implementation to use when comparing keys, or  to use the default  for the type of the key.
     */
-    public init(comparer : dotnet.System.Collections.Generic.IComparer_1<TKey>) throws {
+    public init(comparer : Optional<dotnet.System.Collections.Generic.IComparer_1<TKey>>) throws {
         var __thrown : NullableHandle = nil;
-        let h = System_Collections_Generic_SortedDictionary_2_ctor_0__1__System_Collections_Generic_IComparer_TKey_(TKey.get_type_handle(), TValue.get_type_handle(), &__thrown, nil);
+        let h = System_Collections_Generic_SortedDictionary_2_ctor_0__1__System_Collections_Generic_IComparer_TKey_(TKey.get_type_handle(), TValue.get_type_handle(), &__thrown, (comparer?.get_handle()));
         if let __ex = __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
@@ -4998,9 +5227,9 @@ open class SortedDictionary_2<TKey : SGBridgeGenericValue,TValue : SGBridgeGener
     - Parameter dictionary: The  whose elements are copied to the new .
     - Parameter comparer: The  implementation to use when comparing keys, or  to use the default  for the type of the key.
     */
-    public init(dictionary : dotnet.System.Collections.Generic.IDictionary_2<TKey,TValue>, comparer : dotnet.System.Collections.Generic.IComparer_1<TKey>) throws {
+    public init(dictionary : dotnet.System.Collections.Generic.IDictionary_2<TKey,TValue>, comparer : Optional<dotnet.System.Collections.Generic.IComparer_1<TKey>>) throws {
         var __thrown : NullableHandle = nil;
-        let h = System_Collections_Generic_SortedDictionary_2_ctor_0__2__System_Collections_Generic_IDictionary_TKey_TValue__System_Collections_Generic_IComparer_TKey_(TKey.get_type_handle(), TValue.get_type_handle(), &__thrown, dictionary.get_handle(), nil);
+        let h = System_Collections_Generic_SortedDictionary_2_ctor_0__2__System_Collections_Generic_IDictionary_TKey_TValue__System_Collections_Generic_IComparer_TKey_(TKey.get_type_handle(), TValue.get_type_handle(), &__thrown, dictionary.get_handle(), (comparer?.get_handle()));
         if let __ex = __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
@@ -5193,9 +5422,6 @@ open class SortedDictionary_2<TKey : SGBridgeGenericValue,TValue : SGBridgeGener
     }
     // [IsSpecialName] TValue get_Item(TKey)
 // docid: M:System.Collections.Generic.SortedDictionary`2.get_Item(`0)
-//BEGIN method_is_override
-//matches_1
-//matches :
     open /* method final */ func get_Item(key : TKey) throws -> TValue {
         var __thrown : NullableHandle = nil;
         let __return = System_Collections_Generic_SortedDictionary_2_TValue__get_Item_0__1__TKey(TKey.get_type_handle(), TValue.get_type_handle(), &__thrown, self.get_handle(), key.to_gval());
@@ -5270,6 +5496,9 @@ public final class SortedDictionary_Enumerator_2<TKey : SGBridgeGenericValue,TVa
 {
     public class override func get_type_handle() -> TypeHandle {
         return System_Collections_Generic_SortedDictionary_2_Enumerator_get_type_handle(TKey.get_type_handle(),TValue.get_type_handle());
+    }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -5346,6 +5575,9 @@ public final class SortedDictionary_KeyCollection_2<TKey : SGBridgeGenericValue,
 {
     public class override func get_type_handle() -> TypeHandle {
         return System_Collections_Generic_SortedDictionary_2_KeyCollection_get_type_handle(TKey.get_type_handle(),TValue.get_type_handle());
+    }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -5431,6 +5663,9 @@ public final class SortedDictionary_KeyCollection_Enumerator_2<TKey : SGBridgeGe
     public class override func get_type_handle() -> TypeHandle {
         return System_Collections_Generic_SortedDictionary_2_KeyCollection_Enumerator_get_type_handle(TKey.get_type_handle(),TValue.get_type_handle());
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     /**
@@ -5506,6 +5741,9 @@ public final class SortedDictionary_ValueCollection_2<TKey : SGBridgeGenericValu
 {
     public class override func get_type_handle() -> TypeHandle {
         return System_Collections_Generic_SortedDictionary_2_ValueCollection_get_type_handle(TKey.get_type_handle(),TValue.get_type_handle());
+    }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -5591,6 +5829,9 @@ public final class SortedDictionary_ValueCollection_Enumerator_2<TKey : SGBridge
     public class override func get_type_handle() -> TypeHandle {
         return System_Collections_Generic_SortedDictionary_2_ValueCollection_Enumerator_get_type_handle(TKey.get_type_handle(),TValue.get_type_handle());
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     /**
@@ -5668,6 +5909,9 @@ open class SortedList_2<TKey : SGBridgeGenericValue,TValue : SGBridgeGenericValu
     open class override func get_type_handle() -> TypeHandle {
         return System_Collections_Generic_SortedList_2_get_type_handle(TKey.get_type_handle(),TValue.get_type_handle());
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor()
@@ -5696,9 +5940,9 @@ open class SortedList_2<TKey : SGBridgeGenericValue,TValue : SGBridgeGenericValu
   
   to use the default  for the type of the key.
     */
-    public init(comparer : dotnet.System.Collections.Generic.IComparer_1<TKey>) throws {
+    public init(comparer : Optional<dotnet.System.Collections.Generic.IComparer_1<TKey>>) throws {
         var __thrown : NullableHandle = nil;
-        let h = System_Collections_Generic_SortedList_2_ctor_0__1__System_Collections_Generic_IComparer_TKey_(TKey.get_type_handle(), TValue.get_type_handle(), &__thrown, nil);
+        let h = System_Collections_Generic_SortedList_2_ctor_0__1__System_Collections_Generic_IComparer_TKey_(TKey.get_type_handle(), TValue.get_type_handle(), &__thrown, (comparer?.get_handle()));
         if let __ex = __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
@@ -5733,9 +5977,9 @@ open class SortedList_2<TKey : SGBridgeGenericValue,TValue : SGBridgeGenericValu
   
   to use the default  for the type of the key.
     */
-    public init(dictionary : dotnet.System.Collections.Generic.IDictionary_2<TKey,TValue>, comparer : dotnet.System.Collections.Generic.IComparer_1<TKey>) throws {
+    public init(dictionary : dotnet.System.Collections.Generic.IDictionary_2<TKey,TValue>, comparer : Optional<dotnet.System.Collections.Generic.IComparer_1<TKey>>) throws {
         var __thrown : NullableHandle = nil;
-        let h = System_Collections_Generic_SortedList_2_ctor_0__2__System_Collections_Generic_IDictionary_TKey_TValue__System_Collections_Generic_IComparer_TKey_(TKey.get_type_handle(), TValue.get_type_handle(), &__thrown, dictionary.get_handle(), nil);
+        let h = System_Collections_Generic_SortedList_2_ctor_0__2__System_Collections_Generic_IDictionary_TKey_TValue__System_Collections_Generic_IComparer_TKey_(TKey.get_type_handle(), TValue.get_type_handle(), &__thrown, dictionary.get_handle(), (comparer?.get_handle()));
         if let __ex = __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
@@ -5770,9 +6014,9 @@ open class SortedList_2<TKey : SGBridgeGenericValue,TValue : SGBridgeGenericValu
   
   to use the default  for the type of the key.
     */
-    public init(capacity : Swift.Int32, comparer : dotnet.System.Collections.Generic.IComparer_1<TKey>) throws {
+    public init(capacity : Swift.Int32, comparer : Optional<dotnet.System.Collections.Generic.IComparer_1<TKey>>) throws {
         var __thrown : NullableHandle = nil;
-        let h = System_Collections_Generic_SortedList_2_ctor_0__2__i32_System_Collections_Generic_IComparer_TKey_(TKey.get_type_handle(), TValue.get_type_handle(), &__thrown, capacity, nil);
+        let h = System_Collections_Generic_SortedList_2_ctor_0__2__i32_System_Collections_Generic_IComparer_TKey_(TKey.get_type_handle(), TValue.get_type_handle(), &__thrown, capacity, (comparer?.get_handle()));
         if let __ex = __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
@@ -6043,9 +6287,6 @@ open class SortedList_2<TKey : SGBridgeGenericValue,TValue : SGBridgeGenericValu
     }
     // [IsSpecialName] TValue get_Item(TKey)
 // docid: M:System.Collections.Generic.SortedList`2.get_Item(`0)
-//BEGIN method_is_override
-//matches_1
-//matches :
     open /* method final */ func get_Item(key : TKey) throws -> TValue {
         var __thrown : NullableHandle = nil;
         let __return = System_Collections_Generic_SortedList_2_TValue__get_Item_0__1__TKey(TKey.get_type_handle(), TValue.get_type_handle(), &__thrown, self.get_handle(), key.to_gval());
@@ -6133,6 +6374,9 @@ open class SortedSet_1<T : SGBridgeGenericValue>
     open class override func get_type_handle() -> TypeHandle {
         return System_Collections_Generic_SortedSet_1_get_type_handle(T.get_type_handle());
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor()
@@ -6157,9 +6401,9 @@ open class SortedSet_1<T : SGBridgeGenericValue>
 
     - Parameter comparer: The default comparer to use for comparing objects.
     */
-    public init(comparer : dotnet.System.Collections.Generic.IComparer_1<T>) throws {
+    public init(comparer : Optional<dotnet.System.Collections.Generic.IComparer_1<T>>) throws {
         var __thrown : NullableHandle = nil;
-        let h = System_Collections_Generic_SortedSet_1_ctor_0__1__System_Collections_Generic_IComparer_T_(T.get_type_handle(), &__thrown, nil);
+        let h = System_Collections_Generic_SortedSet_1_ctor_0__1__System_Collections_Generic_IComparer_T_(T.get_type_handle(), &__thrown, (comparer?.get_handle()));
         if let __ex = __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
@@ -6190,9 +6434,9 @@ open class SortedSet_1<T : SGBridgeGenericValue>
     - Parameter collection: The enumerable collection to be copied.
     - Parameter comparer: The default comparer to use for comparing objects.
     */
-    public init(collection : dotnet.System.Collections.Generic.IEnumerable_1<T>, comparer : dotnet.System.Collections.Generic.IComparer_1<T>) throws {
+    public init(collection : dotnet.System.Collections.Generic.IEnumerable_1<T>, comparer : Optional<dotnet.System.Collections.Generic.IComparer_1<T>>) throws {
         var __thrown : NullableHandle = nil;
-        let h = System_Collections_Generic_SortedSet_1_ctor_0__2__System_Collections_Generic_IEnumerable_T__System_Collections_Generic_IComparer_T_(T.get_type_handle(), &__thrown, collection.get_handle(), nil);
+        let h = System_Collections_Generic_SortedSet_1_ctor_0__2__System_Collections_Generic_IEnumerable_T__System_Collections_Generic_IComparer_T_(T.get_type_handle(), &__thrown, collection.get_handle(), (comparer?.get_handle()));
         if let __ex = __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
@@ -6311,9 +6555,9 @@ open class SortedSet_1<T : SGBridgeGenericValue>
     - Returns: A comparer for creating a collection of sets.
 
     */
-    open class func CreateSetComparer(memberEqualityComparer : dotnet.System.Collections.Generic.IEqualityComparer_1<T>) throws -> dotnet.System.Collections.Generic.IEqualityComparer_1<dotnet.System.Collections.Generic.SortedSet_1<T>> {
+    open class func CreateSetComparer(memberEqualityComparer : Optional<dotnet.System.Collections.Generic.IEqualityComparer_1<T>>) throws -> dotnet.System.Collections.Generic.IEqualityComparer_1<dotnet.System.Collections.Generic.SortedSet_1<T>> {
         var __thrown : NullableHandle = nil;
-        let __return = System_Collections_Generic_SortedSet_1_System_Collections_Generic_IEqualityComparer_System_Collections_Generic_System_Collections_Generic_SortedSet_T____CreateSetComparer_0__1__System_Collections_Generic_IEqualityComparer_T_(T.get_type_handle(), &__thrown, nil);
+        let __return = System_Collections_Generic_SortedSet_1_System_Collections_Generic_IEqualityComparer_System_Collections_Generic_System_Collections_Generic_SortedSet_T____CreateSetComparer_0__1__System_Collections_Generic_IEqualityComparer_T_(T.get_type_handle(), &__thrown, (memberEqualityComparer?.get_handle()));
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
@@ -6715,6 +6959,9 @@ public final class SortedSet_Enumerator_1<T : SGBridgeGenericValue>
     public class override func get_type_handle() -> TypeHandle {
         return System_Collections_Generic_SortedSet_1_Enumerator_get_type_handle(T.get_type_handle());
     }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     /**
@@ -6790,6 +7037,9 @@ open class Stack_1<T : SGBridgeGenericValue>
 {
     open class override func get_type_handle() -> TypeHandle {
         return System_Collections_Generic_Stack_1_get_type_handle(T.get_type_handle());
+    }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
@@ -6954,6 +7204,13 @@ open class Stack_1<T : SGBridgeGenericValue>
     }
     // System.Int32 EnsureCapacity(System.Int32)
 // docid: M:System.Collections.Generic.Stack`1.EnsureCapacity(System.Int32)
+    /**
+    Ensures that the capacity of this Stack is at least the specified . If the current capacity is less than , it is successively increased to twice the current capacity until it is at least the specified .
+
+    - Parameter capacity: The minimum capacity to ensure.
+    - Returns: The new capacity of this stack.
+
+    */
     open func EnsureCapacity(capacity : Swift.Int32) throws -> Swift.Int32 {
         var __thrown : NullableHandle = nil;
         let __return = System_Collections_Generic_Stack_1_i32__EnsureCapacity_0__1__i32(T.get_type_handle(), &__thrown, self.get_handle(), capacity);
@@ -7076,6 +7333,9 @@ public final class Stack_Enumerator_1<T : SGBridgeGenericValue>
 {
     public class override func get_type_handle() -> TypeHandle {
         return System_Collections_Generic_Stack_1_Enumerator_get_type_handle(T.get_type_handle());
+    }
+    public class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }

@@ -834,6 +834,9 @@ open class WebHeaderCollection
     open class override func get_type_handle() -> TypeHandle {
         return System_Net_WebHeaderCollection_get_type_handle();
     }
+    open class override func AsType() -> dotnet.System.Type_ {
+        return dotnet.System.Type_(hndl: __copy_handle(get_type_handle()));
+    }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
     // .ctor()
@@ -1098,7 +1101,8 @@ open class WebHeaderCollection
     Tests whether the specified HTTP header can be set for the request or the response.
 
     - Parameter headerName: The header to test.
-    - Parameter response: Does the Framework test the response or the request?
+    - Parameter response: 
+         to test the response;  to test the request.
     - Returns: 
          if the header is restricted; otherwise, .
 
@@ -1296,9 +1300,6 @@ open class WebHeaderCollection
     }
     // [IsSpecialName] System.String get_Item(System.Net.HttpRequestHeader)
 // docid: M:System.Net.WebHeaderCollection.get_Item(System.Net.HttpRequestHeader)
-//BEGIN method_is_override
-//matches_1
-//matches :
     open func get_Item(header : dotnet.System.Net.HttpRequestHeader) throws -> Optional<dotnet.System.String> {
         var __thrown : NullableHandle = nil;
         let __return = System_Net_WebHeaderCollection_String__get_Item_0__1__HttpRequestHeader(&__thrown, self.get_handle(), header.get_value());
@@ -1325,9 +1326,6 @@ open class WebHeaderCollection
     }
     // [IsSpecialName] System.String get_Item(System.Net.HttpResponseHeader)
 // docid: M:System.Net.WebHeaderCollection.get_Item(System.Net.HttpResponseHeader)
-//BEGIN method_is_override
-//matches_1
-//matches :
     open func get_Item(header : dotnet.System.Net.HttpResponseHeader) throws -> Optional<dotnet.System.String> {
         var __thrown : NullableHandle = nil;
         let __return = System_Net_WebHeaderCollection_String__get_Item_0__1__HttpResponseHeader(&__thrown, self.get_handle(), header.get_value());
