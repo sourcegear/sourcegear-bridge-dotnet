@@ -1541,7 +1541,7 @@ public struct DataflowBlock {
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return try await dotnet.System.Threading.Tasks.Task_1(hndl: __return).ToAsync();
+        return try await dotnet.System.Threading.Tasks.Task_1(hndl: __return).to_async_result();
         }
     }
     // System.Threading.Tasks.Task<bool> OutputAvailableAsync<TOutput>(System.Threading.Tasks.Dataflow.ISourceBlock<TOutput>, System.Threading.CancellationToken)
@@ -1560,7 +1560,7 @@ public struct DataflowBlock {
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return try await dotnet.System.Threading.Tasks.Task_1(hndl: __return).ToAsync();
+        return try await dotnet.System.Threading.Tasks.Task_1(hndl: __return).to_async_result();
         }
     }
     // bool Post<TInput>(System.Threading.Tasks.Dataflow.ITargetBlock<TInput>, TInput)
@@ -1598,7 +1598,7 @@ public struct DataflowBlock {
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return try await dotnet.System.Threading.Tasks.Task_1(hndl: __return).ToAsync();
+        return try await dotnet.System.Threading.Tasks.Task_1(hndl: __return).to_async_result();
         }
     }
     // System.Threading.Tasks.Task<TOutput> ReceiveAsync<TOutput>(System.Threading.Tasks.Dataflow.ISourceBlock<TOutput>, System.Threading.CancellationToken)
@@ -1617,7 +1617,7 @@ public struct DataflowBlock {
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return try await dotnet.System.Threading.Tasks.Task_1(hndl: __return).ToAsync();
+        return try await dotnet.System.Threading.Tasks.Task_1(hndl: __return).to_async_result();
         }
     }
     // System.Threading.Tasks.Task<TOutput> ReceiveAsync<TOutput>(System.Threading.Tasks.Dataflow.ISourceBlock<TOutput>, System.TimeSpan)
@@ -1636,7 +1636,7 @@ public struct DataflowBlock {
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return try await dotnet.System.Threading.Tasks.Task_1(hndl: __return).ToAsync();
+        return try await dotnet.System.Threading.Tasks.Task_1(hndl: __return).to_async_result();
         }
     }
     // System.Threading.Tasks.Task<TOutput> ReceiveAsync<TOutput>(System.Threading.Tasks.Dataflow.ISourceBlock<TOutput>, System.TimeSpan, System.Threading.CancellationToken)
@@ -1656,7 +1656,7 @@ public struct DataflowBlock {
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return try await dotnet.System.Threading.Tasks.Task_1(hndl: __return).ToAsync();
+        return try await dotnet.System.Threading.Tasks.Task_1(hndl: __return).to_async_result();
         }
     }
     // TOutput Receive<TOutput>(System.Threading.Tasks.Dataflow.ISourceBlock<TOutput>)
@@ -1751,7 +1751,7 @@ public struct DataflowBlock {
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return try await dotnet.System.Threading.Tasks.Task_1(hndl: __return).ToAsync();
+        return try await dotnet.System.Threading.Tasks.Task_1(hndl: __return).to_async_result();
         }
     }
     // System.Threading.Tasks.Task<bool> SendAsync<TInput>(System.Threading.Tasks.Dataflow.ITargetBlock<TInput>, TInput, System.Threading.CancellationToken)
@@ -1773,7 +1773,7 @@ public struct DataflowBlock {
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return try await dotnet.System.Threading.Tasks.Task_1(hndl: __return).ToAsync();
+        return try await dotnet.System.Threading.Tasks.Task_1(hndl: __return).to_async_result();
         }
     }
     // bool TryReceive<TOutput>(System.Threading.Tasks.Dataflow.IReceivableSourceBlock<TOutput>, ref TOutput)

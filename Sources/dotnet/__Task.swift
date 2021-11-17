@@ -4,7 +4,7 @@
 @available(macOS 12, *)
 extension dotnet.System.Threading.Tasks.Task_1
 {
-    public func ToAsync() async throws -> TResult
+    public func to_async_result() async throws -> TResult
     {
         try await withCheckedThrowingContinuation
             {
@@ -43,7 +43,7 @@ extension dotnet.System.Threading.Tasks.Task_1
 @available(macOS 12, *)
 extension dotnet.System.Threading.Tasks.Task
 {
-    public func ToAsync() async throws
+    public func to_async_void() async throws
     {
         let clos : (CheckedContinuation<Void, Error>) -> Void =
             {

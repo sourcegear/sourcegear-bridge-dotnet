@@ -6740,7 +6740,7 @@ open class XmlDictionaryWriter
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return try await dotnet.System.Threading.Tasks.Task(hndl: __return).ToAsync();
+        return try await dotnet.System.Threading.Tasks.Task(hndl: __return).to_async_void();
         }
     }
     // void WriteElementString(System.String, System.Xml.XmlDictionaryString, System.Xml.XmlDictionaryString, System.String)
@@ -7014,7 +7014,7 @@ open class XmlDictionaryWriter
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return try await dotnet.System.Threading.Tasks.Task(hndl: __return).ToAsync();
+        return try await dotnet.System.Threading.Tasks.Task(hndl: __return).to_async_void();
         }
     }
     // void WriteXmlAttribute(System.String, System.String)

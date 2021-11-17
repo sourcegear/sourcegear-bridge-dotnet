@@ -202,7 +202,7 @@ public final class JsonDocument
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return try await dotnet.System.Threading.Tasks.Task_1(hndl: __return).ToAsync();
+        return try await dotnet.System.Threading.Tasks.Task_1(hndl: __return).to_async_result();
         }
     }
 // TODO COPE (parm byref span): System.Text.Json.JsonDocument ParseValue(ref System.Text.Json.Utf8JsonReader)
@@ -2719,7 +2719,7 @@ public struct JsonSerializer {
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return try await dotnet.System.Threading.Tasks.Task(hndl: __return).ToAsync();
+        return try await dotnet.System.Threading.Tasks.Task(hndl: __return).to_async_void();
         }
     }
     // System.Threading.Tasks.Task SerializeAsync(System.IO.Stream, System.Object, System.Type, System.Text.Json.Serialization.JsonSerializerContext, System.Threading.CancellationToken)
@@ -2741,7 +2741,7 @@ public struct JsonSerializer {
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return try await dotnet.System.Threading.Tasks.Task(hndl: __return).ToAsync();
+        return try await dotnet.System.Threading.Tasks.Task(hndl: __return).to_async_void();
         }
     }
     // System.Threading.Tasks.Task SerializeAsync<TValue>(System.IO.Stream, TValue, System.Text.Json.JsonSerializerOptions, System.Threading.CancellationToken)
@@ -2762,7 +2762,7 @@ public struct JsonSerializer {
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return try await dotnet.System.Threading.Tasks.Task(hndl: __return).ToAsync();
+        return try await dotnet.System.Threading.Tasks.Task(hndl: __return).to_async_void();
         }
     }
     // System.Threading.Tasks.Task SerializeAsync<TValue>(System.IO.Stream, TValue, System.Text.Json.Serialization.Metadata.JsonTypeInfo<TValue>, System.Threading.CancellationToken)
@@ -2783,7 +2783,7 @@ public struct JsonSerializer {
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return try await dotnet.System.Threading.Tasks.Task(hndl: __return).ToAsync();
+        return try await dotnet.System.Threading.Tasks.Task(hndl: __return).to_async_void();
         }
     }
     // System.Text.Json.JsonDocument SerializeToDocument(System.Object, System.Type, System.Text.Json.JsonSerializerOptions)
@@ -4480,7 +4480,7 @@ public final class Utf8JsonWriter
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return try await dotnet.System.Threading.Tasks.Task(hndl: __return).ToAsync();
+        return try await dotnet.System.Threading.Tasks.Task(hndl: __return).to_async_void();
         }
     }
     // void Reset()

@@ -28,7 +28,7 @@ public struct HttpClientJsonExtensions {
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return try await dotnet.System.Threading.Tasks.Task_1(hndl: __return).ToAsync();
+        return try await dotnet.System.Threading.Tasks.Task_1(hndl: __return).to_async_result();
         }
     }
     // System.Threading.Tasks.Task<System.Object> GetFromJsonAsync(System.Net.Http.HttpClient, System.String, System.Type, System.Text.Json.Serialization.JsonSerializerContext, System.Threading.CancellationToken)
@@ -50,7 +50,7 @@ public struct HttpClientJsonExtensions {
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return try await dotnet.System.Threading.Tasks.Task_1(hndl: __return).ToAsync();
+        return try await dotnet.System.Threading.Tasks.Task_1(hndl: __return).to_async_result();
         }
     }
     // System.Threading.Tasks.Task<System.Object> GetFromJsonAsync(System.Net.Http.HttpClient, System.String, System.Type, System.Threading.CancellationToken)
@@ -71,7 +71,7 @@ public struct HttpClientJsonExtensions {
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return try await dotnet.System.Threading.Tasks.Task_1(hndl: __return).ToAsync();
+        return try await dotnet.System.Threading.Tasks.Task_1(hndl: __return).to_async_result();
         }
     }
     // System.Threading.Tasks.Task<System.Object> GetFromJsonAsync(System.Net.Http.HttpClient, System.Uri, System.Type, System.Text.Json.JsonSerializerOptions, System.Threading.CancellationToken)
@@ -93,7 +93,7 @@ public struct HttpClientJsonExtensions {
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return try await dotnet.System.Threading.Tasks.Task_1(hndl: __return).ToAsync();
+        return try await dotnet.System.Threading.Tasks.Task_1(hndl: __return).to_async_result();
         }
     }
     // System.Threading.Tasks.Task<System.Object> GetFromJsonAsync(System.Net.Http.HttpClient, System.Uri, System.Type, System.Text.Json.Serialization.JsonSerializerContext, System.Threading.CancellationToken)
@@ -115,7 +115,7 @@ public struct HttpClientJsonExtensions {
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return try await dotnet.System.Threading.Tasks.Task_1(hndl: __return).ToAsync();
+        return try await dotnet.System.Threading.Tasks.Task_1(hndl: __return).to_async_result();
         }
     }
     // System.Threading.Tasks.Task<System.Object> GetFromJsonAsync(System.Net.Http.HttpClient, System.Uri, System.Type, System.Threading.CancellationToken)
@@ -136,7 +136,7 @@ public struct HttpClientJsonExtensions {
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return try await dotnet.System.Threading.Tasks.Task_1(hndl: __return).ToAsync();
+        return try await dotnet.System.Threading.Tasks.Task_1(hndl: __return).to_async_result();
         }
     }
 // TODO COPE (write_all_methods) (unused generic param) System.Threading.Tasks.Task<TValue> GetFromJsonAsync<TValue>(System.Net.Http.HttpClient, System.String, System.Text.Json.JsonSerializerOptions, System.Threading.CancellationToken)
@@ -158,7 +158,7 @@ public struct HttpClientJsonExtensions {
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return try await dotnet.System.Threading.Tasks.Task_1(hndl: __return).ToAsync();
+        return try await dotnet.System.Threading.Tasks.Task_1(hndl: __return).to_async_result();
         }
     }
 // TODO COPE (write_all_methods) (unused generic param) System.Threading.Tasks.Task<TValue> GetFromJsonAsync<TValue>(System.Net.Http.HttpClient, System.String, System.Threading.CancellationToken)
@@ -181,7 +181,7 @@ public struct HttpClientJsonExtensions {
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return try await dotnet.System.Threading.Tasks.Task_1(hndl: __return).ToAsync();
+        return try await dotnet.System.Threading.Tasks.Task_1(hndl: __return).to_async_result();
         }
     }
 // TODO COPE (write_all_methods) (unused generic param) System.Threading.Tasks.Task<TValue> GetFromJsonAsync<TValue>(System.Net.Http.HttpClient, System.Uri, System.Threading.CancellationToken)
@@ -204,7 +204,7 @@ public struct HttpClientJsonExtensions {
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return try await dotnet.System.Threading.Tasks.Task_1(hndl: __return).ToAsync();
+        return try await dotnet.System.Threading.Tasks.Task_1(hndl: __return).to_async_result();
         }
     }
     // System.Threading.Tasks.Task<System.Net.Http.HttpResponseMessage> PostAsJsonAsync<TValue>(System.Net.Http.HttpClient, System.String, TValue, System.Text.Json.Serialization.Metadata.JsonTypeInfo<TValue>, System.Threading.CancellationToken)
@@ -226,7 +226,7 @@ public struct HttpClientJsonExtensions {
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return try await dotnet.System.Threading.Tasks.Task_1(hndl: __return).ToAsync();
+        return try await dotnet.System.Threading.Tasks.Task_1(hndl: __return).to_async_result();
         }
     }
     // System.Threading.Tasks.Task<System.Net.Http.HttpResponseMessage> PostAsJsonAsync<TValue>(System.Net.Http.HttpClient, System.String, TValue, System.Threading.CancellationToken)
@@ -247,7 +247,7 @@ public struct HttpClientJsonExtensions {
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return try await dotnet.System.Threading.Tasks.Task_1(hndl: __return).ToAsync();
+        return try await dotnet.System.Threading.Tasks.Task_1(hndl: __return).to_async_result();
         }
     }
     // System.Threading.Tasks.Task<System.Net.Http.HttpResponseMessage> PostAsJsonAsync<TValue>(System.Net.Http.HttpClient, System.Uri, TValue, System.Text.Json.JsonSerializerOptions, System.Threading.CancellationToken)
@@ -269,7 +269,7 @@ public struct HttpClientJsonExtensions {
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return try await dotnet.System.Threading.Tasks.Task_1(hndl: __return).ToAsync();
+        return try await dotnet.System.Threading.Tasks.Task_1(hndl: __return).to_async_result();
         }
     }
     // System.Threading.Tasks.Task<System.Net.Http.HttpResponseMessage> PostAsJsonAsync<TValue>(System.Net.Http.HttpClient, System.Uri, TValue, System.Text.Json.Serialization.Metadata.JsonTypeInfo<TValue>, System.Threading.CancellationToken)
@@ -291,7 +291,7 @@ public struct HttpClientJsonExtensions {
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return try await dotnet.System.Threading.Tasks.Task_1(hndl: __return).ToAsync();
+        return try await dotnet.System.Threading.Tasks.Task_1(hndl: __return).to_async_result();
         }
     }
     // System.Threading.Tasks.Task<System.Net.Http.HttpResponseMessage> PostAsJsonAsync<TValue>(System.Net.Http.HttpClient, System.Uri, TValue, System.Threading.CancellationToken)
@@ -312,7 +312,7 @@ public struct HttpClientJsonExtensions {
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return try await dotnet.System.Threading.Tasks.Task_1(hndl: __return).ToAsync();
+        return try await dotnet.System.Threading.Tasks.Task_1(hndl: __return).to_async_result();
         }
     }
     // System.Threading.Tasks.Task<System.Net.Http.HttpResponseMessage> PutAsJsonAsync<TValue>(System.Net.Http.HttpClient, System.String, TValue, System.Text.Json.JsonSerializerOptions, System.Threading.CancellationToken)
@@ -334,7 +334,7 @@ public struct HttpClientJsonExtensions {
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return try await dotnet.System.Threading.Tasks.Task_1(hndl: __return).ToAsync();
+        return try await dotnet.System.Threading.Tasks.Task_1(hndl: __return).to_async_result();
         }
     }
     // System.Threading.Tasks.Task<System.Net.Http.HttpResponseMessage> PutAsJsonAsync<TValue>(System.Net.Http.HttpClient, System.String, TValue, System.Text.Json.Serialization.Metadata.JsonTypeInfo<TValue>, System.Threading.CancellationToken)
@@ -356,7 +356,7 @@ public struct HttpClientJsonExtensions {
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return try await dotnet.System.Threading.Tasks.Task_1(hndl: __return).ToAsync();
+        return try await dotnet.System.Threading.Tasks.Task_1(hndl: __return).to_async_result();
         }
     }
     // System.Threading.Tasks.Task<System.Net.Http.HttpResponseMessage> PutAsJsonAsync<TValue>(System.Net.Http.HttpClient, System.String, TValue, System.Threading.CancellationToken)
@@ -377,7 +377,7 @@ public struct HttpClientJsonExtensions {
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return try await dotnet.System.Threading.Tasks.Task_1(hndl: __return).ToAsync();
+        return try await dotnet.System.Threading.Tasks.Task_1(hndl: __return).to_async_result();
         }
     }
     // System.Threading.Tasks.Task<System.Net.Http.HttpResponseMessage> PutAsJsonAsync<TValue>(System.Net.Http.HttpClient, System.Uri, TValue, System.Text.Json.JsonSerializerOptions, System.Threading.CancellationToken)
@@ -399,7 +399,7 @@ public struct HttpClientJsonExtensions {
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return try await dotnet.System.Threading.Tasks.Task_1(hndl: __return).ToAsync();
+        return try await dotnet.System.Threading.Tasks.Task_1(hndl: __return).to_async_result();
         }
     }
     // System.Threading.Tasks.Task<System.Net.Http.HttpResponseMessage> PutAsJsonAsync<TValue>(System.Net.Http.HttpClient, System.Uri, TValue, System.Text.Json.Serialization.Metadata.JsonTypeInfo<TValue>, System.Threading.CancellationToken)
@@ -421,7 +421,7 @@ public struct HttpClientJsonExtensions {
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return try await dotnet.System.Threading.Tasks.Task_1(hndl: __return).ToAsync();
+        return try await dotnet.System.Threading.Tasks.Task_1(hndl: __return).to_async_result();
         }
     }
     // System.Threading.Tasks.Task<System.Net.Http.HttpResponseMessage> PutAsJsonAsync<TValue>(System.Net.Http.HttpClient, System.Uri, TValue, System.Threading.CancellationToken)
@@ -442,7 +442,7 @@ public struct HttpClientJsonExtensions {
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return try await dotnet.System.Threading.Tasks.Task_1(hndl: __return).ToAsync();
+        return try await dotnet.System.Threading.Tasks.Task_1(hndl: __return).to_async_result();
         }
     }
 } // HttpClientJsonExtensions
@@ -468,7 +468,7 @@ public struct HttpContentJsonExtensions {
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return try await dotnet.System.Threading.Tasks.Task_1(hndl: __return).ToAsync();
+        return try await dotnet.System.Threading.Tasks.Task_1(hndl: __return).to_async_result();
         }
     }
     // System.Threading.Tasks.Task<System.Object> ReadFromJsonAsync(System.Net.Http.HttpContent, System.Type, System.Text.Json.Serialization.JsonSerializerContext, System.Threading.CancellationToken)
@@ -489,7 +489,7 @@ public struct HttpContentJsonExtensions {
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return try await dotnet.System.Threading.Tasks.Task_1(hndl: __return).ToAsync();
+        return try await dotnet.System.Threading.Tasks.Task_1(hndl: __return).to_async_result();
         }
     }
 // TODO COPE (write_all_methods) (unused generic param) System.Threading.Tasks.Task<T> ReadFromJsonAsync<T>(System.Net.Http.HttpContent, System.Text.Json.JsonSerializerOptions, System.Threading.CancellationToken)
@@ -510,7 +510,7 @@ public struct HttpContentJsonExtensions {
         if let __ex =  __thrown {
             throw dotnet.System.Exception(hndl: __ex);
         } else {
-        return try await dotnet.System.Threading.Tasks.Task_1(hndl: __return).ToAsync();
+        return try await dotnet.System.Threading.Tasks.Task_1(hndl: __return).to_async_result();
         }
     }
 } // HttpContentJsonExtensions
