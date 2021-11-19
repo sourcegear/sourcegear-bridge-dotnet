@@ -474,6 +474,15 @@ open class AsnContentException
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Formats_Asn1_AsnContentException_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor()
 // docid: M:System.Formats.Asn1.AsnContentException.#ctor
     /**
@@ -629,6 +638,15 @@ open class AsnReader
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Formats_Asn1_AsnReader_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor(System.ReadOnlyMemory<System.Byte>, System.Formats.Asn1.AsnEncodingRules, System.Formats.Asn1.AsnReaderOptions)
 // docid: M:System.Formats.Asn1.AsnReader.#ctor(System.ReadOnlyMemory{System.Byte},System.Formats.Asn1.AsnEncodingRules,System.Formats.Asn1.AsnReaderOptions)
     /**
@@ -1389,6 +1407,15 @@ public final class AsnWriter
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Formats_Asn1_AsnWriter_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor(System.Formats.Asn1.AsnEncodingRules)
 // docid: M:System.Formats.Asn1.AsnWriter.#ctor(System.Formats.Asn1.AsnEncodingRules)
     /**

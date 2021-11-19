@@ -25,6 +25,15 @@ public final class BitArray
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Collections_BitArray_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor(bool[])
 // docid: M:System.Collections.BitArray.#ctor(System.Boolean[])
     /**
@@ -625,6 +634,15 @@ open class Comparer_1<T : SGBridgeGenericValue>
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Collections_Generic_Comparer_1_cast(T.get_type_handle(),&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // System.Int32 Compare(T, T)
 // docid: M:System.Collections.Generic.Comparer`1.Compare(`0,`0)
     /**
@@ -714,6 +732,15 @@ open class Dictionary_2<TKey : SGBridgeGenericValue,TValue : SGBridgeGenericValu
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Collections_Generic_Dictionary_2_cast(TKey.get_type_handle(),TValue.get_type_handle(),&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor()
 // docid: M:System.Collections.Generic.Dictionary`2.#ctor
     /**
@@ -1303,6 +1330,15 @@ public final class Dictionary_KeyCollection_2<TKey : SGBridgeGenericValue,TValue
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Collections_Generic_Dictionary_2_KeyCollection_cast(TKey.get_type_handle(),TValue.get_type_handle(),&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor(System.Collections.Generic.Dictionary<TKey,TValue>)
 // docid: M:System.Collections.Generic.Dictionary`2.KeyCollection.#ctor(System.Collections.Generic.Dictionary{`0,`1})
     /**
@@ -1469,6 +1505,15 @@ public final class Dictionary_ValueCollection_2<TKey : SGBridgeGenericValue,TVal
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Collections_Generic_Dictionary_2_ValueCollection_cast(TKey.get_type_handle(),TValue.get_type_handle(),&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor(System.Collections.Generic.Dictionary<TKey,TValue>)
 // docid: M:System.Collections.Generic.Dictionary`2.ValueCollection.#ctor(System.Collections.Generic.Dictionary{`0,`1})
     /**
@@ -1634,6 +1679,15 @@ open class EqualityComparer_1<T : SGBridgeGenericValue>
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Collections_Generic_EqualityComparer_1_cast(T.get_type_handle(),&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // bool Equals(T, T)
 // docid: M:System.Collections.Generic.EqualityComparer`1.Equals(`0,`0)
     /**
@@ -1715,6 +1769,15 @@ open class HashSet_1<T : SGBridgeGenericValue>
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Collections_Generic_HashSet_1_cast(T.get_type_handle(),&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor()
 // docid: M:System.Collections.Generic.HashSet`1.#ctor
     /**
@@ -2380,6 +2443,15 @@ public final class LinkedListNode_1<T : SGBridgeGenericValue>
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Collections_Generic_LinkedListNode_1_cast(T.get_type_handle(),&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor(T)
 // docid: M:System.Collections.Generic.LinkedListNode`1.#ctor(`0)
     /**
@@ -2527,6 +2599,15 @@ open class LinkedList_1<T : SGBridgeGenericValue>
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Collections_Generic_LinkedList_1_cast(T.get_type_handle(),&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor()
 // docid: M:System.Collections.Generic.LinkedList`1.#ctor
     /**
@@ -3075,6 +3156,15 @@ open class List_1<T : SGBridgeGenericValue>
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Collections_Generic_List_1_cast(T.get_type_handle(),&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor()
 // docid: M:System.Collections.Generic.List`1.#ctor
     /**
@@ -4192,6 +4282,15 @@ open class PriorityQueue_2<TElement : SGBridgeGenericValue,TPriority : SGBridgeG
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Collections_Generic_PriorityQueue_2_cast(TElement.get_type_handle(),TPriority.get_type_handle(),&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor()
 // docid: M:System.Collections.Generic.PriorityQueue`2.#ctor
     /**
@@ -4578,6 +4677,15 @@ public final class PriorityQueue_UnorderedItemsCollection_2<TElement : SGBridgeG
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Collections_Generic_PriorityQueue_2_UnorderedItemsCollection_cast(TElement.get_type_handle(),TPriority.get_type_handle(),&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // System.Collections.Generic.PriorityQueue<TElement,TPriority>.UnorderedItemsCollection.Enumerator GetEnumerator()
 // docid: M:System.Collections.Generic.PriorityQueue`2.UnorderedItemsCollection.GetEnumerator
     /**
@@ -4717,6 +4825,15 @@ open class Queue_1<T : SGBridgeGenericValue>
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Collections_Generic_Queue_1_cast(T.get_type_handle(),&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor()
 // docid: M:System.Collections.Generic.Queue`1.#ctor
     /**
@@ -5091,6 +5208,15 @@ public final class ReferenceEqualityComparer
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Collections_Generic_ReferenceEqualityComparer_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // bool Equals(System.Object, System.Object)
 // docid: M:System.Collections.Generic.ReferenceEqualityComparer.Equals(System.Object,System.Object)
     /**
@@ -5172,6 +5298,15 @@ open class SortedDictionary_2<TKey : SGBridgeGenericValue,TValue : SGBridgeGener
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Collections_Generic_SortedDictionary_2_cast(TKey.get_type_handle(),TValue.get_type_handle(),&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor()
 // docid: M:System.Collections.Generic.SortedDictionary`2.#ctor
     /**
@@ -5581,6 +5716,15 @@ public final class SortedDictionary_KeyCollection_2<TKey : SGBridgeGenericValue,
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Collections_Generic_SortedDictionary_2_KeyCollection_cast(TKey.get_type_handle(),TValue.get_type_handle(),&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor(System.Collections.Generic.SortedDictionary<TKey,TValue>)
 // docid: M:System.Collections.Generic.SortedDictionary`2.KeyCollection.#ctor(System.Collections.Generic.SortedDictionary{`0,`1})
     /**
@@ -5747,6 +5891,15 @@ public final class SortedDictionary_ValueCollection_2<TKey : SGBridgeGenericValu
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Collections_Generic_SortedDictionary_2_ValueCollection_cast(TKey.get_type_handle(),TValue.get_type_handle(),&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor(System.Collections.Generic.SortedDictionary<TKey,TValue>)
 // docid: M:System.Collections.Generic.SortedDictionary`2.ValueCollection.#ctor(System.Collections.Generic.SortedDictionary{`0,`1})
     /**
@@ -5914,6 +6067,15 @@ open class SortedList_2<TKey : SGBridgeGenericValue,TValue : SGBridgeGenericValu
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Collections_Generic_SortedList_2_cast(TKey.get_type_handle(),TValue.get_type_handle(),&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor()
 // docid: M:System.Collections.Generic.SortedList`2.#ctor
     /**
@@ -6379,6 +6541,15 @@ open class SortedSet_1<T : SGBridgeGenericValue>
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Collections_Generic_SortedSet_1_cast(T.get_type_handle(),&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor()
 // docid: M:System.Collections.Generic.SortedSet`1.#ctor
     /**
@@ -7043,6 +7214,15 @@ open class Stack_1<T : SGBridgeGenericValue>
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Collections_Generic_Stack_1_cast(T.get_type_handle(),&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor()
 // docid: M:System.Collections.Generic.Stack`1.#ctor
     /**

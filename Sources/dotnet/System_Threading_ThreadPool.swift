@@ -30,6 +30,15 @@ open class IThreadPoolWorkItem
 
     deinit { __drop_handle(self.h); }
 
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Threading_IThreadPoolWorkItem_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // void Execute()
 // docid: M:System.Threading.IThreadPoolWorkItem.Execute
     /**
@@ -65,6 +74,15 @@ public final class RegisteredWaitHandle
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Threading_RegisteredWaitHandle_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // bool Unregister(System.Threading.WaitHandle)
 // docid: M:System.Threading.RegisteredWaitHandle.Unregister(System.Threading.WaitHandle)
     /**

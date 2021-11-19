@@ -22,6 +22,15 @@ open class EnumerableExecutor
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Linq_EnumerableExecutor_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
 } // EnumerableExecutor
 
 
@@ -42,6 +51,15 @@ open class EnumerableExecutor_1<T : SGBridgeGenericValue>
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Linq_EnumerableExecutor_1_cast(T.get_type_handle(),&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor(System.Linq.Expressions.Expression)
 // docid: M:System.Linq.EnumerableExecutor`1.#ctor(System.Linq.Expressions.Expression)
     /**
@@ -78,6 +96,15 @@ open class EnumerableQuery
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Linq_EnumerableQuery_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
 } // EnumerableQuery
 
 
@@ -102,6 +129,15 @@ open class EnumerableQuery_1<T : SGBridgeGenericValue>
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Linq_EnumerableQuery_1_cast(T.get_type_handle(),&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor(System.Collections.Generic.IEnumerable<T>)
 // docid: M:System.Linq.EnumerableQuery`1.#ctor(System.Collections.Generic.IEnumerable{`0})
     /**

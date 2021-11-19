@@ -125,6 +125,15 @@ open class DeflateStream
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_IO_Compression_DeflateStream_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor(System.IO.Stream, System.IO.Compression.CompressionLevel)
 // docid: M:System.IO.Compression.DeflateStream.#ctor(System.IO.Stream,System.IO.Compression.CompressionLevel)
     /**
@@ -698,6 +707,15 @@ open class GZipStream
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_IO_Compression_GZipStream_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor(System.IO.Stream, System.IO.Compression.CompressionLevel)
 // docid: M:System.IO.Compression.GZipStream.#ctor(System.IO.Stream,System.IO.Compression.CompressionLevel)
     /**
@@ -1271,6 +1289,15 @@ public final class ZLibStream
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_IO_Compression_ZLibStream_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor(System.IO.Stream, System.IO.Compression.CompressionLevel)
 // docid: M:System.IO.Compression.ZLibStream.#ctor(System.IO.Stream,System.IO.Compression.CompressionLevel)
     /**
@@ -1861,6 +1888,15 @@ open class ZipArchive
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_IO_Compression_ZipArchive_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor(System.IO.Stream)
 // docid: M:System.IO.Compression.ZipArchive.#ctor(System.IO.Stream)
     /**
@@ -2067,6 +2103,15 @@ open class ZipArchiveEntry
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_IO_Compression_ZipArchiveEntry_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // void Delete()
 // docid: M:System.IO.Compression.ZipArchiveEntry.Delete
     /**

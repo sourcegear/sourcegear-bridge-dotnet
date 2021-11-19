@@ -96,6 +96,15 @@ open class GatewayIPAddressInformation
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Net_NetworkInformation_GatewayIPAddressInformation_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // [IsSpecialName] System.Net.IPAddress get_Address()
 // docid: M:System.Net.NetworkInformation.GatewayIPAddressInformation.get_Address
     open func get_Address() throws -> dotnet.System.Net.IPAddress {
@@ -137,6 +146,15 @@ open class GatewayIPAddressInformationCollection
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Net_NetworkInformation_GatewayIPAddressInformationCollection_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // void Add(System.Net.NetworkInformation.GatewayIPAddressInformation)
 // docid: M:System.Net.NetworkInformation.GatewayIPAddressInformationCollection.Add(System.Net.NetworkInformation.GatewayIPAddressInformation)
     /**
@@ -310,6 +328,15 @@ open class IPAddressInformation
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Net_NetworkInformation_IPAddressInformation_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // [IsSpecialName] System.Net.IPAddress get_Address()
 // docid: M:System.Net.NetworkInformation.IPAddressInformation.get_Address
     open func get_Address() throws -> dotnet.System.Net.IPAddress {
@@ -391,6 +418,15 @@ open class IPAddressInformationCollection
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Net_NetworkInformation_IPAddressInformationCollection_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // void Add(System.Net.NetworkInformation.IPAddressInformation)
 // docid: M:System.Net.NetworkInformation.IPAddressInformationCollection.Add(System.Net.NetworkInformation.IPAddressInformation)
     /**
@@ -564,6 +600,15 @@ open class IPGlobalProperties
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Net_NetworkInformation_IPGlobalProperties_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // System.IAsyncResult BeginGetUnicastAddresses(System.AsyncCallback, System.Object)
 // docid: M:System.Net.NetworkInformation.IPGlobalProperties.BeginGetUnicastAddresses(System.AsyncCallback,System.Object)
     /**
@@ -964,6 +1009,15 @@ open class IPGlobalStatistics
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Net_NetworkInformation_IPGlobalStatistics_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // [IsSpecialName] System.Int32 get_DefaultTtl()
 // docid: M:System.Net.NetworkInformation.IPGlobalStatistics.get_DefaultTtl
     open func get_DefaultTtl() throws -> Swift.Int32 {
@@ -1424,6 +1478,15 @@ open class IPInterfaceProperties
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Net_NetworkInformation_IPInterfaceProperties_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // System.Net.NetworkInformation.IPv4InterfaceProperties GetIPv4Properties()
 // docid: M:System.Net.NetworkInformation.IPInterfaceProperties.GetIPv4Properties
     /**
@@ -1678,6 +1741,15 @@ open class IPInterfaceStatistics
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Net_NetworkInformation_IPInterfaceStatistics_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // [IsSpecialName] System.Int64 get_BytesReceived()
 // docid: M:System.Net.NetworkInformation.IPInterfaceStatistics.get_BytesReceived
     open func get_BytesReceived() throws -> Swift.Int64 {
@@ -1938,6 +2010,15 @@ open class IPv4InterfaceProperties
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Net_NetworkInformation_IPv4InterfaceProperties_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // [IsSpecialName] System.Int32 get_Index()
 // docid: M:System.Net.NetworkInformation.IPv4InterfaceProperties.get_Index
     open func get_Index() throws -> Swift.Int32 {
@@ -2098,6 +2179,15 @@ open class IPv4InterfaceStatistics
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Net_NetworkInformation_IPv4InterfaceStatistics_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // [IsSpecialName] System.Int64 get_BytesReceived()
 // docid: M:System.Net.NetworkInformation.IPv4InterfaceStatistics.get_BytesReceived
     open func get_BytesReceived() throws -> Swift.Int64 {
@@ -2358,6 +2448,15 @@ open class IPv6InterfaceProperties
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Net_NetworkInformation_IPv6InterfaceProperties_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // System.Int64 GetScopeId(System.Net.NetworkInformation.ScopeLevel)
 // docid: M:System.Net.NetworkInformation.IPv6InterfaceProperties.GetScopeId(System.Net.NetworkInformation.ScopeLevel)
     /**
@@ -2436,6 +2535,15 @@ open class IcmpV4Statistics
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Net_NetworkInformation_IcmpV4Statistics_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // [IsSpecialName] System.Int64 get_AddressMaskRepliesReceived()
 // docid: M:System.Net.NetworkInformation.IcmpV4Statistics.get_AddressMaskRepliesReceived
     open func get_AddressMaskRepliesReceived() throws -> Swift.Int64 {
@@ -2976,6 +3084,15 @@ open class IcmpV6Statistics
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Net_NetworkInformation_IcmpV6Statistics_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // [IsSpecialName] System.Int64 get_DestinationUnreachableMessagesReceived()
 // docid: M:System.Net.NetworkInformation.IcmpV6Statistics.get_DestinationUnreachableMessagesReceived
     open func get_DestinationUnreachableMessagesReceived() throws -> Swift.Int64 {
@@ -3636,6 +3753,15 @@ open class MulticastIPAddressInformation
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Net_NetworkInformation_MulticastIPAddressInformation_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // [IsSpecialName] System.Int64 get_AddressPreferredLifetime()
 // docid: M:System.Net.NetworkInformation.MulticastIPAddressInformation.get_AddressPreferredLifetime
     open func get_AddressPreferredLifetime() throws -> Swift.Int64 {
@@ -3777,6 +3903,15 @@ open class MulticastIPAddressInformationCollection
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Net_NetworkInformation_MulticastIPAddressInformationCollection_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // void Add(System.Net.NetworkInformation.MulticastIPAddressInformation)
 // docid: M:System.Net.NetworkInformation.MulticastIPAddressInformationCollection.Add(System.Net.NetworkInformation.MulticastIPAddressInformation)
     /**
@@ -4239,6 +4374,15 @@ open class NetworkAvailabilityEventArgs
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Net_NetworkInformation_NetworkAvailabilityEventArgs_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // [IsSpecialName] bool get_IsAvailable()
 // docid: M:System.Net.NetworkInformation.NetworkAvailabilityEventArgs.get_IsAvailable
     open func get_IsAvailable() throws -> Bool {
@@ -4279,6 +4423,15 @@ open class NetworkChange
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Net_NetworkInformation_NetworkChange_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor()
 // docid: M:System.Net.NetworkInformation.NetworkChange.#ctor
     /**
@@ -4394,6 +4547,15 @@ open class NetworkInformationException
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Net_NetworkInformation_NetworkInformationException_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor()
 // docid: M:System.Net.NetworkInformation.NetworkInformationException.#ctor
     /**
@@ -4465,6 +4627,15 @@ open class NetworkInterface
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Net_NetworkInformation_NetworkInterface_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // System.Net.NetworkInformation.NetworkInterface[] GetAllNetworkInterfaces()
 // docid: M:System.Net.NetworkInformation.NetworkInterface.GetAllNetworkInterfaces
     /**
@@ -5268,6 +5439,15 @@ open class PhysicalAddress
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Net_NetworkInformation_PhysicalAddress_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // static field: System.Net.NetworkInformation.PhysicalAddress None
     /**
     Returns a new  instance with a zero length address. This field is read-only.
@@ -5692,6 +5872,15 @@ open class TcpConnectionInformation
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Net_NetworkInformation_TcpConnectionInformation_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // [IsSpecialName] System.Net.IPEndPoint get_LocalEndPoint()
 // docid: M:System.Net.NetworkInformation.TcpConnectionInformation.get_LocalEndPoint
     open func get_LocalEndPoint() throws -> dotnet.System.Net.IPEndPoint {
@@ -5933,6 +6122,15 @@ open class TcpStatistics
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Net_NetworkInformation_TcpStatistics_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // [IsSpecialName] System.Int64 get_ConnectionsAccepted()
 // docid: M:System.Net.NetworkInformation.TcpStatistics.get_ConnectionsAccepted
     open func get_ConnectionsAccepted() throws -> Swift.Int64 {
@@ -6233,6 +6431,15 @@ open class UdpStatistics
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Net_NetworkInformation_UdpStatistics_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // [IsSpecialName] System.Int64 get_DatagramsReceived()
 // docid: M:System.Net.NetworkInformation.UdpStatistics.get_DatagramsReceived
     open func get_DatagramsReceived() throws -> Swift.Int64 {
@@ -6353,6 +6560,15 @@ open class UnicastIPAddressInformation
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Net_NetworkInformation_UnicastIPAddressInformation_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // [IsSpecialName] System.Int64 get_AddressPreferredLifetime()
 // docid: M:System.Net.NetworkInformation.UnicastIPAddressInformation.get_AddressPreferredLifetime
     open func get_AddressPreferredLifetime() throws -> Swift.Int64 {
@@ -6534,6 +6750,15 @@ open class UnicastIPAddressInformationCollection
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Net_NetworkInformation_UnicastIPAddressInformationCollection_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // void Add(System.Net.NetworkInformation.UnicastIPAddressInformation)
 // docid: M:System.Net.NetworkInformation.UnicastIPAddressInformationCollection.Add(System.Net.NetworkInformation.UnicastIPAddressInformation)
     /**

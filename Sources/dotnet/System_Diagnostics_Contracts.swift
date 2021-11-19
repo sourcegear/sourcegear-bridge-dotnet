@@ -366,6 +366,15 @@ public final class ContractAbbreviatorAttribute
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Diagnostics_Contracts_ContractAbbreviatorAttribute_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor()
 // docid: M:System.Diagnostics.Contracts.ContractAbbreviatorAttribute.#ctor
     /**
@@ -401,6 +410,15 @@ public final class ContractArgumentValidatorAttribute
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Diagnostics_Contracts_ContractArgumentValidatorAttribute_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor()
 // docid: M:System.Diagnostics.Contracts.ContractArgumentValidatorAttribute.#ctor
     /**
@@ -436,6 +454,15 @@ public final class ContractClassAttribute
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Diagnostics_Contracts_ContractClassAttribute_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor(System.Type)
 // docid: M:System.Diagnostics.Contracts.ContractClassAttribute.#ctor(System.Type)
     /**
@@ -492,6 +519,15 @@ public final class ContractClassForAttribute
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Diagnostics_Contracts_ContractClassForAttribute_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor(System.Type)
 // docid: M:System.Diagnostics.Contracts.ContractClassForAttribute.#ctor(System.Type)
     /**
@@ -548,6 +584,15 @@ public final class ContractFailedEventArgs
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Diagnostics_Contracts_ContractFailedEventArgs_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor(System.Diagnostics.Contracts.ContractFailureKind, System.String, System.String, System.Exception)
 // docid: M:System.Diagnostics.Contracts.ContractFailedEventArgs.#ctor(System.Diagnostics.Contracts.ContractFailureKind,System.String,System.String,System.Exception)
     /**
@@ -833,6 +878,15 @@ public final class ContractInvariantMethodAttribute
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Diagnostics_Contracts_ContractInvariantMethodAttribute_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor()
 // docid: M:System.Diagnostics.Contracts.ContractInvariantMethodAttribute.#ctor
     /**
@@ -868,6 +922,15 @@ public final class ContractOptionAttribute
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Diagnostics_Contracts_ContractOptionAttribute_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor(System.String, System.String, bool)
 // docid: M:System.Diagnostics.Contracts.ContractOptionAttribute.#ctor(System.String,System.String,System.Boolean)
     /**
@@ -1009,6 +1072,15 @@ public final class ContractPublicPropertyNameAttribute
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Diagnostics_Contracts_ContractPublicPropertyNameAttribute_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor(System.String)
 // docid: M:System.Diagnostics.Contracts.ContractPublicPropertyNameAttribute.#ctor(System.String)
     /**
@@ -1065,6 +1137,15 @@ public final class ContractReferenceAssemblyAttribute
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Diagnostics_Contracts_ContractReferenceAssemblyAttribute_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor()
 // docid: M:System.Diagnostics.Contracts.ContractReferenceAssemblyAttribute.#ctor
     /**
@@ -1100,6 +1181,15 @@ public final class ContractRuntimeIgnoredAttribute
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Diagnostics_Contracts_ContractRuntimeIgnoredAttribute_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor()
 // docid: M:System.Diagnostics.Contracts.ContractRuntimeIgnoredAttribute.#ctor
     /**
@@ -1135,6 +1225,15 @@ public final class ContractVerificationAttribute
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Diagnostics_Contracts_ContractVerificationAttribute_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor(bool)
 // docid: M:System.Diagnostics.Contracts.ContractVerificationAttribute.#ctor(System.Boolean)
     /**
@@ -1192,6 +1291,15 @@ public final class PureAttribute
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Diagnostics_Contracts_PureAttribute_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor()
 // docid: M:System.Diagnostics.Contracts.PureAttribute.#ctor
     /**

@@ -22,6 +22,15 @@ open class StackFrame
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Diagnostics_StackFrame_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // static field: System.Int32 OFFSET_UNKNOWN
     /**
     Defines the value that is returned from the  or  method when the native or Microsoft intermediate language (MSIL) offset is unknown. This field is constant.
@@ -396,6 +405,15 @@ open class StackTrace
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Diagnostics_StackTrace_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // static field: System.Int32 METHODS_TO_SKIP
     /**
     Defines the default for the number of methods to omit from the stack trace. This field is constant.
@@ -666,6 +684,15 @@ open class ISymbolBinder
 
     deinit { __drop_handle(self.h); }
 
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Diagnostics_SymbolStore_ISymbolBinder_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // System.Diagnostics.SymbolStore.ISymbolReader GetReader(System.Int32, System.String, System.String)
 // docid: M:System.Diagnostics.SymbolStore.ISymbolBinder.GetReader(System.Int32,System.String,System.String)
     /**
@@ -718,6 +745,15 @@ open class ISymbolBinder1
 
     deinit { __drop_handle(self.h); }
 
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Diagnostics_SymbolStore_ISymbolBinder1_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // System.Diagnostics.SymbolStore.ISymbolReader GetReader(System.IntPtr, System.String, System.String)
 // docid: M:System.Diagnostics.SymbolStore.ISymbolBinder1.GetReader(System.IntPtr,System.String,System.String)
     /**
@@ -770,6 +806,15 @@ open class ISymbolDocument
 
     deinit { __drop_handle(self.h); }
 
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Diagnostics_SymbolStore_ISymbolDocument_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // System.Int32 FindClosestLine(System.Int32)
 // docid: M:System.Diagnostics.SymbolStore.ISymbolDocument.FindClosestLine(System.Int32)
     /**
@@ -931,6 +976,15 @@ open class ISymbolDocumentWriter
 
     deinit { __drop_handle(self.h); }
 
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Diagnostics_SymbolStore_ISymbolDocumentWriter_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // void SetCheckSum(System.Guid, System.Byte[])
 // docid: M:System.Diagnostics.SymbolStore.ISymbolDocumentWriter.SetCheckSum(System.Guid,System.Byte[])
     /**
@@ -992,6 +1046,15 @@ open class ISymbolMethod
 
     deinit { __drop_handle(self.h); }
 
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Diagnostics_SymbolStore_ISymbolMethod_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // System.Diagnostics.SymbolStore.ISymbolNamespace GetNamespace()
 // docid: M:System.Diagnostics.SymbolStore.ISymbolMethod.GetNamespace
     /**
@@ -1187,6 +1250,15 @@ open class ISymbolNamespace
 
     deinit { __drop_handle(self.h); }
 
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Diagnostics_SymbolStore_ISymbolNamespace_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // System.Diagnostics.SymbolStore.ISymbolNamespace[] GetNamespaces()
 // docid: M:System.Diagnostics.SymbolStore.ISymbolNamespace.GetNamespaces
     /**
@@ -1260,6 +1332,15 @@ open class ISymbolReader
 
     deinit { __drop_handle(self.h); }
 
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Diagnostics_SymbolStore_ISymbolReader_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // System.Diagnostics.SymbolStore.ISymbolDocument GetDocument(System.String, System.Guid, System.Guid, System.Guid)
 // docid: M:System.Diagnostics.SymbolStore.ISymbolReader.GetDocument(System.String,System.Guid,System.Guid,System.Guid)
     /**
@@ -1477,6 +1558,15 @@ open class ISymbolScope
 
     deinit { __drop_handle(self.h); }
 
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Diagnostics_SymbolStore_ISymbolScope_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // System.Diagnostics.SymbolStore.ISymbolScope[] GetChildren()
 // docid: M:System.Diagnostics.SymbolStore.ISymbolScope.GetChildren
     /**
@@ -1600,6 +1690,15 @@ open class ISymbolVariable
 
     deinit { __drop_handle(self.h); }
 
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Diagnostics_SymbolStore_ISymbolVariable_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // System.Byte[] GetSignature()
 // docid: M:System.Diagnostics.SymbolStore.ISymbolVariable.GetSignature
     /**
@@ -1733,6 +1832,15 @@ open class ISymbolWriter
 
     deinit { __drop_handle(self.h); }
 
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Diagnostics_SymbolStore_ISymbolWriter_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // void Close()
 // docid: M:System.Diagnostics.SymbolStore.ISymbolWriter.Close
     /**
@@ -2249,6 +2357,15 @@ open class SymDocumentType
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Diagnostics_SymbolStore_SymDocumentType_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // static field: System.Guid Text
     /**
     Specifies the GUID of the document type to be used with the symbol store.
@@ -2295,6 +2412,15 @@ open class SymLanguageType
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Diagnostics_SymbolStore_SymLanguageType_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // static field: System.Guid Basic
     /**
     Specifies the GUID of the Basic language type to be used with the symbol store.
@@ -2451,6 +2577,15 @@ open class SymLanguageVendor
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Diagnostics_SymbolStore_SymLanguageVendor_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // static field: System.Guid Microsoft
     /**
     Specifies the GUID of the Microsoft language vendor.

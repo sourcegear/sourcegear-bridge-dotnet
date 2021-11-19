@@ -305,6 +305,15 @@ open class Ping
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Net_NetworkInformation_Ping_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor()
 // docid: M:System.Net.NetworkInformation.Ping.#ctor
     /**
@@ -847,6 +856,15 @@ open class PingCompletedEventArgs
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Net_NetworkInformation_PingCompletedEventArgs_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // [IsSpecialName] System.Net.NetworkInformation.PingReply get_Reply()
 // docid: M:System.Net.NetworkInformation.PingCompletedEventArgs.get_Reply
     open func get_Reply() throws -> Optional<dotnet.System.Net.NetworkInformation.PingReply> {
@@ -999,6 +1017,15 @@ open class PingException
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Net_NetworkInformation_PingException_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor(System.String)
 // docid: M:System.Net.NetworkInformation.PingException.#ctor(System.String)
     /**
@@ -1052,6 +1079,15 @@ open class PingOptions
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Net_NetworkInformation_PingOptions_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor()
 // docid: M:System.Net.NetworkInformation.PingOptions.#ctor
     /**
@@ -1173,6 +1209,15 @@ open class PingReply
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Net_NetworkInformation_PingReply_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // [IsSpecialName] System.Net.IPAddress get_Address()
 // docid: M:System.Net.NetworkInformation.PingReply.get_Address
     open func get_Address() throws -> dotnet.System.Net.IPAddress {

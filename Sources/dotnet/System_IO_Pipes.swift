@@ -23,6 +23,15 @@ public final class SafePipeHandle
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = Microsoft_Win32_SafeHandles_SafePipeHandle_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor()
 // docid: M:Microsoft.Win32.SafeHandles.SafePipeHandle.#ctor
     /**
@@ -104,6 +113,15 @@ public final class AnonymousPipeClientStream
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_IO_Pipes_AnonymousPipeClientStream_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor(System.IO.Pipes.PipeDirection, Microsoft.Win32.SafeHandles.SafePipeHandle)
 // docid: M:System.IO.Pipes.AnonymousPipeClientStream.#ctor(System.IO.Pipes.PipeDirection,Microsoft.Win32.SafeHandles.SafePipeHandle)
     /**
@@ -209,6 +227,15 @@ public final class AnonymousPipeServerStream
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_IO_Pipes_AnonymousPipeServerStream_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor()
 // docid: M:System.IO.Pipes.AnonymousPipeServerStream.#ctor
     /**
@@ -404,6 +431,15 @@ public final class NamedPipeClientStream
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_IO_Pipes_NamedPipeClientStream_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor(System.IO.Pipes.PipeDirection, bool, bool, Microsoft.Win32.SafeHandles.SafePipeHandle)
 // docid: M:System.IO.Pipes.NamedPipeClientStream.#ctor(System.IO.Pipes.PipeDirection,System.Boolean,System.Boolean,Microsoft.Win32.SafeHandles.SafePipeHandle)
     /**
@@ -679,6 +715,15 @@ public final class NamedPipeServerStream
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_IO_Pipes_NamedPipeServerStream_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // static field: System.Int32 MaxAllowedServerInstances
     /**
     Represents the maximum number of server instances that the system resources allow.
@@ -1099,6 +1144,15 @@ open class PipeStream
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_IO_Pipes_PipeStream_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // System.IAsyncResult BeginRead(System.Byte[], System.Int32, System.Int32, System.AsyncCallback, System.Object)
 // docid: M:System.IO.Pipes.PipeStream.BeginRead(System.Byte[],System.Int32,System.Int32,System.AsyncCallback,System.Object)
     /**

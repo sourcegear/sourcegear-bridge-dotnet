@@ -23,6 +23,15 @@ open class DateTimeFormat
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Runtime_Serialization_DateTimeFormat_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor(System.String)
 // docid: M:System.Runtime.Serialization.DateTimeFormat.#ctor(System.String)
     /**
@@ -204,6 +213,15 @@ public final class DataContractJsonSerializer
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Runtime_Serialization_Json_DataContractJsonSerializer_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor(System.Type)
 // docid: M:System.Runtime.Serialization.Json.DataContractJsonSerializer.#ctor(System.Type)
     /**
@@ -791,6 +809,15 @@ open class DataContractJsonSerializerSettings
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Runtime_Serialization_Json_DataContractJsonSerializerSettings_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor()
 // docid: M:System.Runtime.Serialization.Json.DataContractJsonSerializerSettings.#ctor
     /**
@@ -1118,6 +1145,15 @@ open class IXmlJsonReaderInitializer
 
     deinit { __drop_handle(self.h); }
 
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Runtime_Serialization_Json_IXmlJsonReaderInitializer_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // void SetInput(System.Byte[], System.Int32, System.Int32, System.Text.Encoding, System.Xml.XmlDictionaryReaderQuotas, System.Xml.OnXmlDictionaryReaderClose)
 // docid: M:System.Runtime.Serialization.Json.IXmlJsonReaderInitializer.SetInput(System.Byte[],System.Int32,System.Int32,System.Text.Encoding,System.Xml.XmlDictionaryReaderQuotas,System.Xml.OnXmlDictionaryReaderClose)
     /**
@@ -1197,6 +1233,15 @@ open class IXmlJsonWriterInitializer
 
     deinit { __drop_handle(self.h); }
 
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Runtime_Serialization_Json_IXmlJsonWriterInitializer_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // void SetOutput(System.IO.Stream, System.Text.Encoding, bool)
 // docid: M:System.Runtime.Serialization.Json.IXmlJsonWriterInitializer.SetOutput(System.IO.Stream,System.Text.Encoding,System.Boolean)
     /**

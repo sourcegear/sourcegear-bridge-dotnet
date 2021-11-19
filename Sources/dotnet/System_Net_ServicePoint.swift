@@ -217,6 +217,15 @@ open class ServicePoint
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Net_ServicePoint_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // bool CloseConnectionGroup(System.String)
 // docid: M:System.Net.ServicePoint.CloseConnectionGroup(System.String)
     /**
@@ -696,6 +705,15 @@ open class ServicePointManager
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Net_ServicePointManager_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // static field: System.Int32 DefaultNonPersistentConnectionLimit
     /**
     The default number of non-persistent connections (4) allowed on a  object connected to an HTTP/1.0 or later server. This field is constant but is no longer used as of .NET Framework 2.0.

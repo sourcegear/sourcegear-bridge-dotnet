@@ -22,6 +22,15 @@ open class DispatchProxy
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Reflection_DispatchProxy_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
 // TODO COPE (write_all_methods) (unused generic param) T Create<T, TProxy>()
 } // DispatchProxy
 

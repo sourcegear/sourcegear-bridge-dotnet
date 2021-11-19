@@ -23,6 +23,15 @@ public final class SafeMemoryMappedFileHandle
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = Microsoft_Win32_SafeHandles_SafeMemoryMappedFileHandle_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor()
 // docid: M:Microsoft.Win32.SafeHandles.SafeMemoryMappedFileHandle.#ctor
     /**
@@ -78,6 +87,15 @@ public final class SafeMemoryMappedViewHandle
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = Microsoft_Win32_SafeHandles_SafeMemoryMappedViewHandle_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor()
 // docid: M:Microsoft.Win32.SafeHandles.SafeMemoryMappedViewHandle.#ctor
     /**
@@ -122,6 +140,15 @@ open class MemoryMappedFile
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_IO_MemoryMappedFiles_MemoryMappedFile_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // System.IO.MemoryMappedFiles.MemoryMappedFile CreateFromFile(System.IO.FileStream, System.String, System.Int64, System.IO.MemoryMappedFiles.MemoryMappedFileAccess, System.IO.HandleInheritability, bool)
 // docid: M:System.IO.MemoryMappedFiles.MemoryMappedFile.CreateFromFile(System.IO.FileStream,System.String,System.Int64,System.IO.MemoryMappedFiles.MemoryMappedFileAccess,System.IO.HandleInheritability,System.Boolean)
     /**
@@ -878,6 +905,15 @@ public final class MemoryMappedViewAccessor
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_IO_MemoryMappedFiles_MemoryMappedViewAccessor_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // void Flush()
 // docid: M:System.IO.MemoryMappedFiles.MemoryMappedViewAccessor.Flush
     /**
@@ -953,6 +989,15 @@ public final class MemoryMappedViewStream
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_IO_MemoryMappedFiles_MemoryMappedViewStream_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // void Flush()
 // docid: M:System.IO.MemoryMappedFiles.MemoryMappedViewStream.Flush
     /**

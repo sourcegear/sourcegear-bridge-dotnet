@@ -286,6 +286,15 @@ public final class PipeAccessRule
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_IO_Pipes_PipeAccessRule_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor(System.Security.Principal.IdentityReference, System.IO.Pipes.PipeAccessRights, System.Security.AccessControl.AccessControlType)
 // docid: M:System.IO.Pipes.PipeAccessRule.#ctor(System.Security.Principal.IdentityReference,System.IO.Pipes.PipeAccessRights,System.Security.AccessControl.AccessControlType)
     /**
@@ -362,6 +371,15 @@ public final class PipeAuditRule
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_IO_Pipes_PipeAuditRule_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor(System.Security.Principal.IdentityReference, System.IO.Pipes.PipeAccessRights, System.Security.AccessControl.AuditFlags)
 // docid: M:System.IO.Pipes.PipeAuditRule.#ctor(System.Security.Principal.IdentityReference,System.IO.Pipes.PipeAccessRights,System.Security.AccessControl.AuditFlags)
     /**
@@ -438,6 +456,15 @@ open class PipeSecurity
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_IO_Pipes_PipeSecurity_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor()
 // docid: M:System.IO.Pipes.PipeSecurity.#ctor
     /**

@@ -533,6 +533,15 @@ public final class JsonContent
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Net_Http_Json_JsonContent_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // System.Net.Http.Json.JsonContent Create(System.Object, System.Type, System.Net.Http.Headers.MediaTypeHeaderValue, System.Text.Json.JsonSerializerOptions)
 // docid: M:System.Net.Http.Json.JsonContent.Create(System.Object,System.Type,System.Net.Http.Headers.MediaTypeHeaderValue,System.Text.Json.JsonSerializerOptions)
     /**

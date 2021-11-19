@@ -343,6 +343,15 @@ open class Constraint
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Data_Constraint_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // System.String ToString()
 // docid: M:System.Data.Constraint.ToString
     /**
@@ -458,6 +467,15 @@ public final class ConstraintCollection
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Data_ConstraintCollection_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // void Add(System.Data.Constraint)
 // docid: M:System.Data.ConstraintCollection.Add(System.Data.Constraint)
     /**
@@ -802,6 +820,15 @@ open class ConstraintException
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Data_ConstraintException_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor()
 // docid: M:System.Data.ConstraintException.#ctor
     /**
@@ -870,6 +897,15 @@ public final class DBConcurrencyException
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Data_DBConcurrencyException_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor()
 // docid: M:System.Data.DBConcurrencyException.#ctor
     /**
@@ -1064,6 +1100,15 @@ open class DataColumn
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Data_DataColumn_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor()
 // docid: M:System.Data.DataColumn.#ctor
     /**
@@ -1810,6 +1855,15 @@ open class DataColumnChangeEventArgs
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Data_DataColumnChangeEventArgs_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor(System.Data.DataRow, System.Data.DataColumn, System.Object)
 // docid: M:System.Data.DataColumnChangeEventArgs.#ctor(System.Data.DataRow,System.Data.DataColumn,System.Object)
     /**
@@ -2038,6 +2092,15 @@ public final class DataColumnCollection
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Data_DataColumnCollection_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // System.Data.DataColumn Add()
 // docid: M:System.Data.DataColumnCollection.Add
     /**
@@ -2384,6 +2447,15 @@ open class DataException
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Data_DataException_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor()
 // docid: M:System.Data.DataException.#ctor
     /**
@@ -2925,6 +2997,15 @@ open class DataRelation
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Data_DataRelation_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor(System.String, System.Data.DataColumn, System.Data.DataColumn)
 // docid: M:System.Data.DataRelation.#ctor(System.String,System.Data.DataColumn,System.Data.DataColumn)
     /**
@@ -3320,6 +3401,15 @@ open class DataRelationCollection
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Data_DataRelationCollection_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // System.Data.DataRelation Add(System.Data.DataColumn, System.Data.DataColumn)
 // docid: M:System.Data.DataRelationCollection.Add(System.Data.DataColumn,System.Data.DataColumn)
     /**
@@ -3706,6 +3796,15 @@ open class DataRow
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Data_DataRow_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // void AcceptChanges()
 // docid: M:System.Data.DataRow.AcceptChanges
     /**
@@ -4683,6 +4782,15 @@ public final class DataRowBuilder
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Data_DataRowBuilder_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
 } // DataRowBuilder
 
 
@@ -4703,6 +4811,15 @@ open class DataRowChangeEventArgs
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Data_DataRowChangeEventArgs_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor(System.Data.DataRow, System.Data.DataRowAction)
 // docid: M:System.Data.DataRowChangeEventArgs.#ctor(System.Data.DataRow,System.Data.DataRowAction)
     /**
@@ -4888,6 +5005,15 @@ public final class DataRowCollection
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Data_DataRowCollection_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // void Add(System.Data.DataRow)
 // docid: M:System.Data.DataRowCollection.Add(System.Data.DataRow)
     /**
@@ -5213,6 +5339,15 @@ public final class DataRowComparer_1<TRow : SGBridgeGenericValue>
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Data_DataRowComparer_1_cast(TRow.get_type_handle(),&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // bool Equals(TRow, TRow)
 // docid: M:System.Data.DataRowComparer`1.Equals(`0,`0)
     /**
@@ -5495,6 +5630,15 @@ open class DataRowView
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Data_DataRowView_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // void BeginEdit()
 // docid: M:System.Data.DataRowView.BeginEdit
     /**
@@ -5867,6 +6011,15 @@ open class DataSet
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Data_DataSet_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor()
 // docid: M:System.Data.DataSet.#ctor
     /**
@@ -7533,6 +7686,15 @@ open class DataSysDescriptionAttribute
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Data_DataSysDescriptionAttribute_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor(System.String)
 // docid: M:System.Data.DataSysDescriptionAttribute.#ctor(System.String)
     /**
@@ -7594,6 +7756,15 @@ open class DataTable
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Data_DataTable_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor()
 // docid: M:System.Data.DataTable.#ctor
     /**
@@ -9631,6 +9802,15 @@ public final class DataTableClearEventArgs
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Data_DataTableClearEventArgs_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor(System.Data.DataTable)
 // docid: M:System.Data.DataTableClearEventArgs.#ctor(System.Data.DataTable)
     /**
@@ -9835,6 +10015,15 @@ public final class DataTableCollection
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Data_DataTableCollection_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // System.Data.DataTable Add()
 // docid: M:System.Data.DataTableCollection.Add
     /**
@@ -10375,6 +10564,15 @@ public final class DataTableNewRowEventArgs
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Data_DataTableNewRowEventArgs_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor(System.Data.DataRow)
 // docid: M:System.Data.DataTableNewRowEventArgs.#ctor(System.Data.DataRow)
     /**
@@ -10539,6 +10737,15 @@ public final class DataTableReader
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Data_DataTableReader_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor(System.Data.DataTable)
 // docid: M:System.Data.DataTableReader.#ctor(System.Data.DataTable)
     /**
@@ -11247,6 +11454,15 @@ open class DataView
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Data_DataView_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor()
 // docid: M:System.Data.DataView.#ctor
     /**
@@ -12003,6 +12219,15 @@ open class DataViewManager
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Data_DataViewManager_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor()
 // docid: M:System.Data.DataViewManager.#ctor
     /**
@@ -12302,6 +12527,15 @@ open class DataViewSetting
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Data_DataViewSetting_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // [IsSpecialName] bool get_ApplyDefaultSort()
 // docid: M:System.Data.DataViewSetting.get_ApplyDefaultSort
     open func get_ApplyDefaultSort() throws -> Bool {
@@ -12508,6 +12742,15 @@ open class DataViewSettingCollection
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Data_DataViewSettingCollection_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // void CopyTo(System.Array, System.Int32)
 // docid: M:System.Data.DataViewSettingCollection.CopyTo(System.Array,System.Int32)
     /**
@@ -13037,6 +13280,15 @@ open class DeletedRowInaccessibleException
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Data_DeletedRowInaccessibleException_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor()
 // docid: M:System.Data.DeletedRowInaccessibleException.#ctor
     /**
@@ -13105,6 +13357,15 @@ open class DuplicateNameException
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Data_DuplicateNameException_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor()
 // docid: M:System.Data.DuplicateNameException.#ctor
     /**
@@ -13174,6 +13435,15 @@ open class EnumerableRowCollection
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Data_EnumerableRowCollection_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
 } // EnumerableRowCollection
 
 
@@ -13444,6 +13714,15 @@ open class EnumerableRowCollection_1<TRow : SGBridgeGenericValue>
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Data_EnumerableRowCollection_1_cast(TRow.get_type_handle(),&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // System.Collections.Generic.IEnumerator<TRow> GetEnumerator()
 // docid: M:System.Data.EnumerableRowCollection`1.GetEnumerator
     /**
@@ -13481,6 +13760,15 @@ open class EvaluateException
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Data_EvaluateException_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor()
 // docid: M:System.Data.EvaluateException.#ctor
     /**
@@ -13549,6 +13837,15 @@ open class FillErrorEventArgs
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Data_FillErrorEventArgs_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor(System.Data.DataTable, System.Object[])
 // docid: M:System.Data.FillErrorEventArgs.#ctor(System.Data.DataTable,System.Object[])
     /**
@@ -13810,6 +14107,15 @@ open class ForeignKeyConstraint
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Data_ForeignKeyConstraint_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor(System.Data.DataColumn, System.Data.DataColumn)
 // docid: M:System.Data.ForeignKeyConstraint.#ctor(System.Data.DataColumn,System.Data.DataColumn)
     /**
@@ -14175,6 +14481,15 @@ open class IColumnMapping
 
     deinit { __drop_handle(self.h); }
 
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Data_IColumnMapping_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // [IsSpecialName] System.String get_DataSetColumn()
 // docid: M:System.Data.IColumnMapping.get_DataSetColumn
     open func get_DataSetColumn() throws -> dotnet.System.String {
@@ -14248,6 +14563,15 @@ open class IColumnMappingCollection
 
     deinit { __drop_handle(self.h); }
 
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Data_IColumnMappingCollection_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // System.Data.IColumnMapping Add(System.String, System.String)
 // docid: M:System.Data.IColumnMappingCollection.Add(System.String,System.String)
     /**
@@ -14390,6 +14714,15 @@ open class IDataAdapter
 
     deinit { __drop_handle(self.h); }
 
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Data_IDataAdapter_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // System.Int32 Fill(System.Data.DataSet)
 // docid: M:System.Data.IDataAdapter.Fill(System.Data.DataSet)
     /**
@@ -14545,6 +14878,15 @@ open class IDataParameter
 
     deinit { __drop_handle(self.h); }
 
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Data_IDataParameter_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // [IsSpecialName] System.Data.DbType get_DbType()
 // docid: M:System.Data.IDataParameter.get_DbType
     open func get_DbType() throws -> dotnet.System.Data.DbType {
@@ -14721,6 +15063,15 @@ open class IDataParameterCollection
 
     deinit { __drop_handle(self.h); }
 
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Data_IDataParameterCollection_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // bool Contains(System.String)
 // docid: M:System.Data.IDataParameterCollection.Contains(System.String)
     /**
@@ -14826,6 +15177,15 @@ open class IDataReader
 
     deinit { __drop_handle(self.h); }
 
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Data_IDataReader_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // void Close()
 // docid: M:System.Data.IDataReader.Close
     /**
@@ -14961,6 +15321,15 @@ open class IDataRecord
 
     deinit { __drop_handle(self.h); }
 
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Data_IDataRecord_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // bool GetBoolean(System.Int32)
 // docid: M:System.Data.IDataRecord.GetBoolean(System.Int32)
     /**
@@ -15428,6 +15797,15 @@ open class IDbCommand
 
     deinit { __drop_handle(self.h); }
 
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Data_IDbCommand_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // void Cancel()
 // docid: M:System.Data.IDbCommand.Cancel
     /**
@@ -15728,6 +16106,15 @@ open class IDbConnection
 
     deinit { __drop_handle(self.h); }
 
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Data_IDbConnection_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // System.Data.IDbTransaction BeginTransaction()
 // docid: M:System.Data.IDbConnection.BeginTransaction
     /**
@@ -15910,6 +16297,15 @@ open class IDbDataAdapter
 
     deinit { __drop_handle(self.h); }
 
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Data_IDbDataAdapter_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // [IsSpecialName] System.Data.IDbCommand get_DeleteCommand()
 // docid: M:System.Data.IDbDataAdapter.get_DeleteCommand
     open func get_DeleteCommand() throws -> Optional<dotnet.System.Data.IDbCommand> {
@@ -16043,6 +16439,15 @@ open class IDbDataParameter
 
     deinit { __drop_handle(self.h); }
 
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Data_IDbDataParameter_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // [IsSpecialName] System.Byte get_Precision()
 // docid: M:System.Data.IDbDataParameter.get_Precision
     open func get_Precision() throws -> Swift.UInt8 {
@@ -16138,6 +16543,15 @@ open class IDbTransaction
 
     deinit { __drop_handle(self.h); }
 
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Data_IDbTransaction_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // void Commit()
 // docid: M:System.Data.IDbTransaction.Commit
     /**
@@ -16222,6 +16636,15 @@ open class ITableMapping
 
     deinit { __drop_handle(self.h); }
 
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Data_ITableMapping_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // [IsSpecialName] System.Data.IColumnMappingCollection get_ColumnMappings()
 // docid: M:System.Data.ITableMapping.get_ColumnMappings
     open func get_ColumnMappings() throws -> dotnet.System.Data.IColumnMappingCollection {
@@ -16306,6 +16729,15 @@ open class ITableMappingCollection
 
     deinit { __drop_handle(self.h); }
 
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Data_ITableMappingCollection_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // System.Data.ITableMapping Add(System.String, System.String)
 // docid: M:System.Data.ITableMappingCollection.Add(System.String,System.String)
     /**
@@ -16438,6 +16870,15 @@ open class InRowChangingEventException
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Data_InRowChangingEventException_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor()
 // docid: M:System.Data.InRowChangingEventException.#ctor
     /**
@@ -16508,6 +16949,15 @@ open class InternalDataCollectionBase
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Data_InternalDataCollectionBase_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor()
 // docid: M:System.Data.InternalDataCollectionBase.#ctor
     /**
@@ -16657,6 +17107,15 @@ open class InvalidConstraintException
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Data_InvalidConstraintException_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor()
 // docid: M:System.Data.InvalidConstraintException.#ctor
     /**
@@ -16725,6 +17184,15 @@ open class InvalidExpressionException
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Data_InvalidExpressionException_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor()
 // docid: M:System.Data.InvalidExpressionException.#ctor
     /**
@@ -17041,6 +17509,15 @@ open class MergeFailedEventArgs
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Data_MergeFailedEventArgs_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor(System.Data.DataTable, System.String)
 // docid: M:System.Data.MergeFailedEventArgs.#ctor(System.Data.DataTable,System.String)
     /**
@@ -17281,6 +17758,15 @@ open class MissingPrimaryKeyException
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Data_MissingPrimaryKeyException_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor()
 // docid: M:System.Data.MissingPrimaryKeyException.#ctor
     /**
@@ -17411,6 +17897,15 @@ open class NoNullAllowedException
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Data_NoNullAllowedException_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor()
 // docid: M:System.Data.NoNullAllowedException.#ctor
     /**
@@ -17479,6 +17974,15 @@ public final class OrderedEnumerableRowCollection_1<TRow : SGBridgeGenericValue>
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Data_OrderedEnumerableRowCollection_1_cast(TRow.get_type_handle(),&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
 } // OrderedEnumerableRowCollection_1
 
 
@@ -17561,6 +18065,15 @@ open class PropertyCollection
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Data_PropertyCollection_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor()
 // docid: M:System.Data.PropertyCollection.#ctor
     /**
@@ -17613,6 +18126,15 @@ open class ReadOnlyException
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Data_ReadOnlyException_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor()
 // docid: M:System.Data.ReadOnlyException.#ctor
     /**
@@ -17681,6 +18203,15 @@ open class RowNotInTableException
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Data_RowNotInTableException_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor()
 // docid: M:System.Data.RowNotInTableException.#ctor
     /**
@@ -18314,6 +18845,15 @@ public final class StateChangeEventArgs
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Data_StateChangeEventArgs_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor(System.Data.ConnectionState, System.Data.ConnectionState)
 // docid: M:System.Data.StateChangeEventArgs.#ctor(System.Data.ConnectionState,System.Data.ConnectionState)
     /**
@@ -18499,6 +19039,15 @@ public final class StatementCompletedEventArgs
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Data_StatementCompletedEventArgs_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor(System.Int32)
 // docid: M:System.Data.StatementCompletedEventArgs.#ctor(System.Int32)
     /**
@@ -18736,6 +19285,15 @@ open class StrongTypingException
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Data_StrongTypingException_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor()
 // docid: M:System.Data.StrongTypingException.#ctor
     /**
@@ -18804,6 +19362,15 @@ open class SyntaxErrorException
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Data_SyntaxErrorException_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor()
 // docid: M:System.Data.SyntaxErrorException.#ctor
     /**
@@ -19061,6 +19628,15 @@ open class TypedTableBase_1<T : SGBridgeGenericValue>
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Data_TypedTableBase_1_cast(T.get_type_handle(),&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
 // TODO COPE (write_all_methods) (unused generic param) System.Data.EnumerableRowCollection<TResult> Cast<TResult>()
     // System.Collections.Generic.IEnumerator<T> GetEnumerator()
 // docid: M:System.Data.TypedTableBase`1.GetEnumerator
@@ -19099,6 +19675,15 @@ open class UniqueConstraint
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Data_UniqueConstraint_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor(System.Data.DataColumn)
 // docid: M:System.Data.UniqueConstraint.#ctor(System.Data.DataColumn)
     /**
@@ -19502,6 +20087,15 @@ open class VersionNotFoundException
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Data_VersionNotFoundException_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor()
 // docid: M:System.Data.VersionNotFoundException.#ctor
     /**
@@ -19762,6 +20356,15 @@ open class DataAdapter
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Data_Common_DataAdapter_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // System.Int32 Fill(System.Data.DataSet)
 // docid: M:System.Data.Common.DataAdapter.Fill(System.Data.DataSet)
     /**
@@ -20197,6 +20800,15 @@ public final class DataColumnMapping
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Data_Common_DataColumnMapping_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor()
 // docid: M:System.Data.Common.DataColumnMapping.#ctor
     /**
@@ -20388,6 +21000,15 @@ public final class DataColumnMappingCollection
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Data_Common_DataColumnMappingCollection_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor()
 // docid: M:System.Data.Common.DataColumnMappingCollection.#ctor
     /**
@@ -20883,6 +21504,15 @@ public final class DataTableMapping
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Data_Common_DataTableMapping_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor()
 // docid: M:System.Data.Common.DataTableMapping.#ctor
     /**
@@ -21134,6 +21764,15 @@ public final class DataTableMappingCollection
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Data_Common_DataTableMappingCollection_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor()
 // docid: M:System.Data.Common.DataTableMappingCollection.#ctor
     /**
@@ -21601,6 +22240,15 @@ open class DbBatch
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Data_Common_DbBatch_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // System.Data.Common.DbDataReader ExecuteReader(System.Data.CommandBehavior)
 // docid: M:System.Data.Common.DbBatch.ExecuteReader(System.Data.CommandBehavior)
     /**
@@ -21927,6 +22575,15 @@ open class DbBatchCommand
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Data_Common_DbBatchCommand_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // [IsSpecialName] System.String get_CommandText()
 // docid: M:System.Data.Common.DbBatchCommand.get_CommandText
     open func get_CommandText() throws -> dotnet.System.String {
@@ -22046,6 +22703,15 @@ open class DbBatchCommandCollection
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Data_Common_DbBatchCommandCollection_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // System.Collections.Generic.IEnumerator<System.Data.Common.DbBatchCommand> GetEnumerator()
 // docid: M:System.Data.Common.DbBatchCommandCollection.GetEnumerator
     /**
@@ -22282,6 +22948,15 @@ open class DbColumn
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Data_Common_DbColumn_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // [IsSpecialName] System.Nullable<bool> get_AllowDBNull()
 // docid: M:System.Data.Common.DbColumn.get_AllowDBNull
     open func get_AllowDBNull() throws -> Optional<Bool> {
@@ -23133,6 +23808,15 @@ open class DbCommand
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Data_Common_DbCommand_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // void Cancel()
 // docid: M:System.Data.Common.DbCommand.Cancel
     /**
@@ -23734,6 +24418,15 @@ open class DbCommandBuilder
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Data_Common_DbCommandBuilder_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // System.Data.Common.DbCommand GetDeleteCommand()
 // docid: M:System.Data.Common.DbCommandBuilder.GetDeleteCommand
     /**
@@ -24188,6 +24881,15 @@ open class DbConnection
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Data_Common_DbConnection_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // System.Data.Common.DbTransaction BeginTransaction()
 // docid: M:System.Data.Common.DbConnection.BeginTransaction
     /**
@@ -24778,6 +25480,15 @@ open class DbConnectionStringBuilder
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Data_Common_DbConnectionStringBuilder_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor()
 // docid: M:System.Data.Common.DbConnectionStringBuilder.#ctor
     /**
@@ -25209,6 +25920,15 @@ open class DbDataAdapter
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Data_Common_DbDataAdapter_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // static field: System.String DefaultSourceTableName
     /**
     The default name used by the  object for table mappings.
@@ -25679,6 +26399,15 @@ open class DbDataReader
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Data_Common_DbDataReader_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // void Close()
 // docid: M:System.Data.Common.DbDataReader.Close
     /**
@@ -26675,6 +27404,15 @@ open class DbDataRecord
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Data_Common_DbDataRecord_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // bool GetBoolean(System.Int32)
 // docid: M:System.Data.Common.DbDataRecord.GetBoolean(System.Int32)
     /**
@@ -27143,6 +27881,15 @@ open class DbDataSourceEnumerator
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Data_Common_DbDataSourceEnumerator_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // System.Data.DataTable GetDataSources()
 // docid: M:System.Data.Common.DbDataSourceEnumerator.GetDataSources
     /**
@@ -27181,6 +27928,15 @@ open class DbEnumerator
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Data_Common_DbEnumerator_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor(System.Data.Common.DbDataReader)
 // docid: M:System.Data.Common.DbEnumerator.#ctor(System.Data.Common.DbDataReader)
     /**
@@ -27322,6 +28078,15 @@ open class DbException
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Data_Common_DbException_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // [IsSpecialName] bool get_IsTransient()
 // docid: M:System.Data.Common.DbException.get_IsTransient
     open func get_IsTransient() throws -> Bool {
@@ -27951,6 +28716,15 @@ open class DbParameter
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Data_Common_DbParameter_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // void ResetDbType()
 // docid: M:System.Data.Common.DbParameter.ResetDbType
     /**
@@ -28368,6 +29142,15 @@ open class DbParameterCollection
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Data_Common_DbParameterCollection_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // System.Int32 Add(System.Object)
 // docid: M:System.Data.Common.DbParameterCollection.Add(System.Object)
     /**
@@ -28948,6 +29731,15 @@ open class DbProviderFactory
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Data_Common_DbProviderFactory_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // System.Data.Common.DbBatch CreateBatch()
 // docid: M:System.Data.Common.DbProviderFactory.CreateBatch
     /**
@@ -29219,6 +30011,15 @@ public final class DbProviderSpecificTypePropertyAttribute
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Data_Common_DbProviderSpecificTypePropertyAttribute_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor(bool)
 // docid: M:System.Data.Common.DbProviderSpecificTypePropertyAttribute.#ctor(System.Boolean)
     /**
@@ -29278,6 +30079,15 @@ open class DbTransaction
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Data_Common_DbTransaction_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // void Commit()
 // docid: M:System.Data.Common.DbTransaction.Commit
     /**
@@ -29647,6 +30457,15 @@ open class IDbColumnSchemaGenerator
 
     deinit { __drop_handle(self.h); }
 
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Data_Common_IDbColumnSchemaGenerator_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // System.Collections.ObjectModel.ReadOnlyCollection<System.Data.Common.DbColumn> GetColumnSchema()
 // docid: M:System.Data.Common.IDbColumnSchemaGenerator.GetColumnSchema
     /**
@@ -29735,6 +30554,15 @@ open class RowUpdatedEventArgs
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Data_Common_RowUpdatedEventArgs_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor(System.Data.DataRow, System.Data.IDbCommand, System.Data.StatementType, System.Data.Common.DataTableMapping)
 // docid: M:System.Data.Common.RowUpdatedEventArgs.#ctor(System.Data.DataRow,System.Data.IDbCommand,System.Data.StatementType,System.Data.Common.DataTableMapping)
     /**
@@ -30003,6 +30831,15 @@ open class RowUpdatingEventArgs
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Data_Common_RowUpdatingEventArgs_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor(System.Data.DataRow, System.Data.IDbCommand, System.Data.StatementType, System.Data.Common.DataTableMapping)
 // docid: M:System.Data.Common.RowUpdatingEventArgs.#ctor(System.Data.DataRow,System.Data.IDbCommand,System.Data.StatementType,System.Data.Common.DataTableMapping)
     /**
@@ -30648,6 +31485,15 @@ open class INullable
 
     deinit { __drop_handle(self.h); }
 
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Data_SqlTypes_INullable_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // [IsSpecialName] bool get_IsNull()
 // docid: M:System.Data.SqlTypes.INullable.get_IsNull
     open func get_IsNull() throws -> Bool {
@@ -30679,6 +31525,15 @@ public final class SqlAlreadyFilledException
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Data_SqlTypes_SqlAlreadyFilledException_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor()
 // docid: M:System.Data.SqlTypes.SqlAlreadyFilledException.#ctor
     /**
@@ -33521,6 +34376,15 @@ public final class SqlBytes
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Data_SqlTypes_SqlBytes_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor()
 // docid: M:System.Data.SqlTypes.SqlBytes.#ctor
     /**
@@ -33936,6 +34800,15 @@ public final class SqlChars
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Data_SqlTypes_SqlChars_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor()
 // docid: M:System.Data.SqlTypes.SqlChars.#ctor
     /**
@@ -42589,6 +43462,15 @@ public final class SqlNotFilledException
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Data_SqlTypes_SqlNotFilledException_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor()
 // docid: M:System.Data.SqlTypes.SqlNotFilledException.#ctor
     /**
@@ -42657,6 +43539,15 @@ public final class SqlNullValueException
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Data_SqlTypes_SqlNullValueException_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor()
 // docid: M:System.Data.SqlTypes.SqlNullValueException.#ctor
     /**
@@ -44849,6 +45740,15 @@ public final class SqlTruncateException
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Data_SqlTypes_SqlTruncateException_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor()
 // docid: M:System.Data.SqlTypes.SqlTruncateException.#ctor
     /**
@@ -44917,6 +45817,15 @@ open class SqlTypeException
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Data_SqlTypes_SqlTypeException_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor()
 // docid: M:System.Data.SqlTypes.SqlTypeException.#ctor
     /**
@@ -44987,6 +45896,15 @@ public final class SqlXml
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Data_SqlTypes_SqlXml_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor()
 // docid: M:System.Data.SqlTypes.SqlXml.#ctor
     /**
@@ -45205,6 +46123,15 @@ open class XmlDataDocument
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Xml_XmlDataDocument_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor()
 // docid: M:System.Xml.XmlDataDocument.#ctor
     /**

@@ -23,6 +23,15 @@ open class Capture
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Text_RegularExpressions_Capture_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
 // TODO COPE (returns byreflike): [IsSpecialName] System.ReadOnlySpan<System.Char> get_ValueSpan()
     // System.String ToString()
 // docid: M:System.Text.RegularExpressions.Capture.ToString
@@ -124,6 +133,15 @@ open class CaptureCollection
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Text_RegularExpressions_CaptureCollection_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // void CopyTo(System.Array, System.Int32)
 // docid: M:System.Text.RegularExpressions.CaptureCollection.CopyTo(System.Array,System.Int32)
     /**
@@ -286,6 +304,15 @@ open class Group
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Text_RegularExpressions_Group_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // System.Text.RegularExpressions.Group Synchronized(System.Text.RegularExpressions.Group)
 // docid: M:System.Text.RegularExpressions.Group.Synchronized(System.Text.RegularExpressions.Group)
     /**
@@ -387,6 +414,15 @@ open class GroupCollection
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Text_RegularExpressions_GroupCollection_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // bool ContainsKey(System.String)
 // docid: M:System.Text.RegularExpressions.GroupCollection.ContainsKey(System.String)
     /**
@@ -643,6 +679,15 @@ open class Match
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Text_RegularExpressions_Match_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // System.Text.RegularExpressions.Match NextMatch()
 // docid: M:System.Text.RegularExpressions.Match.NextMatch
     /**
@@ -759,6 +804,15 @@ open class MatchCollection
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Text_RegularExpressions_MatchCollection_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // void CopyTo(System.Array, System.Int32)
 // docid: M:System.Text.RegularExpressions.MatchCollection.CopyTo(System.Array,System.Int32)
     /**
@@ -1033,6 +1087,15 @@ open class Regex
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Text_RegularExpressions_Regex_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // static field: System.TimeSpan InfiniteMatchTimeout
     /**
     Specifies that a pattern-matching operation should not time out.
@@ -2095,6 +2158,15 @@ open class RegexCompilationInfo
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Text_RegularExpressions_RegexCompilationInfo_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor(System.String, System.Text.RegularExpressions.RegexOptions, System.String, System.String, bool)
 // docid: M:System.Text.RegularExpressions.RegexCompilationInfo.#ctor(System.String,System.Text.RegularExpressions.RegexOptions,System.String,System.String,System.Boolean)
     /**
@@ -2362,6 +2434,15 @@ open class RegexMatchTimeoutException
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Text_RegularExpressions_RegexMatchTimeoutException_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor()
 // docid: M:System.Text.RegularExpressions.RegexMatchTimeoutException.#ctor
     /**
@@ -3008,6 +3089,15 @@ public final class RegexParseException
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Text_RegularExpressions_RegexParseException_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // void GetObjectData(System.Runtime.Serialization.SerializationInfo, System.Runtime.Serialization.StreamingContext)
 // docid: M:System.Text.RegularExpressions.RegexParseException.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)
     /**
@@ -3085,6 +3175,15 @@ open class RegexRunner
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Text_RegularExpressions_RegexRunner_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
 } // RegexRunner
 
 
@@ -3105,6 +3204,15 @@ open class RegexRunnerFactory
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Text_RegularExpressions_RegexRunnerFactory_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
 } // RegexRunnerFactory
 
 

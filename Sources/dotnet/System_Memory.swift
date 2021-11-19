@@ -665,6 +665,15 @@ public final class ArrayBufferWriter_1<T : SGBridgeGenericValue>
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Buffers_ArrayBufferWriter_1_cast(T.get_type_handle(),&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor()
 // docid: M:System.Buffers.ArrayBufferWriter`1.#ctor
     /**
@@ -876,6 +885,15 @@ open class IBufferWriter_1<T : SGBridgeGenericValue>
 
     deinit { __drop_handle(self.h); }
 
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Buffers_IBufferWriter_1_cast(T.get_type_handle(),&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // void Advance(System.Int32)
 // docid: M:System.Buffers.IBufferWriter`1.Advance(System.Int32)
     /**
@@ -932,6 +950,15 @@ open class MemoryPool_1<T : SGBridgeGenericValue>
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Buffers_MemoryPool_1_cast(T.get_type_handle(),&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // void Dispose()
 // docid: M:System.Buffers.MemoryPool`1.Dispose
     /**
@@ -1025,6 +1052,15 @@ open class ReadOnlySequenceSegment_1<T : SGBridgeGenericValue>
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Buffers_ReadOnlySequenceSegment_1_cast(T.get_type_handle(),&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // [IsSpecialName] System.ReadOnlyMemory<T> get_Memory()
 // docid: M:System.Buffers.ReadOnlySequenceSegment`1.get_Memory
     open func get_Memory() throws -> dotnet.System.ReadOnlyMemory_1<T> {

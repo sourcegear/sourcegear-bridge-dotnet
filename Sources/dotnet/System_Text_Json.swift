@@ -75,6 +75,15 @@ public final class JsonDocument
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Text_Json_JsonDocument_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // void Dispose()
 // docid: M:System.Text.Json.JsonDocument.Dispose
     /**
@@ -1605,6 +1614,15 @@ open class JsonException
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Text_Json_JsonException_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor()
 // docid: M:System.Text.Json.JsonException.#ctor
     /**
@@ -1813,6 +1831,15 @@ open class JsonNamingPolicy
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Text_Json_JsonNamingPolicy_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // System.String ConvertName(System.String)
 // docid: M:System.Text.Json.JsonNamingPolicy.ConvertName(System.String)
     /**
@@ -3293,6 +3320,15 @@ public final class JsonSerializerOptions
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Text_Json_JsonSerializerOptions_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor()
 // docid: M:System.Text.Json.JsonSerializerOptions.#ctor
     /**
@@ -4384,6 +4420,15 @@ public final class Utf8JsonWriter
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Text_Json_Utf8JsonWriter_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor(System.Buffers.IBufferWriter<System.Byte>, System.Text.Json.JsonWriterOptions)
 // docid: M:System.Text.Json.Utf8JsonWriter.#ctor(System.Buffers.IBufferWriter{System.Byte},System.Text.Json.JsonWriterOptions)
     /**
@@ -5574,6 +5619,15 @@ public final class JsonArray
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Text_Json_Nodes_JsonArray_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor(System.Nullable<System.Text.Json.Nodes.JsonNodeOptions>)
 // docid: M:System.Text.Json.Nodes.JsonArray.#ctor(System.Nullable{System.Text.Json.Nodes.JsonNodeOptions})
     /**
@@ -5856,6 +5910,15 @@ open class JsonNode
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Text_Json_Nodes_JsonNode_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // System.Text.Json.Nodes.JsonArray AsArray()
 // docid: M:System.Text.Json.Nodes.JsonNode.AsArray
     /**
@@ -7024,6 +7087,15 @@ public final class JsonObject
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Text_Json_Nodes_JsonObject_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor(System.Collections.Generic.IEnumerable<System.Collections.Generic.KeyValuePair<System.String,System.Text.Json.Nodes.JsonNode>>, System.Nullable<System.Text.Json.Nodes.JsonNodeOptions>)
 // docid: M:System.Text.Json.Nodes.JsonObject.#ctor(System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{System.String,System.Text.Json.Nodes.JsonNode}},System.Nullable{System.Text.Json.Nodes.JsonNodeOptions})
     /**
@@ -7264,6 +7336,15 @@ open class JsonValue
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Text_Json_Nodes_JsonValue_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // System.Text.Json.Nodes.JsonValue Create(bool, System.Nullable<System.Text.Json.Nodes.JsonNodeOptions>)
 // docid: M:System.Text.Json.Nodes.JsonValue.Create(System.Boolean,System.Nullable{System.Text.Json.Nodes.JsonNodeOptions})
     /**
@@ -8085,6 +8166,15 @@ open class IJsonOnDeserialized
 
     deinit { __drop_handle(self.h); }
 
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Text_Json_Serialization_IJsonOnDeserialized_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // void OnDeserialized()
 // docid: M:System.Text.Json.Serialization.IJsonOnDeserialized.OnDeserialized
     /**
@@ -8128,6 +8218,15 @@ open class IJsonOnDeserializing
 
     deinit { __drop_handle(self.h); }
 
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Text_Json_Serialization_IJsonOnDeserializing_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // void OnDeserializing()
 // docid: M:System.Text.Json.Serialization.IJsonOnDeserializing.OnDeserializing
     /**
@@ -8171,6 +8270,15 @@ open class IJsonOnSerialized
 
     deinit { __drop_handle(self.h); }
 
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Text_Json_Serialization_IJsonOnSerialized_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // void OnSerialized()
 // docid: M:System.Text.Json.Serialization.IJsonOnSerialized.OnSerialized
     /**
@@ -8214,6 +8322,15 @@ open class IJsonOnSerializing
 
     deinit { __drop_handle(self.h); }
 
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Text_Json_Serialization_IJsonOnSerializing_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // void OnSerializing()
 // docid: M:System.Text.Json.Serialization.IJsonOnSerializing.OnSerializing
     /**
@@ -8249,6 +8366,15 @@ open class JsonAttribute
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Text_Json_Serialization_JsonAttribute_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
 } // JsonAttribute
 
 
@@ -8269,6 +8395,15 @@ public final class JsonConstructorAttribute
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Text_Json_Serialization_JsonConstructorAttribute_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor()
 // docid: M:System.Text.Json.Serialization.JsonConstructorAttribute.#ctor
     /**
@@ -8304,6 +8439,15 @@ open class JsonConverter
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Text_Json_Serialization_JsonConverter_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // bool CanConvert(System.Type)
 // docid: M:System.Text.Json.Serialization.JsonConverter.CanConvert(System.Type)
     /**
@@ -8343,6 +8487,15 @@ open class JsonConverterAttribute
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Text_Json_Serialization_JsonConverterAttribute_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor(System.Type)
 // docid: M:System.Text.Json.Serialization.JsonConverterAttribute.#ctor(System.Type)
     /**
@@ -8425,6 +8578,15 @@ open class JsonConverterFactory
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Text_Json_Serialization_JsonConverterFactory_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // System.Text.Json.Serialization.JsonConverter CreateConverter(System.Type, System.Text.Json.JsonSerializerOptions)
 // docid: M:System.Text.Json.Serialization.JsonConverterFactory.CreateConverter(System.Type,System.Text.Json.JsonSerializerOptions)
     /**
@@ -8468,6 +8630,15 @@ open class JsonConverter_1<T : SGBridgeGenericValue>
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Text_Json_Serialization_JsonConverter_1_cast(T.get_type_handle(),&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // bool CanConvert(System.Type)
 // docid: M:System.Text.Json.Serialization.JsonConverter`1.CanConvert(System.Type)
     /**
@@ -8565,6 +8736,15 @@ public final class JsonExtensionDataAttribute
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Text_Json_Serialization_JsonExtensionDataAttribute_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor()
 // docid: M:System.Text.Json.Serialization.JsonExtensionDataAttribute.#ctor
     /**
@@ -8600,6 +8780,15 @@ public final class JsonIgnoreAttribute
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Text_Json_Serialization_JsonIgnoreAttribute_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor()
 // docid: M:System.Text.Json.Serialization.JsonIgnoreAttribute.#ctor
     /**
@@ -8731,6 +8920,15 @@ public final class JsonIncludeAttribute
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Text_Json_Serialization_JsonIncludeAttribute_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor()
 // docid: M:System.Text.Json.Serialization.JsonIncludeAttribute.#ctor
     /**
@@ -8868,6 +9066,15 @@ public final class JsonNumberHandlingAttribute
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Text_Json_Serialization_JsonNumberHandlingAttribute_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor(System.Text.Json.Serialization.JsonNumberHandling)
 // docid: M:System.Text.Json.Serialization.JsonNumberHandlingAttribute.#ctor(System.Text.Json.Serialization.JsonNumberHandling)
     /**
@@ -8924,6 +9131,15 @@ public final class JsonPropertyNameAttribute
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Text_Json_Serialization_JsonPropertyNameAttribute_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor(System.String)
 // docid: M:System.Text.Json.Serialization.JsonPropertyNameAttribute.#ctor(System.String)
     /**
@@ -8981,6 +9197,15 @@ public final class JsonPropertyOrderAttribute
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Text_Json_Serialization_JsonPropertyOrderAttribute_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor(System.Int32)
 // docid: M:System.Text.Json.Serialization.JsonPropertyOrderAttribute.#ctor(System.Int32)
     /**
@@ -9037,6 +9262,15 @@ public final class JsonSerializableAttribute
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Text_Json_Serialization_JsonSerializableAttribute_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor(System.Type)
 // docid: M:System.Text.Json.Serialization.JsonSerializableAttribute.#ctor(System.Type)
     /**
@@ -9145,6 +9379,15 @@ open class JsonSerializerContext
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Text_Json_Serialization_JsonSerializerContext_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // System.Text.Json.Serialization.Metadata.JsonTypeInfo GetTypeInfo(System.Type)
 // docid: M:System.Text.Json.Serialization.JsonSerializerContext.GetTypeInfo(System.Type)
     /**
@@ -9258,6 +9501,15 @@ public final class JsonSourceGenerationOptionsAttribute
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Text_Json_Serialization_JsonSourceGenerationOptionsAttribute_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor()
 // docid: M:System.Text.Json.Serialization.JsonSourceGenerationOptionsAttribute.#ctor
     /**
@@ -9531,6 +9783,15 @@ open class JsonStringEnumConverter
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Text_Json_Serialization_JsonStringEnumConverter_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor()
 // docid: M:System.Text.Json.Serialization.JsonStringEnumConverter.#ctor
     /**
@@ -9662,6 +9923,15 @@ open class ReferenceHandler
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Text_Json_Serialization_ReferenceHandler_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // System.Text.Json.Serialization.ReferenceResolver CreateResolver()
 // docid: M:System.Text.Json.Serialization.ReferenceHandler.CreateResolver
     /**
@@ -9739,6 +10009,15 @@ public final class ReferenceHandler_1<T : SGBridgeGenericValue>
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Text_Json_Serialization_ReferenceHandler_1_cast(T.get_type_handle(),&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor()
 // docid: M:System.Text.Json.Serialization.ReferenceHandler`1.#ctor
     /**
@@ -9792,6 +10071,15 @@ open class ReferenceResolver
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Text_Json_Serialization_ReferenceResolver_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // void AddReference(System.String, System.Object)
 // docid: M:System.Text.Json.Serialization.ReferenceResolver.AddReference(System.String,System.Object)
     /**
@@ -9871,6 +10159,15 @@ public final class JsonCollectionInfoValues_1<TCollection : SGBridgeGenericValue
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Text_Json_Serialization_Metadata_JsonCollectionInfoValues_1_cast(TCollection.get_type_handle(),&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor()
 // docid: M:System.Text.Json.Serialization.Metadata.JsonCollectionInfoValues`1.#ctor
     public override init() throws {
@@ -10747,6 +11044,15 @@ public final class JsonObjectInfoValues_1<T : SGBridgeGenericValue>
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Text_Json_Serialization_Metadata_JsonObjectInfoValues_1_cast(T.get_type_handle(),&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor()
 // docid: M:System.Text.Json.Serialization.Metadata.JsonObjectInfoValues`1.#ctor
     /**
@@ -11029,6 +11335,15 @@ public final class JsonParameterInfoValues
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Text_Json_Serialization_Metadata_JsonParameterInfoValues_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor()
 // docid: M:System.Text.Json.Serialization.Metadata.JsonParameterInfoValues.#ctor
     /**
@@ -11236,6 +11551,15 @@ open class JsonPropertyInfo
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Text_Json_Serialization_Metadata_JsonPropertyInfo_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
 } // JsonPropertyInfo
 
 
@@ -11252,6 +11576,15 @@ public final class JsonPropertyInfoValues_1<T : SGBridgeGenericValue>
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Text_Json_Serialization_Metadata_JsonPropertyInfoValues_1_cast(T.get_type_handle(),&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor()
 // docid: M:System.Text.Json.Serialization.Metadata.JsonPropertyInfoValues`1.#ctor
     public override init() throws {
@@ -11729,6 +12062,15 @@ open class JsonTypeInfo
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Text_Json_Serialization_Metadata_JsonTypeInfo_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
 } // JsonTypeInfo
 
 
@@ -11749,6 +12091,15 @@ open class JsonTypeInfo_1<T : SGBridgeGenericValue>
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Text_Json_Serialization_Metadata_JsonTypeInfo_1_cast(T.get_type_handle(),&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // [IsSpecialName] System.Action<System.Text.Json.Utf8JsonWriter,T> get_SerializeHandler()
 // docid: M:System.Text.Json.Serialization.Metadata.JsonTypeInfo`1.get_SerializeHandler
     open func get_SerializeHandler() throws -> Optional<dotnet.System.Action_2<dotnet.System.Text.Json.Utf8JsonWriter,T>> {

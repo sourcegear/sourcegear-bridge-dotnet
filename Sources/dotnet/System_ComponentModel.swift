@@ -29,6 +29,15 @@ open class IServiceProvider
 
     deinit { __drop_handle(self.h); }
 
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_IServiceProvider_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // System.Object GetService(System.Type)
 // docid: M:System.IServiceProvider.GetService(System.Type)
     /**
@@ -78,6 +87,15 @@ open class CancelEventArgs
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_ComponentModel_CancelEventArgs_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor()
 // docid: M:System.ComponentModel.CancelEventArgs.#ctor
     /**
@@ -172,6 +190,15 @@ open class IChangeTracking
 
     deinit { __drop_handle(self.h); }
 
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_ComponentModel_IChangeTracking_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // void AcceptChanges()
 // docid: M:System.ComponentModel.IChangeTracking.AcceptChanges
     /**
@@ -226,6 +253,15 @@ open class IEditableObject
 
     deinit { __drop_handle(self.h); }
 
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_ComponentModel_IEditableObject_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // void BeginEdit()
 // docid: M:System.ComponentModel.IEditableObject.BeginEdit
     /**
@@ -300,6 +336,15 @@ open class IRevertibleChangeTracking
 
     deinit { __drop_handle(self.h); }
 
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_ComponentModel_IRevertibleChangeTracking_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // void RejectChanges()
 // docid: M:System.ComponentModel.IRevertibleChangeTracking.RejectChanges
     /**

@@ -23,6 +23,15 @@ public final class SafeX509ChainHandle
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = Microsoft_Win32_SafeHandles_SafeX509ChainHandle_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor()
 // docid: M:Microsoft.Win32.SafeHandles.SafeX509ChainHandle.#ctor
     /**
@@ -67,6 +76,15 @@ public final class CertificateRequest
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Security_Cryptography_X509Certificates_CertificateRequest_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor(System.Security.Cryptography.X509Certificates.X500DistinguishedName, System.Security.Cryptography.ECDsa, System.Security.Cryptography.HashAlgorithmName)
 // docid: M:System.Security.Cryptography.X509Certificates.CertificateRequest.#ctor(System.Security.Cryptography.X509Certificates.X500DistinguishedName,System.Security.Cryptography.ECDsa,System.Security.Cryptography.HashAlgorithmName)
     /**
@@ -567,6 +585,15 @@ public final class PublicKey
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Security_Cryptography_X509Certificates_PublicKey_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor(System.Security.Cryptography.AsymmetricAlgorithm)
 // docid: M:System.Security.Cryptography.X509Certificates.PublicKey.#ctor(System.Security.Cryptography.AsymmetricAlgorithm)
     /**
@@ -1018,6 +1045,15 @@ public final class SubjectAlternativeNameBuilder
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Security_Cryptography_X509Certificates_SubjectAlternativeNameBuilder_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor()
 // docid: M:System.Security.Cryptography.X509Certificates.SubjectAlternativeNameBuilder.#ctor
     /**
@@ -1152,6 +1188,15 @@ public final class X500DistinguishedName
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Security_Cryptography_X509Certificates_X500DistinguishedName_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor(System.Byte[])
 // docid: M:System.Security.Cryptography.X509Certificates.X500DistinguishedName.#ctor(System.Byte[])
     /**
@@ -1439,6 +1484,15 @@ public final class X509BasicConstraintsExtension
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Security_Cryptography_X509Certificates_X509BasicConstraintsExtension_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor()
 // docid: M:System.Security.Cryptography.X509Certificates.X509BasicConstraintsExtension.#ctor
     /**
@@ -1593,6 +1647,15 @@ open class X509Certificate
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Security_Cryptography_X509Certificates_X509Certificate_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor()
 // docid: M:System.Security.Cryptography.X509Certificates.X509Certificate.#ctor
     /**
@@ -2535,6 +2598,15 @@ open class X509Certificate2
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Security_Cryptography_X509Certificates_X509Certificate2_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor()
 // docid: M:System.Security.Cryptography.X509Certificates.X509Certificate2.#ctor
     /**
@@ -3438,6 +3510,15 @@ open class X509Certificate2Collection
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Security_Cryptography_X509Certificates_X509Certificate2Collection_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor()
 // docid: M:System.Security.Cryptography.X509Certificates.X509Certificate2Collection.#ctor
     /**
@@ -3851,6 +3932,15 @@ public final class X509Certificate2Enumerator
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Security_Cryptography_X509Certificates_X509Certificate2Enumerator_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // bool MoveNext()
 // docid: M:System.Security.Cryptography.X509Certificates.X509Certificate2Enumerator.MoveNext
     /**
@@ -3924,6 +4014,15 @@ open class X509CertificateCollection
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Security_Cryptography_X509Certificates_X509CertificateCollection_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor()
 // docid: M:System.Security.Cryptography.X509Certificates.X509CertificateCollection.#ctor
     /**
@@ -4185,6 +4284,15 @@ open class X509CertificateCollection_X509CertificateEnumerator
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Security_Cryptography_X509Certificates_X509CertificateCollection_X509CertificateEnumerator_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor(System.Security.Cryptography.X509Certificates.X509CertificateCollection)
 // docid: M:System.Security.Cryptography.X509Certificates.X509CertificateCollection.X509CertificateEnumerator.#ctor(System.Security.Cryptography.X509Certificates.X509CertificateCollection)
     /**
@@ -4275,6 +4383,15 @@ open class X509Chain
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Security_Cryptography_X509Certificates_X509Chain_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor()
 // docid: M:System.Security.Cryptography.X509Certificates.X509Chain.#ctor
     /**
@@ -4527,6 +4644,15 @@ open class X509ChainElement
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Security_Cryptography_X509Certificates_X509ChainElement_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // [IsSpecialName] System.Security.Cryptography.X509Certificates.X509Certificate2 get_Certificate()
 // docid: M:System.Security.Cryptography.X509Certificates.X509ChainElement.get_Certificate
     open func get_Certificate() throws -> dotnet.System.Security.Cryptography.X509Certificates.X509Certificate2 {
@@ -4609,6 +4735,15 @@ public final class X509ChainElementCollection
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Security_Cryptography_X509Certificates_X509ChainElementCollection_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // void CopyTo(System.Security.Cryptography.X509Certificates.X509ChainElement[], System.Int32)
 // docid: M:System.Security.Cryptography.X509Certificates.X509ChainElementCollection.CopyTo(System.Security.Cryptography.X509Certificates.X509ChainElement[],System.Int32)
     /**
@@ -4736,6 +4871,15 @@ public final class X509ChainElementEnumerator
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Security_Cryptography_X509Certificates_X509ChainElementEnumerator_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // bool MoveNext()
 // docid: M:System.Security.Cryptography.X509Certificates.X509ChainElementEnumerator.MoveNext
     /**
@@ -4809,6 +4953,15 @@ public final class X509ChainPolicy
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Security_Cryptography_X509Certificates_X509ChainPolicy_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor()
 // docid: M:System.Security.Cryptography.X509Certificates.X509ChainPolicy.#ctor
     /**
@@ -5720,6 +5873,15 @@ public final class X509EnhancedKeyUsageExtension
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Security_Cryptography_X509Certificates_X509EnhancedKeyUsageExtension_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor()
 // docid: M:System.Security.Cryptography.X509Certificates.X509EnhancedKeyUsageExtension.#ctor
     /**
@@ -5827,6 +5989,15 @@ open class X509Extension
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Security_Cryptography_X509Certificates_X509Extension_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor(System.Security.Cryptography.AsnEncodedData, bool)
 // docid: M:System.Security.Cryptography.X509Certificates.X509Extension.#ctor(System.Security.Cryptography.AsnEncodedData,System.Boolean)
     /**
@@ -5957,6 +6128,15 @@ public final class X509ExtensionCollection
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Security_Cryptography_X509Certificates_X509ExtensionCollection_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor()
 // docid: M:System.Security.Cryptography.X509Certificates.X509ExtensionCollection.#ctor
     /**
@@ -6132,6 +6312,15 @@ public final class X509ExtensionEnumerator
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Security_Cryptography_X509Certificates_X509ExtensionEnumerator_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // bool MoveNext()
 // docid: M:System.Security.Cryptography.X509Certificates.X509ExtensionEnumerator.MoveNext
     /**
@@ -6545,6 +6734,15 @@ public final class X509KeyUsageExtension
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Security_Cryptography_X509Certificates_X509KeyUsageExtension_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor()
 // docid: M:System.Security.Cryptography.X509Certificates.X509KeyUsageExtension.#ctor
     /**
@@ -6966,6 +7164,15 @@ open class X509SignatureGenerator
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Security_Cryptography_X509Certificates_X509SignatureGenerator_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // System.Security.Cryptography.X509Certificates.X509SignatureGenerator CreateForECDsa(System.Security.Cryptography.ECDsa)
 // docid: M:System.Security.Cryptography.X509Certificates.X509SignatureGenerator.CreateForECDsa(System.Security.Cryptography.ECDsa)
     /**
@@ -7081,6 +7288,15 @@ public final class X509Store
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Security_Cryptography_X509Certificates_X509Store_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor()
 // docid: M:System.Security.Cryptography.X509Certificates.X509Store.#ctor
     /**
@@ -7464,6 +7680,15 @@ public final class X509SubjectKeyIdentifierExtension
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Security_Cryptography_X509Certificates_X509SubjectKeyIdentifierExtension_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor()
 // docid: M:System.Security.Cryptography.X509Certificates.X509SubjectKeyIdentifierExtension.#ctor
     /**

@@ -23,6 +23,15 @@ open class ByteArrayContent
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Net_Http_ByteArrayContent_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor(System.Byte[])
 // docid: M:System.Net.Http.ByteArrayContent.#ctor(System.Byte[])
     /**
@@ -117,6 +126,15 @@ open class DelegatingHandler
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Net_Http_DelegatingHandler_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // [IsSpecialName] System.Net.Http.HttpMessageHandler get_InnerHandler()
 // docid: M:System.Net.Http.DelegatingHandler.get_InnerHandler
     open func get_InnerHandler() throws -> Optional<dotnet.System.Net.Http.HttpMessageHandler> {
@@ -175,6 +193,15 @@ open class FormUrlEncodedContent
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Net_Http_FormUrlEncodedContent_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor(System.Collections.Generic.IEnumerable<System.Collections.Generic.KeyValuePair<System.String,System.String>>)
 // docid: M:System.Net.Http.FormUrlEncodedContent.#ctor(System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{System.String,System.String}})
     /**
@@ -335,6 +362,15 @@ open class HttpClient
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Net_Http_HttpClient_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor()
 // docid: M:System.Net.Http.HttpClient.#ctor
     /**
@@ -1481,6 +1517,15 @@ open class HttpClientHandler
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Net_Http_HttpClientHandler_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor()
 // docid: M:System.Net.Http.HttpClientHandler.#ctor
     /**
@@ -2310,6 +2355,15 @@ open class HttpContent
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Net_Http_HttpContent_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // void CopyTo(System.IO.Stream, System.Net.TransportContext, System.Threading.CancellationToken)
 // docid: M:System.Net.Http.HttpContent.CopyTo(System.IO.Stream,System.Net.TransportContext,System.Threading.CancellationToken)
     /**
@@ -2675,6 +2729,15 @@ open class HttpMessageHandler
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Net_Http_HttpMessageHandler_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // void Dispose()
 // docid: M:System.Net.Http.HttpMessageHandler.Dispose
     /**
@@ -2711,6 +2774,15 @@ open class HttpMessageInvoker
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Net_Http_HttpMessageInvoker_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor(System.Net.Http.HttpMessageHandler)
 // docid: M:System.Net.Http.HttpMessageInvoker.#ctor(System.Net.Http.HttpMessageHandler)
     /**
@@ -2818,6 +2890,15 @@ open class HttpMethod
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Net_Http_HttpMethod_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor(System.String)
 // docid: M:System.Net.Http.HttpMethod.#ctor(System.String)
     /**
@@ -3146,6 +3227,15 @@ open class HttpRequestException
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Net_Http_HttpRequestException_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor()
 // docid: M:System.Net.Http.HttpRequestException.#ctor
     /**
@@ -3253,6 +3343,15 @@ open class HttpRequestMessage
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Net_Http_HttpRequestMessage_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor()
 // docid: M:System.Net.Http.HttpRequestMessage.#ctor
     /**
@@ -3593,6 +3692,15 @@ public final class HttpRequestOptions
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Net_Http_HttpRequestOptions_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor()
 // docid: M:System.Net.Http.HttpRequestOptions.#ctor
     /**
@@ -3730,6 +3838,15 @@ open class HttpResponseMessage
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Net_Http_HttpResponseMessage_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor()
 // docid: M:System.Net.Http.HttpResponseMessage.#ctor
     /**
@@ -4128,6 +4245,15 @@ open class MessageProcessingHandler
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Net_Http_MessageProcessingHandler_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
 } // MessageProcessingHandler
 
 
@@ -4149,6 +4275,15 @@ open class MultipartContent
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Net_Http_MultipartContent_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor()
 // docid: M:System.Net.Http.MultipartContent.#ctor
     /**
@@ -4293,6 +4428,15 @@ open class MultipartFormDataContent
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Net_Http_MultipartFormDataContent_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor()
 // docid: M:System.Net.Http.MultipartFormDataContent.#ctor
     /**
@@ -4395,6 +4539,15 @@ public final class ReadOnlyMemoryContent
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Net_Http_ReadOnlyMemoryContent_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor(System.ReadOnlyMemory<System.Byte>)
 // docid: M:System.Net.Http.ReadOnlyMemoryContent.#ctor(System.ReadOnlyMemory{System.Byte})
     /**
@@ -4431,6 +4584,15 @@ public final class SocketsHttpConnectionContext
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Net_Http_SocketsHttpConnectionContext_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // [IsSpecialName] System.Net.DnsEndPoint get_DnsEndPoint()
 // docid: M:System.Net.Http.SocketsHttpConnectionContext.get_DnsEndPoint
     public func get_DnsEndPoint() throws -> dotnet.System.Net.DnsEndPoint {
@@ -4491,6 +4653,15 @@ public final class SocketsHttpHandler
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Net_Http_SocketsHttpHandler_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor()
 // docid: M:System.Net.Http.SocketsHttpHandler.#ctor
     /**
@@ -5605,6 +5776,15 @@ public final class SocketsHttpPlaintextStreamFilterContext
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Net_Http_SocketsHttpPlaintextStreamFilterContext_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // [IsSpecialName] System.IO.Stream get_PlaintextStream()
 // docid: M:System.Net.Http.SocketsHttpPlaintextStreamFilterContext.get_PlaintextStream
     public func get_PlaintextStream() throws -> dotnet.System.IO.Stream {
@@ -5685,6 +5865,15 @@ open class StreamContent
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Net_Http_StreamContent_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor(System.IO.Stream)
 // docid: M:System.Net.Http.StreamContent.#ctor(System.IO.Stream)
     /**
@@ -5738,6 +5927,15 @@ open class StringContent
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Net_Http_StringContent_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor(System.String)
 // docid: M:System.Net.Http.StringContent.#ctor(System.String)
     /**
@@ -5813,6 +6011,15 @@ open class AuthenticationHeaderValue
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Net_Http_Headers_AuthenticationHeaderValue_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor(System.String)
 // docid: M:System.Net.Http.Headers.AuthenticationHeaderValue.#ctor(System.String)
     /**
@@ -6006,6 +6213,15 @@ open class CacheControlHeaderValue
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Net_Http_Headers_CacheControlHeaderValue_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor()
 // docid: M:System.Net.Http.Headers.CacheControlHeaderValue.#ctor
     /**
@@ -6639,6 +6855,15 @@ open class ContentDispositionHeaderValue
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Net_Http_Headers_ContentDispositionHeaderValue_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor(System.String)
 // docid: M:System.Net.Http.Headers.ContentDispositionHeaderValue.#ctor(System.String)
     /**
@@ -7075,6 +7300,15 @@ open class ContentRangeHeaderValue
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Net_Http_Headers_ContentRangeHeaderValue_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor(System.Int64)
 // docid: M:System.Net.Http.Headers.ContentRangeHeaderValue.#ctor(System.Int64)
     /**
@@ -7376,6 +7610,15 @@ open class EntityTagHeaderValue
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Net_Http_Headers_EntityTagHeaderValue_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor(System.String)
 // docid: M:System.Net.Http.Headers.EntityTagHeaderValue.#ctor(System.String)
     /**
@@ -7744,6 +7987,15 @@ public final class HttpContentHeaders
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Net_Http_Headers_HttpContentHeaders_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // [IsSpecialName] System.Collections.Generic.ICollection<System.String> get_Allow()
 // docid: M:System.Net.Http.Headers.HttpContentHeaders.get_Allow
     public func get_Allow() throws -> dotnet.System.Collections.Generic.ICollection_1<dotnet.System.String> {
@@ -8117,6 +8369,15 @@ public final class HttpHeaderValueCollection_1<T : SGBridgeGenericValue>
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Net_Http_Headers_HttpHeaderValueCollection_1_cast(T.get_type_handle(),&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // void Add(T)
 // docid: M:System.Net.Http.Headers.HttpHeaderValueCollection`1.Add(`0)
     /**
@@ -8327,6 +8588,15 @@ open class HttpHeaders
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Net_Http_Headers_HttpHeaders_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // void Add(System.String, System.Collections.Generic.IEnumerable<System.String>)
 // docid: M:System.Net.Http.Headers.HttpHeaders.Add(System.String,System.Collections.Generic.IEnumerable{System.String})
     /**
@@ -8765,6 +9035,15 @@ public final class HttpRequestHeaders
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Net_Http_Headers_HttpRequestHeaders_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // [IsSpecialName] System.Net.Http.Headers.HttpHeaderValueCollection<System.Net.Http.Headers.MediaTypeWithQualityHeaderValue> get_Accept()
 // docid: M:System.Net.Http.Headers.HttpRequestHeaders.get_Accept
     public func get_Accept() throws -> dotnet.System.Net.Http.Headers.HttpHeaderValueCollection_1<dotnet.System.Net.Http.Headers.MediaTypeWithQualityHeaderValue> {
@@ -9647,6 +9926,15 @@ public final class HttpResponseHeaders
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Net_Http_Headers_HttpResponseHeaders_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // [IsSpecialName] System.Net.Http.Headers.HttpHeaderValueCollection<System.String> get_AcceptRanges()
 // docid: M:System.Net.Http.Headers.HttpResponseHeaders.get_AcceptRanges
     public func get_AcceptRanges() throws -> dotnet.System.Net.Http.Headers.HttpHeaderValueCollection_1<dotnet.System.String> {
@@ -10196,6 +10484,15 @@ open class MediaTypeHeaderValue
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Net_Http_Headers_MediaTypeHeaderValue_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor(System.String)
 // docid: M:System.Net.Http.Headers.MediaTypeHeaderValue.#ctor(System.String)
     /**
@@ -10423,6 +10720,15 @@ public final class MediaTypeWithQualityHeaderValue
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Net_Http_Headers_MediaTypeWithQualityHeaderValue_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor(System.String)
 // docid: M:System.Net.Http.Headers.MediaTypeWithQualityHeaderValue.#ctor(System.String)
     /**
@@ -10553,6 +10859,15 @@ open class NameValueHeaderValue
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Net_Http_Headers_NameValueHeaderValue_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor(System.String)
 // docid: M:System.Net.Http.Headers.NameValueHeaderValue.#ctor(System.String)
     /**
@@ -10759,6 +11074,15 @@ open class NameValueWithParametersHeaderValue
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Net_Http_Headers_NameValueWithParametersHeaderValue_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor(System.String)
 // docid: M:System.Net.Http.Headers.NameValueWithParametersHeaderValue.#ctor(System.String)
     /**
@@ -10928,6 +11252,15 @@ open class ProductHeaderValue
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Net_Http_Headers_ProductHeaderValue_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor(System.String)
 // docid: M:System.Net.Http.Headers.ProductHeaderValue.#ctor(System.String)
     /**
@@ -11121,6 +11454,15 @@ open class ProductInfoHeaderValue
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Net_Http_Headers_ProductInfoHeaderValue_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor(System.Net.Http.Headers.ProductHeaderValue)
 // docid: M:System.Net.Http.Headers.ProductInfoHeaderValue.#ctor(System.Net.Http.Headers.ProductHeaderValue)
     /**
@@ -11334,6 +11676,15 @@ open class RangeConditionHeaderValue
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Net_Http_Headers_RangeConditionHeaderValue_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor(System.DateTimeOffset)
 // docid: M:System.Net.Http.Headers.RangeConditionHeaderValue.#ctor(System.DateTimeOffset)
     /**
@@ -11542,6 +11893,15 @@ open class RangeHeaderValue
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Net_Http_Headers_RangeHeaderValue_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor()
 // docid: M:System.Net.Http.Headers.RangeHeaderValue.#ctor
     /**
@@ -11744,6 +12104,15 @@ open class RangeItemHeaderValue
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Net_Http_Headers_RangeItemHeaderValue_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor(System.Nullable<System.Int64>, System.Nullable<System.Int64>)
 // docid: M:System.Net.Http.Headers.RangeItemHeaderValue.#ctor(System.Nullable{System.Int64},System.Nullable{System.Int64})
     /**
@@ -11875,6 +12244,15 @@ open class RetryConditionHeaderValue
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Net_Http_Headers_RetryConditionHeaderValue_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor(System.DateTimeOffset)
 // docid: M:System.Net.Http.Headers.RetryConditionHeaderValue.#ctor(System.DateTimeOffset)
     /**
@@ -12063,6 +12441,15 @@ open class StringWithQualityHeaderValue
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Net_Http_Headers_StringWithQualityHeaderValue_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor(System.String)
 // docid: M:System.Net.Http.Headers.StringWithQualityHeaderValue.#ctor(System.String)
     /**
@@ -12252,6 +12639,15 @@ open class TransferCodingHeaderValue
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Net_Http_Headers_TransferCodingHeaderValue_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor(System.String)
 // docid: M:System.Net.Http.Headers.TransferCodingHeaderValue.#ctor(System.String)
     /**
@@ -12423,6 +12819,15 @@ public final class TransferCodingWithQualityHeaderValue
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Net_Http_Headers_TransferCodingWithQualityHeaderValue_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor(System.String)
 // docid: M:System.Net.Http.Headers.TransferCodingWithQualityHeaderValue.#ctor(System.String)
     /**
@@ -12553,6 +12958,15 @@ open class ViaHeaderValue
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Net_Http_Headers_ViaHeaderValue_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor(System.String, System.String)
 // docid: M:System.Net.Http.Headers.ViaHeaderValue.#ctor(System.String,System.String)
     /**
@@ -12811,6 +13225,15 @@ open class WarningHeaderValue
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Net_Http_Headers_WarningHeaderValue_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor(System.Int32, System.String, System.String)
 // docid: M:System.Net.Http.Headers.WarningHeaderValue.#ctor(System.Int32,System.String,System.String)
     /**

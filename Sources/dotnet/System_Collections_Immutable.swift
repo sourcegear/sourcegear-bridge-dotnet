@@ -39,6 +39,15 @@ open class IImmutableDictionary_2<TKey : SGBridgeGenericValue,TValue : SGBridgeG
 
     deinit { __drop_handle(self.h); }
 
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Collections_Immutable_IImmutableDictionary_2_cast(TKey.get_type_handle(),TValue.get_type_handle(),&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // System.Collections.Immutable.IImmutableDictionary<TKey,TValue> Add(TKey, TValue)
 // docid: M:System.Collections.Immutable.IImmutableDictionary`2.Add(`0,`1)
     /**
@@ -242,6 +251,15 @@ open class IImmutableList_1<T : SGBridgeGenericValue>
 
     deinit { __drop_handle(self.h); }
 
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Collections_Immutable_IImmutableList_1_cast(T.get_type_handle(),&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // System.Collections.Immutable.IImmutableList<T> Add(T)
 // docid: M:System.Collections.Immutable.IImmutableList`1.Add(`0)
     /**
@@ -544,6 +562,15 @@ open class IImmutableQueue_1<T : SGBridgeGenericValue>
 
     deinit { __drop_handle(self.h); }
 
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Collections_Immutable_IImmutableQueue_1_cast(T.get_type_handle(),&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // System.Collections.Immutable.IImmutableQueue<T> Clear()
 // docid: M:System.Collections.Immutable.IImmutableQueue`1.Clear
     /**
@@ -657,6 +684,15 @@ open class IImmutableSet_1<T : SGBridgeGenericValue>
 
     deinit { __drop_handle(self.h); }
 
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Collections_Immutable_IImmutableSet_1_cast(T.get_type_handle(),&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // System.Collections.Immutable.IImmutableSet<T> Add(T)
 // docid: M:System.Collections.Immutable.IImmutableSet`1.Add(`0)
     /**
@@ -970,6 +1006,15 @@ open class IImmutableStack_1<T : SGBridgeGenericValue>
 
     deinit { __drop_handle(self.h); }
 
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Collections_Immutable_IImmutableStack_1_cast(T.get_type_handle(),&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // System.Collections.Immutable.IImmutableStack<T> Clear()
 // docid: M:System.Collections.Immutable.IImmutableStack`1.Clear
     /**
@@ -2420,6 +2465,15 @@ public final class ImmutableArray_Builder_1<T : SGBridgeGenericValue>
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Collections_Immutable_ImmutableArray_1_Builder_cast(T.get_type_handle(),&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // void Add(T)
 // docid: M:System.Collections.Immutable.ImmutableArray`1.Builder.Add(`0)
     /**
@@ -3495,6 +3549,15 @@ public final class ImmutableDictionary_2<TKey : SGBridgeGenericValue,TValue : SG
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Collections_Immutable_ImmutableDictionary_2_cast(TKey.get_type_handle(),TValue.get_type_handle(),&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // static field:  Empty
     /**
     Gets an empty immutable dictionary.
@@ -3963,6 +4026,15 @@ public final class ImmutableDictionary_Builder_2<TKey : SGBridgeGenericValue,TVa
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Collections_Immutable_ImmutableDictionary_2_Builder_cast(TKey.get_type_handle(),TValue.get_type_handle(),&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // void Add(System.Collections.Generic.KeyValuePair<TKey,TValue>)
 // docid: M:System.Collections.Immutable.ImmutableDictionary`2.Builder.Add(System.Collections.Generic.KeyValuePair{`0,`1})
     /**
@@ -4703,6 +4775,15 @@ public final class ImmutableHashSet_1<T : SGBridgeGenericValue>
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Collections_Immutable_ImmutableHashSet_1_cast(T.get_type_handle(),&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // static field:  Empty
     /**
     Gets an immutable hash set for this type that uses the default .
@@ -5129,6 +5210,15 @@ public final class ImmutableHashSet_Builder_1<T : SGBridgeGenericValue>
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Collections_Immutable_ImmutableHashSet_1_Builder_cast(T.get_type_handle(),&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // bool Add(T)
 // docid: M:System.Collections.Immutable.ImmutableHashSet`1.Builder.Add(`0)
     /**
@@ -6327,6 +6417,15 @@ public final class ImmutableList_1<T : SGBridgeGenericValue>
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Collections_Immutable_ImmutableList_1_cast(T.get_type_handle(),&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // static field:  Empty
     /**
     Gets an empty set with the default sort comparer.
@@ -7340,6 +7439,15 @@ public final class ImmutableList_Builder_1<T : SGBridgeGenericValue>
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Collections_Immutable_ImmutableList_1_Builder_cast(T.get_type_handle(),&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // void Add(T)
 // docid: M:System.Collections.Immutable.ImmutableList`1.Builder.Add(`0)
     /**
@@ -8433,6 +8541,15 @@ public final class ImmutableQueue_1<T : SGBridgeGenericValue>
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Collections_Immutable_ImmutableQueue_1_cast(T.get_type_handle(),&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // System.Collections.Immutable.ImmutableQueue<T> Clear()
 // docid: M:System.Collections.Immutable.ImmutableQueue`1.Clear
     /**
@@ -8926,6 +9043,15 @@ public final class ImmutableSortedDictionary_2<TKey : SGBridgeGenericValue,TValu
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Collections_Immutable_ImmutableSortedDictionary_2_cast(TKey.get_type_handle(),TValue.get_type_handle(),&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // static field:  Empty
     /**
     Gets an empty immutable sorted dictionary.
@@ -9395,6 +9521,15 @@ public final class ImmutableSortedDictionary_Builder_2<TKey : SGBridgeGenericVal
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Collections_Immutable_ImmutableSortedDictionary_2_Builder_cast(TKey.get_type_handle(),TValue.get_type_handle(),&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // void Add(System.Collections.Generic.KeyValuePair<TKey,TValue>)
 // docid: M:System.Collections.Immutable.ImmutableSortedDictionary`2.Builder.Add(System.Collections.Generic.KeyValuePair{`0,`1})
     /**
@@ -10137,6 +10272,15 @@ public final class ImmutableSortedSet_1<T : SGBridgeGenericValue>
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Collections_Immutable_ImmutableSortedSet_1_cast(T.get_type_handle(),&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // static field:  Empty
     /**
     Gets an empty immutable sorted set.
@@ -10651,6 +10795,15 @@ public final class ImmutableSortedSet_Builder_1<T : SGBridgeGenericValue>
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Collections_Immutable_ImmutableSortedSet_1_Builder_cast(T.get_type_handle(),&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // bool Add(T)
 // docid: M:System.Collections.Immutable.ImmutableSortedSet`1.Builder.Add(`0)
     /**
@@ -11273,6 +11426,15 @@ public final class ImmutableStack_1<T : SGBridgeGenericValue>
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Collections_Immutable_ImmutableStack_1_cast(T.get_type_handle(),&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // System.Collections.Immutable.ImmutableStack<T> Clear()
 // docid: M:System.Collections.Immutable.ImmutableStack`1.Clear
     /**

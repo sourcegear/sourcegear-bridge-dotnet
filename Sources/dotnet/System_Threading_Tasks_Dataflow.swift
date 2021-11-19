@@ -25,6 +25,15 @@ public final class ActionBlock_1<TInput : SGBridgeGenericValue>
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Threading_Tasks_Dataflow_ActionBlock_1_cast(TInput.get_type_handle(),&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor(System.Action<TInput>)
 // docid: M:System.Threading.Tasks.Dataflow.ActionBlock`1.#ctor(System.Action{`0})
     /**
@@ -203,6 +212,15 @@ public final class BatchBlock_1<T : SGBridgeGenericValue>
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Threading_Tasks_Dataflow_BatchBlock_1_cast(T.get_type_handle(),&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor(System.Int32)
 // docid: M:System.Threading.Tasks.Dataflow.BatchBlock`1.#ctor(System.Int32)
     /**
@@ -410,6 +428,15 @@ public final class BatchedJoinBlock_2<T1 : SGBridgeGenericValue,T2 : SGBridgeGen
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Threading_Tasks_Dataflow_BatchedJoinBlock_2_cast(T1.get_type_handle(),T2.get_type_handle(),&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor(System.Int32)
 // docid: M:System.Threading.Tasks.Dataflow.BatchedJoinBlock`2.#ctor(System.Int32)
     /**
@@ -667,6 +694,15 @@ public final class BatchedJoinBlock_3<T1 : SGBridgeGenericValue,T2 : SGBridgeGen
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Threading_Tasks_Dataflow_BatchedJoinBlock_3_cast(T1.get_type_handle(),T2.get_type_handle(),T3.get_type_handle(),&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor(System.Int32)
 // docid: M:System.Threading.Tasks.Dataflow.BatchedJoinBlock`3.#ctor(System.Int32)
     /**
@@ -945,6 +981,15 @@ public final class BroadcastBlock_1<T : SGBridgeGenericValue>
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Threading_Tasks_Dataflow_BroadcastBlock_1_cast(T.get_type_handle(),&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor(System.Func<T,T>)
 // docid: M:System.Threading.Tasks.Dataflow.BroadcastBlock`1.#ctor(System.Func{`0,`0})
     /**
@@ -1098,6 +1143,15 @@ public final class BufferBlock_1<T : SGBridgeGenericValue>
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Threading_Tasks_Dataflow_BufferBlock_1_cast(T.get_type_handle(),&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor()
 // docid: M:System.Threading.Tasks.Dataflow.BufferBlock`1.#ctor
     /**
@@ -1838,6 +1892,15 @@ open class DataflowBlockOptions
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Threading_Tasks_Dataflow_DataflowBlockOptions_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // static field: System.Int32 Unbounded
     /**
     A constant used to specify an unlimited quantity for   members that provide an upper bound. This field is constant.
@@ -2088,6 +2151,15 @@ open class DataflowLinkOptions
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Threading_Tasks_Dataflow_DataflowLinkOptions_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor()
 // docid: M:System.Threading.Tasks.Dataflow.DataflowLinkOptions.#ctor
     /**
@@ -2478,6 +2550,15 @@ open class ExecutionDataflowBlockOptions
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Threading_Tasks_Dataflow_ExecutionDataflowBlockOptions_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor()
 // docid: M:System.Threading.Tasks.Dataflow.ExecutionDataflowBlockOptions.#ctor
     /**
@@ -2581,6 +2662,15 @@ open class GroupingDataflowBlockOptions
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Threading_Tasks_Dataflow_GroupingDataflowBlockOptions_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor()
 // docid: M:System.Threading.Tasks.Dataflow.GroupingDataflowBlockOptions.#ctor
     /**
@@ -2692,6 +2782,15 @@ open class IDataflowBlock
 
     deinit { __drop_handle(self.h); }
 
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Threading_Tasks_Dataflow_IDataflowBlock_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // void Complete()
 // docid: M:System.Threading.Tasks.Dataflow.IDataflowBlock.Complete
     /**
@@ -2766,6 +2865,15 @@ open class IPropagatorBlock_2<TInput : SGBridgeGenericValue,TOutput : SGBridgeGe
 
     deinit { __drop_handle(self.h); }
 
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Threading_Tasks_Dataflow_IPropagatorBlock_2_cast(TInput.get_type_handle(),TOutput.get_type_handle(),&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
 } // IPropagatorBlock_2
 
 
@@ -2796,6 +2904,15 @@ open class IReceivableSourceBlock_1<TOutput : SGBridgeGenericValue>
 
     deinit { __drop_handle(self.h); }
 
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Threading_Tasks_Dataflow_IReceivableSourceBlock_1_cast(TOutput.get_type_handle(),&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // bool TryReceive(System.Predicate<TOutput>, ref TOutput)
 // docid: M:System.Threading.Tasks.Dataflow.IReceivableSourceBlock`1.TryReceive(System.Predicate{`0},`0@)
     /**
@@ -2877,6 +2994,15 @@ open class ISourceBlock_1<TOutput : SGBridgeGenericValue>
 
     deinit { __drop_handle(self.h); }
 
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Threading_Tasks_Dataflow_ISourceBlock_1_cast(TOutput.get_type_handle(),&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // TOutput ConsumeMessage(System.Threading.Tasks.Dataflow.DataflowMessageHeader, System.Threading.Tasks.Dataflow.ITargetBlock<TOutput>, ref bool)
 // docid: M:System.Threading.Tasks.Dataflow.ISourceBlock`1.ConsumeMessage(System.Threading.Tasks.Dataflow.DataflowMessageHeader,System.Threading.Tasks.Dataflow.ITargetBlock{`0},System.Boolean@)
     /**
@@ -2989,6 +3115,15 @@ open class ITargetBlock_1<TInput : SGBridgeGenericValue>
 
     deinit { __drop_handle(self.h); }
 
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Threading_Tasks_Dataflow_ITargetBlock_1_cast(TInput.get_type_handle(),&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // System.Threading.Tasks.Dataflow.DataflowMessageStatus OfferMessage(System.Threading.Tasks.Dataflow.DataflowMessageHeader, TInput, System.Threading.Tasks.Dataflow.ISourceBlock<TInput>, bool)
 // docid: M:System.Threading.Tasks.Dataflow.ITargetBlock`1.OfferMessage(System.Threading.Tasks.Dataflow.DataflowMessageHeader,`0,System.Threading.Tasks.Dataflow.ISourceBlock{`0},System.Boolean)
     /**
@@ -3037,6 +3172,15 @@ public final class JoinBlock_2<T1 : SGBridgeGenericValue,T2 : SGBridgeGenericVal
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Threading_Tasks_Dataflow_JoinBlock_2_cast(T1.get_type_handle(),T2.get_type_handle(),&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor()
 // docid: M:System.Threading.Tasks.Dataflow.JoinBlock`2.#ctor
     /**
@@ -3272,6 +3416,15 @@ public final class JoinBlock_3<T1 : SGBridgeGenericValue,T2 : SGBridgeGenericVal
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Threading_Tasks_Dataflow_JoinBlock_3_cast(T1.get_type_handle(),T2.get_type_handle(),T3.get_type_handle(),&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor()
 // docid: M:System.Threading.Tasks.Dataflow.JoinBlock`3.#ctor
     /**
@@ -3527,6 +3680,15 @@ public final class TransformBlock_2<TInput : SGBridgeGenericValue,TOutput : SGBr
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Threading_Tasks_Dataflow_TransformBlock_2_cast(TInput.get_type_handle(),TOutput.get_type_handle(),&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor(System.Func<TInput,System.Threading.Tasks.Task<TOutput>>)
 // docid: M:System.Threading.Tasks.Dataflow.TransformBlock`2.#ctor(System.Func{`0,System.Threading.Tasks.Task{`1}})
     /**
@@ -3776,6 +3938,15 @@ public final class TransformManyBlock_2<TInput : SGBridgeGenericValue,TOutput : 
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Threading_Tasks_Dataflow_TransformManyBlock_2_cast(TInput.get_type_handle(),TOutput.get_type_handle(),&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor(System.Func<TInput,System.Collections.Generic.IEnumerable<TOutput>>)
 // docid: M:System.Threading.Tasks.Dataflow.TransformManyBlock`2.#ctor(System.Func{`0,System.Collections.Generic.IEnumerable{`1}})
     /**
@@ -4025,6 +4196,15 @@ public final class WriteOnceBlock_1<T : SGBridgeGenericValue>
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Threading_Tasks_Dataflow_WriteOnceBlock_1_cast(T.get_type_handle(),&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor(System.Func<T,T>)
 // docid: M:System.Threading.Tasks.Dataflow.WriteOnceBlock`1.#ctor(System.Func{`0,`0})
     /**

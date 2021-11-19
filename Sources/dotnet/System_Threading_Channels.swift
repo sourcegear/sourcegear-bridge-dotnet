@@ -85,6 +85,15 @@ public final class BoundedChannelOptions
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Threading_Channels_BoundedChannelOptions_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor(System.Int32)
 // docid: M:System.Threading.Channels.BoundedChannelOptions.#ctor(System.Int32)
     /**
@@ -222,6 +231,15 @@ open class ChannelClosedException
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Threading_Channels_ChannelClosedException_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor()
 // docid: M:System.Threading.Channels.ChannelClosedException.#ctor
     /**
@@ -306,6 +324,15 @@ open class ChannelOptions
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Threading_Channels_ChannelOptions_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // [IsSpecialName] bool get_AllowSynchronousContinuations()
 // docid: M:System.Threading.Channels.ChannelOptions.get_AllowSynchronousContinuations
     open func get_AllowSynchronousContinuations() throws -> Bool {
@@ -434,6 +461,15 @@ open class ChannelReader_1<T : SGBridgeGenericValue>
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Threading_Channels_ChannelReader_1_cast(T.get_type_handle(),&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // System.Threading.Tasks.ValueTask<T> ReadAsync(System.Threading.CancellationToken)
 // docid: M:System.Threading.Channels.ChannelReader`1.ReadAsync(System.Threading.CancellationToken)
     /**
@@ -637,6 +673,15 @@ open class ChannelWriter_1<T : SGBridgeGenericValue>
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Threading_Channels_ChannelWriter_1_cast(T.get_type_handle(),&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // void Complete(System.Exception)
 // docid: M:System.Threading.Channels.ChannelWriter`1.Complete(System.Exception)
     /**
@@ -751,6 +796,15 @@ open class Channel_1<T : SGBridgeGenericValue>
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Threading_Channels_Channel_1_cast(T.get_type_handle(),&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
 } // Channel_1
 
 
@@ -771,6 +825,15 @@ open class Channel_2<TWrite : SGBridgeGenericValue,TRead : SGBridgeGenericValue>
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Threading_Channels_Channel_2_cast(TWrite.get_type_handle(),TRead.get_type_handle(),&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // [IsSpecialName] System.Threading.Channels.ChannelReader<TRead> op_Implicit(System.Threading.Channels.Channel<TWrite,TRead>)
 // docid: M:System.Threading.Channels.Channel`2.op_Implicit(System.Threading.Channels.Channel{`0,`1})
     open class func op_Implicit(channel : dotnet.System.Threading.Channels.Channel_2<TWrite,TRead>) throws -> dotnet.System.Threading.Channels.ChannelReader_1<TRead> {
@@ -881,6 +944,15 @@ public final class UnboundedChannelOptions
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Threading_Channels_UnboundedChannelOptions_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor()
 // docid: M:System.Threading.Channels.UnboundedChannelOptions.#ctor
     /**

@@ -22,6 +22,15 @@ public final class BrowsableAttribute
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_ComponentModel_BrowsableAttribute_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // static field: System.ComponentModel.BrowsableAttribute Default
     /**
     Specifies the default value for the , which is . This  field is read-only.
@@ -166,6 +175,15 @@ open class CategoryAttribute
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_ComponentModel_CategoryAttribute_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor()
 // docid: M:System.ComponentModel.CategoryAttribute.#ctor
     /**
@@ -573,6 +591,15 @@ open class Component
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_ComponentModel_Component_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor()
 // docid: M:System.ComponentModel.Component.#ctor
     /**
@@ -734,6 +761,15 @@ open class ComponentCollection
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_ComponentModel_ComponentCollection_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor(System.ComponentModel.IComponent[])
 // docid: M:System.ComponentModel.ComponentCollection.#ctor(System.ComponentModel.IComponent[])
     /**
@@ -817,6 +853,15 @@ open class DescriptionAttribute
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_ComponentModel_DescriptionAttribute_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // static field: System.ComponentModel.DescriptionAttribute Default
     /**
     Specifies the default value for the , which is an empty string (""). This  field is read-only.
@@ -953,6 +998,15 @@ public final class DesignOnlyAttribute
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_ComponentModel_DesignOnlyAttribute_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // static field: System.ComponentModel.DesignOnlyAttribute Default
     /**
     Specifies the default value for the , which is . This  field is read-only.
@@ -1097,6 +1151,15 @@ public final class DesignerAttribute
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_ComponentModel_DesignerAttribute_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor(System.String)
 // docid: M:System.ComponentModel.DesignerAttribute.#ctor(System.String)
     /**
@@ -1296,6 +1359,15 @@ public final class DesignerCategoryAttribute
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_ComponentModel_DesignerCategoryAttribute_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // static field: System.ComponentModel.DesignerCategoryAttribute Component
     /**
     Specifies that a component marked with this category use a component designer. This field is read-only.
@@ -1536,6 +1608,15 @@ public final class DesignerSerializationVisibilityAttribute
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_ComponentModel_DesignerSerializationVisibilityAttribute_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // static field: System.ComponentModel.DesignerSerializationVisibilityAttribute Content
     /**
     Specifies that a serializer should serialize the contents of the property, rather than the property itself. This field is read-only.
@@ -1690,6 +1771,15 @@ open class DisplayNameAttribute
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_ComponentModel_DisplayNameAttribute_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // static field: System.ComponentModel.DisplayNameAttribute Default
     /**
     Specifies the default value for the . This field is read-only.
@@ -1826,6 +1916,15 @@ public final class EditorAttribute
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_ComponentModel_EditorAttribute_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor()
 // docid: M:System.ComponentModel.EditorAttribute.#ctor
     /**
@@ -2013,6 +2112,15 @@ public final class EventHandlerList
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_ComponentModel_EventHandlerList_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor()
 // docid: M:System.ComponentModel.EventHandlerList.#ctor
     /**
@@ -2148,6 +2256,15 @@ open class IComponent
 
     deinit { __drop_handle(self.h); }
 
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_ComponentModel_IComponent_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // [IsSpecialName] System.ComponentModel.ISite get_Site()
 // docid: M:System.ComponentModel.IComponent.get_Site
     open func get_Site() throws -> Optional<dotnet.System.ComponentModel.ISite> {
@@ -2235,6 +2352,15 @@ open class IContainer
 
     deinit { __drop_handle(self.h); }
 
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_ComponentModel_IContainer_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // void Add(System.ComponentModel.IComponent)
 // docid: M:System.ComponentModel.IContainer.Add(System.ComponentModel.IComponent)
     /**
@@ -2328,6 +2454,15 @@ open class ISite
 
     deinit { __drop_handle(self.h); }
 
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_ComponentModel_ISite_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // [IsSpecialName] System.ComponentModel.IComponent get_Component()
 // docid: M:System.ComponentModel.ISite.get_Component
     open func get_Component() throws -> dotnet.System.ComponentModel.IComponent {
@@ -2419,6 +2554,15 @@ open class ISupportInitialize
 
     deinit { __drop_handle(self.h); }
 
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_ComponentModel_ISupportInitialize_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // void BeginInit()
 // docid: M:System.ComponentModel.ISupportInitialize.BeginInit
     /**
@@ -2477,6 +2621,15 @@ open class ISynchronizeInvoke
 
     deinit { __drop_handle(self.h); }
 
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_ComponentModel_ISynchronizeInvoke_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // System.IAsyncResult BeginInvoke(System.Delegate, System.Object[])
 // docid: M:System.ComponentModel.ISynchronizeInvoke.BeginInvoke(System.Delegate,System.Object[])
     /**
@@ -2572,6 +2725,15 @@ public final class ImmutableObjectAttribute
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_ComponentModel_ImmutableObjectAttribute_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // static field: System.ComponentModel.ImmutableObjectAttribute Default
     /**
     Represents the default value for .
@@ -2716,6 +2878,15 @@ public final class InitializationEventAttribute
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_ComponentModel_InitializationEventAttribute_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor(System.String)
 // docid: M:System.ComponentModel.InitializationEventAttribute.#ctor(System.String)
     /**
@@ -2772,6 +2943,15 @@ open class InvalidAsynchronousStateException
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_ComponentModel_InvalidAsynchronousStateException_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor()
 // docid: M:System.ComponentModel.InvalidAsynchronousStateException.#ctor
     /**
@@ -2840,6 +3020,15 @@ open class InvalidEnumArgumentException
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_ComponentModel_InvalidEnumArgumentException_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor()
 // docid: M:System.ComponentModel.InvalidEnumArgumentException.#ctor
     /**
@@ -2926,6 +3115,15 @@ public final class LocalizableAttribute
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_ComponentModel_LocalizableAttribute_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // static field: System.ComponentModel.LocalizableAttribute Default
     /**
     Specifies the default value, which is . This  field is read-only.
@@ -3070,6 +3268,15 @@ public final class MergablePropertyAttribute
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_ComponentModel_MergablePropertyAttribute_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // static field: System.ComponentModel.MergablePropertyAttribute Default
     /**
     Specifies the default value, which is , that is a property can be combined with properties belonging to other objects in a Properties window. This  field is read-only.
@@ -3214,6 +3421,15 @@ public final class NotifyParentPropertyAttribute
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_ComponentModel_NotifyParentPropertyAttribute_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // static field: System.ComponentModel.NotifyParentPropertyAttribute Default
     /**
     Indicates the default attribute state, that the property should not notify the parent property of changes to its value. This field is read-only.
@@ -3358,6 +3574,15 @@ public final class ParenthesizePropertyNameAttribute
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_ComponentModel_ParenthesizePropertyNameAttribute_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // static field: System.ComponentModel.ParenthesizePropertyNameAttribute Default
     /**
     Initializes a new instance of the  class with a default value that indicates that the associated property should not be shown with parentheses. This field is read-only.
@@ -3495,6 +3720,15 @@ public final class ReadOnlyAttribute
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_ComponentModel_ReadOnlyAttribute_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // static field: System.ComponentModel.ReadOnlyAttribute Default
     /**
     Specifies the default value for the , which is  (that is, the property this attribute is bound to is read/write). This  field is read-only.
@@ -3690,6 +3924,15 @@ public final class RefreshPropertiesAttribute
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_ComponentModel_RefreshPropertiesAttribute_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // static field: System.ComponentModel.RefreshPropertiesAttribute All
     /**
     Indicates that all properties are queried again and refreshed if the property value is changed. This field is read-only.
@@ -3837,6 +4080,15 @@ public final class DesignerSerializerAttribute
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_ComponentModel_Design_Serialization_DesignerSerializerAttribute_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor(System.String, System.String)
 // docid: M:System.ComponentModel.Design.Serialization.DesignerSerializerAttribute.#ctor(System.String,System.String)
     /**

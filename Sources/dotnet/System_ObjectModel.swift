@@ -23,6 +23,15 @@ open class KeyedCollection_2<TKey : SGBridgeGenericValue,TItem : SGBridgeGeneric
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Collections_ObjectModel_KeyedCollection_2_cast(TKey.get_type_handle(),TItem.get_type_handle(),&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // bool Contains(TKey)
 // docid: M:System.Collections.ObjectModel.KeyedCollection`2.Contains(`0)
     /**
@@ -137,6 +146,15 @@ open class ObservableCollection_1<T : SGBridgeGenericValue>
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Collections_ObjectModel_ObservableCollection_1_cast(T.get_type_handle(),&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor()
 // docid: M:System.Collections.ObjectModel.ObservableCollection`1.#ctor
     /**
@@ -256,6 +274,15 @@ open class ReadOnlyDictionary_2<TKey : SGBridgeGenericValue,TValue : SGBridgeGen
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Collections_ObjectModel_ReadOnlyDictionary_2_cast(TKey.get_type_handle(),TValue.get_type_handle(),&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor(System.Collections.Generic.IDictionary<TKey,TValue>)
 // docid: M:System.Collections.ObjectModel.ReadOnlyDictionary`2.#ctor(System.Collections.Generic.IDictionary{`0,`1})
     /**
@@ -424,6 +451,15 @@ public final class ReadOnlyDictionary_KeyCollection_2<TKey : SGBridgeGenericValu
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Collections_ObjectModel_ReadOnlyDictionary_2_KeyCollection_cast(TKey.get_type_handle(),TValue.get_type_handle(),&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // void CopyTo(TKey[], System.Int32)
 // docid: M:System.Collections.ObjectModel.ReadOnlyDictionary`2.KeyCollection.CopyTo(System.Collections.ObjectModel.TKey[],System.Int32)
     public func CopyTo(array : dotnet.System_Arr<TKey>, arrayIndex : Swift.Int32) throws {
@@ -494,6 +530,15 @@ public final class ReadOnlyDictionary_ValueCollection_2<TKey : SGBridgeGenericVa
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Collections_ObjectModel_ReadOnlyDictionary_2_ValueCollection_cast(TKey.get_type_handle(),TValue.get_type_handle(),&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // void CopyTo(TValue[], System.Int32)
 // docid: M:System.Collections.ObjectModel.ReadOnlyDictionary`2.ValueCollection.CopyTo(System.Collections.ObjectModel.TValue[],System.Int32)
     public func CopyTo(array : dotnet.System_Arr<TValue>, arrayIndex : Swift.Int32) throws {
@@ -564,6 +609,15 @@ open class ReadOnlyObservableCollection_1<T : SGBridgeGenericValue>
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Collections_ObjectModel_ReadOnlyObservableCollection_1_cast(T.get_type_handle(),&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor(System.Collections.ObjectModel.ObservableCollection<T>)
 // docid: M:System.Collections.ObjectModel.ReadOnlyObservableCollection`1.#ctor(System.Collections.ObjectModel.ObservableCollection{`0})
     /**
@@ -612,6 +666,15 @@ open class INotifyCollectionChanged
 
     deinit { __drop_handle(self.h); }
 
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Collections_Specialized_INotifyCollectionChanged_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // [IsSpecialName] void add_CollectionChanged(System.Collections.Specialized.NotifyCollectionChangedEventHandler)
 // docid: M:System.Collections.Specialized.INotifyCollectionChanged.add_CollectionChanged(System.Collections.Specialized.NotifyCollectionChangedEventHandler)
     open func add_CollectionChanged(value : Optional<dotnet.System.Collections.Specialized.NotifyCollectionChangedEventHandler>) throws {
@@ -737,6 +800,15 @@ open class NotifyCollectionChangedEventArgs
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Collections_Specialized_NotifyCollectionChangedEventArgs_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor(System.Collections.Specialized.NotifyCollectionChangedAction)
 // docid: M:System.Collections.Specialized.NotifyCollectionChangedEventArgs.#ctor(System.Collections.Specialized.NotifyCollectionChangedAction)
     /**
@@ -1176,6 +1248,15 @@ open class DataErrorsChangedEventArgs
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_ComponentModel_DataErrorsChangedEventArgs_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor(System.String)
 // docid: M:System.ComponentModel.DataErrorsChangedEventArgs.#ctor(System.String)
     /**
@@ -1244,6 +1325,15 @@ open class INotifyDataErrorInfo
 
     deinit { __drop_handle(self.h); }
 
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_ComponentModel_INotifyDataErrorInfo_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // System.Collections.IEnumerable GetErrors(System.String)
 // docid: M:System.ComponentModel.INotifyDataErrorInfo.GetErrors(System.String)
     /**
@@ -1333,6 +1423,15 @@ open class INotifyPropertyChanged
 
     deinit { __drop_handle(self.h); }
 
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_ComponentModel_INotifyPropertyChanged_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // [IsSpecialName] void add_PropertyChanged(System.ComponentModel.PropertyChangedEventHandler)
 // docid: M:System.ComponentModel.INotifyPropertyChanged.add_PropertyChanged(System.ComponentModel.PropertyChangedEventHandler)
     open func add_PropertyChanged(value : Optional<dotnet.System.ComponentModel.PropertyChangedEventHandler>) throws {
@@ -1393,6 +1492,15 @@ open class INotifyPropertyChanging
 
     deinit { __drop_handle(self.h); }
 
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_ComponentModel_INotifyPropertyChanging_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // [IsSpecialName] void add_PropertyChanging(System.ComponentModel.PropertyChangingEventHandler)
 // docid: M:System.ComponentModel.INotifyPropertyChanging.add_PropertyChanging(System.ComponentModel.PropertyChangingEventHandler)
     open func add_PropertyChanging(value : Optional<dotnet.System.ComponentModel.PropertyChangingEventHandler>) throws {
@@ -1445,6 +1553,15 @@ open class PropertyChangedEventArgs
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_ComponentModel_PropertyChangedEventArgs_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor(System.String)
 // docid: M:System.ComponentModel.PropertyChangedEventArgs.#ctor(System.String)
     /**
@@ -1613,6 +1730,15 @@ open class PropertyChangingEventArgs
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_ComponentModel_PropertyChangingEventArgs_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor(System.String)
 // docid: M:System.ComponentModel.PropertyChangingEventArgs.#ctor(System.String)
     /**
@@ -1781,6 +1907,15 @@ public final class TypeConverterAttribute
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_ComponentModel_TypeConverterAttribute_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // static field: System.ComponentModel.TypeConverterAttribute Default
     /**
     Specifies the type to use as a converter for the object this attribute is bound to.
@@ -1915,6 +2050,15 @@ public final class TypeDescriptionProviderAttribute
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_ComponentModel_TypeDescriptionProviderAttribute_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor(System.String)
 // docid: M:System.ComponentModel.TypeDescriptionProviderAttribute.#ctor(System.String)
     /**
@@ -1999,6 +2143,15 @@ open class ICustomTypeProvider
 
     deinit { __drop_handle(self.h); }
 
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Reflection_ICustomTypeProvider_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // System.Type GetCustomType()
 // docid: M:System.Reflection.ICustomTypeProvider.GetCustomType
     /**
@@ -2049,6 +2202,15 @@ open class ICommand
 
     deinit { __drop_handle(self.h); }
 
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Windows_Input_ICommand_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // bool CanExecute(System.Object)
 // docid: M:System.Windows.Input.ICommand.CanExecute(System.Object)
     /**
@@ -2140,6 +2302,15 @@ public final class ValueSerializerAttribute
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Windows_Markup_ValueSerializerAttribute_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor(System.String)
 // docid: M:System.Windows.Markup.ValueSerializerAttribute.#ctor(System.String)
     /**

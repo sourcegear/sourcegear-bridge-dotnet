@@ -31,6 +31,15 @@ open class INormalizeForIsolatedStorage
 
     deinit { __drop_handle(self.h); }
 
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_IO_IsolatedStorage_INormalizeForIsolatedStorage_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // System.Object Normalize()
 // docid: M:System.IO.IsolatedStorage.INormalizeForIsolatedStorage.Normalize
     /**
@@ -68,6 +77,15 @@ open class IsolatedStorage
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_IO_IsolatedStorage_IsolatedStorage_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // bool IncreaseQuotaTo(System.Int64)
 // docid: M:System.IO.IsolatedStorage.IsolatedStorage.IncreaseQuotaTo(System.Int64)
     /**
@@ -302,6 +320,15 @@ open class IsolatedStorageException
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_IO_IsolatedStorage_IsolatedStorageException_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor()
 // docid: M:System.IO.IsolatedStorage.IsolatedStorageException.#ctor
     /**
@@ -371,6 +398,15 @@ public final class IsolatedStorageFile
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_IO_IsolatedStorage_IsolatedStorageFile_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // void Close()
 // docid: M:System.IO.IsolatedStorage.IsolatedStorageFile.Close
     /**
@@ -1164,6 +1200,15 @@ open class IsolatedStorageFileStream
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_IO_IsolatedStorage_IsolatedStorageFileStream_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor(System.String, System.IO.FileMode)
 // docid: M:System.IO.IsolatedStorage.IsolatedStorageFileStream.#ctor(System.String,System.IO.FileMode)
     /**

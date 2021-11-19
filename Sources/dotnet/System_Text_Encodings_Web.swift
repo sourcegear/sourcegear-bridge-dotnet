@@ -24,6 +24,15 @@ open class HtmlEncoder
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Text_Encodings_Web_HtmlEncoder_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // System.Text.Encodings.Web.HtmlEncoder Create(System.Text.Encodings.Web.TextEncoderSettings)
 // docid: M:System.Text.Encodings.Web.HtmlEncoder.Create(System.Text.Encodings.Web.TextEncoderSettings)
     /**
@@ -100,6 +109,15 @@ open class JavaScriptEncoder
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Text_Encodings_Web_JavaScriptEncoder_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // System.Text.Encodings.Web.JavaScriptEncoder Create(System.Text.Encodings.Web.TextEncoderSettings)
 // docid: M:System.Text.Encodings.Web.JavaScriptEncoder.Create(System.Text.Encodings.Web.TextEncoderSettings)
     /**
@@ -196,6 +214,15 @@ open class TextEncoder
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Text_Encodings_Web_TextEncoder_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // void Encode(System.IO.TextWriter, System.Char[], System.Int32, System.Int32)
 // docid: M:System.Text.Encodings.Web.TextEncoder.Encode(System.IO.TextWriter,System.Char[],System.Int32,System.Int32)
     /**
@@ -375,6 +402,15 @@ open class TextEncoderSettings
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Text_Encodings_Web_TextEncoderSettings_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor()
 // docid: M:System.Text.Encodings.Web.TextEncoderSettings.#ctor
     /**
@@ -618,6 +654,15 @@ open class UrlEncoder
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Text_Encodings_Web_UrlEncoder_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // System.Text.Encodings.Web.UrlEncoder Create(System.Text.Encodings.Web.TextEncoderSettings)
 // docid: M:System.Text.Encodings.Web.UrlEncoder.Create(System.Text.Encodings.Web.TextEncoderSettings)
     /**
@@ -699,6 +744,15 @@ public final class UnicodeRange
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Text_Unicode_UnicodeRange_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor(System.Int32, System.Int32)
 // docid: M:System.Text.Unicode.UnicodeRange.#ctor(System.Int32,System.Int32)
     /**

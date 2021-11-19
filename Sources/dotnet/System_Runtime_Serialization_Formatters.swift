@@ -24,6 +24,15 @@ open class Formatter
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Runtime_Serialization_Formatter_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // System.Object Deserialize(System.IO.Stream)
 // docid: M:System.Runtime.Serialization.Formatter.Deserialize(System.IO.Stream)
     /**
@@ -190,6 +199,15 @@ open class FormatterConverter
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Runtime_Serialization_FormatterConverter_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor()
 // docid: M:System.Runtime.Serialization.FormatterConverter.#ctor
     /**
@@ -720,6 +738,15 @@ open class IFormatter
 
     deinit { __drop_handle(self.h); }
 
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Runtime_Serialization_IFormatter_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // System.Object Deserialize(System.IO.Stream)
 // docid: M:System.Runtime.Serialization.IFormatter.Deserialize(System.IO.Stream)
     /**
@@ -857,6 +884,15 @@ open class ISerializationSurrogate
 
     deinit { __drop_handle(self.h); }
 
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Runtime_Serialization_ISerializationSurrogate_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // void GetObjectData(System.Object, System.Runtime.Serialization.SerializationInfo, System.Runtime.Serialization.StreamingContext)
 // docid: M:System.Runtime.Serialization.ISerializationSurrogate.GetObjectData(System.Object,System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)
     /**
@@ -924,6 +960,15 @@ open class ISurrogateSelector
 
     deinit { __drop_handle(self.h); }
 
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Runtime_Serialization_ISurrogateSelector_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // void ChainSelector(System.Runtime.Serialization.ISurrogateSelector)
 // docid: M:System.Runtime.Serialization.ISurrogateSelector.ChainSelector(System.Runtime.Serialization.ISurrogateSelector)
     /**
@@ -1008,6 +1053,15 @@ open class ObjectIDGenerator
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Runtime_Serialization_ObjectIDGenerator_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor()
 // docid: M:System.Runtime.Serialization.ObjectIDGenerator.#ctor
     /**
@@ -1089,6 +1143,15 @@ open class ObjectManager
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Runtime_Serialization_ObjectManager_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor(System.Runtime.Serialization.ISurrogateSelector, System.Runtime.Serialization.StreamingContext)
 // docid: M:System.Runtime.Serialization.ObjectManager.#ctor(System.Runtime.Serialization.ISurrogateSelector,System.Runtime.Serialization.StreamingContext)
     /**
@@ -1342,6 +1405,15 @@ open class SerializationBinder
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Runtime_Serialization_SerializationBinder_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // void BindToName(System.Type, ref System.String, ref System.String)
 // docid: M:System.Runtime.Serialization.SerializationBinder.BindToName(System.Type,System.String@,System.String@)
     /**
@@ -1411,6 +1483,15 @@ public final class SerializationObjectManager
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Runtime_Serialization_SerializationObjectManager_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor(System.Runtime.Serialization.StreamingContext)
 // docid: M:System.Runtime.Serialization.SerializationObjectManager.#ctor(System.Runtime.Serialization.StreamingContext)
     /**
@@ -1479,6 +1560,15 @@ open class SurrogateSelector
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Runtime_Serialization_SurrogateSelector_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor()
 // docid: M:System.Runtime.Serialization.SurrogateSelector.#ctor
     /**
@@ -1715,6 +1805,15 @@ open class IFieldInfo
 
     deinit { __drop_handle(self.h); }
 
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Runtime_Serialization_Formatters_IFieldInfo_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // [IsSpecialName] System.String[] get_FieldNames()
 // docid: M:System.Runtime.Serialization.Formatters.IFieldInfo.get_FieldNames
     open func get_FieldNames() throws -> Optional<dotnet.System_Arr<dotnet.System.String>> {
@@ -1831,6 +1930,15 @@ public final class BinaryFormatter
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Runtime_Serialization_Formatters_Binary_BinaryFormatter_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor()
 // docid: M:System.Runtime.Serialization.Formatters.Binary.BinaryFormatter.#ctor
     /**

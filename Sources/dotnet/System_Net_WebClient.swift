@@ -22,6 +22,15 @@ open class DownloadDataCompletedEventArgs
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Net_DownloadDataCompletedEventArgs_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // [IsSpecialName] System.Byte[] get_Result()
 // docid: M:System.Net.DownloadDataCompletedEventArgs.get_Result
     open func get_Result() throws -> dotnet.System_Arr<Swift.UInt8> {
@@ -170,6 +179,15 @@ open class DownloadProgressChangedEventArgs
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Net_DownloadProgressChangedEventArgs_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // [IsSpecialName] System.Int64 get_BytesReceived()
 // docid: M:System.Net.DownloadProgressChangedEventArgs.get_BytesReceived
     open func get_BytesReceived() throws -> Swift.Int64 {
@@ -338,6 +356,15 @@ open class DownloadStringCompletedEventArgs
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Net_DownloadStringCompletedEventArgs_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // [IsSpecialName] System.String get_Result()
 // docid: M:System.Net.DownloadStringCompletedEventArgs.get_Result
     open func get_Result() throws -> dotnet.System.String {
@@ -486,6 +513,15 @@ open class OpenReadCompletedEventArgs
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Net_OpenReadCompletedEventArgs_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // [IsSpecialName] System.IO.Stream get_Result()
 // docid: M:System.Net.OpenReadCompletedEventArgs.get_Result
     open func get_Result() throws -> dotnet.System.IO.Stream {
@@ -634,6 +670,15 @@ open class OpenWriteCompletedEventArgs
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Net_OpenWriteCompletedEventArgs_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // [IsSpecialName] System.IO.Stream get_Result()
 // docid: M:System.Net.OpenWriteCompletedEventArgs.get_Result
     open func get_Result() throws -> dotnet.System.IO.Stream {
@@ -782,6 +827,15 @@ open class UploadDataCompletedEventArgs
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Net_UploadDataCompletedEventArgs_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // [IsSpecialName] System.Byte[] get_Result()
 // docid: M:System.Net.UploadDataCompletedEventArgs.get_Result
     open func get_Result() throws -> dotnet.System_Arr<Swift.UInt8> {
@@ -930,6 +984,15 @@ open class UploadFileCompletedEventArgs
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Net_UploadFileCompletedEventArgs_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // [IsSpecialName] System.Byte[] get_Result()
 // docid: M:System.Net.UploadFileCompletedEventArgs.get_Result
     open func get_Result() throws -> dotnet.System_Arr<Swift.UInt8> {
@@ -1078,6 +1141,15 @@ open class UploadProgressChangedEventArgs
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Net_UploadProgressChangedEventArgs_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // [IsSpecialName] System.Int64 get_BytesReceived()
 // docid: M:System.Net.UploadProgressChangedEventArgs.get_BytesReceived
     open func get_BytesReceived() throws -> Swift.Int64 {
@@ -1286,6 +1358,15 @@ open class UploadStringCompletedEventArgs
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Net_UploadStringCompletedEventArgs_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // [IsSpecialName] System.String get_Result()
 // docid: M:System.Net.UploadStringCompletedEventArgs.get_Result
     open func get_Result() throws -> dotnet.System.String {
@@ -1434,6 +1515,15 @@ open class UploadValuesCompletedEventArgs
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Net_UploadValuesCompletedEventArgs_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // [IsSpecialName] System.Byte[] get_Result()
 // docid: M:System.Net.UploadValuesCompletedEventArgs.get_Result
     open func get_Result() throws -> dotnet.System_Arr<Swift.UInt8> {
@@ -1582,6 +1672,15 @@ open class WebClient
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Net_WebClient_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor()
 // docid: M:System.Net.WebClient.#ctor
     /**
@@ -3773,6 +3872,15 @@ open class WriteStreamClosedEventArgs
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Net_WriteStreamClosedEventArgs_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor()
 // docid: M:System.Net.WriteStreamClosedEventArgs.#ctor
     /**

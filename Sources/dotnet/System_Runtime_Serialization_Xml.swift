@@ -23,6 +23,15 @@ open class DataContractResolver
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Runtime_Serialization_DataContractResolver_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // System.Type ResolveName(System.String, System.String, System.Type, System.Runtime.Serialization.DataContractResolver)
 // docid: M:System.Runtime.Serialization.DataContractResolver.ResolveName(System.String,System.String,System.Type,System.Runtime.Serialization.DataContractResolver)
     /**
@@ -99,6 +108,15 @@ public final class DataContractSerializer
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Runtime_Serialization_DataContractSerializer_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor(System.Type)
 // docid: M:System.Runtime.Serialization.DataContractSerializer.#ctor(System.Type)
     /**
@@ -679,6 +697,15 @@ open class DataContractSerializerSettings
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Runtime_Serialization_DataContractSerializerSettings_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor()
 // docid: M:System.Runtime.Serialization.DataContractSerializerSettings.#ctor
     /**
@@ -1002,6 +1029,15 @@ open class ExportOptions
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Runtime_Serialization_ExportOptions_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor()
 // docid: M:System.Runtime.Serialization.ExportOptions.#ctor
     /**
@@ -1057,6 +1093,15 @@ public final class ExtensionDataObject
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Runtime_Serialization_ExtensionDataObject_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
 } // ExtensionDataObject
 
 
@@ -1085,6 +1130,15 @@ open class IExtensibleDataObject
 
     deinit { __drop_handle(self.h); }
 
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Runtime_Serialization_IExtensibleDataObject_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // [IsSpecialName] System.Runtime.Serialization.ExtensionDataObject get_ExtensionData()
 // docid: M:System.Runtime.Serialization.IExtensibleDataObject.get_ExtensionData
     open func get_ExtensionData() throws -> Optional<dotnet.System.Runtime.Serialization.ExtensionDataObject> {
@@ -1189,6 +1243,15 @@ open class XmlObjectSerializer
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Runtime_Serialization_XmlObjectSerializer_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // bool IsStartObject(System.Xml.XmlDictionaryReader)
 // docid: M:System.Runtime.Serialization.XmlObjectSerializer.IsStartObject(System.Xml.XmlDictionaryReader)
     /**
@@ -1569,6 +1632,15 @@ open class XsdDataContractExporter
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Runtime_Serialization_XsdDataContractExporter_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor()
 // docid: M:System.Runtime.Serialization.XsdDataContractExporter.#ctor
     /**
@@ -1858,6 +1930,15 @@ open class IFragmentCapableXmlDictionaryWriter
 
     deinit { __drop_handle(self.h); }
 
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Xml_IFragmentCapableXmlDictionaryWriter_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // void EndFragment()
 // docid: M:System.Xml.IFragmentCapableXmlDictionaryWriter.EndFragment
     /**
@@ -1947,6 +2028,15 @@ open class IStreamProvider
 
     deinit { __drop_handle(self.h); }
 
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Xml_IStreamProvider_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // System.IO.Stream GetStream()
 // docid: M:System.Xml.IStreamProvider.GetStream
     /**
@@ -2008,6 +2098,15 @@ open class IXmlBinaryReaderInitializer
 
     deinit { __drop_handle(self.h); }
 
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Xml_IXmlBinaryReaderInitializer_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // void SetInput(System.Byte[], System.Int32, System.Int32, System.Xml.IXmlDictionary, System.Xml.XmlDictionaryReaderQuotas, System.Xml.XmlBinaryReaderSession, System.Xml.OnXmlDictionaryReaderClose)
 // docid: M:System.Xml.IXmlBinaryReaderInitializer.SetInput(System.Byte[],System.Int32,System.Int32,System.Xml.IXmlDictionary,System.Xml.XmlDictionaryReaderQuotas,System.Xml.XmlBinaryReaderSession,System.Xml.OnXmlDictionaryReaderClose)
     /**
@@ -2094,6 +2193,15 @@ open class IXmlBinaryWriterInitializer
 
     deinit { __drop_handle(self.h); }
 
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Xml_IXmlBinaryWriterInitializer_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // void SetOutput(System.IO.Stream, System.Xml.IXmlDictionary, System.Xml.XmlBinaryWriterSession, bool)
 // docid: M:System.Xml.IXmlBinaryWriterInitializer.SetOutput(System.IO.Stream,System.Xml.IXmlDictionary,System.Xml.XmlBinaryWriterSession,System.Boolean)
     /**
@@ -2142,6 +2250,15 @@ open class IXmlDictionary
 
     deinit { __drop_handle(self.h); }
 
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Xml_IXmlDictionary_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // bool TryLookup(System.Int32, ref System.Xml.XmlDictionaryString)
 // docid: M:System.Xml.IXmlDictionary.TryLookup(System.Int32,System.Xml.XmlDictionaryString@)
     /**
@@ -2242,6 +2359,15 @@ open class IXmlTextReaderInitializer
 
     deinit { __drop_handle(self.h); }
 
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Xml_IXmlTextReaderInitializer_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // void SetInput(System.Byte[], System.Int32, System.Int32, System.Text.Encoding, System.Xml.XmlDictionaryReaderQuotas, System.Xml.OnXmlDictionaryReaderClose)
 // docid: M:System.Xml.IXmlTextReaderInitializer.SetInput(System.Byte[],System.Int32,System.Int32,System.Text.Encoding,System.Xml.XmlDictionaryReaderQuotas,System.Xml.OnXmlDictionaryReaderClose)
     /**
@@ -2320,6 +2446,15 @@ open class IXmlTextWriterInitializer
 
     deinit { __drop_handle(self.h); }
 
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Xml_IXmlTextWriterInitializer_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // void SetOutput(System.IO.Stream, System.Text.Encoding, bool)
 // docid: M:System.Xml.IXmlTextWriterInitializer.SetOutput(System.IO.Stream,System.Text.Encoding,System.Boolean)
     /**
@@ -2468,6 +2603,15 @@ open class UniqueId
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Xml_UniqueId_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor()
 // docid: M:System.Xml.UniqueId.#ctor
     /**
@@ -2782,6 +2926,15 @@ open class XmlBinaryReaderSession
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Xml_XmlBinaryReaderSession_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor()
 // docid: M:System.Xml.XmlBinaryReaderSession.#ctor
     /**
@@ -2923,6 +3076,15 @@ open class XmlBinaryWriterSession
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Xml_XmlBinaryWriterSession_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor()
 // docid: M:System.Xml.XmlBinaryWriterSession.#ctor
     /**
@@ -2997,6 +3159,15 @@ open class XmlDictionary
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Xml_XmlDictionary_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor()
 // docid: M:System.Xml.XmlDictionary.#ctor
     /**
@@ -3158,6 +3329,15 @@ open class XmlDictionaryReader
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Xml_XmlDictionaryReader_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // System.Xml.XmlDictionaryReader CreateBinaryReader(System.Byte[], System.Int32, System.Int32, System.Xml.IXmlDictionary, System.Xml.XmlDictionaryReaderQuotas)
 // docid: M:System.Xml.XmlDictionaryReader.CreateBinaryReader(System.Byte[],System.Int32,System.Int32,System.Xml.IXmlDictionary,System.Xml.XmlDictionaryReaderQuotas)
     /**
@@ -5633,6 +5813,15 @@ public final class XmlDictionaryReaderQuotas
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Xml_XmlDictionaryReaderQuotas_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor()
 // docid: M:System.Xml.XmlDictionaryReaderQuotas.#ctor
     /**
@@ -5894,6 +6083,15 @@ open class XmlDictionaryString
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Xml_XmlDictionaryString_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor(System.Xml.IXmlDictionary, System.String, System.Int32)
 // docid: M:System.Xml.XmlDictionaryString.#ctor(System.Xml.IXmlDictionary,System.String,System.Int32)
     /**
@@ -6029,6 +6227,15 @@ open class XmlDictionaryWriter
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Xml_XmlDictionaryWriter_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // System.Xml.XmlDictionaryWriter CreateBinaryWriter(System.IO.Stream)
 // docid: M:System.Xml.XmlDictionaryWriter.CreateBinaryWriter(System.IO.Stream)
     /**

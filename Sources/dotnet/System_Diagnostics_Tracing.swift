@@ -25,6 +25,15 @@ open class DiagnosticCounter
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Diagnostics_Tracing_DiagnosticCounter_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // void AddMetadata(System.String, System.String)
 // docid: M:System.Diagnostics.Tracing.DiagnosticCounter.AddMetadata(System.String,System.String)
     /**
@@ -247,6 +256,15 @@ public final class EventAttribute
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Diagnostics_Tracing_EventAttribute_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor(System.Int32)
 // docid: M:System.Diagnostics.Tracing.EventAttribute.#ctor(System.Int32)
     /**
@@ -748,6 +766,15 @@ open class EventCommandEventArgs
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Diagnostics_Tracing_EventCommandEventArgs_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // bool DisableEvent(System.Int32)
 // docid: M:System.Diagnostics.Tracing.EventCommandEventArgs.DisableEvent(System.Int32)
     /**
@@ -850,6 +877,15 @@ open class EventCounter
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Diagnostics_Tracing_EventCounter_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor(System.String, System.Diagnostics.Tracing.EventSource)
 // docid: M:System.Diagnostics.Tracing.EventCounter.#ctor(System.String,System.Diagnostics.Tracing.EventSource)
     /**
@@ -936,6 +972,15 @@ open class EventDataAttribute
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Diagnostics_Tracing_EventDataAttribute_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor()
 // docid: M:System.Diagnostics.Tracing.EventDataAttribute.#ctor
     /**
@@ -1009,6 +1054,15 @@ open class EventFieldAttribute
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Diagnostics_Tracing_EventFieldAttribute_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor()
 // docid: M:System.Diagnostics.Tracing.EventFieldAttribute.#ctor
     /**
@@ -1236,6 +1290,15 @@ open class EventIgnoreAttribute
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Diagnostics_Tracing_EventIgnoreAttribute_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor()
 // docid: M:System.Diagnostics.Tracing.EventIgnoreAttribute.#ctor
     /**
@@ -1484,6 +1547,15 @@ open class EventListener
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Diagnostics_Tracing_EventListener_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // void DisableEvents(System.Diagnostics.Tracing.EventSource)
 // docid: M:System.Diagnostics.Tracing.EventListener.DisableEvents(System.Diagnostics.Tracing.EventSource)
     /**
@@ -1866,6 +1938,15 @@ open class EventSource
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Diagnostics_Tracing_EventSource_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor(System.String)
 // docid: M:System.Diagnostics.Tracing.EventSource.#ctor(System.String)
     /**
@@ -2413,6 +2494,15 @@ public final class EventSourceAttribute
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Diagnostics_Tracing_EventSourceAttribute_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor()
 // docid: M:System.Diagnostics.Tracing.EventSourceAttribute.#ctor
     /**
@@ -2562,6 +2652,15 @@ open class EventSourceCreatedEventArgs
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Diagnostics_Tracing_EventSourceCreatedEventArgs_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor()
 // docid: M:System.Diagnostics.Tracing.EventSourceCreatedEventArgs.#ctor
     /**
@@ -2621,6 +2720,15 @@ open class EventSourceException
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Diagnostics_Tracing_EventSourceException_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor()
 // docid: M:System.Diagnostics.Tracing.EventSourceException.#ctor
     /**
@@ -3004,6 +3112,15 @@ open class EventWrittenEventArgs
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Diagnostics_Tracing_EventWrittenEventArgs_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // [IsSpecialName] System.Guid get_ActivityId()
 // docid: M:System.Diagnostics.Tracing.EventWrittenEventArgs.get_ActivityId
     open func get_ActivityId() throws -> dotnet.System.Guid {
@@ -3380,6 +3497,15 @@ open class IncrementingEventCounter
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Diagnostics_Tracing_IncrementingEventCounter_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor(System.String, System.Diagnostics.Tracing.EventSource)
 // docid: M:System.Diagnostics.Tracing.IncrementingEventCounter.#ctor(System.String,System.Diagnostics.Tracing.EventSource)
     /**
@@ -3484,6 +3610,15 @@ open class IncrementingPollingCounter
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Diagnostics_Tracing_IncrementingPollingCounter_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor(System.String, System.Diagnostics.Tracing.EventSource, System.Func<System.Double>)
 // docid: M:System.Diagnostics.Tracing.IncrementingPollingCounter.#ctor(System.String,System.Diagnostics.Tracing.EventSource,System.Func{System.Double})
     /**
@@ -3573,6 +3708,15 @@ public final class NonEventAttribute
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Diagnostics_Tracing_NonEventAttribute_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor()
 // docid: M:System.Diagnostics.Tracing.NonEventAttribute.#ctor
     /**
@@ -3608,6 +3752,15 @@ open class PollingCounter
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Diagnostics_Tracing_PollingCounter_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor(System.String, System.Diagnostics.Tracing.EventSource, System.Func<System.Double>)
 // docid: M:System.Diagnostics.Tracing.PollingCounter.#ctor(System.String,System.Diagnostics.Tracing.EventSource,System.Func{System.Double})
     /**

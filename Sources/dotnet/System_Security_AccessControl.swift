@@ -282,6 +282,15 @@ open class AccessRule
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Security_AccessControl_AccessRule_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // [IsSpecialName] System.Security.AccessControl.AccessControlType get_AccessControlType()
 // docid: M:System.Security.AccessControl.AccessRule.get_AccessControlType
     open func get_AccessControlType() throws -> dotnet.System.Security.AccessControl.AccessControlType {
@@ -322,6 +331,15 @@ open class AccessRule_1<T : SGBridgeGenericValue>
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Security_AccessControl_AccessRule_1_cast(T.get_type_handle(),&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor(System.Security.Principal.IdentityReference, T, System.Security.AccessControl.AccessControlType)
 // docid: M:System.Security.AccessControl.AccessRule`1.#ctor(System.Security.Principal.IdentityReference,`0,System.Security.AccessControl.AccessControlType)
     /**
@@ -439,6 +457,15 @@ public final class AceEnumerator
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Security_AccessControl_AceEnumerator_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // bool MoveNext()
 // docid: M:System.Security.AccessControl.AceEnumerator.MoveNext
     /**
@@ -969,6 +996,15 @@ open class AuditRule
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Security_AccessControl_AuditRule_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // [IsSpecialName] System.Security.AccessControl.AuditFlags get_AuditFlags()
 // docid: M:System.Security.AccessControl.AuditRule.get_AuditFlags
     open func get_AuditFlags() throws -> dotnet.System.Security.AccessControl.AuditFlags {
@@ -1009,6 +1045,15 @@ open class AuditRule_1<T : SGBridgeGenericValue>
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Security_AccessControl_AuditRule_1_cast(T.get_type_handle(),&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor(System.Security.Principal.IdentityReference, T, System.Security.AccessControl.AuditFlags)
 // docid: M:System.Security.AccessControl.AuditRule`1.#ctor(System.Security.Principal.IdentityReference,`0,System.Security.AccessControl.AuditFlags)
     /**
@@ -1125,6 +1170,15 @@ open class AuthorizationRule
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Security_AccessControl_AuthorizationRule_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // [IsSpecialName] System.Security.Principal.IdentityReference get_IdentityReference()
 // docid: M:System.Security.AccessControl.AuthorizationRule.get_IdentityReference
     open func get_IdentityReference() throws -> dotnet.System.Security.Principal.IdentityReference {
@@ -1225,6 +1279,15 @@ public final class AuthorizationRuleCollection
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Security_AccessControl_AuthorizationRuleCollection_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor()
 // docid: M:System.Security.AccessControl.AuthorizationRuleCollection.#ctor
     /**
@@ -1308,6 +1371,15 @@ public final class CommonAce
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Security_AccessControl_CommonAce_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor(System.Security.AccessControl.AceFlags, System.Security.AccessControl.AceQualifier, System.Int32, System.Security.Principal.SecurityIdentifier, bool, System.Byte[])
 // docid: M:System.Security.AccessControl.CommonAce.#ctor(System.Security.AccessControl.AceFlags,System.Security.AccessControl.AceQualifier,System.Int32,System.Security.Principal.SecurityIdentifier,System.Boolean,System.Byte[])
     /**
@@ -1406,6 +1478,15 @@ open class CommonAcl
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Security_AccessControl_CommonAcl_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // void GetBinaryForm(System.Byte[], System.Int32)
 // docid: M:System.Security.AccessControl.CommonAcl.GetBinaryForm(System.Byte[],System.Int32)
     /**
@@ -1616,6 +1697,15 @@ open class CommonObjectSecurity
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Security_AccessControl_CommonObjectSecurity_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // System.Security.AccessControl.AuthorizationRuleCollection GetAccessRules(bool, bool, System.Type)
 // docid: M:System.Security.AccessControl.CommonObjectSecurity.GetAccessRules(System.Boolean,System.Boolean,System.Type)
     /**
@@ -1680,6 +1770,15 @@ public final class CommonSecurityDescriptor
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Security_AccessControl_CommonSecurityDescriptor_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor(bool, bool, System.Byte[], System.Int32)
 // docid: M:System.Security.AccessControl.CommonSecurityDescriptor.#ctor(System.Boolean,System.Boolean,System.Byte[],System.Int32)
     /**
@@ -2141,6 +2240,15 @@ public final class CompoundAce
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Security_AccessControl_CompoundAce_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor(System.Security.AccessControl.AceFlags, System.Int32, System.Security.AccessControl.CompoundAceType, System.Security.Principal.SecurityIdentifier)
 // docid: M:System.Security.AccessControl.CompoundAce.#ctor(System.Security.AccessControl.AceFlags,System.Int32,System.Security.AccessControl.CompoundAceType,System.Security.Principal.SecurityIdentifier)
     /**
@@ -2485,6 +2593,15 @@ public final class CustomAce
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Security_AccessControl_CustomAce_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // static field: System.Int32 MaxOpaqueLength
     /**
     Returns the maximum allowed length of an opaque data blob for this  object.
@@ -2628,6 +2745,15 @@ public final class DiscretionaryAcl
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Security_AccessControl_DiscretionaryAcl_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor(bool, bool, System.Byte, System.Int32)
 // docid: M:System.Security.AccessControl.DiscretionaryAcl.#ctor(System.Boolean,System.Boolean,System.Byte,System.Int32)
     /**
@@ -2961,6 +3087,15 @@ open class GenericAce
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Security_AccessControl_GenericAce_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // System.Security.AccessControl.GenericAce Copy()
 // docid: M:System.Security.AccessControl.GenericAce.Copy
     /**
@@ -3266,6 +3401,15 @@ open class GenericAcl
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Security_AccessControl_GenericAcl_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // static field: System.Byte AclRevision
     /**
     The revision level of the current . This value is returned by the  property for Access Control Lists (ACLs) that are not associated with Directory Services objects.
@@ -3492,6 +3636,15 @@ open class GenericSecurityDescriptor
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Security_AccessControl_GenericSecurityDescriptor_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // void GetBinaryForm(System.Byte[], System.Int32)
 // docid: M:System.Security.AccessControl.GenericSecurityDescriptor.GetBinaryForm(System.Byte[],System.Int32)
     /**
@@ -3752,6 +3905,15 @@ open class KnownAce
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Security_AccessControl_KnownAce_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // [IsSpecialName] System.Int32 get_AccessMask()
 // docid: M:System.Security.AccessControl.KnownAce.get_AccessMask
     open func get_AccessMask() throws -> Swift.Int32 {
@@ -3840,6 +4002,15 @@ open class NativeObjectSecurity
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Security_AccessControl_NativeObjectSecurity_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
 } // NativeObjectSecurity
 
 
@@ -3860,6 +4031,15 @@ open class ObjectAccessRule
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Security_AccessControl_ObjectAccessRule_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // [IsSpecialName] System.Guid get_InheritedObjectType()
 // docid: M:System.Security.AccessControl.ObjectAccessRule.get_InheritedObjectType
     open func get_InheritedObjectType() throws -> dotnet.System.Guid {
@@ -3940,6 +4120,15 @@ public final class ObjectAce
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Security_AccessControl_ObjectAce_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor(System.Security.AccessControl.AceFlags, System.Security.AccessControl.AceQualifier, System.Int32, System.Security.Principal.SecurityIdentifier, System.Security.AccessControl.ObjectAceFlags, System.Guid, System.Guid, bool, System.Byte[])
 // docid: M:System.Security.AccessControl.ObjectAce.#ctor(System.Security.AccessControl.AceFlags,System.Security.AccessControl.AceQualifier,System.Int32,System.Security.Principal.SecurityIdentifier,System.Security.AccessControl.ObjectAceFlags,System.Guid,System.Guid,System.Boolean,System.Byte[])
     /**
@@ -4193,6 +4382,15 @@ open class ObjectAuditRule
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Security_AccessControl_ObjectAuditRule_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // [IsSpecialName] System.Guid get_InheritedObjectType()
 // docid: M:System.Security.AccessControl.ObjectAuditRule.get_InheritedObjectType
     open func get_InheritedObjectType() throws -> dotnet.System.Guid {
@@ -4274,6 +4472,15 @@ open class ObjectSecurity
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Security_AccessControl_ObjectSecurity_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // System.Security.AccessControl.AccessRule AccessRuleFactory(System.Security.Principal.IdentityReference, System.Int32, bool, System.Security.AccessControl.InheritanceFlags, System.Security.AccessControl.PropagationFlags, System.Security.AccessControl.AccessControlType)
 // docid: M:System.Security.AccessControl.ObjectSecurity.AccessRuleFactory(System.Security.Principal.IdentityReference,System.Int32,System.Boolean,System.Security.AccessControl.InheritanceFlags,System.Security.AccessControl.PropagationFlags,System.Security.AccessControl.AccessControlType)
     /**
@@ -4796,6 +5003,15 @@ open class ObjectSecurity_1<T : SGBridgeGenericValue>
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Security_AccessControl_ObjectSecurity_1_cast(T.get_type_handle(),&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // System.Security.AccessControl.AccessRule AccessRuleFactory(System.Security.Principal.IdentityReference, System.Int32, bool, System.Security.AccessControl.InheritanceFlags, System.Security.AccessControl.PropagationFlags, System.Security.AccessControl.AccessControlType)
 // docid: M:System.Security.AccessControl.ObjectSecurity`1.AccessRuleFactory(System.Security.Principal.IdentityReference,System.Int32,System.Boolean,System.Security.AccessControl.InheritanceFlags,System.Security.AccessControl.PropagationFlags,System.Security.AccessControl.AccessControlType)
     /**
@@ -5106,6 +5322,15 @@ public final class PrivilegeNotHeldException
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Security_AccessControl_PrivilegeNotHeldException_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor()
 // docid: M:System.Security.AccessControl.PrivilegeNotHeldException.#ctor
     /**
@@ -5266,6 +5491,15 @@ open class QualifiedAce
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Security_AccessControl_QualifiedAce_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // System.Byte[] GetOpaque()
 // docid: M:System.Security.AccessControl.QualifiedAce.GetOpaque
     /**
@@ -5383,6 +5617,15 @@ public final class RawAcl
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Security_AccessControl_RawAcl_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor(System.Byte, System.Int32)
 // docid: M:System.Security.AccessControl.RawAcl.#ctor(System.Byte,System.Int32)
     /**
@@ -5569,6 +5812,15 @@ public final class RawSecurityDescriptor
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Security_AccessControl_RawSecurityDescriptor_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor(System.Byte[], System.Int32)
 // docid: M:System.Security.AccessControl.RawSecurityDescriptor.#ctor(System.Byte[],System.Int32)
     /**
@@ -6087,6 +6339,15 @@ public final class SystemAcl
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Security_AccessControl_SystemAcl_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor(bool, bool, System.Byte, System.Int32)
 // docid: M:System.Security.AccessControl.SystemAcl.#ctor(System.Boolean,System.Boolean,System.Byte,System.Int32)
     /**
@@ -6423,6 +6684,15 @@ public final class Evidence
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Security_Policy_Evidence_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor()
 // docid: M:System.Security.Policy.Evidence.#ctor
     /**
@@ -6824,6 +7094,15 @@ open class EvidenceBase
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Security_Policy_EvidenceBase_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // System.Security.Policy.EvidenceBase Clone()
 // docid: M:System.Security.Policy.EvidenceBase.Clone
     /**

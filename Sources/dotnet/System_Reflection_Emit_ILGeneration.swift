@@ -23,6 +23,15 @@ open class CustomAttributeBuilder
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Reflection_Emit_CustomAttributeBuilder_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor(System.Reflection.ConstructorInfo, System.Object[])
 // docid: M:System.Reflection.Emit.CustomAttributeBuilder.#ctor(System.Reflection.ConstructorInfo,System.Object[])
     /**
@@ -119,6 +128,15 @@ open class ILGenerator
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Reflection_Emit_ILGenerator_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // void BeginCatchBlock(System.Type)
 // docid: M:System.Reflection.Emit.ILGenerator.BeginCatchBlock(System.Type)
     /**
@@ -898,6 +916,15 @@ public final class LocalBuilder
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Reflection_Emit_LocalBuilder_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // [IsSpecialName] bool get_IsPinned()
 // docid: M:System.Reflection.Emit.LocalBuilder.get_IsPinned
     public override func get_IsPinned() throws -> Bool {
@@ -978,6 +1005,15 @@ open class ParameterBuilder
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Reflection_Emit_ParameterBuilder_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // void SetConstant(System.Object)
 // docid: M:System.Reflection.Emit.ParameterBuilder.SetConstant(System.Object)
     /**
@@ -1171,6 +1207,15 @@ public final class SignatureHelper
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Reflection_Emit_SignatureHelper_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // void AddArgument(System.Type)
 // docid: M:System.Reflection.Emit.SignatureHelper.AddArgument(System.Type)
     /**

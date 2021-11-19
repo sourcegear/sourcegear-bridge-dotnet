@@ -3742,6 +3742,15 @@ open class IGrouping_2<TKey : SGBridgeGenericValue,TElement : SGBridgeGenericVal
 
     deinit { __drop_handle(self.h); }
 
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Linq_IGrouping_2_cast(TKey.get_type_handle(),TElement.get_type_handle(),&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // [IsSpecialName] TKey get_Key()
 // docid: M:System.Linq.IGrouping`2.get_Key
     open func get_Key() throws -> TKey {
@@ -3784,6 +3793,15 @@ open class ILookup_2<TKey : SGBridgeGenericValue,TElement : SGBridgeGenericValue
 
     deinit { __drop_handle(self.h); }
 
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Linq_ILookup_2_cast(TKey.get_type_handle(),TElement.get_type_handle(),&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // bool Contains(TKey)
 // docid: M:System.Linq.ILookup`2.Contains(`0)
     /**
@@ -3855,6 +3873,15 @@ open class IOrderedEnumerable_1<TElement : SGBridgeGenericValue>
 
     deinit { __drop_handle(self.h); }
 
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Linq_IOrderedEnumerable_1_cast(TElement.get_type_handle(),&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // System.Linq.IOrderedEnumerable<TElement> CreateOrderedEnumerable<TKey>(System.Func<TElement,TKey>, System.Collections.Generic.IComparer<TKey>, bool)
 // docid: M:System.Linq.IOrderedEnumerable`1.CreateOrderedEnumerable``1(System.Func{`0,``0},System.Collections.Generic.IComparer{``0},System.Boolean)
     /**
@@ -3902,6 +3929,15 @@ open class Lookup_2<TKey : SGBridgeGenericValue,TElement : SGBridgeGenericValue>
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Linq_Lookup_2_cast(TKey.get_type_handle(),TElement.get_type_handle(),&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // System.Collections.Generic.IEnumerable<TResult> ApplyResultSelector<TResult>(System.Func<TKey,System.Collections.Generic.IEnumerable<TElement>,TResult>)
 // docid: M:System.Linq.Lookup`2.ApplyResultSelector``1(System.Func{`0,System.Collections.Generic.IEnumerable{`1},``0})
     /**

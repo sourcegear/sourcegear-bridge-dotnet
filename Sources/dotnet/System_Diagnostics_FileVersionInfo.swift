@@ -22,6 +22,15 @@ public final class FileVersionInfo
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Diagnostics_FileVersionInfo_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // System.Diagnostics.FileVersionInfo GetVersionInfo(System.String)
 // docid: M:System.Diagnostics.FileVersionInfo.GetVersionInfo(System.String)
     /**

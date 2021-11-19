@@ -22,6 +22,15 @@ open class BinaryOperationBinder
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Dynamic_BinaryOperationBinder_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // System.Dynamic.DynamicMetaObject Bind(System.Dynamic.DynamicMetaObject, System.Dynamic.DynamicMetaObject[])
 // docid: M:System.Dynamic.BinaryOperationBinder.Bind(System.Dynamic.DynamicMetaObject,System.Dynamic.DynamicMetaObject[])
     /**
@@ -140,6 +149,15 @@ open class BindingRestrictions
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Dynamic_BindingRestrictions_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // static field: System.Dynamic.BindingRestrictions Empty
     /**
     Represents an empty set of binding restrictions. This field is read only.
@@ -280,6 +298,15 @@ public final class CallInfo
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Dynamic_CallInfo_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor(System.Int32, System.Collections.Generic.IEnumerable<System.String>)
 // docid: M:System.Dynamic.CallInfo.#ctor(System.Int32,System.Collections.Generic.IEnumerable{System.String})
     /**
@@ -410,6 +437,15 @@ open class ConvertBinder
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Dynamic_ConvertBinder_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // System.Dynamic.DynamicMetaObject Bind(System.Dynamic.DynamicMetaObject, System.Dynamic.DynamicMetaObject[])
 // docid: M:System.Dynamic.ConvertBinder.Bind(System.Dynamic.DynamicMetaObject,System.Dynamic.DynamicMetaObject[])
     /**
@@ -546,6 +582,15 @@ open class CreateInstanceBinder
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Dynamic_CreateInstanceBinder_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // System.Dynamic.DynamicMetaObject Bind(System.Dynamic.DynamicMetaObject, System.Dynamic.DynamicMetaObject[])
 // docid: M:System.Dynamic.CreateInstanceBinder.Bind(System.Dynamic.DynamicMetaObject,System.Dynamic.DynamicMetaObject[])
     /**
@@ -664,6 +709,15 @@ open class DeleteIndexBinder
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Dynamic_DeleteIndexBinder_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // System.Dynamic.DynamicMetaObject Bind(System.Dynamic.DynamicMetaObject, System.Dynamic.DynamicMetaObject[])
 // docid: M:System.Dynamic.DeleteIndexBinder.Bind(System.Dynamic.DynamicMetaObject,System.Dynamic.DynamicMetaObject[])
     /**
@@ -782,6 +836,15 @@ open class DeleteMemberBinder
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Dynamic_DeleteMemberBinder_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // System.Dynamic.DynamicMetaObject Bind(System.Dynamic.DynamicMetaObject, System.Dynamic.DynamicMetaObject[])
 // docid: M:System.Dynamic.DeleteMemberBinder.Bind(System.Dynamic.DynamicMetaObject,System.Dynamic.DynamicMetaObject[])
     /**
@@ -918,6 +981,15 @@ open class DynamicMetaObject
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Dynamic_DynamicMetaObject_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // static field: System.Dynamic.DynamicMetaObject[] EmptyMetaObjects
     /**
     Represents an empty array of type . This field is read only.
@@ -1373,6 +1445,15 @@ open class DynamicMetaObjectBinder
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Dynamic_DynamicMetaObjectBinder_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // System.Dynamic.DynamicMetaObject Bind(System.Dynamic.DynamicMetaObject, System.Dynamic.DynamicMetaObject[])
 // docid: M:System.Dynamic.DynamicMetaObjectBinder.Bind(System.Dynamic.DynamicMetaObject,System.Dynamic.DynamicMetaObject[])
     /**
@@ -1508,6 +1589,15 @@ open class DynamicObject
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Dynamic_DynamicObject_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // System.Collections.Generic.IEnumerable<System.String> GetDynamicMemberNames()
 // docid: M:System.Dynamic.DynamicObject.GetDynamicMemberNames
     /**
@@ -1843,6 +1933,15 @@ public final class ExpandoObject
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Dynamic_ExpandoObject_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor()
 // docid: M:System.Dynamic.ExpandoObject.#ctor
     /**
@@ -1878,6 +1977,15 @@ open class GetIndexBinder
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Dynamic_GetIndexBinder_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // System.Dynamic.DynamicMetaObject Bind(System.Dynamic.DynamicMetaObject, System.Dynamic.DynamicMetaObject[])
 // docid: M:System.Dynamic.GetIndexBinder.Bind(System.Dynamic.DynamicMetaObject,System.Dynamic.DynamicMetaObject[])
     /**
@@ -1996,6 +2104,15 @@ open class GetMemberBinder
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Dynamic_GetMemberBinder_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // System.Dynamic.DynamicMetaObject Bind(System.Dynamic.DynamicMetaObject, System.Dynamic.DynamicMetaObject[])
 // docid: M:System.Dynamic.GetMemberBinder.Bind(System.Dynamic.DynamicMetaObject,System.Dynamic.DynamicMetaObject[])
     /**
@@ -2140,6 +2257,15 @@ open class IDynamicMetaObjectProvider
 
     deinit { __drop_handle(self.h); }
 
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Dynamic_IDynamicMetaObjectProvider_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // System.Dynamic.DynamicMetaObject GetMetaObject(System.Linq.Expressions.Expression)
 // docid: M:System.Dynamic.IDynamicMetaObjectProvider.GetMetaObject(System.Linq.Expressions.Expression)
     /**
@@ -2186,6 +2312,15 @@ open class IInvokeOnGetBinder
 
     deinit { __drop_handle(self.h); }
 
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Dynamic_IInvokeOnGetBinder_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // [IsSpecialName] bool get_InvokeOnGet()
 // docid: M:System.Dynamic.IInvokeOnGetBinder.get_InvokeOnGet
     open func get_InvokeOnGet() throws -> Bool {
@@ -2217,6 +2352,15 @@ open class InvokeBinder
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Dynamic_InvokeBinder_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // System.Dynamic.DynamicMetaObject Bind(System.Dynamic.DynamicMetaObject, System.Dynamic.DynamicMetaObject[])
 // docid: M:System.Dynamic.InvokeBinder.Bind(System.Dynamic.DynamicMetaObject,System.Dynamic.DynamicMetaObject[])
     /**
@@ -2335,6 +2479,15 @@ open class InvokeMemberBinder
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Dynamic_InvokeMemberBinder_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // System.Dynamic.DynamicMetaObject Bind(System.Dynamic.DynamicMetaObject, System.Dynamic.DynamicMetaObject[])
 // docid: M:System.Dynamic.InvokeMemberBinder.Bind(System.Dynamic.DynamicMetaObject,System.Dynamic.DynamicMetaObject[])
     /**
@@ -2513,6 +2666,15 @@ open class SetIndexBinder
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Dynamic_SetIndexBinder_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // System.Dynamic.DynamicMetaObject Bind(System.Dynamic.DynamicMetaObject, System.Dynamic.DynamicMetaObject[])
 // docid: M:System.Dynamic.SetIndexBinder.Bind(System.Dynamic.DynamicMetaObject,System.Dynamic.DynamicMetaObject[])
     /**
@@ -2633,6 +2795,15 @@ open class SetMemberBinder
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Dynamic_SetMemberBinder_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // System.Dynamic.DynamicMetaObject Bind(System.Dynamic.DynamicMetaObject, System.Dynamic.DynamicMetaObject[])
 // docid: M:System.Dynamic.SetMemberBinder.Bind(System.Dynamic.DynamicMetaObject,System.Dynamic.DynamicMetaObject[])
     /**
@@ -2771,6 +2942,15 @@ open class UnaryOperationBinder
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Dynamic_UnaryOperationBinder_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // System.Dynamic.DynamicMetaObject Bind(System.Dynamic.DynamicMetaObject, System.Dynamic.DynamicMetaObject[])
 // docid: M:System.Dynamic.UnaryOperationBinder.Bind(System.Dynamic.DynamicMetaObject,System.Dynamic.DynamicMetaObject[])
     /**
@@ -2900,6 +3080,15 @@ open class IOrderedQueryable
 
     deinit { __drop_handle(self.h); }
 
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Linq_IOrderedQueryable_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
 } // IOrderedQueryable
 
 
@@ -2932,6 +3121,15 @@ open class IOrderedQueryable_1<T : SGBridgeGenericValue>
 
     deinit { __drop_handle(self.h); }
 
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Linq_IOrderedQueryable_1_cast(T.get_type_handle(),&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
 } // IOrderedQueryable_1
 
 
@@ -2960,6 +3158,15 @@ open class IQueryProvider
 
     deinit { __drop_handle(self.h); }
 
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Linq_IQueryProvider_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // System.Linq.IQueryable CreateQuery(System.Linq.Expressions.Expression)
 // docid: M:System.Linq.IQueryProvider.CreateQuery(System.Linq.Expressions.Expression)
     /**
@@ -3031,6 +3238,15 @@ open class IQueryable
 
     deinit { __drop_handle(self.h); }
 
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Linq_IQueryable_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // [IsSpecialName] System.Type get_ElementType()
 // docid: M:System.Linq.IQueryable.get_ElementType
     open func get_ElementType() throws -> dotnet.System.Type_ {
@@ -3095,6 +3311,15 @@ open class IQueryable_1<T : SGBridgeGenericValue>
 
     deinit { __drop_handle(self.h); }
 
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Linq_IQueryable_1_cast(T.get_type_handle(),&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
 } // IQueryable_1
 
 
@@ -3118,6 +3343,15 @@ open class BinaryExpression
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Linq_Expressions_BinaryExpression_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // System.Linq.Expressions.Expression Reduce()
 // docid: M:System.Linq.Expressions.BinaryExpression.Reduce
     /**
@@ -3323,6 +3557,15 @@ open class BlockExpression
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Linq_Expressions_BlockExpression_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // System.Linq.Expressions.BlockExpression Update(System.Collections.Generic.IEnumerable<System.Linq.Expressions.ParameterExpression>, System.Collections.Generic.IEnumerable<System.Linq.Expressions.Expression>)
 // docid: M:System.Linq.Expressions.BlockExpression.Update(System.Collections.Generic.IEnumerable{System.Linq.Expressions.ParameterExpression},System.Collections.Generic.IEnumerable{System.Linq.Expressions.Expression})
     /**
@@ -3462,6 +3705,15 @@ public final class CatchBlock
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Linq_Expressions_CatchBlock_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // System.String ToString()
 // docid: M:System.Linq.Expressions.CatchBlock.ToString
     /**
@@ -3607,6 +3859,15 @@ open class ConditionalExpression
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Linq_Expressions_ConditionalExpression_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // System.Linq.Expressions.ConditionalExpression Update(System.Linq.Expressions.Expression, System.Linq.Expressions.Expression, System.Linq.Expressions.Expression)
 // docid: M:System.Linq.Expressions.ConditionalExpression.Update(System.Linq.Expressions.Expression,System.Linq.Expressions.Expression,System.Linq.Expressions.Expression)
     /**
@@ -3747,6 +4008,15 @@ open class ConstantExpression
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Linq_Expressions_ConstantExpression_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // [IsSpecialName] System.Linq.Expressions.ExpressionType get_NodeType()
 // docid: M:System.Linq.Expressions.ConstantExpression.get_NodeType
     open /* method final */ override func get_NodeType() throws -> dotnet.System.Linq.Expressions.ExpressionType {
@@ -3831,6 +4101,15 @@ open class DebugInfoExpression
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Linq_Expressions_DebugInfoExpression_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // [IsSpecialName] System.Linq.Expressions.SymbolDocumentInfo get_Document()
 // docid: M:System.Linq.Expressions.DebugInfoExpression.get_Document
     open func get_Document() throws -> dotnet.System.Linq.Expressions.SymbolDocumentInfo {
@@ -4011,6 +4290,15 @@ public final class DefaultExpression
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Linq_Expressions_DefaultExpression_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // [IsSpecialName] System.Linq.Expressions.ExpressionType get_NodeType()
 // docid: M:System.Linq.Expressions.DefaultExpression.get_NodeType
     public override func get_NodeType() throws -> dotnet.System.Linq.Expressions.ExpressionType {
@@ -4073,6 +4361,15 @@ open class DynamicExpression
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Linq_Expressions_DynamicExpression_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // System.Linq.Expressions.DynamicExpression Dynamic(System.Runtime.CompilerServices.CallSiteBinder, System.Type, System.Collections.Generic.IEnumerable<System.Linq.Expressions.Expression>)
 // docid: M:System.Linq.Expressions.DynamicExpression.Dynamic(System.Runtime.CompilerServices.CallSiteBinder,System.Type,System.Collections.Generic.IEnumerable{System.Linq.Expressions.Expression})
     /**
@@ -4463,6 +4760,15 @@ open class DynamicExpressionVisitor
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Linq_Expressions_DynamicExpressionVisitor_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
 } // DynamicExpressionVisitor
 
 
@@ -4484,6 +4790,15 @@ public final class ElementInit
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Linq_Expressions_ElementInit_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // System.String ToString()
 // docid: M:System.Linq.Expressions.ElementInit.ToString
     /**
@@ -4579,6 +4894,15 @@ open class Expression
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Linq_Expressions_Expression_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // System.Linq.Expressions.BinaryExpression Add(System.Linq.Expressions.Expression, System.Linq.Expressions.Expression)
 // docid: M:System.Linq.Expressions.Expression.Add(System.Linq.Expressions.Expression,System.Linq.Expressions.Expression)
     /**
@@ -11613,6 +11937,15 @@ open class ExpressionVisitor
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Linq_Expressions_ExpressionVisitor_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // System.Collections.ObjectModel.ReadOnlyCollection<System.Linq.Expressions.Expression> Visit(System.Collections.ObjectModel.ReadOnlyCollection<System.Linq.Expressions.Expression>)
 // docid: M:System.Linq.Expressions.ExpressionVisitor.Visit(System.Collections.ObjectModel.ReadOnlyCollection{System.Linq.Expressions.Expression})
     /**
@@ -11735,6 +12068,15 @@ public final class Expression_1<TDelegate : SGBridgeGenericValue>
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Linq_Expressions_Expression_1_cast(TDelegate.get_type_handle(),&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // TDelegate Compile()
 // docid: M:System.Linq.Expressions.Expression`1.Compile
     /**
@@ -11828,6 +12170,15 @@ public final class GotoExpression
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Linq_Expressions_GotoExpression_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // System.Linq.Expressions.GotoExpression Update(System.Linq.Expressions.LabelTarget, System.Linq.Expressions.Expression)
 // docid: M:System.Linq.Expressions.GotoExpression.Update(System.Linq.Expressions.LabelTarget,System.Linq.Expressions.Expression)
     /**
@@ -12041,6 +12392,15 @@ open class IArgumentProvider
 
     deinit { __drop_handle(self.h); }
 
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Linq_Expressions_IArgumentProvider_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // System.Linq.Expressions.Expression GetArgument(System.Int32)
 // docid: M:System.Linq.Expressions.IArgumentProvider.GetArgument(System.Int32)
     /**
@@ -12099,6 +12459,15 @@ open class IDynamicExpression
 
     deinit { __drop_handle(self.h); }
 
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Linq_Expressions_IDynamicExpression_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // System.Object CreateCallSite()
 // docid: M:System.Linq.Expressions.IDynamicExpression.CreateCallSite
     /**
@@ -12166,6 +12535,15 @@ public final class IndexExpression
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Linq_Expressions_IndexExpression_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // System.Linq.Expressions.IndexExpression Update(System.Linq.Expressions.Expression, System.Collections.Generic.IEnumerable<System.Linq.Expressions.Expression>)
 // docid: M:System.Linq.Expressions.IndexExpression.Update(System.Linq.Expressions.Expression,System.Collections.Generic.IEnumerable{System.Linq.Expressions.Expression})
     /**
@@ -12314,6 +12692,15 @@ public final class InvocationExpression
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Linq_Expressions_InvocationExpression_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // System.Linq.Expressions.InvocationExpression Update(System.Linq.Expressions.Expression, System.Collections.Generic.IEnumerable<System.Linq.Expressions.Expression>)
 // docid: M:System.Linq.Expressions.InvocationExpression.Update(System.Linq.Expressions.Expression,System.Collections.Generic.IEnumerable{System.Linq.Expressions.Expression})
     /**
@@ -12433,6 +12820,15 @@ public final class LabelExpression
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Linq_Expressions_LabelExpression_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // System.Linq.Expressions.LabelExpression Update(System.Linq.Expressions.LabelTarget, System.Linq.Expressions.Expression)
 // docid: M:System.Linq.Expressions.LabelExpression.Update(System.Linq.Expressions.LabelTarget,System.Linq.Expressions.Expression)
     /**
@@ -12556,6 +12952,15 @@ public final class LabelTarget
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Linq_Expressions_LabelTarget_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // System.String ToString()
 // docid: M:System.Linq.Expressions.LabelTarget.ToString
     /**
@@ -12637,6 +13042,15 @@ open class LambdaExpression
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Linq_Expressions_LambdaExpression_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // System.Delegate Compile()
 // docid: M:System.Linq.Expressions.LambdaExpression.Compile
     /**
@@ -12855,6 +13269,15 @@ public final class ListInitExpression
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Linq_Expressions_ListInitExpression_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // System.Linq.Expressions.Expression Reduce()
 // docid: M:System.Linq.Expressions.ListInitExpression.Reduce
     /**
@@ -13011,6 +13434,15 @@ public final class LoopExpression
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Linq_Expressions_LoopExpression_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // System.Linq.Expressions.LoopExpression Update(System.Linq.Expressions.LabelTarget, System.Linq.Expressions.LabelTarget, System.Linq.Expressions.Expression)
 // docid: M:System.Linq.Expressions.LoopExpression.Update(System.Linq.Expressions.LabelTarget,System.Linq.Expressions.LabelTarget,System.Linq.Expressions.Expression)
     /**
@@ -13159,6 +13591,15 @@ public final class MemberAssignment
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Linq_Expressions_MemberAssignment_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // System.Linq.Expressions.MemberAssignment Update(System.Linq.Expressions.Expression)
 // docid: M:System.Linq.Expressions.MemberAssignment.Update(System.Linq.Expressions.Expression)
     /**
@@ -13217,6 +13658,15 @@ open class MemberBinding
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Linq_Expressions_MemberBinding_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // System.String ToString()
 // docid: M:System.Linq.Expressions.MemberBinding.ToString
     /**
@@ -13345,6 +13795,15 @@ open class MemberExpression
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Linq_Expressions_MemberExpression_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // System.Linq.Expressions.MemberExpression Update(System.Linq.Expressions.Expression)
 // docid: M:System.Linq.Expressions.MemberExpression.Update(System.Linq.Expressions.Expression)
     /**
@@ -13447,6 +13906,15 @@ public final class MemberInitExpression
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Linq_Expressions_MemberInitExpression_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // System.Linq.Expressions.Expression Reduce()
 // docid: M:System.Linq.Expressions.MemberInitExpression.Reduce
     /**
@@ -13603,6 +14071,15 @@ public final class MemberListBinding
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Linq_Expressions_MemberListBinding_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // System.Linq.Expressions.MemberListBinding Update(System.Collections.Generic.IEnumerable<System.Linq.Expressions.ElementInit>)
 // docid: M:System.Linq.Expressions.MemberListBinding.Update(System.Collections.Generic.IEnumerable{System.Linq.Expressions.ElementInit})
     /**
@@ -13661,6 +14138,15 @@ public final class MemberMemberBinding
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Linq_Expressions_MemberMemberBinding_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // System.Linq.Expressions.MemberMemberBinding Update(System.Collections.Generic.IEnumerable<System.Linq.Expressions.MemberBinding>)
 // docid: M:System.Linq.Expressions.MemberMemberBinding.Update(System.Collections.Generic.IEnumerable{System.Linq.Expressions.MemberBinding})
     /**
@@ -13720,6 +14206,15 @@ open class MethodCallExpression
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Linq_Expressions_MethodCallExpression_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // System.Linq.Expressions.MethodCallExpression Update(System.Linq.Expressions.Expression, System.Collections.Generic.IEnumerable<System.Linq.Expressions.Expression>)
 // docid: M:System.Linq.Expressions.MethodCallExpression.Update(System.Linq.Expressions.Expression,System.Collections.Generic.IEnumerable{System.Linq.Expressions.Expression})
     /**
@@ -13863,6 +14358,15 @@ open class NewArrayExpression
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Linq_Expressions_NewArrayExpression_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // System.Linq.Expressions.NewArrayExpression Update(System.Collections.Generic.IEnumerable<System.Linq.Expressions.Expression>)
 // docid: M:System.Linq.Expressions.NewArrayExpression.Update(System.Collections.Generic.IEnumerable{System.Linq.Expressions.Expression})
     /**
@@ -13942,6 +14446,15 @@ open class NewExpression
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Linq_Expressions_NewExpression_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // System.Linq.Expressions.NewExpression Update(System.Collections.Generic.IEnumerable<System.Linq.Expressions.Expression>)
 // docid: M:System.Linq.Expressions.NewExpression.Update(System.Collections.Generic.IEnumerable{System.Linq.Expressions.Expression})
     /**
@@ -14088,6 +14601,15 @@ open class ParameterExpression
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Linq_Expressions_ParameterExpression_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // [IsSpecialName] bool get_IsByRef()
 // docid: M:System.Linq.Expressions.ParameterExpression.get_IsByRef
     open func get_IsByRef() throws -> Bool {
@@ -14192,6 +14714,15 @@ public final class RuntimeVariablesExpression
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Linq_Expressions_RuntimeVariablesExpression_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // System.Linq.Expressions.RuntimeVariablesExpression Update(System.Collections.Generic.IEnumerable<System.Linq.Expressions.ParameterExpression>)
 // docid: M:System.Linq.Expressions.RuntimeVariablesExpression.Update(System.Collections.Generic.IEnumerable{System.Linq.Expressions.ParameterExpression})
     /**
@@ -14290,6 +14821,15 @@ public final class SwitchCase
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Linq_Expressions_SwitchCase_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // System.String ToString()
 // docid: M:System.Linq.Expressions.SwitchCase.ToString
     /**
@@ -14386,6 +14926,15 @@ public final class SwitchExpression
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Linq_Expressions_SwitchExpression_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // System.Linq.Expressions.SwitchExpression Update(System.Linq.Expressions.Expression, System.Collections.Generic.IEnumerable<System.Linq.Expressions.SwitchCase>, System.Linq.Expressions.Expression)
 // docid: M:System.Linq.Expressions.SwitchExpression.Update(System.Linq.Expressions.Expression,System.Collections.Generic.IEnumerable{System.Linq.Expressions.SwitchCase},System.Linq.Expressions.Expression)
     /**
@@ -14554,6 +15103,15 @@ open class SymbolDocumentInfo
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Linq_Expressions_SymbolDocumentInfo_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // [IsSpecialName] System.Guid get_DocumentType()
 // docid: M:System.Linq.Expressions.SymbolDocumentInfo.get_DocumentType
     open func get_DocumentType() throws -> dotnet.System.Guid {
@@ -14654,6 +15212,15 @@ public final class TryExpression
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Linq_Expressions_TryExpression_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // System.Linq.Expressions.TryExpression Update(System.Linq.Expressions.Expression, System.Collections.Generic.IEnumerable<System.Linq.Expressions.CatchBlock>, System.Linq.Expressions.Expression, System.Linq.Expressions.Expression)
 // docid: M:System.Linq.Expressions.TryExpression.Update(System.Linq.Expressions.Expression,System.Collections.Generic.IEnumerable{System.Linq.Expressions.CatchBlock},System.Linq.Expressions.Expression,System.Linq.Expressions.Expression)
     /**
@@ -14823,6 +15390,15 @@ public final class TypeBinaryExpression
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Linq_Expressions_TypeBinaryExpression_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // System.Linq.Expressions.TypeBinaryExpression Update(System.Linq.Expressions.Expression)
 // docid: M:System.Linq.Expressions.TypeBinaryExpression.Update(System.Linq.Expressions.Expression)
     /**
@@ -14941,6 +15517,15 @@ public final class UnaryExpression
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Linq_Expressions_UnaryExpression_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // System.Linq.Expressions.Expression Reduce()
 // docid: M:System.Linq.Expressions.UnaryExpression.Reduce
     /**
@@ -15146,6 +15731,15 @@ open class CallSite
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Runtime_CompilerServices_CallSite_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // System.Runtime.CompilerServices.CallSite Create(System.Type, System.Runtime.CompilerServices.CallSiteBinder)
 // docid: M:System.Runtime.CompilerServices.CallSite.Create(System.Type,System.Runtime.CompilerServices.CallSiteBinder)
     /**
@@ -15209,6 +15803,15 @@ open class CallSiteBinder
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Runtime_CompilerServices_CallSiteBinder_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // System.Linq.Expressions.Expression Bind(System.Object[], System.Collections.ObjectModel.ReadOnlyCollection<System.Linq.Expressions.ParameterExpression>, System.Linq.Expressions.LabelTarget)
 // docid: M:System.Runtime.CompilerServices.CallSiteBinder.Bind(System.Object[],System.Collections.ObjectModel.ReadOnlyCollection{System.Linq.Expressions.ParameterExpression},System.Linq.Expressions.LabelTarget)
     /**
@@ -15312,6 +15915,15 @@ open class CallSite_1<T : SGBridgeGenericValue>
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Runtime_CompilerServices_CallSite_1_cast(T.get_type_handle(),&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
 // TODO COPE (field class type param): System.Runtime.CompilerServices.CallSite`1.Target
 // TODO COPE (field class type param): System.Runtime.CompilerServices.CallSite`1.Target
     // System.Runtime.CompilerServices.CallSite<T> Create(System.Runtime.CompilerServices.CallSiteBinder)
@@ -15372,6 +15984,15 @@ open class DebugInfoGenerator
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Runtime_CompilerServices_DebugInfoGenerator_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // System.Runtime.CompilerServices.DebugInfoGenerator CreatePdbGenerator()
 // docid: M:System.Runtime.CompilerServices.DebugInfoGenerator.CreatePdbGenerator
     /**
@@ -15427,6 +16048,15 @@ public final class DynamicAttribute
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Runtime_CompilerServices_DynamicAttribute_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor()
 // docid: M:System.Runtime.CompilerServices.DynamicAttribute.#ctor
     /**
@@ -15506,6 +16136,15 @@ open class IRuntimeVariables
 
     deinit { __drop_handle(self.h); }
 
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Runtime_CompilerServices_IRuntimeVariables_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // [IsSpecialName] System.Int32 get_Count()
 // docid: M:System.Runtime.CompilerServices.IRuntimeVariables.get_Count
     open func get_Count() throws -> Swift.Int32 {
@@ -15566,6 +16205,15 @@ public final class ReadOnlyCollectionBuilder_1<T : SGBridgeGenericValue>
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Runtime_CompilerServices_ReadOnlyCollectionBuilder_1_cast(T.get_type_handle(),&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor()
 // docid: M:System.Runtime.CompilerServices.ReadOnlyCollectionBuilder`1.#ctor
     /**
@@ -15923,6 +16571,15 @@ open class RuleCache_1<T : SGBridgeGenericValue>
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Runtime_CompilerServices_RuleCache_1_cast(T.get_type_handle(),&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
 } // RuleCache_1
 
 

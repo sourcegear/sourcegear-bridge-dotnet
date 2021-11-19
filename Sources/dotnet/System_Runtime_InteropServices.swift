@@ -21,6 +21,15 @@ public final class DataMisalignedException
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_DataMisalignedException_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor()
 // docid: M:System.DataMisalignedException.#ctor
     /**
@@ -89,6 +98,15 @@ open class DllNotFoundException
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_DllNotFoundException_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor()
 // docid: M:System.DllNotFoundException.#ctor
     /**
@@ -161,6 +179,15 @@ open class UnmanagedMemoryAccessor
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_IO_UnmanagedMemoryAccessor_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor(System.Runtime.InteropServices.SafeBuffer, System.Int64, System.Int64)
 // docid: M:System.IO.UnmanagedMemoryAccessor.#ctor(System.Runtime.InteropServices.SafeBuffer,System.Int64,System.Int64)
     /**
@@ -758,6 +785,15 @@ public final class IDispatchConstantAttribute
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Runtime_CompilerServices_IDispatchConstantAttribute_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor()
 // docid: M:System.Runtime.CompilerServices.IDispatchConstantAttribute.#ctor
     /**
@@ -813,6 +849,15 @@ public final class IUnknownConstantAttribute
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Runtime_CompilerServices_IUnknownConstantAttribute_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor()
 // docid: M:System.Runtime.CompilerServices.IUnknownConstantAttribute.#ctor
     /**
@@ -872,6 +917,15 @@ public final class AllowReversePInvokeCallsAttribute
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Runtime_InteropServices_AllowReversePInvokeCallsAttribute_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor()
 // docid: M:System.Runtime.InteropServices.AllowReversePInvokeCallsAttribute.#ctor
     /**
@@ -1082,6 +1136,15 @@ public final class AutomationProxyAttribute
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Runtime_InteropServices_AutomationProxyAttribute_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor(bool)
 // docid: M:System.Runtime.InteropServices.AutomationProxyAttribute.#ctor(System.Boolean)
     /**
@@ -1139,6 +1202,15 @@ public final class BStrWrapper
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Runtime_InteropServices_BStrWrapper_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor(System.Object)
 // docid: M:System.Runtime.InteropServices.BStrWrapper.#ctor(System.Object)
     /**
@@ -1215,6 +1287,15 @@ public final class BestFitMappingAttribute
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Runtime_InteropServices_BestFitMappingAttribute_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // instance field: System.Boolean ThrowOnUnmappableChar
     /**
     Enables or disables the throwing of an exception on an unmappable Unicode character that is converted to an ANSI '?' character.
@@ -1439,6 +1520,15 @@ open class COMException
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Runtime_InteropServices_COMException_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor()
 // docid: M:System.Runtime.InteropServices.COMException.#ctor
     /**
@@ -1767,6 +1857,15 @@ public final class ClassInterfaceAttribute
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Runtime_InteropServices_ClassInterfaceAttribute_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor(System.Int16)
 // docid: M:System.Runtime.InteropServices.ClassInterfaceAttribute.#ctor(System.Int16)
     /**
@@ -1896,6 +1995,15 @@ public final class CoClassAttribute
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Runtime_InteropServices_CoClassAttribute_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor(System.Type)
 // docid: M:System.Runtime.InteropServices.CoClassAttribute.#ctor(System.Type)
     /**
@@ -1960,6 +2068,15 @@ public final class ComAliasNameAttribute
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Runtime_InteropServices_ComAliasNameAttribute_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor(System.String)
 // docid: M:System.Runtime.InteropServices.ComAliasNameAttribute.#ctor(System.String)
     /**
@@ -2016,6 +2133,15 @@ open class ComAwareEventInfo
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Runtime_InteropServices_ComAwareEventInfo_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor(System.Type, System.String)
 // docid: M:System.Runtime.InteropServices.ComAwareEventInfo.#ctor(System.Type,System.String)
     /**
@@ -2380,6 +2506,15 @@ public final class ComCompatibleVersionAttribute
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Runtime_InteropServices_ComCompatibleVersionAttribute_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor(System.Int32, System.Int32, System.Int32, System.Int32)
 // docid: M:System.Runtime.InteropServices.ComCompatibleVersionAttribute.#ctor(System.Int32,System.Int32,System.Int32,System.Int32)
     /**
@@ -2499,6 +2634,15 @@ public final class ComConversionLossAttribute
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Runtime_InteropServices_ComConversionLossAttribute_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor()
 // docid: M:System.Runtime.InteropServices.ComConversionLossAttribute.#ctor
     /**
@@ -2534,6 +2678,15 @@ public final class ComDefaultInterfaceAttribute
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Runtime_InteropServices_ComDefaultInterfaceAttribute_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor(System.Type)
 // docid: M:System.Runtime.InteropServices.ComDefaultInterfaceAttribute.#ctor(System.Type)
     /**
@@ -2590,6 +2743,15 @@ public final class ComEventInterfaceAttribute
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Runtime_InteropServices_ComEventInterfaceAttribute_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor(System.Type, System.Type)
 // docid: M:System.Runtime.InteropServices.ComEventInterfaceAttribute.#ctor(System.Type,System.Type)
     /**
@@ -2716,6 +2878,15 @@ public final class ComImportAttribute
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Runtime_InteropServices_ComImportAttribute_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor()
 // docid: M:System.Runtime.InteropServices.ComImportAttribute.#ctor
     /**
@@ -2864,6 +3035,15 @@ public final class ComRegisterFunctionAttribute
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Runtime_InteropServices_ComRegisterFunctionAttribute_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor()
 // docid: M:System.Runtime.InteropServices.ComRegisterFunctionAttribute.#ctor
     /**
@@ -2899,6 +3079,15 @@ public final class ComSourceInterfacesAttribute
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Runtime_InteropServices_ComSourceInterfacesAttribute_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor(System.String)
 // docid: M:System.Runtime.InteropServices.ComSourceInterfacesAttribute.#ctor(System.String)
     /**
@@ -3025,6 +3214,15 @@ public final class ComUnregisterFunctionAttribute
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Runtime_InteropServices_ComUnregisterFunctionAttribute_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor()
 // docid: M:System.Runtime.InteropServices.ComUnregisterFunctionAttribute.#ctor
     /**
@@ -3060,6 +3258,15 @@ open class ComWrappers
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Runtime_InteropServices_ComWrappers_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
 // TODO COPE (blocked): System.IntPtr GetOrCreateComInterfaceForObject(System.Object, System.Runtime.InteropServices.CreateComInterfaceFlags)
 // TODO COPE (blocked): System.Object GetOrCreateObjectForComInstance(System.IntPtr, System.Runtime.InteropServices.CreateObjectFlags)
 // TODO COPE (blocked): System.Object GetOrRegisterObjectForComInstance(System.IntPtr, System.Runtime.InteropServices.CreateObjectFlags, System.Object)
@@ -3270,6 +3477,15 @@ public final class CurrencyWrapper
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Runtime_InteropServices_CurrencyWrapper_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor(System.Decimal)
 // docid: M:System.Runtime.InteropServices.CurrencyWrapper.#ctor(System.Decimal)
     /**
@@ -3433,6 +3649,15 @@ public final class DefaultCharSetAttribute
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Runtime_InteropServices_DefaultCharSetAttribute_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor(System.Runtime.InteropServices.CharSet)
 // docid: M:System.Runtime.InteropServices.DefaultCharSetAttribute.#ctor(System.Runtime.InteropServices.CharSet)
     /**
@@ -3489,6 +3714,15 @@ public final class DefaultDllImportSearchPathsAttribute
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Runtime_InteropServices_DefaultDllImportSearchPathsAttribute_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor(System.Runtime.InteropServices.DllImportSearchPath)
 // docid: M:System.Runtime.InteropServices.DefaultDllImportSearchPathsAttribute.#ctor(System.Runtime.InteropServices.DllImportSearchPath)
     /**
@@ -3545,6 +3779,15 @@ public final class DefaultParameterValueAttribute
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Runtime_InteropServices_DefaultParameterValueAttribute_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor(System.Object)
 // docid: M:System.Runtime.InteropServices.DefaultParameterValueAttribute.#ctor(System.Object)
     /**
@@ -3605,6 +3848,15 @@ public final class DispIdAttribute
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Runtime_InteropServices_DispIdAttribute_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor(System.Int32)
 // docid: M:System.Runtime.InteropServices.DispIdAttribute.#ctor(System.Int32)
     /**
@@ -3661,6 +3913,15 @@ public final class DispatchWrapper
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Runtime_InteropServices_DispatchWrapper_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor(System.Object)
 // docid: M:System.Runtime.InteropServices.DispatchWrapper.#ctor(System.Object)
     /**
@@ -3721,6 +3982,15 @@ public final class DllImportAttribute
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Runtime_InteropServices_DllImportAttribute_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // instance field: System.Boolean BestFitMapping
     /**
     Enables or disables best-fit mapping behavior when converting Unicode characters to ANSI characters.
@@ -4096,6 +4366,15 @@ public final class DynamicInterfaceCastableImplementationAttribute
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Runtime_InteropServices_DynamicInterfaceCastableImplementationAttribute_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor()
 // docid: M:System.Runtime.InteropServices.DynamicInterfaceCastableImplementationAttribute.#ctor
     /**
@@ -4131,6 +4410,15 @@ public final class ErrorWrapper
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Runtime_InteropServices_ErrorWrapper_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor(System.Exception)
 // docid: M:System.Runtime.InteropServices.ErrorWrapper.#ctor(System.Exception)
     /**
@@ -4219,6 +4507,15 @@ public final class GuidAttribute
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Runtime_InteropServices_GuidAttribute_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor(System.String)
 // docid: M:System.Runtime.InteropServices.GuidAttribute.#ctor(System.String)
     /**
@@ -4275,6 +4572,15 @@ public final class HandleCollector
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Runtime_InteropServices_HandleCollector_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor(System.String, System.Int32)
 // docid: M:System.Runtime.InteropServices.HandleCollector.#ctor(System.String,System.Int32)
     /**
@@ -4563,6 +4869,15 @@ open class ICustomAdapter
 
     deinit { __drop_handle(self.h); }
 
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Runtime_InteropServices_ICustomAdapter_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // System.Object GetUnderlyingObject()
 // docid: M:System.Runtime.InteropServices.ICustomAdapter.GetUnderlyingObject
     /**
@@ -4608,6 +4923,15 @@ open class ICustomFactory
 
     deinit { __drop_handle(self.h); }
 
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Runtime_InteropServices_ICustomFactory_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // System.MarshalByRefObject CreateInstance(System.Type)
 // docid: M:System.Runtime.InteropServices.ICustomFactory.CreateInstance(System.Type)
     /**
@@ -4654,6 +4978,15 @@ open class ICustomMarshaler
 
     deinit { __drop_handle(self.h); }
 
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Runtime_InteropServices_ICustomMarshaler_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // void CleanUpManagedData(System.Object)
 // docid: M:System.Runtime.InteropServices.ICustomMarshaler.CleanUpManagedData(System.Object)
     /**
@@ -4767,6 +5100,15 @@ open class ICustomQueryInterface
 
     deinit { __drop_handle(self.h); }
 
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Runtime_InteropServices_ICustomQueryInterface_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // System.Runtime.InteropServices.CustomQueryInterfaceResult GetInterface(ref System.Guid, ref System.IntPtr)
 // docid: M:System.Runtime.InteropServices.ICustomQueryInterface.GetInterface(System.Guid@,System.IntPtr@)
     /**
@@ -4821,6 +5163,15 @@ open class IDynamicInterfaceCastable
 
     deinit { __drop_handle(self.h); }
 
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Runtime_InteropServices_IDynamicInterfaceCastable_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // bool IsInterfaceImplemented(System.RuntimeTypeHandle, bool)
 // docid: M:System.Runtime.InteropServices.IDynamicInterfaceCastable.IsInterfaceImplemented(System.RuntimeTypeHandle,System.Boolean)
     /**
@@ -4879,6 +5230,15 @@ public final class ImportedFromTypeLibAttribute
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Runtime_InteropServices_ImportedFromTypeLibAttribute_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor(System.String)
 // docid: M:System.Runtime.InteropServices.ImportedFromTypeLibAttribute.#ctor(System.String)
     /**
@@ -4935,6 +5295,15 @@ public final class InterfaceTypeAttribute
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Runtime_InteropServices_InterfaceTypeAttribute_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor(System.Int16)
 // docid: M:System.Runtime.InteropServices.InterfaceTypeAttribute.#ctor(System.Int16)
     /**
@@ -5007,6 +5376,15 @@ open class InvalidComObjectException
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Runtime_InteropServices_InvalidComObjectException_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor()
 // docid: M:System.Runtime.InteropServices.InvalidComObjectException.#ctor
     /**
@@ -5075,6 +5453,15 @@ open class InvalidOleVariantTypeException
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Runtime_InteropServices_InvalidOleVariantTypeException_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor()
 // docid: M:System.Runtime.InteropServices.InvalidOleVariantTypeException.#ctor
     /**
@@ -5143,6 +5530,15 @@ public final class LCIDConversionAttribute
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Runtime_InteropServices_LCIDConversionAttribute_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor(System.Int32)
 // docid: M:System.Runtime.InteropServices.LCIDConversionAttribute.#ctor(System.Int32)
     /**
@@ -5199,6 +5595,15 @@ public final class ManagedToNativeComInteropStubAttribute
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Runtime_InteropServices_ManagedToNativeComInteropStubAttribute_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor(System.Type, System.String)
 // docid: M:System.Runtime.InteropServices.ManagedToNativeComInteropStubAttribute.#ctor(System.Type,System.String)
     /**
@@ -8080,6 +8485,15 @@ public final class MarshalAsAttribute
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Runtime_InteropServices_MarshalAsAttribute_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // instance field: System.Runtime.InteropServices.UnmanagedType ArraySubType
     /**
     Specifies the element type of the unmanaged  or .
@@ -8282,6 +8696,15 @@ open class MarshalDirectiveException
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Runtime_InteropServices_MarshalDirectiveException_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor()
 // docid: M:System.Runtime.InteropServices.MarshalDirectiveException.#ctor
     /**
@@ -8842,6 +9265,15 @@ public final class OptionalAttribute
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Runtime_InteropServices_OptionalAttribute_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor()
 // docid: M:System.Runtime.InteropServices.OptionalAttribute.#ctor
     /**
@@ -9005,6 +9437,15 @@ public final class PosixSignalContext
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Runtime_InteropServices_PosixSignalContext_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor(System.Runtime.InteropServices.PosixSignal)
 // docid: M:System.Runtime.InteropServices.PosixSignalContext.#ctor(System.Runtime.InteropServices.PosixSignal)
     /**
@@ -9096,6 +9537,15 @@ public final class PosixSignalRegistration
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Runtime_InteropServices_PosixSignalRegistration_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // System.Runtime.InteropServices.PosixSignalRegistration Create(System.Runtime.InteropServices.PosixSignal, System.Action<System.Runtime.InteropServices.PosixSignalContext>)
 // docid: M:System.Runtime.InteropServices.PosixSignalRegistration.Create(System.Runtime.InteropServices.PosixSignal,System.Action{System.Runtime.InteropServices.PosixSignalContext})
     /**
@@ -9155,6 +9605,15 @@ public final class PreserveSigAttribute
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Runtime_InteropServices_PreserveSigAttribute_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor()
 // docid: M:System.Runtime.InteropServices.PreserveSigAttribute.#ctor
     /**
@@ -9190,6 +9649,15 @@ public final class PrimaryInteropAssemblyAttribute
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Runtime_InteropServices_PrimaryInteropAssemblyAttribute_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor(System.Int32, System.Int32)
 // docid: M:System.Runtime.InteropServices.PrimaryInteropAssemblyAttribute.#ctor(System.Int32,System.Int32)
     /**
@@ -9267,6 +9735,15 @@ public final class ProgIdAttribute
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Runtime_InteropServices_ProgIdAttribute_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor(System.String)
 // docid: M:System.Runtime.InteropServices.ProgIdAttribute.#ctor(System.String)
     /**
@@ -9439,6 +9916,15 @@ open class SEHException
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Runtime_InteropServices_SEHException_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor()
 // docid: M:System.Runtime.InteropServices.SEHException.#ctor
     /**
@@ -9524,6 +10010,15 @@ open class SafeArrayRankMismatchException
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Runtime_InteropServices_SafeArrayRankMismatchException_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor()
 // docid: M:System.Runtime.InteropServices.SafeArrayRankMismatchException.#ctor
     /**
@@ -9592,6 +10087,15 @@ open class SafeArrayTypeMismatchException
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Runtime_InteropServices_SafeArrayTypeMismatchException_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor()
 // docid: M:System.Runtime.InteropServices.SafeArrayTypeMismatchException.#ctor
     /**
@@ -9660,6 +10164,15 @@ open class StandardOleMarshalObject
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Runtime_InteropServices_StandardOleMarshalObject_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
 } // StandardOleMarshalObject
 
 
@@ -9680,6 +10193,15 @@ public final class TypeIdentifierAttribute
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Runtime_InteropServices_TypeIdentifierAttribute_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor()
 // docid: M:System.Runtime.InteropServices.TypeIdentifierAttribute.#ctor
     /**
@@ -9780,6 +10302,15 @@ public final class TypeLibFuncAttribute
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Runtime_InteropServices_TypeLibFuncAttribute_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor(System.Int16)
 // docid: M:System.Runtime.InteropServices.TypeLibFuncAttribute.#ctor(System.Int16)
     /**
@@ -10013,6 +10544,15 @@ public final class TypeLibImportClassAttribute
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Runtime_InteropServices_TypeLibImportClassAttribute_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor(System.Type)
 // docid: M:System.Runtime.InteropServices.TypeLibImportClassAttribute.#ctor(System.Type)
     /**
@@ -10069,6 +10609,15 @@ public final class TypeLibTypeAttribute
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Runtime_InteropServices_TypeLibTypeAttribute_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor(System.Int16)
 // docid: M:System.Runtime.InteropServices.TypeLibTypeAttribute.#ctor(System.Int16)
     /**
@@ -10313,6 +10862,15 @@ public final class TypeLibVarAttribute
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Runtime_InteropServices_TypeLibVarAttribute_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor(System.Int16)
 // docid: M:System.Runtime.InteropServices.TypeLibVarAttribute.#ctor(System.Int16)
     /**
@@ -10546,6 +11104,15 @@ public final class TypeLibVersionAttribute
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Runtime_InteropServices_TypeLibVersionAttribute_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor(System.Int32, System.Int32)
 // docid: M:System.Runtime.InteropServices.TypeLibVersionAttribute.#ctor(System.Int32,System.Int32)
     /**
@@ -10623,6 +11190,15 @@ public final class UnknownWrapper
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Runtime_InteropServices_UnknownWrapper_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor(System.Object)
 // docid: M:System.Runtime.InteropServices.UnknownWrapper.#ctor(System.Object)
     /**
@@ -10683,6 +11259,15 @@ public final class UnmanagedCallConvAttribute
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Runtime_InteropServices_UnmanagedCallConvAttribute_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // instance field: System.Type[] CallConvs
     /**
     Types indicating calling conventions for the unmanaged target.
@@ -10733,6 +11318,15 @@ public final class UnmanagedCallersOnlyAttribute
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Runtime_InteropServices_UnmanagedCallersOnlyAttribute_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // instance field: System.Type[] CallConvs
     /**
     Optional. If omitted, the runtime will use the default platform calling convention.
@@ -10798,6 +11392,15 @@ public final class UnmanagedFunctionPointerAttribute
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Runtime_InteropServices_UnmanagedFunctionPointerAttribute_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // instance field: System.Boolean BestFitMapping
     /**
     Enables or disables best-fit mapping behavior when converting Unicode characters to ANSI characters.
@@ -11848,6 +12451,15 @@ public final class VariantWrapper
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Runtime_InteropServices_VariantWrapper_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor(System.Object)
 // docid: M:System.Runtime.InteropServices.VariantWrapper.#ctor(System.Object)
     /**
@@ -12812,6 +13424,15 @@ open class IAdviseSink
 
     deinit { __drop_handle(self.h); }
 
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Runtime_InteropServices_ComTypes_IAdviseSink_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // void OnClose()
 // docid: M:System.Runtime.InteropServices.ComTypes.IAdviseSink.OnClose
     /**
@@ -12926,6 +13547,15 @@ open class IBindCtx
 
     deinit { __drop_handle(self.h); }
 
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Runtime_InteropServices_ComTypes_IBindCtx_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // void EnumObjectParam(ref System.Runtime.InteropServices.ComTypes.IEnumString)
 // docid: M:System.Runtime.InteropServices.ComTypes.IBindCtx.EnumObjectParam(System.Runtime.InteropServices.ComTypes.IEnumString@)
     /**
@@ -13135,6 +13765,15 @@ open class IConnectionPoint
 
     deinit { __drop_handle(self.h); }
 
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Runtime_InteropServices_ComTypes_IConnectionPoint_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // void Advise(System.Object, ref System.Int32)
 // docid: M:System.Runtime.InteropServices.ComTypes.IConnectionPoint.Advise(System.Object,System.Int32@)
     /**
@@ -13256,6 +13895,15 @@ open class IConnectionPointContainer
 
     deinit { __drop_handle(self.h); }
 
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Runtime_InteropServices_ComTypes_IConnectionPointContainer_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // void EnumConnectionPoints(ref System.Runtime.InteropServices.ComTypes.IEnumConnectionPoints)
 // docid: M:System.Runtime.InteropServices.ComTypes.IConnectionPointContainer.EnumConnectionPoints(System.Runtime.InteropServices.ComTypes.IEnumConnectionPoints@)
     /**
@@ -13426,6 +14074,15 @@ open class IDataObject
 
     deinit { __drop_handle(self.h); }
 
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Runtime_InteropServices_ComTypes_IDataObject_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // System.Int32 DAdvise(ref System.Runtime.InteropServices.ComTypes.FORMATETC, System.Runtime.InteropServices.ComTypes.ADVF, System.Runtime.InteropServices.ComTypes.IAdviseSink, ref System.Int32)
 // docid: M:System.Runtime.InteropServices.ComTypes.IDataObject.DAdvise(System.Runtime.InteropServices.ComTypes.FORMATETC@,System.Runtime.InteropServices.ComTypes.ADVF,System.Runtime.InteropServices.ComTypes.IAdviseSink,System.Int32@)
     /**
@@ -13664,6 +14321,15 @@ open class IEnumConnectionPoints
 
     deinit { __drop_handle(self.h); }
 
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Runtime_InteropServices_ComTypes_IEnumConnectionPoints_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // void Clone(ref System.Runtime.InteropServices.ComTypes.IEnumConnectionPoints)
 // docid: M:System.Runtime.InteropServices.ComTypes.IEnumConnectionPoints.Clone(System.Runtime.InteropServices.ComTypes.IEnumConnectionPoints@)
     /**
@@ -13766,6 +14432,15 @@ open class IEnumConnections
 
     deinit { __drop_handle(self.h); }
 
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Runtime_InteropServices_ComTypes_IEnumConnections_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // void Clone(ref System.Runtime.InteropServices.ComTypes.IEnumConnections)
 // docid: M:System.Runtime.InteropServices.ComTypes.IEnumConnections.Clone(System.Runtime.InteropServices.ComTypes.IEnumConnections@)
     /**
@@ -13868,6 +14543,15 @@ open class IEnumFORMATETC
 
     deinit { __drop_handle(self.h); }
 
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Runtime_InteropServices_ComTypes_IEnumFORMATETC_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // void Clone(ref System.Runtime.InteropServices.ComTypes.IEnumFORMATETC)
 // docid: M:System.Runtime.InteropServices.ComTypes.IEnumFORMATETC.Clone(System.Runtime.InteropServices.ComTypes.IEnumFORMATETC@)
     /**
@@ -13972,6 +14656,15 @@ open class IEnumMoniker
 
     deinit { __drop_handle(self.h); }
 
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Runtime_InteropServices_ComTypes_IEnumMoniker_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // void Clone(ref System.Runtime.InteropServices.ComTypes.IEnumMoniker)
 // docid: M:System.Runtime.InteropServices.ComTypes.IEnumMoniker.Clone(System.Runtime.InteropServices.ComTypes.IEnumMoniker@)
     /**
@@ -14074,6 +14767,15 @@ open class IEnumSTATDATA
 
     deinit { __drop_handle(self.h); }
 
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Runtime_InteropServices_ComTypes_IEnumSTATDATA_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // void Clone(ref System.Runtime.InteropServices.ComTypes.IEnumSTATDATA)
 // docid: M:System.Runtime.InteropServices.ComTypes.IEnumSTATDATA.Clone(System.Runtime.InteropServices.ComTypes.IEnumSTATDATA@)
     /**
@@ -14178,6 +14880,15 @@ open class IEnumString
 
     deinit { __drop_handle(self.h); }
 
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Runtime_InteropServices_ComTypes_IEnumString_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // void Clone(ref System.Runtime.InteropServices.ComTypes.IEnumString)
 // docid: M:System.Runtime.InteropServices.ComTypes.IEnumString.Clone(System.Runtime.InteropServices.ComTypes.IEnumString@)
     /**
@@ -14280,6 +14991,15 @@ open class IEnumVARIANT
 
     deinit { __drop_handle(self.h); }
 
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Runtime_InteropServices_ComTypes_IEnumVARIANT_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // System.Runtime.InteropServices.ComTypes.IEnumVARIANT Clone()
 // docid: M:System.Runtime.InteropServices.ComTypes.IEnumVARIANT.Clone
     /**
@@ -14444,6 +15164,15 @@ open class IMoniker
 
     deinit { __drop_handle(self.h); }
 
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Runtime_InteropServices_ComTypes_IMoniker_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // void BindToObject(System.Runtime.InteropServices.ComTypes.IBindCtx, System.Runtime.InteropServices.ComTypes.IMoniker, ref System.Guid, ref System.Object)
 // docid: M:System.Runtime.InteropServices.ComTypes.IMoniker.BindToObject(System.Runtime.InteropServices.ComTypes.IBindCtx,System.Runtime.InteropServices.ComTypes.IMoniker,System.Guid@,System.Object@)
     /**
@@ -14952,6 +15681,15 @@ open class IPersistFile
 
     deinit { __drop_handle(self.h); }
 
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Runtime_InteropServices_ComTypes_IPersistFile_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // void GetClassID(ref System.Guid)
 // docid: M:System.Runtime.InteropServices.ComTypes.IPersistFile.GetClassID(System.Guid@)
     /**
@@ -15087,6 +15825,15 @@ open class IRunningObjectTable
 
     deinit { __drop_handle(self.h); }
 
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Runtime_InteropServices_ComTypes_IRunningObjectTable_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // void EnumRunning(ref System.Runtime.InteropServices.ComTypes.IEnumMoniker)
 // docid: M:System.Runtime.InteropServices.ComTypes.IRunningObjectTable.EnumRunning(System.Runtime.InteropServices.ComTypes.IEnumMoniker@)
     /**
@@ -15252,6 +15999,15 @@ open class IStream
 
     deinit { __drop_handle(self.h); }
 
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Runtime_InteropServices_ComTypes_IStream_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // void Clone(ref System.Runtime.InteropServices.ComTypes.IStream)
 // docid: M:System.Runtime.InteropServices.ComTypes.IStream.Clone(System.Runtime.InteropServices.ComTypes.IStream@)
     /**
@@ -15475,6 +16231,15 @@ open class ITypeComp
 
     deinit { __drop_handle(self.h); }
 
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Runtime_InteropServices_ComTypes_ITypeComp_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // void Bind(System.String, System.Int32, System.Int16, ref System.Runtime.InteropServices.ComTypes.ITypeInfo, ref System.Runtime.InteropServices.ComTypes.DESCKIND, ref System.Runtime.InteropServices.ComTypes.BINDPTR)
 // docid: M:System.Runtime.InteropServices.ComTypes.ITypeComp.Bind(System.String,System.Int32,System.Int16,System.Runtime.InteropServices.ComTypes.ITypeInfo@,System.Runtime.InteropServices.ComTypes.DESCKIND@,System.Runtime.InteropServices.ComTypes.BINDPTR@)
     /**
@@ -15558,6 +16323,15 @@ open class ITypeInfo
 
     deinit { __drop_handle(self.h); }
 
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Runtime_InteropServices_ComTypes_ITypeInfo_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // void AddressOfMember(System.Int32, System.Runtime.InteropServices.ComTypes.INVOKEKIND, ref System.IntPtr)
 // docid: M:System.Runtime.InteropServices.ComTypes.ITypeInfo.AddressOfMember(System.Int32,System.Runtime.InteropServices.ComTypes.INVOKEKIND,System.IntPtr@)
     /**
@@ -15982,6 +16756,15 @@ open class ITypeInfo2
 
     deinit { __drop_handle(self.h); }
 
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Runtime_InteropServices_ComTypes_ITypeInfo2_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // void AddressOfMember(System.Int32, System.Runtime.InteropServices.ComTypes.INVOKEKIND, ref System.IntPtr)
 // docid: M:System.Runtime.InteropServices.ComTypes.ITypeInfo2.AddressOfMember(System.Int32,System.Runtime.InteropServices.ComTypes.INVOKEKIND,System.IntPtr@)
     /**
@@ -16717,6 +17500,15 @@ open class ITypeLib
 
     deinit { __drop_handle(self.h); }
 
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Runtime_InteropServices_ComTypes_ITypeLib_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // void FindName(System.String, System.Int32, System.Runtime.InteropServices.ComTypes.ITypeInfo[], System.Int32[], ref System.Int16)
 // docid: M:System.Runtime.InteropServices.ComTypes.ITypeLib.FindName(System.String,System.Int32,System.Runtime.InteropServices.ComTypes.ITypeInfo[],System.Int32[],System.Int16@)
     /**
@@ -16957,6 +17749,15 @@ open class ITypeLib2
 
     deinit { __drop_handle(self.h); }
 
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Runtime_InteropServices_ComTypes_ITypeLib2_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // void FindName(System.String, System.Int32, System.Runtime.InteropServices.ComTypes.ITypeInfo[], System.Int32[], ref System.Int16)
 // docid: M:System.Runtime.InteropServices.ComTypes.ITypeLib2.FindName(System.String,System.Int32,System.Runtime.InteropServices.ComTypes.ITypeInfo[],System.Int32[],System.Int16@)
     /**
@@ -18524,6 +19325,15 @@ public final class ObjectiveCTrackedTypeAttribute
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Runtime_InteropServices_ObjectiveC_ObjectiveCTrackedTypeAttribute_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor()
 // docid: M:System.Runtime.InteropServices.ObjectiveC.ObjectiveCTrackedTypeAttribute.#ctor
     /**
@@ -18566,6 +19376,15 @@ public final class SecureString
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Security_SecureString_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor()
 // docid: M:System.Security.SecureString.#ctor
     /**

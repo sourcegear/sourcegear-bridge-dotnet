@@ -24,6 +24,15 @@ open class AsymmetricAlgorithm
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Security_Cryptography_AsymmetricAlgorithm_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // void Clear()
 // docid: M:System.Security.Cryptography.AsymmetricAlgorithm.Clear
     /**
@@ -372,6 +381,15 @@ open class CryptoStream
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Security_Cryptography_CryptoStream_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor(System.IO.Stream, System.Security.Cryptography.ICryptoTransform, System.Security.Cryptography.CryptoStreamMode)
 // docid: M:System.Security.Cryptography.CryptoStream.#ctor(System.IO.Stream,System.Security.Cryptography.ICryptoTransform,System.Security.Cryptography.CryptoStreamMode)
     /**
@@ -1020,6 +1038,15 @@ open class CryptographicUnexpectedOperationException
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Security_Cryptography_CryptographicUnexpectedOperationException_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor()
 // docid: M:System.Security.Cryptography.CryptographicUnexpectedOperationException.#ctor
     /**
@@ -1105,6 +1132,15 @@ open class HMAC
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Security_Cryptography_HMAC_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // System.Security.Cryptography.HMAC Create()
 // docid: M:System.Security.Cryptography.HMAC.Create
     /**
@@ -1251,6 +1287,15 @@ open class HashAlgorithm
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Security_Cryptography_HashAlgorithm_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // void Clear()
 // docid: M:System.Security.Cryptography.HashAlgorithm.Clear
     /**
@@ -1926,6 +1971,15 @@ open class ICryptoTransform
 
     deinit { __drop_handle(self.h); }
 
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Security_Cryptography_ICryptoTransform_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // System.Int32 TransformBlock(System.Byte[], System.Int32, System.Int32, System.Byte[], System.Int32)
 // docid: M:System.Security.Cryptography.ICryptoTransform.TransformBlock(System.Byte[],System.Int32,System.Int32,System.Byte[],System.Int32)
     /**
@@ -2032,6 +2086,15 @@ public final class KeySizes
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Security_Cryptography_KeySizes_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor(System.Int32, System.Int32, System.Int32)
 // docid: M:System.Security.Cryptography.KeySizes.#ctor(System.Int32,System.Int32,System.Int32)
     /**
@@ -2130,6 +2193,15 @@ open class KeyedHashAlgorithm
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Security_Cryptography_KeyedHashAlgorithm_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // System.Security.Cryptography.KeyedHashAlgorithm Create()
 // docid: M:System.Security.Cryptography.KeyedHashAlgorithm.Create
     /**
@@ -2371,6 +2443,15 @@ public final class PbeParameters
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Security_Cryptography_PbeParameters_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // .ctor(System.Security.Cryptography.PbeEncryptionAlgorithm, System.Security.Cryptography.HashAlgorithmName, System.Int32)
 // docid: M:System.Security.Cryptography.PbeParameters.#ctor(System.Security.Cryptography.PbeEncryptionAlgorithm,System.Security.Cryptography.HashAlgorithmName,System.Int32)
     /**
@@ -2470,6 +2551,15 @@ open class SymmetricAlgorithm
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Security_Cryptography_SymmetricAlgorithm_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // void Clear()
 // docid: M:System.Security.Cryptography.SymmetricAlgorithm.Clear
     /**

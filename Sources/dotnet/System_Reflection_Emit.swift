@@ -23,6 +23,15 @@ public final class AssemblyBuilder
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Reflection_Emit_AssemblyBuilder_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // System.Reflection.Emit.AssemblyBuilder DefineDynamicAssembly(System.Reflection.AssemblyName, System.Reflection.Emit.AssemblyBuilderAccess)
 // docid: M:System.Reflection.Emit.AssemblyBuilder.DefineDynamicAssembly(System.Reflection.AssemblyName,System.Reflection.Emit.AssemblyBuilderAccess)
     /**
@@ -795,6 +804,15 @@ public final class ConstructorBuilder
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Reflection_Emit_ConstructorBuilder_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // System.Reflection.Emit.ParameterBuilder DefineParameter(System.Int32, System.Reflection.ParameterAttributes, System.String)
 // docid: M:System.Reflection.Emit.ConstructorBuilder.DefineParameter(System.Int32,System.Reflection.ParameterAttributes,System.String)
     /**
@@ -1272,6 +1290,15 @@ public final class EnumBuilder
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Reflection_Emit_EnumBuilder_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // System.Type CreateType()
 // docid: M:System.Reflection.Emit.EnumBuilder.CreateType
     /**
@@ -2252,6 +2279,15 @@ public final class EventBuilder
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Reflection_Emit_EventBuilder_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // void AddOtherMethod(System.Reflection.Emit.MethodBuilder)
 // docid: M:System.Reflection.Emit.EventBuilder.AddOtherMethod(System.Reflection.Emit.MethodBuilder)
     /**
@@ -2369,6 +2405,15 @@ public final class FieldBuilder
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Reflection_Emit_FieldBuilder_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // System.Object[] GetCustomAttributes(bool)
 // docid: M:System.Reflection.Emit.FieldBuilder.GetCustomAttributes(System.Boolean)
     /**
@@ -2721,6 +2766,15 @@ public final class GenericTypeParameterBuilder
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Reflection_Emit_GenericTypeParameterBuilder_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // bool Equals(System.Object)
 // docid: M:System.Reflection.Emit.GenericTypeParameterBuilder.Equals(System.Object)
     /**
@@ -3925,6 +3979,15 @@ public final class MethodBuilder
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Reflection_Emit_MethodBuilder_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // System.Reflection.Emit.GenericTypeParameterBuilder[] DefineGenericParameters(System.String[])
 // docid: M:System.Reflection.Emit.MethodBuilder.DefineGenericParameters(System.String[])
     /**
@@ -4737,6 +4800,15 @@ open class ModuleBuilder
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Reflection_Emit_ModuleBuilder_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // void CreateGlobalFunctions()
 // docid: M:System.Reflection.Emit.ModuleBuilder.CreateGlobalFunctions
     /**
@@ -5714,6 +5786,15 @@ public final class PropertyBuilder
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Reflection_Emit_PropertyBuilder_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // void AddOtherMethod(System.Reflection.Emit.MethodBuilder)
 // docid: M:System.Reflection.Emit.PropertyBuilder.AddOtherMethod(System.Reflection.Emit.MethodBuilder)
     /**
@@ -6221,6 +6302,15 @@ public final class TypeBuilder
     }
     public required init(hndl: NonnullHandle) { super.init(hndl: hndl); }
     public required init(gval: GVal) { super.init(gval: gval); }
+    public convenience init (cast h_cast: NonnullHandle) throws {
+        var __thrown : NullableHandle = nil;
+        let h_res = System_Reflection_Emit_TypeBuilder_cast(&__thrown,h_cast);
+        if let __ex = __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: h_res);
+        }
+    }
     // static field: System.Int32 UnspecifiedTypeSize
     /**
     Represents that total size for the type is not specified.
