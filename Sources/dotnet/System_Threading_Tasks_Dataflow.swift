@@ -2411,6 +2411,10 @@ public final class DataflowMessageHeader
         return (__return) != 0;
         }
     }
+    public static func == (left : dotnet.System.Threading.Tasks.Dataflow.DataflowMessageHeader, right : dotnet.System.Threading.Tasks.Dataflow.DataflowMessageHeader) -> Bool
+    {
+        return try! op_Equality(left: left, right: right);
+    }
     // [IsSpecialName] bool op_Inequality(System.Threading.Tasks.Dataflow.DataflowMessageHeader, System.Threading.Tasks.Dataflow.DataflowMessageHeader)
 // docid: M:System.Threading.Tasks.Dataflow.DataflowMessageHeader.op_Inequality(System.Threading.Tasks.Dataflow.DataflowMessageHeader,System.Threading.Tasks.Dataflow.DataflowMessageHeader)
     /**
@@ -2430,6 +2434,10 @@ public final class DataflowMessageHeader
         } else {
         return (__return) != 0;
         }
+    }
+    public static func != (left : dotnet.System.Threading.Tasks.Dataflow.DataflowMessageHeader, right : dotnet.System.Threading.Tasks.Dataflow.DataflowMessageHeader) -> Bool
+    {
+        return try! op_Inequality(left: left, right: right);
     }
     // [IsSpecialName] System.Int64 get_Id()
 // docid: M:System.Threading.Tasks.Dataflow.DataflowMessageHeader.get_Id

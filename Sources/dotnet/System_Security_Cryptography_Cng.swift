@@ -594,6 +594,10 @@ public final class CngAlgorithm
         return (__return) != 0;
         }
     }
+    public static func == (left : dotnet.System.Security.Cryptography.CngAlgorithm, right : dotnet.System.Security.Cryptography.CngAlgorithm) -> Bool
+    {
+        return try! op_Equality(left: left, right: right);
+    }
     // [IsSpecialName] bool op_Inequality(System.Security.Cryptography.CngAlgorithm, System.Security.Cryptography.CngAlgorithm)
 // docid: M:System.Security.Cryptography.CngAlgorithm.op_Inequality(System.Security.Cryptography.CngAlgorithm,System.Security.Cryptography.CngAlgorithm)
     /**
@@ -613,6 +617,10 @@ public final class CngAlgorithm
         } else {
         return (__return) != 0;
         }
+    }
+    public static func != (left : dotnet.System.Security.Cryptography.CngAlgorithm, right : dotnet.System.Security.Cryptography.CngAlgorithm) -> Bool
+    {
+        return try! op_Inequality(left: left, right: right);
     }
     // System.String ToString()
 // docid: M:System.Security.Cryptography.CngAlgorithm.ToString
@@ -1051,6 +1059,10 @@ public final class CngAlgorithmGroup
         return (__return) != 0;
         }
     }
+    public static func == (left : dotnet.System.Security.Cryptography.CngAlgorithmGroup, right : dotnet.System.Security.Cryptography.CngAlgorithmGroup) -> Bool
+    {
+        return try! op_Equality(left: left, right: right);
+    }
     // [IsSpecialName] bool op_Inequality(System.Security.Cryptography.CngAlgorithmGroup, System.Security.Cryptography.CngAlgorithmGroup)
 // docid: M:System.Security.Cryptography.CngAlgorithmGroup.op_Inequality(System.Security.Cryptography.CngAlgorithmGroup,System.Security.Cryptography.CngAlgorithmGroup)
     /**
@@ -1070,6 +1082,10 @@ public final class CngAlgorithmGroup
         } else {
         return (__return) != 0;
         }
+    }
+    public static func != (left : dotnet.System.Security.Cryptography.CngAlgorithmGroup, right : dotnet.System.Security.Cryptography.CngAlgorithmGroup) -> Bool
+    {
+        return try! op_Inequality(left: left, right: right);
     }
     // System.String ToString()
 // docid: M:System.Security.Cryptography.CngAlgorithmGroup.ToString
@@ -2076,6 +2092,10 @@ public final class CngKeyBlobFormat
         return (__return) != 0;
         }
     }
+    public static func == (left : dotnet.System.Security.Cryptography.CngKeyBlobFormat, right : dotnet.System.Security.Cryptography.CngKeyBlobFormat) -> Bool
+    {
+        return try! op_Equality(left: left, right: right);
+    }
     // [IsSpecialName] bool op_Inequality(System.Security.Cryptography.CngKeyBlobFormat, System.Security.Cryptography.CngKeyBlobFormat)
 // docid: M:System.Security.Cryptography.CngKeyBlobFormat.op_Inequality(System.Security.Cryptography.CngKeyBlobFormat,System.Security.Cryptography.CngKeyBlobFormat)
     /**
@@ -2095,6 +2115,10 @@ public final class CngKeyBlobFormat
         } else {
         return (__return) != 0;
         }
+    }
+    public static func != (left : dotnet.System.Security.Cryptography.CngKeyBlobFormat, right : dotnet.System.Security.Cryptography.CngKeyBlobFormat) -> Bool
+    {
+        return try! op_Inequality(left: left, right: right);
     }
     // System.String ToString()
 // docid: M:System.Security.Cryptography.CngKeyBlobFormat.ToString
@@ -2948,6 +2972,10 @@ public final class CngProperty
         return (__return) != 0;
         }
     }
+    public static func == (left : dotnet.System.Security.Cryptography.CngProperty, right : dotnet.System.Security.Cryptography.CngProperty) -> Bool
+    {
+        return try! op_Equality(left: left, right: right);
+    }
     // [IsSpecialName] bool op_Inequality(System.Security.Cryptography.CngProperty, System.Security.Cryptography.CngProperty)
 // docid: M:System.Security.Cryptography.CngProperty.op_Inequality(System.Security.Cryptography.CngProperty,System.Security.Cryptography.CngProperty)
     /**
@@ -2967,6 +2995,10 @@ public final class CngProperty
         } else {
         return (__return) != 0;
         }
+    }
+    public static func != (left : dotnet.System.Security.Cryptography.CngProperty, right : dotnet.System.Security.Cryptography.CngProperty) -> Bool
+    {
+        return try! op_Inequality(left: left, right: right);
     }
     // [IsSpecialName] System.String get_Name()
 // docid: M:System.Security.Cryptography.CngProperty.get_Name
@@ -3205,6 +3237,10 @@ public final class CngProvider
         return (__return) != 0;
         }
     }
+    public static func == (left : dotnet.System.Security.Cryptography.CngProvider, right : dotnet.System.Security.Cryptography.CngProvider) -> Bool
+    {
+        return try! op_Equality(left: left, right: right);
+    }
     // [IsSpecialName] bool op_Inequality(System.Security.Cryptography.CngProvider, System.Security.Cryptography.CngProvider)
 // docid: M:System.Security.Cryptography.CngProvider.op_Inequality(System.Security.Cryptography.CngProvider,System.Security.Cryptography.CngProvider)
     /**
@@ -3224,6 +3260,10 @@ public final class CngProvider
         } else {
         return (__return) != 0;
         }
+    }
+    public static func != (left : dotnet.System.Security.Cryptography.CngProvider, right : dotnet.System.Security.Cryptography.CngProvider) -> Bool
+    {
+        return try! op_Inequality(left: left, right: right);
     }
     // System.String ToString()
 // docid: M:System.Security.Cryptography.CngProvider.ToString

@@ -385,6 +385,10 @@ public final class BitVector32_Section
         return (__return) != 0;
         }
     }
+    public static func == (a : dotnet.System.Collections.Specialized.BitVector32_Section, b : dotnet.System.Collections.Specialized.BitVector32_Section) -> Bool
+    {
+        return try! op_Equality(a: a, b: b);
+    }
     // [IsSpecialName] bool op_Inequality(System.Collections.Specialized.BitVector32.Section, System.Collections.Specialized.BitVector32.Section)
 // docid: M:System.Collections.Specialized.BitVector32.Section.op_Inequality(System.Collections.Specialized.BitVector32.Section,System.Collections.Specialized.BitVector32.Section)
     /**
@@ -404,6 +408,10 @@ public final class BitVector32_Section
         } else {
         return (__return) != 0;
         }
+    }
+    public static func != (a : dotnet.System.Collections.Specialized.BitVector32_Section, b : dotnet.System.Collections.Specialized.BitVector32_Section) -> Bool
+    {
+        return try! op_Inequality(a: a, b: b);
     }
     // System.String ToString()
 // docid: M:System.Collections.Specialized.BitVector32.Section.ToString

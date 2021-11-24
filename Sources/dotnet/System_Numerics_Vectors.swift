@@ -309,6 +309,10 @@ public final class Matrix3x2
         return dotnet.System.Numerics.Matrix3x2(hndl : __return);
         }
     }
+    public static func + (value1 : dotnet.System.Numerics.Matrix3x2, value2 : dotnet.System.Numerics.Matrix3x2) -> dotnet.System.Numerics.Matrix3x2
+    {
+        return try! op_Addition(value1: value1, value2: value2);
+    }
     // [IsSpecialName] bool op_Equality(System.Numerics.Matrix3x2, System.Numerics.Matrix3x2)
 // docid: M:System.Numerics.Matrix3x2.op_Equality(System.Numerics.Matrix3x2,System.Numerics.Matrix3x2)
     public class func op_Equality(value1 : dotnet.System.Numerics.Matrix3x2, value2 : dotnet.System.Numerics.Matrix3x2) throws -> Bool {
@@ -319,6 +323,10 @@ public final class Matrix3x2
         } else {
         return (__return) != 0;
         }
+    }
+    public static func == (value1 : dotnet.System.Numerics.Matrix3x2, value2 : dotnet.System.Numerics.Matrix3x2) -> Bool
+    {
+        return try! op_Equality(value1: value1, value2: value2);
     }
     // [IsSpecialName] bool op_Inequality(System.Numerics.Matrix3x2, System.Numerics.Matrix3x2)
 // docid: M:System.Numerics.Matrix3x2.op_Inequality(System.Numerics.Matrix3x2,System.Numerics.Matrix3x2)
@@ -331,6 +339,10 @@ public final class Matrix3x2
         return (__return) != 0;
         }
     }
+    public static func != (value1 : dotnet.System.Numerics.Matrix3x2, value2 : dotnet.System.Numerics.Matrix3x2) -> Bool
+    {
+        return try! op_Inequality(value1: value1, value2: value2);
+    }
     // [IsSpecialName] System.Numerics.Matrix3x2 op_Multiply(System.Numerics.Matrix3x2, System.Numerics.Matrix3x2)
 // docid: M:System.Numerics.Matrix3x2.op_Multiply(System.Numerics.Matrix3x2,System.Numerics.Matrix3x2)
     public class func op_Multiply(value1 : dotnet.System.Numerics.Matrix3x2, value2 : dotnet.System.Numerics.Matrix3x2) throws -> dotnet.System.Numerics.Matrix3x2 {
@@ -341,6 +353,10 @@ public final class Matrix3x2
         } else {
         return dotnet.System.Numerics.Matrix3x2(hndl : __return);
         }
+    }
+    public static func * (value1 : dotnet.System.Numerics.Matrix3x2, value2 : dotnet.System.Numerics.Matrix3x2) -> dotnet.System.Numerics.Matrix3x2
+    {
+        return try! op_Multiply(value1: value1, value2: value2);
     }
     // [IsSpecialName] System.Numerics.Matrix3x2 op_Multiply(System.Numerics.Matrix3x2, System.Single)
 // docid: M:System.Numerics.Matrix3x2.op_Multiply(System.Numerics.Matrix3x2,System.Single)
@@ -353,6 +369,10 @@ public final class Matrix3x2
         return dotnet.System.Numerics.Matrix3x2(hndl : __return);
         }
     }
+    public static func * (value1 : dotnet.System.Numerics.Matrix3x2, value2 : Swift.Float) -> dotnet.System.Numerics.Matrix3x2
+    {
+        return try! op_Multiply(value1: value1, value2: value2);
+    }
     // [IsSpecialName] System.Numerics.Matrix3x2 op_Subtraction(System.Numerics.Matrix3x2, System.Numerics.Matrix3x2)
 // docid: M:System.Numerics.Matrix3x2.op_Subtraction(System.Numerics.Matrix3x2,System.Numerics.Matrix3x2)
     public class func op_Subtraction(value1 : dotnet.System.Numerics.Matrix3x2, value2 : dotnet.System.Numerics.Matrix3x2) throws -> dotnet.System.Numerics.Matrix3x2 {
@@ -363,6 +383,10 @@ public final class Matrix3x2
         } else {
         return dotnet.System.Numerics.Matrix3x2(hndl : __return);
         }
+    }
+    public static func - (value1 : dotnet.System.Numerics.Matrix3x2, value2 : dotnet.System.Numerics.Matrix3x2) -> dotnet.System.Numerics.Matrix3x2
+    {
+        return try! op_Subtraction(value1: value1, value2: value2);
     }
     // [IsSpecialName] System.Numerics.Matrix3x2 op_UnaryNegation(System.Numerics.Matrix3x2)
 // docid: M:System.Numerics.Matrix3x2.op_UnaryNegation(System.Numerics.Matrix3x2)
@@ -958,6 +982,10 @@ public final class Matrix4x4
         return dotnet.System.Numerics.Matrix4x4(hndl : __return);
         }
     }
+    public static func + (value1 : dotnet.System.Numerics.Matrix4x4, value2 : dotnet.System.Numerics.Matrix4x4) -> dotnet.System.Numerics.Matrix4x4
+    {
+        return try! op_Addition(value1: value1, value2: value2);
+    }
     // [IsSpecialName] bool op_Equality(System.Numerics.Matrix4x4, System.Numerics.Matrix4x4)
 // docid: M:System.Numerics.Matrix4x4.op_Equality(System.Numerics.Matrix4x4,System.Numerics.Matrix4x4)
     public class func op_Equality(value1 : dotnet.System.Numerics.Matrix4x4, value2 : dotnet.System.Numerics.Matrix4x4) throws -> Bool {
@@ -968,6 +996,10 @@ public final class Matrix4x4
         } else {
         return (__return) != 0;
         }
+    }
+    public static func == (value1 : dotnet.System.Numerics.Matrix4x4, value2 : dotnet.System.Numerics.Matrix4x4) -> Bool
+    {
+        return try! op_Equality(value1: value1, value2: value2);
     }
     // [IsSpecialName] bool op_Inequality(System.Numerics.Matrix4x4, System.Numerics.Matrix4x4)
 // docid: M:System.Numerics.Matrix4x4.op_Inequality(System.Numerics.Matrix4x4,System.Numerics.Matrix4x4)
@@ -980,6 +1012,10 @@ public final class Matrix4x4
         return (__return) != 0;
         }
     }
+    public static func != (value1 : dotnet.System.Numerics.Matrix4x4, value2 : dotnet.System.Numerics.Matrix4x4) -> Bool
+    {
+        return try! op_Inequality(value1: value1, value2: value2);
+    }
     // [IsSpecialName] System.Numerics.Matrix4x4 op_Multiply(System.Numerics.Matrix4x4, System.Numerics.Matrix4x4)
 // docid: M:System.Numerics.Matrix4x4.op_Multiply(System.Numerics.Matrix4x4,System.Numerics.Matrix4x4)
     public class func op_Multiply(value1 : dotnet.System.Numerics.Matrix4x4, value2 : dotnet.System.Numerics.Matrix4x4) throws -> dotnet.System.Numerics.Matrix4x4 {
@@ -990,6 +1026,10 @@ public final class Matrix4x4
         } else {
         return dotnet.System.Numerics.Matrix4x4(hndl : __return);
         }
+    }
+    public static func * (value1 : dotnet.System.Numerics.Matrix4x4, value2 : dotnet.System.Numerics.Matrix4x4) -> dotnet.System.Numerics.Matrix4x4
+    {
+        return try! op_Multiply(value1: value1, value2: value2);
     }
     // [IsSpecialName] System.Numerics.Matrix4x4 op_Multiply(System.Numerics.Matrix4x4, System.Single)
 // docid: M:System.Numerics.Matrix4x4.op_Multiply(System.Numerics.Matrix4x4,System.Single)
@@ -1002,6 +1042,10 @@ public final class Matrix4x4
         return dotnet.System.Numerics.Matrix4x4(hndl : __return);
         }
     }
+    public static func * (value1 : dotnet.System.Numerics.Matrix4x4, value2 : Swift.Float) -> dotnet.System.Numerics.Matrix4x4
+    {
+        return try! op_Multiply(value1: value1, value2: value2);
+    }
     // [IsSpecialName] System.Numerics.Matrix4x4 op_Subtraction(System.Numerics.Matrix4x4, System.Numerics.Matrix4x4)
 // docid: M:System.Numerics.Matrix4x4.op_Subtraction(System.Numerics.Matrix4x4,System.Numerics.Matrix4x4)
     public class func op_Subtraction(value1 : dotnet.System.Numerics.Matrix4x4, value2 : dotnet.System.Numerics.Matrix4x4) throws -> dotnet.System.Numerics.Matrix4x4 {
@@ -1012,6 +1056,10 @@ public final class Matrix4x4
         } else {
         return dotnet.System.Numerics.Matrix4x4(hndl : __return);
         }
+    }
+    public static func - (value1 : dotnet.System.Numerics.Matrix4x4, value2 : dotnet.System.Numerics.Matrix4x4) -> dotnet.System.Numerics.Matrix4x4
+    {
+        return try! op_Subtraction(value1: value1, value2: value2);
     }
     // [IsSpecialName] System.Numerics.Matrix4x4 op_UnaryNegation(System.Numerics.Matrix4x4)
 // docid: M:System.Numerics.Matrix4x4.op_UnaryNegation(System.Numerics.Matrix4x4)
@@ -1265,6 +1313,10 @@ public final class Plane
         return (__return) != 0;
         }
     }
+    public static func == (value1 : dotnet.System.Numerics.Plane, value2 : dotnet.System.Numerics.Plane) -> Bool
+    {
+        return try! op_Equality(value1: value1, value2: value2);
+    }
     // [IsSpecialName] bool op_Inequality(System.Numerics.Plane, System.Numerics.Plane)
 // docid: M:System.Numerics.Plane.op_Inequality(System.Numerics.Plane,System.Numerics.Plane)
     public class func op_Inequality(value1 : dotnet.System.Numerics.Plane, value2 : dotnet.System.Numerics.Plane) throws -> Bool {
@@ -1275,6 +1327,10 @@ public final class Plane
         } else {
         return (__return) != 0;
         }
+    }
+    public static func != (value1 : dotnet.System.Numerics.Plane, value2 : dotnet.System.Numerics.Plane) -> Bool
+    {
+        return try! op_Inequality(value1: value1, value2: value2);
     }
     // System.String ToString()
 // docid: M:System.Numerics.Plane.ToString
@@ -1582,6 +1638,10 @@ public final class Quaternion
         return dotnet.System.Numerics.Quaternion(hndl : __return);
         }
     }
+    public static func + (value1 : dotnet.System.Numerics.Quaternion, value2 : dotnet.System.Numerics.Quaternion) -> dotnet.System.Numerics.Quaternion
+    {
+        return try! op_Addition(value1: value1, value2: value2);
+    }
     // [IsSpecialName] System.Numerics.Quaternion op_Division(System.Numerics.Quaternion, System.Numerics.Quaternion)
 // docid: M:System.Numerics.Quaternion.op_Division(System.Numerics.Quaternion,System.Numerics.Quaternion)
     public class func op_Division(value1 : dotnet.System.Numerics.Quaternion, value2 : dotnet.System.Numerics.Quaternion) throws -> dotnet.System.Numerics.Quaternion {
@@ -1592,6 +1652,10 @@ public final class Quaternion
         } else {
         return dotnet.System.Numerics.Quaternion(hndl : __return);
         }
+    }
+    public static func / (value1 : dotnet.System.Numerics.Quaternion, value2 : dotnet.System.Numerics.Quaternion) -> dotnet.System.Numerics.Quaternion
+    {
+        return try! op_Division(value1: value1, value2: value2);
     }
     // [IsSpecialName] bool op_Equality(System.Numerics.Quaternion, System.Numerics.Quaternion)
 // docid: M:System.Numerics.Quaternion.op_Equality(System.Numerics.Quaternion,System.Numerics.Quaternion)
@@ -1604,6 +1668,10 @@ public final class Quaternion
         return (__return) != 0;
         }
     }
+    public static func == (value1 : dotnet.System.Numerics.Quaternion, value2 : dotnet.System.Numerics.Quaternion) -> Bool
+    {
+        return try! op_Equality(value1: value1, value2: value2);
+    }
     // [IsSpecialName] bool op_Inequality(System.Numerics.Quaternion, System.Numerics.Quaternion)
 // docid: M:System.Numerics.Quaternion.op_Inequality(System.Numerics.Quaternion,System.Numerics.Quaternion)
     public class func op_Inequality(value1 : dotnet.System.Numerics.Quaternion, value2 : dotnet.System.Numerics.Quaternion) throws -> Bool {
@@ -1614,6 +1682,10 @@ public final class Quaternion
         } else {
         return (__return) != 0;
         }
+    }
+    public static func != (value1 : dotnet.System.Numerics.Quaternion, value2 : dotnet.System.Numerics.Quaternion) -> Bool
+    {
+        return try! op_Inequality(value1: value1, value2: value2);
     }
     // [IsSpecialName] System.Numerics.Quaternion op_Multiply(System.Numerics.Quaternion, System.Numerics.Quaternion)
 // docid: M:System.Numerics.Quaternion.op_Multiply(System.Numerics.Quaternion,System.Numerics.Quaternion)
@@ -1626,6 +1698,10 @@ public final class Quaternion
         return dotnet.System.Numerics.Quaternion(hndl : __return);
         }
     }
+    public static func * (value1 : dotnet.System.Numerics.Quaternion, value2 : dotnet.System.Numerics.Quaternion) -> dotnet.System.Numerics.Quaternion
+    {
+        return try! op_Multiply(value1: value1, value2: value2);
+    }
     // [IsSpecialName] System.Numerics.Quaternion op_Multiply(System.Numerics.Quaternion, System.Single)
 // docid: M:System.Numerics.Quaternion.op_Multiply(System.Numerics.Quaternion,System.Single)
     public class func op_Multiply(value1 : dotnet.System.Numerics.Quaternion, value2 : Swift.Float) throws -> dotnet.System.Numerics.Quaternion {
@@ -1637,6 +1713,10 @@ public final class Quaternion
         return dotnet.System.Numerics.Quaternion(hndl : __return);
         }
     }
+    public static func * (value1 : dotnet.System.Numerics.Quaternion, value2 : Swift.Float) -> dotnet.System.Numerics.Quaternion
+    {
+        return try! op_Multiply(value1: value1, value2: value2);
+    }
     // [IsSpecialName] System.Numerics.Quaternion op_Subtraction(System.Numerics.Quaternion, System.Numerics.Quaternion)
 // docid: M:System.Numerics.Quaternion.op_Subtraction(System.Numerics.Quaternion,System.Numerics.Quaternion)
     public class func op_Subtraction(value1 : dotnet.System.Numerics.Quaternion, value2 : dotnet.System.Numerics.Quaternion) throws -> dotnet.System.Numerics.Quaternion {
@@ -1647,6 +1727,10 @@ public final class Quaternion
         } else {
         return dotnet.System.Numerics.Quaternion(hndl : __return);
         }
+    }
+    public static func - (value1 : dotnet.System.Numerics.Quaternion, value2 : dotnet.System.Numerics.Quaternion) -> dotnet.System.Numerics.Quaternion
+    {
+        return try! op_Subtraction(value1: value1, value2: value2);
     }
     // [IsSpecialName] System.Numerics.Quaternion op_UnaryNegation(System.Numerics.Quaternion)
 // docid: M:System.Numerics.Quaternion.op_UnaryNegation(System.Numerics.Quaternion)
@@ -3157,6 +3241,10 @@ public final class Vector2
         return dotnet.System.Numerics.Vector2(hndl : __return);
         }
     }
+    public static func + (left : dotnet.System.Numerics.Vector2, right : dotnet.System.Numerics.Vector2) -> dotnet.System.Numerics.Vector2
+    {
+        return try! op_Addition(left: left, right: right);
+    }
     // [IsSpecialName] System.Numerics.Vector2 op_Division(System.Numerics.Vector2, System.Numerics.Vector2)
 // docid: M:System.Numerics.Vector2.op_Division(System.Numerics.Vector2,System.Numerics.Vector2)
     public class func op_Division(left : dotnet.System.Numerics.Vector2, right : dotnet.System.Numerics.Vector2) throws -> dotnet.System.Numerics.Vector2 {
@@ -3167,6 +3255,10 @@ public final class Vector2
         } else {
         return dotnet.System.Numerics.Vector2(hndl : __return);
         }
+    }
+    public static func / (left : dotnet.System.Numerics.Vector2, right : dotnet.System.Numerics.Vector2) -> dotnet.System.Numerics.Vector2
+    {
+        return try! op_Division(left: left, right: right);
     }
     // [IsSpecialName] System.Numerics.Vector2 op_Division(System.Numerics.Vector2, System.Single)
 // docid: M:System.Numerics.Vector2.op_Division(System.Numerics.Vector2,System.Single)
@@ -3179,6 +3271,10 @@ public final class Vector2
         return dotnet.System.Numerics.Vector2(hndl : __return);
         }
     }
+    public static func / (value1 : dotnet.System.Numerics.Vector2, value2 : Swift.Float) -> dotnet.System.Numerics.Vector2
+    {
+        return try! op_Division(value1: value1, value2: value2);
+    }
     // [IsSpecialName] bool op_Equality(System.Numerics.Vector2, System.Numerics.Vector2)
 // docid: M:System.Numerics.Vector2.op_Equality(System.Numerics.Vector2,System.Numerics.Vector2)
     public class func op_Equality(left : dotnet.System.Numerics.Vector2, right : dotnet.System.Numerics.Vector2) throws -> Bool {
@@ -3189,6 +3285,10 @@ public final class Vector2
         } else {
         return (__return) != 0;
         }
+    }
+    public static func == (left : dotnet.System.Numerics.Vector2, right : dotnet.System.Numerics.Vector2) -> Bool
+    {
+        return try! op_Equality(left: left, right: right);
     }
     // [IsSpecialName] bool op_Inequality(System.Numerics.Vector2, System.Numerics.Vector2)
 // docid: M:System.Numerics.Vector2.op_Inequality(System.Numerics.Vector2,System.Numerics.Vector2)
@@ -3201,6 +3301,10 @@ public final class Vector2
         return (__return) != 0;
         }
     }
+    public static func != (left : dotnet.System.Numerics.Vector2, right : dotnet.System.Numerics.Vector2) -> Bool
+    {
+        return try! op_Inequality(left: left, right: right);
+    }
     // [IsSpecialName] System.Numerics.Vector2 op_Multiply(System.Numerics.Vector2, System.Numerics.Vector2)
 // docid: M:System.Numerics.Vector2.op_Multiply(System.Numerics.Vector2,System.Numerics.Vector2)
     public class func op_Multiply(left : dotnet.System.Numerics.Vector2, right : dotnet.System.Numerics.Vector2) throws -> dotnet.System.Numerics.Vector2 {
@@ -3211,6 +3315,10 @@ public final class Vector2
         } else {
         return dotnet.System.Numerics.Vector2(hndl : __return);
         }
+    }
+    public static func * (left : dotnet.System.Numerics.Vector2, right : dotnet.System.Numerics.Vector2) -> dotnet.System.Numerics.Vector2
+    {
+        return try! op_Multiply(left: left, right: right);
     }
     // [IsSpecialName] System.Numerics.Vector2 op_Multiply(System.Numerics.Vector2, System.Single)
 // docid: M:System.Numerics.Vector2.op_Multiply(System.Numerics.Vector2,System.Single)
@@ -3223,6 +3331,10 @@ public final class Vector2
         return dotnet.System.Numerics.Vector2(hndl : __return);
         }
     }
+    public static func * (left : dotnet.System.Numerics.Vector2, right : Swift.Float) -> dotnet.System.Numerics.Vector2
+    {
+        return try! op_Multiply(left: left, right: right);
+    }
     // [IsSpecialName] System.Numerics.Vector2 op_Multiply(System.Single, System.Numerics.Vector2)
 // docid: M:System.Numerics.Vector2.op_Multiply(System.Single,System.Numerics.Vector2)
     public class func op_Multiply(left : Swift.Float, right : dotnet.System.Numerics.Vector2) throws -> dotnet.System.Numerics.Vector2 {
@@ -3234,6 +3346,10 @@ public final class Vector2
         return dotnet.System.Numerics.Vector2(hndl : __return);
         }
     }
+    public static func * (left : Swift.Float, right : dotnet.System.Numerics.Vector2) -> dotnet.System.Numerics.Vector2
+    {
+        return try! op_Multiply(left: left, right: right);
+    }
     // [IsSpecialName] System.Numerics.Vector2 op_Subtraction(System.Numerics.Vector2, System.Numerics.Vector2)
 // docid: M:System.Numerics.Vector2.op_Subtraction(System.Numerics.Vector2,System.Numerics.Vector2)
     public class func op_Subtraction(left : dotnet.System.Numerics.Vector2, right : dotnet.System.Numerics.Vector2) throws -> dotnet.System.Numerics.Vector2 {
@@ -3244,6 +3360,10 @@ public final class Vector2
         } else {
         return dotnet.System.Numerics.Vector2(hndl : __return);
         }
+    }
+    public static func - (left : dotnet.System.Numerics.Vector2, right : dotnet.System.Numerics.Vector2) -> dotnet.System.Numerics.Vector2
+    {
+        return try! op_Subtraction(left: left, right: right);
     }
     // [IsSpecialName] System.Numerics.Vector2 op_UnaryNegation(System.Numerics.Vector2)
 // docid: M:System.Numerics.Vector2.op_UnaryNegation(System.Numerics.Vector2)
@@ -3779,6 +3899,10 @@ public final class Vector3
         return dotnet.System.Numerics.Vector3(hndl : __return);
         }
     }
+    public static func + (left : dotnet.System.Numerics.Vector3, right : dotnet.System.Numerics.Vector3) -> dotnet.System.Numerics.Vector3
+    {
+        return try! op_Addition(left: left, right: right);
+    }
     // [IsSpecialName] System.Numerics.Vector3 op_Division(System.Numerics.Vector3, System.Numerics.Vector3)
 // docid: M:System.Numerics.Vector3.op_Division(System.Numerics.Vector3,System.Numerics.Vector3)
     public class func op_Division(left : dotnet.System.Numerics.Vector3, right : dotnet.System.Numerics.Vector3) throws -> dotnet.System.Numerics.Vector3 {
@@ -3789,6 +3913,10 @@ public final class Vector3
         } else {
         return dotnet.System.Numerics.Vector3(hndl : __return);
         }
+    }
+    public static func / (left : dotnet.System.Numerics.Vector3, right : dotnet.System.Numerics.Vector3) -> dotnet.System.Numerics.Vector3
+    {
+        return try! op_Division(left: left, right: right);
     }
     // [IsSpecialName] System.Numerics.Vector3 op_Division(System.Numerics.Vector3, System.Single)
 // docid: M:System.Numerics.Vector3.op_Division(System.Numerics.Vector3,System.Single)
@@ -3801,6 +3929,10 @@ public final class Vector3
         return dotnet.System.Numerics.Vector3(hndl : __return);
         }
     }
+    public static func / (value1 : dotnet.System.Numerics.Vector3, value2 : Swift.Float) -> dotnet.System.Numerics.Vector3
+    {
+        return try! op_Division(value1: value1, value2: value2);
+    }
     // [IsSpecialName] bool op_Equality(System.Numerics.Vector3, System.Numerics.Vector3)
 // docid: M:System.Numerics.Vector3.op_Equality(System.Numerics.Vector3,System.Numerics.Vector3)
     public class func op_Equality(left : dotnet.System.Numerics.Vector3, right : dotnet.System.Numerics.Vector3) throws -> Bool {
@@ -3811,6 +3943,10 @@ public final class Vector3
         } else {
         return (__return) != 0;
         }
+    }
+    public static func == (left : dotnet.System.Numerics.Vector3, right : dotnet.System.Numerics.Vector3) -> Bool
+    {
+        return try! op_Equality(left: left, right: right);
     }
     // [IsSpecialName] bool op_Inequality(System.Numerics.Vector3, System.Numerics.Vector3)
 // docid: M:System.Numerics.Vector3.op_Inequality(System.Numerics.Vector3,System.Numerics.Vector3)
@@ -3823,6 +3959,10 @@ public final class Vector3
         return (__return) != 0;
         }
     }
+    public static func != (left : dotnet.System.Numerics.Vector3, right : dotnet.System.Numerics.Vector3) -> Bool
+    {
+        return try! op_Inequality(left: left, right: right);
+    }
     // [IsSpecialName] System.Numerics.Vector3 op_Multiply(System.Numerics.Vector3, System.Numerics.Vector3)
 // docid: M:System.Numerics.Vector3.op_Multiply(System.Numerics.Vector3,System.Numerics.Vector3)
     public class func op_Multiply(left : dotnet.System.Numerics.Vector3, right : dotnet.System.Numerics.Vector3) throws -> dotnet.System.Numerics.Vector3 {
@@ -3833,6 +3973,10 @@ public final class Vector3
         } else {
         return dotnet.System.Numerics.Vector3(hndl : __return);
         }
+    }
+    public static func * (left : dotnet.System.Numerics.Vector3, right : dotnet.System.Numerics.Vector3) -> dotnet.System.Numerics.Vector3
+    {
+        return try! op_Multiply(left: left, right: right);
     }
     // [IsSpecialName] System.Numerics.Vector3 op_Multiply(System.Numerics.Vector3, System.Single)
 // docid: M:System.Numerics.Vector3.op_Multiply(System.Numerics.Vector3,System.Single)
@@ -3845,6 +3989,10 @@ public final class Vector3
         return dotnet.System.Numerics.Vector3(hndl : __return);
         }
     }
+    public static func * (left : dotnet.System.Numerics.Vector3, right : Swift.Float) -> dotnet.System.Numerics.Vector3
+    {
+        return try! op_Multiply(left: left, right: right);
+    }
     // [IsSpecialName] System.Numerics.Vector3 op_Multiply(System.Single, System.Numerics.Vector3)
 // docid: M:System.Numerics.Vector3.op_Multiply(System.Single,System.Numerics.Vector3)
     public class func op_Multiply(left : Swift.Float, right : dotnet.System.Numerics.Vector3) throws -> dotnet.System.Numerics.Vector3 {
@@ -3856,6 +4004,10 @@ public final class Vector3
         return dotnet.System.Numerics.Vector3(hndl : __return);
         }
     }
+    public static func * (left : Swift.Float, right : dotnet.System.Numerics.Vector3) -> dotnet.System.Numerics.Vector3
+    {
+        return try! op_Multiply(left: left, right: right);
+    }
     // [IsSpecialName] System.Numerics.Vector3 op_Subtraction(System.Numerics.Vector3, System.Numerics.Vector3)
 // docid: M:System.Numerics.Vector3.op_Subtraction(System.Numerics.Vector3,System.Numerics.Vector3)
     public class func op_Subtraction(left : dotnet.System.Numerics.Vector3, right : dotnet.System.Numerics.Vector3) throws -> dotnet.System.Numerics.Vector3 {
@@ -3866,6 +4018,10 @@ public final class Vector3
         } else {
         return dotnet.System.Numerics.Vector3(hndl : __return);
         }
+    }
+    public static func - (left : dotnet.System.Numerics.Vector3, right : dotnet.System.Numerics.Vector3) -> dotnet.System.Numerics.Vector3
+    {
+        return try! op_Subtraction(left: left, right: right);
     }
     // [IsSpecialName] System.Numerics.Vector3 op_UnaryNegation(System.Numerics.Vector3)
 // docid: M:System.Numerics.Vector3.op_UnaryNegation(System.Numerics.Vector3)
@@ -4395,6 +4551,10 @@ public final class Vector4
         return dotnet.System.Numerics.Vector4(hndl : __return);
         }
     }
+    public static func + (left : dotnet.System.Numerics.Vector4, right : dotnet.System.Numerics.Vector4) -> dotnet.System.Numerics.Vector4
+    {
+        return try! op_Addition(left: left, right: right);
+    }
     // [IsSpecialName] System.Numerics.Vector4 op_Division(System.Numerics.Vector4, System.Numerics.Vector4)
 // docid: M:System.Numerics.Vector4.op_Division(System.Numerics.Vector4,System.Numerics.Vector4)
     public class func op_Division(left : dotnet.System.Numerics.Vector4, right : dotnet.System.Numerics.Vector4) throws -> dotnet.System.Numerics.Vector4 {
@@ -4405,6 +4565,10 @@ public final class Vector4
         } else {
         return dotnet.System.Numerics.Vector4(hndl : __return);
         }
+    }
+    public static func / (left : dotnet.System.Numerics.Vector4, right : dotnet.System.Numerics.Vector4) -> dotnet.System.Numerics.Vector4
+    {
+        return try! op_Division(left: left, right: right);
     }
     // [IsSpecialName] System.Numerics.Vector4 op_Division(System.Numerics.Vector4, System.Single)
 // docid: M:System.Numerics.Vector4.op_Division(System.Numerics.Vector4,System.Single)
@@ -4417,6 +4581,10 @@ public final class Vector4
         return dotnet.System.Numerics.Vector4(hndl : __return);
         }
     }
+    public static func / (value1 : dotnet.System.Numerics.Vector4, value2 : Swift.Float) -> dotnet.System.Numerics.Vector4
+    {
+        return try! op_Division(value1: value1, value2: value2);
+    }
     // [IsSpecialName] bool op_Equality(System.Numerics.Vector4, System.Numerics.Vector4)
 // docid: M:System.Numerics.Vector4.op_Equality(System.Numerics.Vector4,System.Numerics.Vector4)
     public class func op_Equality(left : dotnet.System.Numerics.Vector4, right : dotnet.System.Numerics.Vector4) throws -> Bool {
@@ -4427,6 +4595,10 @@ public final class Vector4
         } else {
         return (__return) != 0;
         }
+    }
+    public static func == (left : dotnet.System.Numerics.Vector4, right : dotnet.System.Numerics.Vector4) -> Bool
+    {
+        return try! op_Equality(left: left, right: right);
     }
     // [IsSpecialName] bool op_Inequality(System.Numerics.Vector4, System.Numerics.Vector4)
 // docid: M:System.Numerics.Vector4.op_Inequality(System.Numerics.Vector4,System.Numerics.Vector4)
@@ -4439,6 +4611,10 @@ public final class Vector4
         return (__return) != 0;
         }
     }
+    public static func != (left : dotnet.System.Numerics.Vector4, right : dotnet.System.Numerics.Vector4) -> Bool
+    {
+        return try! op_Inequality(left: left, right: right);
+    }
     // [IsSpecialName] System.Numerics.Vector4 op_Multiply(System.Numerics.Vector4, System.Numerics.Vector4)
 // docid: M:System.Numerics.Vector4.op_Multiply(System.Numerics.Vector4,System.Numerics.Vector4)
     public class func op_Multiply(left : dotnet.System.Numerics.Vector4, right : dotnet.System.Numerics.Vector4) throws -> dotnet.System.Numerics.Vector4 {
@@ -4449,6 +4625,10 @@ public final class Vector4
         } else {
         return dotnet.System.Numerics.Vector4(hndl : __return);
         }
+    }
+    public static func * (left : dotnet.System.Numerics.Vector4, right : dotnet.System.Numerics.Vector4) -> dotnet.System.Numerics.Vector4
+    {
+        return try! op_Multiply(left: left, right: right);
     }
     // [IsSpecialName] System.Numerics.Vector4 op_Multiply(System.Numerics.Vector4, System.Single)
 // docid: M:System.Numerics.Vector4.op_Multiply(System.Numerics.Vector4,System.Single)
@@ -4461,6 +4641,10 @@ public final class Vector4
         return dotnet.System.Numerics.Vector4(hndl : __return);
         }
     }
+    public static func * (left : dotnet.System.Numerics.Vector4, right : Swift.Float) -> dotnet.System.Numerics.Vector4
+    {
+        return try! op_Multiply(left: left, right: right);
+    }
     // [IsSpecialName] System.Numerics.Vector4 op_Multiply(System.Single, System.Numerics.Vector4)
 // docid: M:System.Numerics.Vector4.op_Multiply(System.Single,System.Numerics.Vector4)
     public class func op_Multiply(left : Swift.Float, right : dotnet.System.Numerics.Vector4) throws -> dotnet.System.Numerics.Vector4 {
@@ -4472,6 +4656,10 @@ public final class Vector4
         return dotnet.System.Numerics.Vector4(hndl : __return);
         }
     }
+    public static func * (left : Swift.Float, right : dotnet.System.Numerics.Vector4) -> dotnet.System.Numerics.Vector4
+    {
+        return try! op_Multiply(left: left, right: right);
+    }
     // [IsSpecialName] System.Numerics.Vector4 op_Subtraction(System.Numerics.Vector4, System.Numerics.Vector4)
 // docid: M:System.Numerics.Vector4.op_Subtraction(System.Numerics.Vector4,System.Numerics.Vector4)
     public class func op_Subtraction(left : dotnet.System.Numerics.Vector4, right : dotnet.System.Numerics.Vector4) throws -> dotnet.System.Numerics.Vector4 {
@@ -4482,6 +4670,10 @@ public final class Vector4
         } else {
         return dotnet.System.Numerics.Vector4(hndl : __return);
         }
+    }
+    public static func - (left : dotnet.System.Numerics.Vector4, right : dotnet.System.Numerics.Vector4) -> dotnet.System.Numerics.Vector4
+    {
+        return try! op_Subtraction(left: left, right: right);
     }
     // [IsSpecialName] System.Numerics.Vector4 op_UnaryNegation(System.Numerics.Vector4)
 // docid: M:System.Numerics.Vector4.op_UnaryNegation(System.Numerics.Vector4)
@@ -4822,6 +5014,7 @@ public final class Vector_1<T : SGBridgeGenericValue>
         return dotnet.System.Numerics.Vector_1(hndl : __return);
         }
     }
+// TODO skip binop generic [IsSpecialName] System.Numerics.Vector<T> op_Addition(System.Numerics.Vector<T>, System.Numerics.Vector<T>)
     // [IsSpecialName] System.Numerics.Vector<T> op_BitwiseAnd(System.Numerics.Vector<T>, System.Numerics.Vector<T>)
 // docid: M:System.Numerics.Vector`1.op_BitwiseAnd(System.Numerics.Vector{`0},System.Numerics.Vector{`0})
     public class func op_BitwiseAnd(left : dotnet.System.Numerics.Vector_1<T>, right : dotnet.System.Numerics.Vector_1<T>) throws -> dotnet.System.Numerics.Vector_1<T> {
@@ -4833,6 +5026,7 @@ public final class Vector_1<T : SGBridgeGenericValue>
         return dotnet.System.Numerics.Vector_1(hndl : __return);
         }
     }
+// TODO skip binop generic [IsSpecialName] System.Numerics.Vector<T> op_BitwiseAnd(System.Numerics.Vector<T>, System.Numerics.Vector<T>)
     // [IsSpecialName] System.Numerics.Vector<T> op_BitwiseOr(System.Numerics.Vector<T>, System.Numerics.Vector<T>)
 // docid: M:System.Numerics.Vector`1.op_BitwiseOr(System.Numerics.Vector{`0},System.Numerics.Vector{`0})
     public class func op_BitwiseOr(left : dotnet.System.Numerics.Vector_1<T>, right : dotnet.System.Numerics.Vector_1<T>) throws -> dotnet.System.Numerics.Vector_1<T> {
@@ -4844,6 +5038,7 @@ public final class Vector_1<T : SGBridgeGenericValue>
         return dotnet.System.Numerics.Vector_1(hndl : __return);
         }
     }
+// TODO skip binop generic [IsSpecialName] System.Numerics.Vector<T> op_BitwiseOr(System.Numerics.Vector<T>, System.Numerics.Vector<T>)
     // [IsSpecialName] System.Numerics.Vector<T> op_Division(System.Numerics.Vector<T>, System.Numerics.Vector<T>)
 // docid: M:System.Numerics.Vector`1.op_Division(System.Numerics.Vector{`0},System.Numerics.Vector{`0})
     public class func op_Division(left : dotnet.System.Numerics.Vector_1<T>, right : dotnet.System.Numerics.Vector_1<T>) throws -> dotnet.System.Numerics.Vector_1<T> {
@@ -4855,6 +5050,7 @@ public final class Vector_1<T : SGBridgeGenericValue>
         return dotnet.System.Numerics.Vector_1(hndl : __return);
         }
     }
+// TODO skip binop generic [IsSpecialName] System.Numerics.Vector<T> op_Division(System.Numerics.Vector<T>, System.Numerics.Vector<T>)
     // [IsSpecialName] bool op_Equality(System.Numerics.Vector<T>, System.Numerics.Vector<T>)
 // docid: M:System.Numerics.Vector`1.op_Equality(System.Numerics.Vector{`0},System.Numerics.Vector{`0})
     public class func op_Equality(left : dotnet.System.Numerics.Vector_1<T>, right : dotnet.System.Numerics.Vector_1<T>) throws -> Bool {
@@ -4866,6 +5062,7 @@ public final class Vector_1<T : SGBridgeGenericValue>
         return (__return) != 0;
         }
     }
+// TODO skip binop generic [IsSpecialName] bool op_Equality(System.Numerics.Vector<T>, System.Numerics.Vector<T>)
     // [IsSpecialName] System.Numerics.Vector<T> op_ExclusiveOr(System.Numerics.Vector<T>, System.Numerics.Vector<T>)
 // docid: M:System.Numerics.Vector`1.op_ExclusiveOr(System.Numerics.Vector{`0},System.Numerics.Vector{`0})
     public class func op_ExclusiveOr(left : dotnet.System.Numerics.Vector_1<T>, right : dotnet.System.Numerics.Vector_1<T>) throws -> dotnet.System.Numerics.Vector_1<T> {
@@ -4877,6 +5074,7 @@ public final class Vector_1<T : SGBridgeGenericValue>
         return dotnet.System.Numerics.Vector_1(hndl : __return);
         }
     }
+// TODO skip binop generic [IsSpecialName] System.Numerics.Vector<T> op_ExclusiveOr(System.Numerics.Vector<T>, System.Numerics.Vector<T>)
     // [IsSpecialName] System.Numerics.Vector<System.Byte> op_Explicit(System.Numerics.Vector<T>)
 // docid: M:System.Numerics.Vector`1.op_Explicit(System.Numerics.Vector{`0})
     public class func op_Explicit(value : dotnet.System.Numerics.Vector_1<T>) throws -> dotnet.System.Numerics.Vector_1<Swift.UInt8> {
@@ -4888,6 +5086,7 @@ public final class Vector_1<T : SGBridgeGenericValue>
         return dotnet.System.Numerics.Vector_1(hndl : __return);
         }
     }
+// TODO conversion generic [IsSpecialName] System.Numerics.Vector<System.Byte> op_Explicit(System.Numerics.Vector<T>)
     // [IsSpecialName] System.Numerics.Vector<System.Double> op_Explicit(System.Numerics.Vector<T>)
 // docid: M:System.Numerics.Vector`1.op_Explicit(System.Numerics.Vector{`0})
     public class func op_Explicit(value : dotnet.System.Numerics.Vector_1<T>) throws -> dotnet.System.Numerics.Vector_1<Swift.Double> {
@@ -4899,6 +5098,7 @@ public final class Vector_1<T : SGBridgeGenericValue>
         return dotnet.System.Numerics.Vector_1(hndl : __return);
         }
     }
+// TODO conversion generic [IsSpecialName] System.Numerics.Vector<System.Double> op_Explicit(System.Numerics.Vector<T>)
     // [IsSpecialName] System.Numerics.Vector<System.Int16> op_Explicit(System.Numerics.Vector<T>)
 // docid: M:System.Numerics.Vector`1.op_Explicit(System.Numerics.Vector{`0})
     public class func op_Explicit(value : dotnet.System.Numerics.Vector_1<T>) throws -> dotnet.System.Numerics.Vector_1<Swift.Int16> {
@@ -4910,6 +5110,7 @@ public final class Vector_1<T : SGBridgeGenericValue>
         return dotnet.System.Numerics.Vector_1(hndl : __return);
         }
     }
+// TODO conversion generic [IsSpecialName] System.Numerics.Vector<System.Int16> op_Explicit(System.Numerics.Vector<T>)
     // [IsSpecialName] System.Numerics.Vector<System.Int32> op_Explicit(System.Numerics.Vector<T>)
 // docid: M:System.Numerics.Vector`1.op_Explicit(System.Numerics.Vector{`0})
     public class func op_Explicit(value : dotnet.System.Numerics.Vector_1<T>) throws -> dotnet.System.Numerics.Vector_1<Swift.Int32> {
@@ -4921,6 +5122,7 @@ public final class Vector_1<T : SGBridgeGenericValue>
         return dotnet.System.Numerics.Vector_1(hndl : __return);
         }
     }
+// TODO conversion generic [IsSpecialName] System.Numerics.Vector<System.Int32> op_Explicit(System.Numerics.Vector<T>)
     // [IsSpecialName] System.Numerics.Vector<System.Int64> op_Explicit(System.Numerics.Vector<T>)
 // docid: M:System.Numerics.Vector`1.op_Explicit(System.Numerics.Vector{`0})
     public class func op_Explicit(value : dotnet.System.Numerics.Vector_1<T>) throws -> dotnet.System.Numerics.Vector_1<Swift.Int64> {
@@ -4932,6 +5134,7 @@ public final class Vector_1<T : SGBridgeGenericValue>
         return dotnet.System.Numerics.Vector_1(hndl : __return);
         }
     }
+// TODO conversion generic [IsSpecialName] System.Numerics.Vector<System.Int64> op_Explicit(System.Numerics.Vector<T>)
     // [IsSpecialName] System.Numerics.Vector<System.IntPtr> op_Explicit(System.Numerics.Vector<T>)
 // docid: M:System.Numerics.Vector`1.op_Explicit(System.Numerics.Vector{`0})
     public class func op_Explicit(value : dotnet.System.Numerics.Vector_1<T>) throws -> dotnet.System.Numerics.Vector_1<dotnet.System.IntPtr> {
@@ -4943,6 +5146,7 @@ public final class Vector_1<T : SGBridgeGenericValue>
         return dotnet.System.Numerics.Vector_1(hndl : __return);
         }
     }
+// TODO conversion generic [IsSpecialName] System.Numerics.Vector<System.IntPtr> op_Explicit(System.Numerics.Vector<T>)
     // [IsSpecialName] System.Numerics.Vector<System.UIntPtr> op_Explicit(System.Numerics.Vector<T>)
 // docid: M:System.Numerics.Vector`1.op_Explicit(System.Numerics.Vector{`0})
     public class func op_Explicit(value : dotnet.System.Numerics.Vector_1<T>) throws -> dotnet.System.Numerics.Vector_1<dotnet.System.UIntPtr> {
@@ -4954,6 +5158,7 @@ public final class Vector_1<T : SGBridgeGenericValue>
         return dotnet.System.Numerics.Vector_1(hndl : __return);
         }
     }
+// TODO conversion generic [IsSpecialName] System.Numerics.Vector<System.UIntPtr> op_Explicit(System.Numerics.Vector<T>)
     // [IsSpecialName] System.Numerics.Vector<System.SByte> op_Explicit(System.Numerics.Vector<T>)
 // docid: M:System.Numerics.Vector`1.op_Explicit(System.Numerics.Vector{`0})
     public class func op_Explicit(value : dotnet.System.Numerics.Vector_1<T>) throws -> dotnet.System.Numerics.Vector_1<Swift.Int8> {
@@ -4965,6 +5170,7 @@ public final class Vector_1<T : SGBridgeGenericValue>
         return dotnet.System.Numerics.Vector_1(hndl : __return);
         }
     }
+// TODO conversion generic [IsSpecialName] System.Numerics.Vector<System.SByte> op_Explicit(System.Numerics.Vector<T>)
     // [IsSpecialName] System.Numerics.Vector<System.Single> op_Explicit(System.Numerics.Vector<T>)
 // docid: M:System.Numerics.Vector`1.op_Explicit(System.Numerics.Vector{`0})
     public class func op_Explicit(value : dotnet.System.Numerics.Vector_1<T>) throws -> dotnet.System.Numerics.Vector_1<Swift.Float> {
@@ -4976,6 +5182,7 @@ public final class Vector_1<T : SGBridgeGenericValue>
         return dotnet.System.Numerics.Vector_1(hndl : __return);
         }
     }
+// TODO conversion generic [IsSpecialName] System.Numerics.Vector<System.Single> op_Explicit(System.Numerics.Vector<T>)
     // [IsSpecialName] System.Numerics.Vector<System.UInt16> op_Explicit(System.Numerics.Vector<T>)
 // docid: M:System.Numerics.Vector`1.op_Explicit(System.Numerics.Vector{`0})
     public class func op_Explicit(value : dotnet.System.Numerics.Vector_1<T>) throws -> dotnet.System.Numerics.Vector_1<Swift.UInt16> {
@@ -4987,6 +5194,7 @@ public final class Vector_1<T : SGBridgeGenericValue>
         return dotnet.System.Numerics.Vector_1(hndl : __return);
         }
     }
+// TODO conversion generic [IsSpecialName] System.Numerics.Vector<System.UInt16> op_Explicit(System.Numerics.Vector<T>)
     // [IsSpecialName] System.Numerics.Vector<System.UInt32> op_Explicit(System.Numerics.Vector<T>)
 // docid: M:System.Numerics.Vector`1.op_Explicit(System.Numerics.Vector{`0})
     public class func op_Explicit(value : dotnet.System.Numerics.Vector_1<T>) throws -> dotnet.System.Numerics.Vector_1<Swift.UInt32> {
@@ -4998,6 +5206,7 @@ public final class Vector_1<T : SGBridgeGenericValue>
         return dotnet.System.Numerics.Vector_1(hndl : __return);
         }
     }
+// TODO conversion generic [IsSpecialName] System.Numerics.Vector<System.UInt32> op_Explicit(System.Numerics.Vector<T>)
     // [IsSpecialName] System.Numerics.Vector<System.UInt64> op_Explicit(System.Numerics.Vector<T>)
 // docid: M:System.Numerics.Vector`1.op_Explicit(System.Numerics.Vector{`0})
     public class func op_Explicit(value : dotnet.System.Numerics.Vector_1<T>) throws -> dotnet.System.Numerics.Vector_1<Swift.UInt64> {
@@ -5009,6 +5218,7 @@ public final class Vector_1<T : SGBridgeGenericValue>
         return dotnet.System.Numerics.Vector_1(hndl : __return);
         }
     }
+// TODO conversion generic [IsSpecialName] System.Numerics.Vector<System.UInt64> op_Explicit(System.Numerics.Vector<T>)
     // [IsSpecialName] bool op_Inequality(System.Numerics.Vector<T>, System.Numerics.Vector<T>)
 // docid: M:System.Numerics.Vector`1.op_Inequality(System.Numerics.Vector{`0},System.Numerics.Vector{`0})
     public class func op_Inequality(left : dotnet.System.Numerics.Vector_1<T>, right : dotnet.System.Numerics.Vector_1<T>) throws -> Bool {
@@ -5020,6 +5230,7 @@ public final class Vector_1<T : SGBridgeGenericValue>
         return (__return) != 0;
         }
     }
+// TODO skip binop generic [IsSpecialName] bool op_Inequality(System.Numerics.Vector<T>, System.Numerics.Vector<T>)
     // [IsSpecialName] System.Numerics.Vector<T> op_Multiply(System.Numerics.Vector<T>, System.Numerics.Vector<T>)
 // docid: M:System.Numerics.Vector`1.op_Multiply(System.Numerics.Vector{`0},System.Numerics.Vector{`0})
     public class func op_Multiply(left : dotnet.System.Numerics.Vector_1<T>, right : dotnet.System.Numerics.Vector_1<T>) throws -> dotnet.System.Numerics.Vector_1<T> {
@@ -5031,6 +5242,7 @@ public final class Vector_1<T : SGBridgeGenericValue>
         return dotnet.System.Numerics.Vector_1(hndl : __return);
         }
     }
+// TODO skip binop generic [IsSpecialName] System.Numerics.Vector<T> op_Multiply(System.Numerics.Vector<T>, System.Numerics.Vector<T>)
     // [IsSpecialName] System.Numerics.Vector<T> op_Multiply(System.Numerics.Vector<T>, T)
 // docid: M:System.Numerics.Vector`1.op_Multiply(System.Numerics.Vector{`0},`0)
     public class func op_Multiply(value : dotnet.System.Numerics.Vector_1<T>, factor : T) throws -> dotnet.System.Numerics.Vector_1<T> {
@@ -5042,6 +5254,7 @@ public final class Vector_1<T : SGBridgeGenericValue>
         return dotnet.System.Numerics.Vector_1(hndl : __return);
         }
     }
+// TODO skip binop generic [IsSpecialName] System.Numerics.Vector<T> op_Multiply(System.Numerics.Vector<T>, T)
     // [IsSpecialName] System.Numerics.Vector<T> op_Multiply(T, System.Numerics.Vector<T>)
 // docid: M:System.Numerics.Vector`1.op_Multiply(`0,System.Numerics.Vector{`0})
     public class func op_Multiply(factor : T, value : dotnet.System.Numerics.Vector_1<T>) throws -> dotnet.System.Numerics.Vector_1<T> {
@@ -5053,6 +5266,7 @@ public final class Vector_1<T : SGBridgeGenericValue>
         return dotnet.System.Numerics.Vector_1(hndl : __return);
         }
     }
+// TODO skip binop generic [IsSpecialName] System.Numerics.Vector<T> op_Multiply(T, System.Numerics.Vector<T>)
     // [IsSpecialName] System.Numerics.Vector<T> op_OnesComplement(System.Numerics.Vector<T>)
 // docid: M:System.Numerics.Vector`1.op_OnesComplement(System.Numerics.Vector{`0})
     public class func op_OnesComplement(value : dotnet.System.Numerics.Vector_1<T>) throws -> dotnet.System.Numerics.Vector_1<T> {
@@ -5075,6 +5289,7 @@ public final class Vector_1<T : SGBridgeGenericValue>
         return dotnet.System.Numerics.Vector_1(hndl : __return);
         }
     }
+// TODO skip binop generic [IsSpecialName] System.Numerics.Vector<T> op_Subtraction(System.Numerics.Vector<T>, System.Numerics.Vector<T>)
     // [IsSpecialName] System.Numerics.Vector<T> op_UnaryNegation(System.Numerics.Vector<T>)
 // docid: M:System.Numerics.Vector`1.op_UnaryNegation(System.Numerics.Vector{`0})
     public class func op_UnaryNegation(value : dotnet.System.Numerics.Vector_1<T>) throws -> dotnet.System.Numerics.Vector_1<T> {

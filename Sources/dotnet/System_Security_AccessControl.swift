@@ -3205,6 +3205,10 @@ open class GenericAce
         return (__return) != 0;
         }
     }
+    public static func == (left : dotnet.System.Security.AccessControl.GenericAce, right : dotnet.System.Security.AccessControl.GenericAce) -> Bool
+    {
+        return try! op_Equality(left: left, right: right);
+    }
     // [IsSpecialName] bool op_Inequality(System.Security.AccessControl.GenericAce, System.Security.AccessControl.GenericAce)
 // docid: M:System.Security.AccessControl.GenericAce.op_Inequality(System.Security.AccessControl.GenericAce,System.Security.AccessControl.GenericAce)
     /**
@@ -3224,6 +3228,10 @@ open class GenericAce
         } else {
         return (__return) != 0;
         }
+    }
+    public static func != (left : dotnet.System.Security.AccessControl.GenericAce, right : dotnet.System.Security.AccessControl.GenericAce) -> Bool
+    {
+        return try! op_Inequality(left: left, right: right);
     }
     // [IsSpecialName] System.Security.AccessControl.AceFlags get_AceFlags()
 // docid: M:System.Security.AccessControl.GenericAce.get_AceFlags

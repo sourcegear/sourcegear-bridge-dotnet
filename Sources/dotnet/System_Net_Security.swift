@@ -2252,6 +2252,10 @@ public final class SslApplicationProtocol
         return (__return) != 0;
         }
     }
+    public static func == (left : dotnet.System.Net.Security.SslApplicationProtocol, right : dotnet.System.Net.Security.SslApplicationProtocol) -> Bool
+    {
+        return try! op_Equality(left: left, right: right);
+    }
     // [IsSpecialName] bool op_Inequality(System.Net.Security.SslApplicationProtocol, System.Net.Security.SslApplicationProtocol)
 // docid: M:System.Net.Security.SslApplicationProtocol.op_Inequality(System.Net.Security.SslApplicationProtocol,System.Net.Security.SslApplicationProtocol)
     /**
@@ -2271,6 +2275,10 @@ public final class SslApplicationProtocol
         } else {
         return (__return) != 0;
         }
+    }
+    public static func != (left : dotnet.System.Net.Security.SslApplicationProtocol, right : dotnet.System.Net.Security.SslApplicationProtocol) -> Bool
+    {
+        return try! op_Inequality(left: left, right: right);
     }
     // System.String ToString()
 // docid: M:System.Net.Security.SslApplicationProtocol.ToString

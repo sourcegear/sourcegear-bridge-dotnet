@@ -29499,6 +29499,10 @@ public final class MemberRelationship
         return (__return) != 0;
         }
     }
+    public static func == (left : dotnet.System.ComponentModel.Design.Serialization.MemberRelationship, right : dotnet.System.ComponentModel.Design.Serialization.MemberRelationship) -> Bool
+    {
+        return try! op_Equality(left: left, right: right);
+    }
     // [IsSpecialName] bool op_Inequality(System.ComponentModel.Design.Serialization.MemberRelationship, System.ComponentModel.Design.Serialization.MemberRelationship)
 // docid: M:System.ComponentModel.Design.Serialization.MemberRelationship.op_Inequality(System.ComponentModel.Design.Serialization.MemberRelationship,System.ComponentModel.Design.Serialization.MemberRelationship)
     /**
@@ -29517,6 +29521,10 @@ public final class MemberRelationship
         } else {
         return (__return) != 0;
         }
+    }
+    public static func != (left : dotnet.System.ComponentModel.Design.Serialization.MemberRelationship, right : dotnet.System.ComponentModel.Design.Serialization.MemberRelationship) -> Bool
+    {
+        return try! op_Inequality(left: left, right: right);
     }
     // [IsSpecialName] bool get_IsEmpty()
 // docid: M:System.ComponentModel.Design.Serialization.MemberRelationship.get_IsEmpty

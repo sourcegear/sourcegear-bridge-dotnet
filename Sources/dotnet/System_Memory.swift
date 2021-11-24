@@ -1933,6 +1933,10 @@ public final class StandardFormat
         return (__return) != 0;
         }
     }
+    public static func == (left : dotnet.System.Buffers.StandardFormat, right : dotnet.System.Buffers.StandardFormat) -> Bool
+    {
+        return try! op_Equality(left: left, right: right);
+    }
     // [IsSpecialName] System.Buffers.StandardFormat op_Implicit(System.Char)
 // docid: M:System.Buffers.StandardFormat.op_Implicit(System.Char)
     public class func op_Implicit(symbol : dotnet.System.Char) throws -> dotnet.System.Buffers.StandardFormat {
@@ -1943,6 +1947,14 @@ public final class StandardFormat
         } else {
         return dotnet.System.Buffers.StandardFormat(hndl : __return);
         }
+    }
+// TODO conversion to Self [IsSpecialName] System.Buffers.StandardFormat op_Implicit(System.Char)
+    public convenience init(symbol : dotnet.System.Char) 
+    {
+        var __thrown : NullableHandle = nil;
+        let __return = System_Buffers_StandardFormat_StandardFormat__op_Implicit_0__1__Char(&__thrown, symbol.get_value());
+        assert(__thrown == nil);
+            self.init(hndl: __return);
     }
     // [IsSpecialName] bool op_Inequality(System.Buffers.StandardFormat, System.Buffers.StandardFormat)
 // docid: M:System.Buffers.StandardFormat.op_Inequality(System.Buffers.StandardFormat,System.Buffers.StandardFormat)
@@ -1963,6 +1975,10 @@ public final class StandardFormat
         } else {
         return (__return) != 0;
         }
+    }
+    public static func != (left : dotnet.System.Buffers.StandardFormat, right : dotnet.System.Buffers.StandardFormat) -> Bool
+    {
+        return try! op_Inequality(left: left, right: right);
     }
 // TODO COPE (write_all_methods) (span) System.Buffers.StandardFormat Parse(System.ReadOnlySpan<System.Char>)
     // System.Buffers.StandardFormat Parse(System.String)

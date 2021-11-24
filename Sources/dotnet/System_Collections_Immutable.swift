@@ -2001,6 +2001,7 @@ public final class ImmutableArray_1<T : SGBridgeGenericValue>
         return (__return) != 0;
         }
     }
+// TODO skip binop generic [IsSpecialName] bool op_Equality(System.Collections.Immutable.ImmutableArray<T>, System.Collections.Immutable.ImmutableArray<T>)
     // [IsSpecialName] bool op_Equality(System.Nullable<System.Collections.Immutable.ImmutableArray<T>>, System.Nullable<System.Collections.Immutable.ImmutableArray<T>>)
 // docid: M:System.Collections.Immutable.ImmutableArray`1.op_Equality(System.Nullable{System.Collections.Immutable.ImmutableArray{`0}},System.Nullable{System.Collections.Immutable.ImmutableArray{`0}})
     /**
@@ -2021,6 +2022,7 @@ public final class ImmutableArray_1<T : SGBridgeGenericValue>
         return (__return) != 0;
         }
     }
+// TODO skip binop generic [IsSpecialName] bool op_Equality(System.Nullable<System.Collections.Immutable.ImmutableArray<T>>, System.Nullable<System.Collections.Immutable.ImmutableArray<T>>)
     // [IsSpecialName] bool op_Inequality(System.Collections.Immutable.ImmutableArray<T>, System.Collections.Immutable.ImmutableArray<T>)
 // docid: M:System.Collections.Immutable.ImmutableArray`1.op_Inequality(System.Collections.Immutable.ImmutableArray{`0},System.Collections.Immutable.ImmutableArray{`0})
     /**
@@ -2041,6 +2043,7 @@ public final class ImmutableArray_1<T : SGBridgeGenericValue>
         return (__return) != 0;
         }
     }
+// TODO skip binop generic [IsSpecialName] bool op_Inequality(System.Collections.Immutable.ImmutableArray<T>, System.Collections.Immutable.ImmutableArray<T>)
     // [IsSpecialName] bool op_Inequality(System.Nullable<System.Collections.Immutable.ImmutableArray<T>>, System.Nullable<System.Collections.Immutable.ImmutableArray<T>>)
 // docid: M:System.Collections.Immutable.ImmutableArray`1.op_Inequality(System.Nullable{System.Collections.Immutable.ImmutableArray{`0}},System.Nullable{System.Collections.Immutable.ImmutableArray{`0}})
     /**
@@ -2061,6 +2064,7 @@ public final class ImmutableArray_1<T : SGBridgeGenericValue>
         return (__return) != 0;
         }
     }
+// TODO skip binop generic [IsSpecialName] bool op_Inequality(System.Nullable<System.Collections.Immutable.ImmutableArray<T>>, System.Nullable<System.Collections.Immutable.ImmutableArray<T>>)
     // System.Collections.Immutable.ImmutableArray<T> Remove(T)
 // docid: M:System.Collections.Immutable.ImmutableArray`1.Remove(`0)
     /**

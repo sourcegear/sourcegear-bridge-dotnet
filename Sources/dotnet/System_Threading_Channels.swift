@@ -845,6 +845,7 @@ open class Channel_2<TWrite : SGBridgeGenericValue,TRead : SGBridgeGenericValue>
         return dotnet.System.Threading.Channels.ChannelReader_1(hndl : __return);
         }
     }
+// TODO conversion generic [IsSpecialName] System.Threading.Channels.ChannelReader<TRead> op_Implicit(System.Threading.Channels.Channel<TWrite,TRead>)
     // [IsSpecialName] System.Threading.Channels.ChannelWriter<TWrite> op_Implicit(System.Threading.Channels.Channel<TWrite,TRead>)
 // docid: M:System.Threading.Channels.Channel`2.op_Implicit(System.Threading.Channels.Channel{`0,`1})
     open class func op_Implicit(channel : dotnet.System.Threading.Channels.Channel_2<TWrite,TRead>) throws -> dotnet.System.Threading.Channels.ChannelWriter_1<TWrite> {
@@ -856,6 +857,7 @@ open class Channel_2<TWrite : SGBridgeGenericValue,TRead : SGBridgeGenericValue>
         return dotnet.System.Threading.Channels.ChannelWriter_1(hndl : __return);
         }
     }
+// TODO conversion generic [IsSpecialName] System.Threading.Channels.ChannelWriter<TWrite> op_Implicit(System.Threading.Channels.Channel<TWrite,TRead>)
     // [IsSpecialName] System.Threading.Channels.ChannelReader<TRead> get_Reader()
 // docid: M:System.Threading.Channels.Channel`2.get_Reader
     open func get_Reader() throws -> dotnet.System.Threading.Channels.ChannelReader_1<TRead> {

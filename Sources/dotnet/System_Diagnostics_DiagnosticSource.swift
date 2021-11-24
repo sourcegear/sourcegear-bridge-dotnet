@@ -1325,6 +1325,10 @@ public final class ActivityContext
         return (__return) != 0;
         }
     }
+    public static func == (left : dotnet.System.Diagnostics.ActivityContext, right : dotnet.System.Diagnostics.ActivityContext) -> Bool
+    {
+        return try! op_Equality(left: left, right: right);
+    }
     // [IsSpecialName] bool op_Inequality(System.Diagnostics.ActivityContext, System.Diagnostics.ActivityContext)
 // docid: M:System.Diagnostics.ActivityContext.op_Inequality(System.Diagnostics.ActivityContext,System.Diagnostics.ActivityContext)
     /**
@@ -1344,6 +1348,10 @@ public final class ActivityContext
         } else {
         return (__return) != 0;
         }
+    }
+    public static func != (left : dotnet.System.Diagnostics.ActivityContext, right : dotnet.System.Diagnostics.ActivityContext) -> Bool
+    {
+        return try! op_Inequality(left: left, right: right);
     }
     // bool Equals(System.Diagnostics.ActivityContext)
 // docid: M:System.Diagnostics.ActivityContext.Equals(System.Diagnostics.ActivityContext)
@@ -2019,6 +2027,10 @@ public final class ActivityLink
         return (__return) != 0;
         }
     }
+    public static func == (left : dotnet.System.Diagnostics.ActivityLink, right : dotnet.System.Diagnostics.ActivityLink) -> Bool
+    {
+        return try! op_Equality(left: left, right: right);
+    }
     // [IsSpecialName] bool op_Inequality(System.Diagnostics.ActivityLink, System.Diagnostics.ActivityLink)
 // docid: M:System.Diagnostics.ActivityLink.op_Inequality(System.Diagnostics.ActivityLink,System.Diagnostics.ActivityLink)
     /**
@@ -2038,6 +2050,10 @@ public final class ActivityLink
         } else {
         return (__return) != 0;
         }
+    }
+    public static func != (left : dotnet.System.Diagnostics.ActivityLink, right : dotnet.System.Diagnostics.ActivityLink) -> Bool
+    {
+        return try! op_Inequality(left: left, right: right);
     }
     // System.Int32 GetHashCode()
 // docid: M:System.Diagnostics.ActivityLink.GetHashCode
@@ -2852,6 +2868,10 @@ public final class ActivitySpanId
         return (__return) != 0;
         }
     }
+    public static func == (spanId1 : dotnet.System.Diagnostics.ActivitySpanId, spandId2 : dotnet.System.Diagnostics.ActivitySpanId) -> Bool
+    {
+        return try! op_Equality(spanId1: spanId1, spandId2: spandId2);
+    }
     // [IsSpecialName] bool op_Inequality(System.Diagnostics.ActivitySpanId, System.Diagnostics.ActivitySpanId)
 // docid: M:System.Diagnostics.ActivitySpanId.op_Inequality(System.Diagnostics.ActivitySpanId,System.Diagnostics.ActivitySpanId)
     /**
@@ -2871,6 +2891,10 @@ public final class ActivitySpanId
         } else {
         return (__return) != 0;
         }
+    }
+    public static func != (spanId1 : dotnet.System.Diagnostics.ActivitySpanId, spandId2 : dotnet.System.Diagnostics.ActivitySpanId) -> Bool
+    {
+        return try! op_Inequality(spanId1: spanId1, spandId2: spandId2);
     }
     // System.String ToHexString()
 // docid: M:System.Diagnostics.ActivitySpanId.ToHexString
@@ -3551,6 +3575,10 @@ public final class ActivityTraceId
         return (__return) != 0;
         }
     }
+    public static func == (traceId1 : dotnet.System.Diagnostics.ActivityTraceId, traceId2 : dotnet.System.Diagnostics.ActivityTraceId) -> Bool
+    {
+        return try! op_Equality(traceId1: traceId1, traceId2: traceId2);
+    }
     // [IsSpecialName] bool op_Inequality(System.Diagnostics.ActivityTraceId, System.Diagnostics.ActivityTraceId)
 // docid: M:System.Diagnostics.ActivityTraceId.op_Inequality(System.Diagnostics.ActivityTraceId,System.Diagnostics.ActivityTraceId)
     /**
@@ -3570,6 +3598,10 @@ public final class ActivityTraceId
         } else {
         return (__return) != 0;
         }
+    }
+    public static func != (traceId1 : dotnet.System.Diagnostics.ActivityTraceId, traceId2 : dotnet.System.Diagnostics.ActivityTraceId) -> Bool
+    {
+        return try! op_Inequality(traceId1: traceId1, traceId2: traceId2);
     }
     // System.String ToHexString()
 // docid: M:System.Diagnostics.ActivityTraceId.ToHexString

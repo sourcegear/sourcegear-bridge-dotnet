@@ -2745,6 +2745,10 @@ public final class SymbolToken
         return (__return) != 0;
         }
     }
+    public static func == (a : dotnet.System.Diagnostics.SymbolStore.SymbolToken, b : dotnet.System.Diagnostics.SymbolStore.SymbolToken) -> Bool
+    {
+        return try! op_Equality(a: a, b: b);
+    }
     // [IsSpecialName] bool op_Inequality(System.Diagnostics.SymbolStore.SymbolToken, System.Diagnostics.SymbolStore.SymbolToken)
 // docid: M:System.Diagnostics.SymbolStore.SymbolToken.op_Inequality(System.Diagnostics.SymbolStore.SymbolToken,System.Diagnostics.SymbolStore.SymbolToken)
     /**
@@ -2764,6 +2768,10 @@ public final class SymbolToken
         } else {
         return (__return) != 0;
         }
+    }
+    public static func != (a : dotnet.System.Diagnostics.SymbolStore.SymbolToken, b : dotnet.System.Diagnostics.SymbolStore.SymbolToken) -> Bool
+    {
+        return try! op_Inequality(a: a, b: b);
     }
 } // SymbolToken
 

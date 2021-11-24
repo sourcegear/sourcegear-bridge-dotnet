@@ -560,6 +560,7 @@ open class XAttribute
         return (__return) != 0;
         }
     }
+// TODO conversion from Self [IsSpecialName] bool op_Explicit(System.Xml.Linq.XAttribute)
     // [IsSpecialName] System.DateTime op_Explicit(System.Xml.Linq.XAttribute)
 // docid: M:System.Xml.Linq.XAttribute.op_Explicit(System.Xml.Linq.XAttribute)
     open class func op_Explicit(attribute : dotnet.System.Xml.Linq.XAttribute) throws -> dotnet.System.DateTime {
@@ -571,6 +572,7 @@ open class XAttribute
         return dotnet.System.DateTime(hndl : __return);
         }
     }
+// TODO conversion from Self [IsSpecialName] System.DateTime op_Explicit(System.Xml.Linq.XAttribute)
     // [IsSpecialName] System.DateTimeOffset op_Explicit(System.Xml.Linq.XAttribute)
 // docid: M:System.Xml.Linq.XAttribute.op_Explicit(System.Xml.Linq.XAttribute)
     open class func op_Explicit(attribute : dotnet.System.Xml.Linq.XAttribute) throws -> dotnet.System.DateTimeOffset {
@@ -582,6 +584,7 @@ open class XAttribute
         return dotnet.System.DateTimeOffset(hndl : __return);
         }
     }
+// TODO conversion from Self [IsSpecialName] System.DateTimeOffset op_Explicit(System.Xml.Linq.XAttribute)
     // [IsSpecialName] System.Decimal op_Explicit(System.Xml.Linq.XAttribute)
 // docid: M:System.Xml.Linq.XAttribute.op_Explicit(System.Xml.Linq.XAttribute)
     open class func op_Explicit(attribute : dotnet.System.Xml.Linq.XAttribute) throws -> dotnet.System.Decimal {
@@ -593,6 +596,7 @@ open class XAttribute
         return dotnet.System.Decimal(hndl : __return);
         }
     }
+// TODO conversion from Self [IsSpecialName] System.Decimal op_Explicit(System.Xml.Linq.XAttribute)
     // [IsSpecialName] System.Double op_Explicit(System.Xml.Linq.XAttribute)
 // docid: M:System.Xml.Linq.XAttribute.op_Explicit(System.Xml.Linq.XAttribute)
     open class func op_Explicit(attribute : dotnet.System.Xml.Linq.XAttribute) throws -> Swift.Double {
@@ -604,6 +608,7 @@ open class XAttribute
         return __return;
         }
     }
+// TODO conversion from Self [IsSpecialName] System.Double op_Explicit(System.Xml.Linq.XAttribute)
     // [IsSpecialName] System.Guid op_Explicit(System.Xml.Linq.XAttribute)
 // docid: M:System.Xml.Linq.XAttribute.op_Explicit(System.Xml.Linq.XAttribute)
     open class func op_Explicit(attribute : dotnet.System.Xml.Linq.XAttribute) throws -> dotnet.System.Guid {
@@ -615,6 +620,7 @@ open class XAttribute
         return dotnet.System.Guid(hndl : __return);
         }
     }
+// TODO conversion from Self [IsSpecialName] System.Guid op_Explicit(System.Xml.Linq.XAttribute)
     // [IsSpecialName] System.Int32 op_Explicit(System.Xml.Linq.XAttribute)
 // docid: M:System.Xml.Linq.XAttribute.op_Explicit(System.Xml.Linq.XAttribute)
     open class func op_Explicit(attribute : dotnet.System.Xml.Linq.XAttribute) throws -> Swift.Int32 {
@@ -626,6 +632,7 @@ open class XAttribute
         return __return;
         }
     }
+// TODO conversion from Self [IsSpecialName] System.Int32 op_Explicit(System.Xml.Linq.XAttribute)
     // [IsSpecialName] System.Int64 op_Explicit(System.Xml.Linq.XAttribute)
 // docid: M:System.Xml.Linq.XAttribute.op_Explicit(System.Xml.Linq.XAttribute)
     open class func op_Explicit(attribute : dotnet.System.Xml.Linq.XAttribute) throws -> Swift.Int64 {
@@ -637,6 +644,7 @@ open class XAttribute
         return __return;
         }
     }
+// TODO conversion from Self [IsSpecialName] System.Int64 op_Explicit(System.Xml.Linq.XAttribute)
     // [IsSpecialName] System.Nullable<bool> op_Explicit(System.Xml.Linq.XAttribute)
 // docid: M:System.Xml.Linq.XAttribute.op_Explicit(System.Xml.Linq.XAttribute)
     open class func op_Explicit(attribute : Optional<dotnet.System.Xml.Linq.XAttribute>) throws -> Optional<Bool> {
@@ -648,6 +656,7 @@ open class XAttribute
             return (__return != nil) ? System_Int32_unbox(__return!) != 0 : nil;
         }
     }
+// TODO conversion from Self [IsSpecialName] System.Nullable<bool> op_Explicit(System.Xml.Linq.XAttribute)
     // [IsSpecialName] System.Nullable<System.DateTimeOffset> op_Explicit(System.Xml.Linq.XAttribute)
 // docid: M:System.Xml.Linq.XAttribute.op_Explicit(System.Xml.Linq.XAttribute)
     open class func op_Explicit(attribute : Optional<dotnet.System.Xml.Linq.XAttribute>) throws -> Optional<dotnet.System.DateTimeOffset> {
@@ -659,6 +668,7 @@ open class XAttribute
         return (__return != nil) ? (dotnet.System.DateTimeOffset(hndl: __return!)) : nil;
         }
     }
+// TODO conversion from Self [IsSpecialName] System.Nullable<System.DateTimeOffset> op_Explicit(System.Xml.Linq.XAttribute)
     // [IsSpecialName] System.Nullable<System.DateTime> op_Explicit(System.Xml.Linq.XAttribute)
 // docid: M:System.Xml.Linq.XAttribute.op_Explicit(System.Xml.Linq.XAttribute)
     open class func op_Explicit(attribute : Optional<dotnet.System.Xml.Linq.XAttribute>) throws -> Optional<dotnet.System.DateTime> {
@@ -670,6 +680,7 @@ open class XAttribute
         return (__return != nil) ? (dotnet.System.DateTime(hndl: __return!)) : nil;
         }
     }
+// TODO conversion from Self [IsSpecialName] System.Nullable<System.DateTime> op_Explicit(System.Xml.Linq.XAttribute)
     // [IsSpecialName] System.Nullable<System.Decimal> op_Explicit(System.Xml.Linq.XAttribute)
 // docid: M:System.Xml.Linq.XAttribute.op_Explicit(System.Xml.Linq.XAttribute)
     open class func op_Explicit(attribute : Optional<dotnet.System.Xml.Linq.XAttribute>) throws -> Optional<dotnet.System.Decimal> {
@@ -681,6 +692,7 @@ open class XAttribute
         return (__return != nil) ? (dotnet.System.Decimal(hndl: __return!)) : nil;
         }
     }
+// TODO conversion from Self [IsSpecialName] System.Nullable<System.Decimal> op_Explicit(System.Xml.Linq.XAttribute)
     // [IsSpecialName] System.Nullable<System.Double> op_Explicit(System.Xml.Linq.XAttribute)
 // docid: M:System.Xml.Linq.XAttribute.op_Explicit(System.Xml.Linq.XAttribute)
     open class func op_Explicit(attribute : Optional<dotnet.System.Xml.Linq.XAttribute>) throws -> Optional<Swift.Double> {
@@ -692,6 +704,7 @@ open class XAttribute
             return (__return != nil) ? System_Double_unbox(__return!) : nil;
         }
     }
+// TODO conversion from Self [IsSpecialName] System.Nullable<System.Double> op_Explicit(System.Xml.Linq.XAttribute)
     // [IsSpecialName] System.Nullable<System.Guid> op_Explicit(System.Xml.Linq.XAttribute)
 // docid: M:System.Xml.Linq.XAttribute.op_Explicit(System.Xml.Linq.XAttribute)
     open class func op_Explicit(attribute : Optional<dotnet.System.Xml.Linq.XAttribute>) throws -> Optional<dotnet.System.Guid> {
@@ -703,6 +716,7 @@ open class XAttribute
         return (__return != nil) ? (dotnet.System.Guid(hndl: __return!)) : nil;
         }
     }
+// TODO conversion from Self [IsSpecialName] System.Nullable<System.Guid> op_Explicit(System.Xml.Linq.XAttribute)
     // [IsSpecialName] System.Nullable<System.Int32> op_Explicit(System.Xml.Linq.XAttribute)
 // docid: M:System.Xml.Linq.XAttribute.op_Explicit(System.Xml.Linq.XAttribute)
     open class func op_Explicit(attribute : Optional<dotnet.System.Xml.Linq.XAttribute>) throws -> Optional<Swift.Int32> {
@@ -714,6 +728,7 @@ open class XAttribute
             return (__return != nil) ? System_Int32_unbox(__return!) : nil;
         }
     }
+// TODO conversion from Self [IsSpecialName] System.Nullable<System.Int32> op_Explicit(System.Xml.Linq.XAttribute)
     // [IsSpecialName] System.Nullable<System.Int64> op_Explicit(System.Xml.Linq.XAttribute)
 // docid: M:System.Xml.Linq.XAttribute.op_Explicit(System.Xml.Linq.XAttribute)
     open class func op_Explicit(attribute : Optional<dotnet.System.Xml.Linq.XAttribute>) throws -> Optional<Swift.Int64> {
@@ -725,6 +740,7 @@ open class XAttribute
             return (__return != nil) ? System_Int64_unbox(__return!) : nil;
         }
     }
+// TODO conversion from Self [IsSpecialName] System.Nullable<System.Int64> op_Explicit(System.Xml.Linq.XAttribute)
     // [IsSpecialName] System.Nullable<System.Single> op_Explicit(System.Xml.Linq.XAttribute)
 // docid: M:System.Xml.Linq.XAttribute.op_Explicit(System.Xml.Linq.XAttribute)
     open class func op_Explicit(attribute : Optional<dotnet.System.Xml.Linq.XAttribute>) throws -> Optional<Swift.Float> {
@@ -736,6 +752,7 @@ open class XAttribute
             return (__return != nil) ? System_Single_unbox(__return!) : nil;
         }
     }
+// TODO conversion from Self [IsSpecialName] System.Nullable<System.Single> op_Explicit(System.Xml.Linq.XAttribute)
     // [IsSpecialName] System.Nullable<System.TimeSpan> op_Explicit(System.Xml.Linq.XAttribute)
 // docid: M:System.Xml.Linq.XAttribute.op_Explicit(System.Xml.Linq.XAttribute)
     open class func op_Explicit(attribute : Optional<dotnet.System.Xml.Linq.XAttribute>) throws -> Optional<dotnet.System.TimeSpan> {
@@ -747,6 +764,7 @@ open class XAttribute
         return (__return != nil) ? (dotnet.System.TimeSpan(hndl: __return!)) : nil;
         }
     }
+// TODO conversion from Self [IsSpecialName] System.Nullable<System.TimeSpan> op_Explicit(System.Xml.Linq.XAttribute)
     // [IsSpecialName] System.Nullable<System.UInt32> op_Explicit(System.Xml.Linq.XAttribute)
 // docid: M:System.Xml.Linq.XAttribute.op_Explicit(System.Xml.Linq.XAttribute)
     open class func op_Explicit(attribute : Optional<dotnet.System.Xml.Linq.XAttribute>) throws -> Optional<Swift.UInt32> {
@@ -758,6 +776,7 @@ open class XAttribute
             return (__return != nil) ? System_UInt32_unbox(__return!) : nil;
         }
     }
+// TODO conversion from Self [IsSpecialName] System.Nullable<System.UInt32> op_Explicit(System.Xml.Linq.XAttribute)
     // [IsSpecialName] System.Nullable<System.UInt64> op_Explicit(System.Xml.Linq.XAttribute)
 // docid: M:System.Xml.Linq.XAttribute.op_Explicit(System.Xml.Linq.XAttribute)
     open class func op_Explicit(attribute : Optional<dotnet.System.Xml.Linq.XAttribute>) throws -> Optional<Swift.UInt64> {
@@ -769,6 +788,7 @@ open class XAttribute
             return (__return != nil) ? System_UInt64_unbox(__return!) : nil;
         }
     }
+// TODO conversion from Self [IsSpecialName] System.Nullable<System.UInt64> op_Explicit(System.Xml.Linq.XAttribute)
     // [IsSpecialName] System.Single op_Explicit(System.Xml.Linq.XAttribute)
 // docid: M:System.Xml.Linq.XAttribute.op_Explicit(System.Xml.Linq.XAttribute)
     open class func op_Explicit(attribute : dotnet.System.Xml.Linq.XAttribute) throws -> Swift.Float {
@@ -780,6 +800,7 @@ open class XAttribute
         return __return;
         }
     }
+// TODO conversion from Self [IsSpecialName] System.Single op_Explicit(System.Xml.Linq.XAttribute)
     // [IsSpecialName] System.String op_Explicit(System.Xml.Linq.XAttribute)
 // docid: M:System.Xml.Linq.XAttribute.op_Explicit(System.Xml.Linq.XAttribute)
     open class func op_Explicit(attribute : Optional<dotnet.System.Xml.Linq.XAttribute>) throws -> Optional<dotnet.System.String> {
@@ -795,6 +816,7 @@ open class XAttribute
         }
         }
     }
+// TODO conversion from Self [IsSpecialName] System.String op_Explicit(System.Xml.Linq.XAttribute)
     // [IsSpecialName] System.TimeSpan op_Explicit(System.Xml.Linq.XAttribute)
 // docid: M:System.Xml.Linq.XAttribute.op_Explicit(System.Xml.Linq.XAttribute)
     open class func op_Explicit(attribute : dotnet.System.Xml.Linq.XAttribute) throws -> dotnet.System.TimeSpan {
@@ -806,6 +828,7 @@ open class XAttribute
         return dotnet.System.TimeSpan(hndl : __return);
         }
     }
+// TODO conversion from Self [IsSpecialName] System.TimeSpan op_Explicit(System.Xml.Linq.XAttribute)
     // [IsSpecialName] System.UInt32 op_Explicit(System.Xml.Linq.XAttribute)
 // docid: M:System.Xml.Linq.XAttribute.op_Explicit(System.Xml.Linq.XAttribute)
     open class func op_Explicit(attribute : dotnet.System.Xml.Linq.XAttribute) throws -> Swift.UInt32 {
@@ -817,6 +840,7 @@ open class XAttribute
         return __return;
         }
     }
+// TODO conversion from Self [IsSpecialName] System.UInt32 op_Explicit(System.Xml.Linq.XAttribute)
     // [IsSpecialName] System.UInt64 op_Explicit(System.Xml.Linq.XAttribute)
 // docid: M:System.Xml.Linq.XAttribute.op_Explicit(System.Xml.Linq.XAttribute)
     open class func op_Explicit(attribute : dotnet.System.Xml.Linq.XAttribute) throws -> Swift.UInt64 {
@@ -828,6 +852,7 @@ open class XAttribute
         return __return;
         }
     }
+// TODO conversion from Self [IsSpecialName] System.UInt64 op_Explicit(System.Xml.Linq.XAttribute)
     // void Remove()
 // docid: M:System.Xml.Linq.XAttribute.Remove
     /**
@@ -3285,6 +3310,7 @@ open class XElement
         return (__return) != 0;
         }
     }
+// TODO conversion from Self [IsSpecialName] bool op_Explicit(System.Xml.Linq.XElement)
     // [IsSpecialName] System.DateTime op_Explicit(System.Xml.Linq.XElement)
 // docid: M:System.Xml.Linq.XElement.op_Explicit(System.Xml.Linq.XElement)
     open class func op_Explicit(element : dotnet.System.Xml.Linq.XElement) throws -> dotnet.System.DateTime {
@@ -3296,6 +3322,7 @@ open class XElement
         return dotnet.System.DateTime(hndl : __return);
         }
     }
+// TODO conversion from Self [IsSpecialName] System.DateTime op_Explicit(System.Xml.Linq.XElement)
     // [IsSpecialName] System.DateTimeOffset op_Explicit(System.Xml.Linq.XElement)
 // docid: M:System.Xml.Linq.XElement.op_Explicit(System.Xml.Linq.XElement)
     open class func op_Explicit(element : dotnet.System.Xml.Linq.XElement) throws -> dotnet.System.DateTimeOffset {
@@ -3307,6 +3334,7 @@ open class XElement
         return dotnet.System.DateTimeOffset(hndl : __return);
         }
     }
+// TODO conversion from Self [IsSpecialName] System.DateTimeOffset op_Explicit(System.Xml.Linq.XElement)
     // [IsSpecialName] System.Decimal op_Explicit(System.Xml.Linq.XElement)
 // docid: M:System.Xml.Linq.XElement.op_Explicit(System.Xml.Linq.XElement)
     open class func op_Explicit(element : dotnet.System.Xml.Linq.XElement) throws -> dotnet.System.Decimal {
@@ -3318,6 +3346,7 @@ open class XElement
         return dotnet.System.Decimal(hndl : __return);
         }
     }
+// TODO conversion from Self [IsSpecialName] System.Decimal op_Explicit(System.Xml.Linq.XElement)
     // [IsSpecialName] System.Double op_Explicit(System.Xml.Linq.XElement)
 // docid: M:System.Xml.Linq.XElement.op_Explicit(System.Xml.Linq.XElement)
     open class func op_Explicit(element : dotnet.System.Xml.Linq.XElement) throws -> Swift.Double {
@@ -3329,6 +3358,7 @@ open class XElement
         return __return;
         }
     }
+// TODO conversion from Self [IsSpecialName] System.Double op_Explicit(System.Xml.Linq.XElement)
     // [IsSpecialName] System.Guid op_Explicit(System.Xml.Linq.XElement)
 // docid: M:System.Xml.Linq.XElement.op_Explicit(System.Xml.Linq.XElement)
     open class func op_Explicit(element : dotnet.System.Xml.Linq.XElement) throws -> dotnet.System.Guid {
@@ -3340,6 +3370,7 @@ open class XElement
         return dotnet.System.Guid(hndl : __return);
         }
     }
+// TODO conversion from Self [IsSpecialName] System.Guid op_Explicit(System.Xml.Linq.XElement)
     // [IsSpecialName] System.Int32 op_Explicit(System.Xml.Linq.XElement)
 // docid: M:System.Xml.Linq.XElement.op_Explicit(System.Xml.Linq.XElement)
     open class func op_Explicit(element : dotnet.System.Xml.Linq.XElement) throws -> Swift.Int32 {
@@ -3351,6 +3382,7 @@ open class XElement
         return __return;
         }
     }
+// TODO conversion from Self [IsSpecialName] System.Int32 op_Explicit(System.Xml.Linq.XElement)
     // [IsSpecialName] System.Int64 op_Explicit(System.Xml.Linq.XElement)
 // docid: M:System.Xml.Linq.XElement.op_Explicit(System.Xml.Linq.XElement)
     open class func op_Explicit(element : dotnet.System.Xml.Linq.XElement) throws -> Swift.Int64 {
@@ -3362,6 +3394,7 @@ open class XElement
         return __return;
         }
     }
+// TODO conversion from Self [IsSpecialName] System.Int64 op_Explicit(System.Xml.Linq.XElement)
     // [IsSpecialName] System.Nullable<bool> op_Explicit(System.Xml.Linq.XElement)
 // docid: M:System.Xml.Linq.XElement.op_Explicit(System.Xml.Linq.XElement)
     open class func op_Explicit(element : Optional<dotnet.System.Xml.Linq.XElement>) throws -> Optional<Bool> {
@@ -3373,6 +3406,7 @@ open class XElement
             return (__return != nil) ? System_Int32_unbox(__return!) != 0 : nil;
         }
     }
+// TODO conversion from Self [IsSpecialName] System.Nullable<bool> op_Explicit(System.Xml.Linq.XElement)
     // [IsSpecialName] System.Nullable<System.DateTimeOffset> op_Explicit(System.Xml.Linq.XElement)
 // docid: M:System.Xml.Linq.XElement.op_Explicit(System.Xml.Linq.XElement)
     open class func op_Explicit(element : Optional<dotnet.System.Xml.Linq.XElement>) throws -> Optional<dotnet.System.DateTimeOffset> {
@@ -3384,6 +3418,7 @@ open class XElement
         return (__return != nil) ? (dotnet.System.DateTimeOffset(hndl: __return!)) : nil;
         }
     }
+// TODO conversion from Self [IsSpecialName] System.Nullable<System.DateTimeOffset> op_Explicit(System.Xml.Linq.XElement)
     // [IsSpecialName] System.Nullable<System.DateTime> op_Explicit(System.Xml.Linq.XElement)
 // docid: M:System.Xml.Linq.XElement.op_Explicit(System.Xml.Linq.XElement)
     open class func op_Explicit(element : Optional<dotnet.System.Xml.Linq.XElement>) throws -> Optional<dotnet.System.DateTime> {
@@ -3395,6 +3430,7 @@ open class XElement
         return (__return != nil) ? (dotnet.System.DateTime(hndl: __return!)) : nil;
         }
     }
+// TODO conversion from Self [IsSpecialName] System.Nullable<System.DateTime> op_Explicit(System.Xml.Linq.XElement)
     // [IsSpecialName] System.Nullable<System.Decimal> op_Explicit(System.Xml.Linq.XElement)
 // docid: M:System.Xml.Linq.XElement.op_Explicit(System.Xml.Linq.XElement)
     open class func op_Explicit(element : Optional<dotnet.System.Xml.Linq.XElement>) throws -> Optional<dotnet.System.Decimal> {
@@ -3406,6 +3442,7 @@ open class XElement
         return (__return != nil) ? (dotnet.System.Decimal(hndl: __return!)) : nil;
         }
     }
+// TODO conversion from Self [IsSpecialName] System.Nullable<System.Decimal> op_Explicit(System.Xml.Linq.XElement)
     // [IsSpecialName] System.Nullable<System.Double> op_Explicit(System.Xml.Linq.XElement)
 // docid: M:System.Xml.Linq.XElement.op_Explicit(System.Xml.Linq.XElement)
     open class func op_Explicit(element : Optional<dotnet.System.Xml.Linq.XElement>) throws -> Optional<Swift.Double> {
@@ -3417,6 +3454,7 @@ open class XElement
             return (__return != nil) ? System_Double_unbox(__return!) : nil;
         }
     }
+// TODO conversion from Self [IsSpecialName] System.Nullable<System.Double> op_Explicit(System.Xml.Linq.XElement)
     // [IsSpecialName] System.Nullable<System.Guid> op_Explicit(System.Xml.Linq.XElement)
 // docid: M:System.Xml.Linq.XElement.op_Explicit(System.Xml.Linq.XElement)
     open class func op_Explicit(element : Optional<dotnet.System.Xml.Linq.XElement>) throws -> Optional<dotnet.System.Guid> {
@@ -3428,6 +3466,7 @@ open class XElement
         return (__return != nil) ? (dotnet.System.Guid(hndl: __return!)) : nil;
         }
     }
+// TODO conversion from Self [IsSpecialName] System.Nullable<System.Guid> op_Explicit(System.Xml.Linq.XElement)
     // [IsSpecialName] System.Nullable<System.Int32> op_Explicit(System.Xml.Linq.XElement)
 // docid: M:System.Xml.Linq.XElement.op_Explicit(System.Xml.Linq.XElement)
     open class func op_Explicit(element : Optional<dotnet.System.Xml.Linq.XElement>) throws -> Optional<Swift.Int32> {
@@ -3439,6 +3478,7 @@ open class XElement
             return (__return != nil) ? System_Int32_unbox(__return!) : nil;
         }
     }
+// TODO conversion from Self [IsSpecialName] System.Nullable<System.Int32> op_Explicit(System.Xml.Linq.XElement)
     // [IsSpecialName] System.Nullable<System.Int64> op_Explicit(System.Xml.Linq.XElement)
 // docid: M:System.Xml.Linq.XElement.op_Explicit(System.Xml.Linq.XElement)
     open class func op_Explicit(element : Optional<dotnet.System.Xml.Linq.XElement>) throws -> Optional<Swift.Int64> {
@@ -3450,6 +3490,7 @@ open class XElement
             return (__return != nil) ? System_Int64_unbox(__return!) : nil;
         }
     }
+// TODO conversion from Self [IsSpecialName] System.Nullable<System.Int64> op_Explicit(System.Xml.Linq.XElement)
     // [IsSpecialName] System.Nullable<System.Single> op_Explicit(System.Xml.Linq.XElement)
 // docid: M:System.Xml.Linq.XElement.op_Explicit(System.Xml.Linq.XElement)
     open class func op_Explicit(element : Optional<dotnet.System.Xml.Linq.XElement>) throws -> Optional<Swift.Float> {
@@ -3461,6 +3502,7 @@ open class XElement
             return (__return != nil) ? System_Single_unbox(__return!) : nil;
         }
     }
+// TODO conversion from Self [IsSpecialName] System.Nullable<System.Single> op_Explicit(System.Xml.Linq.XElement)
     // [IsSpecialName] System.Nullable<System.TimeSpan> op_Explicit(System.Xml.Linq.XElement)
 // docid: M:System.Xml.Linq.XElement.op_Explicit(System.Xml.Linq.XElement)
     open class func op_Explicit(element : Optional<dotnet.System.Xml.Linq.XElement>) throws -> Optional<dotnet.System.TimeSpan> {
@@ -3472,6 +3514,7 @@ open class XElement
         return (__return != nil) ? (dotnet.System.TimeSpan(hndl: __return!)) : nil;
         }
     }
+// TODO conversion from Self [IsSpecialName] System.Nullable<System.TimeSpan> op_Explicit(System.Xml.Linq.XElement)
     // [IsSpecialName] System.Nullable<System.UInt32> op_Explicit(System.Xml.Linq.XElement)
 // docid: M:System.Xml.Linq.XElement.op_Explicit(System.Xml.Linq.XElement)
     open class func op_Explicit(element : Optional<dotnet.System.Xml.Linq.XElement>) throws -> Optional<Swift.UInt32> {
@@ -3483,6 +3526,7 @@ open class XElement
             return (__return != nil) ? System_UInt32_unbox(__return!) : nil;
         }
     }
+// TODO conversion from Self [IsSpecialName] System.Nullable<System.UInt32> op_Explicit(System.Xml.Linq.XElement)
     // [IsSpecialName] System.Nullable<System.UInt64> op_Explicit(System.Xml.Linq.XElement)
 // docid: M:System.Xml.Linq.XElement.op_Explicit(System.Xml.Linq.XElement)
     open class func op_Explicit(element : Optional<dotnet.System.Xml.Linq.XElement>) throws -> Optional<Swift.UInt64> {
@@ -3494,6 +3538,7 @@ open class XElement
             return (__return != nil) ? System_UInt64_unbox(__return!) : nil;
         }
     }
+// TODO conversion from Self [IsSpecialName] System.Nullable<System.UInt64> op_Explicit(System.Xml.Linq.XElement)
     // [IsSpecialName] System.Single op_Explicit(System.Xml.Linq.XElement)
 // docid: M:System.Xml.Linq.XElement.op_Explicit(System.Xml.Linq.XElement)
     open class func op_Explicit(element : dotnet.System.Xml.Linq.XElement) throws -> Swift.Float {
@@ -3505,6 +3550,7 @@ open class XElement
         return __return;
         }
     }
+// TODO conversion from Self [IsSpecialName] System.Single op_Explicit(System.Xml.Linq.XElement)
     // [IsSpecialName] System.String op_Explicit(System.Xml.Linq.XElement)
 // docid: M:System.Xml.Linq.XElement.op_Explicit(System.Xml.Linq.XElement)
     open class func op_Explicit(element : Optional<dotnet.System.Xml.Linq.XElement>) throws -> Optional<dotnet.System.String> {
@@ -3520,6 +3566,7 @@ open class XElement
         }
         }
     }
+// TODO conversion from Self [IsSpecialName] System.String op_Explicit(System.Xml.Linq.XElement)
     // [IsSpecialName] System.TimeSpan op_Explicit(System.Xml.Linq.XElement)
 // docid: M:System.Xml.Linq.XElement.op_Explicit(System.Xml.Linq.XElement)
     open class func op_Explicit(element : dotnet.System.Xml.Linq.XElement) throws -> dotnet.System.TimeSpan {
@@ -3531,6 +3578,7 @@ open class XElement
         return dotnet.System.TimeSpan(hndl : __return);
         }
     }
+// TODO conversion from Self [IsSpecialName] System.TimeSpan op_Explicit(System.Xml.Linq.XElement)
     // [IsSpecialName] System.UInt32 op_Explicit(System.Xml.Linq.XElement)
 // docid: M:System.Xml.Linq.XElement.op_Explicit(System.Xml.Linq.XElement)
     open class func op_Explicit(element : dotnet.System.Xml.Linq.XElement) throws -> Swift.UInt32 {
@@ -3542,6 +3590,7 @@ open class XElement
         return __return;
         }
     }
+// TODO conversion from Self [IsSpecialName] System.UInt32 op_Explicit(System.Xml.Linq.XElement)
     // [IsSpecialName] System.UInt64 op_Explicit(System.Xml.Linq.XElement)
 // docid: M:System.Xml.Linq.XElement.op_Explicit(System.Xml.Linq.XElement)
     open class func op_Explicit(element : dotnet.System.Xml.Linq.XElement) throws -> Swift.UInt64 {
@@ -3553,6 +3602,7 @@ open class XElement
         return __return;
         }
     }
+// TODO conversion from Self [IsSpecialName] System.UInt64 op_Explicit(System.Xml.Linq.XElement)
     // System.Xml.Linq.XElement Parse(System.String)
 // docid: M:System.Xml.Linq.XElement.Parse(System.String)
     /**
@@ -4282,6 +4332,10 @@ public final class XName
         return (__return) != 0;
         }
     }
+    public static func == (left : dotnet.System.Xml.Linq.XName, right : dotnet.System.Xml.Linq.XName) -> Bool
+    {
+        return try! op_Equality(left: left, right: right);
+    }
     // [IsSpecialName] System.Xml.Linq.XName op_Implicit(System.String)
 // docid: M:System.Xml.Linq.XName.op_Implicit(System.String)
     public class func op_Implicit(expandedName : Optional<dotnet.System.String>) throws -> Optional<dotnet.System.Xml.Linq.XName> {
@@ -4295,6 +4349,18 @@ public final class XName
         } else {
             return nil;
         }
+        }
+    }
+// TODO conversion to Self [IsSpecialName] System.Xml.Linq.XName op_Implicit(System.String)
+    public convenience init?(expandedName : Optional<dotnet.System.String>) 
+    {
+        var __thrown : NullableHandle = nil;
+        let __return = System_Xml_Linq_XName_XName__op_Implicit_0__1__String(&__thrown, expandedName?.get_handle() ?? nil);
+        assert(__thrown == nil);
+        if let __ret_unwrapped = __return {
+            self.init(hndl: __ret_unwrapped);
+        } else {
+            return nil;
         }
     }
     // [IsSpecialName] bool op_Inequality(System.Xml.Linq.XName, System.Xml.Linq.XName)
@@ -4316,6 +4382,10 @@ public final class XName
         } else {
         return (__return) != 0;
         }
+    }
+    public static func != (left : dotnet.System.Xml.Linq.XName, right : dotnet.System.Xml.Linq.XName) -> Bool
+    {
+        return try! op_Inequality(left: left, right: right);
     }
     // System.String ToString()
 // docid: M:System.Xml.Linq.XName.ToString
@@ -4513,6 +4583,10 @@ public final class XNamespace
         return dotnet.System.Xml.Linq.XName(hndl : __return);
         }
     }
+    public static func + (ns : dotnet.System.Xml.Linq.XNamespace, localName : dotnet.System.String) -> dotnet.System.Xml.Linq.XName
+    {
+        return try! op_Addition(ns: ns, localName: localName);
+    }
     // [IsSpecialName] bool op_Equality(System.Xml.Linq.XNamespace, System.Xml.Linq.XNamespace)
 // docid: M:System.Xml.Linq.XNamespace.op_Equality(System.Xml.Linq.XNamespace,System.Xml.Linq.XNamespace)
     /**
@@ -4532,6 +4606,10 @@ public final class XNamespace
         return (__return) != 0;
         }
     }
+    public static func == (left : dotnet.System.Xml.Linq.XNamespace, right : dotnet.System.Xml.Linq.XNamespace) -> Bool
+    {
+        return try! op_Equality(left: left, right: right);
+    }
     // [IsSpecialName] System.Xml.Linq.XNamespace op_Implicit(System.String)
 // docid: M:System.Xml.Linq.XNamespace.op_Implicit(System.String)
     public class func op_Implicit(namespaceName : Optional<dotnet.System.String>) throws -> Optional<dotnet.System.Xml.Linq.XNamespace> {
@@ -4545,6 +4623,18 @@ public final class XNamespace
         } else {
             return nil;
         }
+        }
+    }
+// TODO conversion to Self [IsSpecialName] System.Xml.Linq.XNamespace op_Implicit(System.String)
+    public convenience init?(namespaceName : Optional<dotnet.System.String>) 
+    {
+        var __thrown : NullableHandle = nil;
+        let __return = System_Xml_Linq_XNamespace_XNamespace__op_Implicit_0__1__String(&__thrown, namespaceName?.get_handle() ?? nil);
+        assert(__thrown == nil);
+        if let __ret_unwrapped = __return {
+            self.init(hndl: __ret_unwrapped);
+        } else {
+            return nil;
         }
     }
     // [IsSpecialName] bool op_Inequality(System.Xml.Linq.XNamespace, System.Xml.Linq.XNamespace)
@@ -4565,6 +4655,10 @@ public final class XNamespace
         } else {
         return (__return) != 0;
         }
+    }
+    public static func != (left : dotnet.System.Xml.Linq.XNamespace, right : dotnet.System.Xml.Linq.XNamespace) -> Bool
+    {
+        return try! op_Inequality(left: left, right: right);
     }
     // System.String ToString()
 // docid: M:System.Xml.Linq.XNamespace.ToString

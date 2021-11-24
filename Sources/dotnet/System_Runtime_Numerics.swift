@@ -728,6 +728,10 @@ public final class BigInteger
         return dotnet.System.Numerics.BigInteger(hndl : __return);
         }
     }
+    public static func + (left : dotnet.System.Numerics.BigInteger, right : dotnet.System.Numerics.BigInteger) -> dotnet.System.Numerics.BigInteger
+    {
+        return try! op_Addition(left: left, right: right);
+    }
     // [IsSpecialName] System.Numerics.BigInteger op_BitwiseAnd(System.Numerics.BigInteger, System.Numerics.BigInteger)
 // docid: M:System.Numerics.BigInteger.op_BitwiseAnd(System.Numerics.BigInteger,System.Numerics.BigInteger)
     /**
@@ -747,6 +751,10 @@ public final class BigInteger
         return dotnet.System.Numerics.BigInteger(hndl : __return);
         }
     }
+    public static func & (left : dotnet.System.Numerics.BigInteger, right : dotnet.System.Numerics.BigInteger) -> dotnet.System.Numerics.BigInteger
+    {
+        return try! op_BitwiseAnd(left: left, right: right);
+    }
     // [IsSpecialName] System.Numerics.BigInteger op_BitwiseOr(System.Numerics.BigInteger, System.Numerics.BigInteger)
 // docid: M:System.Numerics.BigInteger.op_BitwiseOr(System.Numerics.BigInteger,System.Numerics.BigInteger)
     /**
@@ -765,6 +773,10 @@ public final class BigInteger
         } else {
         return dotnet.System.Numerics.BigInteger(hndl : __return);
         }
+    }
+    public static func | (left : dotnet.System.Numerics.BigInteger, right : dotnet.System.Numerics.BigInteger) -> dotnet.System.Numerics.BigInteger
+    {
+        return try! op_BitwiseOr(left: left, right: right);
     }
     // [IsSpecialName] System.Numerics.BigInteger op_Decrement(System.Numerics.BigInteger)
 // docid: M:System.Numerics.BigInteger.op_Decrement(System.Numerics.BigInteger)
@@ -803,6 +815,10 @@ public final class BigInteger
         return dotnet.System.Numerics.BigInteger(hndl : __return);
         }
     }
+    public static func / (dividend : dotnet.System.Numerics.BigInteger, divisor : dotnet.System.Numerics.BigInteger) -> dotnet.System.Numerics.BigInteger
+    {
+        return try! op_Division(dividend: dividend, divisor: divisor);
+    }
     // [IsSpecialName] bool op_Equality(System.Int64, System.Numerics.BigInteger)
 // docid: M:System.Numerics.BigInteger.op_Equality(System.Int64,System.Numerics.BigInteger)
     /**
@@ -822,6 +838,10 @@ public final class BigInteger
         } else {
         return (__return) != 0;
         }
+    }
+    public static func == (left : Swift.Int64, right : dotnet.System.Numerics.BigInteger) -> Bool
+    {
+        return try! op_Equality(left: left, right: right);
     }
     // [IsSpecialName] bool op_Equality(System.Numerics.BigInteger, System.Int64)
 // docid: M:System.Numerics.BigInteger.op_Equality(System.Numerics.BigInteger,System.Int64)
@@ -843,6 +863,10 @@ public final class BigInteger
         return (__return) != 0;
         }
     }
+    public static func == (left : dotnet.System.Numerics.BigInteger, right : Swift.Int64) -> Bool
+    {
+        return try! op_Equality(left: left, right: right);
+    }
     // [IsSpecialName] bool op_Equality(System.Numerics.BigInteger, System.Numerics.BigInteger)
 // docid: M:System.Numerics.BigInteger.op_Equality(System.Numerics.BigInteger,System.Numerics.BigInteger)
     /**
@@ -862,6 +886,10 @@ public final class BigInteger
         } else {
         return (__return) != 0;
         }
+    }
+    public static func == (left : dotnet.System.Numerics.BigInteger, right : dotnet.System.Numerics.BigInteger) -> Bool
+    {
+        return try! op_Equality(left: left, right: right);
     }
     // [IsSpecialName] bool op_Equality(System.Numerics.BigInteger, System.UInt64)
 // docid: M:System.Numerics.BigInteger.op_Equality(System.Numerics.BigInteger,System.UInt64)
@@ -883,6 +911,10 @@ public final class BigInteger
         return (__return) != 0;
         }
     }
+    public static func == (left : dotnet.System.Numerics.BigInteger, right : Swift.UInt64) -> Bool
+    {
+        return try! op_Equality(left: left, right: right);
+    }
     // [IsSpecialName] bool op_Equality(System.UInt64, System.Numerics.BigInteger)
 // docid: M:System.Numerics.BigInteger.op_Equality(System.UInt64,System.Numerics.BigInteger)
     /**
@@ -903,6 +935,10 @@ public final class BigInteger
         return (__return) != 0;
         }
     }
+    public static func == (left : Swift.UInt64, right : dotnet.System.Numerics.BigInteger) -> Bool
+    {
+        return try! op_Equality(left: left, right: right);
+    }
     // [IsSpecialName] System.Numerics.BigInteger op_ExclusiveOr(System.Numerics.BigInteger, System.Numerics.BigInteger)
 // docid: M:System.Numerics.BigInteger.op_ExclusiveOr(System.Numerics.BigInteger,System.Numerics.BigInteger)
     /**
@@ -922,6 +958,10 @@ public final class BigInteger
         return dotnet.System.Numerics.BigInteger(hndl : __return);
         }
     }
+    public static func ^ (left : dotnet.System.Numerics.BigInteger, right : dotnet.System.Numerics.BigInteger) -> dotnet.System.Numerics.BigInteger
+    {
+        return try! op_ExclusiveOr(left: left, right: right);
+    }
     // [IsSpecialName] System.Numerics.BigInteger op_Explicit(System.Decimal)
 // docid: M:System.Numerics.BigInteger.op_Explicit(System.Decimal)
     public class func op_Explicit(value : dotnet.System.Decimal) throws -> dotnet.System.Numerics.BigInteger {
@@ -933,6 +973,8 @@ public final class BigInteger
         return dotnet.System.Numerics.BigInteger(hndl : __return);
         }
     }
+// TODO conversion to Self [IsSpecialName] System.Numerics.BigInteger op_Explicit(System.Decimal)
+// skip because equivalent ctor
     // [IsSpecialName] System.Numerics.BigInteger op_Explicit(System.Double)
 // docid: M:System.Numerics.BigInteger.op_Explicit(System.Double)
     public class func op_Explicit(value : Swift.Double) throws -> dotnet.System.Numerics.BigInteger {
@@ -944,6 +986,8 @@ public final class BigInteger
         return dotnet.System.Numerics.BigInteger(hndl : __return);
         }
     }
+// TODO conversion to Self [IsSpecialName] System.Numerics.BigInteger op_Explicit(System.Double)
+// skip because equivalent ctor
     // [IsSpecialName] System.Byte op_Explicit(System.Numerics.BigInteger)
 // docid: M:System.Numerics.BigInteger.op_Explicit(System.Numerics.BigInteger)
     public class func op_Explicit(value : dotnet.System.Numerics.BigInteger) throws -> Swift.UInt8 {
@@ -955,6 +999,7 @@ public final class BigInteger
         return __return;
         }
     }
+// TODO conversion from Self [IsSpecialName] System.Byte op_Explicit(System.Numerics.BigInteger)
     // [IsSpecialName] System.Decimal op_Explicit(System.Numerics.BigInteger)
 // docid: M:System.Numerics.BigInteger.op_Explicit(System.Numerics.BigInteger)
     public class func op_Explicit(value : dotnet.System.Numerics.BigInteger) throws -> dotnet.System.Decimal {
@@ -966,6 +1011,7 @@ public final class BigInteger
         return dotnet.System.Decimal(hndl : __return);
         }
     }
+// TODO conversion from Self [IsSpecialName] System.Decimal op_Explicit(System.Numerics.BigInteger)
     // [IsSpecialName] System.Double op_Explicit(System.Numerics.BigInteger)
 // docid: M:System.Numerics.BigInteger.op_Explicit(System.Numerics.BigInteger)
     public class func op_Explicit(value : dotnet.System.Numerics.BigInteger) throws -> Swift.Double {
@@ -977,6 +1023,7 @@ public final class BigInteger
         return __return;
         }
     }
+// TODO conversion from Self [IsSpecialName] System.Double op_Explicit(System.Numerics.BigInteger)
     // [IsSpecialName] System.Int16 op_Explicit(System.Numerics.BigInteger)
 // docid: M:System.Numerics.BigInteger.op_Explicit(System.Numerics.BigInteger)
     public class func op_Explicit(value : dotnet.System.Numerics.BigInteger) throws -> Swift.Int16 {
@@ -988,6 +1035,7 @@ public final class BigInteger
         return __return;
         }
     }
+// TODO conversion from Self [IsSpecialName] System.Int16 op_Explicit(System.Numerics.BigInteger)
     // [IsSpecialName] System.Int32 op_Explicit(System.Numerics.BigInteger)
 // docid: M:System.Numerics.BigInteger.op_Explicit(System.Numerics.BigInteger)
     public class func op_Explicit(value : dotnet.System.Numerics.BigInteger) throws -> Swift.Int32 {
@@ -999,6 +1047,7 @@ public final class BigInteger
         return __return;
         }
     }
+// TODO conversion from Self [IsSpecialName] System.Int32 op_Explicit(System.Numerics.BigInteger)
     // [IsSpecialName] System.Int64 op_Explicit(System.Numerics.BigInteger)
 // docid: M:System.Numerics.BigInteger.op_Explicit(System.Numerics.BigInteger)
     public class func op_Explicit(value : dotnet.System.Numerics.BigInteger) throws -> Swift.Int64 {
@@ -1010,6 +1059,7 @@ public final class BigInteger
         return __return;
         }
     }
+// TODO conversion from Self [IsSpecialName] System.Int64 op_Explicit(System.Numerics.BigInteger)
     // [IsSpecialName] System.SByte op_Explicit(System.Numerics.BigInteger)
 // docid: M:System.Numerics.BigInteger.op_Explicit(System.Numerics.BigInteger)
     public class func op_Explicit(value : dotnet.System.Numerics.BigInteger) throws -> Swift.Int8 {
@@ -1021,6 +1071,7 @@ public final class BigInteger
         return __return;
         }
     }
+// TODO conversion from Self [IsSpecialName] System.SByte op_Explicit(System.Numerics.BigInteger)
     // [IsSpecialName] System.Single op_Explicit(System.Numerics.BigInteger)
 // docid: M:System.Numerics.BigInteger.op_Explicit(System.Numerics.BigInteger)
     public class func op_Explicit(value : dotnet.System.Numerics.BigInteger) throws -> Swift.Float {
@@ -1032,6 +1083,7 @@ public final class BigInteger
         return __return;
         }
     }
+// TODO conversion from Self [IsSpecialName] System.Single op_Explicit(System.Numerics.BigInteger)
     // [IsSpecialName] System.UInt16 op_Explicit(System.Numerics.BigInteger)
 // docid: M:System.Numerics.BigInteger.op_Explicit(System.Numerics.BigInteger)
     public class func op_Explicit(value : dotnet.System.Numerics.BigInteger) throws -> Swift.UInt16 {
@@ -1043,6 +1095,7 @@ public final class BigInteger
         return __return;
         }
     }
+// TODO conversion from Self [IsSpecialName] System.UInt16 op_Explicit(System.Numerics.BigInteger)
     // [IsSpecialName] System.UInt32 op_Explicit(System.Numerics.BigInteger)
 // docid: M:System.Numerics.BigInteger.op_Explicit(System.Numerics.BigInteger)
     public class func op_Explicit(value : dotnet.System.Numerics.BigInteger) throws -> Swift.UInt32 {
@@ -1054,6 +1107,7 @@ public final class BigInteger
         return __return;
         }
     }
+// TODO conversion from Self [IsSpecialName] System.UInt32 op_Explicit(System.Numerics.BigInteger)
     // [IsSpecialName] System.UInt64 op_Explicit(System.Numerics.BigInteger)
 // docid: M:System.Numerics.BigInteger.op_Explicit(System.Numerics.BigInteger)
     public class func op_Explicit(value : dotnet.System.Numerics.BigInteger) throws -> Swift.UInt64 {
@@ -1065,6 +1119,7 @@ public final class BigInteger
         return __return;
         }
     }
+// TODO conversion from Self [IsSpecialName] System.UInt64 op_Explicit(System.Numerics.BigInteger)
     // [IsSpecialName] System.Numerics.BigInteger op_Explicit(System.Single)
 // docid: M:System.Numerics.BigInteger.op_Explicit(System.Single)
     public class func op_Explicit(value : Swift.Float) throws -> dotnet.System.Numerics.BigInteger {
@@ -1076,6 +1131,8 @@ public final class BigInteger
         return dotnet.System.Numerics.BigInteger(hndl : __return);
         }
     }
+// TODO conversion to Self [IsSpecialName] System.Numerics.BigInteger op_Explicit(System.Single)
+// skip because equivalent ctor
     // [IsSpecialName] bool op_GreaterThan(System.Int64, System.Numerics.BigInteger)
 // docid: M:System.Numerics.BigInteger.op_GreaterThan(System.Int64,System.Numerics.BigInteger)
     /**
@@ -1095,6 +1152,10 @@ public final class BigInteger
         } else {
         return (__return) != 0;
         }
+    }
+    public static func > (left : Swift.Int64, right : dotnet.System.Numerics.BigInteger) -> Bool
+    {
+        return try! op_GreaterThan(left: left, right: right);
     }
     // [IsSpecialName] bool op_GreaterThan(System.Numerics.BigInteger, System.Int64)
 // docid: M:System.Numerics.BigInteger.op_GreaterThan(System.Numerics.BigInteger,System.Int64)
@@ -1116,6 +1177,10 @@ public final class BigInteger
         return (__return) != 0;
         }
     }
+    public static func > (left : dotnet.System.Numerics.BigInteger, right : Swift.Int64) -> Bool
+    {
+        return try! op_GreaterThan(left: left, right: right);
+    }
     // [IsSpecialName] bool op_GreaterThan(System.Numerics.BigInteger, System.Numerics.BigInteger)
 // docid: M:System.Numerics.BigInteger.op_GreaterThan(System.Numerics.BigInteger,System.Numerics.BigInteger)
     /**
@@ -1135,6 +1200,10 @@ public final class BigInteger
         } else {
         return (__return) != 0;
         }
+    }
+    public static func > (left : dotnet.System.Numerics.BigInteger, right : dotnet.System.Numerics.BigInteger) -> Bool
+    {
+        return try! op_GreaterThan(left: left, right: right);
     }
     // [IsSpecialName] bool op_GreaterThan(System.Numerics.BigInteger, System.UInt64)
 // docid: M:System.Numerics.BigInteger.op_GreaterThan(System.Numerics.BigInteger,System.UInt64)
@@ -1156,6 +1225,10 @@ public final class BigInteger
         return (__return) != 0;
         }
     }
+    public static func > (left : dotnet.System.Numerics.BigInteger, right : Swift.UInt64) -> Bool
+    {
+        return try! op_GreaterThan(left: left, right: right);
+    }
     // [IsSpecialName] bool op_GreaterThan(System.UInt64, System.Numerics.BigInteger)
 // docid: M:System.Numerics.BigInteger.op_GreaterThan(System.UInt64,System.Numerics.BigInteger)
     /**
@@ -1175,6 +1248,10 @@ public final class BigInteger
         } else {
         return (__return) != 0;
         }
+    }
+    public static func > (left : Swift.UInt64, right : dotnet.System.Numerics.BigInteger) -> Bool
+    {
+        return try! op_GreaterThan(left: left, right: right);
     }
     // [IsSpecialName] bool op_GreaterThanOrEqual(System.Int64, System.Numerics.BigInteger)
 // docid: M:System.Numerics.BigInteger.op_GreaterThanOrEqual(System.Int64,System.Numerics.BigInteger)
@@ -1196,6 +1273,10 @@ public final class BigInteger
         return (__return) != 0;
         }
     }
+    public static func >= (left : Swift.Int64, right : dotnet.System.Numerics.BigInteger) -> Bool
+    {
+        return try! op_GreaterThanOrEqual(left: left, right: right);
+    }
     // [IsSpecialName] bool op_GreaterThanOrEqual(System.Numerics.BigInteger, System.Int64)
 // docid: M:System.Numerics.BigInteger.op_GreaterThanOrEqual(System.Numerics.BigInteger,System.Int64)
     /**
@@ -1215,6 +1296,10 @@ public final class BigInteger
         } else {
         return (__return) != 0;
         }
+    }
+    public static func >= (left : dotnet.System.Numerics.BigInteger, right : Swift.Int64) -> Bool
+    {
+        return try! op_GreaterThanOrEqual(left: left, right: right);
     }
     // [IsSpecialName] bool op_GreaterThanOrEqual(System.Numerics.BigInteger, System.Numerics.BigInteger)
 // docid: M:System.Numerics.BigInteger.op_GreaterThanOrEqual(System.Numerics.BigInteger,System.Numerics.BigInteger)
@@ -1236,6 +1321,10 @@ public final class BigInteger
         return (__return) != 0;
         }
     }
+    public static func >= (left : dotnet.System.Numerics.BigInteger, right : dotnet.System.Numerics.BigInteger) -> Bool
+    {
+        return try! op_GreaterThanOrEqual(left: left, right: right);
+    }
     // [IsSpecialName] bool op_GreaterThanOrEqual(System.Numerics.BigInteger, System.UInt64)
 // docid: M:System.Numerics.BigInteger.op_GreaterThanOrEqual(System.Numerics.BigInteger,System.UInt64)
     /**
@@ -1255,6 +1344,10 @@ public final class BigInteger
         } else {
         return (__return) != 0;
         }
+    }
+    public static func >= (left : dotnet.System.Numerics.BigInteger, right : Swift.UInt64) -> Bool
+    {
+        return try! op_GreaterThanOrEqual(left: left, right: right);
     }
     // [IsSpecialName] bool op_GreaterThanOrEqual(System.UInt64, System.Numerics.BigInteger)
 // docid: M:System.Numerics.BigInteger.op_GreaterThanOrEqual(System.UInt64,System.Numerics.BigInteger)
@@ -1276,6 +1369,10 @@ public final class BigInteger
         return (__return) != 0;
         }
     }
+    public static func >= (left : Swift.UInt64, right : dotnet.System.Numerics.BigInteger) -> Bool
+    {
+        return try! op_GreaterThanOrEqual(left: left, right: right);
+    }
     // [IsSpecialName] System.Numerics.BigInteger op_Implicit(System.Byte)
 // docid: M:System.Numerics.BigInteger.op_Implicit(System.Byte)
     public class func op_Implicit(value : Swift.UInt8) throws -> dotnet.System.Numerics.BigInteger {
@@ -1286,6 +1383,14 @@ public final class BigInteger
         } else {
         return dotnet.System.Numerics.BigInteger(hndl : __return);
         }
+    }
+// TODO conversion to Self [IsSpecialName] System.Numerics.BigInteger op_Implicit(System.Byte)
+    public convenience init(value : Swift.UInt8) 
+    {
+        var __thrown : NullableHandle = nil;
+        let __return = System_Numerics_BigInteger_BigInteger__op_Implicit_0__1__u8(&__thrown, value);
+        assert(__thrown == nil);
+            self.init(hndl: __return);
     }
     // [IsSpecialName] System.Numerics.BigInteger op_Implicit(System.Int16)
 // docid: M:System.Numerics.BigInteger.op_Implicit(System.Int16)
@@ -1298,6 +1403,14 @@ public final class BigInteger
         return dotnet.System.Numerics.BigInteger(hndl : __return);
         }
     }
+// TODO conversion to Self [IsSpecialName] System.Numerics.BigInteger op_Implicit(System.Int16)
+    public convenience init(value : Swift.Int16) 
+    {
+        var __thrown : NullableHandle = nil;
+        let __return = System_Numerics_BigInteger_BigInteger__op_Implicit_0__1__i16(&__thrown, value);
+        assert(__thrown == nil);
+            self.init(hndl: __return);
+    }
     // [IsSpecialName] System.Numerics.BigInteger op_Implicit(System.Int32)
 // docid: M:System.Numerics.BigInteger.op_Implicit(System.Int32)
     public class func op_Implicit(value : Swift.Int32) throws -> dotnet.System.Numerics.BigInteger {
@@ -1309,6 +1422,8 @@ public final class BigInteger
         return dotnet.System.Numerics.BigInteger(hndl : __return);
         }
     }
+// TODO conversion to Self [IsSpecialName] System.Numerics.BigInteger op_Implicit(System.Int32)
+// skip because equivalent ctor
     // [IsSpecialName] System.Numerics.BigInteger op_Implicit(System.Int64)
 // docid: M:System.Numerics.BigInteger.op_Implicit(System.Int64)
     public class func op_Implicit(value : Swift.Int64) throws -> dotnet.System.Numerics.BigInteger {
@@ -1320,6 +1435,8 @@ public final class BigInteger
         return dotnet.System.Numerics.BigInteger(hndl : __return);
         }
     }
+// TODO conversion to Self [IsSpecialName] System.Numerics.BigInteger op_Implicit(System.Int64)
+// skip because equivalent ctor
     // [IsSpecialName] System.Numerics.BigInteger op_Implicit(System.SByte)
 // docid: M:System.Numerics.BigInteger.op_Implicit(System.SByte)
     public class func op_Implicit(value : Swift.Int8) throws -> dotnet.System.Numerics.BigInteger {
@@ -1330,6 +1447,14 @@ public final class BigInteger
         } else {
         return dotnet.System.Numerics.BigInteger(hndl : __return);
         }
+    }
+// TODO conversion to Self [IsSpecialName] System.Numerics.BigInteger op_Implicit(System.SByte)
+    public convenience init(value : Swift.Int8) 
+    {
+        var __thrown : NullableHandle = nil;
+        let __return = System_Numerics_BigInteger_BigInteger__op_Implicit_0__1__i8(&__thrown, value);
+        assert(__thrown == nil);
+            self.init(hndl: __return);
     }
     // [IsSpecialName] System.Numerics.BigInteger op_Implicit(System.UInt16)
 // docid: M:System.Numerics.BigInteger.op_Implicit(System.UInt16)
@@ -1342,6 +1467,14 @@ public final class BigInteger
         return dotnet.System.Numerics.BigInteger(hndl : __return);
         }
     }
+// TODO conversion to Self [IsSpecialName] System.Numerics.BigInteger op_Implicit(System.UInt16)
+    public convenience init(value : Swift.UInt16) 
+    {
+        var __thrown : NullableHandle = nil;
+        let __return = System_Numerics_BigInteger_BigInteger__op_Implicit_0__1__u16(&__thrown, value);
+        assert(__thrown == nil);
+            self.init(hndl: __return);
+    }
     // [IsSpecialName] System.Numerics.BigInteger op_Implicit(System.UInt32)
 // docid: M:System.Numerics.BigInteger.op_Implicit(System.UInt32)
     public class func op_Implicit(value : Swift.UInt32) throws -> dotnet.System.Numerics.BigInteger {
@@ -1353,6 +1486,8 @@ public final class BigInteger
         return dotnet.System.Numerics.BigInteger(hndl : __return);
         }
     }
+// TODO conversion to Self [IsSpecialName] System.Numerics.BigInteger op_Implicit(System.UInt32)
+// skip because equivalent ctor
     // [IsSpecialName] System.Numerics.BigInteger op_Implicit(System.UInt64)
 // docid: M:System.Numerics.BigInteger.op_Implicit(System.UInt64)
     public class func op_Implicit(value : Swift.UInt64) throws -> dotnet.System.Numerics.BigInteger {
@@ -1364,6 +1499,8 @@ public final class BigInteger
         return dotnet.System.Numerics.BigInteger(hndl : __return);
         }
     }
+// TODO conversion to Self [IsSpecialName] System.Numerics.BigInteger op_Implicit(System.UInt64)
+// skip because equivalent ctor
     // [IsSpecialName] System.Numerics.BigInteger op_Increment(System.Numerics.BigInteger)
 // docid: M:System.Numerics.BigInteger.op_Increment(System.Numerics.BigInteger)
     /**
@@ -1402,6 +1539,10 @@ public final class BigInteger
         return (__return) != 0;
         }
     }
+    public static func != (left : Swift.Int64, right : dotnet.System.Numerics.BigInteger) -> Bool
+    {
+        return try! op_Inequality(left: left, right: right);
+    }
     // [IsSpecialName] bool op_Inequality(System.Numerics.BigInteger, System.Int64)
 // docid: M:System.Numerics.BigInteger.op_Inequality(System.Numerics.BigInteger,System.Int64)
     /**
@@ -1421,6 +1562,10 @@ public final class BigInteger
         } else {
         return (__return) != 0;
         }
+    }
+    public static func != (left : dotnet.System.Numerics.BigInteger, right : Swift.Int64) -> Bool
+    {
+        return try! op_Inequality(left: left, right: right);
     }
     // [IsSpecialName] bool op_Inequality(System.Numerics.BigInteger, System.Numerics.BigInteger)
 // docid: M:System.Numerics.BigInteger.op_Inequality(System.Numerics.BigInteger,System.Numerics.BigInteger)
@@ -1442,6 +1587,10 @@ public final class BigInteger
         return (__return) != 0;
         }
     }
+    public static func != (left : dotnet.System.Numerics.BigInteger, right : dotnet.System.Numerics.BigInteger) -> Bool
+    {
+        return try! op_Inequality(left: left, right: right);
+    }
     // [IsSpecialName] bool op_Inequality(System.Numerics.BigInteger, System.UInt64)
 // docid: M:System.Numerics.BigInteger.op_Inequality(System.Numerics.BigInteger,System.UInt64)
     /**
@@ -1461,6 +1610,10 @@ public final class BigInteger
         } else {
         return (__return) != 0;
         }
+    }
+    public static func != (left : dotnet.System.Numerics.BigInteger, right : Swift.UInt64) -> Bool
+    {
+        return try! op_Inequality(left: left, right: right);
     }
     // [IsSpecialName] bool op_Inequality(System.UInt64, System.Numerics.BigInteger)
 // docid: M:System.Numerics.BigInteger.op_Inequality(System.UInt64,System.Numerics.BigInteger)
@@ -1482,6 +1635,10 @@ public final class BigInteger
         return (__return) != 0;
         }
     }
+    public static func != (left : Swift.UInt64, right : dotnet.System.Numerics.BigInteger) -> Bool
+    {
+        return try! op_Inequality(left: left, right: right);
+    }
     // [IsSpecialName] System.Numerics.BigInteger op_LeftShift(System.Numerics.BigInteger, System.Int32)
 // docid: M:System.Numerics.BigInteger.op_LeftShift(System.Numerics.BigInteger,System.Int32)
     /**
@@ -1500,6 +1657,10 @@ public final class BigInteger
         } else {
         return dotnet.System.Numerics.BigInteger(hndl : __return);
         }
+    }
+    public static func << (value : dotnet.System.Numerics.BigInteger, shift : Swift.Int32) -> dotnet.System.Numerics.BigInteger
+    {
+        return try! op_LeftShift(value: value, shift: shift);
     }
     // [IsSpecialName] bool op_LessThan(System.Int64, System.Numerics.BigInteger)
 // docid: M:System.Numerics.BigInteger.op_LessThan(System.Int64,System.Numerics.BigInteger)
@@ -1521,6 +1682,10 @@ public final class BigInteger
         return (__return) != 0;
         }
     }
+    public static func < (left : Swift.Int64, right : dotnet.System.Numerics.BigInteger) -> Bool
+    {
+        return try! op_LessThan(left: left, right: right);
+    }
     // [IsSpecialName] bool op_LessThan(System.Numerics.BigInteger, System.Int64)
 // docid: M:System.Numerics.BigInteger.op_LessThan(System.Numerics.BigInteger,System.Int64)
     /**
@@ -1540,6 +1705,10 @@ public final class BigInteger
         } else {
         return (__return) != 0;
         }
+    }
+    public static func < (left : dotnet.System.Numerics.BigInteger, right : Swift.Int64) -> Bool
+    {
+        return try! op_LessThan(left: left, right: right);
     }
     // [IsSpecialName] bool op_LessThan(System.Numerics.BigInteger, System.Numerics.BigInteger)
 // docid: M:System.Numerics.BigInteger.op_LessThan(System.Numerics.BigInteger,System.Numerics.BigInteger)
@@ -1561,6 +1730,10 @@ public final class BigInteger
         return (__return) != 0;
         }
     }
+    public static func < (left : dotnet.System.Numerics.BigInteger, right : dotnet.System.Numerics.BigInteger) -> Bool
+    {
+        return try! op_LessThan(left: left, right: right);
+    }
     // [IsSpecialName] bool op_LessThan(System.Numerics.BigInteger, System.UInt64)
 // docid: M:System.Numerics.BigInteger.op_LessThan(System.Numerics.BigInteger,System.UInt64)
     /**
@@ -1580,6 +1753,10 @@ public final class BigInteger
         } else {
         return (__return) != 0;
         }
+    }
+    public static func < (left : dotnet.System.Numerics.BigInteger, right : Swift.UInt64) -> Bool
+    {
+        return try! op_LessThan(left: left, right: right);
     }
     // [IsSpecialName] bool op_LessThan(System.UInt64, System.Numerics.BigInteger)
 // docid: M:System.Numerics.BigInteger.op_LessThan(System.UInt64,System.Numerics.BigInteger)
@@ -1601,6 +1778,10 @@ public final class BigInteger
         return (__return) != 0;
         }
     }
+    public static func < (left : Swift.UInt64, right : dotnet.System.Numerics.BigInteger) -> Bool
+    {
+        return try! op_LessThan(left: left, right: right);
+    }
     // [IsSpecialName] bool op_LessThanOrEqual(System.Int64, System.Numerics.BigInteger)
 // docid: M:System.Numerics.BigInteger.op_LessThanOrEqual(System.Int64,System.Numerics.BigInteger)
     /**
@@ -1620,6 +1801,10 @@ public final class BigInteger
         } else {
         return (__return) != 0;
         }
+    }
+    public static func <= (left : Swift.Int64, right : dotnet.System.Numerics.BigInteger) -> Bool
+    {
+        return try! op_LessThanOrEqual(left: left, right: right);
     }
     // [IsSpecialName] bool op_LessThanOrEqual(System.Numerics.BigInteger, System.Int64)
 // docid: M:System.Numerics.BigInteger.op_LessThanOrEqual(System.Numerics.BigInteger,System.Int64)
@@ -1641,6 +1826,10 @@ public final class BigInteger
         return (__return) != 0;
         }
     }
+    public static func <= (left : dotnet.System.Numerics.BigInteger, right : Swift.Int64) -> Bool
+    {
+        return try! op_LessThanOrEqual(left: left, right: right);
+    }
     // [IsSpecialName] bool op_LessThanOrEqual(System.Numerics.BigInteger, System.Numerics.BigInteger)
 // docid: M:System.Numerics.BigInteger.op_LessThanOrEqual(System.Numerics.BigInteger,System.Numerics.BigInteger)
     /**
@@ -1660,6 +1849,10 @@ public final class BigInteger
         } else {
         return (__return) != 0;
         }
+    }
+    public static func <= (left : dotnet.System.Numerics.BigInteger, right : dotnet.System.Numerics.BigInteger) -> Bool
+    {
+        return try! op_LessThanOrEqual(left: left, right: right);
     }
     // [IsSpecialName] bool op_LessThanOrEqual(System.Numerics.BigInteger, System.UInt64)
 // docid: M:System.Numerics.BigInteger.op_LessThanOrEqual(System.Numerics.BigInteger,System.UInt64)
@@ -1681,6 +1874,10 @@ public final class BigInteger
         return (__return) != 0;
         }
     }
+    public static func <= (left : dotnet.System.Numerics.BigInteger, right : Swift.UInt64) -> Bool
+    {
+        return try! op_LessThanOrEqual(left: left, right: right);
+    }
     // [IsSpecialName] bool op_LessThanOrEqual(System.UInt64, System.Numerics.BigInteger)
 // docid: M:System.Numerics.BigInteger.op_LessThanOrEqual(System.UInt64,System.Numerics.BigInteger)
     /**
@@ -1701,6 +1898,10 @@ public final class BigInteger
         return (__return) != 0;
         }
     }
+    public static func <= (left : Swift.UInt64, right : dotnet.System.Numerics.BigInteger) -> Bool
+    {
+        return try! op_LessThanOrEqual(left: left, right: right);
+    }
     // [IsSpecialName] System.Numerics.BigInteger op_Modulus(System.Numerics.BigInteger, System.Numerics.BigInteger)
 // docid: M:System.Numerics.BigInteger.op_Modulus(System.Numerics.BigInteger,System.Numerics.BigInteger)
     /**
@@ -1720,6 +1921,10 @@ public final class BigInteger
         return dotnet.System.Numerics.BigInteger(hndl : __return);
         }
     }
+    public static func % (dividend : dotnet.System.Numerics.BigInteger, divisor : dotnet.System.Numerics.BigInteger) -> dotnet.System.Numerics.BigInteger
+    {
+        return try! op_Modulus(dividend: dividend, divisor: divisor);
+    }
     // [IsSpecialName] System.Numerics.BigInteger op_Multiply(System.Numerics.BigInteger, System.Numerics.BigInteger)
 // docid: M:System.Numerics.BigInteger.op_Multiply(System.Numerics.BigInteger,System.Numerics.BigInteger)
     /**
@@ -1738,6 +1943,10 @@ public final class BigInteger
         } else {
         return dotnet.System.Numerics.BigInteger(hndl : __return);
         }
+    }
+    public static func * (left : dotnet.System.Numerics.BigInteger, right : dotnet.System.Numerics.BigInteger) -> dotnet.System.Numerics.BigInteger
+    {
+        return try! op_Multiply(left: left, right: right);
     }
     // [IsSpecialName] System.Numerics.BigInteger op_OnesComplement(System.Numerics.BigInteger)
 // docid: M:System.Numerics.BigInteger.op_OnesComplement(System.Numerics.BigInteger)
@@ -1776,6 +1985,10 @@ public final class BigInteger
         return dotnet.System.Numerics.BigInteger(hndl : __return);
         }
     }
+    public static func >> (value : dotnet.System.Numerics.BigInteger, shift : Swift.Int32) -> dotnet.System.Numerics.BigInteger
+    {
+        return try! op_RightShift(value: value, shift: shift);
+    }
     // [IsSpecialName] System.Numerics.BigInteger op_Subtraction(System.Numerics.BigInteger, System.Numerics.BigInteger)
 // docid: M:System.Numerics.BigInteger.op_Subtraction(System.Numerics.BigInteger,System.Numerics.BigInteger)
     /**
@@ -1794,6 +2007,10 @@ public final class BigInteger
         } else {
         return dotnet.System.Numerics.BigInteger(hndl : __return);
         }
+    }
+    public static func - (left : dotnet.System.Numerics.BigInteger, right : dotnet.System.Numerics.BigInteger) -> dotnet.System.Numerics.BigInteger
+    {
+        return try! op_Subtraction(left: left, right: right);
     }
     // [IsSpecialName] System.Numerics.BigInteger op_UnaryNegation(System.Numerics.BigInteger)
 // docid: M:System.Numerics.BigInteger.op_UnaryNegation(System.Numerics.BigInteger)
@@ -2889,6 +3106,10 @@ public final class Complex
         return dotnet.System.Numerics.Complex(hndl : __return);
         }
     }
+    public static func + (left : Swift.Double, right : dotnet.System.Numerics.Complex) -> dotnet.System.Numerics.Complex
+    {
+        return try! op_Addition(left: left, right: right);
+    }
     // [IsSpecialName] System.Numerics.Complex op_Addition(System.Numerics.Complex, System.Double)
 // docid: M:System.Numerics.Complex.op_Addition(System.Numerics.Complex,System.Double)
     /**
@@ -2907,6 +3128,10 @@ public final class Complex
         } else {
         return dotnet.System.Numerics.Complex(hndl : __return);
         }
+    }
+    public static func + (left : dotnet.System.Numerics.Complex, right : Swift.Double) -> dotnet.System.Numerics.Complex
+    {
+        return try! op_Addition(left: left, right: right);
     }
     // [IsSpecialName] System.Numerics.Complex op_Addition(System.Numerics.Complex, System.Numerics.Complex)
 // docid: M:System.Numerics.Complex.op_Addition(System.Numerics.Complex,System.Numerics.Complex)
@@ -2927,6 +3152,10 @@ public final class Complex
         return dotnet.System.Numerics.Complex(hndl : __return);
         }
     }
+    public static func + (left : dotnet.System.Numerics.Complex, right : dotnet.System.Numerics.Complex) -> dotnet.System.Numerics.Complex
+    {
+        return try! op_Addition(left: left, right: right);
+    }
     // [IsSpecialName] System.Numerics.Complex op_Division(System.Double, System.Numerics.Complex)
 // docid: M:System.Numerics.Complex.op_Division(System.Double,System.Numerics.Complex)
     /**
@@ -2945,6 +3174,10 @@ public final class Complex
         } else {
         return dotnet.System.Numerics.Complex(hndl : __return);
         }
+    }
+    public static func / (left : Swift.Double, right : dotnet.System.Numerics.Complex) -> dotnet.System.Numerics.Complex
+    {
+        return try! op_Division(left: left, right: right);
     }
     // [IsSpecialName] System.Numerics.Complex op_Division(System.Numerics.Complex, System.Double)
 // docid: M:System.Numerics.Complex.op_Division(System.Numerics.Complex,System.Double)
@@ -2965,6 +3198,10 @@ public final class Complex
         return dotnet.System.Numerics.Complex(hndl : __return);
         }
     }
+    public static func / (left : dotnet.System.Numerics.Complex, right : Swift.Double) -> dotnet.System.Numerics.Complex
+    {
+        return try! op_Division(left: left, right: right);
+    }
     // [IsSpecialName] System.Numerics.Complex op_Division(System.Numerics.Complex, System.Numerics.Complex)
 // docid: M:System.Numerics.Complex.op_Division(System.Numerics.Complex,System.Numerics.Complex)
     /**
@@ -2983,6 +3220,10 @@ public final class Complex
         } else {
         return dotnet.System.Numerics.Complex(hndl : __return);
         }
+    }
+    public static func / (left : dotnet.System.Numerics.Complex, right : dotnet.System.Numerics.Complex) -> dotnet.System.Numerics.Complex
+    {
+        return try! op_Division(left: left, right: right);
     }
     // [IsSpecialName] bool op_Equality(System.Numerics.Complex, System.Numerics.Complex)
 // docid: M:System.Numerics.Complex.op_Equality(System.Numerics.Complex,System.Numerics.Complex)
@@ -3004,6 +3245,10 @@ public final class Complex
         return (__return) != 0;
         }
     }
+    public static func == (left : dotnet.System.Numerics.Complex, right : dotnet.System.Numerics.Complex) -> Bool
+    {
+        return try! op_Equality(left: left, right: right);
+    }
     // [IsSpecialName] System.Numerics.Complex op_Explicit(System.Decimal)
 // docid: M:System.Numerics.Complex.op_Explicit(System.Decimal)
     public class func op_Explicit(value : dotnet.System.Decimal) throws -> dotnet.System.Numerics.Complex {
@@ -3013,6 +3258,17 @@ public final class Complex
             throw dotnet.System.Exception(hndl: __ex);
         } else {
         return dotnet.System.Numerics.Complex(hndl : __return);
+        }
+    }
+// TODO conversion to Self [IsSpecialName] System.Numerics.Complex op_Explicit(System.Decimal)
+    public convenience init(value : dotnet.System.Decimal) throws
+    {
+        var __thrown : NullableHandle = nil;
+        let __return = System_Numerics_Complex_Complex__op_Explicit_0__1__Decimal(&__thrown, value.get_handle());
+        if let __ex =  __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: __return);
         }
     }
     // [IsSpecialName] System.Numerics.Complex op_Explicit(System.Numerics.BigInteger)
@@ -3026,6 +3282,17 @@ public final class Complex
         return dotnet.System.Numerics.Complex(hndl : __return);
         }
     }
+// TODO conversion to Self [IsSpecialName] System.Numerics.Complex op_Explicit(System.Numerics.BigInteger)
+    public convenience init(value : dotnet.System.Numerics.BigInteger) throws
+    {
+        var __thrown : NullableHandle = nil;
+        let __return = System_Numerics_Complex_Complex__op_Explicit_0__1__BigInteger(&__thrown, value.get_handle());
+        if let __ex =  __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: __return);
+        }
+    }
     // [IsSpecialName] System.Numerics.Complex op_Implicit(System.Byte)
 // docid: M:System.Numerics.Complex.op_Implicit(System.Byte)
     public class func op_Implicit(value : Swift.UInt8) throws -> dotnet.System.Numerics.Complex {
@@ -3036,6 +3303,14 @@ public final class Complex
         } else {
         return dotnet.System.Numerics.Complex(hndl : __return);
         }
+    }
+// TODO conversion to Self [IsSpecialName] System.Numerics.Complex op_Implicit(System.Byte)
+    public convenience init(value : Swift.UInt8) 
+    {
+        var __thrown : NullableHandle = nil;
+        let __return = System_Numerics_Complex_Complex__op_Implicit_0__1__u8(&__thrown, value);
+        assert(__thrown == nil);
+            self.init(hndl: __return);
     }
     // [IsSpecialName] System.Numerics.Complex op_Implicit(System.Double)
 // docid: M:System.Numerics.Complex.op_Implicit(System.Double)
@@ -3048,6 +3323,14 @@ public final class Complex
         return dotnet.System.Numerics.Complex(hndl : __return);
         }
     }
+// TODO conversion to Self [IsSpecialName] System.Numerics.Complex op_Implicit(System.Double)
+    public convenience init(value : Swift.Double) 
+    {
+        var __thrown : NullableHandle = nil;
+        let __return = System_Numerics_Complex_Complex__op_Implicit_0__1__f64(&__thrown, value);
+        assert(__thrown == nil);
+            self.init(hndl: __return);
+    }
     // [IsSpecialName] System.Numerics.Complex op_Implicit(System.Int16)
 // docid: M:System.Numerics.Complex.op_Implicit(System.Int16)
     public class func op_Implicit(value : Swift.Int16) throws -> dotnet.System.Numerics.Complex {
@@ -3058,6 +3341,14 @@ public final class Complex
         } else {
         return dotnet.System.Numerics.Complex(hndl : __return);
         }
+    }
+// TODO conversion to Self [IsSpecialName] System.Numerics.Complex op_Implicit(System.Int16)
+    public convenience init(value : Swift.Int16) 
+    {
+        var __thrown : NullableHandle = nil;
+        let __return = System_Numerics_Complex_Complex__op_Implicit_0__1__i16(&__thrown, value);
+        assert(__thrown == nil);
+            self.init(hndl: __return);
     }
     // [IsSpecialName] System.Numerics.Complex op_Implicit(System.Int32)
 // docid: M:System.Numerics.Complex.op_Implicit(System.Int32)
@@ -3070,6 +3361,14 @@ public final class Complex
         return dotnet.System.Numerics.Complex(hndl : __return);
         }
     }
+// TODO conversion to Self [IsSpecialName] System.Numerics.Complex op_Implicit(System.Int32)
+    public convenience init(value : Swift.Int32) 
+    {
+        var __thrown : NullableHandle = nil;
+        let __return = System_Numerics_Complex_Complex__op_Implicit_0__1__i32(&__thrown, value);
+        assert(__thrown == nil);
+            self.init(hndl: __return);
+    }
     // [IsSpecialName] System.Numerics.Complex op_Implicit(System.Int64)
 // docid: M:System.Numerics.Complex.op_Implicit(System.Int64)
     public class func op_Implicit(value : Swift.Int64) throws -> dotnet.System.Numerics.Complex {
@@ -3080,6 +3379,14 @@ public final class Complex
         } else {
         return dotnet.System.Numerics.Complex(hndl : __return);
         }
+    }
+// TODO conversion to Self [IsSpecialName] System.Numerics.Complex op_Implicit(System.Int64)
+    public convenience init(value : Swift.Int64) 
+    {
+        var __thrown : NullableHandle = nil;
+        let __return = System_Numerics_Complex_Complex__op_Implicit_0__1__i64(&__thrown, value);
+        assert(__thrown == nil);
+            self.init(hndl: __return);
     }
     // [IsSpecialName] System.Numerics.Complex op_Implicit(System.SByte)
 // docid: M:System.Numerics.Complex.op_Implicit(System.SByte)
@@ -3092,6 +3399,14 @@ public final class Complex
         return dotnet.System.Numerics.Complex(hndl : __return);
         }
     }
+// TODO conversion to Self [IsSpecialName] System.Numerics.Complex op_Implicit(System.SByte)
+    public convenience init(value : Swift.Int8) 
+    {
+        var __thrown : NullableHandle = nil;
+        let __return = System_Numerics_Complex_Complex__op_Implicit_0__1__i8(&__thrown, value);
+        assert(__thrown == nil);
+            self.init(hndl: __return);
+    }
     // [IsSpecialName] System.Numerics.Complex op_Implicit(System.Single)
 // docid: M:System.Numerics.Complex.op_Implicit(System.Single)
     public class func op_Implicit(value : Swift.Float) throws -> dotnet.System.Numerics.Complex {
@@ -3102,6 +3417,14 @@ public final class Complex
         } else {
         return dotnet.System.Numerics.Complex(hndl : __return);
         }
+    }
+// TODO conversion to Self [IsSpecialName] System.Numerics.Complex op_Implicit(System.Single)
+    public convenience init(value : Swift.Float) 
+    {
+        var __thrown : NullableHandle = nil;
+        let __return = System_Numerics_Complex_Complex__op_Implicit_0__1__f32(&__thrown, value);
+        assert(__thrown == nil);
+            self.init(hndl: __return);
     }
     // [IsSpecialName] System.Numerics.Complex op_Implicit(System.UInt16)
 // docid: M:System.Numerics.Complex.op_Implicit(System.UInt16)
@@ -3114,6 +3437,14 @@ public final class Complex
         return dotnet.System.Numerics.Complex(hndl : __return);
         }
     }
+// TODO conversion to Self [IsSpecialName] System.Numerics.Complex op_Implicit(System.UInt16)
+    public convenience init(value : Swift.UInt16) 
+    {
+        var __thrown : NullableHandle = nil;
+        let __return = System_Numerics_Complex_Complex__op_Implicit_0__1__u16(&__thrown, value);
+        assert(__thrown == nil);
+            self.init(hndl: __return);
+    }
     // [IsSpecialName] System.Numerics.Complex op_Implicit(System.UInt32)
 // docid: M:System.Numerics.Complex.op_Implicit(System.UInt32)
     public class func op_Implicit(value : Swift.UInt32) throws -> dotnet.System.Numerics.Complex {
@@ -3125,6 +3456,14 @@ public final class Complex
         return dotnet.System.Numerics.Complex(hndl : __return);
         }
     }
+// TODO conversion to Self [IsSpecialName] System.Numerics.Complex op_Implicit(System.UInt32)
+    public convenience init(value : Swift.UInt32) 
+    {
+        var __thrown : NullableHandle = nil;
+        let __return = System_Numerics_Complex_Complex__op_Implicit_0__1__u32(&__thrown, value);
+        assert(__thrown == nil);
+            self.init(hndl: __return);
+    }
     // [IsSpecialName] System.Numerics.Complex op_Implicit(System.UInt64)
 // docid: M:System.Numerics.Complex.op_Implicit(System.UInt64)
     public class func op_Implicit(value : Swift.UInt64) throws -> dotnet.System.Numerics.Complex {
@@ -3135,6 +3474,14 @@ public final class Complex
         } else {
         return dotnet.System.Numerics.Complex(hndl : __return);
         }
+    }
+// TODO conversion to Self [IsSpecialName] System.Numerics.Complex op_Implicit(System.UInt64)
+    public convenience init(value : Swift.UInt64) 
+    {
+        var __thrown : NullableHandle = nil;
+        let __return = System_Numerics_Complex_Complex__op_Implicit_0__1__u64(&__thrown, value);
+        assert(__thrown == nil);
+            self.init(hndl: __return);
     }
     // [IsSpecialName] bool op_Inequality(System.Numerics.Complex, System.Numerics.Complex)
 // docid: M:System.Numerics.Complex.op_Inequality(System.Numerics.Complex,System.Numerics.Complex)
@@ -3156,6 +3503,10 @@ public final class Complex
         return (__return) != 0;
         }
     }
+    public static func != (left : dotnet.System.Numerics.Complex, right : dotnet.System.Numerics.Complex) -> Bool
+    {
+        return try! op_Inequality(left: left, right: right);
+    }
     // [IsSpecialName] System.Numerics.Complex op_Multiply(System.Double, System.Numerics.Complex)
 // docid: M:System.Numerics.Complex.op_Multiply(System.Double,System.Numerics.Complex)
     /**
@@ -3174,6 +3525,10 @@ public final class Complex
         } else {
         return dotnet.System.Numerics.Complex(hndl : __return);
         }
+    }
+    public static func * (left : Swift.Double, right : dotnet.System.Numerics.Complex) -> dotnet.System.Numerics.Complex
+    {
+        return try! op_Multiply(left: left, right: right);
     }
     // [IsSpecialName] System.Numerics.Complex op_Multiply(System.Numerics.Complex, System.Double)
 // docid: M:System.Numerics.Complex.op_Multiply(System.Numerics.Complex,System.Double)
@@ -3194,6 +3549,10 @@ public final class Complex
         return dotnet.System.Numerics.Complex(hndl : __return);
         }
     }
+    public static func * (left : dotnet.System.Numerics.Complex, right : Swift.Double) -> dotnet.System.Numerics.Complex
+    {
+        return try! op_Multiply(left: left, right: right);
+    }
     // [IsSpecialName] System.Numerics.Complex op_Multiply(System.Numerics.Complex, System.Numerics.Complex)
 // docid: M:System.Numerics.Complex.op_Multiply(System.Numerics.Complex,System.Numerics.Complex)
     /**
@@ -3212,6 +3571,10 @@ public final class Complex
         } else {
         return dotnet.System.Numerics.Complex(hndl : __return);
         }
+    }
+    public static func * (left : dotnet.System.Numerics.Complex, right : dotnet.System.Numerics.Complex) -> dotnet.System.Numerics.Complex
+    {
+        return try! op_Multiply(left: left, right: right);
     }
     // [IsSpecialName] System.Numerics.Complex op_Subtraction(System.Double, System.Numerics.Complex)
 // docid: M:System.Numerics.Complex.op_Subtraction(System.Double,System.Numerics.Complex)
@@ -3232,6 +3595,10 @@ public final class Complex
         return dotnet.System.Numerics.Complex(hndl : __return);
         }
     }
+    public static func - (left : Swift.Double, right : dotnet.System.Numerics.Complex) -> dotnet.System.Numerics.Complex
+    {
+        return try! op_Subtraction(left: left, right: right);
+    }
     // [IsSpecialName] System.Numerics.Complex op_Subtraction(System.Numerics.Complex, System.Double)
 // docid: M:System.Numerics.Complex.op_Subtraction(System.Numerics.Complex,System.Double)
     /**
@@ -3251,6 +3618,10 @@ public final class Complex
         return dotnet.System.Numerics.Complex(hndl : __return);
         }
     }
+    public static func - (left : dotnet.System.Numerics.Complex, right : Swift.Double) -> dotnet.System.Numerics.Complex
+    {
+        return try! op_Subtraction(left: left, right: right);
+    }
     // [IsSpecialName] System.Numerics.Complex op_Subtraction(System.Numerics.Complex, System.Numerics.Complex)
 // docid: M:System.Numerics.Complex.op_Subtraction(System.Numerics.Complex,System.Numerics.Complex)
     /**
@@ -3269,6 +3640,10 @@ public final class Complex
         } else {
         return dotnet.System.Numerics.Complex(hndl : __return);
         }
+    }
+    public static func - (left : dotnet.System.Numerics.Complex, right : dotnet.System.Numerics.Complex) -> dotnet.System.Numerics.Complex
+    {
+        return try! op_Subtraction(left: left, right: right);
     }
     // [IsSpecialName] System.Numerics.Complex op_UnaryNegation(System.Numerics.Complex)
 // docid: M:System.Numerics.Complex.op_UnaryNegation(System.Numerics.Complex)

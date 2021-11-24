@@ -2990,6 +2990,10 @@ open class HttpMethod
         return (__return) != 0;
         }
     }
+    public static func == (left : dotnet.System.Net.Http.HttpMethod, right : dotnet.System.Net.Http.HttpMethod) -> Bool
+    {
+        return try! op_Equality(left: left, right: right);
+    }
     // [IsSpecialName] bool op_Inequality(System.Net.Http.HttpMethod, System.Net.Http.HttpMethod)
 // docid: M:System.Net.Http.HttpMethod.op_Inequality(System.Net.Http.HttpMethod,System.Net.Http.HttpMethod)
     /**
@@ -3009,6 +3013,10 @@ open class HttpMethod
         } else {
         return (__return) != 0;
         }
+    }
+    public static func != (left : dotnet.System.Net.Http.HttpMethod, right : dotnet.System.Net.Http.HttpMethod) -> Bool
+    {
+        return try! op_Inequality(left: left, right: right);
     }
     // System.String ToString()
 // docid: M:System.Net.Http.HttpMethod.ToString

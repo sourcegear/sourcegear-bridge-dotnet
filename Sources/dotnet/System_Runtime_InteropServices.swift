@@ -1096,6 +1096,10 @@ public final class ArrayWithOffset
         return (__return) != 0;
         }
     }
+    public static func == (a : dotnet.System.Runtime.InteropServices.ArrayWithOffset, b : dotnet.System.Runtime.InteropServices.ArrayWithOffset) -> Bool
+    {
+        return try! op_Equality(a: a, b: b);
+    }
     // [IsSpecialName] bool op_Inequality(System.Runtime.InteropServices.ArrayWithOffset, System.Runtime.InteropServices.ArrayWithOffset)
 // docid: M:System.Runtime.InteropServices.ArrayWithOffset.op_Inequality(System.Runtime.InteropServices.ArrayWithOffset,System.Runtime.InteropServices.ArrayWithOffset)
     /**
@@ -1115,6 +1119,10 @@ public final class ArrayWithOffset
         } else {
         return (__return) != 0;
         }
+    }
+    public static func != (a : dotnet.System.Runtime.InteropServices.ArrayWithOffset, b : dotnet.System.Runtime.InteropServices.ArrayWithOffset) -> Bool
+    {
+        return try! op_Inequality(a: a, b: b);
     }
 } // ArrayWithOffset
 
@@ -4797,6 +4805,7 @@ public final class HandleRef
         return dotnet.System.IntPtr(val: __return);
         }
     }
+// TODO conversion from Self [IsSpecialName] System.IntPtr op_Explicit(System.Runtime.InteropServices.HandleRef)
     // System.IntPtr ToIntPtr(System.Runtime.InteropServices.HandleRef)
 // docid: M:System.Runtime.InteropServices.HandleRef.ToIntPtr(System.Runtime.InteropServices.HandleRef)
     /**

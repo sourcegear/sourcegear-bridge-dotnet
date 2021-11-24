@@ -3934,6 +3934,10 @@ public final class ConsoleKeyInfo
         return (__return) != 0;
         }
     }
+    public static func == (a : dotnet.System.ConsoleKeyInfo, b : dotnet.System.ConsoleKeyInfo) -> Bool
+    {
+        return try! op_Equality(a: a, b: b);
+    }
     // [IsSpecialName] bool op_Inequality(System.ConsoleKeyInfo, System.ConsoleKeyInfo)
 // docid: M:System.ConsoleKeyInfo.op_Inequality(System.ConsoleKeyInfo,System.ConsoleKeyInfo)
     /**
@@ -3953,6 +3957,10 @@ public final class ConsoleKeyInfo
         } else {
         return (__return) != 0;
         }
+    }
+    public static func != (a : dotnet.System.ConsoleKeyInfo, b : dotnet.System.ConsoleKeyInfo) -> Bool
+    {
+        return try! op_Inequality(a: a, b: b);
     }
     // [IsSpecialName] System.ConsoleKey get_Key()
 // docid: M:System.ConsoleKeyInfo.get_Key

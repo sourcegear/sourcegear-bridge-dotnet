@@ -1637,6 +1637,10 @@ public final class Color
         return (__return) != 0;
         }
     }
+    public static func == (left : dotnet.System.Drawing.Color, right : dotnet.System.Drawing.Color) -> Bool
+    {
+        return try! op_Equality(left: left, right: right);
+    }
     // [IsSpecialName] bool op_Inequality(System.Drawing.Color, System.Drawing.Color)
 // docid: M:System.Drawing.Color.op_Inequality(System.Drawing.Color,System.Drawing.Color)
     /**
@@ -1656,6 +1660,10 @@ public final class Color
         } else {
         return (__return) != 0;
         }
+    }
+    public static func != (left : dotnet.System.Drawing.Color, right : dotnet.System.Drawing.Color) -> Bool
+    {
+        return try! op_Inequality(left: left, right: right);
     }
     // System.Int32 ToArgb()
 // docid: M:System.Drawing.Color.ToArgb
@@ -5687,6 +5695,10 @@ public final class Point
         return dotnet.System.Drawing.Point(hndl : __return);
         }
     }
+    public static func + (pt : dotnet.System.Drawing.Point, sz : dotnet.System.Drawing.Size) -> dotnet.System.Drawing.Point
+    {
+        return try! op_Addition(pt: pt, sz: sz);
+    }
     // [IsSpecialName] bool op_Equality(System.Drawing.Point, System.Drawing.Point)
 // docid: M:System.Drawing.Point.op_Equality(System.Drawing.Point,System.Drawing.Point)
     /**
@@ -5707,6 +5719,10 @@ public final class Point
         return (__return) != 0;
         }
     }
+    public static func == (left : dotnet.System.Drawing.Point, right : dotnet.System.Drawing.Point) -> Bool
+    {
+        return try! op_Equality(left: left, right: right);
+    }
     // [IsSpecialName] System.Drawing.Size op_Explicit(System.Drawing.Point)
 // docid: M:System.Drawing.Point.op_Explicit(System.Drawing.Point)
     public class func op_Explicit(p : dotnet.System.Drawing.Point) throws -> dotnet.System.Drawing.Size {
@@ -5718,6 +5734,7 @@ public final class Point
         return dotnet.System.Drawing.Size(hndl : __return);
         }
     }
+// TODO conversion from Self [IsSpecialName] System.Drawing.Size op_Explicit(System.Drawing.Point)
     // [IsSpecialName] System.Drawing.PointF op_Implicit(System.Drawing.Point)
 // docid: M:System.Drawing.Point.op_Implicit(System.Drawing.Point)
     public class func op_Implicit(p : dotnet.System.Drawing.Point) throws -> dotnet.System.Drawing.PointF {
@@ -5729,6 +5746,7 @@ public final class Point
         return dotnet.System.Drawing.PointF(hndl : __return);
         }
     }
+// TODO conversion from Self [IsSpecialName] System.Drawing.PointF op_Implicit(System.Drawing.Point)
     // [IsSpecialName] bool op_Inequality(System.Drawing.Point, System.Drawing.Point)
 // docid: M:System.Drawing.Point.op_Inequality(System.Drawing.Point,System.Drawing.Point)
     /**
@@ -5749,6 +5767,10 @@ public final class Point
         return (__return) != 0;
         }
     }
+    public static func != (left : dotnet.System.Drawing.Point, right : dotnet.System.Drawing.Point) -> Bool
+    {
+        return try! op_Inequality(left: left, right: right);
+    }
     // [IsSpecialName] System.Drawing.Point op_Subtraction(System.Drawing.Point, System.Drawing.Size)
 // docid: M:System.Drawing.Point.op_Subtraction(System.Drawing.Point,System.Drawing.Size)
     /**
@@ -5767,6 +5789,10 @@ public final class Point
         } else {
         return dotnet.System.Drawing.Point(hndl : __return);
         }
+    }
+    public static func - (pt : dotnet.System.Drawing.Point, sz : dotnet.System.Drawing.Size) -> dotnet.System.Drawing.Point
+    {
+        return try! op_Subtraction(pt: pt, sz: sz);
     }
     // System.Drawing.Point Round(System.Drawing.PointF)
 // docid: M:System.Drawing.Point.Round(System.Drawing.PointF)
@@ -6100,6 +6126,7 @@ public final class PointF
         return dotnet.System.Numerics.Vector2(hndl : __return);
         }
     }
+// TODO conversion from Self [IsSpecialName] System.Numerics.Vector2 op_Explicit(System.Drawing.PointF)
     // [IsSpecialName] System.Drawing.PointF op_Explicit(System.Numerics.Vector2)
 // docid: M:System.Drawing.PointF.op_Explicit(System.Numerics.Vector2)
     public class func op_Explicit(vector : dotnet.System.Numerics.Vector2) throws -> dotnet.System.Drawing.PointF {
@@ -6111,6 +6138,8 @@ public final class PointF
         return dotnet.System.Drawing.PointF(hndl : __return);
         }
     }
+// TODO conversion to Self [IsSpecialName] System.Drawing.PointF op_Explicit(System.Numerics.Vector2)
+// skip because equivalent ctor
     // [IsSpecialName] System.Drawing.PointF op_Addition(System.Drawing.PointF, System.Drawing.Size)
 // docid: M:System.Drawing.PointF.op_Addition(System.Drawing.PointF,System.Drawing.Size)
     /**
@@ -6130,6 +6159,10 @@ public final class PointF
         return dotnet.System.Drawing.PointF(hndl : __return);
         }
     }
+    public static func + (pt : dotnet.System.Drawing.PointF, sz : dotnet.System.Drawing.Size) -> dotnet.System.Drawing.PointF
+    {
+        return try! op_Addition(pt: pt, sz: sz);
+    }
     // [IsSpecialName] System.Drawing.PointF op_Addition(System.Drawing.PointF, System.Drawing.SizeF)
 // docid: M:System.Drawing.PointF.op_Addition(System.Drawing.PointF,System.Drawing.SizeF)
     /**
@@ -6148,6 +6181,10 @@ public final class PointF
         } else {
         return dotnet.System.Drawing.PointF(hndl : __return);
         }
+    }
+    public static func + (pt : dotnet.System.Drawing.PointF, sz : dotnet.System.Drawing.SizeF) -> dotnet.System.Drawing.PointF
+    {
+        return try! op_Addition(pt: pt, sz: sz);
     }
     // [IsSpecialName] bool op_Equality(System.Drawing.PointF, System.Drawing.PointF)
 // docid: M:System.Drawing.PointF.op_Equality(System.Drawing.PointF,System.Drawing.PointF)
@@ -6169,6 +6206,10 @@ public final class PointF
         return (__return) != 0;
         }
     }
+    public static func == (left : dotnet.System.Drawing.PointF, right : dotnet.System.Drawing.PointF) -> Bool
+    {
+        return try! op_Equality(left: left, right: right);
+    }
     // [IsSpecialName] bool op_Inequality(System.Drawing.PointF, System.Drawing.PointF)
 // docid: M:System.Drawing.PointF.op_Inequality(System.Drawing.PointF,System.Drawing.PointF)
     /**
@@ -6189,6 +6230,10 @@ public final class PointF
         return (__return) != 0;
         }
     }
+    public static func != (left : dotnet.System.Drawing.PointF, right : dotnet.System.Drawing.PointF) -> Bool
+    {
+        return try! op_Inequality(left: left, right: right);
+    }
     // [IsSpecialName] System.Drawing.PointF op_Subtraction(System.Drawing.PointF, System.Drawing.Size)
 // docid: M:System.Drawing.PointF.op_Subtraction(System.Drawing.PointF,System.Drawing.Size)
     /**
@@ -6208,6 +6253,10 @@ public final class PointF
         return dotnet.System.Drawing.PointF(hndl : __return);
         }
     }
+    public static func - (pt : dotnet.System.Drawing.PointF, sz : dotnet.System.Drawing.Size) -> dotnet.System.Drawing.PointF
+    {
+        return try! op_Subtraction(pt: pt, sz: sz);
+    }
     // [IsSpecialName] System.Drawing.PointF op_Subtraction(System.Drawing.PointF, System.Drawing.SizeF)
 // docid: M:System.Drawing.PointF.op_Subtraction(System.Drawing.PointF,System.Drawing.SizeF)
     /**
@@ -6226,6 +6275,10 @@ public final class PointF
         } else {
         return dotnet.System.Drawing.PointF(hndl : __return);
         }
+    }
+    public static func - (pt : dotnet.System.Drawing.PointF, sz : dotnet.System.Drawing.SizeF) -> dotnet.System.Drawing.PointF
+    {
+        return try! op_Subtraction(pt: pt, sz: sz);
     }
     // System.Drawing.PointF Subtract(System.Drawing.PointF, System.Drawing.Size)
 // docid: M:System.Drawing.PointF.Subtract(System.Drawing.PointF,System.Drawing.Size)
@@ -6849,6 +6902,10 @@ public final class Rectangle
         return (__return) != 0;
         }
     }
+    public static func == (left : dotnet.System.Drawing.Rectangle, right : dotnet.System.Drawing.Rectangle) -> Bool
+    {
+        return try! op_Equality(left: left, right: right);
+    }
     // [IsSpecialName] bool op_Inequality(System.Drawing.Rectangle, System.Drawing.Rectangle)
 // docid: M:System.Drawing.Rectangle.op_Inequality(System.Drawing.Rectangle,System.Drawing.Rectangle)
     /**
@@ -6867,6 +6924,10 @@ public final class Rectangle
         } else {
         return (__return) != 0;
         }
+    }
+    public static func != (left : dotnet.System.Drawing.Rectangle, right : dotnet.System.Drawing.Rectangle) -> Bool
+    {
+        return try! op_Inequality(left: left, right: right);
     }
     // System.Drawing.Rectangle Round(System.Drawing.RectangleF)
 // docid: M:System.Drawing.Rectangle.Round(System.Drawing.RectangleF)
@@ -7617,6 +7678,7 @@ public final class RectangleF
         return dotnet.System.Numerics.Vector4(hndl : __return);
         }
     }
+// TODO conversion from Self [IsSpecialName] System.Numerics.Vector4 op_Explicit(System.Drawing.RectangleF)
     // [IsSpecialName] System.Drawing.RectangleF op_Explicit(System.Numerics.Vector4)
 // docid: M:System.Drawing.RectangleF.op_Explicit(System.Numerics.Vector4)
     public class func op_Explicit(vector : dotnet.System.Numerics.Vector4) throws -> dotnet.System.Drawing.RectangleF {
@@ -7628,6 +7690,8 @@ public final class RectangleF
         return dotnet.System.Drawing.RectangleF(hndl : __return);
         }
     }
+// TODO conversion to Self [IsSpecialName] System.Drawing.RectangleF op_Explicit(System.Numerics.Vector4)
+// skip because equivalent ctor
     // [IsSpecialName] bool op_Equality(System.Drawing.RectangleF, System.Drawing.RectangleF)
 // docid: M:System.Drawing.RectangleF.op_Equality(System.Drawing.RectangleF,System.Drawing.RectangleF)
     /**
@@ -7648,6 +7712,10 @@ public final class RectangleF
         return (__return) != 0;
         }
     }
+    public static func == (left : dotnet.System.Drawing.RectangleF, right : dotnet.System.Drawing.RectangleF) -> Bool
+    {
+        return try! op_Equality(left: left, right: right);
+    }
     // [IsSpecialName] System.Drawing.RectangleF op_Implicit(System.Drawing.Rectangle)
 // docid: M:System.Drawing.RectangleF.op_Implicit(System.Drawing.Rectangle)
     public class func op_Implicit(r : dotnet.System.Drawing.Rectangle) throws -> dotnet.System.Drawing.RectangleF {
@@ -7658,6 +7726,14 @@ public final class RectangleF
         } else {
         return dotnet.System.Drawing.RectangleF(hndl : __return);
         }
+    }
+// TODO conversion to Self [IsSpecialName] System.Drawing.RectangleF op_Implicit(System.Drawing.Rectangle)
+    public convenience init(r : dotnet.System.Drawing.Rectangle) 
+    {
+        var __thrown : NullableHandle = nil;
+        let __return = System_Drawing_RectangleF_RectangleF__op_Implicit_0__1__Rectangle(&__thrown, r.get_handle());
+        assert(__thrown == nil);
+            self.init(hndl: __return);
     }
     // [IsSpecialName] bool op_Inequality(System.Drawing.RectangleF, System.Drawing.RectangleF)
 // docid: M:System.Drawing.RectangleF.op_Inequality(System.Drawing.RectangleF,System.Drawing.RectangleF)
@@ -7678,6 +7754,10 @@ public final class RectangleF
         } else {
         return (__return) != 0;
         }
+    }
+    public static func != (left : dotnet.System.Drawing.RectangleF, right : dotnet.System.Drawing.RectangleF) -> Bool
+    {
+        return try! op_Inequality(left: left, right: right);
     }
     // System.String ToString()
 // docid: M:System.Drawing.RectangleF.ToString
@@ -8132,6 +8212,10 @@ public final class Size
         return dotnet.System.Drawing.Size(hndl : __return);
         }
     }
+    public static func + (sz1 : dotnet.System.Drawing.Size, sz2 : dotnet.System.Drawing.Size) -> dotnet.System.Drawing.Size
+    {
+        return try! op_Addition(sz1: sz1, sz2: sz2);
+    }
     // [IsSpecialName] System.Drawing.Size op_Division(System.Drawing.Size, System.Int32)
 // docid: M:System.Drawing.Size.op_Division(System.Drawing.Size,System.Int32)
     /**
@@ -8151,6 +8235,10 @@ public final class Size
         return dotnet.System.Drawing.Size(hndl : __return);
         }
     }
+    public static func / (left : dotnet.System.Drawing.Size, right : Swift.Int32) -> dotnet.System.Drawing.Size
+    {
+        return try! op_Division(left: left, right: right);
+    }
     // [IsSpecialName] System.Drawing.SizeF op_Division(System.Drawing.Size, System.Single)
 // docid: M:System.Drawing.Size.op_Division(System.Drawing.Size,System.Single)
     /**
@@ -8169,6 +8257,10 @@ public final class Size
         } else {
         return dotnet.System.Drawing.SizeF(hndl : __return);
         }
+    }
+    public static func / (left : dotnet.System.Drawing.Size, right : Swift.Float) -> dotnet.System.Drawing.SizeF
+    {
+        return try! op_Division(left: left, right: right);
     }
     // [IsSpecialName] bool op_Equality(System.Drawing.Size, System.Drawing.Size)
 // docid: M:System.Drawing.Size.op_Equality(System.Drawing.Size,System.Drawing.Size)
@@ -8190,6 +8282,10 @@ public final class Size
         return (__return) != 0;
         }
     }
+    public static func == (sz1 : dotnet.System.Drawing.Size, sz2 : dotnet.System.Drawing.Size) -> Bool
+    {
+        return try! op_Equality(sz1: sz1, sz2: sz2);
+    }
     // [IsSpecialName] System.Drawing.Point op_Explicit(System.Drawing.Size)
 // docid: M:System.Drawing.Size.op_Explicit(System.Drawing.Size)
     public class func op_Explicit(size : dotnet.System.Drawing.Size) throws -> dotnet.System.Drawing.Point {
@@ -8201,6 +8297,7 @@ public final class Size
         return dotnet.System.Drawing.Point(hndl : __return);
         }
     }
+// TODO conversion from Self [IsSpecialName] System.Drawing.Point op_Explicit(System.Drawing.Size)
     // [IsSpecialName] System.Drawing.SizeF op_Implicit(System.Drawing.Size)
 // docid: M:System.Drawing.Size.op_Implicit(System.Drawing.Size)
     public class func op_Implicit(p : dotnet.System.Drawing.Size) throws -> dotnet.System.Drawing.SizeF {
@@ -8212,6 +8309,7 @@ public final class Size
         return dotnet.System.Drawing.SizeF(hndl : __return);
         }
     }
+// TODO conversion from Self [IsSpecialName] System.Drawing.SizeF op_Implicit(System.Drawing.Size)
     // [IsSpecialName] bool op_Inequality(System.Drawing.Size, System.Drawing.Size)
 // docid: M:System.Drawing.Size.op_Inequality(System.Drawing.Size,System.Drawing.Size)
     /**
@@ -8232,6 +8330,10 @@ public final class Size
         return (__return) != 0;
         }
     }
+    public static func != (sz1 : dotnet.System.Drawing.Size, sz2 : dotnet.System.Drawing.Size) -> Bool
+    {
+        return try! op_Inequality(sz1: sz1, sz2: sz2);
+    }
     // [IsSpecialName] System.Drawing.Size op_Multiply(System.Drawing.Size, System.Int32)
 // docid: M:System.Drawing.Size.op_Multiply(System.Drawing.Size,System.Int32)
     /**
@@ -8250,6 +8352,10 @@ public final class Size
         } else {
         return dotnet.System.Drawing.Size(hndl : __return);
         }
+    }
+    public static func * (left : dotnet.System.Drawing.Size, right : Swift.Int32) -> dotnet.System.Drawing.Size
+    {
+        return try! op_Multiply(left: left, right: right);
     }
     // [IsSpecialName] System.Drawing.SizeF op_Multiply(System.Drawing.Size, System.Single)
 // docid: M:System.Drawing.Size.op_Multiply(System.Drawing.Size,System.Single)
@@ -8270,6 +8376,10 @@ public final class Size
         return dotnet.System.Drawing.SizeF(hndl : __return);
         }
     }
+    public static func * (left : dotnet.System.Drawing.Size, right : Swift.Float) -> dotnet.System.Drawing.SizeF
+    {
+        return try! op_Multiply(left: left, right: right);
+    }
     // [IsSpecialName] System.Drawing.Size op_Multiply(System.Int32, System.Drawing.Size)
 // docid: M:System.Drawing.Size.op_Multiply(System.Int32,System.Drawing.Size)
     /**
@@ -8288,6 +8398,10 @@ public final class Size
         } else {
         return dotnet.System.Drawing.Size(hndl : __return);
         }
+    }
+    public static func * (left : Swift.Int32, right : dotnet.System.Drawing.Size) -> dotnet.System.Drawing.Size
+    {
+        return try! op_Multiply(left: left, right: right);
     }
     // [IsSpecialName] System.Drawing.SizeF op_Multiply(System.Single, System.Drawing.Size)
 // docid: M:System.Drawing.Size.op_Multiply(System.Single,System.Drawing.Size)
@@ -8308,6 +8422,10 @@ public final class Size
         return dotnet.System.Drawing.SizeF(hndl : __return);
         }
     }
+    public static func * (left : Swift.Float, right : dotnet.System.Drawing.Size) -> dotnet.System.Drawing.SizeF
+    {
+        return try! op_Multiply(left: left, right: right);
+    }
     // [IsSpecialName] System.Drawing.Size op_Subtraction(System.Drawing.Size, System.Drawing.Size)
 // docid: M:System.Drawing.Size.op_Subtraction(System.Drawing.Size,System.Drawing.Size)
     /**
@@ -8326,6 +8444,10 @@ public final class Size
         } else {
         return dotnet.System.Drawing.Size(hndl : __return);
         }
+    }
+    public static func - (sz1 : dotnet.System.Drawing.Size, sz2 : dotnet.System.Drawing.Size) -> dotnet.System.Drawing.Size
+    {
+        return try! op_Subtraction(sz1: sz1, sz2: sz2);
     }
     // System.Drawing.Size Round(System.Drawing.SizeF)
 // docid: M:System.Drawing.Size.Round(System.Drawing.SizeF)
@@ -8673,6 +8795,7 @@ public final class SizeF
         return dotnet.System.Numerics.Vector2(hndl : __return);
         }
     }
+// TODO conversion from Self [IsSpecialName] System.Numerics.Vector2 op_Explicit(System.Drawing.SizeF)
     // [IsSpecialName] System.Drawing.SizeF op_Explicit(System.Numerics.Vector2)
 // docid: M:System.Drawing.SizeF.op_Explicit(System.Numerics.Vector2)
     public class func op_Explicit(vector : dotnet.System.Numerics.Vector2) throws -> dotnet.System.Drawing.SizeF {
@@ -8684,6 +8807,8 @@ public final class SizeF
         return dotnet.System.Drawing.SizeF(hndl : __return);
         }
     }
+// TODO conversion to Self [IsSpecialName] System.Drawing.SizeF op_Explicit(System.Numerics.Vector2)
+// skip because equivalent ctor
     // [IsSpecialName] System.Drawing.SizeF op_Addition(System.Drawing.SizeF, System.Drawing.SizeF)
 // docid: M:System.Drawing.SizeF.op_Addition(System.Drawing.SizeF,System.Drawing.SizeF)
     /**
@@ -8703,6 +8828,10 @@ public final class SizeF
         return dotnet.System.Drawing.SizeF(hndl : __return);
         }
     }
+    public static func + (sz1 : dotnet.System.Drawing.SizeF, sz2 : dotnet.System.Drawing.SizeF) -> dotnet.System.Drawing.SizeF
+    {
+        return try! op_Addition(sz1: sz1, sz2: sz2);
+    }
     // [IsSpecialName] System.Drawing.SizeF op_Division(System.Drawing.SizeF, System.Single)
 // docid: M:System.Drawing.SizeF.op_Division(System.Drawing.SizeF,System.Single)
     /**
@@ -8721,6 +8850,10 @@ public final class SizeF
         } else {
         return dotnet.System.Drawing.SizeF(hndl : __return);
         }
+    }
+    public static func / (left : dotnet.System.Drawing.SizeF, right : Swift.Float) -> dotnet.System.Drawing.SizeF
+    {
+        return try! op_Division(left: left, right: right);
     }
     // [IsSpecialName] bool op_Equality(System.Drawing.SizeF, System.Drawing.SizeF)
 // docid: M:System.Drawing.SizeF.op_Equality(System.Drawing.SizeF,System.Drawing.SizeF)
@@ -8742,6 +8875,10 @@ public final class SizeF
         return (__return) != 0;
         }
     }
+    public static func == (sz1 : dotnet.System.Drawing.SizeF, sz2 : dotnet.System.Drawing.SizeF) -> Bool
+    {
+        return try! op_Equality(sz1: sz1, sz2: sz2);
+    }
     // [IsSpecialName] System.Drawing.PointF op_Explicit(System.Drawing.SizeF)
 // docid: M:System.Drawing.SizeF.op_Explicit(System.Drawing.SizeF)
     public class func op_Explicit(size : dotnet.System.Drawing.SizeF) throws -> dotnet.System.Drawing.PointF {
@@ -8753,6 +8890,7 @@ public final class SizeF
         return dotnet.System.Drawing.PointF(hndl : __return);
         }
     }
+// TODO conversion from Self [IsSpecialName] System.Drawing.PointF op_Explicit(System.Drawing.SizeF)
     // [IsSpecialName] bool op_Inequality(System.Drawing.SizeF, System.Drawing.SizeF)
 // docid: M:System.Drawing.SizeF.op_Inequality(System.Drawing.SizeF,System.Drawing.SizeF)
     /**
@@ -8773,6 +8911,10 @@ public final class SizeF
         return (__return) != 0;
         }
     }
+    public static func != (sz1 : dotnet.System.Drawing.SizeF, sz2 : dotnet.System.Drawing.SizeF) -> Bool
+    {
+        return try! op_Inequality(sz1: sz1, sz2: sz2);
+    }
     // [IsSpecialName] System.Drawing.SizeF op_Multiply(System.Drawing.SizeF, System.Single)
 // docid: M:System.Drawing.SizeF.op_Multiply(System.Drawing.SizeF,System.Single)
     /**
@@ -8791,6 +8933,10 @@ public final class SizeF
         } else {
         return dotnet.System.Drawing.SizeF(hndl : __return);
         }
+    }
+    public static func * (left : dotnet.System.Drawing.SizeF, right : Swift.Float) -> dotnet.System.Drawing.SizeF
+    {
+        return try! op_Multiply(left: left, right: right);
     }
     // [IsSpecialName] System.Drawing.SizeF op_Multiply(System.Single, System.Drawing.SizeF)
 // docid: M:System.Drawing.SizeF.op_Multiply(System.Single,System.Drawing.SizeF)
@@ -8811,6 +8957,10 @@ public final class SizeF
         return dotnet.System.Drawing.SizeF(hndl : __return);
         }
     }
+    public static func * (left : Swift.Float, right : dotnet.System.Drawing.SizeF) -> dotnet.System.Drawing.SizeF
+    {
+        return try! op_Multiply(left: left, right: right);
+    }
     // [IsSpecialName] System.Drawing.SizeF op_Subtraction(System.Drawing.SizeF, System.Drawing.SizeF)
 // docid: M:System.Drawing.SizeF.op_Subtraction(System.Drawing.SizeF,System.Drawing.SizeF)
     /**
@@ -8829,6 +8979,10 @@ public final class SizeF
         } else {
         return dotnet.System.Drawing.SizeF(hndl : __return);
         }
+    }
+    public static func - (sz1 : dotnet.System.Drawing.SizeF, sz2 : dotnet.System.Drawing.SizeF) -> dotnet.System.Drawing.SizeF
+    {
+        return try! op_Subtraction(sz1: sz1, sz2: sz2);
     }
     // System.Drawing.SizeF Subtract(System.Drawing.SizeF, System.Drawing.SizeF)
 // docid: M:System.Drawing.SizeF.Subtract(System.Drawing.SizeF,System.Drawing.SizeF)

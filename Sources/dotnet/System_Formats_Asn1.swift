@@ -382,6 +382,10 @@ public final class Asn1Tag
         return (__return) != 0;
         }
     }
+    public static func == (left : dotnet.System.Formats.Asn1.Asn1Tag, right : dotnet.System.Formats.Asn1.Asn1Tag) -> Bool
+    {
+        return try! op_Equality(left: left, right: right);
+    }
     // [IsSpecialName] bool op_Inequality(System.Formats.Asn1.Asn1Tag, System.Formats.Asn1.Asn1Tag)
 // docid: M:System.Formats.Asn1.Asn1Tag.op_Inequality(System.Formats.Asn1.Asn1Tag,System.Formats.Asn1.Asn1Tag)
     /**
@@ -401,6 +405,10 @@ public final class Asn1Tag
         } else {
         return (__return) != 0;
         }
+    }
+    public static func != (left : dotnet.System.Formats.Asn1.Asn1Tag, right : dotnet.System.Formats.Asn1.Asn1Tag) -> Bool
+    {
+        return try! op_Inequality(left: left, right: right);
     }
     // System.String ToString()
 // docid: M:System.Formats.Asn1.Asn1Tag.ToString

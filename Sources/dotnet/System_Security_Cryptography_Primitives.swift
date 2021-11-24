@@ -1812,6 +1812,10 @@ public final class HashAlgorithmName
         return (__return) != 0;
         }
     }
+    public static func == (left : dotnet.System.Security.Cryptography.HashAlgorithmName, right : dotnet.System.Security.Cryptography.HashAlgorithmName) -> Bool
+    {
+        return try! op_Equality(left: left, right: right);
+    }
     // [IsSpecialName] bool op_Inequality(System.Security.Cryptography.HashAlgorithmName, System.Security.Cryptography.HashAlgorithmName)
 // docid: M:System.Security.Cryptography.HashAlgorithmName.op_Inequality(System.Security.Cryptography.HashAlgorithmName,System.Security.Cryptography.HashAlgorithmName)
     /**
@@ -1831,6 +1835,10 @@ public final class HashAlgorithmName
         } else {
         return (__return) != 0;
         }
+    }
+    public static func != (left : dotnet.System.Security.Cryptography.HashAlgorithmName, right : dotnet.System.Security.Cryptography.HashAlgorithmName) -> Bool
+    {
+        return try! op_Inequality(left: left, right: right);
     }
     // System.String ToString()
 // docid: M:System.Security.Cryptography.HashAlgorithmName.ToString

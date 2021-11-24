@@ -293,6 +293,10 @@ public final class AsyncFlowControl
         return (__return) != 0;
         }
     }
+    public static func == (a : dotnet.System.Threading.AsyncFlowControl, b : dotnet.System.Threading.AsyncFlowControl) -> Bool
+    {
+        return try! op_Equality(a: a, b: b);
+    }
     // [IsSpecialName] bool op_Inequality(System.Threading.AsyncFlowControl, System.Threading.AsyncFlowControl)
 // docid: M:System.Threading.AsyncFlowControl.op_Inequality(System.Threading.AsyncFlowControl,System.Threading.AsyncFlowControl)
     /**
@@ -312,6 +316,10 @@ public final class AsyncFlowControl
         } else {
         return (__return) != 0;
         }
+    }
+    public static func != (a : dotnet.System.Threading.AsyncFlowControl, b : dotnet.System.Threading.AsyncFlowControl) -> Bool
+    {
+        return try! op_Inequality(a: a, b: b);
     }
     // void Undo()
 // docid: M:System.Threading.AsyncFlowControl.Undo
@@ -3186,6 +3194,10 @@ public final class LockCookie
         return (__return) != 0;
         }
     }
+    public static func == (a : dotnet.System.Threading.LockCookie, b : dotnet.System.Threading.LockCookie) -> Bool
+    {
+        return try! op_Equality(a: a, b: b);
+    }
     // [IsSpecialName] bool op_Inequality(System.Threading.LockCookie, System.Threading.LockCookie)
 // docid: M:System.Threading.LockCookie.op_Inequality(System.Threading.LockCookie,System.Threading.LockCookie)
     /**
@@ -3205,6 +3217,10 @@ public final class LockCookie
         } else {
         return (__return) != 0;
         }
+    }
+    public static func != (a : dotnet.System.Threading.LockCookie, b : dotnet.System.Threading.LockCookie) -> Bool
+    {
+        return try! op_Inequality(a: a, b: b);
     }
 } // LockCookie
 

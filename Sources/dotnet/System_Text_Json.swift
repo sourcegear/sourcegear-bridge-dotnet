@@ -5999,6 +5999,7 @@ open class JsonNode
         return (__return) != 0;
         }
     }
+// TODO conversion from Self [IsSpecialName] bool op_Explicit(System.Text.Json.Nodes.JsonNode)
     // [IsSpecialName] System.Byte op_Explicit(System.Text.Json.Nodes.JsonNode)
 // docid: M:System.Text.Json.Nodes.JsonNode.op_Explicit(System.Text.Json.Nodes.JsonNode)
     open class func op_Explicit(value : dotnet.System.Text.Json.Nodes.JsonNode) throws -> Swift.UInt8 {
@@ -6010,6 +6011,7 @@ open class JsonNode
         return __return;
         }
     }
+// TODO conversion from Self [IsSpecialName] System.Byte op_Explicit(System.Text.Json.Nodes.JsonNode)
     // [IsSpecialName] System.Char op_Explicit(System.Text.Json.Nodes.JsonNode)
 // docid: M:System.Text.Json.Nodes.JsonNode.op_Explicit(System.Text.Json.Nodes.JsonNode)
     open class func op_Explicit(value : dotnet.System.Text.Json.Nodes.JsonNode) throws -> dotnet.System.Char {
@@ -6021,6 +6023,7 @@ open class JsonNode
         return dotnet.System.Char(val: __return);
         }
     }
+// TODO conversion from Self [IsSpecialName] System.Char op_Explicit(System.Text.Json.Nodes.JsonNode)
     // [IsSpecialName] System.DateTime op_Explicit(System.Text.Json.Nodes.JsonNode)
 // docid: M:System.Text.Json.Nodes.JsonNode.op_Explicit(System.Text.Json.Nodes.JsonNode)
     open class func op_Explicit(value : dotnet.System.Text.Json.Nodes.JsonNode) throws -> dotnet.System.DateTime {
@@ -6032,6 +6035,7 @@ open class JsonNode
         return dotnet.System.DateTime(hndl : __return);
         }
     }
+// TODO conversion from Self [IsSpecialName] System.DateTime op_Explicit(System.Text.Json.Nodes.JsonNode)
     // [IsSpecialName] System.DateTimeOffset op_Explicit(System.Text.Json.Nodes.JsonNode)
 // docid: M:System.Text.Json.Nodes.JsonNode.op_Explicit(System.Text.Json.Nodes.JsonNode)
     open class func op_Explicit(value : dotnet.System.Text.Json.Nodes.JsonNode) throws -> dotnet.System.DateTimeOffset {
@@ -6043,6 +6047,7 @@ open class JsonNode
         return dotnet.System.DateTimeOffset(hndl : __return);
         }
     }
+// TODO conversion from Self [IsSpecialName] System.DateTimeOffset op_Explicit(System.Text.Json.Nodes.JsonNode)
     // [IsSpecialName] System.Decimal op_Explicit(System.Text.Json.Nodes.JsonNode)
 // docid: M:System.Text.Json.Nodes.JsonNode.op_Explicit(System.Text.Json.Nodes.JsonNode)
     open class func op_Explicit(value : dotnet.System.Text.Json.Nodes.JsonNode) throws -> dotnet.System.Decimal {
@@ -6054,6 +6059,7 @@ open class JsonNode
         return dotnet.System.Decimal(hndl : __return);
         }
     }
+// TODO conversion from Self [IsSpecialName] System.Decimal op_Explicit(System.Text.Json.Nodes.JsonNode)
     // [IsSpecialName] System.Double op_Explicit(System.Text.Json.Nodes.JsonNode)
 // docid: M:System.Text.Json.Nodes.JsonNode.op_Explicit(System.Text.Json.Nodes.JsonNode)
     open class func op_Explicit(value : dotnet.System.Text.Json.Nodes.JsonNode) throws -> Swift.Double {
@@ -6065,6 +6071,7 @@ open class JsonNode
         return __return;
         }
     }
+// TODO conversion from Self [IsSpecialName] System.Double op_Explicit(System.Text.Json.Nodes.JsonNode)
     // [IsSpecialName] System.Guid op_Explicit(System.Text.Json.Nodes.JsonNode)
 // docid: M:System.Text.Json.Nodes.JsonNode.op_Explicit(System.Text.Json.Nodes.JsonNode)
     open class func op_Explicit(value : dotnet.System.Text.Json.Nodes.JsonNode) throws -> dotnet.System.Guid {
@@ -6076,6 +6083,7 @@ open class JsonNode
         return dotnet.System.Guid(hndl : __return);
         }
     }
+// TODO conversion from Self [IsSpecialName] System.Guid op_Explicit(System.Text.Json.Nodes.JsonNode)
     // [IsSpecialName] System.Int16 op_Explicit(System.Text.Json.Nodes.JsonNode)
 // docid: M:System.Text.Json.Nodes.JsonNode.op_Explicit(System.Text.Json.Nodes.JsonNode)
     open class func op_Explicit(value : dotnet.System.Text.Json.Nodes.JsonNode) throws -> Swift.Int16 {
@@ -6087,6 +6095,7 @@ open class JsonNode
         return __return;
         }
     }
+// TODO conversion from Self [IsSpecialName] System.Int16 op_Explicit(System.Text.Json.Nodes.JsonNode)
     // [IsSpecialName] System.Int32 op_Explicit(System.Text.Json.Nodes.JsonNode)
 // docid: M:System.Text.Json.Nodes.JsonNode.op_Explicit(System.Text.Json.Nodes.JsonNode)
     open class func op_Explicit(value : dotnet.System.Text.Json.Nodes.JsonNode) throws -> Swift.Int32 {
@@ -6098,6 +6107,7 @@ open class JsonNode
         return __return;
         }
     }
+// TODO conversion from Self [IsSpecialName] System.Int32 op_Explicit(System.Text.Json.Nodes.JsonNode)
     // [IsSpecialName] System.Int64 op_Explicit(System.Text.Json.Nodes.JsonNode)
 // docid: M:System.Text.Json.Nodes.JsonNode.op_Explicit(System.Text.Json.Nodes.JsonNode)
     open class func op_Explicit(value : dotnet.System.Text.Json.Nodes.JsonNode) throws -> Swift.Int64 {
@@ -6109,6 +6119,7 @@ open class JsonNode
         return __return;
         }
     }
+// TODO conversion from Self [IsSpecialName] System.Int64 op_Explicit(System.Text.Json.Nodes.JsonNode)
     // [IsSpecialName] System.Nullable<bool> op_Explicit(System.Text.Json.Nodes.JsonNode)
 // docid: M:System.Text.Json.Nodes.JsonNode.op_Explicit(System.Text.Json.Nodes.JsonNode)
     open class func op_Explicit(value : Optional<dotnet.System.Text.Json.Nodes.JsonNode>) throws -> Optional<Bool> {
@@ -6120,6 +6131,7 @@ open class JsonNode
             return (__return != nil) ? System_Int32_unbox(__return!) != 0 : nil;
         }
     }
+// TODO conversion from Self [IsSpecialName] System.Nullable<bool> op_Explicit(System.Text.Json.Nodes.JsonNode)
     // [IsSpecialName] System.Nullable<System.Byte> op_Explicit(System.Text.Json.Nodes.JsonNode)
 // docid: M:System.Text.Json.Nodes.JsonNode.op_Explicit(System.Text.Json.Nodes.JsonNode)
     open class func op_Explicit(value : Optional<dotnet.System.Text.Json.Nodes.JsonNode>) throws -> Optional<Swift.UInt8> {
@@ -6131,6 +6143,7 @@ open class JsonNode
             return (__return != nil) ? System_Byte_unbox(__return!) : nil;
         }
     }
+// TODO conversion from Self [IsSpecialName] System.Nullable<System.Byte> op_Explicit(System.Text.Json.Nodes.JsonNode)
     // [IsSpecialName] System.Nullable<System.Char> op_Explicit(System.Text.Json.Nodes.JsonNode)
 // docid: M:System.Text.Json.Nodes.JsonNode.op_Explicit(System.Text.Json.Nodes.JsonNode)
     open class func op_Explicit(value : Optional<dotnet.System.Text.Json.Nodes.JsonNode>) throws -> Optional<dotnet.System.Char> {
@@ -6142,6 +6155,7 @@ open class JsonNode
             return (__return != nil) ? dotnet.System.Char(val: System_Int16_unbox(__return!)) : nil;
         }
     }
+// TODO conversion from Self [IsSpecialName] System.Nullable<System.Char> op_Explicit(System.Text.Json.Nodes.JsonNode)
     // [IsSpecialName] System.Nullable<System.DateTimeOffset> op_Explicit(System.Text.Json.Nodes.JsonNode)
 // docid: M:System.Text.Json.Nodes.JsonNode.op_Explicit(System.Text.Json.Nodes.JsonNode)
     open class func op_Explicit(value : Optional<dotnet.System.Text.Json.Nodes.JsonNode>) throws -> Optional<dotnet.System.DateTimeOffset> {
@@ -6153,6 +6167,7 @@ open class JsonNode
         return (__return != nil) ? (dotnet.System.DateTimeOffset(hndl: __return!)) : nil;
         }
     }
+// TODO conversion from Self [IsSpecialName] System.Nullable<System.DateTimeOffset> op_Explicit(System.Text.Json.Nodes.JsonNode)
     // [IsSpecialName] System.Nullable<System.DateTime> op_Explicit(System.Text.Json.Nodes.JsonNode)
 // docid: M:System.Text.Json.Nodes.JsonNode.op_Explicit(System.Text.Json.Nodes.JsonNode)
     open class func op_Explicit(value : Optional<dotnet.System.Text.Json.Nodes.JsonNode>) throws -> Optional<dotnet.System.DateTime> {
@@ -6164,6 +6179,7 @@ open class JsonNode
         return (__return != nil) ? (dotnet.System.DateTime(hndl: __return!)) : nil;
         }
     }
+// TODO conversion from Self [IsSpecialName] System.Nullable<System.DateTime> op_Explicit(System.Text.Json.Nodes.JsonNode)
     // [IsSpecialName] System.Nullable<System.Decimal> op_Explicit(System.Text.Json.Nodes.JsonNode)
 // docid: M:System.Text.Json.Nodes.JsonNode.op_Explicit(System.Text.Json.Nodes.JsonNode)
     open class func op_Explicit(value : Optional<dotnet.System.Text.Json.Nodes.JsonNode>) throws -> Optional<dotnet.System.Decimal> {
@@ -6175,6 +6191,7 @@ open class JsonNode
         return (__return != nil) ? (dotnet.System.Decimal(hndl: __return!)) : nil;
         }
     }
+// TODO conversion from Self [IsSpecialName] System.Nullable<System.Decimal> op_Explicit(System.Text.Json.Nodes.JsonNode)
     // [IsSpecialName] System.Nullable<System.Double> op_Explicit(System.Text.Json.Nodes.JsonNode)
 // docid: M:System.Text.Json.Nodes.JsonNode.op_Explicit(System.Text.Json.Nodes.JsonNode)
     open class func op_Explicit(value : Optional<dotnet.System.Text.Json.Nodes.JsonNode>) throws -> Optional<Swift.Double> {
@@ -6186,6 +6203,7 @@ open class JsonNode
             return (__return != nil) ? System_Double_unbox(__return!) : nil;
         }
     }
+// TODO conversion from Self [IsSpecialName] System.Nullable<System.Double> op_Explicit(System.Text.Json.Nodes.JsonNode)
     // [IsSpecialName] System.Nullable<System.Guid> op_Explicit(System.Text.Json.Nodes.JsonNode)
 // docid: M:System.Text.Json.Nodes.JsonNode.op_Explicit(System.Text.Json.Nodes.JsonNode)
     open class func op_Explicit(value : Optional<dotnet.System.Text.Json.Nodes.JsonNode>) throws -> Optional<dotnet.System.Guid> {
@@ -6197,6 +6215,7 @@ open class JsonNode
         return (__return != nil) ? (dotnet.System.Guid(hndl: __return!)) : nil;
         }
     }
+// TODO conversion from Self [IsSpecialName] System.Nullable<System.Guid> op_Explicit(System.Text.Json.Nodes.JsonNode)
     // [IsSpecialName] System.Nullable<System.Int16> op_Explicit(System.Text.Json.Nodes.JsonNode)
 // docid: M:System.Text.Json.Nodes.JsonNode.op_Explicit(System.Text.Json.Nodes.JsonNode)
     open class func op_Explicit(value : Optional<dotnet.System.Text.Json.Nodes.JsonNode>) throws -> Optional<Swift.Int16> {
@@ -6208,6 +6227,7 @@ open class JsonNode
             return (__return != nil) ? System_Int16_unbox(__return!) : nil;
         }
     }
+// TODO conversion from Self [IsSpecialName] System.Nullable<System.Int16> op_Explicit(System.Text.Json.Nodes.JsonNode)
     // [IsSpecialName] System.Nullable<System.Int32> op_Explicit(System.Text.Json.Nodes.JsonNode)
 // docid: M:System.Text.Json.Nodes.JsonNode.op_Explicit(System.Text.Json.Nodes.JsonNode)
     open class func op_Explicit(value : Optional<dotnet.System.Text.Json.Nodes.JsonNode>) throws -> Optional<Swift.Int32> {
@@ -6219,6 +6239,7 @@ open class JsonNode
             return (__return != nil) ? System_Int32_unbox(__return!) : nil;
         }
     }
+// TODO conversion from Self [IsSpecialName] System.Nullable<System.Int32> op_Explicit(System.Text.Json.Nodes.JsonNode)
     // [IsSpecialName] System.Nullable<System.Int64> op_Explicit(System.Text.Json.Nodes.JsonNode)
 // docid: M:System.Text.Json.Nodes.JsonNode.op_Explicit(System.Text.Json.Nodes.JsonNode)
     open class func op_Explicit(value : Optional<dotnet.System.Text.Json.Nodes.JsonNode>) throws -> Optional<Swift.Int64> {
@@ -6230,6 +6251,7 @@ open class JsonNode
             return (__return != nil) ? System_Int64_unbox(__return!) : nil;
         }
     }
+// TODO conversion from Self [IsSpecialName] System.Nullable<System.Int64> op_Explicit(System.Text.Json.Nodes.JsonNode)
     // [IsSpecialName] System.Nullable<System.SByte> op_Explicit(System.Text.Json.Nodes.JsonNode)
 // docid: M:System.Text.Json.Nodes.JsonNode.op_Explicit(System.Text.Json.Nodes.JsonNode)
     open class func op_Explicit(value : Optional<dotnet.System.Text.Json.Nodes.JsonNode>) throws -> Optional<Swift.Int8> {
@@ -6241,6 +6263,7 @@ open class JsonNode
             return (__return != nil) ? System_SByte_unbox(__return!) : nil;
         }
     }
+// TODO conversion from Self [IsSpecialName] System.Nullable<System.SByte> op_Explicit(System.Text.Json.Nodes.JsonNode)
     // [IsSpecialName] System.Nullable<System.Single> op_Explicit(System.Text.Json.Nodes.JsonNode)
 // docid: M:System.Text.Json.Nodes.JsonNode.op_Explicit(System.Text.Json.Nodes.JsonNode)
     open class func op_Explicit(value : Optional<dotnet.System.Text.Json.Nodes.JsonNode>) throws -> Optional<Swift.Float> {
@@ -6252,6 +6275,7 @@ open class JsonNode
             return (__return != nil) ? System_Single_unbox(__return!) : nil;
         }
     }
+// TODO conversion from Self [IsSpecialName] System.Nullable<System.Single> op_Explicit(System.Text.Json.Nodes.JsonNode)
     // [IsSpecialName] System.Nullable<System.UInt16> op_Explicit(System.Text.Json.Nodes.JsonNode)
 // docid: M:System.Text.Json.Nodes.JsonNode.op_Explicit(System.Text.Json.Nodes.JsonNode)
     open class func op_Explicit(value : Optional<dotnet.System.Text.Json.Nodes.JsonNode>) throws -> Optional<Swift.UInt16> {
@@ -6263,6 +6287,7 @@ open class JsonNode
             return (__return != nil) ? System_UInt16_unbox(__return!) : nil;
         }
     }
+// TODO conversion from Self [IsSpecialName] System.Nullable<System.UInt16> op_Explicit(System.Text.Json.Nodes.JsonNode)
     // [IsSpecialName] System.Nullable<System.UInt32> op_Explicit(System.Text.Json.Nodes.JsonNode)
 // docid: M:System.Text.Json.Nodes.JsonNode.op_Explicit(System.Text.Json.Nodes.JsonNode)
     open class func op_Explicit(value : Optional<dotnet.System.Text.Json.Nodes.JsonNode>) throws -> Optional<Swift.UInt32> {
@@ -6274,6 +6299,7 @@ open class JsonNode
             return (__return != nil) ? System_UInt32_unbox(__return!) : nil;
         }
     }
+// TODO conversion from Self [IsSpecialName] System.Nullable<System.UInt32> op_Explicit(System.Text.Json.Nodes.JsonNode)
     // [IsSpecialName] System.Nullable<System.UInt64> op_Explicit(System.Text.Json.Nodes.JsonNode)
 // docid: M:System.Text.Json.Nodes.JsonNode.op_Explicit(System.Text.Json.Nodes.JsonNode)
     open class func op_Explicit(value : Optional<dotnet.System.Text.Json.Nodes.JsonNode>) throws -> Optional<Swift.UInt64> {
@@ -6285,6 +6311,7 @@ open class JsonNode
             return (__return != nil) ? System_UInt64_unbox(__return!) : nil;
         }
     }
+// TODO conversion from Self [IsSpecialName] System.Nullable<System.UInt64> op_Explicit(System.Text.Json.Nodes.JsonNode)
     // [IsSpecialName] System.SByte op_Explicit(System.Text.Json.Nodes.JsonNode)
 // docid: M:System.Text.Json.Nodes.JsonNode.op_Explicit(System.Text.Json.Nodes.JsonNode)
     open class func op_Explicit(value : dotnet.System.Text.Json.Nodes.JsonNode) throws -> Swift.Int8 {
@@ -6296,6 +6323,7 @@ open class JsonNode
         return __return;
         }
     }
+// TODO conversion from Self [IsSpecialName] System.SByte op_Explicit(System.Text.Json.Nodes.JsonNode)
     // [IsSpecialName] System.Single op_Explicit(System.Text.Json.Nodes.JsonNode)
 // docid: M:System.Text.Json.Nodes.JsonNode.op_Explicit(System.Text.Json.Nodes.JsonNode)
     open class func op_Explicit(value : dotnet.System.Text.Json.Nodes.JsonNode) throws -> Swift.Float {
@@ -6307,6 +6335,7 @@ open class JsonNode
         return __return;
         }
     }
+// TODO conversion from Self [IsSpecialName] System.Single op_Explicit(System.Text.Json.Nodes.JsonNode)
     // [IsSpecialName] System.String op_Explicit(System.Text.Json.Nodes.JsonNode)
 // docid: M:System.Text.Json.Nodes.JsonNode.op_Explicit(System.Text.Json.Nodes.JsonNode)
     open class func op_Explicit(value : Optional<dotnet.System.Text.Json.Nodes.JsonNode>) throws -> Optional<dotnet.System.String> {
@@ -6322,6 +6351,7 @@ open class JsonNode
         }
         }
     }
+// TODO conversion from Self [IsSpecialName] System.String op_Explicit(System.Text.Json.Nodes.JsonNode)
     // [IsSpecialName] System.UInt16 op_Explicit(System.Text.Json.Nodes.JsonNode)
 // docid: M:System.Text.Json.Nodes.JsonNode.op_Explicit(System.Text.Json.Nodes.JsonNode)
     open class func op_Explicit(value : dotnet.System.Text.Json.Nodes.JsonNode) throws -> Swift.UInt16 {
@@ -6333,6 +6363,7 @@ open class JsonNode
         return __return;
         }
     }
+// TODO conversion from Self [IsSpecialName] System.UInt16 op_Explicit(System.Text.Json.Nodes.JsonNode)
     // [IsSpecialName] System.UInt32 op_Explicit(System.Text.Json.Nodes.JsonNode)
 // docid: M:System.Text.Json.Nodes.JsonNode.op_Explicit(System.Text.Json.Nodes.JsonNode)
     open class func op_Explicit(value : dotnet.System.Text.Json.Nodes.JsonNode) throws -> Swift.UInt32 {
@@ -6344,6 +6375,7 @@ open class JsonNode
         return __return;
         }
     }
+// TODO conversion from Self [IsSpecialName] System.UInt32 op_Explicit(System.Text.Json.Nodes.JsonNode)
     // [IsSpecialName] System.UInt64 op_Explicit(System.Text.Json.Nodes.JsonNode)
 // docid: M:System.Text.Json.Nodes.JsonNode.op_Explicit(System.Text.Json.Nodes.JsonNode)
     open class func op_Explicit(value : dotnet.System.Text.Json.Nodes.JsonNode) throws -> Swift.UInt64 {
@@ -6355,6 +6387,7 @@ open class JsonNode
         return __return;
         }
     }
+// TODO conversion from Self [IsSpecialName] System.UInt64 op_Explicit(System.Text.Json.Nodes.JsonNode)
     // [IsSpecialName] System.Text.Json.Nodes.JsonNode op_Implicit(bool)
 // docid: M:System.Text.Json.Nodes.JsonNode.op_Implicit(System.Boolean)
     open class func op_Implicit(value : Bool) throws -> dotnet.System.Text.Json.Nodes.JsonNode {
@@ -6365,6 +6398,14 @@ open class JsonNode
         } else {
         return dotnet.System.Text.Json.Nodes.JsonNode(hndl : __return);
         }
+    }
+// TODO conversion to Self [IsSpecialName] System.Text.Json.Nodes.JsonNode op_Implicit(bool)
+    public convenience init(value : Bool) 
+    {
+        var __thrown : NullableHandle = nil;
+        let __return = System_Text_Json_Nodes_JsonNode_JsonNode__op_Implicit_0__1__bool(&__thrown, Swift.Int32(value ? 1 : 0));
+        assert(__thrown == nil);
+            self.init(hndl: __return);
     }
     // [IsSpecialName] System.Text.Json.Nodes.JsonNode op_Implicit(System.Byte)
 // docid: M:System.Text.Json.Nodes.JsonNode.op_Implicit(System.Byte)
@@ -6377,6 +6418,14 @@ open class JsonNode
         return dotnet.System.Text.Json.Nodes.JsonNode(hndl : __return);
         }
     }
+// TODO conversion to Self [IsSpecialName] System.Text.Json.Nodes.JsonNode op_Implicit(System.Byte)
+    public convenience init(value : Swift.UInt8) 
+    {
+        var __thrown : NullableHandle = nil;
+        let __return = System_Text_Json_Nodes_JsonNode_JsonNode__op_Implicit_0__1__u8(&__thrown, value);
+        assert(__thrown == nil);
+            self.init(hndl: __return);
+    }
     // [IsSpecialName] System.Text.Json.Nodes.JsonNode op_Implicit(System.Char)
 // docid: M:System.Text.Json.Nodes.JsonNode.op_Implicit(System.Char)
     open class func op_Implicit(value : dotnet.System.Char) throws -> dotnet.System.Text.Json.Nodes.JsonNode {
@@ -6387,6 +6436,14 @@ open class JsonNode
         } else {
         return dotnet.System.Text.Json.Nodes.JsonNode(hndl : __return);
         }
+    }
+// TODO conversion to Self [IsSpecialName] System.Text.Json.Nodes.JsonNode op_Implicit(System.Char)
+    public convenience init(value : dotnet.System.Char) 
+    {
+        var __thrown : NullableHandle = nil;
+        let __return = System_Text_Json_Nodes_JsonNode_JsonNode__op_Implicit_0__1__Char(&__thrown, value.get_value());
+        assert(__thrown == nil);
+            self.init(hndl: __return);
     }
     // [IsSpecialName] System.Text.Json.Nodes.JsonNode op_Implicit(System.DateTime)
 // docid: M:System.Text.Json.Nodes.JsonNode.op_Implicit(System.DateTime)
@@ -6399,6 +6456,14 @@ open class JsonNode
         return dotnet.System.Text.Json.Nodes.JsonNode(hndl : __return);
         }
     }
+// TODO conversion to Self [IsSpecialName] System.Text.Json.Nodes.JsonNode op_Implicit(System.DateTime)
+    public convenience init(value : dotnet.System.DateTime) 
+    {
+        var __thrown : NullableHandle = nil;
+        let __return = System_Text_Json_Nodes_JsonNode_JsonNode__op_Implicit_0__1__DateTime(&__thrown, value.get_handle());
+        assert(__thrown == nil);
+            self.init(hndl: __return);
+    }
     // [IsSpecialName] System.Text.Json.Nodes.JsonNode op_Implicit(System.DateTimeOffset)
 // docid: M:System.Text.Json.Nodes.JsonNode.op_Implicit(System.DateTimeOffset)
     open class func op_Implicit(value : dotnet.System.DateTimeOffset) throws -> dotnet.System.Text.Json.Nodes.JsonNode {
@@ -6409,6 +6474,14 @@ open class JsonNode
         } else {
         return dotnet.System.Text.Json.Nodes.JsonNode(hndl : __return);
         }
+    }
+// TODO conversion to Self [IsSpecialName] System.Text.Json.Nodes.JsonNode op_Implicit(System.DateTimeOffset)
+    public convenience init(value : dotnet.System.DateTimeOffset) 
+    {
+        var __thrown : NullableHandle = nil;
+        let __return = System_Text_Json_Nodes_JsonNode_JsonNode__op_Implicit_0__1__DateTimeOffset(&__thrown, value.get_handle());
+        assert(__thrown == nil);
+            self.init(hndl: __return);
     }
     // [IsSpecialName] System.Text.Json.Nodes.JsonNode op_Implicit(System.Decimal)
 // docid: M:System.Text.Json.Nodes.JsonNode.op_Implicit(System.Decimal)
@@ -6421,6 +6494,14 @@ open class JsonNode
         return dotnet.System.Text.Json.Nodes.JsonNode(hndl : __return);
         }
     }
+// TODO conversion to Self [IsSpecialName] System.Text.Json.Nodes.JsonNode op_Implicit(System.Decimal)
+    public convenience init(value : dotnet.System.Decimal) 
+    {
+        var __thrown : NullableHandle = nil;
+        let __return = System_Text_Json_Nodes_JsonNode_JsonNode__op_Implicit_0__1__Decimal(&__thrown, value.get_handle());
+        assert(__thrown == nil);
+            self.init(hndl: __return);
+    }
     // [IsSpecialName] System.Text.Json.Nodes.JsonNode op_Implicit(System.Double)
 // docid: M:System.Text.Json.Nodes.JsonNode.op_Implicit(System.Double)
     open class func op_Implicit(value : Swift.Double) throws -> dotnet.System.Text.Json.Nodes.JsonNode {
@@ -6431,6 +6512,14 @@ open class JsonNode
         } else {
         return dotnet.System.Text.Json.Nodes.JsonNode(hndl : __return);
         }
+    }
+// TODO conversion to Self [IsSpecialName] System.Text.Json.Nodes.JsonNode op_Implicit(System.Double)
+    public convenience init(value : Swift.Double) 
+    {
+        var __thrown : NullableHandle = nil;
+        let __return = System_Text_Json_Nodes_JsonNode_JsonNode__op_Implicit_0__1__f64(&__thrown, value);
+        assert(__thrown == nil);
+            self.init(hndl: __return);
     }
     // [IsSpecialName] System.Text.Json.Nodes.JsonNode op_Implicit(System.Guid)
 // docid: M:System.Text.Json.Nodes.JsonNode.op_Implicit(System.Guid)
@@ -6443,6 +6532,14 @@ open class JsonNode
         return dotnet.System.Text.Json.Nodes.JsonNode(hndl : __return);
         }
     }
+// TODO conversion to Self [IsSpecialName] System.Text.Json.Nodes.JsonNode op_Implicit(System.Guid)
+    public convenience init(value : dotnet.System.Guid) 
+    {
+        var __thrown : NullableHandle = nil;
+        let __return = System_Text_Json_Nodes_JsonNode_JsonNode__op_Implicit_0__1__Guid(&__thrown, value.get_handle());
+        assert(__thrown == nil);
+            self.init(hndl: __return);
+    }
     // [IsSpecialName] System.Text.Json.Nodes.JsonNode op_Implicit(System.Int16)
 // docid: M:System.Text.Json.Nodes.JsonNode.op_Implicit(System.Int16)
     open class func op_Implicit(value : Swift.Int16) throws -> dotnet.System.Text.Json.Nodes.JsonNode {
@@ -6453,6 +6550,14 @@ open class JsonNode
         } else {
         return dotnet.System.Text.Json.Nodes.JsonNode(hndl : __return);
         }
+    }
+// TODO conversion to Self [IsSpecialName] System.Text.Json.Nodes.JsonNode op_Implicit(System.Int16)
+    public convenience init(value : Swift.Int16) 
+    {
+        var __thrown : NullableHandle = nil;
+        let __return = System_Text_Json_Nodes_JsonNode_JsonNode__op_Implicit_0__1__i16(&__thrown, value);
+        assert(__thrown == nil);
+            self.init(hndl: __return);
     }
     // [IsSpecialName] System.Text.Json.Nodes.JsonNode op_Implicit(System.Int32)
 // docid: M:System.Text.Json.Nodes.JsonNode.op_Implicit(System.Int32)
@@ -6465,6 +6570,14 @@ open class JsonNode
         return dotnet.System.Text.Json.Nodes.JsonNode(hndl : __return);
         }
     }
+// TODO conversion to Self [IsSpecialName] System.Text.Json.Nodes.JsonNode op_Implicit(System.Int32)
+    public convenience init(value : Swift.Int32) 
+    {
+        var __thrown : NullableHandle = nil;
+        let __return = System_Text_Json_Nodes_JsonNode_JsonNode__op_Implicit_0__1__i32(&__thrown, value);
+        assert(__thrown == nil);
+            self.init(hndl: __return);
+    }
     // [IsSpecialName] System.Text.Json.Nodes.JsonNode op_Implicit(System.Int64)
 // docid: M:System.Text.Json.Nodes.JsonNode.op_Implicit(System.Int64)
     open class func op_Implicit(value : Swift.Int64) throws -> dotnet.System.Text.Json.Nodes.JsonNode {
@@ -6475,6 +6588,14 @@ open class JsonNode
         } else {
         return dotnet.System.Text.Json.Nodes.JsonNode(hndl : __return);
         }
+    }
+// TODO conversion to Self [IsSpecialName] System.Text.Json.Nodes.JsonNode op_Implicit(System.Int64)
+    public convenience init(value : Swift.Int64) 
+    {
+        var __thrown : NullableHandle = nil;
+        let __return = System_Text_Json_Nodes_JsonNode_JsonNode__op_Implicit_0__1__i64(&__thrown, value);
+        assert(__thrown == nil);
+            self.init(hndl: __return);
     }
     // [IsSpecialName] System.Text.Json.Nodes.JsonNode op_Implicit(System.Nullable<bool>)
 // docid: M:System.Text.Json.Nodes.JsonNode.op_Implicit(System.Nullable{System.Boolean})
@@ -6489,6 +6610,18 @@ open class JsonNode
         } else {
             return nil;
         }
+        }
+    }
+// TODO conversion to Self [IsSpecialName] System.Text.Json.Nodes.JsonNode op_Implicit(System.Nullable<bool>)
+    public convenience init?(value : Optional<Bool>) 
+    {
+        var __thrown : NullableHandle = nil;
+        let __return = System_Text_Json_Nodes_JsonNode_JsonNode__op_Implicit_0__1__System_Nullable_bool_(&__thrown, (value != nil) ? System_Int32_box(Swift.Int32(value! ? 1 : 0)) : nil);
+        assert(__thrown == nil);
+        if let __ret_unwrapped = __return {
+            self.init(hndl: __ret_unwrapped);
+        } else {
+            return nil;
         }
     }
     // [IsSpecialName] System.Text.Json.Nodes.JsonNode op_Implicit(System.Nullable<System.Byte>)
@@ -6506,6 +6639,18 @@ open class JsonNode
         }
         }
     }
+// TODO conversion to Self [IsSpecialName] System.Text.Json.Nodes.JsonNode op_Implicit(System.Nullable<System.Byte>)
+    public convenience init?(value : Optional<Swift.UInt8>) 
+    {
+        var __thrown : NullableHandle = nil;
+        let __return = System_Text_Json_Nodes_JsonNode_JsonNode__op_Implicit_0__1__System_Nullable_u8_(&__thrown, (value != nil) ? System_Byte_box(value!) : nil);
+        assert(__thrown == nil);
+        if let __ret_unwrapped = __return {
+            self.init(hndl: __ret_unwrapped);
+        } else {
+            return nil;
+        }
+    }
     // [IsSpecialName] System.Text.Json.Nodes.JsonNode op_Implicit(System.Nullable<System.Char>)
 // docid: M:System.Text.Json.Nodes.JsonNode.op_Implicit(System.Nullable{System.Char})
     open class func op_Implicit(value : Optional<dotnet.System.Char>) throws -> Optional<dotnet.System.Text.Json.Nodes.JsonNode> {
@@ -6519,6 +6664,18 @@ open class JsonNode
         } else {
             return nil;
         }
+        }
+    }
+// TODO conversion to Self [IsSpecialName] System.Text.Json.Nodes.JsonNode op_Implicit(System.Nullable<System.Char>)
+    public convenience init?(value : Optional<dotnet.System.Char>) 
+    {
+        var __thrown : NullableHandle = nil;
+        let __return = System_Text_Json_Nodes_JsonNode_JsonNode__op_Implicit_0__1__System_Nullable_System_Char_(&__thrown, (value != nil) ? System_Int16_box(value!.get_value()) : nil);
+        assert(__thrown == nil);
+        if let __ret_unwrapped = __return {
+            self.init(hndl: __ret_unwrapped);
+        } else {
+            return nil;
         }
     }
     // [IsSpecialName] System.Text.Json.Nodes.JsonNode op_Implicit(System.Nullable<System.DateTimeOffset>)
@@ -6536,6 +6693,18 @@ open class JsonNode
         }
         }
     }
+// TODO conversion to Self [IsSpecialName] System.Text.Json.Nodes.JsonNode op_Implicit(System.Nullable<System.DateTimeOffset>)
+    public convenience init?(value : Optional<dotnet.System.DateTimeOffset>) 
+    {
+        var __thrown : NullableHandle = nil;
+        let __return = System_Text_Json_Nodes_JsonNode_JsonNode__op_Implicit_0__1__System_Nullable_System_DateTimeOffset_(&__thrown, (value != nil) ? value!.get_handle() : nil);
+        assert(__thrown == nil);
+        if let __ret_unwrapped = __return {
+            self.init(hndl: __ret_unwrapped);
+        } else {
+            return nil;
+        }
+    }
     // [IsSpecialName] System.Text.Json.Nodes.JsonNode op_Implicit(System.Nullable<System.DateTime>)
 // docid: M:System.Text.Json.Nodes.JsonNode.op_Implicit(System.Nullable{System.DateTime})
     open class func op_Implicit(value : Optional<dotnet.System.DateTime>) throws -> Optional<dotnet.System.Text.Json.Nodes.JsonNode> {
@@ -6549,6 +6718,18 @@ open class JsonNode
         } else {
             return nil;
         }
+        }
+    }
+// TODO conversion to Self [IsSpecialName] System.Text.Json.Nodes.JsonNode op_Implicit(System.Nullable<System.DateTime>)
+    public convenience init?(value : Optional<dotnet.System.DateTime>) 
+    {
+        var __thrown : NullableHandle = nil;
+        let __return = System_Text_Json_Nodes_JsonNode_JsonNode__op_Implicit_0__1__System_Nullable_System_DateTime_(&__thrown, (value != nil) ? value!.get_handle() : nil);
+        assert(__thrown == nil);
+        if let __ret_unwrapped = __return {
+            self.init(hndl: __ret_unwrapped);
+        } else {
+            return nil;
         }
     }
     // [IsSpecialName] System.Text.Json.Nodes.JsonNode op_Implicit(System.Nullable<System.Decimal>)
@@ -6566,6 +6747,18 @@ open class JsonNode
         }
         }
     }
+// TODO conversion to Self [IsSpecialName] System.Text.Json.Nodes.JsonNode op_Implicit(System.Nullable<System.Decimal>)
+    public convenience init?(value : Optional<dotnet.System.Decimal>) 
+    {
+        var __thrown : NullableHandle = nil;
+        let __return = System_Text_Json_Nodes_JsonNode_JsonNode__op_Implicit_0__1__System_Nullable_System_Decimal_(&__thrown, (value != nil) ? value!.get_handle() : nil);
+        assert(__thrown == nil);
+        if let __ret_unwrapped = __return {
+            self.init(hndl: __ret_unwrapped);
+        } else {
+            return nil;
+        }
+    }
     // [IsSpecialName] System.Text.Json.Nodes.JsonNode op_Implicit(System.Nullable<System.Double>)
 // docid: M:System.Text.Json.Nodes.JsonNode.op_Implicit(System.Nullable{System.Double})
     open class func op_Implicit(value : Optional<Swift.Double>) throws -> Optional<dotnet.System.Text.Json.Nodes.JsonNode> {
@@ -6579,6 +6772,18 @@ open class JsonNode
         } else {
             return nil;
         }
+        }
+    }
+// TODO conversion to Self [IsSpecialName] System.Text.Json.Nodes.JsonNode op_Implicit(System.Nullable<System.Double>)
+    public convenience init?(value : Optional<Swift.Double>) 
+    {
+        var __thrown : NullableHandle = nil;
+        let __return = System_Text_Json_Nodes_JsonNode_JsonNode__op_Implicit_0__1__System_Nullable_f64_(&__thrown, (value != nil) ? System_Double_box(value!) : nil);
+        assert(__thrown == nil);
+        if let __ret_unwrapped = __return {
+            self.init(hndl: __ret_unwrapped);
+        } else {
+            return nil;
         }
     }
     // [IsSpecialName] System.Text.Json.Nodes.JsonNode op_Implicit(System.Nullable<System.Guid>)
@@ -6596,6 +6801,18 @@ open class JsonNode
         }
         }
     }
+// TODO conversion to Self [IsSpecialName] System.Text.Json.Nodes.JsonNode op_Implicit(System.Nullable<System.Guid>)
+    public convenience init?(value : Optional<dotnet.System.Guid>) 
+    {
+        var __thrown : NullableHandle = nil;
+        let __return = System_Text_Json_Nodes_JsonNode_JsonNode__op_Implicit_0__1__System_Nullable_System_Guid_(&__thrown, (value != nil) ? value!.get_handle() : nil);
+        assert(__thrown == nil);
+        if let __ret_unwrapped = __return {
+            self.init(hndl: __ret_unwrapped);
+        } else {
+            return nil;
+        }
+    }
     // [IsSpecialName] System.Text.Json.Nodes.JsonNode op_Implicit(System.Nullable<System.Int16>)
 // docid: M:System.Text.Json.Nodes.JsonNode.op_Implicit(System.Nullable{System.Int16})
     open class func op_Implicit(value : Optional<Swift.Int16>) throws -> Optional<dotnet.System.Text.Json.Nodes.JsonNode> {
@@ -6609,6 +6826,18 @@ open class JsonNode
         } else {
             return nil;
         }
+        }
+    }
+// TODO conversion to Self [IsSpecialName] System.Text.Json.Nodes.JsonNode op_Implicit(System.Nullable<System.Int16>)
+    public convenience init?(value : Optional<Swift.Int16>) 
+    {
+        var __thrown : NullableHandle = nil;
+        let __return = System_Text_Json_Nodes_JsonNode_JsonNode__op_Implicit_0__1__System_Nullable_i16_(&__thrown, (value != nil) ? System_Int16_box(value!) : nil);
+        assert(__thrown == nil);
+        if let __ret_unwrapped = __return {
+            self.init(hndl: __ret_unwrapped);
+        } else {
+            return nil;
         }
     }
     // [IsSpecialName] System.Text.Json.Nodes.JsonNode op_Implicit(System.Nullable<System.Int32>)
@@ -6626,6 +6855,18 @@ open class JsonNode
         }
         }
     }
+// TODO conversion to Self [IsSpecialName] System.Text.Json.Nodes.JsonNode op_Implicit(System.Nullable<System.Int32>)
+    public convenience init?(value : Optional<Swift.Int32>) 
+    {
+        var __thrown : NullableHandle = nil;
+        let __return = System_Text_Json_Nodes_JsonNode_JsonNode__op_Implicit_0__1__System_Nullable_i32_(&__thrown, (value != nil) ? System_Int32_box(value!) : nil);
+        assert(__thrown == nil);
+        if let __ret_unwrapped = __return {
+            self.init(hndl: __ret_unwrapped);
+        } else {
+            return nil;
+        }
+    }
     // [IsSpecialName] System.Text.Json.Nodes.JsonNode op_Implicit(System.Nullable<System.Int64>)
 // docid: M:System.Text.Json.Nodes.JsonNode.op_Implicit(System.Nullable{System.Int64})
     open class func op_Implicit(value : Optional<Swift.Int64>) throws -> Optional<dotnet.System.Text.Json.Nodes.JsonNode> {
@@ -6639,6 +6880,18 @@ open class JsonNode
         } else {
             return nil;
         }
+        }
+    }
+// TODO conversion to Self [IsSpecialName] System.Text.Json.Nodes.JsonNode op_Implicit(System.Nullable<System.Int64>)
+    public convenience init?(value : Optional<Swift.Int64>) 
+    {
+        var __thrown : NullableHandle = nil;
+        let __return = System_Text_Json_Nodes_JsonNode_JsonNode__op_Implicit_0__1__System_Nullable_i64_(&__thrown, (value != nil) ? System_Int64_box(value!) : nil);
+        assert(__thrown == nil);
+        if let __ret_unwrapped = __return {
+            self.init(hndl: __ret_unwrapped);
+        } else {
+            return nil;
         }
     }
     // [IsSpecialName] System.Text.Json.Nodes.JsonNode op_Implicit(System.Nullable<System.SByte>)
@@ -6656,6 +6909,18 @@ open class JsonNode
         }
         }
     }
+// TODO conversion to Self [IsSpecialName] System.Text.Json.Nodes.JsonNode op_Implicit(System.Nullable<System.SByte>)
+    public convenience init?(value : Optional<Swift.Int8>) 
+    {
+        var __thrown : NullableHandle = nil;
+        let __return = System_Text_Json_Nodes_JsonNode_JsonNode__op_Implicit_0__1__System_Nullable_i8_(&__thrown, (value != nil) ? System_SByte_box(value!) : nil);
+        assert(__thrown == nil);
+        if let __ret_unwrapped = __return {
+            self.init(hndl: __ret_unwrapped);
+        } else {
+            return nil;
+        }
+    }
     // [IsSpecialName] System.Text.Json.Nodes.JsonNode op_Implicit(System.Nullable<System.Single>)
 // docid: M:System.Text.Json.Nodes.JsonNode.op_Implicit(System.Nullable{System.Single})
     open class func op_Implicit(value : Optional<Swift.Float>) throws -> Optional<dotnet.System.Text.Json.Nodes.JsonNode> {
@@ -6669,6 +6934,18 @@ open class JsonNode
         } else {
             return nil;
         }
+        }
+    }
+// TODO conversion to Self [IsSpecialName] System.Text.Json.Nodes.JsonNode op_Implicit(System.Nullable<System.Single>)
+    public convenience init?(value : Optional<Swift.Float>) 
+    {
+        var __thrown : NullableHandle = nil;
+        let __return = System_Text_Json_Nodes_JsonNode_JsonNode__op_Implicit_0__1__System_Nullable_f32_(&__thrown, (value != nil) ? System_Single_box(value!) : nil);
+        assert(__thrown == nil);
+        if let __ret_unwrapped = __return {
+            self.init(hndl: __ret_unwrapped);
+        } else {
+            return nil;
         }
     }
     // [IsSpecialName] System.Text.Json.Nodes.JsonNode op_Implicit(System.Nullable<System.UInt16>)
@@ -6686,6 +6963,18 @@ open class JsonNode
         }
         }
     }
+// TODO conversion to Self [IsSpecialName] System.Text.Json.Nodes.JsonNode op_Implicit(System.Nullable<System.UInt16>)
+    public convenience init?(value : Optional<Swift.UInt16>) 
+    {
+        var __thrown : NullableHandle = nil;
+        let __return = System_Text_Json_Nodes_JsonNode_JsonNode__op_Implicit_0__1__System_Nullable_u16_(&__thrown, (value != nil) ? System_UInt16_box(value!) : nil);
+        assert(__thrown == nil);
+        if let __ret_unwrapped = __return {
+            self.init(hndl: __ret_unwrapped);
+        } else {
+            return nil;
+        }
+    }
     // [IsSpecialName] System.Text.Json.Nodes.JsonNode op_Implicit(System.Nullable<System.UInt32>)
 // docid: M:System.Text.Json.Nodes.JsonNode.op_Implicit(System.Nullable{System.UInt32})
     open class func op_Implicit(value : Optional<Swift.UInt32>) throws -> Optional<dotnet.System.Text.Json.Nodes.JsonNode> {
@@ -6699,6 +6988,18 @@ open class JsonNode
         } else {
             return nil;
         }
+        }
+    }
+// TODO conversion to Self [IsSpecialName] System.Text.Json.Nodes.JsonNode op_Implicit(System.Nullable<System.UInt32>)
+    public convenience init?(value : Optional<Swift.UInt32>) 
+    {
+        var __thrown : NullableHandle = nil;
+        let __return = System_Text_Json_Nodes_JsonNode_JsonNode__op_Implicit_0__1__System_Nullable_u32_(&__thrown, (value != nil) ? System_UInt32_box(value!) : nil);
+        assert(__thrown == nil);
+        if let __ret_unwrapped = __return {
+            self.init(hndl: __ret_unwrapped);
+        } else {
+            return nil;
         }
     }
     // [IsSpecialName] System.Text.Json.Nodes.JsonNode op_Implicit(System.Nullable<System.UInt64>)
@@ -6716,6 +7017,18 @@ open class JsonNode
         }
         }
     }
+// TODO conversion to Self [IsSpecialName] System.Text.Json.Nodes.JsonNode op_Implicit(System.Nullable<System.UInt64>)
+    public convenience init?(value : Optional<Swift.UInt64>) 
+    {
+        var __thrown : NullableHandle = nil;
+        let __return = System_Text_Json_Nodes_JsonNode_JsonNode__op_Implicit_0__1__System_Nullable_u64_(&__thrown, (value != nil) ? System_UInt64_box(value!) : nil);
+        assert(__thrown == nil);
+        if let __ret_unwrapped = __return {
+            self.init(hndl: __ret_unwrapped);
+        } else {
+            return nil;
+        }
+    }
     // [IsSpecialName] System.Text.Json.Nodes.JsonNode op_Implicit(System.SByte)
 // docid: M:System.Text.Json.Nodes.JsonNode.op_Implicit(System.SByte)
     open class func op_Implicit(value : Swift.Int8) throws -> dotnet.System.Text.Json.Nodes.JsonNode {
@@ -6727,6 +7040,14 @@ open class JsonNode
         return dotnet.System.Text.Json.Nodes.JsonNode(hndl : __return);
         }
     }
+// TODO conversion to Self [IsSpecialName] System.Text.Json.Nodes.JsonNode op_Implicit(System.SByte)
+    public convenience init(value : Swift.Int8) 
+    {
+        var __thrown : NullableHandle = nil;
+        let __return = System_Text_Json_Nodes_JsonNode_JsonNode__op_Implicit_0__1__i8(&__thrown, value);
+        assert(__thrown == nil);
+            self.init(hndl: __return);
+    }
     // [IsSpecialName] System.Text.Json.Nodes.JsonNode op_Implicit(System.Single)
 // docid: M:System.Text.Json.Nodes.JsonNode.op_Implicit(System.Single)
     open class func op_Implicit(value : Swift.Float) throws -> dotnet.System.Text.Json.Nodes.JsonNode {
@@ -6737,6 +7058,14 @@ open class JsonNode
         } else {
         return dotnet.System.Text.Json.Nodes.JsonNode(hndl : __return);
         }
+    }
+// TODO conversion to Self [IsSpecialName] System.Text.Json.Nodes.JsonNode op_Implicit(System.Single)
+    public convenience init(value : Swift.Float) 
+    {
+        var __thrown : NullableHandle = nil;
+        let __return = System_Text_Json_Nodes_JsonNode_JsonNode__op_Implicit_0__1__f32(&__thrown, value);
+        assert(__thrown == nil);
+            self.init(hndl: __return);
     }
     // [IsSpecialName] System.Text.Json.Nodes.JsonNode op_Implicit(System.String)
 // docid: M:System.Text.Json.Nodes.JsonNode.op_Implicit(System.String)
@@ -6753,6 +7082,18 @@ open class JsonNode
         }
         }
     }
+// TODO conversion to Self [IsSpecialName] System.Text.Json.Nodes.JsonNode op_Implicit(System.String)
+    public convenience init?(value : Optional<dotnet.System.String>) 
+    {
+        var __thrown : NullableHandle = nil;
+        let __return = System_Text_Json_Nodes_JsonNode_JsonNode__op_Implicit_0__1__String(&__thrown, value?.get_handle() ?? nil);
+        assert(__thrown == nil);
+        if let __ret_unwrapped = __return {
+            self.init(hndl: __ret_unwrapped);
+        } else {
+            return nil;
+        }
+    }
     // [IsSpecialName] System.Text.Json.Nodes.JsonNode op_Implicit(System.UInt16)
 // docid: M:System.Text.Json.Nodes.JsonNode.op_Implicit(System.UInt16)
     open class func op_Implicit(value : Swift.UInt16) throws -> dotnet.System.Text.Json.Nodes.JsonNode {
@@ -6763,6 +7104,14 @@ open class JsonNode
         } else {
         return dotnet.System.Text.Json.Nodes.JsonNode(hndl : __return);
         }
+    }
+// TODO conversion to Self [IsSpecialName] System.Text.Json.Nodes.JsonNode op_Implicit(System.UInt16)
+    public convenience init(value : Swift.UInt16) 
+    {
+        var __thrown : NullableHandle = nil;
+        let __return = System_Text_Json_Nodes_JsonNode_JsonNode__op_Implicit_0__1__u16(&__thrown, value);
+        assert(__thrown == nil);
+            self.init(hndl: __return);
     }
     // [IsSpecialName] System.Text.Json.Nodes.JsonNode op_Implicit(System.UInt32)
 // docid: M:System.Text.Json.Nodes.JsonNode.op_Implicit(System.UInt32)
@@ -6775,6 +7124,14 @@ open class JsonNode
         return dotnet.System.Text.Json.Nodes.JsonNode(hndl : __return);
         }
     }
+// TODO conversion to Self [IsSpecialName] System.Text.Json.Nodes.JsonNode op_Implicit(System.UInt32)
+    public convenience init(value : Swift.UInt32) 
+    {
+        var __thrown : NullableHandle = nil;
+        let __return = System_Text_Json_Nodes_JsonNode_JsonNode__op_Implicit_0__1__u32(&__thrown, value);
+        assert(__thrown == nil);
+            self.init(hndl: __return);
+    }
     // [IsSpecialName] System.Text.Json.Nodes.JsonNode op_Implicit(System.UInt64)
 // docid: M:System.Text.Json.Nodes.JsonNode.op_Implicit(System.UInt64)
     open class func op_Implicit(value : Swift.UInt64) throws -> dotnet.System.Text.Json.Nodes.JsonNode {
@@ -6785,6 +7142,14 @@ open class JsonNode
         } else {
         return dotnet.System.Text.Json.Nodes.JsonNode(hndl : __return);
         }
+    }
+// TODO conversion to Self [IsSpecialName] System.Text.Json.Nodes.JsonNode op_Implicit(System.UInt64)
+    public convenience init(value : Swift.UInt64) 
+    {
+        var __thrown : NullableHandle = nil;
+        let __return = System_Text_Json_Nodes_JsonNode_JsonNode__op_Implicit_0__1__u64(&__thrown, value);
+        assert(__thrown == nil);
+            self.init(hndl: __return);
     }
     // System.Text.Json.Nodes.JsonNode Parse(System.IO.Stream, System.Nullable<System.Text.Json.Nodes.JsonNodeOptions>, System.Text.Json.JsonDocumentOptions)
 // docid: M:System.Text.Json.Nodes.JsonNode.Parse(System.IO.Stream,System.Nullable{System.Text.Json.Nodes.JsonNodeOptions},System.Text.Json.JsonDocumentOptions)

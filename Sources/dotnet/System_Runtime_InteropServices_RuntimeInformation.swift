@@ -242,6 +242,10 @@ public final class OSPlatform
         return (__return) != 0;
         }
     }
+    public static func == (left : dotnet.System.Runtime.InteropServices.OSPlatform, right : dotnet.System.Runtime.InteropServices.OSPlatform) -> Bool
+    {
+        return try! op_Equality(left: left, right: right);
+    }
     // [IsSpecialName] bool op_Inequality(System.Runtime.InteropServices.OSPlatform, System.Runtime.InteropServices.OSPlatform)
 // docid: M:System.Runtime.InteropServices.OSPlatform.op_Inequality(System.Runtime.InteropServices.OSPlatform,System.Runtime.InteropServices.OSPlatform)
     /**
@@ -261,6 +265,10 @@ public final class OSPlatform
         } else {
         return (__return) != 0;
         }
+    }
+    public static func != (left : dotnet.System.Runtime.InteropServices.OSPlatform, right : dotnet.System.Runtime.InteropServices.OSPlatform) -> Bool
+    {
+        return try! op_Inequality(left: left, right: right);
     }
     // System.String ToString()
 // docid: M:System.Runtime.InteropServices.OSPlatform.ToString

@@ -31930,6 +31930,10 @@ public final class SqlBinary
         return dotnet.System.Data.SqlTypes.SqlBinary(hndl : __return);
         }
     }
+    public static func + (x : dotnet.System.Data.SqlTypes.SqlBinary, y : dotnet.System.Data.SqlTypes.SqlBinary) -> dotnet.System.Data.SqlTypes.SqlBinary
+    {
+        return try! op_Addition(x: x, y: y);
+    }
     // [IsSpecialName] System.Data.SqlTypes.SqlBoolean op_Equality(System.Data.SqlTypes.SqlBinary, System.Data.SqlTypes.SqlBinary)
 // docid: M:System.Data.SqlTypes.SqlBinary.op_Equality(System.Data.SqlTypes.SqlBinary,System.Data.SqlTypes.SqlBinary)
     /**
@@ -31949,6 +31953,10 @@ public final class SqlBinary
         return dotnet.System.Data.SqlTypes.SqlBoolean(hndl : __return);
         }
     }
+    public static func == (x : dotnet.System.Data.SqlTypes.SqlBinary, y : dotnet.System.Data.SqlTypes.SqlBinary) -> dotnet.System.Data.SqlTypes.SqlBoolean
+    {
+        return try! op_Equality(x: x, y: y);
+    }
     // [IsSpecialName] System.Byte[] op_Explicit(System.Data.SqlTypes.SqlBinary)
 // docid: M:System.Data.SqlTypes.SqlBinary.op_Explicit(System.Data.SqlTypes.SqlBinary)
     public class func op_Explicit(x : dotnet.System.Data.SqlTypes.SqlBinary) throws -> Optional<dotnet.System_Arr<Swift.UInt8>> {
@@ -31964,6 +31972,7 @@ public final class SqlBinary
         }
         }
     }
+// TODO conversion from Self [IsSpecialName] System.Byte[] op_Explicit(System.Data.SqlTypes.SqlBinary)
     // [IsSpecialName] System.Data.SqlTypes.SqlBinary op_Explicit(System.Data.SqlTypes.SqlGuid)
 // docid: M:System.Data.SqlTypes.SqlBinary.op_Explicit(System.Data.SqlTypes.SqlGuid)
     public class func op_Explicit(x : dotnet.System.Data.SqlTypes.SqlGuid) throws -> dotnet.System.Data.SqlTypes.SqlBinary {
@@ -31973,6 +31982,17 @@ public final class SqlBinary
             throw dotnet.System.Exception(hndl: __ex);
         } else {
         return dotnet.System.Data.SqlTypes.SqlBinary(hndl : __return);
+        }
+    }
+// TODO conversion to Self [IsSpecialName] System.Data.SqlTypes.SqlBinary op_Explicit(System.Data.SqlTypes.SqlGuid)
+    public convenience init(x : dotnet.System.Data.SqlTypes.SqlGuid) throws
+    {
+        var __thrown : NullableHandle = nil;
+        let __return = System_Data_SqlTypes_SqlBinary_SqlBinary__op_Explicit_0__1__SqlGuid(&__thrown, x.get_handle());
+        if let __ex =  __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: __return);
         }
     }
     // [IsSpecialName] System.Data.SqlTypes.SqlBoolean op_GreaterThan(System.Data.SqlTypes.SqlBinary, System.Data.SqlTypes.SqlBinary)
@@ -31994,6 +32014,10 @@ public final class SqlBinary
         return dotnet.System.Data.SqlTypes.SqlBoolean(hndl : __return);
         }
     }
+    public static func > (x : dotnet.System.Data.SqlTypes.SqlBinary, y : dotnet.System.Data.SqlTypes.SqlBinary) -> dotnet.System.Data.SqlTypes.SqlBoolean
+    {
+        return try! op_GreaterThan(x: x, y: y);
+    }
     // [IsSpecialName] System.Data.SqlTypes.SqlBoolean op_GreaterThanOrEqual(System.Data.SqlTypes.SqlBinary, System.Data.SqlTypes.SqlBinary)
 // docid: M:System.Data.SqlTypes.SqlBinary.op_GreaterThanOrEqual(System.Data.SqlTypes.SqlBinary,System.Data.SqlTypes.SqlBinary)
     /**
@@ -32013,6 +32037,10 @@ public final class SqlBinary
         return dotnet.System.Data.SqlTypes.SqlBoolean(hndl : __return);
         }
     }
+    public static func >= (x : dotnet.System.Data.SqlTypes.SqlBinary, y : dotnet.System.Data.SqlTypes.SqlBinary) -> dotnet.System.Data.SqlTypes.SqlBoolean
+    {
+        return try! op_GreaterThanOrEqual(x: x, y: y);
+    }
     // [IsSpecialName] System.Data.SqlTypes.SqlBinary op_Implicit(System.Byte[])
 // docid: M:System.Data.SqlTypes.SqlBinary.op_Implicit(System.Byte[])
     public class func op_Implicit(x : dotnet.System_Arr<Swift.UInt8>) throws -> dotnet.System.Data.SqlTypes.SqlBinary {
@@ -32023,6 +32051,14 @@ public final class SqlBinary
         } else {
         return dotnet.System.Data.SqlTypes.SqlBinary(hndl : __return);
         }
+    }
+// TODO conversion to Self [IsSpecialName] System.Data.SqlTypes.SqlBinary op_Implicit(System.Byte[])
+    public convenience init(x : dotnet.System_Arr<Swift.UInt8>) 
+    {
+        var __thrown : NullableHandle = nil;
+        let __return = System_Data_SqlTypes_SqlBinary_SqlBinary__op_Implicit_0__1__u8Array(&__thrown, x.get_handle());
+        assert(__thrown == nil);
+            self.init(hndl: __return);
     }
     // [IsSpecialName] System.Data.SqlTypes.SqlBoolean op_Inequality(System.Data.SqlTypes.SqlBinary, System.Data.SqlTypes.SqlBinary)
 // docid: M:System.Data.SqlTypes.SqlBinary.op_Inequality(System.Data.SqlTypes.SqlBinary,System.Data.SqlTypes.SqlBinary)
@@ -32043,6 +32079,10 @@ public final class SqlBinary
         return dotnet.System.Data.SqlTypes.SqlBoolean(hndl : __return);
         }
     }
+    public static func != (x : dotnet.System.Data.SqlTypes.SqlBinary, y : dotnet.System.Data.SqlTypes.SqlBinary) -> dotnet.System.Data.SqlTypes.SqlBoolean
+    {
+        return try! op_Inequality(x: x, y: y);
+    }
     // [IsSpecialName] System.Data.SqlTypes.SqlBoolean op_LessThan(System.Data.SqlTypes.SqlBinary, System.Data.SqlTypes.SqlBinary)
 // docid: M:System.Data.SqlTypes.SqlBinary.op_LessThan(System.Data.SqlTypes.SqlBinary,System.Data.SqlTypes.SqlBinary)
     /**
@@ -32062,6 +32102,10 @@ public final class SqlBinary
         return dotnet.System.Data.SqlTypes.SqlBoolean(hndl : __return);
         }
     }
+    public static func < (x : dotnet.System.Data.SqlTypes.SqlBinary, y : dotnet.System.Data.SqlTypes.SqlBinary) -> dotnet.System.Data.SqlTypes.SqlBoolean
+    {
+        return try! op_LessThan(x: x, y: y);
+    }
     // [IsSpecialName] System.Data.SqlTypes.SqlBoolean op_LessThanOrEqual(System.Data.SqlTypes.SqlBinary, System.Data.SqlTypes.SqlBinary)
 // docid: M:System.Data.SqlTypes.SqlBinary.op_LessThanOrEqual(System.Data.SqlTypes.SqlBinary,System.Data.SqlTypes.SqlBinary)
     /**
@@ -32080,6 +32124,10 @@ public final class SqlBinary
         } else {
         return dotnet.System.Data.SqlTypes.SqlBoolean(hndl : __return);
         }
+    }
+    public static func <= (x : dotnet.System.Data.SqlTypes.SqlBinary, y : dotnet.System.Data.SqlTypes.SqlBinary) -> dotnet.System.Data.SqlTypes.SqlBoolean
+    {
+        return try! op_LessThanOrEqual(x: x, y: y);
     }
     // System.Data.SqlTypes.SqlGuid ToSqlGuid()
 // docid: M:System.Data.SqlTypes.SqlBinary.ToSqlGuid
@@ -32589,6 +32637,10 @@ public final class SqlBoolean
         return dotnet.System.Data.SqlTypes.SqlBoolean(hndl : __return);
         }
     }
+    public static func & (x : dotnet.System.Data.SqlTypes.SqlBoolean, y : dotnet.System.Data.SqlTypes.SqlBoolean) -> dotnet.System.Data.SqlTypes.SqlBoolean
+    {
+        return try! op_BitwiseAnd(x: x, y: y);
+    }
     // [IsSpecialName] System.Data.SqlTypes.SqlBoolean op_BitwiseOr(System.Data.SqlTypes.SqlBoolean, System.Data.SqlTypes.SqlBoolean)
 // docid: M:System.Data.SqlTypes.SqlBoolean.op_BitwiseOr(System.Data.SqlTypes.SqlBoolean,System.Data.SqlTypes.SqlBoolean)
     /**
@@ -32607,6 +32659,10 @@ public final class SqlBoolean
         } else {
         return dotnet.System.Data.SqlTypes.SqlBoolean(hndl : __return);
         }
+    }
+    public static func | (x : dotnet.System.Data.SqlTypes.SqlBoolean, y : dotnet.System.Data.SqlTypes.SqlBoolean) -> dotnet.System.Data.SqlTypes.SqlBoolean
+    {
+        return try! op_BitwiseOr(x: x, y: y);
     }
     // [IsSpecialName] System.Data.SqlTypes.SqlBoolean op_Equality(System.Data.SqlTypes.SqlBoolean, System.Data.SqlTypes.SqlBoolean)
 // docid: M:System.Data.SqlTypes.SqlBoolean.op_Equality(System.Data.SqlTypes.SqlBoolean,System.Data.SqlTypes.SqlBoolean)
@@ -32628,6 +32684,10 @@ public final class SqlBoolean
         return dotnet.System.Data.SqlTypes.SqlBoolean(hndl : __return);
         }
     }
+    public static func == (x : dotnet.System.Data.SqlTypes.SqlBoolean, y : dotnet.System.Data.SqlTypes.SqlBoolean) -> dotnet.System.Data.SqlTypes.SqlBoolean
+    {
+        return try! op_Equality(x: x, y: y);
+    }
     // [IsSpecialName] System.Data.SqlTypes.SqlBoolean op_ExclusiveOr(System.Data.SqlTypes.SqlBoolean, System.Data.SqlTypes.SqlBoolean)
 // docid: M:System.Data.SqlTypes.SqlBoolean.op_ExclusiveOr(System.Data.SqlTypes.SqlBoolean,System.Data.SqlTypes.SqlBoolean)
     /**
@@ -32647,6 +32707,10 @@ public final class SqlBoolean
         return dotnet.System.Data.SqlTypes.SqlBoolean(hndl : __return);
         }
     }
+    public static func ^ (x : dotnet.System.Data.SqlTypes.SqlBoolean, y : dotnet.System.Data.SqlTypes.SqlBoolean) -> dotnet.System.Data.SqlTypes.SqlBoolean
+    {
+        return try! op_ExclusiveOr(x: x, y: y);
+    }
     // [IsSpecialName] bool op_Explicit(System.Data.SqlTypes.SqlBoolean)
 // docid: M:System.Data.SqlTypes.SqlBoolean.op_Explicit(System.Data.SqlTypes.SqlBoolean)
     public class func op_Explicit(x : dotnet.System.Data.SqlTypes.SqlBoolean) throws -> Bool {
@@ -32658,6 +32722,7 @@ public final class SqlBoolean
         return (__return) != 0;
         }
     }
+// TODO conversion from Self [IsSpecialName] bool op_Explicit(System.Data.SqlTypes.SqlBoolean)
     // [IsSpecialName] System.Data.SqlTypes.SqlBoolean op_Explicit(System.Data.SqlTypes.SqlByte)
 // docid: M:System.Data.SqlTypes.SqlBoolean.op_Explicit(System.Data.SqlTypes.SqlByte)
     public class func op_Explicit(x : dotnet.System.Data.SqlTypes.SqlByte) throws -> dotnet.System.Data.SqlTypes.SqlBoolean {
@@ -32667,6 +32732,17 @@ public final class SqlBoolean
             throw dotnet.System.Exception(hndl: __ex);
         } else {
         return dotnet.System.Data.SqlTypes.SqlBoolean(hndl : __return);
+        }
+    }
+// TODO conversion to Self [IsSpecialName] System.Data.SqlTypes.SqlBoolean op_Explicit(System.Data.SqlTypes.SqlByte)
+    public convenience init(x : dotnet.System.Data.SqlTypes.SqlByte) throws
+    {
+        var __thrown : NullableHandle = nil;
+        let __return = System_Data_SqlTypes_SqlBoolean_SqlBoolean__op_Explicit_0__1__SqlByte(&__thrown, x.get_handle());
+        if let __ex =  __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: __return);
         }
     }
     // [IsSpecialName] System.Data.SqlTypes.SqlBoolean op_Explicit(System.Data.SqlTypes.SqlDecimal)
@@ -32680,6 +32756,17 @@ public final class SqlBoolean
         return dotnet.System.Data.SqlTypes.SqlBoolean(hndl : __return);
         }
     }
+// TODO conversion to Self [IsSpecialName] System.Data.SqlTypes.SqlBoolean op_Explicit(System.Data.SqlTypes.SqlDecimal)
+    public convenience init(x : dotnet.System.Data.SqlTypes.SqlDecimal) throws
+    {
+        var __thrown : NullableHandle = nil;
+        let __return = System_Data_SqlTypes_SqlBoolean_SqlBoolean__op_Explicit_0__1__SqlDecimal(&__thrown, x.get_handle());
+        if let __ex =  __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: __return);
+        }
+    }
     // [IsSpecialName] System.Data.SqlTypes.SqlBoolean op_Explicit(System.Data.SqlTypes.SqlDouble)
 // docid: M:System.Data.SqlTypes.SqlBoolean.op_Explicit(System.Data.SqlTypes.SqlDouble)
     public class func op_Explicit(x : dotnet.System.Data.SqlTypes.SqlDouble) throws -> dotnet.System.Data.SqlTypes.SqlBoolean {
@@ -32689,6 +32776,17 @@ public final class SqlBoolean
             throw dotnet.System.Exception(hndl: __ex);
         } else {
         return dotnet.System.Data.SqlTypes.SqlBoolean(hndl : __return);
+        }
+    }
+// TODO conversion to Self [IsSpecialName] System.Data.SqlTypes.SqlBoolean op_Explicit(System.Data.SqlTypes.SqlDouble)
+    public convenience init(x : dotnet.System.Data.SqlTypes.SqlDouble) throws
+    {
+        var __thrown : NullableHandle = nil;
+        let __return = System_Data_SqlTypes_SqlBoolean_SqlBoolean__op_Explicit_0__1__SqlDouble(&__thrown, x.get_handle());
+        if let __ex =  __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: __return);
         }
     }
     // [IsSpecialName] System.Data.SqlTypes.SqlBoolean op_Explicit(System.Data.SqlTypes.SqlInt16)
@@ -32702,6 +32800,17 @@ public final class SqlBoolean
         return dotnet.System.Data.SqlTypes.SqlBoolean(hndl : __return);
         }
     }
+// TODO conversion to Self [IsSpecialName] System.Data.SqlTypes.SqlBoolean op_Explicit(System.Data.SqlTypes.SqlInt16)
+    public convenience init(x : dotnet.System.Data.SqlTypes.SqlInt16) throws
+    {
+        var __thrown : NullableHandle = nil;
+        let __return = System_Data_SqlTypes_SqlBoolean_SqlBoolean__op_Explicit_0__1__SqlInt16(&__thrown, x.get_handle());
+        if let __ex =  __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: __return);
+        }
+    }
     // [IsSpecialName] System.Data.SqlTypes.SqlBoolean op_Explicit(System.Data.SqlTypes.SqlInt32)
 // docid: M:System.Data.SqlTypes.SqlBoolean.op_Explicit(System.Data.SqlTypes.SqlInt32)
     public class func op_Explicit(x : dotnet.System.Data.SqlTypes.SqlInt32) throws -> dotnet.System.Data.SqlTypes.SqlBoolean {
@@ -32711,6 +32820,17 @@ public final class SqlBoolean
             throw dotnet.System.Exception(hndl: __ex);
         } else {
         return dotnet.System.Data.SqlTypes.SqlBoolean(hndl : __return);
+        }
+    }
+// TODO conversion to Self [IsSpecialName] System.Data.SqlTypes.SqlBoolean op_Explicit(System.Data.SqlTypes.SqlInt32)
+    public convenience init(x : dotnet.System.Data.SqlTypes.SqlInt32) throws
+    {
+        var __thrown : NullableHandle = nil;
+        let __return = System_Data_SqlTypes_SqlBoolean_SqlBoolean__op_Explicit_0__1__SqlInt32(&__thrown, x.get_handle());
+        if let __ex =  __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: __return);
         }
     }
     // [IsSpecialName] System.Data.SqlTypes.SqlBoolean op_Explicit(System.Data.SqlTypes.SqlInt64)
@@ -32724,6 +32844,17 @@ public final class SqlBoolean
         return dotnet.System.Data.SqlTypes.SqlBoolean(hndl : __return);
         }
     }
+// TODO conversion to Self [IsSpecialName] System.Data.SqlTypes.SqlBoolean op_Explicit(System.Data.SqlTypes.SqlInt64)
+    public convenience init(x : dotnet.System.Data.SqlTypes.SqlInt64) throws
+    {
+        var __thrown : NullableHandle = nil;
+        let __return = System_Data_SqlTypes_SqlBoolean_SqlBoolean__op_Explicit_0__1__SqlInt64(&__thrown, x.get_handle());
+        if let __ex =  __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: __return);
+        }
+    }
     // [IsSpecialName] System.Data.SqlTypes.SqlBoolean op_Explicit(System.Data.SqlTypes.SqlMoney)
 // docid: M:System.Data.SqlTypes.SqlBoolean.op_Explicit(System.Data.SqlTypes.SqlMoney)
     public class func op_Explicit(x : dotnet.System.Data.SqlTypes.SqlMoney) throws -> dotnet.System.Data.SqlTypes.SqlBoolean {
@@ -32733,6 +32864,17 @@ public final class SqlBoolean
             throw dotnet.System.Exception(hndl: __ex);
         } else {
         return dotnet.System.Data.SqlTypes.SqlBoolean(hndl : __return);
+        }
+    }
+// TODO conversion to Self [IsSpecialName] System.Data.SqlTypes.SqlBoolean op_Explicit(System.Data.SqlTypes.SqlMoney)
+    public convenience init(x : dotnet.System.Data.SqlTypes.SqlMoney) throws
+    {
+        var __thrown : NullableHandle = nil;
+        let __return = System_Data_SqlTypes_SqlBoolean_SqlBoolean__op_Explicit_0__1__SqlMoney(&__thrown, x.get_handle());
+        if let __ex =  __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: __return);
         }
     }
     // [IsSpecialName] System.Data.SqlTypes.SqlBoolean op_Explicit(System.Data.SqlTypes.SqlSingle)
@@ -32746,6 +32888,17 @@ public final class SqlBoolean
         return dotnet.System.Data.SqlTypes.SqlBoolean(hndl : __return);
         }
     }
+// TODO conversion to Self [IsSpecialName] System.Data.SqlTypes.SqlBoolean op_Explicit(System.Data.SqlTypes.SqlSingle)
+    public convenience init(x : dotnet.System.Data.SqlTypes.SqlSingle) throws
+    {
+        var __thrown : NullableHandle = nil;
+        let __return = System_Data_SqlTypes_SqlBoolean_SqlBoolean__op_Explicit_0__1__SqlSingle(&__thrown, x.get_handle());
+        if let __ex =  __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: __return);
+        }
+    }
     // [IsSpecialName] System.Data.SqlTypes.SqlBoolean op_Explicit(System.Data.SqlTypes.SqlString)
 // docid: M:System.Data.SqlTypes.SqlBoolean.op_Explicit(System.Data.SqlTypes.SqlString)
     public class func op_Explicit(x : dotnet.System.Data.SqlTypes.SqlString) throws -> dotnet.System.Data.SqlTypes.SqlBoolean {
@@ -32755,6 +32908,17 @@ public final class SqlBoolean
             throw dotnet.System.Exception(hndl: __ex);
         } else {
         return dotnet.System.Data.SqlTypes.SqlBoolean(hndl : __return);
+        }
+    }
+// TODO conversion to Self [IsSpecialName] System.Data.SqlTypes.SqlBoolean op_Explicit(System.Data.SqlTypes.SqlString)
+    public convenience init(x : dotnet.System.Data.SqlTypes.SqlString) throws
+    {
+        var __thrown : NullableHandle = nil;
+        let __return = System_Data_SqlTypes_SqlBoolean_SqlBoolean__op_Explicit_0__1__SqlString(&__thrown, x.get_handle());
+        if let __ex =  __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: __return);
         }
     }
     // [IsSpecialName] bool op_False(System.Data.SqlTypes.SqlBoolean)
@@ -32796,6 +32960,10 @@ public final class SqlBoolean
         return dotnet.System.Data.SqlTypes.SqlBoolean(hndl : __return);
         }
     }
+    public static func > (x : dotnet.System.Data.SqlTypes.SqlBoolean, y : dotnet.System.Data.SqlTypes.SqlBoolean) -> dotnet.System.Data.SqlTypes.SqlBoolean
+    {
+        return try! op_GreaterThan(x: x, y: y);
+    }
     // [IsSpecialName] System.Data.SqlTypes.SqlBoolean op_GreaterThanOrEqual(System.Data.SqlTypes.SqlBoolean, System.Data.SqlTypes.SqlBoolean)
 // docid: M:System.Data.SqlTypes.SqlBoolean.op_GreaterThanOrEqual(System.Data.SqlTypes.SqlBoolean,System.Data.SqlTypes.SqlBoolean)
     /**
@@ -32816,6 +32984,10 @@ public final class SqlBoolean
         return dotnet.System.Data.SqlTypes.SqlBoolean(hndl : __return);
         }
     }
+    public static func >= (x : dotnet.System.Data.SqlTypes.SqlBoolean, y : dotnet.System.Data.SqlTypes.SqlBoolean) -> dotnet.System.Data.SqlTypes.SqlBoolean
+    {
+        return try! op_GreaterThanOrEqual(x: x, y: y);
+    }
     // [IsSpecialName] System.Data.SqlTypes.SqlBoolean op_Implicit(bool)
 // docid: M:System.Data.SqlTypes.SqlBoolean.op_Implicit(System.Boolean)
     public class func op_Implicit(x : Bool) throws -> dotnet.System.Data.SqlTypes.SqlBoolean {
@@ -32826,6 +32998,14 @@ public final class SqlBoolean
         } else {
         return dotnet.System.Data.SqlTypes.SqlBoolean(hndl : __return);
         }
+    }
+// TODO conversion to Self [IsSpecialName] System.Data.SqlTypes.SqlBoolean op_Implicit(bool)
+    public convenience init(x : Bool) 
+    {
+        var __thrown : NullableHandle = nil;
+        let __return = System_Data_SqlTypes_SqlBoolean_SqlBoolean__op_Implicit_0__1__bool(&__thrown, Swift.Int32(x ? 1 : 0));
+        assert(__thrown == nil);
+            self.init(hndl: __return);
     }
     // [IsSpecialName] System.Data.SqlTypes.SqlBoolean op_Inequality(System.Data.SqlTypes.SqlBoolean, System.Data.SqlTypes.SqlBoolean)
 // docid: M:System.Data.SqlTypes.SqlBoolean.op_Inequality(System.Data.SqlTypes.SqlBoolean,System.Data.SqlTypes.SqlBoolean)
@@ -32847,6 +33027,10 @@ public final class SqlBoolean
         return dotnet.System.Data.SqlTypes.SqlBoolean(hndl : __return);
         }
     }
+    public static func != (x : dotnet.System.Data.SqlTypes.SqlBoolean, y : dotnet.System.Data.SqlTypes.SqlBoolean) -> dotnet.System.Data.SqlTypes.SqlBoolean
+    {
+        return try! op_Inequality(x: x, y: y);
+    }
     // [IsSpecialName] System.Data.SqlTypes.SqlBoolean op_LessThan(System.Data.SqlTypes.SqlBoolean, System.Data.SqlTypes.SqlBoolean)
 // docid: M:System.Data.SqlTypes.SqlBoolean.op_LessThan(System.Data.SqlTypes.SqlBoolean,System.Data.SqlTypes.SqlBoolean)
     /**
@@ -32867,6 +33051,10 @@ public final class SqlBoolean
         return dotnet.System.Data.SqlTypes.SqlBoolean(hndl : __return);
         }
     }
+    public static func < (x : dotnet.System.Data.SqlTypes.SqlBoolean, y : dotnet.System.Data.SqlTypes.SqlBoolean) -> dotnet.System.Data.SqlTypes.SqlBoolean
+    {
+        return try! op_LessThan(x: x, y: y);
+    }
     // [IsSpecialName] System.Data.SqlTypes.SqlBoolean op_LessThanOrEqual(System.Data.SqlTypes.SqlBoolean, System.Data.SqlTypes.SqlBoolean)
 // docid: M:System.Data.SqlTypes.SqlBoolean.op_LessThanOrEqual(System.Data.SqlTypes.SqlBoolean,System.Data.SqlTypes.SqlBoolean)
     /**
@@ -32886,6 +33074,10 @@ public final class SqlBoolean
         } else {
         return dotnet.System.Data.SqlTypes.SqlBoolean(hndl : __return);
         }
+    }
+    public static func <= (x : dotnet.System.Data.SqlTypes.SqlBoolean, y : dotnet.System.Data.SqlTypes.SqlBoolean) -> dotnet.System.Data.SqlTypes.SqlBoolean
+    {
+        return try! op_LessThanOrEqual(x: x, y: y);
     }
     // [IsSpecialName] System.Data.SqlTypes.SqlBoolean op_LogicalNot(System.Data.SqlTypes.SqlBoolean)
 // docid: M:System.Data.SqlTypes.SqlBoolean.op_LogicalNot(System.Data.SqlTypes.SqlBoolean)
@@ -33718,6 +33910,10 @@ public final class SqlByte
         return dotnet.System.Data.SqlTypes.SqlByte(hndl : __return);
         }
     }
+    public static func + (x : dotnet.System.Data.SqlTypes.SqlByte, y : dotnet.System.Data.SqlTypes.SqlByte) -> dotnet.System.Data.SqlTypes.SqlByte
+    {
+        return try! op_Addition(x: x, y: y);
+    }
     // [IsSpecialName] System.Data.SqlTypes.SqlByte op_BitwiseAnd(System.Data.SqlTypes.SqlByte, System.Data.SqlTypes.SqlByte)
 // docid: M:System.Data.SqlTypes.SqlByte.op_BitwiseAnd(System.Data.SqlTypes.SqlByte,System.Data.SqlTypes.SqlByte)
     /**
@@ -33736,6 +33932,10 @@ public final class SqlByte
         } else {
         return dotnet.System.Data.SqlTypes.SqlByte(hndl : __return);
         }
+    }
+    public static func & (x : dotnet.System.Data.SqlTypes.SqlByte, y : dotnet.System.Data.SqlTypes.SqlByte) -> dotnet.System.Data.SqlTypes.SqlByte
+    {
+        return try! op_BitwiseAnd(x: x, y: y);
     }
     // [IsSpecialName] System.Data.SqlTypes.SqlByte op_BitwiseOr(System.Data.SqlTypes.SqlByte, System.Data.SqlTypes.SqlByte)
 // docid: M:System.Data.SqlTypes.SqlByte.op_BitwiseOr(System.Data.SqlTypes.SqlByte,System.Data.SqlTypes.SqlByte)
@@ -33756,6 +33956,10 @@ public final class SqlByte
         return dotnet.System.Data.SqlTypes.SqlByte(hndl : __return);
         }
     }
+    public static func | (x : dotnet.System.Data.SqlTypes.SqlByte, y : dotnet.System.Data.SqlTypes.SqlByte) -> dotnet.System.Data.SqlTypes.SqlByte
+    {
+        return try! op_BitwiseOr(x: x, y: y);
+    }
     // [IsSpecialName] System.Data.SqlTypes.SqlByte op_Division(System.Data.SqlTypes.SqlByte, System.Data.SqlTypes.SqlByte)
 // docid: M:System.Data.SqlTypes.SqlByte.op_Division(System.Data.SqlTypes.SqlByte,System.Data.SqlTypes.SqlByte)
     /**
@@ -33774,6 +33978,10 @@ public final class SqlByte
         } else {
         return dotnet.System.Data.SqlTypes.SqlByte(hndl : __return);
         }
+    }
+    public static func / (x : dotnet.System.Data.SqlTypes.SqlByte, y : dotnet.System.Data.SqlTypes.SqlByte) -> dotnet.System.Data.SqlTypes.SqlByte
+    {
+        return try! op_Division(x: x, y: y);
     }
     // [IsSpecialName] System.Data.SqlTypes.SqlBoolean op_Equality(System.Data.SqlTypes.SqlByte, System.Data.SqlTypes.SqlByte)
 // docid: M:System.Data.SqlTypes.SqlByte.op_Equality(System.Data.SqlTypes.SqlByte,System.Data.SqlTypes.SqlByte)
@@ -33794,6 +34002,10 @@ public final class SqlByte
         return dotnet.System.Data.SqlTypes.SqlBoolean(hndl : __return);
         }
     }
+    public static func == (x : dotnet.System.Data.SqlTypes.SqlByte, y : dotnet.System.Data.SqlTypes.SqlByte) -> dotnet.System.Data.SqlTypes.SqlBoolean
+    {
+        return try! op_Equality(x: x, y: y);
+    }
     // [IsSpecialName] System.Data.SqlTypes.SqlByte op_ExclusiveOr(System.Data.SqlTypes.SqlByte, System.Data.SqlTypes.SqlByte)
 // docid: M:System.Data.SqlTypes.SqlByte.op_ExclusiveOr(System.Data.SqlTypes.SqlByte,System.Data.SqlTypes.SqlByte)
     /**
@@ -33813,6 +34025,10 @@ public final class SqlByte
         return dotnet.System.Data.SqlTypes.SqlByte(hndl : __return);
         }
     }
+    public static func ^ (x : dotnet.System.Data.SqlTypes.SqlByte, y : dotnet.System.Data.SqlTypes.SqlByte) -> dotnet.System.Data.SqlTypes.SqlByte
+    {
+        return try! op_ExclusiveOr(x: x, y: y);
+    }
     // [IsSpecialName] System.Data.SqlTypes.SqlByte op_Explicit(System.Data.SqlTypes.SqlBoolean)
 // docid: M:System.Data.SqlTypes.SqlByte.op_Explicit(System.Data.SqlTypes.SqlBoolean)
     public class func op_Explicit(x : dotnet.System.Data.SqlTypes.SqlBoolean) throws -> dotnet.System.Data.SqlTypes.SqlByte {
@@ -33822,6 +34038,17 @@ public final class SqlByte
             throw dotnet.System.Exception(hndl: __ex);
         } else {
         return dotnet.System.Data.SqlTypes.SqlByte(hndl : __return);
+        }
+    }
+// TODO conversion to Self [IsSpecialName] System.Data.SqlTypes.SqlByte op_Explicit(System.Data.SqlTypes.SqlBoolean)
+    public convenience init(x : dotnet.System.Data.SqlTypes.SqlBoolean) throws
+    {
+        var __thrown : NullableHandle = nil;
+        let __return = System_Data_SqlTypes_SqlByte_SqlByte__op_Explicit_0__1__SqlBoolean(&__thrown, x.get_handle());
+        if let __ex =  __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: __return);
         }
     }
     // [IsSpecialName] System.Byte op_Explicit(System.Data.SqlTypes.SqlByte)
@@ -33835,6 +34062,7 @@ public final class SqlByte
         return __return;
         }
     }
+// TODO conversion from Self [IsSpecialName] System.Byte op_Explicit(System.Data.SqlTypes.SqlByte)
     // [IsSpecialName] System.Data.SqlTypes.SqlByte op_Explicit(System.Data.SqlTypes.SqlDecimal)
 // docid: M:System.Data.SqlTypes.SqlByte.op_Explicit(System.Data.SqlTypes.SqlDecimal)
     public class func op_Explicit(x : dotnet.System.Data.SqlTypes.SqlDecimal) throws -> dotnet.System.Data.SqlTypes.SqlByte {
@@ -33844,6 +34072,17 @@ public final class SqlByte
             throw dotnet.System.Exception(hndl: __ex);
         } else {
         return dotnet.System.Data.SqlTypes.SqlByte(hndl : __return);
+        }
+    }
+// TODO conversion to Self [IsSpecialName] System.Data.SqlTypes.SqlByte op_Explicit(System.Data.SqlTypes.SqlDecimal)
+    public convenience init(x : dotnet.System.Data.SqlTypes.SqlDecimal) throws
+    {
+        var __thrown : NullableHandle = nil;
+        let __return = System_Data_SqlTypes_SqlByte_SqlByte__op_Explicit_0__1__SqlDecimal(&__thrown, x.get_handle());
+        if let __ex =  __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: __return);
         }
     }
     // [IsSpecialName] System.Data.SqlTypes.SqlByte op_Explicit(System.Data.SqlTypes.SqlDouble)
@@ -33857,6 +34096,17 @@ public final class SqlByte
         return dotnet.System.Data.SqlTypes.SqlByte(hndl : __return);
         }
     }
+// TODO conversion to Self [IsSpecialName] System.Data.SqlTypes.SqlByte op_Explicit(System.Data.SqlTypes.SqlDouble)
+    public convenience init(x : dotnet.System.Data.SqlTypes.SqlDouble) throws
+    {
+        var __thrown : NullableHandle = nil;
+        let __return = System_Data_SqlTypes_SqlByte_SqlByte__op_Explicit_0__1__SqlDouble(&__thrown, x.get_handle());
+        if let __ex =  __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: __return);
+        }
+    }
     // [IsSpecialName] System.Data.SqlTypes.SqlByte op_Explicit(System.Data.SqlTypes.SqlInt16)
 // docid: M:System.Data.SqlTypes.SqlByte.op_Explicit(System.Data.SqlTypes.SqlInt16)
     public class func op_Explicit(x : dotnet.System.Data.SqlTypes.SqlInt16) throws -> dotnet.System.Data.SqlTypes.SqlByte {
@@ -33866,6 +34116,17 @@ public final class SqlByte
             throw dotnet.System.Exception(hndl: __ex);
         } else {
         return dotnet.System.Data.SqlTypes.SqlByte(hndl : __return);
+        }
+    }
+// TODO conversion to Self [IsSpecialName] System.Data.SqlTypes.SqlByte op_Explicit(System.Data.SqlTypes.SqlInt16)
+    public convenience init(x : dotnet.System.Data.SqlTypes.SqlInt16) throws
+    {
+        var __thrown : NullableHandle = nil;
+        let __return = System_Data_SqlTypes_SqlByte_SqlByte__op_Explicit_0__1__SqlInt16(&__thrown, x.get_handle());
+        if let __ex =  __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: __return);
         }
     }
     // [IsSpecialName] System.Data.SqlTypes.SqlByte op_Explicit(System.Data.SqlTypes.SqlInt32)
@@ -33879,6 +34140,17 @@ public final class SqlByte
         return dotnet.System.Data.SqlTypes.SqlByte(hndl : __return);
         }
     }
+// TODO conversion to Self [IsSpecialName] System.Data.SqlTypes.SqlByte op_Explicit(System.Data.SqlTypes.SqlInt32)
+    public convenience init(x : dotnet.System.Data.SqlTypes.SqlInt32) throws
+    {
+        var __thrown : NullableHandle = nil;
+        let __return = System_Data_SqlTypes_SqlByte_SqlByte__op_Explicit_0__1__SqlInt32(&__thrown, x.get_handle());
+        if let __ex =  __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: __return);
+        }
+    }
     // [IsSpecialName] System.Data.SqlTypes.SqlByte op_Explicit(System.Data.SqlTypes.SqlInt64)
 // docid: M:System.Data.SqlTypes.SqlByte.op_Explicit(System.Data.SqlTypes.SqlInt64)
     public class func op_Explicit(x : dotnet.System.Data.SqlTypes.SqlInt64) throws -> dotnet.System.Data.SqlTypes.SqlByte {
@@ -33888,6 +34160,17 @@ public final class SqlByte
             throw dotnet.System.Exception(hndl: __ex);
         } else {
         return dotnet.System.Data.SqlTypes.SqlByte(hndl : __return);
+        }
+    }
+// TODO conversion to Self [IsSpecialName] System.Data.SqlTypes.SqlByte op_Explicit(System.Data.SqlTypes.SqlInt64)
+    public convenience init(x : dotnet.System.Data.SqlTypes.SqlInt64) throws
+    {
+        var __thrown : NullableHandle = nil;
+        let __return = System_Data_SqlTypes_SqlByte_SqlByte__op_Explicit_0__1__SqlInt64(&__thrown, x.get_handle());
+        if let __ex =  __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: __return);
         }
     }
     // [IsSpecialName] System.Data.SqlTypes.SqlByte op_Explicit(System.Data.SqlTypes.SqlMoney)
@@ -33901,6 +34184,17 @@ public final class SqlByte
         return dotnet.System.Data.SqlTypes.SqlByte(hndl : __return);
         }
     }
+// TODO conversion to Self [IsSpecialName] System.Data.SqlTypes.SqlByte op_Explicit(System.Data.SqlTypes.SqlMoney)
+    public convenience init(x : dotnet.System.Data.SqlTypes.SqlMoney) throws
+    {
+        var __thrown : NullableHandle = nil;
+        let __return = System_Data_SqlTypes_SqlByte_SqlByte__op_Explicit_0__1__SqlMoney(&__thrown, x.get_handle());
+        if let __ex =  __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: __return);
+        }
+    }
     // [IsSpecialName] System.Data.SqlTypes.SqlByte op_Explicit(System.Data.SqlTypes.SqlSingle)
 // docid: M:System.Data.SqlTypes.SqlByte.op_Explicit(System.Data.SqlTypes.SqlSingle)
     public class func op_Explicit(x : dotnet.System.Data.SqlTypes.SqlSingle) throws -> dotnet.System.Data.SqlTypes.SqlByte {
@@ -33912,6 +34206,17 @@ public final class SqlByte
         return dotnet.System.Data.SqlTypes.SqlByte(hndl : __return);
         }
     }
+// TODO conversion to Self [IsSpecialName] System.Data.SqlTypes.SqlByte op_Explicit(System.Data.SqlTypes.SqlSingle)
+    public convenience init(x : dotnet.System.Data.SqlTypes.SqlSingle) throws
+    {
+        var __thrown : NullableHandle = nil;
+        let __return = System_Data_SqlTypes_SqlByte_SqlByte__op_Explicit_0__1__SqlSingle(&__thrown, x.get_handle());
+        if let __ex =  __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: __return);
+        }
+    }
     // [IsSpecialName] System.Data.SqlTypes.SqlByte op_Explicit(System.Data.SqlTypes.SqlString)
 // docid: M:System.Data.SqlTypes.SqlByte.op_Explicit(System.Data.SqlTypes.SqlString)
     public class func op_Explicit(x : dotnet.System.Data.SqlTypes.SqlString) throws -> dotnet.System.Data.SqlTypes.SqlByte {
@@ -33921,6 +34226,17 @@ public final class SqlByte
             throw dotnet.System.Exception(hndl: __ex);
         } else {
         return dotnet.System.Data.SqlTypes.SqlByte(hndl : __return);
+        }
+    }
+// TODO conversion to Self [IsSpecialName] System.Data.SqlTypes.SqlByte op_Explicit(System.Data.SqlTypes.SqlString)
+    public convenience init(x : dotnet.System.Data.SqlTypes.SqlString) throws
+    {
+        var __thrown : NullableHandle = nil;
+        let __return = System_Data_SqlTypes_SqlByte_SqlByte__op_Explicit_0__1__SqlString(&__thrown, x.get_handle());
+        if let __ex =  __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: __return);
         }
     }
     // [IsSpecialName] System.Data.SqlTypes.SqlBoolean op_GreaterThan(System.Data.SqlTypes.SqlByte, System.Data.SqlTypes.SqlByte)
@@ -33942,6 +34258,10 @@ public final class SqlByte
         return dotnet.System.Data.SqlTypes.SqlBoolean(hndl : __return);
         }
     }
+    public static func > (x : dotnet.System.Data.SqlTypes.SqlByte, y : dotnet.System.Data.SqlTypes.SqlByte) -> dotnet.System.Data.SqlTypes.SqlBoolean
+    {
+        return try! op_GreaterThan(x: x, y: y);
+    }
     // [IsSpecialName] System.Data.SqlTypes.SqlBoolean op_GreaterThanOrEqual(System.Data.SqlTypes.SqlByte, System.Data.SqlTypes.SqlByte)
 // docid: M:System.Data.SqlTypes.SqlByte.op_GreaterThanOrEqual(System.Data.SqlTypes.SqlByte,System.Data.SqlTypes.SqlByte)
     /**
@@ -33961,6 +34281,10 @@ public final class SqlByte
         return dotnet.System.Data.SqlTypes.SqlBoolean(hndl : __return);
         }
     }
+    public static func >= (x : dotnet.System.Data.SqlTypes.SqlByte, y : dotnet.System.Data.SqlTypes.SqlByte) -> dotnet.System.Data.SqlTypes.SqlBoolean
+    {
+        return try! op_GreaterThanOrEqual(x: x, y: y);
+    }
     // [IsSpecialName] System.Data.SqlTypes.SqlByte op_Implicit(System.Byte)
 // docid: M:System.Data.SqlTypes.SqlByte.op_Implicit(System.Byte)
     public class func op_Implicit(x : Swift.UInt8) throws -> dotnet.System.Data.SqlTypes.SqlByte {
@@ -33971,6 +34295,14 @@ public final class SqlByte
         } else {
         return dotnet.System.Data.SqlTypes.SqlByte(hndl : __return);
         }
+    }
+// TODO conversion to Self [IsSpecialName] System.Data.SqlTypes.SqlByte op_Implicit(System.Byte)
+    public convenience init(x : Swift.UInt8) 
+    {
+        var __thrown : NullableHandle = nil;
+        let __return = System_Data_SqlTypes_SqlByte_SqlByte__op_Implicit_0__1__u8(&__thrown, x);
+        assert(__thrown == nil);
+            self.init(hndl: __return);
     }
     // [IsSpecialName] System.Data.SqlTypes.SqlBoolean op_Inequality(System.Data.SqlTypes.SqlByte, System.Data.SqlTypes.SqlByte)
 // docid: M:System.Data.SqlTypes.SqlByte.op_Inequality(System.Data.SqlTypes.SqlByte,System.Data.SqlTypes.SqlByte)
@@ -33991,6 +34323,10 @@ public final class SqlByte
         return dotnet.System.Data.SqlTypes.SqlBoolean(hndl : __return);
         }
     }
+    public static func != (x : dotnet.System.Data.SqlTypes.SqlByte, y : dotnet.System.Data.SqlTypes.SqlByte) -> dotnet.System.Data.SqlTypes.SqlBoolean
+    {
+        return try! op_Inequality(x: x, y: y);
+    }
     // [IsSpecialName] System.Data.SqlTypes.SqlBoolean op_LessThan(System.Data.SqlTypes.SqlByte, System.Data.SqlTypes.SqlByte)
 // docid: M:System.Data.SqlTypes.SqlByte.op_LessThan(System.Data.SqlTypes.SqlByte,System.Data.SqlTypes.SqlByte)
     /**
@@ -34009,6 +34345,10 @@ public final class SqlByte
         } else {
         return dotnet.System.Data.SqlTypes.SqlBoolean(hndl : __return);
         }
+    }
+    public static func < (x : dotnet.System.Data.SqlTypes.SqlByte, y : dotnet.System.Data.SqlTypes.SqlByte) -> dotnet.System.Data.SqlTypes.SqlBoolean
+    {
+        return try! op_LessThan(x: x, y: y);
     }
     // [IsSpecialName] System.Data.SqlTypes.SqlBoolean op_LessThanOrEqual(System.Data.SqlTypes.SqlByte, System.Data.SqlTypes.SqlByte)
 // docid: M:System.Data.SqlTypes.SqlByte.op_LessThanOrEqual(System.Data.SqlTypes.SqlByte,System.Data.SqlTypes.SqlByte)
@@ -34029,6 +34369,10 @@ public final class SqlByte
         return dotnet.System.Data.SqlTypes.SqlBoolean(hndl : __return);
         }
     }
+    public static func <= (x : dotnet.System.Data.SqlTypes.SqlByte, y : dotnet.System.Data.SqlTypes.SqlByte) -> dotnet.System.Data.SqlTypes.SqlBoolean
+    {
+        return try! op_LessThanOrEqual(x: x, y: y);
+    }
     // [IsSpecialName] System.Data.SqlTypes.SqlByte op_Modulus(System.Data.SqlTypes.SqlByte, System.Data.SqlTypes.SqlByte)
 // docid: M:System.Data.SqlTypes.SqlByte.op_Modulus(System.Data.SqlTypes.SqlByte,System.Data.SqlTypes.SqlByte)
     /**
@@ -34048,6 +34392,10 @@ public final class SqlByte
         return dotnet.System.Data.SqlTypes.SqlByte(hndl : __return);
         }
     }
+    public static func % (x : dotnet.System.Data.SqlTypes.SqlByte, y : dotnet.System.Data.SqlTypes.SqlByte) -> dotnet.System.Data.SqlTypes.SqlByte
+    {
+        return try! op_Modulus(x: x, y: y);
+    }
     // [IsSpecialName] System.Data.SqlTypes.SqlByte op_Multiply(System.Data.SqlTypes.SqlByte, System.Data.SqlTypes.SqlByte)
 // docid: M:System.Data.SqlTypes.SqlByte.op_Multiply(System.Data.SqlTypes.SqlByte,System.Data.SqlTypes.SqlByte)
     /**
@@ -34066,6 +34414,10 @@ public final class SqlByte
         } else {
         return dotnet.System.Data.SqlTypes.SqlByte(hndl : __return);
         }
+    }
+    public static func * (x : dotnet.System.Data.SqlTypes.SqlByte, y : dotnet.System.Data.SqlTypes.SqlByte) -> dotnet.System.Data.SqlTypes.SqlByte
+    {
+        return try! op_Multiply(x: x, y: y);
     }
     // [IsSpecialName] System.Data.SqlTypes.SqlByte op_OnesComplement(System.Data.SqlTypes.SqlByte)
 // docid: M:System.Data.SqlTypes.SqlByte.op_OnesComplement(System.Data.SqlTypes.SqlByte)
@@ -34103,6 +34455,10 @@ public final class SqlByte
         } else {
         return dotnet.System.Data.SqlTypes.SqlByte(hndl : __return);
         }
+    }
+    public static func - (x : dotnet.System.Data.SqlTypes.SqlByte, y : dotnet.System.Data.SqlTypes.SqlByte) -> dotnet.System.Data.SqlTypes.SqlByte
+    {
+        return try! op_Subtraction(x: x, y: y);
     }
     // System.Data.SqlTypes.SqlByte Parse(System.String)
 // docid: M:System.Data.SqlTypes.SqlByte.Parse(System.String)
@@ -34477,6 +34833,8 @@ public final class SqlBytes
         return dotnet.System.Data.SqlTypes.SqlBytes(hndl : __return);
         }
     }
+// TODO conversion to Self [IsSpecialName] System.Data.SqlTypes.SqlBytes op_Explicit(System.Data.SqlTypes.SqlBinary)
+// skip because equivalent ctor
     // [IsSpecialName] System.Data.SqlTypes.SqlBinary op_Explicit(System.Data.SqlTypes.SqlBytes)
 // docid: M:System.Data.SqlTypes.SqlBytes.op_Explicit(System.Data.SqlTypes.SqlBytes)
     public class func op_Explicit(value : dotnet.System.Data.SqlTypes.SqlBytes) throws -> dotnet.System.Data.SqlTypes.SqlBinary {
@@ -34488,6 +34846,7 @@ public final class SqlBytes
         return dotnet.System.Data.SqlTypes.SqlBinary(hndl : __return);
         }
     }
+// TODO conversion from Self [IsSpecialName] System.Data.SqlTypes.SqlBinary op_Explicit(System.Data.SqlTypes.SqlBytes)
     // System.Int64 Read(System.Int64, System.Byte[], System.Int32, System.Int32)
 // docid: M:System.Data.SqlTypes.SqlBytes.Read(System.Int64,System.Byte[],System.Int32,System.Int32)
     /**
@@ -34885,6 +35244,7 @@ public final class SqlChars
         return dotnet.System.Data.SqlTypes.SqlString(hndl : __return);
         }
     }
+// TODO conversion from Self [IsSpecialName] System.Data.SqlTypes.SqlString op_Explicit(System.Data.SqlTypes.SqlChars)
     // [IsSpecialName] System.Data.SqlTypes.SqlChars op_Explicit(System.Data.SqlTypes.SqlString)
 // docid: M:System.Data.SqlTypes.SqlChars.op_Explicit(System.Data.SqlTypes.SqlString)
     public class func op_Explicit(value : dotnet.System.Data.SqlTypes.SqlString) throws -> dotnet.System.Data.SqlTypes.SqlChars {
@@ -34896,6 +35256,8 @@ public final class SqlChars
         return dotnet.System.Data.SqlTypes.SqlChars(hndl : __return);
         }
     }
+// TODO conversion to Self [IsSpecialName] System.Data.SqlTypes.SqlChars op_Explicit(System.Data.SqlTypes.SqlString)
+// skip because equivalent ctor
     // System.Int64 Read(System.Int64, System.Char[], System.Int32, System.Int32)
 // docid: M:System.Data.SqlTypes.SqlChars.Read(System.Int64,System.Char[],System.Int32,System.Int32)
     /**
@@ -35746,6 +36108,10 @@ public final class SqlDateTime
         return dotnet.System.Data.SqlTypes.SqlDateTime(hndl : __return);
         }
     }
+    public static func + (x : dotnet.System.Data.SqlTypes.SqlDateTime, t : dotnet.System.TimeSpan) -> dotnet.System.Data.SqlTypes.SqlDateTime
+    {
+        return try! op_Addition(x: x, t: t);
+    }
     // [IsSpecialName] System.Data.SqlTypes.SqlBoolean op_Equality(System.Data.SqlTypes.SqlDateTime, System.Data.SqlTypes.SqlDateTime)
 // docid: M:System.Data.SqlTypes.SqlDateTime.op_Equality(System.Data.SqlTypes.SqlDateTime,System.Data.SqlTypes.SqlDateTime)
     /**
@@ -35766,6 +36132,10 @@ public final class SqlDateTime
         return dotnet.System.Data.SqlTypes.SqlBoolean(hndl : __return);
         }
     }
+    public static func == (x : dotnet.System.Data.SqlTypes.SqlDateTime, y : dotnet.System.Data.SqlTypes.SqlDateTime) -> dotnet.System.Data.SqlTypes.SqlBoolean
+    {
+        return try! op_Equality(x: x, y: y);
+    }
     // [IsSpecialName] System.DateTime op_Explicit(System.Data.SqlTypes.SqlDateTime)
 // docid: M:System.Data.SqlTypes.SqlDateTime.op_Explicit(System.Data.SqlTypes.SqlDateTime)
     public class func op_Explicit(x : dotnet.System.Data.SqlTypes.SqlDateTime) throws -> dotnet.System.DateTime {
@@ -35777,6 +36147,7 @@ public final class SqlDateTime
         return dotnet.System.DateTime(hndl : __return);
         }
     }
+// TODO conversion from Self [IsSpecialName] System.DateTime op_Explicit(System.Data.SqlTypes.SqlDateTime)
     // [IsSpecialName] System.Data.SqlTypes.SqlDateTime op_Explicit(System.Data.SqlTypes.SqlString)
 // docid: M:System.Data.SqlTypes.SqlDateTime.op_Explicit(System.Data.SqlTypes.SqlString)
     public class func op_Explicit(x : dotnet.System.Data.SqlTypes.SqlString) throws -> dotnet.System.Data.SqlTypes.SqlDateTime {
@@ -35786,6 +36157,17 @@ public final class SqlDateTime
             throw dotnet.System.Exception(hndl: __ex);
         } else {
         return dotnet.System.Data.SqlTypes.SqlDateTime(hndl : __return);
+        }
+    }
+// TODO conversion to Self [IsSpecialName] System.Data.SqlTypes.SqlDateTime op_Explicit(System.Data.SqlTypes.SqlString)
+    public convenience init(x : dotnet.System.Data.SqlTypes.SqlString) throws
+    {
+        var __thrown : NullableHandle = nil;
+        let __return = System_Data_SqlTypes_SqlDateTime_SqlDateTime__op_Explicit_0__1__SqlString(&__thrown, x.get_handle());
+        if let __ex =  __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: __return);
         }
     }
     // [IsSpecialName] System.Data.SqlTypes.SqlBoolean op_GreaterThan(System.Data.SqlTypes.SqlDateTime, System.Data.SqlTypes.SqlDateTime)
@@ -35807,6 +36189,10 @@ public final class SqlDateTime
         return dotnet.System.Data.SqlTypes.SqlBoolean(hndl : __return);
         }
     }
+    public static func > (x : dotnet.System.Data.SqlTypes.SqlDateTime, y : dotnet.System.Data.SqlTypes.SqlDateTime) -> dotnet.System.Data.SqlTypes.SqlBoolean
+    {
+        return try! op_GreaterThan(x: x, y: y);
+    }
     // [IsSpecialName] System.Data.SqlTypes.SqlBoolean op_GreaterThanOrEqual(System.Data.SqlTypes.SqlDateTime, System.Data.SqlTypes.SqlDateTime)
 // docid: M:System.Data.SqlTypes.SqlDateTime.op_GreaterThanOrEqual(System.Data.SqlTypes.SqlDateTime,System.Data.SqlTypes.SqlDateTime)
     /**
@@ -35826,6 +36212,10 @@ public final class SqlDateTime
         return dotnet.System.Data.SqlTypes.SqlBoolean(hndl : __return);
         }
     }
+    public static func >= (x : dotnet.System.Data.SqlTypes.SqlDateTime, y : dotnet.System.Data.SqlTypes.SqlDateTime) -> dotnet.System.Data.SqlTypes.SqlBoolean
+    {
+        return try! op_GreaterThanOrEqual(x: x, y: y);
+    }
     // [IsSpecialName] System.Data.SqlTypes.SqlDateTime op_Implicit(System.DateTime)
 // docid: M:System.Data.SqlTypes.SqlDateTime.op_Implicit(System.DateTime)
     public class func op_Implicit(value : dotnet.System.DateTime) throws -> dotnet.System.Data.SqlTypes.SqlDateTime {
@@ -35837,6 +36227,8 @@ public final class SqlDateTime
         return dotnet.System.Data.SqlTypes.SqlDateTime(hndl : __return);
         }
     }
+// TODO conversion to Self [IsSpecialName] System.Data.SqlTypes.SqlDateTime op_Implicit(System.DateTime)
+// skip because equivalent ctor
     // [IsSpecialName] System.Data.SqlTypes.SqlBoolean op_Inequality(System.Data.SqlTypes.SqlDateTime, System.Data.SqlTypes.SqlDateTime)
 // docid: M:System.Data.SqlTypes.SqlDateTime.op_Inequality(System.Data.SqlTypes.SqlDateTime,System.Data.SqlTypes.SqlDateTime)
     /**
@@ -35855,6 +36247,10 @@ public final class SqlDateTime
         } else {
         return dotnet.System.Data.SqlTypes.SqlBoolean(hndl : __return);
         }
+    }
+    public static func != (x : dotnet.System.Data.SqlTypes.SqlDateTime, y : dotnet.System.Data.SqlTypes.SqlDateTime) -> dotnet.System.Data.SqlTypes.SqlBoolean
+    {
+        return try! op_Inequality(x: x, y: y);
     }
     // [IsSpecialName] System.Data.SqlTypes.SqlBoolean op_LessThan(System.Data.SqlTypes.SqlDateTime, System.Data.SqlTypes.SqlDateTime)
 // docid: M:System.Data.SqlTypes.SqlDateTime.op_LessThan(System.Data.SqlTypes.SqlDateTime,System.Data.SqlTypes.SqlDateTime)
@@ -35875,6 +36271,10 @@ public final class SqlDateTime
         return dotnet.System.Data.SqlTypes.SqlBoolean(hndl : __return);
         }
     }
+    public static func < (x : dotnet.System.Data.SqlTypes.SqlDateTime, y : dotnet.System.Data.SqlTypes.SqlDateTime) -> dotnet.System.Data.SqlTypes.SqlBoolean
+    {
+        return try! op_LessThan(x: x, y: y);
+    }
     // [IsSpecialName] System.Data.SqlTypes.SqlBoolean op_LessThanOrEqual(System.Data.SqlTypes.SqlDateTime, System.Data.SqlTypes.SqlDateTime)
 // docid: M:System.Data.SqlTypes.SqlDateTime.op_LessThanOrEqual(System.Data.SqlTypes.SqlDateTime,System.Data.SqlTypes.SqlDateTime)
     /**
@@ -35894,6 +36294,10 @@ public final class SqlDateTime
         return dotnet.System.Data.SqlTypes.SqlBoolean(hndl : __return);
         }
     }
+    public static func <= (x : dotnet.System.Data.SqlTypes.SqlDateTime, y : dotnet.System.Data.SqlTypes.SqlDateTime) -> dotnet.System.Data.SqlTypes.SqlBoolean
+    {
+        return try! op_LessThanOrEqual(x: x, y: y);
+    }
     // [IsSpecialName] System.Data.SqlTypes.SqlDateTime op_Subtraction(System.Data.SqlTypes.SqlDateTime, System.TimeSpan)
 // docid: M:System.Data.SqlTypes.SqlDateTime.op_Subtraction(System.Data.SqlTypes.SqlDateTime,System.TimeSpan)
     /**
@@ -35912,6 +36316,10 @@ public final class SqlDateTime
         } else {
         return dotnet.System.Data.SqlTypes.SqlDateTime(hndl : __return);
         }
+    }
+    public static func - (x : dotnet.System.Data.SqlTypes.SqlDateTime, t : dotnet.System.TimeSpan) -> dotnet.System.Data.SqlTypes.SqlDateTime
+    {
+        return try! op_Subtraction(x: x, t: t);
     }
     // System.Data.SqlTypes.SqlDateTime Parse(System.String)
 // docid: M:System.Data.SqlTypes.SqlDateTime.Parse(System.String)
@@ -36666,6 +37074,10 @@ public final class SqlDecimal
         return dotnet.System.Data.SqlTypes.SqlDecimal(hndl : __return);
         }
     }
+    public static func + (x : dotnet.System.Data.SqlTypes.SqlDecimal, y : dotnet.System.Data.SqlTypes.SqlDecimal) -> dotnet.System.Data.SqlTypes.SqlDecimal
+    {
+        return try! op_Addition(x: x, y: y);
+    }
     // [IsSpecialName] System.Data.SqlTypes.SqlDecimal op_Division(System.Data.SqlTypes.SqlDecimal, System.Data.SqlTypes.SqlDecimal)
 // docid: M:System.Data.SqlTypes.SqlDecimal.op_Division(System.Data.SqlTypes.SqlDecimal,System.Data.SqlTypes.SqlDecimal)
     /**
@@ -36684,6 +37096,10 @@ public final class SqlDecimal
         } else {
         return dotnet.System.Data.SqlTypes.SqlDecimal(hndl : __return);
         }
+    }
+    public static func / (x : dotnet.System.Data.SqlTypes.SqlDecimal, y : dotnet.System.Data.SqlTypes.SqlDecimal) -> dotnet.System.Data.SqlTypes.SqlDecimal
+    {
+        return try! op_Division(x: x, y: y);
     }
     // [IsSpecialName] System.Data.SqlTypes.SqlBoolean op_Equality(System.Data.SqlTypes.SqlDecimal, System.Data.SqlTypes.SqlDecimal)
 // docid: M:System.Data.SqlTypes.SqlDecimal.op_Equality(System.Data.SqlTypes.SqlDecimal,System.Data.SqlTypes.SqlDecimal)
@@ -36704,6 +37120,10 @@ public final class SqlDecimal
         return dotnet.System.Data.SqlTypes.SqlBoolean(hndl : __return);
         }
     }
+    public static func == (x : dotnet.System.Data.SqlTypes.SqlDecimal, y : dotnet.System.Data.SqlTypes.SqlDecimal) -> dotnet.System.Data.SqlTypes.SqlBoolean
+    {
+        return try! op_Equality(x: x, y: y);
+    }
     // [IsSpecialName] System.Data.SqlTypes.SqlDecimal op_Explicit(System.Data.SqlTypes.SqlBoolean)
 // docid: M:System.Data.SqlTypes.SqlDecimal.op_Explicit(System.Data.SqlTypes.SqlBoolean)
     public class func op_Explicit(x : dotnet.System.Data.SqlTypes.SqlBoolean) throws -> dotnet.System.Data.SqlTypes.SqlDecimal {
@@ -36713,6 +37133,17 @@ public final class SqlDecimal
             throw dotnet.System.Exception(hndl: __ex);
         } else {
         return dotnet.System.Data.SqlTypes.SqlDecimal(hndl : __return);
+        }
+    }
+// TODO conversion to Self [IsSpecialName] System.Data.SqlTypes.SqlDecimal op_Explicit(System.Data.SqlTypes.SqlBoolean)
+    public convenience init(x : dotnet.System.Data.SqlTypes.SqlBoolean) throws
+    {
+        var __thrown : NullableHandle = nil;
+        let __return = System_Data_SqlTypes_SqlDecimal_SqlDecimal__op_Explicit_0__1__SqlBoolean(&__thrown, x.get_handle());
+        if let __ex =  __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: __return);
         }
     }
     // [IsSpecialName] System.Decimal op_Explicit(System.Data.SqlTypes.SqlDecimal)
@@ -36726,6 +37157,7 @@ public final class SqlDecimal
         return dotnet.System.Decimal(hndl : __return);
         }
     }
+// TODO conversion from Self [IsSpecialName] System.Decimal op_Explicit(System.Data.SqlTypes.SqlDecimal)
     // [IsSpecialName] System.Data.SqlTypes.SqlDecimal op_Explicit(System.Data.SqlTypes.SqlDouble)
 // docid: M:System.Data.SqlTypes.SqlDecimal.op_Explicit(System.Data.SqlTypes.SqlDouble)
     public class func op_Explicit(x : dotnet.System.Data.SqlTypes.SqlDouble) throws -> dotnet.System.Data.SqlTypes.SqlDecimal {
@@ -36735,6 +37167,17 @@ public final class SqlDecimal
             throw dotnet.System.Exception(hndl: __ex);
         } else {
         return dotnet.System.Data.SqlTypes.SqlDecimal(hndl : __return);
+        }
+    }
+// TODO conversion to Self [IsSpecialName] System.Data.SqlTypes.SqlDecimal op_Explicit(System.Data.SqlTypes.SqlDouble)
+    public convenience init(x : dotnet.System.Data.SqlTypes.SqlDouble) throws
+    {
+        var __thrown : NullableHandle = nil;
+        let __return = System_Data_SqlTypes_SqlDecimal_SqlDecimal__op_Explicit_0__1__SqlDouble(&__thrown, x.get_handle());
+        if let __ex =  __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: __return);
         }
     }
     // [IsSpecialName] System.Data.SqlTypes.SqlDecimal op_Explicit(System.Data.SqlTypes.SqlSingle)
@@ -36748,6 +37191,17 @@ public final class SqlDecimal
         return dotnet.System.Data.SqlTypes.SqlDecimal(hndl : __return);
         }
     }
+// TODO conversion to Self [IsSpecialName] System.Data.SqlTypes.SqlDecimal op_Explicit(System.Data.SqlTypes.SqlSingle)
+    public convenience init(x : dotnet.System.Data.SqlTypes.SqlSingle) throws
+    {
+        var __thrown : NullableHandle = nil;
+        let __return = System_Data_SqlTypes_SqlDecimal_SqlDecimal__op_Explicit_0__1__SqlSingle(&__thrown, x.get_handle());
+        if let __ex =  __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: __return);
+        }
+    }
     // [IsSpecialName] System.Data.SqlTypes.SqlDecimal op_Explicit(System.Data.SqlTypes.SqlString)
 // docid: M:System.Data.SqlTypes.SqlDecimal.op_Explicit(System.Data.SqlTypes.SqlString)
     public class func op_Explicit(x : dotnet.System.Data.SqlTypes.SqlString) throws -> dotnet.System.Data.SqlTypes.SqlDecimal {
@@ -36759,6 +37213,17 @@ public final class SqlDecimal
         return dotnet.System.Data.SqlTypes.SqlDecimal(hndl : __return);
         }
     }
+// TODO conversion to Self [IsSpecialName] System.Data.SqlTypes.SqlDecimal op_Explicit(System.Data.SqlTypes.SqlString)
+    public convenience init(x : dotnet.System.Data.SqlTypes.SqlString) throws
+    {
+        var __thrown : NullableHandle = nil;
+        let __return = System_Data_SqlTypes_SqlDecimal_SqlDecimal__op_Explicit_0__1__SqlString(&__thrown, x.get_handle());
+        if let __ex =  __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: __return);
+        }
+    }
     // [IsSpecialName] System.Data.SqlTypes.SqlDecimal op_Explicit(System.Double)
 // docid: M:System.Data.SqlTypes.SqlDecimal.op_Explicit(System.Double)
     public class func op_Explicit(x : Swift.Double) throws -> dotnet.System.Data.SqlTypes.SqlDecimal {
@@ -36768,6 +37233,17 @@ public final class SqlDecimal
             throw dotnet.System.Exception(hndl: __ex);
         } else {
         return dotnet.System.Data.SqlTypes.SqlDecimal(hndl : __return);
+        }
+    }
+// TODO conversion to Self [IsSpecialName] System.Data.SqlTypes.SqlDecimal op_Explicit(System.Double)
+    public convenience init(x : Swift.Double) throws
+    {
+        var __thrown : NullableHandle = nil;
+        let __return = System_Data_SqlTypes_SqlDecimal_SqlDecimal__op_Explicit_0__1__f64(&__thrown, x);
+        if let __ex =  __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: __return);
         }
     }
     // [IsSpecialName] System.Data.SqlTypes.SqlBoolean op_GreaterThan(System.Data.SqlTypes.SqlDecimal, System.Data.SqlTypes.SqlDecimal)
@@ -36789,6 +37265,10 @@ public final class SqlDecimal
         return dotnet.System.Data.SqlTypes.SqlBoolean(hndl : __return);
         }
     }
+    public static func > (x : dotnet.System.Data.SqlTypes.SqlDecimal, y : dotnet.System.Data.SqlTypes.SqlDecimal) -> dotnet.System.Data.SqlTypes.SqlBoolean
+    {
+        return try! op_GreaterThan(x: x, y: y);
+    }
     // [IsSpecialName] System.Data.SqlTypes.SqlBoolean op_GreaterThanOrEqual(System.Data.SqlTypes.SqlDecimal, System.Data.SqlTypes.SqlDecimal)
 // docid: M:System.Data.SqlTypes.SqlDecimal.op_GreaterThanOrEqual(System.Data.SqlTypes.SqlDecimal,System.Data.SqlTypes.SqlDecimal)
     /**
@@ -36808,6 +37288,10 @@ public final class SqlDecimal
         return dotnet.System.Data.SqlTypes.SqlBoolean(hndl : __return);
         }
     }
+    public static func >= (x : dotnet.System.Data.SqlTypes.SqlDecimal, y : dotnet.System.Data.SqlTypes.SqlDecimal) -> dotnet.System.Data.SqlTypes.SqlBoolean
+    {
+        return try! op_GreaterThanOrEqual(x: x, y: y);
+    }
     // [IsSpecialName] System.Data.SqlTypes.SqlDecimal op_Implicit(System.Data.SqlTypes.SqlByte)
 // docid: M:System.Data.SqlTypes.SqlDecimal.op_Implicit(System.Data.SqlTypes.SqlByte)
     public class func op_Implicit(x : dotnet.System.Data.SqlTypes.SqlByte) throws -> dotnet.System.Data.SqlTypes.SqlDecimal {
@@ -36818,6 +37302,14 @@ public final class SqlDecimal
         } else {
         return dotnet.System.Data.SqlTypes.SqlDecimal(hndl : __return);
         }
+    }
+// TODO conversion to Self [IsSpecialName] System.Data.SqlTypes.SqlDecimal op_Implicit(System.Data.SqlTypes.SqlByte)
+    public convenience init(x : dotnet.System.Data.SqlTypes.SqlByte) 
+    {
+        var __thrown : NullableHandle = nil;
+        let __return = System_Data_SqlTypes_SqlDecimal_SqlDecimal__op_Implicit_0__1__SqlByte(&__thrown, x.get_handle());
+        assert(__thrown == nil);
+            self.init(hndl: __return);
     }
     // [IsSpecialName] System.Data.SqlTypes.SqlDecimal op_Implicit(System.Data.SqlTypes.SqlInt16)
 // docid: M:System.Data.SqlTypes.SqlDecimal.op_Implicit(System.Data.SqlTypes.SqlInt16)
@@ -36830,6 +37322,14 @@ public final class SqlDecimal
         return dotnet.System.Data.SqlTypes.SqlDecimal(hndl : __return);
         }
     }
+// TODO conversion to Self [IsSpecialName] System.Data.SqlTypes.SqlDecimal op_Implicit(System.Data.SqlTypes.SqlInt16)
+    public convenience init(x : dotnet.System.Data.SqlTypes.SqlInt16) 
+    {
+        var __thrown : NullableHandle = nil;
+        let __return = System_Data_SqlTypes_SqlDecimal_SqlDecimal__op_Implicit_0__1__SqlInt16(&__thrown, x.get_handle());
+        assert(__thrown == nil);
+            self.init(hndl: __return);
+    }
     // [IsSpecialName] System.Data.SqlTypes.SqlDecimal op_Implicit(System.Data.SqlTypes.SqlInt32)
 // docid: M:System.Data.SqlTypes.SqlDecimal.op_Implicit(System.Data.SqlTypes.SqlInt32)
     public class func op_Implicit(x : dotnet.System.Data.SqlTypes.SqlInt32) throws -> dotnet.System.Data.SqlTypes.SqlDecimal {
@@ -36840,6 +37340,14 @@ public final class SqlDecimal
         } else {
         return dotnet.System.Data.SqlTypes.SqlDecimal(hndl : __return);
         }
+    }
+// TODO conversion to Self [IsSpecialName] System.Data.SqlTypes.SqlDecimal op_Implicit(System.Data.SqlTypes.SqlInt32)
+    public convenience init(x : dotnet.System.Data.SqlTypes.SqlInt32) 
+    {
+        var __thrown : NullableHandle = nil;
+        let __return = System_Data_SqlTypes_SqlDecimal_SqlDecimal__op_Implicit_0__1__SqlInt32(&__thrown, x.get_handle());
+        assert(__thrown == nil);
+            self.init(hndl: __return);
     }
     // [IsSpecialName] System.Data.SqlTypes.SqlDecimal op_Implicit(System.Data.SqlTypes.SqlInt64)
 // docid: M:System.Data.SqlTypes.SqlDecimal.op_Implicit(System.Data.SqlTypes.SqlInt64)
@@ -36852,6 +37360,14 @@ public final class SqlDecimal
         return dotnet.System.Data.SqlTypes.SqlDecimal(hndl : __return);
         }
     }
+// TODO conversion to Self [IsSpecialName] System.Data.SqlTypes.SqlDecimal op_Implicit(System.Data.SqlTypes.SqlInt64)
+    public convenience init(x : dotnet.System.Data.SqlTypes.SqlInt64) 
+    {
+        var __thrown : NullableHandle = nil;
+        let __return = System_Data_SqlTypes_SqlDecimal_SqlDecimal__op_Implicit_0__1__SqlInt64(&__thrown, x.get_handle());
+        assert(__thrown == nil);
+            self.init(hndl: __return);
+    }
     // [IsSpecialName] System.Data.SqlTypes.SqlDecimal op_Implicit(System.Data.SqlTypes.SqlMoney)
 // docid: M:System.Data.SqlTypes.SqlDecimal.op_Implicit(System.Data.SqlTypes.SqlMoney)
     public class func op_Implicit(x : dotnet.System.Data.SqlTypes.SqlMoney) throws -> dotnet.System.Data.SqlTypes.SqlDecimal {
@@ -36862,6 +37378,14 @@ public final class SqlDecimal
         } else {
         return dotnet.System.Data.SqlTypes.SqlDecimal(hndl : __return);
         }
+    }
+// TODO conversion to Self [IsSpecialName] System.Data.SqlTypes.SqlDecimal op_Implicit(System.Data.SqlTypes.SqlMoney)
+    public convenience init(x : dotnet.System.Data.SqlTypes.SqlMoney) 
+    {
+        var __thrown : NullableHandle = nil;
+        let __return = System_Data_SqlTypes_SqlDecimal_SqlDecimal__op_Implicit_0__1__SqlMoney(&__thrown, x.get_handle());
+        assert(__thrown == nil);
+            self.init(hndl: __return);
     }
     // [IsSpecialName] System.Data.SqlTypes.SqlDecimal op_Implicit(System.Decimal)
 // docid: M:System.Data.SqlTypes.SqlDecimal.op_Implicit(System.Decimal)
@@ -36874,6 +37398,14 @@ public final class SqlDecimal
         return dotnet.System.Data.SqlTypes.SqlDecimal(hndl : __return);
         }
     }
+// TODO conversion to Self [IsSpecialName] System.Data.SqlTypes.SqlDecimal op_Implicit(System.Decimal)
+    public convenience init(x : dotnet.System.Decimal) 
+    {
+        var __thrown : NullableHandle = nil;
+        let __return = System_Data_SqlTypes_SqlDecimal_SqlDecimal__op_Implicit_0__1__Decimal(&__thrown, x.get_handle());
+        assert(__thrown == nil);
+            self.init(hndl: __return);
+    }
     // [IsSpecialName] System.Data.SqlTypes.SqlDecimal op_Implicit(System.Int64)
 // docid: M:System.Data.SqlTypes.SqlDecimal.op_Implicit(System.Int64)
     public class func op_Implicit(x : Swift.Int64) throws -> dotnet.System.Data.SqlTypes.SqlDecimal {
@@ -36884,6 +37416,14 @@ public final class SqlDecimal
         } else {
         return dotnet.System.Data.SqlTypes.SqlDecimal(hndl : __return);
         }
+    }
+// TODO conversion to Self [IsSpecialName] System.Data.SqlTypes.SqlDecimal op_Implicit(System.Int64)
+    public convenience init(x : Swift.Int64) 
+    {
+        var __thrown : NullableHandle = nil;
+        let __return = System_Data_SqlTypes_SqlDecimal_SqlDecimal__op_Implicit_0__1__i64(&__thrown, x);
+        assert(__thrown == nil);
+            self.init(hndl: __return);
     }
     // [IsSpecialName] System.Data.SqlTypes.SqlBoolean op_Inequality(System.Data.SqlTypes.SqlDecimal, System.Data.SqlTypes.SqlDecimal)
 // docid: M:System.Data.SqlTypes.SqlDecimal.op_Inequality(System.Data.SqlTypes.SqlDecimal,System.Data.SqlTypes.SqlDecimal)
@@ -36904,6 +37444,10 @@ public final class SqlDecimal
         return dotnet.System.Data.SqlTypes.SqlBoolean(hndl : __return);
         }
     }
+    public static func != (x : dotnet.System.Data.SqlTypes.SqlDecimal, y : dotnet.System.Data.SqlTypes.SqlDecimal) -> dotnet.System.Data.SqlTypes.SqlBoolean
+    {
+        return try! op_Inequality(x: x, y: y);
+    }
     // [IsSpecialName] System.Data.SqlTypes.SqlBoolean op_LessThan(System.Data.SqlTypes.SqlDecimal, System.Data.SqlTypes.SqlDecimal)
 // docid: M:System.Data.SqlTypes.SqlDecimal.op_LessThan(System.Data.SqlTypes.SqlDecimal,System.Data.SqlTypes.SqlDecimal)
     /**
@@ -36922,6 +37466,10 @@ public final class SqlDecimal
         } else {
         return dotnet.System.Data.SqlTypes.SqlBoolean(hndl : __return);
         }
+    }
+    public static func < (x : dotnet.System.Data.SqlTypes.SqlDecimal, y : dotnet.System.Data.SqlTypes.SqlDecimal) -> dotnet.System.Data.SqlTypes.SqlBoolean
+    {
+        return try! op_LessThan(x: x, y: y);
     }
     // [IsSpecialName] System.Data.SqlTypes.SqlBoolean op_LessThanOrEqual(System.Data.SqlTypes.SqlDecimal, System.Data.SqlTypes.SqlDecimal)
 // docid: M:System.Data.SqlTypes.SqlDecimal.op_LessThanOrEqual(System.Data.SqlTypes.SqlDecimal,System.Data.SqlTypes.SqlDecimal)
@@ -36942,6 +37490,10 @@ public final class SqlDecimal
         return dotnet.System.Data.SqlTypes.SqlBoolean(hndl : __return);
         }
     }
+    public static func <= (x : dotnet.System.Data.SqlTypes.SqlDecimal, y : dotnet.System.Data.SqlTypes.SqlDecimal) -> dotnet.System.Data.SqlTypes.SqlBoolean
+    {
+        return try! op_LessThanOrEqual(x: x, y: y);
+    }
     // [IsSpecialName] System.Data.SqlTypes.SqlDecimal op_Multiply(System.Data.SqlTypes.SqlDecimal, System.Data.SqlTypes.SqlDecimal)
 // docid: M:System.Data.SqlTypes.SqlDecimal.op_Multiply(System.Data.SqlTypes.SqlDecimal,System.Data.SqlTypes.SqlDecimal)
     /**
@@ -36961,6 +37513,10 @@ public final class SqlDecimal
         return dotnet.System.Data.SqlTypes.SqlDecimal(hndl : __return);
         }
     }
+    public static func * (x : dotnet.System.Data.SqlTypes.SqlDecimal, y : dotnet.System.Data.SqlTypes.SqlDecimal) -> dotnet.System.Data.SqlTypes.SqlDecimal
+    {
+        return try! op_Multiply(x: x, y: y);
+    }
     // [IsSpecialName] System.Data.SqlTypes.SqlDecimal op_Subtraction(System.Data.SqlTypes.SqlDecimal, System.Data.SqlTypes.SqlDecimal)
 // docid: M:System.Data.SqlTypes.SqlDecimal.op_Subtraction(System.Data.SqlTypes.SqlDecimal,System.Data.SqlTypes.SqlDecimal)
     /**
@@ -36979,6 +37535,10 @@ public final class SqlDecimal
         } else {
         return dotnet.System.Data.SqlTypes.SqlDecimal(hndl : __return);
         }
+    }
+    public static func - (x : dotnet.System.Data.SqlTypes.SqlDecimal, y : dotnet.System.Data.SqlTypes.SqlDecimal) -> dotnet.System.Data.SqlTypes.SqlDecimal
+    {
+        return try! op_Subtraction(x: x, y: y);
     }
     // [IsSpecialName] System.Data.SqlTypes.SqlDecimal op_UnaryNegation(System.Data.SqlTypes.SqlDecimal)
 // docid: M:System.Data.SqlTypes.SqlDecimal.op_UnaryNegation(System.Data.SqlTypes.SqlDecimal)
@@ -37774,6 +38334,10 @@ public final class SqlDouble
         return dotnet.System.Data.SqlTypes.SqlDouble(hndl : __return);
         }
     }
+    public static func + (x : dotnet.System.Data.SqlTypes.SqlDouble, y : dotnet.System.Data.SqlTypes.SqlDouble) -> dotnet.System.Data.SqlTypes.SqlDouble
+    {
+        return try! op_Addition(x: x, y: y);
+    }
     // [IsSpecialName] System.Data.SqlTypes.SqlDouble op_Division(System.Data.SqlTypes.SqlDouble, System.Data.SqlTypes.SqlDouble)
 // docid: M:System.Data.SqlTypes.SqlDouble.op_Division(System.Data.SqlTypes.SqlDouble,System.Data.SqlTypes.SqlDouble)
     /**
@@ -37792,6 +38356,10 @@ public final class SqlDouble
         } else {
         return dotnet.System.Data.SqlTypes.SqlDouble(hndl : __return);
         }
+    }
+    public static func / (x : dotnet.System.Data.SqlTypes.SqlDouble, y : dotnet.System.Data.SqlTypes.SqlDouble) -> dotnet.System.Data.SqlTypes.SqlDouble
+    {
+        return try! op_Division(x: x, y: y);
     }
     // [IsSpecialName] System.Data.SqlTypes.SqlBoolean op_Equality(System.Data.SqlTypes.SqlDouble, System.Data.SqlTypes.SqlDouble)
 // docid: M:System.Data.SqlTypes.SqlDouble.op_Equality(System.Data.SqlTypes.SqlDouble,System.Data.SqlTypes.SqlDouble)
@@ -37813,6 +38381,10 @@ public final class SqlDouble
         return dotnet.System.Data.SqlTypes.SqlBoolean(hndl : __return);
         }
     }
+    public static func == (x : dotnet.System.Data.SqlTypes.SqlDouble, y : dotnet.System.Data.SqlTypes.SqlDouble) -> dotnet.System.Data.SqlTypes.SqlBoolean
+    {
+        return try! op_Equality(x: x, y: y);
+    }
     // [IsSpecialName] System.Data.SqlTypes.SqlDouble op_Explicit(System.Data.SqlTypes.SqlBoolean)
 // docid: M:System.Data.SqlTypes.SqlDouble.op_Explicit(System.Data.SqlTypes.SqlBoolean)
     public class func op_Explicit(x : dotnet.System.Data.SqlTypes.SqlBoolean) throws -> dotnet.System.Data.SqlTypes.SqlDouble {
@@ -37822,6 +38394,17 @@ public final class SqlDouble
             throw dotnet.System.Exception(hndl: __ex);
         } else {
         return dotnet.System.Data.SqlTypes.SqlDouble(hndl : __return);
+        }
+    }
+// TODO conversion to Self [IsSpecialName] System.Data.SqlTypes.SqlDouble op_Explicit(System.Data.SqlTypes.SqlBoolean)
+    public convenience init(x : dotnet.System.Data.SqlTypes.SqlBoolean) throws
+    {
+        var __thrown : NullableHandle = nil;
+        let __return = System_Data_SqlTypes_SqlDouble_SqlDouble__op_Explicit_0__1__SqlBoolean(&__thrown, x.get_handle());
+        if let __ex =  __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: __return);
         }
     }
     // [IsSpecialName] System.Double op_Explicit(System.Data.SqlTypes.SqlDouble)
@@ -37835,6 +38418,7 @@ public final class SqlDouble
         return __return;
         }
     }
+// TODO conversion from Self [IsSpecialName] System.Double op_Explicit(System.Data.SqlTypes.SqlDouble)
     // [IsSpecialName] System.Data.SqlTypes.SqlDouble op_Explicit(System.Data.SqlTypes.SqlString)
 // docid: M:System.Data.SqlTypes.SqlDouble.op_Explicit(System.Data.SqlTypes.SqlString)
     public class func op_Explicit(x : dotnet.System.Data.SqlTypes.SqlString) throws -> dotnet.System.Data.SqlTypes.SqlDouble {
@@ -37844,6 +38428,17 @@ public final class SqlDouble
             throw dotnet.System.Exception(hndl: __ex);
         } else {
         return dotnet.System.Data.SqlTypes.SqlDouble(hndl : __return);
+        }
+    }
+// TODO conversion to Self [IsSpecialName] System.Data.SqlTypes.SqlDouble op_Explicit(System.Data.SqlTypes.SqlString)
+    public convenience init(x : dotnet.System.Data.SqlTypes.SqlString) throws
+    {
+        var __thrown : NullableHandle = nil;
+        let __return = System_Data_SqlTypes_SqlDouble_SqlDouble__op_Explicit_0__1__SqlString(&__thrown, x.get_handle());
+        if let __ex =  __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: __return);
         }
     }
     // [IsSpecialName] System.Data.SqlTypes.SqlBoolean op_GreaterThan(System.Data.SqlTypes.SqlDouble, System.Data.SqlTypes.SqlDouble)
@@ -37865,6 +38460,10 @@ public final class SqlDouble
         return dotnet.System.Data.SqlTypes.SqlBoolean(hndl : __return);
         }
     }
+    public static func > (x : dotnet.System.Data.SqlTypes.SqlDouble, y : dotnet.System.Data.SqlTypes.SqlDouble) -> dotnet.System.Data.SqlTypes.SqlBoolean
+    {
+        return try! op_GreaterThan(x: x, y: y);
+    }
     // [IsSpecialName] System.Data.SqlTypes.SqlBoolean op_GreaterThanOrEqual(System.Data.SqlTypes.SqlDouble, System.Data.SqlTypes.SqlDouble)
 // docid: M:System.Data.SqlTypes.SqlDouble.op_GreaterThanOrEqual(System.Data.SqlTypes.SqlDouble,System.Data.SqlTypes.SqlDouble)
     /**
@@ -37884,6 +38483,10 @@ public final class SqlDouble
         return dotnet.System.Data.SqlTypes.SqlBoolean(hndl : __return);
         }
     }
+    public static func >= (x : dotnet.System.Data.SqlTypes.SqlDouble, y : dotnet.System.Data.SqlTypes.SqlDouble) -> dotnet.System.Data.SqlTypes.SqlBoolean
+    {
+        return try! op_GreaterThanOrEqual(x: x, y: y);
+    }
     // [IsSpecialName] System.Data.SqlTypes.SqlDouble op_Implicit(System.Data.SqlTypes.SqlByte)
 // docid: M:System.Data.SqlTypes.SqlDouble.op_Implicit(System.Data.SqlTypes.SqlByte)
     public class func op_Implicit(x : dotnet.System.Data.SqlTypes.SqlByte) throws -> dotnet.System.Data.SqlTypes.SqlDouble {
@@ -37894,6 +38497,14 @@ public final class SqlDouble
         } else {
         return dotnet.System.Data.SqlTypes.SqlDouble(hndl : __return);
         }
+    }
+// TODO conversion to Self [IsSpecialName] System.Data.SqlTypes.SqlDouble op_Implicit(System.Data.SqlTypes.SqlByte)
+    public convenience init(x : dotnet.System.Data.SqlTypes.SqlByte) 
+    {
+        var __thrown : NullableHandle = nil;
+        let __return = System_Data_SqlTypes_SqlDouble_SqlDouble__op_Implicit_0__1__SqlByte(&__thrown, x.get_handle());
+        assert(__thrown == nil);
+            self.init(hndl: __return);
     }
     // [IsSpecialName] System.Data.SqlTypes.SqlDouble op_Implicit(System.Data.SqlTypes.SqlDecimal)
 // docid: M:System.Data.SqlTypes.SqlDouble.op_Implicit(System.Data.SqlTypes.SqlDecimal)
@@ -37906,6 +38517,14 @@ public final class SqlDouble
         return dotnet.System.Data.SqlTypes.SqlDouble(hndl : __return);
         }
     }
+// TODO conversion to Self [IsSpecialName] System.Data.SqlTypes.SqlDouble op_Implicit(System.Data.SqlTypes.SqlDecimal)
+    public convenience init(x : dotnet.System.Data.SqlTypes.SqlDecimal) 
+    {
+        var __thrown : NullableHandle = nil;
+        let __return = System_Data_SqlTypes_SqlDouble_SqlDouble__op_Implicit_0__1__SqlDecimal(&__thrown, x.get_handle());
+        assert(__thrown == nil);
+            self.init(hndl: __return);
+    }
     // [IsSpecialName] System.Data.SqlTypes.SqlDouble op_Implicit(System.Data.SqlTypes.SqlInt16)
 // docid: M:System.Data.SqlTypes.SqlDouble.op_Implicit(System.Data.SqlTypes.SqlInt16)
     public class func op_Implicit(x : dotnet.System.Data.SqlTypes.SqlInt16) throws -> dotnet.System.Data.SqlTypes.SqlDouble {
@@ -37916,6 +38535,14 @@ public final class SqlDouble
         } else {
         return dotnet.System.Data.SqlTypes.SqlDouble(hndl : __return);
         }
+    }
+// TODO conversion to Self [IsSpecialName] System.Data.SqlTypes.SqlDouble op_Implicit(System.Data.SqlTypes.SqlInt16)
+    public convenience init(x : dotnet.System.Data.SqlTypes.SqlInt16) 
+    {
+        var __thrown : NullableHandle = nil;
+        let __return = System_Data_SqlTypes_SqlDouble_SqlDouble__op_Implicit_0__1__SqlInt16(&__thrown, x.get_handle());
+        assert(__thrown == nil);
+            self.init(hndl: __return);
     }
     // [IsSpecialName] System.Data.SqlTypes.SqlDouble op_Implicit(System.Data.SqlTypes.SqlInt32)
 // docid: M:System.Data.SqlTypes.SqlDouble.op_Implicit(System.Data.SqlTypes.SqlInt32)
@@ -37928,6 +38555,14 @@ public final class SqlDouble
         return dotnet.System.Data.SqlTypes.SqlDouble(hndl : __return);
         }
     }
+// TODO conversion to Self [IsSpecialName] System.Data.SqlTypes.SqlDouble op_Implicit(System.Data.SqlTypes.SqlInt32)
+    public convenience init(x : dotnet.System.Data.SqlTypes.SqlInt32) 
+    {
+        var __thrown : NullableHandle = nil;
+        let __return = System_Data_SqlTypes_SqlDouble_SqlDouble__op_Implicit_0__1__SqlInt32(&__thrown, x.get_handle());
+        assert(__thrown == nil);
+            self.init(hndl: __return);
+    }
     // [IsSpecialName] System.Data.SqlTypes.SqlDouble op_Implicit(System.Data.SqlTypes.SqlInt64)
 // docid: M:System.Data.SqlTypes.SqlDouble.op_Implicit(System.Data.SqlTypes.SqlInt64)
     public class func op_Implicit(x : dotnet.System.Data.SqlTypes.SqlInt64) throws -> dotnet.System.Data.SqlTypes.SqlDouble {
@@ -37938,6 +38573,14 @@ public final class SqlDouble
         } else {
         return dotnet.System.Data.SqlTypes.SqlDouble(hndl : __return);
         }
+    }
+// TODO conversion to Self [IsSpecialName] System.Data.SqlTypes.SqlDouble op_Implicit(System.Data.SqlTypes.SqlInt64)
+    public convenience init(x : dotnet.System.Data.SqlTypes.SqlInt64) 
+    {
+        var __thrown : NullableHandle = nil;
+        let __return = System_Data_SqlTypes_SqlDouble_SqlDouble__op_Implicit_0__1__SqlInt64(&__thrown, x.get_handle());
+        assert(__thrown == nil);
+            self.init(hndl: __return);
     }
     // [IsSpecialName] System.Data.SqlTypes.SqlDouble op_Implicit(System.Data.SqlTypes.SqlMoney)
 // docid: M:System.Data.SqlTypes.SqlDouble.op_Implicit(System.Data.SqlTypes.SqlMoney)
@@ -37950,6 +38593,14 @@ public final class SqlDouble
         return dotnet.System.Data.SqlTypes.SqlDouble(hndl : __return);
         }
     }
+// TODO conversion to Self [IsSpecialName] System.Data.SqlTypes.SqlDouble op_Implicit(System.Data.SqlTypes.SqlMoney)
+    public convenience init(x : dotnet.System.Data.SqlTypes.SqlMoney) 
+    {
+        var __thrown : NullableHandle = nil;
+        let __return = System_Data_SqlTypes_SqlDouble_SqlDouble__op_Implicit_0__1__SqlMoney(&__thrown, x.get_handle());
+        assert(__thrown == nil);
+            self.init(hndl: __return);
+    }
     // [IsSpecialName] System.Data.SqlTypes.SqlDouble op_Implicit(System.Data.SqlTypes.SqlSingle)
 // docid: M:System.Data.SqlTypes.SqlDouble.op_Implicit(System.Data.SqlTypes.SqlSingle)
     public class func op_Implicit(x : dotnet.System.Data.SqlTypes.SqlSingle) throws -> dotnet.System.Data.SqlTypes.SqlDouble {
@@ -37961,6 +38612,14 @@ public final class SqlDouble
         return dotnet.System.Data.SqlTypes.SqlDouble(hndl : __return);
         }
     }
+// TODO conversion to Self [IsSpecialName] System.Data.SqlTypes.SqlDouble op_Implicit(System.Data.SqlTypes.SqlSingle)
+    public convenience init(x : dotnet.System.Data.SqlTypes.SqlSingle) 
+    {
+        var __thrown : NullableHandle = nil;
+        let __return = System_Data_SqlTypes_SqlDouble_SqlDouble__op_Implicit_0__1__SqlSingle(&__thrown, x.get_handle());
+        assert(__thrown == nil);
+            self.init(hndl: __return);
+    }
     // [IsSpecialName] System.Data.SqlTypes.SqlDouble op_Implicit(System.Double)
 // docid: M:System.Data.SqlTypes.SqlDouble.op_Implicit(System.Double)
     public class func op_Implicit(x : Swift.Double) throws -> dotnet.System.Data.SqlTypes.SqlDouble {
@@ -37971,6 +38630,14 @@ public final class SqlDouble
         } else {
         return dotnet.System.Data.SqlTypes.SqlDouble(hndl : __return);
         }
+    }
+// TODO conversion to Self [IsSpecialName] System.Data.SqlTypes.SqlDouble op_Implicit(System.Double)
+    public convenience init(x : Swift.Double) 
+    {
+        var __thrown : NullableHandle = nil;
+        let __return = System_Data_SqlTypes_SqlDouble_SqlDouble__op_Implicit_0__1__f64(&__thrown, x);
+        assert(__thrown == nil);
+            self.init(hndl: __return);
     }
     // [IsSpecialName] System.Data.SqlTypes.SqlBoolean op_Inequality(System.Data.SqlTypes.SqlDouble, System.Data.SqlTypes.SqlDouble)
 // docid: M:System.Data.SqlTypes.SqlDouble.op_Inequality(System.Data.SqlTypes.SqlDouble,System.Data.SqlTypes.SqlDouble)
@@ -37991,6 +38658,10 @@ public final class SqlDouble
         return dotnet.System.Data.SqlTypes.SqlBoolean(hndl : __return);
         }
     }
+    public static func != (x : dotnet.System.Data.SqlTypes.SqlDouble, y : dotnet.System.Data.SqlTypes.SqlDouble) -> dotnet.System.Data.SqlTypes.SqlBoolean
+    {
+        return try! op_Inequality(x: x, y: y);
+    }
     // [IsSpecialName] System.Data.SqlTypes.SqlBoolean op_LessThan(System.Data.SqlTypes.SqlDouble, System.Data.SqlTypes.SqlDouble)
 // docid: M:System.Data.SqlTypes.SqlDouble.op_LessThan(System.Data.SqlTypes.SqlDouble,System.Data.SqlTypes.SqlDouble)
     /**
@@ -38009,6 +38680,10 @@ public final class SqlDouble
         } else {
         return dotnet.System.Data.SqlTypes.SqlBoolean(hndl : __return);
         }
+    }
+    public static func < (x : dotnet.System.Data.SqlTypes.SqlDouble, y : dotnet.System.Data.SqlTypes.SqlDouble) -> dotnet.System.Data.SqlTypes.SqlBoolean
+    {
+        return try! op_LessThan(x: x, y: y);
     }
     // [IsSpecialName] System.Data.SqlTypes.SqlBoolean op_LessThanOrEqual(System.Data.SqlTypes.SqlDouble, System.Data.SqlTypes.SqlDouble)
 // docid: M:System.Data.SqlTypes.SqlDouble.op_LessThanOrEqual(System.Data.SqlTypes.SqlDouble,System.Data.SqlTypes.SqlDouble)
@@ -38029,6 +38704,10 @@ public final class SqlDouble
         return dotnet.System.Data.SqlTypes.SqlBoolean(hndl : __return);
         }
     }
+    public static func <= (x : dotnet.System.Data.SqlTypes.SqlDouble, y : dotnet.System.Data.SqlTypes.SqlDouble) -> dotnet.System.Data.SqlTypes.SqlBoolean
+    {
+        return try! op_LessThanOrEqual(x: x, y: y);
+    }
     // [IsSpecialName] System.Data.SqlTypes.SqlDouble op_Multiply(System.Data.SqlTypes.SqlDouble, System.Data.SqlTypes.SqlDouble)
 // docid: M:System.Data.SqlTypes.SqlDouble.op_Multiply(System.Data.SqlTypes.SqlDouble,System.Data.SqlTypes.SqlDouble)
     /**
@@ -38048,6 +38727,10 @@ public final class SqlDouble
         return dotnet.System.Data.SqlTypes.SqlDouble(hndl : __return);
         }
     }
+    public static func * (x : dotnet.System.Data.SqlTypes.SqlDouble, y : dotnet.System.Data.SqlTypes.SqlDouble) -> dotnet.System.Data.SqlTypes.SqlDouble
+    {
+        return try! op_Multiply(x: x, y: y);
+    }
     // [IsSpecialName] System.Data.SqlTypes.SqlDouble op_Subtraction(System.Data.SqlTypes.SqlDouble, System.Data.SqlTypes.SqlDouble)
 // docid: M:System.Data.SqlTypes.SqlDouble.op_Subtraction(System.Data.SqlTypes.SqlDouble,System.Data.SqlTypes.SqlDouble)
     /**
@@ -38066,6 +38749,10 @@ public final class SqlDouble
         } else {
         return dotnet.System.Data.SqlTypes.SqlDouble(hndl : __return);
         }
+    }
+    public static func - (x : dotnet.System.Data.SqlTypes.SqlDouble, y : dotnet.System.Data.SqlTypes.SqlDouble) -> dotnet.System.Data.SqlTypes.SqlDouble
+    {
+        return try! op_Subtraction(x: x, y: y);
     }
     // [IsSpecialName] System.Data.SqlTypes.SqlDouble op_UnaryNegation(System.Data.SqlTypes.SqlDouble)
 // docid: M:System.Data.SqlTypes.SqlDouble.op_UnaryNegation(System.Data.SqlTypes.SqlDouble)
@@ -38681,6 +39368,10 @@ public final class SqlGuid
         return dotnet.System.Data.SqlTypes.SqlBoolean(hndl : __return);
         }
     }
+    public static func == (x : dotnet.System.Data.SqlTypes.SqlGuid, y : dotnet.System.Data.SqlTypes.SqlGuid) -> dotnet.System.Data.SqlTypes.SqlBoolean
+    {
+        return try! op_Equality(x: x, y: y);
+    }
     // [IsSpecialName] System.Data.SqlTypes.SqlGuid op_Explicit(System.Data.SqlTypes.SqlBinary)
 // docid: M:System.Data.SqlTypes.SqlGuid.op_Explicit(System.Data.SqlTypes.SqlBinary)
     public class func op_Explicit(x : dotnet.System.Data.SqlTypes.SqlBinary) throws -> dotnet.System.Data.SqlTypes.SqlGuid {
@@ -38690,6 +39381,17 @@ public final class SqlGuid
             throw dotnet.System.Exception(hndl: __ex);
         } else {
         return dotnet.System.Data.SqlTypes.SqlGuid(hndl : __return);
+        }
+    }
+// TODO conversion to Self [IsSpecialName] System.Data.SqlTypes.SqlGuid op_Explicit(System.Data.SqlTypes.SqlBinary)
+    public convenience init(x : dotnet.System.Data.SqlTypes.SqlBinary) throws
+    {
+        var __thrown : NullableHandle = nil;
+        let __return = System_Data_SqlTypes_SqlGuid_SqlGuid__op_Explicit_0__1__SqlBinary(&__thrown, x.get_handle());
+        if let __ex =  __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: __return);
         }
     }
     // [IsSpecialName] System.Guid op_Explicit(System.Data.SqlTypes.SqlGuid)
@@ -38703,6 +39405,7 @@ public final class SqlGuid
         return dotnet.System.Guid(hndl : __return);
         }
     }
+// TODO conversion from Self [IsSpecialName] System.Guid op_Explicit(System.Data.SqlTypes.SqlGuid)
     // [IsSpecialName] System.Data.SqlTypes.SqlGuid op_Explicit(System.Data.SqlTypes.SqlString)
 // docid: M:System.Data.SqlTypes.SqlGuid.op_Explicit(System.Data.SqlTypes.SqlString)
     public class func op_Explicit(x : dotnet.System.Data.SqlTypes.SqlString) throws -> dotnet.System.Data.SqlTypes.SqlGuid {
@@ -38712,6 +39415,17 @@ public final class SqlGuid
             throw dotnet.System.Exception(hndl: __ex);
         } else {
         return dotnet.System.Data.SqlTypes.SqlGuid(hndl : __return);
+        }
+    }
+// TODO conversion to Self [IsSpecialName] System.Data.SqlTypes.SqlGuid op_Explicit(System.Data.SqlTypes.SqlString)
+    public convenience init(x : dotnet.System.Data.SqlTypes.SqlString) throws
+    {
+        var __thrown : NullableHandle = nil;
+        let __return = System_Data_SqlTypes_SqlGuid_SqlGuid__op_Explicit_0__1__SqlString(&__thrown, x.get_handle());
+        if let __ex =  __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: __return);
         }
     }
     // [IsSpecialName] System.Data.SqlTypes.SqlBoolean op_GreaterThan(System.Data.SqlTypes.SqlGuid, System.Data.SqlTypes.SqlGuid)
@@ -38733,6 +39447,10 @@ public final class SqlGuid
         return dotnet.System.Data.SqlTypes.SqlBoolean(hndl : __return);
         }
     }
+    public static func > (x : dotnet.System.Data.SqlTypes.SqlGuid, y : dotnet.System.Data.SqlTypes.SqlGuid) -> dotnet.System.Data.SqlTypes.SqlBoolean
+    {
+        return try! op_GreaterThan(x: x, y: y);
+    }
     // [IsSpecialName] System.Data.SqlTypes.SqlBoolean op_GreaterThanOrEqual(System.Data.SqlTypes.SqlGuid, System.Data.SqlTypes.SqlGuid)
 // docid: M:System.Data.SqlTypes.SqlGuid.op_GreaterThanOrEqual(System.Data.SqlTypes.SqlGuid,System.Data.SqlTypes.SqlGuid)
     /**
@@ -38752,6 +39470,10 @@ public final class SqlGuid
         return dotnet.System.Data.SqlTypes.SqlBoolean(hndl : __return);
         }
     }
+    public static func >= (x : dotnet.System.Data.SqlTypes.SqlGuid, y : dotnet.System.Data.SqlTypes.SqlGuid) -> dotnet.System.Data.SqlTypes.SqlBoolean
+    {
+        return try! op_GreaterThanOrEqual(x: x, y: y);
+    }
     // [IsSpecialName] System.Data.SqlTypes.SqlGuid op_Implicit(System.Guid)
 // docid: M:System.Data.SqlTypes.SqlGuid.op_Implicit(System.Guid)
     public class func op_Implicit(x : dotnet.System.Guid) throws -> dotnet.System.Data.SqlTypes.SqlGuid {
@@ -38762,6 +39484,14 @@ public final class SqlGuid
         } else {
         return dotnet.System.Data.SqlTypes.SqlGuid(hndl : __return);
         }
+    }
+// TODO conversion to Self [IsSpecialName] System.Data.SqlTypes.SqlGuid op_Implicit(System.Guid)
+    public convenience init(x : dotnet.System.Guid) 
+    {
+        var __thrown : NullableHandle = nil;
+        let __return = System_Data_SqlTypes_SqlGuid_SqlGuid__op_Implicit_0__1__Guid(&__thrown, x.get_handle());
+        assert(__thrown == nil);
+            self.init(hndl: __return);
     }
     // [IsSpecialName] System.Data.SqlTypes.SqlBoolean op_Inequality(System.Data.SqlTypes.SqlGuid, System.Data.SqlTypes.SqlGuid)
 // docid: M:System.Data.SqlTypes.SqlGuid.op_Inequality(System.Data.SqlTypes.SqlGuid,System.Data.SqlTypes.SqlGuid)
@@ -38782,6 +39512,10 @@ public final class SqlGuid
         return dotnet.System.Data.SqlTypes.SqlBoolean(hndl : __return);
         }
     }
+    public static func != (x : dotnet.System.Data.SqlTypes.SqlGuid, y : dotnet.System.Data.SqlTypes.SqlGuid) -> dotnet.System.Data.SqlTypes.SqlBoolean
+    {
+        return try! op_Inequality(x: x, y: y);
+    }
     // [IsSpecialName] System.Data.SqlTypes.SqlBoolean op_LessThan(System.Data.SqlTypes.SqlGuid, System.Data.SqlTypes.SqlGuid)
 // docid: M:System.Data.SqlTypes.SqlGuid.op_LessThan(System.Data.SqlTypes.SqlGuid,System.Data.SqlTypes.SqlGuid)
     /**
@@ -38801,6 +39535,10 @@ public final class SqlGuid
         return dotnet.System.Data.SqlTypes.SqlBoolean(hndl : __return);
         }
     }
+    public static func < (x : dotnet.System.Data.SqlTypes.SqlGuid, y : dotnet.System.Data.SqlTypes.SqlGuid) -> dotnet.System.Data.SqlTypes.SqlBoolean
+    {
+        return try! op_LessThan(x: x, y: y);
+    }
     // [IsSpecialName] System.Data.SqlTypes.SqlBoolean op_LessThanOrEqual(System.Data.SqlTypes.SqlGuid, System.Data.SqlTypes.SqlGuid)
 // docid: M:System.Data.SqlTypes.SqlGuid.op_LessThanOrEqual(System.Data.SqlTypes.SqlGuid,System.Data.SqlTypes.SqlGuid)
     /**
@@ -38819,6 +39557,10 @@ public final class SqlGuid
         } else {
         return dotnet.System.Data.SqlTypes.SqlBoolean(hndl : __return);
         }
+    }
+    public static func <= (x : dotnet.System.Data.SqlTypes.SqlGuid, y : dotnet.System.Data.SqlTypes.SqlGuid) -> dotnet.System.Data.SqlTypes.SqlBoolean
+    {
+        return try! op_LessThanOrEqual(x: x, y: y);
     }
     // System.Data.SqlTypes.SqlGuid Parse(System.String)
 // docid: M:System.Data.SqlTypes.SqlGuid.Parse(System.String)
@@ -39421,6 +40163,10 @@ public final class SqlInt16
         return dotnet.System.Data.SqlTypes.SqlInt16(hndl : __return);
         }
     }
+    public static func + (x : dotnet.System.Data.SqlTypes.SqlInt16, y : dotnet.System.Data.SqlTypes.SqlInt16) -> dotnet.System.Data.SqlTypes.SqlInt16
+    {
+        return try! op_Addition(x: x, y: y);
+    }
     // [IsSpecialName] System.Data.SqlTypes.SqlInt16 op_BitwiseAnd(System.Data.SqlTypes.SqlInt16, System.Data.SqlTypes.SqlInt16)
 // docid: M:System.Data.SqlTypes.SqlInt16.op_BitwiseAnd(System.Data.SqlTypes.SqlInt16,System.Data.SqlTypes.SqlInt16)
     /**
@@ -39439,6 +40185,10 @@ public final class SqlInt16
         } else {
         return dotnet.System.Data.SqlTypes.SqlInt16(hndl : __return);
         }
+    }
+    public static func & (x : dotnet.System.Data.SqlTypes.SqlInt16, y : dotnet.System.Data.SqlTypes.SqlInt16) -> dotnet.System.Data.SqlTypes.SqlInt16
+    {
+        return try! op_BitwiseAnd(x: x, y: y);
     }
     // [IsSpecialName] System.Data.SqlTypes.SqlInt16 op_BitwiseOr(System.Data.SqlTypes.SqlInt16, System.Data.SqlTypes.SqlInt16)
 // docid: M:System.Data.SqlTypes.SqlInt16.op_BitwiseOr(System.Data.SqlTypes.SqlInt16,System.Data.SqlTypes.SqlInt16)
@@ -39459,6 +40209,10 @@ public final class SqlInt16
         return dotnet.System.Data.SqlTypes.SqlInt16(hndl : __return);
         }
     }
+    public static func | (x : dotnet.System.Data.SqlTypes.SqlInt16, y : dotnet.System.Data.SqlTypes.SqlInt16) -> dotnet.System.Data.SqlTypes.SqlInt16
+    {
+        return try! op_BitwiseOr(x: x, y: y);
+    }
     // [IsSpecialName] System.Data.SqlTypes.SqlInt16 op_Division(System.Data.SqlTypes.SqlInt16, System.Data.SqlTypes.SqlInt16)
 // docid: M:System.Data.SqlTypes.SqlInt16.op_Division(System.Data.SqlTypes.SqlInt16,System.Data.SqlTypes.SqlInt16)
     /**
@@ -39477,6 +40231,10 @@ public final class SqlInt16
         } else {
         return dotnet.System.Data.SqlTypes.SqlInt16(hndl : __return);
         }
+    }
+    public static func / (x : dotnet.System.Data.SqlTypes.SqlInt16, y : dotnet.System.Data.SqlTypes.SqlInt16) -> dotnet.System.Data.SqlTypes.SqlInt16
+    {
+        return try! op_Division(x: x, y: y);
     }
     // [IsSpecialName] System.Data.SqlTypes.SqlBoolean op_Equality(System.Data.SqlTypes.SqlInt16, System.Data.SqlTypes.SqlInt16)
 // docid: M:System.Data.SqlTypes.SqlInt16.op_Equality(System.Data.SqlTypes.SqlInt16,System.Data.SqlTypes.SqlInt16)
@@ -39497,6 +40255,10 @@ public final class SqlInt16
         return dotnet.System.Data.SqlTypes.SqlBoolean(hndl : __return);
         }
     }
+    public static func == (x : dotnet.System.Data.SqlTypes.SqlInt16, y : dotnet.System.Data.SqlTypes.SqlInt16) -> dotnet.System.Data.SqlTypes.SqlBoolean
+    {
+        return try! op_Equality(x: x, y: y);
+    }
     // [IsSpecialName] System.Data.SqlTypes.SqlInt16 op_ExclusiveOr(System.Data.SqlTypes.SqlInt16, System.Data.SqlTypes.SqlInt16)
 // docid: M:System.Data.SqlTypes.SqlInt16.op_ExclusiveOr(System.Data.SqlTypes.SqlInt16,System.Data.SqlTypes.SqlInt16)
     /**
@@ -39516,6 +40278,10 @@ public final class SqlInt16
         return dotnet.System.Data.SqlTypes.SqlInt16(hndl : __return);
         }
     }
+    public static func ^ (x : dotnet.System.Data.SqlTypes.SqlInt16, y : dotnet.System.Data.SqlTypes.SqlInt16) -> dotnet.System.Data.SqlTypes.SqlInt16
+    {
+        return try! op_ExclusiveOr(x: x, y: y);
+    }
     // [IsSpecialName] System.Data.SqlTypes.SqlInt16 op_Explicit(System.Data.SqlTypes.SqlBoolean)
 // docid: M:System.Data.SqlTypes.SqlInt16.op_Explicit(System.Data.SqlTypes.SqlBoolean)
     public class func op_Explicit(x : dotnet.System.Data.SqlTypes.SqlBoolean) throws -> dotnet.System.Data.SqlTypes.SqlInt16 {
@@ -39525,6 +40291,17 @@ public final class SqlInt16
             throw dotnet.System.Exception(hndl: __ex);
         } else {
         return dotnet.System.Data.SqlTypes.SqlInt16(hndl : __return);
+        }
+    }
+// TODO conversion to Self [IsSpecialName] System.Data.SqlTypes.SqlInt16 op_Explicit(System.Data.SqlTypes.SqlBoolean)
+    public convenience init(x : dotnet.System.Data.SqlTypes.SqlBoolean) throws
+    {
+        var __thrown : NullableHandle = nil;
+        let __return = System_Data_SqlTypes_SqlInt16_SqlInt16__op_Explicit_0__1__SqlBoolean(&__thrown, x.get_handle());
+        if let __ex =  __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: __return);
         }
     }
     // [IsSpecialName] System.Data.SqlTypes.SqlInt16 op_Explicit(System.Data.SqlTypes.SqlDecimal)
@@ -39538,6 +40315,17 @@ public final class SqlInt16
         return dotnet.System.Data.SqlTypes.SqlInt16(hndl : __return);
         }
     }
+// TODO conversion to Self [IsSpecialName] System.Data.SqlTypes.SqlInt16 op_Explicit(System.Data.SqlTypes.SqlDecimal)
+    public convenience init(x : dotnet.System.Data.SqlTypes.SqlDecimal) throws
+    {
+        var __thrown : NullableHandle = nil;
+        let __return = System_Data_SqlTypes_SqlInt16_SqlInt16__op_Explicit_0__1__SqlDecimal(&__thrown, x.get_handle());
+        if let __ex =  __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: __return);
+        }
+    }
     // [IsSpecialName] System.Data.SqlTypes.SqlInt16 op_Explicit(System.Data.SqlTypes.SqlDouble)
 // docid: M:System.Data.SqlTypes.SqlInt16.op_Explicit(System.Data.SqlTypes.SqlDouble)
     public class func op_Explicit(x : dotnet.System.Data.SqlTypes.SqlDouble) throws -> dotnet.System.Data.SqlTypes.SqlInt16 {
@@ -39547,6 +40335,17 @@ public final class SqlInt16
             throw dotnet.System.Exception(hndl: __ex);
         } else {
         return dotnet.System.Data.SqlTypes.SqlInt16(hndl : __return);
+        }
+    }
+// TODO conversion to Self [IsSpecialName] System.Data.SqlTypes.SqlInt16 op_Explicit(System.Data.SqlTypes.SqlDouble)
+    public convenience init(x : dotnet.System.Data.SqlTypes.SqlDouble) throws
+    {
+        var __thrown : NullableHandle = nil;
+        let __return = System_Data_SqlTypes_SqlInt16_SqlInt16__op_Explicit_0__1__SqlDouble(&__thrown, x.get_handle());
+        if let __ex =  __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: __return);
         }
     }
     // [IsSpecialName] System.Int16 op_Explicit(System.Data.SqlTypes.SqlInt16)
@@ -39560,6 +40359,7 @@ public final class SqlInt16
         return __return;
         }
     }
+// TODO conversion from Self [IsSpecialName] System.Int16 op_Explicit(System.Data.SqlTypes.SqlInt16)
     // [IsSpecialName] System.Data.SqlTypes.SqlInt16 op_Explicit(System.Data.SqlTypes.SqlInt32)
 // docid: M:System.Data.SqlTypes.SqlInt16.op_Explicit(System.Data.SqlTypes.SqlInt32)
     public class func op_Explicit(x : dotnet.System.Data.SqlTypes.SqlInt32) throws -> dotnet.System.Data.SqlTypes.SqlInt16 {
@@ -39569,6 +40369,17 @@ public final class SqlInt16
             throw dotnet.System.Exception(hndl: __ex);
         } else {
         return dotnet.System.Data.SqlTypes.SqlInt16(hndl : __return);
+        }
+    }
+// TODO conversion to Self [IsSpecialName] System.Data.SqlTypes.SqlInt16 op_Explicit(System.Data.SqlTypes.SqlInt32)
+    public convenience init(x : dotnet.System.Data.SqlTypes.SqlInt32) throws
+    {
+        var __thrown : NullableHandle = nil;
+        let __return = System_Data_SqlTypes_SqlInt16_SqlInt16__op_Explicit_0__1__SqlInt32(&__thrown, x.get_handle());
+        if let __ex =  __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: __return);
         }
     }
     // [IsSpecialName] System.Data.SqlTypes.SqlInt16 op_Explicit(System.Data.SqlTypes.SqlInt64)
@@ -39582,6 +40393,17 @@ public final class SqlInt16
         return dotnet.System.Data.SqlTypes.SqlInt16(hndl : __return);
         }
     }
+// TODO conversion to Self [IsSpecialName] System.Data.SqlTypes.SqlInt16 op_Explicit(System.Data.SqlTypes.SqlInt64)
+    public convenience init(x : dotnet.System.Data.SqlTypes.SqlInt64) throws
+    {
+        var __thrown : NullableHandle = nil;
+        let __return = System_Data_SqlTypes_SqlInt16_SqlInt16__op_Explicit_0__1__SqlInt64(&__thrown, x.get_handle());
+        if let __ex =  __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: __return);
+        }
+    }
     // [IsSpecialName] System.Data.SqlTypes.SqlInt16 op_Explicit(System.Data.SqlTypes.SqlMoney)
 // docid: M:System.Data.SqlTypes.SqlInt16.op_Explicit(System.Data.SqlTypes.SqlMoney)
     public class func op_Explicit(x : dotnet.System.Data.SqlTypes.SqlMoney) throws -> dotnet.System.Data.SqlTypes.SqlInt16 {
@@ -39591,6 +40413,17 @@ public final class SqlInt16
             throw dotnet.System.Exception(hndl: __ex);
         } else {
         return dotnet.System.Data.SqlTypes.SqlInt16(hndl : __return);
+        }
+    }
+// TODO conversion to Self [IsSpecialName] System.Data.SqlTypes.SqlInt16 op_Explicit(System.Data.SqlTypes.SqlMoney)
+    public convenience init(x : dotnet.System.Data.SqlTypes.SqlMoney) throws
+    {
+        var __thrown : NullableHandle = nil;
+        let __return = System_Data_SqlTypes_SqlInt16_SqlInt16__op_Explicit_0__1__SqlMoney(&__thrown, x.get_handle());
+        if let __ex =  __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: __return);
         }
     }
     // [IsSpecialName] System.Data.SqlTypes.SqlInt16 op_Explicit(System.Data.SqlTypes.SqlSingle)
@@ -39604,6 +40437,17 @@ public final class SqlInt16
         return dotnet.System.Data.SqlTypes.SqlInt16(hndl : __return);
         }
     }
+// TODO conversion to Self [IsSpecialName] System.Data.SqlTypes.SqlInt16 op_Explicit(System.Data.SqlTypes.SqlSingle)
+    public convenience init(x : dotnet.System.Data.SqlTypes.SqlSingle) throws
+    {
+        var __thrown : NullableHandle = nil;
+        let __return = System_Data_SqlTypes_SqlInt16_SqlInt16__op_Explicit_0__1__SqlSingle(&__thrown, x.get_handle());
+        if let __ex =  __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: __return);
+        }
+    }
     // [IsSpecialName] System.Data.SqlTypes.SqlInt16 op_Explicit(System.Data.SqlTypes.SqlString)
 // docid: M:System.Data.SqlTypes.SqlInt16.op_Explicit(System.Data.SqlTypes.SqlString)
     public class func op_Explicit(x : dotnet.System.Data.SqlTypes.SqlString) throws -> dotnet.System.Data.SqlTypes.SqlInt16 {
@@ -39613,6 +40457,17 @@ public final class SqlInt16
             throw dotnet.System.Exception(hndl: __ex);
         } else {
         return dotnet.System.Data.SqlTypes.SqlInt16(hndl : __return);
+        }
+    }
+// TODO conversion to Self [IsSpecialName] System.Data.SqlTypes.SqlInt16 op_Explicit(System.Data.SqlTypes.SqlString)
+    public convenience init(x : dotnet.System.Data.SqlTypes.SqlString) throws
+    {
+        var __thrown : NullableHandle = nil;
+        let __return = System_Data_SqlTypes_SqlInt16_SqlInt16__op_Explicit_0__1__SqlString(&__thrown, x.get_handle());
+        if let __ex =  __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: __return);
         }
     }
     // [IsSpecialName] System.Data.SqlTypes.SqlBoolean op_GreaterThan(System.Data.SqlTypes.SqlInt16, System.Data.SqlTypes.SqlInt16)
@@ -39634,6 +40489,10 @@ public final class SqlInt16
         return dotnet.System.Data.SqlTypes.SqlBoolean(hndl : __return);
         }
     }
+    public static func > (x : dotnet.System.Data.SqlTypes.SqlInt16, y : dotnet.System.Data.SqlTypes.SqlInt16) -> dotnet.System.Data.SqlTypes.SqlBoolean
+    {
+        return try! op_GreaterThan(x: x, y: y);
+    }
     // [IsSpecialName] System.Data.SqlTypes.SqlBoolean op_GreaterThanOrEqual(System.Data.SqlTypes.SqlInt16, System.Data.SqlTypes.SqlInt16)
 // docid: M:System.Data.SqlTypes.SqlInt16.op_GreaterThanOrEqual(System.Data.SqlTypes.SqlInt16,System.Data.SqlTypes.SqlInt16)
     /**
@@ -39653,6 +40512,10 @@ public final class SqlInt16
         return dotnet.System.Data.SqlTypes.SqlBoolean(hndl : __return);
         }
     }
+    public static func >= (x : dotnet.System.Data.SqlTypes.SqlInt16, y : dotnet.System.Data.SqlTypes.SqlInt16) -> dotnet.System.Data.SqlTypes.SqlBoolean
+    {
+        return try! op_GreaterThanOrEqual(x: x, y: y);
+    }
     // [IsSpecialName] System.Data.SqlTypes.SqlInt16 op_Implicit(System.Data.SqlTypes.SqlByte)
 // docid: M:System.Data.SqlTypes.SqlInt16.op_Implicit(System.Data.SqlTypes.SqlByte)
     public class func op_Implicit(x : dotnet.System.Data.SqlTypes.SqlByte) throws -> dotnet.System.Data.SqlTypes.SqlInt16 {
@@ -39664,6 +40527,14 @@ public final class SqlInt16
         return dotnet.System.Data.SqlTypes.SqlInt16(hndl : __return);
         }
     }
+// TODO conversion to Self [IsSpecialName] System.Data.SqlTypes.SqlInt16 op_Implicit(System.Data.SqlTypes.SqlByte)
+    public convenience init(x : dotnet.System.Data.SqlTypes.SqlByte) 
+    {
+        var __thrown : NullableHandle = nil;
+        let __return = System_Data_SqlTypes_SqlInt16_SqlInt16__op_Implicit_0__1__SqlByte(&__thrown, x.get_handle());
+        assert(__thrown == nil);
+            self.init(hndl: __return);
+    }
     // [IsSpecialName] System.Data.SqlTypes.SqlInt16 op_Implicit(System.Int16)
 // docid: M:System.Data.SqlTypes.SqlInt16.op_Implicit(System.Int16)
     public class func op_Implicit(x : Swift.Int16) throws -> dotnet.System.Data.SqlTypes.SqlInt16 {
@@ -39674,6 +40545,14 @@ public final class SqlInt16
         } else {
         return dotnet.System.Data.SqlTypes.SqlInt16(hndl : __return);
         }
+    }
+// TODO conversion to Self [IsSpecialName] System.Data.SqlTypes.SqlInt16 op_Implicit(System.Int16)
+    public convenience init(x : Swift.Int16) 
+    {
+        var __thrown : NullableHandle = nil;
+        let __return = System_Data_SqlTypes_SqlInt16_SqlInt16__op_Implicit_0__1__i16(&__thrown, x);
+        assert(__thrown == nil);
+            self.init(hndl: __return);
     }
     // [IsSpecialName] System.Data.SqlTypes.SqlBoolean op_Inequality(System.Data.SqlTypes.SqlInt16, System.Data.SqlTypes.SqlInt16)
 // docid: M:System.Data.SqlTypes.SqlInt16.op_Inequality(System.Data.SqlTypes.SqlInt16,System.Data.SqlTypes.SqlInt16)
@@ -39694,6 +40573,10 @@ public final class SqlInt16
         return dotnet.System.Data.SqlTypes.SqlBoolean(hndl : __return);
         }
     }
+    public static func != (x : dotnet.System.Data.SqlTypes.SqlInt16, y : dotnet.System.Data.SqlTypes.SqlInt16) -> dotnet.System.Data.SqlTypes.SqlBoolean
+    {
+        return try! op_Inequality(x: x, y: y);
+    }
     // [IsSpecialName] System.Data.SqlTypes.SqlBoolean op_LessThan(System.Data.SqlTypes.SqlInt16, System.Data.SqlTypes.SqlInt16)
 // docid: M:System.Data.SqlTypes.SqlInt16.op_LessThan(System.Data.SqlTypes.SqlInt16,System.Data.SqlTypes.SqlInt16)
     /**
@@ -39712,6 +40595,10 @@ public final class SqlInt16
         } else {
         return dotnet.System.Data.SqlTypes.SqlBoolean(hndl : __return);
         }
+    }
+    public static func < (x : dotnet.System.Data.SqlTypes.SqlInt16, y : dotnet.System.Data.SqlTypes.SqlInt16) -> dotnet.System.Data.SqlTypes.SqlBoolean
+    {
+        return try! op_LessThan(x: x, y: y);
     }
     // [IsSpecialName] System.Data.SqlTypes.SqlBoolean op_LessThanOrEqual(System.Data.SqlTypes.SqlInt16, System.Data.SqlTypes.SqlInt16)
 // docid: M:System.Data.SqlTypes.SqlInt16.op_LessThanOrEqual(System.Data.SqlTypes.SqlInt16,System.Data.SqlTypes.SqlInt16)
@@ -39732,6 +40619,10 @@ public final class SqlInt16
         return dotnet.System.Data.SqlTypes.SqlBoolean(hndl : __return);
         }
     }
+    public static func <= (x : dotnet.System.Data.SqlTypes.SqlInt16, y : dotnet.System.Data.SqlTypes.SqlInt16) -> dotnet.System.Data.SqlTypes.SqlBoolean
+    {
+        return try! op_LessThanOrEqual(x: x, y: y);
+    }
     // [IsSpecialName] System.Data.SqlTypes.SqlInt16 op_Modulus(System.Data.SqlTypes.SqlInt16, System.Data.SqlTypes.SqlInt16)
 // docid: M:System.Data.SqlTypes.SqlInt16.op_Modulus(System.Data.SqlTypes.SqlInt16,System.Data.SqlTypes.SqlInt16)
     /**
@@ -39751,6 +40642,10 @@ public final class SqlInt16
         return dotnet.System.Data.SqlTypes.SqlInt16(hndl : __return);
         }
     }
+    public static func % (x : dotnet.System.Data.SqlTypes.SqlInt16, y : dotnet.System.Data.SqlTypes.SqlInt16) -> dotnet.System.Data.SqlTypes.SqlInt16
+    {
+        return try! op_Modulus(x: x, y: y);
+    }
     // [IsSpecialName] System.Data.SqlTypes.SqlInt16 op_Multiply(System.Data.SqlTypes.SqlInt16, System.Data.SqlTypes.SqlInt16)
 // docid: M:System.Data.SqlTypes.SqlInt16.op_Multiply(System.Data.SqlTypes.SqlInt16,System.Data.SqlTypes.SqlInt16)
     /**
@@ -39769,6 +40664,10 @@ public final class SqlInt16
         } else {
         return dotnet.System.Data.SqlTypes.SqlInt16(hndl : __return);
         }
+    }
+    public static func * (x : dotnet.System.Data.SqlTypes.SqlInt16, y : dotnet.System.Data.SqlTypes.SqlInt16) -> dotnet.System.Data.SqlTypes.SqlInt16
+    {
+        return try! op_Multiply(x: x, y: y);
     }
     // [IsSpecialName] System.Data.SqlTypes.SqlInt16 op_OnesComplement(System.Data.SqlTypes.SqlInt16)
 // docid: M:System.Data.SqlTypes.SqlInt16.op_OnesComplement(System.Data.SqlTypes.SqlInt16)
@@ -39806,6 +40705,10 @@ public final class SqlInt16
         } else {
         return dotnet.System.Data.SqlTypes.SqlInt16(hndl : __return);
         }
+    }
+    public static func - (x : dotnet.System.Data.SqlTypes.SqlInt16, y : dotnet.System.Data.SqlTypes.SqlInt16) -> dotnet.System.Data.SqlTypes.SqlInt16
+    {
+        return try! op_Subtraction(x: x, y: y);
     }
     // [IsSpecialName] System.Data.SqlTypes.SqlInt16 op_UnaryNegation(System.Data.SqlTypes.SqlInt16)
 // docid: M:System.Data.SqlTypes.SqlInt16.op_UnaryNegation(System.Data.SqlTypes.SqlInt16)
@@ -40567,6 +41470,10 @@ public final class SqlInt32
         return dotnet.System.Data.SqlTypes.SqlInt32(hndl : __return);
         }
     }
+    public static func + (x : dotnet.System.Data.SqlTypes.SqlInt32, y : dotnet.System.Data.SqlTypes.SqlInt32) -> dotnet.System.Data.SqlTypes.SqlInt32
+    {
+        return try! op_Addition(x: x, y: y);
+    }
     // [IsSpecialName] System.Data.SqlTypes.SqlInt32 op_BitwiseAnd(System.Data.SqlTypes.SqlInt32, System.Data.SqlTypes.SqlInt32)
 // docid: M:System.Data.SqlTypes.SqlInt32.op_BitwiseAnd(System.Data.SqlTypes.SqlInt32,System.Data.SqlTypes.SqlInt32)
     /**
@@ -40585,6 +41492,10 @@ public final class SqlInt32
         } else {
         return dotnet.System.Data.SqlTypes.SqlInt32(hndl : __return);
         }
+    }
+    public static func & (x : dotnet.System.Data.SqlTypes.SqlInt32, y : dotnet.System.Data.SqlTypes.SqlInt32) -> dotnet.System.Data.SqlTypes.SqlInt32
+    {
+        return try! op_BitwiseAnd(x: x, y: y);
     }
     // [IsSpecialName] System.Data.SqlTypes.SqlInt32 op_BitwiseOr(System.Data.SqlTypes.SqlInt32, System.Data.SqlTypes.SqlInt32)
 // docid: M:System.Data.SqlTypes.SqlInt32.op_BitwiseOr(System.Data.SqlTypes.SqlInt32,System.Data.SqlTypes.SqlInt32)
@@ -40605,6 +41516,10 @@ public final class SqlInt32
         return dotnet.System.Data.SqlTypes.SqlInt32(hndl : __return);
         }
     }
+    public static func | (x : dotnet.System.Data.SqlTypes.SqlInt32, y : dotnet.System.Data.SqlTypes.SqlInt32) -> dotnet.System.Data.SqlTypes.SqlInt32
+    {
+        return try! op_BitwiseOr(x: x, y: y);
+    }
     // [IsSpecialName] System.Data.SqlTypes.SqlInt32 op_Division(System.Data.SqlTypes.SqlInt32, System.Data.SqlTypes.SqlInt32)
 // docid: M:System.Data.SqlTypes.SqlInt32.op_Division(System.Data.SqlTypes.SqlInt32,System.Data.SqlTypes.SqlInt32)
     /**
@@ -40623,6 +41538,10 @@ public final class SqlInt32
         } else {
         return dotnet.System.Data.SqlTypes.SqlInt32(hndl : __return);
         }
+    }
+    public static func / (x : dotnet.System.Data.SqlTypes.SqlInt32, y : dotnet.System.Data.SqlTypes.SqlInt32) -> dotnet.System.Data.SqlTypes.SqlInt32
+    {
+        return try! op_Division(x: x, y: y);
     }
     // [IsSpecialName] System.Data.SqlTypes.SqlBoolean op_Equality(System.Data.SqlTypes.SqlInt32, System.Data.SqlTypes.SqlInt32)
 // docid: M:System.Data.SqlTypes.SqlInt32.op_Equality(System.Data.SqlTypes.SqlInt32,System.Data.SqlTypes.SqlInt32)
@@ -40643,6 +41562,10 @@ public final class SqlInt32
         return dotnet.System.Data.SqlTypes.SqlBoolean(hndl : __return);
         }
     }
+    public static func == (x : dotnet.System.Data.SqlTypes.SqlInt32, y : dotnet.System.Data.SqlTypes.SqlInt32) -> dotnet.System.Data.SqlTypes.SqlBoolean
+    {
+        return try! op_Equality(x: x, y: y);
+    }
     // [IsSpecialName] System.Data.SqlTypes.SqlInt32 op_ExclusiveOr(System.Data.SqlTypes.SqlInt32, System.Data.SqlTypes.SqlInt32)
 // docid: M:System.Data.SqlTypes.SqlInt32.op_ExclusiveOr(System.Data.SqlTypes.SqlInt32,System.Data.SqlTypes.SqlInt32)
     /**
@@ -40662,6 +41585,10 @@ public final class SqlInt32
         return dotnet.System.Data.SqlTypes.SqlInt32(hndl : __return);
         }
     }
+    public static func ^ (x : dotnet.System.Data.SqlTypes.SqlInt32, y : dotnet.System.Data.SqlTypes.SqlInt32) -> dotnet.System.Data.SqlTypes.SqlInt32
+    {
+        return try! op_ExclusiveOr(x: x, y: y);
+    }
     // [IsSpecialName] System.Data.SqlTypes.SqlInt32 op_Explicit(System.Data.SqlTypes.SqlBoolean)
 // docid: M:System.Data.SqlTypes.SqlInt32.op_Explicit(System.Data.SqlTypes.SqlBoolean)
     public class func op_Explicit(x : dotnet.System.Data.SqlTypes.SqlBoolean) throws -> dotnet.System.Data.SqlTypes.SqlInt32 {
@@ -40671,6 +41598,17 @@ public final class SqlInt32
             throw dotnet.System.Exception(hndl: __ex);
         } else {
         return dotnet.System.Data.SqlTypes.SqlInt32(hndl : __return);
+        }
+    }
+// TODO conversion to Self [IsSpecialName] System.Data.SqlTypes.SqlInt32 op_Explicit(System.Data.SqlTypes.SqlBoolean)
+    public convenience init(x : dotnet.System.Data.SqlTypes.SqlBoolean) throws
+    {
+        var __thrown : NullableHandle = nil;
+        let __return = System_Data_SqlTypes_SqlInt32_SqlInt32__op_Explicit_0__1__SqlBoolean(&__thrown, x.get_handle());
+        if let __ex =  __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: __return);
         }
     }
     // [IsSpecialName] System.Data.SqlTypes.SqlInt32 op_Explicit(System.Data.SqlTypes.SqlDecimal)
@@ -40684,6 +41622,17 @@ public final class SqlInt32
         return dotnet.System.Data.SqlTypes.SqlInt32(hndl : __return);
         }
     }
+// TODO conversion to Self [IsSpecialName] System.Data.SqlTypes.SqlInt32 op_Explicit(System.Data.SqlTypes.SqlDecimal)
+    public convenience init(x : dotnet.System.Data.SqlTypes.SqlDecimal) throws
+    {
+        var __thrown : NullableHandle = nil;
+        let __return = System_Data_SqlTypes_SqlInt32_SqlInt32__op_Explicit_0__1__SqlDecimal(&__thrown, x.get_handle());
+        if let __ex =  __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: __return);
+        }
+    }
     // [IsSpecialName] System.Data.SqlTypes.SqlInt32 op_Explicit(System.Data.SqlTypes.SqlDouble)
 // docid: M:System.Data.SqlTypes.SqlInt32.op_Explicit(System.Data.SqlTypes.SqlDouble)
     public class func op_Explicit(x : dotnet.System.Data.SqlTypes.SqlDouble) throws -> dotnet.System.Data.SqlTypes.SqlInt32 {
@@ -40693,6 +41642,17 @@ public final class SqlInt32
             throw dotnet.System.Exception(hndl: __ex);
         } else {
         return dotnet.System.Data.SqlTypes.SqlInt32(hndl : __return);
+        }
+    }
+// TODO conversion to Self [IsSpecialName] System.Data.SqlTypes.SqlInt32 op_Explicit(System.Data.SqlTypes.SqlDouble)
+    public convenience init(x : dotnet.System.Data.SqlTypes.SqlDouble) throws
+    {
+        var __thrown : NullableHandle = nil;
+        let __return = System_Data_SqlTypes_SqlInt32_SqlInt32__op_Explicit_0__1__SqlDouble(&__thrown, x.get_handle());
+        if let __ex =  __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: __return);
         }
     }
     // [IsSpecialName] System.Int32 op_Explicit(System.Data.SqlTypes.SqlInt32)
@@ -40706,6 +41666,7 @@ public final class SqlInt32
         return __return;
         }
     }
+// TODO conversion from Self [IsSpecialName] System.Int32 op_Explicit(System.Data.SqlTypes.SqlInt32)
     // [IsSpecialName] System.Data.SqlTypes.SqlInt32 op_Explicit(System.Data.SqlTypes.SqlInt64)
 // docid: M:System.Data.SqlTypes.SqlInt32.op_Explicit(System.Data.SqlTypes.SqlInt64)
     public class func op_Explicit(x : dotnet.System.Data.SqlTypes.SqlInt64) throws -> dotnet.System.Data.SqlTypes.SqlInt32 {
@@ -40715,6 +41676,17 @@ public final class SqlInt32
             throw dotnet.System.Exception(hndl: __ex);
         } else {
         return dotnet.System.Data.SqlTypes.SqlInt32(hndl : __return);
+        }
+    }
+// TODO conversion to Self [IsSpecialName] System.Data.SqlTypes.SqlInt32 op_Explicit(System.Data.SqlTypes.SqlInt64)
+    public convenience init(x : dotnet.System.Data.SqlTypes.SqlInt64) throws
+    {
+        var __thrown : NullableHandle = nil;
+        let __return = System_Data_SqlTypes_SqlInt32_SqlInt32__op_Explicit_0__1__SqlInt64(&__thrown, x.get_handle());
+        if let __ex =  __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: __return);
         }
     }
     // [IsSpecialName] System.Data.SqlTypes.SqlInt32 op_Explicit(System.Data.SqlTypes.SqlMoney)
@@ -40728,6 +41700,17 @@ public final class SqlInt32
         return dotnet.System.Data.SqlTypes.SqlInt32(hndl : __return);
         }
     }
+// TODO conversion to Self [IsSpecialName] System.Data.SqlTypes.SqlInt32 op_Explicit(System.Data.SqlTypes.SqlMoney)
+    public convenience init(x : dotnet.System.Data.SqlTypes.SqlMoney) throws
+    {
+        var __thrown : NullableHandle = nil;
+        let __return = System_Data_SqlTypes_SqlInt32_SqlInt32__op_Explicit_0__1__SqlMoney(&__thrown, x.get_handle());
+        if let __ex =  __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: __return);
+        }
+    }
     // [IsSpecialName] System.Data.SqlTypes.SqlInt32 op_Explicit(System.Data.SqlTypes.SqlSingle)
 // docid: M:System.Data.SqlTypes.SqlInt32.op_Explicit(System.Data.SqlTypes.SqlSingle)
     public class func op_Explicit(x : dotnet.System.Data.SqlTypes.SqlSingle) throws -> dotnet.System.Data.SqlTypes.SqlInt32 {
@@ -40739,6 +41722,17 @@ public final class SqlInt32
         return dotnet.System.Data.SqlTypes.SqlInt32(hndl : __return);
         }
     }
+// TODO conversion to Self [IsSpecialName] System.Data.SqlTypes.SqlInt32 op_Explicit(System.Data.SqlTypes.SqlSingle)
+    public convenience init(x : dotnet.System.Data.SqlTypes.SqlSingle) throws
+    {
+        var __thrown : NullableHandle = nil;
+        let __return = System_Data_SqlTypes_SqlInt32_SqlInt32__op_Explicit_0__1__SqlSingle(&__thrown, x.get_handle());
+        if let __ex =  __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: __return);
+        }
+    }
     // [IsSpecialName] System.Data.SqlTypes.SqlInt32 op_Explicit(System.Data.SqlTypes.SqlString)
 // docid: M:System.Data.SqlTypes.SqlInt32.op_Explicit(System.Data.SqlTypes.SqlString)
     public class func op_Explicit(x : dotnet.System.Data.SqlTypes.SqlString) throws -> dotnet.System.Data.SqlTypes.SqlInt32 {
@@ -40748,6 +41742,17 @@ public final class SqlInt32
             throw dotnet.System.Exception(hndl: __ex);
         } else {
         return dotnet.System.Data.SqlTypes.SqlInt32(hndl : __return);
+        }
+    }
+// TODO conversion to Self [IsSpecialName] System.Data.SqlTypes.SqlInt32 op_Explicit(System.Data.SqlTypes.SqlString)
+    public convenience init(x : dotnet.System.Data.SqlTypes.SqlString) throws
+    {
+        var __thrown : NullableHandle = nil;
+        let __return = System_Data_SqlTypes_SqlInt32_SqlInt32__op_Explicit_0__1__SqlString(&__thrown, x.get_handle());
+        if let __ex =  __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: __return);
         }
     }
     // [IsSpecialName] System.Data.SqlTypes.SqlBoolean op_GreaterThan(System.Data.SqlTypes.SqlInt32, System.Data.SqlTypes.SqlInt32)
@@ -40769,6 +41774,10 @@ public final class SqlInt32
         return dotnet.System.Data.SqlTypes.SqlBoolean(hndl : __return);
         }
     }
+    public static func > (x : dotnet.System.Data.SqlTypes.SqlInt32, y : dotnet.System.Data.SqlTypes.SqlInt32) -> dotnet.System.Data.SqlTypes.SqlBoolean
+    {
+        return try! op_GreaterThan(x: x, y: y);
+    }
     // [IsSpecialName] System.Data.SqlTypes.SqlBoolean op_GreaterThanOrEqual(System.Data.SqlTypes.SqlInt32, System.Data.SqlTypes.SqlInt32)
 // docid: M:System.Data.SqlTypes.SqlInt32.op_GreaterThanOrEqual(System.Data.SqlTypes.SqlInt32,System.Data.SqlTypes.SqlInt32)
     /**
@@ -40788,6 +41797,10 @@ public final class SqlInt32
         return dotnet.System.Data.SqlTypes.SqlBoolean(hndl : __return);
         }
     }
+    public static func >= (x : dotnet.System.Data.SqlTypes.SqlInt32, y : dotnet.System.Data.SqlTypes.SqlInt32) -> dotnet.System.Data.SqlTypes.SqlBoolean
+    {
+        return try! op_GreaterThanOrEqual(x: x, y: y);
+    }
     // [IsSpecialName] System.Data.SqlTypes.SqlInt32 op_Implicit(System.Data.SqlTypes.SqlByte)
 // docid: M:System.Data.SqlTypes.SqlInt32.op_Implicit(System.Data.SqlTypes.SqlByte)
     public class func op_Implicit(x : dotnet.System.Data.SqlTypes.SqlByte) throws -> dotnet.System.Data.SqlTypes.SqlInt32 {
@@ -40798,6 +41811,14 @@ public final class SqlInt32
         } else {
         return dotnet.System.Data.SqlTypes.SqlInt32(hndl : __return);
         }
+    }
+// TODO conversion to Self [IsSpecialName] System.Data.SqlTypes.SqlInt32 op_Implicit(System.Data.SqlTypes.SqlByte)
+    public convenience init(x : dotnet.System.Data.SqlTypes.SqlByte) 
+    {
+        var __thrown : NullableHandle = nil;
+        let __return = System_Data_SqlTypes_SqlInt32_SqlInt32__op_Implicit_0__1__SqlByte(&__thrown, x.get_handle());
+        assert(__thrown == nil);
+            self.init(hndl: __return);
     }
     // [IsSpecialName] System.Data.SqlTypes.SqlInt32 op_Implicit(System.Data.SqlTypes.SqlInt16)
 // docid: M:System.Data.SqlTypes.SqlInt32.op_Implicit(System.Data.SqlTypes.SqlInt16)
@@ -40810,6 +41831,14 @@ public final class SqlInt32
         return dotnet.System.Data.SqlTypes.SqlInt32(hndl : __return);
         }
     }
+// TODO conversion to Self [IsSpecialName] System.Data.SqlTypes.SqlInt32 op_Implicit(System.Data.SqlTypes.SqlInt16)
+    public convenience init(x : dotnet.System.Data.SqlTypes.SqlInt16) 
+    {
+        var __thrown : NullableHandle = nil;
+        let __return = System_Data_SqlTypes_SqlInt32_SqlInt32__op_Implicit_0__1__SqlInt16(&__thrown, x.get_handle());
+        assert(__thrown == nil);
+            self.init(hndl: __return);
+    }
     // [IsSpecialName] System.Data.SqlTypes.SqlInt32 op_Implicit(System.Int32)
 // docid: M:System.Data.SqlTypes.SqlInt32.op_Implicit(System.Int32)
     public class func op_Implicit(x : Swift.Int32) throws -> dotnet.System.Data.SqlTypes.SqlInt32 {
@@ -40820,6 +41849,14 @@ public final class SqlInt32
         } else {
         return dotnet.System.Data.SqlTypes.SqlInt32(hndl : __return);
         }
+    }
+// TODO conversion to Self [IsSpecialName] System.Data.SqlTypes.SqlInt32 op_Implicit(System.Int32)
+    public convenience init(x : Swift.Int32) 
+    {
+        var __thrown : NullableHandle = nil;
+        let __return = System_Data_SqlTypes_SqlInt32_SqlInt32__op_Implicit_0__1__i32(&__thrown, x);
+        assert(__thrown == nil);
+            self.init(hndl: __return);
     }
     // [IsSpecialName] System.Data.SqlTypes.SqlBoolean op_Inequality(System.Data.SqlTypes.SqlInt32, System.Data.SqlTypes.SqlInt32)
 // docid: M:System.Data.SqlTypes.SqlInt32.op_Inequality(System.Data.SqlTypes.SqlInt32,System.Data.SqlTypes.SqlInt32)
@@ -40840,6 +41877,10 @@ public final class SqlInt32
         return dotnet.System.Data.SqlTypes.SqlBoolean(hndl : __return);
         }
     }
+    public static func != (x : dotnet.System.Data.SqlTypes.SqlInt32, y : dotnet.System.Data.SqlTypes.SqlInt32) -> dotnet.System.Data.SqlTypes.SqlBoolean
+    {
+        return try! op_Inequality(x: x, y: y);
+    }
     // [IsSpecialName] System.Data.SqlTypes.SqlBoolean op_LessThan(System.Data.SqlTypes.SqlInt32, System.Data.SqlTypes.SqlInt32)
 // docid: M:System.Data.SqlTypes.SqlInt32.op_LessThan(System.Data.SqlTypes.SqlInt32,System.Data.SqlTypes.SqlInt32)
     /**
@@ -40858,6 +41899,10 @@ public final class SqlInt32
         } else {
         return dotnet.System.Data.SqlTypes.SqlBoolean(hndl : __return);
         }
+    }
+    public static func < (x : dotnet.System.Data.SqlTypes.SqlInt32, y : dotnet.System.Data.SqlTypes.SqlInt32) -> dotnet.System.Data.SqlTypes.SqlBoolean
+    {
+        return try! op_LessThan(x: x, y: y);
     }
     // [IsSpecialName] System.Data.SqlTypes.SqlBoolean op_LessThanOrEqual(System.Data.SqlTypes.SqlInt32, System.Data.SqlTypes.SqlInt32)
 // docid: M:System.Data.SqlTypes.SqlInt32.op_LessThanOrEqual(System.Data.SqlTypes.SqlInt32,System.Data.SqlTypes.SqlInt32)
@@ -40878,6 +41923,10 @@ public final class SqlInt32
         return dotnet.System.Data.SqlTypes.SqlBoolean(hndl : __return);
         }
     }
+    public static func <= (x : dotnet.System.Data.SqlTypes.SqlInt32, y : dotnet.System.Data.SqlTypes.SqlInt32) -> dotnet.System.Data.SqlTypes.SqlBoolean
+    {
+        return try! op_LessThanOrEqual(x: x, y: y);
+    }
     // [IsSpecialName] System.Data.SqlTypes.SqlInt32 op_Modulus(System.Data.SqlTypes.SqlInt32, System.Data.SqlTypes.SqlInt32)
 // docid: M:System.Data.SqlTypes.SqlInt32.op_Modulus(System.Data.SqlTypes.SqlInt32,System.Data.SqlTypes.SqlInt32)
     /**
@@ -40897,6 +41946,10 @@ public final class SqlInt32
         return dotnet.System.Data.SqlTypes.SqlInt32(hndl : __return);
         }
     }
+    public static func % (x : dotnet.System.Data.SqlTypes.SqlInt32, y : dotnet.System.Data.SqlTypes.SqlInt32) -> dotnet.System.Data.SqlTypes.SqlInt32
+    {
+        return try! op_Modulus(x: x, y: y);
+    }
     // [IsSpecialName] System.Data.SqlTypes.SqlInt32 op_Multiply(System.Data.SqlTypes.SqlInt32, System.Data.SqlTypes.SqlInt32)
 // docid: M:System.Data.SqlTypes.SqlInt32.op_Multiply(System.Data.SqlTypes.SqlInt32,System.Data.SqlTypes.SqlInt32)
     /**
@@ -40915,6 +41968,10 @@ public final class SqlInt32
         } else {
         return dotnet.System.Data.SqlTypes.SqlInt32(hndl : __return);
         }
+    }
+    public static func * (x : dotnet.System.Data.SqlTypes.SqlInt32, y : dotnet.System.Data.SqlTypes.SqlInt32) -> dotnet.System.Data.SqlTypes.SqlInt32
+    {
+        return try! op_Multiply(x: x, y: y);
     }
     // [IsSpecialName] System.Data.SqlTypes.SqlInt32 op_OnesComplement(System.Data.SqlTypes.SqlInt32)
 // docid: M:System.Data.SqlTypes.SqlInt32.op_OnesComplement(System.Data.SqlTypes.SqlInt32)
@@ -40952,6 +42009,10 @@ public final class SqlInt32
         } else {
         return dotnet.System.Data.SqlTypes.SqlInt32(hndl : __return);
         }
+    }
+    public static func - (x : dotnet.System.Data.SqlTypes.SqlInt32, y : dotnet.System.Data.SqlTypes.SqlInt32) -> dotnet.System.Data.SqlTypes.SqlInt32
+    {
+        return try! op_Subtraction(x: x, y: y);
     }
     // [IsSpecialName] System.Data.SqlTypes.SqlInt32 op_UnaryNegation(System.Data.SqlTypes.SqlInt32)
 // docid: M:System.Data.SqlTypes.SqlInt32.op_UnaryNegation(System.Data.SqlTypes.SqlInt32)
@@ -41713,6 +42774,10 @@ public final class SqlInt64
         return dotnet.System.Data.SqlTypes.SqlInt64(hndl : __return);
         }
     }
+    public static func + (x : dotnet.System.Data.SqlTypes.SqlInt64, y : dotnet.System.Data.SqlTypes.SqlInt64) -> dotnet.System.Data.SqlTypes.SqlInt64
+    {
+        return try! op_Addition(x: x, y: y);
+    }
     // [IsSpecialName] System.Data.SqlTypes.SqlInt64 op_BitwiseAnd(System.Data.SqlTypes.SqlInt64, System.Data.SqlTypes.SqlInt64)
 // docid: M:System.Data.SqlTypes.SqlInt64.op_BitwiseAnd(System.Data.SqlTypes.SqlInt64,System.Data.SqlTypes.SqlInt64)
     /**
@@ -41731,6 +42796,10 @@ public final class SqlInt64
         } else {
         return dotnet.System.Data.SqlTypes.SqlInt64(hndl : __return);
         }
+    }
+    public static func & (x : dotnet.System.Data.SqlTypes.SqlInt64, y : dotnet.System.Data.SqlTypes.SqlInt64) -> dotnet.System.Data.SqlTypes.SqlInt64
+    {
+        return try! op_BitwiseAnd(x: x, y: y);
     }
     // [IsSpecialName] System.Data.SqlTypes.SqlInt64 op_BitwiseOr(System.Data.SqlTypes.SqlInt64, System.Data.SqlTypes.SqlInt64)
 // docid: M:System.Data.SqlTypes.SqlInt64.op_BitwiseOr(System.Data.SqlTypes.SqlInt64,System.Data.SqlTypes.SqlInt64)
@@ -41751,6 +42820,10 @@ public final class SqlInt64
         return dotnet.System.Data.SqlTypes.SqlInt64(hndl : __return);
         }
     }
+    public static func | (x : dotnet.System.Data.SqlTypes.SqlInt64, y : dotnet.System.Data.SqlTypes.SqlInt64) -> dotnet.System.Data.SqlTypes.SqlInt64
+    {
+        return try! op_BitwiseOr(x: x, y: y);
+    }
     // [IsSpecialName] System.Data.SqlTypes.SqlInt64 op_Division(System.Data.SqlTypes.SqlInt64, System.Data.SqlTypes.SqlInt64)
 // docid: M:System.Data.SqlTypes.SqlInt64.op_Division(System.Data.SqlTypes.SqlInt64,System.Data.SqlTypes.SqlInt64)
     /**
@@ -41769,6 +42842,10 @@ public final class SqlInt64
         } else {
         return dotnet.System.Data.SqlTypes.SqlInt64(hndl : __return);
         }
+    }
+    public static func / (x : dotnet.System.Data.SqlTypes.SqlInt64, y : dotnet.System.Data.SqlTypes.SqlInt64) -> dotnet.System.Data.SqlTypes.SqlInt64
+    {
+        return try! op_Division(x: x, y: y);
     }
     // [IsSpecialName] System.Data.SqlTypes.SqlBoolean op_Equality(System.Data.SqlTypes.SqlInt64, System.Data.SqlTypes.SqlInt64)
 // docid: M:System.Data.SqlTypes.SqlInt64.op_Equality(System.Data.SqlTypes.SqlInt64,System.Data.SqlTypes.SqlInt64)
@@ -41789,6 +42866,10 @@ public final class SqlInt64
         return dotnet.System.Data.SqlTypes.SqlBoolean(hndl : __return);
         }
     }
+    public static func == (x : dotnet.System.Data.SqlTypes.SqlInt64, y : dotnet.System.Data.SqlTypes.SqlInt64) -> dotnet.System.Data.SqlTypes.SqlBoolean
+    {
+        return try! op_Equality(x: x, y: y);
+    }
     // [IsSpecialName] System.Data.SqlTypes.SqlInt64 op_ExclusiveOr(System.Data.SqlTypes.SqlInt64, System.Data.SqlTypes.SqlInt64)
 // docid: M:System.Data.SqlTypes.SqlInt64.op_ExclusiveOr(System.Data.SqlTypes.SqlInt64,System.Data.SqlTypes.SqlInt64)
     /**
@@ -41808,6 +42889,10 @@ public final class SqlInt64
         return dotnet.System.Data.SqlTypes.SqlInt64(hndl : __return);
         }
     }
+    public static func ^ (x : dotnet.System.Data.SqlTypes.SqlInt64, y : dotnet.System.Data.SqlTypes.SqlInt64) -> dotnet.System.Data.SqlTypes.SqlInt64
+    {
+        return try! op_ExclusiveOr(x: x, y: y);
+    }
     // [IsSpecialName] System.Data.SqlTypes.SqlInt64 op_Explicit(System.Data.SqlTypes.SqlBoolean)
 // docid: M:System.Data.SqlTypes.SqlInt64.op_Explicit(System.Data.SqlTypes.SqlBoolean)
     public class func op_Explicit(x : dotnet.System.Data.SqlTypes.SqlBoolean) throws -> dotnet.System.Data.SqlTypes.SqlInt64 {
@@ -41817,6 +42902,17 @@ public final class SqlInt64
             throw dotnet.System.Exception(hndl: __ex);
         } else {
         return dotnet.System.Data.SqlTypes.SqlInt64(hndl : __return);
+        }
+    }
+// TODO conversion to Self [IsSpecialName] System.Data.SqlTypes.SqlInt64 op_Explicit(System.Data.SqlTypes.SqlBoolean)
+    public convenience init(x : dotnet.System.Data.SqlTypes.SqlBoolean) throws
+    {
+        var __thrown : NullableHandle = nil;
+        let __return = System_Data_SqlTypes_SqlInt64_SqlInt64__op_Explicit_0__1__SqlBoolean(&__thrown, x.get_handle());
+        if let __ex =  __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: __return);
         }
     }
     // [IsSpecialName] System.Data.SqlTypes.SqlInt64 op_Explicit(System.Data.SqlTypes.SqlDecimal)
@@ -41830,6 +42926,17 @@ public final class SqlInt64
         return dotnet.System.Data.SqlTypes.SqlInt64(hndl : __return);
         }
     }
+// TODO conversion to Self [IsSpecialName] System.Data.SqlTypes.SqlInt64 op_Explicit(System.Data.SqlTypes.SqlDecimal)
+    public convenience init(x : dotnet.System.Data.SqlTypes.SqlDecimal) throws
+    {
+        var __thrown : NullableHandle = nil;
+        let __return = System_Data_SqlTypes_SqlInt64_SqlInt64__op_Explicit_0__1__SqlDecimal(&__thrown, x.get_handle());
+        if let __ex =  __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: __return);
+        }
+    }
     // [IsSpecialName] System.Data.SqlTypes.SqlInt64 op_Explicit(System.Data.SqlTypes.SqlDouble)
 // docid: M:System.Data.SqlTypes.SqlInt64.op_Explicit(System.Data.SqlTypes.SqlDouble)
     public class func op_Explicit(x : dotnet.System.Data.SqlTypes.SqlDouble) throws -> dotnet.System.Data.SqlTypes.SqlInt64 {
@@ -41839,6 +42946,17 @@ public final class SqlInt64
             throw dotnet.System.Exception(hndl: __ex);
         } else {
         return dotnet.System.Data.SqlTypes.SqlInt64(hndl : __return);
+        }
+    }
+// TODO conversion to Self [IsSpecialName] System.Data.SqlTypes.SqlInt64 op_Explicit(System.Data.SqlTypes.SqlDouble)
+    public convenience init(x : dotnet.System.Data.SqlTypes.SqlDouble) throws
+    {
+        var __thrown : NullableHandle = nil;
+        let __return = System_Data_SqlTypes_SqlInt64_SqlInt64__op_Explicit_0__1__SqlDouble(&__thrown, x.get_handle());
+        if let __ex =  __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: __return);
         }
     }
     // [IsSpecialName] System.Int64 op_Explicit(System.Data.SqlTypes.SqlInt64)
@@ -41852,6 +42970,7 @@ public final class SqlInt64
         return __return;
         }
     }
+// TODO conversion from Self [IsSpecialName] System.Int64 op_Explicit(System.Data.SqlTypes.SqlInt64)
     // [IsSpecialName] System.Data.SqlTypes.SqlInt64 op_Explicit(System.Data.SqlTypes.SqlMoney)
 // docid: M:System.Data.SqlTypes.SqlInt64.op_Explicit(System.Data.SqlTypes.SqlMoney)
     public class func op_Explicit(x : dotnet.System.Data.SqlTypes.SqlMoney) throws -> dotnet.System.Data.SqlTypes.SqlInt64 {
@@ -41861,6 +42980,17 @@ public final class SqlInt64
             throw dotnet.System.Exception(hndl: __ex);
         } else {
         return dotnet.System.Data.SqlTypes.SqlInt64(hndl : __return);
+        }
+    }
+// TODO conversion to Self [IsSpecialName] System.Data.SqlTypes.SqlInt64 op_Explicit(System.Data.SqlTypes.SqlMoney)
+    public convenience init(x : dotnet.System.Data.SqlTypes.SqlMoney) throws
+    {
+        var __thrown : NullableHandle = nil;
+        let __return = System_Data_SqlTypes_SqlInt64_SqlInt64__op_Explicit_0__1__SqlMoney(&__thrown, x.get_handle());
+        if let __ex =  __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: __return);
         }
     }
     // [IsSpecialName] System.Data.SqlTypes.SqlInt64 op_Explicit(System.Data.SqlTypes.SqlSingle)
@@ -41874,6 +43004,17 @@ public final class SqlInt64
         return dotnet.System.Data.SqlTypes.SqlInt64(hndl : __return);
         }
     }
+// TODO conversion to Self [IsSpecialName] System.Data.SqlTypes.SqlInt64 op_Explicit(System.Data.SqlTypes.SqlSingle)
+    public convenience init(x : dotnet.System.Data.SqlTypes.SqlSingle) throws
+    {
+        var __thrown : NullableHandle = nil;
+        let __return = System_Data_SqlTypes_SqlInt64_SqlInt64__op_Explicit_0__1__SqlSingle(&__thrown, x.get_handle());
+        if let __ex =  __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: __return);
+        }
+    }
     // [IsSpecialName] System.Data.SqlTypes.SqlInt64 op_Explicit(System.Data.SqlTypes.SqlString)
 // docid: M:System.Data.SqlTypes.SqlInt64.op_Explicit(System.Data.SqlTypes.SqlString)
     public class func op_Explicit(x : dotnet.System.Data.SqlTypes.SqlString) throws -> dotnet.System.Data.SqlTypes.SqlInt64 {
@@ -41883,6 +43024,17 @@ public final class SqlInt64
             throw dotnet.System.Exception(hndl: __ex);
         } else {
         return dotnet.System.Data.SqlTypes.SqlInt64(hndl : __return);
+        }
+    }
+// TODO conversion to Self [IsSpecialName] System.Data.SqlTypes.SqlInt64 op_Explicit(System.Data.SqlTypes.SqlString)
+    public convenience init(x : dotnet.System.Data.SqlTypes.SqlString) throws
+    {
+        var __thrown : NullableHandle = nil;
+        let __return = System_Data_SqlTypes_SqlInt64_SqlInt64__op_Explicit_0__1__SqlString(&__thrown, x.get_handle());
+        if let __ex =  __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: __return);
         }
     }
     // [IsSpecialName] System.Data.SqlTypes.SqlBoolean op_GreaterThan(System.Data.SqlTypes.SqlInt64, System.Data.SqlTypes.SqlInt64)
@@ -41904,6 +43056,10 @@ public final class SqlInt64
         return dotnet.System.Data.SqlTypes.SqlBoolean(hndl : __return);
         }
     }
+    public static func > (x : dotnet.System.Data.SqlTypes.SqlInt64, y : dotnet.System.Data.SqlTypes.SqlInt64) -> dotnet.System.Data.SqlTypes.SqlBoolean
+    {
+        return try! op_GreaterThan(x: x, y: y);
+    }
     // [IsSpecialName] System.Data.SqlTypes.SqlBoolean op_GreaterThanOrEqual(System.Data.SqlTypes.SqlInt64, System.Data.SqlTypes.SqlInt64)
 // docid: M:System.Data.SqlTypes.SqlInt64.op_GreaterThanOrEqual(System.Data.SqlTypes.SqlInt64,System.Data.SqlTypes.SqlInt64)
     /**
@@ -41923,6 +43079,10 @@ public final class SqlInt64
         return dotnet.System.Data.SqlTypes.SqlBoolean(hndl : __return);
         }
     }
+    public static func >= (x : dotnet.System.Data.SqlTypes.SqlInt64, y : dotnet.System.Data.SqlTypes.SqlInt64) -> dotnet.System.Data.SqlTypes.SqlBoolean
+    {
+        return try! op_GreaterThanOrEqual(x: x, y: y);
+    }
     // [IsSpecialName] System.Data.SqlTypes.SqlInt64 op_Implicit(System.Data.SqlTypes.SqlByte)
 // docid: M:System.Data.SqlTypes.SqlInt64.op_Implicit(System.Data.SqlTypes.SqlByte)
     public class func op_Implicit(x : dotnet.System.Data.SqlTypes.SqlByte) throws -> dotnet.System.Data.SqlTypes.SqlInt64 {
@@ -41933,6 +43093,14 @@ public final class SqlInt64
         } else {
         return dotnet.System.Data.SqlTypes.SqlInt64(hndl : __return);
         }
+    }
+// TODO conversion to Self [IsSpecialName] System.Data.SqlTypes.SqlInt64 op_Implicit(System.Data.SqlTypes.SqlByte)
+    public convenience init(x : dotnet.System.Data.SqlTypes.SqlByte) 
+    {
+        var __thrown : NullableHandle = nil;
+        let __return = System_Data_SqlTypes_SqlInt64_SqlInt64__op_Implicit_0__1__SqlByte(&__thrown, x.get_handle());
+        assert(__thrown == nil);
+            self.init(hndl: __return);
     }
     // [IsSpecialName] System.Data.SqlTypes.SqlInt64 op_Implicit(System.Data.SqlTypes.SqlInt16)
 // docid: M:System.Data.SqlTypes.SqlInt64.op_Implicit(System.Data.SqlTypes.SqlInt16)
@@ -41945,6 +43113,14 @@ public final class SqlInt64
         return dotnet.System.Data.SqlTypes.SqlInt64(hndl : __return);
         }
     }
+// TODO conversion to Self [IsSpecialName] System.Data.SqlTypes.SqlInt64 op_Implicit(System.Data.SqlTypes.SqlInt16)
+    public convenience init(x : dotnet.System.Data.SqlTypes.SqlInt16) 
+    {
+        var __thrown : NullableHandle = nil;
+        let __return = System_Data_SqlTypes_SqlInt64_SqlInt64__op_Implicit_0__1__SqlInt16(&__thrown, x.get_handle());
+        assert(__thrown == nil);
+            self.init(hndl: __return);
+    }
     // [IsSpecialName] System.Data.SqlTypes.SqlInt64 op_Implicit(System.Data.SqlTypes.SqlInt32)
 // docid: M:System.Data.SqlTypes.SqlInt64.op_Implicit(System.Data.SqlTypes.SqlInt32)
     public class func op_Implicit(x : dotnet.System.Data.SqlTypes.SqlInt32) throws -> dotnet.System.Data.SqlTypes.SqlInt64 {
@@ -41956,6 +43132,14 @@ public final class SqlInt64
         return dotnet.System.Data.SqlTypes.SqlInt64(hndl : __return);
         }
     }
+// TODO conversion to Self [IsSpecialName] System.Data.SqlTypes.SqlInt64 op_Implicit(System.Data.SqlTypes.SqlInt32)
+    public convenience init(x : dotnet.System.Data.SqlTypes.SqlInt32) 
+    {
+        var __thrown : NullableHandle = nil;
+        let __return = System_Data_SqlTypes_SqlInt64_SqlInt64__op_Implicit_0__1__SqlInt32(&__thrown, x.get_handle());
+        assert(__thrown == nil);
+            self.init(hndl: __return);
+    }
     // [IsSpecialName] System.Data.SqlTypes.SqlInt64 op_Implicit(System.Int64)
 // docid: M:System.Data.SqlTypes.SqlInt64.op_Implicit(System.Int64)
     public class func op_Implicit(x : Swift.Int64) throws -> dotnet.System.Data.SqlTypes.SqlInt64 {
@@ -41966,6 +43150,14 @@ public final class SqlInt64
         } else {
         return dotnet.System.Data.SqlTypes.SqlInt64(hndl : __return);
         }
+    }
+// TODO conversion to Self [IsSpecialName] System.Data.SqlTypes.SqlInt64 op_Implicit(System.Int64)
+    public convenience init(x : Swift.Int64) 
+    {
+        var __thrown : NullableHandle = nil;
+        let __return = System_Data_SqlTypes_SqlInt64_SqlInt64__op_Implicit_0__1__i64(&__thrown, x);
+        assert(__thrown == nil);
+            self.init(hndl: __return);
     }
     // [IsSpecialName] System.Data.SqlTypes.SqlBoolean op_Inequality(System.Data.SqlTypes.SqlInt64, System.Data.SqlTypes.SqlInt64)
 // docid: M:System.Data.SqlTypes.SqlInt64.op_Inequality(System.Data.SqlTypes.SqlInt64,System.Data.SqlTypes.SqlInt64)
@@ -41986,6 +43178,10 @@ public final class SqlInt64
         return dotnet.System.Data.SqlTypes.SqlBoolean(hndl : __return);
         }
     }
+    public static func != (x : dotnet.System.Data.SqlTypes.SqlInt64, y : dotnet.System.Data.SqlTypes.SqlInt64) -> dotnet.System.Data.SqlTypes.SqlBoolean
+    {
+        return try! op_Inequality(x: x, y: y);
+    }
     // [IsSpecialName] System.Data.SqlTypes.SqlBoolean op_LessThan(System.Data.SqlTypes.SqlInt64, System.Data.SqlTypes.SqlInt64)
 // docid: M:System.Data.SqlTypes.SqlInt64.op_LessThan(System.Data.SqlTypes.SqlInt64,System.Data.SqlTypes.SqlInt64)
     /**
@@ -42004,6 +43200,10 @@ public final class SqlInt64
         } else {
         return dotnet.System.Data.SqlTypes.SqlBoolean(hndl : __return);
         }
+    }
+    public static func < (x : dotnet.System.Data.SqlTypes.SqlInt64, y : dotnet.System.Data.SqlTypes.SqlInt64) -> dotnet.System.Data.SqlTypes.SqlBoolean
+    {
+        return try! op_LessThan(x: x, y: y);
     }
     // [IsSpecialName] System.Data.SqlTypes.SqlBoolean op_LessThanOrEqual(System.Data.SqlTypes.SqlInt64, System.Data.SqlTypes.SqlInt64)
 // docid: M:System.Data.SqlTypes.SqlInt64.op_LessThanOrEqual(System.Data.SqlTypes.SqlInt64,System.Data.SqlTypes.SqlInt64)
@@ -42024,6 +43224,10 @@ public final class SqlInt64
         return dotnet.System.Data.SqlTypes.SqlBoolean(hndl : __return);
         }
     }
+    public static func <= (x : dotnet.System.Data.SqlTypes.SqlInt64, y : dotnet.System.Data.SqlTypes.SqlInt64) -> dotnet.System.Data.SqlTypes.SqlBoolean
+    {
+        return try! op_LessThanOrEqual(x: x, y: y);
+    }
     // [IsSpecialName] System.Data.SqlTypes.SqlInt64 op_Modulus(System.Data.SqlTypes.SqlInt64, System.Data.SqlTypes.SqlInt64)
 // docid: M:System.Data.SqlTypes.SqlInt64.op_Modulus(System.Data.SqlTypes.SqlInt64,System.Data.SqlTypes.SqlInt64)
     /**
@@ -42043,6 +43247,10 @@ public final class SqlInt64
         return dotnet.System.Data.SqlTypes.SqlInt64(hndl : __return);
         }
     }
+    public static func % (x : dotnet.System.Data.SqlTypes.SqlInt64, y : dotnet.System.Data.SqlTypes.SqlInt64) -> dotnet.System.Data.SqlTypes.SqlInt64
+    {
+        return try! op_Modulus(x: x, y: y);
+    }
     // [IsSpecialName] System.Data.SqlTypes.SqlInt64 op_Multiply(System.Data.SqlTypes.SqlInt64, System.Data.SqlTypes.SqlInt64)
 // docid: M:System.Data.SqlTypes.SqlInt64.op_Multiply(System.Data.SqlTypes.SqlInt64,System.Data.SqlTypes.SqlInt64)
     /**
@@ -42061,6 +43269,10 @@ public final class SqlInt64
         } else {
         return dotnet.System.Data.SqlTypes.SqlInt64(hndl : __return);
         }
+    }
+    public static func * (x : dotnet.System.Data.SqlTypes.SqlInt64, y : dotnet.System.Data.SqlTypes.SqlInt64) -> dotnet.System.Data.SqlTypes.SqlInt64
+    {
+        return try! op_Multiply(x: x, y: y);
     }
     // [IsSpecialName] System.Data.SqlTypes.SqlInt64 op_OnesComplement(System.Data.SqlTypes.SqlInt64)
 // docid: M:System.Data.SqlTypes.SqlInt64.op_OnesComplement(System.Data.SqlTypes.SqlInt64)
@@ -42098,6 +43310,10 @@ public final class SqlInt64
         } else {
         return dotnet.System.Data.SqlTypes.SqlInt64(hndl : __return);
         }
+    }
+    public static func - (x : dotnet.System.Data.SqlTypes.SqlInt64, y : dotnet.System.Data.SqlTypes.SqlInt64) -> dotnet.System.Data.SqlTypes.SqlInt64
+    {
+        return try! op_Subtraction(x: x, y: y);
     }
     // [IsSpecialName] System.Data.SqlTypes.SqlInt64 op_UnaryNegation(System.Data.SqlTypes.SqlInt64)
 // docid: M:System.Data.SqlTypes.SqlInt64.op_UnaryNegation(System.Data.SqlTypes.SqlInt64)
@@ -42813,6 +44029,10 @@ public final class SqlMoney
         return dotnet.System.Data.SqlTypes.SqlMoney(hndl : __return);
         }
     }
+    public static func + (x : dotnet.System.Data.SqlTypes.SqlMoney, y : dotnet.System.Data.SqlTypes.SqlMoney) -> dotnet.System.Data.SqlTypes.SqlMoney
+    {
+        return try! op_Addition(x: x, y: y);
+    }
     // [IsSpecialName] System.Data.SqlTypes.SqlMoney op_Division(System.Data.SqlTypes.SqlMoney, System.Data.SqlTypes.SqlMoney)
 // docid: M:System.Data.SqlTypes.SqlMoney.op_Division(System.Data.SqlTypes.SqlMoney,System.Data.SqlTypes.SqlMoney)
     /**
@@ -42831,6 +44051,10 @@ public final class SqlMoney
         } else {
         return dotnet.System.Data.SqlTypes.SqlMoney(hndl : __return);
         }
+    }
+    public static func / (x : dotnet.System.Data.SqlTypes.SqlMoney, y : dotnet.System.Data.SqlTypes.SqlMoney) -> dotnet.System.Data.SqlTypes.SqlMoney
+    {
+        return try! op_Division(x: x, y: y);
     }
     // [IsSpecialName] System.Data.SqlTypes.SqlBoolean op_Equality(System.Data.SqlTypes.SqlMoney, System.Data.SqlTypes.SqlMoney)
 // docid: M:System.Data.SqlTypes.SqlMoney.op_Equality(System.Data.SqlTypes.SqlMoney,System.Data.SqlTypes.SqlMoney)
@@ -42851,6 +44075,10 @@ public final class SqlMoney
         return dotnet.System.Data.SqlTypes.SqlBoolean(hndl : __return);
         }
     }
+    public static func == (x : dotnet.System.Data.SqlTypes.SqlMoney, y : dotnet.System.Data.SqlTypes.SqlMoney) -> dotnet.System.Data.SqlTypes.SqlBoolean
+    {
+        return try! op_Equality(x: x, y: y);
+    }
     // [IsSpecialName] System.Data.SqlTypes.SqlMoney op_Explicit(System.Data.SqlTypes.SqlBoolean)
 // docid: M:System.Data.SqlTypes.SqlMoney.op_Explicit(System.Data.SqlTypes.SqlBoolean)
     public class func op_Explicit(x : dotnet.System.Data.SqlTypes.SqlBoolean) throws -> dotnet.System.Data.SqlTypes.SqlMoney {
@@ -42860,6 +44088,17 @@ public final class SqlMoney
             throw dotnet.System.Exception(hndl: __ex);
         } else {
         return dotnet.System.Data.SqlTypes.SqlMoney(hndl : __return);
+        }
+    }
+// TODO conversion to Self [IsSpecialName] System.Data.SqlTypes.SqlMoney op_Explicit(System.Data.SqlTypes.SqlBoolean)
+    public convenience init(x : dotnet.System.Data.SqlTypes.SqlBoolean) throws
+    {
+        var __thrown : NullableHandle = nil;
+        let __return = System_Data_SqlTypes_SqlMoney_SqlMoney__op_Explicit_0__1__SqlBoolean(&__thrown, x.get_handle());
+        if let __ex =  __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: __return);
         }
     }
     // [IsSpecialName] System.Data.SqlTypes.SqlMoney op_Explicit(System.Data.SqlTypes.SqlDecimal)
@@ -42873,6 +44112,17 @@ public final class SqlMoney
         return dotnet.System.Data.SqlTypes.SqlMoney(hndl : __return);
         }
     }
+// TODO conversion to Self [IsSpecialName] System.Data.SqlTypes.SqlMoney op_Explicit(System.Data.SqlTypes.SqlDecimal)
+    public convenience init(x : dotnet.System.Data.SqlTypes.SqlDecimal) throws
+    {
+        var __thrown : NullableHandle = nil;
+        let __return = System_Data_SqlTypes_SqlMoney_SqlMoney__op_Explicit_0__1__SqlDecimal(&__thrown, x.get_handle());
+        if let __ex =  __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: __return);
+        }
+    }
     // [IsSpecialName] System.Data.SqlTypes.SqlMoney op_Explicit(System.Data.SqlTypes.SqlDouble)
 // docid: M:System.Data.SqlTypes.SqlMoney.op_Explicit(System.Data.SqlTypes.SqlDouble)
     public class func op_Explicit(x : dotnet.System.Data.SqlTypes.SqlDouble) throws -> dotnet.System.Data.SqlTypes.SqlMoney {
@@ -42882,6 +44132,17 @@ public final class SqlMoney
             throw dotnet.System.Exception(hndl: __ex);
         } else {
         return dotnet.System.Data.SqlTypes.SqlMoney(hndl : __return);
+        }
+    }
+// TODO conversion to Self [IsSpecialName] System.Data.SqlTypes.SqlMoney op_Explicit(System.Data.SqlTypes.SqlDouble)
+    public convenience init(x : dotnet.System.Data.SqlTypes.SqlDouble) throws
+    {
+        var __thrown : NullableHandle = nil;
+        let __return = System_Data_SqlTypes_SqlMoney_SqlMoney__op_Explicit_0__1__SqlDouble(&__thrown, x.get_handle());
+        if let __ex =  __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: __return);
         }
     }
     // [IsSpecialName] System.Decimal op_Explicit(System.Data.SqlTypes.SqlMoney)
@@ -42895,6 +44156,7 @@ public final class SqlMoney
         return dotnet.System.Decimal(hndl : __return);
         }
     }
+// TODO conversion from Self [IsSpecialName] System.Decimal op_Explicit(System.Data.SqlTypes.SqlMoney)
     // [IsSpecialName] System.Data.SqlTypes.SqlMoney op_Explicit(System.Data.SqlTypes.SqlSingle)
 // docid: M:System.Data.SqlTypes.SqlMoney.op_Explicit(System.Data.SqlTypes.SqlSingle)
     public class func op_Explicit(x : dotnet.System.Data.SqlTypes.SqlSingle) throws -> dotnet.System.Data.SqlTypes.SqlMoney {
@@ -42904,6 +44166,17 @@ public final class SqlMoney
             throw dotnet.System.Exception(hndl: __ex);
         } else {
         return dotnet.System.Data.SqlTypes.SqlMoney(hndl : __return);
+        }
+    }
+// TODO conversion to Self [IsSpecialName] System.Data.SqlTypes.SqlMoney op_Explicit(System.Data.SqlTypes.SqlSingle)
+    public convenience init(x : dotnet.System.Data.SqlTypes.SqlSingle) throws
+    {
+        var __thrown : NullableHandle = nil;
+        let __return = System_Data_SqlTypes_SqlMoney_SqlMoney__op_Explicit_0__1__SqlSingle(&__thrown, x.get_handle());
+        if let __ex =  __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: __return);
         }
     }
     // [IsSpecialName] System.Data.SqlTypes.SqlMoney op_Explicit(System.Data.SqlTypes.SqlString)
@@ -42917,6 +44190,17 @@ public final class SqlMoney
         return dotnet.System.Data.SqlTypes.SqlMoney(hndl : __return);
         }
     }
+// TODO conversion to Self [IsSpecialName] System.Data.SqlTypes.SqlMoney op_Explicit(System.Data.SqlTypes.SqlString)
+    public convenience init(x : dotnet.System.Data.SqlTypes.SqlString) throws
+    {
+        var __thrown : NullableHandle = nil;
+        let __return = System_Data_SqlTypes_SqlMoney_SqlMoney__op_Explicit_0__1__SqlString(&__thrown, x.get_handle());
+        if let __ex =  __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: __return);
+        }
+    }
     // [IsSpecialName] System.Data.SqlTypes.SqlMoney op_Explicit(System.Double)
 // docid: M:System.Data.SqlTypes.SqlMoney.op_Explicit(System.Double)
     public class func op_Explicit(x : Swift.Double) throws -> dotnet.System.Data.SqlTypes.SqlMoney {
@@ -42926,6 +44210,17 @@ public final class SqlMoney
             throw dotnet.System.Exception(hndl: __ex);
         } else {
         return dotnet.System.Data.SqlTypes.SqlMoney(hndl : __return);
+        }
+    }
+// TODO conversion to Self [IsSpecialName] System.Data.SqlTypes.SqlMoney op_Explicit(System.Double)
+    public convenience init(x : Swift.Double) throws
+    {
+        var __thrown : NullableHandle = nil;
+        let __return = System_Data_SqlTypes_SqlMoney_SqlMoney__op_Explicit_0__1__f64(&__thrown, x);
+        if let __ex =  __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: __return);
         }
     }
     // [IsSpecialName] System.Data.SqlTypes.SqlBoolean op_GreaterThan(System.Data.SqlTypes.SqlMoney, System.Data.SqlTypes.SqlMoney)
@@ -42947,6 +44242,10 @@ public final class SqlMoney
         return dotnet.System.Data.SqlTypes.SqlBoolean(hndl : __return);
         }
     }
+    public static func > (x : dotnet.System.Data.SqlTypes.SqlMoney, y : dotnet.System.Data.SqlTypes.SqlMoney) -> dotnet.System.Data.SqlTypes.SqlBoolean
+    {
+        return try! op_GreaterThan(x: x, y: y);
+    }
     // [IsSpecialName] System.Data.SqlTypes.SqlBoolean op_GreaterThanOrEqual(System.Data.SqlTypes.SqlMoney, System.Data.SqlTypes.SqlMoney)
 // docid: M:System.Data.SqlTypes.SqlMoney.op_GreaterThanOrEqual(System.Data.SqlTypes.SqlMoney,System.Data.SqlTypes.SqlMoney)
     /**
@@ -42966,6 +44265,10 @@ public final class SqlMoney
         return dotnet.System.Data.SqlTypes.SqlBoolean(hndl : __return);
         }
     }
+    public static func >= (x : dotnet.System.Data.SqlTypes.SqlMoney, y : dotnet.System.Data.SqlTypes.SqlMoney) -> dotnet.System.Data.SqlTypes.SqlBoolean
+    {
+        return try! op_GreaterThanOrEqual(x: x, y: y);
+    }
     // [IsSpecialName] System.Data.SqlTypes.SqlMoney op_Implicit(System.Data.SqlTypes.SqlByte)
 // docid: M:System.Data.SqlTypes.SqlMoney.op_Implicit(System.Data.SqlTypes.SqlByte)
     public class func op_Implicit(x : dotnet.System.Data.SqlTypes.SqlByte) throws -> dotnet.System.Data.SqlTypes.SqlMoney {
@@ -42976,6 +44279,14 @@ public final class SqlMoney
         } else {
         return dotnet.System.Data.SqlTypes.SqlMoney(hndl : __return);
         }
+    }
+// TODO conversion to Self [IsSpecialName] System.Data.SqlTypes.SqlMoney op_Implicit(System.Data.SqlTypes.SqlByte)
+    public convenience init(x : dotnet.System.Data.SqlTypes.SqlByte) 
+    {
+        var __thrown : NullableHandle = nil;
+        let __return = System_Data_SqlTypes_SqlMoney_SqlMoney__op_Implicit_0__1__SqlByte(&__thrown, x.get_handle());
+        assert(__thrown == nil);
+            self.init(hndl: __return);
     }
     // [IsSpecialName] System.Data.SqlTypes.SqlMoney op_Implicit(System.Data.SqlTypes.SqlInt16)
 // docid: M:System.Data.SqlTypes.SqlMoney.op_Implicit(System.Data.SqlTypes.SqlInt16)
@@ -42988,6 +44299,14 @@ public final class SqlMoney
         return dotnet.System.Data.SqlTypes.SqlMoney(hndl : __return);
         }
     }
+// TODO conversion to Self [IsSpecialName] System.Data.SqlTypes.SqlMoney op_Implicit(System.Data.SqlTypes.SqlInt16)
+    public convenience init(x : dotnet.System.Data.SqlTypes.SqlInt16) 
+    {
+        var __thrown : NullableHandle = nil;
+        let __return = System_Data_SqlTypes_SqlMoney_SqlMoney__op_Implicit_0__1__SqlInt16(&__thrown, x.get_handle());
+        assert(__thrown == nil);
+            self.init(hndl: __return);
+    }
     // [IsSpecialName] System.Data.SqlTypes.SqlMoney op_Implicit(System.Data.SqlTypes.SqlInt32)
 // docid: M:System.Data.SqlTypes.SqlMoney.op_Implicit(System.Data.SqlTypes.SqlInt32)
     public class func op_Implicit(x : dotnet.System.Data.SqlTypes.SqlInt32) throws -> dotnet.System.Data.SqlTypes.SqlMoney {
@@ -42998,6 +44317,14 @@ public final class SqlMoney
         } else {
         return dotnet.System.Data.SqlTypes.SqlMoney(hndl : __return);
         }
+    }
+// TODO conversion to Self [IsSpecialName] System.Data.SqlTypes.SqlMoney op_Implicit(System.Data.SqlTypes.SqlInt32)
+    public convenience init(x : dotnet.System.Data.SqlTypes.SqlInt32) 
+    {
+        var __thrown : NullableHandle = nil;
+        let __return = System_Data_SqlTypes_SqlMoney_SqlMoney__op_Implicit_0__1__SqlInt32(&__thrown, x.get_handle());
+        assert(__thrown == nil);
+            self.init(hndl: __return);
     }
     // [IsSpecialName] System.Data.SqlTypes.SqlMoney op_Implicit(System.Data.SqlTypes.SqlInt64)
 // docid: M:System.Data.SqlTypes.SqlMoney.op_Implicit(System.Data.SqlTypes.SqlInt64)
@@ -43010,6 +44337,14 @@ public final class SqlMoney
         return dotnet.System.Data.SqlTypes.SqlMoney(hndl : __return);
         }
     }
+// TODO conversion to Self [IsSpecialName] System.Data.SqlTypes.SqlMoney op_Implicit(System.Data.SqlTypes.SqlInt64)
+    public convenience init(x : dotnet.System.Data.SqlTypes.SqlInt64) 
+    {
+        var __thrown : NullableHandle = nil;
+        let __return = System_Data_SqlTypes_SqlMoney_SqlMoney__op_Implicit_0__1__SqlInt64(&__thrown, x.get_handle());
+        assert(__thrown == nil);
+            self.init(hndl: __return);
+    }
     // [IsSpecialName] System.Data.SqlTypes.SqlMoney op_Implicit(System.Decimal)
 // docid: M:System.Data.SqlTypes.SqlMoney.op_Implicit(System.Decimal)
     public class func op_Implicit(x : dotnet.System.Decimal) throws -> dotnet.System.Data.SqlTypes.SqlMoney {
@@ -43021,6 +44356,14 @@ public final class SqlMoney
         return dotnet.System.Data.SqlTypes.SqlMoney(hndl : __return);
         }
     }
+// TODO conversion to Self [IsSpecialName] System.Data.SqlTypes.SqlMoney op_Implicit(System.Decimal)
+    public convenience init(x : dotnet.System.Decimal) 
+    {
+        var __thrown : NullableHandle = nil;
+        let __return = System_Data_SqlTypes_SqlMoney_SqlMoney__op_Implicit_0__1__Decimal(&__thrown, x.get_handle());
+        assert(__thrown == nil);
+            self.init(hndl: __return);
+    }
     // [IsSpecialName] System.Data.SqlTypes.SqlMoney op_Implicit(System.Int64)
 // docid: M:System.Data.SqlTypes.SqlMoney.op_Implicit(System.Int64)
     public class func op_Implicit(x : Swift.Int64) throws -> dotnet.System.Data.SqlTypes.SqlMoney {
@@ -43031,6 +44374,14 @@ public final class SqlMoney
         } else {
         return dotnet.System.Data.SqlTypes.SqlMoney(hndl : __return);
         }
+    }
+// TODO conversion to Self [IsSpecialName] System.Data.SqlTypes.SqlMoney op_Implicit(System.Int64)
+    public convenience init(x : Swift.Int64) 
+    {
+        var __thrown : NullableHandle = nil;
+        let __return = System_Data_SqlTypes_SqlMoney_SqlMoney__op_Implicit_0__1__i64(&__thrown, x);
+        assert(__thrown == nil);
+            self.init(hndl: __return);
     }
     // [IsSpecialName] System.Data.SqlTypes.SqlBoolean op_Inequality(System.Data.SqlTypes.SqlMoney, System.Data.SqlTypes.SqlMoney)
 // docid: M:System.Data.SqlTypes.SqlMoney.op_Inequality(System.Data.SqlTypes.SqlMoney,System.Data.SqlTypes.SqlMoney)
@@ -43051,6 +44402,10 @@ public final class SqlMoney
         return dotnet.System.Data.SqlTypes.SqlBoolean(hndl : __return);
         }
     }
+    public static func != (x : dotnet.System.Data.SqlTypes.SqlMoney, y : dotnet.System.Data.SqlTypes.SqlMoney) -> dotnet.System.Data.SqlTypes.SqlBoolean
+    {
+        return try! op_Inequality(x: x, y: y);
+    }
     // [IsSpecialName] System.Data.SqlTypes.SqlBoolean op_LessThan(System.Data.SqlTypes.SqlMoney, System.Data.SqlTypes.SqlMoney)
 // docid: M:System.Data.SqlTypes.SqlMoney.op_LessThan(System.Data.SqlTypes.SqlMoney,System.Data.SqlTypes.SqlMoney)
     /**
@@ -43069,6 +44424,10 @@ public final class SqlMoney
         } else {
         return dotnet.System.Data.SqlTypes.SqlBoolean(hndl : __return);
         }
+    }
+    public static func < (x : dotnet.System.Data.SqlTypes.SqlMoney, y : dotnet.System.Data.SqlTypes.SqlMoney) -> dotnet.System.Data.SqlTypes.SqlBoolean
+    {
+        return try! op_LessThan(x: x, y: y);
     }
     // [IsSpecialName] System.Data.SqlTypes.SqlBoolean op_LessThanOrEqual(System.Data.SqlTypes.SqlMoney, System.Data.SqlTypes.SqlMoney)
 // docid: M:System.Data.SqlTypes.SqlMoney.op_LessThanOrEqual(System.Data.SqlTypes.SqlMoney,System.Data.SqlTypes.SqlMoney)
@@ -43089,6 +44448,10 @@ public final class SqlMoney
         return dotnet.System.Data.SqlTypes.SqlBoolean(hndl : __return);
         }
     }
+    public static func <= (x : dotnet.System.Data.SqlTypes.SqlMoney, y : dotnet.System.Data.SqlTypes.SqlMoney) -> dotnet.System.Data.SqlTypes.SqlBoolean
+    {
+        return try! op_LessThanOrEqual(x: x, y: y);
+    }
     // [IsSpecialName] System.Data.SqlTypes.SqlMoney op_Multiply(System.Data.SqlTypes.SqlMoney, System.Data.SqlTypes.SqlMoney)
 // docid: M:System.Data.SqlTypes.SqlMoney.op_Multiply(System.Data.SqlTypes.SqlMoney,System.Data.SqlTypes.SqlMoney)
     /**
@@ -43108,6 +44471,10 @@ public final class SqlMoney
         return dotnet.System.Data.SqlTypes.SqlMoney(hndl : __return);
         }
     }
+    public static func * (x : dotnet.System.Data.SqlTypes.SqlMoney, y : dotnet.System.Data.SqlTypes.SqlMoney) -> dotnet.System.Data.SqlTypes.SqlMoney
+    {
+        return try! op_Multiply(x: x, y: y);
+    }
     // [IsSpecialName] System.Data.SqlTypes.SqlMoney op_Subtraction(System.Data.SqlTypes.SqlMoney, System.Data.SqlTypes.SqlMoney)
 // docid: M:System.Data.SqlTypes.SqlMoney.op_Subtraction(System.Data.SqlTypes.SqlMoney,System.Data.SqlTypes.SqlMoney)
     /**
@@ -43126,6 +44493,10 @@ public final class SqlMoney
         } else {
         return dotnet.System.Data.SqlTypes.SqlMoney(hndl : __return);
         }
+    }
+    public static func - (x : dotnet.System.Data.SqlTypes.SqlMoney, y : dotnet.System.Data.SqlTypes.SqlMoney) -> dotnet.System.Data.SqlTypes.SqlMoney
+    {
+        return try! op_Subtraction(x: x, y: y);
     }
     // [IsSpecialName] System.Data.SqlTypes.SqlMoney op_UnaryNegation(System.Data.SqlTypes.SqlMoney)
 // docid: M:System.Data.SqlTypes.SqlMoney.op_UnaryNegation(System.Data.SqlTypes.SqlMoney)
@@ -44011,6 +45382,10 @@ public final class SqlSingle
         return dotnet.System.Data.SqlTypes.SqlSingle(hndl : __return);
         }
     }
+    public static func + (x : dotnet.System.Data.SqlTypes.SqlSingle, y : dotnet.System.Data.SqlTypes.SqlSingle) -> dotnet.System.Data.SqlTypes.SqlSingle
+    {
+        return try! op_Addition(x: x, y: y);
+    }
     // [IsSpecialName] System.Data.SqlTypes.SqlSingle op_Division(System.Data.SqlTypes.SqlSingle, System.Data.SqlTypes.SqlSingle)
 // docid: M:System.Data.SqlTypes.SqlSingle.op_Division(System.Data.SqlTypes.SqlSingle,System.Data.SqlTypes.SqlSingle)
     /**
@@ -44029,6 +45404,10 @@ public final class SqlSingle
         } else {
         return dotnet.System.Data.SqlTypes.SqlSingle(hndl : __return);
         }
+    }
+    public static func / (x : dotnet.System.Data.SqlTypes.SqlSingle, y : dotnet.System.Data.SqlTypes.SqlSingle) -> dotnet.System.Data.SqlTypes.SqlSingle
+    {
+        return try! op_Division(x: x, y: y);
     }
     // [IsSpecialName] System.Data.SqlTypes.SqlBoolean op_Equality(System.Data.SqlTypes.SqlSingle, System.Data.SqlTypes.SqlSingle)
 // docid: M:System.Data.SqlTypes.SqlSingle.op_Equality(System.Data.SqlTypes.SqlSingle,System.Data.SqlTypes.SqlSingle)
@@ -44049,6 +45428,10 @@ public final class SqlSingle
         return dotnet.System.Data.SqlTypes.SqlBoolean(hndl : __return);
         }
     }
+    public static func == (x : dotnet.System.Data.SqlTypes.SqlSingle, y : dotnet.System.Data.SqlTypes.SqlSingle) -> dotnet.System.Data.SqlTypes.SqlBoolean
+    {
+        return try! op_Equality(x: x, y: y);
+    }
     // [IsSpecialName] System.Data.SqlTypes.SqlSingle op_Explicit(System.Data.SqlTypes.SqlBoolean)
 // docid: M:System.Data.SqlTypes.SqlSingle.op_Explicit(System.Data.SqlTypes.SqlBoolean)
     public class func op_Explicit(x : dotnet.System.Data.SqlTypes.SqlBoolean) throws -> dotnet.System.Data.SqlTypes.SqlSingle {
@@ -44058,6 +45441,17 @@ public final class SqlSingle
             throw dotnet.System.Exception(hndl: __ex);
         } else {
         return dotnet.System.Data.SqlTypes.SqlSingle(hndl : __return);
+        }
+    }
+// TODO conversion to Self [IsSpecialName] System.Data.SqlTypes.SqlSingle op_Explicit(System.Data.SqlTypes.SqlBoolean)
+    public convenience init(x : dotnet.System.Data.SqlTypes.SqlBoolean) throws
+    {
+        var __thrown : NullableHandle = nil;
+        let __return = System_Data_SqlTypes_SqlSingle_SqlSingle__op_Explicit_0__1__SqlBoolean(&__thrown, x.get_handle());
+        if let __ex =  __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: __return);
         }
     }
     // [IsSpecialName] System.Data.SqlTypes.SqlSingle op_Explicit(System.Data.SqlTypes.SqlDouble)
@@ -44071,6 +45465,17 @@ public final class SqlSingle
         return dotnet.System.Data.SqlTypes.SqlSingle(hndl : __return);
         }
     }
+// TODO conversion to Self [IsSpecialName] System.Data.SqlTypes.SqlSingle op_Explicit(System.Data.SqlTypes.SqlDouble)
+    public convenience init(x : dotnet.System.Data.SqlTypes.SqlDouble) throws
+    {
+        var __thrown : NullableHandle = nil;
+        let __return = System_Data_SqlTypes_SqlSingle_SqlSingle__op_Explicit_0__1__SqlDouble(&__thrown, x.get_handle());
+        if let __ex =  __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: __return);
+        }
+    }
     // [IsSpecialName] System.Single op_Explicit(System.Data.SqlTypes.SqlSingle)
 // docid: M:System.Data.SqlTypes.SqlSingle.op_Explicit(System.Data.SqlTypes.SqlSingle)
     public class func op_Explicit(x : dotnet.System.Data.SqlTypes.SqlSingle) throws -> Swift.Float {
@@ -44082,6 +45487,7 @@ public final class SqlSingle
         return __return;
         }
     }
+// TODO conversion from Self [IsSpecialName] System.Single op_Explicit(System.Data.SqlTypes.SqlSingle)
     // [IsSpecialName] System.Data.SqlTypes.SqlSingle op_Explicit(System.Data.SqlTypes.SqlString)
 // docid: M:System.Data.SqlTypes.SqlSingle.op_Explicit(System.Data.SqlTypes.SqlString)
     public class func op_Explicit(x : dotnet.System.Data.SqlTypes.SqlString) throws -> dotnet.System.Data.SqlTypes.SqlSingle {
@@ -44091,6 +45497,17 @@ public final class SqlSingle
             throw dotnet.System.Exception(hndl: __ex);
         } else {
         return dotnet.System.Data.SqlTypes.SqlSingle(hndl : __return);
+        }
+    }
+// TODO conversion to Self [IsSpecialName] System.Data.SqlTypes.SqlSingle op_Explicit(System.Data.SqlTypes.SqlString)
+    public convenience init(x : dotnet.System.Data.SqlTypes.SqlString) throws
+    {
+        var __thrown : NullableHandle = nil;
+        let __return = System_Data_SqlTypes_SqlSingle_SqlSingle__op_Explicit_0__1__SqlString(&__thrown, x.get_handle());
+        if let __ex =  __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: __return);
         }
     }
     // [IsSpecialName] System.Data.SqlTypes.SqlBoolean op_GreaterThan(System.Data.SqlTypes.SqlSingle, System.Data.SqlTypes.SqlSingle)
@@ -44112,6 +45529,10 @@ public final class SqlSingle
         return dotnet.System.Data.SqlTypes.SqlBoolean(hndl : __return);
         }
     }
+    public static func > (x : dotnet.System.Data.SqlTypes.SqlSingle, y : dotnet.System.Data.SqlTypes.SqlSingle) -> dotnet.System.Data.SqlTypes.SqlBoolean
+    {
+        return try! op_GreaterThan(x: x, y: y);
+    }
     // [IsSpecialName] System.Data.SqlTypes.SqlBoolean op_GreaterThanOrEqual(System.Data.SqlTypes.SqlSingle, System.Data.SqlTypes.SqlSingle)
 // docid: M:System.Data.SqlTypes.SqlSingle.op_GreaterThanOrEqual(System.Data.SqlTypes.SqlSingle,System.Data.SqlTypes.SqlSingle)
     /**
@@ -44131,6 +45552,10 @@ public final class SqlSingle
         return dotnet.System.Data.SqlTypes.SqlBoolean(hndl : __return);
         }
     }
+    public static func >= (x : dotnet.System.Data.SqlTypes.SqlSingle, y : dotnet.System.Data.SqlTypes.SqlSingle) -> dotnet.System.Data.SqlTypes.SqlBoolean
+    {
+        return try! op_GreaterThanOrEqual(x: x, y: y);
+    }
     // [IsSpecialName] System.Data.SqlTypes.SqlSingle op_Implicit(System.Data.SqlTypes.SqlByte)
 // docid: M:System.Data.SqlTypes.SqlSingle.op_Implicit(System.Data.SqlTypes.SqlByte)
     public class func op_Implicit(x : dotnet.System.Data.SqlTypes.SqlByte) throws -> dotnet.System.Data.SqlTypes.SqlSingle {
@@ -44141,6 +45566,14 @@ public final class SqlSingle
         } else {
         return dotnet.System.Data.SqlTypes.SqlSingle(hndl : __return);
         }
+    }
+// TODO conversion to Self [IsSpecialName] System.Data.SqlTypes.SqlSingle op_Implicit(System.Data.SqlTypes.SqlByte)
+    public convenience init(x : dotnet.System.Data.SqlTypes.SqlByte) 
+    {
+        var __thrown : NullableHandle = nil;
+        let __return = System_Data_SqlTypes_SqlSingle_SqlSingle__op_Implicit_0__1__SqlByte(&__thrown, x.get_handle());
+        assert(__thrown == nil);
+            self.init(hndl: __return);
     }
     // [IsSpecialName] System.Data.SqlTypes.SqlSingle op_Implicit(System.Data.SqlTypes.SqlDecimal)
 // docid: M:System.Data.SqlTypes.SqlSingle.op_Implicit(System.Data.SqlTypes.SqlDecimal)
@@ -44153,6 +45586,14 @@ public final class SqlSingle
         return dotnet.System.Data.SqlTypes.SqlSingle(hndl : __return);
         }
     }
+// TODO conversion to Self [IsSpecialName] System.Data.SqlTypes.SqlSingle op_Implicit(System.Data.SqlTypes.SqlDecimal)
+    public convenience init(x : dotnet.System.Data.SqlTypes.SqlDecimal) 
+    {
+        var __thrown : NullableHandle = nil;
+        let __return = System_Data_SqlTypes_SqlSingle_SqlSingle__op_Implicit_0__1__SqlDecimal(&__thrown, x.get_handle());
+        assert(__thrown == nil);
+            self.init(hndl: __return);
+    }
     // [IsSpecialName] System.Data.SqlTypes.SqlSingle op_Implicit(System.Data.SqlTypes.SqlInt16)
 // docid: M:System.Data.SqlTypes.SqlSingle.op_Implicit(System.Data.SqlTypes.SqlInt16)
     public class func op_Implicit(x : dotnet.System.Data.SqlTypes.SqlInt16) throws -> dotnet.System.Data.SqlTypes.SqlSingle {
@@ -44163,6 +45604,14 @@ public final class SqlSingle
         } else {
         return dotnet.System.Data.SqlTypes.SqlSingle(hndl : __return);
         }
+    }
+// TODO conversion to Self [IsSpecialName] System.Data.SqlTypes.SqlSingle op_Implicit(System.Data.SqlTypes.SqlInt16)
+    public convenience init(x : dotnet.System.Data.SqlTypes.SqlInt16) 
+    {
+        var __thrown : NullableHandle = nil;
+        let __return = System_Data_SqlTypes_SqlSingle_SqlSingle__op_Implicit_0__1__SqlInt16(&__thrown, x.get_handle());
+        assert(__thrown == nil);
+            self.init(hndl: __return);
     }
     // [IsSpecialName] System.Data.SqlTypes.SqlSingle op_Implicit(System.Data.SqlTypes.SqlInt32)
 // docid: M:System.Data.SqlTypes.SqlSingle.op_Implicit(System.Data.SqlTypes.SqlInt32)
@@ -44175,6 +45624,14 @@ public final class SqlSingle
         return dotnet.System.Data.SqlTypes.SqlSingle(hndl : __return);
         }
     }
+// TODO conversion to Self [IsSpecialName] System.Data.SqlTypes.SqlSingle op_Implicit(System.Data.SqlTypes.SqlInt32)
+    public convenience init(x : dotnet.System.Data.SqlTypes.SqlInt32) 
+    {
+        var __thrown : NullableHandle = nil;
+        let __return = System_Data_SqlTypes_SqlSingle_SqlSingle__op_Implicit_0__1__SqlInt32(&__thrown, x.get_handle());
+        assert(__thrown == nil);
+            self.init(hndl: __return);
+    }
     // [IsSpecialName] System.Data.SqlTypes.SqlSingle op_Implicit(System.Data.SqlTypes.SqlInt64)
 // docid: M:System.Data.SqlTypes.SqlSingle.op_Implicit(System.Data.SqlTypes.SqlInt64)
     public class func op_Implicit(x : dotnet.System.Data.SqlTypes.SqlInt64) throws -> dotnet.System.Data.SqlTypes.SqlSingle {
@@ -44185,6 +45642,14 @@ public final class SqlSingle
         } else {
         return dotnet.System.Data.SqlTypes.SqlSingle(hndl : __return);
         }
+    }
+// TODO conversion to Self [IsSpecialName] System.Data.SqlTypes.SqlSingle op_Implicit(System.Data.SqlTypes.SqlInt64)
+    public convenience init(x : dotnet.System.Data.SqlTypes.SqlInt64) 
+    {
+        var __thrown : NullableHandle = nil;
+        let __return = System_Data_SqlTypes_SqlSingle_SqlSingle__op_Implicit_0__1__SqlInt64(&__thrown, x.get_handle());
+        assert(__thrown == nil);
+            self.init(hndl: __return);
     }
     // [IsSpecialName] System.Data.SqlTypes.SqlSingle op_Implicit(System.Data.SqlTypes.SqlMoney)
 // docid: M:System.Data.SqlTypes.SqlSingle.op_Implicit(System.Data.SqlTypes.SqlMoney)
@@ -44197,6 +45662,14 @@ public final class SqlSingle
         return dotnet.System.Data.SqlTypes.SqlSingle(hndl : __return);
         }
     }
+// TODO conversion to Self [IsSpecialName] System.Data.SqlTypes.SqlSingle op_Implicit(System.Data.SqlTypes.SqlMoney)
+    public convenience init(x : dotnet.System.Data.SqlTypes.SqlMoney) 
+    {
+        var __thrown : NullableHandle = nil;
+        let __return = System_Data_SqlTypes_SqlSingle_SqlSingle__op_Implicit_0__1__SqlMoney(&__thrown, x.get_handle());
+        assert(__thrown == nil);
+            self.init(hndl: __return);
+    }
     // [IsSpecialName] System.Data.SqlTypes.SqlSingle op_Implicit(System.Single)
 // docid: M:System.Data.SqlTypes.SqlSingle.op_Implicit(System.Single)
     public class func op_Implicit(x : Swift.Float) throws -> dotnet.System.Data.SqlTypes.SqlSingle {
@@ -44207,6 +45680,14 @@ public final class SqlSingle
         } else {
         return dotnet.System.Data.SqlTypes.SqlSingle(hndl : __return);
         }
+    }
+// TODO conversion to Self [IsSpecialName] System.Data.SqlTypes.SqlSingle op_Implicit(System.Single)
+    public convenience init(x : Swift.Float) 
+    {
+        var __thrown : NullableHandle = nil;
+        let __return = System_Data_SqlTypes_SqlSingle_SqlSingle__op_Implicit_0__1__f32(&__thrown, x);
+        assert(__thrown == nil);
+            self.init(hndl: __return);
     }
     // [IsSpecialName] System.Data.SqlTypes.SqlBoolean op_Inequality(System.Data.SqlTypes.SqlSingle, System.Data.SqlTypes.SqlSingle)
 // docid: M:System.Data.SqlTypes.SqlSingle.op_Inequality(System.Data.SqlTypes.SqlSingle,System.Data.SqlTypes.SqlSingle)
@@ -44227,6 +45708,10 @@ public final class SqlSingle
         return dotnet.System.Data.SqlTypes.SqlBoolean(hndl : __return);
         }
     }
+    public static func != (x : dotnet.System.Data.SqlTypes.SqlSingle, y : dotnet.System.Data.SqlTypes.SqlSingle) -> dotnet.System.Data.SqlTypes.SqlBoolean
+    {
+        return try! op_Inequality(x: x, y: y);
+    }
     // [IsSpecialName] System.Data.SqlTypes.SqlBoolean op_LessThan(System.Data.SqlTypes.SqlSingle, System.Data.SqlTypes.SqlSingle)
 // docid: M:System.Data.SqlTypes.SqlSingle.op_LessThan(System.Data.SqlTypes.SqlSingle,System.Data.SqlTypes.SqlSingle)
     /**
@@ -44245,6 +45730,10 @@ public final class SqlSingle
         } else {
         return dotnet.System.Data.SqlTypes.SqlBoolean(hndl : __return);
         }
+    }
+    public static func < (x : dotnet.System.Data.SqlTypes.SqlSingle, y : dotnet.System.Data.SqlTypes.SqlSingle) -> dotnet.System.Data.SqlTypes.SqlBoolean
+    {
+        return try! op_LessThan(x: x, y: y);
     }
     // [IsSpecialName] System.Data.SqlTypes.SqlBoolean op_LessThanOrEqual(System.Data.SqlTypes.SqlSingle, System.Data.SqlTypes.SqlSingle)
 // docid: M:System.Data.SqlTypes.SqlSingle.op_LessThanOrEqual(System.Data.SqlTypes.SqlSingle,System.Data.SqlTypes.SqlSingle)
@@ -44265,6 +45754,10 @@ public final class SqlSingle
         return dotnet.System.Data.SqlTypes.SqlBoolean(hndl : __return);
         }
     }
+    public static func <= (x : dotnet.System.Data.SqlTypes.SqlSingle, y : dotnet.System.Data.SqlTypes.SqlSingle) -> dotnet.System.Data.SqlTypes.SqlBoolean
+    {
+        return try! op_LessThanOrEqual(x: x, y: y);
+    }
     // [IsSpecialName] System.Data.SqlTypes.SqlSingle op_Multiply(System.Data.SqlTypes.SqlSingle, System.Data.SqlTypes.SqlSingle)
 // docid: M:System.Data.SqlTypes.SqlSingle.op_Multiply(System.Data.SqlTypes.SqlSingle,System.Data.SqlTypes.SqlSingle)
     /**
@@ -44284,6 +45777,10 @@ public final class SqlSingle
         return dotnet.System.Data.SqlTypes.SqlSingle(hndl : __return);
         }
     }
+    public static func * (x : dotnet.System.Data.SqlTypes.SqlSingle, y : dotnet.System.Data.SqlTypes.SqlSingle) -> dotnet.System.Data.SqlTypes.SqlSingle
+    {
+        return try! op_Multiply(x: x, y: y);
+    }
     // [IsSpecialName] System.Data.SqlTypes.SqlSingle op_Subtraction(System.Data.SqlTypes.SqlSingle, System.Data.SqlTypes.SqlSingle)
 // docid: M:System.Data.SqlTypes.SqlSingle.op_Subtraction(System.Data.SqlTypes.SqlSingle,System.Data.SqlTypes.SqlSingle)
     /**
@@ -44302,6 +45799,10 @@ public final class SqlSingle
         } else {
         return dotnet.System.Data.SqlTypes.SqlSingle(hndl : __return);
         }
+    }
+    public static func - (x : dotnet.System.Data.SqlTypes.SqlSingle, y : dotnet.System.Data.SqlTypes.SqlSingle) -> dotnet.System.Data.SqlTypes.SqlSingle
+    {
+        return try! op_Subtraction(x: x, y: y);
     }
     // [IsSpecialName] System.Data.SqlTypes.SqlSingle op_UnaryNegation(System.Data.SqlTypes.SqlSingle)
 // docid: M:System.Data.SqlTypes.SqlSingle.op_UnaryNegation(System.Data.SqlTypes.SqlSingle)
@@ -45192,6 +46693,10 @@ public final class SqlString
         return dotnet.System.Data.SqlTypes.SqlString(hndl : __return);
         }
     }
+    public static func + (x : dotnet.System.Data.SqlTypes.SqlString, y : dotnet.System.Data.SqlTypes.SqlString) -> dotnet.System.Data.SqlTypes.SqlString
+    {
+        return try! op_Addition(x: x, y: y);
+    }
     // [IsSpecialName] System.Data.SqlTypes.SqlBoolean op_Equality(System.Data.SqlTypes.SqlString, System.Data.SqlTypes.SqlString)
 // docid: M:System.Data.SqlTypes.SqlString.op_Equality(System.Data.SqlTypes.SqlString,System.Data.SqlTypes.SqlString)
     /**
@@ -45211,6 +46716,10 @@ public final class SqlString
         return dotnet.System.Data.SqlTypes.SqlBoolean(hndl : __return);
         }
     }
+    public static func == (x : dotnet.System.Data.SqlTypes.SqlString, y : dotnet.System.Data.SqlTypes.SqlString) -> dotnet.System.Data.SqlTypes.SqlBoolean
+    {
+        return try! op_Equality(x: x, y: y);
+    }
     // [IsSpecialName] System.Data.SqlTypes.SqlString op_Explicit(System.Data.SqlTypes.SqlBoolean)
 // docid: M:System.Data.SqlTypes.SqlString.op_Explicit(System.Data.SqlTypes.SqlBoolean)
     public class func op_Explicit(x : dotnet.System.Data.SqlTypes.SqlBoolean) throws -> dotnet.System.Data.SqlTypes.SqlString {
@@ -45220,6 +46729,17 @@ public final class SqlString
             throw dotnet.System.Exception(hndl: __ex);
         } else {
         return dotnet.System.Data.SqlTypes.SqlString(hndl : __return);
+        }
+    }
+// TODO conversion to Self [IsSpecialName] System.Data.SqlTypes.SqlString op_Explicit(System.Data.SqlTypes.SqlBoolean)
+    public convenience init(x : dotnet.System.Data.SqlTypes.SqlBoolean) throws
+    {
+        var __thrown : NullableHandle = nil;
+        let __return = System_Data_SqlTypes_SqlString_SqlString__op_Explicit_0__1__SqlBoolean(&__thrown, x.get_handle());
+        if let __ex =  __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: __return);
         }
     }
     // [IsSpecialName] System.Data.SqlTypes.SqlString op_Explicit(System.Data.SqlTypes.SqlByte)
@@ -45233,6 +46753,17 @@ public final class SqlString
         return dotnet.System.Data.SqlTypes.SqlString(hndl : __return);
         }
     }
+// TODO conversion to Self [IsSpecialName] System.Data.SqlTypes.SqlString op_Explicit(System.Data.SqlTypes.SqlByte)
+    public convenience init(x : dotnet.System.Data.SqlTypes.SqlByte) throws
+    {
+        var __thrown : NullableHandle = nil;
+        let __return = System_Data_SqlTypes_SqlString_SqlString__op_Explicit_0__1__SqlByte(&__thrown, x.get_handle());
+        if let __ex =  __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: __return);
+        }
+    }
     // [IsSpecialName] System.Data.SqlTypes.SqlString op_Explicit(System.Data.SqlTypes.SqlDateTime)
 // docid: M:System.Data.SqlTypes.SqlString.op_Explicit(System.Data.SqlTypes.SqlDateTime)
     public class func op_Explicit(x : dotnet.System.Data.SqlTypes.SqlDateTime) throws -> dotnet.System.Data.SqlTypes.SqlString {
@@ -45242,6 +46773,17 @@ public final class SqlString
             throw dotnet.System.Exception(hndl: __ex);
         } else {
         return dotnet.System.Data.SqlTypes.SqlString(hndl : __return);
+        }
+    }
+// TODO conversion to Self [IsSpecialName] System.Data.SqlTypes.SqlString op_Explicit(System.Data.SqlTypes.SqlDateTime)
+    public convenience init(x : dotnet.System.Data.SqlTypes.SqlDateTime) throws
+    {
+        var __thrown : NullableHandle = nil;
+        let __return = System_Data_SqlTypes_SqlString_SqlString__op_Explicit_0__1__SqlDateTime(&__thrown, x.get_handle());
+        if let __ex =  __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: __return);
         }
     }
     // [IsSpecialName] System.Data.SqlTypes.SqlString op_Explicit(System.Data.SqlTypes.SqlDecimal)
@@ -45255,6 +46797,17 @@ public final class SqlString
         return dotnet.System.Data.SqlTypes.SqlString(hndl : __return);
         }
     }
+// TODO conversion to Self [IsSpecialName] System.Data.SqlTypes.SqlString op_Explicit(System.Data.SqlTypes.SqlDecimal)
+    public convenience init(x : dotnet.System.Data.SqlTypes.SqlDecimal) throws
+    {
+        var __thrown : NullableHandle = nil;
+        let __return = System_Data_SqlTypes_SqlString_SqlString__op_Explicit_0__1__SqlDecimal(&__thrown, x.get_handle());
+        if let __ex =  __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: __return);
+        }
+    }
     // [IsSpecialName] System.Data.SqlTypes.SqlString op_Explicit(System.Data.SqlTypes.SqlDouble)
 // docid: M:System.Data.SqlTypes.SqlString.op_Explicit(System.Data.SqlTypes.SqlDouble)
     public class func op_Explicit(x : dotnet.System.Data.SqlTypes.SqlDouble) throws -> dotnet.System.Data.SqlTypes.SqlString {
@@ -45264,6 +46817,17 @@ public final class SqlString
             throw dotnet.System.Exception(hndl: __ex);
         } else {
         return dotnet.System.Data.SqlTypes.SqlString(hndl : __return);
+        }
+    }
+// TODO conversion to Self [IsSpecialName] System.Data.SqlTypes.SqlString op_Explicit(System.Data.SqlTypes.SqlDouble)
+    public convenience init(x : dotnet.System.Data.SqlTypes.SqlDouble) throws
+    {
+        var __thrown : NullableHandle = nil;
+        let __return = System_Data_SqlTypes_SqlString_SqlString__op_Explicit_0__1__SqlDouble(&__thrown, x.get_handle());
+        if let __ex =  __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: __return);
         }
     }
     // [IsSpecialName] System.Data.SqlTypes.SqlString op_Explicit(System.Data.SqlTypes.SqlGuid)
@@ -45277,6 +46841,17 @@ public final class SqlString
         return dotnet.System.Data.SqlTypes.SqlString(hndl : __return);
         }
     }
+// TODO conversion to Self [IsSpecialName] System.Data.SqlTypes.SqlString op_Explicit(System.Data.SqlTypes.SqlGuid)
+    public convenience init(x : dotnet.System.Data.SqlTypes.SqlGuid) throws
+    {
+        var __thrown : NullableHandle = nil;
+        let __return = System_Data_SqlTypes_SqlString_SqlString__op_Explicit_0__1__SqlGuid(&__thrown, x.get_handle());
+        if let __ex =  __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: __return);
+        }
+    }
     // [IsSpecialName] System.Data.SqlTypes.SqlString op_Explicit(System.Data.SqlTypes.SqlInt16)
 // docid: M:System.Data.SqlTypes.SqlString.op_Explicit(System.Data.SqlTypes.SqlInt16)
     public class func op_Explicit(x : dotnet.System.Data.SqlTypes.SqlInt16) throws -> dotnet.System.Data.SqlTypes.SqlString {
@@ -45286,6 +46861,17 @@ public final class SqlString
             throw dotnet.System.Exception(hndl: __ex);
         } else {
         return dotnet.System.Data.SqlTypes.SqlString(hndl : __return);
+        }
+    }
+// TODO conversion to Self [IsSpecialName] System.Data.SqlTypes.SqlString op_Explicit(System.Data.SqlTypes.SqlInt16)
+    public convenience init(x : dotnet.System.Data.SqlTypes.SqlInt16) throws
+    {
+        var __thrown : NullableHandle = nil;
+        let __return = System_Data_SqlTypes_SqlString_SqlString__op_Explicit_0__1__SqlInt16(&__thrown, x.get_handle());
+        if let __ex =  __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: __return);
         }
     }
     // [IsSpecialName] System.Data.SqlTypes.SqlString op_Explicit(System.Data.SqlTypes.SqlInt32)
@@ -45299,6 +46885,17 @@ public final class SqlString
         return dotnet.System.Data.SqlTypes.SqlString(hndl : __return);
         }
     }
+// TODO conversion to Self [IsSpecialName] System.Data.SqlTypes.SqlString op_Explicit(System.Data.SqlTypes.SqlInt32)
+    public convenience init(x : dotnet.System.Data.SqlTypes.SqlInt32) throws
+    {
+        var __thrown : NullableHandle = nil;
+        let __return = System_Data_SqlTypes_SqlString_SqlString__op_Explicit_0__1__SqlInt32(&__thrown, x.get_handle());
+        if let __ex =  __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: __return);
+        }
+    }
     // [IsSpecialName] System.Data.SqlTypes.SqlString op_Explicit(System.Data.SqlTypes.SqlInt64)
 // docid: M:System.Data.SqlTypes.SqlString.op_Explicit(System.Data.SqlTypes.SqlInt64)
     public class func op_Explicit(x : dotnet.System.Data.SqlTypes.SqlInt64) throws -> dotnet.System.Data.SqlTypes.SqlString {
@@ -45308,6 +46905,17 @@ public final class SqlString
             throw dotnet.System.Exception(hndl: __ex);
         } else {
         return dotnet.System.Data.SqlTypes.SqlString(hndl : __return);
+        }
+    }
+// TODO conversion to Self [IsSpecialName] System.Data.SqlTypes.SqlString op_Explicit(System.Data.SqlTypes.SqlInt64)
+    public convenience init(x : dotnet.System.Data.SqlTypes.SqlInt64) throws
+    {
+        var __thrown : NullableHandle = nil;
+        let __return = System_Data_SqlTypes_SqlString_SqlString__op_Explicit_0__1__SqlInt64(&__thrown, x.get_handle());
+        if let __ex =  __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: __return);
         }
     }
     // [IsSpecialName] System.Data.SqlTypes.SqlString op_Explicit(System.Data.SqlTypes.SqlMoney)
@@ -45321,6 +46929,17 @@ public final class SqlString
         return dotnet.System.Data.SqlTypes.SqlString(hndl : __return);
         }
     }
+// TODO conversion to Self [IsSpecialName] System.Data.SqlTypes.SqlString op_Explicit(System.Data.SqlTypes.SqlMoney)
+    public convenience init(x : dotnet.System.Data.SqlTypes.SqlMoney) throws
+    {
+        var __thrown : NullableHandle = nil;
+        let __return = System_Data_SqlTypes_SqlString_SqlString__op_Explicit_0__1__SqlMoney(&__thrown, x.get_handle());
+        if let __ex =  __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: __return);
+        }
+    }
     // [IsSpecialName] System.Data.SqlTypes.SqlString op_Explicit(System.Data.SqlTypes.SqlSingle)
 // docid: M:System.Data.SqlTypes.SqlString.op_Explicit(System.Data.SqlTypes.SqlSingle)
     public class func op_Explicit(x : dotnet.System.Data.SqlTypes.SqlSingle) throws -> dotnet.System.Data.SqlTypes.SqlString {
@@ -45330,6 +46949,17 @@ public final class SqlString
             throw dotnet.System.Exception(hndl: __ex);
         } else {
         return dotnet.System.Data.SqlTypes.SqlString(hndl : __return);
+        }
+    }
+// TODO conversion to Self [IsSpecialName] System.Data.SqlTypes.SqlString op_Explicit(System.Data.SqlTypes.SqlSingle)
+    public convenience init(x : dotnet.System.Data.SqlTypes.SqlSingle) throws
+    {
+        var __thrown : NullableHandle = nil;
+        let __return = System_Data_SqlTypes_SqlString_SqlString__op_Explicit_0__1__SqlSingle(&__thrown, x.get_handle());
+        if let __ex =  __thrown {
+            throw dotnet.System.Exception(hndl: __ex);
+        } else {
+            self.init(hndl: __return);
         }
     }
     // [IsSpecialName] System.String op_Explicit(System.Data.SqlTypes.SqlString)
@@ -45343,6 +46973,7 @@ public final class SqlString
         return dotnet.System.String(hndl : __return);
         }
     }
+// TODO conversion from Self [IsSpecialName] System.String op_Explicit(System.Data.SqlTypes.SqlString)
     // [IsSpecialName] System.Data.SqlTypes.SqlBoolean op_GreaterThan(System.Data.SqlTypes.SqlString, System.Data.SqlTypes.SqlString)
 // docid: M:System.Data.SqlTypes.SqlString.op_GreaterThan(System.Data.SqlTypes.SqlString,System.Data.SqlTypes.SqlString)
     /**
@@ -45361,6 +46992,10 @@ public final class SqlString
         } else {
         return dotnet.System.Data.SqlTypes.SqlBoolean(hndl : __return);
         }
+    }
+    public static func > (x : dotnet.System.Data.SqlTypes.SqlString, y : dotnet.System.Data.SqlTypes.SqlString) -> dotnet.System.Data.SqlTypes.SqlBoolean
+    {
+        return try! op_GreaterThan(x: x, y: y);
     }
     // [IsSpecialName] System.Data.SqlTypes.SqlBoolean op_GreaterThanOrEqual(System.Data.SqlTypes.SqlString, System.Data.SqlTypes.SqlString)
 // docid: M:System.Data.SqlTypes.SqlString.op_GreaterThanOrEqual(System.Data.SqlTypes.SqlString,System.Data.SqlTypes.SqlString)
@@ -45381,6 +47016,10 @@ public final class SqlString
         return dotnet.System.Data.SqlTypes.SqlBoolean(hndl : __return);
         }
     }
+    public static func >= (x : dotnet.System.Data.SqlTypes.SqlString, y : dotnet.System.Data.SqlTypes.SqlString) -> dotnet.System.Data.SqlTypes.SqlBoolean
+    {
+        return try! op_GreaterThanOrEqual(x: x, y: y);
+    }
     // [IsSpecialName] System.Data.SqlTypes.SqlString op_Implicit(System.String)
 // docid: M:System.Data.SqlTypes.SqlString.op_Implicit(System.String)
     public class func op_Implicit(x : dotnet.System.String) throws -> dotnet.System.Data.SqlTypes.SqlString {
@@ -45391,6 +47030,14 @@ public final class SqlString
         } else {
         return dotnet.System.Data.SqlTypes.SqlString(hndl : __return);
         }
+    }
+// TODO conversion to Self [IsSpecialName] System.Data.SqlTypes.SqlString op_Implicit(System.String)
+    public convenience init(x : dotnet.System.String) 
+    {
+        var __thrown : NullableHandle = nil;
+        let __return = System_Data_SqlTypes_SqlString_SqlString__op_Implicit_0__1__String(&__thrown, x.get_handle());
+        assert(__thrown == nil);
+            self.init(hndl: __return);
     }
     // [IsSpecialName] System.Data.SqlTypes.SqlBoolean op_Inequality(System.Data.SqlTypes.SqlString, System.Data.SqlTypes.SqlString)
 // docid: M:System.Data.SqlTypes.SqlString.op_Inequality(System.Data.SqlTypes.SqlString,System.Data.SqlTypes.SqlString)
@@ -45411,6 +47058,10 @@ public final class SqlString
         return dotnet.System.Data.SqlTypes.SqlBoolean(hndl : __return);
         }
     }
+    public static func != (x : dotnet.System.Data.SqlTypes.SqlString, y : dotnet.System.Data.SqlTypes.SqlString) -> dotnet.System.Data.SqlTypes.SqlBoolean
+    {
+        return try! op_Inequality(x: x, y: y);
+    }
     // [IsSpecialName] System.Data.SqlTypes.SqlBoolean op_LessThan(System.Data.SqlTypes.SqlString, System.Data.SqlTypes.SqlString)
 // docid: M:System.Data.SqlTypes.SqlString.op_LessThan(System.Data.SqlTypes.SqlString,System.Data.SqlTypes.SqlString)
     /**
@@ -45430,6 +47081,10 @@ public final class SqlString
         return dotnet.System.Data.SqlTypes.SqlBoolean(hndl : __return);
         }
     }
+    public static func < (x : dotnet.System.Data.SqlTypes.SqlString, y : dotnet.System.Data.SqlTypes.SqlString) -> dotnet.System.Data.SqlTypes.SqlBoolean
+    {
+        return try! op_LessThan(x: x, y: y);
+    }
     // [IsSpecialName] System.Data.SqlTypes.SqlBoolean op_LessThanOrEqual(System.Data.SqlTypes.SqlString, System.Data.SqlTypes.SqlString)
 // docid: M:System.Data.SqlTypes.SqlString.op_LessThanOrEqual(System.Data.SqlTypes.SqlString,System.Data.SqlTypes.SqlString)
     /**
@@ -45448,6 +47103,10 @@ public final class SqlString
         } else {
         return dotnet.System.Data.SqlTypes.SqlBoolean(hndl : __return);
         }
+    }
+    public static func <= (x : dotnet.System.Data.SqlTypes.SqlString, y : dotnet.System.Data.SqlTypes.SqlString) -> dotnet.System.Data.SqlTypes.SqlBoolean
+    {
+        return try! op_LessThanOrEqual(x: x, y: y);
     }
     // System.Data.SqlTypes.SqlBoolean ToSqlBoolean()
 // docid: M:System.Data.SqlTypes.SqlString.ToSqlBoolean

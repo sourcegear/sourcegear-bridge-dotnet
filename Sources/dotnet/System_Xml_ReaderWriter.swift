@@ -11735,6 +11735,10 @@ open class XmlQualifiedName
         return (__return) != 0;
         }
     }
+    public static func == (a : dotnet.System.Xml.XmlQualifiedName, b : dotnet.System.Xml.XmlQualifiedName) -> Bool
+    {
+        return try! op_Equality(a: a, b: b);
+    }
     // [IsSpecialName] bool op_Inequality(System.Xml.XmlQualifiedName, System.Xml.XmlQualifiedName)
 // docid: M:System.Xml.XmlQualifiedName.op_Inequality(System.Xml.XmlQualifiedName,System.Xml.XmlQualifiedName)
     /**
@@ -11754,6 +11758,10 @@ open class XmlQualifiedName
         } else {
         return (__return) != 0;
         }
+    }
+    public static func != (a : dotnet.System.Xml.XmlQualifiedName, b : dotnet.System.Xml.XmlQualifiedName) -> Bool
+    {
+        return try! op_Inequality(a: a, b: b);
     }
     // System.String ToString()
 // docid: M:System.Xml.XmlQualifiedName.ToString

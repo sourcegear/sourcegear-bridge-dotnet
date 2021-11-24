@@ -292,6 +292,10 @@ public final class OpCode
         return (__return) != 0;
         }
     }
+    public static func == (a : dotnet.System.Reflection.Emit.OpCode, b : dotnet.System.Reflection.Emit.OpCode) -> Bool
+    {
+        return try! op_Equality(a: a, b: b);
+    }
     // [IsSpecialName] bool op_Inequality(System.Reflection.Emit.OpCode, System.Reflection.Emit.OpCode)
 // docid: M:System.Reflection.Emit.OpCode.op_Inequality(System.Reflection.Emit.OpCode,System.Reflection.Emit.OpCode)
     /**
@@ -311,6 +315,10 @@ public final class OpCode
         } else {
         return (__return) != 0;
         }
+    }
+    public static func != (a : dotnet.System.Reflection.Emit.OpCode, b : dotnet.System.Reflection.Emit.OpCode) -> Bool
+    {
+        return try! op_Inequality(a: a, b: b);
     }
     // System.String ToString()
 // docid: M:System.Reflection.Emit.OpCode.ToString

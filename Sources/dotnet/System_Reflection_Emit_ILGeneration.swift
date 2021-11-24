@@ -876,6 +876,10 @@ public final class Label
         return (__return) != 0;
         }
     }
+    public static func == (a : dotnet.System.Reflection.Emit.Label, b : dotnet.System.Reflection.Emit.Label) -> Bool
+    {
+        return try! op_Equality(a: a, b: b);
+    }
     // [IsSpecialName] bool op_Inequality(System.Reflection.Emit.Label, System.Reflection.Emit.Label)
 // docid: M:System.Reflection.Emit.Label.op_Inequality(System.Reflection.Emit.Label,System.Reflection.Emit.Label)
     /**
@@ -895,6 +899,10 @@ public final class Label
         } else {
         return (__return) != 0;
         }
+    }
+    public static func != (a : dotnet.System.Reflection.Emit.Label, b : dotnet.System.Reflection.Emit.Label) -> Bool
+    {
+        return try! op_Inequality(a: a, b: b);
     }
 } // Label
 

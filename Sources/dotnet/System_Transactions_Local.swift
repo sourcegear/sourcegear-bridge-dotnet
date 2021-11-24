@@ -1531,6 +1531,10 @@ open class Transaction
         return (__return) != 0;
         }
     }
+    public static func == (x : dotnet.System.Transactions.Transaction, y : dotnet.System.Transactions.Transaction) -> Bool
+    {
+        return try! op_Equality(x: x, y: y);
+    }
     // [IsSpecialName] bool op_Inequality(System.Transactions.Transaction, System.Transactions.Transaction)
 // docid: M:System.Transactions.Transaction.op_Inequality(System.Transactions.Transaction,System.Transactions.Transaction)
     /**
@@ -1550,6 +1554,10 @@ open class Transaction
         } else {
         return (__return) != 0;
         }
+    }
+    public static func != (x : dotnet.System.Transactions.Transaction, y : dotnet.System.Transactions.Transaction) -> Bool
+    {
+        return try! op_Inequality(x: x, y: y);
     }
     // System.Transactions.Enlistment PromoteAndEnlistDurable(System.Guid, System.Transactions.IPromotableSinglePhaseNotification, System.Transactions.ISinglePhaseNotification, System.Transactions.EnlistmentOptions)
 // docid: M:System.Transactions.Transaction.PromoteAndEnlistDurable(System.Guid,System.Transactions.IPromotableSinglePhaseNotification,System.Transactions.ISinglePhaseNotification,System.Transactions.EnlistmentOptions)
@@ -2747,6 +2755,10 @@ public final class TransactionOptions
         return (__return) != 0;
         }
     }
+    public static func == (x : dotnet.System.Transactions.TransactionOptions, y : dotnet.System.Transactions.TransactionOptions) -> Bool
+    {
+        return try! op_Equality(x: x, y: y);
+    }
     // [IsSpecialName] bool op_Inequality(System.Transactions.TransactionOptions, System.Transactions.TransactionOptions)
 // docid: M:System.Transactions.TransactionOptions.op_Inequality(System.Transactions.TransactionOptions,System.Transactions.TransactionOptions)
     /**
@@ -2766,6 +2778,10 @@ public final class TransactionOptions
         } else {
         return (__return) != 0;
         }
+    }
+    public static func != (x : dotnet.System.Transactions.TransactionOptions, y : dotnet.System.Transactions.TransactionOptions) -> Bool
+    {
+        return try! op_Inequality(x: x, y: y);
     }
     // [IsSpecialName] System.Transactions.IsolationLevel get_IsolationLevel()
 // docid: M:System.Transactions.TransactionOptions.get_IsolationLevel

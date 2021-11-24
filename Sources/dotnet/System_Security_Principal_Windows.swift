@@ -331,6 +331,10 @@ open class IdentityReference
         return (__return) != 0;
         }
     }
+    public static func == (left : dotnet.System.Security.Principal.IdentityReference, right : dotnet.System.Security.Principal.IdentityReference) -> Bool
+    {
+        return try! op_Equality(left: left, right: right);
+    }
     // [IsSpecialName] bool op_Inequality(System.Security.Principal.IdentityReference, System.Security.Principal.IdentityReference)
 // docid: M:System.Security.Principal.IdentityReference.op_Inequality(System.Security.Principal.IdentityReference,System.Security.Principal.IdentityReference)
     /**
@@ -350,6 +354,10 @@ open class IdentityReference
         } else {
         return (__return) != 0;
         }
+    }
+    public static func != (left : dotnet.System.Security.Principal.IdentityReference, right : dotnet.System.Security.Principal.IdentityReference) -> Bool
+    {
+        return try! op_Inequality(left: left, right: right);
     }
     // System.String ToString()
 // docid: M:System.Security.Principal.IdentityReference.ToString
@@ -794,6 +802,10 @@ public final class NTAccount
         return (__return) != 0;
         }
     }
+    public static func == (left : dotnet.System.Security.Principal.NTAccount, right : dotnet.System.Security.Principal.NTAccount) -> Bool
+    {
+        return try! op_Equality(left: left, right: right);
+    }
     // [IsSpecialName] bool op_Inequality(System.Security.Principal.NTAccount, System.Security.Principal.NTAccount)
 // docid: M:System.Security.Principal.NTAccount.op_Inequality(System.Security.Principal.NTAccount,System.Security.Principal.NTAccount)
     /**
@@ -813,6 +825,10 @@ public final class NTAccount
         } else {
         return (__return) != 0;
         }
+    }
+    public static func != (left : dotnet.System.Security.Principal.NTAccount, right : dotnet.System.Security.Principal.NTAccount) -> Bool
+    {
+        return try! op_Inequality(left: left, right: right);
     }
     // System.String ToString()
 // docid: M:System.Security.Principal.NTAccount.ToString
@@ -1203,6 +1219,10 @@ public final class SecurityIdentifier
         return (__return) != 0;
         }
     }
+    public static func == (left : dotnet.System.Security.Principal.SecurityIdentifier, right : dotnet.System.Security.Principal.SecurityIdentifier) -> Bool
+    {
+        return try! op_Equality(left: left, right: right);
+    }
     // [IsSpecialName] bool op_Inequality(System.Security.Principal.SecurityIdentifier, System.Security.Principal.SecurityIdentifier)
 // docid: M:System.Security.Principal.SecurityIdentifier.op_Inequality(System.Security.Principal.SecurityIdentifier,System.Security.Principal.SecurityIdentifier)
     /**
@@ -1222,6 +1242,10 @@ public final class SecurityIdentifier
         } else {
         return (__return) != 0;
         }
+    }
+    public static func != (left : dotnet.System.Security.Principal.SecurityIdentifier, right : dotnet.System.Security.Principal.SecurityIdentifier) -> Bool
+    {
+        return try! op_Inequality(left: left, right: right);
     }
     // System.String ToString()
 // docid: M:System.Security.Principal.SecurityIdentifier.ToString

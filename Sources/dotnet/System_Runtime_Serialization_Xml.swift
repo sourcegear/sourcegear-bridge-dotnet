@@ -2766,6 +2766,10 @@ open class UniqueId
         return (__return) != 0;
         }
     }
+    public static func == (id1 : dotnet.System.Xml.UniqueId, id2 : dotnet.System.Xml.UniqueId) -> Bool
+    {
+        return try! op_Equality(id1: id1, id2: id2);
+    }
     // [IsSpecialName] bool op_Inequality(System.Xml.UniqueId, System.Xml.UniqueId)
 // docid: M:System.Xml.UniqueId.op_Inequality(System.Xml.UniqueId,System.Xml.UniqueId)
     /**
@@ -2785,6 +2789,10 @@ open class UniqueId
         } else {
         return (__return) != 0;
         }
+    }
+    public static func != (id1 : dotnet.System.Xml.UniqueId, id2 : dotnet.System.Xml.UniqueId) -> Bool
+    {
+        return try! op_Inequality(id1: id1, id2: id2);
     }
     // System.Int32 ToCharArray(System.Char[], System.Int32)
 // docid: M:System.Xml.UniqueId.ToCharArray(System.Char[],System.Int32)

@@ -6494,6 +6494,10 @@ public final class RSAEncryptionPadding
         return (__return) != 0;
         }
     }
+    public static func == (left : dotnet.System.Security.Cryptography.RSAEncryptionPadding, right : dotnet.System.Security.Cryptography.RSAEncryptionPadding) -> Bool
+    {
+        return try! op_Equality(left: left, right: right);
+    }
     // [IsSpecialName] bool op_Inequality(System.Security.Cryptography.RSAEncryptionPadding, System.Security.Cryptography.RSAEncryptionPadding)
 // docid: M:System.Security.Cryptography.RSAEncryptionPadding.op_Inequality(System.Security.Cryptography.RSAEncryptionPadding,System.Security.Cryptography.RSAEncryptionPadding)
     /**
@@ -6513,6 +6517,10 @@ public final class RSAEncryptionPadding
         } else {
         return (__return) != 0;
         }
+    }
+    public static func != (left : dotnet.System.Security.Cryptography.RSAEncryptionPadding, right : dotnet.System.Security.Cryptography.RSAEncryptionPadding) -> Bool
+    {
+        return try! op_Inequality(left: left, right: right);
     }
     // System.String ToString()
 // docid: M:System.Security.Cryptography.RSAEncryptionPadding.ToString
@@ -7748,6 +7756,10 @@ public final class RSASignaturePadding
         return (__return) != 0;
         }
     }
+    public static func == (left : dotnet.System.Security.Cryptography.RSASignaturePadding, right : dotnet.System.Security.Cryptography.RSASignaturePadding) -> Bool
+    {
+        return try! op_Equality(left: left, right: right);
+    }
     // [IsSpecialName] bool op_Inequality(System.Security.Cryptography.RSASignaturePadding, System.Security.Cryptography.RSASignaturePadding)
 // docid: M:System.Security.Cryptography.RSASignaturePadding.op_Inequality(System.Security.Cryptography.RSASignaturePadding,System.Security.Cryptography.RSASignaturePadding)
     /**
@@ -7767,6 +7779,10 @@ public final class RSASignaturePadding
         } else {
         return (__return) != 0;
         }
+    }
+    public static func != (left : dotnet.System.Security.Cryptography.RSASignaturePadding, right : dotnet.System.Security.Cryptography.RSASignaturePadding) -> Bool
+    {
+        return try! op_Inequality(left: left, right: right);
     }
     // System.String ToString()
 // docid: M:System.Security.Cryptography.RSASignaturePadding.ToString

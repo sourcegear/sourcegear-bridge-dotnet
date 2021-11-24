@@ -494,6 +494,10 @@ public final class IPPacketInformation
         return (__return) != 0;
         }
     }
+    public static func == (packetInformation1 : dotnet.System.Net.Sockets.IPPacketInformation, packetInformation2 : dotnet.System.Net.Sockets.IPPacketInformation) -> Bool
+    {
+        return try! op_Equality(packetInformation1: packetInformation1, packetInformation2: packetInformation2);
+    }
     // [IsSpecialName] bool op_Inequality(System.Net.Sockets.IPPacketInformation, System.Net.Sockets.IPPacketInformation)
 // docid: M:System.Net.Sockets.IPPacketInformation.op_Inequality(System.Net.Sockets.IPPacketInformation,System.Net.Sockets.IPPacketInformation)
     /**
@@ -513,6 +517,10 @@ public final class IPPacketInformation
         } else {
         return (__return) != 0;
         }
+    }
+    public static func != (packetInformation1 : dotnet.System.Net.Sockets.IPPacketInformation, packetInformation2 : dotnet.System.Net.Sockets.IPPacketInformation) -> Bool
+    {
+        return try! op_Inequality(packetInformation1: packetInformation1, packetInformation2: packetInformation2);
     }
     // [IsSpecialName] System.Net.IPAddress get_Address()
 // docid: M:System.Net.Sockets.IPPacketInformation.get_Address
@@ -11156,6 +11164,10 @@ public final class UdpReceiveResult
         return (__return) != 0;
         }
     }
+    public static func == (left : dotnet.System.Net.Sockets.UdpReceiveResult, right : dotnet.System.Net.Sockets.UdpReceiveResult) -> Bool
+    {
+        return try! op_Equality(left: left, right: right);
+    }
     // [IsSpecialName] bool op_Inequality(System.Net.Sockets.UdpReceiveResult, System.Net.Sockets.UdpReceiveResult)
 // docid: M:System.Net.Sockets.UdpReceiveResult.op_Inequality(System.Net.Sockets.UdpReceiveResult,System.Net.Sockets.UdpReceiveResult)
     /**
@@ -11175,6 +11187,10 @@ public final class UdpReceiveResult
         } else {
         return (__return) != 0;
         }
+    }
+    public static func != (left : dotnet.System.Net.Sockets.UdpReceiveResult, right : dotnet.System.Net.Sockets.UdpReceiveResult) -> Bool
+    {
+        return try! op_Inequality(left: left, right: right);
     }
     // [IsSpecialName] System.Byte[] get_Buffer()
 // docid: M:System.Net.Sockets.UdpReceiveResult.get_Buffer
